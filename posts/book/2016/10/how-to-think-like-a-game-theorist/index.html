@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Lee-W" />
+<meta name="description" content="" />
+<meta name="keywords" content="">
+<meta property="og:site_name" content="Life Lies in Traveling"/>
+<meta property="og:title" content="[Book] 所有問題都是一場賽局"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://lee-w.github.io/posts/book/2016/10/how-to-think-like-a-game-theorist"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-10-15 11:04:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
+<meta property="article:section" content="Book"/>
+<meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
+
+  <title>Life Lies in Traveling &ndash; [Book] 所有問題都是一場賽局</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://lee-w.github.io">
+        <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
+      </a>
+      <h1><a href="http://lee-w.github.io">Lee-W</a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="http://lee-w.github.io/pages/about-me.html#about-me">About Me</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-google" href="http://plus.google.com/113295124327840065090" target="_blank"><i class="fa fa-google"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://lee-w.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://lee-w.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="how-to-think-like-a-game-theorist">[Book] 所有問題都是一場賽局</h1>
+    <p>
+          Posted on 2016/10/15 - 六 in <a href="http://lee-w.github.io/category/book.html">Book</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><img alt="How to think like a game theorist" src="http://i.imgur.com/a4TS6Y0m.jpg"></p>
+<!--more-->
+
+<h2>序章: 用賽局來思考，培養解決問題的「三種能力」</h2>
+<ul>
+<li>賽局理論: 分析兩人以上的玩家，其決策和行動的理論</li>
+<li>學賽局理論的目的<ol>
+<li>掌握賽局的整理樣貌 （對問題的分析能力）</li>
+<li>預測即將發生的未來</li>
+<li>找到適當的解決方法</li>
+</ol>
+</li>
+<li>贏不了的賽局，就改變規則吧<ul>
+<li>e.g. 減少排放二氧化碳有損國家經濟，所有國家都不願意，然而破壞環境卻是最終對大家都不好的<ul>
+<li>-&gt; 獎勵二氧化碳排放少的國家，讓二氧化碳變成對經濟有利</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Ch1: 合理的下一步是......? 「囚犯賽局」與「合理的豬」</h2>
+<h3>囚犯賽局</h3>
+<p>相信接觸過賽局理論的人，一定會聽過囚犯賽局</p>
+<div class="codehilite"><pre><span></span>假設今天有兩個囚犯A和B，他們被分開訊問，並且知道
+如果都不認罪的話，兩個人都會被關一年
+都認罪的話，兩個人都會被關兩年
+但是要是一方認罪，另一方不認罪的話，則認罪方無罪釋放，不認罪方要關三年
+</pre></div>
+
+
+<p>將上述狀況畫成表格就會像下面這樣<br>
+(每一格左邊的數字代表左邊參與者的獲益，右邊的數字代表上面參與者的獲益)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>B認罪</th>
+<th>B沈默</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A認罪</td>
+<td>-2, -2</td>
+<td>0, -3</td>
+</tr>
+<tr>
+<td>A沈默</td>
+<td>0, -3</td>
+<td>-1, -1</td>
+</tr>
+</tbody>
+</table>
+<p>在考量了對方所會做的最佳選擇後，所做的最佳選擇就會導向A和B都認罪<br>
+然而對他們來說共同的最大利益，卻是都保持沈默</p>
+<p>最後導向的這個點就是所謂的奈許均衡(Nash Equilibrium)</p>
+<h2>Ch2: 協調賽局 - 為何你拿蘋果、用微軟</h2>
+<p>參加賽局的玩家，透過協調讓雙方得到利益</p>
+<h3>協調賽局</h3>
+<div class="codehilite"><pre><span></span>以朋友出去玩作為案例
+假設A, B有音樂劇和電影兩個方案
+兩人一起去看音樂劇，滿足度是10
+一起去看電影是9
+分開去的兩種結果，雙方滿意度都是0
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>B音樂劇</th>
+<th>B電影</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A音樂劇</td>
+<td>10, 10</td>
+<td>0, 0</td>
+</tr>
+<tr>
+<td>A電影</td>
+<td>0, 0</td>
+<td>9, 9</td>
+</tr>
+</tbody>
+</table>
+<p>此時的奈許均衡有兩個，就是雙方選擇同樣行動的兩個點</p>
+<p>這時候只要有一方先做了選擇，則另一個方就會趨向於<strong>一樣的選擇</strong><br>
+協調賽局的根本就是「和大家一樣」</p>
+<h4>協調的失敗</h4>
+<p>協調賽局中，有多個奈許均衡點<br>
+但最後仍有可能落在對大家都不利的均衡點上(e.g. 以上面的例子來說就是看電影)<br>
+而且協調賽局具有「穩定了就很難改變」的性質<br>
+所以陷入這個不好的平衡點是相當危險的</p>
+<ul>
+<li>實際案例<ul>
+<li>病態的過度加班 （有人加班，其他人不敢走）</li>
+</ul>
+</li>
+</ul>
+<h2>Ch3: 知彼知己，百戰不殆 - 三種賽局，搞懂你的對手</h2>
+<h3>膽小鬼賽局</h3>
+<div class="codehilite"><pre><span></span>假設兩人各開一台車，朝向牆壁全速前進
+看誰能不採煞車前，到離牆最近的地方 -&gt; 先踩剎車的人就輸了
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>B踩剎車</th>
+<th>B不踩煞車</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A踩煞車</td>
+<td>0, 0</td>
+<td>-5, 5</td>
+</tr>
+<tr>
+<td>A不踩剎車</td>
+<td>5, -5</td>
+<td>-20, -20</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>奈許均衡有兩個</p>
+<ul>
+<li>對方先踩剎車，則自己不踩</li>
+<li>對方不踩剎車，則自己先踩</li>
+</ul>
+</li>
+<li>
+<p>實際案例</p>
+<ul>
+<li>古巴危機<ul>
+<li>美國要蘇聯撤除軍備，蘇聯要美國認同蘇聯裝設核子飛彈</li>
+<li>如果都不讓步，就會爆發核子戰爭</li>
+<li>不存在都讓步的情況</li>
+</ul>
+</li>
+<li>誰都不願意做的事，為什麼有人做</li>
+</ul>
+</li>
+<li>
+<p>膽小鬼賽局雖然是決定誰是膽小鬼的賽局，但不要只是讚賞勝利者</p>
+<ul>
+<li>犧牲自己成為膽小鬼的那一方也應該獲得注目</li>
+</ul>
+</li>
+</ul>
+<h3>猜銅板賽局</h3>
+<div class="codehilite"><pre><span></span>某個城市中，有警察和小偷
+警察的選擇是「巡邏」和「偷懶」
+小偷則是「進入偷竊」和「不進入」
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>小偷進入偷竊</th>
+<th>小偷不進入</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>警察巡邏</td>
+<td>1, -1</td>
+<td>-1, 0</td>
+</tr>
+<tr>
+<td>警察不巡邏</td>
+<td>1, 1</td>
+<td>0, 0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>這樣的賽局並不存在奈許均衡</strong></p>
+<ul>
+<li>如果改變規則，則賽局構造也會改變<ul>
+<li>e.g. 增加警察抓到小偷的利益，或沒抓到的懲罰 </li>
+</ul>
+</li>
+</ul>
+<h3>霍特琳賽局</h3>
+<div class="codehilite"><pre><span></span>某片沙灘上，A, B兩家冰淇淋店都想開店
+沙灘約100m，遊客也均勻分散
+那兩家店的老闆會在哪開店呢
+左右兩邊是海，一個-代表離沙灘10m
+
+1.
+
+         A B
+|- - - - - - - - - - -|
+
+左邊的50m都是A的範圍，反之亦然
+但所有顧客都要走50m
+
+2. 
+     A           B
+|- - - - - - - - - - -|
+對顧客最方便，因為對顧客來說最遠也不過就走30m
+</pre></div>
+
+
+<p>最後的奈許平衡會是1，即使2才是最好的結果<br>
+然而當A想要設店在離海30m的地方的時候<br>
+B就會像把店往左移，如此就能吸引到更大範圍的顧客</p>
+<ul>
+<li>實際案例<ul>
+<li>日本拉麵店都集中在車站</li>
+</ul>
+</li>
+</ul>
+<h2>Ch4: 動態賽局 - 時間，可以解決問題</h2>
+<ul>
+<li>動態賽局並不是一個特定賽局，而是一種統稱<ul>
+<li>隨著時間經過，賽局發展也會產生變化的結構</li>
+</ul>
+</li>
+</ul>
+<h3>擴散型賽局</h3>
+<div class="codehilite"><pre><span></span>假設目前城市中已經有一家A工廠，B工廠在考慮是否進入
+A工廠的選項是「戰鬥」和「合作」
+B工廠是「進入」和「不進入」
+
+原本A工廠的利益是3
+如果B工廠不加入的話，自身利益是0
+如果B工廠加入，而A工廠選擇合作，則雙方利益為1
+如果B工廠加入，A工廠選擇戰鬥則雙方都是-1
+</pre></div>
+
+
+<p>如果用原本的2x2表格來做計算<br>
+可以發現奈許均衡在「A戰鬥 Ｘ B不進入」「A合作 X B進入」</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>B進入</th>
+<th>B不進入</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A戰鬥</td>
+<td>-1, -1</td>
+<td>3, 0</td>
+</tr>
+<tr>
+<td>A合作</td>
+<td>1, 1</td>
+<td>3, 0</td>
+</tr>
+</tbody>
+</table>
+<p>不過「A戰鬥 X B不進入」是不會發生的</p>
+<ul>
+<li>這時候就可以透過「賽局樹」來觀察時間流</li>
+</ul>
+<div class="codehilite"><pre><span></span>                            -戰鬥-&gt; (-1, -1)
+                    A工廠
+        -進入-&gt;     
+                            -合作-&gt; (1, 1)
+B工廠
+        -不進入-&gt; (3, 0)
+</pre></div>
+
+
+<p>這種賽局要使用反向歸納（backward indction），排除「奇怪的奈許均衡」<br>
+1. 如果B工廠進入，A工廠就會合作<br>
+2. 則「A戰鬥 X B進入」可以被排除<br>
+3. 再來B工廠去比較「A合作 X B不進入」和「B不進入」<br>
+4. 就能消除不進入的選項</p>
+<h3>時間矛盾的問題- 空包彈式的威脅</h3>
+<p>就前面的A, B工廠例子來說<br>
+A工廠進入市場前的最佳行動是戰鬥，所以一定會表現出強硬的姿態<br>
+然而B工廠一旦進入，A工廠就會為了利益選擇合作<br>
+像這樣A工廠的強勢姿態就只是「空包彈」</p>
+<ul>
+<li>實際案例<ul>
+<li>不...的話，就會...。 然而這樣的情況卻沒發生，久而久之就無效了</li>
+</ul>
+</li>
+</ul>
+<h4>解決方案之一 - 創造出必須遵守約定的狀況</h4>
+<ul>
+<li>製藥特許權制度<ul>
+<li>製藥需要很大的成本，如果沒給予製藥公司製藥成功有販售的特許權</li>
+<li>製藥公司就會不願意投入，最後人民會受害</li>
+<li>所以這個特許權必須被法定</li>
+</ul>
+</li>
+<li>高級品決不降價<ul>
+<li>一旦降價，就會產生「等一段時間，價格會下降」的想法</li>
+<li>以後的物品更不可能用原價把商品賣出 </li>
+</ul>
+</li>
+</ul>
+<h3>「重複賽局」和「扣板機策略」</h3>
+<p>回到最一開始的囚犯賽局<br>
+如果這個賽局會執行不止一次<br>
+最終兩人就會選擇都不認罪的最佳利益</p>
+<p>這兩人本來就已經知道最好的選擇是都不認罪<br>
+但因為無法抹去「如果對方背叛了...」的想法，才會不做出最佳選擇<br>
+但是如果「對方背叛我，我就讓他好看」的策略成為可能<br>
+就會產生某種信賴關係，讓兩人都導向選擇不認罪</p>
+<p>將無限重複的賽局視為大型賽局，而會成為奈許均衡的選項，即是採取合作關係<br>
+這稱為「無名氏定理」(folk theorem)<br>
+就算是在短期關係中極可能背叛對方的狀況<br>
+只要關係變成長期的，就有可能表現出能好好維持合作的關係</p>
+<h2>Ch5: 人為什麼無法理性？ - 情感和賽局理論</h2>
+<p>所有的賽局都是在一個共通條件上成立的 - <strong>玩家只考慮自己的利益，各自做出符合理性的行動</strong><br>
+而這個前提卻是常常不會成立的</p>
+<h3>人能預測未來嗎？ - 蜈蚣賽局</h3>
+<div class="codehilite"><pre><span></span>爸爸手上有100枚硬幣，要分配給A, B兩個兒子
+但必須遵循以下兩個規定
+首先，爸爸會在A面前放1枚
+A可以選擇「停止」或「繼續」
+如果選擇「停止」就結束
+選擇「繼續」，則爸爸會從A那邊拿起1枚(即使後期A有不止1枚，還是只會拿1枚)
+並且再加上手上的1枚，2枚一起給B
+</pre></div>
+
+
+<p>這個狀況用反向歸納預測的結果是「A在第一回合就應該選擇停止」<br>
+如此A便能獲得比B還多的硬幣<br>
+但是在實際實驗中，卻沒有人做出了這樣的決定</p>
+<p><strong>人並沒有辦法預測未來</strong></p>
+<h3>拍賣賽局 - 證明人會從理性到瘋狂</h3>
+<div class="codehilite"><pre><span></span>與一般拍賣不同
+競標成功後，未得標的前一位出價者，需要付他喊出的價錢
+而這個東西依然會給得標者
+也就是，前一位出價者付了錢卻什麼都拿不到
+</pre></div>
+
+
+<p>這種賽局一直執行下去，玩家就必須一直往高價喊</p>
+<ul>
+<li>實際案例<ul>
+<li>選舉的燒錢比賽</li>
+<li>泡沫經濟</li>
+</ul>
+</li>
+</ul>
+<p><strong><em>「你沒想清楚後果」確實是個問題，但是你還要考慮的是「其他人沒想清楚後果的可能性」</em></strong></p>
+<h3>只用金錢，無法驅動人心</h3>
+<p>利益並非唯一能影響人心的，往往情感也是</p>
+<h4>最後通牒賽局</h4>
+<div class="codehilite"><pre><span></span>A, B兩位玩家憑空得到1000元
+由B決定分配方式，A有同意或否決權
+A同意的話則造這個分配方式
+A否決的話就都拿不到錢
+只執行一次賽局
+</pre></div>
+
+
+<p>如果人是理性的，A即使只拿到1元都應該接受<br>
+然而實際上這樣的狀況卻幾乎不會發生</p>
+<h4>獨裁者賽局 (Dicatator game)</h4>
+<p>跟上面同樣的情境<br>
+只是這次A沒有任何決定權，只能接受B的分配<br>
+此時B的最佳選擇就是1000元全部拿走<br>
+然而實驗結果，相當多的人依然會給對方一定程度的金額</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lee-w-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>&copy; Lee-W </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Life Lies in Traveling ",
+  "url" : "http://lee-w.github.io",
+  "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
+  "description": ""
+}
+</script>
+</body>
+</html>

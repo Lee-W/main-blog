@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Lee-W" />
+<meta name="description" content="vimspell是一套提供vim根據字典來檢查文法的套件 有了vimsepll，寫markdown或latex的時候，就不用再怕拼錯字了" />
+<meta name="keywords" content="plugin">
+<meta property="og:site_name" content="Life Lies in Traveling"/>
+<meta property="og:title" content="vimspell - vim檢查英文文法的套件"/>
+<meta property="og:description" content="vimspell是一套提供vim根據字典來檢查文法的套件 有了vimsepll，寫markdown或latex的時候，就不用再怕拼錯字了"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://lee-w.github.io/posts/article/2015/02/vim-spell-check"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2015-02-14 09:59:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
+<meta property="article:section" content="Article"/>
+<meta property="article:tag" content="plugin"/>
+<meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
+
+  <title>Life Lies in Traveling &ndash; vimspell - vim檢查英文文法的套件</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://lee-w.github.io">
+        <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
+      </a>
+      <h1><a href="http://lee-w.github.io">Lee-W</a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="http://lee-w.github.io/pages/about-me.html#about-me">About Me</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-google" href="http://plus.google.com/113295124327840065090" target="_blank"><i class="fa fa-google"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://lee-w.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://lee-w.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="vim-spell-check">vimspell - vim檢查英文文法的套件</h1>
+    <p>
+          Posted on 2015/02/14 - 六 in <a href="http://lee-w.github.io/category/article.html">Article</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><a href="http://www.vim.org/scripts/script.php?script_id=465">vimspell</a>是一套提供vim根據字典來檢查文法的套件<br>
+有了vimsepll，寫markdown或latex的時候，就不用再怕拼錯字了</p>
+<!--more-->
+
+<h1>用vundle安裝</h1>
+<p>在vimrc中加入下面這行</p>
+<div class="codehilite"><pre><span></span>Bundle &#39;vimspell&#39;
+</pre></div>
+
+
+<p>接著用<code>:BundleInstall</code>安裝</p>
+<h1>字典檔</h1>
+<p>到下面的網站下載字典檔<br>
+http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/dictionaries/</p>
+<p>我下載的是<code>en_US.zip</code></p>
+<p>解壓縮完後，用vim開啟街壓縮完的資料夾<br>
+應該會看到下面這樣<br>
+<img alt="1_directory" src="http://i.imgur.com/gLWMnmW.png"></p>
+<p>接著進入vim在normal mode輸入</p>
+<div class="codehilite"><pre><span></span>:mkspell en en_US
+</pre></div>
+
+
+<p><code>en</code>可以自己定義，<code>en\_US</code>必須是.aff 和.dic的檔名<br>
+檢查一下vim資料夾下的spell資料夾有沒有新增字典檔，確定有了後就新增完成了</p>
+<h1>設定</h1>
+<p>首先要先定義要根據哪個字典檔</p>
+<div class="codehilite"><pre><span></span>:set spelllang=en
+</pre></div>
+
+
+<p>en就是剛剛所定義的名稱</p>
+<p>接著<code>:set spell</code>就可以開啟了<br>
+<code>:set nospell</code>則是關閉</p>
+<p>如果每次都要設定一次，就太麻煩了<br>
+我在vimrc加入了下面這些</p>
+<div class="codehilite"><pre><span></span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
+nmap <span class="p">&lt;</span>F7<span class="p">&gt;</span> :<span class="k">setlocal</span> <span class="k">spell</span><span class="p">!&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+autocmd <span class="nb">BufRead</span> *.txt<span class="p">,</span>*.md<span class="p">,</span>*.tex <span class="k">setlocal</span> <span class="k">spell</span>
+</pre></div>
+
+
+<p>第二行是每次按F7就能開啟或關閉vimspell，也可以換成自己想要的快捷鍵<br>
+第三行則是每次遇到副檔名是txt, md, tex時就自動開啟vimspell</p>
+<h1>使用</h1>
+<p>vimspell被開啟後，就會自動把拼錯的字反白起來<br>
+如果有其他的語言一樣會被反白起來<br>
+<img alt="2_vimspell_sample" src="http://i.imgur.com/MGjdAoq.png"></p>
+<h2>指令</h2>
+<ul>
+<li><code>]s</code> : 跳到下一個錯字</li>
+<li><code>[s</code> : 跳到上一個錯字</li>
+<li><code>z=</code> : 開啟建議，可以參考下面的圖，選擇完按enter後，就會替換原本的字</li>
+<li><code>zg</code> : 將目前游標上的字加入字典<br>
+    新增的字都會被加到<code>~/.vim/spell/en.utf-8.add</code>(根據語言不同，檔名會不同)</li>
+<li><code>zug</code>: 復原加入字典的字(刪除)</li>
+<li><code>zw</code> : 加入壞字字典，壞字也會被加入同樣的檔案中，最後面會另外加上<code>/!</code></li>
+<li><code>zuw</code>: 復原加入壞字字典的字(刪除)</li>
+</ul>
+<p><img alt="3_choose_word" src="http://i.imgur.com/NWHCakj.png"></p>
+<h1>Reference</h1>
+<ul>
+<li><a href="http://vimdoc.sourceforge.net/htmldoc/spell.html">Vim documentation: spell</a></li>
+<li><a href="http://www.go2linux.org/linux/2010/10/how-use-spell-check-vim-795">How to use spell check with vim</a></li>
+<li><a href="http://ithelp.ithome.com.tw/question/10055602">[Reply] 如何在vim裡用拼字檢查 - iT邦幫忙::IT知識分享社群</a></li>
+<li><a href="http://henry.precheur.org/vim/create_spell_file_for_vim">Create a spell file for VIM</a></li>
+<li><a href="http://stackoverflow.com/questions/7286207/automatically-enabling-spell-checking-in-vimrc">vim - Automatically enabling spell checking in vimrc - Stack Overflow</a></li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://lee-w.github.io/tag/plugin.html">plugin</a>
+    </p>
+  </div>
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lee-w-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>&copy; Lee-W </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Life Lies in Traveling ",
+  "url" : "http://lee-w.github.io",
+  "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
+  "description": ""
+}
+</script>
+</body>
+</html>
