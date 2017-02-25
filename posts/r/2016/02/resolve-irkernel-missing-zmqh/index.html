@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Lee-W" />
+<meta name="description" content="" />
+<meta name="keywords" content="Jupyter">
+<meta property="og:site_name" content="Life Lies in Traveling"/>
+<meta property="og:title" content="解決安裝IRKernel缺少zmq.h"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000/posts/r/2016/02/resolve-irkernel-missing-zmqh"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-02-20 03:42:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://localhost:8000/author/lee-w.html">
+<meta property="article:section" content="R"/>
+<meta property="article:tag" content="Jupyter"/>
+<meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
+
+  <title>Life Lies in Traveling &ndash; 解決安裝IRKernel缺少zmq.h</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://localhost:8000">
+        <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
+      </a>
+      <h1><a href="http://localhost:8000">Lee-W</a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="http://localhost:8000/pages/about-me.html#about-me">About Me</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-google" href="http://plus.google.com/113295124327840065090" target="_blank"><i class="fa fa-google"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://localhost:8000">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="resolve-irkernel-missing-zmqh">解決安裝IRKernel缺少zmq.h</h1>
+    <p>
+          Posted on 2016/02/20 - 六 in <a href="http://localhost:8000/category/r.html">R</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <!--more-->
+
+<h2>安裝IRKernel</h2>
+<p>進入R的命令列，輸入下面的指令<br>
+就能安裝IRKernel，以後就能在jupyter中使用R</p>
+<div class="codehilite"><pre><span></span>install.packages(c(&#39;rzmq&#39;,&#39;repr&#39;,&#39;IRkernel&#39;,&#39;IRdisplay&#39;),
+                 repos = c(&#39;http://irkernel.github.io/&#39;, getOption(&#39;repos&#39;)))
+IRkernel::installspec()
+</pre></div>
+
+
+<h2>錯誤訊息</h2>
+<div class="codehilite"><pre><span></span><span class="n">interface</span><span class="p">.</span><span class="nl">cpp</span><span class="p">:</span><span class="mi">22</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span> <span class="n">fatal</span> <span class="nl">error</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">zmq</span><span class="p">.</span><span class="n">h</span><span class="err">&#39;</span> <span class="n">file</span> <span class="n">not</span> <span class="n">found</span>
+<span class="cp">#include</span> <span class="cpf">&lt;zmq.h&gt;</span><span class="cp"></span>
+         <span class="o">^</span>
+<span class="mi">1</span> <span class="n">error</span> <span class="n">generated</span><span class="p">.</span>
+<span class="nl">make</span><span class="p">:</span> <span class="o">***</span> <span class="p">[</span><span class="n">interface</span><span class="p">.</span><span class="n">o</span><span class="p">]</span> <span class="n">Error</span> <span class="mi">1</span>
+<span class="nl">ERROR</span><span class="p">:</span> <span class="n">compilation</span> <span class="n">failed</span> <span class="k">for</span> <span class="n">package</span> <span class="err">‘</span><span class="n">rzmq</span><span class="err">’</span>
+</pre></div>
+
+
+<!--more-->
+
+<h2>解決</h2>
+<p>這時候就要將缺少的套件補齊</p>
+<div class="codehilite"><pre><span></span>brew install czmq zmq
+</pre></div>
+
+
+<p>再執行一次最上面的安裝指令</p>
+<p>接著在指令列執行輸入下面的指令</p>
+<div class="codehilite"><pre><span></span>jupyter qtconsole --kernel=ir
+jupyter console --kernel=ir
+</pre></div>
+
+
+<p>安裝成功後就可以看到<br>
+<img alt="R_in_jupyter" src="http://i.imgur.com/pWf6j0q.png"></p>
+<h1>Reference</h1>
+<ul>
+<li><a href="https://github.com/IRkernel/IRkernel/issues/50">Failed to install rzmq #50</a></li>
+<li><a href="https://github.com/IRkernel/IRkernel">IRkernel</a></li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://localhost:8000/tag/jupyter.html">Jupyter</a>
+    </p>
+  </div>
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lee-w-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>&copy; Lee-W </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Life Lies in Traveling ",
+  "url" : "http://localhost:8000",
+  "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
+  "description": ""
+}
+</script>
+</body>
+</html>

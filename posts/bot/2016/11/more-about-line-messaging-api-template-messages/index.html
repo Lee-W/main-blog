@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Lee-W" />
+<meta name="description" content="除了傳送文字外，Line Bot還可以傳 圖片, 影像, 聲音, 地圖 貼圖 (Line Bot所能使用的貼圖清單) Imagemap Tempalte Button Confirm Carousel 大部分使用上很直覺，可以直接參考API Reference - Messaging API和line-bot-sdk-python 這篇文章主要談Template Messages的使用" />
+<meta name="keywords" content="Line">
+<meta property="og:site_name" content="Life Lies in Traveling"/>
+<meta property="og:title" content="[Bot] More About Line Messaging API - Template Messages"/>
+<meta property="og:description" content="除了傳送文字外，Line Bot還可以傳 圖片, 影像, 聲音, 地圖 貼圖 (Line Bot所能使用的貼圖清單) Imagemap Tempalte Button Confirm Carousel 大部分使用上很直覺，可以直接參考API Reference - Messaging API和line-bot-sdk-python 這篇文章主要談Template Messages的使用"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000/posts/bot/2016/11/more-about-line-messaging-api-template-messages"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-11-27 06:08:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://localhost:8000/author/lee-w.html">
+<meta property="article:section" content="Bot"/>
+<meta property="article:tag" content="Line"/>
+<meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
+
+  <title>Life Lies in Traveling &ndash; [Bot] More About Line Messaging API - Template Messages</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://localhost:8000">
+        <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
+      </a>
+      <h1><a href="http://localhost:8000">Lee-W</a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="http://localhost:8000/pages/about-me.html#about-me">About Me</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-google" href="http://plus.google.com/113295124327840065090" target="_blank"><i class="fa fa-google"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://localhost:8000">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="more-about-line-messaging-api-template-messages">[Bot] More About Line Messaging API - Template Messages</h1>
+    <p>
+          Posted on 2016/11/27 - 日 in <a href="http://localhost:8000/category/bot.html">Bot</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>除了傳送文字外，Line Bot還可以傳</p>
+<ul>
+<li>圖片, 影像, 聲音, 地圖</li>
+<li>貼圖 (Line Bot所能使用的<a href="https://devdocs.line.me/files/sticker_list.pdf">貼圖清單</a>)</li>
+<li>Imagemap</li>
+<li>Tempalte<ul>
+<li>Button</li>
+</ul>
+</li>
+<li>Confirm</li>
+<li>Carousel</li>
+</ul>
+<p>大部分使用上很直覺，可以直接參考<a href="https://devdocs.line.me/en/">API Reference - Messaging API</a>和<a href="https://github.com/line/line-bot-sdk-python">line-bot-sdk-python</a></p>
+<p>這篇文章主要談Template Messages的使用</p>
+<!--more-->
+
+<h1>Template</h1>
+<p>Template分為Button, Confirm跟Carousel三種<br>
+這些功能也是我認為從Line Bot Trail升級到Line Messaging API最好用的功能</p>
+<h2>Example</h2>
+<p>以下的測試是bot收到關鍵字，回傳相對應的訊息</p>
+<ul>
+<li>
+<p>Button<br>
+<img alt="button_example" src="http://i.imgur.com/KYN6kDR.png"></p>
+</li>
+<li>
+<p>Confirm<br>
+<img alt="confirm_example" src="http://i.imgur.com/pUFboL5.png"></p>
+</li>
+<li>
+<p>Carousel (如果超出版面，則可以左右滑動)<br>
+<img alt="carousel_example" src="http://i.imgur.com/Pxvj6om.png"></p>
+</li>
+</ul>
+<p>另外必須要注意的是，這些功能目前都只支援手機版<br>
+在電腦版上的Line看到的訊息會是這樣<br>
+<img alt="template_message_on_pc" src="http://i.imgur.com/ZdGQjc6.png"><br>
+這個文字內容可以透過template的alt_text參數設定</p>
+<p>上面的例子是<a href="https://github.com/line/line-bot-sdk-python#templatesendmessage---buttonstemplaten">line-bot-sdk-python</a>的使用範例<br>
+(<a href="https://github.com/Lee-W/line_echobot/tree/template-message">可以回傳template message的echo bot</a>)<br>
+大部分都能透過Code和Example比對，找到需要調整的參數</p>
+<p>接下來談的是那些按鍵的設定<br>
+上面所看到的按鍵都是一個Action<br>
+三種Template最大的不同，主要是這些action擺設的方式不同<br>
+限制的數量也不同</p>
+<ul>
+<li>Button一次可以支援四個action</li>
+<li>Confirm支援三個action</li>
+<li>Carousel則可以用5個CarouselColumn，每一個Column支援3個Action<ul>
+<li>另外需要注意的是Carousel中每一個Column的action數量必須是一樣的</li>
+</ul>
+</li>
+</ul>
+<h1>Action</h1>
+<p>這些action的label參數，就是顯示在按鍵上的文字，必須在20字以內</p>
+<p>text參數則是按下這個按鍵，會由使用者回傳設定的文字<br>
+e.g. 這是我按下上面Button的postback的效果<br>
+<img alt="text_example" src="http://i.imgur.com/ow2G8wU.png"><br>
+而text就是設定為postback (注意並非label的'postback')</p>
+<h2>Postback</h2>
+<p>當使用者按了這個按鍵<br>
+Line Server會傳一個postback event給我們，裡面包含著data參數中設定的字串 <br>
+在收到event的時候，透過<code>event.postback.postback.data</code>取出data</p>
+<p>Postback可以不給text參數</p>
+<h2>Message</h2>
+<p>text參數在Message Action是必須的，也不能給空字串<br>
+如果希望這個按鍵，只有顯示但不會由使用者傳文字過來，可以給一串空白 (e.g. ' ')</p>
+<h2>URI</h2>
+<p>使用者按下這個按鍵就會用Line的瀏覽器跳到外部網頁</p>
+<h1>Reference</h1>
+<ul>
+<li><a href="https://devdocs.line.me/en/#template-messages">API Reference - Messaging API</a></li>
+<li><a href="https://github.com/line/line-bot-sdk-python#templatesendmessage---buttonstemplate">line-bot-sdk-python</a></li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://localhost:8000/tag/line.html">Line</a>
+    </p>
+  </div>
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lee-w-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>&copy; Lee-W </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Life Lies in Traveling ",
+  "url" : "http://localhost:8000",
+  "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
+  "description": ""
+}
+</script>
+</body>
+</html>
