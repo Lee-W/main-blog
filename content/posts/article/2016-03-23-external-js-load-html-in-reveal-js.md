@@ -1,8 +1,8 @@
 ---
 Title: External.js - Load HTML in Reveal.js
 Date: 2016-03-23 01:23
-Category: Article
-Tags: 
+Category: JS
+Tags: reveal.js
 Slug: external-js-load-html-in-reveal-js
 Authors: Lee-W
 Summary: 

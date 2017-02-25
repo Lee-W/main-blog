@@ -1,9 +1,9 @@
 ---
 Title: 我如何更有效率的使用時間
 Date: 2017-02-03 00:53
-Category: Article
-Tags: productivity
-Slug: how-do-i-manage-time
+Category: Thought
+Tags: Productivity
+Slug: how-do-i-manage-my-time
 Authors: Lee-W
 Summary: 
 ---

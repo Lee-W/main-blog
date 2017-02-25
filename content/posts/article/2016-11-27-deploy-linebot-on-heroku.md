@@ -1,8 +1,8 @@
 ---
 Title: [Bot] Deploy LineBot on Heroku
 Date: 2016-11-27 06:05
-Category: Article
-Tags: 
+Category: Bot
+Tags: Heroku, django, Line
 Slug: deploy-linebot-on-heroku
 Authors: Lee-W
 Summary: 

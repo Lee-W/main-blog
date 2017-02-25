@@ -1,8 +1,8 @@
 ---
 Title: 解決更新gcc找不到libgfortran.3.dylib (Octave,R)
 Date: 2016-06-11 03:13
-Category: Article
-Tags: 
+Category: R 
+Tags: mac
 Slug: solve-libgfortran3dylib-not-found
 Authors: Lee-W
 Summary: 

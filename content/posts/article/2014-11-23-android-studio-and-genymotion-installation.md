@@ -1,8 +1,8 @@
 ---
 Title: Android Studio+Genymotion安裝(12/29更新)
 Date: 2014-11-23 09:26
-Category: Article
-Tags: 
+Category: Android
+Tags: Tutorial
 Slug: android-studio-and-genymotion-installation
 Authors: Lee-W
 Summary: 

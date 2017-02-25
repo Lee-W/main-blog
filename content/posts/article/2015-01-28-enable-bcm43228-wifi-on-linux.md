@@ -1,7 +1,7 @@
 ---
 Title: 驅動BCM43228網卡在Linux的無線功能
 Date: 2015-01-28 08:52
-Category: Article
+Category: Linux-Unix
 Tags: 
 Slug: enable-bcm43228-wifi-on-linux
 Authors: Lee-W

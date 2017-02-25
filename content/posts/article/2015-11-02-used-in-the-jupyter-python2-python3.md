@@ -1,8 +1,8 @@
 ---
 Title: 在jupyter中同時使用Python2 Python3
 Date: 2015-11-02 15:12
-Category: Article
-Tags: jupiter
+Category: Python
+Tags: Jupyter
 Slug: used-in-the-jupyter-python2-python3
 Authors: Lee-W
 Summary: 

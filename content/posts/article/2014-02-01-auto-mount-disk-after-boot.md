@@ -1,7 +1,7 @@
 ---
 Title: Linux開機自動掛載分割區
 Date: 2014-02-01 16:44
-Category: Article
+Category: Linux-Unix
 Tags: 
 Slug: auto-mount-disk-after-boot
 Authors: Lee-W

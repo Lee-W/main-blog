@@ -1,8 +1,8 @@
 ---
 Title: powerline on zsh, vim, tmux
 Date: 2014-07-30 15:01
-Category: Article
-Tags: utility
+Category: Linux-Unix
+Tags: Utility
 Slug: powerline-on-zsh-vim-tmux
 Authors: Lee-W
 Summary: 

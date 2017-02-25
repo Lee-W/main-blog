@@ -1,8 +1,8 @@
 ---
 Title: [Bot] More than Just Echo Bot
 Date: 2016-11-29 01:57
-Category: Article
-Tags: 
+Category: Bot
+Tags:
 Slug: more-than-just-echo-bot
 Authors: Lee-W
 Summary: 

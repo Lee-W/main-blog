@@ -1,8 +1,8 @@
 ---
 Title: Scrollable RISE
 Date: 2016-08-15 03:22
-Category: Article
-Tags: 
+Category: Python
+Tags: Jupyter, reveal.js
 Slug: scrollable-rise
 Authors: Lee-W
 Summary: 

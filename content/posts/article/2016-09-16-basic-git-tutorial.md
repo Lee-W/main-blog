@@ -1,8 +1,8 @@
 ---
 Title: Basic Git Tutorial
 Date: 2016-09-16 15:41
-Category: Article
-Tags: 
+Category: Git
+Tags: Tutorial
 Slug: basic-git-tutorial
 Authors: Lee-W
 Summary: 

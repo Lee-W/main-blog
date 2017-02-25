@@ -1,8 +1,8 @@
 ---
 Title: [Bot] More About Line Messaging API - Template Messages
 Date: 2016-11-27 06:08
-Category: Article
-Tags: 
+Category: Bot
+Tags: Line
 Slug: more-about-line-messaging-api-template-messages
 Authors: Lee-W
 Summary: 

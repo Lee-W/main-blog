@@ -1,8 +1,8 @@
 ---
 Title: [Bot] Introduction to Chatbot
 Date: 2016-11-21 08:18
-Category: Article
-Tags: 
+Category: Bot
+Tags: Line
 Slug: introduction-to-chatbot
 Authors: Lee-W
 Summary: 

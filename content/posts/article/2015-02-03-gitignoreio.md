@@ -1,8 +1,8 @@
 ---
 Title: gitignore.io
 Date: 2015-02-03 05:58
-Category: Article
-Tags: 
+Category: Git
+Tags: Deprecated
 Slug: gitignoreio
 Authors: Lee-W
 Summary: 

@@ -1,8 +1,8 @@
 ---
 Title: COSCUP 2016 小啄如何實作的
 Date: 2016-10-01 11:50
-Category: Article
-Tags: 
+Category: Bot
+Tags: COSCUP
 Slug: coscup-2016-how-to-implement-small-pecks
 Authors: Lee-W
 Summary: 

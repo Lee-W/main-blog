@@ -1,8 +1,8 @@
 ---
 Title: 解決django-admin在mac找不到django.core
 Date: 2015-05-10 23:42
-Category: Article
-Tags: django
+Category: Python
+Tags: django, mac
 Slug: solve-django-admin-cant-find-the-djangocore-on-mac
 Authors: Lee-W
 Summary: 

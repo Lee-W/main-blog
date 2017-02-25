@@ -1,8 +1,8 @@
 ---
 Title: Guake terminal
 Date: 2014-02-09 07:02
-Category: Article
-Tags: utility
+Category: Linux-Unix
+Tags: Utility
 Slug: guake-terminal
 Authors: Lee-W
 Summary: 

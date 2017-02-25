@@ -1,8 +1,8 @@
 ---
 Title: 解決Win 8、Ubuntu雙系統無法掛載NTFS分割區問題
 Date: 2014-02-25 15:40
-Category: Article
-Tags: 
+Category: Linux-Unix
+Tags:
 Slug: solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem
 Authors: Lee-W
 Summary: 
