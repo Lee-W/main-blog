@@ -2,7 +2,7 @@
 Title: [Book] 思考的技術
 Date: 2017-01-22 11:45
 Category: Book
-Tags: other
+Tags: Thinking
 Slug: thinking-technique
 Authors: Lee-W
 Summary: 

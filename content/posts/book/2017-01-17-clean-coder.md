@@ -2,7 +2,7 @@
 Title: [Book] Clean Coder
 Date: 2017-01-17 09:35
 Category: Book
-Tags: other
+Tags: Software Engineering
 Slug: clean-coder
 Authors: Lee-W
 Summary: 

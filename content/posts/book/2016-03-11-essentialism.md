@@ -2,7 +2,7 @@
 Title: [Book] 少，但是更好
 Date: 2016-03-11 14:29
 Category: Book
-Tags: productivity
+Tags: Productivity
 Slug: essentialism
 Authors: Lee-W
 Summary: 

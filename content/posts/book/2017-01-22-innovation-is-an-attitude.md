@@ -2,7 +2,7 @@
 Title: [Book] 創新是一種態度
 Date: 2017-01-22 12:04
 Category: Book
-Tags: business
+Tags: Thinking
 Slug: innovation-is-an-attitude
 Authors: Lee-W
 Summary: 

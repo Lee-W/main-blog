@@ -2,7 +2,7 @@
 Title: [Book] 最後的演講
 Date: 2016-06-06 08:32
 Category: Book
-Tags: 
+Tags: Life
 Slug: the-last-lecture
 Authors: Lee-W
 Summary: 

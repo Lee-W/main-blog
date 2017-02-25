@@ -2,7 +2,7 @@
 Title: [Book] 為什麼他接的案子比我多
 Date: 2017-01-22 12:16
 Category: Book
-Tags: design
+Tags: Design
 Slug: burn-your-portfolio-stuff-they-don-t-teach-you-in-design-school-but-should
 Authors: Lee-W
 Summary: 

@@ -2,7 +2,7 @@
 Title: [Book] 所有問題都是一場賽局
 Date: 2016-10-15 11:04
 Category: Book
-Tags: 
+Tags: Game Theory
 Slug: how-to-think-like-a-game-theorist
 Authors: Lee-W
 Summary: 
