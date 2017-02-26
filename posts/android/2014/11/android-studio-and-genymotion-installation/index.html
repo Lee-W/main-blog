@@ -4,12 +4,14 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/monokai.min.css">
-  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/pygments/xcode.min.css">
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/font-awesome/css/font-awesome.min.css">
 
+    <link href="http://lee-w.github.io/static/custom.css" rel="stylesheet">
 
+    <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Atom">
 
 
 
@@ -28,36 +30,36 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <meta name="author" content="Lee-W" />
-<meta name="description" content="What is Android Studio? 最近Google在推行的Android IDE，前身是IntelliJ IDEA" />
+<meta name="description" content="What is Android Studio? 最近Google在推行的Android IDE，前身是IntelliJ IDEA" />
 <meta name="keywords" content="Tutorial">
 <meta property="og:site_name" content="Life Lies in Traveling"/>
-<meta property="og:title" content="Android Studio+Genymotion安裝(12/29更新)"/>
-<meta property="og:description" content="What is Android Studio? 最近Google在推行的Android IDE，前身是IntelliJ IDEA"/>
+<meta property="og:title" content="Android Studio+Genymotion安裝(12/29更新)"/>
+<meta property="og:description" content="What is Android Studio? 最近Google在推行的Android IDE，前身是IntelliJ IDEA"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://localhost:8000/posts/android/2014/11/android-studio-and-genymotion-installation"/>
+<meta property="og:url" content="http://lee-w.github.io/posts/android/2014/11/android-studio-and-genymotion-installation"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2014-11-23 09:26:00+08:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="http://localhost:8000/author/lee-w.html">
+<meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 <meta property="article:section" content="Android"/>
 <meta property="article:tag" content="Tutorial"/>
 <meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
 
-  <title>Life Lies in Traveling &ndash; Android Studio+Genymotion安裝(12/29更新)</title>
+  <title>Life Lies in Traveling &ndash; Android Studio+Genymotion安裝(12/29更新)</title>
 
 </head>
 <body>
   <aside>
     <div>
-      <a href="http://localhost:8000">
+      <a href="http://lee-w.github.io">
         <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
       </a>
-      <h1><a href="http://localhost:8000">Lee-W</a></h1>
+      <h1><a href="http://lee-w.github.io">Lee-W</a></h1>
 
 
       <nav>
         <ul class="list">
-          <li><a href="http://localhost:8000/pages/about-me.html#about-me">About Me</a></li>
+          <li><a href="http://lee-w.github.io/pages/about-me.html#about-me">About&nbsp;Me</a></li>
 
         </ul>
       </nav>
@@ -66,7 +68,7 @@
         <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
         <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
-        <li><a class="sc-google" href="http://plus.google.com/113295124327840065090" target="_blank"><i class="fa fa-google"></i></a></li>
+        <li><a class="sc-rss" href="//lee-w.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
       </ul>
     </div>
 
@@ -75,21 +77,23 @@
   <main>
 
     <nav>
-      <a href="http://localhost:8000">    Home
+      <a href="http://lee-w.github.io">    Home
 </a>
 
       <a href="/archives.html">Archives</a>
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="http://lee-w.github.io/feeds/all.atom.xml">    Atom
+</a>
 
     </nav>
 
 <article class="single">
   <header>
-    <h1 id="android-studio-and-genymotion-installation">Android Studio+Genymotion安裝(12/29更新)</h1>
+    <h1 id="android-studio-and-genymotion-installation">Android&nbsp;Studio+Genymotion安裝(12/29更新)</h1>
     <p>
-          Posted on 2014/11/23 - 日 in <a href="http://localhost:8000/category/android.html">Android</a>
+          Posted on 2014/11/23 - 日 in <a href="http://lee-w.github.io/category/android.html">Android</a>
 
 
     </p>
@@ -97,54 +101,49 @@
 
 
   <div>
-    <h1>What is Android Studio?</h1>
-<p>最近Google在推行的Android IDE，前身是IntelliJ IDEA<br>
+    <h1>What is Android&nbsp;Studio?</h1>
+<p>最近Google在推行的Android <span class="caps">IDE</span>，前身是IntelliJ <span class="caps">IDEA</span><br>
 <!--more--><br>
 它的檔案架構跟eclipse差蠻多的，所以用不同的IDE來協作會有點麻煩<br>
-就我的經驗Android Studio比eclipse來得穩定一些<br>
-反正現在還有Google在背後支持它，就來試試看吧XD</p>
+就我的經驗Android Studio比eclipse來得穩定一些<br>&nbsp;反正現在還有Google在背後支持它，就來試試看吧XD</p>
 <h3>2014/11/23更新</h3>
-<p><a href="#1123 update 1">Install SDK</a>: 更新了Android Studio 0.8.14後需要的額外設定<br>
-<a href="#1123 update 2">Setup SDK</a>: SDK版本更新至API21(Android 5.0)</p>
+<p><a href="#1123 update 1">Install <span class="caps">SDK</span></a>: 更新了Android Studio 0.8.14後需要的額外設定<br>
+<a href="#1123 update 2">Setup <span class="caps">SDK</span></a>: SDK版本更新至API21(Android&nbsp;5.0)</p>
 <h3>2014/12/29更新</h3>
-<p>Android Studio 正式版已經發布了，現在好像完全無法把sdk放在Android Studio資料夾內<br>
-所以之前沒有把sdk獨立出來的，記得要獨立出來，不然可能會發生無法更新的問題</p>
+<p>Android Studio 正式版已經發布了，現在好像完全無法把sdk放在Android Studio資料夾內<br>&nbsp;所以之前沒有把sdk獨立出來的，記得要獨立出來，不然可能會發生無法更新的問題</p>
 <h1>Installation</h1>
-<h2>Download Android Studio</h2>
+<h2>Download Android&nbsp;Studio</h2>
 <p>先到官網下載Android Studio (這篇文以Windows為例)<br>
 https://developer.android.com/sdk/installing/studio.html<br>
 <img alt="1_download" src="http://i.imgur.com/iFQ6JJY.png"></p>
 <p>下載後會進入到下面的教學頁面<br>
 其實寫得還蠻清楚的，所以如果可以接受就可以跳過以下的教學了XD<br>
 <img alt="2_Installation_Guide" src="http://i.imgur.com/gkttlS9.png"></p>
-<h2>Install JDK</h2>
+<h2>Install <span class="caps">JDK</span></h2>
 <p>在安裝Android Studio前，要先安裝好JDK<br>
 現在最新的版本是JDK 8，可以到下面的連結下載<br>
 http://www.oracle.com/technetwork/java/javase/downloads/index.html<br>
 <img alt="3_jdk1" src="http://i.imgur.com/0om5D2M.png"><br>
 選好自己的作業系統<br>
-<img alt="4_jdk2" src="http://i.imgur.com/D0G7XLq.png"><br>
-再來就是一直下一步囉XD</p>
+<img alt="4_jdk2" src="http://i.imgur.com/D0G7XLq.png"><br>&nbsp;再來就是一直下一步囉XD</p>
 <h3>設定環境變數</h3>
-<p>安裝完JDK後，我們還需要設定環境變數<br>
-以Win7為例</p>
+<p>安裝完JDK後，我們還需要設定環境變數<br>&nbsp;以Win7為例</p>
 <blockquote>
-<p>電腦-&gt; 內容 -&gt; 進階系統設定 -&gt; 進階 -&gt; 環境變數</p>
+<p>電腦-&gt; 內容 -&gt; 進階系統設定 -&gt; 進階 -&gt;&nbsp;環境變數</p>
 </blockquote>
 <p>接著在 <code>系統變數</code> 這個欄位按下 <code>新增</code> <br>
 變數名稱 輸入 <code>JAVA_HOME</code> (可能會因為Android Studio的版本而不同)<br>
 變數值 輸入 你安裝JDK的路徑 (e.g. <code>C:\Program Files\Java\jdk1.8.0_20</code>)<br>
 <img alt="5_env_var" src="http://i.imgur.com/KYG8pBO.png"></p>
-<h2>Install Android Studio</h2>
+<h2>Install Android&nbsp;Studio</h2>
 <p>安裝過程中會問要讓<strong>目前使用者</strong>使用還是<strong>所有使用者</strong>使用<br>
 再來會要你選安裝目錄<br>
 如果不想理它，就一直下一步吧<br>
-除了Android Studio外，可能還會安裝一些Dependent的套件<br>
-不過就放著讓他跑就可以了</p>
+除了Android Studio外，可能還會安裝一些Dependent的套件<br>&nbsp;不過就放著讓他跑就可以了</p>
 <p><a name="1123 update 1"></a></p>
-<h2>Install SDK manager</h2>
-<p>自從0.8.14版之後，SDK Manager就不會再跟Android Studio綁在一起<br>
-所以要額外<a href="https://developer.android.com/sdk/index.html?hl=i">下載SDK tools</a></p>
+<h2>Install <span class="caps">SDK</span>&nbsp;manager</h2>
+<p>自從0.8.14版之後，<span class="caps">SDK</span> Manager就不會再跟Android Studio綁在一起<br>
+所以要額外<a href="https://developer.android.com/sdk/index.html?hl=i">下載SDK&nbsp;tools</a></p>
 <div class="codehilite"><pre><span></span>如果是在0.8.14版前安裝的也不用擔心，更新後需要多做設定
 Android Studio會自動幫你把SDK的路徑設定到原本的位置
 </pre></div>
@@ -153,18 +152,18 @@ Android Studio會自動幫你把SDK的路徑設定到原本的位置
 <p>把網頁往下拉會看到SDK Tools Only<br>
 <img alt="18_sdk_download" src="http://i.imgur.com/TctIzTa.png"><br>
 下載完解壓縮到你要的路徑<br>
-之後設定SDK manager設定到這個路徑就可以了</p>
-<p>開始Android Studio</p>
+之後設定SDK&nbsp;manager設定到這個路徑就可以了</p>
+<p>開始Android&nbsp;Studio</p>
 <blockquote>
-<p>Configure -&gt; Project Default -&gt; Project Structure</p>
+<p>Configure -&gt; Project Default -&gt; Project&nbsp;Structure</p>
 </blockquote>
 <p><img alt="20_set_sdk_1" src="http://i.imgur.com/Tj82hvs.png"></p>
 <p>記得要把SDK的路徑改成剛剛安裝的路徑<br>
 <img alt="21_set_sdk_2" src="http://i.imgur.com/ETqkNhX.png"></p>
 <p><a name="1123 update 1"></a></p>
-<h2>SDK setup</h2>
+<h2><span class="caps">SDK</span>&nbsp;setup</h2>
 <p>接著我們要設定SDK<br>
-現在最新的版本是Android 5.0 (API 21)</p>
+現在最新的版本是Android 5.0 (<span class="caps">API</span>&nbsp;21)</p>
 <p>先開啟Android Studio，進入<code>Configure</code><br>
 <img alt="6_SDK1" src="http://i.imgur.com/c8rDZxZ.png"><br>
 進入<code>SDK Manager</code><br>
@@ -176,40 +175,36 @@ Android Studio會自動幫你把SDK的路徑設定到原本的位置
 - <strong>Android support Libarary</strong><br>
 - <strong>Coogle Play services</strong><br>
 - <strong>Google Repository</strong><br>
-- <strong>Google USB Driver</strong><br>
-- <strong>Intel X86 Emulator Accelerator(HAXM installer)</strong><br>
+- <strong>Google <span class="caps">USB</span> Driver</strong><br>
+- <strong>Intel X86 Emulator Accelerator(<span class="caps">HAXM</span> installer)</strong><br>
     最後的這個HAXM是為了讓模擬器加速用的，從SDK manager下載完之後，還有另外的安裝步驟<br>
 <img alt="9_SDK4" src="http://i.imgur.com/UM8w30n.png"></p>
 <p><strong>安裝到這裡Android Studio已經可以使用了</strong>，不過還可以再做一些設定讓手機模擬器跑得更快</p>
-<h2>Emulator Accelerator</h2>
-<p>在安裝HAXM前要先確定Intel VT-x是否有在你的bios被啟用<br>
+<h2>Emulator&nbsp;Accelerator</h2>
+<p>在安裝HAXM前要先確定Intel <span class="caps">VT</span>-x是否有在你的bios被啟用<br>
 我沒遇到這個問題，所以我也不知道怎麼解決＠＠<br>
 可以在cmd下<code>sc query intelhaxm</code>來看有沒有開啓，只要有看到Running應該就是沒問題了</p>
 <p>再來到Android Studio的目錄下找到HAXM的安裝檔<br>
-它被放在<code>...\android-studio\sdk\extras\intel\Hardware_Accelerated_Execution_Manager</code><br>
-...指的是安裝的目錄</p>
+它被放在<code>...\android-studio\sdk\extras\intel\Hardware_Accelerated_Execution_Manager</code><br>&nbsp;&#8230;指的是安裝的目錄</p>
 <p>看到<code>intelhaxm</code>按下去!<br>
-<img alt="10_Intel_accelator" src="http://i.imgur.com/NX8lULd.png"><br>
-一直按下一步就大功告成了</p>
-<p>不過...<br>
-這樣還是不夠快，我們需要更快的模擬器！<br>
-Genymotion！！！</p>
+<img alt="10_Intel_accelator" src="http://i.imgur.com/NX8lULd.png"><br>&nbsp;一直按下一步就大功告成了</p>
+<p>不過&#8230;<br>
+這樣還是不夠快，我們需要更快的模擬器！<br>&nbsp;Genymotion！！！</p>
 <h1>Genymotion</h1>
-<p>安裝Genymotion的模擬器前，我們必須先註冊<br>
-http://www.genymotion.com/</p>
+<p>安裝Genymotion的模擬器前，我們必須先註冊<br>&nbsp;http://www.genymotion.com/</p>
 <h2>Download</h2>
-<p>進入下載頁面後，往下拉會看到Windows，mac 和 Liunx版</p>
+<p>進入下載頁面後，往下拉會看到Windows，mac 和&nbsp;Liunx版</p>
 <p>Windows只要直接安裝就可以了，它會連Oracle Virtual Box一起安裝<br>
 <img alt="11_genymotiong_win" src="http://i.imgur.com/4oUXeea.png"></p>
 <p>mac 和 Linux還要額外先安裝 <a href="https://www.virtualbox.org/wiki/Downloads">Oracle Virtual Box</a><br>
 <img alt="12_genymotion_Unix" src="http://i.imgur.com/NMQD2Jc.png"></p>
-<h2>Install IDE plug-in</h2>
+<h2>Install <span class="caps">IDE</span>&nbsp;plug-in</h2>
 <p>在下載頁面往下拉會看到genymotion在IDE上的plugin，可以讓我們從IDE內直接開啟Genymothion<br>
-Android Studio屬於IntelliJ IDEA，所以我們就照著他上面的指示設定<br>
+Android Studio屬於IntelliJ <span class="caps">IDEA</span>，所以我們就照著他上面的指示設定<br>
 <img alt="13_genymotion_plug in" src="http://i.imgur.com/7C0d8aU.png"></p>
-<p>開啟 Android Studio</p>
+<p>開啟 Android&nbsp;Studio</p>
 <blockquote>
-<p>File -&gt; Settings</p>
+<p>File -&gt;&nbsp;Settings</p>
 </blockquote>
 <p><img alt="14_plug-in" src="http://i.imgur.com/vemudkb.png"></p>
 <p>找到Plungins ，接著點Browse repositories<br>
@@ -218,19 +213,37 @@ Android Studio屬於IntelliJ IDEA，所以我們就照著他上面的指示設�
 <img alt="16_plug-in3" src="http://i.imgur.com/xzjsTmz.png"></p>
 <p>安裝完記得重新啟動Android Studio，就會在工具列看到多一個按鈕，Genymotion就安裝完成囉<br>
 <img alt="17_plug-in4" src="http://i.imgur.com/I2RbFEG.png"></p>
-<p>第一次使用會要求設定Genymotion安裝的資料夾 (e.g. <code>C:\Program Files\Genymobile\Genymotion</code>)<br>
-設定完就可以開始使用Genymotion了</p>
+<p>第一次使用會要求設定Genymotion安裝的資料夾 (e.g. <code>C:\Program Files\Genymobile\Genymotion</code>)<br>&nbsp;設定完就可以開始使用Genymotion了</p>
 <h2>Plugins</h2>
 <p>IdeaVim: 如果你是重度Vim狂熱者，這絕對是你不能不裝的plugin!!!<br>
-MarkDown: 這個Plugin提供直接在Android Studio中，Preview Markdown的功能</p>
+MarkDown: 這個Plugin提供直接在Android Studio中，Preview&nbsp;Markdown的功能</p>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="http://localhost:8000/tag/tutorial.html">Tutorial</a>
+      <a href="http://lee-w.github.io/tag/tutorial.html">Tutorial</a>
     </p>
   </div>
 
 
+
+
+  <div class="article-navigation">
+      <a href="http://lee-w.github.io/posts/linux-unix/2014/10/dual-boot-freebsd-using-grub2" class="article-prev">
+        &larr; Dual Boot FreeBSD Using <span class="caps">GRUB2</span>
+      </a>
+      <a href="http://lee-w.github.io/posts/general/2015/01/mbpr-out-of-the-box" class="article-next">
+        MacBook Pro Retina&nbsp;開箱 &rarr;
+       </a>
+  </div>
+
+  <div>
+    <ul class="share-buttons">
+      Share on:
+      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//lee-w.github.io/posts/android/2014/11/android-studio-and-genymotion-installation" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+      <li><a href="http://twitter.com/home?status=b'Android%C2%A0Studio%2BGenymotion%E5%AE%89%E8%A3%9D%2812/29%E6%9B%B4%E6%96%B0%29%20http%3A//lee-w.github.io/posts/android/2014/11/android-studio-and-genymotion-installation'" target="_blank" title="Tweet"><img alt="Tweet" src="/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+      <li><a href="https://plus.google.com/share?url=http%3A//lee-w.github.io/posts/android/2014/11/android-studio-and-genymotion-installation" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
+    </ul>
+   </div>
 
 
 <div id="disqus_thread"></div>
@@ -263,7 +276,7 @@ MarkDown: 這個Plugin提供直接在Android Studio中，Preview Markdown的功�
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Life Lies in Traveling ",
-  "url" : "http://localhost:8000",
+  "url" : "http://lee-w.github.io",
   "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
   "description": ""
 }

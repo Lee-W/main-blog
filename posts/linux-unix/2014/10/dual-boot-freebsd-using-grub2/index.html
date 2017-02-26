@@ -4,12 +4,14 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/monokai.min.css">
-  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/pygments/xcode.min.css">
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/font-awesome/css/font-awesome.min.css">
 
+    <link href="http://lee-w.github.io/static/custom.css" rel="stylesheet">
 
+    <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Atom">
 
 
 
@@ -34,11 +36,11 @@
 <meta property="og:title" content="Dual Boot FreeBSD Using GRUB2"/>
 <meta property="og:description" content="其實原本的標題是Dual Boot FreeBsd with Ubuntu 這篇文章寫的都是用Ubuntu測試的 不過我想只要是grub2應該都差不多吧XD"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://localhost:8000/posts/linux-unix/2014/10/dual-boot-freebsd-using-grub2"/>
+<meta property="og:url" content="http://lee-w.github.io/posts/linux-unix/2014/10/dual-boot-freebsd-using-grub2"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2014-10-21 08:56:00+08:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="http://localhost:8000/author/lee-w.html">
+<meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 <meta property="article:section" content="Linux-Unix"/>
 <meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
 
@@ -48,15 +50,15 @@
 <body>
   <aside>
     <div>
-      <a href="http://localhost:8000">
+      <a href="http://lee-w.github.io">
         <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
       </a>
-      <h1><a href="http://localhost:8000">Lee-W</a></h1>
+      <h1><a href="http://lee-w.github.io">Lee-W</a></h1>
 
 
       <nav>
         <ul class="list">
-          <li><a href="http://localhost:8000/pages/about-me.html#about-me">About Me</a></li>
+          <li><a href="http://lee-w.github.io/pages/about-me.html#about-me">About&nbsp;Me</a></li>
 
         </ul>
       </nav>
@@ -65,7 +67,7 @@
         <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
         <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
-        <li><a class="sc-google" href="http://plus.google.com/113295124327840065090" target="_blank"><i class="fa fa-google"></i></a></li>
+        <li><a class="sc-rss" href="//lee-w.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
       </ul>
     </div>
 
@@ -74,21 +76,23 @@
   <main>
 
     <nav>
-      <a href="http://localhost:8000">    Home
+      <a href="http://lee-w.github.io">    Home
 </a>
 
       <a href="/archives.html">Archives</a>
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="http://lee-w.github.io/feeds/all.atom.xml">    Atom
+</a>
 
     </nav>
 
 <article class="single">
   <header>
-    <h1 id="dual-boot-freebsd-using-grub2">Dual Boot FreeBSD Using GRUB2</h1>
+    <h1 id="dual-boot-freebsd-using-grub2">Dual Boot FreeBSD Using <span class="caps">GRUB2</span></h1>
     <p>
-          Posted on 2014/10/21 - 二 in <a href="http://localhost:8000/category/linux-unix.html">Linux-Unix</a>
+          Posted on 2014/10/21 - 二 in <a href="http://lee-w.github.io/category/linux-unix.html">Linux-Unix</a>
 
 
     </p>
@@ -124,7 +128,7 @@
 
 <p>這樣就會在開機選單上看到freeBSD了</p>
 <p>其實還有一些其他的設定方法<br>
-可以參考<a href="http://unix.stackexchange.com/questions/16886/set-up-grub2-to-boot-freebsd-using-either-ubuntu-tools-or-liveusb-to-find-what-p">Set up Grub2 to boot Freebsd</a></p>
+可以參考<a href="http://unix.stackexchange.com/questions/16886/set-up-grub2-to-boot-freebsd-using-either-ubuntu-tools-or-liveusb-to-find-what-p">Set up Grub2 to boot&nbsp;Freebsd</a></p>
 <h2>換grub開機順序</h2>
 <p>如果希望改變預設的開機順序，就必須要修改下面的檔案<code>/etc/default/grub</code></p>
 <div class="codehilite"><pre><span></span>vi /etc/default/grub
@@ -143,7 +147,7 @@ GRUB_CMDLINE_LINUX=&quot;&quot;
 
 
 <p>把第1行設定為多少(注意是從0開始)，就會預設從那裡開機</p>
-<h2>在ubuntu mount FreeBSD</h2>
+<h2>在ubuntu mount&nbsp;FreeBSD</h2>
 <div class="codehilite"><pre><span></span>sudo mount -t ufs -r -o ufstype=ufs2 /dev/sda4 ~/freebsd
 </pre></div>
   </div>
@@ -153,6 +157,25 @@ GRUB_CMDLINE_LINUX=&quot;&quot;
   </div>
 
 
+
+
+  <div class="article-navigation">
+      <a href="http://lee-w.github.io/posts/linux-unix/2014/07/powerline-on-zsh-vim-tmux" class="article-prev">
+        &larr; powerline on zsh, vim,&nbsp;tmux
+      </a>
+      <a href="http://lee-w.github.io/posts/android/2014/11/android-studio-and-genymotion-installation" class="article-next">
+        Android&nbsp;Studio+Genymotion安裝(12/29更新) &rarr;
+       </a>
+  </div>
+
+  <div>
+    <ul class="share-buttons">
+      Share on:
+      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//lee-w.github.io/posts/linux-unix/2014/10/dual-boot-freebsd-using-grub2" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+      <li><a href="http://twitter.com/home?status=b'Dual%20Boot%20FreeBSD%20Using%20GRUB2%20http%3A//lee-w.github.io/posts/linux-unix/2014/10/dual-boot-freebsd-using-grub2'" target="_blank" title="Tweet"><img alt="Tweet" src="/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+      <li><a href="https://plus.google.com/share?url=http%3A//lee-w.github.io/posts/linux-unix/2014/10/dual-boot-freebsd-using-grub2" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
+    </ul>
+   </div>
 
 
 <div id="disqus_thread"></div>
@@ -185,7 +208,7 @@ GRUB_CMDLINE_LINUX=&quot;&quot;
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Life Lies in Traveling ",
-  "url" : "http://localhost:8000",
+  "url" : "http://lee-w.github.io",
   "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
   "description": ""
 }

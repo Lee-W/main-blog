@@ -4,12 +4,14 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/monokai.min.css">
-  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/pygments/xcode.min.css">
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/font-awesome/css/font-awesome.min.css">
 
+    <link href="http://lee-w.github.io/static/custom.css" rel="stylesheet">
 
+    <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Atom">
 
 
 
@@ -28,35 +30,35 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <meta name="author" content="Lee-W" />
-<meta name="description" content="現在安裝了Win8 和 Ubuntu雙系統 每次只要開Win 8 ，再重新開機進到Ubuntu就會出現file system 無法掛載的問題 然後我在兩個系統間共同的data 分割區就會無法掛載 可是再重開一次Win 8，問題就神祕的解決了@@ 後來才發現原來是因為Win 8 的 Fast Boot 造成的" />
+<meta name="description" content="現在安裝了Win8 和 Ubuntu雙系統 每次只要開Win 8 ，再重新開機進到Ubuntu就會出現file system 無法掛載的問題 然後我在兩個系統間共同的data 分割區就會無法掛載 可是再重開一次Win 8，問題就神祕的解決了@@ 後來才發現原來是因為Win 8 的 Fast Boot 造成的" />
 <meta name="keywords" content="">
 <meta property="og:site_name" content="Life Lies in Traveling"/>
-<meta property="og:title" content="解決Win 8、Ubuntu雙系統無法掛載NTFS分割區問題"/>
-<meta property="og:description" content="現在安裝了Win8 和 Ubuntu雙系統 每次只要開Win 8 ，再重新開機進到Ubuntu就會出現file system 無法掛載的問題 然後我在兩個系統間共同的data 分割區就會無法掛載 可是再重開一次Win 8，問題就神祕的解決了@@ 後來才發現原來是因為Win 8 的 Fast Boot 造成的"/>
+<meta property="og:title" content="解決Win 8、Ubuntu雙系統無法掛載NTFS分割區問題"/>
+<meta property="og:description" content="現在安裝了Win8 和 Ubuntu雙系統 每次只要開Win 8 ，再重新開機進到Ubuntu就會出現file system 無法掛載的問題 然後我在兩個系統間共同的data 分割區就會無法掛載 可是再重開一次Win 8，問題就神祕的解決了@@ 後來才發現原來是因為Win 8 的 Fast Boot 造成的"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://localhost:8000/posts/linux-unix/2014/02/solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem"/>
+<meta property="og:url" content="http://lee-w.github.io/posts/linux-unix/2014/02/solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2014-02-25 15:40:00+08:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="http://localhost:8000/author/lee-w.html">
+<meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 <meta property="article:section" content="Linux-Unix"/>
 <meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
 
-  <title>Life Lies in Traveling &ndash; 解決Win 8、Ubuntu雙系統無法掛載NTFS分割區問題</title>
+  <title>Life Lies in Traveling &ndash; 解決Win 8、Ubuntu雙系統無法掛載NTFS分割區問題</title>
 
 </head>
 <body>
   <aside>
     <div>
-      <a href="http://localhost:8000">
+      <a href="http://lee-w.github.io">
         <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
       </a>
-      <h1><a href="http://localhost:8000">Lee-W</a></h1>
+      <h1><a href="http://lee-w.github.io">Lee-W</a></h1>
 
 
       <nav>
         <ul class="list">
-          <li><a href="http://localhost:8000/pages/about-me.html#about-me">About Me</a></li>
+          <li><a href="http://lee-w.github.io/pages/about-me.html#about-me">About&nbsp;Me</a></li>
 
         </ul>
       </nav>
@@ -65,7 +67,7 @@
         <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
         <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
-        <li><a class="sc-google" href="http://plus.google.com/113295124327840065090" target="_blank"><i class="fa fa-google"></i></a></li>
+        <li><a class="sc-rss" href="//lee-w.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
       </ul>
     </div>
 
@@ -74,21 +76,23 @@
   <main>
 
     <nav>
-      <a href="http://localhost:8000">    Home
+      <a href="http://lee-w.github.io">    Home
 </a>
 
       <a href="/archives.html">Archives</a>
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
 
+      <a href="http://lee-w.github.io/feeds/all.atom.xml">    Atom
+</a>
 
     </nav>
 
 <article class="single">
   <header>
-    <h1 id="solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem">解決Win 8、Ubuntu雙系統無法掛載NTFS分割區問題</h1>
+    <h1 id="solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem">解決Win&nbsp;8、Ubuntu雙系統無法掛載NTFS分割區問題</h1>
     <p>
-          Posted on 2014/02/25 - 二 in <a href="http://localhost:8000/category/linux-unix.html">Linux-Unix</a>
+          Posted on 2014/02/25 - 二 in <a href="http://lee-w.github.io/category/linux-unix.html">Linux-Unix</a>
 
 
     </p>
@@ -100,7 +104,7 @@
 每次只要開Win 8 ，再重新開機進到Ubuntu就會出現file system 無法掛載的問題<br>
 然後我在兩個系統間共同的data 分割區就會無法掛載<br>
 可是再重開一次Win 8，問題就神祕的解決了@@<br>
-後來才發現原來是因為Win 8 的 <strong>Fast Boot</strong>  造成的</p>
+後來才發現原來是因為Win 8 的 <strong>Fast Boot</strong>&nbsp;造成的</p>
 <!--more-->
 
 <h2>解決</h2>
@@ -110,7 +114,7 @@
 </blockquote>
 <p>只要把<code>開啟快速啟動</code>取消掉就可以了</p>
 <h2>Reference</h2>
-<p>[Cannot mount NTFS partition in Ubuntu 13.04 [duplicate]] (http://askubuntu.com/questions/291864/cannot-mount-ntfs-partition-in-ubuntu-13-04)</p>
+<p>[Cannot mount <span class="caps">NTFS</span> partition in Ubuntu 13.04 [duplicate]]&nbsp;(http://askubuntu.com/questions/291864/cannot-mount-ntfs-partition-in-ubuntu-13-04)</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -118,6 +122,25 @@
   </div>
 
 
+
+
+  <div class="article-navigation">
+      <a href="http://lee-w.github.io/posts/git/2014/02/git-and-git-hub" class="article-prev">
+        &larr; Git and Git&nbsp;Hub
+      </a>
+      <a href="http://lee-w.github.io/posts/linux-unix/2014/07/powerline-on-zsh-vim-tmux" class="article-next">
+        powerline on zsh, vim,&nbsp;tmux &rarr;
+       </a>
+  </div>
+
+  <div>
+    <ul class="share-buttons">
+      Share on:
+      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//lee-w.github.io/posts/linux-unix/2014/02/solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+      <li><a href="http://twitter.com/home?status=b'%E8%A7%A3%E6%B1%BAWin%C2%A08%E3%80%81Ubuntu%E9%9B%99%E7%B3%BB%E7%B5%B1%E7%84%A1%E6%B3%95%E6%8E%9B%E8%BC%89NTFS%E5%88%86%E5%89%B2%E5%8D%80%E5%95%8F%E9%A1%8C%20http%3A//lee-w.github.io/posts/linux-unix/2014/02/solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem'" target="_blank" title="Tweet"><img alt="Tweet" src="/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+      <li><a href="https://plus.google.com/share?url=http%3A//lee-w.github.io/posts/linux-unix/2014/02/solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
+    </ul>
+   </div>
 
 
 <div id="disqus_thread"></div>
@@ -150,7 +173,7 @@
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Life Lies in Traveling ",
-  "url" : "http://localhost:8000",
+  "url" : "http://lee-w.github.io",
   "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
   "description": ""
 }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Python</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/python.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2016-08-15T03:22:00+08:00</updated><entry><title>Scrollable RISE</title><link href="http://lee-w.github.io/posts/python/2016/08/scrollable-rise" rel="alternate"></link><published>2016-08-15T03:22:00+08:00</published><updated>2016-08-15T03:22:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-15:/posts/python/2016/08/scrollable-rise</id><summary type="html">&lt;p&gt;RISE是一套結合&lt;a href="http://jupyter.org"&gt;jupyter-notebook&lt;/a&gt;和&lt;a href="http://lab.hakim.se/reveal-js/#/"&gt;reveal.js&lt;/a&gt;的專案&lt;br&gt;
+讓我們能在jupyter notebook直接開啟如同reveal.js的slide&lt;br&gt;
+</summary><content type="html">&lt;p&gt;RISE是一套結合&lt;a href="http://jupyter.org"&gt;jupyter-notebook&lt;/a&gt;和&lt;a href="http://lab.hakim.se/reveal-js/#/"&gt;reveal.js&lt;/a&gt;的專案&lt;br&gt;
+讓我們能在jupyter notebook直接開啟如同reveal.js的slide&lt;br&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;不過如過notebook cell中的內容太長&lt;br&gt;
+在播放的時候就會導致內容被裁剪&lt;br&gt;
+而RISE預設是無法用滑鼠滾動的&lt;br&gt;&amp;nbsp;所以這裡記錄該如何讓RISE可以滾動&lt;/p&gt;
+&lt;p&gt;進入jupyter notebook的任一個notebook後&lt;br&gt;
+在上方工具列點選&lt;code&gt;Edit&lt;/code&gt; -&amp;gt; &lt;code&gt;Edit Notebook Metadata&lt;/code&gt;&lt;br&gt;
+接著在裡面加入livereveal的設定&lt;br&gt;
+如下&amp;nbsp;（只需加入livereveal的部分）&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;kernelspec&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="err"&gt;...&lt;/span&gt;
+  &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;quot;livereveal&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;quot;scroll&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+&lt;p&gt;不過開發者其實有說，開啟滾動會造成不少問題&lt;br&gt;&amp;nbsp;所以預設上才會設定為不能滾動&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;damianavila commented on Jul 12&lt;/strong&gt;&lt;br&gt;
+After several and long discussions with a lot of people, we have arrived to the conclusion that scrolling on reveal.js based slideshows brings more problems than benefits, so I will not add the scrolling as a default option &lt;span class="caps"&gt;BUT&lt;/span&gt; we should clearly document how to get scrolling slides with the config option available. I will mark this as a docs issue and prioritize&amp;nbsp;properly.&lt;/p&gt;
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/damianavila/RISE/issues/185"&gt;scrolling vertically&amp;nbsp;#185&lt;/a&gt;&lt;/p&gt;</content><category term="Jupyter"></category><category term="reveal.js"></category></entry><entry><title>在jupyter中同時使用Python2 Python3</title><link href="http://lee-w.github.io/posts/python/2015/11/used-in-the-jupyter-python2-python3" rel="alternate"></link><published>2015-11-02T15:12:00+08:00</published><updated>2015-11-02T15:12:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-11-02:/posts/python/2015/11/used-in-the-jupyter-python2-python3</id><summary type="html">&lt;p&gt;先安裝Python2和Python3的ipython&amp;nbsp;notebook&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip2 install ipython notebook
+pip3 install ipython notebook
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;分別用各自的ipython執行下面的指令&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ipython2 kernelspec install-self
+ipython3 kernelspec install-self
+&lt;/pre&gt;&lt;/div&gt;
+
+
+</summary><content type="html">&lt;p&gt;先安裝Python2和Python3的ipython&amp;nbsp;notebook&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip2 install ipython notebook
+pip3 install ipython notebook
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;分別用各自的ipython執行下面的指令&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ipython2 kernelspec install-self
+ipython3 kernelspec install-self
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;!--more--&gt;
+
+&lt;p&gt;就能在ipython notebook裡面同時使用兩種版本的Python了&lt;br&gt;
+&lt;img alt="1_jupyter" src="http://i.imgur.com/IxopQfG.png"&gt;&lt;br&gt;
+Python2上面是另一個也被jupyter notebook支援的語言julia&lt;br&gt;&amp;nbsp;最近才剛開始碰，有機會再來分享julia的心得&lt;/p&gt;
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/30492623/using-both-python-2-x-and-python-3-x-in-ipython-notebook"&gt;Using both Python 2.x and Python 3.x in IPython&amp;nbsp;Notebook&lt;/a&gt;&lt;/p&gt;</content><category term="Jupyter"></category></entry><entry><title>解決django-admin在mac找不到django.core</title><link href="http://lee-w.github.io/posts/python/2015/05/solve-django-admin-cant-find-the-djangocore-on-mac" rel="alternate"></link><published>2015-05-10T23:42:00+08:00</published><updated>2015-05-10T23:42:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-05-10:/posts/python/2015/05/solve-django-admin-cant-find-the-djangocore-on-mac</id><summary type="html">&lt;h2&gt;問題&lt;/h2&gt;
+&lt;p&gt;在mac上，用pip3安裝完django 1.8.1後&lt;br&gt;
+執行&lt;code&gt;django-admin&lt;/code&gt;出現了以下的錯誤訊息&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+  &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/usr/local/bin/django-admin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.core&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;management&lt;/span&gt;
+&lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+</summary><content type="html">&lt;h2&gt;問題&lt;/h2&gt;
+&lt;p&gt;在mac上，用pip3安裝完django 1.8.1後&lt;br&gt;
+執行&lt;code&gt;django-admin&lt;/code&gt;出現了以下的錯誤訊息&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+  &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/usr/local/bin/django-admin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.core&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;management&lt;/span&gt;
+&lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;!--more--&gt;
+
+&lt;h2&gt;解決&lt;/h2&gt;
+&lt;p&gt;找到&lt;code&gt;/usr/local/lib/python3.4/site-packages/django/bin/django-admin.py&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;把第一行的&lt;code&gt;#!/usr/bin/env python&lt;/code&gt;改成Python的路徑&lt;br&gt;
+以我為例，我改成&lt;code&gt;#!/usr/local/bin/python3.4&lt;/code&gt;&lt;br&gt;&amp;nbsp;之後就可以執行了&lt;/p&gt;</content><category term="django"></category><category term="mac"></category></entry></feed>

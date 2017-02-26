@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Git</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/git.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2016-09-16T15:41:00+08:00</updated><entry><title>Basic Git Tutorial</title><link href="http://lee-w.github.io/posts/git/2016/09/basic-git-tutorial" rel="alternate"></link><published>2016-09-16T15:41:00+08:00</published><updated>2016-09-16T15:41:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-09-16:/posts/git/2016/09/basic-git-tutorial</id><summary type="html">&lt;p&gt;最近終於下定決定把很久以前的這份&lt;a href="http://lee-w-blog.logdown.com/posts/180572-git-and-git-hub"&gt;Git and GitHub&lt;/a&gt;改版了&lt;br&gt;&amp;nbsp;聽說這份在我進實驗室前，就已經被不想教大家Git的學長拿去流傳&amp;#8230;&lt;/p&gt;
+&lt;p&gt;新版： &lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;Git Tutorial&lt;/a&gt;&lt;br&gt;
+</summary><content type="html">&lt;p&gt;最近終於下定決定把很久以前的這份&lt;a href="http://lee-w-blog.logdown.com/posts/180572-git-and-git-hub"&gt;Git and GitHub&lt;/a&gt;改版了&lt;br&gt;&amp;nbsp;聽說這份在我進實驗室前，就已經被不想教大家Git的學長拿去流傳&amp;#8230;&lt;/p&gt;
+&lt;p&gt;新版： &lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;Git Tutorial&lt;/a&gt;&lt;br&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;新版主要加了&lt;br&gt;
+- 如何寫好commit&lt;br&gt;
+- tag&lt;br&gt;
+- stash&lt;br&gt;
+- rebase&lt;br&gt;
+-&amp;nbsp;submodule&lt;/p&gt;
+&lt;p&gt;還有各種我這些年開發上有用到的Git功能&lt;br&gt;&amp;nbsp;順便來練習一直想學的reveal.js&lt;/p&gt;
+&lt;p&gt;因為用了exteral.js，一開始load的時間會稍微久一點&lt;/p&gt;</content><category term="Tutorial"></category></entry><entry><title>Using GitHub to Develop Software Collaboratively</title><link href="http://lee-w.github.io/posts/git/2016/09/using-github-to-develop-software-collaboratively" rel="alternate"></link><published>2016-09-15T01:26:00+08:00</published><updated>2016-09-15T01:26:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-09-15:/posts/git/2016/09/using-github-to-develop-software-collaboratively</id><summary type="html">&lt;p&gt;這是兩年前Github來成大教育課程的筆記&lt;br&gt;
+最近在整理git的筆記才翻出來&lt;br&gt;
+因為當時是以英文進行，課程筆記就也用英文做了&lt;br&gt;&amp;nbsp;這篇的內容可能比較雜亂，之後還會再整理進另一篇git的筆記&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;這是兩年前Github來成大教育課程的筆記&lt;br&gt;
+最近在整理git的筆記才翻出來&lt;br&gt;
+因為當時是以英文進行，課程筆記就也用英文做了&lt;br&gt;&amp;nbsp;這篇的內容可能比較雜亂，之後還會再整理進另一篇git的筆記&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h1&gt;Introduction to Git Hub&amp;nbsp;(Company)&lt;/h1&gt;
+&lt;p&gt;There are around 2600 staffs in GitHub and 40% of them live in San Fransisco.&lt;br&gt;
+Among them, there is one&amp;nbsp;Taiwanese.&lt;/p&gt;
+&lt;h1&gt;Git&lt;/h1&gt;
+&lt;p&gt;Wrote by Linus&amp;nbsp;Torvalds.&lt;/p&gt;
+&lt;h2&gt;Why version&amp;nbsp;control?&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Historical&amp;nbsp;propose&lt;/li&gt;
+&lt;li&gt;Collaboration&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Tutorial&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init &amp;quot;path&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;.git is just a folder with normal file&lt;br&gt;
+There is no daemon or background progress&lt;br&gt;
+Everything is operated in file&lt;br&gt;
+Never &lt;code&gt;rm -rf .git&lt;/code&gt; &lt;span class="caps"&gt;XD&lt;/span&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git stauts
+touch REAMDE.mdd
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There are three main stages&lt;br&gt;
+1. working&lt;br&gt;
+2. staging&lt;br&gt;
+3.&amp;nbsp;repo  &lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Stage&lt;/th&gt;
+&lt;th&gt;Action&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Stage&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;working&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;add&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;-&amp;gt;&lt;/td&gt;
+&lt;td&gt;staging&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;staging&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;commit&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;-&amp;gt;&lt;/td&gt;
+&lt;td&gt;repo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;working&lt;/td&gt;
+&lt;td&gt;&amp;lt;-&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;checkout&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;repo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add REAMDE.md
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;When we&amp;#8217;re ready&lt;br&gt;
+&lt;code&gt;git commit -m "add a blank commit"&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;After &lt;span class="caps"&gt;README&lt;/span&gt;.md is&amp;nbsp;modified&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add REAMDE.md
+git status
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now this file is in staging&amp;nbsp;area  &lt;/p&gt;
+&lt;p&gt;So, how to go back to history?&lt;br&gt;
+&lt;code&gt;git reset REAMDE.md&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Take a look at our history&lt;br&gt;
+&lt;code&gt;git log&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Go back to history&lt;br&gt;
+&lt;code&gt;git checkout "SHA1"&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git checkout master&lt;/code&gt;&lt;br&gt;
+Everything comes&amp;nbsp;back&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;master&lt;/code&gt; is the default branch name of git. It is a default word but not&amp;nbsp;reserved.  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git checkout -b "branch_name"&lt;/code&gt; create a branch and checkout to&amp;nbsp;it&lt;/p&gt;
+&lt;h2&gt;diff&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;git diff&lt;/code&gt;: View the difference between working and&amp;nbsp;staging&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git diff --staged&lt;/code&gt;: Difference between staging and&amp;nbsp;repo&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git diff "SHA1"&lt;/code&gt;: Difference between current version and &lt;span class="caps"&gt;SHA1&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git diff master~1&lt;/code&gt;: difference between current and the one before master&lt;br&gt;
+&lt;code&gt;git diff master^&lt;/code&gt; -&amp;gt; master~1&lt;br&gt;
+&lt;code&gt;git diff master^^&lt;/code&gt; -&amp;gt;&amp;nbsp;master~2  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git diff a b&lt;/code&gt;: Show the change from a to&amp;nbsp;b  &lt;/p&gt;
+&lt;h2&gt;branch&lt;/h2&gt;
+&lt;p&gt;In git, branch is not copy. It&amp;#8217;s like bookmark&lt;br&gt;
+Actually &lt;code&gt;git branch -d "name"&lt;/code&gt; just delete the pointer but not the&amp;nbsp;entry.&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;HEAD&lt;/span&gt;: the pointer points to current&amp;nbsp;entry&lt;/p&gt;
+&lt;h3&gt;detach&amp;nbsp;error&lt;/h3&gt;
+&lt;p&gt;If you go back to a entry not in certain branch, a detach error might occur.&lt;br&gt;
+For example, checkout to a commit that is parent of more than one branch and then append a new commit to it.&lt;br&gt;
+In such case, this new appended commit might not be able to be referenced.&lt;br&gt;
+&lt;em&gt;The solution to this problem is to create a new branch for&amp;nbsp;it.&lt;/em&gt;  &lt;/p&gt;
+&lt;h2&gt;log&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;git log --decorate&lt;/code&gt;: Show also branch&amp;nbsp;info&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git log --all&lt;/code&gt;: Show all&amp;nbsp;branch&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git log --graph&lt;/code&gt;: Show&amp;nbsp;graph&lt;/p&gt;
+&lt;h3&gt;The difference between log and&amp;nbsp;show&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;git log&lt;/code&gt;: Only the first line&lt;br&gt;
+&lt;code&gt;git show&lt;/code&gt;: All the message, not only the first&amp;nbsp;line&lt;/p&gt;
+&lt;h1&gt;GitHub&lt;/h1&gt;
+&lt;h2&gt;push&lt;/h2&gt;
+&lt;p&gt;origin is a short hand name of that remote url. In other word, your&amp;nbsp;repo.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;br&gt;
+- upload &lt;em&gt;master&lt;/em&gt; to &lt;em&gt;origin&lt;/em&gt;&lt;br&gt;
+- -u tell git the default url to push for that branch(master) is origin, it would also make &lt;code&gt;git pull&lt;/code&gt; remember&lt;br&gt;
+    - Do -u and after that you can just use &lt;code&gt;git push&lt;/code&gt;  &lt;/p&gt;
+&lt;h2&gt;pull&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;git push --all&lt;/code&gt;: push all branch&lt;br&gt;
+&lt;code&gt;git pull --prune&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;difference between fetch and&amp;nbsp;pull&lt;/h2&gt;
+&lt;p&gt;git fetch : go to remote and copy it&lt;br&gt;
+git pull -&amp;gt; fetch +&amp;nbsp;merge&lt;/p&gt;
+&lt;h2&gt;on-site&lt;/h2&gt;
+&lt;p&gt;pull request on GitHub&lt;br&gt;
+&lt;code&gt;@person-name&lt;/code&gt; -&amp;gt; notification&lt;br&gt;
+Have a conversation with the whole&amp;nbsp;team  &lt;/p&gt;
+&lt;p&gt;Write &amp;#8220;fix #2 &amp;#8230;.&amp;#8221; in git commit -&amp;gt; special meaning -&amp;gt; specify the bug in issue on GitHub&lt;br&gt;
+Wiki -&amp;gt;&amp;nbsp;documentation&lt;/p&gt;
+&lt;h1&gt;How to write a good git&amp;nbsp;commit&lt;/h1&gt;
+&lt;h2&gt;Principle&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Separate each&amp;nbsp;commit&lt;/li&gt;
+&lt;li&gt;Let the commit tell a&amp;nbsp;story  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;More&amp;nbsp;specific&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;One line 80&amp;nbsp;character  &lt;/li&gt;
+&lt;li&gt;Use present tense instead of past&amp;nbsp;tense  &lt;/li&gt;
+&lt;li&gt;Don&amp;#8217;t repeat what can be found in &lt;code&gt;git diff&lt;/code&gt;  &lt;/li&gt;
+&lt;li&gt;If more detail is to be written, left the second line to be&amp;nbsp;blank.&lt;/li&gt;
+&lt;li&gt;Write more detail about why this change happened after the third&amp;nbsp;line.  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Other&amp;nbsp;issue&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;git config --global -e&lt;/code&gt;: Edit your .gitconfig&amp;nbsp;file.&lt;/p&gt;
+&lt;p&gt;Not include binary files and executable&lt;br&gt;
+Don&amp;#8217;t version control these kinds of files.&lt;br&gt;
+Also, large files are not recommended to add to git.&lt;br&gt;
+If it&amp;#8217;s needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git revert "SHA1"&lt;/code&gt; -&amp;gt; save another entry of&amp;nbsp;undo&lt;/p&gt;
+&lt;p&gt;If you commit the password -&amp;gt; &lt;code&gt;git rebase&lt;/code&gt; can change commit, but it is not that&amp;nbsp;recommended.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git submodule&lt;/code&gt; create a&amp;nbsp;sub-module&lt;/p&gt;</content><category term="GitHub"></category></entry><entry><title>gitignore.io</title><link href="http://lee-w.github.io/posts/git/2015/02/gitignoreio" rel="alternate"></link><published>2015-02-03T05:58:00+08:00</published><updated>2015-02-03T05:58:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-02-03:/posts/git/2015/02/gitignoreio</id><summary type="html">&lt;p&gt;每次開一個git專案，要為它找適當的.gitignore，都要上網找模板蠻麻煩的&lt;br&gt;
+能不能有個簡單的方法，我開什麼專案就產生怎樣的.gitignore&lt;br&gt;
+然後我就發現了&lt;a href="https://www.gitignore.io"&gt;gitignore.io&lt;/a&gt;&lt;br&gt;
+</summary><content type="html">&lt;p&gt;每次開一個git專案，要為它找適當的.gitignore，都要上網找模板蠻麻煩的&lt;br&gt;
+能不能有個簡單的方法，我開什麼專案就產生怎樣的.gitignore&lt;br&gt;
+然後我就發現了&lt;a href="https://www.gitignore.io"&gt;gitignore.io&lt;/a&gt;&lt;br&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;簡單來說gitignore.io提供各式各樣的gitignore，而且可以自動合併成一個file&lt;br&gt;
+最棒的是它有提供api讓我們在command&amp;nbsp;line上使用&lt;/p&gt;
+&lt;h1&gt;gitignore.io on&amp;nbsp;command&lt;/h1&gt;
+&lt;p&gt;這是gitignore.io的官方文件&lt;br&gt;&amp;nbsp;https://www.gitignore.io/docs&lt;/p&gt;
+&lt;h2&gt;設定&lt;/h2&gt;
+&lt;p&gt;以mac的zsh的使用者為例，只要在執行下面這段&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;zshrc&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nt"&gt;source&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;zshrc&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;或者在~/.zshrc加入下面這段後，執行&lt;code&gt;source ~/.zshrc&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;gi() {&lt;/span&gt; &lt;span class="nx"&gt;curl&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;L&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;s&lt;/span&gt; &lt;span class="nx"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//www.gitignore.io/api/$@ ;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;設定完成後就可以使用gi的功能&lt;/p&gt;
+&lt;h2&gt;使用&lt;/h2&gt;
+&lt;p&gt;基本上只有兩種用法&lt;br&gt;&amp;nbsp;首先當然要先看gi支援哪些.gitignore&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi list
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;執行完會看到一長串的結果&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;actionscript,ada,agda,android...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;接著在gi後面輸入想產生的.gitignore的types&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi &amp;quot;types&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果有超過一個必須用,隔開&lt;br&gt;&amp;nbsp;e.g.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi vim,osx
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;不過這樣還不會產生.gitignore，只會顯示在螢幕上&lt;br&gt;
+還要再使用output&amp;nbsp;redirection才會有.gitignore&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi vim,osx &amp;gt;&amp;gt; .gitignore
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;My Custom&amp;nbsp;gi&lt;/h1&gt;
+&lt;p&gt;但用起來還是有點小小的不順手&lt;br&gt;
+尤其每次要看list都要重新連上網抓一次，挺浪費時間&lt;br&gt;
+所以就自己寫了一個新的gi&lt;br&gt;
+我把它放在我的Git Hub上&lt;br&gt;&amp;nbsp;https://github.com/Lee-W/gi_extension&lt;/p&gt;
+&lt;p&gt;那我的Custom gi到底多支援了什麼呢？&lt;br&gt;
+1. 線下查看gitignore.io支援的類型，用更適合閱讀當方式印出&lt;br&gt;
+2. 將output redirection寫成一個option&lt;br&gt;
+3. 支援以空格作為類型的分隔(逗號依然支援)&lt;br&gt;
+   e.g. &lt;code&gt;vim,osx&lt;/code&gt; -&amp;gt; &lt;code&gt;vim osx&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;安裝&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/Lee-W/gi_extension &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; gi_extension
+sudo cp gi_extension.sh /usr/bin/gi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果之前有在shell的設定檔中，設定過gitignore.io提供的gi&lt;br&gt;&amp;nbsp;記得要把它註解掉，不然那個gi會蓋過我的gi&lt;/p&gt;
+&lt;p&gt;如果想移除掉&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/Lee-W/gi_extension &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; gi_extension
+sudo rm gi_extension.sh /usr/bin/gi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;使用&lt;/h2&gt;
+&lt;p&gt;第一次使用的時候要先下&lt;code&gt;gi -u&lt;/code&gt;&lt;br&gt;
+將原本&lt;code&gt;gi list&lt;/code&gt;的output，儲存到&lt;code&gt;~/.gi_list&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;顯示支援類型&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;以表格的方式輸出支援的類型&lt;br&gt;&amp;nbsp;目前設定一個row容納5個column，每個column長度為25  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="1_gi_l.png" src="https://i0.wp.com/f6daa3706f14a40c04cb86aa98ffd752d68309b0.googledrive.com/host/0BzTRBX34Y857ZDZxM3dNYm9VcDg/gitignore_io/1_gi_l.png"&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;以字母的順序輸出&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -L
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="2_gi_L.png" src="https://i0.wp.com/f6daa3706f14a40c04cb86aa98ffd752d68309b0.googledrive.com/host/0BzTRBX34Y857ZDZxM3dNYm9VcDg/gitignore_io/2_gi_L.png"&gt;&lt;/p&gt;
+&lt;h3&gt;顯示.gitignore的內容&lt;/h3&gt;
+&lt;p&gt;跟原本的gi一樣，只是多支援了以空白作為分隔&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi &amp;quot;types&amp;quot;
+# e.g. gi vim osx 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;輸出.gitignore&lt;/h3&gt;
+&lt;p&gt;將結果加入目前資料夾下的.gitignore&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -a &amp;quot;types&amp;quot;
+# e.g. gi -a vim osx
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;在目前的資料夾產生一份新的.gitignore取代舊有的&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -e &amp;quot;types&amp;quot;
+# e.g. gi -e vim osx
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;更新本地端的支援列表&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -u
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;其實每次gi被執行的時候，都會在backgroud更新列表&lt;br&gt;
+但是這次的更新，下次才能被使用&lt;br&gt;&amp;nbsp;所以如果想要強制更新就可以用上這個指令&lt;/p&gt;</content><category term="Deprecated"></category></entry><entry><title>Gitbook on Command Line</title><link href="http://lee-w.github.io/posts/git/2015/01/gitbook-on-command-line" rel="alternate"></link><published>2015-01-23T07:34:00+08:00</published><updated>2015-01-23T07:34:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-23:/posts/git/2015/01/gitbook-on-command-line</id><summary type="html">&lt;p&gt;最近比較認真在寫Gitbook，順便記錄一下該怎麼用&lt;br&gt;
+簡單來說Gitbook就是可以使用markdown來寫書的平台，可以轉成各種電子書的格式&lt;br&gt;
+目前已經支援的有html, pdf, ePUB, &lt;span class="caps"&gt;MOBI&lt;/span&gt;&lt;br&gt;
+</summary><content type="html">&lt;p&gt;最近比較認真在寫Gitbook，順便記錄一下該怎麼用&lt;br&gt;
+簡單來說Gitbook就是可以使用markdown來寫書的平台，可以轉成各種電子書的格式&lt;br&gt;
+目前已經支援的有html, pdf, ePUB, &lt;span class="caps"&gt;MOBI&lt;/span&gt;&lt;br&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;之前寫了一本Clean Code的筆記&lt;br&gt;
+最近又開始寫一本FreeBSD和網管相關的Gitbook&lt;br&gt;
+如果有興趣可以到&lt;a href="https://www.gitbook.com/@lee-w"&gt;我的Gitbook&lt;/a&gt;上看看XD&lt;/p&gt;
+&lt;p&gt;目前Gitbook主要支援網站上的Editor，不過我比較習慣在本地端進行編輯&lt;br&gt;
+雖然有Gitbook編輯器，但有時候用起來還是會出點問題&lt;br&gt;
+所以最後還是決定來學如何用command line +&amp;nbsp;sublime寫Gitbook&lt;/p&gt;
+&lt;h2&gt;安裝Gitbook&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install gitbook -g
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;開始撰寫Gitbook&lt;/h2&gt;
+&lt;p&gt;一本Gitbook一般都會包含&lt;code&gt;SUMMARY.md&lt;/code&gt;, &lt;code&gt;README.md&lt;/code&gt;, &lt;code&gt;package.json&lt;/code&gt;, &lt;code&gt;book.json&lt;/code&gt;&lt;br&gt;
+像我的Learning Python筆記的檔案架構大概長的是這樣&lt;br&gt;
+&lt;img alt="1_learning_python_project_structure" src="http://i.imgur.com/6RDgdVZ.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;README&lt;/span&gt;.md是這本書的簡介&lt;br&gt;
+package.json是額外使用的package的定義和設定&lt;br&gt;
+book.json是這本書的額外設定&lt;br&gt;
+這裡不會多做介紹，可以參考&lt;a href="#Reference"&gt;Reference&lt;/a&gt;的網站，裡面有很詳細的介紹&lt;/p&gt;
+&lt;p&gt;最重要的是SUMMARY.md，它會定義整本gitbook的架構&lt;br&gt;
+每個章節下面都還可以給予更多的小節&lt;br&gt;
+下面是我Learning&amp;nbsp;Python的SUMMARY.md&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;# Summary&lt;/span&gt;
+
+&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Introduction&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="n"&gt;README&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Getting&lt;/span&gt; &lt;span class="n"&gt;Started&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;_getting_started&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;README&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="n"&gt;Python&lt;/span&gt; &lt;span class="n"&gt;Q&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="n"&gt;Session&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;_getting_started&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;a_python_q&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;a_session&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;How&lt;/span&gt; &lt;span class="n"&gt;Python&lt;/span&gt; &lt;span class="n"&gt;Runs&lt;/span&gt; &lt;span class="n"&gt;Programs&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;_getting_started&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;how_python_runs_programs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;How&lt;/span&gt; &lt;span class="n"&gt;You&lt;/span&gt; &lt;span class="n"&gt;Run&lt;/span&gt; &lt;span class="n"&gt;Programs&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;_getting_started&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;how_you_run_programs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Types&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;Operations&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;_types_and_operations&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;README&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Introducing&lt;/span&gt; &lt;span class="n"&gt;Python&lt;/span&gt; &lt;span class="n"&gt;Object&lt;/span&gt; &lt;span class="n"&gt;Types&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;_types_and_operations&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;introducing_python_object_types&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Numeric&lt;/span&gt; &lt;span class="n"&gt;Types&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;_types_and_operations&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;numeric_types&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;Dynamic&lt;/span&gt; &lt;span class="n"&gt;Typing&lt;/span&gt; &lt;span class="n"&gt;Interlude&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;_types_and_operations&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;the_dynamic_typing_interlude&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;這是預覽的結果&lt;br&gt;
+&lt;img alt="2_learning_python_web" src="http://i.imgur.com/d3NP0xi.png"&gt;&lt;/p&gt;
+&lt;p&gt;下了這個指令後就會根據SUMMARY.md的定義，自動產生相對應資料夾和檔案&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gitbook init
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;接著就可以開始編輯裡面的檔案了&lt;/p&gt;
+&lt;h2&gt;預覽&lt;/h2&gt;
+&lt;p&gt;寫完之後當然預覽一下&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gitbook serve 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;用了這個指令後就會為目前的目錄開一個預覽HTML的port&lt;br&gt;
+只要在瀏覽器上輸入&lt;code&gt;http://localhost:4000&lt;/code&gt;&lt;br&gt;
+就可以預覽剛剛寫的Gitbook&lt;br&gt;&amp;nbsp;只要有更新後存擋，重新整理就能看到更新後的結果&lt;/p&gt;
+&lt;h2&gt;輸出&lt;/h2&gt;
+&lt;p&gt;在export前，需要為pdf, epub, mobi三種格式多安裝程式才能使用&lt;br&gt;
+先到的官網下載Calibre&lt;br&gt;&amp;nbsp;http://calibre-ebook.com/download&lt;/p&gt;
+&lt;p&gt;以mac為例&lt;br&gt;&amp;nbsp;需要下面這個指令，為ebook-covert建立一個捷徑，讓gitbook可以找到這個功能&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;以下的四個指令依序可以產生html, pdf, epub,&amp;nbsp;mobi&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gitbook build ./ 
+gitbook pdf ./
+gitbook epub ./
+gitbook mobi ./
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;後面可以多指定一個參數&lt;code&gt;--output="Directory"&lt;/code&gt;&lt;br&gt;
+&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;Directory&amp;#8221;換成你要的位置或檔名&lt;br&gt;&amp;nbsp;如果不指定，預設html會export到_book裡面，其他檔案則會以book命名&lt;/p&gt;
+&lt;h2&gt;Publish到Gitbook.com上&lt;/h2&gt;
+&lt;p&gt;先到&lt;a href="https://www.gitbook.com"&gt;Gitbook官網&lt;/a&gt;上註冊帳號&lt;br&gt;
+接著create a new&amp;nbsp;book，到setting頁面往下拉，就會看到一個URL&lt;/p&gt;
+&lt;p&gt;接下來的操作就跟git基本上是一樣的，init, add, commit &amp;#8230;等&lt;br&gt;&amp;nbsp;只有在remote的設定有點不同&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote add gitbook &amp;quot;URL&amp;quot;
+git push -u gitbook
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;這裡要輸入的帳號、密碼是gitbook上的，不是與其連結的帳號的&lt;br&gt;&amp;nbsp;如果還沒設定就要再去自己的profile內設定&lt;/p&gt;
+&lt;p&gt;&lt;a name="reference"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/GitbookIO/gitbook"&gt;Gitbook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://help.gitbook.io/index.html"&gt;GitBook&amp;nbsp;Documentaion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.codedata.com.tw/social-coding/gitbook-self-publishing/"&gt;深入淺出 GitBook&amp;nbsp;寫作與自助出版，電子書也能多人協作&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Git Book"></category></entry><entry><title>Git and Git Hub</title><link href="http://lee-w.github.io/posts/git/2014/02/git-and-git-hub" rel="alternate"></link><published>2014-02-22T16:18:00+08:00</published><updated>2014-02-22T16:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-22:/posts/git/2014/02/git-and-git-hub</id><summary type="html"></summary><content type="html">&lt;p&gt;這份筆記已經是舊的版本了&lt;br&gt;
+請參考&lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;新版&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最近因為專題需要，所以寫了一份簡單的Git筆記&lt;br&gt;
+裡面大概就是我常用的指令&lt;br&gt;&amp;nbsp;因為我也只是剛開始使用git沒多久，內容不會太深入&lt;/p&gt;
+&lt;iframe src="http://www.slideshare.net/slideshow/embed_code/31515684" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt;
+
+&lt;p&gt;&lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/ssuser5e1963/git-and-git-hub-31515684" title="Git and git hub" target="_blank"&gt;Git and git hub&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/ssuser5e1963" target="_blank"&gt;唯 李&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;</content><category term="Tutorial"></category><category term="Deprecated"></category></entry></feed>

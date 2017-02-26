@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Linux-Unix</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/linux-unix.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2015-02-22T15:06:00+08:00</updated><entry><title>rename - 批次更改檔名</title><link href="http://lee-w.github.io/posts/linux-unix/2015/02/rename" rel="alternate"></link><published>2015-02-22T15:06:00+08:00</published><updated>2015-02-22T15:06:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-02-22:/posts/linux-unix/2015/02/rename</id><summary type="html">&lt;p&gt;只是要改變一兩個檔案的檔名，只要&lt;code&gt;mv&lt;/code&gt;就很夠用了&lt;br&gt;
+但如果要一次改很多相似的檔名就用到&lt;code&gt;rename&lt;/code&gt;指令就會更有效率&lt;br&gt;
+</summary><content type="html">&lt;p&gt;只是要改變一兩個檔案的檔名，只要&lt;code&gt;mv&lt;/code&gt;就很夠用了&lt;br&gt;
+但如果要一次改很多相似的檔名就用到&lt;code&gt;rename&lt;/code&gt;指令就會更有效率&lt;br&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;h1&gt;安裝&lt;/h1&gt;
+&lt;h3&gt;Ubuntu, Linux&amp;nbsp;Mint&lt;/h3&gt;
+&lt;p&gt;預設就已經安裝好了&lt;/p&gt;
+&lt;h3&gt;Mac&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install rename
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;使用&lt;/h1&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rename s/pattern1/pattern2/ files
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;把files中的檔案符合pattern1替代成pattern2&lt;br&gt;
+files要使用萬用字元，pattern則是使用regular&amp;nbsp;expression&lt;/p&gt;
+&lt;p&gt;在改檔名之前，會想先看會改成什麼樣子&lt;br&gt;
+這時候就要加上參數&lt;code&gt;-n&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;需要特別注意要跳脫的字元&lt;/em&gt;&lt;/strong&gt;&lt;br&gt;
+可以參考下面這篇文章整理需要跳脫的保留字&lt;br&gt;
+&lt;a href="http://awei791129.pixnet.net/blog/post/53319618-%5Bregular-expression%5D-使用正規表達時需要-escape-的"&gt;[Regular Expression] 使用正規表達時需要 escape&amp;nbsp;的保留字&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;保留原本檔名的片段&lt;/h2&gt;
+&lt;p&gt;而在批量更改檔名時，常常會需要保留pattern1的某些片段&lt;br&gt;
+這就需要用到regular&amp;nbsp;expression的group&lt;/p&gt;
+&lt;p&gt;例如，我們希望把檔名從01~05這五個檔案改成01A~05A&lt;br&gt;
+我們如果只用&lt;code&gt;rename -n s/\[0-\9]{2}/\[0-9\]{2}A/ *&lt;/code&gt;就會錯誤&lt;br&gt;&amp;nbsp;必須要改成像下面這樣&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rename -n s/&lt;span class="se"&gt;\(\[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;-&lt;span class="se"&gt;\9&lt;/span&gt;&lt;span class="o"&gt;]{&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="se"&gt;\)&lt;/span&gt;/&lt;span class="se"&gt;\$&lt;/span&gt;1A/ *
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;扣除跳脫用的&lt;code&gt;\&lt;/code&gt;&lt;br&gt;
+這個例子在&lt;code&gt;[0-9]{2}&lt;/code&gt;外面加上&lt;code&gt;()&lt;/code&gt;，將他們視為群組&lt;br&gt;
+在pattern2用&lt;code&gt;$1&lt;/code&gt;，代替第一個group&lt;/p&gt;
+&lt;p&gt;&lt;img alt="1_mac_rename" src="http://i.imgur.com/h1NV6ro.png"&gt;&lt;/p&gt;
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://mix.bruceli.net/2011/01/ubuntu-linuxrename.html"&gt;ubuntu&amp;nbsp;linux用rename指令批次改檔名&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://unix.stackexchange.com/questions/20718/substitute-text-with-sed-and-keep-part-of-the-original-text"&gt;regular expression - Substitute text with sed and keep part of the original text - Unix &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; Linux Stack&amp;nbsp;Exchange&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Shell Script"></category></entry><entry><title>驅動BCM43228網卡在Linux的無線功能</title><link href="http://lee-w.github.io/posts/linux-unix/2015/01/enable-bcm43228-wifi-on-linux" rel="alternate"></link><published>2015-01-28T08:52:00+08:00</published><updated>2015-01-28T08:52:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-28:/posts/linux-unix/2015/01/enable-bcm43228-wifi-on-linux</id><summary type="html">&lt;p&gt;最近本來下定決心要來玩arch linux&lt;br&gt;
+結果竟然被筆電的網卡搞死了&lt;br&gt;&amp;nbsp;抓了官網的驅動竟然不能build&amp;#8230;&lt;/p&gt;
+&lt;p&gt;沒想到改成灌Linux mint 17，依然有問題＝＝&lt;br&gt;
+最後找到一個解決的辦法&lt;br&gt;
+</summary><content type="html">&lt;p&gt;最近本來下定決心要來玩arch linux&lt;br&gt;
+結果竟然被筆電的網卡搞死了&lt;br&gt;&amp;nbsp;抓了官網的驅動竟然不能build&amp;#8230;&lt;/p&gt;
+&lt;p&gt;沒想到改成灌Linux mint 17，依然有問題＝＝&lt;br&gt;
+最後找到一個解決的辦法&lt;br&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;先確定你的網卡是不是BC43228&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lspci &lt;span class="p"&gt;|&lt;/span&gt; grep Network
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果是的話就能開始進行安裝了&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install linux-headers-generic
+sudo apt-get install --reinstall bcmwl-kernel-source
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果成功的話，Wifi應該馬上就能用了&lt;/p&gt;
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://wiki.beyondlogic.org/index.php?title=Ubuntu14.04_Acer_Aspire_V5_571_Broadcom_BCM43228_WiFi"&gt;Ubuntu14.04 Acer Aspire V5 571 Broadcom &lt;span class="caps"&gt;BCM43228&lt;/span&gt; WiFi -&amp;nbsp;BeyondLogic&lt;/a&gt;&lt;/p&gt;</content></entry><entry><title>Dual Boot FreeBSD Using GRUB2</title><link href="http://lee-w.github.io/posts/linux-unix/2014/10/dual-boot-freebsd-using-grub2" rel="alternate"></link><published>2014-10-21T08:56:00+08:00</published><updated>2014-10-21T08:56:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-10-21:/posts/linux-unix/2014/10/dual-boot-freebsd-using-grub2</id><summary type="html">&lt;p&gt;其實原本的標題是&lt;code&gt;Dual Boot FreeBsd with Ubuntu&lt;/code&gt;&lt;br&gt;
+這篇文章寫的都是用Ubuntu測試的&lt;br&gt;
+不過我想只要是grub2應該都差不多吧XD&lt;br&gt;
+</summary><content type="html">&lt;p&gt;其實原本的標題是&lt;code&gt;Dual Boot FreeBsd with Ubuntu&lt;/code&gt;&lt;br&gt;
+這篇文章寫的都是用Ubuntu測試的&lt;br&gt;
+不過我想只要是grub2應該都差不多吧XD&lt;br&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;h2&gt;加入freeBSD到grub開機選單&lt;/h2&gt;
+&lt;h3&gt;更改grub的設定檔&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vi /etc/grub.d/40_Custom
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;加入下面這幾行&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;menuentry &amp;quot;FreeBSD (/boot/loader)&amp;quot; {
+    insmod ufs2
+    set root=(hd0,1,a)
+    kfreebsd /boot/loader
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;FreeBSD (/boot/loader)&lt;/code&gt;是在開機時顯示的名稱&lt;br&gt;
+&lt;code&gt;(hd0,1,a)&lt;/code&gt;要根據你的freeBSD灌在磁碟的哪一塊決定&lt;/p&gt;
+&lt;h3&gt;更新grub設定檔&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-grub
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;這樣就會在開機選單上看到freeBSD了&lt;/p&gt;
+&lt;p&gt;其實還有一些其他的設定方法&lt;br&gt;
+可以參考&lt;a href="http://unix.stackexchange.com/questions/16886/set-up-grub2-to-boot-freebsd-using-either-ubuntu-tools-or-liveusb-to-find-what-p"&gt;Set up Grub2 to boot&amp;nbsp;Freebsd&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;換grub開機順序&lt;/h2&gt;
+&lt;p&gt;如果希望改變預設的開機順序，就必須要修改下面的檔案&lt;code&gt;/etc/default/grub&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vi /etc/default/grub
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;會看到下面這串&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;GRUB_DEFAULT=0
+#GRUB_HIDDEN_TIMEOUT=0
+GRUB_HIDDEN_TIMEOUT_QUIET=true
+GRUB_TIMEOUT=10
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2&amp;gt; /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot;quiet splash&amp;quot;
+GRUB_CMDLINE_LINUX=&amp;quot;&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;把第1行設定為多少(注意是從0開始)，就會預設從那裡開機&lt;/p&gt;
+&lt;h2&gt;在ubuntu mount&amp;nbsp;FreeBSD&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount -t ufs -r -o ufstype=ufs2 /dev/sda4 ~/freebsd
+&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>powerline on zsh, vim, tmux</title><link href="http://lee-w.github.io/posts/linux-unix/2014/07/powerline-on-zsh-vim-tmux" rel="alternate"></link><published>2014-07-30T15:01:00+08:00</published><updated>2014-07-30T15:01:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-07-30:/posts/linux-unix/2014/07/powerline-on-zsh-vim-tmux</id><summary type="html">&lt;p&gt;用了vim的powerline後覺得很酷，就找了很多的powerline來玩&lt;br&gt;
+於是這篇文章產生了XDD&lt;br&gt;
+</summary><content type="html">&lt;p&gt;用了vim的powerline後覺得很酷，就找了很多的powerline來玩&lt;br&gt;
+於是這篇文章產生了XDD&lt;br&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;這是各個powerline的預覽圖&lt;br&gt;
+1. vim&lt;br&gt;
+&lt;img alt="1_vim" src="http://i.imgur.com/VTM4866.png"&gt;&lt;br&gt;
+2. tmux&lt;br&gt;
+&lt;img alt="2_tmux" src="http://i.imgur.com/LLJ9xjk.png"&gt;&lt;br&gt;
+3. zsh&lt;br&gt;
+&lt;a href="http://i.imgur.com/tOvzhK3.png"&gt;3_zsh&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;powerline&amp;nbsp;字體&lt;/h2&gt;
+&lt;p&gt;安裝這些powerline之前要先下載powerline字體&lt;br&gt;
+不然可能會無法正常顯示&lt;br&gt;
+在https://github.com/Lokaltog/powerline-fonts下載後，之後安裝就完成了&lt;br&gt;
+&lt;em&gt;記得要把終端機的字體條成這些有powerline結尾的字體，我當初就是沒用這個卡了很久=&amp;nbsp;=&lt;/em&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/Lokaltog/powerline-fonts /tmp/git/clone
+sudo mv /tmp/git-clone/powerline-fonts /usr/share/fonts/powerline-fonts
+sudo fc-cache -v -f
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;zsh&lt;/h2&gt;
+&lt;p&gt;其實oh-my-zsh本身就有agnoster了&lt;br&gt;
+但我更推薦下面這個https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme&lt;br&gt;&amp;nbsp;安裝完之後記得再zshrc中加入&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ZSH_THEME=&amp;#8221;powerline&amp;#8221;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果要更多客制化設定可以參考repo內的設定&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme /tmp/oh-my-zsh-powerline-theme
+/tmp/oh-my-zsh-powerline-theme/oh-my-zsh-powerline-theme/install_in_omz.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;vim&lt;/h2&gt;
+&lt;p&gt;其實我也不是用vim-powerline&lt;br&gt;
+而是vim-airline&lt;br&gt;
+不過基本上好像是差不多的東西，而且vim-airline比較輕量化&lt;br&gt;
+建議直接用vundle&amp;nbsp;這類的套件管理安裝比較方便&lt;/p&gt;
+&lt;p&gt;https://github.com/bling/vim-airline&lt;/p&gt;
+&lt;h2&gt;tmux&lt;/h2&gt;
+&lt;p&gt;tmux有非常多的東西可以客製化設定&lt;br&gt;&amp;nbsp;在各系統也有不同的安裝方式，就自己看repo的readme文件吧XD&lt;/p&gt;
+&lt;p&gt;https://github.com/erikw/tmux-powerline&lt;/p&gt;</content><category term="Utility"></category></entry><entry><title>解決Win 8、Ubuntu雙系統無法掛載NTFS分割區問題</title><link href="http://lee-w.github.io/posts/linux-unix/2014/02/solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem" rel="alternate"></link><published>2014-02-25T15:40:00+08:00</published><updated>2014-02-25T15:40:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-25:/posts/linux-unix/2014/02/solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem</id><summary type="html">&lt;p&gt;現在安裝了Win8 和 Ubuntu雙系統&lt;br&gt;
+每次只要開Win 8 ，再重新開機進到Ubuntu就會出現file system 無法掛載的問題&lt;br&gt;
+然後我在兩個系統間共同的data 分割區就會無法掛載&lt;br&gt;
+可是再重開一次Win 8，問題就神祕的解決了@@&lt;br&gt;
+後來才發現原來是因為Win 8 的 &lt;strong&gt;Fast Boot&lt;/strong&gt;&amp;nbsp;造成的&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;現在安裝了Win8 和 Ubuntu雙系統&lt;br&gt;
+每次只要開Win 8 ，再重新開機進到Ubuntu就會出現file system 無法掛載的問題&lt;br&gt;
+然後我在兩個系統間共同的data 分割區就會無法掛載&lt;br&gt;
+可是再重開一次Win 8，問題就神祕的解決了@@&lt;br&gt;
+後來才發現原來是因為Win 8 的 &lt;strong&gt;Fast Boot&lt;/strong&gt;&amp;nbsp;造成的&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2&gt;解決&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="win8_start_up" src="http://i.imgur.com/ohEfCkR.png"&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;控制台\硬體和音效\電源選項\系統設定&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;只要把&lt;code&gt;開啟快速啟動&lt;/code&gt;取消掉就可以了&lt;/p&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;p&gt;[Cannot mount &lt;span class="caps"&gt;NTFS&lt;/span&gt; partition in Ubuntu 13.04 [duplicate]]&amp;nbsp;(http://askubuntu.com/questions/291864/cannot-mount-ntfs-partition-in-ubuntu-13-04)&lt;/p&gt;</content></entry><entry><title>Guake terminal</title><link href="http://lee-w.github.io/posts/linux-unix/2014/02/guake-terminal" rel="alternate"></link><published>2014-02-09T07:02:00+08:00</published><updated>2014-02-09T07:02:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-09:/posts/linux-unix/2014/02/guake-terminal</id><summary type="html">&lt;h1&gt;什麼是guake&amp;nbsp;termianl&lt;/h1&gt;
+&lt;p&gt;隱藏在背景的terminal&lt;br&gt;&amp;nbsp;並且可以隨時呼叫(預設是F12)&lt;/p&gt;
+</summary><content type="html">&lt;h1&gt;什麼是guake&amp;nbsp;termianl&lt;/h1&gt;
+&lt;p&gt;隱藏在背景的terminal&lt;br&gt;&amp;nbsp;並且可以隨時呼叫(預設是F12)&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;img alt="1_guake" src="http://i.imgur.com/0L95Qtg.png"&gt;&lt;/p&gt;
+&lt;h1&gt;安裝 Guake&amp;nbsp;Terminal&lt;/h1&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install guake
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;設定&lt;/h1&gt;
+&lt;h2&gt;滑鼠一移開就自動隱藏&lt;/h2&gt;
+&lt;p&gt;從「偏好設定 （Preferences)」勾選「Hide on lost focus」&lt;br&gt;
+&lt;img alt="2_hide on focus" src="http://i.imgur.com/Ibp8MX0.png"&gt;&lt;/p&gt;
+&lt;h1&gt;開機就啟動Guake&amp;nbsp;Terminal&lt;/h1&gt;
+&lt;p&gt;在「初始應用程式 （Startup Applications) 」把guake terminal加上去&lt;br&gt;
+&lt;img alt="3_guake start up" src="http://i.imgur.com/sYQ6Klw.png"&gt;&lt;/p&gt;
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;p&gt;[Ubuntu 安裝 Guake Terminal]&amp;nbsp;(http://www.arthurtoday.com/2012/08/ubuntu-install-guake-terminal.html#.UvcpWx9KiXo)&lt;/p&gt;</content><category term="Utility"></category></entry><entry><title>Linux開機自動掛載分割區</title><link href="http://lee-w.github.io/posts/linux-unix/2014/02/auto-mount-disk-after-boot" rel="alternate"></link><published>2014-02-01T16:44:00+08:00</published><updated>2014-02-01T16:44:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-01:/posts/linux-unix/2014/02/auto-mount-disk-after-boot</id><summary type="html">&lt;p&gt;分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改&lt;br&gt;
+需要注意的是，如果設定不好，可能會沒辦法開機的！！！&lt;br&gt;
+</summary><content type="html">&lt;p&gt;分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改&lt;br&gt;
+需要注意的是，如果設定不好，可能會沒辦法開機的！！！&lt;br&gt;
+&lt;!--more--&gt;&lt;br&gt;&amp;nbsp;我們先來看一下/etc/fstab內的東西&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo cat /etc/fstab
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# /etc/fstab: static file system information.
+#
+# Use &amp;#39;blkid&amp;#39; to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# &amp;lt;file system&amp;gt; &amp;lt;mount point&amp;gt;   &amp;lt;type&amp;gt;  &amp;lt;options&amp;gt;       &amp;lt;dump&amp;gt;  &amp;lt;pass&amp;gt;
+# / was on /dev/sda1 during installation
+UUID=c5744283-f105-47e9-8a2e-21f477d895b7 /               ext4    errors=remount-ro 0       1
+# swap was on /dev/sda5 during installation
+UUID=72b6a10a-f0b6-43ef-927d-0d74673febe7 none            swap    sw              0       0
+#data
+UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;#是註解&lt;br&gt;
+最後六行是比較重要的&lt;br&gt;
+1~2是root的掛載&lt;br&gt;
+3~4是swap的掛載&lt;br&gt;&amp;nbsp;5~6是我自己的data的掛載&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#data
+UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;總共有6個欄位&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;掛載硬碟的標籤&lt;ul&gt;
+&lt;li&gt;掛載硬碟的標籤我用的是UUID的標籤，可以用下面的指令查詢&lt;br&gt;
+&lt;code&gt;ls -l /dev/disk/by-uuid/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;也可以直接使用/dev/sda1這樣的格式，只是如果硬碟的代號改變，就要再去手動改變比較麻煩 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;掛載位置&lt;ul&gt;
+&lt;li&gt;掛載的位置要是一個已經存在的位置，建議是一個空的資料夾&lt;/li&gt;
+&lt;li&gt;如果不是空的，裏面的東西應該都會被清空&lt;/li&gt;
+&lt;li&gt;另外，一個掛載點只能掛載一個disk&lt;/li&gt;
+&lt;li&gt;另外，注意在Linux中大小寫是不同的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;分隔區格式&lt;ul&gt;
+&lt;li&gt;而一般的檔案朝的分割驅格式都是都是ntfs，不過也可以用指令來查詢&lt;br&gt;
+&lt;code&gt;df&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;選項&lt;/li&gt;
+&lt;li&gt;是否被 dump&amp;nbsp;備份指令作用&lt;/li&gt;
+&lt;li&gt;是否以 fsck&amp;nbsp;檢驗磁區&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基本上4 5 6我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到&lt;br&gt;
+&lt;/br&gt;&lt;br&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;h1&gt;測試&lt;/h1&gt;
+&lt;p&gt;先看一下是否有掛載成功&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;檔案系統         1K-區段      已用      可用 已用% 掛載點
+/dev/sda1      103081248   9259936  88562048   10% /
+none                   4         0         4    0% /sys/fs/cgroup
+udev             3992780         4   3992776    1% /dev
+tmpfs             801368      1168    800200    1% /run
+none                5120         0      5120    0% /run/lock
+none             4006840      1032   4005808    1% /run/shm
+none              102400        44    102356    1% /run/user
+/dev/sda6      459942908 229176172 230766736   50% /media/lee/data
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;像我的最後面就出現了data&lt;/p&gt;
+&lt;p&gt;之後暫時將它卸載 (若&lt;code&gt;df&lt;/code&gt;之後，分割區沒有出現，那就不用做這步了)&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo umount /dev/sda6
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;(/dev/sda6要取代成你自己的位置)&lt;br&gt;&amp;nbsp;接著再執行一次&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;剛剛的分割區應該會不見，然後執行&lt;br&gt;&amp;nbsp;開機自動掛載分割區&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount -a
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果沒有錯誤訊息，就在執行一次&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果掛載的分隔驅再裡面就是成功了&lt;/p&gt;
+&lt;p&gt;如果有任何異常，就去看一下/etc/fstab是不是有哪裡寫錯了&lt;/p&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;p&gt;[巴特的微花盆： 筆記： Linux 中設定開機時自動掛載分割區 ]&amp;nbsp;(http://255121.blogspot.tw/2010/05/linux.html)&lt;/p&gt;</content></entry><entry><title>autojump - 在terminal中快速跳轉資料夾</title><link href="http://lee-w.github.io/posts/linux-unix/2014/02/autojump" rel="alternate"></link><published>2014-02-01T13:11:00+08:00</published><updated>2014-02-01T13:11:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-01:/posts/linux-unix/2014/02/autojump</id><summary type="html">&lt;h1&gt;什麼是autojump&lt;/h1&gt;
+&lt;p&gt;可以快速跳轉資料夾的工具&lt;/p&gt;
+</summary><content type="html">&lt;h1&gt;什麼是autojump&lt;/h1&gt;
+&lt;p&gt;可以快速跳轉資料夾的工具&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;e.g.&lt;br&gt;
+有個資料夾是/a/b/c/d/e/f/g/h&lt;br&gt;&amp;nbsp;原本要輸入&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /a/b/c/d/e/f/g/h
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;可是現在有了autojump，而且你也去過這個h資料夾，你就可以&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;j h
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;很方便吧！！！&lt;/p&gt;
+&lt;h1&gt;安裝&lt;/h1&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /tmp
+git clone https://github.com/joelthelion/autojump
+&lt;span class="nb"&gt;cd&lt;/span&gt; autojump
+chmod +x install.py
+./install.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;然後把下面這行加入shell的設定檔(e.g. ~/.bashrc  ,&amp;nbsp;~/.zshrc)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] &amp;amp;&amp;amp; .&amp;nbsp;~/.autojump/etc/profile.d/autojump.sh &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最後只要重開shell就完成了&lt;/p&gt;
+&lt;h1&gt;使用&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;最基本的功能當然就是跳轉囉&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;j word
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果有重複的名稱 (e.g. worda, wordb)，就在打一次同樣的指令，就會跳到下一個
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;strong text&lt;/strong&gt;&lt;br&gt;
+2.&amp;nbsp;list現在autojump可以跳到的資料夾&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;j -s 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;刪除已經背改變路徑或刪除的紀錄&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; j --purge
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;p&gt;[autojump readme] (https://github.com/joelthelion/autojump/blob/master/&lt;span class="caps"&gt;README&lt;/span&gt;.md)&lt;/p&gt;</content><category term="Utility"></category></entry></feed>

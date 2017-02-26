@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - JS</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/js.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2016-03-23T01:23:00+08:00</updated><entry><title>External.js - Load HTML in Reveal.js</title><link href="http://lee-w.github.io/posts/js/2016/03/external-js-load-html-in-reveal-js" rel="alternate"></link><published>2016-03-23T01:23:00+08:00</published><updated>2016-03-23T01:23:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-03-23:/posts/js/2016/03/external-js-load-html-in-reveal-js</id><summary type="html">&lt;p&gt;reavel.js提供了&lt;code&gt;data-markdown="example.md"&lt;/code&gt;這個tag可以載入外部的markdown&lt;br&gt;
+卻沒提供可以載入html的tag&lt;br&gt;
+於是就有人寫了這個&lt;a href="https://github.com/calevans/external"&gt;External.js&lt;/a&gt;&lt;br&gt;
+</summary><content type="html">&lt;p&gt;reavel.js提供了&lt;code&gt;data-markdown="example.md"&lt;/code&gt;這個tag可以載入外部的markdown&lt;br&gt;
+卻沒提供可以載入html的tag&lt;br&gt;
+於是就有人寫了這個&lt;a href="https://github.com/calevans/external"&gt;External.js&lt;/a&gt;&lt;br&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;有了External.js，就可以不用把所有的內容都寫在&lt;code&gt;index.html&lt;/code&gt;裡面&lt;/p&gt;
+&lt;h1&gt;Install&lt;/h1&gt;
+&lt;h2&gt;Method1:&amp;nbsp;Download&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;到https://github.com/calevans/external下載&lt;/li&gt;
+&lt;li&gt;把extneral裡面的external資料夾放到plugin裡面&lt;/li&gt;
+&lt;li&gt;在&lt;code&gt;index.html&lt;/code&gt;中的&lt;code&gt;Reveal.initalize&lt;/code&gt;這個block加入下面的內容&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;plugin/external/external.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt; &lt;span class="n"&gt;return&lt;/span&gt; &lt;span class="o"&gt;!!&lt;/span&gt;&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="na"&gt;-external&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Method2:&amp;nbsp;Submodule&lt;/h2&gt;
+&lt;p&gt;不過為了讓他的更新也能被追蹤，我使用了git&amp;nbsp;submodule&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;git&amp;nbsp;submodule&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git submodule add https://github.com/calevans/external plugin/external
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;在&lt;code&gt;index.html&lt;/code&gt;中的&lt;code&gt;Reveal.initalize&lt;/code&gt;這個block加入下面的內容&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;plugin/external/external/external.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt; &lt;span class="n"&gt;return&lt;/span&gt; &lt;span class="o"&gt;!!&lt;/span&gt;&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="na"&gt;-external&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;(注意兩種方式加入的內容有些微的不同)&lt;/p&gt;
+&lt;h1&gt;Usage&lt;/h1&gt;
+&lt;p&gt;之後就能使用&lt;code&gt;data-external&lt;/code&gt;這個tag來載入外部的html&lt;/p&gt;
+&lt;h2&gt;原本的index.html&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;data-external&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;module_01/index.html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;外部html&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;&amp;lt;!-- module_01/index.html --&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; This is external &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;載入後的html&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;data-external&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;module_01/index.html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="c"&gt;&amp;lt;!-- module_01/index.html --&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; This is external &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;https://github.com/calevans/external&lt;/p&gt;</content><category term="reveal.js"></category></entry><entry><title>Reveal.js 安裝錯誤</title><link href="http://lee-w.github.io/posts/js/2016/02/reveal-s-installation-error" rel="alternate"></link><published>2016-02-20T03:57:00+08:00</published><updated>2016-02-20T03:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-02-20:/posts/js/2016/02/reveal-s-installation-error</id><summary type="html">&lt;p&gt;當我安裝步驟執行到&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;會跳出很多錯誤訊息&lt;br&gt;
+</summary><content type="html">&lt;p&gt;當我安裝步驟執行到&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;會跳出很多錯誤訊息&lt;br&gt;
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;這才發現Reveal.js 要用python &amp;gt;= 2.5 and &amp;lt; 3.0.0&lt;br&gt;
+而我預設的python是python3.5&lt;br&gt;&amp;nbsp;所以只要像下面的指令把python指到python2就可以了&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install --python&lt;span class="o"&gt;=&lt;/span&gt;python2.7
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;--python=&lt;/code&gt;後面是python2的執行擋，需要根據自己的設定做調整&lt;/p&gt;
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/hakimel/reveal.js/"&gt;Reveal.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="reveal.js"></category></entry></feed>
