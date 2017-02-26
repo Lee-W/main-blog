@@ -6,6 +6,7 @@ Tags: Line
 Slug: introduction-to-chatbot
 Authors: Lee-W
 Summary: 
+Series: Line Bot Tutorial
 ---
 
 有人說聊天機器人Chat Bot將要取代APP

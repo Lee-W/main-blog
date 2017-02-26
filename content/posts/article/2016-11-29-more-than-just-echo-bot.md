@@ -6,6 +6,7 @@ Tags:
 Slug: more-than-just-echo-bot
 Authors: Lee-W
 Summary: 
+Series: Line Bot Tutorial
 ---
 
 知道怎麼實作一個會Echo的Bot後

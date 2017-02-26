@@ -6,6 +6,7 @@ Tags: Line
 Slug: more-about-line-messaging-api-template-messages
 Authors: Lee-W
 Summary: 
+Series: Line Bot Tutorial
 ---
 
 除了傳送文字外，Line Bot還可以傳

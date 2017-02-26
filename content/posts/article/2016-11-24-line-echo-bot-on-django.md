@@ -6,6 +6,7 @@ Tags: django, Line
 Slug: line-echo-bot-on-django
 Authors: Lee-W
 Summary: 
+Series: Line Bot Tutorial
 ---
 
 單純要寫一個只會Echo的Line Chat Bot

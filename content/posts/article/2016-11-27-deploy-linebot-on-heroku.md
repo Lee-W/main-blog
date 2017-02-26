@@ -6,6 +6,7 @@ Tags: Heroku, django, Line
 Slug: deploy-linebot-on-heroku
 Authors: Lee-W
 Summary: 
+Series: Line Bot Tutorial
 ---
 
 上一篇提到如何用ngrok
@@ -83,9 +84,11 @@ Heroku可過專案中是否有`requirements.txt`來判斷這個專案是否為Py
 這裡使用的部署套件是gunicorn
 先在`requirements.txt`加入`gunicorn==19.0.0`
 再來創一個`Profile`，內容是
+
 ```
 web: gunicorn line_echobot.wsgi --log-file -
 ```
+
 如果用其他的部署套件，則需要修改web後面的指令
 
 到了這裡就做好所有的設定了

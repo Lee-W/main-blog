@@ -8,20 +8,17 @@ HOME = os.path.expanduser("~")
 
 PATH = 'content'
 
-# Config
-THEME = os.path.join(HOME, "pelican-themes/flex/")
-DISQUS_SITENAME = "lee-w-blog"
-
-TIMEZONE = 'Asia/Taipei'
-DEFAULT_LANG = 'zh'
-
+# Blog Conf
 AUTHOR = 'Lee-W'
 SITENAME = 'Life Lies in Traveling'
 SITEURL = 'http://localhost:8000'
 SITETITLE = AUTHOR
 SITELOGO = '//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120'
+TIMEZONE = 'Asia/Taipei'
+DEFAULT_LANG = 'zh'
+DEFAULT_CATEGORY = 'Article'
 BROWSER_COLOR = '#333333'
-PYGMENTS_STYLE = 'monokai'
+DISQUS_SITENAME = "lee-w-blog"
 MAIN_MENU = True
 
 MENUITEMS = (
@@ -33,6 +30,23 @@ MENUITEMS = (
 DATE_FORMATS = {
     'zh': '%Y/%m/%d - %a',
 }
+
+TYPOGRIFY = True
+ARTICLE_URL = 'posts/{category}/{date:%Y}/{date:%m}/{slug}'
+ARTICLE_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{slug}/index.html'
+DEFAULT_PAGINATION = 10
+
+STATIC_PATHS = ['extra', 'images']
+
+# Theme Setting
+THEME = os.path.join(HOME, "pelican-themes/Flex/")
+PYGMENTS_STYLE = 'xcode'
+# EXTRA_TEMPLATES_PATHS = ['templates/']
+EXTRA_PATH_METADATA = {
+    'images': {'path': 'images'},
+    'extra/custom.css': {'path': 'static/custom.css'},
+}
+CUSTOM_CSS = 'static/custom.css'
 
 # Feed generation is usually not desired when developing
 
@@ -46,12 +60,8 @@ AUTHOR_FEED_RSS = None
 SOCIAL = (('linkedin', 'http://tw.linkedin.com/in/clleew'),
           ('github', 'http://github.com/Lee-W'),
           ('facebook', 'http://www.facebook.com/clleew'),
-          ('google', 'http://plus.google.com/113295124327840065090'),)
+          ('rss', '//lee-w.github.io/feeds/all.atom.xml'))
 
-DEFAULT_PAGINATION = 10
-
-ARTICLE_URL = 'posts/{category}/{date:%Y}/{date:%m}/{slug}'
-ARTICLE_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{slug}/index.html'
 
 # Markdown extension
 MARKDOWN = {
@@ -65,5 +75,6 @@ MARKDOWN = {
 
 # Plugin-setting
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['another_read_more_link']
-ANOTHER_READ_MORE_LINK = ""
+PLUGINS = ['another_read_more_link',  'series', 'render_math',
+           'neighbors', 'share_post']
+ANOTHER_READ_MORE_LINK = ''
