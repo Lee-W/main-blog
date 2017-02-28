@@ -1,11 +1,12 @@
 ---
 Title: [Book] 內向者的優勢
-Date: 2017-01-22 11:55
+Date: 2016-04-19 11:55
 Category: Book
 Tags: Other
 Slug: leise-menschen-starke-wirkung
 Authors: Lee-W
 Summary: 
+
 ---
 
 ![leise-menschen-starke-wirkung](http://pic.eslite.com/Upload/Product/201404/m/635319380267441240.jpg)

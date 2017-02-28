@@ -1,6 +1,6 @@
 ---
 Title: [Book] 點子都是偷來的
-Date: 2017-01-17 08:43
+Date: 2015-01-31 08:43
 Category: Book
 Tags: Design
 Slug: steal-like-an-artist-10-things-nobody-told-you-about-being-creatvie

@@ -1,6 +1,6 @@
 ---
 Title: [Book] Zero to One
-Date: 2017-01-17 08:57
+Date: 2015-02-16 08:57
 Category: Book
 Tags: Start Up
 Slug: zero-to-one

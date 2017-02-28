@@ -1,6 +1,6 @@
 ---
 Title: [Book] 人月神話
-Date: 2017-01-17 09:30
+Date: 2015-01-17 09:30
 Category: Book
 Tags: Software Engineering, Team
 Slug: the-mythical-man-month

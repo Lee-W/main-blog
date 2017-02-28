@@ -1,6 +1,6 @@
 ---
 Title: [Book] 思考的技術
-Date: 2017-01-22 11:45
+Date: 2015-10-18 11:45
 Category: Book
 Tags: Thinking
 Slug: thinking-technique

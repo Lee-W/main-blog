@@ -1,6 +1,6 @@
 ---
 Title: [Book] 引誘科學
-Date: 2017-01-22 12:11
+Date: 2016-08-07 12:11
 Category: Book
 Tags: Sales
 Slug: captivology-the-science-of-capturing-people-s-attention
