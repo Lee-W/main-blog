@@ -6,7 +6,6 @@ Tags: Software Engineering
 Slug: clean-coder
 Authors: Lee-W
 Summary: 
-
 ---
 
 ![Clean Coder](http://i.imgur.com/5a0LzcSm.jpg)

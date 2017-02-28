@@ -6,7 +6,6 @@ Tags: Programming
 Slug: automate-this-how-algorithms-came-to-rule-our-world
 Authors: Lee-W
 Summary: 
-
 ---
 
 ![automate-this-how-algorithms-came-to-rule-our-world](http://pic.eslite.com/Upload/Product/201407/m/635416147773839348.jpg)
