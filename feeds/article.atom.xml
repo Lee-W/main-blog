@@ -1,5 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Article</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/article.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2016-04-05T14:02:00+08:00</updated><entry><title>[Book] 隨機騙局</title><link href="http://lee-w.github.io/posts/article/2016/04/fooled-by-randomness" rel="alternate"></link><published>2016-04-05T14:02:00+08:00</published><updated>2016-04-05T14:02:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-04-05:/posts/article/2016/04/fooled-by-randomness</id><summary type="html">&lt;p&gt;&lt;img alt="fooled by randomness" src="http://pic.eslite.com/Upload/Product/201405/m/635359124106127500.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Article</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/article.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-02-28T21:56:00+08:00</updated><entry><title>git ignore-io 與 開源貢獻經驗</title><link href="http://lee-w.github.io/posts/article/2017/02/git-ignoreio-and-open-source-experience" rel="alternate"></link><published>2017-02-28T21:56:00+08:00</published><updated>2017-02-28T21:56:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-28:/posts/article/2017/02/git-ignoreio-and-open-source-experience</id><summary type="html">&lt;p&gt;雖然已經隔了一年多&lt;br&gt;
+當初git ignore-io這個小功能，也是花了一兩個月&lt;br&gt;
+好不容易才&lt;a href="https://github.com/tj/git-extras"&gt;git extras&lt;/a&gt;&amp;nbsp;merge回去的&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;雖然已經隔了一年多&lt;br&gt;
+當初git ignore-io這個小功能，也是花了一兩個月&lt;br&gt;
+好不容易才&lt;a href="https://github.com/tj/git-extras"&gt;git extras&lt;/a&gt;&amp;nbsp;merge回去的&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;當初看到這封信的時候，很是感動啊xd&lt;br&gt;
+&lt;img alt="accepted" src="http://lee-w.github.io/images/posts-image/2017-02-28/1-accepted.jpg"&gt;&lt;/p&gt;
+&lt;h2&gt;git&amp;nbsp;ignore-io&lt;/h2&gt;
+&lt;p&gt;這個工具主要是從&lt;a href="https://www.gitignore.io"&gt;gitignoore.io&lt;/a&gt;上下載.gitignore的範本&lt;br&gt;&amp;nbsp;e.g. &lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git ignore-io -a vim osx python
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;像這就是vim常見的暫存檔們&lt;br&gt;&amp;nbsp;一般來說應該被忽略掉，不用被commit&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Created by https://www.gitignore.io/api/vim
+
+### Vim ###
+# swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+# auto-generated tag files
+tags
+
+# End of https://www.gitignore.io/api/vim
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+&lt;p&gt;當初可是連文件都要寫好，才會被作者接受&lt;br&gt;&amp;nbsp;所以我這裡就直接沿用我當初寫的文件了xd&lt;/p&gt;
+&lt;p&gt;Without option, &lt;code&gt;git ignore-io &amp;lt;type&amp;gt;&lt;/code&gt; shows the sample gitignore of specified types on&amp;nbsp;screen.  &lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git ignore-io vim
+
+    &lt;span class="c1"&gt;# Created by https://www.gitignore.io/api/vim&lt;/span&gt;
+
+    &lt;span class="c1"&gt;### Vim ###&lt;/span&gt;
+    &lt;span class="o"&gt;[&lt;/span&gt;._&lt;span class="o"&gt;]&lt;/span&gt;*.s&lt;span class="o"&gt;[&lt;/span&gt;a-w&lt;span class="o"&gt;][&lt;/span&gt;a-z&lt;span class="o"&gt;]&lt;/span&gt;
+    &lt;span class="o"&gt;[&lt;/span&gt;._&lt;span class="o"&gt;]&lt;/span&gt;s&lt;span class="o"&gt;[&lt;/span&gt;a-w&lt;span class="o"&gt;][&lt;/span&gt;a-z&lt;span class="o"&gt;]&lt;/span&gt;
+    *.un~
+    Session.vim
+    .netrwhist
+    *~
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To export it to &lt;code&gt;.gitignore&lt;/code&gt; file you can use the following&amp;nbsp;options:  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-a&lt;/code&gt; or &lt;code&gt;--append&lt;/code&gt; to append the result to &lt;code&gt;.gitignore&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-r&lt;/code&gt; or &lt;code&gt;--replace&lt;/code&gt; to export &lt;code&gt;.gitignore&lt;/code&gt; with the&amp;nbsp;result&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git ignore-io vim python
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For efficiency, &lt;code&gt;git ignore-io&lt;/code&gt; store all available types at &lt;code&gt;~/.gi_list&lt;/code&gt;.&lt;br&gt;
+To list all the available&amp;nbsp;types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-l&lt;/code&gt; or &lt;code&gt;-L&lt;/code&gt; : These two options will show the list in different format. Just try&amp;nbsp;it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can also search type from the list&amp;nbsp;by:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-s &amp;lt;word&amp;gt;&lt;/code&gt; or &lt;code&gt;--search &amp;lt;word&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git ignore-io -s ja
+
+    django
+    jabref
+    java
+    ninja
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+&lt;h2&gt;為什麼要貢獻開源專案？&lt;/h2&gt;
+&lt;p&gt;貢獻開源專案最主要的原因&lt;br&gt;
+還是就是&lt;strong&gt;我需要這個功能啊！！！&lt;/strong&gt;&lt;br&gt;
+但是就沒有人寫，bug沒有人修&lt;br&gt;&amp;nbsp;所以就只好先承認自己就是「沒有人」了xd&lt;/p&gt;
+&lt;p&gt;其實gitignore.io本身就有提供一個簡單的script &lt;a href="https://www.gitignore.io/docs#-install-command-line"&gt;gi&lt;/a&gt;&lt;br&gt;
+不過實在有點不夠我用xd&lt;br&gt;
+於是我就寫了&lt;a href="https://github.com/Lee-W/gi_extension"&gt;gi_extension&lt;/a&gt;&lt;br&gt;
+後來又覺得，如果整併的git extras&lt;br&gt;&amp;nbsp;我就能透過homebrew安裝了(?????&lt;/p&gt;
+&lt;p&gt;整個從pull request到merge的過程其實蠻有趣的&lt;br&gt;
+我找到當初我開的&lt;a href="https://github.com/tj/git-extras/pull/439"&gt;pr #439&lt;/a&gt;和&lt;a href="https://github.com/tj/git-extras/pull/448"&gt;pr #448&lt;/a&gt;&lt;br&gt;
+從shell script的風格（有人建議我用&lt;a href="https://github.com/koalaman/shellcheck"&gt;shellcheck&lt;/a&gt;）到command的option為什麼要這樣命名&lt;br&gt;
+都有人跟我討論，給我建議&lt;br&gt;
+從中也學到了很多&lt;br&gt;&amp;nbsp;~~貢獻這些專案還能去申請SITCON跟COSCUP的開源貢獻票，這樣就不用跟大家搶票了~~&lt;/p&gt;</content></entry><entry><title>[Book] 隨機騙局</title><link href="http://lee-w.github.io/posts/article/2016/04/fooled-by-randomness" rel="alternate"></link><published>2016-04-05T14:02:00+08:00</published><updated>2016-04-05T14:02:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-04-05:/posts/article/2016/04/fooled-by-randomness</id><summary type="html">&lt;p&gt;&lt;img alt="fooled by randomness" src="http://pic.eslite.com/Upload/Product/201405/m/635359124106127500.jpg"&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="fooled by randomness" src="http://pic.eslite.com/Upload/Product/201405/m/635359124106127500.jpg"&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
