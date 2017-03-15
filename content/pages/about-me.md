@@ -7,7 +7,7 @@ Modified: 2017-03-17 19:05
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 
-Hi, I'm Lee Wei
+Hi, this is Lee Wei
 
 I'm a
   
@@ -18,5 +18,5 @@ I'm a
 <i class="fa fa-lg fa-lock" style="padding-right:1.4em"></i> Locker
 <i class="fa fa-lg fa-rebel" style="padding-right:1em"></i> Star Wars Fan
 
-In this blog, I share what I thought, what I read and what I like.
+In this blog, I share what I like, what I read and what I think.
 If you have any problem or suggestion, feel free to leave a command below the article.
