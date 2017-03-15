@@ -1,5 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-03-05T11:40:00+08:00</updated><entry><title>[Book] 此人進廠維修中</title><link href="http://lee-w.github.io/posts/book/2017/03/take-a-rest" rel="alternate"></link><published>2017-03-05T11:40:00+08:00</published><updated>2017-03-05T11:40:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-05:/posts/book/2017/03/take-a-rest</id><summary type="html">&lt;p&gt;&lt;img alt="此人進廠維修中" src="http://i.imgur.com/M5ZXQkhm.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-03-15T19:13:00+08:00</updated><entry><title>Tool for Checking Python Coding Style</title><link href="http://lee-w.github.io/posts/python/2017/03/tools-for-checking-python-coding-style" rel="alternate"></link><published>2017-03-15T19:13:00+08:00</published><updated>2017-03-15T19:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-15:/posts/python/2017/03/tools-for-checking-python-coding-style</id><summary type="html">&lt;p&gt;&lt;a href="https://www.pylint.org"&gt;Pylint&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Setup&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pylint
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Usage&lt;/h2&gt;
+&lt;h3&gt;Generate a code quality&amp;nbsp;report&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pylint your_code.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+</summary><content type="html">&lt;p&gt;&lt;a href="https://www.pylint.org"&gt;Pylint&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Setup&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pylint
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Usage&lt;/h2&gt;
+&lt;h3&gt;Generate a code quality&amp;nbsp;report&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pylint your_code.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;!--more--&gt;
+
+&lt;h3&gt;Customize your pylint&amp;nbsp;settings&lt;/h3&gt;
+&lt;p&gt;Some rules in default settings might be too trivial.&lt;br&gt;
+(e.g. &lt;span class="caps"&gt;PEP8&lt;/span&gt; E501: line too long error (no more than 79 characters)&amp;nbsp;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generate &lt;code&gt;pylintrc&lt;/code&gt; file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pylint --generate-rcfile &amp;gt; ~/.pylintrc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This generate a common used &lt;code&gt;pylintrc&lt;/code&gt;.&lt;br&gt;
+For further customization, you&amp;#8217;ll have to change this&amp;nbsp;file.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generate a code quality report using you &lt;code&gt;pylintrc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pylint --rcfile ~/.pylintrc you_code.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Integrate with&amp;nbsp;Vim&lt;/h2&gt;
+&lt;h3&gt;1. &lt;a href="https://github.com/w0rp/ale"&gt;ale&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="https://i.imgur.com/vwpqY4G.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ale&lt;/code&gt; also supports other linters in other languages.&lt;br&gt;
+It uses the new async feature in vim 8.&lt;br&gt;
+Thus, it checks your code when you are typing. (You can disable&amp;nbsp;it.)&lt;/p&gt;
+&lt;p&gt;The following settings are for pylint in &lt;code&gt;~/.vimrc&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# The default value is pytlinh&lt;/span&gt;
+&lt;span class="c1"&gt;# If your pylint executable is not pylint, it should be set &lt;/span&gt;
+&lt;span class="nb"&gt;let&lt;/span&gt; g:ale_python_pylint_executable &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pylint&amp;#39;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# options of your pylint command&lt;/span&gt;
+&lt;span class="nb"&gt;let&lt;/span&gt; g:ale_python_pylint_options &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;--rcfile ~/.pylintrc&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;All the available linters are enabled by default.&lt;br&gt;
+For Python, &lt;code&gt;flake8&lt;/code&gt;, &lt;code&gt;mypy&lt;/code&gt; are also used.&lt;br&gt;
+Thus, you might find that even if you ignore some rules in &lt;code&gt;pylintc&lt;/code&gt;, you are still&amp;nbsp;notified.&lt;/p&gt;
+&lt;p&gt;In this case, add the following setting in &lt;code&gt;~/.vimrc&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;let&lt;/span&gt; g:ale_linters &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="se"&gt;\ &lt;/span&gt;  &lt;span class="s1"&gt;&amp;#39;python&amp;#39;&lt;/span&gt;: &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pylint&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;,
+&lt;span class="se"&gt;\}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This enables &lt;code&gt;pylint&lt;/code&gt; as the only linter for&amp;nbsp;Python&lt;/p&gt;
+&lt;p&gt;p.s. &lt;code&gt;mypy&lt;/code&gt;, &lt;code&gt;flake8&lt;/code&gt; are also great linters. I&amp;#8217;m just not familiar with&amp;nbsp;it&lt;/p&gt;
+&lt;h3&gt;2. &lt;a href="https://github.com/python-mode/python-mode"&gt;python-mode&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;It&amp;#8217;s a powerful package supports not only linters but also plenty of useful features a python programer would&amp;nbsp;need.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://i.imgur.com/5FffIqN.png"&gt;&lt;br&gt;
+Unlike &lt;code&gt;ale&lt;/code&gt;, &lt;code&gt;python-mode&lt;/code&gt; check your code only when you save or open your python file (You can set this in your &lt;code&gt;~/.vimrc&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;Add these lines in &lt;code&gt;~/.vimrc&lt;/code&gt;  to enable &lt;code&gt;pylint&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;let g:pymode_lint_checkers = [&amp;#39;pyflakes&amp;#39;, &amp;#39;pylint&amp;#39;, &amp;#39;pep8&amp;#39;]
+let g:pymode_lint_ignore = &amp;quot;C0111,W0621,E501,F0002&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Note that space cannot appear in &lt;code&gt;pymode_lint_ignore&lt;/code&gt;&lt;/p&gt;</content><category term="Code Quality"></category><category term="Vim"></category></entry><entry><title>[Book] 此人進廠維修中</title><link href="http://lee-w.github.io/posts/book/2017/03/take-a-rest" rel="alternate"></link><published>2017-03-05T11:40:00+08:00</published><updated>2017-03-05T11:40:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-05:/posts/book/2017/03/take-a-rest</id><summary type="html">&lt;p&gt;&lt;img alt="此人進廠維修中" src="http://i.imgur.com/M5ZXQkhm.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;這本書不談情緒管理，而是如何與情緒共處&lt;/p&gt;
 &lt;p&gt;我總覺得這些有關情緒的書，要做筆記實在是一件很困難的事&lt;br&gt;&amp;nbsp;不過這裡就稍微紀錄比較能紀錄的部分吧&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="此人進廠維修中" src="http://i.imgur.com/M5ZXQkhm.jpg"&gt;&lt;/p&gt;

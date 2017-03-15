@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/pygments/xcode.min.css">
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+    <link href="http://lee-w.github.io/static/custom.css" rel="stylesheet">
+
+    <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Lee-W" />
+<meta name="description" content="Pylint Setup pip install pylint Usage Generate a code quality report pylint your_code.py" />
+<meta name="keywords" content="Code Quality, Vim">
+<meta property="og:site_name" content="Life Lies in Traveling"/>
+<meta property="og:title" content="Tool for Checking Python Coding Style"/>
+<meta property="og:description" content="Pylint Setup pip install pylint Usage Generate a code quality report pylint your_code.py"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://lee-w.github.io/posts/python/2017/03/tools-for-checking-python-coding-style"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-03-15 19:13:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
+<meta property="article:section" content="Python"/>
+<meta property="article:tag" content="Code Quality"/>
+<meta property="article:tag" content="Vim"/>
+<meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
+
+  <title>Life Lies in Traveling &ndash; Tool for Checking Python Coding Style</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://lee-w.github.io">
+        <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
+      </a>
+      <h1><a href="http://lee-w.github.io">Lee-W</a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="http://lee-w.github.io/pages/about-me.html#about-me">About&nbsp;Me</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-rss" href="//lee-w.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://lee-w.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://lee-w.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="tools-for-checking-python-coding-style">Tool for Checking Python Coding&nbsp;Style</h1>
+    <p>
+          Posted on 2017/03/15 - 三 in <a href="http://lee-w.github.io/category/python.html">Python</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><a href="https://www.pylint.org">Pylint</a></p>
+<h2>Setup</h2>
+<div class="codehilite"><pre><span></span>pip install pylint
+</pre></div>
+
+
+<h2>Usage</h2>
+<h3>Generate a code quality&nbsp;report</h3>
+<div class="codehilite"><pre><span></span>pylint your_code.py
+</pre></div>
+
+
+<!--more-->
+
+<h3>Customize your pylint&nbsp;settings</h3>
+<p>Some rules in default settings might be too trivial.<br>
+(e.g. <span class="caps">PEP8</span> E501: line too long error (no more than 79 characters)&nbsp;)</p>
+<ul>
+<li>Generate <code>pylintrc</code> file</li>
+</ul>
+<div class="codehilite"><pre><span></span>pylint --generate-rcfile &gt; ~/.pylintrc
+</pre></div>
+
+
+<p>This generate a common used <code>pylintrc</code>.<br>
+For further customization, you&#8217;ll have to change this&nbsp;file.</p>
+<ul>
+<li>Generate a code quality report using you <code>pylintrc</code></li>
+</ul>
+<div class="codehilite"><pre><span></span>pylint --rcfile ~/.pylintrc you_code.py
+</pre></div>
+
+
+<h2>Integrate with&nbsp;Vim</h2>
+<h3>1. <a href="https://github.com/w0rp/ale">ale</a></h3>
+<p><img alt="" src="https://i.imgur.com/vwpqY4G.png"></p>
+<p><code>ale</code> also supports other linters in other languages.<br>
+It uses the new async feature in vim 8.<br>
+Thus, it checks your code when you are typing. (You can disable&nbsp;it.)</p>
+<p>The following settings are for pylint in <code>~/.vimrc</code></p>
+<div class="codehilite"><pre><span></span><span class="c1"># The default value is pytlinh</span>
+<span class="c1"># If your pylint executable is not pylint, it should be set </span>
+<span class="nb">let</span> g:ale_python_pylint_executable <span class="o">=</span> <span class="s1">&#39;pylint&#39;</span>
+
+<span class="c1"># options of your pylint command</span>
+<span class="nb">let</span> g:ale_python_pylint_options <span class="o">=</span> <span class="s1">&#39;--rcfile ~/.pylintrc&#39;</span>
+</pre></div>
+
+
+<p>All the available linters are enabled by default.<br>
+For Python, <code>flake8</code>, <code>mypy</code> are also used.<br>
+Thus, you might find that even if you ignore some rules in <code>pylintc</code>, you are still&nbsp;notified.</p>
+<p>In this case, add the following setting in <code>~/.vimrc</code></p>
+<div class="codehilite"><pre><span></span><span class="nb">let</span> g:ale_linters <span class="o">=</span> <span class="o">{</span>
+<span class="se">\ </span>  <span class="s1">&#39;python&#39;</span>: <span class="o">[</span><span class="s1">&#39;pylint&#39;</span><span class="o">]</span>,
+<span class="se">\}</span>
+</pre></div>
+
+
+<p>This enables <code>pylint</code> as the only linter for&nbsp;Python</p>
+<p>p.s. <code>mypy</code>, <code>flake8</code> are also great linters. I&#8217;m just not familiar with&nbsp;it</p>
+<h3>2. <a href="https://github.com/python-mode/python-mode">python-mode</a></h3>
+<p>It&#8217;s a powerful package supports not only linters but also plenty of useful features a python programer would&nbsp;need.</p>
+<p><img alt="" src="https://i.imgur.com/5FffIqN.png"><br>
+Unlike <code>ale</code>, <code>python-mode</code> check your code only when you save or open your python file (You can set this in your <code>~/.vimrc</code>)</p>
+<p>Add these lines in <code>~/.vimrc</code>  to enable <code>pylint</code></p>
+<div class="codehilite"><pre><span></span>let g:pymode_lint_checkers = [&#39;pyflakes&#39;, &#39;pylint&#39;, &#39;pep8&#39;]
+let g:pymode_lint_ignore = &quot;C0111,W0621,E501,F0002&quot;
+</pre></div>
+
+
+<p>Note that space cannot appear in <code>pymode_lint_ignore</code></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://lee-w.github.io/tag/code-quality.html">Code Quality</a>
+      <a href="http://lee-w.github.io/tag/vim.html">Vim</a>
+    </p>
+  </div>
+
+
+
+
+  <div class="article-navigation">
+      <a href="http://lee-w.github.io/posts/book/2017/03/take-a-rest" class="article-prev">
+        &larr; [Book]&nbsp;此人進廠維修中
+      </a>
+  </div>
+
+  <div>
+    <ul class="share-buttons">
+      Share on:
+      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//lee-w.github.io/posts/python/2017/03/tools-for-checking-python-coding-style" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+      <li><a href="http://twitter.com/home?status=b'Tool%20for%20Checking%20Python%20Coding%C2%A0Style%20http%3A//lee-w.github.io/posts/python/2017/03/tools-for-checking-python-coding-style'" target="_blank" title="Tweet"><img alt="Tweet" src="/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+      <li><a href="https://plus.google.com/share?url=http%3A//lee-w.github.io/posts/python/2017/03/tools-for-checking-python-coding-style" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
+    </ul>
+   </div>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lee-w-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>&copy; Lee-W </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Life Lies in Traveling ",
+  "url" : "http://lee-w.github.io",
+  "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
+  "description": ""
+}
+</script>
+</body>
+</html>
