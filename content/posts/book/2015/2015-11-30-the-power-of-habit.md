@@ -7,7 +7,7 @@ Slug: the-power-of-habit
 Authors: Lee-W
 ---
 
-![為什麼我們這樣生活，那樣工作](http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/056/00/0010560033.jpg&v=50586da6&w=348&h=348)
+![The Power of Habit](http://i.imgur.com/Mo2J3YWm.jpg)
 
 <!--more-->
 
