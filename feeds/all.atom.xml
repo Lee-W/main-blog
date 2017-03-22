@@ -81,7 +81,7 @@ For further customization, you&amp;#8217;ll have to change this&amp;nbsp;file.&l
 
 &lt;h2&gt;Integrate with&amp;nbsp;Vim&lt;/h2&gt;
 &lt;h3&gt;1. &lt;a href="https://github.com/w0rp/ale"&gt;ale&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="" src="https://i.imgur.com/vwpqY4G.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ale-screenshot" src="https://i.imgur.com/vwpqY4G.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ale&lt;/code&gt; also supports other linters in other languages.&lt;br&gt;
 It uses the new async feature in vim 8.&lt;br&gt;
 Thus, it checks your code when you are typing. (You can disable&amp;nbsp;it.)&lt;/p&gt;
@@ -109,7 +109,7 @@ Thus, you might find that even if you ignore some rules in &lt;code&gt;pylintc&l
 &lt;p&gt;p.s. &lt;code&gt;mypy&lt;/code&gt;, &lt;code&gt;flake8&lt;/code&gt; are also great linters. I&amp;#8217;m just not familiar with&amp;nbsp;it&lt;/p&gt;
 &lt;h3&gt;2. &lt;a href="https://github.com/python-mode/python-mode"&gt;python-mode&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;It&amp;#8217;s a powerful package supports not only linters but also plenty of useful features a python programer would&amp;nbsp;need.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="https://i.imgur.com/5FffIqN.png"&gt;&lt;br&gt;
+&lt;p&gt;&lt;img alt="python-mode-screenshot" src="https://i.imgur.com/5FffIqN.png"&gt;&lt;br&gt;
 Unlike &lt;code&gt;ale&lt;/code&gt;, &lt;code&gt;python-mode&lt;/code&gt; check your code only when you save or open your python file (You can set this in your &lt;code&gt;~/.vimrc&lt;/code&gt;)&lt;/p&gt;
 &lt;p&gt;Add these lines in &lt;code&gt;~/.vimrc&lt;/code&gt;  to enable &lt;code&gt;pylint&lt;/code&gt;&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;let g:pymode_lint_checkers = [&amp;#39;pyflakes&amp;#39;, &amp;#39;pylint&amp;#39;, &amp;#39;pep8&amp;#39;]
@@ -1473,7 +1473,26 @@ brew cask install ngrok
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果今天換作是我們遇到同樣的處境
 
 我們真的能處理得更好嗎？
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Inspiring"></category></entry><entry><title>[Book] 所有問題都是一場賽局</title><link href="http://lee-w.github.io/posts/book/2016/10/how-to-think-like-a-game-theorist" rel="alternate"></link><published>2016-10-15T11:04:00+08:00</published><updated>2016-10-15T11:04:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-15:/posts/book/2016/10/how-to-think-like-a-game-theorist</id><summary type="html">&lt;p&gt;&lt;img alt="How to think like a game theorist" src="http://i.imgur.com/a4TS6Y0m.jpg"&gt;&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Inspiring"></category></entry><entry><title>[Paper] Mining Online Social Data for Detecting Social Network Mental Disorders</title><link href="http://lee-w.github.io/posts/paper/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders" rel="alternate"></link><published>2016-11-18T16:53:00+08:00</published><updated>2016-11-18T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-18:/posts/paper/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders</id><summary type="html">&lt;p&gt;&lt;a href="http://www2016.net/proceedings/proceedings/p275.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders"&gt;Slide&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a href="http://www2016.net/proceedings/proceedings/p275.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders"&gt;Slide&lt;/a&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;This paper proposes a model named &lt;span class="caps"&gt;SNMDD&lt;/span&gt; to detect Social Network Mental Disorder (&lt;span class="caps"&gt;SNMD&lt;/span&gt;) through users&amp;#8217; behaviors on online social networks (&lt;span class="caps"&gt;OSN&lt;/span&gt;) instead of asking their mental condition.&lt;br&gt;
+In addition, multi-source learning (&lt;span class="caps"&gt;FB&lt;/span&gt; and &lt;span class="caps"&gt;IG&lt;/span&gt;) is used to improve performance through &lt;span class="caps"&gt;STM&lt;/span&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="caps"&gt;SNMDD&lt;/span&gt; is a classification model based on &lt;span class="caps"&gt;TSVM&lt;/span&gt;&lt;br&gt;
+The use of domain knowledge from psychology to extract features is the core of this model.&lt;br&gt;
+The most interesting part is choosing features as the proxy features to replace ones that are hard to detect.&lt;br&gt;
+For example, distinguishing whether a social capital is a strong tie or a weak tie is crucial to the detection of &lt;span class="caps"&gt;SNMD&lt;/span&gt;. However, it&amp;#8217;s hard to detect through OSNs data. Thus, it guesses that friends you interacts (e.g. posts, likes, comments) with might be the strong tie&amp;nbsp;ones.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STM&lt;/span&gt; is a tensor model based on Tucker Decomposition&lt;br&gt;
+Through Tucker Decomposition, it&amp;#8217;s possible to combine data from different sources and extract new features&amp;nbsp;vectors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Social Network"></category><category term="Machine Learning"></category></entry><entry><title>[Book] 所有問題都是一場賽局</title><link href="http://lee-w.github.io/posts/book/2016/10/how-to-think-like-a-game-theorist" rel="alternate"></link><published>2016-10-15T11:04:00+08:00</published><updated>2016-10-15T11:04:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-15:/posts/book/2016/10/how-to-think-like-a-game-theorist</id><summary type="html">&lt;p&gt;&lt;img alt="How to think like a game theorist" src="http://i.imgur.com/a4TS6Y0m.jpg"&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="How to think like a game theorist" src="http://i.imgur.com/a4TS6Y0m.jpg"&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -2461,7 +2480,331 @@ e.g.&amp;nbsp;DELL逐步將個人電腦的技術包給華碩，最後華碩自�
 &lt;p&gt;為了變成自己理想中的，每一個人的過程都不同。不管如何，你應該要能回答這樣的問題:「我真的想要變成那樣的人嗎?」&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;「如果我將每日禱告、反思的時間拿來研究迴歸分析，我將後悔莫及。
  每年，我用到計量經濟學工具不過只有幾次，而我對人生目的的認知卻天天都可派上用場」
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Life"></category></entry><entry><title>COSCUP 2016</title><link href="http://lee-w.github.io/posts/conference/2016/08/coscup-2016" rel="alternate"></link><published>2016-08-22T15:36:00+08:00</published><updated>2016-08-22T15:36:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/conference/2016/08/coscup-2016</id><summary type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder共筆&lt;/a&gt;&lt;br&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Life"></category></entry><entry><title>[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks</title><link href="http://lee-w.github.io/posts/paper/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" rel="alternate"></link><published>2016-08-22T16:53:00+08:00</published><updated>2016-08-22T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/paper/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks</id><summary type="html">&lt;p&gt;&lt;a href="http://dl.acm.org/citation.cfm?id=2783392"&gt;original&amp;nbsp;paper&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a href="http://dl.acm.org/citation.cfm?id=2783392"&gt;original&amp;nbsp;paper&lt;/a&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2&gt;1.&amp;nbsp;Introduction&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Problem&amp;nbsp;Description&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A company intends to select a small set of customers to distribute praises of their trial products to a larger&amp;nbsp;group&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Influence&amp;nbsp;maximization&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Goal: Identify a small subset of seed nodes that have the best chance to influence the most number of&amp;nbsp;nodes&lt;/li&gt;
+&lt;li&gt;Competitive Influence Maximization (&lt;span class="caps"&gt;CIM&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Assumption&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Influence is exclusive (Once a node is influenced by one party, it will not be influenced&amp;nbsp;again)      &lt;/li&gt;
+&lt;li&gt;Each round all parties choose one node and then the influence propagates before the next round&amp;nbsp;starts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STORM&lt;/span&gt; (STrategy-Oriented Reinforcement-Learning based influence Maximization)&amp;nbsp;performs&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data Generation&lt;ul&gt;
+&lt;li&gt;the data, which is the experience generated through simulation by applying the current model, will become the feedbacks to refine the model for better&amp;nbsp;performance &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Model&amp;nbsp;Learning &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Difference with&amp;nbsp;Others&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Known strategy -&amp;gt; Both know and unknown&lt;ul&gt;
+&lt;li&gt;Known or Unknown but available to compete -&amp;gt; Train a model to learn&amp;nbsp;strategy&lt;/li&gt;
+&lt;li&gt;Unknown -&amp;gt; Game-theoretical solution to seek the Nash&amp;nbsp;equilibrium     &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Single-roung -&amp;gt;&amp;nbsp;Multi-round&lt;/li&gt;
+&lt;li&gt;Model driven -&amp;gt; learning-based,&amp;nbsp;data-drivern&lt;/li&gt;
+&lt;li&gt;Not considering different network topology -&amp;gt; General to adapt both opponent&amp;#8217;s strategy and environment setting (e.g. underlying network&amp;nbsp;topology)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;2. Problem&amp;nbsp;Statment&lt;/h2&gt;
+&lt;h3&gt;Def 1: Competive Linear Threshold (&lt;span class="caps"&gt;CLT&lt;/span&gt;)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="caps"&gt;CLT&lt;/span&gt; model is a multi-party diffusion&amp;nbsp;model&lt;/li&gt;
+&lt;li&gt;The party who has the highest influence occupied the&amp;nbsp;node&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Def 2: Multi-Round Competitive Influence Maximization (&lt;span class="caps"&gt;MRCIM&lt;/span&gt;)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Max its overall relative&amp;nbsp;influence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;4.&amp;nbsp;Methodology&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="caps"&gt;NP&lt;/span&gt;-hardness of &lt;span class="caps"&gt;MRCIM&lt;/span&gt; -&amp;gt; looks for approxmiate&amp;nbsp;solution&lt;/li&gt;
+&lt;li&gt;Max the inflence for each round does not guarantee overall max&lt;ul&gt;
+&lt;li&gt;Due to the fact that each round are not&amp;nbsp;independent&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4.1 Preliminary: Reinforcement&amp;nbsp;Learning&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn a policy &lt;span class="math"&gt;\(\pi(s)\)&lt;/span&gt; to determine which action to take state s&amp;nbsp;(environment)&lt;/li&gt;
+&lt;li&gt;How to estimated &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;?&lt;ul&gt;
+&lt;li&gt;Expected Accmulated Reward of a state (V function)&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\( V^\pi(s) =&amp;nbsp;E_\pi\{R_t|S_t=s\}=...\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Expected Accmulated Reward of a state-action pair (Q function)&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\( Q^\pi(s, a) = E_\pi\{R_t|S_t=s,&amp;nbsp;a_t=a\}=...\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The optimal &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; can be obtained through Q&amp;nbsp;functinon&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\( \pi = \arg \min_{a\in&amp;nbsp;A}Q(s,a)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;(i.e. For all &amp;#8220;a&amp;#8221; in A, find the &amp;#8220;a&amp;#8221; such that min Q(s,&amp;nbsp;a))&lt;/p&gt;
+&lt;h3&gt;4.2 Strategy-Oriented&amp;nbsp;Reinforcement-Learning&lt;/h3&gt;
+&lt;h4&gt;Setup&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Env&lt;ul&gt;
+&lt;li&gt;Influence propagation&amp;nbsp;process&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Reward&lt;ul&gt;
+&lt;li&gt;Delay Reward: The difference of activated nodes between parties at the last round&lt;ul&gt;
+&lt;li&gt;After the last round, rewards are propagated to the previous states through Q-function&amp;nbsp;updating&lt;/li&gt;
+&lt;li&gt;Slow but more&amp;nbsp;accurate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Action&lt;ul&gt;
+&lt;li&gt;&lt;s&gt;Choosing certain node to activate&lt;/s&gt;&lt;ul&gt;
+&lt;li&gt;too&amp;nbsp;many&lt;/li&gt;
+&lt;li&gt;overfit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Single Party &lt;span class="caps"&gt;IM&lt;/span&gt; strategies&lt;ul&gt;
+&lt;li&gt;Namely, which strategy to choose given the current&amp;nbsp;state&lt;/li&gt;
+&lt;li&gt;The size can be reduced to strategies&amp;nbsp;choosen&lt;/li&gt;
+&lt;li&gt;Chosen Strategies&lt;ul&gt;
+&lt;li&gt;sub-greedy&lt;/li&gt;
+&lt;li&gt;degree-first&lt;/li&gt;
+&lt;li&gt;block&lt;/li&gt;
+&lt;li&gt;max-weight&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;State&lt;ul&gt;
+&lt;li&gt;Represents&lt;ul&gt;
+&lt;li&gt;network&lt;/li&gt;
+&lt;li&gt;environment&amp;nbsp;status&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;s&gt;record the occupation status of all nodes&lt;/s&gt;&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(3^{|V|}\)&lt;/span&gt;, too&amp;nbsp;many&lt;/li&gt;
+&lt;li&gt;overfit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Features Designed&lt;ul&gt;
+&lt;li&gt;Number of free&amp;nbsp;nodes&lt;/li&gt;
+&lt;li&gt;Sum of degrees of all&amp;nbsp;nodes&lt;/li&gt;
+&lt;li&gt;Sum of weight of the edges for which bot h vertices are&amp;nbsp;free&lt;/li&gt;
+&lt;li&gt;Max degree among all free&amp;nbsp;nodes&lt;/li&gt;
+&lt;li&gt;Max sum of free out-edge weight of a node among nodes which are the first player&amp;#8217;s&amp;nbsp;neighbors&lt;/li&gt;
+&lt;li&gt;Second&amp;nbsp;player&amp;#8217;s &lt;/li&gt;
+&lt;li&gt;Max activated nodes of a node for the first player alter two rounds of influence&amp;nbsp;propagation&lt;/li&gt;
+&lt;li&gt;Second&amp;nbsp;player&amp;#8217;s&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The feautres are quantize into&lt;ul&gt;
+&lt;li&gt;low&lt;/li&gt;
+&lt;li&gt;medium&lt;/li&gt;
+&lt;li&gt;high&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Totally, &lt;span class="math"&gt;\(3^9\)&lt;/span&gt;&amp;nbsp;states&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Data For&amp;nbsp;Training&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Propagation model is known (e.g. &lt;span class="caps"&gt;LT&lt;/span&gt; in the&amp;nbsp;experiments)&lt;/li&gt;
+&lt;li&gt;Strategies served as actions are&amp;nbsp;predefined&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In training phase, train the agent aginst a certain strategy and see how it performs on the given network&lt;br&gt;
+These data can be used to learn the value&amp;nbsp;functions&lt;/p&gt;
+&lt;h4&gt;Training Against&amp;nbsp;Opponents&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Opponent Strategy&lt;ul&gt;
+&lt;li&gt;Known: Simulate the strategy during&amp;nbsp;training&lt;/li&gt;
+&lt;li&gt;Unknown but availble during training: Same as&amp;nbsp;above&lt;/li&gt;
+&lt;li&gt;Unknown: More Gerneral Model in&amp;nbsp;4.4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Phase&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Phase 1: Training&lt;ul&gt;
+&lt;li&gt;The agent update its Q function from the simulation experiences throughout the training&amp;nbsp;rounds&lt;/li&gt;
+&lt;li&gt;Update &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; in the&amp;nbsp;meantime&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Phase 2: Competition&lt;ul&gt;
+&lt;li&gt;The agent would not update&amp;nbsp;Q-table&lt;/li&gt;
+&lt;li&gt;Generates &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; according to&amp;nbsp;Q-table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;4.3 &lt;span class="caps"&gt;STORM&lt;/span&gt; with Strategy&amp;nbsp;Known&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Training the model compete against the strategy to learn &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;STORM&lt;/span&gt;-Q&lt;ul&gt;
+&lt;li&gt;Update Q-function following the concept of Q-learning&lt;ul&gt;
+&lt;li&gt;Q-Learning: &lt;span class="math"&gt;\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t,&amp;nbsp;a_t))\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\epsilon\)&lt;/span&gt;-greedy&lt;ul&gt;
+&lt;li&gt;Determine strategies on the current policy derived from&amp;nbsp;Q-table.&lt;/li&gt;
+&lt;li&gt;Explore the new directions to avoid local&amp;nbsp;optimum&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Pure&amp;nbsp;Strategy&lt;/li&gt;
+&lt;li&gt;The most likely strategy is&amp;nbsp;choosen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$ Algorithm&amp;nbsp;$&lt;/p&gt;
+&lt;h2&gt;4.4 &lt;span class="caps"&gt;STORM&lt;/span&gt; with Strategy&amp;nbsp;Unknown&lt;/h2&gt;
+&lt;h3&gt;Unknown but available to&amp;nbsp;train&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The differece between the known case is that experience cannot be obtained through&amp;nbsp;simulation&lt;/li&gt;
+&lt;li&gt;Train against unknown opponent&amp;#8217;s strategy during competition&lt;ul&gt;
+&lt;li&gt;It&amp;#8217;s feasible because &lt;span class="caps"&gt;STORM&lt;/span&gt;-Q only needs to know the seed-selection outcoms of the opponent to update the Q-table, not exact strategy it&amp;nbsp;takes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Unknown&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Goal: Create a general model to compete a variety of rational&amp;nbsp;strategies&lt;/li&gt;
+&lt;li&gt;Assumption: The oppoent is rational (Wants to max influence and knows its oppoent wants&amp;nbsp;so)&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;STORM&lt;/span&gt;-&lt;span class="caps"&gt;QQ&lt;/span&gt;&lt;ul&gt;
+&lt;li&gt;Two &lt;span class="caps"&gt;STROM&lt;/span&gt;-Q compete and update Q-tabale at the same&amp;nbsp;time&lt;/li&gt;
+&lt;li&gt;Using current Q-table during training&amp;nbsp;phase&lt;/li&gt;
+&lt;li&gt;Pure Strategy&lt;ul&gt;
+&lt;li&gt;Does Not guarantee that equilibrium exists in &lt;span class="caps"&gt;MRCIM&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STORM&lt;/span&gt;-&lt;span class="caps"&gt;MM&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mix Strategy (Samples an action from the distribution of actions in each&amp;nbsp;state)&lt;/li&gt;
+&lt;li&gt;In two-player zero-sum game&lt;ul&gt;
+&lt;li&gt;Nash equilibrium is graranteed to exist with miexed&amp;nbsp;strategies&lt;/li&gt;
+&lt;li&gt;Use &lt;span class="caps"&gt;MINMAX&lt;/span&gt; theorem to find the&amp;nbsp;equilibrium&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(Q(s, a, o)\)&lt;/span&gt;: The reward of first party when using strategy &lt;span class="math"&gt;\(a\)&lt;/span&gt; against oppoent&amp;#8217;s strategy &lt;span class="math"&gt;\(o\)&lt;/span&gt; in state &lt;span class="math"&gt;\(s\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma&amp;nbsp;V(s_{t+1})]\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Operations&amp;nbsp;Research&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The differece between &lt;span class="caps"&gt;STROM&lt;/span&gt;-&lt;span class="caps"&gt;QQ&lt;/span&gt; and &lt;span class="caps"&gt;STORM&lt;/span&gt;-&lt;span class="caps"&gt;MM&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;span class="caps"&gt;STROM&lt;/span&gt;-&lt;span class="caps"&gt;QQ&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;&lt;span class="caps"&gt;STROM&lt;/span&gt;-&lt;span class="caps"&gt;MM&lt;/span&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Max the reward in their own Q-table&lt;/td&gt;
+&lt;td&gt;Finds equilibrium with one Q-table and determines both side&amp;#8217;s &lt;span class="math"&gt;\(a\)&lt;/span&gt; at the same time&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Pure Strategies&lt;/td&gt;
+&lt;td&gt;Mixed Strategies&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Choose strategy by greedy&lt;/td&gt;
+&lt;td&gt;Samples from the mixed strategy &lt;span class="math"&gt;\(\pi_a\)&lt;/span&gt; or &lt;span class="math"&gt;\(\pi_o\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Ideally, they should have simliar result in two-party &lt;span class="caps"&gt;MRCIM&lt;/span&gt;. In practice, the result might not due to&lt;ul&gt;
+&lt;li&gt;&lt;span class="caps"&gt;STORM&lt;/span&gt;-&lt;span class="caps"&gt;QQ&lt;/span&gt; does not guarantee&amp;nbsp;equilibrium&lt;/li&gt;
+&lt;li&gt;Although equilibrium exists in &lt;span class="caps"&gt;STORM&lt;/span&gt;-&lt;span class="caps"&gt;MM&lt;/span&gt;. It does not guarantee to be found due to lack of training data or bad init or such&amp;nbsp;problems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Social Network"></category><category term="Machine Learning"></category><category term="Game Theory"></category></entry><entry><title>COSCUP 2016</title><link href="http://lee-w.github.io/posts/conference/2016/08/coscup-2016" rel="alternate"></link><published>2016-08-22T15:36:00+08:00</published><updated>2016-08-22T15:36:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/conference/2016/08/coscup-2016</id><summary type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder共筆&lt;/a&gt;&lt;br&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder共筆&lt;/a&gt;&lt;br&gt;
 &lt;!--more--&gt;&lt;/p&gt;
 &lt;h1&gt;Day1&lt;/h1&gt;

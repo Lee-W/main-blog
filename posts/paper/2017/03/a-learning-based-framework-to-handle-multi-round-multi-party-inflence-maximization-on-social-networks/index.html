@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/xcode.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/font-awesome.min.css">
+
+    <link href="http://localhost:8000/static/custom.css" rel="stylesheet">
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Lee-W" />
+<meta name="description" content="" />
+<meta name="keywords" content="Social Network">
+<meta property="og:site_name" content="Life Lies in Traveling"/>
+<meta property="og:title" content="[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000/posts/paper/2017/03/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-03-22 16:53:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://localhost:8000/author/lee-w.html">
+<meta property="article:section" content="Paper"/>
+<meta property="article:tag" content="Social Network"/>
+<meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
+
+  <title>Life Lies in Traveling &ndash; [Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://localhost:8000">
+        <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
+      </a>
+      <h1><a href="http://localhost:8000">Lee-W</a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="http://localhost:8000/pages/about-me.html#about-me">About&nbsp;Me</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-rss" href="//lee-w.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://localhost:8000">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks">[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social&nbsp;Networks</h1>
+    <p>
+          Posted on 2017/03/22 - 三 in <a href="http://localhost:8000/category/paper.html">Paper</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2>1.&nbsp;Introduction</h2>
+<ul>
+<li>
+<p>Problem&nbsp;Description</p>
+<ul>
+<li>A company intends to select a small set of customers to distribute praises of their trial products to a larger&nbsp;group</li>
+</ul>
+</li>
+<li>
+<p>Influence&nbsp;maximization</p>
+<ul>
+<li>Goal: Identify a small subset of seed nodes that have the best chance to influence the most number of&nbsp;nodes</li>
+<li>Competitive Influence Maximization (<span class="caps">CIM</span>)</li>
+</ul>
+</li>
+<li>
+<p>Assumption</p>
+<ul>
+<li>Influence is exclusive (Once a node is influenced by one party, it will not be influenced&nbsp;again)      </li>
+<li>Each round all parties choose one node and then the influence propagates before the next round&nbsp;starts</li>
+</ul>
+</li>
+<li>
+<p><span class="caps">STORM</span> (STrategy-Oriented Reinforcement-Learning based influence Maximization)&nbsp;performs</p>
+<ul>
+<li>Data Generation<ul>
+<li>the data, which is the experience generated through simulation by applying the current model, will become the feedbacks to refine the model for better&nbsp;performance </li>
+</ul>
+</li>
+<li>Model&nbsp;Learning </li>
+</ul>
+</li>
+</ul>
+<h3>Difference with&nbsp;Others</h3>
+<ol>
+<li>Known strategy -&gt; Both know and unknown<ul>
+<li>Known or Unknown but available to compete -&gt; Train a model to learn&nbsp;strategy</li>
+<li>Unknown -&gt; Game-theoretical solution to seek the Nash&nbsp;equilibrium     </li>
+</ul>
+</li>
+<li>Single-roung -&gt;&nbsp;Multi-round</li>
+<li>Model driven -&gt; learning-based,&nbsp;data-drivern</li>
+<li>Not considering different network topology -&gt; General to adapt both opponent&#8217;s strategy and environment setting (e.g. underlying network&nbsp;topology)</li>
+</ol>
+<h2>2. Problem&nbsp;Statment</h2>
+<h3>Def 1: Competive Linear Threshold (<span class="caps">CLT</span>)</h3>
+<ul>
+<li><span class="caps">CLT</span> model is a multi-party diffusion&nbsp;model</li>
+<li>The party who has the highest influence occupied the&nbsp;node</li>
+</ul>
+<h3>Def 2: Multi-Round Competitive Influence Maximization (<span class="caps">MRCIM</span>)</h3>
+<ul>
+<li>Max its overall relative&nbsp;influence</li>
+</ul>
+<h2>4.&nbsp;Methodology</h2>
+<ul>
+<li><span class="caps">NP</span>-hardness of <span class="caps">MRCIM</span> -&gt; looks for approxmiate&nbsp;solution</li>
+<li>Max the inflence for each round does not guarantee overall max<ul>
+<li>Due to the fact that each round are not&nbsp;independent</li>
+</ul>
+</li>
+</ul>
+<h3>4.1 Preliminary: Reinforcement&nbsp;Learning</h3>
+<ul>
+<li>Learn a policy <span class="math">\(\pi(s)\)</span> to determine which action to take state s&nbsp;(environment)</li>
+<li>How to estimated <span class="math">\(\pi\)</span>?<ul>
+<li>Expected Accmulated Reward of a state (V function)<ul>
+<li><span class="math">\( V^\pi(s) =&nbsp;E_\pi\{R_t|S_t=s\}=...\)</span></li>
+</ul>
+</li>
+<li>Expected Accmulated Reward of a state-action pair (Q function)<ul>
+<li><span class="math">\( Q^\pi(s, a) = E_\pi\{R_t|S_t=s,&nbsp;a_t=a\}=...\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The optimal <span class="math">\(\pi\)</span> can be obtained through Q&nbsp;functinon</p>
+<p><span class="math">\( \pi = \arg \min_{a\in&nbsp;A}Q(s,a)\)</span></p>
+<p>(i.e. For all &#8220;a&#8221; in A, find the &#8220;a&#8221; such that min Q(s,&nbsp;a))</p>
+<h3>4.2 Strategy-Oriented&nbsp;Reinforcement-Learning</h3>
+<h4>Setup</h4>
+<ul>
+<li>Env<ul>
+<li>Influence propagation&nbsp;process</li>
+</ul>
+</li>
+<li>Reward<ul>
+<li>Delay Reward: The difference of activated nodes between parties at the last round<ul>
+<li>After the last round, rewards are propagated to the previous states through Q-function&nbsp;updating</li>
+<li>Slow but more&nbsp;accurate</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Action<ul>
+<li><s>Choosing certain node to activate</s><ul>
+<li>too&nbsp;many</li>
+<li>overfit</li>
+</ul>
+</li>
+<li>Single Party <span class="caps">IM</span> strategies<ul>
+<li>Namely, which strategy to choose given the current&nbsp;state</li>
+<li>The size can be reduced to strategies&nbsp;choosen</li>
+<li>Chosen Strategies<ul>
+<li>sub-greedy</li>
+<li>degree-first</li>
+<li>block</li>
+<li>max-weight</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>State<ul>
+<li>Represents<ul>
+<li>network</li>
+<li>environment&nbsp;status</li>
+</ul>
+</li>
+<li><s>record the occupation status of all nodes<s><ul>
+<li><span class="math">\(3^{|V|}\)</span>, too&nbsp;many</li>
+<li>overfit</li>
+</ul>
+</li>
+<li>Features Designed<ul>
+<li>Number of free&nbsp;nodes</li>
+<li>Sum of degrees of all&nbsp;nodes</li>
+<li>Sum of weight of the edges for which bot h vertices are&nbsp;free</li>
+<li>Max degree among all free&nbsp;nodes</li>
+<li>Max sum of free out-edge weight of a node among nodes which are the first player&#8217;s&nbsp;neighbors</li>
+<li>Second&nbsp;player&#8217;s </li>
+<li>Max activated nodes of a node for the first player alter two rounds of influence&nbsp;propagation</li>
+<li>Second&nbsp;player&#8217;s</li>
+</ul>
+</li>
+<li>The feautres are quantize into<ul>
+<li>low</li>
+<li>medium</li>
+<li>high</li>
+</ul>
+</li>
+<li>Totally, <span class="math">\(3^9\)</span>&nbsp;states</li>
+</ul>
+</li>
+</ul>
+<h4>Data For&nbsp;Training</h4>
+<ul>
+<li>Propagation model is known (e.g. <span class="caps">LT</span> in the&nbsp;experiments)</li>
+<li>Strategies served as actions are&nbsp;predefined</li>
+</ul>
+<p>In training phase, train the agent aginst a certain strategy and see how it performs on the given network<br>
+These data can be used to learn the value&nbsp;functions</p>
+<h4>Training Against&nbsp;Opponents</h4>
+<ul>
+<li>Opponent Strategy<ul>
+<li>Known: Simulate the strategy during&nbsp;training</li>
+<li>Unknown but availble during training: Same as&nbsp;above</li>
+<li>Unknown: More Gerneral Model in&nbsp;4.4</li>
+</ul>
+</li>
+</ul>
+<h4>Phase</h4>
+<ul>
+<li>Phase 1: Training<ul>
+<li>The agent update its Q function from the simulation experiences throughout the training&nbsp;rounds</li>
+<li>Update <span class="math">\(\pi\)</span> in the&nbsp;meantime</li>
+</ul>
+</li>
+<li>Phase 2: Competition<ul>
+<li>The agent would not update&nbsp;Q-table</li>
+<li>Generates <span class="math">\(\pi\)</span> according to&nbsp;Q-table</li>
+</ul>
+</li>
+</ul>
+<h2>4.3 <span class="caps">STORM</span> with Strategy&nbsp;Known</h2>
+<ul>
+<li>Training the model compete against the strategy to learn <span class="math">\(\pi\)</span></li>
+<li><span class="caps">STORM</span>-Q<ul>
+<li>Update Q-function following the concept of Q-learning<ul>
+<li>Q-Learning: <span class="math">\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t,&nbsp;a_t))\)</span></li>
+</ul>
+</li>
+<li><span class="math">\(\epsilon\)</span>-greedy<ul>
+<li>Determine strategies on the current policy derived from&nbsp;Q-table.</li>
+<li>Explore the new directions to avoid local&nbsp;optimum</li>
+</ul>
+</li>
+<li>Pure&nbsp;Strategy</li>
+<li>The most likely strategy is&nbsp;choosen</li>
+</ul>
+</li>
+</ul>
+<p>$ Algorithm&nbsp;$</p>
+<h2>4.4 <span class="caps">STORM</span> with Strategy&nbsp;Unknown</h2>
+<h3>Unknown but available to&nbsp;train</h3>
+<ul>
+<li>The differece between the known case is that experience cannot be obtained through&nbsp;simulation</li>
+<li>Train against unknown opponent&#8217;s strategy during competition<ul>
+<li>It&#8217;s feasible because <span class="caps">STORM</span>-Q only needs to know the seed-selection outcoms of the opponent to update the Q-table, not exact strategy it&nbsp;takes</li>
+</ul>
+</li>
+</ul>
+<h3>Unknown</h3>
+<ul>
+<li>Goal: Create a general model to compete a variety of rational&nbsp;strategies</li>
+<li>Assumption: The oppoent is rational (Wants to max influence and knows its oppoent wants&nbsp;so)</li>
+<li><span class="caps">STORM</span>-<span class="caps">QQ</span><ul>
+<li>Two <span class="caps">STROM</span>-Q compete and update Q-tabale at the same&nbsp;time</li>
+<li>Using current Q-table during training&nbsp;phase</li>
+<li>Pure Strategy<ul>
+<li>Does Not guarantee that equilibrium exists in <span class="caps">MRCIM</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="caps">STORM</span>-<span class="caps">MM</span></p>
+<ul>
+<li>Mix Strategy (Samples an action from the distribution of actions in each&nbsp;state)</li>
+<li>In two-player zero-sum game<ul>
+<li>Nash equilibrium is graranteed to exist with miexed&nbsp;strategies</li>
+<li>Use <span class="caps">MINMAX</span> theorem to find the&nbsp;equilibrium</li>
+</ul>
+</li>
+<li><span class="math">\(Q(s, a, o)\)</span>: The reward of first party when using strategy <span class="math">\(a\)</span> against oppoent&#8217;s strategy <span class="math">\(o\)</span> in state <span class="math">\(s\)</span></li>
+<li><span class="math">\(Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma&nbsp;V(s_{t+1})]\)</span></li>
+<li>Operations&nbsp;Research</li>
+</ul>
+</li>
+<li>
+<p>The differece between <span class="caps">STROM</span>-<span class="caps">QQ</span> and <span class="caps">STORM</span>-<span class="caps">MM</span></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><span class="caps">STROM</span>-<span class="caps">QQ</span></th>
+<th><span class="caps">STROM</span>-<span class="caps">MM</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max the reward in their own Q-table</td>
+<td>Finds equilibrium with one Q-table and determines both side&#8217;s <span class="math">\(a\)</span> at the same time</td>
+</tr>
+<tr>
+<td>Pure Strategies</td>
+<td>Mixed Strategies</td>
+</tr>
+<tr>
+<td>Choose strategy by greedy</td>
+<td>Samples from the mixed strategy <span class="math">\(\pi_a\)</span> or <span class="math">\(\pi_o\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Ideally, they should have simliar result in two-party <span class="caps">MRCIM</span>. In practice, the result might not due to<ul>
+<li><span class="caps">STORM</span>-<span class="caps">QQ</span> does not guarantee&nbsp;equilibrium</li>
+<li>Although equilibrium exists in <span class="caps">STORM</span>-<span class="caps">MM</span>. It does not guarantee to be found due to lack of training data or bad init or such&nbsp;problems.</li>
+</ul>
+</li>
+</ul>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://localhost:8000/tag/social-network.html">Social Network</a>
+    </p>
+  </div>
+
+
+
+
+  <div class="article-navigation">
+      <a href="http://localhost:8000/posts/conference/2017/03/sitcon-2017" class="article-prev">
+        &larr; <span class="caps">SITCON</span>&nbsp;2017
+      </a>
+  </div>
+
+  <div>
+    <ul class="share-buttons">
+      Share on:
+      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//localhost%3A8000/posts/paper/2017/03/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+      <li><a href="http://twitter.com/home?status=b'%5BPaper%5D%20A%20Learning-based%20Framework%20to%20Handle%20Multi-round%20Multi-party%20Influence%20Maximization%20on%20Social%C2%A0Networks%20http%3A//localhost%3A8000/posts/paper/2017/03/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks'" target="_blank" title="Tweet"><img alt="Tweet" src="/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+      <li><a href="https://plus.google.com/share?url=http%3A//localhost%3A8000/posts/paper/2017/03/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
+    </ul>
+   </div>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lee-w-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>&copy; Lee-W </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Life Lies in Traveling ",
+  "url" : "http://localhost:8000",
+  "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
+  "description": ""
+}
+</script>
+</body>
+</html>
