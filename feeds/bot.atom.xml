@@ -914,7 +914,9 @@ brew cask install ngrok
 做一個最簡單只會Echo的Chat&amp;nbsp;Bot&lt;/p&gt;
 &lt;h1&gt;Reference&lt;/h1&gt;
 &lt;p&gt;這篇文章整理了相當多的相關資源&lt;br&gt;
-&lt;a href="https://stanfy.com/blog/the-rise-of-chat-bots-useful-links-articles-libraries-and-platforms/"&gt;The Rise of Chat Bots: Useful Links, Articles, Libraries and Platforms&lt;/a&gt;&lt;br&gt;&amp;nbsp;相當推薦對ChatBot有興趣的人參考&lt;/p&gt;</content><category term="Line"></category></entry><entry><title>COSCUP 2016 小啄如何實作的</title><link href="http://lee-w.github.io/posts/bot/2016/10/coscup-2016-how-to-implement-small-pecks" rel="alternate"></link><published>2016-10-01T11:50:00+08:00</published><updated>2016-10-01T11:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-01:/posts/bot/2016/10/coscup-2016-how-to-implement-small-pecks</id><summary type="html">&lt;p&gt;今年COSCUP的聊天機器人「小啄」&lt;br&gt;
+&lt;a href="https://stanfy.com/blog/the-rise-of-chat-bots-useful-links-articles-libraries-and-platforms/"&gt;The Rise of Chat Bots: Useful Links, Articles, Libraries and Platforms&lt;/a&gt;&lt;br&gt;&amp;nbsp;相當推薦對ChatBot有興趣的人參考&lt;/p&gt;
+&lt;h1&gt;Slide&lt;/h1&gt;
+&lt;p&gt;如果有點不喜歡看文章的，也可以看看&lt;a href="https://hackmd.io/p/HkW8LjRfl#/"&gt;slide&lt;/a&gt;的版本&lt;/p&gt;</content><category term="Line"></category></entry><entry><title>COSCUP 2016 小啄如何實作的</title><link href="http://lee-w.github.io/posts/bot/2016/10/coscup-2016-how-to-implement-small-pecks" rel="alternate"></link><published>2016-10-01T11:50:00+08:00</published><updated>2016-10-01T11:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-01:/posts/bot/2016/10/coscup-2016-how-to-implement-small-pecks</id><summary type="html">&lt;p&gt;今年COSCUP的聊天機器人「小啄」&lt;br&gt;
 終於在今天宣告退休了&lt;br&gt;
 退休前他讓我們詢問了「你是如何實作的」&lt;br&gt;
 這邊是我測試的所有結果&lt;br&gt;
