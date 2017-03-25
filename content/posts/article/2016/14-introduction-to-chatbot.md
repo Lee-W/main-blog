@@ -82,3 +82,6 @@ e.g. Line Chat Bot 架構
 這篇文章整理了相當多的相關資源
 [The Rise of Chat Bots: Useful Links, Articles, Libraries and Platforms](https://stanfy.com/blog/the-rise-of-chat-bots-useful-links-articles-libraries-and-platforms/)
 相當推薦對ChatBot有興趣的人參考
+
+# Slide
+如果有點不喜歡看文章的，也可以看看[slide](https://hackmd.io/p/HkW8LjRfl#/)的版本

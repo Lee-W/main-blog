@@ -1,7 +1,7 @@
 ---
 Title: [Book] 隨機騙局
 Date: 2016-04-05 14:02
-Category: Article
+Category: Book
 Tags: Other
 Slug: fooled-by-randomness
 Authors: Lee-W
