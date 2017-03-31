@@ -21,13 +21,14 @@ I'm a
 This page is served as a not so formal CV and briefly introduces what I've done.
 
 ## Education
+- 2016-2018(Expeect)
+	- NCKU
+	- Master, Computer Science and Information Engineering
 - 2011-2015
 	- NCKU
 	- Bachelor, Industrial and Information Management
 	- Double Major: Computer Science and Information Engineering 
-- 2016-2018(Expeect)
-	- NCKU
-	- Master, Computer Science and Information Engineering
+
 
 ## Experience
 - 2015-2016
