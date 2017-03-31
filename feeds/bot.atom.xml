@@ -459,7 +459,7 @@ python3 manage.py startapp echobot
 
 &lt;span class="n"&gt;urlpatterns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
     &lt;span class="o"&gt;......&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;^echobot/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;include&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;echobot.urls&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+    &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;r&amp;#39;^echobot/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;include&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;echobot.urls&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
 &lt;span class="p"&gt;]&lt;/span&gt;
 
 &lt;span class="o"&gt;......&lt;/span&gt;
@@ -750,7 +750,7 @@ brew cask install ngrok
 &lt;p&gt;預設django的port是8000&lt;br&gt;
 這裡並不需要使用0.0.0.0:8000，讓外部可以連到這個django server&lt;br&gt;&amp;nbsp;ngrok會把request傳到local端相對應的port&lt;/p&gt;
 &lt;p&gt;接著就要用ngrok將request導到本地端的port&amp;nbsp;8000&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ngrok http &lt;span class="m"&gt;8000&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ngrok http 8000
 &lt;/pre&gt;&lt;/div&gt;
 
 
