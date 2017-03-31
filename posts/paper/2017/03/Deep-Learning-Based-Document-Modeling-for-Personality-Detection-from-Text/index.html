@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/xcode.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/font-awesome.min.css">
+
+    <link href="http://localhost:8000/static/custom.css" rel="stylesheet">
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Lee-W" />
+<meta name="description" content="Summary: Paper Implementation: Personality-Detection" />
+<meta name="keywords" content="Deep Learning, Machine Learning, NLP, Big Five Theory, Personality">
+<meta property="og:site_name" content="Life Lies in Traveling"/>
+<meta property="og:title" content="[Paper] Deep Learning-Based Document Modeling for Personality Detection from Text"/>
+<meta property="og:description" content="Summary: Paper Implementation: Personality-Detection"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000/posts/paper/2017/03/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-03-29 09:36:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://localhost:8000/author/lee-w.html">
+<meta property="article:section" content="Paper"/>
+<meta property="article:tag" content="Deep Learning"/>
+<meta property="article:tag" content="Machine Learning"/>
+<meta property="article:tag" content="NLP"/>
+<meta property="article:tag" content="Big Five Theory"/>
+<meta property="article:tag" content="Personality"/>
+<meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
+
+  <title>Life Lies in Traveling &ndash; [Paper] Deep Learning-Based Document Modeling for Personality Detection from Text</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://localhost:8000">
+        <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
+      </a>
+      <h1><a href="http://localhost:8000">Lee-W</a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="http://localhost:8000/pages/about-me.html#about-me">About&nbsp;Me</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-rss" href="//lee-w.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://localhost:8000">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text">[Paper] Deep Learning-Based Document Modeling for Personality Detection from&nbsp;Text</h1>
+    <p>
+          Posted on 2017/03/29 - 三 in <a href="http://localhost:8000/category/paper.html">Paper</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2>Summary:</h2>
+<p><a href="https://sentic.net/deep-learning-based-personality-detection.pdf">Paper</a><br>
+Implementation: <a href="https://github.com/SenticNet/Personality-Detection">Personality-Detection</a></p>
+<!--more-->
+
+<h2>Practical Application of Personality&nbsp;Detection</h2>
+<ul>
+<li>Product and Service Recommandation (People with similiar personalities might have similiar&nbsp;favors)</li>
+<li>Mental Health&nbsp;Diagnosis</li>
+<li>Forensics: Reduce the circle of&nbsp;suspects</li>
+<li>Human Resource: One&#8217;s suitablitlty for certain&nbsp;jobs </li>
+</ul>
+<h2>Personality Theory Used in This&nbsp;Paper</h2>
+<p><a href="https://en.wikipedia.org/wiki/Big_Five_personality_traits">Big Five Personality&nbsp;Trait</a></p>
+<h2>Idea</h2>
+<ol>
+<li>Feed Sentences from essays to convolution filter → Sentence model in the form of n-gram feature&nbsp;vectors</li>
+<li>Aggregate the vectors of its sentences and combine with Masiresse features to represent the&nbsp;document</li>
+<li>Classification: Feed document vector into a fully connected neural network with one hidden&nbsp;layer</li>
+</ol>
+<h2>Overview of the&nbsp;Method</h2>
+<h3>1.&nbsp;Preprocessing</h3>
+<ul>
+<li>Sentence&nbsp;Splitting</li>
+<li>Data&nbsp;Cleaning</li>
+<li>Unification (e.g.&nbsp;lowercase)</li>
+</ul>
+<h3>2. Document-level feature&nbsp;extraction</h3>
+<p>Mairesse baseline feature set (e.g. word count, average sentence&nbsp;length)</p>
+<h3>3.&nbsp;Filtering</h3>
+<p>Sentences without personliaty clues are&nbsp;dropped</p>
+<h3>4. Word-level feature&nbsp;extraction</h3>
+<ul>
+<li>word2vec embeddings → a variable-length feature set for the&nbsp;document</li>
+<li>variable number of fixed-length word feature vectors → variable number of sentences →&nbsp;document</li>
+</ul>
+<h3>5.&nbsp;Classfication</h3>
+<p>Deep <span class="caps">CNN</span> (Conolutional Nerual&nbsp;Network)</p>
+<ul>
+<li>Input<ul>
+<li>words: Fixed-length feature vector using&nbsp;word2vec</li>
+<li>sentences: A variable number of word&nbsp;vectors</li>
+</ul>
+</li>
+<li>Process<ul>
+<li>Word Vector is reduces to a fixed length vector of each&nbsp;sentence</li>
+<li>Documents: a variable number of such fixed-length sentence&nbsp;embeddings</li>
+<li>Document vector is then reduced to a fixed-length document&nbsp;vector</li>
+<li>This Document vector is then concatenated with document-level&nbsp;features</li>
+</ul>
+</li>
+<li>Predict<ul>
+<li>Yes / No (5 different personality traits are trained&nbsp;seperately) </li>
+</ul>
+</li>
+</ul>
+<h2>Network&nbsp;Architecture</h2>
+<h3>Main Steps (7&nbsp;Layers)</h3>
+<h4>Word&nbsp;Vectorization</h4>
+<ul>
+<li>Layer 1: Input<ul>
+<li><span class="math">\( R ^{D \times S\times W \times&nbsp;E}\)</span> </li>
+<li>Use Google&#8217;s pretrained&nbsp;word2vec</li>
+<li>In implementation, all the documents contain the same number of sentences.<br>
+  Shorter documents are padded shorter sentences with dummy&nbsp;words.</li>
+</ul>
+</li>
+</ul>
+<h4>Sentence&nbsp;Vectorization</h4>
+<ul>
+<li>Layer 2:&nbsp;Convolution</li>
+<li>Layer 3: Max&nbsp;Polling</li>
+</ul>
+<h4>Document&nbsp;Vectorization</h4>
+<ul>
+<li>Layer 4: 1-max&nbsp;pooling</li>
+</ul>
+<h4>Classification:&nbsp;(Yes/No)</h4>
+<ul>
+<li>Layer 5: Linear with Sigmoid&nbsp;activation</li>
+<li>Layer 6, 7: 2 Neuron Softmax&nbsp;Output</li>
+</ul>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://localhost:8000/tag/deep-learning.html">Deep Learning</a>
+      <a href="http://localhost:8000/tag/machine-learning.html">Machine Learning</a>
+      <a href="http://localhost:8000/tag/nlp.html">NLP</a>
+      <a href="http://localhost:8000/tag/big-five-theory.html">Big Five Theory</a>
+      <a href="http://localhost:8000/tag/personality.html">Personality</a>
+    </p>
+  </div>
+
+
+
+
+  <div class="article-navigation">
+      <a href="http://localhost:8000/posts/book/2017/03/worker" class="article-prev">
+        &larr; [Book]&nbsp;做工的人
+      </a>
+  </div>
+
+  <div>
+    <ul class="share-buttons">
+      Share on:
+      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//localhost%3A8000/posts/paper/2017/03/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+      <li><a href="http://twitter.com/home?status=b'%5BPaper%5D%20Deep%20Learning-Based%20Document%20Modeling%20for%20Personality%20Detection%20from%C2%A0Text%20http%3A//localhost%3A8000/posts/paper/2017/03/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text'" target="_blank" title="Tweet"><img alt="Tweet" src="/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+      <li><a href="https://plus.google.com/share?url=http%3A//localhost%3A8000/posts/paper/2017/03/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
+    </ul>
+   </div>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lee-w-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>&copy; Lee-W </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Life Lies in Traveling ",
+  "url" : "http://localhost:8000",
+  "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
+  "description": ""
+}
+</script>
+</body>
+</html>
