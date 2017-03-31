@@ -1,5 +1,3 @@
-[submodule "output"]
-	path = output
-    url = https://github.com/Lee-W/Lee-W.github.io
-    ignore = all
-
+[submodule "theme/Flex"]
+	path = theme/Flex
+	url = https://github.com/Lee-W/Flex

@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
-import os
-
-HOME = os.path.expanduser("~")
 
 
 PATH = 'content'
@@ -39,7 +36,7 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['extra', 'images']
 
 # Theme Setting
-THEME = os.path.join(HOME, "pelican-themes/Flex/")
+THEME = 'theme/Flex/'
 PYGMENTS_STYLE = 'xcode'
 # EXTRA_TEMPLATES_PATHS = ['templates/']
 EXTRA_PATH_METADATA = {
@@ -75,6 +72,5 @@ MARKDOWN = {
 
 # Plugin-setting
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['another_read_more_link',  'series', 'render_math',
-           'neighbors', 'share_post']
+PLUGINS = ['another_read_more_link', 'series', 'render_math', 'neighbors', 'share_post']
 ANOTHER_READ_MORE_LINK = ''
