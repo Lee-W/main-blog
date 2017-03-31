@@ -14,7 +14,7 @@ Summary:
 
 <!--more-->
 當初看到這封信的時候，很是感動啊xd
-![accepted]({filename}/images/posts-image/2017-02-28/1-accepted.jpg)
+![accepted]({filename}/images/posts-image/2017-02-28-git-ignoreio-and-open-source-experience/1-accepted.jpg)
 
 ## git ignore-io
 這個工具主要是從[gitignoore.io](https://www.gitignore.io)上下載.gitignore的範本
