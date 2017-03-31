@@ -30,21 +30,22 @@
 
 <meta name="author" content="Lee-W" />
 <meta name="description" content="" />
-<meta name="keywords" content="Telegram">
+<meta name="keywords" content="Telegram, Flask">
 <meta property="og:site_name" content="Life Lies in Traveling"/>
-<meta property="og:title" content="Create a Telegram Bot"/>
+<meta property="og:title" content="Create a Telegram EchoBot"/>
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://localhost:8000/drafts/create-a-telegram-bot.html"/>
+<meta property="og:url" content="http://localhost:8000/drafts/create-a-telegram-echobot.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2017-03-23 22:28:00+08:00"/>
+<meta property="article:published_time" content="2017-03-31 19:24:00+08:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="http://localhost:8000/author/lee-w.html">
 <meta property="article:section" content="Bot"/>
 <meta property="article:tag" content="Telegram"/>
+<meta property="article:tag" content="Flask"/>
 <meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
 
-  <title>Life Lies in Traveling &ndash; Create a Telegram Bot</title>
+  <title>Life Lies in Traveling &ndash; Create a Telegram EchoBot</title>
 
 </head>
 <body>
@@ -89,9 +90,9 @@
 
 <article class="single">
   <header>
-    <h1 id="create-a-telegram-bot">Create a Telegram&nbsp;Bot</h1>
+    <h1 id="create-a-telegram-echobot">Create a Telegram&nbsp;EchoBot</h1>
     <p>
-          Posted on 2017/03/23 - 四 in <a href="http://localhost:8000/category/bot.html">Bot</a>
+          Posted on 2017/03/31 - 五 in <a href="http://localhost:8000/category/bot.html">Bot</a>
 
 
     </p>
@@ -99,9 +100,16 @@
 
 
   <div>
-    <h1>Create a Telegram&nbsp;Bot</h1>
-<p>首先你必須先有telegram(???)<br>
-並且加<a href="https://telegram.me/botfather">BotFather</a>為好友</p>
+    <p>最近當助教要出一個Telegram Bot相關的Project<br>&nbsp;就來寫一篇簡單的教學，減少大家之後的問題XDD</p>
+<!--more-->
+
+<p>上次寫Line EchoBot的教學是用django (其實repo中也有flask跟sanic的版本)<br>&nbsp;這次來試試看用Flask開發</p>
+<p>Source Code同樣放在Github上<br>
+這篇文章會用<a href="https://github.com/Lee-W/telegram_echobot/tree/minimal-flask">minimal-flask</a>這個branch的範例，只有31行，比較容易理解<br>
+<a href="https://github.com/Lee-W/telegram_echobot/tree/master">master</a>上的則是最近剛好在學flask，用了blueprint之類的概念，之後可能還會多加一些奇怪的功能xd</p>
+<h2>Apply a telegram&nbsp;bot</h2>
+<p>當然首先你必須先有telegram<br>
+接著你要加<a href="https://telegram.me/botfather">BotFather</a>為好友</p>
 <p>然後跟他說<code>/newbot</code><br>
 接著他就會問你，name跟username<br>
 其中uesrname必須要用bot結尾<br>
@@ -109,6 +117,40 @@
 <div class="codehilite"><pre><span></span>The name of your bot is displayed in contact details and elsewhere.
 
 The Username is a short name, to be used in mentions and telegram.me links. Usernames are 5-32 characters long and are case insensitive, but may only include Latin characters, numbers, and underscores. Your bot&#39;s username must end in ‘bot’, e.g. ‘tetris_bot’ or ‘TetrisBot’.
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">telegram</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;Your API Token&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_set_webhook</span><span class="p">():</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">&#39;https://79f7ae1b.ngrok.io/hook&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">status</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Webhook setup failed&#39;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/hook&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">webhook_handler</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
+        <span class="n">update</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Update</span><span class="o">.</span><span class="n">de_json</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span> <span class="n">bot</span><span class="p">)</span>
+
+        <span class="n">text</span> <span class="o">=</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span>
+
+        <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;ok&#39;</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">_set_webhook</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 
 
@@ -120,6 +162,7 @@ The Username is a short name, to be used in mentions and telegram.me links. User
   <div class="tag-cloud">
     <p>
       <a href="http://localhost:8000/tag/telegram.html">Telegram</a>
+      <a href="http://localhost:8000/tag/flask.html">Flask</a>
     </p>
   </div>
 
