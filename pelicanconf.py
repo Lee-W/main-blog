@@ -74,5 +74,3 @@ MARKDOWN = {
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['another_read_more_link', 'series', 'render_math', 'neighbors', 'share_post']
 ANOTHER_READ_MORE_LINK = ''
-
-OUTPUT_PATH = 'local_output'
