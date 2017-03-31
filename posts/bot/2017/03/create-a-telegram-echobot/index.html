@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/pygments/xcode.min.css">
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+    <link href="http://lee-w.github.io/static/custom.css" rel="stylesheet">
+
+    <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Lee-W" />
+<meta name="description" content="最近當助教要出一個Telegram Bot相關的Project 先來寫一篇簡單的教學，減少之後的問題XDD" />
+<meta name="keywords" content="Telegram, Flask">
+<meta property="og:site_name" content="Life Lies in Traveling"/>
+<meta property="og:title" content="Create a Telegram EchoBot"/>
+<meta property="og:description" content="最近當助教要出一個Telegram Bot相關的Project 先來寫一篇簡單的教學，減少之後的問題XDD"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://lee-w.github.io/posts/bot/2017/03/create-a-telegram-echobot"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-03-31 19:24:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
+<meta property="article:section" content="Bot"/>
+<meta property="article:tag" content="Telegram"/>
+<meta property="article:tag" content="Flask"/>
+<meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
+
+  <title>Life Lies in Traveling &ndash; Create a Telegram EchoBot</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://lee-w.github.io">
+        <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
+      </a>
+      <h1><a href="http://lee-w.github.io">Lee-W</a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="http://lee-w.github.io/pages/about-this-blog.html#about-this-blog">About This&nbsp;Blog</a></li>
+          <li><a href="http://lee-w.github.io/pages/about-me.html#about-me">About&nbsp;Me</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-rss" href="//lee-w.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://lee-w.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://lee-w.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="create-a-telegram-echobot">Create a Telegram&nbsp;EchoBot</h1>
+    <p>
+          Posted on 2017/03/31 - 五 in <a href="http://lee-w.github.io/category/bot.html">Bot</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>最近當助教要出一個Telegram Bot相關的Project<br>&nbsp;先來寫一篇簡單的教學，減少之後的問題XDD</p>
+<!--more-->
+
+<p>如果對Chat Bot的基本運作概念不太熟<br>
+可以參考<a href="http://lee-w.github.io/posts/bot/2016/11/introduction-to-chatbot/#introduction-to-chatbot">[Bot] Introduction to&nbsp;Chatbot</a></p>
+<h2>What is&nbsp;Telegram</h2>
+<p>在台灣，好像還沒有那麼多人用Telegram<br>
+簡單來說就跟Facebook&nbsp;Messenger或Line這類的IM差不多</p>
+<h2>Why&nbsp;Telegram</h2>
+<p>至於這次為什麼要選用Telegram麻<br>
+是因為上次有聽其他開發者說Telegram Bot提供相當多的功能<br>&nbsp;就想說來試試看</p>
+<h2>Web&nbsp;Framework</h2>
+<p>上次寫Line EchoBot的教學是用django<br>&nbsp;這次來試試Flask</p>
+<p>Source Code一樣放在Github上<br>
+這篇文章會用<a href="https://github.com/Lee-W/telegram_echobot/tree/minimal-flask">minimal-flask</a> branch當範例<br>&nbsp;只有31行Code，比較容易理解</p>
+<p><a href="https://github.com/Lee-W/telegram_echobot/tree/master">master</a>上也是用Flask<br>&nbsp;只是架構比較複雜，有試一下Flask的blueprint，之後可能還會多加一些奇怪的功能xd</p>
+<h2>Apply a telegram&nbsp;bot</h2>
+<p>首先當然必須要有<a href="https://telegram.org">Telegram</a>的帳號<br>
+再來要加<a href="https://telegram.me/botfather">BotFather</a>為好友</p>
+<p>跟他說<code>/newbot</code><br>&nbsp;接著他會問你，Bot的name跟username</p>
+<ul>
+<li>name是Bot在聯絡人資訊顯示的名稱</li>
+<li>username則比較像id的概念，而且一定要用Bot結尾</li>
+</ul>
+<p>之後就會得到剛申請Bot的API Token<br>
+然後你就可以從<code>https://telegram.me/&lt;bot_username&gt;</code>找到剛申請的bot</p>
+<h2>Telegram Bot <span class="caps">API</span>&nbsp;Wrapper</h2>
+<p>開發上，我使用的是<a href="https://github.com/python-telegram-bot/python-telegram-bot">python-telegram-bot</a></p>
+<div class="codehilite"><pre><span></span>pip install python-telegram-bot
+</pre></div>
+
+
+<p>它其中一點設計的很不錯的是<br>
+Telegram API的命名是CamelCase (e.g. sendMessage)<br>
+但Python的命名convention卻是lowercase_separated_by_underscores (e.g. send_message)<br>&nbsp;而它是兩種都支援</p>
+<h2>Star&nbsp;Programming</h2>
+<p>先附上全部的code，後面再慢慢解釋</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">telegram</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;Your API Token&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_set_webhook</span><span class="p">():</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">&#39;https://Your URL/hook&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">status</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Webhook setup failed&#39;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/hook&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">webhook_handler</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
+        <span class="n">update</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Update</span><span class="o">.</span><span class="n">de_json</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span> <span class="n">bot</span><span class="p">)</span>
+
+        <span class="n">text</span> <span class="o">=</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span>
+
+        <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;ok&#39;</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">_set_webhook</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+
+<h3>Setup</h3>
+<p>其中有兩個地方，必須要改成自己的設定</p>
+<h4>1. <span class="caps">API</span>&nbsp;Token</h4>
+<div class="codehilite"><pre><span></span><span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;Your API Token&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Your <span class="caps">API</span> Token要改成剛剛取得的API&nbsp;Token</p>
+<h4>2. Webhook <span class="caps">URL</span></h4>
+<p>_set_webhook中的Your <span class="caps">URL</span></p>
+<div class="codehilite"><pre><span></span><span class="n">statue</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">&#39;https://Your URL/hook&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>這裡的URL就是設定成你這個Bot Server的URL<br>
+不過Telegram一樣要求必須要是https<br>
+最簡單的方式就是使用ngrok<br>
+(ngrok的使用在<a href="http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django/#line-echo-bot-on-django">[Bot] Line Echo Bot on Django</a>最後面有介紹)<br>
+平常測試使用ngrok就很足夠了<br>&nbsp;之後要production的時候，在deploy到適當的server就好了</p>
+<h3>_set_webhook</h3>
+<p>Telegram有兩種接收訊息的方式<br>
+隨時去監聽的webhook，和主動去要求更新的<code>get_updates</code><br>&nbsp;這裡使用的是webhook</p>
+<p>這個function先設定Bot的webhook <span class="caps">URL</span>，如果設定失敗就直接終止程式<br>
+也就是告訴Telegram要把Bot收到的訊息傳到哪<br>
+而<code>set_webhook</code>前面要有個_的原因是我不希望它被其他的code使用<br>&nbsp;但Python本身並不支援Private的概念，而是慣例上在前面加一個底線</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">_set_webhook</span><span class="p">():</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">&#39;https://Your URL/hook&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">status</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Webhook setup failed&#39;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<p>在最後run Flask app前，要先把webhook&nbsp;URL設定好</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">_set_webhook</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+
+<h3>wehook_handler</h3>
+<p>這裡就是bot收到訊息要怎麼處理</p>
+<div class="codehilite"><pre><span></span><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/hook&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">webhook_handler</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
+        <span class="n">update</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Update</span><span class="o">.</span><span class="n">de_json</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span> <span class="n">bot</span><span class="p">)</span>
+
+        <span class="n">text</span> <span class="o">=</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span>
+
+        <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;ok&#39;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/hook&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</pre></div>
+
+
+<p><code>app.route</code>這個decorator是Flask的語法<br>
+表示<code>https:/Your URL/hook</code>會導到這個function，而它只能接受POST<br>
+這裡設定的<code>/hook</code>也就是為什麼在<code>_set_webhook</code>中的URL最後面必須有<code>/hook</code></p>
+<p>接下來<code>webhook_handler</code>內做的就只是把收到的訊息轉成<code>update</code><br>
+再從裡面讀到對方傳來的<code>text</code><br>
+最後用<code>reply_text</code>回傳同樣的text回去</p>
+<hr>
+<p>這是最簡單的Telegram Bot<br>
+不過我覺得開始學一個東西，還是會希望能在最短時間看到點東西，再慢慢專研<br>
+接下來可以從<a href="https://github.com/python-telegram-bot/python-telegram-bot">python-telegram-bot</a>的<a href="https://github.com/python-telegram-bot/python-telegram-bot/wiki">wiki</a>，試更多Telegram&nbsp;Bot的功能</p>
+<h2>Reference</h2>
+<ul>
+<li><a href="https://github.com/sooyhwang/Simple-Echo-Telegram-Bot">Simple-Echo-Telegram-Bot</a></li>
+<li><a href="http://blog.30sparks.com/develop-telegram-bot-introduction/">開發 Telegram Bot&nbsp;簡介</a></li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://lee-w.github.io/tag/telegram.html">Telegram</a>
+      <a href="http://lee-w.github.io/tag/flask.html">Flask</a>
+    </p>
+  </div>
+
+
+
+
+  <div class="article-navigation">
+      <a href="http://lee-w.github.io/posts/book/2017/03/worker" class="article-prev">
+        &larr; [Book]&nbsp;做工的人
+      </a>
+  </div>
+
+  <div>
+    <ul class="share-buttons">
+      Share on:
+      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//lee-w.github.io/posts/bot/2017/03/create-a-telegram-echobot" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+      <li><a href="http://twitter.com/home?status=b'Create%20a%20Telegram%C2%A0EchoBot%20http%3A//lee-w.github.io/posts/bot/2017/03/create-a-telegram-echobot'" target="_blank" title="Tweet"><img alt="Tweet" src="/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+      <li><a href="https://plus.google.com/share?url=http%3A//lee-w.github.io/posts/bot/2017/03/create-a-telegram-echobot" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
+    </ul>
+   </div>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lee-w-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>&copy; Lee-W </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96190677-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Life Lies in Traveling ",
+  "url" : "http://lee-w.github.io",
+  "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
+  "description": ""
+}
+</script>
+</body>
+</html>

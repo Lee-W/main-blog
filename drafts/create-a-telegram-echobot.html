@@ -100,26 +100,25 @@
 
 
   <div>
-    <p>最近當助教要出一個Telegram Bot相關的Project<br>&nbsp;就來寫一篇簡單的教學，減少大家之後的問題XDD</p>
+    <p>最近當助教要出一個Telegram Bot相關的Project<br>&nbsp;先來寫一篇簡單的教學，減少大家之後的問題XDD</p>
 <!--more-->
 
-<p>上次寫Line EchoBot的教學是用django (其實repo中也有flask跟sanic的版本)<br>&nbsp;這次來試試看用Flask開發</p>
+<p>上次寫Line EchoBot的教學是用django<br>&nbsp;這次來試試Flask</p>
 <p>Source Code同樣放在Github上<br>
-這篇文章會用<a href="https://github.com/Lee-W/telegram_echobot/tree/minimal-flask">minimal-flask</a>這個branch的範例，只有31行，比較容易理解<br>
-<a href="https://github.com/Lee-W/telegram_echobot/tree/master">master</a>上的則是最近剛好在學flask，用了blueprint之類的概念，之後可能還會多加一些奇怪的功能xd</p>
+這篇文章會用<a href="https://github.com/Lee-W/telegram_echobot/tree/minimal-flask">minimal-flask</a> branch當範例<br>&nbsp;Code只有31行，比較容易理解</p>
+<p><a href="https://github.com/Lee-W/telegram_echobot/tree/master">master</a>上也是用flask<br>
+只是設計上比較複雜一點<br>&nbsp;最近剛好在學flask，用了blueprint之類的概念，之後可能還會多加一些奇怪的功能xd</p>
 <h2>Apply a telegram&nbsp;bot</h2>
-<p>當然首先你必須先有telegram<br>
-接著你要加<a href="https://telegram.me/botfather">BotFather</a>為好友</p>
+<p>要寫一個Telegram Bot<br>
+當然首先你必須先有Telegram<br>
+接著要加<a href="https://telegram.me/botfather">BotFather</a>為好友</p>
+<p>加好友後，會出現下面這樣的畫面<br>
+<img alt="bot father" src="http://localhost:8000/images/posts-image/2017-03-31-telegram-bot/1_botfather.png"></p>
 <p>然後跟他說<code>/newbot</code><br>
 接著他就會問你，name跟username<br>
 其中uesrname必須要用bot結尾<br>
-然後你就會得到你的api&nbsp;token</p>
-<div class="codehilite"><pre><span></span>The name of your bot is displayed in contact details and elsewhere.
-
-The Username is a short name, to be used in mentions and telegram.me links. Usernames are 5-32 characters long and are case insensitive, but may only include Latin characters, numbers, and underscores. Your bot&#39;s username must end in ‘bot’, e.g. ‘tetris_bot’ or ‘TetrisBot’.
-</pre></div>
-
-
+然後就會得到這個bot的api&nbsp;token</p>
+<p>name是在聯絡人資訊顯示用的<br>&nbsp;而username則是拿來識別這個bot，感覺有點像是id的概念</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="kn">import</span> <span class="nn">telegram</span>

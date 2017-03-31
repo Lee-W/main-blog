@@ -1,5 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-03-24T18:48:00+08:00</updated><entry><title>[Book] 做工的人</title><link href="http://lee-w.github.io/posts/book/2017/03/worker" rel="alternate"></link><published>2017-03-24T18:48:00+08:00</published><updated>2017-03-24T18:48:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-24:/posts/book/2017/03/worker</id><summary type="html">&lt;p&gt;&lt;img alt="做工的人" src="http://i.imgur.com/SlWTvkOm.jpg"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-03-31T19:24:00+08:00</updated><entry><title>Create a Telegram EchoBot</title><link href="http://lee-w.github.io/posts/bot/2017/03/create-a-telegram-echobot" rel="alternate"></link><published>2017-03-31T19:24:00+08:00</published><updated>2017-03-31T19:24:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-31:/posts/bot/2017/03/create-a-telegram-echobot</id><summary type="html">&lt;p&gt;最近當助教要出一個Telegram Bot相關的Project&lt;br&gt;&amp;nbsp;先來寫一篇簡單的教學，減少之後的問題XDD&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;最近當助教要出一個Telegram Bot相關的Project&lt;br&gt;&amp;nbsp;先來寫一篇簡單的教學，減少之後的問題XDD&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;如果對Chat Bot的基本運作概念不太熟&lt;br&gt;
+可以參考&lt;a href="http://lee-w.github.io/posts/bot/2016/11/introduction-to-chatbot/#introduction-to-chatbot"&gt;[Bot] Introduction to&amp;nbsp;Chatbot&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;What is&amp;nbsp;Telegram&lt;/h2&gt;
+&lt;p&gt;在台灣，好像還沒有那麼多人用Telegram&lt;br&gt;
+簡單來說就跟Facebook&amp;nbsp;Messenger或Line這類的IM差不多&lt;/p&gt;
+&lt;h2&gt;Why&amp;nbsp;Telegram&lt;/h2&gt;
+&lt;p&gt;至於這次為什麼要選用Telegram麻&lt;br&gt;
+是因為上次有聽其他開發者說Telegram Bot提供相當多的功能&lt;br&gt;&amp;nbsp;就想說來試試看&lt;/p&gt;
+&lt;h2&gt;Web&amp;nbsp;Framework&lt;/h2&gt;
+&lt;p&gt;上次寫Line EchoBot的教學是用django&lt;br&gt;&amp;nbsp;這次來試試Flask&lt;/p&gt;
+&lt;p&gt;Source Code一樣放在Github上&lt;br&gt;
+這篇文章會用&lt;a href="https://github.com/Lee-W/telegram_echobot/tree/minimal-flask"&gt;minimal-flask&lt;/a&gt; branch當範例&lt;br&gt;&amp;nbsp;只有31行Code，比較容易理解&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/Lee-W/telegram_echobot/tree/master"&gt;master&lt;/a&gt;上也是用Flask&lt;br&gt;&amp;nbsp;只是架構比較複雜，有試一下Flask的blueprint，之後可能還會多加一些奇怪的功能xd&lt;/p&gt;
+&lt;h2&gt;Apply a telegram&amp;nbsp;bot&lt;/h2&gt;
+&lt;p&gt;首先當然必須要有&lt;a href="https://telegram.org"&gt;Telegram&lt;/a&gt;的帳號&lt;br&gt;
+再來要加&lt;a href="https://telegram.me/botfather"&gt;BotFather&lt;/a&gt;為好友&lt;/p&gt;
+&lt;p&gt;跟他說&lt;code&gt;/newbot&lt;/code&gt;&lt;br&gt;&amp;nbsp;接著他會問你，Bot的name跟username&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;name是Bot在聯絡人資訊顯示的名稱&lt;/li&gt;
+&lt;li&gt;username則比較像id的概念，而且一定要用Bot結尾&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;之後就會得到剛申請Bot的API Token&lt;br&gt;
+然後你就可以從&lt;code&gt;https://telegram.me/&amp;lt;bot_username&amp;gt;&lt;/code&gt;找到剛申請的bot&lt;/p&gt;
+&lt;h2&gt;Telegram Bot &lt;span class="caps"&gt;API&lt;/span&gt;&amp;nbsp;Wrapper&lt;/h2&gt;
+&lt;p&gt;開發上，我使用的是&lt;a href="https://github.com/python-telegram-bot/python-telegram-bot"&gt;python-telegram-bot&lt;/a&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install python-telegram-bot
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;它其中一點設計的很不錯的是&lt;br&gt;
+Telegram API的命名是CamelCase (e.g. sendMessage)&lt;br&gt;
+但Python的命名convention卻是lowercase_separated_by_underscores (e.g. send_message)&lt;br&gt;&amp;nbsp;而它是兩種都支援&lt;/p&gt;
+&lt;h2&gt;Star&amp;nbsp;Programming&lt;/h2&gt;
+&lt;p&gt;先附上全部的code，後面再慢慢解釋&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;telegram&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;
+
+
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;bot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;telegram&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your API Token&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_webhook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://Your URL/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Webhook setup failed&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;webhook_handler&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;POST&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;telegram&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Update&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;de_json&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_json&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;force&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;
+
+        &lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ok&amp;#39;&lt;/span&gt;
+
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Setup&lt;/h3&gt;
+&lt;p&gt;其中有兩個地方，必須要改成自己的設定&lt;/p&gt;
+&lt;h4&gt;1. &lt;span class="caps"&gt;API&lt;/span&gt;&amp;nbsp;Token&lt;/h4&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;bot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;telegram&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your API Token&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Your &lt;span class="caps"&gt;API&lt;/span&gt; Token要改成剛剛取得的API&amp;nbsp;Token&lt;/p&gt;
+&lt;h4&gt;2. Webhook &lt;span class="caps"&gt;URL&lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;_set_webhook中的Your &lt;span class="caps"&gt;URL&lt;/span&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;statue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_webhook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://Your URL/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;這裡的URL就是設定成你這個Bot Server的URL&lt;br&gt;
+不過Telegram一樣要求必須要是https&lt;br&gt;
+最簡單的方式就是使用ngrok&lt;br&gt;
+(ngrok的使用在&lt;a href="http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django/#line-echo-bot-on-django"&gt;[Bot] Line Echo Bot on Django&lt;/a&gt;最後面有介紹)&lt;br&gt;
+平常測試使用ngrok就很足夠了&lt;br&gt;&amp;nbsp;之後要production的時候，在deploy到適當的server就好了&lt;/p&gt;
+&lt;h3&gt;_set_webhook&lt;/h3&gt;
+&lt;p&gt;Telegram有兩種接收訊息的方式&lt;br&gt;
+隨時去監聽的webhook，和主動去要求更新的&lt;code&gt;get_updates&lt;/code&gt;&lt;br&gt;&amp;nbsp;這裡使用的是webhook&lt;/p&gt;
+&lt;p&gt;這個function先設定Bot的webhook &lt;span class="caps"&gt;URL&lt;/span&gt;，如果設定失敗就直接終止程式&lt;br&gt;
+也就是告訴Telegram要把Bot收到的訊息傳到哪&lt;br&gt;
+而&lt;code&gt;set_webhook&lt;/code&gt;前面要有個_的原因是我不希望它被其他的code使用&lt;br&gt;&amp;nbsp;但Python本身並不支援Private的概念，而是慣例上在前面加一個底線&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_webhook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://Your URL/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Webhook setup failed&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;在最後run Flask app前，要先把webhook&amp;nbsp;URL設定好&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;wehook_handler&lt;/h3&gt;
+&lt;p&gt;這裡就是bot收到訊息要怎麼處理&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;webhook_handler&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;POST&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;telegram&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Update&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;de_json&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_json&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;force&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;
+
+        &lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ok&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;app.route&lt;/code&gt;這個decorator是Flask的語法&lt;br&gt;
+表示&lt;code&gt;https:/Your URL/hook&lt;/code&gt;會導到這個function，而它只能接受POST&lt;br&gt;
+這裡設定的&lt;code&gt;/hook&lt;/code&gt;也就是為什麼在&lt;code&gt;_set_webhook&lt;/code&gt;中的URL最後面必須有&lt;code&gt;/hook&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;接下來&lt;code&gt;webhook_handler&lt;/code&gt;內做的就只是把收到的訊息轉成&lt;code&gt;update&lt;/code&gt;&lt;br&gt;
+再從裡面讀到對方傳來的&lt;code&gt;text&lt;/code&gt;&lt;br&gt;
+最後用&lt;code&gt;reply_text&lt;/code&gt;回傳同樣的text回去&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;這是最簡單的Telegram Bot&lt;br&gt;
+不過我覺得開始學一個東西，還是會希望能在最短時間看到點東西，再慢慢專研&lt;br&gt;
+接下來可以從&lt;a href="https://github.com/python-telegram-bot/python-telegram-bot"&gt;python-telegram-bot&lt;/a&gt;的&lt;a href="https://github.com/python-telegram-bot/python-telegram-bot/wiki"&gt;wiki&lt;/a&gt;，試更多Telegram&amp;nbsp;Bot的功能&lt;/p&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/sooyhwang/Simple-Echo-Telegram-Bot"&gt;Simple-Echo-Telegram-Bot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.30sparks.com/develop-telegram-bot-introduction/"&gt;開發 Telegram Bot&amp;nbsp;簡介&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Telegram"></category><category term="Flask"></category></entry><entry><title>[Book] 做工的人</title><link href="http://lee-w.github.io/posts/book/2017/03/worker" rel="alternate"></link><published>2017-03-24T18:48:00+08:00</published><updated>2017-03-24T18:48:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-24:/posts/book/2017/03/worker</id><summary type="html">&lt;p&gt;&lt;img alt="做工的人" src="http://i.imgur.com/SlWTvkOm.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;「做工的人」由一個個藍領階級的故事所組成&lt;br&gt;
 說的是那些壓迫、歧視和無奈&lt;br&gt;&amp;nbsp;看這本書是會讓人感到很難過的&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="做工的人" src="http://i.imgur.com/SlWTvkOm.jpg"&gt;&lt;/p&gt;
@@ -287,7 +431,7 @@ let g:pymode_lint_ignore = &amp;quot;C0111,W0621,E501,F0002&amp;quot;
 &lt;!--more--&gt;
 
 &lt;p&gt;當初看到這封信的時候，很是感動啊xd&lt;br&gt;
-&lt;img alt="accepted" src="http://lee-w.github.io/images/posts-image/2017-02-28/1-accepted.jpg"&gt;&lt;/p&gt;
+&lt;img alt="accepted" src="http://lee-w.github.io/images/posts-image/2017-02-28-git-ignoreio-and-open-source-experience/1-accepted.jpg"&gt;&lt;/p&gt;
 &lt;h2&gt;git&amp;nbsp;ignore-io&lt;/h2&gt;
 &lt;p&gt;這個工具主要是從&lt;a href="https://www.gitignore.io"&gt;gitignoore.io&lt;/a&gt;上下載.gitignore的範本&lt;br&gt;&amp;nbsp;e.g. &lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git ignore-io -a vim osx python

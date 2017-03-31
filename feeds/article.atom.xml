@@ -8,7 +8,7 @@
 &lt;!--more--&gt;
 
 &lt;p&gt;當初看到這封信的時候，很是感動啊xd&lt;br&gt;
-&lt;img alt="accepted" src="http://lee-w.github.io/images/posts-image/2017-02-28/1-accepted.jpg"&gt;&lt;/p&gt;
+&lt;img alt="accepted" src="http://lee-w.github.io/images/posts-image/2017-02-28-git-ignoreio-and-open-source-experience/1-accepted.jpg"&gt;&lt;/p&gt;
 &lt;h2&gt;git&amp;nbsp;ignore-io&lt;/h2&gt;
 &lt;p&gt;這個工具主要是從&lt;a href="https://www.gitignore.io"&gt;gitignoore.io&lt;/a&gt;上下載.gitignore的範本&lt;br&gt;&amp;nbsp;e.g. &lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git ignore-io -a vim osx python
