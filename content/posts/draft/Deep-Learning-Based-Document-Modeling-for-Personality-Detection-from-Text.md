@@ -5,11 +5,12 @@ Category: Paper
 Tags: Deep Learning, Machine Learning, NLP, Big Five Theory, Personality
 Slug: Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text
 Authors: Lee-W
-
+Status: draft
 Summary: 
 ---
 
 [Paper](https://sentic.net/deep-learning-based-personality-detection.pdf)
+Data Set: [James Pennebaker and Laura King's stream-of-consciousness essay dataset](http://mypersonality.org/wiki/doku.php?id=wcpr13)
 Implementation: [Personality-Detection](https://github.com/SenticNet/Personality-Detection)
 
 <!--more-->
@@ -18,15 +19,15 @@ Implementation: [Personality-Detection](https://github.com/SenticNet/Personality
 - Product and Service Recommandation (People with similiar personalities might have similiar favors)
 - Mental Health Diagnosis
 - Forensics: Reduce the circle of suspects
-- Human Resource: One's suitablitlty for certain jobs 
+- Human Resource: One's suitablitlty for certain jobs
 
 ## Personality Theory Used in This Paper
 [Big Five Personality Trait](https://en.wikipedia.org/wiki/Big_Five_personality_traits)
 
-## Idea
-1. Feed Sentences from essays to convolution filter → Sentence model in the form of n-gram feature vectors
-2. Aggregate the vectors of its sentences and combine with Masiresse features to represent the document
-3. Classification: Feed document vector into a fully connected neural network with one hidden layer
+## Basic Idea of the Method
+1. Feed sentences from essays to convolution filter → Sentence model in the form of n-gram feature vectors
+2. Aggregate the vectors of a document's sentences and combine them with Masiresse features to represent the document
+3. Classification: Feed the document vectors into a fully connected neural network
 
 ## Overview of the Method
 
@@ -40,28 +41,27 @@ Mairesse baseline feature set (e.g. word count, average sentence length)
 
 ### 3. Filtering
 Sentences without personliaty clues are dropped
+(Based on [NRC Word-Emotion Association Lexicon](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm))
 
 ### 4. Word-level feature extraction
-- word2vec embeddings → a variable-length feature set for the document
-- variable number of fixed-length word feature vectors → variable number of sentences → document
+- word2vec
+- Variable number of fixed-length word feature vectors → Variable number of sentences → Document
 
 ### 5. Classfication
 Deep CNN (Conolutional Nerual Network)
 
 - Input
-	- words: Fixed-length feature vector using word2vec
-	- sentences: A variable number of word vectors
+	- Words: Fixed-length feature vector using word2vec
+	- Sentences: Variable number of word vectors
 - Process
-	- Word Vector is reduces to a fixed length vector of each sentence
-	- Documents: a variable number of such fixed-length sentence embeddings
+	- Word Vector is reduced to a fixed length vector of each sentence
+	- Document: Variable number of such fixed-length sentence vector
 	- Document vector is then reduced to a fixed-length document vector
 	- This Document vector is then concatenated with document-level features
 - Predict
 	- Yes / No (5 different personality traits are trained seperately) 
 
-
-## Network Architecture
-
+## Network Architecture in Detail
 ### Main Steps (7 Layers)
 #### Word Vectorization
 * Layer 1: Input
