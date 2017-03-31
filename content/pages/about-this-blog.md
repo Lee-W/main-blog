@@ -20,7 +20,7 @@ So I take notes for them.
 
 #### 3. Paper Summary
 Since I'm now a graduate student, I have to read papers and do summarization.
-I think it would be a pity if I only them only with my labmates.
+I think it would be a pity if I share them only with my labmates.
 Thus, I share them with all you guys.
 
 ---
