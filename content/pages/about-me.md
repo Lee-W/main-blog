@@ -47,6 +47,7 @@ National Cheng Kung University, Tainan
 
 [2016/11/03]
 深度之夜
+[Keras Demo](https://github.com/Lee-W/Keras-Mnist-Example)
 
 
 ## Projects
@@ -73,13 +74,13 @@ National Cheng Kung University, Tainan
 
 ## Tutoiral or Note
 ### Slide
-- [Learn Deep Learning in One Day - Keras Demo](https://github.com/Lee-W/Keras-Mnist-Example)
 - [Git Tutorial](https://github.com/Lee-W/git-tutorial)
     - Sample: [Git-Tutorial-Sample](https://github.com/Lee-W/Git-Tutorial-Sample)
 
 ### Books
 - [Learning Python 5e Note](https://github.com/Lee-W/Learning_Python)
 - [Python Cookbook](https://github.com/Lee-W/Python_Cookbook)
+- [Clean Code](https://lee-w.gitbooks.io/clean-code/content/)
 
 ### MOOCs
 - [Machine Learning (Cousera)](https://github.com/Lee-W/Machine-Learning-Coursera)
