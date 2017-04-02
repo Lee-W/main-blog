@@ -165,13 +165,18 @@ def webhook_handler():
     return 'ok'
 ```
 
-
-```python
-@app.route('/hook', methods=['POST'])
-```
 `app.route`這個decorator是Flask的語法
 表示`https:/Your URL/hook`會導到這個function，而它只能接受POST
 這裡設定的`/hook`也就是為什麼在`_set_webhook`中的URL最後面必須有`/hook`
+
+另外還可以發現webhook_handler是不帶任何參數的
+跟django不同的是
+Flask把request這種幾乎所有view function都會用到的參數直接變成全域可讀取的變數
+也就是最一開始的
+
+```python
+from flask import Flask, request
+```
 
 接下來`webhook_handler`內做的就只是把收到的訊息轉成`update`
 再從裡面讀到對方傳來的`text`
