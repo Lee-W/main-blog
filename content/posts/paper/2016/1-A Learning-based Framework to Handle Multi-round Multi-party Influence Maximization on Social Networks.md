@@ -8,7 +8,7 @@ Authors: Lee-W
 Summary: 
 ---
 
-[original paper](http://dl.acm.org/citation.cfm?id=2783392)
+[Paper](http://dl.acm.org/citation.cfm?id=2783392)
 
 <!--more-->
 ## 1. Introduction
