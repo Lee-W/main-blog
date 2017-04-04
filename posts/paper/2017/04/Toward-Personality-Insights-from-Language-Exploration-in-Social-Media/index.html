@@ -30,22 +30,25 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <meta name="author" content="Lee-W" />
-<meta name="description" content="只是要改變一兩個檔案的檔名，只要mv就很夠用了 但如果要一次改很多相似的檔名就用到rename指令就會更有效率" />
-<meta name="keywords" content="Shell Script">
+<meta name="description" content="Paper Demo My Slide The main purpose of this paper is to show how social media can be used to gain psychological insights." />
+<meta name="keywords" content="Visualization, NLP, Big Five Theory, Personality">
 <meta property="og:site_name" content="Life Lies in Traveling"/>
-<meta property="og:title" content="rename - 批次更改檔名"/>
-<meta property="og:description" content="只是要改變一兩個檔案的檔名，只要mv就很夠用了 但如果要一次改很多相似的檔名就用到rename指令就會更有效率"/>
+<meta property="og:title" content="[Paper] Toward Personality Insights from Language Exploration in Social Media"/>
+<meta property="og:description" content="Paper Demo My Slide The main purpose of this paper is to show how social media can be used to gain psychological insights."/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://lee-w.github.io/posts/linux-unix/2015/02/rename"/>
+<meta property="og:url" content="http://lee-w.github.io/posts/paper/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2015-02-22 15:06:00+08:00"/>
+<meta property="article:published_time" content="2017-04-04 18:45:00+08:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
-<meta property="article:section" content="Linux-Unix"/>
-<meta property="article:tag" content="Shell Script"/>
+<meta property="article:section" content="Paper"/>
+<meta property="article:tag" content="Visualization"/>
+<meta property="article:tag" content="NLP"/>
+<meta property="article:tag" content="Big Five Theory"/>
+<meta property="article:tag" content="Personality"/>
 <meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
 
-  <title>Life Lies in Traveling &ndash; rename - 批次更改檔名</title>
+  <title>Life Lies in Traveling &ndash; [Paper] Toward Personality Insights from Language Exploration in Social Media</title>
 
 </head>
 <body>
@@ -92,9 +95,9 @@
 
 <article class="single">
   <header>
-    <h1 id="rename">rename -&nbsp;批次更改檔名</h1>
+    <h1 id="Toward-Personality-Insights-from-Language-Exploration-in-Social-Media">[Paper] Toward Personality Insights from Language Exploration in Social&nbsp;Media</h1>
     <p>
-          Posted on 2015/02/22 - 日 in <a href="http://lee-w.github.io/category/linux-unix.html">Linux-Unix</a>
+          Posted on 2017/04/04 - 二 in <a href="http://lee-w.github.io/category/paper.html">Paper</a>
 
 
     </p>
@@ -102,51 +105,68 @@
 
 
   <div>
-    <p>只是要改變一兩個檔案的檔名，只要<code>mv</code>就很夠用了<br>
-但如果要一次改很多相似的檔名就用到<code>rename</code>指令就會更有效率<br>
-<!--more--></p>
-<h1>安裝</h1>
-<h3>Ubuntu, Linux&nbsp;Mint</h3>
-<p>預設就已經安裝好了</p>
-<h3>Mac</h3>
-<div class="codehilite"><pre><span></span>brew install rename
-</pre></div>
+    <p><a href="http://wwbp.org/papers/sam2013-dla.pdf">Paper</a><br>
+<a href="http://wwbp.org/personality_wc.html">Demo</a></p>
+<p><a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media">My&nbsp;Slide</a></p>
+<p>The main purpose of this paper is to show how social media can be used to gain psychological&nbsp;insights.</p>
+<!--more-->
 
-
-<h1>使用</h1>
-<div class="codehilite"><pre><span></span>rename s/pattern1/pattern2/ files
-</pre></div>
-
-
-<p>把files中的檔案符合pattern1替代成pattern2<br>
-files要使用萬用字元，pattern則是使用regular&nbsp;expression</p>
-<p>在改檔名之前，會想先看會改成什麼樣子<br>
-這時候就要加上參數<code>-n</code></p>
-<p><strong><em>需要特別注意要跳脫的字元</em></strong><br>
-可以參考下面這篇文章整理需要跳脫的保留字<br>
-<a href="http://awei791129.pixnet.net/blog/post/53319618-%5Bregular-expression%5D-使用正規表達時需要-escape-的">[Regular Expression] 使用正規表達時需要 escape&nbsp;的保留字</a></p>
-<h2>保留原本檔名的片段</h2>
-<p>而在批量更改檔名時，常常會需要保留pattern1的某些片段<br>
-這就需要用到regular&nbsp;expression的group</p>
-<p>例如，我們希望把檔名從01~05這五個檔案改成01A~05A<br>
-我們如果只用<code>rename -n s/\[0-\9]{2}/\[0-9\]{2}A/ *</code>就會錯誤<br>&nbsp;必須要改成像下面這樣</p>
-<div class="codehilite"><pre><span></span>rename -n s/<span class="se">\(\[</span>0-<span class="se">\9</span><span class="o">]{</span>2<span class="o">}</span><span class="se">\)</span>/<span class="se">\$</span>1A/ *
-</pre></div>
-
-
-<p>扣除跳脫用的<code>\</code><br>
-這個例子在<code>[0-9]{2}</code>外面加上<code>()</code>，將他們視為群組<br>
-在pattern2用<code>$1</code>，代替第一個group</p>
-<p><img alt="1_mac_rename" src="http://i.imgur.com/h1NV6ro.png"></p>
-<h1>Reference</h1>
+<p>Different from other papers in the past which use a pre-compiled word category list (e.g. <span class="caps">LIWC</span>),<br>
+it uses an open vocabulary approach that allowing discovery of unanticipated&nbsp;language.</p>
+<h3>Data</h3>
 <ul>
-<li><a href="http://mix.bruceli.net/2011/01/ubuntu-linuxrename.html">ubuntu&nbsp;linux用rename指令批次改檔名</a></li>
-<li><a href="http://unix.stackexchange.com/questions/20718/substitute-text-with-sed-and-keep-part-of-the-original-text">regular expression - Substitute text with sed and keep part of the original text - Unix <span class="amp">&amp;</span> Linux Stack&nbsp;Exchange</a></li>
+<li>75,000 Volunteers<ul>
+<li>Facebook Status&nbsp;Update</li>
+<li>Age</li>
+<li>Gender</li>
+<li>Personality (Through Standard Personality&nbsp;Questionnaire)</li>
 </ul>
+</li>
+</ul>
+<h3>Architecture</h3>
+<ol>
+<li>
+<p>Linguistic Feature&nbsp;Extraction</p>
+<ul>
+<li>N-Gram<ul>
+<li>Point-Wise Mutual&nbsp;Information</li>
+</ul>
+</li>
+<li>Topic<ul>
+<li>Probability a person mentioning a topic (Derived from <span class="caps">LDA</span>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Correlation&nbsp;analysis</p>
+<ul>
+<li>Least Squares Linear&nbsp;Regression   </li>
+</ul>
+</li>
+<li>Visualization<ul>
+<li><a href="http://wwbp.org/personality_wc.html">Differential Word Clouds</a><ul>
+<li>Word size represents correlation&nbsp;strength.</li>
+<li>Color represents relative&nbsp;frequency</li>
+</ul>
+</li>
+<li>Standardized Frequency Plot<ul>
+<li>Plot the word frequency against&nbsp;age</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3>Result</h3>
+<p>Most results confirm what is already known or obvious.<br>
+However, I think this method might still be useful to gain insight in other kinds of&nbsp;datasets.</p>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="http://lee-w.github.io/tag/shell-script.html">Shell Script</a>
+      <a href="http://lee-w.github.io/tag/visualization.html">Visualization</a>
+      <a href="http://lee-w.github.io/tag/nlp.html">NLP</a>
+      <a href="http://lee-w.github.io/tag/big-five-theory.html">Big Five Theory</a>
+      <a href="http://lee-w.github.io/tag/personality.html">Personality</a>
     </p>
   </div>
 
@@ -154,20 +174,17 @@ files要使用萬用字元，pattern則是使用regular&nbsp;expression</p>
 
 
   <div class="article-navigation">
-      <a href="http://lee-w.github.io/posts/book/2015/02/zero-to-one" class="article-prev">
-        &larr; [Book] Zero to&nbsp;One
+      <a href="http://lee-w.github.io/posts/bot/2017/03/create-a-telegram-echobot" class="article-prev">
+        &larr; Create a Telegram&nbsp;EchoBot
       </a>
-      <a href="http://lee-w.github.io/posts/python/2015/05/solve-django-admin-cant-find-the-djangocore-on-mac" class="article-next">
-        解決django-admin在mac找不到django.core &rarr;
-       </a>
   </div>
 
   <div>
     <ul class="share-buttons">
       Share on:
-      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//lee-w.github.io/posts/linux-unix/2015/02/rename" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
-      <li><a href="http://twitter.com/home?status=b'rename%20-%C2%A0%E6%89%B9%E6%AC%A1%E6%9B%B4%E6%94%B9%E6%AA%94%E5%90%8D%20http%3A//lee-w.github.io/posts/linux-unix/2015/02/rename'" target="_blank" title="Tweet"><img alt="Tweet" src="/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
-      <li><a href="https://plus.google.com/share?url=http%3A//lee-w.github.io/posts/linux-unix/2015/02/rename" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
+      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//lee-w.github.io/posts/paper/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+      <li><a href="http://twitter.com/home?status=b'%5BPaper%5D%20Toward%20Personality%20Insights%20from%20Language%20Exploration%20in%20Social%C2%A0Media%20http%3A//lee-w.github.io/posts/paper/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media'" target="_blank" title="Tweet"><img alt="Tweet" src="/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+      <li><a href="https://plus.google.com/share?url=http%3A//lee-w.github.io/posts/paper/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
     </ul>
    </div>
 

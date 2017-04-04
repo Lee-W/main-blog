@@ -29,24 +29,25 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <meta name="author" content="Lee-W" />
-<meta name="description" content="Paper My Slide" />
-<meta name="keywords" content="Personality, Machine Learning, NLP">
+<meta name="description" content="Paper Demo My Slide" />
+<meta name="keywords" content="Visulization, NLP, Big Five Theory, Personality">
 <meta property="og:site_name" content="Life Lies in Traveling"/>
-<meta property="og:title" content="[Paper] Toward Personality Insights from Langueage Exploration in Social Media"/>
-<meta property="og:description" content="Paper My Slide"/>
+<meta property="og:title" content="[Paper] Toward Personality Insights from Language Exploration in Social Media"/>
+<meta property="og:description" content="Paper Demo My Slide"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://localhost:8000/posts/paper/2017/03/sitcon-2017"/>
+<meta property="og:url" content="http://localhost:8000/posts/paper/2017/04/Toward-Personality-Insights-from-Langueage-Exploration-in-Social-Media"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2017-03-24 18:45:00+08:00"/>
+<meta property="article:published_time" content="2017-04-04 18:45:00+08:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="http://localhost:8000/author/lee-w.html">
 <meta property="article:section" content="Paper"/>
-<meta property="article:tag" content="Personality"/>
-<meta property="article:tag" content="Machine Learning"/>
+<meta property="article:tag" content="Visulization"/>
 <meta property="article:tag" content="NLP"/>
+<meta property="article:tag" content="Big Five Theory"/>
+<meta property="article:tag" content="Personality"/>
 <meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
 
-  <title>Life Lies in Traveling &ndash; [Paper] Toward Personality Insights from Langueage Exploration in Social Media</title>
+  <title>Life Lies in Traveling &ndash; [Paper] Toward Personality Insights from Language Exploration in Social Media</title>
 
 </head>
 <body>
@@ -91,9 +92,9 @@
 
 <article class="single">
   <header>
-    <h1 id="sitcon-2017">[Paper] Toward Personality Insights from Langueage Exploration in Social&nbsp;Media</h1>
+    <h1 id="Toward-Personality-Insights-from-Langueage-Exploration-in-Social-Media">[Paper] Toward Personality Insights from Language Exploration in Social&nbsp;Media</h1>
     <p>
-          Posted on 2017/03/24 - 五 in <a href="http://localhost:8000/category/paper.html">Paper</a>
+          Posted on 2017/04/04 - 二 in <a href="http://localhost:8000/category/paper.html">Paper</a>
 
 
     </p>
@@ -102,25 +103,63 @@
 
   <div>
     <p><a href="http://wwbp.org/papers/sam2013-dla.pdf">Paper</a><br>
-<a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media">My&nbsp;Slide</a></p>
+<a href="http://wwbp.org/personality_wc.html">Demo</a></p>
+<p><a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media">My&nbsp;Slide</a></p>
 <!--more-->
 
-<h1></h1>
-<p>show how social media can also be used to gain psychological&nbsp;insights</p>
-<p>exploration of language use as a function of age, gender, and personality from a dataset of Facebook posts from 75,000 people who have also taken person- ality&nbsp;tests,</p>
-<p>The most common approach is to count words from a pre-compiled word-category list, such as Lin- guistic Inquiry and Word Count or <span class="caps">LIWC</span> (Pennebaker et al.&nbsp;2007). </p>
-<p>Such studies rarely look beyond a priori categorical lan-&nbsp;guage</p>
-<p>In this paper, we use an open-vocabulary approach, where the vocabulary being examined is based on the actual text, allowing discovery of unanticipated&nbsp;language.</p>
-<p>open-vocabulary or data-driven approaches are commonplace in computational linguistics, but rarely for the purpose of gaining&nbsp;insights</p>
-<p>Bigrams were among the best pre- dictive features, motivating the idea that words with context add information linked to&nbsp;personality</p>
-<p>prune features from the word cloud which contain overlap in information so that other significant features may fit. <br>
-Specifically, using inverse-frequency as proxy for information content (Resnik 1999), we only include an ngram if it contains at least one word which is more informative than previously seen&nbsp;words. </p>
+<p>The main purpose of this paper is to show how show how social media can also be used to gain psychological&nbsp;insights.</p>
+<p>Different from most researches in the past which use a pre-compiled word category list (e.g. <span class="caps">LIWC</span>), it uses an open vocabulary approach that allowing discovery of unanticipaated&nbsp;language.</p>
+<h3>Data</h3>
+<ul>
+<li>75,000 Volunteers<ul>
+<li>Facebook Status&nbsp;Update</li>
+<li>Age</li>
+<li>Gender</li>
+<li>Personality (Through Standard Personality&nbsp;Questionnaire)</li>
+</ul>
+</li>
+</ul>
+<h3>Architecture</h3>
+<ol>
+<li>
+<p>Linguistic Feature&nbsp;Extraction</p>
+<ul>
+<li>N-Gram<ul>
+<li>Point-Wise Mutual&nbsp;Inforamtion</li>
+</ul>
+</li>
+<li>Topic<ul>
+<li>Probability a person mentioning a topic (Derived from <span class="caps">LDA</span>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Correlation&nbsp;analysis</p>
+<ul>
+<li>Least Squares Linear&nbsp;Regression   </li>
+</ul>
+</li>
+<li>Visualization<ul>
+<li><a href="http://wwbp.org/personality_wc.html">Differential Word Clouds</a><ul>
+<li>Word ize represents correlation&nbsp;strength.</li>
+<li>Color represents relative&nbsp;frequency</li>
+</ul>
+</li>
+<li>Standardized Frequency Plot<ul>
+<li>Plot the word frequency against&nbsp;age</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="http://localhost:8000/tag/personality.html">Personality</a>
-      <a href="http://localhost:8000/tag/machine-learning.html">Machine Learning</a>
+      <a href="http://localhost:8000/tag/visulization.html">Visulization</a>
       <a href="http://localhost:8000/tag/nlp.html">NLP</a>
+      <a href="http://localhost:8000/tag/big-five-theory.html">Big Five Theory</a>
+      <a href="http://localhost:8000/tag/personality.html">Personality</a>
     </p>
   </div>
 
@@ -128,20 +167,17 @@ Specifically, using inverse-frequency as proxy for information content (Resnik 1
 
 
   <div class="article-navigation">
-      <a href="http://localhost:8000/posts/python/2017/03/tools-for-checking-python-coding-style" class="article-prev">
-        &larr; Tool for Checking Python Coding&nbsp;Style
+      <a href="http://localhost:8000/posts/bot/2017/03/create-a-telegram-echobot" class="article-prev">
+        &larr; Create a Telegram&nbsp;EchoBot
       </a>
-      <a href="http://localhost:8000/posts/conference/2017/03/sitcon-2017" class="article-next">
-        <span class="caps">SITCON</span>&nbsp;2017 &rarr;
-       </a>
   </div>
 
   <div>
     <ul class="share-buttons">
       Share on:
-      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//localhost%3A8000/posts/paper/2017/03/sitcon-2017" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
-      <li><a href="http://twitter.com/home?status=b'%5BPaper%5D%20Toward%20Personality%20Insights%20from%20Langueage%20Exploration%20in%20Social%C2%A0Media%20http%3A//localhost%3A8000/posts/paper/2017/03/sitcon-2017'" target="_blank" title="Tweet"><img alt="Tweet" src="/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
-      <li><a href="https://plus.google.com/share?url=http%3A//localhost%3A8000/posts/paper/2017/03/sitcon-2017" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
+      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//localhost%3A8000/posts/paper/2017/04/Toward-Personality-Insights-from-Langueage-Exploration-in-Social-Media" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+      <li><a href="http://twitter.com/home?status=b'%5BPaper%5D%20Toward%20Personality%20Insights%20from%20Language%20Exploration%20in%20Social%C2%A0Media%20http%3A//localhost%3A8000/posts/paper/2017/04/Toward-Personality-Insights-from-Langueage-Exploration-in-Social-Media'" target="_blank" title="Tweet"><img alt="Tweet" src="/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+      <li><a href="https://plus.google.com/share?url=http%3A//localhost%3A8000/posts/paper/2017/04/Toward-Personality-Insights-from-Langueage-Exploration-in-Social-Media" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
     </ul>
    </div>
 

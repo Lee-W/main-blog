@@ -3,7 +3,7 @@
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib
   Referenced from: /usr/local/Cellar/r/3.3.0/R.framework/Versions/3.2/Resources/lib/libR.dylib
   Reason: image not found
-Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
+Trace/BPT trap: 5
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -11,7 +11,7 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib
   Referenced from: /usr/local/Cellar/r/3.3.0/R.framework/Versions/3.2/Resources/lib/libR.dylib
   Reason: image not found
-Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
+Trace/BPT trap: 5
 &lt;/pre&gt;&lt;/div&gt;
 
 

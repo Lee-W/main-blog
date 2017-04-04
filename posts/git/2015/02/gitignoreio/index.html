@@ -112,12 +112,12 @@
 <p>這是gitignore.io的官方文件<br>&nbsp;https://www.gitignore.io/docs</p>
 <h2>設定</h2>
 <p>以mac的zsh的使用者為例，只要在執行下面這段</p>
-<div class="codehilite"><pre><span></span><span class="nt">echo</span> <span class="s2">&quot;function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/</span><span class="p">.</span><span class="nc">zshrc</span> <span class="o">&amp;&amp;</span> <span class="nt">source</span> <span class="o">~/</span><span class="p">.</span><span class="nc">zshrc</span>
+<div class="codehilite"><pre><span></span><span class="nt">echo</span> <span class="s2">&quot;function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/</span><span class="nc">.zshrc</span> <span class="o">&amp;&amp;</span> <span class="nt">source</span> <span class="o">~/</span><span class="nc">.zshrc</span>
 </pre></div>
 
 
 <p>或者在~/.zshrc加入下面這段後，執行<code>source ~/.zshrc</code></p>
-<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">gi() {</span> <span class="nx">curl</span> <span class="o">-</span><span class="nx">L</span> <span class="o">-</span><span class="nx">s</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//www.gitignore.io/api/$@ ;}</span>
+<div class="codehilite"><pre><span></span><span class="nt">function</span> <span class="nt">gi</span><span class="o">()</span> <span class="p">{</span> <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="n">s</span> <span class="n">https</span><span class="o">://</span><span class="n">www</span><span class="o">.</span><span class="n">gitignore</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="err">$</span><span class="o">@</span> <span class="p">;}</span>
 </pre></div>
 
 

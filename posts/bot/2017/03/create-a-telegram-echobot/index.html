@@ -146,7 +146,7 @@ Telegram API的命名是CamelCase (e.g. sendMessage)<br>
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
 
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 <span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;Your API Token&#39;</span><span class="p">)</span>
 
 
@@ -168,7 +168,7 @@ Telegram API的命名是CamelCase (e.g. sendMessage)<br>
     <span class="k">return</span> <span class="s1">&#39;ok&#39;</span>
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">_set_webhook</span><span class="p">()</span>
     <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
@@ -208,7 +208,7 @@ Telegram API的命名是CamelCase (e.g. sendMessage)<br>
 
 
 <p>在最後run Flask app前，要先把webhook&nbsp;URL設定好</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">_set_webhook</span><span class="p">()</span>
     <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
@@ -228,16 +228,13 @@ Telegram API的命名是CamelCase (e.g. sendMessage)<br>
 </pre></div>
 
 
-<p><code>app.route</code>這個decorator是Flask的語法<br>
-表示<code>https:/Your URL/hook</code>會導到這個function，而它只能接受POST<br>
-這裡設定的<code>/hook</code>也就是為什麼在<code>_set_webhook</code>中的URL最後面必須有<code>/hook</code></p>
-<p>另外還可以發現webhook_handler是不帶任何參數的<br>
-跟django不同的是<br>
-Flask把request這種幾乎所有view function都會用到的參數直接變成全域可讀取的變數<br>&nbsp;也就是最一開始的</p>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+<div class="codehilite"><pre><span></span><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/hook&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
 </pre></div>
 
 
+<p><code>app.route</code>這個decorator是Flask的語法<br>
+表示<code>https:/Your URL/hook</code>會導到這個function，而它只能接受POST<br>
+這裡設定的<code>/hook</code>也就是為什麼在<code>_set_webhook</code>中的URL最後面必須有<code>/hook</code></p>
 <p>接下來<code>webhook_handler</code>內做的就只是把收到的訊息轉成<code>update</code><br>
 再從裡面讀到對方傳來的<code>text</code><br>
 最後用<code>reply_text</code>回傳同樣的text回去</p>
@@ -265,6 +262,9 @@ Flask把request這種幾乎所有view function都會用到的參數直接變成�
       <a href="http://lee-w.github.io/posts/book/2017/03/worker" class="article-prev">
         &larr; [Book]&nbsp;做工的人
       </a>
+      <a href="http://lee-w.github.io/posts/paper/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media" class="article-next">
+        [Paper] Toward Personality Insights from Language Exploration in Social&nbsp;Media &rarr;
+       </a>
   </div>
 
   <div>

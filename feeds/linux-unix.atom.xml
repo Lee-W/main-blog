@@ -29,7 +29,7 @@ files要使用萬用字元，pattern則是使用regular&amp;nbsp;expression&lt;/
 這就需要用到regular&amp;nbsp;expression的group&lt;/p&gt;
 &lt;p&gt;例如，我們希望把檔名從01~05這五個檔案改成01A~05A&lt;br&gt;
 我們如果只用&lt;code&gt;rename -n s/\[0-\9]{2}/\[0-9\]{2}A/ *&lt;/code&gt;就會錯誤&lt;br&gt;&amp;nbsp;必須要改成像下面這樣&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rename -n s/&lt;span class="se"&gt;\(\[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;-&lt;span class="se"&gt;\9&lt;/span&gt;&lt;span class="o"&gt;]{&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="se"&gt;\)&lt;/span&gt;/&lt;span class="se"&gt;\$&lt;/span&gt;1A/ *
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rename -n s/&lt;span class="se"&gt;\(\[&lt;/span&gt;0-&lt;span class="se"&gt;\9&lt;/span&gt;&lt;span class="o"&gt;]{&lt;/span&gt;2&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="se"&gt;\)&lt;/span&gt;/&lt;span class="se"&gt;\$&lt;/span&gt;1A/ *
 &lt;/pre&gt;&lt;/div&gt;
 
 
