@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/pygments/xcode.min.css">
+  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+    <link href="http://lee-w.github.io/static/custom.css" rel="stylesheet">
+
+    <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Lee-W" />
+<meta name="description" content="Paper Main Purpose: To see how linguistic features correlate with each personality trait." />
+<meta name="keywords" content="Machine Learning, NLP, MBTI, Personality">
+<meta property="og:site_name" content="Life Lies in Traveling"/>
+<meta property="og:title" content="[Paper Summary] Understanding Personality through Social Media"/>
+<meta property="og:description" content="Paper Main Purpose: To see how linguistic features correlate with each personality trait."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-04-05 22:30:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
+<meta property="article:section" content="Paper Summary"/>
+<meta property="article:tag" content="Machine Learning"/>
+<meta property="article:tag" content="NLP"/>
+<meta property="article:tag" content="MBTI"/>
+<meta property="article:tag" content="Personality"/>
+<meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
+
+  <title>Life Lies in Traveling &ndash; [Paper Summary] Understanding Personality through Social Media</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://lee-w.github.io">
+        <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
+      </a>
+      <h1><a href="http://lee-w.github.io">Lee-W</a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="http://lee-w.github.io/pages/about-this-blog.html#about-this-blog">About This&nbsp;Blog</a></li>
+          <li><a href="http://lee-w.github.io/pages/about-me.html#about-me">About&nbsp;Me</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-rss" href="//lee-w.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://lee-w.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://lee-w.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="Understanding-Personality-through-Social-Media">[Paper Summary] Understanding Personality through Social&nbsp;Media</h1>
+    <p>
+          Posted on 2017/04/05 - 三 in <a href="http://lee-w.github.io/category/paper-summary.html">Paper Summary</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf">Paper</a></p>
+<p>Main Purpose: To see how linguistic features correlate with each personality&nbsp;trait.</p>
+<!--more-->
+
+<p><strong>Use Twitter to predict <span class="caps">MBIT</span>&nbsp;personality.</strong></p>
+<h3>Problem of Past&nbsp;Researches</h3>
+<ul>
+<li>Language on social media has richer content that makes the typical linguistic analysis tool perform poorly (e.g. iono -&gt; I don&#8217;t&nbsp;know)</li>
+<li>Gain personality information is costly (e.g. Big Five&nbsp;Questionnaire)</li>
+</ul>
+<h3><span class="caps">MBTI</span></h3>
+<p>Instead of commonly used big five theory, <span class="caps">MBTI</span> is used in this&nbsp;paper.</p>
+<p><a href="https://en.wikipedia.org/wiki/Myers–Briggs_Type_Indicator">Myers-Briggs Type&nbsp;Indicator</a></p>
+<p>There are 4 types of personality trait<br>&nbsp;i.e.</p>
+<ul>
+<li>Introversion(I) /&nbsp;Extraversion(E)</li>
+<li>Intuition(N) /&nbsp;Sensing(S)</li>
+<li>Feeling(F) /&nbsp;Thinking(T)</li>
+<li>Perception(P) /&nbsp;Judging(J)</li>
+</ul>
+<p>Personality can be expressed as a code with 4 letters.<br>
+e.g. <span class="caps">ENFJ</span>, <span class="caps">INTP</span></p>
+<h3>Data</h3>
+<ul>
+<li>A Twitter dataset<ul>
+<li>Around 90,000&nbsp;users</li>
+<li>120,000 personality-related tweets from 2006~2015 (out of 1.7 M&nbsp;tweets)</li>
+</ul>
+</li>
+</ul>
+<h4>What is the so-called personliaty-related&nbsp;tweets?</h4>
+<ul>
+<li>English Tweets that contain users&#8217; own <span class="caps">MBIT</span> code. <br>
+    e.g.<ul>
+<li><code>"I'm an ENFJ"</code> is&nbsp;qualified</li>
+<li><code>"My friend is an ISFJ"</code> is not&nbsp;qualified</li>
+</ul>
+</li>
+<li>Heuristic rules is used (e.g. <code>"I'm"</code>, <code>"I got"</code>, <code>"I have been a"</code>)</li>
+<li>No classification method is used for ensuring the personality code is indeed the&nbsp;user&#8217;s </li>
+</ul>
+<h4>Distribution</h4>
+<p>Personality distribution of this data is&nbsp;skewed.</p>
+<p><img alt="MBTI-bar" src="http://lee-w.github.io/images/posts-image/2017-04-05-understanding-personliaty-through-social-media/MBTI-bar.png"></p>
+<p>However, in the real word, the personality distribution might also be&nbsp;skewed.</p>
+<h3>Features</h3>
+<h4>1.&nbsp;n-grams</h4>
+<ul>
+<li>Most frequent 1,000 unigram, bigram, trigram words and&nbsp;phrases</li>
+<li>1,000 dimensions vectors for unigram, bigram trigram for each&nbsp;user</li>
+</ul>
+<h4>2. Twitter Part-of-speech&nbsp;tags</h4>
+<p>Based on <a href="http://www.cs.cmu.edu/~ark/TweetNLP/gimpel+etal.acl11.pdf">Part-of-Speech Tagging for Twitter: Annotation, Features, and&nbsp;Experiments</a></p>
+<ul>
+<li>25 types with some Twitter-specific tag. <br>
+  e.g.<ul>
+<li>hashtag</li>
+<li>at-mention</li>
+<li><span class="caps">URL</span></li>
+<li>emoticon </li>
+</ul>
+</li>
+</ul>
+<h4>3.word&nbsp;vectors</h4>
+<ul>
+<li>
+<p>Word Vector&nbsp;Settings</p>
+<ul>
+<li>2,334,564&nbsp;words</li>
+<li>500&nbsp;dimension</li>
+</ul>
+</li>
+<li>
+<p>Extracted&nbsp;Features</p>
+<ul>
+<li>Average word&nbsp;vectors</li>
+<li>Weighted average word vectors (weighted according to <span class="caps">TF</span>-<span class="caps">IDF</span>) </li>
+</ul>
+</li>
+</ul>
+<h3>Prediction</h3>
+<p>Logistic Regression is used (Random Forest and <span class="caps">SVM</span> produced similar&nbsp;results)</p>
+<h4>Accuracy&nbsp;Measurement</h4>
+<p>Since the data is skewed, <span class="caps">AUC</span> is&nbsp;used.</p>
+<h4>Accuracy</h4>
+<ul>
+<li>Indivisula Features<ul>
+<li>Word Vector Only -&gt; (<span class="caps">AUC</span>=0.651) </li>
+<li>n-gram only -&gt; (<span class="caps">AUC</span>=0.607)</li>
+<li><span class="caps">POS</span> only -&gt; (<span class="caps">AUC</span>=0.585)</li>
+</ul>
+</li>
+<li>Combinded Features<ul>
+<li>All three features -&gt; (<span class="caps">AUC</span>=0.661)</li>
+<li><span class="caps">POS</span> + n-gram -&gt; (<span class="caps">AUC</span>=0.616)</li>
+</ul>
+</li>
+</ul>
+<h4>Insight</h4>
+<p>Among the results, word vector performs best which might illustrate that predictions based on social media and language would&nbsp;work.</p>
+<p>During the <span class="caps">POS</span> conversion process, information is compressed into 25 tags and might lost some important one.<br>
+This might be the reason why it performs&nbsp;worse.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://lee-w.github.io/tag/machine-learning.html">Machine Learning</a>
+      <a href="http://lee-w.github.io/tag/nlp.html">NLP</a>
+      <a href="http://lee-w.github.io/tag/mbti.html">MBTI</a>
+      <a href="http://lee-w.github.io/tag/personality.html">Personality</a>
+    </p>
+  </div>
+
+
+
+
+  <div class="article-navigation">
+      <a href="http://lee-w.github.io/posts/paper/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media" class="article-prev">
+        &larr; [Paper] Toward Personality Insights from Language Exploration in Social&nbsp;Media
+      </a>
+  </div>
+
+  <div>
+    <ul class="share-buttons">
+      Share on:
+      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A//lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/images/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+      <li><a href="http://twitter.com/home?status=b'%5BPaper%20Summary%5D%20Understanding%20Personality%20through%20Social%C2%A0Media%20http%3A//lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media'" target="_blank" title="Tweet"><img alt="Tweet" src="/images/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+      <li><a href="https://plus.google.com/share?url=http%3A//lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="/images/social_flat_rounded_rects_svg/Google+.svg"></a></li>
+    </ul>
+   </div>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lee-w-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>&copy; Lee-W </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96190677-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Life Lies in Traveling ",
+  "url" : "http://lee-w.github.io",
+  "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
+  "description": ""
+}
+</script>
+</body>
+</html>
