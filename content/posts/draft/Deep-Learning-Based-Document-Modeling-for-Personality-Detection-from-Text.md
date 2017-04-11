@@ -1,17 +1,19 @@
 ---
-Title: [Paper] Deep Learning-Based Document Modeling for Personality Detection from Text
-Date: 2017-03-29 09:36
-Category: Paper
+Title: [Paper Summary] Deep Learning-Based Document Modeling for Personality Detection from Text
+Date: 2017-04-11 17:59
+Category: Paper Summary
 Tags: Deep Learning, Machine Learning, NLP, Big Five Theory, Personality
 Slug: Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text
 Authors: Lee-W
-Status: draft
 Summary: 
 ---
 
 [Paper](https://sentic.net/deep-learning-based-personality-detection.pdf)
-Data Set: [James Pennebaker and Laura King's stream-of-consciousness essay dataset](http://mypersonality.org/wiki/doku.php?id=wcpr13)
 Implementation: [Personality-Detection](https://github.com/SenticNet/Personality-Detection)
+
+* Data Set
+	* [James Pennebaker and Laura King's stream-of-consciousness essay dataset](http://mypersonality.org/wiki/doku.php?id=wcpr13)
+	* [NRC Word-Emotion Association Lexicon](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm)
 
 <!--more-->
 
@@ -72,6 +74,7 @@ Deep CNN (Conolutional Nerual Network)
 
 #### Sentence Vectorization
 * Layer 2: Convolution
+	* 3 convolutional filters: unigram, bigram, trigram 
 * Layer 3: Max Polling
 
 #### Document Vectorization
@@ -79,6 +82,11 @@ Deep CNN (Conolutional Nerual Network)
 
 #### Classification: (Yes/No)
 * Layer 5: Linear with Sigmoid activation
-* Layer 6, 7: 2 Neuron Softmax Output
+* Layer 6, 7
+	* 2 Neuron (yes/no) Softmax Output (ReLU and tanh perform worse)
+	* fully connected layer of size 200
+
+### Training
+Objective Function: Negative Log Likelihood
 
 
