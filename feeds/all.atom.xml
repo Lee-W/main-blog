@@ -1,5 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-04-05T22:30:00+08:00</updated><entry><title>[Paper Summary] Understanding Personality through Social Media</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media" rel="alternate"></link><published>2017-04-05T22:30:00+08:00</published><updated>2017-04-05T22:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-05:/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media</id><summary type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-04-11T17:59:00+08:00</updated><entry><title>[Paper Summary] Deep Learning-Based Document Modeling for Personality Detection from Text</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text" rel="alternate"></link><published>2017-04-11T17:59:00+08:00</published><updated>2017-04-11T17:59:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-11:/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text</id><summary type="html">&lt;p&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
+Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data Set&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://mypersonality.org/wiki/doku.php?id=wcpr13"&gt;James Pennebaker and Laura King&amp;#8217;s stream-of-consciousness essay&amp;nbsp;dataset&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;&lt;span class="caps"&gt;NRC&lt;/span&gt; Word-Emotion Association&amp;nbsp;Lexicon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
+Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data Set&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://mypersonality.org/wiki/doku.php?id=wcpr13"&gt;James Pennebaker and Laura King&amp;#8217;s stream-of-consciousness essay&amp;nbsp;dataset&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;&lt;span class="caps"&gt;NRC&lt;/span&gt; Word-Emotion Association&amp;nbsp;Lexicon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--more--&gt;
+
+&lt;h2&gt;Practical Application of Personality&amp;nbsp;Detection&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Product and Service Recommandation (People with similiar personalities might have similiar&amp;nbsp;favors)&lt;/li&gt;
+&lt;li&gt;Mental Health&amp;nbsp;Diagnosis&lt;/li&gt;
+&lt;li&gt;Forensics: Reduce the circle of&amp;nbsp;suspects&lt;/li&gt;
+&lt;li&gt;Human Resource: One&amp;#8217;s suitablitlty for certain&amp;nbsp;jobs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Personality Theory Used in This&amp;nbsp;Paper&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Big_Five_personality_traits"&gt;Big Five Personality&amp;nbsp;Trait&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Basic Idea of the&amp;nbsp;Method&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Feed sentences from essays to convolution filter → Sentence model in the form of n-gram feature&amp;nbsp;vectors&lt;/li&gt;
+&lt;li&gt;Aggregate the vectors of a document&amp;#8217;s sentences and combine them with Masiresse features to represent the&amp;nbsp;document&lt;/li&gt;
+&lt;li&gt;Classification: Feed the document vectors into a fully connected neural&amp;nbsp;network&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Overview of the&amp;nbsp;Method&lt;/h2&gt;
+&lt;h3&gt;1.&amp;nbsp;Preprocessing&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Sentence&amp;nbsp;Splitting&lt;/li&gt;
+&lt;li&gt;Data&amp;nbsp;Cleaning&lt;/li&gt;
+&lt;li&gt;Unification (e.g.&amp;nbsp;lowercase)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Document-level feature&amp;nbsp;extraction&lt;/h3&gt;
+&lt;p&gt;Mairesse baseline feature set (e.g. word count, average sentence&amp;nbsp;length)&lt;/p&gt;
+&lt;h3&gt;3.&amp;nbsp;Filtering&lt;/h3&gt;
+&lt;p&gt;Sentences without personliaty clues are dropped&lt;br&gt;
+(Based on &lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;&lt;span class="caps"&gt;NRC&lt;/span&gt; Word-Emotion Association Lexicon&lt;/a&gt;)&lt;/p&gt;
+&lt;h3&gt;4. Word-level feature&amp;nbsp;extraction&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;word2vec&lt;/li&gt;
+&lt;li&gt;Variable number of fixed-length word feature vectors → Variable number of sentences →&amp;nbsp;Document&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;5.&amp;nbsp;Classfication&lt;/h3&gt;
+&lt;p&gt;Deep &lt;span class="caps"&gt;CNN&lt;/span&gt; (Conolutional Nerual&amp;nbsp;Network)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Input&lt;ul&gt;
+&lt;li&gt;Words: Fixed-length feature vector using&amp;nbsp;word2vec&lt;/li&gt;
+&lt;li&gt;Sentences: Variable number of word&amp;nbsp;vectors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Process&lt;ul&gt;
+&lt;li&gt;Word Vector is reduced to a fixed length vector of each&amp;nbsp;sentence&lt;/li&gt;
+&lt;li&gt;Document: Variable number of such fixed-length sentence&amp;nbsp;vector&lt;/li&gt;
+&lt;li&gt;Document vector is then reduced to a fixed-length document&amp;nbsp;vector&lt;/li&gt;
+&lt;li&gt;This Document vector is then concatenated with document-level&amp;nbsp;features&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Predict&lt;ul&gt;
+&lt;li&gt;Yes / No (5 different personality traits are trained&amp;nbsp;seperately) &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Network Architecture in&amp;nbsp;Detail&lt;/h2&gt;
+&lt;h3&gt;Main Steps (7&amp;nbsp;Layers)&lt;/h3&gt;
+&lt;h4&gt;Word&amp;nbsp;Vectorization&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer 1: Input&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\( R ^{D \times S\times W \times&amp;nbsp;E}\)&lt;/span&gt; &lt;/li&gt;
+&lt;li&gt;Use Google&amp;#8217;s pretrained&amp;nbsp;word2vec&lt;/li&gt;
+&lt;li&gt;In implementation, all the documents contain the same number of sentences.&lt;br&gt;
+  Shorter documents are padded shorter sentences with dummy&amp;nbsp;words.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Sentence&amp;nbsp;Vectorization&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer 2: Convolution&lt;ul&gt;
+&lt;li&gt;3 convolutional filters: unigram, bigram,&amp;nbsp;trigram &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Layer 3: Max&amp;nbsp;Polling&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Document&amp;nbsp;Vectorization&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer 4: 1-max&amp;nbsp;pooling&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Classification:&amp;nbsp;(Yes/No)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer 5: Linear with Sigmoid&amp;nbsp;activation&lt;/li&gt;
+&lt;li&gt;Layer 6, 7&lt;ul&gt;
+&lt;li&gt;2 Neuron (yes/no) Softmax Output (ReLU and tanh perform&amp;nbsp;worse)&lt;/li&gt;
+&lt;li&gt;fully connected layer of size&amp;nbsp;200&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Training&lt;/h3&gt;
+&lt;p&gt;Objective Function: Negative Log&amp;nbsp;Likelihood&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Deep Learning"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category></entry><entry><title>[Paper Summary] Understanding Personality through Social Media</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media" rel="alternate"></link><published>2017-04-05T22:30:00+08:00</published><updated>2017-04-05T22:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-05:/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media</id><summary type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Main Purpose: To see how linguistic features correlate with each personality&amp;nbsp;trait.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Main Purpose: To see how linguistic features correlate with each personality&amp;nbsp;trait.&lt;/p&gt;
