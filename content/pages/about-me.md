@@ -40,7 +40,7 @@ National Cheng Kung University, Tainan
 
 ## Talk
 [2017/01/22]
-資管講座 (一場工資管營的演講)
+[資管講座 (一場工資管營的演講)](https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang)
 
 [2016/12/08]
 [Bot Development](https://hackmd.io/p/HkW8LjRfl)
