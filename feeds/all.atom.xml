@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-04-11T17:59:00+08:00</updated><entry><title>[Paper Summary] Deep Learning-Based Document Modeling for Personality Detection from Text</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text" rel="alternate"></link><published>2017-04-11T17:59:00+08:00</published><updated>2017-04-11T17:59:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-11:/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text</id><summary type="html">&lt;p&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-05-14T13:13:00+08:00</updated><entry><title>Common Neovim Problems</title><link href="http://lee-w.github.io/posts/vim/2017/05/common-neovim-problems" rel="alternate"></link><published>2017-05-14T13:13:00+08:00</published><updated>2017-05-14T13:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-05-14:/posts/vim/2017/05/common-neovim-problems</id><summary type="html"></summary><content type="html">&lt;h2&gt;Load ~/.vimrc from&amp;nbsp;neovim&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;XDG_CONFIG_HOME&lt;/span&gt;&lt;span class="p"&gt;:=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="p"&gt;/.config&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
+ln -s ~/.vim &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim
+ln -s ~/.vimrc &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim/init.vim
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;No python interpreter&amp;nbsp;found.&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install neovim
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/3536"&gt;.nvimrc doesn&amp;#8217;t seem to be loaded up or working and it cannot create backups on editing existing&amp;nbsp;files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/1755"&gt;No python interpreter&amp;nbsp;found.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Neovim"></category></entry><entry><title>[Paper Summary] Deep Learning-Based Document Modeling for Personality Detection from Text</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text" rel="alternate"></link><published>2017-04-11T17:59:00+08:00</published><updated>2017-04-11T17:59:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-11:/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text</id><summary type="html">&lt;p&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
 Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Data Set&lt;ul&gt;

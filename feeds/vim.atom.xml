@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Vim</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/vim.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2015-02-14T09:59:00+08:00</updated><entry><title>vimspell - vim檢查英文文法的套件</title><link href="http://lee-w.github.io/posts/vim/2015/02/vim-spell-check" rel="alternate"></link><published>2015-02-14T09:59:00+08:00</published><updated>2015-02-14T09:59:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-02-14:/posts/vim/2015/02/vim-spell-check</id><summary type="html">&lt;p&gt;&lt;a href="http://www.vim.org/scripts/script.php?script_id=465"&gt;vimspell&lt;/a&gt;是一套提供vim根據字典來檢查文法的套件&lt;br&gt;&amp;nbsp;有了vimsepll，寫markdown或latex的時候，就不用再怕拼錯字了&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Vim</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/vim.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-05-14T13:13:00+08:00</updated><entry><title>Common Neovim Problems</title><link href="http://lee-w.github.io/posts/vim/2017/05/common-neovim-problems" rel="alternate"></link><published>2017-05-14T13:13:00+08:00</published><updated>2017-05-14T13:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-05-14:/posts/vim/2017/05/common-neovim-problems</id><summary type="html"></summary><content type="html">&lt;h2&gt;Load ~/.vimrc from&amp;nbsp;neovim&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;XDG_CONFIG_HOME&lt;/span&gt;&lt;span class="p"&gt;:=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="p"&gt;/.config&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
+ln -s ~/.vim &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim
+ln -s ~/.vimrc &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim/init.vim
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;No python interpreter&amp;nbsp;found.&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install neovim
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/3536"&gt;.nvimrc doesn&amp;#8217;t seem to be loaded up or working and it cannot create backups on editing existing&amp;nbsp;files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/1755"&gt;No python interpreter&amp;nbsp;found.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Neovim"></category></entry><entry><title>vimspell - vim檢查英文文法的套件</title><link href="http://lee-w.github.io/posts/vim/2015/02/vim-spell-check" rel="alternate"></link><published>2015-02-14T09:59:00+08:00</published><updated>2015-02-14T09:59:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-02-14:/posts/vim/2015/02/vim-spell-check</id><summary type="html">&lt;p&gt;&lt;a href="http://www.vim.org/scripts/script.php?script_id=465"&gt;vimspell&lt;/a&gt;是一套提供vim根據字典來檢查文法的套件&lt;br&gt;&amp;nbsp;有了vimsepll，寫markdown或latex的時候，就不用再怕拼錯字了&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="http://www.vim.org/scripts/script.php?script_id=465"&gt;vimspell&lt;/a&gt;是一套提供vim根據字典來檢查文法的套件&lt;br&gt;&amp;nbsp;有了vimsepll，寫markdown或latex的時候，就不用再怕拼錯字了&lt;/p&gt;
 &lt;!--more--&gt;
 
