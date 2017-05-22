@@ -40,7 +40,7 @@ National Cheng Kung University, Tainan
 
 ## Talk
 [2017/01/22]
-資管講座 (一場工資管營的演講)
+[資管講座 (一場工資管營的演講)](https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang)
 
 [2016/12/08]
 [Bot Development](https://hackmd.io/p/HkW8LjRfl)
@@ -71,6 +71,8 @@ National Cheng Kung University, Tainan
 - [pipreqs](https://github.com/Lee-W/pipreqs) ([bndr/pipreqs](https://github.com/bndr/pipreqs))
 - [pip-check](https://github.com/Lee-W/pip-check) ([bartTC/pip-check](https://github.com/bartTC/pip-check))
 
+### Other
+- [SITW 二手網](http://sitw-trade.herokuapp.com) (Backend Develpment)
 
 ## Tutoiral or Note
 ### Slide

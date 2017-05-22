@@ -1,14 +1,14 @@
 ---
-Title: [Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks
+Title: [Paper Summary] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks
 Date: 2016-08-22 16:53
-Category: Paper
+Category: Paper Summary
 Tags: Social Network, Machine Learning, Game Theory
 Slug: a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks
 Authors: Lee-W
 Summary: 
 ---
 
-[original paper](http://dl.acm.org/citation.cfm?id=2783392)
+[Paper](http://dl.acm.org/citation.cfm?id=2783392)
 
 <!--more-->
 ## 1. Introduction
