@@ -130,7 +130,7 @@ files要使用萬用字元，pattern則是使用regular&nbsp;expression</p>
 這就需要用到regular&nbsp;expression的group</p>
 <p>例如，我們希望把檔名從01~05這五個檔案改成01A~05A<br>
 我們如果只用<code>rename -n s/\[0-\9]{2}/\[0-9\]{2}A/ *</code>就會錯誤<br>&nbsp;必須要改成像下面這樣</p>
-<div class="codehilite"><pre><span></span>rename -n s/<span class="se">\(\[</span>0-<span class="se">\9</span><span class="o">]{</span>2<span class="o">}</span><span class="se">\)</span>/<span class="se">\$</span>1A/ *
+<div class="codehilite"><pre><span></span>rename -n s/<span class="se">\(\[</span><span class="m">0</span>-<span class="se">\9</span><span class="o">]{</span><span class="m">2</span><span class="o">}</span><span class="se">\)</span>/<span class="se">\$</span>1A/ *
 </pre></div>
 
 
