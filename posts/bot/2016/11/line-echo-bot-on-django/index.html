@@ -183,7 +183,7 @@ python3 manage.py startapp echobot
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="o">......</span><span class="p">,</span>
-    <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^echobot/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;echobot.urls&#39;</span><span class="p">)),</span>
+    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^echobot/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;echobot.urls&#39;</span><span class="p">)),</span>
 <span class="p">]</span>
 
 <span class="o">......</span>
@@ -474,7 +474,7 @@ brew cask install ngrok
 <p>預設django的port是8000<br>
 這裡並不需要使用0.0.0.0:8000，讓外部可以連到這個django server<br>&nbsp;ngrok會把request傳到local端相對應的port</p>
 <p>接著就要用ngrok將request導到本地端的port&nbsp;8000</p>
-<div class="codehilite"><pre><span></span>ngrok http 8000
+<div class="codehilite"><pre><span></span>ngrok http <span class="m">8000</span>
 </pre></div>
 
 
