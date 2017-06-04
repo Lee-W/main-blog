@@ -3,7 +3,7 @@ Title: About Me
 Date: 2017-02-14 12:30
 Modified: 2017-03-30 22:53
 ---
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 
@@ -17,6 +17,11 @@ I'm a
 <i class="fa fa-lg fa-music" style="padding-right:1em"></i> Ukulele Player
 <i class="fa fa-lg fa-lock" style="padding-right:1.4em"></i> Locker
 <i class="fa fa-lg fa-rebel" style="padding-right:1em"></i> Star Wars Fan
+
+As a programmer, I focus on web backend development.  
+Currently using flask, but also have some django experience.
+
+<a href="{filename}/static/resume.pdf"><button type="button" class="btn btn-default">Resume</button></a>
 
 ----
 
@@ -71,7 +76,7 @@ National Cheng Kung University, Tainan
 - [pip-check](https://github.com/Lee-W/pip-check) ([bartTC/pip-check](https://github.com/bartTC/pip-check))
 
 ### Other
-- [SITW 二手網](http://sitw-trade.herokuapp.com) (Backend Develpment)
+- [SITW 二手網](http://sitw-trade.herokuapp.com) (Backend Development)
 
 ## Tutoiral or Note
 ### Slide
@@ -84,7 +89,7 @@ National Cheng Kung University, Tainan
 - [Python Cookbook](https://github.com/Lee-W/Python_Cookbook)
 
 ### MOOCs
-- [Machine Learning (Cousera)](https://github.com/Lee-W/Machine-Learning-Coursera)
+- [Machine Learning (Coursera)](https://github.com/Lee-W/Machine-Learning-Coursera)
 - [Intro to Machine Learning](https://github.com/Lee-W/Intro_to_Machine_Learning_Udacity)
 - [Intro to Data Science Udacity](https://github.com/Lee-W/Intro_to_Data_Science_Udacity)
 - [Assignments for Udacity Deep Learning class with TensorFlow](https://github.com/Lee-W/Deep-Learning-Udacity)
