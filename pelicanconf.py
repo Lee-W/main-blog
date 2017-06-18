@@ -33,7 +33,7 @@ ARTICLE_URL = 'posts/{category}/{date:%Y}/{date:%m}/{slug}'
 ARTICLE_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{slug}/index.html'
 DEFAULT_PAGINATION = 10
 
-STATIC_PATHS = ['extra', 'images']
+STATIC_PATHS = ['extra', 'images', 'static']
 
 # Theme Setting
 THEME = 'theme/Flex/'
