@@ -36,7 +36,7 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['extra', 'images', 'static']
 
 # Theme Setting
-THEME = 'theme/Flex/'
+THEME = 'theme/pelican-clean-blog/'
 PYGMENTS_STYLE = 'xcode'
 # EXTRA_TEMPLATES_PATHS = ['templates/']
 EXTRA_PATH_METADATA = {
