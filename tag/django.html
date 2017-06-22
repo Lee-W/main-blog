@@ -1,154 +1,139 @@
-
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-
-    <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/stylesheet/style.min.css">
-
-  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/pygments/xcode.min.css">
-  <link rel="stylesheet" type="text/css" href="http://lee-w.github.io/theme/font-awesome/css/font-awesome.min.css">
-
-    <link href="http://lee-w.github.io/static/custom.css" rel="stylesheet">
-
-    <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Atom">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+        <title>Life Lies in Traveling - Tag django</title>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
+        <link href="//lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Full Atom Feed" />
+        <!-- Bootstrap Core CSS -->
+        <link href="http://lee-w.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#333333">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#333333">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <!-- Custom CSS -->
+        <link href="http://lee-w.github.io/theme/css/clean-blog.min.css" rel="stylesheet">
 
-    <meta name="author" content="Lee-W" />
-    <meta name="description" content="" />
-<meta property="og:site_name" content="Life Lies in Traveling"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="Life Lies in Traveling"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://lee-w.github.io"/>
-<meta property="og:image" content="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120">
+        <!-- Code highlight color scheme -->
+            <link href="http://lee-w.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet">
 
-  <title>Life Lies in Traveling &ndash;     Tag django
-</title>
 
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Life Lies in Traveling">
 </head>
+
 <body>
-  <aside>
-    <div>
-      <a href="http://lee-w.github.io">
-        <img src="//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120" alt="Lee-W" title="Lee-W">
-      </a>
-      <h1><a href="http://lee-w.github.io">Lee-W</a></h1>
 
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://lee-w.github.io/">Life Lies in Traveling</a>
+            </div>
 
-      <nav>
-        <ul class="list">
-          <li><a href="http://lee-w.github.io/pages/about-this-blog.html#about-this-blog">About This&nbsp;Blog</a></li>
-          <li><a href="http://lee-w.github.io/pages/about-me.html#about-me">About&nbsp;Me</a></li>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/archives.html">Archives</a></li>
+                        <li><a href="/categories.html">Categories</a></li>
+                        <li><a href="/tags.html">Tags</a></li>
 
-        </ul>
-      </nav>
-
-      <ul class="social">
-        <li><a class="sc-linkedin" href="http://tw.linkedin.com/in/clleew" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-        <li><a class="sc-github" href="http://github.com/Lee-W" target="_blank"><i class="fa fa-github"></i></a></li>
-        <li><a class="sc-facebook" href="http://www.facebook.com/clleew" target="_blank"><i class="fa fa-facebook"></i></a></li>
-        <li><a class="sc-rss" href="//lee-w.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
-      </ul>
-    </div>
-
-
-  </aside>
-  <main>
-
-    <nav>
-      <a href="http://lee-w.github.io">    Home
-</a>
-
-      <a href="/archives.html">Archives</a>
-      <a href="/categories.html">Categories</a>
-      <a href="/tags.html">Tags</a>
-
-      <a href="http://lee-w.github.io/feeds/all.atom.xml">    Atom
-</a>
-
+                            <li><a href="http://lee-w.github.io/pages/about-me.html">About&nbsp;Me</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This&nbsp;Blog</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
     </nav>
 
+        <header class="intro-header" style="background-image: url('http://lee-w.github.io/theme/images/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>Tag django</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-
-<article>
-  <header>
-    <h2><a href="http://lee-w.github.io/posts/bot/2016/11/deploy-linebot-on-heroku#deploy-linebot-on-heroku">[Bot] Deploy LineBot on&nbsp;Heroku</a></h2>
-    <p>
-          Posted on 2016/11/27 - 日 in <a href="http://lee-w.github.io/category/bot.html">Bot</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="http://lee-w.github.io/tag/heroku.html">Heroku</a>,              <a href="http://lee-w.github.io/tag/django.html">django</a>,              <a href="http://lee-w.github.io/tag/line.html">Line</a>
-    </p>
-  </header>
-  <div>
-      <p>上一篇提到如何用ngrok<br>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-preview">
+            <a href="http://lee-w.github.io/posts/bot/2016/11/deploy-linebot-on-heroku" rel="bookmark" title="Permalink to [Bot] Deploy LineBot on Heroku">
+                <h2 class="post-title">
+                    [Bot] Deploy LineBot on&nbsp;Heroku
+                </h2>
+            </a>
+                <p class="article-summary">
+                    <p>上一篇提到如何用ngrok<br>
 讓我們可以不用架Https&nbsp;Server，直接在本地端測試Bot</p>
 <p>再來要談的是如何把Bot部署到Heroku上</p>
 
-      <br>
-      <a class="btn" href="http://lee-w.github.io/posts/bot/2016/11/deploy-linebot-on-heroku#deploy-linebot-on-heroku">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django#line-echo-bot-on-django">[Bot] Line Echo Bot on&nbsp;Django</a></h2>
-    <p>
-          Posted on 2016/11/24 - 四 in <a href="http://lee-w.github.io/category/bot.html">Bot</a>
+                </p>
+            <p class="post-meta">Posted by
+                    <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
+                on 2016/11/27 - 日
+                <br />
 
-
-          &#8226;     Tagged with
-
-              <a href="http://lee-w.github.io/tag/django.html">django</a>,              <a href="http://lee-w.github.io/tag/line.html">Line</a>
-    </p>
-  </header>
-  <div>
-      <p>單純要寫一個只會Echo的Line Chat Bot<br>
+                    Tagged with
+                        <a href="http://lee-w.github.io/tag/heroku.html">Heroku</a>,                        <a href="http://lee-w.github.io/tag/django.html">django</a>,                        <a href="http://lee-w.github.io/tag/line.html">Line</a>            </p>
+        </div>
+        <div class="post-preview">
+            <a href="http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django" rel="bookmark" title="Permalink to [Bot] Line Echo Bot on Django">
+                <h2 class="post-title">
+                    [Bot] Line Echo Bot on&nbsp;Django
+                </h2>
+            </a>
+                <p class="article-summary">
+                    <p>單純要寫一個只會Echo的Line Chat Bot<br>
 用flask只要85行的code就能解決<br>
 官方已經有提供相當清楚的範例[flask-echo]<br>&nbsp;(https://github.com/line/line-bot-sdk-python/tree/master/examples/flask-echo)了</p>
 <p>這篇文章則是提供了django的做法<br>
 想直接看code也可以參考<a href="https://github.com/Lee-W/line_echobot">line_echobot</a></p>
 
-      <br>
-      <a class="btn" href="http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django#line-echo-bot-on-django">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://lee-w.github.io/posts/python/2015/05/solve-django-admin-cant-find-the-djangocore-on-mac#solve-django-admin-cant-find-the-djangocore-on-mac">解決django-admin在mac找不到django.core</a></h2>
-    <p>
-          Posted on 2015/05/10 - 日 in <a href="http://lee-w.github.io/category/python.html">Python</a>
+                </p>
+            <p class="post-meta">Posted by
+                    <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
+                on 2016/11/24 - 四
+                <br />
 
-
-          &#8226;     Tagged with
-
-              <a href="http://lee-w.github.io/tag/django.html">django</a>,              <a href="http://lee-w.github.io/tag/mac.html">mac</a>
-    </p>
-  </header>
-  <div>
-      <h2>問題</h2>
+                    Tagged with
+                        <a href="http://lee-w.github.io/tag/django.html">django</a>,                        <a href="http://lee-w.github.io/tag/line.html">Line</a>            </p>
+        </div>
+        <div class="post-preview">
+            <a href="http://lee-w.github.io/posts/python/2015/05/solve-django-admin-cant-find-the-djangocore-on-mac" rel="bookmark" title="Permalink to 解決django-admin在mac找不到django.core">
+                <h2 class="post-title">
+                    解決django-admin在mac找不到django.core
+                </h2>
+            </a>
+                <p class="article-summary">
+                    <h2>問題</h2>
 <p>在mac上，用pip3安裝完django 1.8.1後<br>
 執行<code>django-admin</code>出現了以下的錯誤訊息</p>
 <div class="codehilite"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
@@ -159,47 +144,97 @@
 
 
 
-      <br>
-      <a class="btn" href="http://lee-w.github.io/posts/python/2015/05/solve-django-admin-cant-find-the-djangocore-on-mac#solve-django-admin-cant-find-the-djangocore-on-mac">    Continue reading
-</a>
-  </div>
-</article>
+                </p>
+            <p class="post-meta">Posted by
+                    <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
+                on 2015/05/10 - 日
+                <br />
 
-  <div class="pagination">
-  </div>
+                    Tagged with
+                        <a href="http://lee-w.github.io/tag/django.html">django</a>,                        <a href="http://lee-w.github.io/tag/mac.html">mac</a>            </p>
+        </div>
 
+            </div>
+        </div>
+    </div>
 
+    <hr>
 
-
+    <!-- Footer -->
     <footer>
-<p>&copy; Lee-W </p>
-<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
-</p>    </footer>
-  </main>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="http://tw.linkedin.com/in/clleew">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://github.com/Lee-W">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.facebook.com/clleew">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="//lee-w.github.io/feeds/all.atom.xml">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>. <br />        &copy;  Lee-W
+</p>                </div>
+            </div>
+        </div>
+    </footer>
 
-<!-- Google Analytics -->
+    <!-- jQuery -->
+    <script src="http://lee-w.github.io/theme/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://lee-w.github.io/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="http://lee-w.github.io/theme/js/clean-blog.min.js"></script>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-96190677-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
 <script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-96190677-1', 'auto');
-  ga('send', 'pageview');
-</script>
-<!-- End Google Analytics -->
-
-
-
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " Life Lies in Traveling ",
-  "url" : "http://lee-w.github.io",
-  "image": "//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120",
-  "description": ""
-}
+    var disqus_shortname = 'lee-w-blog';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
 </script>
 </body>
+
 </html>
