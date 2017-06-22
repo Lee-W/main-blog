@@ -1,5 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Python</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/python.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-06-18T14:08:00+08:00</updated><entry><title>PyCon TW 2017 - Sprint</title><link href="http://lee-w.github.io/posts/python/2017/06/PyCon-TW-2017-Sprint" rel="alternate"></link><published>2017-06-17T16:07:00+08:00</published><updated>2017-06-17T16:07:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-06-17:/posts/python/2017/06/PyCon-TW-2017-Sprint</id><summary type="html">&lt;p&gt;這天的Sprint是由今年的Keynote Speaker - Russell Keith-Magee帶來他的開源專案&lt;a href="https://pybee.org"&gt;BeeWare&lt;/a&gt;&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Python</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/python.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-06-22T22:10:00+08:00</updated><entry><title>Python@Instagram</title><link href="http://lee-w.github.io/posts/python/2017/06/Python-at-IG" rel="alternate"></link><published>2017-06-22T22:10:00+08:00</published><updated>2017-06-22T22:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-06-22:/posts/python/2017/06/Python-at-IG</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=66XoCk79kjM"&gt;Lisa Guo, Hui Ding Keynote PyCon&amp;nbsp;2017&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/pycon2017/keynote-lisa-guo-and-hui-ding-python-at-instagram"&gt;slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;終於好好花個時間看完今年IG在PyCon US的Talk了&lt;br&gt;&amp;nbsp;的確蠻值得大家花這個時間去看的&lt;/p&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=66XoCk79kjM"&gt;Lisa Guo, Hui Ding Keynote PyCon&amp;nbsp;2017&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/pycon2017/keynote-lisa-guo-and-hui-ding-python-at-instagram"&gt;slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;終於好好花個時間看完今年IG在PyCon US的Talk了&lt;br&gt;&amp;nbsp;的確蠻值得大家花這個時間去看的&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;如果要看懶人包&lt;br&gt;
+Google一下「PyCon」、「Instagram」有很多很清楚地整理&lt;br&gt;&amp;nbsp;我也整理了一點點我覺得特別有意思的&lt;/p&gt;
+&lt;h2&gt;Why&amp;nbsp;Python?&lt;/h2&gt;
+&lt;p&gt;(一開始主要是歷史因素，因為當初的創辦人就這麼用了XD)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use Proven Technology&lt;ul&gt;
+&lt;li&gt;Users do not care what database Instagram runs on. They certainly don&amp;#8217;t care what language Instagram develop&amp;nbsp;in.&lt;/li&gt;
+&lt;li&gt;Focus on scoping and solve real problems rather than getting stuck on language&amp;nbsp;detail.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;But Python is still slow,&amp;nbsp;right?&lt;/h2&gt;
+&lt;p&gt;At instagram, our bottlenecck is development velocity, not pure code&amp;nbsp;execution&lt;/p&gt;
+&lt;p&gt;The conclusion is that you can get to a few hundred million users with Python before worrying about the performance of framework and&amp;nbsp;language &lt;/p&gt;
+&lt;h2&gt;Python Efficiency&amp;nbsp;Strategy&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Build extensive tools to profile and understand performance&amp;nbsp;bottleneck&lt;/li&gt;
+&lt;li&gt;Moving stable, citical compenents to&amp;nbsp;C/C++&lt;/li&gt;
+&lt;li&gt;Cythonization&lt;/li&gt;
+&lt;li&gt;Async? New Pyton&amp;nbsp;runtime?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Road to&amp;nbsp;Python3&lt;/h2&gt;
+&lt;p&gt;這一段講到Instragram如何從Python2轉到Python3的過程&lt;br&gt;&amp;nbsp;我覺得很精彩，所以大家就自己去看吧XD&lt;/p&gt;
+&lt;p&gt;我只紀錄一個我覺得特別有趣的東西&lt;br&gt;
+如同大家所知道的Python2跟Python3一個很大的不同點，就是對於byte跟str的處理&lt;br&gt;
+這就會導致我們必須先確認他的型態是否符合預期&lt;br&gt;&amp;nbsp;如果不符合就要在做encode或decode&lt;/p&gt;
+&lt;p&gt;可能就會像下面這樣&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;abc&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;six&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text_type&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;encode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;encode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;mymac&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;hamc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Instagram處理這種問題的功能實作成&lt;code&gt;ensure_binary&lt;/code&gt;, &lt;code&gt;ensure_str&lt;/code&gt;, &lt;code&gt;ensure_text&lt;/code&gt;這類的helper&amp;nbsp;functon&lt;/p&gt;
+&lt;p&gt;這也是我之前在trace &lt;a href="https://github.com/pytransitions/transitions"&gt;transitions&lt;/a&gt; 的source code&lt;br&gt;
+發現有一個&lt;a href="https://github.com/pytransitions/transitions/blob/2cb42916affe167a8d94cdfdf56ab08b41ccd05c/transitions/core.py#L25"&gt;listify&lt;/a&gt;的function&lt;br&gt;&amp;nbsp;雖然是蠻簡單的小技巧，不過還算蠻實用的&lt;/p&gt;</content><category term="PyCon"></category></entry><entry><title>PyCon TW 2017 - Sprint</title><link href="http://lee-w.github.io/posts/python/2017/06/PyCon-TW-2017-Sprint" rel="alternate"></link><published>2017-06-17T16:07:00+08:00</published><updated>2017-06-17T16:07:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-06-17:/posts/python/2017/06/PyCon-TW-2017-Sprint</id><summary type="html">&lt;p&gt;這天的Sprint是由今年的Keynote Speaker - Russell Keith-Magee帶來他的開源專案&lt;a href="https://pybee.org"&gt;BeeWare&lt;/a&gt;&lt;br&gt;
 讓大家一起來貢獻&lt;br&gt;
 這個專案還蠻有趣的&lt;br&gt;
 主要就是要讓Python能在各平台上跑 (i.e. web,&amp;nbsp;mobile)&lt;/p&gt;
