@@ -46,7 +46,8 @@ touch REAMDE.mdd
 &lt;p&gt;There are three main stages&lt;br&gt;
 1. working&lt;br&gt;
 2. staging&lt;br&gt;
-3.&amp;nbsp;repo  &lt;/p&gt;
+3. repo&lt;br&gt;
+&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -89,7 +90,8 @@ git status
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Now this file is in staging&amp;nbsp;area  &lt;/p&gt;
+&lt;p&gt;Now this file is in staging area&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;So, how to go back to history?&lt;br&gt;
 &lt;code&gt;git reset REAMDE.md&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Take a look at our history&lt;br&gt;
@@ -98,7 +100,8 @@ git status
 &lt;code&gt;git checkout "SHA1"&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git checkout master&lt;/code&gt;&lt;br&gt;
 Everything comes&amp;nbsp;back&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;master&lt;/code&gt; is the default branch name of git. It is a default word but not&amp;nbsp;reserved.  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;master&lt;/code&gt; is the default branch name of git. It is a default word but not reserved.&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git checkout -b "branch_name"&lt;/code&gt; create a branch and checkout to&amp;nbsp;it&lt;/p&gt;
 &lt;h2&gt;diff&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git diff&lt;/code&gt;: View the difference between working and&amp;nbsp;staging&lt;/p&gt;
@@ -106,8 +109,10 @@ Everything comes&amp;nbsp;back&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git diff "SHA1"&lt;/code&gt;: Difference between current version and &lt;span class="caps"&gt;SHA1&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git diff master~1&lt;/code&gt;: difference between current and the one before master&lt;br&gt;
 &lt;code&gt;git diff master^&lt;/code&gt; -&amp;gt; master~1&lt;br&gt;
-&lt;code&gt;git diff master^^&lt;/code&gt; -&amp;gt;&amp;nbsp;master~2  &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git diff a b&lt;/code&gt;: Show the change from a to&amp;nbsp;b  &lt;/p&gt;
+&lt;code&gt;git diff master^^&lt;/code&gt; -&amp;gt; master~2&lt;br&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git diff a b&lt;/code&gt;: Show the change from a to b&lt;br&gt;
+&lt;/p&gt;
 &lt;h2&gt;branch&lt;/h2&gt;
 &lt;p&gt;In git, branch is not copy. It&amp;#8217;s like bookmark&lt;br&gt;
 Actually &lt;code&gt;git branch -d "name"&lt;/code&gt; just delete the pointer but not the&amp;nbsp;entry.&lt;/p&gt;
@@ -116,7 +121,8 @@ Actually &lt;code&gt;git branch -d "name"&lt;/code&gt; just delete the pointer b
 &lt;p&gt;If you go back to a entry not in certain branch, a detach error might occur.&lt;br&gt;
 For example, checkout to a commit that is parent of more than one branch and then append a new commit to it.&lt;br&gt;
 In such case, this new appended commit might not be able to be referenced.&lt;br&gt;
-&lt;em&gt;The solution to this problem is to create a new branch for&amp;nbsp;it.&lt;/em&gt;  &lt;/p&gt;
+&lt;em&gt;The solution to this problem is to create a new branch for it.&lt;/em&gt;&lt;br&gt;
+&lt;/p&gt;
 &lt;h2&gt;log&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git log --decorate&lt;/code&gt;: Show also branch&amp;nbsp;info&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git log --all&lt;/code&gt;: Show all&amp;nbsp;branch&lt;/p&gt;
@@ -130,7 +136,8 @@ In such case, this new appended commit might not be able to be referenced.&lt;br
 &lt;p&gt;&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;br&gt;
 - upload &lt;em&gt;master&lt;/em&gt; to &lt;em&gt;origin&lt;/em&gt;&lt;br&gt;
 - -u tell git the default url to push for that branch(master) is origin, it would also make &lt;code&gt;git pull&lt;/code&gt; remember&lt;br&gt;
-    - Do -u and after that you can just use &lt;code&gt;git push&lt;/code&gt;  &lt;/p&gt;
+    - Do -u and after that you can just use &lt;code&gt;git push&lt;/code&gt;&lt;br&gt;
+&lt;/p&gt;
 &lt;h2&gt;pull&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git push --all&lt;/code&gt;: push all branch&lt;br&gt;
 &lt;code&gt;git pull --prune&lt;/code&gt;&lt;/p&gt;
@@ -140,22 +147,28 @@ git pull -&amp;gt; fetch +&amp;nbsp;merge&lt;/p&gt;
 &lt;h2&gt;on-site&lt;/h2&gt;
 &lt;p&gt;pull request on GitHub&lt;br&gt;
 &lt;code&gt;@person-name&lt;/code&gt; -&amp;gt; notification&lt;br&gt;
-Have a conversation with the whole&amp;nbsp;team  &lt;/p&gt;
+Have a conversation with the whole team&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;Write &amp;#8220;fix #2 &amp;#8230;.&amp;#8221; in git commit -&amp;gt; special meaning -&amp;gt; specify the bug in issue on GitHub&lt;br&gt;
 Wiki -&amp;gt;&amp;nbsp;documentation&lt;/p&gt;
 &lt;h1&gt;How to write a good git&amp;nbsp;commit&lt;/h1&gt;
 &lt;h2&gt;Principle&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Separate each&amp;nbsp;commit&lt;/li&gt;
-&lt;li&gt;Let the commit tell a&amp;nbsp;story  &lt;/li&gt;
+&lt;li&gt;Let the commit tell a story&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;More&amp;nbsp;specific&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;One line 80&amp;nbsp;character  &lt;/li&gt;
-&lt;li&gt;Use present tense instead of past&amp;nbsp;tense  &lt;/li&gt;
-&lt;li&gt;Don&amp;#8217;t repeat what can be found in &lt;code&gt;git diff&lt;/code&gt;  &lt;/li&gt;
+&lt;li&gt;One line 80 character&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;Use present tense instead of past tense&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;Don&amp;#8217;t repeat what can be found in &lt;code&gt;git diff&lt;/code&gt;&lt;br&gt;
+&lt;/li&gt;
 &lt;li&gt;If more detail is to be written, left the second line to be&amp;nbsp;blank.&lt;/li&gt;
-&lt;li&gt;Write more detail about why this change happened after the third&amp;nbsp;line.  &lt;/li&gt;
+&lt;li&gt;Write more detail about why this change happened after the third line.&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Other&amp;nbsp;issue&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git config --global -e&lt;/code&gt;: Edit your .gitconfig&amp;nbsp;file.&lt;/p&gt;
@@ -167,11 +180,12 @@ If it&amp;#8217;s needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/
 &lt;p&gt;If you commit the password -&amp;gt; &lt;code&gt;git rebase&lt;/code&gt; can change commit, but it is not that&amp;nbsp;recommended.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git submodule&lt;/code&gt; create a&amp;nbsp;sub-module&lt;/p&gt;</content><category term="GitHub"></category></entry><entry><title>gitignore.io</title><link href="http://lee-w.github.io/posts/git/2015/02/gitignoreio" rel="alternate"></link><published>2015-02-03T05:58:00+08:00</published><updated>2015-02-03T05:58:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-02-03:/posts/git/2015/02/gitignoreio</id><summary type="html">&lt;p&gt;每次開一個git專案，要為它找適當的.gitignore，都要上網找模板蠻麻煩的&lt;br&gt;
 能不能有個簡單的方法，我開什麼專案就產生怎樣的.gitignore&lt;br&gt;
-然後我就發現了&lt;a href="https://www.gitignore.io"&gt;gitignore.io&lt;/a&gt;&lt;br&gt;
+然後我就發現了&lt;a href="https://www.gitignore.io"&gt;gitignore.io&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;每次開一個git專案，要為它找適當的.gitignore，都要上網找模板蠻麻煩的&lt;br&gt;
 能不能有個簡單的方法，我開什麼專案就產生怎樣的.gitignore&lt;br&gt;
-然後我就發現了&lt;a href="https://www.gitignore.io"&gt;gitignore.io&lt;/a&gt;&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+然後我就發現了&lt;a href="https://www.gitignore.io"&gt;gitignore.io&lt;/a&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;p&gt;簡單來說gitignore.io提供各式各樣的gitignore，而且可以自動合併成一個file&lt;br&gt;
 最棒的是它有提供api讓我們在command&amp;nbsp;line上使用&lt;/p&gt;
 &lt;h1&gt;gitignore.io on&amp;nbsp;command&lt;/h1&gt;
@@ -243,7 +257,9 @@ sudo rm gi_extension.sh /usr/bin/gi
 將原本&lt;code&gt;gi list&lt;/code&gt;的output，儲存到&lt;code&gt;~/.gi_list&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;顯示支援類型&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;以表格的方式輸出支援的類型&lt;br&gt;&amp;nbsp;目前設定一個row容納5個column，每個column長度為25  &lt;/li&gt;
+&lt;li&gt;以表格的方式輸出支援的類型&lt;br&gt;
+目前設定一個row容納5個column，每個column長度為25&lt;br&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -l
 &lt;/pre&gt;&lt;/div&gt;
@@ -284,13 +300,14 @@ sudo rm gi_extension.sh /usr/bin/gi
 
 
 &lt;p&gt;其實每次gi被執行的時候，都會在backgroud更新列表&lt;br&gt;
-但是這次的更新，下次才能被使用&lt;br&gt;&amp;nbsp;所以如果想要強制更新就可以用上這個指令&lt;/p&gt;</content><category term="Deprecated"></category></entry><entry><title>Gitbook on Command Line</title><link href="http://lee-w.github.io/posts/git/2015/01/gitbook-on-command-line" rel="alternate"></link><published>2015-01-23T07:34:00+08:00</published><updated>2015-01-23T07:34:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-23:/posts/git/2015/01/gitbook-on-command-line</id><summary type="html">&lt;p&gt;最近比較認真在寫Gitbook，順便記錄一下該怎麼用&lt;br&gt;
+但是這次的更新，下次才能被使用&lt;br&gt;&amp;nbsp;所以如果想要強制更新就可以用上這個指令&lt;/p&gt;</content><category term="Deprecated"></category><category term="Utility"></category></entry><entry><title>Gitbook on Command Line</title><link href="http://lee-w.github.io/posts/git/2015/01/gitbook-on-command-line" rel="alternate"></link><published>2015-01-23T07:34:00+08:00</published><updated>2015-01-23T07:34:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-23:/posts/git/2015/01/gitbook-on-command-line</id><summary type="html">&lt;p&gt;最近比較認真在寫Gitbook，順便記錄一下該怎麼用&lt;br&gt;
 簡單來說Gitbook就是可以使用markdown來寫書的平台，可以轉成各種電子書的格式&lt;br&gt;
-目前已經支援的有html, pdf, ePUB, &lt;span class="caps"&gt;MOBI&lt;/span&gt;&lt;br&gt;
+目前已經支援的有html, pdf, ePUB, &lt;span class="caps"&gt;MOBI&lt;/span&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最近比較認真在寫Gitbook，順便記錄一下該怎麼用&lt;br&gt;
 簡單來說Gitbook就是可以使用markdown來寫書的平台，可以轉成各種電子書的格式&lt;br&gt;
-目前已經支援的有html, pdf, ePUB, &lt;span class="caps"&gt;MOBI&lt;/span&gt;&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+目前已經支援的有html, pdf, ePUB, &lt;span class="caps"&gt;MOBI&lt;/span&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;p&gt;之前寫了一本Clean Code的筆記&lt;br&gt;
 最近又開始寫一本FreeBSD和網管相關的Gitbook&lt;br&gt;
 如果有興趣可以到&lt;a href="https://www.gitbook.com/@lee-w"&gt;我的Gitbook&lt;/a&gt;上看看XD&lt;/p&gt;
@@ -378,8 +395,12 @@ git push -u gitbook
 &lt;li&gt;&lt;a href="https://github.com/GitbookIO/gitbook"&gt;Gitbook&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://help.gitbook.io/index.html"&gt;GitBook&amp;nbsp;Documentaion&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.codedata.com.tw/social-coding/gitbook-self-publishing/"&gt;深入淺出 GitBook&amp;nbsp;寫作與自助出版，電子書也能多人協作&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Git Book"></category></entry><entry><title>Git and Git Hub</title><link href="http://lee-w.github.io/posts/git/2014/02/git-and-git-hub" rel="alternate"></link><published>2014-02-22T16:18:00+08:00</published><updated>2014-02-22T16:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-22:/posts/git/2014/02/git-and-git-hub</id><summary type="html"></summary><content type="html">&lt;p&gt;這份筆記已經是舊的版本了&lt;br&gt;
+&lt;/ul&gt;</content><category term="Git Book"></category></entry><entry><title>Git and Git Hub</title><link href="http://lee-w.github.io/posts/git/2014/02/git-and-git-hub" rel="alternate"></link><published>2014-02-22T16:18:00+08:00</published><updated>2014-02-22T16:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-22:/posts/git/2014/02/git-and-git-hub</id><summary type="html">&lt;p&gt;這份筆記已經是舊的版本了&lt;br&gt;
 請參考&lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;新版&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;這份筆記已經是舊的版本了&lt;br&gt;
+請參考&lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;新版&lt;/a&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;p&gt;最近因為專題需要，所以寫了一份簡單的Git筆記&lt;br&gt;
 裡面大概就是我常用的指令&lt;br&gt;&amp;nbsp;因為我也只是剛開始使用git沒多久，內容不會太深入&lt;/p&gt;
 &lt;iframe src="http://www.slideshare.net/slideshow/embed_code/31515684" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt;

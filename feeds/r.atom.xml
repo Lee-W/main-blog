@@ -45,8 +45,6 @@ IRkernel::installspec()
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;!--more--&gt;
-
 &lt;h2&gt;解決&lt;/h2&gt;
 &lt;p&gt;這時候就要將缺少的套件補齊&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install czmq zmq

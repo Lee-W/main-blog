@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>[Bot] Line Echo Bot on&nbsp;Django</title>
+        <title>Line Echo Bot on&nbsp;Django</title>
 
         <link href="//lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Full Atom Feed" />
         <!-- Bootstrap Core CSS -->
@@ -39,7 +39,7 @@
         <meta name="author" content="Lee-W">
 
         <meta name="tags" content="django">
-        <meta name="tags" content="Line">
+        <meta name="tags" content="Line Bot">
 
 	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="Life Lies in Traveling">
@@ -47,7 +47,7 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 	<meta property="og:url" content="http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django">
-	<meta property="og:title" content="[Bot] Line Echo Bot on Django">
+	<meta property="og:title" content="Line Echo Bot on Django">
 	<meta property="article:published_time" content="2016-11-24 03:26:00+08:00">
             <meta property="og:description" content="單純要寫一個只會Echo的Line Chat Bot 用flask只要85行的code就能解決...">
 
@@ -92,7 +92,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>[Bot] Line Echo Bot on&nbsp;Django</h1>
+                        <h1>Line Echo Bot on&nbsp;Django</h1>
                         <span class="meta">Posted by
                                 <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
                              on 2016/11/24 - 四
@@ -236,7 +236,6 @@ python3 manage.py startapp echobot
 <p>有兩種方法可以處理Line Server送過來的訊息<br>&nbsp;這裡先用Todo記著，待會再來補上</p>
 <div class="codehilite"><pre><span></span><span class="c1"># TODO: Define Receiver</span>
 
-
 <span class="nd">@csrf_exempt</span>
 <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
@@ -374,7 +373,6 @@ e.g.<br>
 <span class="n">line_bot_api</span> <span class="o">=</span> <span class="n">LineBotApi</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LINE_CHANNEL_ACCESS_TOKEN</span><span class="p">)</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">WebhookParser</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LINE_CHANNEL_SECRET</span><span class="p">)</span>
 
-
 <span class="nd">@csrf_exempt</span>
 <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
@@ -419,14 +417,12 @@ e.g.<br>
 <span class="n">line_bot_api</span> <span class="o">=</span> <span class="n">LineBotApi</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LINE_CHANNEL_ACCESS_TOKEN</span><span class="p">)</span>
 <span class="n">handler</span> <span class="o">=</span> <span class="n">WebhookHandler</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LINE_CHANNEL_SECRET</span><span class="p">)</span>
 
-
 <span class="nd">@handler.add</span><span class="p">(</span><span class="n">MessageEvent</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">TextMessage</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">handle_text_message</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
     <span class="n">line_bot_api</span><span class="o">.</span><span class="n">reply_message</span><span class="p">(</span>
         <span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span>
         <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
     <span class="p">)</span>
-
 
 <span class="nd">@handler.default</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
@@ -435,7 +431,6 @@ e.g.<br>
         <span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span>
         <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Currently Not Support None Text Message&#39;</span><span class="p">)</span>
     <span class="p">)</span>
-
 
 <span class="nd">@csrf_exempt</span>
 <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
@@ -513,7 +508,7 @@ brew cask install ngrok
     </article>
 
         <div class="tags">
-            <p>tags: <a href="http://lee-w.github.io/tag/django.html">django</a>, <a href="http://lee-w.github.io/tag/line.html">Line</a></p>
+            <p>tags: <a href="http://lee-w.github.io/tag/django.html">django</a>, <a href="http://lee-w.github.io/tag/line-bot.html">Line Bot</a></p>
         </div>
 
     <hr>
@@ -521,22 +516,22 @@ brew cask install ngrok
       <p>This post is part 3 of the "Line Bot Tutorial" series:</p>
       <ol class="parts">
             <li >
-                <a href='http://lee-w.github.io/posts/bot/2016/11/introduction-to-chatbot'>[Bot] Introduction to&nbsp;Chatbot</a>
+                <a href='http://lee-w.github.io/posts/bot/2016/11/introduction-to-chatbot'>Introduction to&nbsp;Chatbot</a>
             </li>
             <li >
-                <a href='http://lee-w.github.io/posts/bot/2016/11/apply-line-messaging-api'>[Bot] Apply Line Messaging <span class="caps">API</span></a>
+                <a href='http://lee-w.github.io/posts/bot/2016/11/apply-line-messaging-api'>Apply Line Messaging <span class="caps">API</span></a>
             </li>
             <li class="active">
-                <a href='http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django'>[Bot] Line Echo Bot on&nbsp;Django</a>
+                <a href='http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django'>Line Echo Bot on&nbsp;Django</a>
             </li>
             <li >
-                <a href='http://lee-w.github.io/posts/bot/2016/11/deploy-linebot-on-heroku'>[Bot] Deploy LineBot on&nbsp;Heroku</a>
+                <a href='http://lee-w.github.io/posts/bot/2016/11/deploy-linebot-on-heroku'>Deploy LineBot on&nbsp;Heroku</a>
             </li>
             <li >
-                <a href='http://lee-w.github.io/posts/bot/2016/11/more-about-line-messaging-api-template-messages'>[Bot] More About Line Messaging <span class="caps">API</span> - Template&nbsp;Messages</a>
+                <a href='http://lee-w.github.io/posts/bot/2016/11/more-about-line-messaging-api-template-messages'>More About Line Messaging <span class="caps">API</span> - Template&nbsp;Messages</a>
             </li>
             <li >
-                <a href='http://lee-w.github.io/posts/bot/2016/11/more-than-just-echo-bot'>[Bot] More than Just Echo&nbsp;Bot</a>
+                <a href='http://lee-w.github.io/posts/bot/2016/11/more-than-just-echo-bot'>More than Just Echo&nbsp;Bot</a>
             </li>
       </ol>
 

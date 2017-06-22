@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Android</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/android.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2014-11-23T09:26:00+08:00</updated><entry><title>Android Studio+Genymotion安裝(12/29更新)</title><link href="http://lee-w.github.io/posts/android/2014/11/android-studio-and-genymotion-installation" rel="alternate"></link><published>2014-11-23T09:26:00+08:00</published><updated>2014-11-23T09:26:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-11-23:/posts/android/2014/11/android-studio-and-genymotion-installation</id><summary type="html">&lt;h1&gt;What is Android&amp;nbsp;Studio?&lt;/h1&gt;
-&lt;p&gt;最近Google在推行的Android &lt;span class="caps"&gt;IDE&lt;/span&gt;，前身是IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&lt;br&gt;
-</summary><content type="html">&lt;h1&gt;What is Android&amp;nbsp;Studio?&lt;/h1&gt;
-&lt;p&gt;最近Google在推行的Android &lt;span class="caps"&gt;IDE&lt;/span&gt;，前身是IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&lt;br&gt;
-&lt;!--more--&gt;&lt;br&gt;
-它的檔案架構跟eclipse差蠻多的，所以用不同的IDE來協作會有點麻煩&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Android</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/android.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2014-11-23T09:26:00+08:00</updated><entry><title>Android Studio+Genymotion安裝(12/29更新)</title><link href="http://lee-w.github.io/posts/android/2014/11/android-studio-and-genymotion-installation" rel="alternate"></link><published>2014-11-23T09:26:00+08:00</published><updated>2014-11-23T09:26:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-11-23:/posts/android/2014/11/android-studio-and-genymotion-installation</id><summary type="html">&lt;p&gt;最近Google在推行的Android &lt;span class="caps"&gt;IDE&lt;/span&gt;，前身是IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;最近Google在推行的Android &lt;span class="caps"&gt;IDE&lt;/span&gt;，前身是IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;它的檔案架構跟eclipse差蠻多的，所以用不同的IDE來協作會有點麻煩&lt;br&gt;
 就我的經驗Android Studio比eclipse來得穩定一些&lt;br&gt;&amp;nbsp;反正現在還有Google在背後支持它，就來試試看吧XD&lt;/p&gt;
 &lt;h3&gt;2014/11/23更新&lt;/h3&gt;
 &lt;p&gt;&lt;a href="#1123 update 1"&gt;Install &lt;span class="caps"&gt;SDK&lt;/span&gt;&lt;/a&gt;: 更新了Android Studio 0.8.14後需要的額外設定&lt;br&gt;

@@ -494,7 +494,8 @@ Parallel:&amp;nbsp;一個時間點同時跑&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;讓那篇文章的回應當作ground&amp;nbsp;truth&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;來評斷機器人產生的結果好不好    &lt;/li&gt;
+&lt;li&gt;來評斷機器人產生的結果好不好  &lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -511,7 +512,8 @@ Parallel:&amp;nbsp;一個時間點同時跑&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;不定時提醒 -&amp;nbsp;貼近使用者&lt;/li&gt;
-&lt;li&gt;隨機答案 -&amp;nbsp;提高趣味   &lt;/li&gt;
+&lt;li&gt;隨機答案 - 提高趣味 &lt;br&gt;
+&lt;/li&gt;
 &lt;li&gt;學習與進化&lt;/li&gt;
 &lt;li&gt;Multi-channel&amp;nbsp;(多渠道互動)&lt;/li&gt;
 &lt;/ul&gt;
@@ -553,7 +555,8 @@ Parallel:&amp;nbsp;一個時間點同時跑&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#6"&gt;Understanding Serverless Architecture&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;同場加映：&lt;a href="https://drive.google.com/file/d/0Bz8Kfu_94VuJcVo1a1drQjhReU0/view"&gt;Don’t Reinvent Sandwich&lt;/a&gt; (本議程沒供餐 &lt;span class="caps"&gt;XD&lt;/span&gt;)  &lt;/li&gt;
+&lt;li&gt;同場加映：&lt;a href="https://drive.google.com/file/d/0Bz8Kfu_94VuJcVo1a1drQjhReU0/view"&gt;Don’t Reinvent Sandwich&lt;/a&gt; (本議程沒供餐 &lt;span class="caps"&gt;XD&lt;/span&gt;)&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#7"&gt;Tensorflow &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; Python: Fault Detection&amp;nbsp;System&lt;/a&gt;&lt;/li&gt;
@@ -774,7 +777,8 @@ Parallel:&amp;nbsp;一個時間點同時跑&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Try except for any case&lt;ul&gt;
-&lt;li&gt;dockerpy的雷xd   &lt;/li&gt;
+&lt;li&gt;dockerpy的雷xd &lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;File Permission&lt;ul&gt;
@@ -843,7 +847,9 @@ Parallel:&amp;nbsp;一個時間點同時跑&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Log is also natural language.&lt;br&gt;
 The sequence of words and expression is important sequential&amp;nbsp;data.&lt;/p&gt;
-&lt;p&gt;這場我真的就有點聽不太懂了＠＠&lt;/p&gt;</content><category term="PyCon"></category></entry><entry><title>Common Neovim Problems</title><link href="http://lee-w.github.io/posts/vim/2017/05/common-neovim-problems" rel="alternate"></link><published>2017-05-14T13:13:00+08:00</published><updated>2017-05-14T13:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-05-14:/posts/vim/2017/05/common-neovim-problems</id><summary type="html"></summary><content type="html">&lt;h2&gt;Load ~/.vimrc from&amp;nbsp;neovim&lt;/h2&gt;
+&lt;p&gt;這場我真的就有點聽不太懂了＠＠&lt;/p&gt;</content><category term="PyCon"></category></entry><entry><title>Common Neovim Problems</title><link href="http://lee-w.github.io/posts/vim/2017/05/common-neovim-problems" rel="alternate"></link><published>2017-05-14T13:13:00+08:00</published><updated>2017-05-14T13:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-05-14:/posts/vim/2017/05/common-neovim-problems</id><summary type="html"></summary><content type="html">&lt;!--more--&gt;
+
+&lt;h2&gt;Load ~/.vimrc from&amp;nbsp;neovim&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;XDG_CONFIG_HOME&lt;/span&gt;&lt;span class="p"&gt;:=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="p"&gt;/.config&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
 ln -s ~/.vim &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim
 ln -s ~/.vimrc &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim/init.vim
@@ -859,18 +865,18 @@ ln -s ~/.vimrc &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim/init.vi
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/3536"&gt;.nvimrc doesn&amp;#8217;t seem to be loaded up or working and it cannot create backups on editing existing&amp;nbsp;files&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/1755"&gt;No python interpreter&amp;nbsp;found.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Neovim"></category></entry><entry><title>[Paper Summary] Deep Learning-Based Document Modeling for Personality Detection from Text</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text" rel="alternate"></link><published>2017-04-11T17:59:00+08:00</published><updated>2017-04-11T17:59:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-11:/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text</id><summary type="html">&lt;p&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
-Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
+&lt;/ul&gt;</content><category term="Neovim"></category></entry><entry><title>[Paper] Deep Learning-Based Document Modeling for Personality Detection from Text</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text" rel="alternate"></link><published>2017-04-11T17:59:00+08:00</published><updated>2017-04-11T17:59:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-11:/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Data Set&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://mypersonality.org/wiki/doku.php?id=wcpr13"&gt;James Pennebaker and Laura King&amp;#8217;s stream-of-consciousness essay&amp;nbsp;dataset&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;&lt;span class="caps"&gt;NRC&lt;/span&gt; Word-Emotion Association&amp;nbsp;Lexicon&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
-Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Data Set&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://mypersonality.org/wiki/doku.php?id=wcpr13"&gt;James Pennebaker and Laura King&amp;#8217;s stream-of-consciousness essay&amp;nbsp;dataset&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;&lt;span class="caps"&gt;NRC&lt;/span&gt; Word-Emotion Association&amp;nbsp;Lexicon&lt;/a&gt;&lt;/li&gt;
@@ -1022,7 +1028,7 @@ Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Deep Learning"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category></entry><entry><title>[Paper Summary] Understanding Personality through Social Media</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media" rel="alternate"></link><published>2017-04-05T22:30:00+08:00</published><updated>2017-04-05T22:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-05:/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media</id><summary type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
+&lt;/script&gt;</content><category term="Deep Learning"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category></entry><entry><title>[Paper] Understanding Personality through Social Media</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media" rel="alternate"></link><published>2017-04-05T22:30:00+08:00</published><updated>2017-04-05T22:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-05:/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media</id><summary type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Main Purpose: To see how linguistic features correlate with each personality&amp;nbsp;trait.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Main Purpose: To see how linguistic features correlate with each personality&amp;nbsp;trait.&lt;/p&gt;
@@ -1125,13 +1131,17 @@ e.g. &lt;span class="caps"&gt;ENFJ&lt;/span&gt;, &lt;span class="caps"&gt;INTP&l
 &lt;h4&gt;Insight&lt;/h4&gt;
 &lt;p&gt;Among the results, word vector performs best which might illustrate that predictions based on social media and language would&amp;nbsp;work.&lt;/p&gt;
 &lt;p&gt;During the &lt;span class="caps"&gt;POS&lt;/span&gt; conversion process, information is compressed into 25 tags and might lost some important one.&lt;br&gt;
-This might be the reason why it performs&amp;nbsp;worse.&lt;/p&gt;</content><category term="Machine Learning"></category><category term="NLP"></category><category term="MBTI"></category><category term="Personality"></category></entry><entry><title>[Paper Summary] Toward Personality Insights from Language Exploration in Social Media</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media" rel="alternate"></link><published>2017-04-04T18:45:00+08:00</published><updated>2017-04-04T18:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-04:/posts/paper-summary/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media</id><summary type="html">&lt;p&gt;&lt;a href="http://wwbp.org/papers/sam2013-dla.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
-&lt;a href="http://wwbp.org/personality_wc.html"&gt;Demo&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/p&gt;
+This might be the reason why it performs&amp;nbsp;worse.&lt;/p&gt;</content><category term="Machine Learning"></category><category term="NLP"></category><category term="MBTI"></category><category term="Personality"></category></entry><entry><title>[Paper] Toward Personality Insights from Language Exploration in Social Media</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media" rel="alternate"></link><published>2017-04-04T18:45:00+08:00</published><updated>2017-04-04T18:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-04:/posts/paper-summary/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/papers/sam2013-dla.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/personality_wc.html"&gt;Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;The main purpose of this paper is to show how social media can be used to gain psychological&amp;nbsp;insights.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;a href="http://wwbp.org/papers/sam2013-dla.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
-&lt;a href="http://wwbp.org/personality_wc.html"&gt;Demo&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/papers/sam2013-dla.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/personality_wc.html"&gt;Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;The main purpose of this paper is to show how social media can be used to gain psychological&amp;nbsp;insights.&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -1165,7 +1175,8 @@ it uses an open vocabulary approach that allowing discovery of unanticipated&amp
 &lt;li&gt;
 &lt;p&gt;Correlation&amp;nbsp;analysis&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Least Squares Linear&amp;nbsp;Regression   &lt;/li&gt;
+&lt;li&gt;Least Squares Linear Regression &lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Visualization&lt;ul&gt;
@@ -1226,17 +1237,14 @@ Telegram API的命名是CamelCase (e.g. sendMessage)&lt;br&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;telegram&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;
 
-
 &lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;bot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;telegram&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your API Token&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_webhook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://Your URL/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Webhook setup failed&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
 
 &lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;webhook_handler&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
@@ -1247,7 +1255,6 @@ Telegram API的命名是CamelCase (e.g. sendMessage)&lt;br&gt;
 
         &lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ok&amp;#39;&lt;/span&gt;
-
 
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -1330,7 +1337,7 @@ Flask把request這種幾乎所有view function都會用到的參數直接變成�
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/sooyhwang/Simple-Echo-Telegram-Bot"&gt;Simple-Echo-Telegram-Bot&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.30sparks.com/develop-telegram-bot-introduction/"&gt;開發 Telegram Bot&amp;nbsp;簡介&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Telegram"></category><category term="Flask"></category></entry><entry><title>[Book] 做工的人</title><link href="http://lee-w.github.io/posts/book/2017/03/worker" rel="alternate"></link><published>2017-03-24T18:48:00+08:00</published><updated>2017-03-24T18:48:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-24:/posts/book/2017/03/worker</id><summary type="html">&lt;p&gt;&lt;img alt="做工的人" src="http://i.imgur.com/SlWTvkOm.jpg"&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Telegram Bot"></category><category term="Flask"></category></entry><entry><title>[Book] 做工的人</title><link href="http://lee-w.github.io/posts/book/2017/03/worker" rel="alternate"></link><published>2017-03-24T18:48:00+08:00</published><updated>2017-03-24T18:48:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-24:/posts/book/2017/03/worker</id><summary type="html">&lt;p&gt;&lt;img alt="做工的人" src="http://i.imgur.com/SlWTvkOm.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;「做工的人」由一個個藍領階級的故事所組成&lt;br&gt;
 說的是那些壓迫、歧視和無奈&lt;br&gt;&amp;nbsp;看這本書是會讓人感到很難過的&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="做工的人" src="http://i.imgur.com/SlWTvkOm.jpg"&gt;&lt;/p&gt;
@@ -1443,7 +1450,8 @@ Flask把request這種幾乎所有view function都會用到的參數直接變成�
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://webpack.github.io"&gt;Webpack&lt;/a&gt;未來可能取代Gulp與grunt&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://babeljs.io"&gt;Babel&lt;/a&gt;: 目前最主流的Javascript Transpiler&lt;ul&gt;
-&lt;li&gt;e.g. 轉換ES6 -&amp;gt; &lt;span class="caps"&gt;ES5&lt;/span&gt;  &lt;/li&gt;
+&lt;li&gt;e.g. 轉換ES6 -&amp;gt; &lt;span class="caps"&gt;ES5&lt;/span&gt;&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;雖然ES6支援模組標準，但瀏覽器尚未有定論，目前前端依然無法支援模組&lt;ul&gt;
@@ -1458,7 +1466,7 @@ Flask把request這種幾乎所有view function都會用到的參數直接變成�
 我好像應該去聽&lt;br&gt;
 但身為星戰迷，實在無法抵抗光劍的誘惑&lt;br&gt;
 The force is strong in this&amp;nbsp;session&lt;/p&gt;
-&lt;p&gt;一把最簡單的光劍大概台幣1000可以起來&lt;br&gt;&amp;nbsp;感覺有時間蠻值得來玩玩的xd&lt;/p&gt;</content></entry><entry><title>Tool for Checking Python Coding Style</title><link href="http://lee-w.github.io/posts/python/2017/03/tools-for-checking-python-coding-style" rel="alternate"></link><published>2017-03-15T19:13:00+08:00</published><updated>2017-03-15T19:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-15:/posts/python/2017/03/tools-for-checking-python-coding-style</id><summary type="html">&lt;p&gt;&lt;a href="https://www.pylint.org"&gt;Pylint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一把最簡單的光劍大概台幣1000可以起來&lt;br&gt;&amp;nbsp;感覺有時間蠻值得來玩玩的xd&lt;/p&gt;</content><category term="SITCON"></category></entry><entry><title>Tool for Checking Python Coding Style</title><link href="http://lee-w.github.io/posts/python/2017/03/tools-for-checking-python-coding-style" rel="alternate"></link><published>2017-03-15T19:13:00+08:00</published><updated>2017-03-15T19:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-15:/posts/python/2017/03/tools-for-checking-python-coding-style</id><summary type="html">&lt;p&gt;&lt;a href="https://www.pylint.org"&gt;Pylint&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Setup&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pylint
 &lt;/pre&gt;&lt;/div&gt;
@@ -1609,7 +1617,7 @@ let g:pymode_lint_ignore = &amp;quot;C0111,W0621,E501,F0002&amp;quot;
 7. 找出作者的論述，重新架構這些論述的前因後果，以明白作者的主張&lt;br&gt;
 8.&amp;nbsp;確定作者已經解決了那些問題，還有哪些未解決的。在未解決的問題中，確定哪些是作者認為自己無法解決的&lt;/p&gt;
 &lt;h1&gt;Ch13 -&amp;nbsp;如何閱讀實用型的書&lt;/h1&gt;
-&lt;p&gt;任何實用型的書都不能解決該書所關心的實際問題。一本理論性的作品可以解決自己提出的問題。但實際的問題卻只能靠行動解決&lt;/p&gt;</content></entry><entry><title>git ignore-io 與 開源貢獻經驗</title><link href="http://lee-w.github.io/posts/article/2017/02/git-ignoreio-and-open-source-experience" rel="alternate"></link><published>2017-02-28T21:56:00+08:00</published><updated>2017-02-28T21:56:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-28:/posts/article/2017/02/git-ignoreio-and-open-source-experience</id><summary type="html">&lt;p&gt;雖然已經隔了一年多&lt;br&gt;
+&lt;p&gt;任何實用型的書都不能解決該書所關心的實際問題。一本理論性的作品可以解決自己提出的問題。但實際的問題卻只能靠行動解決&lt;/p&gt;</content></entry><entry><title>git ignore-io 與 開源貢獻經驗</title><link href="http://lee-w.github.io/posts/gossiping/2017/02/git-ignoreio-and-open-source-experience" rel="alternate"></link><published>2017-02-28T21:56:00+08:00</published><updated>2017-02-28T21:56:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-28:/posts/gossiping/2017/02/git-ignoreio-and-open-source-experience</id><summary type="html">&lt;p&gt;雖然已經隔了一年多&lt;br&gt;
 當初git ignore-io這個小功能，也是花了一兩個月&lt;br&gt;
 好不容易才&lt;a href="https://github.com/tj/git-extras"&gt;git extras&lt;/a&gt;&amp;nbsp;merge回去的&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;雖然已經隔了一年多&lt;br&gt;
@@ -1648,7 +1656,8 @@ tags
 
 &lt;hr&gt;
 &lt;p&gt;當初可是連文件都要寫好，才會被作者接受&lt;br&gt;&amp;nbsp;所以我這裡就直接沿用我當初寫的文件了xd&lt;/p&gt;
-&lt;p&gt;Without option, &lt;code&gt;git ignore-io &amp;lt;type&amp;gt;&lt;/code&gt; shows the sample gitignore of specified types on&amp;nbsp;screen.  &lt;/p&gt;
+&lt;p&gt;Without option, &lt;code&gt;git ignore-io &amp;lt;type&amp;gt;&lt;/code&gt; shows the sample gitignore of specified types on screen.&lt;br&gt;
+&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git ignore-io vim
 
     &lt;span class="c1"&gt;# Created by https://www.gitignore.io/api/vim&lt;/span&gt;
@@ -1663,7 +1672,8 @@ tags
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;To export it to &lt;code&gt;.gitignore&lt;/code&gt; file you can use the following&amp;nbsp;options:  &lt;/p&gt;
+&lt;p&gt;To export it to &lt;code&gt;.gitignore&lt;/code&gt; file you can use the following options:&lt;br&gt;
+&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;-a&lt;/code&gt; or &lt;code&gt;--append&lt;/code&gt; to append the result to &lt;code&gt;.gitignore&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-r&lt;/code&gt; or &lt;code&gt;--replace&lt;/code&gt; to export &lt;code&gt;.gitignore&lt;/code&gt; with the&amp;nbsp;result&lt;/li&gt;
@@ -1703,7 +1713,8 @@ To list all the available&amp;nbsp;types:&lt;/p&gt;
 我找到當初我開的&lt;a href="https://github.com/tj/git-extras/pull/439"&gt;pr #439&lt;/a&gt;和&lt;a href="https://github.com/tj/git-extras/pull/448"&gt;pr #448&lt;/a&gt;&lt;br&gt;
 從shell script的風格（有人建議我用&lt;a href="https://github.com/koalaman/shellcheck"&gt;shellcheck&lt;/a&gt;）到command的option為什麼要這樣命名&lt;br&gt;
 都有人跟我討論，給我建議&lt;br&gt;
-從中也學到了很多&lt;br&gt;&amp;nbsp;~~貢獻這些專案還能去申請SITCON跟COSCUP的開源貢獻票，這樣就不用跟大家搶票了~~&lt;/p&gt;</content></entry><entry><title>[Book] 看！情緒幹得好事</title><link href="http://lee-w.github.io/posts/book/2017/02/fuck-feelings" rel="alternate"></link><published>2017-02-04T10:16:00+08:00</published><updated>2017-02-04T10:16:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-04:/posts/book/2017/02/fuck-feelings</id><summary type="html">&lt;p&gt;&lt;img alt="F*ck Feelings" src="http://i.imgur.com/tLNg7CJm.jpg"&gt;&lt;/p&gt;
+從中也學到了很多&lt;br&gt;
+&lt;s&gt;貢獻這些專案還能去申請SITCON跟COSCUP的開源貢獻票，這樣就不用跟大家搶票了&lt;/s&gt;&lt;/p&gt;</content></entry><entry><title>[Book] 看！情緒幹得好事</title><link href="http://lee-w.github.io/posts/book/2017/02/fuck-feelings" rel="alternate"></link><published>2017-02-04T10:16:00+08:00</published><updated>2017-02-04T10:16:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-04:/posts/book/2017/02/fuck-feelings</id><summary type="html">&lt;p&gt;&lt;img alt="F*ck Feelings" src="http://i.imgur.com/tLNg7CJm.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;本書鼓勵你接受一切無法改變的事情 (e.g. 你的個性、行為、感情、工作 and etc.)&lt;br&gt;
 並提供方法更有效的管理人生難題，而&lt;strong&gt;不是妄想去改變他們&lt;/strong&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="F*ck Feelings" src="http://i.imgur.com/tLNg7CJm.jpg"&gt;&lt;/p&gt;
@@ -1750,7 +1761,8 @@ To list all the available&amp;nbsp;types:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;真心話練習腳本&amp;nbsp;（一個範本，讓你可以帶入各種角色、事件，對你或其他人說） &lt;/li&gt;
-&lt;li&gt;不一定會有的額外補充  &lt;/li&gt;
+&lt;li&gt;不一定會有的額外補充&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2&gt;&lt;a name='0'&gt;&lt;/a&gt;前言 -&amp;nbsp;你訂下什麼目標&lt;/h2&gt;
@@ -1849,13 +1861,12 @@ To list all the available&amp;nbsp;types:&lt;/p&gt;
 情緒不過是蠢事&lt;br&gt;&amp;nbsp;而人生艱難&amp;#8230;&lt;/p&gt;
 &lt;p&gt;如此你的日子大概就會過得比較ＯＫ&lt;br&gt;
 即使不快樂，因為你的目標很實際&lt;br&gt;&amp;nbsp;而為了達成目標付出的努力也會讓你很驕傲&lt;/p&gt;</content><category term="Emotion"></category></entry><entry><title>我如何更有效率的使用時間</title><link href="http://lee-w.github.io/posts/thought/2017/02/how-do-i-manage-my-time" rel="alternate"></link><published>2017-02-03T00:53:00+08:00</published><updated>2017-02-03T00:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-03:/posts/thought/2017/02/how-do-i-manage-my-time</id><summary type="html">&lt;p&gt;過年整理了好多以前的書摘&lt;br&gt;&amp;nbsp;好像該來發一點自己的東西了&lt;/p&gt;
-&lt;p&gt;前一段時間被找回母系演講&lt;br&gt;
-被問了，我是怎麼管理時間的&lt;br&gt;
+&lt;p&gt;前一段時間被找回母系演講&lt;br&gt;&amp;nbsp;被問了，我是怎麼管理時間的&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;過年整理了好多以前的書摘&lt;br&gt;&amp;nbsp;好像該來發一點自己的東西了&lt;/p&gt;
-&lt;p&gt;前一段時間被找回母系演講&lt;br&gt;
-被問了，我是怎麼管理時間的&lt;br&gt;
-&lt;!--more--&gt;&lt;br&gt;
-當下沒有回答的很好&lt;br&gt;&amp;nbsp;於是乎就有了這篇文章XD&lt;/p&gt;
+&lt;p&gt;前一段時間被找回母系演講&lt;br&gt;&amp;nbsp;被問了，我是怎麼管理時間的&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;當下沒有回答的很好&lt;br&gt;&amp;nbsp;於是乎就有了這篇文章XD&lt;/p&gt;
 &lt;h2&gt;如何達到一個目標&lt;/h2&gt;
 &lt;p&gt;我們常常會給自己定一個很大的目標&lt;br&gt;
 像是我要看完&amp;#8221;Learning Python&amp;#8221; (一本1400頁的Python教學書）&lt;br&gt;
@@ -1948,12 +1959,14 @@ To list all the available&amp;nbsp;types:&lt;/p&gt;
 所以我重新檢視了我的計劃和每天要達成的習慣&lt;br&gt;
 哪些是真的重要的&lt;br&gt;&amp;nbsp;這些事又要怎麼拆解才能不會讓我太費力，或只要多花一點力，不會很容易半途而廢的&lt;/p&gt;
 &lt;p&gt;這些只是我嘗試覺得有用的方法&lt;br&gt;
-不見得適用於每個人&lt;br&gt;&amp;nbsp;不過也許都能去嘗試看看，相信總會有一些有幫助的部分&lt;/p&gt;</content><category term="Productivity"></category></entry><entry><title>[Bot] More than Just Echo Bot</title><link href="http://lee-w.github.io/posts/bot/2016/11/more-than-just-echo-bot" rel="alternate"></link><published>2016-11-29T01:57:00+08:00</published><updated>2016-11-29T01:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-29:/posts/bot/2016/11/more-than-just-echo-bot</id><summary type="html">&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
+不見得適用於每個人&lt;br&gt;&amp;nbsp;不過也許都能去嘗試看看，相信總會有一些有幫助的部分&lt;/p&gt;</content><category term="Productivity"></category></entry><entry><title>More than Just Echo Bot</title><link href="http://lee-w.github.io/posts/bot/2016/11/more-than-just-echo-bot" rel="alternate"></link><published>2016-11-29T01:57:00+08:00</published><updated>2016-11-29T01:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-29:/posts/bot/2016/11/more-than-just-echo-bot</id><summary type="html">&lt;hr&gt;
+&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
 再來就要思考，開發一個Bot我們要提供什麼功能&lt;br&gt;
 (e.g. 天氣查詢, 訂票,&amp;nbsp;推薦旅遊景點)&lt;/p&gt;
 &lt;p&gt;不過這裡要討論的不是Bot的功能&lt;br&gt;&amp;nbsp;Bot的功能實作，跟一般網站或App的實作並沒有太大的差別&lt;/p&gt;
 &lt;p&gt;接下來來談如何從使用者說的話來判斷，使用者要使用的功能&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
+</summary><content type="html">&lt;hr&gt;
+&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
 再來就要思考，開發一個Bot我們要提供什麼功能&lt;br&gt;
 (e.g. 天氣查詢, 訂票,&amp;nbsp;推薦旅遊景點)&lt;/p&gt;
 &lt;p&gt;不過這裡要討論的不是Bot的功能&lt;br&gt;&amp;nbsp;Bot的功能實作，跟一般網站或App的實作並沒有太大的差別&lt;/p&gt;
@@ -2128,7 +2141,8 @@ Mary Johnson at 12 pm tomorrow.
 &lt;p&gt;不過這些服務，通常會有它的限制&lt;br&gt;&amp;nbsp;這時候就能用上Python強大的函式庫們，來實作自己的版本&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.nltk.org"&gt;&lt;span class="caps"&gt;NLTK&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;Python經典的NLP函式庫  &lt;/li&gt;
+&lt;li&gt;Python經典的NLP函式庫&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://radimrehurek.com/gensim/"&gt;word2vec&lt;/a&gt;&lt;ul&gt;
@@ -2170,7 +2184,7 @@ Mary Johnson at 12 pm tomorrow.
 &lt;li&gt;&lt;a href="https://wit.ai/docs/quickstart"&gt;Wit.ai&amp;nbsp;Quickstart&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/warmheartli/ChatBotCourse"&gt;自己动手做聊天机器人教程&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.oreilly.com/ideas/an-overview-of-the-bot-landscape?imm_mid=0eb199&amp;amp;cmp=em-data-na-na-newsltr_20161130"&gt;An overview of the bot&amp;nbsp;landscape&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content></entry><entry><title>[Bot] More About Line Messaging API - Template Messages</title><link href="http://lee-w.github.io/posts/bot/2016/11/more-about-line-messaging-api-template-messages" rel="alternate"></link><published>2016-11-27T06:08:00+08:00</published><updated>2016-11-27T06:08:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-27:/posts/bot/2016/11/more-about-line-messaging-api-template-messages</id><summary type="html">&lt;p&gt;除了傳送文字外，Line&amp;nbsp;Bot還可以傳&lt;/p&gt;
+&lt;/ul&gt;</content><category term="NLP"></category><category term="Machine Learning"></category></entry><entry><title>More About Line Messaging API - Template Messages</title><link href="http://lee-w.github.io/posts/bot/2016/11/more-about-line-messaging-api-template-messages" rel="alternate"></link><published>2016-11-27T06:08:00+08:00</published><updated>2016-11-27T06:08:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-27:/posts/bot/2016/11/more-about-line-messaging-api-template-messages</id><summary type="html">&lt;p&gt;除了傳送文字外，Line&amp;nbsp;Bot還可以傳&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;圖片, 影像, 聲音,&amp;nbsp;地圖&lt;/li&gt;
 &lt;li&gt;貼圖 (Line Bot所能使用的&lt;a href="https://devdocs.line.me/files/sticker_list.pdf"&gt;貼圖清單&lt;/a&gt;)&lt;/li&gt;
@@ -2255,7 +2269,7 @@ Line Server會傳一個postback event給我們，裡面包含著data參數中設
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://devdocs.line.me/en/#template-messages"&gt;&lt;span class="caps"&gt;API&lt;/span&gt; Reference - Messaging &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/line/line-bot-sdk-python#templatesendmessage---buttonstemplate"&gt;line-bot-sdk-python&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Line"></category></entry><entry><title>[Bot] Deploy LineBot on Heroku</title><link href="http://lee-w.github.io/posts/bot/2016/11/deploy-linebot-on-heroku" rel="alternate"></link><published>2016-11-27T06:05:00+08:00</published><updated>2016-11-27T06:05:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-27:/posts/bot/2016/11/deploy-linebot-on-heroku</id><summary type="html">&lt;p&gt;上一篇提到如何用ngrok&lt;br&gt;
+&lt;/ul&gt;</content><category term="Line Bot"></category></entry><entry><title>Deploy LineBot on Heroku</title><link href="http://lee-w.github.io/posts/bot/2016/11/deploy-linebot-on-heroku" rel="alternate"></link><published>2016-11-27T06:05:00+08:00</published><updated>2016-11-27T06:05:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-27:/posts/bot/2016/11/deploy-linebot-on-heroku</id><summary type="html">&lt;p&gt;上一篇提到如何用ngrok&lt;br&gt;
 讓我們可以不用架Https&amp;nbsp;Server，直接在本地端測試Bot&lt;/p&gt;
 &lt;p&gt;再來要談的是如何把Bot部署到Heroku上&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;上一篇提到如何用ngrok&lt;br&gt;
@@ -2323,7 +2337,7 @@ heroku git:remote -a leewbot
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://devcenter.heroku.com/articles/getting-started-with-python#introduction"&gt;Getting Started on Heroku with&amp;nbsp;Python&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://devcenter.heroku.com/articles/deploying-python"&gt;Deploying Python and Django Apps on&amp;nbsp;Heroku&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Heroku"></category><category term="django"></category><category term="Line"></category></entry><entry><title>[Bot] Line Echo Bot on Django</title><link href="http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django" rel="alternate"></link><published>2016-11-24T03:26:00+08:00</published><updated>2016-11-24T03:26:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-24:/posts/bot/2016/11/line-echo-bot-on-django</id><summary type="html">&lt;p&gt;單純要寫一個只會Echo的Line Chat Bot&lt;br&gt;
+&lt;/ul&gt;</content><category term="Heroku"></category><category term="django"></category><category term="Line Bot"></category><category term="deploy"></category></entry><entry><title>Line Echo Bot on Django</title><link href="http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django" rel="alternate"></link><published>2016-11-24T03:26:00+08:00</published><updated>2016-11-24T03:26:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-24:/posts/bot/2016/11/line-echo-bot-on-django</id><summary type="html">&lt;p&gt;單純要寫一個只會Echo的Line Chat Bot&lt;br&gt;
 用flask只要85行的code就能解決&lt;br&gt;
 官方已經有提供相當清楚的範例[flask-echo]&lt;br&gt;&amp;nbsp;(https://github.com/line/line-bot-sdk-python/tree/master/examples/flask-echo)了&lt;/p&gt;
 &lt;p&gt;這篇文章則是提供了django的做法&lt;br&gt;
@@ -2453,7 +2467,6 @@ python3 manage.py startapp echobot
 &lt;h3&gt;Callback&amp;nbsp;Function&lt;/h3&gt;
 &lt;p&gt;有兩種方法可以處理Line Server送過來的訊息&lt;br&gt;&amp;nbsp;這裡先用Todo記著，待會再來補上&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# TODO: Define Receiver&lt;/span&gt;
-
 
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -2592,7 +2605,6 @@ e.g.&lt;br&gt;
 &lt;span class="n"&gt;line_bot_api&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LineBotApi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_ACCESS_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebhookParser&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -2637,14 +2649,12 @@ e.g.&lt;br&gt;
 &lt;span class="n"&gt;line_bot_api&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LineBotApi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_ACCESS_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;handler&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebhookHandler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-
 &lt;span class="nd"&gt;@handler.add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MessageEvent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;TextMessage&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;handle_text_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;line_bot_api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
         &lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_token&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
         &lt;span class="n"&gt;TextSendMessage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="p"&gt;)&lt;/span&gt;
-
 
 &lt;span class="nd"&gt;@handler.default&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;default&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -2653,7 +2663,6 @@ e.g.&lt;br&gt;
         &lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_token&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
         &lt;span class="n"&gt;TextSendMessage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Currently Not Support None Text Message&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="p"&gt;)&lt;/span&gt;
-
 
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -2727,7 +2736,7 @@ brew cask install ngrok
 &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://jiunjiun.logdown.com/posts/2016/10/06/linebot-with-sinatra"&gt;LineBot -&amp;nbsp;Sinatra&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://ngrok.com"&gt;ngrok&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="django"></category><category term="Line"></category></entry><entry><title>[Bot] Apply Line Messaging API</title><link href="http://lee-w.github.io/posts/bot/2016/11/apply-line-messaging-api" rel="alternate"></link><published>2016-11-22T12:43:00+08:00</published><updated>2016-11-22T12:43:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-22:/posts/bot/2016/11/apply-line-messaging-api</id><summary type="html">&lt;p&gt;先到&lt;a href="https://business.line.me/zh-hant/services/bot"&gt;Messaging &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt;申請帳號&lt;/p&gt;
+&lt;/ul&gt;</content><category term="django"></category><category term="Line Bot"></category></entry><entry><title>Apply Line Messaging API</title><link href="http://lee-w.github.io/posts/bot/2016/11/apply-line-messaging-api" rel="alternate"></link><published>2016-11-22T12:43:00+08:00</published><updated>2016-11-22T12:43:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-22:/posts/bot/2016/11/apply-line-messaging-api</id><summary type="html">&lt;p&gt;先到&lt;a href="https://business.line.me/zh-hant/services/bot"&gt;Messaging &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt;申請帳號&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;開始使用Messaging API&lt;/code&gt;和&lt;code&gt;開始使用Developer Trial&lt;/code&gt;申請到的帳號是不同的&lt;br&gt;&amp;nbsp;之後不能互換，所以一開始就要根據需求來決定申請哪種帳號&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;先到&lt;a href="https://business.line.me/zh-hant/services/bot"&gt;Messaging &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt;申請帳號&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;開始使用Messaging API&lt;/code&gt;和&lt;code&gt;開始使用Developer Trial&lt;/code&gt;申請到的帳號是不同的&lt;br&gt;&amp;nbsp;之後不能互換，所以一開始就要根據需求來決定申請哪種帳號&lt;/p&gt;
@@ -2784,7 +2793,7 @@ brew cask install ngrok
 &lt;p&gt;另外要注意的是&lt;code&gt;Webhook URL&lt;/code&gt;&lt;br&gt;
 這裡之後要填的就是你的Server的Webhook&amp;nbsp;url&lt;/p&gt;
 &lt;h1&gt;Reference&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://developers.line.me/messaging-api/getting-started#apply_messagingapi"&gt;Enable the Messaging &lt;span class="caps"&gt;API&lt;/span&gt; for your &lt;span class="caps"&gt;LINE&lt;/span&gt;@&amp;nbsp;account&lt;/a&gt;&lt;/p&gt;</content><category term="Line"></category></entry><entry><title>[Bot] Introduction to Chatbot</title><link href="http://lee-w.github.io/posts/bot/2016/11/introduction-to-chatbot" rel="alternate"></link><published>2016-11-21T08:18:00+08:00</published><updated>2016-11-21T08:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-21:/posts/bot/2016/11/introduction-to-chatbot</id><summary type="html">&lt;p&gt;有人說聊天機器人Chat&amp;nbsp;Bot將要取代APP&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://developers.line.me/messaging-api/getting-started#apply_messagingapi"&gt;Enable the Messaging &lt;span class="caps"&gt;API&lt;/span&gt; for your &lt;span class="caps"&gt;LINE&lt;/span&gt;@&amp;nbsp;account&lt;/a&gt;&lt;/p&gt;</content><category term="Line Bot"></category></entry><entry><title>Introduction to Chatbot</title><link href="http://lee-w.github.io/posts/bot/2016/11/introduction-to-chatbot" rel="alternate"></link><published>2016-11-21T08:18:00+08:00</published><updated>2016-11-21T08:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-21:/posts/bot/2016/11/introduction-to-chatbot</id><summary type="html">&lt;p&gt;有人說聊天機器人Chat&amp;nbsp;Bot將要取代APP&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://venturebeat.com/2016/08/02/why-chatbots-are-replacing-apps/"&gt;Why chatbots are replacing&amp;nbsp;apps&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://chatbotslife.com/this-is-how-chatbots-will-kill-99-of-apps-2fd938a22c99#.tdfugot4m"&gt;This is how Chatbots will Kill 99% of&amp;nbsp;Apps&lt;/a&gt;&lt;/li&gt;
@@ -2865,7 +2874,7 @@ brew cask install ngrok
 &lt;p&gt;這篇文章整理了相當多的相關資源&lt;br&gt;
 &lt;a href="https://stanfy.com/blog/the-rise-of-chat-bots-useful-links-articles-libraries-and-platforms/"&gt;The Rise of Chat Bots: Useful Links, Articles, Libraries and Platforms&lt;/a&gt;&lt;br&gt;&amp;nbsp;相當推薦對ChatBot有興趣的人參考&lt;/p&gt;
 &lt;h1&gt;Slide&lt;/h1&gt;
-&lt;p&gt;如果有點不喜歡看文章的，也可以看看&lt;a href="https://hackmd.io/p/HkW8LjRfl#/"&gt;slide&lt;/a&gt;的版本&lt;/p&gt;</content><category term="Line"></category></entry><entry><title>TEDx Tainan 2016 - 0到1</title><link href="http://lee-w.github.io/posts/general/2016/11/tedx-tainan-2016" rel="alternate"></link><published>2016-11-21T03:27:00+08:00</published><updated>2016-11-21T03:27:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-21:/posts/general/2016/11/tedx-tainan-2016</id><summary type="html">&lt;p&gt;趁著昨天才剛結束&lt;br&gt;&amp;nbsp;把一些感受記錄下來&lt;/p&gt;
+&lt;p&gt;如果有點不喜歡看文章的，也可以看看&lt;a href="https://hackmd.io/p/HkW8LjRfl#/"&gt;slide&lt;/a&gt;的版本&lt;/p&gt;</content><category term="Line Bot"></category></entry><entry><title>TEDx Tainan 2016 - 0到1</title><link href="http://lee-w.github.io/posts/gossiping/2016/11/tedx-tainan-2016" rel="alternate"></link><published>2016-11-21T03:27:00+08:00</published><updated>2016-11-21T03:27:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-21:/posts/gossiping/2016/11/tedx-tainan-2016</id><summary type="html">&lt;p&gt;趁著昨天才剛結束&lt;br&gt;&amp;nbsp;把一些感受記錄下來&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;趁著昨天才剛結束&lt;br&gt;&amp;nbsp;把一些感受記錄下來&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -2899,11 +2908,15 @@ brew cask install ngrok
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果今天換作是我們遇到同樣的處境
 
 我們真的能處理得更好嗎？
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Inspiring"></category></entry><entry><title>[Paper Summary] Mining Online Social Data for Detecting Social Network Mental Disorders</title><link href="http://lee-w.github.io/posts/paper-summary/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders" rel="alternate"></link><published>2016-11-18T16:53:00+08:00</published><updated>2016-11-18T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-18:/posts/paper-summary/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders</id><summary type="html">&lt;p&gt;&lt;a href="http://www2016.net/proceedings/proceedings/p275.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Inspiring"></category><category term="TEDx"></category></entry><entry><title>[Paper] Mining Online Social Data for Detecting Social Network Mental Disorders</title><link href="http://lee-w.github.io/posts/paper-summary/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders" rel="alternate"></link><published>2016-11-18T16:53:00+08:00</published><updated>2016-11-18T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-18:/posts/paper-summary/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www2016.net/proceedings/proceedings/p275.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;This paper proposes a model named &lt;span class="caps"&gt;SNMDD&lt;/span&gt; to detect Social Network Mental Disorder (&lt;span class="caps"&gt;SNMD&lt;/span&gt;) through users&amp;#8217; behaviors on online social networks (&lt;span class="caps"&gt;OSN&lt;/span&gt;) instead of asking their mental&amp;nbsp;condition.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;a href="http://www2016.net/proceedings/proceedings/p275.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www2016.net/proceedings/proceedings/p275.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;This paper proposes a model named &lt;span class="caps"&gt;SNMDD&lt;/span&gt; to detect Social Network Mental Disorder (&lt;span class="caps"&gt;SNMD&lt;/span&gt;) through users&amp;#8217; behaviors on online social networks (&lt;span class="caps"&gt;OSN&lt;/span&gt;) instead of asking their mental&amp;nbsp;condition.&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -3396,14 +3409,13 @@ A否決的話就都拿不到錢
 &lt;/ul&gt;</content><category term="Team"></category></entry><entry><title>COSCUP 2016 小啄如何實作的</title><link href="http://lee-w.github.io/posts/bot/2016/10/coscup-2016-how-to-implement-small-pecks" rel="alternate"></link><published>2016-10-01T11:50:00+08:00</published><updated>2016-10-01T11:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-01:/posts/bot/2016/10/coscup-2016-how-to-implement-small-pecks</id><summary type="html">&lt;p&gt;今年COSCUP的聊天機器人「小啄」&lt;br&gt;
 終於在今天宣告退休了&lt;br&gt;
 退休前他讓我們詢問了「你是如何實作的」&lt;br&gt;
-這邊是我測試的所有結果&lt;br&gt;
-跟大家分享一下XD&lt;br&gt;
+這邊是我測試的所有結果&lt;br&gt;&amp;nbsp;跟大家分享一下XD&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;今年COSCUP的聊天機器人「小啄」&lt;br&gt;
 終於在今天宣告退休了&lt;br&gt;
 退休前他讓我們詢問了「你是如何實作的」&lt;br&gt;
-這邊是我測試的所有結果&lt;br&gt;
-跟大家分享一下XD&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+這邊是我測試的所有結果&lt;br&gt;&amp;nbsp;跟大家分享一下XD&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;hr&gt;
 &lt;h2&gt;總結&lt;/h2&gt;
 &lt;h3&gt;技術相關&lt;/h3&gt;
@@ -3511,7 +3523,8 @@ touch REAMDE.mdd
 &lt;p&gt;There are three main stages&lt;br&gt;
 1. working&lt;br&gt;
 2. staging&lt;br&gt;
-3.&amp;nbsp;repo  &lt;/p&gt;
+3. repo&lt;br&gt;
+&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -3554,7 +3567,8 @@ git status
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Now this file is in staging&amp;nbsp;area  &lt;/p&gt;
+&lt;p&gt;Now this file is in staging area&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;So, how to go back to history?&lt;br&gt;
 &lt;code&gt;git reset REAMDE.md&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Take a look at our history&lt;br&gt;
@@ -3563,7 +3577,8 @@ git status
 &lt;code&gt;git checkout "SHA1"&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git checkout master&lt;/code&gt;&lt;br&gt;
 Everything comes&amp;nbsp;back&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;master&lt;/code&gt; is the default branch name of git. It is a default word but not&amp;nbsp;reserved.  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;master&lt;/code&gt; is the default branch name of git. It is a default word but not reserved.&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git checkout -b "branch_name"&lt;/code&gt; create a branch and checkout to&amp;nbsp;it&lt;/p&gt;
 &lt;h2&gt;diff&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git diff&lt;/code&gt;: View the difference between working and&amp;nbsp;staging&lt;/p&gt;
@@ -3571,8 +3586,10 @@ Everything comes&amp;nbsp;back&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git diff "SHA1"&lt;/code&gt;: Difference between current version and &lt;span class="caps"&gt;SHA1&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git diff master~1&lt;/code&gt;: difference between current and the one before master&lt;br&gt;
 &lt;code&gt;git diff master^&lt;/code&gt; -&amp;gt; master~1&lt;br&gt;
-&lt;code&gt;git diff master^^&lt;/code&gt; -&amp;gt;&amp;nbsp;master~2  &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git diff a b&lt;/code&gt;: Show the change from a to&amp;nbsp;b  &lt;/p&gt;
+&lt;code&gt;git diff master^^&lt;/code&gt; -&amp;gt; master~2&lt;br&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git diff a b&lt;/code&gt;: Show the change from a to b&lt;br&gt;
+&lt;/p&gt;
 &lt;h2&gt;branch&lt;/h2&gt;
 &lt;p&gt;In git, branch is not copy. It&amp;#8217;s like bookmark&lt;br&gt;
 Actually &lt;code&gt;git branch -d "name"&lt;/code&gt; just delete the pointer but not the&amp;nbsp;entry.&lt;/p&gt;
@@ -3581,7 +3598,8 @@ Actually &lt;code&gt;git branch -d "name"&lt;/code&gt; just delete the pointer b
 &lt;p&gt;If you go back to a entry not in certain branch, a detach error might occur.&lt;br&gt;
 For example, checkout to a commit that is parent of more than one branch and then append a new commit to it.&lt;br&gt;
 In such case, this new appended commit might not be able to be referenced.&lt;br&gt;
-&lt;em&gt;The solution to this problem is to create a new branch for&amp;nbsp;it.&lt;/em&gt;  &lt;/p&gt;
+&lt;em&gt;The solution to this problem is to create a new branch for it.&lt;/em&gt;&lt;br&gt;
+&lt;/p&gt;
 &lt;h2&gt;log&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git log --decorate&lt;/code&gt;: Show also branch&amp;nbsp;info&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git log --all&lt;/code&gt;: Show all&amp;nbsp;branch&lt;/p&gt;
@@ -3595,7 +3613,8 @@ In such case, this new appended commit might not be able to be referenced.&lt;br
 &lt;p&gt;&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;br&gt;
 - upload &lt;em&gt;master&lt;/em&gt; to &lt;em&gt;origin&lt;/em&gt;&lt;br&gt;
 - -u tell git the default url to push for that branch(master) is origin, it would also make &lt;code&gt;git pull&lt;/code&gt; remember&lt;br&gt;
-    - Do -u and after that you can just use &lt;code&gt;git push&lt;/code&gt;  &lt;/p&gt;
+    - Do -u and after that you can just use &lt;code&gt;git push&lt;/code&gt;&lt;br&gt;
+&lt;/p&gt;
 &lt;h2&gt;pull&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git push --all&lt;/code&gt;: push all branch&lt;br&gt;
 &lt;code&gt;git pull --prune&lt;/code&gt;&lt;/p&gt;
@@ -3605,22 +3624,28 @@ git pull -&amp;gt; fetch +&amp;nbsp;merge&lt;/p&gt;
 &lt;h2&gt;on-site&lt;/h2&gt;
 &lt;p&gt;pull request on GitHub&lt;br&gt;
 &lt;code&gt;@person-name&lt;/code&gt; -&amp;gt; notification&lt;br&gt;
-Have a conversation with the whole&amp;nbsp;team  &lt;/p&gt;
+Have a conversation with the whole team&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;Write &amp;#8220;fix #2 &amp;#8230;.&amp;#8221; in git commit -&amp;gt; special meaning -&amp;gt; specify the bug in issue on GitHub&lt;br&gt;
 Wiki -&amp;gt;&amp;nbsp;documentation&lt;/p&gt;
 &lt;h1&gt;How to write a good git&amp;nbsp;commit&lt;/h1&gt;
 &lt;h2&gt;Principle&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Separate each&amp;nbsp;commit&lt;/li&gt;
-&lt;li&gt;Let the commit tell a&amp;nbsp;story  &lt;/li&gt;
+&lt;li&gt;Let the commit tell a story&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;More&amp;nbsp;specific&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;One line 80&amp;nbsp;character  &lt;/li&gt;
-&lt;li&gt;Use present tense instead of past&amp;nbsp;tense  &lt;/li&gt;
-&lt;li&gt;Don&amp;#8217;t repeat what can be found in &lt;code&gt;git diff&lt;/code&gt;  &lt;/li&gt;
+&lt;li&gt;One line 80 character&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;Use present tense instead of past tense&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;Don&amp;#8217;t repeat what can be found in &lt;code&gt;git diff&lt;/code&gt;&lt;br&gt;
+&lt;/li&gt;
 &lt;li&gt;If more detail is to be written, left the second line to be&amp;nbsp;blank.&lt;/li&gt;
-&lt;li&gt;Write more detail about why this change happened after the third&amp;nbsp;line.  &lt;/li&gt;
+&lt;li&gt;Write more detail about why this change happened after the third line.&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Other&amp;nbsp;issue&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git config --global -e&lt;/code&gt;: Edit your .gitconfig&amp;nbsp;file.&lt;/p&gt;
@@ -3691,7 +3716,8 @@ If it&amp;#8217;s needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/
 &lt;li&gt;試著總是把明天排成令人期待的日子&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Ch3-2&amp;nbsp;自己的行動方式&lt;/h2&gt;
-&lt;p&gt;如何將To-Do迅速地付諸行動  &lt;/p&gt;
+&lt;p&gt;如何將To-Do迅速地付諸行動&lt;br&gt;
+&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;~~不得不做，只好做了~~&lt;ul&gt;
 &lt;li&gt;長久以來內心會累&lt;/li&gt;
@@ -3818,7 +3844,8 @@ If it&amp;#8217;s needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/
 &lt;/ul&gt;
 &lt;h2&gt;Ch4&amp;nbsp;策略的試金石&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;個人的誘因跟公司長遠目標衝突，是常見的現象  &lt;ul&gt;
+&lt;li&gt;個人的誘因跟公司長遠目標衝突，是常見的現象&lt;br&gt;
+&lt;ul&gt;
 &lt;li&gt;e.g. 立委任期為四年&lt;ul&gt;
 &lt;li&gt;一個好的國家計劃要五年十年&lt;/li&gt;
 &lt;li&gt;然而要讓自己繼續連任，只有提出短期能有成效的計劃才能達到讓自己連任的目標&lt;/li&gt;
@@ -3852,7 +3879,8 @@ If it&amp;#8217;s needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/
 &lt;h2&gt;Ch6&amp;nbsp;一杯奶昔的任務&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;每一個成功的產品或服務之所以能大受歡迎，是因為這種東西&lt;strong&gt;幫我們完成了不得不做的工作&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;每一個成功的產品或服務之所以能大受歡迎，是因為這種東西&lt;strong&gt;幫我們完成了不得不做的工作&lt;/strong&gt;&lt;br&gt;
+&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果一個人開發出一種有趣的產品，但沒能幫上消費者的忙，這種東西就難以成功&lt;/li&gt;
 &lt;/ul&gt;
@@ -3907,7 +3935,7 @@ e.g.&amp;nbsp;DELL逐步將個人電腦的技術包給華碩，最後華碩自�
 &lt;p&gt;為了變成自己理想中的，每一個人的過程都不同。不管如何，你應該要能回答這樣的問題:「我真的想要變成那樣的人嗎?」&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;「如果我將每日禱告、反思的時間拿來研究迴歸分析，我將後悔莫及。
  每年，我用到計量經濟學工具不過只有幾次，而我對人生目的的認知卻天天都可派上用場」
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Life"></category></entry><entry><title>[Paper Summary] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks</title><link href="http://lee-w.github.io/posts/paper-summary/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" rel="alternate"></link><published>2016-08-22T16:53:00+08:00</published><updated>2016-08-22T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/paper-summary/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks</id><summary type="html">&lt;p&gt;&lt;a href="http://dl.acm.org/citation.cfm?id=2783392"&gt;Paper&lt;/a&gt;&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Life"></category></entry><entry><title>[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks</title><link href="http://lee-w.github.io/posts/paper-summary/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" rel="alternate"></link><published>2016-08-22T16:53:00+08:00</published><updated>2016-08-22T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/paper-summary/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks</id><summary type="html">&lt;p&gt;&lt;a href="http://dl.acm.org/citation.cfm?id=2783392"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="http://dl.acm.org/citation.cfm?id=2783392"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -3929,7 +3957,8 @@ e.g.&amp;nbsp;DELL逐步將個人電腦的技術包給華碩，最後華碩自�
 &lt;li&gt;
 &lt;p&gt;Assumption&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Influence is exclusive (Once a node is influenced by one party, it will not be influenced&amp;nbsp;again)      &lt;/li&gt;
+&lt;li&gt;Influence is exclusive (Once a node is influenced by one party, it will not be influenced again)    &lt;br&gt;
+&lt;/li&gt;
 &lt;li&gt;Each round all parties choose one node and then the influence propagates before the next round&amp;nbsp;starts&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -3948,7 +3977,8 @@ e.g.&amp;nbsp;DELL逐步將個人電腦的技術包給華碩，最後華碩自�
 &lt;ol&gt;
 &lt;li&gt;Known strategy -&amp;gt; Both know and unknown&lt;ul&gt;
 &lt;li&gt;Known or Unknown but available to compete -&amp;gt; Train a model to learn&amp;nbsp;strategy&lt;/li&gt;
-&lt;li&gt;Unknown -&amp;gt; Game-theoretical solution to seek the Nash&amp;nbsp;equilibrium     &lt;/li&gt;
+&lt;li&gt;Unknown -&amp;gt; Game-theoretical solution to seek the Nash equilibrium   &lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Single-roung -&amp;gt;&amp;nbsp;Multi-round&lt;/li&gt;
@@ -3976,7 +4006,7 @@ e.g.&amp;nbsp;DELL逐步將個人電腦的技術包給華碩，最後華碩自�
 &lt;h3&gt;4.1 Preliminary: Reinforcement&amp;nbsp;Learning&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Learn a policy &lt;span class="math"&gt;\(\pi(s)\)&lt;/span&gt; to determine which action to take state s&amp;nbsp;(environment)&lt;/li&gt;
-&lt;li&gt;How to estimated &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;?&lt;ul&gt;
+&lt;li&gt;How to estimated &lt;span class="math"&gt;(\pi)&lt;/span&gt;?&lt;ul&gt;
 &lt;li&gt;Expected Accmulated Reward of a state (V function)&lt;ul&gt;
 &lt;li&gt;&lt;span class="math"&gt;\( V^\pi(s) =&amp;nbsp;E_\pi\{R_t|S_t=s\}=...\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -4095,7 +4125,7 @@ These data can be used to learn the value&amp;nbsp;functions&lt;/p&gt;
 &lt;li&gt;Q-Learning: &lt;span class="math"&gt;\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t,&amp;nbsp;a_t))\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(\epsilon\)&lt;/span&gt;-greedy&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;(\epsilon)&lt;/span&gt;-greedy&lt;ul&gt;
 &lt;li&gt;Determine strategies on the current policy derived from&amp;nbsp;Q-table.&lt;/li&gt;
 &lt;li&gt;Explore the new directions to avoid local&amp;nbsp;optimum&lt;/li&gt;
 &lt;/ul&gt;
@@ -4231,9 +4261,10 @@ These data can be used to learn the value&amp;nbsp;functions&lt;/p&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Social Network"></category><category term="Machine Learning"></category><category term="Game Theory"></category></entry><entry><title>COSCUP 2016</title><link href="http://lee-w.github.io/posts/conference/2016/08/coscup-2016" rel="alternate"></link><published>2016-08-22T15:36:00+08:00</published><updated>2016-08-22T15:36:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/conference/2016/08/coscup-2016</id><summary type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder共筆&lt;/a&gt;&lt;br&gt;
-</summary><content type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder共筆&lt;/a&gt;&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+&lt;/script&gt;</content><category term="Social Network"></category><category term="Machine Learning"></category><category term="Game Theory"></category></entry><entry><title>COSCUP 2016</title><link href="http://lee-w.github.io/posts/conference/2016/08/coscup-2016" rel="alternate"></link><published>2016-08-22T15:36:00+08:00</published><updated>2016-08-22T15:36:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/conference/2016/08/coscup-2016</id><summary type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder共筆&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder共筆&lt;/a&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;h1&gt;Day1&lt;/h1&gt;
 &lt;h2&gt;R語言翻轉教室簡介&lt;/h2&gt;
 &lt;ul&gt;
@@ -4260,8 +4291,10 @@ These data can be used to learn the value&amp;nbsp;functions&lt;/p&gt;
 我到的時候就差不多在&lt;a href="https://www.youtube.com/watch?v=WZMPEVGUpgg&amp;amp;t=29m50s"&gt;live demo&lt;/a&gt;了&lt;br&gt;&amp;nbsp;算是剛好沒錯過精彩的部份XD&lt;/p&gt;
 &lt;h2&gt;商業公司如何建立開發者生態系統&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;span class="caps"&gt;B2D&lt;/span&gt;(Business to&amp;nbsp;Developere)  &lt;/li&gt;
-&lt;li&gt;Open Source跟Open &lt;span class="caps"&gt;API&lt;/span&gt;，對於商業公司來說有什麼價值  &lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;B2D&lt;/span&gt;(Business to Developere)&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;Open Source跟Open &lt;span class="caps"&gt;API&lt;/span&gt;，對於商業公司來說有什麼價值&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -4337,8 +4370,8 @@ These data can be used to learn the value&amp;nbsp;functions&lt;/p&gt;
 &lt;li&gt;建置世界級的大系統&lt;/li&gt;
 &lt;li&gt;注重使用者體驗&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Lightening&lt;/h2&gt;
-&lt;p&gt;今年lightening也有很多有趣的主題&lt;br&gt;
+&lt;h2&gt;Lightning&lt;/h2&gt;
+&lt;p&gt;今年Lightning也有很多有趣的主題&lt;br&gt;
 - &lt;span class="caps"&gt;MRT&lt;/span&gt; &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; &lt;span class="caps"&gt;GIT&lt;/span&gt;&lt;br&gt;
     - 用git branch來畫台北捷運的路線圖&lt;br&gt;
         - 不要亂玩git branch啊XD&lt;br&gt;
@@ -4348,10 +4381,11 @@ These data can be used to learn the value&amp;nbsp;functions&lt;/p&gt;
   -&amp;nbsp;https://www.youtube.com/watch?v=daAI2agxzs0&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;今年的&lt;a href="http://beta.hackfoldr.org/coscup2016/https%253A%252F%252Fhackpad.com%252FCOSCUP2016-5wENY4uxqSX"&gt;COSCUP2016梗全集&lt;/a&gt;，還蠻有趣的XD&lt;/p&gt;</content><category term="COSCUP"></category></entry><entry><title>Scrollable RISE</title><link href="http://lee-w.github.io/posts/python/2016/08/scrollable-rise" rel="alternate"></link><published>2016-08-15T03:22:00+08:00</published><updated>2016-08-15T03:22:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-15:/posts/python/2016/08/scrollable-rise</id><summary type="html">&lt;p&gt;RISE是一套結合&lt;a href="http://jupyter.org"&gt;jupyter-notebook&lt;/a&gt;和&lt;a href="http://lab.hakim.se/reveal-js/#/"&gt;reveal.js&lt;/a&gt;的專案&lt;br&gt;
-讓我們能在jupyter notebook直接開啟如同reveal.js的slide&lt;br&gt;
+讓我們能在jupyter&amp;nbsp;notebook直接開啟如同reveal.js的slide&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;RISE是一套結合&lt;a href="http://jupyter.org"&gt;jupyter-notebook&lt;/a&gt;和&lt;a href="http://lab.hakim.se/reveal-js/#/"&gt;reveal.js&lt;/a&gt;的專案&lt;br&gt;
-讓我們能在jupyter notebook直接開啟如同reveal.js的slide&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+讓我們能在jupyter&amp;nbsp;notebook直接開啟如同reveal.js的slide&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;p&gt;不過如過notebook cell中的內容太長&lt;br&gt;
 在播放的時候就會導致內容被裁剪&lt;br&gt;
 而RISE預設是無法用滑鼠滾動的&lt;br&gt;&amp;nbsp;所以這裡記錄該如何讓RISE可以滾動&lt;/p&gt;
@@ -4472,7 +4506,8 @@ After several and long discussions with a lot of people, we have arrived to the 
 &lt;/li&gt;
 &lt;li&gt;飲食應該挑選熱量燃燒慢的食物&lt;ul&gt;
 &lt;li&gt;升糖指數高的食物（e.g.&amp;nbsp;白麵包、馬鈴薯、白飯、零食）會產生大起大落的循環&lt;/li&gt;
-&lt;li&gt;想維持穩定的自制力，應該吃蔬菜、堅果、水果、起司、魚類、肉類、橄欖油這類的升糖指數低的食物  &lt;/li&gt;
+&lt;li&gt;想維持穩定的自制力，應該吃蔬菜、堅果、水果、起司、魚類、肉類、橄欖油這類的升糖指數低的食物&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;累了就睡覺&lt;ul&gt;
@@ -4497,7 +4532,8 @@ After several and long discussions with a lot of people, we have arrived to the 
 &lt;/ul&gt;
 &lt;h2&gt;Ch5 -&amp;nbsp;錢都花到哪去了？&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;遠視：太過擔心未來，而損及眼前的生活。   &lt;ul&gt;
+&lt;li&gt;遠視：太過擔心未來，而損及眼前的生活。 &lt;br&gt;
+&lt;ul&gt;
 &lt;li&gt;這樣的吝嗇心態會讓人花更多時間、與朋友疏離、讓家人抓狂也讓自己痛苦&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -4573,7 +4609,7 @@ After several and long discussions with a lot of people, we have arrived to the 
 &lt;li&gt;把惡習拖延，最後可能就不會去做&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;保存意志力的持久技巧：習慣 &lt;/li&gt;
+&lt;li&gt;保存意志力的持久技巧：習慣&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Productivity"></category></entry><entry><title>解決更新gcc找不到libgfortran.3.dylib (Octave,R)</title><link href="http://lee-w.github.io/posts/r/2016/06/solve-libgfortran3dylib-not-found" rel="alternate"></link><published>2016-06-11T03:13:00+08:00</published><updated>2016-06-11T03:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-06-11:/posts/r/2016/06/solve-libgfortran3dylib-not-found</id><summary type="html">&lt;p&gt;最近在mac上更新了gcc 6後，不管是開Octave還是R&lt;br&gt;&amp;nbsp;都會出現以下的錯誤訊息&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib
   Referenced from: /usr/local/Cellar/r/3.3.0/R.framework/Versions/3.2/Resources/lib/libR.dylib
@@ -4662,7 +4698,7 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;li&gt;
 &lt;p&gt;開口問吧，不用怕。獲得肯定答案的機會，一定比你想像的還要頻繁。&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Life"></category></entry><entry><title>[Book] 演算法統治世界</title><link href="http://lee-w.github.io/posts/book/2016/05/automate-this-how-algorithms-came-to-rule-our-world" rel="alternate"></link><published>2016-05-04T12:00:00+08:00</published><updated>2016-05-04T12:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-05-04:/posts/book/2016/05/automate-this-how-algorithms-came-to-rule-our-world</id><summary type="html">&lt;p&gt;&lt;img alt="automate-this-how-algorithms-came-to-rule-our-world" src="http://pic.eslite.com/Upload/Product/201407/m/635416147773839348.jpg"&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Inspiring"></category></entry><entry><title>[Book] 演算法統治世界</title><link href="http://lee-w.github.io/posts/book/2016/05/automate-this-how-algorithms-came-to-rule-our-world" rel="alternate"></link><published>2016-05-04T12:00:00+08:00</published><updated>2016-05-04T12:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-05-04:/posts/book/2016/05/automate-this-how-algorithms-came-to-rule-our-world</id><summary type="html">&lt;p&gt;&lt;img alt="automate-this-how-algorithms-came-to-rule-our-world" src="http://pic.eslite.com/Upload/Product/201407/m/635416147773839348.jpg"&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="automate-this-how-algorithms-came-to-rule-our-world" src="http://pic.eslite.com/Upload/Product/201407/m/635416147773839348.jpg"&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -4797,13 +4833,14 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;li&gt;如果你一定要被罵了十七次，才在第十八次生氣，這樣的行為就很容易被操縱 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Other"></category></entry><entry><title>External.js - Load HTML in Reveal.js</title><link href="http://lee-w.github.io/posts/js/2016/03/external-js-load-html-in-reveal-js" rel="alternate"></link><published>2016-03-23T01:23:00+08:00</published><updated>2016-03-23T01:23:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-03-23:/posts/js/2016/03/external-js-load-html-in-reveal-js</id><summary type="html">&lt;p&gt;reavel.js提供了&lt;code&gt;data-markdown="example.md"&lt;/code&gt;這個tag可以載入外部的markdown&lt;br&gt;
+&lt;/ul&gt;</content><category term="Other"></category></entry><entry><title>External.js - Load HTML in Reveal.js</title><link href="http://lee-w.github.io/posts/javascript/2016/03/external-js-load-html-in-reveal-js" rel="alternate"></link><published>2016-03-23T01:23:00+08:00</published><updated>2016-03-23T01:23:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-03-23:/posts/javascript/2016/03/external-js-load-html-in-reveal-js</id><summary type="html">&lt;p&gt;reavel.js提供了&lt;code&gt;data-markdown="example.md"&lt;/code&gt;這個tag可以載入外部的markdown&lt;br&gt;
 卻沒提供可以載入html的tag&lt;br&gt;
-於是就有人寫了這個&lt;a href="https://github.com/calevans/external"&gt;External.js&lt;/a&gt;&lt;br&gt;
+於是就有人寫了這個&lt;a href="https://github.com/calevans/external"&gt;External.js&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;reavel.js提供了&lt;code&gt;data-markdown="example.md"&lt;/code&gt;這個tag可以載入外部的markdown&lt;br&gt;
 卻沒提供可以載入html的tag&lt;br&gt;
-於是就有人寫了這個&lt;a href="https://github.com/calevans/external"&gt;External.js&lt;/a&gt;&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+於是就有人寫了這個&lt;a href="https://github.com/calevans/external"&gt;External.js&lt;/a&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;p&gt;有了External.js，就可以不用把所有的內容都寫在&lt;code&gt;index.html&lt;/code&gt;裡面&lt;/p&gt;
 &lt;h1&gt;Install&lt;/h1&gt;
 &lt;h2&gt;Method1:&amp;nbsp;Download&lt;/h2&gt;
@@ -4851,10 +4888,7 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
     &lt;span class="c"&gt;&amp;lt;!-- module_01/index.html --&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; This is external &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;https://github.com/calevans/external&lt;/p&gt;</content><category term="reveal.js"></category></entry><entry><title>[Article] 男子漢理論</title><link href="http://lee-w.github.io/posts/article/2016/03/article-man-theory" rel="alternate"></link><published>2016-03-15T02:13:00+08:00</published><updated>2016-03-15T02:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-03-15:/posts/article/2016/03/article-man-theory</id><summary type="html">&lt;p&gt;這篇文實在太有趣了，還是該留下來做個紀錄XD&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="reveal.js"></category></entry><entry><title>男子漢理論</title><link href="http://lee-w.github.io/posts/article/2016/03/article-man-theory" rel="alternate"></link><published>2016-03-15T02:13:00+08:00</published><updated>2016-03-15T02:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-03-15:/posts/article/2016/03/article-man-theory</id><summary type="html">&lt;p&gt;這篇文實在太有趣了，還是該留下來做個紀錄XD&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這篇文實在太有趣了，還是該留下來做個紀錄XD&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -4884,7 +4918,7 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;From &lt;a href="http://cpmarkchang.logdown.com/pages/about-me"&gt;&lt;span class="caps"&gt;MARK&lt;/span&gt; &lt;span class="caps"&gt;CHANG&lt;/span&gt;&amp;#8217;S &lt;span class="caps"&gt;BLOG&lt;/span&gt; - About&amp;nbsp;Me&lt;/a&gt;&lt;/p&gt;</content></entry><entry><title>[Book] 少，但是更好</title><link href="http://lee-w.github.io/posts/book/2016/03/essentialism" rel="alternate"></link><published>2016-03-11T14:29:00+08:00</published><updated>2016-03-11T14:29:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-03-11:/posts/book/2016/03/essentialism</id><summary type="html">&lt;p&gt;&lt;img alt="Essentialism" src="http://i.imgur.com/zJS927hm.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;From &lt;a href="http://cpmarkchang.logdown.com/pages/about-me"&gt;&lt;span class="caps"&gt;MARK&lt;/span&gt; &lt;span class="caps"&gt;CHANG&lt;/span&gt;&amp;#8217;S &lt;span class="caps"&gt;BLOG&lt;/span&gt; - About&amp;nbsp;Me&lt;/a&gt;&lt;/p&gt;</content><category term="Inspiring"></category><category term="Vim"></category></entry><entry><title>[Book] 少，但是更好</title><link href="http://lee-w.github.io/posts/book/2016/03/essentialism" rel="alternate"></link><published>2016-03-11T14:29:00+08:00</published><updated>2016-03-11T14:29:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-03-11:/posts/book/2016/03/essentialism</id><summary type="html">&lt;p&gt;&lt;img alt="Essentialism" src="http://i.imgur.com/zJS927hm.jpg"&gt;&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Weniger aber besser
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -5031,19 +5065,20 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;心流&lt;/h1&gt;
-&lt;p&gt;習慣的力量(可以參考&lt;a href="http://lee-w-blog.logdown.com/posts/334155-book-why-do-we-live"&gt;「為什麼我們這樣生活，那樣工作」&lt;/a&gt;)&lt;/p&gt;</content><category term="Productivity"></category></entry><entry><title>Reveal.js 安裝錯誤</title><link href="http://lee-w.github.io/posts/js/2016/02/reveal-s-installation-error" rel="alternate"></link><published>2016-02-20T03:57:00+08:00</published><updated>2016-02-20T03:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-02-20:/posts/js/2016/02/reveal-s-installation-error</id><summary type="html">&lt;p&gt;當我安裝步驟執行到&lt;/p&gt;
+&lt;p&gt;習慣的力量(可以參考&lt;a href="http://lee-w-blog.logdown.com/posts/334155-book-why-do-we-live"&gt;「為什麼我們這樣生活，那樣工作」&lt;/a&gt;)&lt;/p&gt;</content><category term="Productivity"></category></entry><entry><title>Reveal.js 安裝錯誤</title><link href="http://lee-w.github.io/posts/javascript/2016/02/reveal-s-installation-error" rel="alternate"></link><published>2016-02-20T03:57:00+08:00</published><updated>2016-02-20T03:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-02-20:/posts/javascript/2016/02/reveal-s-installation-error</id><summary type="html">&lt;p&gt;當我安裝步驟執行到&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;會跳出很多錯誤訊息&lt;br&gt;
+&lt;p&gt;會跳出很多錯誤訊息&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;當我安裝步驟執行到&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;會跳出很多錯誤訊息&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;會跳出很多錯誤訊息&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;p&gt;這才發現Reveal.js 要用python &amp;gt;= 2.5 and &amp;lt; 3.0.0&lt;br&gt;
 而我預設的python是python3.5&lt;br&gt;&amp;nbsp;所以只要像下面的指令把python指到python2就可以了&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install --python&lt;span class="o"&gt;=&lt;/span&gt;python2.7
@@ -5073,8 +5108,6 @@ IRkernel::installspec()
 &lt;span class="nl"&gt;ERROR&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;compilation&lt;/span&gt; &lt;span class="n"&gt;failed&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;package&lt;/span&gt; &lt;span class="err"&gt;‘&lt;/span&gt;&lt;span class="n"&gt;rzmq&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;!--more--&gt;
 
 &lt;h2&gt;解決&lt;/h2&gt;
 &lt;p&gt;這時候就要將缺少的套件補齊&lt;/p&gt;
@@ -5291,7 +5324,8 @@ jupyter console --kernel=ir
 &lt;/li&gt;
 &lt;li&gt;咖啡因要三十分鐘後才會產生效果，在此之前請不要再喝，否則再感受到它的助益前，會先感受到它導致的焦慮&lt;ul&gt;
 &lt;li&gt;即使在你很累的時候，也只應該攝取正常的量&lt;/li&gt;
-&lt;li&gt;如果咖啡因沒辦法提升你的注意力，喝再多可能也沒用，請考慮小睡一下  &lt;/li&gt;
+&lt;li&gt;如果咖啡因沒辦法提升你的注意力，喝再多可能也沒用，請考慮小睡一下&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -5302,7 +5336,8 @@ jupyter console --kernel=ir
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;桌邊的雜亂會影響專注力&lt;ul&gt;
-&lt;li&gt;因為桌上的那些東西都會使你分心   &lt;/li&gt;
+&lt;li&gt;因為桌上的那些東西都會使你分心 &lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -5328,7 +5363,9 @@ jupyter console --kernel=ir
 &lt;ul&gt;
 &lt;li&gt;跳脫慣有的節奏，到國外旅行、新運動、體驗新活動，創新就是從這些地方開始的&lt;/li&gt;
 &lt;li&gt;不管藝術、科學或商業，靈感通常來自&lt;strong&gt;親身體驗&lt;/strong&gt;&lt;br&gt;
-  即使是網路時代，地理位置依然重要&lt;br&gt;&amp;nbsp;這就是為什麼高科技發源地是矽谷不是康乃狄克州  &lt;/li&gt;
+  即使是網路時代，地理位置依然重要&lt;br&gt;
+  這就是為什麼高科技發源地是矽谷不是康乃狄克州&lt;br&gt;
+&lt;/li&gt;
 &lt;li&gt;「當個左撇子」哲學：&amp;nbsp;我們應該關懷消費者的需要，即使是習慣不同於一般人的消費者&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;完美的動腦會議&lt;/h2&gt;
@@ -5370,7 +5407,9 @@ jupyter console --kernel=ir
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;每個人都應該有表演的機會，每個人的立足點是平等的，然後接受各種挫折的機會&lt;br&gt;&amp;nbsp;IDEO通常會讓新人在新專案中擔任吃重的角色，甚至負責整個專案  &lt;/p&gt;
+&lt;p&gt;每個人都應該有表演的機會，每個人的立足點是平等的，然後接受各種挫折的機會&lt;br&gt;
+  IDEO通常會讓新人在新專案中擔任吃重的角色，甚至負責整個專案&lt;br&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;原型製造是創新的捷徑&lt;/h2&gt;
@@ -5395,7 +5434,9 @@ jupyter console --kernel=ir
 &lt;!--more--&gt;
 
 &lt;h2&gt;定錨(anchoring)&lt;/h2&gt;
-&lt;p&gt;Steve Jobs在推出iPad的時候說「我們應該給他設定何種價格？如果你聽信自以為聰明的人，我們會把它的價格訂在1000美元以下」&lt;br&gt;&amp;nbsp;螢幕出現了999，然後「我很高興地向大家宣佈，iPad的起價不是999美元，而是只要499美元」  &lt;/p&gt;
+&lt;p&gt;Steve Jobs在推出iPad的時候說「我們應該給他設定何種價格？如果你聽信自以為聰明的人，我們會把它的價格訂在1000美元以下」&lt;br&gt;
+螢幕出現了999，然後「我很高興地向大家宣佈，iPad的起價不是999美元，而是只要499美元」&lt;br&gt;
+&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;這麼做降低了知覺成本，因為已經被一開始的999給定錨了。第二次的價格就會被拿來跟第一次的錨比較&lt;/li&gt;
 &lt;li&gt;另外，他沒有拿來跟筆電比較，維護了產品的獨特性，也不減少筆電的行銷&lt;/li&gt;
@@ -5404,7 +5445,8 @@ jupyter console --kernel=ir
 &lt;p&gt;下面三種，哪種會最多人訂閱？&lt;br&gt;
 1. 電子版       59.00美元&lt;br&gt;
 2. 紙本       125.00美元 &lt;br&gt;
-3. 紙本+電子版&amp;nbsp;125.00美元  &lt;/p&gt;
+3. 紙本+電子版 125.00美元&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;答案是「紙本+電子報」，紙本則不被考慮&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;那下面兩種呢？&lt;br&gt;
 1. 電子版      59.00美元&lt;br&gt;
@@ -5533,7 +5575,8 @@ jupyter console --kernel=ir
 &lt;h2&gt;扭轉習慣的黃金律&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;沿用相同的提示訊號和獎籌，加入新的慣性行為  &lt;/p&gt;
+&lt;p&gt;沿用相同的提示訊號和獎籌，加入新的慣性行為&lt;br&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;改變舊習，和培養新習慣不同&lt;br&gt;&amp;nbsp;必須同時顧及根深柢固的舊渴望&lt;/p&gt;
@@ -5544,8 +5587,10 @@ jupyter console --kernel=ir
 &lt;/ul&gt;
 &lt;h3&gt;Example&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;假設你想戒掉上班吃點心的習慣  &lt;ul&gt;
-&lt;li&gt;你是為了什麼吃點心？  &lt;ul&gt;
+&lt;li&gt;假設你想戒掉上班吃點心的習慣&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;你是為了什麼吃點心？&lt;br&gt;
+&lt;ul&gt;
 &lt;li&gt;為了消除飢餓？&lt;/li&gt;
 &lt;li&gt;為了擺脫無聊？&lt;/li&gt;
 &lt;li&gt;或只是短暫放鬆?&lt;/li&gt;
@@ -5793,7 +5838,7 @@ ipython3 kernelspec install-self
 &lt;img alt="1_jupyter" src="http://i.imgur.com/IxopQfG.png"&gt;&lt;br&gt;
 Python2上面是另一個也被jupyter notebook支援的語言julia&lt;br&gt;&amp;nbsp;最近才剛開始碰，有機會再來分享julia的心得&lt;/p&gt;
 &lt;h1&gt;Reference&lt;/h1&gt;
-&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/30492623/using-both-python-2-x-and-python-3-x-in-ipython-notebook"&gt;Using both Python 2.x and Python 3.x in IPython&amp;nbsp;Notebook&lt;/a&gt;&lt;/p&gt;</content><category term="Jupyter"></category></entry><entry><title>[Article] No More Zero Day</title><link href="http://lee-w.github.io/posts/article/2015/10/no-more-zero-day" rel="alternate"></link><published>2015-10-27T06:53:00+08:00</published><updated>2015-10-27T06:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-10-27:/posts/article/2015/10/no-more-zero-day</id><summary type="html">&lt;p&gt;決定開始來寫些程式以外的內容&lt;br&gt;
+&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/30492623/using-both-python-2-x-and-python-3-x-in-ipython-notebook"&gt;Using both Python 2.x and Python 3.x in IPython&amp;nbsp;Notebook&lt;/a&gt;&lt;/p&gt;</content><category term="Jupyter"></category></entry><entry><title>No More Zero Day</title><link href="http://lee-w.github.io/posts/article/2015/10/no-more-zero-day" rel="alternate"></link><published>2015-10-27T06:53:00+08:00</published><updated>2015-10-27T06:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-10-27:/posts/article/2015/10/no-more-zero-day</id><summary type="html">&lt;p&gt;決定開始來寫些程式以外的內容&lt;br&gt;
 整理之前看過的書或文章，跟大家分享心得或書摘&lt;br&gt;&amp;nbsp;反正都寫了，不分享一下也是蠻可惜的(?)&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;決定開始來寫些程式以外的內容&lt;br&gt;
 整理之前看過的書或文章，跟大家分享心得或書摘&lt;br&gt;&amp;nbsp;反正都寫了，不分享一下也是蠻可惜的(?)&lt;/p&gt;
@@ -5889,7 +5934,9 @@ Python2上面是另一個也被jupyter notebook支援的語言julia&lt;br&gt;&am
   為自己預算下一年的時間要怎麼分配，並研擬為自我投資計畫&lt;br&gt;&amp;nbsp;試著在大腦裡描繪一年後自己的模樣&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;讀完每天的報紙後，提出五個疑問&lt;br&gt;&amp;nbsp;接著提出自己可以運用怎樣的方式、進行怎樣的調查，是否可以提出完成度更高的報導內容     &lt;/p&gt;
+&lt;p&gt;讀完每天的報紙後，提出五個疑問&lt;br&gt;
+   接著提出自己可以運用怎樣的方式、進行怎樣的調查，是否可以提出完成度更高的報導內容   &lt;br&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;</content><category term="Thinking"></category></entry><entry><title>[Book] 創新是一種態度</title><link href="http://lee-w.github.io/posts/book/2015/10/innovation-is-an-attitude" rel="alternate"></link><published>2015-10-06T12:04:00+08:00</published><updated>2015-10-06T12:04:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-10-06:/posts/book/2015/10/innovation-is-an-attitude</id><summary type="html">&lt;p&gt;&lt;img alt="innovation-is-an-attitude" src="http://pic.eslite.com/Upload/Product/201506/m/635689172041107500.jpg"&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="innovation-is-an-attitude" src="http://pic.eslite.com/Upload/Product/201506/m/635689172041107500.jpg"&gt;&lt;/p&gt;
@@ -5948,7 +5995,8 @@ Python2上面是另一個也被jupyter notebook支援的語言julia&lt;br&gt;&am
 &lt;li&gt;「誰的錯」 -&amp;gt;&amp;nbsp;「我們的制度有甚麼問題」 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;曾有一個故事，IBM一個經理人犯了重大錯誤，賠了公司兩百萬美金，他慚愧的像老闆辭職。老闆拍桌大罵:「你這個人做事怎麼這麼沒責任感」還沒等他開口說自己是辭職以示負責，老闆就說「我們才花了兩百萬幫你上了一課，你現在就想跑」  &lt;/li&gt;
+&lt;li&gt;曾有一個故事，IBM一個經理人犯了重大錯誤，賠了公司兩百萬美金，他慚愧的像老闆辭職。老闆拍桌大罵:「你這個人做事怎麼這麼沒責任感」還沒等他開口說自己是辭職以示負責，老闆就說「我們才花了兩百萬幫你上了一課，你現在就想跑」&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;機會成本，才是公司最大的成本&lt;/h2&gt;
 &lt;ul&gt;
@@ -6135,7 +6183,8 @@ Complementary skills and alike interests would be&amp;nbsp;good.&lt;/p&gt;
 &lt;h4&gt;Q: Education problems. How about the flip classroom or &lt;span class="caps"&gt;MOOCS&lt;/span&gt;?&lt;/h4&gt;
 &lt;p&gt;It&amp;#8217;s education bubble.&lt;br&gt;
 Peter cannot give an ultimate way to replace the university system.&lt;br&gt;
-The suggestion is that don&amp;#8217;t get up the same or similar&amp;nbsp;track.  &lt;/p&gt;
+The suggestion is that don&amp;#8217;t get up the same or similar track.&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;What makes education bubbles is that everyone treats university as church or religion.&lt;br&gt;
 If you don&amp;#8217;t go into a college, your life would ruin.&lt;br&gt;
 Such thought is the main&amp;nbsp;problem.&lt;/p&gt;
@@ -6219,11 +6268,12 @@ autocmd &lt;span class="nb"&gt;BufRead&lt;/span&gt; *.txt&lt;span class="p"&gt;,
 &lt;li&gt;&lt;a href="http://stackoverflow.com/questions/7286207/automatically-enabling-spell-checking-in-vimrc"&gt;vim - Automatically enabling spell checking in vimrc - Stack&amp;nbsp;Overflow&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Plug In"></category></entry><entry><title>gitignore.io</title><link href="http://lee-w.github.io/posts/git/2015/02/gitignoreio" rel="alternate"></link><published>2015-02-03T05:58:00+08:00</published><updated>2015-02-03T05:58:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-02-03:/posts/git/2015/02/gitignoreio</id><summary type="html">&lt;p&gt;每次開一個git專案，要為它找適當的.gitignore，都要上網找模板蠻麻煩的&lt;br&gt;
 能不能有個簡單的方法，我開什麼專案就產生怎樣的.gitignore&lt;br&gt;
-然後我就發現了&lt;a href="https://www.gitignore.io"&gt;gitignore.io&lt;/a&gt;&lt;br&gt;
+然後我就發現了&lt;a href="https://www.gitignore.io"&gt;gitignore.io&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;每次開一個git專案，要為它找適當的.gitignore，都要上網找模板蠻麻煩的&lt;br&gt;
 能不能有個簡單的方法，我開什麼專案就產生怎樣的.gitignore&lt;br&gt;
-然後我就發現了&lt;a href="https://www.gitignore.io"&gt;gitignore.io&lt;/a&gt;&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+然後我就發現了&lt;a href="https://www.gitignore.io"&gt;gitignore.io&lt;/a&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;p&gt;簡單來說gitignore.io提供各式各樣的gitignore，而且可以自動合併成一個file&lt;br&gt;
 最棒的是它有提供api讓我們在command&amp;nbsp;line上使用&lt;/p&gt;
 &lt;h1&gt;gitignore.io on&amp;nbsp;command&lt;/h1&gt;
@@ -6295,7 +6345,9 @@ sudo rm gi_extension.sh /usr/bin/gi
 將原本&lt;code&gt;gi list&lt;/code&gt;的output，儲存到&lt;code&gt;~/.gi_list&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;顯示支援類型&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;以表格的方式輸出支援的類型&lt;br&gt;&amp;nbsp;目前設定一個row容納5個column，每個column長度為25  &lt;/li&gt;
+&lt;li&gt;以表格的方式輸出支援的類型&lt;br&gt;
+目前設定一個row容納5個column，每個column長度為25&lt;br&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -l
 &lt;/pre&gt;&lt;/div&gt;
@@ -6336,7 +6388,7 @@ sudo rm gi_extension.sh /usr/bin/gi
 
 
 &lt;p&gt;其實每次gi被執行的時候，都會在backgroud更新列表&lt;br&gt;
-但是這次的更新，下次才能被使用&lt;br&gt;&amp;nbsp;所以如果想要強制更新就可以用上這個指令&lt;/p&gt;</content><category term="Deprecated"></category></entry><entry><title>[Book] 點子都是偷來的</title><link href="http://lee-w.github.io/posts/book/2015/01/steal-like-an-artist-10-things-nobody-told-you-about-being-creatvie" rel="alternate"></link><published>2015-01-31T08:43:00+08:00</published><updated>2015-01-31T08:43:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-31:/posts/book/2015/01/steal-like-an-artist-10-things-nobody-told-you-about-being-creatvie</id><summary type="html">&lt;p&gt;Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie&lt;br&gt;
+但是這次的更新，下次才能被使用&lt;br&gt;&amp;nbsp;所以如果想要強制更新就可以用上這個指令&lt;/p&gt;</content><category term="Deprecated"></category><category term="Utility"></category></entry><entry><title>[Book] 點子都是偷來的</title><link href="http://lee-w.github.io/posts/book/2015/01/steal-like-an-artist-10-things-nobody-told-you-about-being-creatvie" rel="alternate"></link><published>2015-01-31T08:43:00+08:00</published><updated>2015-01-31T08:43:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-31:/posts/book/2015/01/steal-like-an-artist-10-things-nobody-told-you-about-being-creatvie</id><summary type="html">&lt;p&gt;Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie&lt;br&gt;
 &lt;img alt="Show Your Work" src="http://i.imgur.com/GQNwobGm.jpg"&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie&lt;br&gt;
 &lt;img alt="Show Your Work" src="http://i.imgur.com/GQNwobGm.jpg"&gt;&lt;/p&gt;
@@ -6411,13 +6463,12 @@ sudo rm gi_extension.sh /usr/bin/gi
 &lt;li&gt;Take a&amp;nbsp;nap&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Design"></category></entry><entry><title>驅動BCM43228網卡在Linux的無線功能</title><link href="http://lee-w.github.io/posts/linux-unix/2015/01/enable-bcm43228-wifi-on-linux" rel="alternate"></link><published>2015-01-28T08:52:00+08:00</published><updated>2015-01-28T08:52:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-28:/posts/linux-unix/2015/01/enable-bcm43228-wifi-on-linux</id><summary type="html">&lt;p&gt;最近本來下定決心要來玩arch linux&lt;br&gt;
 結果竟然被筆電的網卡搞死了&lt;br&gt;&amp;nbsp;抓了官網的驅動竟然不能build&amp;#8230;&lt;/p&gt;
-&lt;p&gt;沒想到改成灌Linux mint 17，依然有問題＝＝&lt;br&gt;
-最後找到一個解決的辦法&lt;br&gt;
+&lt;p&gt;沒想到改成灌Linux mint 17，依然有問題＝＝&lt;br&gt;&amp;nbsp;最後找到一個解決的辦法&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最近本來下定決心要來玩arch linux&lt;br&gt;
 結果竟然被筆電的網卡搞死了&lt;br&gt;&amp;nbsp;抓了官網的驅動竟然不能build&amp;#8230;&lt;/p&gt;
-&lt;p&gt;沒想到改成灌Linux mint 17，依然有問題＝＝&lt;br&gt;
-最後找到一個解決的辦法&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;沒想到改成灌Linux mint 17，依然有問題＝＝&lt;br&gt;&amp;nbsp;最後找到一個解決的辦法&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;p&gt;先確定你的網卡是不是BC43228&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lspci &lt;span class="p"&gt;|&lt;/span&gt; grep Network
 &lt;/pre&gt;&lt;/div&gt;
@@ -6431,13 +6482,14 @@ sudo apt-get install --reinstall bcmwl-kernel-source
 
 &lt;p&gt;如果成功的話，Wifi應該馬上就能用了&lt;/p&gt;
 &lt;h1&gt;Reference&lt;/h1&gt;
-&lt;p&gt;&lt;a href="http://wiki.beyondlogic.org/index.php?title=Ubuntu14.04_Acer_Aspire_V5_571_Broadcom_BCM43228_WiFi"&gt;Ubuntu14.04 Acer Aspire V5 571 Broadcom &lt;span class="caps"&gt;BCM43228&lt;/span&gt; WiFi -&amp;nbsp;BeyondLogic&lt;/a&gt;&lt;/p&gt;</content></entry><entry><title>Gitbook on Command Line</title><link href="http://lee-w.github.io/posts/git/2015/01/gitbook-on-command-line" rel="alternate"></link><published>2015-01-23T07:34:00+08:00</published><updated>2015-01-23T07:34:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-23:/posts/git/2015/01/gitbook-on-command-line</id><summary type="html">&lt;p&gt;最近比較認真在寫Gitbook，順便記錄一下該怎麼用&lt;br&gt;
+&lt;p&gt;&lt;a href="http://wiki.beyondlogic.org/index.php?title=Ubuntu14.04_Acer_Aspire_V5_571_Broadcom_BCM43228_WiFi"&gt;Ubuntu14.04 Acer Aspire V5 571 Broadcom &lt;span class="caps"&gt;BCM43228&lt;/span&gt; WiFi -&amp;nbsp;BeyondLogic&lt;/a&gt;&lt;/p&gt;</content><category term="Dual Boot"></category></entry><entry><title>Gitbook on Command Line</title><link href="http://lee-w.github.io/posts/git/2015/01/gitbook-on-command-line" rel="alternate"></link><published>2015-01-23T07:34:00+08:00</published><updated>2015-01-23T07:34:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-23:/posts/git/2015/01/gitbook-on-command-line</id><summary type="html">&lt;p&gt;最近比較認真在寫Gitbook，順便記錄一下該怎麼用&lt;br&gt;
 簡單來說Gitbook就是可以使用markdown來寫書的平台，可以轉成各種電子書的格式&lt;br&gt;
-目前已經支援的有html, pdf, ePUB, &lt;span class="caps"&gt;MOBI&lt;/span&gt;&lt;br&gt;
+目前已經支援的有html, pdf, ePUB, &lt;span class="caps"&gt;MOBI&lt;/span&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最近比較認真在寫Gitbook，順便記錄一下該怎麼用&lt;br&gt;
 簡單來說Gitbook就是可以使用markdown來寫書的平台，可以轉成各種電子書的格式&lt;br&gt;
-目前已經支援的有html, pdf, ePUB, &lt;span class="caps"&gt;MOBI&lt;/span&gt;&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+目前已經支援的有html, pdf, ePUB, &lt;span class="caps"&gt;MOBI&lt;/span&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;p&gt;之前寫了一本Clean Code的筆記&lt;br&gt;
 最近又開始寫一本FreeBSD和網管相關的Gitbook&lt;br&gt;
 如果有興趣可以到&lt;a href="https://www.gitbook.com/@lee-w"&gt;我的Gitbook&lt;/a&gt;上看看XD&lt;/p&gt;
@@ -6556,7 +6608,7 @@ git push -u gitbook
   前40個小時是給僱主的，後20小時是給自己的&lt;br&gt;
   這剩餘的20小時裡，也就是每天3小時，你應該看書、練習、學習，或者做其他提升職業能力的事&lt;br&gt;&amp;nbsp;那20小時你不用為僱主工作。相反，你該為自己的職業發展工作&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Software Engineering"></category></entry><entry><title>[Book] 人月神話</title><link href="http://lee-w.github.io/posts/book/2015/01/the-mythical-man-month" rel="alternate"></link><published>2015-01-17T09:30:00+08:00</published><updated>2015-01-17T09:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-17:/posts/book/2015/01/the-mythical-man-month</id><summary type="html">&lt;p&gt;&lt;img alt="人月神話" src="http://i.imgur.com/yEzGf5dm.jpg"&gt;&lt;br&gt;
+&lt;/ul&gt;</content><category term="Software Engineering"></category><category term="Code Quality"></category></entry><entry><title>[Book] 人月神話</title><link href="http://lee-w.github.io/posts/book/2015/01/the-mythical-man-month" rel="alternate"></link><published>2015-01-17T09:30:00+08:00</published><updated>2015-01-17T09:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-17:/posts/book/2015/01/the-mythical-man-month</id><summary type="html">&lt;p&gt;&lt;img alt="人月神話" src="http://i.imgur.com/yEzGf5dm.jpg"&gt;&lt;br&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="人月神話" src="http://i.imgur.com/yEzGf5dm.jpg"&gt;&lt;br&gt;
 &lt;!--more--&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -6616,7 +6668,8 @@ git push -u gitbook
 &lt;li&gt;要精確而完整的描述&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;執行過程中的指示  &lt;ul&gt;
+&lt;li&gt;執行過程中的指示&lt;br&gt;
+&lt;ul&gt;
 &lt;li&gt;包括運行正常時，或因異常而終止時，在控制台或任何輸出裝置上應該要看得到的任何提示&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -6647,13 +6700,12 @@ git push -u gitbook
 &lt;li&gt;
 &lt;p&gt;以註解的形式在程式中加入一些註解&lt;br&gt;&amp;nbsp;但許多程式為了這個逐行加入註解，這更會讓人感到困惑。&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Software Engineering"></category><category term="Team"></category></entry><entry><title>MacBook Pro Retina 開箱</title><link href="http://lee-w.github.io/posts/general/2015/01/mbpr-out-of-the-box" rel="alternate"></link><published>2015-01-02T04:14:00+08:00</published><updated>2015-01-02T04:14:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-02:/posts/general/2015/01/mbpr-out-of-the-box</id><summary type="html">&lt;p&gt;這篇只是想給自己換mbpr留下一個紀念&lt;br&gt;
-順便紀錄一些從Ubuntu轉過來不習慣的地方&lt;br&gt;
-想要看更專業的開箱文就要再去翻別篇囉ＸＤ&lt;br&gt;
+&lt;/ul&gt;</content><category term="Software Engineering"></category><category term="Team"></category></entry><entry><title>MacBook Pro Retina 開箱</title><link href="http://lee-w.github.io/posts/gossiping/2015/01/mbpr-out-of-the-box" rel="alternate"></link><published>2015-01-02T04:14:00+08:00</published><updated>2015-01-02T04:14:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-02:/posts/gossiping/2015/01/mbpr-out-of-the-box</id><summary type="html">&lt;p&gt;這篇只是想給自己換mbpr留下一個紀念&lt;br&gt;
+順便紀錄一些從Ubuntu轉過來不習慣的地方&lt;br&gt;&amp;nbsp;想要看更專業的開箱文就要再去翻別篇囉ＸＤ&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這篇只是想給自己換mbpr留下一個紀念&lt;br&gt;
-順便紀錄一些從Ubuntu轉過來不習慣的地方&lt;br&gt;
-想要看更專業的開箱文就要再去翻別篇囉ＸＤ&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+順便紀錄一些從Ubuntu轉過來不習慣的地方&lt;br&gt;&amp;nbsp;想要看更專業的開箱文就要再去翻別篇囉ＸＤ&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;p&gt;先附上幾張照片&lt;br&gt;
 &lt;img alt="1_mac" src="http://i.imgur.com/cZp8mpJ.jpg"&gt;&lt;br&gt;
 &lt;img alt="2_mac" src="http://i.imgur.com/NgvObR9.jpg"&gt;&lt;br&gt;
@@ -6680,12 +6732,11 @@ guake terminal實在太好用了啊ＸＤ&lt;br&gt;
 &lt;a href="https://www.android.com/filetransfer/"&gt;Android File&amp;nbsp;Transfer&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;總之我現在也是個mac&amp;nbsp;user了lol&lt;/p&gt;</content><category term="mac"></category></entry><entry><title>Android Studio+Genymotion安裝(12/29更新)</title><link href="http://lee-w.github.io/posts/android/2014/11/android-studio-and-genymotion-installation" rel="alternate"></link><published>2014-11-23T09:26:00+08:00</published><updated>2014-11-23T09:26:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-11-23:/posts/android/2014/11/android-studio-and-genymotion-installation</id><summary type="html">&lt;h1&gt;What is Android&amp;nbsp;Studio?&lt;/h1&gt;
-&lt;p&gt;最近Google在推行的Android &lt;span class="caps"&gt;IDE&lt;/span&gt;，前身是IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&lt;br&gt;
-</summary><content type="html">&lt;h1&gt;What is Android&amp;nbsp;Studio?&lt;/h1&gt;
-&lt;p&gt;最近Google在推行的Android &lt;span class="caps"&gt;IDE&lt;/span&gt;，前身是IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&lt;br&gt;
-&lt;!--more--&gt;&lt;br&gt;
-它的檔案架構跟eclipse差蠻多的，所以用不同的IDE來協作會有點麻煩&lt;br&gt;
+&lt;p&gt;總之我現在也是個mac&amp;nbsp;user了lol&lt;/p&gt;</content><category term="mac"></category></entry><entry><title>Android Studio+Genymotion安裝(12/29更新)</title><link href="http://lee-w.github.io/posts/android/2014/11/android-studio-and-genymotion-installation" rel="alternate"></link><published>2014-11-23T09:26:00+08:00</published><updated>2014-11-23T09:26:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-11-23:/posts/android/2014/11/android-studio-and-genymotion-installation</id><summary type="html">&lt;p&gt;最近Google在推行的Android &lt;span class="caps"&gt;IDE&lt;/span&gt;，前身是IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;最近Google在推行的Android &lt;span class="caps"&gt;IDE&lt;/span&gt;，前身是IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;它的檔案架構跟eclipse差蠻多的，所以用不同的IDE來協作會有點麻煩&lt;br&gt;
 就我的經驗Android Studio比eclipse來得穩定一些&lt;br&gt;&amp;nbsp;反正現在還有Google在背後支持它，就來試試看吧XD&lt;/p&gt;
 &lt;h3&gt;2014/11/23更新&lt;/h3&gt;
 &lt;p&gt;&lt;a href="#1123 update 1"&gt;Install &lt;span class="caps"&gt;SDK&lt;/span&gt;&lt;/a&gt;: 更新了Android Studio 0.8.14後需要的額外設定&lt;br&gt;
@@ -6798,12 +6849,11 @@ Android Studio屬於IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;，所以
 &lt;h2&gt;Plugins&lt;/h2&gt;
 &lt;p&gt;IdeaVim: 如果你是重度Vim狂熱者，這絕對是你不能不裝的plugin!!!&lt;br&gt;
 MarkDown: 這個Plugin提供直接在Android Studio中，Preview&amp;nbsp;Markdown的功能&lt;/p&gt;</content><category term="Tutorial"></category></entry><entry><title>Dual Boot FreeBSD Using GRUB2</title><link href="http://lee-w.github.io/posts/linux-unix/2014/10/dual-boot-freebsd-using-grub2" rel="alternate"></link><published>2014-10-21T08:56:00+08:00</published><updated>2014-10-21T08:56:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-10-21:/posts/linux-unix/2014/10/dual-boot-freebsd-using-grub2</id><summary type="html">&lt;p&gt;其實原本的標題是&lt;code&gt;Dual Boot FreeBsd with Ubuntu&lt;/code&gt;&lt;br&gt;
-這篇文章寫的都是用Ubuntu測試的&lt;br&gt;
-不過我想只要是grub2應該都差不多吧XD&lt;br&gt;
+這篇文章寫的都是用Ubuntu測試的&lt;br&gt;&amp;nbsp;不過我想只要是grub2應該都差不多吧XD&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;其實原本的標題是&lt;code&gt;Dual Boot FreeBsd with Ubuntu&lt;/code&gt;&lt;br&gt;
-這篇文章寫的都是用Ubuntu測試的&lt;br&gt;
-不過我想只要是grub2應該都差不多吧XD&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+這篇文章寫的都是用Ubuntu測試的&lt;br&gt;&amp;nbsp;不過我想只要是grub2應該都差不多吧XD&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;h2&gt;加入freeBSD到grub開機選單&lt;/h2&gt;
 &lt;h3&gt;更改grub的設定檔&lt;/h3&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vi /etc/grub.d/40_Custom
@@ -6848,19 +6898,18 @@ GRUB_CMDLINE_LINUX=&amp;quot;&amp;quot;
 
 &lt;p&gt;把第1行設定為多少(注意是從0開始)，就會預設從那裡開機&lt;/p&gt;
 &lt;h2&gt;在ubuntu mount&amp;nbsp;FreeBSD&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount -t ufs -r -o ufstype=ufs2 /dev/sda4 ~/freebsd
-&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>powerline on zsh, vim, tmux</title><link href="http://lee-w.github.io/posts/linux-unix/2014/07/powerline-on-zsh-vim-tmux" rel="alternate"></link><published>2014-07-30T15:01:00+08:00</published><updated>2014-07-30T15:01:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-07-30:/posts/linux-unix/2014/07/powerline-on-zsh-vim-tmux</id><summary type="html">&lt;p&gt;用了vim的powerline後覺得很酷，就找了很多的powerline來玩&lt;br&gt;
-於是這篇文章產生了XDD&lt;br&gt;
-</summary><content type="html">&lt;p&gt;用了vim的powerline後覺得很酷，就找了很多的powerline來玩&lt;br&gt;
-於是這篇文章產生了XDD&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount -t ufs -r -o &lt;span class="nv"&gt;ufstype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ufs2 /dev/sda4 ~/freebsd
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Dual Boot"></category></entry><entry><title>powerline on zsh, vim, tmux</title><link href="http://lee-w.github.io/posts/linux-unix/2014/07/powerline-on-zsh-vim-tmux" rel="alternate"></link><published>2014-07-30T15:01:00+08:00</published><updated>2014-07-30T15:01:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-07-30:/posts/linux-unix/2014/07/powerline-on-zsh-vim-tmux</id><summary type="html">&lt;p&gt;用了vim的powerline後覺得很酷，就找了很多的powerline來玩&lt;br&gt;&amp;nbsp;於是這篇文章產生了XDD&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;用了vim的powerline後覺得很酷，就找了很多的powerline來玩&lt;br&gt;&amp;nbsp;於是這篇文章產生了XDD&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;p&gt;這是各個powerline的預覽圖&lt;br&gt;
 1. vim&lt;br&gt;
 &lt;img alt="1_vim" src="http://i.imgur.com/VTM4866.png"&gt;&lt;br&gt;
 2. tmux&lt;br&gt;
 &lt;img alt="2_tmux" src="http://i.imgur.com/LLJ9xjk.png"&gt;&lt;br&gt;
 3. zsh&lt;br&gt;
-&lt;a href="http://i.imgur.com/tOvzhK3.png"&gt;3_zsh&lt;/a&gt;&lt;/p&gt;
+&lt;img alt="3_zsh" src="http://i.imgur.com/tOvzhK3.png"&gt;&lt;/p&gt;
 &lt;h2&gt;powerline&amp;nbsp;字體&lt;/h2&gt;
 &lt;p&gt;安裝這些powerline之前要先下載powerline字體&lt;br&gt;
 不然可能會無法正常顯示&lt;br&gt;
@@ -6904,23 +6953,25 @@ sudo fc-cache -v -f
 後來才發現原來是因為Win 8 的 &lt;strong&gt;Fast Boot&lt;/strong&gt;&amp;nbsp;造成的&lt;/p&gt;
 &lt;!--more--&gt;
 
-&lt;h2&gt;解決&lt;/h2&gt;
+&lt;h1&gt;解決&lt;/h1&gt;
 &lt;p&gt;&lt;img alt="win8_start_up" src="http://i.imgur.com/ohEfCkR.png"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;控制台\硬體和音效\電源選項\系統設定&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;只要把&lt;code&gt;開啟快速啟動&lt;/code&gt;取消掉就可以了&lt;/p&gt;
-&lt;h2&gt;Reference&lt;/h2&gt;
-&lt;p&gt;[Cannot mount &lt;span class="caps"&gt;NTFS&lt;/span&gt; partition in Ubuntu 13.04 [duplicate]]&amp;nbsp;(http://askubuntu.com/questions/291864/cannot-mount-ntfs-partition-in-ubuntu-13-04)&lt;/p&gt;</content></entry><entry><title>Git and Git Hub</title><link href="http://lee-w.github.io/posts/git/2014/02/git-and-git-hub" rel="alternate"></link><published>2014-02-22T16:18:00+08:00</published><updated>2014-02-22T16:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-22:/posts/git/2014/02/git-and-git-hub</id><summary type="html"></summary><content type="html">&lt;p&gt;這份筆記已經是舊的版本了&lt;br&gt;
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://askubuntu.com/questions/291864/cannot-mount-ntfs-partition-in-ubuntu-13-04"&gt;Cannot mount &lt;span class="caps"&gt;NTFS&lt;/span&gt; partition in Ubuntu 13.04&amp;nbsp;[duplicate]&lt;/a&gt;&lt;/p&gt;</content><category term="Dual Boot"></category></entry><entry><title>Git and Git Hub</title><link href="http://lee-w.github.io/posts/git/2014/02/git-and-git-hub" rel="alternate"></link><published>2014-02-22T16:18:00+08:00</published><updated>2014-02-22T16:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-22:/posts/git/2014/02/git-and-git-hub</id><summary type="html">&lt;p&gt;這份筆記已經是舊的版本了&lt;br&gt;
 請參考&lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;新版&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;這份筆記已經是舊的版本了&lt;br&gt;
+請參考&lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;新版&lt;/a&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;p&gt;最近因為專題需要，所以寫了一份簡單的Git筆記&lt;br&gt;
 裡面大概就是我常用的指令&lt;br&gt;&amp;nbsp;因為我也只是剛開始使用git沒多久，內容不會太深入&lt;/p&gt;
 &lt;iframe src="http://www.slideshare.net/slideshow/embed_code/31515684" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt;
 
-&lt;p&gt;&lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/ssuser5e1963/git-and-git-hub-31515684" title="Git and git hub" target="_blank"&gt;Git and git hub&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/ssuser5e1963" target="_blank"&gt;唯 李&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;</content><category term="Tutorial"></category><category term="Deprecated"></category></entry><entry><title>Guake terminal</title><link href="http://lee-w.github.io/posts/linux-unix/2014/02/guake-terminal" rel="alternate"></link><published>2014-02-09T07:02:00+08:00</published><updated>2014-02-09T07:02:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-09:/posts/linux-unix/2014/02/guake-terminal</id><summary type="html">&lt;h1&gt;什麼是guake&amp;nbsp;termianl&lt;/h1&gt;
-&lt;p&gt;隱藏在背景的terminal&lt;br&gt;&amp;nbsp;並且可以隨時呼叫(預設是F12)&lt;/p&gt;
-</summary><content type="html">&lt;h1&gt;什麼是guake&amp;nbsp;termianl&lt;/h1&gt;
-&lt;p&gt;隱藏在背景的terminal&lt;br&gt;&amp;nbsp;並且可以隨時呼叫(預設是F12)&lt;/p&gt;
+&lt;p&gt;&lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/ssuser5e1963/git-and-git-hub-31515684" title="Git and git hub" target="_blank"&gt;Git and git hub&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/ssuser5e1963" target="_blank"&gt;唯 李&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;</content><category term="Tutorial"></category><category term="Deprecated"></category></entry><entry><title>Guake terminal</title><link href="http://lee-w.github.io/posts/linux-unix/2014/02/guake-terminal" rel="alternate"></link><published>2014-02-09T07:02:00+08:00</published><updated>2014-02-09T07:02:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-09:/posts/linux-unix/2014/02/guake-terminal</id><summary type="html">&lt;p&gt;隱藏在背景的terminal&lt;br&gt;&amp;nbsp;並且可以隨時呼叫(預設是F12)&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;隱藏在背景的terminal&lt;br&gt;&amp;nbsp;並且可以隨時呼叫(預設是F12)&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;&lt;img alt="1_guake" src="http://i.imgur.com/0L95Qtg.png"&gt;&lt;/p&gt;
@@ -6937,113 +6988,8 @@ sudo fc-cache -v -f
 &lt;p&gt;在「初始應用程式 （Startup Applications) 」把guake terminal加上去&lt;br&gt;
 &lt;img alt="3_guake start up" src="http://i.imgur.com/sYQ6Klw.png"&gt;&lt;/p&gt;
 &lt;h1&gt;Reference&lt;/h1&gt;
-&lt;p&gt;[Ubuntu 安裝 Guake Terminal]&amp;nbsp;(http://www.arthurtoday.com/2012/08/ubuntu-install-guake-terminal.html#.UvcpWx9KiXo)&lt;/p&gt;</content><category term="Utility"></category></entry><entry><title>Linux開機自動掛載分割區</title><link href="http://lee-w.github.io/posts/linux-unix/2014/02/auto-mount-disk-after-boot" rel="alternate"></link><published>2014-02-01T16:44:00+08:00</published><updated>2014-02-01T16:44:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-01:/posts/linux-unix/2014/02/auto-mount-disk-after-boot</id><summary type="html">&lt;p&gt;分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改&lt;br&gt;
-需要注意的是，如果設定不好，可能會沒辦法開機的！！！&lt;br&gt;
-</summary><content type="html">&lt;p&gt;分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改&lt;br&gt;
-需要注意的是，如果設定不好，可能會沒辦法開機的！！！&lt;br&gt;
-&lt;!--more--&gt;&lt;br&gt;&amp;nbsp;我們先來看一下/etc/fstab內的東西&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo cat /etc/fstab
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# /etc/fstab: static file system information.
-#
-# Use &amp;#39;blkid&amp;#39; to print the universally unique identifier for a
-# device; this may be used with UUID= as a more robust way to name devices
-# that works even if disks are added and removed. See fstab(5).
-#
-# &amp;lt;file system&amp;gt; &amp;lt;mount point&amp;gt;   &amp;lt;type&amp;gt;  &amp;lt;options&amp;gt;       &amp;lt;dump&amp;gt;  &amp;lt;pass&amp;gt;
-# / was on /dev/sda1 during installation
-UUID=c5744283-f105-47e9-8a2e-21f477d895b7 /               ext4    errors=remount-ro 0       1
-# swap was on /dev/sda5 during installation
-UUID=72b6a10a-f0b6-43ef-927d-0d74673febe7 none            swap    sw              0       0
-#data
-UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;#是註解&lt;br&gt;
-最後六行是比較重要的&lt;br&gt;
-1~2是root的掛載&lt;br&gt;
-3~4是swap的掛載&lt;br&gt;&amp;nbsp;5~6是我自己的data的掛載&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#data
-UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;總共有6個欄位&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;掛載硬碟的標籤&lt;ul&gt;
-&lt;li&gt;掛載硬碟的標籤我用的是UUID的標籤，可以用下面的指令查詢&lt;br&gt;
-&lt;code&gt;ls -l /dev/disk/by-uuid/&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;也可以直接使用/dev/sda1這樣的格式，只是如果硬碟的代號改變，就要再去手動改變比較麻煩 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;掛載位置&lt;ul&gt;
-&lt;li&gt;掛載的位置要是一個已經存在的位置，建議是一個空的資料夾&lt;/li&gt;
-&lt;li&gt;如果不是空的，裏面的東西應該都會被清空&lt;/li&gt;
-&lt;li&gt;另外，一個掛載點只能掛載一個disk&lt;/li&gt;
-&lt;li&gt;另外，注意在Linux中大小寫是不同的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;分隔區格式&lt;ul&gt;
-&lt;li&gt;而一般的檔案朝的分割驅格式都是都是ntfs，不過也可以用指令來查詢&lt;br&gt;
-&lt;code&gt;df&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;選項&lt;/li&gt;
-&lt;li&gt;是否被 dump&amp;nbsp;備份指令作用&lt;/li&gt;
-&lt;li&gt;是否以 fsck&amp;nbsp;檢驗磁區&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;基本上4 5 6我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到&lt;br&gt;
-&lt;/br&gt;&lt;br&gt;
-&lt;/br&gt;&lt;/p&gt;
-&lt;h1&gt;測試&lt;/h1&gt;
-&lt;p&gt;先看一下是否有掛載成功&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;檔案系統         1K-區段      已用      可用 已用% 掛載點
-/dev/sda1      103081248   9259936  88562048   10% /
-none                   4         0         4    0% /sys/fs/cgroup
-udev             3992780         4   3992776    1% /dev
-tmpfs             801368      1168    800200    1% /run
-none                5120         0      5120    0% /run/lock
-none             4006840      1032   4005808    1% /run/shm
-none              102400        44    102356    1% /run/user
-/dev/sda6      459942908 229176172 230766736   50% /media/lee/data
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;像我的最後面就出現了data&lt;/p&gt;
-&lt;p&gt;之後暫時將它卸載 (若&lt;code&gt;df&lt;/code&gt;之後，分割區沒有出現，那就不用做這步了)&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo umount /dev/sda6
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;(/dev/sda6要取代成你自己的位置)&lt;br&gt;&amp;nbsp;接著再執行一次&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;剛剛的分割區應該會不見，然後執行&lt;br&gt;&amp;nbsp;開機自動掛載分割區&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount -a
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;如果沒有錯誤訊息，就在執行一次&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;如果掛載的分隔驅再裡面就是成功了&lt;/p&gt;
-&lt;p&gt;如果有任何異常，就去看一下/etc/fstab是不是有哪裡寫錯了&lt;/p&gt;
-&lt;h2&gt;Reference&lt;/h2&gt;
-&lt;p&gt;[巴特的微花盆： 筆記： Linux 中設定開機時自動掛載分割區 ]&amp;nbsp;(http://255121.blogspot.tw/2010/05/linux.html)&lt;/p&gt;</content></entry><entry><title>autojump - 在terminal中快速跳轉資料夾</title><link href="http://lee-w.github.io/posts/linux-unix/2014/02/autojump" rel="alternate"></link><published>2014-02-01T13:11:00+08:00</published><updated>2014-02-01T13:11:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-01:/posts/linux-unix/2014/02/autojump</id><summary type="html">&lt;h1&gt;什麼是autojump&lt;/h1&gt;
-&lt;p&gt;可以快速跳轉資料夾的工具&lt;/p&gt;
-</summary><content type="html">&lt;h1&gt;什麼是autojump&lt;/h1&gt;
-&lt;p&gt;可以快速跳轉資料夾的工具&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.arthurtoday.com/2012/08/ubuntu-install-guake-terminal.html#.UvcpWx9KiXo"&gt;Ubuntu 安裝 Guake&amp;nbsp;Terminal&lt;/a&gt;&lt;/p&gt;</content><category term="Utility"></category></entry><entry><title>autojump - 在terminal中快速跳轉資料夾</title><link href="http://lee-w.github.io/posts/linux-unix/2014/02/autojump" rel="alternate"></link><published>2014-02-01T16:58:00+08:00</published><updated>2014-02-01T16:58:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-01:/posts/linux-unix/2014/02/autojump</id><summary type="html">&lt;p&gt;快速跳轉資料夾的工具&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;快速跳轉資料夾的工具&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;e.g.&lt;br&gt;
@@ -7098,24 +7044,123 @@ chmod +x install.py
 
 
 &lt;h1&gt;Reference&lt;/h1&gt;
-&lt;p&gt;[autojump readme] (https://github.com/joelthelion/autojump/blob/master/&lt;span class="caps"&gt;README&lt;/span&gt;.md)&lt;/p&gt;</content><category term="Utility"></category></entry><entry><title>[C++] 如何create thread</title><link href="http://lee-w.github.io/posts/c/2013/12/how-to-create-thread-in-c-plus-plus" rel="alternate"></link><published>2013-12-11T00:56:00+08:00</published><updated>2013-12-11T00:56:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2013-12-11:/posts/c/2013/12/how-to-create-thread-in-c-plus-plus</id><summary type="html">&lt;p&gt;之前因為作業需要使用到multi-thread，就留下了這篇紀錄&lt;br&gt;
+&lt;p&gt;&lt;a href="https://github.com/joelthelion/autojump/blob/master/README.md"&gt;autojump&amp;nbsp;readme&lt;/a&gt;&lt;/p&gt;</content><category term="Utility"></category></entry><entry><title>Linux開機自動掛載分割區</title><link href="http://lee-w.github.io/posts/linux-unix/2014/02/auto-mount-disk-after-boot" rel="alternate"></link><published>2014-02-01T16:44:00+08:00</published><updated>2014-02-01T16:44:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-02-01:/posts/linux-unix/2014/02/auto-mount-disk-after-boot</id><summary type="html">&lt;p&gt;分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改&lt;br&gt;&amp;nbsp;需要注意的是，如果設定不好，可能會沒辦法開機的！！！&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改&lt;br&gt;&amp;nbsp;需要注意的是，如果設定不好，可能會沒辦法開機的！！！&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;我們先來看一下/etc/fstab內的東西&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo cat /etc/fstab
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# /etc/fstab: static file system information.
+#
+# Use &amp;#39;blkid&amp;#39; to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# &amp;lt;file system&amp;gt; &amp;lt;mount point&amp;gt;   &amp;lt;type&amp;gt;  &amp;lt;options&amp;gt;       &amp;lt;dump&amp;gt;  &amp;lt;pass&amp;gt;
+# / was on /dev/sda1 during installation
+UUID=c5744283-f105-47e9-8a2e-21f477d895b7 /               ext4    errors=remount-ro 0       1
+# swap was on /dev/sda5 during installation
+UUID=72b6a10a-f0b6-43ef-927d-0d74673febe7 none            swap    sw              0       0
+#data
+UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;#是註解&lt;br&gt;
+最後六行是比較重要的&lt;br&gt;
+1~2是root的掛載&lt;br&gt;
+3~4是swap的掛載&lt;br&gt;&amp;nbsp;5~6是我自己的data的掛載&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#data
+UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;總共有6個欄位&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;掛載硬碟的標籤&lt;ul&gt;
+&lt;li&gt;掛載硬碟的標籤我用的是UUID的標籤，可以用下面的指令查詢&lt;br&gt;
+&lt;code&gt;ls -l /dev/disk/by-uuid/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;也可以直接使用/dev/sda1這樣的格式，只是如果硬碟的代號改變，就要再去手動改變比較麻煩 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;掛載位置&lt;ul&gt;
+&lt;li&gt;掛載的位置要是一個已經存在的位置，建議是一個空的資料夾&lt;/li&gt;
+&lt;li&gt;如果不是空的，裏面的東西應該都會被清空&lt;/li&gt;
+&lt;li&gt;另外，一個掛載點只能掛載一個disk&lt;/li&gt;
+&lt;li&gt;另外，注意在Linux中大小寫是不同的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;分隔區格式&lt;ul&gt;
+&lt;li&gt;而一般的檔案朝的分割驅格式都是都是ntfs，不過也可以用指令來查詢&lt;br&gt;
+&lt;code&gt;df&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;選項&lt;/li&gt;
+&lt;li&gt;是否被 dump&amp;nbsp;備份指令作用&lt;/li&gt;
+&lt;li&gt;是否以 fsck&amp;nbsp;檢驗磁區&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基本上4 5&amp;nbsp;6我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到&lt;/p&gt;
+&lt;h1&gt;測試&lt;/h1&gt;
+&lt;p&gt;先看一下是否有掛載成功&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;檔案系統         1K-區段      已用      可用 已用% 掛載點
+/dev/sda1      103081248   9259936  88562048   10% /
+none                   4         0         4    0% /sys/fs/cgroup
+udev             3992780         4   3992776    1% /dev
+tmpfs             801368      1168    800200    1% /run
+none                5120         0      5120    0% /run/lock
+none             4006840      1032   4005808    1% /run/shm
+none              102400        44    102356    1% /run/user
+/dev/sda6      459942908 229176172 230766736   50% /media/lee/data
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;像我的最後面就出現了data&lt;/p&gt;
+&lt;p&gt;之後暫時將它卸載 (若&lt;code&gt;df&lt;/code&gt;之後，分割區沒有出現，那就不用做這步了)&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo umount /dev/sda6
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;(/dev/sda6要取代成你自己的位置)&lt;br&gt;&amp;nbsp;接著再執行一次&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;剛剛的分割區應該會不見，然後執行&lt;br&gt;&amp;nbsp;開機自動掛載分割區&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount -a
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果沒有錯誤訊息，就在執行一次&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果掛載的分隔驅再裡面就是成功了&lt;/p&gt;
+&lt;p&gt;如果有任何異常，就去看一下/etc/fstab是不是有哪裡寫錯了&lt;/p&gt;
+&lt;h1&gt;Reference&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://255121.blogspot.tw/2010/05/linux.html"&gt;巴特的微花盆： 筆記： Linux&amp;nbsp;中設定開機時自動掛載分割區&lt;/a&gt;&lt;/p&gt;</content><category term="Dual Boot"></category></entry><entry><title>[C++] 如何create thread</title><link href="http://lee-w.github.io/posts/c/2013/12/how-to-create-thread-in-c-plus-plus" rel="alternate"></link><published>2013-12-11T00:56:00+08:00</published><updated>2013-12-11T00:56:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2013-12-11:/posts/c/2013/12/how-to-create-thread-in-c-plus-plus</id><summary type="html">&lt;p&gt;之前因為作業需要使用到multi-thread，就留下了這篇紀錄&lt;br&gt;
 這篇會稍微介紹C++11 的&lt;code&gt;thread&lt;/code&gt;函式庫，還有一點點和&lt;code&gt;pthread&lt;/code&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;之前因為作業需要使用到multi-thread，就留下了這篇紀錄&lt;br&gt;
 這篇會稍微介紹C++11 的&lt;code&gt;thread&lt;/code&gt;函式庫，還有一點點和&lt;code&gt;pthread&lt;/code&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
-&lt;p&gt;要使用C++11的&lt;code&gt;thread&lt;/code&gt;在編譯時要加上 &lt;code&gt;-std=c++11 -pthread&lt;/code&gt; (&lt;code&gt;-std=c++ -lphread&lt;/code&gt;好像也可以)&lt;br&gt;
-ex: &lt;code&gt;g++ -o t thread.cpp -std=c++11 -pthread&lt;/code&gt;&lt;br&gt;
+&lt;p&gt;要使用C++11的&lt;code&gt;thread&lt;/code&gt;在編譯時要加上 &lt;code&gt;-std=c++11 -pthread&lt;/code&gt;&lt;br&gt;
+(&lt;code&gt;-std=c++ -lphread&lt;/code&gt;好像也可以)&lt;/p&gt;
+&lt;p&gt;e.g. &lt;code&gt;g++ -o t thread.cpp -std=c++11 -pthread&lt;/code&gt;&lt;br&gt;
 &lt;code&gt;-std=c++11&lt;/code&gt; :  是指定c++的版本&lt;br&gt;
 &lt;code&gt;-pthread&lt;/code&gt; (或 &lt;code&gt;-lpthread&lt;/code&gt;)：使用thread的liberary&lt;/p&gt;
 &lt;p&gt;下面有寫到join的部份&lt;br&gt;
 join是開啟這個thread的上層程式必須等待到這個thread的工作結束了，才可以繼續下面的工作&lt;br&gt;&amp;nbsp;也就是join以上的程式會與thread搶CPU，join以後的程式就會等待到thread結束才開始&lt;/p&gt;
-&lt;p&gt;那就直接來看code吧&lt;br&gt;
-&lt;/br&gt;&lt;br&gt;
-&lt;/br&gt;&lt;br&gt;
-&lt;/br&gt;&lt;/p&gt;
-&lt;h2&gt;C++ 11&amp;nbsp;thread&lt;/h2&gt;
-&lt;h3&gt;在main裡面直接開啟thread&lt;/h3&gt;
+&lt;p&gt;那就直接來看code吧&lt;/p&gt;
+&lt;h1&gt;C++ 11&amp;nbsp;thread&lt;/h1&gt;
+&lt;h2&gt;在main裡面直接開啟thread&lt;/h2&gt;
 &lt;p&gt;直接宣告thread型態的變數&lt;br&gt;&amp;nbsp;thread的constructor的第一個參數是函數名稱，第二個以後就是原本函數的參數&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;thread&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
@@ -7139,7 +7184,7 @@ join是開啟這個thread的上層程式必須等待到這個thread的工作結�
 
 
 &lt;p&gt;這樣就可以產生兩個thread，他們會彼此搶CPU的資源&lt;br&gt;&amp;nbsp;cout似乎是每一個&amp;lt;&amp;lt;會去搶一次，所以如果想要一次印完全部，可能可以考慮使用printf或者是thread的lock功能&lt;/p&gt;
-&lt;h3&gt;在class內開啟thread&lt;/h3&gt;
+&lt;h2&gt;在class內開啟thread&lt;/h2&gt;
 &lt;p&gt;用上面的方法直接呼叫同個class的function會出現錯誤&lt;br&gt;
 所以就必須用下面的方法&lt;br&gt;
 在宣告thread的時候&lt;br&gt;
@@ -7206,8 +7251,6 @@ join是開啟這個thread的上層程式必須等待到這個thread的工作結�
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;/br&gt;&lt;br&gt;
-&lt;/br&gt;&lt;/p&gt;
 &lt;h2&gt;基本的pthread使用&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;pthread.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
@@ -7239,7 +7282,7 @@ join是開啟這個thread的上層程式必須等待到這個thread的工作結�
 可以將function加上static&lt;br&gt;&amp;nbsp;同樣第3個參數也要改成&amp;amp;A::fun1&lt;/p&gt;
 &lt;h1&gt;Reference&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;[資訊小兵的胡言亂語: [C++] Thread Function相關測試]&amp;nbsp;(http://programmingpaul.blogspot.tw/2013/08/c-thread-function.html)&lt;/li&gt;
-&lt;li&gt;[解析Linux中多線程編程並傳遞多個參數實例]&amp;nbsp;(http://17089349.blog.hexun.com.tw/65836836_d.html)&lt;/li&gt;
-&lt;li&gt;[linux下C/C++,多线程pthread]&amp;nbsp;(http://www.cnblogs.com/xianghang123/archive/2011/08/11/2134927.html)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://programmingpaul.blogspot.tw/2013/08/c-thread-function.html"&gt;資訊小兵的胡言亂語: [C++] Thread&amp;nbsp;Function相關測試&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://17089349.blog.hexun.com.tw/65836836_d.html"&gt;解析Linux中多線程編程並傳遞多個參數實例&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cnblogs.com/xianghang123/archive/2011/08/11/2134927.html"&gt;linux下C/C++,多线程pthread&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Thread"></category></entry></feed>

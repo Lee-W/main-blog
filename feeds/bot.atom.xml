@@ -42,17 +42,14 @@ Telegram API的命名是CamelCase (e.g. sendMessage)&lt;br&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;telegram&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;
 
-
 &lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;bot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;telegram&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your API Token&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_webhook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://Your URL/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Webhook setup failed&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
 
 &lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;webhook_handler&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
@@ -63,7 +60,6 @@ Telegram API的命名是CamelCase (e.g. sendMessage)&lt;br&gt;
 
         &lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ok&amp;#39;&lt;/span&gt;
-
 
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -146,12 +142,14 @@ Flask把request這種幾乎所有view function都會用到的參數直接變成�
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/sooyhwang/Simple-Echo-Telegram-Bot"&gt;Simple-Echo-Telegram-Bot&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.30sparks.com/develop-telegram-bot-introduction/"&gt;開發 Telegram Bot&amp;nbsp;簡介&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Telegram"></category><category term="Flask"></category></entry><entry><title>[Bot] More than Just Echo Bot</title><link href="http://lee-w.github.io/posts/bot/2016/11/more-than-just-echo-bot" rel="alternate"></link><published>2016-11-29T01:57:00+08:00</published><updated>2016-11-29T01:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-29:/posts/bot/2016/11/more-than-just-echo-bot</id><summary type="html">&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
+&lt;/ul&gt;</content><category term="Telegram Bot"></category><category term="Flask"></category></entry><entry><title>More than Just Echo Bot</title><link href="http://lee-w.github.io/posts/bot/2016/11/more-than-just-echo-bot" rel="alternate"></link><published>2016-11-29T01:57:00+08:00</published><updated>2016-11-29T01:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-29:/posts/bot/2016/11/more-than-just-echo-bot</id><summary type="html">&lt;hr&gt;
+&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
 再來就要思考，開發一個Bot我們要提供什麼功能&lt;br&gt;
 (e.g. 天氣查詢, 訂票,&amp;nbsp;推薦旅遊景點)&lt;/p&gt;
 &lt;p&gt;不過這裡要討論的不是Bot的功能&lt;br&gt;&amp;nbsp;Bot的功能實作，跟一般網站或App的實作並沒有太大的差別&lt;/p&gt;
 &lt;p&gt;接下來來談如何從使用者說的話來判斷，使用者要使用的功能&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
+</summary><content type="html">&lt;hr&gt;
+&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
 再來就要思考，開發一個Bot我們要提供什麼功能&lt;br&gt;
 (e.g. 天氣查詢, 訂票,&amp;nbsp;推薦旅遊景點)&lt;/p&gt;
 &lt;p&gt;不過這裡要討論的不是Bot的功能&lt;br&gt;&amp;nbsp;Bot的功能實作，跟一般網站或App的實作並沒有太大的差別&lt;/p&gt;
@@ -326,7 +324,8 @@ Mary Johnson at 12 pm tomorrow.
 &lt;p&gt;不過這些服務，通常會有它的限制&lt;br&gt;&amp;nbsp;這時候就能用上Python強大的函式庫們，來實作自己的版本&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.nltk.org"&gt;&lt;span class="caps"&gt;NLTK&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;Python經典的NLP函式庫  &lt;/li&gt;
+&lt;li&gt;Python經典的NLP函式庫&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://radimrehurek.com/gensim/"&gt;word2vec&lt;/a&gt;&lt;ul&gt;
@@ -368,7 +367,7 @@ Mary Johnson at 12 pm tomorrow.
 &lt;li&gt;&lt;a href="https://wit.ai/docs/quickstart"&gt;Wit.ai&amp;nbsp;Quickstart&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/warmheartli/ChatBotCourse"&gt;自己动手做聊天机器人教程&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.oreilly.com/ideas/an-overview-of-the-bot-landscape?imm_mid=0eb199&amp;amp;cmp=em-data-na-na-newsltr_20161130"&gt;An overview of the bot&amp;nbsp;landscape&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content></entry><entry><title>[Bot] More About Line Messaging API - Template Messages</title><link href="http://lee-w.github.io/posts/bot/2016/11/more-about-line-messaging-api-template-messages" rel="alternate"></link><published>2016-11-27T06:08:00+08:00</published><updated>2016-11-27T06:08:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-27:/posts/bot/2016/11/more-about-line-messaging-api-template-messages</id><summary type="html">&lt;p&gt;除了傳送文字外，Line&amp;nbsp;Bot還可以傳&lt;/p&gt;
+&lt;/ul&gt;</content><category term="NLP"></category><category term="Machine Learning"></category></entry><entry><title>More About Line Messaging API - Template Messages</title><link href="http://lee-w.github.io/posts/bot/2016/11/more-about-line-messaging-api-template-messages" rel="alternate"></link><published>2016-11-27T06:08:00+08:00</published><updated>2016-11-27T06:08:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-27:/posts/bot/2016/11/more-about-line-messaging-api-template-messages</id><summary type="html">&lt;p&gt;除了傳送文字外，Line&amp;nbsp;Bot還可以傳&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;圖片, 影像, 聲音,&amp;nbsp;地圖&lt;/li&gt;
 &lt;li&gt;貼圖 (Line Bot所能使用的&lt;a href="https://devdocs.line.me/files/sticker_list.pdf"&gt;貼圖清單&lt;/a&gt;)&lt;/li&gt;
@@ -453,7 +452,7 @@ Line Server會傳一個postback event給我們，裡面包含著data參數中設
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://devdocs.line.me/en/#template-messages"&gt;&lt;span class="caps"&gt;API&lt;/span&gt; Reference - Messaging &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/line/line-bot-sdk-python#templatesendmessage---buttonstemplate"&gt;line-bot-sdk-python&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Line"></category></entry><entry><title>[Bot] Deploy LineBot on Heroku</title><link href="http://lee-w.github.io/posts/bot/2016/11/deploy-linebot-on-heroku" rel="alternate"></link><published>2016-11-27T06:05:00+08:00</published><updated>2016-11-27T06:05:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-27:/posts/bot/2016/11/deploy-linebot-on-heroku</id><summary type="html">&lt;p&gt;上一篇提到如何用ngrok&lt;br&gt;
+&lt;/ul&gt;</content><category term="Line Bot"></category></entry><entry><title>Deploy LineBot on Heroku</title><link href="http://lee-w.github.io/posts/bot/2016/11/deploy-linebot-on-heroku" rel="alternate"></link><published>2016-11-27T06:05:00+08:00</published><updated>2016-11-27T06:05:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-27:/posts/bot/2016/11/deploy-linebot-on-heroku</id><summary type="html">&lt;p&gt;上一篇提到如何用ngrok&lt;br&gt;
 讓我們可以不用架Https&amp;nbsp;Server，直接在本地端測試Bot&lt;/p&gt;
 &lt;p&gt;再來要談的是如何把Bot部署到Heroku上&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;上一篇提到如何用ngrok&lt;br&gt;
@@ -521,7 +520,7 @@ heroku git:remote -a leewbot
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://devcenter.heroku.com/articles/getting-started-with-python#introduction"&gt;Getting Started on Heroku with&amp;nbsp;Python&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://devcenter.heroku.com/articles/deploying-python"&gt;Deploying Python and Django Apps on&amp;nbsp;Heroku&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Heroku"></category><category term="django"></category><category term="Line"></category></entry><entry><title>[Bot] Line Echo Bot on Django</title><link href="http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django" rel="alternate"></link><published>2016-11-24T03:26:00+08:00</published><updated>2016-11-24T03:26:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-24:/posts/bot/2016/11/line-echo-bot-on-django</id><summary type="html">&lt;p&gt;單純要寫一個只會Echo的Line Chat Bot&lt;br&gt;
+&lt;/ul&gt;</content><category term="Heroku"></category><category term="django"></category><category term="Line Bot"></category><category term="deploy"></category></entry><entry><title>Line Echo Bot on Django</title><link href="http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django" rel="alternate"></link><published>2016-11-24T03:26:00+08:00</published><updated>2016-11-24T03:26:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-24:/posts/bot/2016/11/line-echo-bot-on-django</id><summary type="html">&lt;p&gt;單純要寫一個只會Echo的Line Chat Bot&lt;br&gt;
 用flask只要85行的code就能解決&lt;br&gt;
 官方已經有提供相當清楚的範例[flask-echo]&lt;br&gt;&amp;nbsp;(https://github.com/line/line-bot-sdk-python/tree/master/examples/flask-echo)了&lt;/p&gt;
 &lt;p&gt;這篇文章則是提供了django的做法&lt;br&gt;
@@ -651,7 +650,6 @@ python3 manage.py startapp echobot
 &lt;h3&gt;Callback&amp;nbsp;Function&lt;/h3&gt;
 &lt;p&gt;有兩種方法可以處理Line Server送過來的訊息&lt;br&gt;&amp;nbsp;這裡先用Todo記著，待會再來補上&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# TODO: Define Receiver&lt;/span&gt;
-
 
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -790,7 +788,6 @@ e.g.&lt;br&gt;
 &lt;span class="n"&gt;line_bot_api&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LineBotApi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_ACCESS_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebhookParser&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -835,14 +832,12 @@ e.g.&lt;br&gt;
 &lt;span class="n"&gt;line_bot_api&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LineBotApi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_ACCESS_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;handler&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebhookHandler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-
 &lt;span class="nd"&gt;@handler.add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MessageEvent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;TextMessage&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;handle_text_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;line_bot_api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
         &lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_token&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
         &lt;span class="n"&gt;TextSendMessage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="p"&gt;)&lt;/span&gt;
-
 
 &lt;span class="nd"&gt;@handler.default&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;default&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -851,7 +846,6 @@ e.g.&lt;br&gt;
         &lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_token&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
         &lt;span class="n"&gt;TextSendMessage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Currently Not Support None Text Message&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="p"&gt;)&lt;/span&gt;
-
 
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -925,7 +919,7 @@ brew cask install ngrok
 &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://jiunjiun.logdown.com/posts/2016/10/06/linebot-with-sinatra"&gt;LineBot -&amp;nbsp;Sinatra&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://ngrok.com"&gt;ngrok&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="django"></category><category term="Line"></category></entry><entry><title>[Bot] Apply Line Messaging API</title><link href="http://lee-w.github.io/posts/bot/2016/11/apply-line-messaging-api" rel="alternate"></link><published>2016-11-22T12:43:00+08:00</published><updated>2016-11-22T12:43:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-22:/posts/bot/2016/11/apply-line-messaging-api</id><summary type="html">&lt;p&gt;先到&lt;a href="https://business.line.me/zh-hant/services/bot"&gt;Messaging &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt;申請帳號&lt;/p&gt;
+&lt;/ul&gt;</content><category term="django"></category><category term="Line Bot"></category></entry><entry><title>Apply Line Messaging API</title><link href="http://lee-w.github.io/posts/bot/2016/11/apply-line-messaging-api" rel="alternate"></link><published>2016-11-22T12:43:00+08:00</published><updated>2016-11-22T12:43:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-22:/posts/bot/2016/11/apply-line-messaging-api</id><summary type="html">&lt;p&gt;先到&lt;a href="https://business.line.me/zh-hant/services/bot"&gt;Messaging &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt;申請帳號&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;開始使用Messaging API&lt;/code&gt;和&lt;code&gt;開始使用Developer Trial&lt;/code&gt;申請到的帳號是不同的&lt;br&gt;&amp;nbsp;之後不能互換，所以一開始就要根據需求來決定申請哪種帳號&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;先到&lt;a href="https://business.line.me/zh-hant/services/bot"&gt;Messaging &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt;申請帳號&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;開始使用Messaging API&lt;/code&gt;和&lt;code&gt;開始使用Developer Trial&lt;/code&gt;申請到的帳號是不同的&lt;br&gt;&amp;nbsp;之後不能互換，所以一開始就要根據需求來決定申請哪種帳號&lt;/p&gt;
@@ -982,7 +976,7 @@ brew cask install ngrok
 &lt;p&gt;另外要注意的是&lt;code&gt;Webhook URL&lt;/code&gt;&lt;br&gt;
 這裡之後要填的就是你的Server的Webhook&amp;nbsp;url&lt;/p&gt;
 &lt;h1&gt;Reference&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://developers.line.me/messaging-api/getting-started#apply_messagingapi"&gt;Enable the Messaging &lt;span class="caps"&gt;API&lt;/span&gt; for your &lt;span class="caps"&gt;LINE&lt;/span&gt;@&amp;nbsp;account&lt;/a&gt;&lt;/p&gt;</content><category term="Line"></category></entry><entry><title>[Bot] Introduction to Chatbot</title><link href="http://lee-w.github.io/posts/bot/2016/11/introduction-to-chatbot" rel="alternate"></link><published>2016-11-21T08:18:00+08:00</published><updated>2016-11-21T08:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-21:/posts/bot/2016/11/introduction-to-chatbot</id><summary type="html">&lt;p&gt;有人說聊天機器人Chat&amp;nbsp;Bot將要取代APP&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://developers.line.me/messaging-api/getting-started#apply_messagingapi"&gt;Enable the Messaging &lt;span class="caps"&gt;API&lt;/span&gt; for your &lt;span class="caps"&gt;LINE&lt;/span&gt;@&amp;nbsp;account&lt;/a&gt;&lt;/p&gt;</content><category term="Line Bot"></category></entry><entry><title>Introduction to Chatbot</title><link href="http://lee-w.github.io/posts/bot/2016/11/introduction-to-chatbot" rel="alternate"></link><published>2016-11-21T08:18:00+08:00</published><updated>2016-11-21T08:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-21:/posts/bot/2016/11/introduction-to-chatbot</id><summary type="html">&lt;p&gt;有人說聊天機器人Chat&amp;nbsp;Bot將要取代APP&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://venturebeat.com/2016/08/02/why-chatbots-are-replacing-apps/"&gt;Why chatbots are replacing&amp;nbsp;apps&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://chatbotslife.com/this-is-how-chatbots-will-kill-99-of-apps-2fd938a22c99#.tdfugot4m"&gt;This is how Chatbots will Kill 99% of&amp;nbsp;Apps&lt;/a&gt;&lt;/li&gt;
@@ -1063,17 +1057,16 @@ brew cask install ngrok
 &lt;p&gt;這篇文章整理了相當多的相關資源&lt;br&gt;
 &lt;a href="https://stanfy.com/blog/the-rise-of-chat-bots-useful-links-articles-libraries-and-platforms/"&gt;The Rise of Chat Bots: Useful Links, Articles, Libraries and Platforms&lt;/a&gt;&lt;br&gt;&amp;nbsp;相當推薦對ChatBot有興趣的人參考&lt;/p&gt;
 &lt;h1&gt;Slide&lt;/h1&gt;
-&lt;p&gt;如果有點不喜歡看文章的，也可以看看&lt;a href="https://hackmd.io/p/HkW8LjRfl#/"&gt;slide&lt;/a&gt;的版本&lt;/p&gt;</content><category term="Line"></category></entry><entry><title>COSCUP 2016 小啄如何實作的</title><link href="http://lee-w.github.io/posts/bot/2016/10/coscup-2016-how-to-implement-small-pecks" rel="alternate"></link><published>2016-10-01T11:50:00+08:00</published><updated>2016-10-01T11:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-01:/posts/bot/2016/10/coscup-2016-how-to-implement-small-pecks</id><summary type="html">&lt;p&gt;今年COSCUP的聊天機器人「小啄」&lt;br&gt;
+&lt;p&gt;如果有點不喜歡看文章的，也可以看看&lt;a href="https://hackmd.io/p/HkW8LjRfl#/"&gt;slide&lt;/a&gt;的版本&lt;/p&gt;</content><category term="Line Bot"></category></entry><entry><title>COSCUP 2016 小啄如何實作的</title><link href="http://lee-w.github.io/posts/bot/2016/10/coscup-2016-how-to-implement-small-pecks" rel="alternate"></link><published>2016-10-01T11:50:00+08:00</published><updated>2016-10-01T11:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-01:/posts/bot/2016/10/coscup-2016-how-to-implement-small-pecks</id><summary type="html">&lt;p&gt;今年COSCUP的聊天機器人「小啄」&lt;br&gt;
 終於在今天宣告退休了&lt;br&gt;
 退休前他讓我們詢問了「你是如何實作的」&lt;br&gt;
-這邊是我測試的所有結果&lt;br&gt;
-跟大家分享一下XD&lt;br&gt;
+這邊是我測試的所有結果&lt;br&gt;&amp;nbsp;跟大家分享一下XD&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;今年COSCUP的聊天機器人「小啄」&lt;br&gt;
 終於在今天宣告退休了&lt;br&gt;
 退休前他讓我們詢問了「你是如何實作的」&lt;br&gt;
-這邊是我測試的所有結果&lt;br&gt;
-跟大家分享一下XD&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+這邊是我測試的所有結果&lt;br&gt;&amp;nbsp;跟大家分享一下XD&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;hr&gt;
 &lt;h2&gt;總結&lt;/h2&gt;
 &lt;h3&gt;技術相關&lt;/h3&gt;

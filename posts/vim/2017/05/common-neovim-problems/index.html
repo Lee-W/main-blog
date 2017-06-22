@@ -107,7 +107,9 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <h2>Load ~/.vimrc from&nbsp;neovim</h2>
+        <!--more-->
+
+<h2>Load ~/.vimrc from&nbsp;neovim</h2>
 <div class="codehilite"><pre><span></span>mkdir -p <span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="p">:=</span><span class="nv">$HOME</span><span class="p">/.config</span><span class="si">}</span>
 ln -s ~/.vim <span class="nv">$XDG_CONFIG_HOME</span>/nvim
 ln -s ~/.vimrc <span class="nv">$XDG_CONFIG_HOME</span>/nvim/init.vim

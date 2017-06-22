@@ -18,18 +18,16 @@
 這篇會稍微介紹C++11 的&lt;code&gt;thread&lt;/code&gt;函式庫，還有一點點和&lt;code&gt;pthread&lt;/code&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
-&lt;p&gt;要使用C++11的&lt;code&gt;thread&lt;/code&gt;在編譯時要加上 &lt;code&gt;-std=c++11 -pthread&lt;/code&gt; (&lt;code&gt;-std=c++ -lphread&lt;/code&gt;好像也可以)&lt;br&gt;
-ex: &lt;code&gt;g++ -o t thread.cpp -std=c++11 -pthread&lt;/code&gt;&lt;br&gt;
+&lt;p&gt;要使用C++11的&lt;code&gt;thread&lt;/code&gt;在編譯時要加上 &lt;code&gt;-std=c++11 -pthread&lt;/code&gt;&lt;br&gt;
+(&lt;code&gt;-std=c++ -lphread&lt;/code&gt;好像也可以)&lt;/p&gt;
+&lt;p&gt;e.g. &lt;code&gt;g++ -o t thread.cpp -std=c++11 -pthread&lt;/code&gt;&lt;br&gt;
 &lt;code&gt;-std=c++11&lt;/code&gt; :  是指定c++的版本&lt;br&gt;
 &lt;code&gt;-pthread&lt;/code&gt; (或 &lt;code&gt;-lpthread&lt;/code&gt;)：使用thread的liberary&lt;/p&gt;
 &lt;p&gt;下面有寫到join的部份&lt;br&gt;
 join是開啟這個thread的上層程式必須等待到這個thread的工作結束了，才可以繼續下面的工作&lt;br&gt;&amp;nbsp;也就是join以上的程式會與thread搶CPU，join以後的程式就會等待到thread結束才開始&lt;/p&gt;
-&lt;p&gt;那就直接來看code吧&lt;br&gt;
-&lt;/br&gt;&lt;br&gt;
-&lt;/br&gt;&lt;br&gt;
-&lt;/br&gt;&lt;/p&gt;
-&lt;h2&gt;C++ 11&amp;nbsp;thread&lt;/h2&gt;
-&lt;h3&gt;在main裡面直接開啟thread&lt;/h3&gt;
+&lt;p&gt;那就直接來看code吧&lt;/p&gt;
+&lt;h1&gt;C++ 11&amp;nbsp;thread&lt;/h1&gt;
+&lt;h2&gt;在main裡面直接開啟thread&lt;/h2&gt;
 &lt;p&gt;直接宣告thread型態的變數&lt;br&gt;&amp;nbsp;thread的constructor的第一個參數是函數名稱，第二個以後就是原本函數的參數&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;thread&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
@@ -53,7 +51,7 @@ join是開啟這個thread的上層程式必須等待到這個thread的工作結�
 
 
 &lt;p&gt;這樣就可以產生兩個thread，他們會彼此搶CPU的資源&lt;br&gt;&amp;nbsp;cout似乎是每一個&amp;lt;&amp;lt;會去搶一次，所以如果想要一次印完全部，可能可以考慮使用printf或者是thread的lock功能&lt;/p&gt;
-&lt;h3&gt;在class內開啟thread&lt;/h3&gt;
+&lt;h2&gt;在class內開啟thread&lt;/h2&gt;
 &lt;p&gt;用上面的方法直接呼叫同個class的function會出現錯誤&lt;br&gt;
 所以就必須用下面的方法&lt;br&gt;
 在宣告thread的時候&lt;br&gt;
@@ -120,8 +118,6 @@ join是開啟這個thread的上層程式必須等待到這個thread的工作結�
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;/br&gt;&lt;br&gt;
-&lt;/br&gt;&lt;/p&gt;
 &lt;h2&gt;基本的pthread使用&lt;/h2&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;pthread.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
@@ -153,7 +149,7 @@ join是開啟這個thread的上層程式必須等待到這個thread的工作結�
 可以將function加上static&lt;br&gt;&amp;nbsp;同樣第3個參數也要改成&amp;amp;A::fun1&lt;/p&gt;
 &lt;h1&gt;Reference&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;[資訊小兵的胡言亂語: [C++] Thread Function相關測試]&amp;nbsp;(http://programmingpaul.blogspot.tw/2013/08/c-thread-function.html)&lt;/li&gt;
-&lt;li&gt;[解析Linux中多線程編程並傳遞多個參數實例]&amp;nbsp;(http://17089349.blog.hexun.com.tw/65836836_d.html)&lt;/li&gt;
-&lt;li&gt;[linux下C/C++,多线程pthread]&amp;nbsp;(http://www.cnblogs.com/xianghang123/archive/2011/08/11/2134927.html)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://programmingpaul.blogspot.tw/2013/08/c-thread-function.html"&gt;資訊小兵的胡言亂語: [C++] Thread&amp;nbsp;Function相關測試&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://17089349.blog.hexun.com.tw/65836836_d.html"&gt;解析Linux中多線程編程並傳遞多個參數實例&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cnblogs.com/xianghang123/archive/2011/08/11/2134927.html"&gt;linux下C/C++,多线程pthread&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Thread"></category></entry></feed>

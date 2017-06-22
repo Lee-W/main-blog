@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Paper Summary</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/paper-summary.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-04-11T17:59:00+08:00</updated><entry><title>[Paper Summary] Deep Learning-Based Document Modeling for Personality Detection from Text</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text" rel="alternate"></link><published>2017-04-11T17:59:00+08:00</published><updated>2017-04-11T17:59:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-11:/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text</id><summary type="html">&lt;p&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
-Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Paper Summary</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/paper-summary.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-04-11T17:59:00+08:00</updated><entry><title>[Paper] Deep Learning-Based Document Modeling for Personality Detection from Text</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text" rel="alternate"></link><published>2017-04-11T17:59:00+08:00</published><updated>2017-04-11T17:59:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-11:/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Data Set&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://mypersonality.org/wiki/doku.php?id=wcpr13"&gt;James Pennebaker and Laura King&amp;#8217;s stream-of-consciousness essay&amp;nbsp;dataset&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;&lt;span class="caps"&gt;NRC&lt;/span&gt; Word-Emotion Association&amp;nbsp;Lexicon&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</summary><content type="html">&lt;p&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
-Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Data Set&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://mypersonality.org/wiki/doku.php?id=wcpr13"&gt;James Pennebaker and Laura King&amp;#8217;s stream-of-consciousness essay&amp;nbsp;dataset&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;&lt;span class="caps"&gt;NRC&lt;/span&gt; Word-Emotion Association&amp;nbsp;Lexicon&lt;/a&gt;&lt;/li&gt;
@@ -162,7 +162,7 @@ Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Deep Learning"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category></entry><entry><title>[Paper Summary] Understanding Personality through Social Media</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media" rel="alternate"></link><published>2017-04-05T22:30:00+08:00</published><updated>2017-04-05T22:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-05:/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media</id><summary type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
+&lt;/script&gt;</content><category term="Deep Learning"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category></entry><entry><title>[Paper] Understanding Personality through Social Media</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media" rel="alternate"></link><published>2017-04-05T22:30:00+08:00</published><updated>2017-04-05T22:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-05:/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media</id><summary type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Main Purpose: To see how linguistic features correlate with each personality&amp;nbsp;trait.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Main Purpose: To see how linguistic features correlate with each personality&amp;nbsp;trait.&lt;/p&gt;
@@ -265,13 +265,17 @@ e.g. &lt;span class="caps"&gt;ENFJ&lt;/span&gt;, &lt;span class="caps"&gt;INTP&l
 &lt;h4&gt;Insight&lt;/h4&gt;
 &lt;p&gt;Among the results, word vector performs best which might illustrate that predictions based on social media and language would&amp;nbsp;work.&lt;/p&gt;
 &lt;p&gt;During the &lt;span class="caps"&gt;POS&lt;/span&gt; conversion process, information is compressed into 25 tags and might lost some important one.&lt;br&gt;
-This might be the reason why it performs&amp;nbsp;worse.&lt;/p&gt;</content><category term="Machine Learning"></category><category term="NLP"></category><category term="MBTI"></category><category term="Personality"></category></entry><entry><title>[Paper Summary] Toward Personality Insights from Language Exploration in Social Media</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media" rel="alternate"></link><published>2017-04-04T18:45:00+08:00</published><updated>2017-04-04T18:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-04:/posts/paper-summary/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media</id><summary type="html">&lt;p&gt;&lt;a href="http://wwbp.org/papers/sam2013-dla.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
-&lt;a href="http://wwbp.org/personality_wc.html"&gt;Demo&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/p&gt;
+This might be the reason why it performs&amp;nbsp;worse.&lt;/p&gt;</content><category term="Machine Learning"></category><category term="NLP"></category><category term="MBTI"></category><category term="Personality"></category></entry><entry><title>[Paper] Toward Personality Insights from Language Exploration in Social Media</title><link href="http://lee-w.github.io/posts/paper-summary/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media" rel="alternate"></link><published>2017-04-04T18:45:00+08:00</published><updated>2017-04-04T18:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-04:/posts/paper-summary/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/papers/sam2013-dla.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/personality_wc.html"&gt;Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;The main purpose of this paper is to show how social media can be used to gain psychological&amp;nbsp;insights.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;a href="http://wwbp.org/papers/sam2013-dla.pdf"&gt;Paper&lt;/a&gt;&lt;br&gt;
-&lt;a href="http://wwbp.org/personality_wc.html"&gt;Demo&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/papers/sam2013-dla.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/personality_wc.html"&gt;Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;The main purpose of this paper is to show how social media can be used to gain psychological&amp;nbsp;insights.&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -305,7 +309,8 @@ it uses an open vocabulary approach that allowing discovery of unanticipated&amp
 &lt;li&gt;
 &lt;p&gt;Correlation&amp;nbsp;analysis&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Least Squares Linear&amp;nbsp;Regression   &lt;/li&gt;
+&lt;li&gt;Least Squares Linear Regression &lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Visualization&lt;ul&gt;
@@ -323,11 +328,15 @@ it uses an open vocabulary approach that allowing discovery of unanticipated&amp
 &lt;/ol&gt;
 &lt;h3&gt;Result&lt;/h3&gt;
 &lt;p&gt;Most results confirm what is already known or obvious.&lt;br&gt;
-However, I think this method might still be useful to gain insight in other kinds of&amp;nbsp;datasets.&lt;/p&gt;</content><category term="Visualization"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category></entry><entry><title>[Paper Summary] Mining Online Social Data for Detecting Social Network Mental Disorders</title><link href="http://lee-w.github.io/posts/paper-summary/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders" rel="alternate"></link><published>2016-11-18T16:53:00+08:00</published><updated>2016-11-18T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-18:/posts/paper-summary/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders</id><summary type="html">&lt;p&gt;&lt;a href="http://www2016.net/proceedings/proceedings/p275.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/p&gt;
+However, I think this method might still be useful to gain insight in other kinds of&amp;nbsp;datasets.&lt;/p&gt;</content><category term="Visualization"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category></entry><entry><title>[Paper] Mining Online Social Data for Detecting Social Network Mental Disorders</title><link href="http://lee-w.github.io/posts/paper-summary/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders" rel="alternate"></link><published>2016-11-18T16:53:00+08:00</published><updated>2016-11-18T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-18:/posts/paper-summary/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www2016.net/proceedings/proceedings/p275.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;This paper proposes a model named &lt;span class="caps"&gt;SNMDD&lt;/span&gt; to detect Social Network Mental Disorder (&lt;span class="caps"&gt;SNMD&lt;/span&gt;) through users&amp;#8217; behaviors on online social networks (&lt;span class="caps"&gt;OSN&lt;/span&gt;) instead of asking their mental&amp;nbsp;condition.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;a href="http://www2016.net/proceedings/proceedings/p275.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www2016.net/proceedings/proceedings/p275.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders"&gt;My&amp;nbsp;Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;This paper proposes a model named &lt;span class="caps"&gt;SNMDD&lt;/span&gt; to detect Social Network Mental Disorder (&lt;span class="caps"&gt;SNMD&lt;/span&gt;) through users&amp;#8217; behaviors on online social networks (&lt;span class="caps"&gt;OSN&lt;/span&gt;) instead of asking their mental&amp;nbsp;condition.&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -343,7 +352,7 @@ For example, distinguishing whether a social capital is a strong tie or a weak t
 &lt;p&gt;&lt;span class="caps"&gt;STM&lt;/span&gt; is a tensor model based on Tucker Decomposition&lt;br&gt;
 Through Tucker Decomposition, it&amp;#8217;s possible to combine data from different sources and extract new features&amp;nbsp;vectors.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Social Network"></category><category term="Machine Learning"></category></entry><entry><title>[Paper Summary] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks</title><link href="http://lee-w.github.io/posts/paper-summary/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" rel="alternate"></link><published>2016-08-22T16:53:00+08:00</published><updated>2016-08-22T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/paper-summary/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks</id><summary type="html">&lt;p&gt;&lt;a href="http://dl.acm.org/citation.cfm?id=2783392"&gt;Paper&lt;/a&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Social Network"></category><category term="Machine Learning"></category></entry><entry><title>[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks</title><link href="http://lee-w.github.io/posts/paper-summary/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" rel="alternate"></link><published>2016-08-22T16:53:00+08:00</published><updated>2016-08-22T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/paper-summary/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks</id><summary type="html">&lt;p&gt;&lt;a href="http://dl.acm.org/citation.cfm?id=2783392"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="http://dl.acm.org/citation.cfm?id=2783392"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -365,7 +374,8 @@ Through Tucker Decomposition, it&amp;#8217;s possible to combine data from diffe
 &lt;li&gt;
 &lt;p&gt;Assumption&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Influence is exclusive (Once a node is influenced by one party, it will not be influenced&amp;nbsp;again)      &lt;/li&gt;
+&lt;li&gt;Influence is exclusive (Once a node is influenced by one party, it will not be influenced again)    &lt;br&gt;
+&lt;/li&gt;
 &lt;li&gt;Each round all parties choose one node and then the influence propagates before the next round&amp;nbsp;starts&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -384,7 +394,8 @@ Through Tucker Decomposition, it&amp;#8217;s possible to combine data from diffe
 &lt;ol&gt;
 &lt;li&gt;Known strategy -&amp;gt; Both know and unknown&lt;ul&gt;
 &lt;li&gt;Known or Unknown but available to compete -&amp;gt; Train a model to learn&amp;nbsp;strategy&lt;/li&gt;
-&lt;li&gt;Unknown -&amp;gt; Game-theoretical solution to seek the Nash&amp;nbsp;equilibrium     &lt;/li&gt;
+&lt;li&gt;Unknown -&amp;gt; Game-theoretical solution to seek the Nash equilibrium   &lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Single-roung -&amp;gt;&amp;nbsp;Multi-round&lt;/li&gt;
@@ -412,7 +423,7 @@ Through Tucker Decomposition, it&amp;#8217;s possible to combine data from diffe
 &lt;h3&gt;4.1 Preliminary: Reinforcement&amp;nbsp;Learning&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Learn a policy &lt;span class="math"&gt;\(\pi(s)\)&lt;/span&gt; to determine which action to take state s&amp;nbsp;(environment)&lt;/li&gt;
-&lt;li&gt;How to estimated &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;?&lt;ul&gt;
+&lt;li&gt;How to estimated &lt;span class="math"&gt;(\pi)&lt;/span&gt;?&lt;ul&gt;
 &lt;li&gt;Expected Accmulated Reward of a state (V function)&lt;ul&gt;
 &lt;li&gt;&lt;span class="math"&gt;\( V^\pi(s) =&amp;nbsp;E_\pi\{R_t|S_t=s\}=...\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -531,7 +542,7 @@ These data can be used to learn the value&amp;nbsp;functions&lt;/p&gt;
 &lt;li&gt;Q-Learning: &lt;span class="math"&gt;\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t,&amp;nbsp;a_t))\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(\epsilon\)&lt;/span&gt;-greedy&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;(\epsilon)&lt;/span&gt;-greedy&lt;ul&gt;
 &lt;li&gt;Determine strategies on the current policy derived from&amp;nbsp;Q-table.&lt;/li&gt;
 &lt;li&gt;Explore the new directions to avoid local&amp;nbsp;optimum&lt;/li&gt;
 &lt;/ul&gt;
