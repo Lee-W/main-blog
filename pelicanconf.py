@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+from functools import partial
 
 
 PATH = 'content'
@@ -38,7 +39,6 @@ STATIC_PATHS = ['extra', 'images', 'static']
 # Theme Setting
 THEME = 'theme/pelican-clean-blog/'
 PYGMENTS_STYLE = 'xcode'
-# EXTRA_TEMPLATES_PATHS = ['templates/']
 EXTRA_PATH_METADATA = {
     'images': {'path': 'images'},
     'extra/custom.css': {'path': 'static/custom.css'},
@@ -74,3 +74,13 @@ MARKDOWN = {
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['another_read_more_link', 'series', 'render_math', 'neighbors', 'share_post']
 ANOTHER_READ_MORE_LINK = ''
+
+
+# Custom Jinja Filters
+JINJA_FILTERS = {
+    'sort_by_article_count': partial(
+        sorted,
+        key=lambda x: len(x[1]),
+        reverse=True
+    )
+}
