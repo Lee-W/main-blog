@@ -1,4 +1,3 @@
----
 Title: Gitbook on Command Line
 Date: 2015-01-23 07:34
 Category: Git
@@ -6,11 +5,12 @@ Tags: Git Book
 Slug: gitbook-on-command-line
 Authors: Lee-W
 Summary: 
----
+
 
 最近比較認真在寫Gitbook，順便記錄一下該怎麼用
 簡單來說Gitbook就是可以使用markdown來寫書的平台，可以轉成各種電子書的格式
 目前已經支援的有html, pdf, ePUB, MOBI
+
 <!--more-->
 
 之前寫了一本Clean Code的筆記

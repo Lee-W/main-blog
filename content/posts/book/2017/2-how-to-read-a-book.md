@@ -1,11 +1,10 @@
----
 title: [Book] 如何閱讀一本書
 date: 2017-03-03 20:41
 Category: Book
 Tags: 
 Slug: how-to-read-a-book
 Authors: Lee-W
----
+
 
 ![how-to-read-a-book](http://i.imgur.com/D1Obrmfm.jpg)
 

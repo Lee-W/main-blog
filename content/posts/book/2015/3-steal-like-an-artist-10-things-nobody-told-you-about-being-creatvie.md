@@ -1,4 +1,3 @@
----
 Title: [Book] 點子都是偷來的
 Date: 2015-01-31 08:43
 Category: Book
@@ -6,7 +5,7 @@ Tags: Design
 Slug: steal-like-an-artist-10-things-nobody-told-you-about-being-creatvie
 Authors: Lee-W
 Summary: 
----
+
 
 Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie
 ![Show Your Work](http://i.imgur.com/GQNwobGm.jpg)

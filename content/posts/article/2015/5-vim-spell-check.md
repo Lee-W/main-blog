@@ -1,4 +1,3 @@
----
 Title: vimspell - vim檢查英文文法的套件
 Date: 2015-02-14 09:59
 Category: Vim
@@ -6,7 +5,6 @@ Tags: Plug In
 Slug: vim-spell-check
 Authors: Lee-W
 Summary: 
----
 
 [vimspell](http://www.vim.org/scripts/script.php?script_id=465)是一套提供vim根據字典來檢查文法的套件
 有了vimsepll，寫markdown或latex的時候，就不用再怕拼錯字了

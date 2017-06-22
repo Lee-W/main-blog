@@ -1,4 +1,3 @@
----
 Title: Git and Git Hub
 Date: 2014-02-22 16:18
 Category: Git
@@ -6,12 +5,12 @@ Tags: Tutorial, Deprecated
 Slug: git-and-git-hub
 Authors: Lee-W
 Summary: 
----
 
 
 這份筆記已經是舊的版本了
 請參考[新版](https://lee-w.github.io/git-tutorial/#/)
 
+<!--more-->
 
 最近因為專題需要，所以寫了一份簡單的Git筆記
 裡面大概就是我常用的指令

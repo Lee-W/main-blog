@@ -1,4 +1,3 @@
----
 Title: Common Neovim Problems
 Date: 2017-05-14 13:13
 Category: Vim
@@ -6,7 +5,8 @@ Tags: Neovim
 Slug: common-neovim-problems
 Authors: Lee-W
 Summary: 
----
+
+<!--more-->
 
 ## Load ~/.vimrc from neovim
 

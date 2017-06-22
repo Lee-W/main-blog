@@ -1,16 +1,16 @@
----
 Title: External.js - Load HTML in Reveal.js
 Date: 2016-03-23 01:23
-Category: JS
+Category: JavaScript
 Tags: reveal.js
 Slug: external-js-load-html-in-reveal-js
 Authors: Lee-W
 Summary: 
----
+
 
 reavel.js提供了`data-markdown="example.md"`這個tag可以載入外部的markdown
 卻沒提供可以載入html的tag
 於是就有人寫了這個[External.js](https://github.com/calevans/external)
+
 <!--more-->
 
 有了External.js，就可以不用把所有的內容都寫在`index.html`裡面
@@ -39,7 +39,6 @@ git submodule add https://github.com/calevans/external plugin/external
 ```
 (注意兩種方式加入的內容有些微的不同)
 
-
 # Usage
 之後就能使用`data-external`這個tag來載入外部的html
 
@@ -61,5 +60,3 @@ git submodule add https://github.com/calevans/external plugin/external
 	<h1> This is external <h1>
 </section>
 ```
-
-https://github.com/calevans/external

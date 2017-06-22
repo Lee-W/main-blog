@@ -1,13 +1,12 @@
----
-Title: [Bot] Introduction to Chatbot
+Title: Introduction to Chatbot
 Date: 2016-11-21 08:18
 Category: Bot
-Tags: Line
+Tags: Line Bot
 Slug: introduction-to-chatbot
 Authors: Lee-W
 Summary: 
 Series: Line Bot Tutorial
----
+
 
 有人說聊天機器人Chat Bot將要取代APP
 

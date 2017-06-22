@@ -1,13 +1,12 @@
----
-Title: [Bot] Deploy LineBot on Heroku
+Title: Deploy LineBot on Heroku
 Date: 2016-11-27 06:05
 Category: Bot
-Tags: Heroku, django, Line
+Tags: Heroku, django, Line Bot, deploy
 Slug: deploy-linebot-on-heroku
 Authors: Lee-W
 Summary: 
 Series: Line Bot Tutorial
----
+
 
 上一篇提到如何用ngrok
 讓我們可以不用架Https Server，直接在本地端測試Bot

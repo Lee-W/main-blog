@@ -1,4 +1,3 @@
----
 Title: [Book] 創新是一種態度
 Date: 2015-10-06 12:04
 Category: Book
@@ -6,7 +5,7 @@ Tags: Thinking
 Slug: innovation-is-an-attitude
 Authors: Lee-W
 Summary: 
----
+
 
 ![innovation-is-an-attitude](http://pic.eslite.com/Upload/Product/201506/m/635689172041107500.jpg)
 
@@ -49,4 +48,3 @@ Summary:
 ## 機會成本，才是公司最大的成本
 - 為了省辦公成本，去做限制，卻剝奪了員工可能產出公司營收的創新想法，這才是最浪費成本的事
 - 台達電不會因為公司業務少了就砍人，而這麼作是為了在未來景氣回升的時候，能有更大的產能，擴大市占率
-

@@ -1,16 +1,16 @@
----
 Title: MacBook Pro Retina 開箱
 Date: 2015-01-02 04:14
-Category: General
+Category: Gossiping
 Tags: mac
 Slug: mbpr-out-of-the-box
 Authors: Lee-W
 Summary: 
----
+
 
 這篇只是想給自己換mbpr留下一個紀念
 順便紀錄一些從Ubuntu轉過來不習慣的地方
 想要看更專業的開箱文就要再去翻別篇囉ＸＤ
+
 <!--more-->
 
 先附上幾張照片

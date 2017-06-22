@@ -1,18 +1,15 @@
----
-Title: [Paper Summary] Toward Personality Insights from Language Exploration in Social Media
+Title: [Paper] Toward Personality Insights from Language Exploration in Social Media
 Date: 2017-04-04 18:45
 Category: Paper Summary
 Tags: Visualization, NLP, Big Five Theory, Personality
 Slug: Toward-Personality-Insights-from-Language-Exploration-in-Social-Media
 Authors: Lee-W
-Status: 
 Summary: 
----
 
-[Paper](http://wwbp.org/papers/sam2013-dla.pdf)
-[Demo](http://wwbp.org/personality_wc.html)
 
-[My Slide](https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media)
+- [Paper](http://wwbp.org/papers/sam2013-dla.pdf)
+- [Demo](http://wwbp.org/personality_wc.html)
+- [My Slide](https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media)
 
 The main purpose of this paper is to show how social media can be used to gain psychological insights.
 

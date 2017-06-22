@@ -1,12 +1,11 @@
----
 Title: [Book] Clean Coder
 Date: 2015-01-17 09:35
 Category: Book
-Tags: Software Engineering
+Tags: Software Engineering, Code Quality
 Slug: clean-coder
 Authors: Lee-W
 Summary: 
----
+
 
 ![Clean Coder](http://i.imgur.com/5a0LzcSm.jpg)
 

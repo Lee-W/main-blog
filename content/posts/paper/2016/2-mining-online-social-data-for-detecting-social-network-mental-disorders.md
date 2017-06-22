@@ -1,16 +1,14 @@
----
-Title: [Paper Summary] Mining Online Social Data for Detecting Social Network Mental Disorders
+Title: [Paper] Mining Online Social Data for Detecting Social Network Mental Disorders
 Date: 2016-11-18 16:53
 Category: Paper Summary
 Tags: Social Network, Machine Learning
 Slug: mining-online-social-data-for-detecting-social-network-mental-disorders
 Authors: Lee-W
 Summary: 
----
 
-[Paper](http://www2016.net/proceedings/proceedings/p275.pdf)
 
-[My Slide](https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders)
+- [Paper](http://www2016.net/proceedings/proceedings/p275.pdf)
+- [My Slide](https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders)
 
 This paper proposes a model named SNMDD to detect Social Network Mental Disorder (SNMD) through users' behaviors on online social networks (OSN) instead of asking their mental condition.
 

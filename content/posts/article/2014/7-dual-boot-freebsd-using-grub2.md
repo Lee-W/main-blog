@@ -1,17 +1,18 @@
----
 Title: Dual Boot FreeBSD Using GRUB2
 Date: 2014-10-21 08:56
 Category: Linux-Unix
-Tags: 
+Tags: Dual Boot
 Slug: dual-boot-freebsd-using-grub2
 Authors: Lee-W
 Summary: 
----
+
 
 其實原本的標題是`Dual Boot FreeBsd with Ubuntu`
 這篇文章寫的都是用Ubuntu測試的
 不過我想只要是grub2應該都差不多吧XD
+
 <!--more-->
+
 ## 加入freeBSD到grub開機選單
 
 ### 更改grub的設定檔
@@ -63,6 +64,6 @@ GRUB_CMDLINE_LINUX=""
 
 ## 在ubuntu mount FreeBSD
 
-```
+```shell
 sudo mount -t ufs -r -o ufstype=ufs2 /dev/sda4 ~/freebsd
 ```

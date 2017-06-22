@@ -1,18 +1,18 @@
----
 Title: Reveal.js 安裝錯誤
 Date: 2016-02-20 03:57
-Category: JS
+Category: JavaScript
 Tags: reveal.js
 Slug: reveal-s-installation-error
 Authors: Lee-W
 Summary: 
----
+
 
 當我安裝步驟執行到
 ```
 npm install
 ```
 會跳出很多錯誤訊息
+
 <!--more-->
 
 這才發現Reveal.js 要用python >= 2.5 and < 3.0.0
@@ -25,4 +25,3 @@ npm install --python=python2.7
 
 # Reference
 - [Reveal.js](https://github.com/hakimel/reveal.js/)
-

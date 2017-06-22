@@ -1,11 +1,10 @@
----
 title: [Book] 為什麼我們這樣生活，那樣工作?
 date: 2015-11-30 05:43
 Category: Book
 Tags: Productivity
 Slug: the-power-of-habit
 Authors: Lee-W
----
+
 
 ![The Power of Habit](http://i.imgur.com/Mo2J3YWm.jpg)
 

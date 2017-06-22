@@ -1,12 +1,11 @@
----
-Title: [Article] No More Zero Day
+Title: No More Zero Day
 Date: 2015-10-27 06:53
 Category: Article
 Tags: Productivity
 Slug: no-more-zero-day
 Authors: Lee-W
 Summary: 
----
+
 
 決定開始來寫些程式以外的內容
 整理之前看過的書或文章，跟大家分享心得或書摘

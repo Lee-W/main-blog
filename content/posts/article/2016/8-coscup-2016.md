@@ -1,4 +1,3 @@
----
 Title: COSCUP 2016
 Date: 2016-08-22 15:36
 Category: Conference
@@ -6,10 +5,12 @@ Tags: COSCUP
 Slug: coscup-2016
 Authors: Lee-W
 Summary: 
----
+
 
 [hackholder共筆](http://beta.hackfoldr.org/coscup2016/)
+
 <!--more-->
+
 # Day1
 ## R語言翻轉教室簡介
 - Why R？
@@ -89,8 +90,8 @@ https://docs.google.com/presentation/d/1RxJxZ_HAWZkDNIy9y2UZPZ3M7oNIxcdLJd6UzIO9
 - 建置世界級的大系統
 - 注重使用者體驗
 
-## Lightening
-今年lightening也有很多有趣的主題
+## Lightning
+今年Lightning也有很多有趣的主題
 - MRT & GIT
 	- 用git branch來畫台北捷運的路線圖
 		- 不要亂玩git branch啊XD
@@ -100,4 +101,5 @@ https://docs.google.com/presentation/d/1RxJxZ_HAWZkDNIy9y2UZPZ3M7oNIxcdLJd6UzIO9
   - https://www.youtube.com/watch?v=daAI2agxzs0
 
 ---
+
 今年的[COSCUP2016梗全集](http://beta.hackfoldr.org/coscup2016/https%253A%252F%252Fhackpad.com%252FCOSCUP2016-5wENY4uxqSX)，還蠻有趣的XD

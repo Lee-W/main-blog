@@ -1,4 +1,3 @@
----
 Title: powerline on zsh, vim, tmux
 Date: 2014-07-30 15:01
 Category: Linux-Unix
@@ -6,10 +5,11 @@ Tags: Utility
 Slug: powerline-on-zsh-vim-tmux
 Authors: Lee-W
 Summary: 
----
+
 
 用了vim的powerline後覺得很酷，就找了很多的powerline來玩
 於是這篇文章產生了XDD
+
 <!--more-->
 
 這是各個powerline的預覽圖
@@ -18,7 +18,7 @@ Summary:
 2. tmux
 ![2_tmux](http://i.imgur.com/LLJ9xjk.png)
 3. zsh
-[3_zsh](http://i.imgur.com/tOvzhK3.png)
+![3_zsh](http://i.imgur.com/tOvzhK3.png)
 
 
 ## powerline 字體

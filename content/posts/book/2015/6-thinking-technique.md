@@ -1,4 +1,3 @@
----
 Title: [Book] 思考的技術
 Date: 2015-10-18 11:45
 Category: Book
@@ -6,7 +5,7 @@ Tags: Thinking
 Slug: thinking-technique
 Authors: Lee-W
 Summary: 
----
+
 
 ![thinking-technique](http://pic.eslite.com/Upload/Product/201506/m/635696947482798750.jpg)
 
@@ -45,5 +44,3 @@ Summary:
 
 2. 讀完每天的報紙後，提出五個疑問  
    接著提出自己可以運用怎樣的方式、進行怎樣的調查，是否可以提出完成度更高的報導內容     
-
-  

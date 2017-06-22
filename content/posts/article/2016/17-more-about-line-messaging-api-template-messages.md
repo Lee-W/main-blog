@@ -1,13 +1,12 @@
----
-Title: [Bot] More About Line Messaging API - Template Messages
+Title: More About Line Messaging API - Template Messages
 Date: 2016-11-27 06:08
 Category: Bot
-Tags: Line
+Tags: Line Bot
 Slug: more-about-line-messaging-api-template-messages
 Authors: Lee-W
 Summary: 
 Series: Line Bot Tutorial
----
+
 
 除了傳送文字外，Line Bot還可以傳
 
@@ -87,6 +86,3 @@ text參數在Message Action是必須的，也不能給空字串
 # Reference
 - [API Reference - Messaging API](https://devdocs.line.me/en/#template-messages)
 - [line-bot-sdk-python](https://github.com/line/line-bot-sdk-python#templatesendmessage---buttonstemplate)
-
-
-

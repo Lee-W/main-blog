@@ -1,11 +1,10 @@
----
 title: [Book] 做工的人
 date: 2017-03-24 18:48
 Category: Book
 Tags: Story
 Slug: worker
 Authors: Lee-W
----
+
 
 ![做工的人](http://i.imgur.com/SlWTvkOm.jpg)
 

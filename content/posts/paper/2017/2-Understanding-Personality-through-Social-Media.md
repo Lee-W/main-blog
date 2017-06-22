@@ -1,12 +1,11 @@
----
-Title: [Paper Summary] Understanding Personality through Social Media
+Title: [Paper] Understanding Personality through Social Media
 Date: 2017-04-05 22:30
 Category: Paper Summary
 Tags: Machine Learning, NLP, MBTI, Personality
 Slug: Understanding-Personality-through-Social-Media
 Authors: Lee-W
 Summary: 
----
+
 
 [Paper](https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf)
 
@@ -102,6 +101,3 @@ Among the results, word vector performs best which might illustrate that predict
 
 During the POS conversion process, information is compressed into 25 tags and might lost some important one.
 This might be the reason why it performs worse.
-
-
-

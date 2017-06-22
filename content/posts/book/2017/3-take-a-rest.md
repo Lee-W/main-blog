@@ -1,11 +1,10 @@
----
 title: [Book] 此人進廠維修中
 date: 2017-03-05 11:40
 Category: Book
 Tags: Emotion
 Slug: take-a-rest
 Authors: Lee-W
----
+
 
 ![此人進廠維修中](http://i.imgur.com/M5ZXQkhm.jpg)
 

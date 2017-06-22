@@ -1,4 +1,3 @@
----
 Title: 解決安裝IRKernel缺少zmq.h 
 Date: 2016-02-20 03:42
 Category: R
@@ -6,7 +5,7 @@ Tags: Jupyter
 Slug: resolve-irkernel-missing-zmqh
 Authors: Lee-W
 Summary: 
----
+
 
 <!--more-->
 
@@ -28,7 +27,6 @@ interface.cpp:22:10: fatal error: 'zmq.h' file not found
 make: *** [interface.o] Error 1
 ERROR: compilation failed for package ‘rzmq’
 ```
-<!--more-->
 
 ## 解決
 這時候就要將缺少的套件補齊

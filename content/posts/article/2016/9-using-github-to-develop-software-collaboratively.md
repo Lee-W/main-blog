@@ -1,4 +1,3 @@
----
 Title: Using GitHub to Develop Software Collaboratively
 Date: 2016-09-15 01:26
 Category: Git
@@ -6,7 +5,7 @@ Tags: GitHub
 Slug: using-github-to-develop-software-collaboratively
 Authors: Lee-W
 Summary: 
----
+
 
 這是兩年前Github來成大教育課程的筆記
 最近在整理git的筆記才翻出來

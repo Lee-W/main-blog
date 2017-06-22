@@ -1,4 +1,3 @@
----
 Title: [Book] 賈伯斯傳
 Date: 2016-09-14 04:53
 Category: Book
@@ -6,7 +5,7 @@ Tags: Autobiography
 Slug: jobs
 Authors: Lee-W
 Summary: 
----
+
 
 記得我去上海交通大學交換的時候
 一門有關創新的課，老師跟我們說一定要看喬布斯傳

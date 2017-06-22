@@ -1,16 +1,14 @@
----
-Title: [Paper Summary] Deep Learning-Based Document Modeling for Personality Detection from Text
+Title: [Paper] Deep Learning-Based Document Modeling for Personality Detection from Text
 Date: 2017-04-11 17:59
 Category: Paper Summary
 Tags: Deep Learning, Machine Learning, NLP, Big Five Theory, Personality
 Slug: Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text
 Authors: Lee-W
 Summary: 
----
 
-[Paper](https://sentic.net/deep-learning-based-personality-detection.pdf)
-Implementation: [Personality-Detection](https://github.com/SenticNet/Personality-Detection)
 
+* [Paper](https://sentic.net/deep-learning-based-personality-detection.pdf)
+* Implementation: [Personality-Detection](https://github.com/SenticNet/Personality-Detection)
 * Data Set
 	* [James Pennebaker and Laura King's stream-of-consciousness essay dataset](http://mypersonality.org/wiki/doku.php?id=wcpr13)
 	* [NRC Word-Emotion Association Lexicon](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm)

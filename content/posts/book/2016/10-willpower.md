@@ -1,4 +1,3 @@
----
 Title: [Book] 增強你的意志力
 Date: 2016-06-27 02:55
 Category: Book
@@ -6,7 +5,7 @@ Tags: Productivity
 Slug: willpower
 Authors: Lee-W
 Summary: 
----
+
 
 ![willpower](http://pic.eslite.com/Upload/Product/201307/m/635093011219915000.jpg)
 
@@ -93,4 +92,4 @@ Summary:
 - 正向拖延的力量
 	- 等一下再享受
 	- 把惡習拖延，最後可能就不會去做
-- 保存意志力的持久技巧：習慣 
+- 保存意志力的持久技巧：習慣

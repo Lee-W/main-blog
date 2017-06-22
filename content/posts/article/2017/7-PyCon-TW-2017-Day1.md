@@ -1,4 +1,3 @@
----
 Title: PyCon TW 2017 - Day 1
 Date: 2017-06-09 09:00
 Modified: 2017-06-18 11:41
@@ -8,7 +7,7 @@ Slug: PyCon-TW-2017-Day1
 Authors: Lee-W
 Summary:
 Series: PyCon TW 2017
----
+
 
 今年PyCon終於比起上次聽得懂多了！
 看來這兩年來，還是有點進步的XD

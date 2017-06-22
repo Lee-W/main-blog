@@ -1,15 +1,13 @@
----
 Title: autojump - 在terminal中快速跳轉資料夾
-Date: 2014-02-01 13:11
+Date: 2014-02-01 16:58
 Category: Linux-Unix
 Tags: Utility
 Slug: autojump
 Authors: Lee-W
 Summary: 
----
 
-# 什麼是autojump
-可以快速跳轉資料夾的工具
+
+快速跳轉資料夾的工具
 
 <!--more-->
 
@@ -58,4 +56,4 @@ j -s
 ```
 
 # Reference
-[autojump readme] (https://github.com/joelthelion/autojump/blob/master/README.md)
+[autojump readme](https://github.com/joelthelion/autojump/blob/master/README.md)

@@ -1,12 +1,11 @@
----
 Title: TEDx Tainan 2016 - 0到1
 Date: 2016-11-21 03:27
-Category: General
-Tags: Inspiring
+Category: Gossiping
+Tags: Inspiring, TEDx
 Slug: tedx-tainan-2016
 Authors: Lee-W
 Summary: 
----
+
 
 趁著昨天才剛結束
 把一些感受記錄下來

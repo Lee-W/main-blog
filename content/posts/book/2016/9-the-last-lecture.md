@@ -1,12 +1,11 @@
----
 Title: [Book] 最後的演講
 Date: 2016-06-06 08:32
 Category: Book
-Tags: Life
+Tags: Inspiring
 Slug: the-last-lecture
 Authors: Lee-W
 Summary: 
----
+
 
 ![最後的演講](http://pic.eslite.com/Upload/Product/200806/m/633519138950888496.jpg)
 
@@ -43,4 +42,3 @@ Summary:
 		- 我該怎麼做才能彌補過錯
 
 - 開口問吧，不用怕。獲得肯定答案的機會，一定比你想像的還要頻繁。
-    

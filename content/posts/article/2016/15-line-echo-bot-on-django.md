@@ -1,13 +1,12 @@
----
-Title: [Bot] Line Echo Bot on Django
+Title: Line Echo Bot on Django
 Date: 2016-11-24 03:26
 Category: Bot
-Tags: django, Line
+Tags: django, Line Bot
 Slug: line-echo-bot-on-django
 Authors: Lee-W
 Summary: 
 Series: Line Bot Tutorial
----
+
 
 單純要寫一個只會Echo的Line Chat Bot
 用flask只要85行的code就能解決

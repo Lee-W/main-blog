@@ -1,12 +1,11 @@
----
 Title: Create a Telegram EchoBot
 Date: 2017-03-31 19:24
 Category: Bot
-Tags: Telegram, Flask
+Tags: Telegram Bot, Flask
 Slug: create-a-telegram-echobot
 Authors: Lee-W
 Summary: 
----
+
 
 最近當助教要出一個Telegram Bot相關的Project
 先來寫一篇簡單的教學，減少之後的問題XDD

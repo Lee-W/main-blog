@@ -1,4 +1,3 @@
----
 Title: [Book] 所有問題都是一場賽局
 Date: 2016-10-15 11:04
 Category: Book
@@ -6,7 +5,7 @@ Tags: Game Theory
 Slug: how-to-think-like-a-game-theorist
 Authors: Lee-W
 Summary: 
----
+
 
 ![How to think like a game theorist](http://i.imgur.com/a4TS6Y0m.jpg)
 
@@ -285,4 +284,3 @@ A否決的話就都拿不到錢
 只是這次A沒有任何決定權，只能接受B的分配
 此時B的最佳選擇就是1000元全部拿走
 然而實驗結果，相當多的人依然會給對方一定程度的金額
-

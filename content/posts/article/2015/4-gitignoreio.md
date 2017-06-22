@@ -1,16 +1,16 @@
----
 Title: gitignore.io
 Date: 2015-02-03 05:58
 Category: Git
-Tags: Deprecated
+Tags: Deprecated, Utility
 Slug: gitignoreio
 Authors: Lee-W
 Summary: 
----
+
 
 每次開一個git專案，要為它找適當的.gitignore，都要上網找模板蠻麻煩的
 能不能有個簡單的方法，我開什麼專案就產生怎樣的.gitignore
 然後我就發現了[gitignore.io](https://www.gitignore.io)
+
 <!--more-->
 
 簡單來說gitignore.io提供各式各樣的gitignore，而且可以自動合併成一個file

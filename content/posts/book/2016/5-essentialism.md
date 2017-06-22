@@ -1,4 +1,3 @@
----
 Title: [Book] 少，但是更好
 Date: 2016-03-11 14:29
 Category: Book
@@ -6,7 +5,7 @@ Tags: Productivity
 Slug: essentialism
 Authors: Lee-W
 Summary: 
----
+
 
 ![Essentialism](http://i.imgur.com/zJS927hm.jpg)
 

@@ -1,4 +1,3 @@
----
 Title: Android Studio+Genymotion安裝(12/29更新)
 Date: 2014-11-23 09:26
 Category: Android
@@ -6,11 +5,12 @@ Tags: Tutorial
 Slug: android-studio-and-genymotion-installation
 Authors: Lee-W
 Summary: 
----
 
-# What is Android Studio?
+
 最近Google在推行的Android IDE，前身是IntelliJ IDEA
+
 <!--more-->
+
 它的檔案架構跟eclipse差蠻多的，所以用不同的IDE來協作會有點麻煩
 就我的經驗Android Studio比eclipse來得穩定一些
 反正現在還有Google在背後支持它，就來試試看吧XD

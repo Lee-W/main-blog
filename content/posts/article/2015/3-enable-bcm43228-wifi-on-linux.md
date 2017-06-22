@@ -1,12 +1,11 @@
----
 Title: 驅動BCM43228網卡在Linux的無線功能
 Date: 2015-01-28 08:52
 Category: Linux-Unix
-Tags: 
+Tags: Dual Boot
 Slug: enable-bcm43228-wifi-on-linux
 Authors: Lee-W
 Summary: 
----
+
 
 最近本來下定決心要來玩arch linux
 結果竟然被筆電的網卡搞死了
@@ -14,6 +13,7 @@ Summary:
 
 沒想到改成灌Linux mint 17，依然有問題＝＝
 最後找到一個解決的辦法
+
 <!--more-->
 
 先確定你的網卡是不是BC43228

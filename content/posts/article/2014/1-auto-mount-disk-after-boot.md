@@ -1,16 +1,17 @@
----
 Title: Linux開機自動掛載分割區
 Date: 2014-02-01 16:44
 Category: Linux-Unix
-Tags: 
+Tags: Dual Boot
 Slug: auto-mount-disk-after-boot
 Authors: Lee-W
 Summary: 
----
+
 
 分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改
 需要注意的是，如果設定不好，可能會沒辦法開機的！！！
+
 <!--more-->
+
 我們先來看一下/etc/fstab內的東西
 ```shell
 sudo cat /etc/fstab
@@ -37,7 +38,6 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 3~4是swap的掛載
 5~6是我自己的data的掛載
 
-
 ```
 #data
 UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
@@ -62,9 +62,8 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 6. 是否以 fsck 檢驗磁區
 
 基本上4 5 6我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到
-</br>
-</br>
-#測試
+
+# 測試
 先看一下是否有掛載成功
 ```
 df
@@ -109,6 +108,5 @@ df
 
 如果有任何異常，就去看一下/etc/fstab是不是有哪裡寫錯了
 
-
-## Reference
-[巴特的微花盆： 筆記： Linux 中設定開機時自動掛載分割區 ] (http://255121.blogspot.tw/2010/05/linux.html)
+# Reference
+[巴特的微花盆： 筆記： Linux 中設定開機時自動掛載分割區](http://255121.blogspot.tw/2010/05/linux.html)

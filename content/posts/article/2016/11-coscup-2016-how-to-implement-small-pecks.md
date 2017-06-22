@@ -1,4 +1,3 @@
----
 Title: COSCUP 2016 小啄如何實作的
 Date: 2016-10-01 11:50
 Category: Bot
@@ -6,14 +5,16 @@ Tags: COSCUP
 Slug: coscup-2016-how-to-implement-small-pecks
 Authors: Lee-W
 Summary: 
----
+
 
 今年COSCUP的聊天機器人「小啄」
 終於在今天宣告退休了
 退休前他讓我們詢問了「你是如何實作的」
 這邊是我測試的所有結果
 跟大家分享一下XD
+
 <!--more-->
+
 ---
 ## 總結
 ### 技術相關

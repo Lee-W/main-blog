@@ -1,4 +1,3 @@
----
 Title: [Book] Zero to One
 Date: 2015-02-16 08:57
 Category: Book
@@ -6,7 +5,7 @@ Tags: Start Up
 Slug: zero-to-one
 Authors: Lee-W
 Summary: 
----
+
 
 ![Zero to One](http://i.imgur.com/O3Uaatbm.jpg?1)
 

@@ -1,4 +1,3 @@
----
 Title: 我如何更有效率的使用時間
 Date: 2017-02-03 00:53
 Category: Thought
@@ -6,14 +5,16 @@ Tags: Productivity
 Slug: how-do-i-manage-my-time
 Authors: Lee-W
 Summary: 
----
+
 
 過年整理了好多以前的書摘
 好像該來發一點自己的東西了
 
 前一段時間被找回母系演講
 被問了，我是怎麼管理時間的
+
 <!--more-->
+
 當下沒有回答的很好
 於是乎就有了這篇文章XD
 

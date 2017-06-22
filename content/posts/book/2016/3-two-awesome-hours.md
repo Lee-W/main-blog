@@ -1,4 +1,3 @@
----
 Title: [Book] 每天最重要的兩小時
 Date: 2016-01-10 02:31
 Category: Book
@@ -6,7 +5,7 @@ Tags: Productivity
 Slug: two-awesome-hours
 Authors: Lee-W
 Summary: 
----
+
 
 ![Two Awesome Hours](http://i.imgur.com/KQpJ2Ghm.jpg)
 
@@ -121,4 +120,3 @@ Summary:
 
 ## 總結
 看完這本書後，不要再想盡辦法擠出更多時間工作，而是試著去調整作法，讓自己每天都能有穩定高工作成效的時段，留一點時間來品味生活
-		

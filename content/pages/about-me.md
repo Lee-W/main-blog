@@ -1,8 +1,7 @@
----
 Title: About Me
 Date: 2017-02-14 12:30
-Modified: 2017-03-30 22:53
----
+Modified: 2017-06-22 22:53
+
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -13,7 +12,7 @@ I'm a
   
 <i class="fa fa-lg fa-terminal" style="padding-right:1em"></i> Python Programmer
 <i class="fa fa-lg fa-book" style="padding-right:1em"></i> Reader
-<a href="https://www.flickr.com/photos/10280407@N02/" target="_blank" title="Flickr" style="color:gray"><i class="fa fa-lg fa-camera" style="padding-right:1em"></i>Traveler</a>
+<a href="https://www.flickr.com/photos/10280407@N02/" target="_blank" title="Flickr" style="color:gray; text-decoration: none;"><i class="fa fa-lg fa-camera" style="padding-right:1em"></i>Traveler</a>
 <i class="fa fa-lg fa-music" style="padding-right:1em"></i> Ukulele Player
 <i class="fa fa-lg fa-lock" style="padding-right:1.4em"></i> Locker
 <i class="fa fa-lg fa-rebel" style="padding-right:1em"></i> Star Wars Fan

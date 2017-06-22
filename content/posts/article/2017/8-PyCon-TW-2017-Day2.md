@@ -1,4 +1,3 @@
----
 Title: PyCon TW 2017 - Day 2
 Date: 2017-06-10 09:00
 Modified: 2017-06-18 12:37
@@ -8,7 +7,7 @@ Slug: PyCon-TW-2017-Day2
 Authors: Lee-W
 Summary:
 Series: PyCon TW 2017
----
+
 
 第二天有一整個時段的Job Fair，可以出去晃晃到各個攤販聊天
 最有印象的大概就是Carousel，跟他們聊得還蠻開心的

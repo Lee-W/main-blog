@@ -1,8 +1,7 @@
----
-Title: [Bot] More than Just Echo Bot
+Title: More than Just Echo Bot
 Date: 2016-11-29 01:57
 Category: Bot
-Tags:
+Tags: NLP, Machine Learning
 Slug: more-than-just-echo-bot
 Authors: Lee-W
 Summary: 
@@ -231,4 +230,3 @@ Mary Johnson at 12 pm tomorrow.
 - [Wit.ai Quickstart](https://wit.ai/docs/quickstart)
 - [自己动手做聊天机器人教程](https://github.com/warmheartli/ChatBotCourse)
 - [An overview of the bot landscape](https://www.oreilly.com/ideas/an-overview-of-the-bot-landscape?imm_mid=0eb199&cmp=em-data-na-na-newsltr_20161130)
-

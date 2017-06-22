@@ -1,4 +1,3 @@
----
 Title: Guake terminal
 Date: 2014-02-09 07:02
 Category: Linux-Unix
@@ -6,9 +5,8 @@ Tags: Utility
 Slug: guake-terminal
 Authors: Lee-W
 Summary: 
----
 
-# 什麼是guake termianl
+
 隱藏在背景的terminal
 並且可以隨時呼叫(預設是F12)
 
@@ -31,4 +29,4 @@ sudo apt-get install guake
 ![3_guake start up](http://i.imgur.com/sYQ6Klw.png)
 
 # Reference
-[Ubuntu 安裝 Guake Terminal] (http://www.arthurtoday.com/2012/08/ubuntu-install-guake-terminal.html#.UvcpWx9KiXo)
+[Ubuntu 安裝 Guake Terminal](http://www.arthurtoday.com/2012/08/ubuntu-install-guake-terminal.html#.UvcpWx9KiXo)

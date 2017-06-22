@@ -1,4 +1,3 @@
----
 Title: 在jupyter中同時使用Python2 Python3
 Date: 2015-11-02 15:12
 Category: Python
@@ -6,16 +5,16 @@ Tags: Jupyter
 Slug: used-in-the-jupyter-python2-python3
 Authors: Lee-W
 Summary: 
----
+
 
 先安裝Python2和Python3的ipython notebook
-```sh
+```shell
 pip2 install ipython notebook
 pip3 install ipython notebook
 ```
 
 分別用各自的ipython執行下面的指令
-```sh
+```shell
 ipython2 kernelspec install-self
 ipython3 kernelspec install-self
 ```

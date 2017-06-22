@@ -1,18 +1,18 @@
----
 Title: git ignore-io 與 開源貢獻經驗
 Date: 2017-02-28 21:56
-Category: Article
+Category: Gossiping
 Tags:
 Slug: git-ignoreio-and-open-source-experience
 Authors: Lee-W
 Summary:
----
+
 
 雖然已經隔了一年多
 當初git ignore-io這個小功能，也是花了一兩個月
 好不容易才[git extras](https://github.com/tj/git-extras) merge回去的
 
 <!--more-->
+
 當初看到這封信的時候，很是感動啊xd
 ![accepted]({filename}/images/posts-image/2017-02-28-git-ignoreio-and-open-source-experience/1-accepted.jpg)
 
@@ -113,4 +113,4 @@ $ git ignore-io -s ja
 從shell script的風格（有人建議我用[shellcheck](https://github.com/koalaman/shellcheck)）到command的option為什麼要這樣命名
 都有人跟我討論，給我建議
 從中也學到了很多
-~~貢獻這些專案還能去申請SITCON跟COSCUP的開源貢獻票，這樣就不用跟大家搶票了~~
+<s>貢獻這些專案還能去申請SITCON跟COSCUP的開源貢獻票，這樣就不用跟大家搶票了</s>

@@ -1,4 +1,3 @@
----
 Title: 在mac上安裝gcc
 Date: 2016-01-06 06:40
 Category: C++
@@ -6,7 +5,7 @@ Tags: mac
 Slug: install-gcc-on-mac
 Authors: Lee-W
 Summary: 
----
+
 
 最近用brew來安裝gcc 5.3，一直卡在`make --bootstrap`
 放了幾個小時還是停在這
