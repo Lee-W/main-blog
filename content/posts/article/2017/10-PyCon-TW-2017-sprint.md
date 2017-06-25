@@ -35,10 +35,14 @@ Russell都會很友善地回答問題
 只要送了PR就可以得到[Challenge Coins](https://pybee.org/contributing/challenge-coins/)
 拿到這個challenge coin其實還蠻開心的xd
 
+
 <img src="{filename}/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/2-challenge-coin.jpg" alt="Challenge Coin" width="30%">
 
 最後再附上在twitter上，這次參與spinrt的大合照
 <img src="{filename}/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/3-all.png" alt="all" width="50%">
+
+2017/6/22
+折騰了許久，我的[PR](https://github.com/pybee/batavia/pull/569)終於被merge回batavia了xd
 
 ---
 
