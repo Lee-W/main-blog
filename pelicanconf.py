@@ -41,9 +41,8 @@ THEME = 'theme/pelican-clean-blog/'
 PYGMENTS_STYLE = 'xcode'
 EXTRA_PATH_METADATA = {
     'images': {'path': 'images'},
-    'extra/custom.css': {'path': 'static/custom.css'},
 }
-CUSTOM_CSS = 'static/custom.css'
+CSS_OVERRIDE = 'static/custom.css'
 
 # Feed generation is usually not desired when developing
 
