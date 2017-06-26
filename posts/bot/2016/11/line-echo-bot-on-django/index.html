@@ -19,6 +19,8 @@
         <!-- Code highlight color scheme -->
             <link href="http://lee-w.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet">
 
+            <!-- CSS specified by the user -->
+            <link href="http://lee-w.github.io/static/custom.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -236,6 +238,7 @@ python3 manage.py startapp echobot
 <p>有兩種方法可以處理Line Server送過來的訊息<br>&nbsp;這裡先用Todo記著，待會再來補上</p>
 <div class="codehilite"><pre><span></span><span class="c1"># TODO: Define Receiver</span>
 
+
 <span class="nd">@csrf_exempt</span>
 <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
@@ -373,6 +376,7 @@ e.g.<br>
 <span class="n">line_bot_api</span> <span class="o">=</span> <span class="n">LineBotApi</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LINE_CHANNEL_ACCESS_TOKEN</span><span class="p">)</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">WebhookParser</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LINE_CHANNEL_SECRET</span><span class="p">)</span>
 
+
 <span class="nd">@csrf_exempt</span>
 <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
@@ -417,12 +421,14 @@ e.g.<br>
 <span class="n">line_bot_api</span> <span class="o">=</span> <span class="n">LineBotApi</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LINE_CHANNEL_ACCESS_TOKEN</span><span class="p">)</span>
 <span class="n">handler</span> <span class="o">=</span> <span class="n">WebhookHandler</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LINE_CHANNEL_SECRET</span><span class="p">)</span>
 
+
 <span class="nd">@handler.add</span><span class="p">(</span><span class="n">MessageEvent</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">TextMessage</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">handle_text_message</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
     <span class="n">line_bot_api</span><span class="o">.</span><span class="n">reply_message</span><span class="p">(</span>
         <span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span>
         <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
     <span class="p">)</span>
+
 
 <span class="nd">@handler.default</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
@@ -431,6 +437,7 @@ e.g.<br>
         <span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span>
         <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Currently Not Support None Text Message&#39;</span><span class="p">)</span>
     <span class="p">)</span>
+
 
 <span class="nd">@csrf_exempt</span>
 <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>

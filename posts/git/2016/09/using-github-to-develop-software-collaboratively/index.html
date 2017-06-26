@@ -19,6 +19,8 @@
         <!-- Code highlight color scheme -->
             <link href="http://lee-w.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet">
 
+            <!-- CSS specified by the user -->
+            <link href="http://lee-w.github.io/static/custom.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -141,8 +143,7 @@ touch REAMDE.mdd
 <p>There are three main stages<br>
 1. working<br>
 2. staging<br>
-3. repo<br>
-</p>
+3.&nbsp;repo  </p>
 <table>
 <thead>
 <tr>
@@ -185,8 +186,7 @@ git status
 </pre></div>
 
 
-<p>Now this file is in staging area<br>
-</p>
+<p>Now this file is in staging&nbsp;area  </p>
 <p>So, how to go back to history?<br>
 <code>git reset REAMDE.md</code></p>
 <p>Take a look at our history<br>
@@ -195,8 +195,7 @@ git status
 <code>git checkout "SHA1"</code></p>
 <p><code>git checkout master</code><br>
 Everything comes&nbsp;back</p>
-<p><code>master</code> is the default branch name of git. It is a default word but not reserved.<br>
-</p>
+<p><code>master</code> is the default branch name of git. It is a default word but not&nbsp;reserved.  </p>
 <p><code>git checkout -b "branch_name"</code> create a branch and checkout to&nbsp;it</p>
 <h2>diff</h2>
 <p><code>git diff</code>: View the difference between working and&nbsp;staging</p>
@@ -204,10 +203,8 @@ Everything comes&nbsp;back</p>
 <p><code>git diff "SHA1"</code>: Difference between current version and <span class="caps">SHA1</span></p>
 <p><code>git diff master~1</code>: difference between current and the one before master<br>
 <code>git diff master^</code> -&gt; master~1<br>
-<code>git diff master^^</code> -&gt; master~2<br>
-</p>
-<p><code>git diff a b</code>: Show the change from a to b<br>
-</p>
+<code>git diff master^^</code> -&gt;&nbsp;master~2  </p>
+<p><code>git diff a b</code>: Show the change from a to&nbsp;b  </p>
 <h2>branch</h2>
 <p>In git, branch is not copy. It&#8217;s like bookmark<br>
 Actually <code>git branch -d "name"</code> just delete the pointer but not the&nbsp;entry.</p>
@@ -216,8 +213,7 @@ Actually <code>git branch -d "name"</code> just delete the pointer but not the&n
 <p>If you go back to a entry not in certain branch, a detach error might occur.<br>
 For example, checkout to a commit that is parent of more than one branch and then append a new commit to it.<br>
 In such case, this new appended commit might not be able to be referenced.<br>
-<em>The solution to this problem is to create a new branch for it.</em><br>
-</p>
+<em>The solution to this problem is to create a new branch for&nbsp;it.</em>  </p>
 <h2>log</h2>
 <p><code>git log --decorate</code>: Show also branch&nbsp;info</p>
 <p><code>git log --all</code>: Show all&nbsp;branch</p>
@@ -231,8 +227,7 @@ In such case, this new appended commit might not be able to be referenced.<br>
 <p><code>git push -u origin master</code><br>
 - upload <em>master</em> to <em>origin</em><br>
 - -u tell git the default url to push for that branch(master) is origin, it would also make <code>git pull</code> remember<br>
-    - Do -u and after that you can just use <code>git push</code><br>
-</p>
+    - Do -u and after that you can just use <code>git push</code>  </p>
 <h2>pull</h2>
 <p><code>git push --all</code>: push all branch<br>
 <code>git pull --prune</code></p>
@@ -242,28 +237,22 @@ git pull -&gt; fetch +&nbsp;merge</p>
 <h2>on-site</h2>
 <p>pull request on GitHub<br>
 <code>@person-name</code> -&gt; notification<br>
-Have a conversation with the whole team<br>
-</p>
+Have a conversation with the whole&nbsp;team  </p>
 <p>Write &#8220;fix #2 &#8230;.&#8221; in git commit -&gt; special meaning -&gt; specify the bug in issue on GitHub<br>
 Wiki -&gt;&nbsp;documentation</p>
 <h1>How to write a good git&nbsp;commit</h1>
 <h2>Principle</h2>
 <ul>
 <li>Separate each&nbsp;commit</li>
-<li>Let the commit tell a story<br>
-</li>
+<li>Let the commit tell a&nbsp;story  </li>
 </ul>
 <h2>More&nbsp;specific</h2>
 <ul>
-<li>One line 80 character<br>
-</li>
-<li>Use present tense instead of past tense<br>
-</li>
-<li>Don&#8217;t repeat what can be found in <code>git diff</code><br>
-</li>
+<li>One line 80&nbsp;character  </li>
+<li>Use present tense instead of past&nbsp;tense  </li>
+<li>Don&#8217;t repeat what can be found in <code>git diff</code>  </li>
 <li>If more detail is to be written, left the second line to be&nbsp;blank.</li>
-<li>Write more detail about why this change happened after the third line.<br>
-</li>
+<li>Write more detail about why this change happened after the third&nbsp;line.  </li>
 </ul>
 <h2>Other&nbsp;issue</h2>
 <p><code>git config --global -e</code>: Edit your .gitconfig&nbsp;file.</p>
