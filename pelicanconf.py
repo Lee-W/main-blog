@@ -42,7 +42,8 @@ PYGMENTS_STYLE = 'xcode'
 EXTRA_PATH_METADATA = {
     'images': {'path': 'images'},
 }
-CSS_OVERRIDE = 'static/custom.css'
+CSS_OVERRIDE = '/static/custom.css'
+HEADER_COVER = '/images/cover.jpg'
 
 # Feed generation is usually not desired when developing
 
