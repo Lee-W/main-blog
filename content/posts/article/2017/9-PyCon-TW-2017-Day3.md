@@ -35,7 +35,7 @@ Series: PyCon TW 2017
 <a name='1'></a>
 ## [Keynote] From Little Things, Big things grow.
 
-![Chinese Intro]({filename}/images/posts-image/2017-06-11-PyCon-TW-2017-Day3/1-Keynote-Chineses.png)
+![Chinese Intro]({filename}/images/posts-image/2017-06-11-PyCon-TW-2017-Day3/1-Keynote-Chineses.jpg)
 
 Russell開場就講了一串中文，引來如雷的掌聲xd
 
