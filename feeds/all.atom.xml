@@ -27,19 +27,19 @@
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Make a change&lt;/td&gt;
-&lt;td edit&gt;&lt;/td&gt;
+&lt;td&gt;{edit}&lt;/td&gt;
 &lt;td&gt;.&lt;/td&gt;
 &lt;td&gt;u&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Scan line for next character&lt;/td&gt;
-&lt;td char&gt;f&lt;/td&gt;
+&lt;td&gt;f{char}/t{char}&lt;/td&gt;
 &lt;td&gt;;&lt;/td&gt;
 &lt;td&gt;,&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Scan line for previous character&lt;/td&gt;
-&lt;td char&gt;F&lt;/td&gt;
+&lt;td&gt;F{char}/T{char}&lt;/td&gt;
 &lt;td&gt;;&lt;/td&gt;
 &lt;td&gt;,&lt;/td&gt;
 &lt;/tr&gt;
@@ -63,7 +63,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Execute a sequence of changes&lt;/td&gt;
-&lt;td changes&gt;qx&lt;/td&gt;
+&lt;td&gt;qx{changes}q&lt;/td&gt;
 &lt;td&gt;@x&lt;/td&gt;
 &lt;td&gt;u&lt;/td&gt;
 &lt;/tr&gt;
@@ -733,7 +733,8 @@ Parallel:&amp;nbsp;一個時間點同時跑&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;讓那篇文章的回應當作ground&amp;nbsp;truth&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;來評斷機器人產生的結果好不好    &lt;/li&gt;
+&lt;li&gt;來評斷機器人產生的結果好不好  &lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -750,7 +751,8 @@ Parallel:&amp;nbsp;一個時間點同時跑&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;不定時提醒 -&amp;nbsp;貼近使用者&lt;/li&gt;
-&lt;li&gt;隨機答案 -&amp;nbsp;提高趣味   &lt;/li&gt;
+&lt;li&gt;隨機答案 - 提高趣味 &lt;br&gt;
+&lt;/li&gt;
 &lt;li&gt;學習與進化&lt;/li&gt;
 &lt;li&gt;Multi-channel&amp;nbsp;(多渠道互動)&lt;/li&gt;
 &lt;/ul&gt;
@@ -792,7 +794,8 @@ Parallel:&amp;nbsp;一個時間點同時跑&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#6"&gt;Understanding Serverless Architecture&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;同場加映：&lt;a href="https://drive.google.com/file/d/0Bz8Kfu_94VuJcVo1a1drQjhReU0/view"&gt;Don’t Reinvent Sandwich&lt;/a&gt; (本議程沒供餐 &lt;span class="caps"&gt;XD&lt;/span&gt;)  &lt;/li&gt;
+&lt;li&gt;同場加映：&lt;a href="https://drive.google.com/file/d/0Bz8Kfu_94VuJcVo1a1drQjhReU0/view"&gt;Don’t Reinvent Sandwich&lt;/a&gt; (本議程沒供餐 &lt;span class="caps"&gt;XD&lt;/span&gt;)&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#7"&gt;Tensorflow &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; Python: Fault Detection&amp;nbsp;System&lt;/a&gt;&lt;/li&gt;
@@ -1013,7 +1016,8 @@ Parallel:&amp;nbsp;一個時間點同時跑&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Try except for any case&lt;ul&gt;
-&lt;li&gt;dockerpy的雷xd   &lt;/li&gt;
+&lt;li&gt;dockerpy的雷xd &lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;File Permission&lt;ul&gt;
@@ -1410,7 +1414,8 @@ it uses an open vocabulary approach that allowing discovery of unanticipated&amp
 &lt;li&gt;
 &lt;p&gt;Correlation&amp;nbsp;analysis&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Least Squares Linear&amp;nbsp;Regression   &lt;/li&gt;
+&lt;li&gt;Least Squares Linear Regression &lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Visualization&lt;ul&gt;
@@ -1471,17 +1476,14 @@ Telegram API的命名是CamelCase (e.g. sendMessage)&lt;br&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;telegram&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;
 
-
 &lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;bot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;telegram&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your API Token&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_webhook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://Your URL/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Webhook setup failed&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
 
 &lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;webhook_handler&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
@@ -1492,7 +1494,6 @@ Telegram API的命名是CamelCase (e.g. sendMessage)&lt;br&gt;
 
         &lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ok&amp;#39;&lt;/span&gt;
-
 
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -1688,7 +1689,8 @@ Flask把request這種幾乎所有view function都會用到的參數直接變成�
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://webpack.github.io"&gt;Webpack&lt;/a&gt;未來可能取代Gulp與grunt&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://babeljs.io"&gt;Babel&lt;/a&gt;: 目前最主流的Javascript Transpiler&lt;ul&gt;
-&lt;li&gt;e.g. 轉換ES6 -&amp;gt; &lt;span class="caps"&gt;ES5&lt;/span&gt;  &lt;/li&gt;
+&lt;li&gt;e.g. 轉換ES6 -&amp;gt; &lt;span class="caps"&gt;ES5&lt;/span&gt;&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;雖然ES6支援模組標準，但瀏覽器尚未有定論，目前前端依然無法支援模組&lt;ul&gt;
@@ -1893,7 +1895,8 @@ tags
 
 &lt;hr&gt;
 &lt;p&gt;當初可是連文件都要寫好，才會被作者接受&lt;br&gt;&amp;nbsp;所以我這裡就直接沿用我當初寫的文件了xd&lt;/p&gt;
-&lt;p&gt;Without option, &lt;code&gt;git ignore-io &amp;lt;type&amp;gt;&lt;/code&gt; shows the sample gitignore of specified types on&amp;nbsp;screen.  &lt;/p&gt;
+&lt;p&gt;Without option, &lt;code&gt;git ignore-io &amp;lt;type&amp;gt;&lt;/code&gt; shows the sample gitignore of specified types on screen.&lt;br&gt;
+&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git ignore-io vim
 
     &lt;span class="c1"&gt;# Created by https://www.gitignore.io/api/vim&lt;/span&gt;
@@ -1908,7 +1911,8 @@ tags
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;To export it to &lt;code&gt;.gitignore&lt;/code&gt; file you can use the following&amp;nbsp;options:  &lt;/p&gt;
+&lt;p&gt;To export it to &lt;code&gt;.gitignore&lt;/code&gt; file you can use the following options:&lt;br&gt;
+&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;-a&lt;/code&gt; or &lt;code&gt;--append&lt;/code&gt; to append the result to &lt;code&gt;.gitignore&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-r&lt;/code&gt; or &lt;code&gt;--replace&lt;/code&gt; to export &lt;code&gt;.gitignore&lt;/code&gt; with the&amp;nbsp;result&lt;/li&gt;
@@ -1996,7 +2000,8 @@ To list all the available&amp;nbsp;types:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;真心話練習腳本&amp;nbsp;（一個範本，讓你可以帶入各種角色、事件，對你或其他人說） &lt;/li&gt;
-&lt;li&gt;不一定會有的額外補充  &lt;/li&gt;
+&lt;li&gt;不一定會有的額外補充&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2&gt;&lt;a name='0'&gt;&lt;/a&gt;前言 -&amp;nbsp;你訂下什麼目標&lt;/h2&gt;
@@ -2193,12 +2198,14 @@ To list all the available&amp;nbsp;types:&lt;/p&gt;
 所以我重新檢視了我的計劃和每天要達成的習慣&lt;br&gt;
 哪些是真的重要的&lt;br&gt;&amp;nbsp;這些事又要怎麼拆解才能不會讓我太費力，或只要多花一點力，不會很容易半途而廢的&lt;/p&gt;
 &lt;p&gt;這些只是我嘗試覺得有用的方法&lt;br&gt;
-不見得適用於每個人&lt;br&gt;&amp;nbsp;不過也許都能去嘗試看看，相信總會有一些有幫助的部分&lt;/p&gt;</content><category term="Productivity"></category></entry><entry><title>More than Just Echo Bot</title><link href="http://lee-w.github.io/posts/bot/2016/11/more-than-just-echo-bot" rel="alternate"></link><published>2016-11-29T01:57:00+08:00</published><updated>2016-11-29T01:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-29:/posts/bot/2016/11/more-than-just-echo-bot</id><summary type="html">&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
+不見得適用於每個人&lt;br&gt;&amp;nbsp;不過也許都能去嘗試看看，相信總會有一些有幫助的部分&lt;/p&gt;</content><category term="Productivity"></category></entry><entry><title>More than Just Echo Bot</title><link href="http://lee-w.github.io/posts/bot/2016/11/more-than-just-echo-bot" rel="alternate"></link><published>2016-11-29T01:57:00+08:00</published><updated>2016-11-29T01:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-29:/posts/bot/2016/11/more-than-just-echo-bot</id><summary type="html">&lt;hr&gt;
+&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
 再來就要思考，開發一個Bot我們要提供什麼功能&lt;br&gt;
 (e.g. 天氣查詢, 訂票,&amp;nbsp;推薦旅遊景點)&lt;/p&gt;
 &lt;p&gt;不過這裡要討論的不是Bot的功能&lt;br&gt;&amp;nbsp;Bot的功能實作，跟一般網站或App的實作並沒有太大的差別&lt;/p&gt;
 &lt;p&gt;接下來來談如何從使用者說的話來判斷，使用者要使用的功能&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
+</summary><content type="html">&lt;hr&gt;
+&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
 再來就要思考，開發一個Bot我們要提供什麼功能&lt;br&gt;
 (e.g. 天氣查詢, 訂票,&amp;nbsp;推薦旅遊景點)&lt;/p&gt;
 &lt;p&gt;不過這裡要討論的不是Bot的功能&lt;br&gt;&amp;nbsp;Bot的功能實作，跟一般網站或App的實作並沒有太大的差別&lt;/p&gt;
@@ -2373,7 +2380,8 @@ Mary Johnson at 12 pm tomorrow.
 &lt;p&gt;不過這些服務，通常會有它的限制&lt;br&gt;&amp;nbsp;這時候就能用上Python強大的函式庫們，來實作自己的版本&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.nltk.org"&gt;&lt;span class="caps"&gt;NLTK&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;Python經典的NLP函式庫  &lt;/li&gt;
+&lt;li&gt;Python經典的NLP函式庫&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://radimrehurek.com/gensim/"&gt;word2vec&lt;/a&gt;&lt;ul&gt;
@@ -2699,7 +2707,6 @@ python3 manage.py startapp echobot
 &lt;p&gt;有兩種方法可以處理Line Server送過來的訊息&lt;br&gt;&amp;nbsp;這裡先用Todo記著，待會再來補上&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# TODO: Define Receiver&lt;/span&gt;
 
-
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -2837,7 +2844,6 @@ e.g.&lt;br&gt;
 &lt;span class="n"&gt;line_bot_api&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LineBotApi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_ACCESS_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebhookParser&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -2882,14 +2888,12 @@ e.g.&lt;br&gt;
 &lt;span class="n"&gt;line_bot_api&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LineBotApi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_ACCESS_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;handler&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebhookHandler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-
 &lt;span class="nd"&gt;@handler.add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MessageEvent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;TextMessage&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;handle_text_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;line_bot_api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
         &lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_token&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
         &lt;span class="n"&gt;TextSendMessage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="p"&gt;)&lt;/span&gt;
-
 
 &lt;span class="nd"&gt;@handler.default&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;default&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -2898,7 +2902,6 @@ e.g.&lt;br&gt;
         &lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_token&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
         &lt;span class="n"&gt;TextSendMessage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Currently Not Support None Text Message&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="p"&gt;)&lt;/span&gt;
-
 
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -3759,7 +3762,8 @@ touch REAMDE.mdd
 &lt;p&gt;There are three main stages&lt;br&gt;
 1. working&lt;br&gt;
 2. staging&lt;br&gt;
-3.&amp;nbsp;repo  &lt;/p&gt;
+3. repo&lt;br&gt;
+&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -3802,7 +3806,8 @@ git status
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Now this file is in staging&amp;nbsp;area  &lt;/p&gt;
+&lt;p&gt;Now this file is in staging area&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;So, how to go back to history?&lt;br&gt;
 &lt;code&gt;git reset REAMDE.md&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Take a look at our history&lt;br&gt;
@@ -3811,7 +3816,8 @@ git status
 &lt;code&gt;git checkout "SHA1"&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git checkout master&lt;/code&gt;&lt;br&gt;
 Everything comes&amp;nbsp;back&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;master&lt;/code&gt; is the default branch name of git. It is a default word but not&amp;nbsp;reserved.  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;master&lt;/code&gt; is the default branch name of git. It is a default word but not reserved.&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git checkout -b "branch_name"&lt;/code&gt; create a branch and checkout to&amp;nbsp;it&lt;/p&gt;
 &lt;h2&gt;diff&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git diff&lt;/code&gt;: View the difference between working and&amp;nbsp;staging&lt;/p&gt;
@@ -3819,8 +3825,10 @@ Everything comes&amp;nbsp;back&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git diff "SHA1"&lt;/code&gt;: Difference between current version and &lt;span class="caps"&gt;SHA1&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git diff master~1&lt;/code&gt;: difference between current and the one before master&lt;br&gt;
 &lt;code&gt;git diff master^&lt;/code&gt; -&amp;gt; master~1&lt;br&gt;
-&lt;code&gt;git diff master^^&lt;/code&gt; -&amp;gt;&amp;nbsp;master~2  &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git diff a b&lt;/code&gt;: Show the change from a to&amp;nbsp;b  &lt;/p&gt;
+&lt;code&gt;git diff master^^&lt;/code&gt; -&amp;gt; master~2&lt;br&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git diff a b&lt;/code&gt;: Show the change from a to b&lt;br&gt;
+&lt;/p&gt;
 &lt;h2&gt;branch&lt;/h2&gt;
 &lt;p&gt;In git, branch is not copy. It&amp;#8217;s like bookmark&lt;br&gt;
 Actually &lt;code&gt;git branch -d "name"&lt;/code&gt; just delete the pointer but not the&amp;nbsp;entry.&lt;/p&gt;
@@ -3829,7 +3837,8 @@ Actually &lt;code&gt;git branch -d "name"&lt;/code&gt; just delete the pointer b
 &lt;p&gt;If you go back to a entry not in certain branch, a detach error might occur.&lt;br&gt;
 For example, checkout to a commit that is parent of more than one branch and then append a new commit to it.&lt;br&gt;
 In such case, this new appended commit might not be able to be referenced.&lt;br&gt;
-&lt;em&gt;The solution to this problem is to create a new branch for&amp;nbsp;it.&lt;/em&gt;  &lt;/p&gt;
+&lt;em&gt;The solution to this problem is to create a new branch for it.&lt;/em&gt;&lt;br&gt;
+&lt;/p&gt;
 &lt;h2&gt;log&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git log --decorate&lt;/code&gt;: Show also branch&amp;nbsp;info&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git log --all&lt;/code&gt;: Show all&amp;nbsp;branch&lt;/p&gt;
@@ -3843,7 +3852,8 @@ In such case, this new appended commit might not be able to be referenced.&lt;br
 &lt;p&gt;&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;br&gt;
 - upload &lt;em&gt;master&lt;/em&gt; to &lt;em&gt;origin&lt;/em&gt;&lt;br&gt;
 - -u tell git the default url to push for that branch(master) is origin, it would also make &lt;code&gt;git pull&lt;/code&gt; remember&lt;br&gt;
-    - Do -u and after that you can just use &lt;code&gt;git push&lt;/code&gt;  &lt;/p&gt;
+    - Do -u and after that you can just use &lt;code&gt;git push&lt;/code&gt;&lt;br&gt;
+&lt;/p&gt;
 &lt;h2&gt;pull&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git push --all&lt;/code&gt;: push all branch&lt;br&gt;
 &lt;code&gt;git pull --prune&lt;/code&gt;&lt;/p&gt;
@@ -3853,22 +3863,28 @@ git pull -&amp;gt; fetch +&amp;nbsp;merge&lt;/p&gt;
 &lt;h2&gt;on-site&lt;/h2&gt;
 &lt;p&gt;pull request on GitHub&lt;br&gt;
 &lt;code&gt;@person-name&lt;/code&gt; -&amp;gt; notification&lt;br&gt;
-Have a conversation with the whole&amp;nbsp;team  &lt;/p&gt;
+Have a conversation with the whole team&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;Write &amp;#8220;fix #2 &amp;#8230;.&amp;#8221; in git commit -&amp;gt; special meaning -&amp;gt; specify the bug in issue on GitHub&lt;br&gt;
 Wiki -&amp;gt;&amp;nbsp;documentation&lt;/p&gt;
 &lt;h1&gt;How to write a good git&amp;nbsp;commit&lt;/h1&gt;
 &lt;h2&gt;Principle&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Separate each&amp;nbsp;commit&lt;/li&gt;
-&lt;li&gt;Let the commit tell a&amp;nbsp;story  &lt;/li&gt;
+&lt;li&gt;Let the commit tell a story&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;More&amp;nbsp;specific&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;One line 80&amp;nbsp;character  &lt;/li&gt;
-&lt;li&gt;Use present tense instead of past&amp;nbsp;tense  &lt;/li&gt;
-&lt;li&gt;Don&amp;#8217;t repeat what can be found in &lt;code&gt;git diff&lt;/code&gt;  &lt;/li&gt;
+&lt;li&gt;One line 80 character&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;Use present tense instead of past tense&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;Don&amp;#8217;t repeat what can be found in &lt;code&gt;git diff&lt;/code&gt;&lt;br&gt;
+&lt;/li&gt;
 &lt;li&gt;If more detail is to be written, left the second line to be&amp;nbsp;blank.&lt;/li&gt;
-&lt;li&gt;Write more detail about why this change happened after the third&amp;nbsp;line.  &lt;/li&gt;
+&lt;li&gt;Write more detail about why this change happened after the third line.&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Other&amp;nbsp;issue&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;git config --global -e&lt;/code&gt;: Edit your .gitconfig&amp;nbsp;file.&lt;/p&gt;
@@ -3939,7 +3955,8 @@ If it&amp;#8217;s needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/
 &lt;li&gt;試著總是把明天排成令人期待的日子&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Ch3-2&amp;nbsp;自己的行動方式&lt;/h2&gt;
-&lt;p&gt;如何將To-Do迅速地付諸行動  &lt;/p&gt;
+&lt;p&gt;如何將To-Do迅速地付諸行動&lt;br&gt;
+&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;~~不得不做，只好做了~~&lt;ul&gt;
 &lt;li&gt;長久以來內心會累&lt;/li&gt;
@@ -4066,7 +4083,8 @@ If it&amp;#8217;s needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/
 &lt;/ul&gt;
 &lt;h2&gt;Ch4&amp;nbsp;策略的試金石&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;個人的誘因跟公司長遠目標衝突，是常見的現象  &lt;ul&gt;
+&lt;li&gt;個人的誘因跟公司長遠目標衝突，是常見的現象&lt;br&gt;
+&lt;ul&gt;
 &lt;li&gt;e.g. 立委任期為四年&lt;ul&gt;
 &lt;li&gt;一個好的國家計劃要五年十年&lt;/li&gt;
 &lt;li&gt;然而要讓自己繼續連任，只有提出短期能有成效的計劃才能達到讓自己連任的目標&lt;/li&gt;
@@ -4100,7 +4118,8 @@ If it&amp;#8217;s needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/
 &lt;h2&gt;Ch6&amp;nbsp;一杯奶昔的任務&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;每一個成功的產品或服務之所以能大受歡迎，是因為這種東西&lt;strong&gt;幫我們完成了不得不做的工作&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;每一個成功的產品或服務之所以能大受歡迎，是因為這種東西&lt;strong&gt;幫我們完成了不得不做的工作&lt;/strong&gt;&lt;br&gt;
+&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果一個人開發出一種有趣的產品，但沒能幫上消費者的忙，這種東西就難以成功&lt;/li&gt;
 &lt;/ul&gt;
@@ -4177,7 +4196,8 @@ e.g.&amp;nbsp;DELL逐步將個人電腦的技術包給華碩，最後華碩自�
 &lt;li&gt;
 &lt;p&gt;Assumption&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Influence is exclusive (Once a node is influenced by one party, it will not be influenced&amp;nbsp;again)      &lt;/li&gt;
+&lt;li&gt;Influence is exclusive (Once a node is influenced by one party, it will not be influenced again)    &lt;br&gt;
+&lt;/li&gt;
 &lt;li&gt;Each round all parties choose one node and then the influence propagates before the next round&amp;nbsp;starts&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -4196,7 +4216,8 @@ e.g.&amp;nbsp;DELL逐步將個人電腦的技術包給華碩，最後華碩自�
 &lt;ol&gt;
 &lt;li&gt;Known strategy -&amp;gt; Both know and unknown&lt;ul&gt;
 &lt;li&gt;Known or Unknown but available to compete -&amp;gt; Train a model to learn&amp;nbsp;strategy&lt;/li&gt;
-&lt;li&gt;Unknown -&amp;gt; Game-theoretical solution to seek the Nash&amp;nbsp;equilibrium     &lt;/li&gt;
+&lt;li&gt;Unknown -&amp;gt; Game-theoretical solution to seek the Nash equilibrium   &lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Single-roung -&amp;gt;&amp;nbsp;Multi-round&lt;/li&gt;
@@ -4224,7 +4245,7 @@ e.g.&amp;nbsp;DELL逐步將個人電腦的技術包給華碩，最後華碩自�
 &lt;h3&gt;4.1 Preliminary: Reinforcement&amp;nbsp;Learning&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Learn a policy &lt;span class="math"&gt;\(\pi(s)\)&lt;/span&gt; to determine which action to take state s&amp;nbsp;(environment)&lt;/li&gt;
-&lt;li&gt;How to estimated &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;?&lt;ul&gt;
+&lt;li&gt;How to estimated &lt;span class="math"&gt;(\pi)&lt;/span&gt;?&lt;ul&gt;
 &lt;li&gt;Expected Accmulated Reward of a state (V function)&lt;ul&gt;
 &lt;li&gt;&lt;span class="math"&gt;\( V^\pi(s) =&amp;nbsp;E_\pi\{R_t|S_t=s\}=...\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -4343,7 +4364,7 @@ These data can be used to learn the value&amp;nbsp;functions&lt;/p&gt;
 &lt;li&gt;Q-Learning: &lt;span class="math"&gt;\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t,&amp;nbsp;a_t))\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(\epsilon\)&lt;/span&gt;-greedy&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;(\epsilon)&lt;/span&gt;-greedy&lt;ul&gt;
 &lt;li&gt;Determine strategies on the current policy derived from&amp;nbsp;Q-table.&lt;/li&gt;
 &lt;li&gt;Explore the new directions to avoid local&amp;nbsp;optimum&lt;/li&gt;
 &lt;/ul&gt;
@@ -4509,8 +4530,10 @@ These data can be used to learn the value&amp;nbsp;functions&lt;/p&gt;
 我到的時候就差不多在&lt;a href="https://www.youtube.com/watch?v=WZMPEVGUpgg&amp;amp;t=29m50s"&gt;live demo&lt;/a&gt;了&lt;br&gt;&amp;nbsp;算是剛好沒錯過精彩的部份XD&lt;/p&gt;
 &lt;h2&gt;商業公司如何建立開發者生態系統&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;span class="caps"&gt;B2D&lt;/span&gt;(Business to&amp;nbsp;Developere)  &lt;/li&gt;
-&lt;li&gt;Open Source跟Open &lt;span class="caps"&gt;API&lt;/span&gt;，對於商業公司來說有什麼價值  &lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;B2D&lt;/span&gt;(Business to Developere)&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;Open Source跟Open &lt;span class="caps"&gt;API&lt;/span&gt;，對於商業公司來說有什麼價值&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -4722,7 +4745,8 @@ After several and long discussions with a lot of people, we have arrived to the 
 &lt;/li&gt;
 &lt;li&gt;飲食應該挑選熱量燃燒慢的食物&lt;ul&gt;
 &lt;li&gt;升糖指數高的食物（e.g.&amp;nbsp;白麵包、馬鈴薯、白飯、零食）會產生大起大落的循環&lt;/li&gt;
-&lt;li&gt;想維持穩定的自制力，應該吃蔬菜、堅果、水果、起司、魚類、肉類、橄欖油這類的升糖指數低的食物  &lt;/li&gt;
+&lt;li&gt;想維持穩定的自制力，應該吃蔬菜、堅果、水果、起司、魚類、肉類、橄欖油這類的升糖指數低的食物&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;累了就睡覺&lt;ul&gt;
@@ -4747,7 +4771,8 @@ After several and long discussions with a lot of people, we have arrived to the 
 &lt;/ul&gt;
 &lt;h2&gt;Ch5 -&amp;nbsp;錢都花到哪去了？&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;遠視：太過擔心未來，而損及眼前的生活。   &lt;ul&gt;
+&lt;li&gt;遠視：太過擔心未來，而損及眼前的生活。 &lt;br&gt;
+&lt;ul&gt;
 &lt;li&gt;這樣的吝嗇心態會讓人花更多時間、與朋友疏離、讓家人抓狂也讓自己痛苦&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -5538,7 +5563,8 @@ jupyter console --kernel=ir
 &lt;/li&gt;
 &lt;li&gt;咖啡因要三十分鐘後才會產生效果，在此之前請不要再喝，否則再感受到它的助益前，會先感受到它導致的焦慮&lt;ul&gt;
 &lt;li&gt;即使在你很累的時候，也只應該攝取正常的量&lt;/li&gt;
-&lt;li&gt;如果咖啡因沒辦法提升你的注意力，喝再多可能也沒用，請考慮小睡一下  &lt;/li&gt;
+&lt;li&gt;如果咖啡因沒辦法提升你的注意力，喝再多可能也沒用，請考慮小睡一下&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -5549,7 +5575,8 @@ jupyter console --kernel=ir
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;桌邊的雜亂會影響專注力&lt;ul&gt;
-&lt;li&gt;因為桌上的那些東西都會使你分心   &lt;/li&gt;
+&lt;li&gt;因為桌上的那些東西都會使你分心 &lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -5575,7 +5602,9 @@ jupyter console --kernel=ir
 &lt;ul&gt;
 &lt;li&gt;跳脫慣有的節奏，到國外旅行、新運動、體驗新活動，創新就是從這些地方開始的&lt;/li&gt;
 &lt;li&gt;不管藝術、科學或商業，靈感通常來自&lt;strong&gt;親身體驗&lt;/strong&gt;&lt;br&gt;
-  即使是網路時代，地理位置依然重要&lt;br&gt;&amp;nbsp;這就是為什麼高科技發源地是矽谷不是康乃狄克州  &lt;/li&gt;
+  即使是網路時代，地理位置依然重要&lt;br&gt;
+  這就是為什麼高科技發源地是矽谷不是康乃狄克州&lt;br&gt;
+&lt;/li&gt;
 &lt;li&gt;「當個左撇子」哲學：&amp;nbsp;我們應該關懷消費者的需要，即使是習慣不同於一般人的消費者&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;完美的動腦會議&lt;/h2&gt;
@@ -5617,7 +5646,9 @@ jupyter console --kernel=ir
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;每個人都應該有表演的機會，每個人的立足點是平等的，然後接受各種挫折的機會&lt;br&gt;&amp;nbsp;IDEO通常會讓新人在新專案中擔任吃重的角色，甚至負責整個專案  &lt;/p&gt;
+&lt;p&gt;每個人都應該有表演的機會，每個人的立足點是平等的，然後接受各種挫折的機會&lt;br&gt;
+  IDEO通常會讓新人在新專案中擔任吃重的角色，甚至負責整個專案&lt;br&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;原型製造是創新的捷徑&lt;/h2&gt;
@@ -5642,7 +5673,9 @@ jupyter console --kernel=ir
 &lt;!--more--&gt;
 
 &lt;h2&gt;定錨(anchoring)&lt;/h2&gt;
-&lt;p&gt;Steve Jobs在推出iPad的時候說「我們應該給他設定何種價格？如果你聽信自以為聰明的人，我們會把它的價格訂在1000美元以下」&lt;br&gt;&amp;nbsp;螢幕出現了999，然後「我很高興地向大家宣佈，iPad的起價不是999美元，而是只要499美元」  &lt;/p&gt;
+&lt;p&gt;Steve Jobs在推出iPad的時候說「我們應該給他設定何種價格？如果你聽信自以為聰明的人，我們會把它的價格訂在1000美元以下」&lt;br&gt;
+螢幕出現了999，然後「我很高興地向大家宣佈，iPad的起價不是999美元，而是只要499美元」&lt;br&gt;
+&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;這麼做降低了知覺成本，因為已經被一開始的999給定錨了。第二次的價格就會被拿來跟第一次的錨比較&lt;/li&gt;
 &lt;li&gt;另外，他沒有拿來跟筆電比較，維護了產品的獨特性，也不減少筆電的行銷&lt;/li&gt;
@@ -5651,7 +5684,8 @@ jupyter console --kernel=ir
 &lt;p&gt;下面三種，哪種會最多人訂閱？&lt;br&gt;
 1. 電子版       59.00美元&lt;br&gt;
 2. 紙本       125.00美元 &lt;br&gt;
-3. 紙本+電子版&amp;nbsp;125.00美元  &lt;/p&gt;
+3. 紙本+電子版 125.00美元&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;答案是「紙本+電子報」，紙本則不被考慮&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;那下面兩種呢？&lt;br&gt;
 1. 電子版      59.00美元&lt;br&gt;
@@ -5780,7 +5814,8 @@ jupyter console --kernel=ir
 &lt;h2&gt;扭轉習慣的黃金律&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;沿用相同的提示訊號和獎籌，加入新的慣性行為  &lt;/p&gt;
+&lt;p&gt;沿用相同的提示訊號和獎籌，加入新的慣性行為&lt;br&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;改變舊習，和培養新習慣不同&lt;br&gt;&amp;nbsp;必須同時顧及根深柢固的舊渴望&lt;/p&gt;
@@ -5791,8 +5826,10 @@ jupyter console --kernel=ir
 &lt;/ul&gt;
 &lt;h3&gt;Example&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;假設你想戒掉上班吃點心的習慣  &lt;ul&gt;
-&lt;li&gt;你是為了什麼吃點心？  &lt;ul&gt;
+&lt;li&gt;假設你想戒掉上班吃點心的習慣&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;你是為了什麼吃點心？&lt;br&gt;
+&lt;ul&gt;
 &lt;li&gt;為了消除飢餓？&lt;/li&gt;
 &lt;li&gt;為了擺脫無聊？&lt;/li&gt;
 &lt;li&gt;或只是短暫放鬆?&lt;/li&gt;
@@ -6136,7 +6173,9 @@ Python2上面是另一個也被jupyter notebook支援的語言julia&lt;br&gt;&am
   為自己預算下一年的時間要怎麼分配，並研擬為自我投資計畫&lt;br&gt;&amp;nbsp;試著在大腦裡描繪一年後自己的模樣&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;讀完每天的報紙後，提出五個疑問&lt;br&gt;&amp;nbsp;接著提出自己可以運用怎樣的方式、進行怎樣的調查，是否可以提出完成度更高的報導內容     &lt;/p&gt;
+&lt;p&gt;讀完每天的報紙後，提出五個疑問&lt;br&gt;
+   接著提出自己可以運用怎樣的方式、進行怎樣的調查，是否可以提出完成度更高的報導內容   &lt;br&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;</content><category term="Thinking"></category></entry><entry><title>[Book] 創新是一種態度</title><link href="http://lee-w.github.io/posts/book/2015/10/innovation-is-an-attitude" rel="alternate"></link><published>2015-10-06T12:04:00+08:00</published><updated>2015-10-06T12:04:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-10-06:/posts/book/2015/10/innovation-is-an-attitude</id><summary type="html">&lt;p&gt;&lt;img alt="innovation-is-an-attitude" src="http://pic.eslite.com/Upload/Product/201506/m/635689172041107500.jpg"&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="innovation-is-an-attitude" src="http://pic.eslite.com/Upload/Product/201506/m/635689172041107500.jpg"&gt;&lt;/p&gt;
@@ -6195,7 +6234,8 @@ Python2上面是另一個也被jupyter notebook支援的語言julia&lt;br&gt;&am
 &lt;li&gt;「誰的錯」 -&amp;gt;&amp;nbsp;「我們的制度有甚麼問題」 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;曾有一個故事，IBM一個經理人犯了重大錯誤，賠了公司兩百萬美金，他慚愧的像老闆辭職。老闆拍桌大罵:「你這個人做事怎麼這麼沒責任感」還沒等他開口說自己是辭職以示負責，老闆就說「我們才花了兩百萬幫你上了一課，你現在就想跑」  &lt;/li&gt;
+&lt;li&gt;曾有一個故事，IBM一個經理人犯了重大錯誤，賠了公司兩百萬美金，他慚愧的像老闆辭職。老闆拍桌大罵:「你這個人做事怎麼這麼沒責任感」還沒等他開口說自己是辭職以示負責，老闆就說「我們才花了兩百萬幫你上了一課，你現在就想跑」&lt;br&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;機會成本，才是公司最大的成本&lt;/h2&gt;
 &lt;ul&gt;
@@ -6382,7 +6422,8 @@ Complementary skills and alike interests would be&amp;nbsp;good.&lt;/p&gt;
 &lt;h4&gt;Q: Education problems. How about the flip classroom or &lt;span class="caps"&gt;MOOCS&lt;/span&gt;?&lt;/h4&gt;
 &lt;p&gt;It&amp;#8217;s education bubble.&lt;br&gt;
 Peter cannot give an ultimate way to replace the university system.&lt;br&gt;
-The suggestion is that don&amp;#8217;t get up the same or similar&amp;nbsp;track.  &lt;/p&gt;
+The suggestion is that don&amp;#8217;t get up the same or similar track.&lt;br&gt;
+&lt;/p&gt;
 &lt;p&gt;What makes education bubbles is that everyone treats university as church or religion.&lt;br&gt;
 If you don&amp;#8217;t go into a college, your life would ruin.&lt;br&gt;
 Such thought is the main&amp;nbsp;problem.&lt;/p&gt;
@@ -6543,7 +6584,9 @@ sudo rm gi_extension.sh /usr/bin/gi
 將原本&lt;code&gt;gi list&lt;/code&gt;的output，儲存到&lt;code&gt;~/.gi_list&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;顯示支援類型&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;以表格的方式輸出支援的類型&lt;br&gt;&amp;nbsp;目前設定一個row容納5個column，每個column長度為25  &lt;/li&gt;
+&lt;li&gt;以表格的方式輸出支援的類型&lt;br&gt;
+目前設定一個row容納5個column，每個column長度為25&lt;br&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -l
 &lt;/pre&gt;&lt;/div&gt;
@@ -6864,7 +6907,8 @@ git push -u gitbook
 &lt;li&gt;要精確而完整的描述&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;執行過程中的指示  &lt;ul&gt;
+&lt;li&gt;執行過程中的指示&lt;br&gt;
+&lt;ul&gt;
 &lt;li&gt;包括運行正常時，或因異常而終止時，在控制台或任何輸出裝置上應該要看得到的任何提示&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;

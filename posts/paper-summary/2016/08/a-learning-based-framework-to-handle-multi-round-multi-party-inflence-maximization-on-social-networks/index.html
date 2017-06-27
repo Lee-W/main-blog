@@ -134,7 +134,8 @@
 <li>
 <p>Assumption</p>
 <ul>
-<li>Influence is exclusive (Once a node is influenced by one party, it will not be influenced&nbsp;again)      </li>
+<li>Influence is exclusive (Once a node is influenced by one party, it will not be influenced again)    <br>
+</li>
 <li>Each round all parties choose one node and then the influence propagates before the next round&nbsp;starts</li>
 </ul>
 </li>
@@ -153,7 +154,8 @@
 <ol>
 <li>Known strategy -&gt; Both know and unknown<ul>
 <li>Known or Unknown but available to compete -&gt; Train a model to learn&nbsp;strategy</li>
-<li>Unknown -&gt; Game-theoretical solution to seek the Nash&nbsp;equilibrium     </li>
+<li>Unknown -&gt; Game-theoretical solution to seek the Nash equilibrium   <br>
+</li>
 </ul>
 </li>
 <li>Single-roung -&gt;&nbsp;Multi-round</li>
@@ -181,7 +183,7 @@
 <h3>4.1 Preliminary: Reinforcement&nbsp;Learning</h3>
 <ul>
 <li>Learn a policy <span class="math">\(\pi(s)\)</span> to determine which action to take state s&nbsp;(environment)</li>
-<li>How to estimated <span class="math">\(\pi\)</span>?<ul>
+<li>How to estimated <span class="math">(\pi)</span>?<ul>
 <li>Expected Accmulated Reward of a state (V function)<ul>
 <li><span class="math">\( V^\pi(s) =&nbsp;E_\pi\{R_t|S_t=s\}=...\)</span></li>
 </ul>
@@ -300,7 +302,7 @@ These data can be used to learn the value&nbsp;functions</p>
 <li>Q-Learning: <span class="math">\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t,&nbsp;a_t))\)</span></li>
 </ul>
 </li>
-<li><span class="math">\(\epsilon\)</span>-greedy<ul>
+<li><span class="math">(\epsilon)</span>-greedy<ul>
 <li>Determine strategies on the current policy derived from&nbsp;Q-table.</li>
 <li>Explore the new directions to avoid local&nbsp;optimum</li>
 </ul>
