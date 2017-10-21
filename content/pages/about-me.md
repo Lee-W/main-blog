@@ -36,7 +36,11 @@ National Cheng Kung University, Tainan
 
 
 ## Experience
-[2015-2016]
+[Apr 2017 - Present]
+**Independent Contractor, Slice Technologies, Inc**
+- Software Development
+
+[July 2015 - July 2016]
 **Substitute Military Service, K-12 Education Administration, Ministry of Education**
 
 -  System Maintenance
