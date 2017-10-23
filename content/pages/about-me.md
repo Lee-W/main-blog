@@ -38,6 +38,7 @@ National Cheng Kung University, Tainan
 ## Experience
 [Apr 2017 - Present]
 **Independent Contractor, Slice Technologies, Inc**
+
 - Software Development
 
 [July 2015 - July 2016]
