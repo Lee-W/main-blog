@@ -3,19 +3,19 @@ Date: 2017-02-14 12:30
 Modified: 2017-06-22 22:53
 
 
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 
 Hi, this is Lee Wei
 
 I'm a
   
-<i class="fa fa-lg fa-terminal" style="padding-right:1em"></i> Python Programmer
-<i class="fa fa-lg fa-book" style="padding-right:1em"></i> Reader
-<a href="https://www.flickr.com/photos/10280407@N02/" target="_blank" title="Flickr" style="color:gray; text-decoration: none;"><i class="fa fa-lg fa-camera" style="padding-right:1em"></i>Traveler</a>
-<i class="fa fa-lg fa-music" style="padding-right:1em"></i> Ukulele Player
-<i class="fa fa-lg fa-lock" style="padding-right:1.4em"></i> Locker
-<i class="fa fa-lg fa-rebel" style="padding-right:1em"></i> Star Wars Fan
+<i class="fab fa-2x fa-python"></i> Python Programmer
+<i class="fas fa-2x fa-book"></i> Reader
+<a href="https://www.flickr.com/photos/10280407@N02/" target="_blank" title="Flickr" style="color:gray; text-decoration: none;"><i class="fas fa-2x fa-camera"></i> Traveler</a>
+<i class="fas fa-2x fa-music"></i> Ukulele Player
+<i class="fas fa-2x fa-lock"></i> Locker
+<i class="fab fa-2x fa-rebel"></i> Star Wars Fan
 
 As a programmer, I focus on web backend development.  
 Currently using flask, but also have some django experience.
