@@ -3,9 +3,6 @@ Date: 2017-02-14 12:30
 Modified: 2017-06-22 22:53
 
 
-<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-
-
 Hi, this is Lee Wei
 
 I'm a
