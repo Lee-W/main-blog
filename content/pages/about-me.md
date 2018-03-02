@@ -44,13 +44,6 @@ National Cheng Kung University, Tainan
 -  System Maintenance
 -  Automation Program Development
 
-## Publication
-1. Wei Lee, Chien-Wei Chang, Po-An Yang, Chi-Hsuan Huang, Ming-Kuang Wu, Chu-Cheng Hsieh, Kun-Ta Chuang "Effective Quality Assurance for Data Labels through Crowdsourcing and Domain Expert Collaboration" 21st International Conference on Extending Database Technology, Demo Track (EDBT-2018)
-2. I-Lin Wang, Wei Lee,  Chiao-Yu Liao "Effective Heuristics for Scheduling Hump and Pullback Engines in Railroad Yard Operational Plans" Proceedings of the 10th Annual Conference of the Operations Research Society at Taiwan (ORSTW 2013)
-
-## Award
-- Honorable Mention, 2013 Railway Application Section Problem Solving Competition
-
 ## Talk
 [2017/01/22]
 [資管講座 (一場工資管營的演講)](https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang)
@@ -65,6 +58,12 @@ National Cheng Kung University, Tainan
 [2018/02/27]
 [Intro to Python Data Science Tools](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools)
 
+## Award
+- Honorable Mention, 2013 Railway Application Section Problem Solving Competition
+
+## Publication
+1. Wei Lee, Chien-Wei Chang, Po-An Yang, Chi-Hsuan Huang, Ming-Kuang Wu, Chu-Cheng Hsieh, Kun-Ta Chuang "Effective Quality Assurance for Data Labels through Crowdsourcing and Domain Expert Collaboration" 21st International Conference on Extending Database Technology, Demo Track (EDBT-2018)
+2. I-Lin Wang, Wei Lee,  Chiao-Yu Liao "Effective Heuristics for Scheduling Hump and Pullback Engines in Railroad Yard Operational Plans" Proceedings of the 10th Annual Conference of the Operations Research Society at Taiwan (ORSTW 2013)
 
 ## Projects
 #### Chat Bot
