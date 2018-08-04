@@ -46,7 +46,7 @@ e.g. 預約餐廳
 5. 服務提供者Server收到後，再傳給User的帳號
 
 e.g. Line Chat Bot 架構
-![Line Chat Bot Architect](https://developers.line.me/wp-content/uploads/2016/09/bottrial-fig1.png)
+![Line Chat Bot Architect](https://developers.line.me/media/messaging-api/overview/messaging-api-architecture-ee0356bd.png)
 
 
 ## Why Chat Bot?
