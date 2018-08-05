@@ -92,7 +92,7 @@ National Cheng Kung University, Tainan
 #### Other
 - [SITW 二手網](http://sitw-trade.herokuapp.com) (Backend Development)
 
-## Tutoiral or Note
+## Tutoiral or Study Note
 #### Slide
 - [Git Tutorial](https://github.com/Lee-W/git-tutorial)
     - Sample: [Git-Tutorial-Sample](https://github.com/Lee-W/Git-Tutorial-Sample)
