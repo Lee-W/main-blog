@@ -16,22 +16,11 @@ I'm a
 
 As a programmer, I focus on web backend development.  
 Currently using flask, but also have some django experience.  
+As a programmer, I'm familiar with web backend development but open to any opportunities.
 
 <a href="{filename}/static/resume.pdf"><button type="button" class="btn btn-default">Resume</button></a>
 
 ----
-
-## Education
-[2016-2018 (Expected)]
-**Master, Computer Science and Information Engineering**
-National Cheng Kung University, Tainan
-
-[2011-2015]
-**Bachelor, Industrial and Information Management**
-**Double Major: Computer Science and Information Engineering**
-National Cheng Kung University, Tainan
-
-
 ## Experience
 [Apr 2017 - Present]
 **Independent Contractor, Slice Technologies, Inc**
@@ -44,19 +33,40 @@ National Cheng Kung University, Tainan
 -  System Maintenance
 -  Automation Program Development
 
+## Education
+[2016-2018 (Expected)]
+**Master, Computer Science and Information Engineering**
+National Cheng Kung University, Tainan
+
+[2011-2015]
+**Bachelor, Industrial and Information Management**
+**Double Major: Computer Science and Information Engineering**
+National Cheng Kung University, Tainan
+
+
+
 ## Talk
+[2018/8/16]
+X-Village - Web Course
+[CRUD in Flask](https://speakerdeck.com/leew/x-village-crud-in-flask)
+
+[2018/2/27]
+NCKU CSIE - 資料科學與人工智慧競技
+[Intro to Python Data Science Tools](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools)
+
 [2017/01/22]
+2018成大工資管營
 [資管講座 (一場工資管營的演講)](https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang)
 
 [2016/12/08]
+NCKU CSIE - 知識挖掘與資料工程導論
 [Bot Development](https://hackmd.io/p/HkW8LjRfl)
 
 [2016/11/03]
 深度之夜
 [Keras Demo](https://github.com/Lee-W/Keras-Mnist-Example)
 
-[2018/02/27]
-[Intro to Python Data Science Tools](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools)
+For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-village-crud-in-flask).
 
 ## Award
 - Honorable Mention, 2013 Railway Application Section Problem Solving Competition
