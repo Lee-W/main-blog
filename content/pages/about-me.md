@@ -14,8 +14,6 @@ I'm a
 <i class="fas fa-2x fa-lock"></i> Locker
 <i class="fab fa-2x fa-rebel"></i> Star Wars Fan
 
-As a programmer, I focus on web backend development.  
-Currently using flask, but also have some django experience.  
 As a programmer, I'm familiar with web backend development but open to any opportunities.
 
 <a href="{filename}/static/resume.pdf"><button type="button" class="btn btn-default">Resume</button></a>
