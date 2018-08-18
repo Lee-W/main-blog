@@ -23,6 +23,7 @@ Series: PyCon TW 2017
 
 * [[Keynote] From Little Things, Big Things Grow](#1)
 * [比美麗的湯更美麗：pyquery](#2)
+* [Write Elegant Concurrent Code in Python](#3)
 * enjoy type hinting and its benefits (我很想聽這場，不過還是先跑去聽unconf了xd)
 	* [slide](https://www.slideshare.net/masahitojp/the-benefits-of-type-hintss)
 	* [共筆](https://hackfoldr.org/pycontw2017/https%253A%252F%252Fhackmd.io%252Fs%252FHkqR2Dvkb)

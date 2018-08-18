@@ -18,11 +18,11 @@ I love reading but I forget what I read quickly.
 So I take notes for them.
 
 #### 3. Paper Summary
-Since I'm now a graduate student, I have to read papers and do summarization.
+Since I'm now a graduate student, I read papers and do summarization.
 I think it would be a pity if I share them only with my labmates.
 Thus, I share them with all you guys.
 
 ---
 
-As you can see, I'm certainly not a native English user.
+As you can see, I'm not a native English user.
 If you find any error, please leave a comment below the article or contact me.

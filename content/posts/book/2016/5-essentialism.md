@@ -83,4 +83,4 @@ Weniger aber besser
 
 
 # 心流
-習慣的力量(可以參考[「為什麼我們這樣生活，那樣工作」](http://lee-w-blog.logdown.com/posts/334155-book-why-do-we-live))
+習慣的力量(可以參考[「為什麼我們這樣生活，那樣工作」]({filename}/posts/book/2015/8-the-power-of-habit.md))
