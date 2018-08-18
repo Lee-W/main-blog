@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Thought</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/thought.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2017-02-03T00:53:00+08:00</updated><entry><title>我如何更有效率的使用時間</title><link href="http://lee-w.github.io/posts/thought/2017/02/how-do-i-manage-my-time" rel="alternate"></link><published>2017-02-03T00:53:00+08:00</published><updated>2017-02-03T00:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-03:/posts/thought/2017/02/how-do-i-manage-my-time</id><summary type="html">&lt;p&gt;過年整理了好多以前的書摘&lt;br&gt;&amp;nbsp;好像該來發一點自己的東西了&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - Thought</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/thought.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2018-08-08T14:00:00+08:00</updated><entry><title>X-Village 中場心得和反思</title><link href="http://lee-w.github.io/posts/thought/2018/08/X-Village-in-the-midle" rel="alternate"></link><published>2018-08-08T14:00:00+08:00</published><updated>2018-08-08T14:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-08-08:/posts/thought/2018/08/X-Village-in-the-midle</id><summary type="html">&lt;p&gt;雖然原先想要取個高大上的標題&lt;br&gt;&amp;nbsp;但看來是有點困難xD&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;雖然原先想要取個高大上的標題&lt;br&gt;&amp;nbsp;但看來是有點困難xD&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;沒想到上一篇文已經是一年前的事了&lt;br&gt;
+三個月前去了的EDBT 2018也有些內容要寫，但還沒找出個時間能好好寫文章&lt;br&gt;&amp;nbsp;雖然我只在Lab的Meeting分享了遊玩的心得，我還是有認真聽talk的xD&lt;/p&gt;
+&lt;p&gt;原本打算是整個&lt;a href="https://sites.google.com/view/x-village/"&gt;X-Village&lt;/a&gt;告一個段落再好好的寫一下文章&lt;br&gt;
+不過助教Rain都寫了&lt;a href="https://medium.com/rain-wu/x-village-心得隨筆-de19a4302648"&gt;X-Village 心得隨筆&lt;/a&gt;&lt;br&gt;&amp;nbsp;讓我覺得好像該來寫一篇（？？？？？&lt;/p&gt;
+&lt;p&gt;這篇只是我個人的心得發想，完全不是X-Village的宣傳文&lt;br&gt;
+所以有興趣知道X-Village是什麼的，就自己去&lt;a href="https://www.facebook.com/X-Village-423736361424301/"&gt;X-Village的粉專&lt;/a&gt;看吧xD&lt;/p&gt;
+&lt;h2&gt;為什麼會加入這個計畫&lt;/h2&gt;
+&lt;p&gt;在「程式設計基石」的最後一堂課下午&lt;br&gt;
+我們把原先的進階Python的課程都刪了&lt;br&gt;
+讓大家重新回想這兩個禮拜的課程學到的&lt;br&gt;&amp;nbsp;也重新去思考寫程式這件事&lt;/p&gt;
+&lt;p&gt;又一次的問了大家這些問題&lt;br&gt;
+「為什麼你要參與這門課？&lt;br&gt;
+ 你給自己什麼具體目標？&lt;br&gt;
+ 你打算如何達到上述目標？」&lt;br&gt;
+這是莊老師整個X-Village的最開始給大家的問題&lt;br&gt;
+我們一再的重複利用&lt;br&gt;
+&lt;code&gt;Stop Trying to Reinvent the Wheel&lt;/code&gt;&lt;br&gt;&amp;nbsp;我想這也代表我們真的十足的工程師吧xD&lt;/p&gt;
+&lt;p&gt;接著助教們也被學員反問了同樣的問題&lt;br&gt;
+為什麼要花這麼長的一個暑假，來做這個教學&lt;br&gt;
+大助教杰翰侃侃而談分享了很多&lt;br&gt;
+我印象最深的一句話就是「想來挑戰自己」&lt;br&gt;
+我想我是說不出這種激勵人心的話xD&lt;br&gt;&amp;nbsp;所以我就枚上台跟大家分享了&lt;/p&gt;
+&lt;p&gt;當初我加入的計畫可完全不是現在這樣呢xDD&lt;br&gt;
+原本只是聽說莊老師有想要在暑假教Python&lt;br&gt;
+覺得好像很好玩，就說了我對這件事很有興趣&lt;br&gt;&amp;nbsp;沒有什麼遠大的目標跟理想&lt;/p&gt;
+&lt;p&gt;我想我不是一個對一切都會做好計劃的人&lt;br&gt;&amp;nbsp;而是試著讓自己變成一個遇到各種突發狀況都有籌碼面對的人&lt;/p&gt;
+&lt;p&gt;所以我倒是不會覺得自己被騙進來什麼的&lt;br&gt;&amp;nbsp;反倒是蠻開心的&lt;/p&gt;
+&lt;h2&gt;我擔任的角色&lt;/h2&gt;
+&lt;p&gt;因為原先預期要教Python，我預期我應該是一個站在台上做教學的角色&lt;br&gt;
+即使到了X-Village逐漸成型了一點&lt;br&gt;
+我得到的消息都是還是，核心助教主要負責教學，讓一般助教來支援&lt;br&gt;
+但實際上完全不是這樣呢xD&lt;br&gt;
+在X-Village中，其實我只有在「電腦科學基石」上了一點點Web Backend的課&amp;nbsp;(下禮拜要上課，到現在還沒備完&lt;/p&gt;
+&lt;p&gt;我的角色更像是整個X-Village的規劃和安排&lt;br&gt;
+大概幾乎所有對內的事，都是我、杰翰和啟軒在安排&lt;br&gt;
+原則上除非是大方向、校內行政、對外公關的事，不然我都盡量要求在我這層就要解決&lt;br&gt;&amp;nbsp;從申請者的審核、教案大方向的審核、教室、食宿的安排&amp;#8230;等，都是我們三個要想好分配給其他助教&lt;/p&gt;
+&lt;p&gt;當初招來的助教們&lt;br&gt;&amp;nbsp;大多都是杰翰找來的，一開始我幾乎都不認識（畢竟我是邊緣人麻&lt;/p&gt;
+&lt;p&gt;在這個過程中，讓我覺得最困難的&lt;br&gt;
+反而不是做事，而是我如何去把事情安排下去&lt;br&gt;
+而且大家會聽我的話，好好的把事情做好&lt;br&gt;
+我不斷不斷在想如何&amp;#8221;Being a Leader, Not A&amp;nbsp;Boss&amp;#8221;&lt;/p&gt;
+&lt;p&gt;從高中當副社長失敗透頂的領導（但也學習到不該這麼做&lt;br&gt;
+大學慢慢會帶一些營隊、系會小組（我自認為還不差&lt;br&gt;
+這一次的X-Village要handle的真的就是為期兩個月的活動&lt;br&gt;
+真的非常的累&lt;br&gt;
+尤其我同時還有論文要趕&lt;br&gt;
+其實我好幾度覺得，論文什麼的就隨緣吧&lt;br&gt;&amp;nbsp;我想把X-Village這件事做好&lt;/p&gt;
+&lt;p&gt;我非常敬佩我在公司的前主管&lt;br&gt;
+很多處理事情、安排事情的方式&lt;br&gt;&amp;nbsp;帶人都是跟他做學習的&lt;/p&gt;
+&lt;p&gt;當我沒能follow up事件或安排好任務&lt;br&gt;&amp;nbsp;這就是我必須處理的時候&lt;/p&gt;</content><category term="X-Village"></category></entry><entry><title>佛系研究生</title><link href="http://lee-w.github.io/posts/thought/2018/08/fo-xi-yan-jiu-sheng" rel="alternate"></link><published>2018-08-05T14:00:00+08:00</published><updated>2018-08-05T14:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-08-05:/posts/thought/2018/08/fo-xi-yan-jiu-sheng</id><summary type="html"></summary><content type="html"></content></entry><entry><title>我如何更有效率的使用時間</title><link href="http://lee-w.github.io/posts/thought/2017/02/how-do-i-manage-my-time" rel="alternate"></link><published>2017-02-03T00:53:00+08:00</published><updated>2017-02-03T00:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-03:/posts/thought/2017/02/how-do-i-manage-my-time</id><summary type="html">&lt;p&gt;過年整理了好多以前的書摘&lt;br&gt;&amp;nbsp;好像該來發一點自己的東西了&lt;/p&gt;
 &lt;p&gt;前一段時間被找回母系演講&lt;br&gt;&amp;nbsp;被問了，我是怎麼管理時間的&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;過年整理了好多以前的書摘&lt;br&gt;&amp;nbsp;好像該來發一點自己的東西了&lt;/p&gt;
 &lt;p&gt;前一段時間被找回母系演講&lt;br&gt;&amp;nbsp;被問了，我是怎麼管理時間的&lt;/p&gt;
@@ -33,7 +86,7 @@
 這個App可以幫我們追蹤今天是不是完成了要達成的行動，到了凌晨12點就會重設Checklist&lt;br&gt;&amp;nbsp;接下來會提到這個App，如何幫我達成目標&lt;/p&gt;
 &lt;h2&gt;如何養成習慣&lt;/h2&gt;
 &lt;p&gt;那麼把目標拆解成很小的行動後&lt;br&gt;&amp;nbsp;要怎麼堅持每天都要走這一小步，而不會半途而廢呢？&lt;/p&gt;
-&lt;p&gt;這裡非常推薦大家看「&lt;a href="http://lee-w-blog.logdown.com/posts/334155-the-power-of-habit"&gt;為什麼我們這樣生活，那樣工作?&lt;/a&gt;」（連結是我的書摘）&lt;/p&gt;
+&lt;p&gt;這裡非常推薦大家看「&lt;a href="http://lee-w.github.io/posts/book/2015/11/the-power-of-habit"&gt;為什麼我們這樣生活，那樣工作?&lt;/a&gt;」（連結是我的書摘）&lt;/p&gt;
 &lt;p&gt;裡面提到要養成一個習慣的條件有以下四個&lt;br&gt;
 1. 提示&lt;br&gt;
 2. 慣性行為 （習慣）&lt;br&gt;
@@ -56,7 +109,7 @@
 &lt;p&gt;除了Daily Checklist，另外也推薦追蹤工作時間用的&lt;a href="https://www.toggl.com"&gt;Toggl&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;一天不做，不會怎樣啦&lt;/h3&gt;
 &lt;p&gt;花了好久時間建立的習慣，還是會有想怠惰的時候&lt;/p&gt;
-&lt;p&gt;我很喜歡「&lt;a href="http://lee-w-blog.logdown.com/posts/807950-how-will-you-measure-your-life"&gt;你如何衡量你的人生&lt;/a&gt;」的一句話&lt;/p&gt;
+&lt;p&gt;我很喜歡「&lt;a href="http://lee-w.github.io/posts/book/2016/08/how-will-you-measure-your-life"&gt;你如何衡量你的人生&lt;/a&gt;」的一句話&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;百分之百的堅持比百分之九十八容易
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -66,7 +119,7 @@
 &lt;p&gt;再來可能會再遇到下一個問題&lt;br&gt;&amp;nbsp;想完成的事情太多，能分配的時間太少&lt;/p&gt;
 &lt;p&gt;這就是必須做出選擇的時候了&lt;br&gt;
 那麼要怎麼決定那些事情是真的很重要，要留下來的呢？&lt;br&gt;
-這裡我要推薦的書是「&lt;a href="http://lee-w-blog.logdown.com/posts/618655-essentialism"&gt;少，但是更好&lt;/a&gt;」&lt;br&gt;
+這裡我要推薦的書是「&lt;a href="http://lee-w.github.io/posts/book/2016/03/essentialism"&gt;少，但是更好&lt;/a&gt;」&lt;br&gt;
 不過如果要給一個最簡單的原則，那就是&lt;a href="https://www.youtube.com/watch?time_continue=60&amp;amp;v=1ehWlVeMrqw"&gt;No more yes. It&amp;#8217;s Either &lt;span class="caps"&gt;HELL&lt;/span&gt; &lt;span class="caps"&gt;YEAH&lt;/span&gt;! Or No&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;如果這件事不是「太棒了！我一定要去做！！！」，那麼就不要做了&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;另外一個更明確的做法是&lt;a href="http://www.artofmanliness.com/2017/01/09/work-deliberately-instead-reactively-rule-3/?utm_source=pocket&amp;amp;utm_medium=email&amp;amp;utm_campaign=pockethits"&gt;Rule of Three&lt;/a&gt;&lt;br&gt;

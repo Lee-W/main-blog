@@ -23,7 +23,8 @@
             <link href="http://lee-w.github.io//static/custom.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/v4-shims.js"></script>
         <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -154,14 +155,17 @@ Telegram API的命名是CamelCase (e.g. sendMessage)<br>
 <span class="kn">import</span> <span class="nn">telegram</span>
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
 
+
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;Your API Token&#39;</span><span class="p">)</span>
+
 
 <span class="k">def</span> <span class="nf">_set_webhook</span><span class="p">():</span>
     <span class="n">status</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">&#39;https://Your URL/hook&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">status</span><span class="p">:</span>
         <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Webhook setup failed&#39;</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
 
 <span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/hook&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">webhook_handler</span><span class="p">():</span>
@@ -172,6 +176,7 @@ Telegram API的命名是CamelCase (e.g. sendMessage)<br>
 
         <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
     <span class="k">return</span> <span class="s1">&#39;ok&#39;</span>
+
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">_set_webhook</span><span class="p">()</span>

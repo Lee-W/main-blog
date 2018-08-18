@@ -42,14 +42,17 @@ Telegram API的命名是CamelCase (e.g. sendMessage)&lt;br&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;telegram&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;
 
+
 &lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;bot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;telegram&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your API Token&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_webhook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://Your URL/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Webhook setup failed&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
 
 &lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;webhook_handler&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
@@ -60,6 +63,7 @@ Telegram API的命名是CamelCase (e.g. sendMessage)&lt;br&gt;
 
         &lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ok&amp;#39;&lt;/span&gt;
+
 
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -142,14 +146,12 @@ Flask把request這種幾乎所有view function都會用到的參數直接變成�
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/sooyhwang/Simple-Echo-Telegram-Bot"&gt;Simple-Echo-Telegram-Bot&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.30sparks.com/develop-telegram-bot-introduction/"&gt;開發 Telegram Bot&amp;nbsp;簡介&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Telegram Bot"></category><category term="Flask"></category></entry><entry><title>More than Just Echo Bot</title><link href="http://lee-w.github.io/posts/bot/2016/11/more-than-just-echo-bot" rel="alternate"></link><published>2016-11-29T01:57:00+08:00</published><updated>2016-11-29T01:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-29:/posts/bot/2016/11/more-than-just-echo-bot</id><summary type="html">&lt;hr&gt;
-&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
+&lt;/ul&gt;</content><category term="Telegram Bot"></category><category term="Flask"></category></entry><entry><title>More than Just Echo Bot</title><link href="http://lee-w.github.io/posts/bot/2016/11/more-than-just-echo-bot" rel="alternate"></link><published>2016-11-29T01:57:00+08:00</published><updated>2016-11-29T01:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-29:/posts/bot/2016/11/more-than-just-echo-bot</id><summary type="html">&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
 再來就要思考，開發一個Bot我們要提供什麼功能&lt;br&gt;
 (e.g. 天氣查詢, 訂票,&amp;nbsp;推薦旅遊景點)&lt;/p&gt;
 &lt;p&gt;不過這裡要討論的不是Bot的功能&lt;br&gt;&amp;nbsp;Bot的功能實作，跟一般網站或App的實作並沒有太大的差別&lt;/p&gt;
 &lt;p&gt;接下來來談如何從使用者說的話來判斷，使用者要使用的功能&lt;/p&gt;
-</summary><content type="html">&lt;hr&gt;
-&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
+</summary><content type="html">&lt;p&gt;知道怎麼實作一個會Echo的Bot後&lt;br&gt;
 再來就要思考，開發一個Bot我們要提供什麼功能&lt;br&gt;
 (e.g. 天氣查詢, 訂票,&amp;nbsp;推薦旅遊景點)&lt;/p&gt;
 &lt;p&gt;不過這裡要討論的不是Bot的功能&lt;br&gt;&amp;nbsp;Bot的功能實作，跟一般網站或App的實作並沒有太大的差別&lt;/p&gt;
@@ -324,8 +326,7 @@ Mary Johnson at 12 pm tomorrow.
 &lt;p&gt;不過這些服務，通常會有它的限制&lt;br&gt;&amp;nbsp;這時候就能用上Python強大的函式庫們，來實作自己的版本&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.nltk.org"&gt;&lt;span class="caps"&gt;NLTK&lt;/span&gt;&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;Python經典的NLP函式庫&lt;br&gt;
-&lt;/li&gt;
+&lt;li&gt;Python經典的NLP函式庫  &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://radimrehurek.com/gensim/"&gt;word2vec&lt;/a&gt;&lt;ul&gt;
@@ -636,7 +637,7 @@ python3 manage.py startapp echobot
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.http&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;HttpResponse&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HttpResponseBadRequest&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HttpResponseForbidden&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.views.decorators.csrf&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;csrf_exempt&lt;/span&gt;
 
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;linebot&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;LineBotApi&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;WebhookParser&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;WebhookHanlder&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;linebot&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;LineBotApi&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;WebhookParser&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;WebhookHandler&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;linebot.exceptions&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;InvalidSignatureError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;LineBotApiError&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;linebot.models&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;MessageEvent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TextMessage&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TextSendMessage&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -650,6 +651,7 @@ python3 manage.py startapp echobot
 &lt;h3&gt;Callback&amp;nbsp;Function&lt;/h3&gt;
 &lt;p&gt;有兩種方法可以處理Line Server送過來的訊息&lt;br&gt;&amp;nbsp;這裡先用Todo記著，待會再來補上&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# TODO: Define Receiver&lt;/span&gt;
+
 
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -788,6 +790,7 @@ e.g.&lt;br&gt;
 &lt;span class="n"&gt;line_bot_api&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LineBotApi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_ACCESS_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebhookParser&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
+
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -832,12 +835,14 @@ e.g.&lt;br&gt;
 &lt;span class="n"&gt;line_bot_api&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LineBotApi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_ACCESS_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;handler&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebhookHandler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
+
 &lt;span class="nd"&gt;@handler.add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MessageEvent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;TextMessage&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;handle_text_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;line_bot_api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
         &lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_token&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
         &lt;span class="n"&gt;TextSendMessage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="p"&gt;)&lt;/span&gt;
+
 
 &lt;span class="nd"&gt;@handler.default&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;default&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -846,6 +851,7 @@ e.g.&lt;br&gt;
         &lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_token&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
         &lt;span class="n"&gt;TextSendMessage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Currently Not Support None Text Message&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="p"&gt;)&lt;/span&gt;
+
 
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -1018,7 +1024,7 @@ brew cask install ngrok
 &lt;li&gt;服務提供者Server收到後，再傳給User的帳號&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;e.g. Line Chat Bot 架構&lt;br&gt;
-&lt;img alt="Line Chat Bot Architect" src="https://developers.line.me/wp-content/uploads/2016/09/bottrial-fig1.png"&gt;&lt;/p&gt;
+&lt;img alt="Line Chat Bot Architect" src="https://developers.line.me/media/messaging-api/overview/messaging-api-architecture-ee0356bd.png"&gt;&lt;/p&gt;
 &lt;h2&gt;Why Chat&amp;nbsp;Bot?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;市面上App太多了，要開發使用者黏著度高的App很困難&lt;/li&gt;

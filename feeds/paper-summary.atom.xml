@@ -309,8 +309,7 @@ it uses an open vocabulary approach that allowing discovery of unanticipated&amp
 &lt;li&gt;
 &lt;p&gt;Correlation&amp;nbsp;analysis&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Least Squares Linear Regression &lt;br&gt;
-&lt;/li&gt;
+&lt;li&gt;Least Squares Linear&amp;nbsp;Regression   &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Visualization&lt;ul&gt;
@@ -374,8 +373,7 @@ Through Tucker Decomposition, it&amp;#8217;s possible to combine data from diffe
 &lt;li&gt;
 &lt;p&gt;Assumption&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Influence is exclusive (Once a node is influenced by one party, it will not be influenced again)    &lt;br&gt;
-&lt;/li&gt;
+&lt;li&gt;Influence is exclusive (Once a node is influenced by one party, it will not be influenced&amp;nbsp;again)      &lt;/li&gt;
 &lt;li&gt;Each round all parties choose one node and then the influence propagates before the next round&amp;nbsp;starts&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -394,8 +392,7 @@ Through Tucker Decomposition, it&amp;#8217;s possible to combine data from diffe
 &lt;ol&gt;
 &lt;li&gt;Known strategy -&amp;gt; Both know and unknown&lt;ul&gt;
 &lt;li&gt;Known or Unknown but available to compete -&amp;gt; Train a model to learn&amp;nbsp;strategy&lt;/li&gt;
-&lt;li&gt;Unknown -&amp;gt; Game-theoretical solution to seek the Nash equilibrium   &lt;br&gt;
-&lt;/li&gt;
+&lt;li&gt;Unknown -&amp;gt; Game-theoretical solution to seek the Nash&amp;nbsp;equilibrium     &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Single-roung -&amp;gt;&amp;nbsp;Multi-round&lt;/li&gt;
@@ -423,7 +420,7 @@ Through Tucker Decomposition, it&amp;#8217;s possible to combine data from diffe
 &lt;h3&gt;4.1 Preliminary: Reinforcement&amp;nbsp;Learning&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Learn a policy &lt;span class="math"&gt;\(\pi(s)\)&lt;/span&gt; to determine which action to take state s&amp;nbsp;(environment)&lt;/li&gt;
-&lt;li&gt;How to estimated &lt;span class="math"&gt;(\pi)&lt;/span&gt;?&lt;ul&gt;
+&lt;li&gt;How to estimated &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;?&lt;ul&gt;
 &lt;li&gt;Expected Accmulated Reward of a state (V function)&lt;ul&gt;
 &lt;li&gt;&lt;span class="math"&gt;\( V^\pi(s) =&amp;nbsp;E_\pi\{R_t|S_t=s\}=...\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -542,7 +539,7 @@ These data can be used to learn the value&amp;nbsp;functions&lt;/p&gt;
 &lt;li&gt;Q-Learning: &lt;span class="math"&gt;\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t,&amp;nbsp;a_t))\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;span class="math"&gt;(\epsilon)&lt;/span&gt;-greedy&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\epsilon\)&lt;/span&gt;-greedy&lt;ul&gt;
 &lt;li&gt;Determine strategies on the current policy derived from&amp;nbsp;Q-table.&lt;/li&gt;
 &lt;li&gt;Explore the new directions to avoid local&amp;nbsp;optimum&lt;/li&gt;
 &lt;/ul&gt;

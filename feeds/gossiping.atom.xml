@@ -38,8 +38,7 @@ tags
 
 &lt;hr&gt;
 &lt;p&gt;當初可是連文件都要寫好，才會被作者接受&lt;br&gt;&amp;nbsp;所以我這裡就直接沿用我當初寫的文件了xd&lt;/p&gt;
-&lt;p&gt;Without option, &lt;code&gt;git ignore-io &amp;lt;type&amp;gt;&lt;/code&gt; shows the sample gitignore of specified types on screen.&lt;br&gt;
-&lt;/p&gt;
+&lt;p&gt;Without option, &lt;code&gt;git ignore-io &amp;lt;type&amp;gt;&lt;/code&gt; shows the sample gitignore of specified types on&amp;nbsp;screen.  &lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git ignore-io vim
 
     &lt;span class="c1"&gt;# Created by https://www.gitignore.io/api/vim&lt;/span&gt;
@@ -54,8 +53,7 @@ tags
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;To export it to &lt;code&gt;.gitignore&lt;/code&gt; file you can use the following options:&lt;br&gt;
-&lt;/p&gt;
+&lt;p&gt;To export it to &lt;code&gt;.gitignore&lt;/code&gt; file you can use the following&amp;nbsp;options:  &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;-a&lt;/code&gt; or &lt;code&gt;--append&lt;/code&gt; to append the result to &lt;code&gt;.gitignore&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-r&lt;/code&gt; or &lt;code&gt;--replace&lt;/code&gt; to export &lt;code&gt;.gitignore&lt;/code&gt; with the&amp;nbsp;result&lt;/li&gt;
