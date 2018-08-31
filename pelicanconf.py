@@ -56,8 +56,9 @@ AUTHOR_FEED_RSS = None
 # Social widget
 SOCIAL = (('linkedin', 'http://tw.linkedin.com/in/clleew'),
           ('github', 'http://github.com/Lee-W'),
+          ('gitlab', 'https://gitlab.com/Lee-W'),
           ('facebook', 'http://www.facebook.com/clleew'),
-          ('rss', '//lee-w.github.io/feeds/all.atom.xml'))
+          ('rss', '//lee-w.github.io/feeds/all.atom.xml'),)
 
 
 # Markdown extension
