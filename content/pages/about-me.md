@@ -25,6 +25,13 @@ As a programmer, I'm familiar with web backend development but open to any oppor
 
 - Software Development
 
+[May 2017 - Present]
+**Core Teaching Assistance, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
+
+- Management
+- Review Python Course ("Programming Design Foudation")
+- Lecture Web Backend (Flask) (The forth part of "Computer Science Foundations")
+
 [July 2015 - July 2016]
 **Substitute Military Service, K-12 Education Administration, Ministry of Education**
 
