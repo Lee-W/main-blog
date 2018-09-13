@@ -1,7 +1,7 @@
 Title: MacBook Pro Retina 開箱
 Date: 2015-01-02 04:14
 Category: Gossiping
-Tags: mac
+Tags: mac, unboxing
 Slug: mbpr-out-of-the-box
 Authors: Lee-W
 Summary: 
