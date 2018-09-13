@@ -29,8 +29,8 @@ As a programmer, I'm familiar with web backend development but open to any oppor
 **Core Teaching Assistance, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
 
 - Management
-- Review Python Course ("Programming Design Foudation")
-- Lecture Web Backend (Flask) (The forth part of "Computer Science Foundations")
+- Review Python Course ("Programming Design Foundation")
+- Lecture Web Backend (Flask) (The fourth part of "Computer Science Foundations")
 
 [July 2015 - July 2016]
 **Substitute Military Service, K-12 Education Administration, Ministry of Education**
@@ -107,7 +107,7 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-v
 #### Other
 - [SITW 二手網](http://sitw-trade.herokuapp.com) (Backend Development)
 
-## Tutoiral or Study Note
+## Tutorial or Study Note
 #### Slide
 - [Git Tutorial](https://github.com/Lee-W/git-tutorial)
     - Sample: [Git-Tutorial-Sample](https://github.com/Lee-W/Git-Tutorial-Sample)
