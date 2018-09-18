@@ -67,6 +67,7 @@ MARKDOWN = {
         'markdown.extensions.extra': {},
         'markdown.extensions.codehilite': {},
         'markdown.extensions.nl2br': {},
+        'del_ins': {},
     },
     'output_format': 'html5'
 }
@@ -75,7 +76,6 @@ MARKDOWN = {
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['another_read_more_link', 'series', 'render_math', 'neighbors', 'share_post']
 ANOTHER_READ_MORE_LINK = ''
-
 
 # Custom Jinja Filters
 JINJA_FILTERS = {
