@@ -1,0 +1,67 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "3a8d3240b4801b98bbfcb56c808ad68165975512b82cfa46df110b8856ec2dc9"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.6"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "beautifulsoup4": {
+            "hashes": [
+                "sha256:194ec62a25438adcb3fdb06378b26559eda1ea8a747367d34c33cef9c7f48d57",
+                "sha256:90f8e61121d6ae58362ce3bed8cd997efb00c914eae0ff3d363c32f9a9822d10",
+                "sha256:f0abd31228055d698bb392a826528ea08ebb9959e6bea17c606fd9c9009db938"
+            ],
+            "version": "==4.6.3"
+        },
+        "bs4": {
+            "hashes": [
+                "sha256:36ecea1fd7cc5c0c6e4a1ff075df26d50da647b75376626cc186e2212886dd3a"
+            ],
+            "index": "pypi",
+            "version": "==0.0.1"
+        },
+        "markdown": {
+            "hashes": [
+                "sha256:0ac8a81e658167da95d063a9279c9c1b2699f37c7c4153256a458b3a43860e33"
+            ],
+            "index": "pypi",
+            "version": "==2.6.8"
+        },
+        "mdx-del-ins": {
+            "hashes": [
+                "sha256:7c41f2940dc4f5da22d6fbc8c5318b133e5290b17bd6291d92ce473a1a79f963"
+            ],
+            "index": "pypi",
+            "version": "==1.0"
+        },
+        "pelican": {
+            "git": "https://github.com/Lee-W/pelican",
+            "ref": "54ec459d35809324391a86658f95ca6b258ee6a9"
+        },
+        "smartypants": {
+            "hashes": [
+                "sha256:8db97f7cbdf08d15b158a86037cd9e116b4cf37703d24e0419a0d64ca5808f0d"
+            ],
+            "version": "==2.0.1"
+        },
+        "typogrify": {
+            "hashes": [
+                "sha256:8be4668cda434163ce229d87ca273a11922cb1614cb359970b7dc96eed13cb38"
+            ],
+            "index": "pypi",
+            "version": "==2.0.7"
+        }
+    },
+    "develop": {}
+}

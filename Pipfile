@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+typogrify = "==2.0.7"
+Markdown = "==2.6.8"
+mdx-del-ins = "*"
+"bs4" = "*"
+pelican = {ref = "3.7.1.lee-w-custom", git = "https://github.com/Lee-W/pelican"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
