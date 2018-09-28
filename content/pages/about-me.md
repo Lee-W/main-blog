@@ -20,19 +20,27 @@ As a programmer, I'm familiar with web backend development but open to any oppor
 
 ----
 ## Experience
-[Apr 2017 - Present]
+### [Apr 2017 - Present]
 **Independent Contractor, Slice Technologies, Inc**
 
 - Software Development
 
-[May 2017 - Present]
-**Core Teaching Assistance, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
+### [May 2018 - Present]
+**Chief Teaching Assistance, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
 
-- Management
-- Review Python Course ("Programming Design Foundation")
-- Lecture Web Backend (Flask) (The fourth part of "Computer Science Foundations")
+* Management
+* Review Python Course ("Programming Design Foundation")
+* Design Data Structure Exercise (The first part of "Computer Science Foundations")
+* Lecture Web Backend (Flask) (The fourth part of "Computer Science Foundations")
 
-[July 2015 - July 2016]
+X-Village is an experimental education program aiming to teach computational thinking to students not major in computer science and enhance future cooperation between computer science and different areas. 
+
+I'm responsible for executing this program and managing a teaching assistance team.  Besides, I design a half day exercise for "Data Structure" course and lecture a four-hour web backend course for "Web Programming, Database/Cloud Computing" course.
+
+* [Website](https://sites.google.com/view/x-village/home?authuser=0)
+* [Facebook Fan Page](https://www.facebook.com/X-Village-423736361424301/)
+
+### [July 2015 - July 2016]
 **Substitute Military Service, K-12 Education Administration, Ministry of Education**
 
 -  System Maintenance
