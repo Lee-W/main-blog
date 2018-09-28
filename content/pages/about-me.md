@@ -26,17 +26,16 @@ As a programmer, I'm familiar with web backend development but open to any oppor
 - Software Development
 
 ### [May 2018 - Present]
-**Chief Teaching Assistance, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
+**Chief Teaching Assistant, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
 
-* Management
-* Review Python Course ("Programming Design Foundation")
-* Design Data Structure Exercise (The first part of "Computer Science Foundations")
-* Lecture Web Backend (Flask) (The fourth part of "Computer Science Foundations")
+* Managing
+* Reviewing the teaching proposal of Python course, *Programming Design Foundation*
+* Designing exercises for *Data Structure*, the first section of *Computer Science Foundations*
+* Lecturing *Web Programming, Database/Cloud Computing*, the fourth section of *Computer Science Foundations*
 
-X-Village is an experimental education program aiming to teach computational thinking to students not major in computer science and enhance future cooperation between computer science and different areas. 
+*X-Village* is an experimental education program aiming to equip to students not major in computer science with the ability of computational thinking and to enhance future cooperation between computer science and other areas. 
 
-I'm responsible for executing this program and managing a teaching assistance team.  Besides, I design a half day exercise for "Data Structure" course and lecture a four-hour web backend course for "Web Programming, Database/Cloud Computing" course.
-
+I am the executor of the program and the leader of the teaching assistant team. Besides, I designed a half day exercise for *Data Structure* and lectured a four-hour web backend course for *Web Programming, Database/Cloud Computing*.
 * [Website](https://sites.google.com/view/x-village/home?authuser=0)
 * [Facebook Fan Page](https://www.facebook.com/X-Village-423736361424301/)
 
