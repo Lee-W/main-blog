@@ -29,7 +29,7 @@ DATE_FORMATS = {
     'zh': '%Y/%m/%d - %a',
 }
 
-TYPOGRIFY = True
+TYPOGRIFY = False
 ARTICLE_URL = 'posts/{category}/{date:%Y}/{date:%m}/{slug}'
 ARTICLE_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{slug}/index.html'
 DEFAULT_PAGINATION = 10
