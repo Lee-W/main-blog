@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>git ignore-io 與 開源貢獻經驗</title>
+        <title>git ignore-io 與 開源貢獻經驗</title>
 
         <link href="//lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Full Atom Feed" />
         <!-- Bootstrap Core CSS -->
@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="雖然已經隔了一年多 當初git ignore-io這個小功能，也是花了一兩個月 好不容易才git extras merge回去的">
+        <meta name="description" content="雖然已經隔了一年多 當初git ignore-io這個小功能，也是花了一兩個月 好不容易才git extras merge回去的">
 
         <meta name="author" content="Lee-W">
 
@@ -48,9 +48,9 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 	<meta property="og:url" content="http://lee-w.github.io/posts/gossiping/2017/02/git-ignoreio-and-open-source-experience">
-	<meta property="og:title" content="git ignore-io 與 開源貢獻經驗">
+	<meta property="og:title" content="git ignore-io 與 開源貢獻經驗">
 	<meta property="article:published_time" content="2017-02-28 21:56:00+08:00">
-            <meta property="og:description" content="雖然已經隔了一年多 當初git ignore-io這個小功能，也是花了一兩個月 好不容易才git extras merge回去的">
+            <meta property="og:description" content="雖然已經隔了一年多 當初git ignore-io這個小功能，也是花了一兩個月 好不容易才git extras merge回去的">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -78,8 +78,8 @@
                         <li><a href="/categories.html">Categories</a></li>
                         <li><a href="/tags.html">Tags</a></li>
 
-                            <li><a href="http://lee-w.github.io/pages/about-me.html">About&nbsp;Me</a></li>
-                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This&nbsp;Blog</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This Blog</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -93,7 +93,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>git ignore-io 與 開源貢獻經驗</h1>
+                        <h1>git ignore-io 與 開源貢獻經驗</h1>
                         <span class="meta">Posted by
                                 <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
                              on 2017/02/28 - 二
@@ -113,18 +113,20 @@
     <article>
         <p>雖然已經隔了一年多<br>
 當初git ignore-io這個小功能，也是花了一兩個月<br>
-好不容易才<a href="https://github.com/tj/git-extras">git extras</a>&nbsp;merge回去的</p>
+好不容易才<a href="https://github.com/tj/git-extras">git extras</a> merge回去的</p>
 <!--more-->
 
 <p>當初看到這封信的時候，很是感動啊xd<br>
 <img alt="accepted" src="http://lee-w.github.io/images/posts-image/2017-02-28-git-ignoreio-and-open-source-experience/1-accepted.jpg"></p>
-<h2>git&nbsp;ignore-io</h2>
-<p>這個工具主要是從<a href="https://www.gitignore.io">gitignoore.io</a>上下載.gitignore的範本<br>&nbsp;e.g. </p>
+<h2>git ignore-io</h2>
+<p>這個工具主要是從<a href="https://www.gitignore.io">gitignoore.io</a>上下載.gitignore的範本<br>
+e.g. </p>
 <div class="codehilite"><pre><span></span>git ignore-io -a vim osx python
 </pre></div>
 
 
-<p>像這就是vim常見的暫存檔們<br>&nbsp;一般來說應該被忽略掉，不用被commit</p>
+<p>像這就是vim常見的暫存檔們<br>
+一般來說應該被忽略掉，不用被commit</p>
 <div class="codehilite"><pre><span></span># Created by https://www.gitignore.io/api/vim
 
 ### Vim ###
@@ -146,8 +148,9 @@ tags
 
 
 <hr>
-<p>當初可是連文件都要寫好，才會被作者接受<br>&nbsp;所以我這裡就直接沿用我當初寫的文件了xd</p>
-<p>Without option, <code>git ignore-io &lt;type&gt;</code> shows the sample gitignore of specified types on&nbsp;screen.  </p>
+<p>當初可是連文件都要寫好，才會被作者接受<br>
+所以我這裡就直接沿用我當初寫的文件了xd</p>
+<p>Without option, <code>git ignore-io &lt;type&gt;</code> shows the sample gitignore of specified types on screen.  </p>
 <div class="codehilite"><pre><span></span>$ git ignore-io vim
 
     <span class="c1"># Created by https://www.gitignore.io/api/vim</span>
@@ -162,21 +165,21 @@ tags
 </pre></div>
 
 
-<p>To export it to <code>.gitignore</code> file you can use the following&nbsp;options:  </p>
+<p>To export it to <code>.gitignore</code> file you can use the following options:  </p>
 <ul>
 <li><code>-a</code> or <code>--append</code> to append the result to <code>.gitignore</code></li>
-<li><code>-r</code> or <code>--replace</code> to export <code>.gitignore</code> with the&nbsp;result</li>
+<li><code>-r</code> or <code>--replace</code> to export <code>.gitignore</code> with the result</li>
 </ul>
 <div class="codehilite"><pre><span></span>$ git ignore-io vim python
 </pre></div>
 
 
 <p>For efficiency, <code>git ignore-io</code> store all available types at <code>~/.gi_list</code>.<br>
-To list all the available&nbsp;types:</p>
+To list all the available types:</p>
 <ul>
-<li><code>-l</code> or <code>-L</code> : These two options will show the list in different format. Just try&nbsp;it.</li>
+<li><code>-l</code> or <code>-L</code> : These two options will show the list in different format. Just try it.</li>
 </ul>
-<p>You can also search type from the list&nbsp;by:</p>
+<p>You can also search type from the list by:</p>
 <ul>
 <li><code>-s &lt;word&gt;</code> or <code>--search &lt;word&gt;</code></li>
 </ul>
@@ -193,11 +196,13 @@ To list all the available&nbsp;types:</p>
 <h2>為什麼要貢獻開源專案？</h2>
 <p>貢獻開源專案最主要的原因<br>
 還是就是<strong>我需要這個功能啊！！！</strong><br>
-但是就沒有人寫，bug沒有人修<br>&nbsp;所以就只好先承認自己就是「沒有人」了xd</p>
+但是就沒有人寫，bug沒有人修<br>
+所以就只好先承認自己就是「沒有人」了xd</p>
 <p>其實gitignore.io本身就有提供一個簡單的script <a href="https://www.gitignore.io/docs#-install-command-line">gi</a><br>
 不過實在有點不夠我用xd<br>
 於是我就寫了<a href="https://github.com/Lee-W/gi_extension">gi_extension</a><br>
-後來又覺得，如果整併的git extras<br>&nbsp;我就能透過homebrew安裝了(?????</p>
+後來又覺得，如果整併的git extras<br>
+我就能透過homebrew安裝了(?????</p>
 <p>整個從pull request到merge的過程其實蠻有趣的<br>
 我找到當初我開的<a href="https://github.com/tj/git-extras/pull/439">pr #439</a>和<a href="https://github.com/tj/git-extras/pull/448">pr #448</a><br>
 從shell script的風格（有人建議我用<a href="https://github.com/koalaman/shellcheck">shellcheck</a>）到command的option為什麼要這樣命名<br>

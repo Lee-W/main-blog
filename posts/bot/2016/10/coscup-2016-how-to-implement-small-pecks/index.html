@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>COSCUP 2016 小啄如何實作的</title>
+        <title>COSCUP 2016 小啄如何實作的</title>
 
         <link href="//lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Full Atom Feed" />
         <!-- Bootstrap Core CSS -->
@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="今年COSCUP的聊天機器人「小啄」 終於在今天宣告退休了 退休前他讓我們詢問了「你是如何實作的」 這邊是我測試的所有結果 跟大家分享一下XD">
+        <meta name="description" content="今年COSCUP的聊天機器人「小啄」 終於在今天宣告退休了 退休前他讓我們詢問了「你是如何實作的」 這邊是我測試的所有結果 跟大家分享一下XD">
 
         <meta name="author" content="Lee-W">
 
@@ -49,9 +49,9 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 	<meta property="og:url" content="http://lee-w.github.io/posts/bot/2016/10/coscup-2016-how-to-implement-small-pecks">
-	<meta property="og:title" content="COSCUP 2016 小啄如何實作的">
+	<meta property="og:title" content="COSCUP 2016 小啄如何實作的">
 	<meta property="article:published_time" content="2016-10-01 11:50:00+08:00">
-            <meta property="og:description" content="今年COSCUP的聊天機器人「小啄」 終於在今天宣告退休了 退休前他讓我們詢問了「你是如何實作的」 這邊是我測試的所有結果 跟大家分享一下XD">
+            <meta property="og:description" content="今年COSCUP的聊天機器人「小啄」 終於在今天宣告退休了 退休前他讓我們詢問了「你是如何實作的」 這邊是我測試的所有結果 跟大家分享一下XD">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -79,8 +79,8 @@
                         <li><a href="/categories.html">Categories</a></li>
                         <li><a href="/tags.html">Tags</a></li>
 
-                            <li><a href="http://lee-w.github.io/pages/about-me.html">About&nbsp;Me</a></li>
-                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This&nbsp;Blog</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This Blog</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>COSCUP 2016 小啄如何實作的</h1>
+                        <h1>COSCUP 2016 小啄如何實作的</h1>
                         <span class="meta">Posted by
                                 <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
                              on 2016/10/01 - 六
@@ -115,7 +115,8 @@
         <p>今年COSCUP的聊天機器人「小啄」<br>
 終於在今天宣告退休了<br>
 退休前他讓我們詢問了「你是如何實作的」<br>
-這邊是我測試的所有結果<br>&nbsp;跟大家分享一下XD</p>
+這邊是我測試的所有結果<br>
+跟大家分享一下XD</p>
 <!--more-->
 
 <hr>
@@ -123,36 +124,37 @@
 <h3>技術相關</h3>
 <ul>
 <li>主要用Python開發</li>
-<li>使用Flask + Gunicorn +&nbsp;Nginx，達到系統輕量化與多執行緒</li>
-<li>用redis作為文本儲存，<span class="caps">SQL</span>&nbsp;Injection無效</li>
+<li>使用Flask + Gunicorn + Nginx，達到系統輕量化與多執行緒</li>
+<li>用redis作為文本儲存，SQL Injection無效</li>
 <li>後台文本管理使用google sheet<ul>
 <li>使用python的<a href="https://github.com/burnash/gspread">gspred</a></li>
 </ul>
 </li>
-<li>文案編輯完後，對bot下同步指令，將google&nbsp;sheet資料更新到後端資料庫</li>
+<li>文案編輯完後，對bot下同步指令，將google sheet資料更新到後端資料庫</li>
 <li>跟吃飯喝水一樣簡單，連麻瓜劇本管理員都會用（？？？？？？）</li>
-<li>使用<a href="https://wit.ai/home">wit.ai</a>&nbsp;（這是我直接問開發者的，不是小啄回答的）</li>
+<li>使用<a href="https://wit.ai/home">wit.ai</a> （這是我直接問開發者的，不是小啄回答的）</li>
 </ul>
 <hr>
 <h2>小啄回覆的原文</h2>
 <ul>
 <li>
-<p>小啄的後台文本管理使用 google sheet，透過 python 的 gspread 套件進行溝通；當文案編輯完畢後，對 bot 下同步指令，後端就會透過 gspread 將 google sheet&nbsp;的資料同步到後端資料庫唷</p>
+<p>小啄的後台文本管理使用 google sheet，透過 python 的 gspread 套件進行溝通；當文案編輯完畢後，對 bot 下同步指令，後端就會透過 gspread 將 google sheet 的資料同步到後端資料庫唷</p>
 </li>
 <li>
-<p>小啄的後台文本管理使用 google sheet，python 有個套件叫 gspread，讓你存取 google sheet&nbsp;跟吃飯喝水一樣簡單！</p>
+<p>小啄的後台文本管理使用 google sheet，python 有個套件叫 gspread，讓你存取 google sheet 跟吃飯喝水一樣簡單！</p>
 </li>
 <li>
-<p>小啄的後台文本管理使用 google sheet，python 有個套件叫 gspread，讓你存取 google sheet 跟吃飯喝水一樣簡單！<br>&nbsp;真的超簡單的，連麻瓜劇本管理員都會用！（麻瓜忍不住一定要再說一次）</p>
+<p>小啄的後台文本管理使用 google sheet，python 有個套件叫 gspread，讓你存取 google sheet 跟吃飯喝水一樣簡單！<br>
+    真的超簡單的，連麻瓜劇本管理員都會用！（麻瓜忍不住一定要再說一次）</p>
 </li>
 <li>
-<p>小啄使用的佈署環境是 Flask + Gunicorn + Nginx&nbsp;的組合，藉此達成系統輕量化與多執行緒的接收訊息。</p>
+<p>小啄使用的佈署環境是 Flask + Gunicorn + Nginx 的組合，藉此達成系統輕量化與多執行緒的接收訊息。</p>
 </li>
 <li>
-<p>小啄使用 redis 作為文本儲存系統，因此不要再試著 <span class="caps">SQL</span> Injection&nbsp;喇，這是沒用的!!!</p>
+<p>小啄使用 redis 作為文本儲存系統，因此不要再試著 SQL Injection 喇，這是沒用的!!!</p>
 </li>
 <li>
-<p>小啄是採用 Python 做為主要的程式語言開發喔，因應短暫兩個禮拜的開發時間，可以快速建置的 Python&nbsp;成為最佳選項！</p>
+<p>小啄是採用 Python 做為主要的程式語言開發喔，因應短暫兩個禮拜的開發時間，可以快速建置的 Python 成為最佳選項！</p>
 </li>
 <li>
 <p>小啄開發團隊核心人物有4+1個：三個寫扣手，一個文案小編，一個文案小編的助理．我們白天都有正職！文案小編和文案小編的助理是程式麻瓜</p>
@@ -164,19 +166,19 @@
 <p>你有選英文模式小啄嗎？真抱歉人力不足，沒有能力提供好笑有趣的回饋讓大家使用。</p>
 </li>
 <li>
-<p>(舉起誠實樹)&nbsp;因為缺乏英文小編寫幽默風趣的回饋，所以團隊人員最後放棄英文幽默版小啄。</p>
+<p>(舉起誠實樹) 因為缺乏英文小編寫幽默風趣的回饋，所以團隊人員最後放棄英文幽默版小啄。</p>
 </li>
 <li>
-<p>小啄 @<span class="caps">LINE</span> 開發時程只有兩週，要申請正式帳號前須到 <span class="caps">LINE</span> 本部進行 <span class="caps">DEMO</span>，當時大會還有些 <span class="caps">API</span> 沒開好、攤位集點巔峰賽還沒有畫好圖。嚴格說起來是大會團隊在忙其他緊急事件延遲了BOT&nbsp;開發時程，請大家多包容唷</p>
+<p>小啄 @LINE 開發時程只有兩週，要申請正式帳號前須到 LINE 本部進行 DEMO，當時大會還有些 API 沒開好、攤位集點巔峰賽還沒有畫好圖。嚴格說起來是大會團隊在忙其他緊急事件延遲了BOT 開發時程，請大家多包容唷</p>
 </li>
 <li>
-<p>小啄 @<span class="caps">LINE</span> 上線前需要經過 <span class="caps">LINE</span>&nbsp;內部審核，然後才會投單到日本總部申請上限；內部審核當天其實有些功能還沒做完啊啊啊啊啊</p>
+<p>小啄 @LINE 上線前需要經過 LINE 內部審核，然後才會投單到日本總部申請上限；內部審核當天其實有些功能還沒做完啊啊啊啊啊</p>
 </li>
 <li>
-<p>很可惜今年閃電秀沒有 <span class="caps">COSCUP</span> <span class="caps">LINE</span> <span class="caps">BOT</span> 的分享；而實際上我們是有報名的，只是沒有被抽到 <span class="caps">QQ</span>，想在明年看到團隊在議程上分享秘辛，請用力回饋：明年想看 小啄@<span class="caps">LINE</span>&nbsp;分享</p>
+<p>很可惜今年閃電秀沒有 COSCUP LINE BOT 的分享；而實際上我們是有報名的，只是沒有被抽到 QQ，想在明年看到團隊在議程上分享秘辛，請用力回饋：明年想看 小啄@LINE 分享</p>
 </li>
 <li>
-<p>開發團隊有報名閃電秀，可惜沒有被抽到，想進一步鼓勵團隊明年投稿，歡迎用力回饋：明年想看 小啄@<span class="caps">LINE</span>&nbsp;分享</p>
+<p>開發團隊有報名閃電秀，可惜沒有被抽到，想進一步鼓勵團隊明年投稿，歡迎用力回饋：明年想看 小啄@LINE 分享</p>
 </li>
 </ul>
     </article>

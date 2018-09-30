@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>Using GitHub to Develop Software Collaboratively</title>
+        <title>Using GitHub to Develop Software Collaboratively</title>
 
         <link href="//lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Full Atom Feed" />
         <!-- Bootstrap Core CSS -->
@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="這是兩年前Github來成大教育課程的筆記 最近在整理git的筆記才翻出來 因為當時是以英文進行，課程筆記就也用英文做了 這篇的內容可能比較雜亂，之後還會再整理進另一篇git的筆記">
+        <meta name="description" content="這是兩年前Github來成大教育課程的筆記 最近在整理git的筆記才翻出來 因為當時是以英文進行，課程筆記就也用英文做了 這篇的內容可能比較雜亂，之後還會再整理進另一篇git的筆記">
 
         <meta name="author" content="Lee-W">
 
@@ -49,9 +49,9 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 	<meta property="og:url" content="http://lee-w.github.io/posts/git/2016/09/using-github-to-develop-software-collaboratively">
-	<meta property="og:title" content="Using GitHub to Develop Software Collaboratively">
+	<meta property="og:title" content="Using GitHub to Develop Software Collaboratively">
 	<meta property="article:published_time" content="2016-09-15 01:26:00+08:00">
-            <meta property="og:description" content="這是兩年前Github來成大教育課程的筆記 最近在整理git的筆記才翻出來 因為當時是以英文進行，課程筆記就也用英文做了 這篇的內容可能比較雜亂，之後還會再整理進另一篇git的筆記">
+            <meta property="og:description" content="這是兩年前Github來成大教育課程的筆記 最近在整理git的筆記才翻出來 因為當時是以英文進行，課程筆記就也用英文做了 這篇的內容可能比較雜亂，之後還會再整理進另一篇git的筆記">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -79,8 +79,8 @@
                         <li><a href="/categories.html">Categories</a></li>
                         <li><a href="/tags.html">Tags</a></li>
 
-                            <li><a href="http://lee-w.github.io/pages/about-me.html">About&nbsp;Me</a></li>
-                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This&nbsp;Blog</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This Blog</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Using GitHub to Develop Software Collaboratively</h1>
+                        <h1>Using GitHub to Develop Software Collaboratively</h1>
                         <span class="meta">Posted by
                                 <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
                              on 2016/09/15 - 四
@@ -114,17 +114,18 @@
     <article>
         <p>這是兩年前Github來成大教育課程的筆記<br>
 最近在整理git的筆記才翻出來<br>
-因為當時是以英文進行，課程筆記就也用英文做了<br>&nbsp;這篇的內容可能比較雜亂，之後還會再整理進另一篇git的筆記</p>
+因為當時是以英文進行，課程筆記就也用英文做了<br>
+這篇的內容可能比較雜亂，之後還會再整理進另一篇git的筆記</p>
 <!--more-->
 
-<h1>Introduction to Git Hub&nbsp;(Company)</h1>
+<h1>Introduction to Git Hub (Company)</h1>
 <p>There are around 2600 staffs in GitHub and 40% of them live in San Fransisco.<br>
-Among them, there is one&nbsp;Taiwanese.</p>
+Among them, there is one Taiwanese.</p>
 <h1>Git</h1>
-<p>Wrote by Linus&nbsp;Torvalds.</p>
-<h2>Why version&nbsp;control?</h2>
+<p>Wrote by Linus Torvalds.</p>
+<h2>Why version control?</h2>
 <ol>
-<li>Historical&nbsp;propose</li>
+<li>Historical propose</li>
 <li>Collaboration</li>
 </ol>
 <h2>Tutorial</h2>
@@ -135,7 +136,7 @@ Among them, there is one&nbsp;Taiwanese.</p>
 <p>.git is just a folder with normal file<br>
 There is no daemon or background progress<br>
 Everything is operated in file<br>
-Never <code>rm -rf .git</code> <span class="caps">XD</span></p>
+Never <code>rm -rf .git</code> XD</p>
 <div class="codehilite"><pre><span></span>git stauts
 touch REAMDE.mdd
 </pre></div>
@@ -144,7 +145,7 @@ touch REAMDE.mdd
 <p>There are three main stages<br>
 1. working<br>
 2. staging<br>
-3.&nbsp;repo  </p>
+3. repo  </p>
 <table>
 <thead>
 <tr>
@@ -179,15 +180,15 @@ touch REAMDE.mdd
 </pre></div>
 
 
-<p>When we&#8217;re ready<br>
+<p>When we're ready<br>
 <code>git commit -m "add a blank commit"</code></p>
-<p>After <span class="caps">README</span>.md is&nbsp;modified</p>
+<p>After README.md is modified</p>
 <div class="codehilite"><pre><span></span>git add REAMDE.md
 git status
 </pre></div>
 
 
-<p>Now this file is in staging&nbsp;area  </p>
+<p>Now this file is in staging area  </p>
 <p>So, how to go back to history?<br>
 <code>git reset REAMDE.md</code></p>
 <p>Take a look at our history<br>
@@ -195,36 +196,36 @@ git status
 <p>Go back to history<br>
 <code>git checkout "SHA1"</code></p>
 <p><code>git checkout master</code><br>
-Everything comes&nbsp;back</p>
-<p><code>master</code> is the default branch name of git. It is a default word but not&nbsp;reserved.  </p>
-<p><code>git checkout -b "branch_name"</code> create a branch and checkout to&nbsp;it</p>
+Everything comes back</p>
+<p><code>master</code> is the default branch name of git. It is a default word but not reserved.  </p>
+<p><code>git checkout -b "branch_name"</code> create a branch and checkout to it</p>
 <h2>diff</h2>
-<p><code>git diff</code>: View the difference between working and&nbsp;staging</p>
-<p><code>git diff --staged</code>: Difference between staging and&nbsp;repo</p>
-<p><code>git diff "SHA1"</code>: Difference between current version and <span class="caps">SHA1</span></p>
+<p><code>git diff</code>: View the difference between working and staging</p>
+<p><code>git diff --staged</code>: Difference between staging and repo</p>
+<p><code>git diff "SHA1"</code>: Difference between current version and SHA1</p>
 <p><code>git diff master~1</code>: difference between current and the one before master<br>
 <code>git diff master^</code> -&gt; master~1<br>
-<code>git diff master^^</code> -&gt;&nbsp;master~2  </p>
-<p><code>git diff a b</code>: Show the change from a to&nbsp;b  </p>
+<code>git diff master^^</code> -&gt; master~2  </p>
+<p><code>git diff a b</code>: Show the change from a to b  </p>
 <h2>branch</h2>
-<p>In git, branch is not copy. It&#8217;s like bookmark<br>
-Actually <code>git branch -d "name"</code> just delete the pointer but not the&nbsp;entry.</p>
-<p><span class="caps">HEAD</span>: the pointer points to current&nbsp;entry</p>
-<h3>detach&nbsp;error</h3>
+<p>In git, branch is not copy. It's like bookmark<br>
+Actually <code>git branch -d "name"</code> just delete the pointer but not the entry.</p>
+<p>HEAD: the pointer points to current entry</p>
+<h3>detach error</h3>
 <p>If you go back to a entry not in certain branch, a detach error might occur.<br>
 For example, checkout to a commit that is parent of more than one branch and then append a new commit to it.<br>
 In such case, this new appended commit might not be able to be referenced.<br>
-<em>The solution to this problem is to create a new branch for&nbsp;it.</em>  </p>
+<em>The solution to this problem is to create a new branch for it.</em>  </p>
 <h2>log</h2>
-<p><code>git log --decorate</code>: Show also branch&nbsp;info</p>
-<p><code>git log --all</code>: Show all&nbsp;branch</p>
-<p><code>git log --graph</code>: Show&nbsp;graph</p>
-<h3>The difference between log and&nbsp;show</h3>
+<p><code>git log --decorate</code>: Show also branch info</p>
+<p><code>git log --all</code>: Show all branch</p>
+<p><code>git log --graph</code>: Show graph</p>
+<h3>The difference between log and show</h3>
 <p><code>git log</code>: Only the first line<br>
-<code>git show</code>: All the message, not only the first&nbsp;line</p>
+<code>git show</code>: All the message, not only the first line</p>
 <h1>GitHub</h1>
 <h2>push</h2>
-<p>origin is a short hand name of that remote url. In other word, your&nbsp;repo.</p>
+<p>origin is a short hand name of that remote url. In other word, your repo.</p>
 <p><code>git push -u origin master</code><br>
 - upload <em>master</em> to <em>origin</em><br>
 - -u tell git the default url to push for that branch(master) is origin, it would also make <code>git pull</code> remember<br>
@@ -232,38 +233,38 @@ In such case, this new appended commit might not be able to be referenced.<br>
 <h2>pull</h2>
 <p><code>git push --all</code>: push all branch<br>
 <code>git pull --prune</code></p>
-<h2>difference between fetch and&nbsp;pull</h2>
+<h2>difference between fetch and pull</h2>
 <p>git fetch : go to remote and copy it<br>
-git pull -&gt; fetch +&nbsp;merge</p>
+git pull -&gt; fetch + merge</p>
 <h2>on-site</h2>
 <p>pull request on GitHub<br>
 <code>@person-name</code> -&gt; notification<br>
-Have a conversation with the whole&nbsp;team  </p>
-<p>Write &#8220;fix #2 &#8230;.&#8221; in git commit -&gt; special meaning -&gt; specify the bug in issue on GitHub<br>
-Wiki -&gt;&nbsp;documentation</p>
-<h1>How to write a good git&nbsp;commit</h1>
+Have a conversation with the whole team  </p>
+<p>Write "fix #2 ...." in git commit -&gt; special meaning -&gt; specify the bug in issue on GitHub<br>
+Wiki -&gt; documentation</p>
+<h1>How to write a good git commit</h1>
 <h2>Principle</h2>
 <ul>
-<li>Separate each&nbsp;commit</li>
-<li>Let the commit tell a&nbsp;story  </li>
+<li>Separate each commit</li>
+<li>Let the commit tell a story  </li>
 </ul>
-<h2>More&nbsp;specific</h2>
+<h2>More specific</h2>
 <ul>
-<li>One line 80&nbsp;character  </li>
-<li>Use present tense instead of past&nbsp;tense  </li>
-<li>Don&#8217;t repeat what can be found in <code>git diff</code>  </li>
-<li>If more detail is to be written, left the second line to be&nbsp;blank.</li>
-<li>Write more detail about why this change happened after the third&nbsp;line.  </li>
+<li>One line 80 character  </li>
+<li>Use present tense instead of past tense  </li>
+<li>Don't repeat what can be found in <code>git diff</code>  </li>
+<li>If more detail is to be written, left the second line to be blank.</li>
+<li>Write more detail about why this change happened after the third line.  </li>
 </ul>
-<h2>Other&nbsp;issue</h2>
-<p><code>git config --global -e</code>: Edit your .gitconfig&nbsp;file.</p>
+<h2>Other issue</h2>
+<p><code>git config --global -e</code>: Edit your .gitconfig file.</p>
 <p>Not include binary files and executable<br>
-Don&#8217;t version control these kinds of files.<br>
+Don't version control these kinds of files.<br>
 Also, large files are not recommended to add to git.<br>
-If it&#8217;s needed, try <code>git-annex</code>(web-site).</p>
-<p><code>git revert "SHA1"</code> -&gt; save another entry of&nbsp;undo</p>
-<p>If you commit the password -&gt; <code>git rebase</code> can change commit, but it is not that&nbsp;recommended.</p>
-<p><code>git submodule</code> create a&nbsp;sub-module</p>
+If it's needed, try <code>git-annex</code>(web-site).</p>
+<p><code>git revert "SHA1"</code> -&gt; save another entry of undo</p>
+<p>If you commit the password -&gt; <code>git rebase</code> can change commit, but it is not that recommended.</p>
+<p><code>git submodule</code> create a sub-module</p>
     </article>
 
         <div class="tags">

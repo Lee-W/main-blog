@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="RISE是一套結合jupyter-notebook和reveal.js的專案 讓我們能在jupyter notebook直接開啟如同reveal.js的slide">
+        <meta name="description" content="RISE是一套結合jupyter-notebook和reveal.js的專案 讓我們能在jupyter notebook直接開啟如同reveal.js的slide">
 
         <meta name="author" content="Lee-W">
 
@@ -52,7 +52,7 @@
 	<meta property="og:url" content="http://lee-w.github.io/posts/python/2016/08/scrollable-rise">
 	<meta property="og:title" content="Scrollable RISE">
 	<meta property="article:published_time" content="2016-08-15 03:22:00+08:00">
-            <meta property="og:description" content="RISE是一套結合jupyter-notebook和reveal.js的專案 讓我們能在jupyter notebook直接開啟如同reveal.js的slide">
+            <meta property="og:description" content="RISE是一套結合jupyter-notebook和reveal.js的專案 讓我們能在jupyter notebook直接開啟如同reveal.js的slide">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -80,8 +80,8 @@
                         <li><a href="/categories.html">Categories</a></li>
                         <li><a href="/tags.html">Tags</a></li>
 
-                            <li><a href="http://lee-w.github.io/pages/about-me.html">About&nbsp;Me</a></li>
-                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This&nbsp;Blog</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This Blog</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -114,16 +114,17 @@
     <!-- Post Content -->
     <article>
         <p>RISE是一套結合<a href="http://jupyter.org">jupyter-notebook</a>和<a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a>的專案<br>
-讓我們能在jupyter&nbsp;notebook直接開啟如同reveal.js的slide</p>
+讓我們能在jupyter notebook直接開啟如同reveal.js的slide</p>
 <!--more-->
 
 <p>不過如過notebook cell中的內容太長<br>
 在播放的時候就會導致內容被裁剪<br>
-而RISE預設是無法用滑鼠滾動的<br>&nbsp;所以這裡記錄該如何讓RISE可以滾動</p>
+而RISE預設是無法用滑鼠滾動的<br>
+所以這裡記錄該如何讓RISE可以滾動</p>
 <p>進入jupyter notebook的任一個notebook後<br>
 在上方工具列點選<code>Edit</code> -&gt; <code>Edit Notebook Metadata</code><br>
 接著在裡面加入livereveal的設定<br>
-如下&nbsp;（只需加入livereveal的部分）</p>
+如下 （只需加入livereveal的部分）</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;kernelspec&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="err">...</span>
@@ -136,11 +137,12 @@
 
 
 <hr>
-<p>不過開發者其實有說，開啟滾動會造成不少問題<br>&nbsp;所以預設上才會設定為不能滾動</p>
+<p>不過開發者其實有說，開啟滾動會造成不少問題<br>
+所以預設上才會設定為不能滾動</p>
 <p><strong>damianavila commented on Jul 12</strong><br>
-After several and long discussions with a lot of people, we have arrived to the conclusion that scrolling on reveal.js based slideshows brings more problems than benefits, so I will not add the scrolling as a default option <span class="caps">BUT</span> we should clearly document how to get scrolling slides with the config option available. I will mark this as a docs issue and prioritize&nbsp;properly.</p>
+After several and long discussions with a lot of people, we have arrived to the conclusion that scrolling on reveal.js based slideshows brings more problems than benefits, so I will not add the scrolling as a default option BUT we should clearly document how to get scrolling slides with the config option available. I will mark this as a docs issue and prioritize properly.</p>
 <h1>Reference</h1>
-<p><a href="https://github.com/damianavila/RISE/issues/185">scrolling vertically&nbsp;#185</a></p>
+<p><a href="https://github.com/damianavila/RISE/issues/185">scrolling vertically #185</a></p>
     </article>
 
         <div class="tags">

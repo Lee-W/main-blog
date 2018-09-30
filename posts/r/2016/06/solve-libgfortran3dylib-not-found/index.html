@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>解決更新gcc找不到libgfortran.3.dylib (Octave,R)</title>
+        <title>解決更新gcc找不到libgfortran.3.dylib (Octave,R)</title>
 
         <link href="//lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Full Atom Feed" />
         <!-- Bootstrap Core CSS -->
@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="最近在mac上更新了gcc 6後，不管是開Octave還是R 都會出現以下的錯誤訊息 dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib Referenced from:...">
+        <meta name="description" content="最近在mac上更新了gcc 6後，不管是開Octave還是R 都會出現以下的錯誤訊息 dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib Referenced from:...">
 
         <meta name="author" content="Lee-W">
 
@@ -49,9 +49,9 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 	<meta property="og:url" content="http://lee-w.github.io/posts/r/2016/06/solve-libgfortran3dylib-not-found">
-	<meta property="og:title" content="解決更新gcc找不到libgfortran.3.dylib (Octave,R)">
+	<meta property="og:title" content="解決更新gcc找不到libgfortran.3.dylib (Octave,R)">
 	<meta property="article:published_time" content="2016-06-11 03:13:00+08:00">
-            <meta property="og:description" content="最近在mac上更新了gcc 6後，不管是開Octave還是R 都會出現以下的錯誤訊息 dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib Referenced from:...">
+            <meta property="og:description" content="最近在mac上更新了gcc 6後，不管是開Octave還是R 都會出現以下的錯誤訊息 dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib Referenced from:...">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -79,8 +79,8 @@
                         <li><a href="/categories.html">Categories</a></li>
                         <li><a href="/tags.html">Tags</a></li>
 
-                            <li><a href="http://lee-w.github.io/pages/about-me.html">About&nbsp;Me</a></li>
-                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This&nbsp;Blog</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This Blog</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>解決更新gcc找不到libgfortran.3.dylib (Octave,R)</h1>
+                        <h1>解決更新gcc找不到libgfortran.3.dylib (Octave,R)</h1>
                         <span class="meta">Posted by
                                 <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
                              on 2016/06/11 - 六
@@ -112,7 +112,8 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p>最近在mac上更新了gcc 6後，不管是開Octave還是R<br>&nbsp;都會出現以下的錯誤訊息</p>
+        <p>最近在mac上更新了gcc 6後，不管是開Octave還是R<br>
+都會出現以下的錯誤訊息</p>
 <div class="codehilite"><pre><span></span>dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib
   Referenced from: /usr/local/Cellar/r/3.3.0/R.framework/Versions/3.2/Resources/lib/libR.dylib
   Reason: image not found
@@ -124,13 +125,14 @@ Trace/BPT trap: <span class="m">5</span>
 
 <p>這是因為原本的lib會去找/usr/local/lib/gcc/5/下的lib<br>
 但是更新過後已經被變成/usr/local/lib/gcc/6/了<br>
-所以只要從<code>/usr/local/lib/gcc/5/</code>建立soft link到<code>/usr/local/lib/gcc/6/</code>即可<br>&nbsp;(版本號則要根據自身gcc的版本來做修改)</p>
+所以只要從<code>/usr/local/lib/gcc/5/</code>建立soft link到<code>/usr/local/lib/gcc/6/</code>即可<br>
+(版本號則要根據自身gcc的版本來做修改)</p>
 <div class="codehilite"><pre><span></span>ln -s /usr/local/lib/gcc/5/ /usr/local/lib/gcc/6/
 </pre></div>
 
 
 <h1>Reference</h1>
-<p><a href="https://github.com/Homebrew/legacy-homebrew/issues/39929">R and julia won&#8217;t start after upgrade (perhaps gcc 5.1, Xcode 6.3.2, or Command Line Tools&nbsp;6.3)</a></p>
+<p><a href="https://github.com/Homebrew/legacy-homebrew/issues/39929">R and julia won't start after upgrade (perhaps gcc 5.1, Xcode 6.3.2, or Command Line Tools 6.3)</a></p>
     </article>
 
         <div class="tags">

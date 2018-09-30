@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>Tool for Checking Python Coding Style</title>
+        <title>Tool for Checking Python Coding Style</title>
 
         <link href="//lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Full Atom Feed" />
         <!-- Bootstrap Core CSS -->
@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="Pylint Setup pip install pylint Usage Generate a code quality report pylint your_code.py">
+        <meta name="description" content="Pylint Setup pip install pylint Usage Generate a code quality report pylint your_code.py">
 
         <meta name="author" content="Lee-W">
 
@@ -50,9 +50,9 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 	<meta property="og:url" content="http://lee-w.github.io/posts/python/2017/03/tools-for-checking-python-coding-style">
-	<meta property="og:title" content="Tool for Checking Python Coding Style">
+	<meta property="og:title" content="Tool for Checking Python Coding Style">
 	<meta property="article:published_time" content="2017-03-15 19:13:00+08:00">
-            <meta property="og:description" content="Pylint Setup pip install pylint Usage Generate a code quality report pylint your_code.py">
+            <meta property="og:description" content="Pylint Setup pip install pylint Usage Generate a code quality report pylint your_code.py">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -80,8 +80,8 @@
                         <li><a href="/categories.html">Categories</a></li>
                         <li><a href="/tags.html">Tags</a></li>
 
-                            <li><a href="http://lee-w.github.io/pages/about-me.html">About&nbsp;Me</a></li>
-                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This&nbsp;Blog</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This Blog</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -95,7 +95,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Tool for Checking Python Coding Style</h1>
+                        <h1>Tool for Checking Python Coding Style</h1>
                         <span class="meta">Posted by
                                 <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
                              on 2017/03/15 - 三
@@ -120,16 +120,16 @@
 
 
 <h2>Usage</h2>
-<h3>Generate a code quality&nbsp;report</h3>
+<h3>Generate a code quality report</h3>
 <div class="codehilite"><pre><span></span>pylint your_code.py
 </pre></div>
 
 
 <!--more-->
 
-<h3>Customize your pylint&nbsp;settings</h3>
+<h3>Customize your pylint settings</h3>
 <p>Some rules in default settings might be too trivial.<br>
-(e.g. <span class="caps">PEP8</span> E501: line too long error (no more than 79 characters)&nbsp;)</p>
+(e.g. PEP8 E501: line too long error (no more than 79 characters) )</p>
 <ul>
 <li>Generate <code>pylintrc</code> file</li>
 </ul>
@@ -138,7 +138,7 @@
 
 
 <p>This generate a common used <code>pylintrc</code>.<br>
-For further customization, you&#8217;ll have to change this&nbsp;file.</p>
+For further customization, you'll have to change this file.</p>
 <ul>
 <li>Generate a code quality report using you <code>pylintrc</code></li>
 </ul>
@@ -146,12 +146,12 @@ For further customization, you&#8217;ll have to change this&nbsp;file.</p>
 </pre></div>
 
 
-<h2>Integrate with&nbsp;Vim</h2>
+<h2>Integrate with Vim</h2>
 <h3>1. <a href="https://github.com/w0rp/ale">ale</a></h3>
 <p><img alt="ale-screenshot" src="https://i.imgur.com/vwpqY4G.png"></p>
 <p><code>ale</code> also supports other linters in other languages.<br>
 It uses the new async feature in vim 8.<br>
-Thus, it checks your code when you are typing. (You can disable&nbsp;it.)</p>
+Thus, it checks your code when you are typing. (You can disable it.)</p>
 <p>The following settings are for pylint in <code>~/.vimrc</code></p>
 <div class="codehilite"><pre><span></span><span class="c1"># The default value is pytlinh</span>
 <span class="c1"># If your pylint executable is not pylint, it should be set </span>
@@ -164,7 +164,7 @@ Thus, it checks your code when you are typing. (You can disable&nbsp;it.)</p>
 
 <p>All the available linters are enabled by default.<br>
 For Python, <code>flake8</code>, <code>mypy</code> are also used.<br>
-Thus, you might find that even if you ignore some rules in <code>pylintc</code>, you are still&nbsp;notified.</p>
+Thus, you might find that even if you ignore some rules in <code>pylintc</code>, you are still notified.</p>
 <p>In this case, add the following setting in <code>~/.vimrc</code></p>
 <div class="codehilite"><pre><span></span><span class="nb">let</span> g:ale_linters <span class="o">=</span> <span class="o">{</span>
 <span class="se">\ </span>  <span class="s1">&#39;python&#39;</span>: <span class="o">[</span><span class="s1">&#39;pylint&#39;</span><span class="o">]</span>,
@@ -172,10 +172,10 @@ Thus, you might find that even if you ignore some rules in <code>pylintc</code>,
 </pre></div>
 
 
-<p>This enables <code>pylint</code> as the only linter for&nbsp;Python</p>
-<p>p.s. <code>mypy</code>, <code>flake8</code> are also great linters. I&#8217;m just not familiar with&nbsp;it</p>
+<p>This enables <code>pylint</code> as the only linter for Python</p>
+<p>p.s. <code>mypy</code>, <code>flake8</code> are also great linters. I'm just not familiar with it</p>
 <h3>2. <a href="https://github.com/python-mode/python-mode">python-mode</a></h3>
-<p>It&#8217;s a powerful package supports not only linters but also plenty of useful features a python programer would&nbsp;need.</p>
+<p>It's a powerful package supports not only linters but also plenty of useful features a python programer would need.</p>
 <p><img alt="python-mode-screenshot" src="https://i.imgur.com/5FffIqN.png"><br>
 Unlike <code>ale</code>, <code>python-mode</code> check your code only when you save or open your python file (You can set this in your <code>~/.vimrc</code>)</p>
 <p>Add these lines in <code>~/.vimrc</code>  to enable <code>pylint</code></p>

@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="其實原本的標題是Dual Boot FreeBsd with Ubuntu 這篇文章寫的都是用Ubuntu測試的 不過我想只要是grub2應該都差不多吧XD">
+        <meta name="description" content="其實原本的標題是Dual Boot FreeBsd with Ubuntu 這篇文章寫的都是用Ubuntu測試的 不過我想只要是grub2應該都差不多吧XD">
 
         <meta name="author" content="Lee-W">
 
@@ -51,7 +51,7 @@
 	<meta property="og:url" content="http://lee-w.github.io/posts/linux-unix/2014/10/dual-boot-freebsd-using-grub2">
 	<meta property="og:title" content="Dual Boot FreeBSD Using GRUB2">
 	<meta property="article:published_time" content="2014-10-21 08:56:00+08:00">
-            <meta property="og:description" content="其實原本的標題是Dual Boot FreeBsd with Ubuntu 這篇文章寫的都是用Ubuntu測試的 不過我想只要是grub2應該都差不多吧XD">
+            <meta property="og:description" content="其實原本的標題是Dual Boot FreeBsd with Ubuntu 這篇文章寫的都是用Ubuntu測試的 不過我想只要是grub2應該都差不多吧XD">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -79,8 +79,8 @@
                         <li><a href="/categories.html">Categories</a></li>
                         <li><a href="/tags.html">Tags</a></li>
 
-                            <li><a href="http://lee-w.github.io/pages/about-me.html">About&nbsp;Me</a></li>
-                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This&nbsp;Blog</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This Blog</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -113,7 +113,8 @@
     <!-- Post Content -->
     <article>
         <p>其實原本的標題是<code>Dual Boot FreeBsd with Ubuntu</code><br>
-這篇文章寫的都是用Ubuntu測試的<br>&nbsp;不過我想只要是grub2應該都差不多吧XD</p>
+這篇文章寫的都是用Ubuntu測試的<br>
+不過我想只要是grub2應該都差不多吧XD</p>
 <!--more-->
 
 <h2>加入freeBSD到grub開機選單</h2>
@@ -140,7 +141,7 @@
 
 <p>這樣就會在開機選單上看到freeBSD了</p>
 <p>其實還有一些其他的設定方法<br>
-可以參考<a href="http://unix.stackexchange.com/questions/16886/set-up-grub2-to-boot-freebsd-using-either-ubuntu-tools-or-liveusb-to-find-what-p">Set up Grub2 to boot&nbsp;Freebsd</a></p>
+可以參考<a href="http://unix.stackexchange.com/questions/16886/set-up-grub2-to-boot-freebsd-using-either-ubuntu-tools-or-liveusb-to-find-what-p">Set up Grub2 to boot Freebsd</a></p>
 <h2>換grub開機順序</h2>
 <p>如果希望改變預設的開機順序，就必須要修改下面的檔案<code>/etc/default/grub</code></p>
 <div class="codehilite"><pre><span></span>vi /etc/default/grub
@@ -159,7 +160,7 @@ GRUB_CMDLINE_LINUX=&quot;&quot;
 
 
 <p>把第1行設定為多少(注意是從0開始)，就會預設從那裡開機</p>
-<h2>在ubuntu mount&nbsp;FreeBSD</h2>
+<h2>在ubuntu mount FreeBSD</h2>
 <div class="codehilite"><pre><span></span>sudo mount -t ufs -r -o <span class="nv">ufstype</span><span class="o">=</span>ufs2 /dev/sda4 ~/freebsd
 </pre></div>
     </article>

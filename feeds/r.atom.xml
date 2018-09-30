@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - R</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/r.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2016-06-11T03:13:00+08:00</updated><entry><title>解決更新gcc找不到libgfortran.3.dylib (Octave,R)</title><link href="http://lee-w.github.io/posts/r/2016/06/solve-libgfortran3dylib-not-found" rel="alternate"></link><published>2016-06-11T03:13:00+08:00</published><updated>2016-06-11T03:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-06-11:/posts/r/2016/06/solve-libgfortran3dylib-not-found</id><summary type="html">&lt;p&gt;最近在mac上更新了gcc 6後，不管是開Octave還是R&lt;br&gt;&amp;nbsp;都會出現以下的錯誤訊息&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling - R</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/r.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2016-06-11T03:13:00+08:00</updated><entry><title>解決更新gcc找不到libgfortran.3.dylib (Octave,R)</title><link href="http://lee-w.github.io/posts/r/2016/06/solve-libgfortran3dylib-not-found" rel="alternate"></link><published>2016-06-11T03:13:00+08:00</published><updated>2016-06-11T03:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-06-11:/posts/r/2016/06/solve-libgfortran3dylib-not-found</id><summary type="html">&lt;p&gt;最近在mac上更新了gcc 6後，不管是開Octave還是R&lt;br&gt;
+都會出現以下的錯誤訊息&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib
   Referenced from: /usr/local/Cellar/r/3.3.0/R.framework/Versions/3.2/Resources/lib/libR.dylib
   Reason: image not found
@@ -7,7 +8,8 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-</summary><content type="html">&lt;p&gt;最近在mac上更新了gcc 6後，不管是開Octave還是R&lt;br&gt;&amp;nbsp;都會出現以下的錯誤訊息&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;最近在mac上更新了gcc 6後，不管是開Octave還是R&lt;br&gt;
+都會出現以下的錯誤訊息&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib
   Referenced from: /usr/local/Cellar/r/3.3.0/R.framework/Versions/3.2/Resources/lib/libR.dylib
   Reason: image not found
@@ -19,16 +21,18 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 
 &lt;p&gt;這是因為原本的lib會去找/usr/local/lib/gcc/5/下的lib&lt;br&gt;
 但是更新過後已經被變成/usr/local/lib/gcc/6/了&lt;br&gt;
-所以只要從&lt;code&gt;/usr/local/lib/gcc/5/&lt;/code&gt;建立soft link到&lt;code&gt;/usr/local/lib/gcc/6/&lt;/code&gt;即可&lt;br&gt;&amp;nbsp;(版本號則要根據自身gcc的版本來做修改)&lt;/p&gt;
+所以只要從&lt;code&gt;/usr/local/lib/gcc/5/&lt;/code&gt;建立soft link到&lt;code&gt;/usr/local/lib/gcc/6/&lt;/code&gt;即可&lt;br&gt;
+(版本號則要根據自身gcc的版本來做修改)&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /usr/local/lib/gcc/5/ /usr/local/lib/gcc/6/
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1&gt;Reference&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://github.com/Homebrew/legacy-homebrew/issues/39929"&gt;R and julia won&amp;#8217;t start after upgrade (perhaps gcc 5.1, Xcode 6.3.2, or Command Line Tools&amp;nbsp;6.3)&lt;/a&gt;&lt;/p&gt;</content><category term="mac"></category></entry><entry><title>解決安裝IRKernel缺少zmq.h</title><link href="http://lee-w.github.io/posts/r/2016/02/resolve-irkernel-missing-zmqh" rel="alternate"></link><published>2016-02-20T03:42:00+08:00</published><updated>2016-02-20T03:42:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-02-20:/posts/r/2016/02/resolve-irkernel-missing-zmqh</id><summary type="html"></summary><content type="html">&lt;!--more--&gt;
+&lt;p&gt;&lt;a href="https://github.com/Homebrew/legacy-homebrew/issues/39929"&gt;R and julia won't start after upgrade (perhaps gcc 5.1, Xcode 6.3.2, or Command Line Tools 6.3)&lt;/a&gt;&lt;/p&gt;</content><category term="mac"></category></entry><entry><title>解決安裝IRKernel缺少zmq.h</title><link href="http://lee-w.github.io/posts/r/2016/02/resolve-irkernel-missing-zmqh" rel="alternate"></link><published>2016-02-20T03:42:00+08:00</published><updated>2016-02-20T03:42:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-02-20:/posts/r/2016/02/resolve-irkernel-missing-zmqh</id><summary type="html"></summary><content type="html">&lt;!--more--&gt;
 
 &lt;h2&gt;安裝IRKernel&lt;/h2&gt;
-&lt;p&gt;進入R的命令列，輸入下面的指令&lt;br&gt;&amp;nbsp;就能安裝IRKernel，以後就能在jupyter中使用R&lt;/p&gt;
+&lt;p&gt;進入R的命令列，輸入下面的指令&lt;br&gt;
+就能安裝IRKernel，以後就能在jupyter中使用R&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;install.packages(c(&amp;#39;rzmq&amp;#39;,&amp;#39;repr&amp;#39;,&amp;#39;IRkernel&amp;#39;,&amp;#39;IRdisplay&amp;#39;),
                  repos = c(&amp;#39;http://irkernel.github.io/&amp;#39;, getOption(&amp;#39;repos&amp;#39;)))
 IRkernel::installspec()
@@ -62,6 +66,6 @@ jupyter console --kernel=ir
 &lt;img alt="R_in_jupyter" src="http://i.imgur.com/pWf6j0q.png"&gt;&lt;/p&gt;
 &lt;h1&gt;Reference&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/IRkernel/IRkernel/issues/50"&gt;Failed to install rzmq&amp;nbsp;#50&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/IRkernel/IRkernel/issues/50"&gt;Failed to install rzmq #50&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/IRkernel/IRkernel"&gt;IRkernel&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Jupyter"></category></entry></feed>

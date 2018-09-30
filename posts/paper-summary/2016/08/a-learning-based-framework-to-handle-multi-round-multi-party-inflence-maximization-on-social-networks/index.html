@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks</title>
+        <title>[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks</title>
 
         <link href="//lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Full Atom Feed" />
         <!-- Bootstrap Core CSS -->
@@ -51,7 +51,7 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 	<meta property="og:url" content="http://lee-w.github.io/posts/paper-summary/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks">
-	<meta property="og:title" content="[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks">
+	<meta property="og:title" content="[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks">
 	<meta property="article:published_time" content="2016-08-22 16:53:00+08:00">
             <meta property="og:description" content="Paper">
 
@@ -81,8 +81,8 @@
                         <li><a href="/categories.html">Categories</a></li>
                         <li><a href="/tags.html">Tags</a></li>
 
-                            <li><a href="http://lee-w.github.io/pages/about-me.html">About&nbsp;Me</a></li>
-                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This&nbsp;Blog</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This Blog</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -96,7 +96,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks</h1>
+                        <h1>[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks</h1>
                         <span class="meta">Posted by
                                 <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
                              on 2016/08/22 - 一
@@ -117,110 +117,110 @@
         <p><a href="http://dl.acm.org/citation.cfm?id=2783392">Paper</a></p>
 <!--more-->
 
-<h2>1.&nbsp;Introduction</h2>
+<h2>1. Introduction</h2>
 <ul>
 <li>
-<p>Problem&nbsp;Description</p>
+<p>Problem Description</p>
 <ul>
-<li>A company intends to select a small set of customers to distribute praises of their trial products to a larger&nbsp;group</li>
+<li>A company intends to select a small set of customers to distribute praises of their trial products to a larger group</li>
 </ul>
 </li>
 <li>
-<p>Influence&nbsp;maximization</p>
+<p>Influence maximization</p>
 <ul>
-<li>Goal: Identify a small subset of seed nodes that have the best chance to influence the most number of&nbsp;nodes</li>
-<li>Competitive Influence Maximization (<span class="caps">CIM</span>)</li>
+<li>Goal: Identify a small subset of seed nodes that have the best chance to influence the most number of nodes</li>
+<li>Competitive Influence Maximization (CIM)</li>
 </ul>
 </li>
 <li>
 <p>Assumption</p>
 <ul>
-<li>Influence is exclusive (Once a node is influenced by one party, it will not be influenced&nbsp;again)      </li>
-<li>Each round all parties choose one node and then the influence propagates before the next round&nbsp;starts</li>
+<li>Influence is exclusive (Once a node is influenced by one party, it will not be influenced again)      </li>
+<li>Each round all parties choose one node and then the influence propagates before the next round starts</li>
 </ul>
 </li>
 <li>
-<p><span class="caps">STORM</span> (STrategy-Oriented Reinforcement-Learning based influence Maximization)&nbsp;performs</p>
+<p>STORM (STrategy-Oriented Reinforcement-Learning based influence Maximization) performs</p>
 <ul>
 <li>Data Generation<ul>
-<li>the data, which is the experience generated through simulation by applying the current model, will become the feedbacks to refine the model for better&nbsp;performance </li>
+<li>the data, which is the experience generated through simulation by applying the current model, will become the feedbacks to refine the model for better performance </li>
 </ul>
 </li>
-<li>Model&nbsp;Learning </li>
+<li>Model Learning </li>
 </ul>
 </li>
 </ul>
-<h3>Difference with&nbsp;Others</h3>
+<h3>Difference with Others</h3>
 <ol>
 <li>Known strategy -&gt; Both know and unknown<ul>
-<li>Known or Unknown but available to compete -&gt; Train a model to learn&nbsp;strategy</li>
-<li>Unknown -&gt; Game-theoretical solution to seek the Nash&nbsp;equilibrium     </li>
+<li>Known or Unknown but available to compete -&gt; Train a model to learn strategy</li>
+<li>Unknown -&gt; Game-theoretical solution to seek the Nash equilibrium     </li>
 </ul>
 </li>
-<li>Single-roung -&gt;&nbsp;Multi-round</li>
-<li>Model driven -&gt; learning-based,&nbsp;data-drivern</li>
-<li>Not considering different network topology -&gt; General to adapt both opponent&#8217;s strategy and environment setting (e.g. underlying network&nbsp;topology)</li>
+<li>Single-roung -&gt; Multi-round</li>
+<li>Model driven -&gt; learning-based, data-drivern</li>
+<li>Not considering different network topology -&gt; General to adapt both opponent's strategy and environment setting (e.g. underlying network topology)</li>
 </ol>
-<h2>2. Problem&nbsp;Statment</h2>
-<h3>Def 1: Competive Linear Threshold (<span class="caps">CLT</span>)</h3>
+<h2>2. Problem Statment</h2>
+<h3>Def 1: Competive Linear Threshold (CLT)</h3>
 <ul>
-<li><span class="caps">CLT</span> model is a multi-party diffusion&nbsp;model</li>
-<li>The party who has the highest influence occupied the&nbsp;node</li>
+<li>CLT model is a multi-party diffusion model</li>
+<li>The party who has the highest influence occupied the node</li>
 </ul>
-<h3>Def 2: Multi-Round Competitive Influence Maximization (<span class="caps">MRCIM</span>)</h3>
+<h3>Def 2: Multi-Round Competitive Influence Maximization (MRCIM)</h3>
 <ul>
-<li>Max its overall relative&nbsp;influence</li>
+<li>Max its overall relative influence</li>
 </ul>
-<h2>4.&nbsp;Methodology</h2>
+<h2>4. Methodology</h2>
 <ul>
-<li><span class="caps">NP</span>-hardness of <span class="caps">MRCIM</span> -&gt; looks for approxmiate&nbsp;solution</li>
+<li>NP-hardness of MRCIM -&gt; looks for approxmiate solution</li>
 <li>Max the inflence for each round does not guarantee overall max<ul>
-<li>Due to the fact that each round are not&nbsp;independent</li>
+<li>Due to the fact that each round are not independent</li>
 </ul>
 </li>
 </ul>
-<h3>4.1 Preliminary: Reinforcement&nbsp;Learning</h3>
+<h3>4.1 Preliminary: Reinforcement Learning</h3>
 <ul>
-<li>Learn a policy <span class="math">\(\pi(s)\)</span> to determine which action to take state s&nbsp;(environment)</li>
+<li>Learn a policy <span class="math">\(\pi(s)\)</span> to determine which action to take state s (environment)</li>
 <li>How to estimated <span class="math">\(\pi\)</span>?<ul>
 <li>Expected Accmulated Reward of a state (V function)<ul>
-<li><span class="math">\( V^\pi(s) =&nbsp;E_\pi\{R_t|S_t=s\}=...\)</span></li>
+<li><span class="math">\( V^\pi(s) = E_\pi\{R_t|S_t=s\}=...\)</span></li>
 </ul>
 </li>
 <li>Expected Accmulated Reward of a state-action pair (Q function)<ul>
-<li><span class="math">\( Q^\pi(s, a) = E_\pi\{R_t|S_t=s,&nbsp;a_t=a\}=...\)</span></li>
+<li><span class="math">\( Q^\pi(s, a) = E_\pi\{R_t|S_t=s, a_t=a\}=...\)</span></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p>The optimal <span class="math">\(\pi\)</span> can be obtained through Q&nbsp;functinon</p>
-<p><span class="math">\( \pi = \arg \min_{a\in&nbsp;A}Q(s,a)\)</span></p>
-<p>(i.e. For all &#8220;a&#8221; in A, find the &#8220;a&#8221; such that min Q(s,&nbsp;a))</p>
-<h3>4.2 Strategy-Oriented&nbsp;Reinforcement-Learning</h3>
+<p>The optimal <span class="math">\(\pi\)</span> can be obtained through Q functinon</p>
+<p><span class="math">\( \pi = \arg \min_{a\in A}Q(s,a)\)</span></p>
+<p>(i.e. For all "a" in A, find the "a" such that min Q(s, a))</p>
+<h3>4.2 Strategy-Oriented Reinforcement-Learning</h3>
 <h4>Setup</h4>
 <ul>
 <li>Env<ul>
-<li>Influence propagation&nbsp;process</li>
+<li>Influence propagation process</li>
 </ul>
 </li>
 <li>Reward<ul>
 <li>Delay Reward: The difference of activated nodes between parties at the last round<ul>
-<li>After the last round, rewards are propagated to the previous states through Q-function&nbsp;updating</li>
-<li>Slow but more&nbsp;accurate</li>
+<li>After the last round, rewards are propagated to the previous states through Q-function updating</li>
+<li>Slow but more accurate</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Action<ul>
 <li><s>Choosing certain node to activate</s><ul>
-<li>too&nbsp;many</li>
+<li>too many</li>
 <li>overfit</li>
 </ul>
 </li>
-<li>Single Party <span class="caps">IM</span> strategies<ul>
-<li>Namely, which strategy to choose given the current&nbsp;state</li>
-<li>The size can be reduced to strategies&nbsp;choosen</li>
+<li>Single Party IM strategies<ul>
+<li>Namely, which strategy to choose given the current state</li>
+<li>The size can be reduced to strategies choosen</li>
 <li>Chosen Strategies<ul>
 <li>sub-greedy</li>
 <li>degree-first</li>
@@ -235,23 +235,23 @@
 <li>State<ul>
 <li>Represents<ul>
 <li>network</li>
-<li>environment&nbsp;status</li>
+<li>environment status</li>
 </ul>
 </li>
 <li><s>record the occupation status of all nodes</s><ul>
-<li><span class="math">\(3^{|V|}\)</span>, too&nbsp;many</li>
+<li><span class="math">\(3^{|V|}\)</span>, too many</li>
 <li>overfit</li>
 </ul>
 </li>
 <li>Features Designed<ul>
-<li>Number of free&nbsp;nodes</li>
-<li>Sum of degrees of all&nbsp;nodes</li>
-<li>Sum of weight of the edges for which bot h vertices are&nbsp;free</li>
-<li>Max degree among all free&nbsp;nodes</li>
-<li>Max sum of free out-edge weight of a node among nodes which are the first player&#8217;s&nbsp;neighbors</li>
-<li>Second&nbsp;player&#8217;s </li>
-<li>Max activated nodes of a node for the first player alter two rounds of influence&nbsp;propagation</li>
-<li>Second&nbsp;player&#8217;s</li>
+<li>Number of free nodes</li>
+<li>Sum of degrees of all nodes</li>
+<li>Sum of weight of the edges for which bot h vertices are free</li>
+<li>Max degree among all free nodes</li>
+<li>Max sum of free out-edge weight of a node among nodes which are the first player's neighbors</li>
+<li>Second player's </li>
+<li>Max activated nodes of a node for the first player alter two rounds of influence propagation</li>
+<li>Second player's</li>
 </ul>
 </li>
 <li>The feautres are quantize into<ul>
@@ -260,109 +260,109 @@
 <li>high</li>
 </ul>
 </li>
-<li>Totally, <span class="math">\(3^9\)</span>&nbsp;states</li>
+<li>Totally, <span class="math">\(3^9\)</span> states</li>
 </ul>
 </li>
 </ul>
-<h4>Data For&nbsp;Training</h4>
+<h4>Data For Training</h4>
 <ul>
-<li>Propagation model is known (e.g. <span class="caps">LT</span> in the&nbsp;experiments)</li>
-<li>Strategies served as actions are&nbsp;predefined</li>
+<li>Propagation model is known (e.g. LT in the experiments)</li>
+<li>Strategies served as actions are predefined</li>
 </ul>
 <p>In training phase, train the agent aginst a certain strategy and see how it performs on the given network<br>
-These data can be used to learn the value&nbsp;functions</p>
-<h4>Training Against&nbsp;Opponents</h4>
+These data can be used to learn the value functions</p>
+<h4>Training Against Opponents</h4>
 <ul>
 <li>Opponent Strategy<ul>
-<li>Known: Simulate the strategy during&nbsp;training</li>
-<li>Unknown but availble during training: Same as&nbsp;above</li>
-<li>Unknown: More Gerneral Model in&nbsp;4.4</li>
+<li>Known: Simulate the strategy during training</li>
+<li>Unknown but availble during training: Same as above</li>
+<li>Unknown: More Gerneral Model in 4.4</li>
 </ul>
 </li>
 </ul>
 <h4>Phase</h4>
 <ul>
 <li>Phase 1: Training<ul>
-<li>The agent update its Q function from the simulation experiences throughout the training&nbsp;rounds</li>
-<li>Update <span class="math">\(\pi\)</span> in the&nbsp;meantime</li>
+<li>The agent update its Q function from the simulation experiences throughout the training rounds</li>
+<li>Update <span class="math">\(\pi\)</span> in the meantime</li>
 </ul>
 </li>
 <li>Phase 2: Competition<ul>
-<li>The agent would not update&nbsp;Q-table</li>
-<li>Generates <span class="math">\(\pi\)</span> according to&nbsp;Q-table</li>
+<li>The agent would not update Q-table</li>
+<li>Generates <span class="math">\(\pi\)</span> according to Q-table</li>
 </ul>
 </li>
 </ul>
-<h2>4.3 <span class="caps">STORM</span> with Strategy&nbsp;Known</h2>
+<h2>4.3 STORM with Strategy Known</h2>
 <ul>
 <li>Training the model compete against the strategy to learn <span class="math">\(\pi\)</span></li>
-<li><span class="caps">STORM</span>-Q<ul>
+<li>STORM-Q<ul>
 <li>Update Q-function following the concept of Q-learning<ul>
-<li>Q-Learning: <span class="math">\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t,&nbsp;a_t))\)</span></li>
+<li>Q-Learning: <span class="math">\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t, a_t))\)</span></li>
 </ul>
 </li>
 <li><span class="math">\(\epsilon\)</span>-greedy<ul>
-<li>Determine strategies on the current policy derived from&nbsp;Q-table.</li>
-<li>Explore the new directions to avoid local&nbsp;optimum</li>
+<li>Determine strategies on the current policy derived from Q-table.</li>
+<li>Explore the new directions to avoid local optimum</li>
 </ul>
 </li>
-<li>Pure&nbsp;Strategy</li>
-<li>The most likely strategy is&nbsp;choosen</li>
+<li>Pure Strategy</li>
+<li>The most likely strategy is choosen</li>
 </ul>
 </li>
 </ul>
-<p>$ Algorithm&nbsp;$</p>
-<h2>4.4 <span class="caps">STORM</span> with Strategy&nbsp;Unknown</h2>
-<h3>Unknown but available to&nbsp;train</h3>
+<p>$ Algorithm $</p>
+<h2>4.4 STORM with Strategy Unknown</h2>
+<h3>Unknown but available to train</h3>
 <ul>
-<li>The differece between the known case is that experience cannot be obtained through&nbsp;simulation</li>
-<li>Train against unknown opponent&#8217;s strategy during competition<ul>
-<li>It&#8217;s feasible because <span class="caps">STORM</span>-Q only needs to know the seed-selection outcoms of the opponent to update the Q-table, not exact strategy it&nbsp;takes</li>
+<li>The differece between the known case is that experience cannot be obtained through simulation</li>
+<li>Train against unknown opponent's strategy during competition<ul>
+<li>It's feasible because STORM-Q only needs to know the seed-selection outcoms of the opponent to update the Q-table, not exact strategy it takes</li>
 </ul>
 </li>
 </ul>
 <h3>Unknown</h3>
 <ul>
-<li>Goal: Create a general model to compete a variety of rational&nbsp;strategies</li>
-<li>Assumption: The oppoent is rational (Wants to max influence and knows its oppoent wants&nbsp;so)</li>
-<li><span class="caps">STORM</span>-<span class="caps">QQ</span><ul>
-<li>Two <span class="caps">STROM</span>-Q compete and update Q-tabale at the same&nbsp;time</li>
-<li>Using current Q-table during training&nbsp;phase</li>
+<li>Goal: Create a general model to compete a variety of rational strategies</li>
+<li>Assumption: The oppoent is rational (Wants to max influence and knows its oppoent wants so)</li>
+<li>STORM-QQ<ul>
+<li>Two STROM-Q compete and update Q-tabale at the same time</li>
+<li>Using current Q-table during training phase</li>
 <li>Pure Strategy<ul>
-<li>Does Not guarantee that equilibrium exists in <span class="caps">MRCIM</span></li>
+<li>Does Not guarantee that equilibrium exists in MRCIM</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p><span class="caps">STORM</span>-<span class="caps">MM</span></p>
+<p>STORM-MM</p>
 <ul>
-<li>Mix Strategy (Samples an action from the distribution of actions in each&nbsp;state)</li>
+<li>Mix Strategy (Samples an action from the distribution of actions in each state)</li>
 <li>In two-player zero-sum game<ul>
-<li>Nash equilibrium is graranteed to exist with miexed&nbsp;strategies</li>
-<li>Use <span class="caps">MINMAX</span> theorem to find the&nbsp;equilibrium</li>
+<li>Nash equilibrium is graranteed to exist with miexed strategies</li>
+<li>Use MINMAX theorem to find the equilibrium</li>
 </ul>
 </li>
-<li><span class="math">\(Q(s, a, o)\)</span>: The reward of first party when using strategy <span class="math">\(a\)</span> against oppoent&#8217;s strategy <span class="math">\(o\)</span> in state <span class="math">\(s\)</span></li>
-<li><span class="math">\(Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma&nbsp;V(s_{t+1})]\)</span></li>
-<li>Operations&nbsp;Research</li>
+<li><span class="math">\(Q(s, a, o)\)</span>: The reward of first party when using strategy <span class="math">\(a\)</span> against oppoent's strategy <span class="math">\(o\)</span> in state <span class="math">\(s\)</span></li>
+<li><span class="math">\(Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma V(s_{t+1})]\)</span></li>
+<li>Operations  Research</li>
 </ul>
 </li>
 <li>
-<p>The differece between <span class="caps">STROM</span>-<span class="caps">QQ</span> and <span class="caps">STORM</span>-<span class="caps">MM</span></p>
+<p>The differece between STROM-QQ and STORM-MM</p>
 </li>
 </ul>
 <table>
 <thead>
 <tr>
-<th><span class="caps">STROM</span>-<span class="caps">QQ</span></th>
-<th><span class="caps">STROM</span>-<span class="caps">MM</span></th>
+<th>STROM-QQ</th>
+<th>STROM-MM</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Max the reward in their own Q-table</td>
-<td>Finds equilibrium with one Q-table and determines both side&#8217;s <span class="math">\(a\)</span> at the same time</td>
+<td>Finds equilibrium with one Q-table and determines both side's <span class="math">\(a\)</span> at the same time</td>
 </tr>
 <tr>
 <td>Pure Strategies</td>
@@ -375,9 +375,9 @@ These data can be used to learn the value&nbsp;functions</p>
 </tbody>
 </table>
 <ul>
-<li>Ideally, they should have simliar result in two-party <span class="caps">MRCIM</span>. In practice, the result might not due to<ul>
-<li><span class="caps">STORM</span>-<span class="caps">QQ</span> does not guarantee&nbsp;equilibrium</li>
-<li>Although equilibrium exists in <span class="caps">STORM</span>-<span class="caps">MM</span>. It does not guarantee to be found due to lack of training data or bad init or such&nbsp;problems.</li>
+<li>Ideally, they should have simliar result in two-party MRCIM. In practice, the result might not due to<ul>
+<li>STORM-QQ does not guarantee equilibrium</li>
+<li>Although equilibrium exists in STORM-MM. It does not guarantee to be found due to lack of training data or bad init or such problems.</li>
 </ul>
 </li>
 </ul>

@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>Gitbook on Command Line</title>
+        <title>Gitbook on Command Line</title>
 
         <link href="//lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Full Atom Feed" />
         <!-- Bootstrap Core CSS -->
@@ -49,7 +49,7 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 	<meta property="og:url" content="http://lee-w.github.io/posts/git/2015/01/gitbook-on-command-line">
-	<meta property="og:title" content="Gitbook on Command Line">
+	<meta property="og:title" content="Gitbook on Command Line">
 	<meta property="article:published_time" content="2015-01-23 07:34:00+08:00">
             <meta property="og:description" content="最近比較認真在寫Gitbook，順便記錄一下該怎麼用 簡單來說Gitbook就是可以使用markdown來寫書的平台，可以轉成各種電子書的格式 目前已經支援的有html, pdf, ePUB, MOBI">
 
@@ -79,8 +79,8 @@
                         <li><a href="/categories.html">Categories</a></li>
                         <li><a href="/tags.html">Tags</a></li>
 
-                            <li><a href="http://lee-w.github.io/pages/about-me.html">About&nbsp;Me</a></li>
-                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This&nbsp;Blog</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This Blog</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Gitbook on Command Line</h1>
+                        <h1>Gitbook on Command Line</h1>
                         <span class="meta">Posted by
                                 <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
                              on 2015/01/23 - 五
@@ -114,7 +114,7 @@
     <article>
         <p>最近比較認真在寫Gitbook，順便記錄一下該怎麼用<br>
 簡單來說Gitbook就是可以使用markdown來寫書的平台，可以轉成各種電子書的格式<br>
-目前已經支援的有html, pdf, ePUB, <span class="caps">MOBI</span></p>
+目前已經支援的有html, pdf, ePUB, MOBI</p>
 <!--more-->
 
 <p>之前寫了一本Clean Code的筆記<br>
@@ -122,7 +122,7 @@
 如果有興趣可以到<a href="https://www.gitbook.com/@lee-w">我的Gitbook</a>上看看XD</p>
 <p>目前Gitbook主要支援網站上的Editor，不過我比較習慣在本地端進行編輯<br>
 雖然有Gitbook編輯器，但有時候用起來還是會出點問題<br>
-所以最後還是決定來學如何用command line +&nbsp;sublime寫Gitbook</p>
+所以最後還是決定來學如何用command line + sublime寫Gitbook</p>
 <h2>安裝Gitbook</h2>
 <div class="codehilite"><pre><span></span>npm install gitbook -g
 </pre></div>
@@ -132,13 +132,13 @@
 <p>一本Gitbook一般都會包含<code>SUMMARY.md</code>, <code>README.md</code>, <code>package.json</code>, <code>book.json</code><br>
 像我的Learning Python筆記的檔案架構大概長的是這樣<br>
 <img alt="1_learning_python_project_structure" src="http://i.imgur.com/6RDgdVZ.png"></p>
-<p><span class="caps">README</span>.md是這本書的簡介<br>
+<p>README.md是這本書的簡介<br>
 package.json是額外使用的package的定義和設定<br>
 book.json是這本書的額外設定<br>
 這裡不會多做介紹，可以參考<a href="#Reference">Reference</a>的網站，裡面有很詳細的介紹</p>
 <p>最重要的是SUMMARY.md，它會定義整本gitbook的架構<br>
 每個章節下面都還可以給予更多的小節<br>
-下面是我Learning&nbsp;Python的SUMMARY.md</p>
+下面是我Learning Python的SUMMARY.md</p>
 <div class="codehilite"><pre><span></span><span class="cp"># Summary</span>
 
 <span class="o">*</span> <span class="p">[</span><span class="n">Introduction</span><span class="p">](</span><span class="n">README</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
@@ -169,16 +169,19 @@ book.json是這本書的額外設定<br>
 
 <p>用了這個指令後就會為目前的目錄開一個預覽HTML的port<br>
 只要在瀏覽器上輸入<code>http://localhost:4000</code><br>
-就可以預覽剛剛寫的Gitbook<br>&nbsp;只要有更新後存擋，重新整理就能看到更新後的結果</p>
+就可以預覽剛剛寫的Gitbook<br>
+只要有更新後存擋，重新整理就能看到更新後的結果</p>
 <h2>輸出</h2>
 <p>在export前，需要為pdf, epub, mobi三種格式多安裝程式才能使用<br>
-先到的官網下載Calibre<br>&nbsp;http://calibre-ebook.com/download</p>
-<p>以mac為例<br>&nbsp;需要下面這個指令，為ebook-covert建立一個捷徑，讓gitbook可以找到這個功能</p>
+先到的官網下載Calibre<br>
+http://calibre-ebook.com/download</p>
+<p>以mac為例<br>
+需要下面這個指令，為ebook-covert建立一個捷徑，讓gitbook可以找到這個功能</p>
 <div class="codehilite"><pre><span></span>ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin
 </pre></div>
 
 
-<p>以下的四個指令依序可以產生html, pdf, epub,&nbsp;mobi</p>
+<p>以下的四個指令依序可以產生html, pdf, epub, mobi</p>
 <div class="codehilite"><pre><span></span>gitbook build ./ 
 gitbook pdf ./
 gitbook epub ./
@@ -187,23 +190,26 @@ gitbook mobi ./
 
 
 <p>後面可以多指定一個參數<code>--output="Directory"</code><br>
-<span class="dquo">&#8220;</span>Directory&#8221;換成你要的位置或檔名<br>&nbsp;如果不指定，預設html會export到_book裡面，其他檔案則會以book命名</p>
+"Directory"換成你要的位置或檔名<br>
+如果不指定，預設html會export到_book裡面，其他檔案則會以book命名</p>
 <h2>Publish到Gitbook.com上</h2>
 <p>先到<a href="https://www.gitbook.com">Gitbook官網</a>上註冊帳號<br>
-接著create a new&nbsp;book，到setting頁面往下拉，就會看到一個URL</p>
-<p>接下來的操作就跟git基本上是一樣的，init, add, commit &#8230;等<br>&nbsp;只有在remote的設定有點不同</p>
+接著create a new book，到setting頁面往下拉，就會看到一個URL</p>
+<p>接下來的操作就跟git基本上是一樣的，init, add, commit ...等<br>
+只有在remote的設定有點不同</p>
 <div class="codehilite"><pre><span></span>git remote add gitbook &quot;URL&quot;
 git push -u gitbook
 </pre></div>
 
 
-<p>這裡要輸入的帳號、密碼是gitbook上的，不是與其連結的帳號的<br>&nbsp;如果還沒設定就要再去自己的profile內設定</p>
+<p>這裡要輸入的帳號、密碼是gitbook上的，不是與其連結的帳號的<br>
+如果還沒設定就要再去自己的profile內設定</p>
 <p><a name="reference"></a></p>
 <h1>Reference</h1>
 <ul>
 <li><a href="https://github.com/GitbookIO/gitbook">Gitbook</a></li>
-<li><a href="http://help.gitbook.io/index.html">GitBook&nbsp;Documentaion</a></li>
-<li><a href="http://www.codedata.com.tw/social-coding/gitbook-self-publishing/">深入淺出 GitBook&nbsp;寫作與自助出版，電子書也能多人協作</a></li>
+<li><a href="http://help.gitbook.io/index.html">GitBook Documentaion</a></li>
+<li><a href="http://www.codedata.com.tw/social-coding/gitbook-self-publishing/">深入淺出 GitBook 寫作與自助出版，電子書也能多人協作</a></li>
 </ul>
     </article>
 

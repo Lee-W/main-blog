@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改 需要注意的是，如果設定不好，可能會沒辦法開機的！！！">
+        <meta name="description" content="分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改 需要注意的是，如果設定不好，可能會沒辦法開機的！！！">
 
         <meta name="author" content="Lee-W">
 
@@ -51,7 +51,7 @@
 	<meta property="og:url" content="http://lee-w.github.io/posts/linux-unix/2014/02/auto-mount-disk-after-boot">
 	<meta property="og:title" content="Linux開機自動掛載分割區">
 	<meta property="article:published_time" content="2014-02-01 16:44:00+08:00">
-            <meta property="og:description" content="分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改 需要注意的是，如果設定不好，可能會沒辦法開機的！！！">
+            <meta property="og:description" content="分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改 需要注意的是，如果設定不好，可能會沒辦法開機的！！！">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -79,8 +79,8 @@
                         <li><a href="/categories.html">Categories</a></li>
                         <li><a href="/tags.html">Tags</a></li>
 
-                            <li><a href="http://lee-w.github.io/pages/about-me.html">About&nbsp;Me</a></li>
-                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This&nbsp;Blog</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                            <li><a href="http://lee-w.github.io/pages/about-this-blog.html">About This Blog</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -112,7 +112,8 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p>分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改<br>&nbsp;需要注意的是，如果設定不好，可能會沒辦法開機的！！！</p>
+        <p>分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改<br>
+需要注意的是，如果設定不好，可能會沒辦法開機的！！！</p>
 <!--more-->
 
 <p>我們先來看一下/etc/fstab內的東西</p>
@@ -139,7 +140,8 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 <p>#是註解<br>
 最後六行是比較重要的<br>
 1~2是root的掛載<br>
-3~4是swap的掛載<br>&nbsp;5~6是我自己的data的掛載</p>
+3~4是swap的掛載<br>
+5~6是我自己的data的掛載</p>
 <div class="codehilite"><pre><span></span>#data
 UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 </pre></div>
@@ -166,10 +168,10 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 </ul>
 </li>
 <li>選項</li>
-<li>是否被 dump&nbsp;備份指令作用</li>
-<li>是否以 fsck&nbsp;檢驗磁區</li>
+<li>是否被 dump 備份指令作用</li>
+<li>是否以 fsck 檢驗磁區</li>
 </ol>
-<p>基本上4 5&nbsp;6我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到</p>
+<p>基本上4 5 6我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到</p>
 <h1>測試</h1>
 <p>先看一下是否有掛載成功</p>
 <div class="codehilite"><pre><span></span>df
@@ -194,12 +196,14 @@ none              102400        44    102356    1% /run/user
 </pre></div>
 
 
-<p>(/dev/sda6要取代成你自己的位置)<br>&nbsp;接著再執行一次</p>
+<p>(/dev/sda6要取代成你自己的位置)<br>
+接著再執行一次</p>
 <div class="codehilite"><pre><span></span>df
 </pre></div>
 
 
-<p>剛剛的分割區應該會不見，然後執行<br>&nbsp;開機自動掛載分割區</p>
+<p>剛剛的分割區應該會不見，然後執行<br>
+開機自動掛載分割區</p>
 <div class="codehilite"><pre><span></span>sudo mount -a
 </pre></div>
 
@@ -212,7 +216,7 @@ none              102400        44    102356    1% /run/user
 <p>如果掛載的分隔驅再裡面就是成功了</p>
 <p>如果有任何異常，就去看一下/etc/fstab是不是有哪裡寫錯了</p>
 <h1>Reference</h1>
-<p><a href="http://255121.blogspot.tw/2010/05/linux.html">巴特的微花盆： 筆記： Linux&nbsp;中設定開機時自動掛載分割區</a></p>
+<p><a href="http://255121.blogspot.tw/2010/05/linux.html">巴特的微花盆： 筆記： Linux 中設定開機時自動掛載分割區</a></p>
     </article>
 
         <div class="tags">
