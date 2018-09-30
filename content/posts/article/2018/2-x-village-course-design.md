@@ -18,7 +18,7 @@ Series: X-Village
 
 1.  Review 「程式設計基石」(a.k.a. Python 課)
 2. 「資料結構」第三天下午的練習
-3. 「網頁開發、資料庫、雲端運算」第三天後半部的課程
+3. 「網頁開發、資料庫、雲端運算」第三天後半課程
 
 ## 1. Review 「程式設計基石」
 
@@ -200,7 +200,7 @@ Bouns 4 我也沒有正確解答
 學員跟我分享他覺得這樣的練習設計，帶著大家思考很有幫助
 看來前一天沒什麼睡到是值得的
 
-## 3. 「網頁開發、資料庫、雲端運算」第三天後半部的課程
+## 3. 「網頁開發、資料庫、雲端運算」第三天後半課程
 * Slide: [CRUD in Flask](https://speakerdeck.com/leew/x-village-crud-in-flask-1)
 * Sample Code: [web-acccounting-example](https://github.com/x-village/web-acccounting-example/)
 
