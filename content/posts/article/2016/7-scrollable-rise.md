@@ -7,20 +7,20 @@ Authors: Lee-W
 Summary: 
 
 
-RISE是一套結合[jupyter-notebook](http://jupyter.org)和[reveal.js](http://lab.hakim.se/reveal-js/#/)的專案
-讓我們能在jupyter notebook直接開啟如同reveal.js的slide
+RISE 是一套結合[jupyter-notebook](http://jupyter.org) 和[reveal.js](http://lab.hakim.se/reveal-js/#/) 的專案
+讓我們能在 jupyter notebook 直接開啟如同 reveal.js 的 slide
 
 <!--more-->
 
-不過如過notebook cell中的內容太長
+不過如過 notebook cell 中的內容太長
 在播放的時候就會導致內容被裁剪
-而RISE預設是無法用滑鼠滾動的
-所以這裡記錄該如何讓RISE可以滾動
+而 RISE 預設是無法用滑鼠滾動的
+所以這裡記錄該如何讓 RISE 可以滾動
 
-進入jupyter notebook的任一個notebook後
-在上方工具列點選`Edit` -> `Edit Notebook Metadata`
-接著在裡面加入livereveal的設定
-如下 （只需加入livereveal的部分）
+進入 jupyter notebook 的任一個 notebook 後
+在上方工具列點選 `Edit` -> `Edit Notebook Metadata`
+接著在裡面加入 livereveal 的設定
+如下 （只需加入 livereveal 的部分）
 
 ```json
 {

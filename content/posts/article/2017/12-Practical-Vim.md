@@ -13,7 +13,7 @@ Summary:
 <!--more-->
 
 ## Ch1: The Vim Way
-### Tip2: Don’t Repeat Yourself
+### Tip2: Don't Repeat Yourself
 - `.` command: Repeat the last change
 	- Command in normal mode
 	- The insert mode between two normal mode

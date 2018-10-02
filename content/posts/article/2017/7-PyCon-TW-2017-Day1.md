@@ -9,8 +9,8 @@ Summary:
 Series: PyCon TW 2017
 
 
-今年PyCon終於比起上次聽得懂多了！
-看來這兩年來，還是有點進步的XD
+今年 PyCon 終於比起上次聽得懂多了！
+看來這兩年來，還是有點進步的 XD
 
 先放上今年的[共筆](https://hackfoldr.org/pycontw2017/)
 這幾篇記錄我參加議程的筆記
@@ -29,7 +29,7 @@ Series: PyCon TW 2017
 	* [Slide](https://www.slideshare.net/jonascheng3/building-microservices-in-python-pycon2017) 
 	* [共筆](https://hackmd.io/s/Sk5LNzQke#1455-1540-talk-building-microservices-in-python-個案分享)
 * [Understanding Serverless Architecture](#6)
-	* 同場加映：[Don’t Reinvent Sandwich](https://drive.google.com/file/d/0Bz8Kfu_94VuJcVo1a1drQjhReU0/view) (本議程沒供餐 XD)	 
+	* 同場加映：[Don't Reinvent Sandwich](https://drive.google.com/file/d/0Bz8Kfu_94VuJcVo1a1drQjhReU0/view) (本議程沒供餐 XD)	 
 * [Tensorflow & Python: Fault Detection System](#7)
 
 ---
@@ -43,7 +43,7 @@ Series: PyCon TW 2017
 - New: 更好用
 
 ### Choice[0]: What Language for AI?
-- 現場會眾一致通過是Python (Bias Sampling XD)
+- 現場會眾一致通過是 Python (Bias Sampling XD)
 - Useful libs
 	- [xgboost](https://github.com/dmlc/xgboost)
 	- [libact](https://github.com/ntucllab/libact): Active Learning
@@ -108,28 +108,28 @@ Linear (Simpler) Model First
 
 <a name='2'></a>
 ## Python 開源軟體考古 - 以 [Viper](https://github.com/viper-framework/viper) 為例
-這場很實用，slide也很清楚
+這場很實用，slide 也很清楚
 蠻推薦影片出來可以看一下
 
 - [slide](https://docs.google.com/presentation/d/1HwBrETgmEz6-igEVaPAtQPWyuBljyFyvXtKzHLSVaMk/edit#slide=id.p)
 - [共筆](https://hackmd.io/CYYw7ARgjFBsCsBaMAGYAWR6DMIBMiAnABx7aLzGH4QCmUwxAZiEA===?view#1050-1120-talk-python-開源軟體考古-以-viper-為例)
 - [viper-research](https://github.com/18z/viper-research)
 
-從開源專案學習寫code
+從開源專案學習寫 code
 
-### 讀code技巧
+### 讀 code 技巧
 #### 降低專案複雜度
 - 從早期版本追
-	- 如何挑版本？ (搭配tig服用)
+	- 如何挑版本？ ( 搭配 tig 服用 )
 		- 重大版本號
-		- 簡單、可運作之版本 (e.g. viper的commit hash: [46a2a](https://github.com/viper-framework/viper/tree/46a2a))
+		- 簡單、可運作之版本 (e.g. viper 的 commit hash: [46a2a](https://github.com/viper-framework/viper/tree/46a2a))
 - 感覺太複雜？
 	- 砍！
 	- 鎖定特定功能，移除其他雜質
 	- 測試，能動就可以
 
 #### 專案程式邏輯架構
-模組相依性 → 一直trace到沒有import專案自己寫的code
+模組相依性 → 一直 trace 到沒有 import 專案自己寫的 code
 
 - Tools
 	- [modulegraph](https://bitbucket.org/ronaldoussoren/modulegraph)
@@ -147,8 +147,8 @@ Linear (Simpler) Model First
 		- 解釋特定組合的程式的意義
 
 ### Conclusion
-- 系統化讀code
-- 從Commit學習
+- 系統化讀 code
+- 從 Commit 學習
 	- 架構變化
 	- Commit Message 規則
 	- Branching Model
@@ -162,26 +162,26 @@ Linear (Simpler) Model First
 - [pnp-interview](https://github.com/kkshyu/pnp-interview)
 - [共筆](https://hackmd.io/CYYw7ARgjFBsCsBaMAGYAWR6DMIBMiAnABx7aLzGH4QCmUwxAZiEA===?view#1145-1230-talk-整合-slack-與-docker-搭建-jupyter-線上程式面試系統)
 
-這場最重要的大概就是slide<s>第12頁</s>第11頁的架構圖
+這場最重要的大概就是 slide ~~第 12 頁~~ 第 11 頁的架構圖
 
 ### Tools Used
 - Flask
-	- Python中最簡單使用的web framework
-	- 做小型web應用非常適合
+	- Python 中最簡單使用的 web framework
+	- 做小型 web 應用非常適合
 - Docker
 	- 容器化
 	- 一鍵部署 
-	- 限制容器耗費的CPU, GPU
+	- 限制容器耗費的 CPU, GPU
 - Slack
-	- Integration很好 
+	- Integration 很好 
 
 ### Bugs
 - Pull Image First
 	- So it can be fast
 - Try except for any case
-	- dockerpy的雷xd   
+	- dockerpy 的雷 xd   
 - File Permission
-	- 要採docker坑，這很重要 
+	- 要採 docker 坑，這很重要 
 
 ---
 
@@ -190,13 +190,13 @@ Linear (Simpler) Model First
 - [slide](https://speakerdeck.com/willingc/the-state-of-python-for-education)
 - [共筆](https://hackfoldr.org/pycontw2017/https%253A%252F%252Fhackmd.io%252Fs%252FHk-NVGXke)
 
-這場Talk主要講學習、推廣和社群
+這場 Talk 主要講學習、推廣和社群
 
-Carol有提到幾個學習Python很棒的資源
-其中我覺得最有用的大概就是[pyvideo.org](http://pyvideo.org)了
-之前回去聽工資管系系友演講，趨勢的學長就有提到看Talk是很快的學習方式
+Carol 有提到幾個學習 Python 很棒的資源
+其中我覺得最有用的大概就是[pyvideo.org](http://pyvideo.org) 了
+之前回去聽工資管系系友演講，趨勢的學長就有提到看 Talk 是很快的學習方式
 
-另外，Carol強力推薦今年PyCon US，Instagram給的Talk
+另外，Carol 強力推薦今年 PyCon US，Instagram 給的 Talk
 [Lisa Guo, Hui Ding Keynote PyCon 2017](https://www.youtube.com/watch?v=66XoCk79kjM)
 之後，應該也會找個時間來看一下
 

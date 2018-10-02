@@ -1,4 +1,4 @@
-Title: [C++] 如何create thread
+Title: [C++] 如何 create thread
 Date: 2013-12-11 00:56
 Category: C++
 Tags: Thread
@@ -7,30 +7,30 @@ Authors: Lee-W
 Summary: 
 
 
-之前因為作業需要使用到multi-thread，就留下了這篇紀錄
-這篇會稍微介紹C++11 的`thread`函式庫，還有一點點和`pthread`
+之前因為作業需要使用到 multi-thread，就留下了這篇紀錄
+這篇會稍微介紹 C++11 的 `thread` 函式庫，還有一點點和 `pthread`
 
 <!--more-->
 
-要使用C++11的`thread`在編譯時要加上 `-std=c++11 -pthread`
-(`-std=c++ -lphread`好像也可以)
+要使用 C++11 的 `thread` 在編譯時要加上 `-std=c++11 -pthread`
+(`-std=c++ -lphread` 好像也可以 )
 
 e.g. `g++ -o t thread.cpp -std=c++11 -pthread`
-`-std=c++11` :  是指定c++的版本
-`-pthread` (或 `-lpthread`)：使用thread的liberary
+`-std=c++11` :  是指定 c++ 的版本
+`-pthread` ( 或 `-lpthread`)：使用 thread 的 liberary
 
-下面有寫到join的部份
-join是開啟這個thread的上層程式必須等待到這個thread的工作結束了，才可以繼續下面的工作
-也就是join以上的程式會與thread搶CPU，join以後的程式就會等待到thread結束才開始
+下面有寫到 join 的部份
+join 是開啟這個 thread 的上層程式必須等待到這個 thread 的工作結束了，才可以繼續下面的工作
+也就是 join 以上的程式會與 thread 搶 CPU，join 以後的程式就會等待到 thread 結束才開始
 
-那就直接來看code吧
+那就直接來看 code 吧
 
 
 # C++ 11 thread
-## 在main裡面直接開啟thread
+## 在 main 裡面直接開啟 thread
 
-直接宣告thread型態的變數
-thread的constructor的第一個參數是函數名稱，第二個以後就是原本函數的參數
+直接宣告 thread 型態的變數
+thread 的 constructor 的第一個參數是函數名稱，第二個以後就是原本函數的參數
 
 ```cpp
 #include <iostream>
@@ -53,18 +53,18 @@ main(){
 }
 ```
 
-這樣就可以產生兩個thread，他們會彼此搶CPU的資源
-cout似乎是每一個<<會去搶一次，所以如果想要一次印完全部，可能可以考慮使用printf或者是thread的lock功能
+這樣就可以產生兩個 thread，他們會彼此搶 CPU 的資源
+cout 似乎是每一個 << 會去搶一次，所以如果想要一次印完全部，可能可以考慮使用 printf 或者是 thread 的 lock 功能
 
 
-## 在class內開啟thread
-用上面的方法直接呼叫同個class的function會出現錯誤
+## 在 class 內開啟 thread
+用上面的方法直接呼叫同個 class 的 function 會出現錯誤
 所以就必須用下面的方法
-在宣告thread的時候
-第1個參數必須是這個function的完整reference
-第2個用this
-第3個以後才是原本function的參數
-p.s.如果fun1是static，則不用this
+在宣告 thread 的時候
+第 1 個參數必須是這個 function 的完整 reference
+第 2 個用 this
+第 3 個以後才是原本 function 的參數
+p.s. 如果 fun1 是 static，則不用 this
 
 ```cpp
 #include <iostream>
@@ -90,8 +90,8 @@ main()
 }
 ```
 
-最後是如何呼叫其他class的function，這裡包含兩個例子(main, class B)
-想法跟上面那種很接近，只是第2個參數改成那個物件的實體
+最後是如何呼叫其他 class 的 function，這裡包含兩個例子 (main, class B)
+想法跟上面那種很接近，只是第 2 個參數改成那個物件的實體
 
 ```cpp
 #include <iostream>
@@ -129,7 +129,7 @@ main()
 ```
 
 
-## 基本的pthread使用
+## 基本的 pthread 使用
 
 ```cpp
 #include <iostream>
@@ -156,11 +156,11 @@ main()
         pthread_join(t1,NULL);
 }
 ```
-至於pthread如何用在class的function上
-可以將function加上static
-同樣第3個參數也要改成&A::fun1
+至於 pthread 如何用在 class 的 function 上
+可以將 function 加上 static
+同樣第 3 個參數也要改成 &A::fun1
 
 # Reference
-- [資訊小兵的胡言亂語: [C++] Thread Function相關測試](http://programmingpaul.blogspot.tw/2013/08/c-thread-function.html)
-- [解析Linux中多線程編程並傳遞多個參數實例](http://17089349.blog.hexun.com.tw/65836836_d.html)
-- [linux下C/C++,多线程pthread](http://www.cnblogs.com/xianghang123/archive/2011/08/11/2134927.html)
+- [資訊小兵的胡言亂語 : [C++] Thread Function 相關測試](http://programmingpaul.blogspot.tw/2013/08/c-thread-function.html)
+- [解析 Linux 中多線程編程並傳遞多個參數實例](http://17089349.blog.hexun.com.tw/65836836_d.html)
+- [linux 下 C/C++, 多线程 pthread](http://www.cnblogs.com/xianghang123/archive/2011/08/11/2134927.html)

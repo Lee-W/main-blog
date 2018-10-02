@@ -1,4 +1,4 @@
-Title: 解決更新gcc找不到libgfortran.3.dylib (Octave,R)
+Title: 解決更新 gcc 找不到 libgfortran.3.dylib (Octave,R)
 Date: 2016-06-11 03:13
 Category: R 
 Tags: mac
@@ -7,7 +7,7 @@ Authors: Lee-W
 Summary: 
 
 
-最近在mac上更新了gcc 6後，不管是開Octave還是R
+最近在 mac 上更新了 gcc 6 後，不管是開 Octave 還是 R
 都會出現以下的錯誤訊息
 
 ```sh
@@ -18,10 +18,10 @@ Trace/BPT trap: 5
 ```
 <!--more-->
 
-這是因為原本的lib會去找/usr/local/lib/gcc/5/下的lib
-但是更新過後已經被變成/usr/local/lib/gcc/6/了
-所以只要從`/usr/local/lib/gcc/5/`建立soft link到`/usr/local/lib/gcc/6/`即可
-(版本號則要根據自身gcc的版本來做修改)
+這是因為原本的 lib 會去找 /usr/local/lib/gcc/5/ 下的 lib
+但是更新過後已經被變成 /usr/local/lib/gcc/6/ 了
+所以只要從 `/usr/local/lib/gcc/5/` 建立 soft link 到 `/usr/local/lib/gcc/6/` 即可
+( 版本號則要根據自身 gcc 的版本來做修改 )
 
 ```shell
 ln -s /usr/local/lib/gcc/5/ /usr/local/lib/gcc/6/

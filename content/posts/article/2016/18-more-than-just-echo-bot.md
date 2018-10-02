@@ -8,12 +8,12 @@ Summary:
 Series: Line Bot Tutorial
 ---
 
-知道怎麼實作一個會Echo的Bot後
-再來就要思考，開發一個Bot我們要提供什麼功能
-(e.g. 天氣查詢, 訂票, 推薦旅遊景點)
+知道怎麼實作一個會 Echo 的 Bot 後
+再來就要思考，開發一個 Bot 我們要提供什麼功能
+(e.g. 天氣查詢, 訂票, 推薦旅遊景點 )
 
-不過這裡要討論的不是Bot的功能
-Bot的功能實作，跟一般網站或App的實作並沒有太大的差別
+不過這裡要討論的不是 Bot 的功能
+Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別
 
 接下來來談如何從使用者說的話來判斷，使用者要使用的功能
 
@@ -25,7 +25,7 @@ Bot的功能實作，跟一般網站或App的實作並沒有太大的差別
 
 ## Based on Keyword
 
-上一篇文章，輸入關鍵字就能回傳template message的bot也是用這樣的方式實作的
+上一篇文章，輸入關鍵字就能回傳 template message 的 bot 也是用這樣的方式實作的
 
 ```python
 if 'button' in text:
@@ -64,14 +64,14 @@ if '天氣' in text:
 - 建立規則很麻煩
 - 規則很容易就會出現例外，很難定義得完整
 	- 只要使用者無法觸發到關鍵字，就無法使用功能 
-- 一堆if else造成程式冗長，不易擴充和維護
+- 一堆 if else 造成程式冗長，不易擴充和維護
 
 
 ## AIML
 Artificial Intelligence Modelling Language
-它是一款基於XML的markup language
+它是一款基於 XML 的 markup language
 
-這是最基本的AIML
+這是最基本的 AIML
 
 ```xml
 <aiml version="1.0.1" encoding="UTF-8"?>
@@ -86,8 +86,8 @@ Artificial Intelligence Modelling Language
 </aiml>
 ```
 
-只要符合特定的pattern，就回傳指定的template
-也能透過`<random>`這樣的tag，從多種回覆隨機丟一種回傳
+只要符合特定的 pattern，就回傳指定的 template
+也能透過 `<random>` 這樣的 tag，從多種回覆隨機丟一種回傳
 
 ```xml
 <random>
@@ -98,14 +98,14 @@ Artificial Intelligence Modelling Language
 ```
 
 ### Pros
-- 比起只用if else更結構化，較易維護和擴充
+- 比起只用 if else 更結構化，較易維護和擴充
 
 ### Cons
 - 依然很難包含所有的狀況
 
 ## Other NLP Service
 - [Wit.ai](https://wit.ai) (Facebook)
-	- COSCUP 2016的聊天機器人小啄，就是透過Wit.ai實作的
+	- COSCUP 2016 的聊天機器人小啄，就是透過 Wit.ai 實作的
 - [LUIS](https://www.luis.ai) (Microsoft)
 - [API.ai](https://api.ai) (Google)
 
@@ -119,12 +119,12 @@ Artificial Intelligence Modelling Language
 
 
 ### Wit.ai
-Wit.ai跟Luis, API.ai比較不同的地方是
-從Wit.ai得到的是，我們設定的回覆
+Wit.ai 跟 LUIS, API.ai 比較不同的地方是
+從 Wit.ai 得到的是，我們設定的回覆
 而不是一句話解析後的結果
 
 ### LUIS
-從[這裡](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis)可以測試兩個訓練過的範例機器人，看看從LUIS可以得到什麼
+從[這裡](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) 可以測試兩個訓練過的範例機器人，看看從 LUIS 可以得到什麼
 
 e.g.
 
@@ -187,17 +187,17 @@ Mary Johnson at 12 pm tomorrow.
 
 ## Implement Through Powerful Libraries
 不過這些服務，通常會有它的限制
-這時候就能用上Python強大的函式庫們，來實作自己的版本
+這時候就能用上 Python 強大的函式庫們，來實作自己的版本
 
 - [NLTK](http://www.nltk.org)
-	- Python經典的NLP函式庫  
+	- Python 經典的 NLP 函式庫  
 - [word2vec](https://radimrehurek.com/gensim/)
 	- 透過詞向量，找出相似詞
 - [jieba](https://github.com/fxsjy/jieba)
 	- 中文斷詞 
 	- 判斷句子中的關鍵詞
 
-我在[NLP Libs Sample](https://gist.github.com/Lee-W/72f3a59b015cd67b3a939bf8a12680ac)寫了這些函式庫的基本使用範例
+我在[NLP Libs Sample](https://gist.github.com/Lee-W/72f3a59b015cd67b3a939bf8a12680ac) 寫了這些函式庫的基本使用範例
 
 另外，也可以看[自己动手做聊天机器人教程](https://github.com/warmheartli/ChatBotCourse)
 它是一系列聊天機器人教學，談這些做法背後的理論和實作
@@ -206,18 +206,18 @@ Mary Johnson at 12 pm tomorrow.
 不過就算做了這些分詞、判斷意圖
 也不能保證使用者就會買單
 
-有人稱Chat Bot為下一代的UX Design
+有人稱 Chat Bot 為下一代的 UX Design
 
 - [The Next Phase Of UX: Designing Chatbot Personalities](https://www.fastcodesign.com/3054934/the-next-phase-of-ux-designing-chatbot-personalities)
 
 ### Issue
-- 如何讓使用者，在機器人的Scope內不會碰壁
-- 如何讓機器人的判斷足夠robust，不會每次回答都是不明白
+- 如何讓使用者，在機器人的 Scope 內不會碰壁
+- 如何讓機器人的判斷足夠 robust，不會每次回答都是不明白
 - 如何讓使用者在最少的操作下，得到想得到的服務
 
 更進一步是
 如何設計一個有個性、有溫度的機器人
-這裡就可以再去研究NLP的情感分析
+這裡就可以再去研究 NLP 的情感分析
 
 ### Read More
 - [WHEN BOTS GO BAD: COMMON UX MISTAKES IN CHATBOT DESIGN](http://www.topbots.com/common-chatbot-ux-mistakes-in-bot-design/)

@@ -28,7 +28,7 @@ Series: X-Village
 因為身上處理的事在太多
 這些工作就逐步派給其他助教
 
-過了一週後，我們得到了一份更難了很多的課綱xD
+過了一週後，我們得到了一份更難了很多的課綱 xD
 畢竟大家沒有太多的教學經驗
 一開始就要設計好一份適當的課綱，本來就很困難
 而且初期 Target Audience 一直不太明確
@@ -39,18 +39,18 @@ Series: X-Village
 | | Topics |
 |---|---|
 | Day 1 | <ul> <li>Opening</li> <li>Python Intro</li> <li>Editor</li> <li>Git</li> </ul>|
-| Day 2 | <ul> <li>HackMD</li> <li>淺談電腦基本運作</li> <li>如何自己解決問題？ (Google, Stack Overflow)</li> <li> Python Basic(I) (Synyax, Data Types)</li> </ul>|
+| Day 2 | <ul> <li>HackMD</li> <li> 淺談電腦基本運作 </li> <li> 如何自己解決問題？ (Google, Stack Overflow)</li> <li> Python Basic(I) (Synyax, Data Types)</li> </ul>|
 | Day 3 | <ul> <li>Function</li> <li>Module/Package</li> <li>Class</li> </ul>|
 | Day 4 | <ul> <li>OOP Introduciton</li> </ul> |
 | Day 5 | <ul> <li>Exception Handling</li> <li>File</li> <li>String</li> <li>Coding Convention</li> </ul>|
 | Day 6 | <ul> <li>Recap</li> <li>Built-in</li> <ul/>|
-| Day 7 | <ul> <li>Regular Expression</li> <li>Python套件管理</li> <li>[requests](http://docs.python-requests.org/en/master/)</li>|
+| Day 7 | <ul> <li>Regular Expression</li> <li>Python 套件管理 </li> <li>[requests](http://docs.python-requests.org/en/master/)</li>|
 | Day 8 | <ul> <li>[Beautifulsoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)</li> <li>Visualization</li> </ul> |
 | Day 9 | <ul> <li>Decorator</li> <li>Iterator</li> <li>Generator</li> <li>Context Manager</li> </ul>|
 | Day 10 | <ul> <li>Broaden Horizon</li> </ul> |
 
 ### Rehearsal
-Rehearsal的時候，我看到了蠻多值得學習跟反省的地方
+Rehearsal 的時候，我看到了蠻多值得學習跟反省的地方
 不愧是從醒獅團的人們，我看到了一些很有趣的教學方式
 看著每個人不同的教學風格和內容
 我在思考著
@@ -58,7 +58,7 @@ Rehearsal的時候，我看到了蠻多值得學習跟反省的地方
 對這樣的人來說，要如何把知識傳遞給學習不那麼快的人，就會需要比較多的學習
 
 回想起我寫程式的歷程，可是一點都不順利
-我在寫Lisp的時候，連Syntax Highlight都不懂
+我在寫 Lisp 的時候，連 Syntax Highlight 都不懂
 還要不斷數括號數量，才知道程式能不能跑的
 
 e.g., 
@@ -81,14 +81,14 @@ e.g.,
 因為第一次辦，完全無法預期大家的學習速度
 只能先用一個版本出來教教看
 再來看現場狀況隨時調整
-不過有了這次的經驗，明年應該就比較有底了（如果還有明年的話xD）
+不過有了這次的經驗，明年應該就比較有底了（如果還有明年的話 xD）
 
 ## 2. 「資料結構」第三天下午的練習
 * Exercise ipynb: [DS-Exercise Day3](http://nbviewer.jupyter.org/github/x-village/data-structure-course/blob/master/DS_Exercise_Day3.ipynb)
 
-雖然先前大概有稍微想了一下準備怎樣的Exercise
+雖然先前大概有稍微想了一下準備怎樣的 Exercise
 但我前一天下午才口試完
-我其實只有大概一個晚上的時間準備...
+我其實只有大概一個晚上的時間準備 ...
 
 可是「資料結構」的老師又是我找的
 總覺得還是得要負起一些責任
@@ -97,10 +97,10 @@ e.g.,
 我帶練習的那天早上則是教排序
 
 在教學上我並沒花多少時間
-就是帶了一些影片，讓大家Recap一下白天老師教的內容
-我主要把時間都花在Exercise的設計上
+就是帶了一些影片，讓大家 Recap 一下白天老師教的內容
+我主要把時間都花在 Exercise 的設計上
 
-### Exercise4 用Python做排序 (ex4.py)
+### Exercise4 用 Python 做排序 (ex4.py)
 ```python
 some_list = [
     65, 81, 65, 19, 6, 28, 86, 40, 72, 27,
@@ -116,8 +116,8 @@ some_list = [
 ]
 ```
 
-寫過 Python 的人，一定馬上就會想到用`sort`或`sorted`
-但我故意把練習時間拉長到20分鐘
+寫過 Python 的人，一定馬上就會想到用 `sort` 或 `sorted`
+但我故意把練習時間拉長到 20 分鐘
 中間一直會有學員、助教問我「真的可以這樣寫嗎？」
 **恩，可以哦**
 
@@ -134,17 +134,17 @@ e.g.,
 json_str = '{"' + course_name + '": "' + course_id + '"}'
 ```
 
-因為在我的Knowledget Base，對函式庫的概念還是很模糊
+因為在我的 Knowledget Base，對函式庫的概念還是很模糊
 也不知道為什麼要用，好處在哪
-大二下的 C++ 寫的 ncurses 反而感覺像是造成我更多的麻煩xD
+大二下的 C++ 寫的 ncurses 反而感覺像是造成我更多的麻煩 xD
 因為我並不知道如果不用 ncurses ，要做同樣的事會多麻煩
 
 所以試試看讓學員真的做一次很麻煩的處理
 透過痛過，來知道為什麼要使用工具
 
-### Exercise5 深入淺出Python排序 (ex5.md)
+### Exercise5 深入淺出 Python 排序 (ex5.md)
 * Q1: Python 的 `some_list.sort()` 跟 `sorted(some_list)` 差別在哪
-* Q2: Python 的 `sorted()` 是用哪種排序演算法?
+* Q2: Python 的 `sorted()` 是用哪種排序演算法 ?
 
 這兩個問題其實並不困難
 
@@ -156,9 +156,9 @@ json_str = '{"' + course_name + '": "' + course_id + '"}'
 即使是在這之後才用我公布的方法，我也是會計分
 因為這個思考的過程才是重要的，答案一點也不重要
 
-### Exercise6 用Python做排序
+### Exercise6 用 Python 做排序
 我給了一筆 PTT 爬下來的資料，根據某個 key 做排序
-早上才從八卦版剛爬下來的（好像有爬到一些奇怪的東西...）
+早上才從八卦版剛爬下來的（好像有爬到一些奇怪的東西 ...）
 靈感就只是前一天跟學員聊天，聊到他們的視覺化作業要用 PTT 的資料
 
 這個練習目的在於用實際的資料
@@ -181,7 +181,7 @@ data = sorted(ptt_data, key=lambda x: x['some_key'])
 ~~我前一天設計這個練習的時候也入坑了，此坑不能只有我入~~
 我也會下去跟大家討論要怎麼解決這個問題
 這個問題本身有很多種不同的解法
-我自己的解法是使用`filter`過濾掉空值
+我自己的解法是使用 `filter` 過濾掉空值
 但我也遇到學員們有很多不一樣的想法，我覺得挺好的
 
 ### Bouns
@@ -194,7 +194,7 @@ data = sorted(ptt_data, key=lambda x: x['some_key'])
 
 Bouns 4 我也沒有正確解答
 我蠻好奇會不會有人能給我一點想法的
-不過這麼機車的題目最後看來是沒人寫xD
+不過這麼機車的題目最後看來是沒人寫 xD
 
 ### 「資料結構」練習後記
 後來有一次跟學員聊天的時候
@@ -208,9 +208,9 @@ Bouns 4 我也沒有正確解答
 前面的課程中有由博安老師指導的 [Database](https://speakerdeck.com/xvillage/cs-foundation-web-5-database)
  跟 [Flask Introduction](https://speakerdeck.com/xvillage/cs-foundation-web-6-flask-introduction)
 （博安老師的課程可是在 Web 課程中唯一零負評的，真不愧是博安老師！）
-而我的內容則會注重在view的撰寫上
+而我的內容則會注重在 view 的撰寫上
 
-我先讓大家對要做的東西有概念 (i.e., 記帳程式)
+我先讓大家對要做的東西有概念 (i.e., 記帳程式 )
 在寫程式前，我帶著大家看市面上做出來的記帳程式是長怎樣的？
 這些記帳程式有什麼功能？
 如果用我們這幾天教的想法，我們要怎麼去思考這個後端的系統？
@@ -218,31 +218,31 @@ Bouns 4 我也沒有正確解答
 接著才真正要進入程式
 我基於博安老師前一個半小時的程式碼在做延伸
 從最原始的 [0.1](https://github.com/x-village/web-acccounting-example/tree/0.1) 版
-每次只做一點點的修改，每一個修改都給那個commit一個tag
+每次只做一點點的修改，每一個修改都給那個 commit 一個 tag
 
 ![tags]({filename}/images/posts-image/2018-09-24-x-village-course-design/1-tag.jpg)
 
-在slide的右下角，也會放目前到哪個版本
+在 slide 的右下角，也會放目前到哪個版本
 也希望能從這樣的做法，帶到 frequent commit 的重要
 
 講解程式碼之前
 我會先讓大家打過程式碼，並確認可以執行
 再來才會解釋每一行程式碼在做什麼
-但它們組合起來不見得是對的xD
-尤其剛開始講view的 [0.2](https://github.com/x-village/web-acccounting-example/tree/0.2.0) 版更是幾乎沒一個功能是對的
+但它們組合起來不見得是對的 xD
+尤其剛開始講 view 的 [0.2](https://github.com/x-village/web-acccounting-example/tree/0.2.0) 版更是幾乎沒一個功能是對的
 但程式是能跑的
 除了聽跟照著做以外
 希望能讓大家去發現哪裡有奇怪的地方
 試著去想想要怎麼解決這些奇怪的地方
 
 直到 [1.0](https://github.com/x-village/web-acccounting-example/tree/1.0) 版才看起來像是一個可以動的網站
-但就算到這裡，還是有一個小錯xD
+但就算到這裡，還是有一個小錯 xD
 我想從這裡帶出測試的重要性
 
 統整一下，我整個課程設計想帶給學員的思考
-1. 如何思考一個後端架構? → 其他人的記帳程式
+1. 如何思考一個後端架構 ? → 其他人的記帳程式
 2. 溝通在寫程式是很重要的 → `README.md`, `requriements.txt`
-3. 如何除錯？ → 滿是錯誤的view, postman的使用
+3. 如何除錯？ → 滿是錯誤的 view, postman 的使用
 4. 為什麼測試是重要的？ → 整個網站雛形都出來了，還有埋錯
 
 整個構想聽起來是很美好

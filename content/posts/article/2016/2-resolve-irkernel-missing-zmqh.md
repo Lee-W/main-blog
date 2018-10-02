@@ -1,4 +1,4 @@
-Title: 解決安裝IRKernel缺少zmq.h 
+Title: 解決安裝 IRKernel 缺少 zmq.h 
 Date: 2016-02-20 03:42
 Category: R
 Tags: Jupyter
@@ -9,9 +9,9 @@ Summary:
 
 <!--more-->
 
-## 安裝IRKernel
-進入R的命令列，輸入下面的指令
-就能安裝IRKernel，以後就能在jupyter中使用R
+## 安裝 IRKernel
+進入 R 的命令列，輸入下面的指令
+就能安裝 IRKernel，以後就能在 jupyter 中使用 R
 ```
 install.packages(c('rzmq','repr','IRkernel','IRdisplay'),
                  repos = c('http://irkernel.github.io/', getOption('repos')))
@@ -25,7 +25,7 @@ interface.cpp:22:10: fatal error: 'zmq.h' file not found
          ^
 1 error generated.
 make: *** [interface.o] Error 1
-ERROR: compilation failed for package ‘rzmq’
+ERROR: compilation failed for package 'rzmq'
 ```
 
 ## 解決

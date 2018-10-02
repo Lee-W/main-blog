@@ -7,8 +7,8 @@ Authors: Lee-W
 Summary: 
 
 
-隱藏在背景的terminal
-並且可以隨時呼叫(預設是F12)
+隱藏在背景的 terminal
+並且可以隨時呼叫 ( 預設是 F12)
 
 <!--more-->
 
@@ -24,8 +24,8 @@ sudo apt-get install guake
 從「偏好設定 （Preferences)」勾選「Hide on lost focus」
 ![2_hide on focus](http://i.imgur.com/Ibp8MX0.png)
 
-# 開機就啟動Guake Terminal
-在「初始應用程式 （Startup Applications) 」把guake terminal加上去
+# 開機就啟動 Guake Terminal
+在「初始應用程式 （Startup Applications) 」把 guake terminal 加上去
 ![3_guake start up](http://i.imgur.com/sYQ6Klw.png)
 
 # Reference
