@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>Linux開機自動掛載分割區</title>
+        <title>Linux 開機自動掛載分割區</title>
 
         <link href="//lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Full Atom Feed" />
         <!-- Bootstrap Core CSS -->
@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改 需要注意的是，如果設定不好，可能會沒辦法開機的！！！">
+        <meta name="description" content="分割區的掛載資訊，存在 /etc/fstab 中，所以需要自動掛載分割區時可以針對此檔案做修改 需要注意的是，如果設定不好，可能會沒辦法開機的！！！">
 
         <meta name="author" content="Lee-W">
 
@@ -49,9 +49,9 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 	<meta property="og:url" content="http://lee-w.github.io/posts/linux-unix/2014/02/auto-mount-disk-after-boot">
-	<meta property="og:title" content="Linux開機自動掛載分割區">
+	<meta property="og:title" content="Linux 開機自動掛載分割區">
 	<meta property="article:published_time" content="2014-02-01 16:44:00+08:00">
-            <meta property="og:description" content="分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改 需要注意的是，如果設定不好，可能會沒辦法開機的！！！">
+            <meta property="og:description" content="分割區的掛載資訊，存在 /etc/fstab 中，所以需要自動掛載分割區時可以針對此檔案做修改 需要注意的是，如果設定不好，可能會沒辦法開機的！！！">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Linux開機自動掛載分割區</h1>
+                        <h1>Linux 開機自動掛載分割區</h1>
                         <span class="meta">Posted by
                                 <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
                              on 2014/02/01 - 六
@@ -112,11 +112,11 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p>分割區的掛載資訊，存在 /etc/fstab中，所以需要自動掛載分割區時可以針對此檔案做修改<br>
+        <p>分割區的掛載資訊，存在 /etc/fstab 中，所以需要自動掛載分割區時可以針對此檔案做修改<br>
 需要注意的是，如果設定不好，可能會沒辦法開機的！！！</p>
 <!--more-->
 
-<p>我們先來看一下/etc/fstab內的東西</p>
+<p>我們先來看一下 /etc/fstab 內的東西</p>
 <div class="codehilite"><pre><span></span>sudo cat /etc/fstab
 </pre></div>
 
@@ -137,33 +137,33 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 </pre></div>
 
 
-<p>#是註解<br>
+<p># 是註解<br>
 最後六行是比較重要的<br>
-1~2是root的掛載<br>
-3~4是swap的掛載<br>
-5~6是我自己的data的掛載</p>
+1~2 是 root 的掛載<br>
+3~4 是 swap 的掛載<br>
+5~6 是我自己的 data 的掛載</p>
 <div class="codehilite"><pre><span></span>#data
 UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 </pre></div>
 
 
-<p>總共有6個欄位</p>
+<p>總共有 6 個欄位</p>
 <ol>
 <li>掛載硬碟的標籤<ul>
-<li>掛載硬碟的標籤我用的是UUID的標籤，可以用下面的指令查詢<br>
+<li>掛載硬碟的標籤我用的是 UUID 的標籤，可以用下面的指令查詢<br>
 <code>ls -l /dev/disk/by-uuid/</code></li>
-<li>也可以直接使用/dev/sda1這樣的格式，只是如果硬碟的代號改變，就要再去手動改變比較麻煩 </li>
+<li>也可以直接使用 /dev/sda1 這樣的格式，只是如果硬碟的代號改變，就要再去手動改變比較麻煩 </li>
 </ul>
 </li>
 <li>掛載位置<ul>
 <li>掛載的位置要是一個已經存在的位置，建議是一個空的資料夾</li>
 <li>如果不是空的，裏面的東西應該都會被清空</li>
-<li>另外，一個掛載點只能掛載一個disk</li>
-<li>另外，注意在Linux中大小寫是不同的</li>
+<li>另外，一個掛載點只能掛載一個 disk</li>
+<li>另外，注意在 Linux 中大小寫是不同的</li>
 </ul>
 </li>
 <li>分隔區格式<ul>
-<li>而一般的檔案朝的分割驅格式都是都是ntfs，不過也可以用指令來查詢<br>
+<li>而一般的檔案朝的分割驅格式都是都是 ntfs，不過也可以用指令來查詢<br>
 <code>df</code></li>
 </ul>
 </li>
@@ -171,14 +171,14 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 <li>是否被 dump 備份指令作用</li>
 <li>是否以 fsck 檢驗磁區</li>
 </ol>
-<p>基本上4 5 6我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到</p>
+<p>基本上 4 5 6 我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到</p>
 <h1>測試</h1>
 <p>先看一下是否有掛載成功</p>
 <div class="codehilite"><pre><span></span>df
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>檔案系統         1K-區段      已用      可用 已用% 掛載點
+<div class="codehilite"><pre><span></span>檔案系統         1K-區段      已用      可用 已用 % 掛載點
 /dev/sda1      103081248   9259936  88562048   10% /
 none                   4         0         4    0% /sys/fs/cgroup
 udev             3992780         4   3992776    1% /dev
@@ -190,13 +190,13 @@ none              102400        44    102356    1% /run/user
 </pre></div>
 
 
-<p>像我的最後面就出現了data</p>
-<p>之後暫時將它卸載 (若<code>df</code>之後，分割區沒有出現，那就不用做這步了)</p>
+<p>像我的最後面就出現了 data</p>
+<p>之後暫時將它卸載 (若 <code>df</code> 之後，分割區沒有出現，那就不用做這步了)</p>
 <div class="codehilite"><pre><span></span>sudo umount /dev/sda6
 </pre></div>
 
 
-<p>(/dev/sda6要取代成你自己的位置)<br>
+<p>(/dev/sda6 要取代成你自己的位置 )<br>
 接著再執行一次</p>
 <div class="codehilite"><pre><span></span>df
 </pre></div>
@@ -214,7 +214,7 @@ none              102400        44    102356    1% /run/user
 
 
 <p>如果掛載的分隔驅再裡面就是成功了</p>
-<p>如果有任何異常，就去看一下/etc/fstab是不是有哪裡寫錯了</p>
+<p>如果有任何異常，就去看一下 /etc/fstab 是不是有哪裡寫錯了</p>
 <h1>Reference</h1>
 <p><a href="http://255121.blogspot.tw/2010/05/linux.html">巴特的微花盆： 筆記： Linux 中設定開機時自動掛載分割區</a></p>
     </article>

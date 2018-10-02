@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="上一篇提到如何用ngrok 讓我們可以不用架Https Server，直接在本地端測試Bot 再來要談的是如何把Bot部署到Heroku上">
+        <meta name="description" content="上一篇提到如何用 ngrok 讓我們可以不用架 Https Server，直接在本地端測試 Bot 再來要談的是如何把 Bot 部署到 Heroku 上">
 
         <meta name="author" content="Lee-W">
 
@@ -54,7 +54,7 @@
 	<meta property="og:url" content="http://lee-w.github.io/posts/bot/2016/11/deploy-linebot-on-heroku">
 	<meta property="og:title" content="Deploy LineBot on Heroku">
 	<meta property="article:published_time" content="2016-11-27 06:05:00+08:00">
-            <meta property="og:description" content="上一篇提到如何用ngrok 讓我們可以不用架Https Server，直接在本地端測試Bot 再來要談的是如何把Bot部署到Heroku上">
+            <meta property="og:description" content="上一篇提到如何用 ngrok 讓我們可以不用架 Https Server，直接在本地端測試 Bot 再來要談的是如何把 Bot 部署到 Heroku 上">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -115,73 +115,73 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p>上一篇提到如何用ngrok<br>
-讓我們可以不用架Https Server，直接在本地端測試Bot</p>
-<p>再來要談的是如何把Bot部署到Heroku上</p>
+        <p>上一篇提到如何用 ngrok<br>
+讓我們可以不用架 Https Server，直接在本地端測試 Bot</p>
+<p>再來要談的是如何把 Bot 部署到 Heroku 上</p>
 <!--more-->
 
 <h1>Why not ngrok</h1>
-<p>使用ngrok必須要讓你的本地端一直開著才能收到訊息<br>
-而且免費版的ngrok每次都會更改url<br>
-所以我們需要一個可以讓其他人較長時間測試的Server</p>
+<p>使用 ngrok 必須要讓你的本地端一直開著才能收到訊息<br>
+而且免費版的 ngrok 每次都會更改 url<br>
+所以我們需要一個可以讓其他人較長時間測試的 Server</p>
 <p>以我自己的開發習慣<br>
-我會使用ngrok，來做Bot的基本除錯<br>
-Heroku則是用來讓其他人測試功能<br>
-真的要上線的時候才會自己架一個Https Server</p>
-<p>Line的帳號也是ngrok, heroku跟上線需要的各申請一個<br>
-不過ngrok可以好幾個Line Bot專案共用一個即可</p>
+我會使用 ngrok，來做 Bot 的基本除錯<br>
+Heroku 則是用來讓其他人測試功能<br>
+真的要上線的時候才會自己架一個 Https Server</p>
+<p>Line 的帳號也是 ngrok, heroku 跟上線需要的各申請一個<br>
+不過 ngrok 可以好幾個 Line Bot 專案共用一個即可</p>
 <h1>Heroku</h1>
 <h2>Create App</h2>
-<p>先上<a href="https://www.heroku.com">Heroku</a>辦個帳號</p>
-<p>到個人的dashboard<br>
+<p>先上<a href="https://www.heroku.com">Heroku</a> 辦個帳號</p>
+<p>到個人的 dashboard<br>
 <code>New</code> -&gt; <code>Create New App</code><br>
-選一個名字，就創好App了</p>
+選一個名字，就創好 App 了</p>
 <h2>Deploy</h2>
 <h3>Add Remote</h3>
 <p>在部署之前要先安裝<a href="https://devcenter.heroku.com/articles/heroku-command-line">Heroku CLI</a></p>
-<p>再來我們要到原本line-echobot，將heroku加入這個專案的remote</p>
+<p>再來我們要到原本 line-echobot，將 heroku 加入這個專案的 remote</p>
 <div class="codehilite"><pre><span></span>heroku login
 heroku git:remote -a leewbot
 </pre></div>
 
 
-<p>接著用<code>git remote -v</code>就能看到<code>heroku</code>已經被加入remote了<br>
-以後只要<code>git push heroku master</code>，就能部署到Heroku<br>
-不過我們還必須要多做一些設定才能讓Bot順利的部署</p>
+<p>接著用 <code>git remote -v</code> 就能看到 <code>heroku</code> 已經被加入 remote 了<br>
+以後只要 <code>git push heroku master</code>，就能部署到 Heroku<br>
+不過我們還必須要多做一些設定才能讓 Bot 順利的部署</p>
 <h3>Environment Variables</h3>
 <p>首先是我們原先設定的環境變數<br>
-Heroku是透過這個指令來做設定</p>
+Heroku 是透過這個指令來做設定</p>
 <div class="codehilite"><pre><span></span>heroku config:set <span class="s2">&quot;env key&quot;</span>:<span class="s2">&quot;env value&quot;</span>
 </pre></div>
 
 
-<p>或者也能到dashboard的<code>Settings</code> -&gt; <code>Config Variables</code> -&gt; <code>Reveal Config Vars</code>做設定</p>
+<p>或者也能到 dashboard 的 <code>Settings</code> -&gt; <code>Config Variables</code> -&gt; <code>Reveal Config Vars</code> 做設定</p>
 <h3>Python Envrionments</h3>
-<p>因為Heroku支援多種不同的語言<br>
-所以要讓Heroku知道我們使用的是Python</p>
-<p>Heroku可過專案中是否有<code>requirements.txt</code>來判斷這個專案是否為Python專案<br>
-並且安裝<code>requirements.txt</code>內的函式庫<br>
-名稱如果打錯，可能會讓Heroku不知道這是Python專案，導致部署失敗</p>
-<p>另外可以透過<code>runtime.txt</code>來指定Python的版本<br>
+<p>因為 Heroku 支援多種不同的語言<br>
+所以要讓 Heroku 知道我們使用的是 Python</p>
+<p>Heroku 可過專案中是否有 <code>requirements.txt</code> 來判斷這個專案是否為 Python 專案<br>
+並且安裝 <code>requirements.txt</code> 內的函式庫<br>
+名稱如果打錯，可能會讓 Heroku 不知道這是 Python 專案，導致部署失敗</p>
+<p>另外可以透過 <code>runtime.txt</code> 來指定 Python 的版本<br>
 目前支援這兩種版本<br>
 - <code>python-2.7.12</code><br>
 - <code>python-3.5.2</code></p>
 <h3>Deploy Settings - Procfile</h3>
-<p>再來必須要讓Heroku知道我們執行專案的指令是什麼<br>
-這個指令就是寫在<code>Profile</code>中</p>
-<p>這裡使用的部署套件是gunicorn<br>
-先在<code>requirements.txt</code>加入<code>gunicorn==19.0.0</code><br>
-再來創一個<code>Profile</code>，內容是</p>
+<p>再來必須要讓 Heroku 知道我們執行專案的指令是什麼<br>
+這個指令就是寫在 <code>Profile</code> 中</p>
+<p>這裡使用的部署套件是 gunicorn<br>
+先在 <code>requirements.txt</code> 加入 <code>gunicorn==19.0.0</code><br>
+再來創一個 <code>Profile</code>，內容是</p>
 <div class="codehilite"><pre><span></span><span class="n">web</span><span class="o">:</span> <span class="n">gunicorn</span> <span class="n">line_echobot</span><span class="o">.</span><span class="na">wsgi</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span>
 </pre></div>
 
 
-<p>如果用其他的部署套件，則需要修改web後面的指令</p>
+<p>如果用其他的部署套件，則需要修改 web 後面的指令</p>
 <p>到了這裡就做好所有的設定了<br>
-最後只要<code>git push heroku master</code>就會部署到Heroku上</p>
-<p>透過<code>heroku open</code>能看到剛剛部署上去的專案<br>
-接著把專案的網址加上我們先前設定的callback url <code>echobot/callback</code><br>
-設定到Line Bot的Webhook URL，就完成了</p>
+最後只要 <code>git push heroku master</code> 就會部署到 Heroku 上</p>
+<p>透過 <code>heroku open</code> 能看到剛剛部署上去的專案<br>
+接著把專案的網址加上我們先前設定的 callback url <code>echobot/callback</code><br>
+設定到 Line Bot 的 Webhook URL，就完成了</p>
 <h1>Reference</h1>
 <ul>
 <li><a href="https://devcenter.heroku.com/articles/getting-started-with-python#introduction">Getting Started on Heroku with Python</a></li>

@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="雖然已經隔了一年多 當初git ignore-io這個小功能，也是花了一兩個月 好不容易才git extras merge回去的">
+        <meta name="description" content="雖然已經隔了一年多 當初 git ignore-io 這個小功能，也是花了一兩個月 好不容易才git extras merge 回去的">
 
         <meta name="author" content="Lee-W">
 
@@ -50,7 +50,7 @@
 	<meta property="og:url" content="http://lee-w.github.io/posts/gossiping/2017/02/git-ignoreio-and-open-source-experience">
 	<meta property="og:title" content="git ignore-io 與 開源貢獻經驗">
 	<meta property="article:published_time" content="2017-02-28 21:56:00+08:00">
-            <meta property="og:description" content="雖然已經隔了一年多 當初git ignore-io這個小功能，也是花了一兩個月 好不容易才git extras merge回去的">
+            <meta property="og:description" content="雖然已經隔了一年多 當初 git ignore-io 這個小功能，也是花了一兩個月 好不容易才git extras merge 回去的">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -112,21 +112,21 @@
     <!-- Post Content -->
     <article>
         <p>雖然已經隔了一年多<br>
-當初git ignore-io這個小功能，也是花了一兩個月<br>
-好不容易才<a href="https://github.com/tj/git-extras">git extras</a> merge回去的</p>
+當初 git ignore-io 這個小功能，也是花了一兩個月<br>
+好不容易才<a href="https://github.com/tj/git-extras">git extras</a> merge 回去的</p>
 <!--more-->
 
-<p>當初看到這封信的時候，很是感動啊xd<br>
+<p>當初看到這封信的時候，很是感動啊 xd<br>
 <img alt="accepted" src="http://lee-w.github.io/images/posts-image/2017-02-28-git-ignoreio-and-open-source-experience/1-accepted.jpg"></p>
 <h2>git ignore-io</h2>
-<p>這個工具主要是從<a href="https://www.gitignore.io">gitignoore.io</a>上下載.gitignore的範本<br>
+<p>這個工具主要是從<a href="https://www.gitignore.io">gitignoore.io</a> 上下載 .gitignore 的範本<br>
 e.g. </p>
 <div class="codehilite"><pre><span></span>git ignore-io -a vim osx python
 </pre></div>
 
 
-<p>像這就是vim常見的暫存檔們<br>
-一般來說應該被忽略掉，不用被commit</p>
+<p>像這就是 vim 常見的暫存檔們<br>
+一般來說應該被忽略掉，不用被 commit</p>
 <div class="codehilite"><pre><span></span># Created by https://www.gitignore.io/api/vim
 
 ### Vim ###
@@ -149,7 +149,7 @@ tags
 
 <hr>
 <p>當初可是連文件都要寫好，才會被作者接受<br>
-所以我這裡就直接沿用我當初寫的文件了xd</p>
+所以我這裡就直接沿用我當初寫的文件了 xd</p>
 <p>Without option, <code>git ignore-io &lt;type&gt;</code> shows the sample gitignore of specified types on screen.  </p>
 <div class="codehilite"><pre><span></span>$ git ignore-io vim
 
@@ -196,19 +196,19 @@ To list all the available types:</p>
 <h2>為什麼要貢獻開源專案？</h2>
 <p>貢獻開源專案最主要的原因<br>
 還是就是<strong>我需要這個功能啊！！！</strong><br>
-但是就沒有人寫，bug沒有人修<br>
-所以就只好先承認自己就是「沒有人」了xd</p>
-<p>其實gitignore.io本身就有提供一個簡單的script <a href="https://www.gitignore.io/docs#-install-command-line">gi</a><br>
-不過實在有點不夠我用xd<br>
+但是就沒有人寫，bug 沒有人修<br>
+所以就只好先承認自己就是「沒有人」了 xd</p>
+<p>其實 gitignore.io 本身就有提供一個簡單的 script <a href="https://www.gitignore.io/docs#-install-command-line">gi</a><br>
+不過實在有點不夠我用 xd<br>
 於是我就寫了<a href="https://github.com/Lee-W/gi_extension">gi_extension</a><br>
-後來又覺得，如果整併的git extras<br>
-我就能透過homebrew安裝了(?????</p>
-<p>整個從pull request到merge的過程其實蠻有趣的<br>
-我找到當初我開的<a href="https://github.com/tj/git-extras/pull/439">pr #439</a>和<a href="https://github.com/tj/git-extras/pull/448">pr #448</a><br>
-從shell script的風格（有人建議我用<a href="https://github.com/koalaman/shellcheck">shellcheck</a>）到command的option為什麼要這樣命名<br>
+後來又覺得，如果整併的 git extras<br>
+我就能透過 homebrew 安裝了 (?????</p>
+<p>整個從 pull request 到 merge 的過程其實蠻有趣的<br>
+我找到當初我開的<a href="https://github.com/tj/git-extras/pull/439">pr #439</a> 和<a href="https://github.com/tj/git-extras/pull/448">pr #448</a><br>
+從 shell script 的風格（有人建議我用<a href="https://github.com/koalaman/shellcheck">shellcheck</a>）到 command 的 option 為什麼要這樣命名<br>
 都有人跟我討論，給我建議<br>
 從中也學到了很多<br>
-<s>貢獻這些專案還能去申請SITCON跟COSCUP的開源貢獻票，這樣就不用跟大家搶票了</s></p>
+<s> 貢獻這些專案還能去申請 SITCON 跟 COSCUP 的開源貢獻票，這樣就不用跟大家搶票了 </s></p>
     </article>
 
 

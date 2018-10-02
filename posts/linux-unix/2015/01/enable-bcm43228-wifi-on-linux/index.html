@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>驅動BCM43228網卡在Linux的無線功能</title>
+        <title>驅動 BCM43228 網卡在 Linux 的無線功能</title>
 
         <link href="//lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Full Atom Feed" />
         <!-- Bootstrap Core CSS -->
@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="最近本來下定決心要來玩arch linux 結果竟然被筆電的網卡搞死了 抓了官網的驅動竟然不能build... 沒想到改成灌Linux mint 17，依然有問題＝＝ 最後找到一個解決的辦法">
+        <meta name="description" content="最近本來下定決心要來玩 arch linux 結果竟然被筆電的網卡搞死了 抓了官網的驅動竟然不能 build... 沒想到改成灌 Linux mint 17，依然有問題＝＝ 最後找到一個解決的辦法">
 
         <meta name="author" content="Lee-W">
 
@@ -49,9 +49,9 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 	<meta property="og:url" content="http://lee-w.github.io/posts/linux-unix/2015/01/enable-bcm43228-wifi-on-linux">
-	<meta property="og:title" content="驅動BCM43228網卡在Linux的無線功能">
+	<meta property="og:title" content="驅動 BCM43228 網卡在 Linux 的無線功能">
 	<meta property="article:published_time" content="2015-01-28 08:52:00+08:00">
-            <meta property="og:description" content="最近本來下定決心要來玩arch linux 結果竟然被筆電的網卡搞死了 抓了官網的驅動竟然不能build... 沒想到改成灌Linux mint 17，依然有問題＝＝ 最後找到一個解決的辦法">
+            <meta property="og:description" content="最近本來下定決心要來玩 arch linux 結果竟然被筆電的網卡搞死了 抓了官網的驅動竟然不能 build... 沒想到改成灌 Linux mint 17，依然有問題＝＝ 最後找到一個解決的辦法">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>驅動BCM43228網卡在Linux的無線功能</h1>
+                        <h1>驅動 BCM43228 網卡在 Linux 的無線功能</h1>
                         <span class="meta">Posted by
                                 <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
                              on 2015/01/28 - 三
@@ -112,14 +112,14 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p>最近本來下定決心要來玩arch linux<br>
+        <p>最近本來下定決心要來玩 arch linux<br>
 結果竟然被筆電的網卡搞死了<br>
-抓了官網的驅動竟然不能build...</p>
-<p>沒想到改成灌Linux mint 17，依然有問題＝＝<br>
+抓了官網的驅動竟然不能 build...</p>
+<p>沒想到改成灌 Linux mint 17，依然有問題＝＝<br>
 最後找到一個解決的辦法</p>
 <!--more-->
 
-<p>先確定你的網卡是不是BC43228</p>
+<p>先確定你的網卡是不是 BC43228</p>
 <div class="codehilite"><pre><span></span>lspci <span class="p">|</span> grep Network
 </pre></div>
 
@@ -130,7 +130,7 @@ sudo apt-get install --reinstall bcmwl-kernel-source
 </pre></div>
 
 
-<p>如果成功的話，Wifi應該馬上就能用了</p>
+<p>如果成功的話，Wifi 應該馬上就能用了</p>
 <h1>Reference</h1>
 <p><a href="http://wiki.beyondlogic.org/index.php?title=Ubuntu14.04_Acer_Aspire_V5_571_Broadcom_BCM43228_WiFi">Ubuntu14.04 Acer Aspire V5 571 Broadcom BCM43228 WiFi - BeyondLogic</a></p>
     </article>

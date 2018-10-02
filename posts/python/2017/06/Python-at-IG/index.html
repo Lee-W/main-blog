@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="Lisa Guo, Hui Ding Keynote PyCon 2017 slide 終於好好花個時間看完今年IG在PyCon US的Talk了 的確蠻值得大家花這個時間去看的">
+        <meta name="description" content="Lisa Guo, Hui Ding Keynote PyCon 2017 slide 終於好好花個時間看完今年 IG 在 PyCon US 的 Talk 了 的確蠻值得大家花這個時間去看的">
 
         <meta name="author" content="Lee-W">
 
@@ -51,7 +51,7 @@
 	<meta property="og:url" content="http://lee-w.github.io/posts/python/2017/06/Python-at-IG">
 	<meta property="og:title" content="Python@Instagram">
 	<meta property="article:published_time" content="2017-06-22 22:10:00+08:00">
-            <meta property="og:description" content="Lisa Guo, Hui Ding Keynote PyCon 2017 slide 終於好好花個時間看完今年IG在PyCon US的Talk了 的確蠻值得大家花這個時間去看的">
+            <meta property="og:description" content="Lisa Guo, Hui Ding Keynote PyCon 2017 slide 終於好好花個時間看完今年 IG 在 PyCon US 的 Talk 了 的確蠻值得大家花這個時間去看的">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -116,15 +116,15 @@
 <li><a href="https://www.youtube.com/watch?v=66XoCk79kjM">Lisa Guo, Hui Ding Keynote PyCon 2017</a></li>
 <li><a href="https://speakerdeck.com/pycon2017/keynote-lisa-guo-and-hui-ding-python-at-instagram">slide</a></li>
 </ul>
-<p>終於好好花個時間看完今年IG在PyCon US的Talk了<br>
+<p>終於好好花個時間看完今年 IG 在 PyCon US 的 Talk 了<br>
 的確蠻值得大家花這個時間去看的</p>
 <!--more-->
 
 <p>如果要看懶人包<br>
-Google一下「PyCon」、「Instagram」有很多很清楚地整理<br>
+Google 一下「PyCon」、「Instagram」有很多很清楚地整理<br>
 我也整理了一點點我覺得特別有意思的</p>
 <h2>Why Python?</h2>
-<p>(一開始主要是歷史因素，因為當初的創辦人就這麼用了XD)</p>
+<p>(一開始主要是歷史因素，因為當初的創辦人就這麼用了 XD)</p>
 <ul>
 <li>Use Proven Technology<ul>
 <li>Users do not care what database Instagram runs on. They certainly don't care what language Instagram develop in.</li>
@@ -143,12 +143,12 @@ Google一下「PyCon」、「Instagram」有很多很清楚地整理<br>
 <li>Async? New Pyton runtime?</li>
 </ol>
 <h2>Road to Python3</h2>
-<p>這一段講到Instragram如何從Python2轉到Python3的過程<br>
-我覺得很精彩，所以大家就自己去看吧XD</p>
+<p>這一段講到 Instragram 如何從 Python2 轉到 Python3 的過程<br>
+我覺得很精彩，所以大家就自己去看吧 XD</p>
 <p>我只紀錄一個我覺得特別有趣的東西<br>
-如同大家所知道的Python2跟Python3一個很大的不同點，就是對於byte跟str的處理<br>
+如同大家所知道的 Python2 跟 Python3 一個很大的不同點，就是對於 byte 跟 str 的處理<br>
 這就會導致我們必須先確認他的型態是否符合預期<br>
-如果不符合就要在做encode或decode</p>
+如果不符合就要在做 encode 或 decode</p>
 <p>可能就會像下面這樣</p>
 <div class="codehilite"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">text_type</span><span class="p">):</span>
@@ -157,9 +157,9 @@ Google一下「PyCon」、「Instagram」有很多很清楚地整理<br>
 </pre></div>
 
 
-<p>Instagram處理這種問題的功能實作成<code>ensure_binary</code>, <code>ensure_str</code>, <code>ensure_text</code>這類的helper functon</p>
-<p>這也是我之前在trace <a href="https://github.com/pytransitions/transitions">transitions</a> 的source code<br>
-發現有一個<a href="https://github.com/pytransitions/transitions/blob/2cb42916affe167a8d94cdfdf56ab08b41ccd05c/transitions/core.py#L25">listify</a>的function<br>
+<p>Instagram 處理這種問題的功能實作成 <code>ensure_binary</code>, <code>ensure_str</code>, <code>ensure_text</code> 這類的 helper functon</p>
+<p>這也是我之前在 trace <a href="https://github.com/pytransitions/transitions">transitions</a> 的 source code<br>
+發現有一個<a href="https://github.com/pytransitions/transitions/blob/2cb42916affe167a8d94cdfdf56ab08b41ccd05c/transitions/core.py#L25">listify</a> 的 function<br>
 雖然是蠻簡單的小技巧，不過還算蠻實用的</p>
     </article>
 

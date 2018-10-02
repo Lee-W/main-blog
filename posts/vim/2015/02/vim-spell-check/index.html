@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>vimspell - vim檢查英文文法的套件</title>
+        <title>vimspell - vim 檢查英文文法的套件</title>
 
         <link href="//lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life Lies in Traveling Full Atom Feed" />
         <!-- Bootstrap Core CSS -->
@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="vimspell是一套提供vim根據字典來檢查文法的套件 有了vimsepll，寫markdown或latex的時候，就不用再怕拼錯字了">
+        <meta name="description" content="vimspell 是一套提供 vim 根據字典來檢查文法的套件 有了 vimsepll，寫 Markdown 或 LaTeX 的時候，就不用再怕拼錯字了">
 
         <meta name="author" content="Lee-W">
 
@@ -49,9 +49,9 @@
 	<meta property="og:type" content="article">
             <meta property="article:author" content="http://lee-w.github.io/author/lee-w.html">
 	<meta property="og:url" content="http://lee-w.github.io/posts/vim/2015/02/vim-spell-check">
-	<meta property="og:title" content="vimspell - vim檢查英文文法的套件">
+	<meta property="og:title" content="vimspell - vim 檢查英文文法的套件">
 	<meta property="article:published_time" content="2015-02-14 09:59:00+08:00">
-            <meta property="og:description" content="vimspell是一套提供vim根據字典來檢查文法的套件 有了vimsepll，寫markdown或latex的時候，就不用再怕拼錯字了">
+            <meta property="og:description" content="vimspell 是一套提供 vim 根據字典來檢查文法的套件 有了 vimsepll，寫 Markdown 或 LaTeX 的時候，就不用再怕拼錯字了">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>vimspell - vim檢查英文文法的套件</h1>
+                        <h1>vimspell - vim 檢查英文文法的套件</h1>
                         <span class="meta">Posted by
                                 <a href="http://lee-w.github.io/author/lee-w.html">Lee-W</a>
                              on 2015/02/14 - 六
@@ -112,71 +112,71 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p><a href="http://www.vim.org/scripts/script.php?script_id=465">vimspell</a>是一套提供vim根據字典來檢查文法的套件<br>
-有了vimsepll，寫markdown或latex的時候，就不用再怕拼錯字了</p>
+        <p><a href="http://www.vim.org/scripts/script.php?script_id=465">vimspell</a> 是一套提供 vim 根據字典來檢查文法的套件<br>
+有了 vimsepll，寫 Markdown 或 LaTeX 的時候，就不用再怕拼錯字了</p>
 <!--more-->
 
-<h1>用vundle安裝</h1>
-<p>在vimrc中加入下面這行</p>
+<h1>用 vundle 安裝</h1>
+<p>在 vimrc 中加入下面這行</p>
 <div class="codehilite"><pre><span></span>Bundle &#39;vimspell&#39;
 </pre></div>
 
 
-<p>接著用<code>:BundleInstall</code>安裝</p>
+<p>接著用 <code>:BundleInstall</code> 安裝</p>
 <h1>字典檔</h1>
 <p>到下面的網站下載字典檔<br>
 http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/dictionaries/</p>
-<p>我下載的是<code>en_US.zip</code></p>
-<p>解壓縮完後，用vim開啟街壓縮完的資料夾<br>
+<p>我下載的是 <code>en_US.zip</code></p>
+<p>解壓縮完後，用 vim 開啟街壓縮完的資料夾<br>
 應該會看到下面這樣<br>
 <img alt="1_directory" src="http://i.imgur.com/gLWMnmW.png"></p>
-<p>接著進入vim在normal mode輸入</p>
+<p>接著進入 vim 在 normal mode 輸入</p>
 <div class="codehilite"><pre><span></span>:mkspell en en_US
 </pre></div>
 
 
-<p><code>en</code>可以自己定義，<code>en\_US</code>必須是.aff 和.dic的檔名<br>
-檢查一下vim資料夾下的spell資料夾有沒有新增字典檔，確定有了後就新增完成了</p>
+<p><code>en</code> 可以自己定義，<code>en\_US</code> 必須是 .aff 和 .dic 的檔名<br>
+檢查一下 vim 資料夾下的 spell 資料夾有沒有新增字典檔，確定有了後就新增完成了</p>
 <h1>設定</h1>
 <p>首先要先定義要根據哪個字典檔</p>
 <div class="codehilite"><pre><span></span>:set spelllang=en
 </pre></div>
 
 
-<p>en就是剛剛所定義的名稱</p>
-<p>接著<code>:set spell</code>就可以開啟了<br>
-<code>:set nospell</code>則是關閉</p>
+<p>en 就是剛剛所定義的名稱</p>
+<p>接著 <code>:set spell</code> 就可以開啟了<br>
+<code>:set nospell</code> 則是關閉</p>
 <p>如果每次都要設定一次，就太麻煩了<br>
-我在vimrc加入了下面這些</p>
+我在 vimrc 加入了下面這些</p>
 <div class="codehilite"><pre><span></span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
 nmap <span class="p">&lt;</span>F7<span class="p">&gt;</span> :<span class="k">setlocal</span> <span class="k">spell</span><span class="p">!&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 autocmd <span class="nb">BufRead</span> *.txt<span class="p">,</span>*.md<span class="p">,</span>*.tex <span class="k">setlocal</span> <span class="k">spell</span>
 </pre></div>
 
 
-<p>第二行是每次按F7就能開啟或關閉vimspell，也可以換成自己想要的快捷鍵<br>
-第三行則是每次遇到副檔名是txt, md, tex時就自動開啟vimspell</p>
+<p>第二行是每次按 F7 就能開啟或關閉 vimspell，也可以換成自己想要的快捷鍵<br>
+第三行則是每次遇到副檔名是 txt, md, tex 時就自動開啟 vimspell</p>
 <h1>使用</h1>
-<p>vimspell被開啟後，就會自動把拼錯的字反白起來<br>
+<p>vimspell 被開啟後，就會自動把拼錯的字反白起來<br>
 如果有其他的語言一樣會被反白起來<br>
 <img alt="2_vimspell_sample" src="http://i.imgur.com/MGjdAoq.png"></p>
 <h2>指令</h2>
 <ul>
 <li><code>]s</code> : 跳到下一個錯字</li>
 <li><code>[s</code> : 跳到上一個錯字</li>
-<li><code>z=</code> : 開啟建議，可以參考下面的圖，選擇完按enter後，就會替換原本的字</li>
+<li><code>z=</code> : 開啟建議，可以參考下面的圖，選擇完按 enter 後，就會替換原本的字</li>
 <li><code>zg</code> : 將目前游標上的字加入字典<br>
-    新增的字都會被加到<code>~/.vim/spell/en.utf-8.add</code>(根據語言不同，檔名會不同)</li>
-<li><code>zug</code>: 復原加入字典的字(刪除)</li>
-<li><code>zw</code> : 加入壞字字典，壞字也會被加入同樣的檔案中，最後面會另外加上<code>/!</code></li>
-<li><code>zuw</code>: 復原加入壞字字典的字(刪除)</li>
+    新增的字都會被加到 <code>~/.vim/spell/en.utf-8.add</code>( 根據語言不同，檔名會不同 )</li>
+<li><code>zug</code>: 復原加入字典的字 (刪除)</li>
+<li><code>zw</code> : 加入壞字字典，壞字也會被加入同樣的檔案中，最後面會另外加上 <code>/!</code></li>
+<li><code>zuw</code>: 復原加入壞字字典的字 (刪除)</li>
 </ul>
 <p><img alt="3_choose_word" src="http://i.imgur.com/NWHCakj.png"></p>
 <h1>Reference</h1>
 <ul>
 <li><a href="http://vimdoc.sourceforge.net/htmldoc/spell.html">Vim documentation: spell</a></li>
 <li><a href="http://www.go2linux.org/linux/2010/10/how-use-spell-check-vim-795">How to use spell check with vim</a></li>
-<li><a href="http://ithelp.ithome.com.tw/question/10055602">[Reply] 如何在vim裡用拼字檢查 - iT邦幫忙::IT知識分享社群</a></li>
+<li><a href="http://ithelp.ithome.com.tw/question/10055602">[Reply] 如何在 vim 裡用拼字檢查 - iT 邦幫忙 ::IT 知識分享社群</a></li>
 <li><a href="http://henry.precheur.org/vim/create_spell_file_for_vim">Create a spell file for VIM</a></li>
 <li><a href="http://stackoverflow.com/questions/7286207/automatically-enabling-spell-checking-in-vimrc">vim - Automatically enabling spell checking in vimrc - Stack Overflow</a></li>
 </ul>

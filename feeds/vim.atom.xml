@@ -6,7 +6,7 @@
 &lt;!--more--&gt;
 
 &lt;h2&gt;Ch1: The Vim Way&lt;/h2&gt;
-&lt;h3&gt;Tip2: Don’t Repeat Yourself&lt;/h3&gt;
+&lt;h3&gt;Tip2: Don't Repeat Yourself&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;.&lt;/code&gt; command: Repeat the last change&lt;ul&gt;
 &lt;li&gt;Command in normal mode&lt;/li&gt;
@@ -254,73 +254,73 @@ ln -s ~/.vimrc &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim/init.vi
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/3536"&gt;.nvimrc doesn't seem to be loaded up or working and it cannot create backups on editing existing files&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/1755"&gt;No python interpreter found.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Neovim"></category></entry><entry><title>vimspell - vim檢查英文文法的套件</title><link href="http://lee-w.github.io/posts/vim/2015/02/vim-spell-check" rel="alternate"></link><published>2015-02-14T09:59:00+08:00</published><updated>2015-02-14T09:59:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-02-14:/posts/vim/2015/02/vim-spell-check</id><summary type="html">&lt;p&gt;&lt;a href="http://www.vim.org/scripts/script.php?script_id=465"&gt;vimspell&lt;/a&gt;是一套提供vim根據字典來檢查文法的套件&lt;br&gt;
-有了vimsepll，寫markdown或latex的時候，就不用再怕拼錯字了&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;a href="http://www.vim.org/scripts/script.php?script_id=465"&gt;vimspell&lt;/a&gt;是一套提供vim根據字典來檢查文法的套件&lt;br&gt;
-有了vimsepll，寫markdown或latex的時候，就不用再怕拼錯字了&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Neovim"></category></entry><entry><title>vimspell - vim 檢查英文文法的套件</title><link href="http://lee-w.github.io/posts/vim/2015/02/vim-spell-check" rel="alternate"></link><published>2015-02-14T09:59:00+08:00</published><updated>2015-02-14T09:59:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-02-14:/posts/vim/2015/02/vim-spell-check</id><summary type="html">&lt;p&gt;&lt;a href="http://www.vim.org/scripts/script.php?script_id=465"&gt;vimspell&lt;/a&gt; 是一套提供 vim 根據字典來檢查文法的套件&lt;br&gt;
+有了 vimsepll，寫 Markdown 或 LaTeX 的時候，就不用再怕拼錯字了&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a href="http://www.vim.org/scripts/script.php?script_id=465"&gt;vimspell&lt;/a&gt; 是一套提供 vim 根據字典來檢查文法的套件&lt;br&gt;
+有了 vimsepll，寫 Markdown 或 LaTeX 的時候，就不用再怕拼錯字了&lt;/p&gt;
 &lt;!--more--&gt;
 
-&lt;h1&gt;用vundle安裝&lt;/h1&gt;
-&lt;p&gt;在vimrc中加入下面這行&lt;/p&gt;
+&lt;h1&gt;用 vundle 安裝&lt;/h1&gt;
+&lt;p&gt;在 vimrc 中加入下面這行&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Bundle &amp;#39;vimspell&amp;#39;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;接著用&lt;code&gt;:BundleInstall&lt;/code&gt;安裝&lt;/p&gt;
+&lt;p&gt;接著用 &lt;code&gt;:BundleInstall&lt;/code&gt; 安裝&lt;/p&gt;
 &lt;h1&gt;字典檔&lt;/h1&gt;
 &lt;p&gt;到下面的網站下載字典檔&lt;br&gt;
 http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/dictionaries/&lt;/p&gt;
-&lt;p&gt;我下載的是&lt;code&gt;en_US.zip&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;解壓縮完後，用vim開啟街壓縮完的資料夾&lt;br&gt;
+&lt;p&gt;我下載的是 &lt;code&gt;en_US.zip&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解壓縮完後，用 vim 開啟街壓縮完的資料夾&lt;br&gt;
 應該會看到下面這樣&lt;br&gt;
 &lt;img alt="1_directory" src="http://i.imgur.com/gLWMnmW.png"&gt;&lt;/p&gt;
-&lt;p&gt;接著進入vim在normal mode輸入&lt;/p&gt;
+&lt;p&gt;接著進入 vim 在 normal mode 輸入&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:mkspell en en_US
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;code&gt;en&lt;/code&gt;可以自己定義，&lt;code&gt;en\_US&lt;/code&gt;必須是.aff 和.dic的檔名&lt;br&gt;
-檢查一下vim資料夾下的spell資料夾有沒有新增字典檔，確定有了後就新增完成了&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;en&lt;/code&gt; 可以自己定義，&lt;code&gt;en\_US&lt;/code&gt; 必須是 .aff 和 .dic 的檔名&lt;br&gt;
+檢查一下 vim 資料夾下的 spell 資料夾有沒有新增字典檔，確定有了後就新增完成了&lt;/p&gt;
 &lt;h1&gt;設定&lt;/h1&gt;
 &lt;p&gt;首先要先定義要根據哪個字典檔&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:set spelllang=en
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;en就是剛剛所定義的名稱&lt;/p&gt;
-&lt;p&gt;接著&lt;code&gt;:set spell&lt;/code&gt;就可以開啟了&lt;br&gt;
-&lt;code&gt;:set nospell&lt;/code&gt;則是關閉&lt;/p&gt;
+&lt;p&gt;en 就是剛剛所定義的名稱&lt;/p&gt;
+&lt;p&gt;接著 &lt;code&gt;:set spell&lt;/code&gt; 就可以開啟了&lt;br&gt;
+&lt;code&gt;:set nospell&lt;/code&gt; 則是關閉&lt;/p&gt;
 &lt;p&gt;如果每次都要設定一次，就太麻煩了&lt;br&gt;
-我在vimrc加入了下面這些&lt;/p&gt;
+我在 vimrc 加入了下面這些&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;spelllang&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="k"&gt;en&lt;/span&gt;
 nmap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;F7&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; :&lt;span class="k"&gt;setlocal&lt;/span&gt; &lt;span class="k"&gt;spell&lt;/span&gt;&lt;span class="p"&gt;!&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;cr&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 autocmd &lt;span class="nb"&gt;BufRead&lt;/span&gt; *.txt&lt;span class="p"&gt;,&lt;/span&gt;*.md&lt;span class="p"&gt;,&lt;/span&gt;*.tex &lt;span class="k"&gt;setlocal&lt;/span&gt; &lt;span class="k"&gt;spell&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;第二行是每次按F7就能開啟或關閉vimspell，也可以換成自己想要的快捷鍵&lt;br&gt;
-第三行則是每次遇到副檔名是txt, md, tex時就自動開啟vimspell&lt;/p&gt;
+&lt;p&gt;第二行是每次按 F7 就能開啟或關閉 vimspell，也可以換成自己想要的快捷鍵&lt;br&gt;
+第三行則是每次遇到副檔名是 txt, md, tex 時就自動開啟 vimspell&lt;/p&gt;
 &lt;h1&gt;使用&lt;/h1&gt;
-&lt;p&gt;vimspell被開啟後，就會自動把拼錯的字反白起來&lt;br&gt;
+&lt;p&gt;vimspell 被開啟後，就會自動把拼錯的字反白起來&lt;br&gt;
 如果有其他的語言一樣會被反白起來&lt;br&gt;
 &lt;img alt="2_vimspell_sample" src="http://i.imgur.com/MGjdAoq.png"&gt;&lt;/p&gt;
 &lt;h2&gt;指令&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;]s&lt;/code&gt; : 跳到下一個錯字&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;[s&lt;/code&gt; : 跳到上一個錯字&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;z=&lt;/code&gt; : 開啟建議，可以參考下面的圖，選擇完按enter後，就會替換原本的字&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;z=&lt;/code&gt; : 開啟建議，可以參考下面的圖，選擇完按 enter 後，就會替換原本的字&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;zg&lt;/code&gt; : 將目前游標上的字加入字典&lt;br&gt;
-    新增的字都會被加到&lt;code&gt;~/.vim/spell/en.utf-8.add&lt;/code&gt;(根據語言不同，檔名會不同)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;zug&lt;/code&gt;: 復原加入字典的字(刪除)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;zw&lt;/code&gt; : 加入壞字字典，壞字也會被加入同樣的檔案中，最後面會另外加上&lt;code&gt;/!&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;zuw&lt;/code&gt;: 復原加入壞字字典的字(刪除)&lt;/li&gt;
+    新增的字都會被加到 &lt;code&gt;~/.vim/spell/en.utf-8.add&lt;/code&gt;( 根據語言不同，檔名會不同 )&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zug&lt;/code&gt;: 復原加入字典的字 (刪除)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zw&lt;/code&gt; : 加入壞字字典，壞字也會被加入同樣的檔案中，最後面會另外加上 &lt;code&gt;/!&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zuw&lt;/code&gt;: 復原加入壞字字典的字 (刪除)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img alt="3_choose_word" src="http://i.imgur.com/NWHCakj.png"&gt;&lt;/p&gt;
 &lt;h1&gt;Reference&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://vimdoc.sourceforge.net/htmldoc/spell.html"&gt;Vim documentation: spell&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.go2linux.org/linux/2010/10/how-use-spell-check-vim-795"&gt;How to use spell check with vim&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://ithelp.ithome.com.tw/question/10055602"&gt;[Reply] 如何在vim裡用拼字檢查 - iT邦幫忙::IT知識分享社群&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://ithelp.ithome.com.tw/question/10055602"&gt;[Reply] 如何在 vim 裡用拼字檢查 - iT 邦幫忙 ::IT 知識分享社群&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://henry.precheur.org/vim/create_spell_file_for_vim"&gt;Create a spell file for VIM&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://stackoverflow.com/questions/7286207/automatically-enabling-spell-checking-in-vimrc"&gt;vim - Automatically enabling spell checking in vimrc - Stack Overflow&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Plug In"></category></entry></feed>

@@ -37,7 +37,7 @@
 
 
 
-        <meta name="description" content="reavel.js提供了data-markdown="example.md"這個tag可以載入外部的markdown 卻沒提供可以載入html的tag 於是就有人寫了這個External.js">
+        <meta name="description" content="reavel.js 提供了 data-markdown="example.md" 這個 tag 可以載入外部的 markdown 卻沒提供可以載入 html 的 tag 於是就有人寫了這個External.js">
 
         <meta name="author" content="Lee-W">
 
@@ -51,7 +51,7 @@
 	<meta property="og:url" content="http://lee-w.github.io/posts/javascript/2016/03/external-js-load-html-in-reveal-js">
 	<meta property="og:title" content="External.js - Load HTML in Reveal.js">
 	<meta property="article:published_time" content="2016-03-23 01:23:00+08:00">
-            <meta property="og:description" content="reavel.js提供了data-markdown="example.md"這個tag可以載入外部的markdown 卻沒提供可以載入html的tag 於是就有人寫了這個External.js">
+            <meta property="og:description" content="reavel.js 提供了 data-markdown="example.md" 這個 tag 可以載入外部的 markdown 卻沒提供可以載入 html 的 tag 於是就有人寫了這個External.js">
 
             <meta property="og:image" content="http://lee-w.github.io//images/cover.jpg">
 </head>
@@ -112,25 +112,25 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-        <p>reavel.js提供了<code>data-markdown="example.md"</code>這個tag可以載入外部的markdown<br>
-卻沒提供可以載入html的tag<br>
+        <p>reavel.js 提供了 <code>data-markdown="example.md"</code> 這個 tag 可以載入外部的 markdown<br>
+卻沒提供可以載入 html 的 tag<br>
 於是就有人寫了這個<a href="https://github.com/calevans/external">External.js</a></p>
 <!--more-->
 
-<p>有了External.js，就可以不用把所有的內容都寫在<code>index.html</code>裡面</p>
+<p>有了 External.js，就可以不用把所有的內容都寫在 <code>index.html</code> 裡面</p>
 <h1>Install</h1>
 <h2>Method1: Download</h2>
 <ol>
-<li>到https://github.com/calevans/external下載</li>
-<li>把extneral裡面的external資料夾放到plugin裡面</li>
-<li>在<code>index.html</code>中的<code>Reveal.initalize</code>這個block加入下面的內容</li>
+<li>到 https://github.com/calevans/external 下載</li>
+<li>把 extneral 裡面的 external 資料夾放到 plugin 裡面</li>
+<li>在 <code>index.html</code> 中的 <code>Reveal.initalize</code> 這個 block 加入下面的內容</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="p">{</span> <span class="n">src</span><span class="p">:</span> <span class="s1">&#39;plugin/external/external.js&#39;</span><span class="p">,</span> <span class="n">condition</span><span class="o">:</span> <span class="nf">function</span><span class="p">()</span> <span class="err">{</span> <span class="n">return</span> <span class="o">!!</span><span class="n">document</span><span class="o">.</span><span class="nf">querySelector</span><span class="p">(</span> <span class="s1">&#39;</span><span class="cp">[</span><span class="nx">data</span><span class="na">-external</span><span class="cp">]</span><span class="s1">&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="err">}</span><span class="o">,</span>
+<div class="codehilite"><pre><span></span><span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;plugin/external/external.js&#39;</span><span class="p">,</span> <span class="nx">condition</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span> <span class="s1">&#39;[data-external]&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
 </pre></div>
 
 
 <h2>Method2: Submodule</h2>
-<p>不過為了讓他的更新也能被追蹤，我使用了git submodule</p>
+<p>不過為了讓他的更新也能被追蹤，我使用了 git submodule</p>
 <ol>
 <li>git submodule</li>
 </ol>
@@ -139,27 +139,27 @@
 
 
 <ol>
-<li>在<code>index.html</code>中的<code>Reveal.initalize</code>這個block加入下面的內容</li>
+<li>在 <code>index.html</code> 中的 <code>Reveal.initalize</code> 這個 block 加入下面的內容</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="p">{</span> <span class="n">src</span><span class="p">:</span> <span class="s1">&#39;plugin/external/external/external.js&#39;</span><span class="p">,</span> <span class="n">condition</span><span class="o">:</span> <span class="nf">function</span><span class="p">()</span> <span class="err">{</span> <span class="n">return</span> <span class="o">!!</span><span class="n">document</span><span class="o">.</span><span class="nf">querySelector</span><span class="p">(</span> <span class="s1">&#39;</span><span class="cp">[</span><span class="nx">data</span><span class="na">-external</span><span class="cp">]</span><span class="s1">&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="err">}</span><span class="o">,</span>
+<div class="codehilite"><pre><span></span><span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;plugin/external/external/external.js&#39;</span><span class="p">,</span> <span class="nx">condition</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span> <span class="s1">&#39;[data-external]&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
 </pre></div>
 
 
-<p>(注意兩種方式加入的內容有些微的不同)</p>
+<p>( 注意兩種方式加入的內容有些微的不同 )</p>
 <h1>Usage</h1>
-<p>之後就能使用<code>data-external</code>這個tag來載入外部的html</p>
-<h2>原本的index.html</h2>
+<p>之後就能使用 <code>data-external</code> 這個 tag 來載入外部的 html</p>
+<h2>原本的 index.html</h2>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">&quot;module_01/index.html&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
 </pre></div>
 
 
-<h2>外部html</h2>
+<h2>外部 html</h2>
 <div class="codehilite"><pre><span></span><span class="c">&lt;!-- module_01/index.html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> This is external <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
 </pre></div>
 
 
-<h2>載入後的html</h2>
+<h2>載入後的 html</h2>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">&quot;module_01/index.html&quot;</span><span class="p">&gt;</span>
     <span class="c">&lt;!-- module_01/index.html --&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> This is external <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
