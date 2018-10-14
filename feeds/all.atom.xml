@@ -1,5 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2018-09-24T15:15:00+08:00</updated><entry><title>X-Village 課程設計</title><link href="http://lee-w.github.io/posts/thought/2018/09/X-Village-Course-Design" rel="alternate"></link><published>2018-09-24T15:15:00+08:00</published><updated>2018-09-24T15:15:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-09-24:/posts/thought/2018/09/X-Village-Course-Design</id><summary type="html">&lt;p&gt;要一次說完整個 X-Village ，還是有點太花時間&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2018-10-14T21:00:00+08:00</updated><entry><title>Blog 風格修正</title><link href="http://lee-w.github.io/posts/develop/2018/10/fix-blog-style" rel="alternate"></link><published>2018-10-14T21:00:00+08:00</published><updated>2018-10-14T21:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-10-14:/posts/develop/2018/10/fix-blog-style</id><summary type="html">&lt;p&gt;一直以來都有發現 Blog 的風格有點小問題&lt;br&gt;
+但都懶得去好好地找出問題&lt;br&gt;
+這次終於下定決定修好它&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;一直以來都有發現 Blog 的風格有點小問題&lt;br&gt;
+但都懶得去好好地找出問題&lt;br&gt;
+這次終於下定決定修好它&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;起源其實是我的上一篇文被嘴了 QAQ&lt;/p&gt;
+&lt;p&gt;&lt;img alt="your style is bad" src="http://lee-w.github.io/images/posts-image/2018-10-14-fix-blog-style/15385701963828.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="problem 1" src="http://lee-w.github.io/images/posts-image/2018-10-14-fix-blog-style/15385699268490.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="problem 2" src="http://lee-w.github.io/images/posts-image/2018-10-14-fix-blog-style/15385700601798.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;整理下來大概有三個問題&lt;br&gt;
+1. 大小標的 margin&lt;br&gt;
+2. 英文前後也空一格&lt;br&gt;
+3. 第二行縮了四分之一字元&lt;/p&gt;
+&lt;h2&gt;1. 大小標的 margin&lt;/h2&gt;
+&lt;p&gt;這應該是三個問題中最簡單的&lt;br&gt;
+但我有點懶得動 CSS ，所以就先不修了 xD&lt;/p&gt;
+&lt;h2&gt;2. 英文前後也空一格&lt;/h2&gt;
+&lt;p&gt;剛好最近看到了&lt;a href="https://github.com/sparanoid/chinese-copywriting-guidelines#中文文案排版指北"&gt;中文文案排版指北&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;才發現原來&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「有研究顯示，打字的時候不喜歡在中文和英文之間加空格的人，感情路都走得很辛苦，有七成的比例會在 34 歲的時候跟自己不愛的人結婚，而其餘三成的人最後只能把遺產留給自己的貓。畢竟愛情跟書寫都需要適時地留白。與大家共勉之。」&lt;br&gt;
+——vinta/paranoid-auto-spacing&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;總之，這也不是特別難處理的問題&lt;br&gt;
+只要透過 &lt;a href="https://github.com/hjiang/scripts/blob/master/add-space-between-latin-and-cjk"&gt;add-space-between-latin-and-cjk&lt;/a&gt; 再加上 &lt;code&gt;os.walk()&lt;/code&gt; 就能解決了&lt;br&gt;
+不過還是會遇到一些不該加空格的地方，也被加空格了&lt;br&gt;
+但也只要用 &lt;code&gt;git diff&lt;/code&gt; 再確認一下哪裡有被 script 修改過就可以了&lt;/p&gt;
+&lt;h2&gt;3. 第二行縮了四分之一字元&lt;/h2&gt;
+&lt;p&gt;這個問題就比較頭痛了&lt;br&gt;
+因為我在模板找到這段的內容是&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{{ article.content }}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;也就是説這個多的空白是 &lt;a href="https://github.com/getpelican/pelican"&gt;pelican&lt;/a&gt; (我用的 static blog generator) 所產生的&lt;br&gt;
+我沒有辦法透過單純的修改 HTML, CSS 來修正這個問題&lt;br&gt;
+必須要找到 pelican 是從哪產生出這個空白的&lt;br&gt;
+於是就開始我的 trace pelican 的之旅&lt;/p&gt;
+&lt;p&gt;接下來，就是一連串的 trace 過程&lt;br&gt;
+不想看可以透過&lt;a href="#transport"&gt;傳送門&lt;/a&gt;直接跳到解法&lt;/p&gt;
+&lt;h3&gt;pelican/readers.py (first try)&lt;/h3&gt;
+&lt;p&gt;要找到 Markdown 是在哪被 parse 並產生內容的並不困難&lt;br&gt;
+(&lt;code&gt;pelican/readers.py&lt;/code&gt; 的 &lt;a href="https://github.com/getpelican/pelican/blob/ee24ad1821774db2bfb199100eced17270a961d3/pelican/readers.py#L334"&gt;334行&lt;/a&gt;)&lt;br&gt;
+透過一些測試，發現這段的行為是因為有了多的 &lt;code&gt;\n&lt;/code&gt; 造成了多的空白&lt;br&gt;
+第一個猜想是某些情況下的 &lt;code&gt;\n&lt;/code&gt; 沒有成功的被移除掉&lt;br&gt;
+所以只要加一行 &lt;code&gt;content.replace('\n', '')&lt;/code&gt; 確保全部的 &lt;code&gt;\n&lt;/code&gt; 都被移除，應該就可以了&lt;/p&gt;
+&lt;p&gt;一開始問題也真的解決了&lt;br&gt;
+直到我用到 markdown中的 ``` 語法才又出現問題&lt;br&gt;
+在整個 code block 中的 code 全部都黏在一起沒有斷行&lt;br&gt;
+看來這個做法是行不通...&lt;/p&gt;
+&lt;p&gt;只好認命的從我平常產生文章的指令一步一步追回去&lt;br&gt;
+trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master 上的版本」&lt;br&gt;
+所以我還必須要切到 &lt;a href="https://github.com/getpelican/pelican/tree/3.7.1"&gt;3.7.1版&lt;/a&gt; 才能開始解決我遇到的問題&lt;/p&gt;
+&lt;h4&gt;setup.py&lt;/h4&gt;
+&lt;p&gt;平常我都是透過 &lt;code&gt;pelican -r -o output -s pelicanconf.py&lt;/code&gt;這個指令來產生文章&lt;br&gt;
+所以第一步就是要從 &lt;a href="https://github.com/getpelican/pelican/blob/master/setup.py#L15"&gt;setup.py&lt;/a&gt; 找出 pelican 這個指令是哪裡來的&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        &lt;span class="o"&gt;...&lt;/span&gt;
+        &lt;span class="s1"&gt;&amp;#39;pelican = pelican:main&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="o"&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;pelican/&lt;strong&gt;init&lt;/strong&gt;.py&lt;/h4&gt;
+&lt;p&gt;既然在 &lt;a href="https://github.com/getpelican/pelican/tree/3.7.1/pelican"&gt;pelican&lt;/a&gt; 這個 package 中沒有 &lt;code&gt;main.py&lt;/code&gt;&lt;br&gt;
+那 Python 還能找到 &lt;code&gt;main&lt;/code&gt; 就只剩下 &lt;code&gt;__init__.py&lt;/code&gt; &lt;br&gt;
+扣除掉一些 parse 指令參數的程式碼&lt;br&gt;
+接下來最像是產生文章的程式碼就是&lt;a href="https://github.com/getpelican/pelican/blob/master/pelican/__init__.py#L147"&gt;147行&lt;/a&gt; 的 &lt;code&gt;run&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;generators&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;hasattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;generate_context&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+                &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;generate_context&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;下一步就是要從 &lt;code&gt;generators&lt;/code&gt; 找出 &lt;code&gt;generate_context&lt;/code&gt; 這個函式&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pelican.generators&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ArticlesGenerator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;PagesGenerator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                &lt;span class="n"&gt;SourceFileGenerator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;StaticGenerator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                &lt;span class="n"&gt;TemplatePagesGenerator&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;pelican/generators.py&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;generators&lt;/code&gt;中看起來最有關的就是 &lt;code&gt;ArticlesGenerator&lt;/code&gt;&lt;br&gt;
+這個 class 也找到了 &lt;code&gt;generate_context&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;                &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                    &lt;span class="n"&gt;article_or_draft&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readers&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+                        &lt;span class="n"&gt;base_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;content_class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Article&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                        &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                        &lt;span class="n"&gt;preread_signal&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;signals&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;article_generator_preread&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                        &lt;span class="n"&gt;preread_sender&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                        &lt;span class="n"&gt;context_signal&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;signals&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;article_generator_context&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                        &lt;span class="n"&gt;context_sender&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;這裡找到的是文章被產生的地方&lt;br&gt;
+只要能在找到文章中的內容是在哪產生，應該就能解決我的問題&lt;br&gt;
+所以下一步就是要再去找到 &lt;code&gt;Readers&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;pelican/reader.py&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;Readers&lt;/code&gt; 在這個檔案的&lt;a href="https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L486"&gt;486行&lt;/a&gt;&lt;br&gt;
+接著 trace 這個 class 到&lt;a href="https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L526"&gt;526行&lt;/a&gt;就真的是文章內容第一次被產生的地方&lt;br&gt;
+到目前為止，文章的內容還是沒有多餘的空白&lt;br&gt;
+所以順利的話只要從這繼續 trace 下去就能找出問題&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;reader_metadata&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cached_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;reader_metadata&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;reader&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cache_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;reader_metadata&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;最後發現問題是出在 &lt;a href="https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L555"&gt;555行&lt;/a&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;typogrify_wrapper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;只要不對 &lt;code&gt;content&lt;/code&gt; 做 &lt;code&gt;typogrify_wrapper&lt;/code&gt;就不會產生多餘的空白&lt;/p&gt;
+&lt;p&gt;&lt;a id='transport'&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;typogrify&lt;/h4&gt;
+&lt;p&gt;typogrify 是 &lt;code&gt;pelicanconf.py&lt;/code&gt; (pelican 的設定檔) 中的一個設定&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TYPOGRIFY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;只要關掉 typogrify 就不會再產生出多餘的空白&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/mintchaos/typogrify"&gt;typogrify&lt;/a&gt; 看來是某種加強 HTML 的工具&lt;br&gt;
+我試過要把 &lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt; 跟 &lt;code&gt;&amp;amp;nbsp&lt;/code&gt; 加入 &lt;code&gt;TYPOGRIFY_IGNORE_TAGS&lt;/code&gt;&lt;br&gt;
+不過看來還是沒辦法解決&lt;br&gt;
+最後只好把 typogrify 整個關掉了&lt;/p&gt;
+&lt;h2&gt;後記&lt;/h2&gt;
+&lt;p&gt;其實這也只是個無傷大雅的小問題&lt;br&gt;
+但真的是花了我不少時間才找到真正的問題所在&lt;/p&gt;
+&lt;p&gt;前幾次都能透過 trace 原始碼，找到 library 的一些小問題&lt;br&gt;
+也丟了幾個 Pull Request&lt;br&gt;
+不過看來這次沒能再多貢獻什麼&lt;br&gt;
+雖然好像有找到可能從 typogrify 解決掉這個 issue的方式&lt;br&gt;
+但要再把它加入 pelican 變成一種 config 還是有些麻煩 xD&lt;/p&gt;</content></entry><entry><title>X-Village 課程設計</title><link href="http://lee-w.github.io/posts/thought/2018/09/X-Village-Course-Design" rel="alternate"></link><published>2018-09-24T15:15:00+08:00</published><updated>2018-09-24T15:15:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-09-24:/posts/thought/2018/09/X-Village-Course-Design</id><summary type="html">&lt;p&gt;要一次說完整個 X-Village ，還是有點太花時間&lt;br&gt;
 先來聊聊我這次接觸到跟課程設計有關的部分&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;要一次說完整個 X-Village ，還是有點太花時間&lt;br&gt;
 先來聊聊我這次接觸到跟課程設計有關的部分&lt;/p&gt;
