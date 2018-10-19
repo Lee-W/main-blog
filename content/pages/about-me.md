@@ -3,7 +3,7 @@ Date: 2017-02-14 12:30
 Modified: 2017-06-22 22:53
 
 
-Hi, this is Lee Wei
+Hi, this is Wei Lee.
 
 I'm a
   
@@ -14,7 +14,7 @@ I'm a
 <i class="fas fa-2x fa-lock"></i> Locker
 <i class="fab fa-2x fa-rebel"></i> Star Wars Fan
 
-As a programmer, I'm familiar with web backend development but open to any opportunities.
+As a programmer, I'm familiar with web backend development (mainly flask) but open to any opportunities.
 
 <a href="{filename}/static/resume.pdf"><button type="button" class="btn btn-default">Resume</button></a>
 
@@ -23,7 +23,7 @@ As a programmer, I'm familiar with web backend development but open to any oppor
 ### [Apr 2017 - Present]
 **Independent Contractor, Slice Technologies, Inc**
 
-- Software Development
+* Software Development
 
 ### [May 2018 - Present]
 **Chief Teaching Assistant, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
@@ -42,28 +42,29 @@ I am the executor of the program and the leader of the teaching assistant team. 
 ### [July 2015 - July 2016]
 **Substitute Military Service, K-12 Education Administration, Ministry of Education**
 
--  System Maintenance
--  Automation Program Development
+*  System Maintenance
+*  Automation Program Development
 
 ## Education
-[2016-2018 (Expected)]
+[2016-2018]
 **Master, Computer Science and Information Engineering**
 National Cheng Kung University, Tainan
+GPA: 4.16/4.3
 
 [2011-2015]
 **Bachelor, Industrial and Information Management**
 **Double Major: Computer Science and Information Engineering**
 National Cheng Kung University, Tainan
+GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 
 
-
-## Talk
+## Talk and Tutorial Experiences
 [2018/8/16]
 X-Village - Web Course
 [CRUD in Flask](https://speakerdeck.com/leew/x-village-crud-in-flask)
 
 [2018/2/27]
-NCKU CSIE - 資料科學與人工智慧競技
+NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence (資料科學與人工智慧競技)
 [Intro to Python Data Science Tools](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools)
 
 [2017/01/22]
@@ -71,7 +72,7 @@ NCKU CSIE - 資料科學與人工智慧競技
 [資管講座 (一場工資管營的演講)](https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang)
 
 [2016/12/08]
-NCKU CSIE - 知識挖掘與資料工程導論
+NCKU CSIE - Introduction to Knowledge Discovery and Data Engineering (知識挖掘與資料工程導論)
 [Bot Development](https://hackmd.io/p/HkW8LjRfl)
 
 [2016/11/03]
@@ -89,21 +90,21 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-v
 
 ## Projects
 #### Chat Bot
-- [Dengue Line Bot Server](https://github.com/NCKU-CCS/line_bot_server)
-- [Telegram EchoBot](https://github.com/Lee-W/telegram_echobot)
-- [Line EchoBot](https://github.com/Lee-W/line_echobot)
+* [Dengue Line Bot Server](https://github.com/NCKU-CCS/line_bot_server)
+* [Telegram EchoBot](https://github.com/Lee-W/telegram_echobot)
+* [Line EchoBot](https://github.com/Lee-W/line_echobot)
 
 #### Utility
-- [Flickr Album Downloader](https://github.com/Lee-W/Flickr_Album_Downloader)
-- [LINE Message Parser](https://github.com/Lee-W/LineMessageParser)
-- [PttCraweler](https://github.com/Lee-W/PttCrawler)
+* [Flickr Album Downloader](https://github.com/Lee-W/Flickr_Album_Downloader)
+* [LINE Message Parser](https://github.com/Lee-W/LineMessageParser)
+* [PttCraweler](https://github.com/Lee-W/PttCrawler)
 
 #### NCKU Related
-- [NCKU Grade](https://github.com/Lee-W/NCKU_Grade)
-- [NCKU Course Parser](https://github.com/Lee-W/nckucourseparser)
-- [NCKU Course Checker](https://github.com/Lee-W/NCKU-course-checker)
+* [NCKU Grade](https://github.com/Lee-W/NCKU_Grade)
+* [NCKU Course Parser](https://github.com/Lee-W/nckucourseparser)
+* [NCKU Course Checker](https://github.com/Lee-W/NCKU-course-checker)
 
-#### Contribute
+#### Open Source Contributions
 - [git-extras](https://github.com/Lee-W/git-extras) ([tj/git-extras](https://github.com/tj/git-extras))
 - [batavia](https://github.com/Lee-W/batavia) ([pybee/batavia](https://github.com/pybee/batavia))
 - [wtforms-json](https://github.com/Lee-W/wtforms-json) ([kvesteri/wtforms-json](https://github.com/kvesteri/wtforms-json))
@@ -114,7 +115,7 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-v
 #### Other
 - [SITW 二手網](http://sitw-trade.herokuapp.com) (Backend Development)
 
-## Tutorial or Study Note
+## Tutorial and Study Note
 #### Slide
 - [Git Tutorial](https://github.com/Lee-W/git-tutorial)
     - Sample: [Git-Tutorial-Sample](https://github.com/Lee-W/Git-Tutorial-Sample)
