@@ -2,7 +2,7 @@ Title: About This Blog
 Date: 2017-03-30 22:28
 Modified: 2017-03-30 22:28
 
-**Welcome to Lee Wei's blog.**
+**Welcome to Wei Lee's blog.**
 
 There are 3 kinds of articles in this blog.
 

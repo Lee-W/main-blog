@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 from functools import partial
@@ -11,7 +10,7 @@ AUTHOR = 'Lee-W'
 SITENAME = 'Life Lies in Traveling'
 SITEURL = 'http://localhost:8000'
 SITETITLE = AUTHOR
-SITELOGO = '//s.gravatar.com/avatar/3e049ed33195d00a8b745b16c63dce6e?s=120'
+SITELOGO = None
 TIMEZONE = 'Asia/Taipei'
 DEFAULT_LANG = 'zh'
 DEFAULT_CATEGORY = 'Article'
@@ -22,7 +21,6 @@ MAIN_MENU = True
 MENUITEMS = (
     ('Archives', '/archives.html'),
     ('Categories', '/categories.html'),
-    ('Tags', '/tags.html'),
 )
 
 DATE_FORMATS = {
@@ -37,16 +35,23 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['extra', 'images', 'static']
 
 # Theme Setting
-THEME = 'theme/pelican-clean-blog/'
+THEME = 'theme/pelican-themes/pelican-bootstrap3/'
+JINJA_ENVIRONMENT = {
+    'extensions': ['jinja2.ext.i18n'],
+}
+DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search')
+DISPLAY_TAG_ON_MENU = False
+DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_SERIES_ON_SIDEBAR = True
+DISPLAY_TAGS_ON_SIDEBAR = True
+DISPLAY_TAGS_INLINE = True
 PYGMENTS_STYLE = 'xcode'
 EXTRA_PATH_METADATA = {
     'images': {'path': 'images'},
 }
 CSS_OVERRIDE = '/static/custom.css'
-HEADER_COVER = '/images/cover.jpg'
 
 # Feed generation is usually not desired when developing
-
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
@@ -54,11 +59,11 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Social widget
-SOCIAL = (('linkedin', 'http://tw.linkedin.com/in/clleew'),
-          ('github', 'http://github.com/Lee-W'),
-          ('gitlab', 'https://gitlab.com/Lee-W'),
-          ('facebook', 'http://www.facebook.com/clleew'),
-          ('rss', '//lee-w.github.io/feeds/all.atom.xml'),)
+SOCIAL = (('Linkedin', 'http://tw.linkedin.com/in/clleew'),
+          ('GitHub', 'http://github.com/Lee-W'),
+          ('Gitlab', 'https://gitlab.com/Lee-W'),
+          ('Facebook', 'http://www.facebook.com/clleew'),
+          ('RSS', '//lee-w.github.io/feeds/all.atom.xml'),)
 
 
 # Markdown extension
@@ -74,7 +79,10 @@ MARKDOWN = {
 
 # Plugin-setting
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['another_read_more_link', 'series', 'render_math', 'neighbors', 'share_post']
+PLUGINS = [
+    'another_read_more_link', 'series', 'render_math',
+    'neighbors', 'share_post', 'i18n_subsites', 'tipue_search', 'tag_cloud'
+]
 ANOTHER_READ_MORE_LINK = ''
 
 # Custom Jinja Filters

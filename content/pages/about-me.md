@@ -1,24 +1,26 @@
 Title: About Me
 Date: 2017-02-14 12:30
-Modified: 2017-06-22 22:53
+Modified: 2018-11-06 14:56
 
 
 Hi, this is Wei Lee.
 
 I'm a
   
-<i class="fab fa-2x fa-python"></i> Python Programmer
-<i class="fas fa-2x fa-book"></i> Reader
-<a href="https://www.flickr.com/photos/10280407@N02/" target="_blank" title="Flickr" style="color:gray; text-decoration: none;"><i class="fas fa-2x fa-camera"></i> Traveler</a>
-<i class="fas fa-2x fa-music"></i> Ukulele Player
-<i class="fas fa-2x fa-lock"></i> Locker
-<i class="fab fa-2x fa-rebel"></i> Star Wars Fan
+<i class="fab fa-lg fa-python"></i>  Python Programmer
+<i class="fas fa-lg fa-book"></i> Reader
+<a href="https://www.flickr.com/photos/10280407@N02/" target="_blank" title="Flickr" style="color:gray; text-decoration: none;"><i class="fas fa-lg fa-camera"></i> Traveler</a>
+<i class="fas fa-lg fa-music"></i> Ukulele Player
+<i class="fas fa-lg fa-lock"></i> Locker
+<i class="fab fa-lg fa-rebel"></i> Star Wars Fan
 
 As a programmer, I'm familiar with web backend development (mainly flask) but open to any opportunities.
 
 <a href="{filename}/static/resume.pdf"><button type="button" class="btn btn-default">Resume</button></a>
 
 ----
+[toc]
+
 ## Experience
 ### [Apr 2017 - Present]
 **Independent Contractor, Slice Technologies, Inc**
