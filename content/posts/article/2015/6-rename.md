@@ -1,7 +1,7 @@
 Title: rename - 批次更改檔名
 Date: 2015-02-22 15:06
-Category: Linux-Unix
-Tags: Shell Script
+Category: Tech
+Tags: Linux-Unix, Shell Script
 Slug: rename
 Authors: Lee-W
 Summary: 

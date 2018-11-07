@@ -1,7 +1,7 @@
 Title: [Book] 你如何衡量你的人生
 Date: 2016-08-26 03:26
 Category: Book
-Tags: Life
+Tags: Inspiring
 Slug: how-will-you-measure-your-life
 Authors: Lee-W
 Summary: 

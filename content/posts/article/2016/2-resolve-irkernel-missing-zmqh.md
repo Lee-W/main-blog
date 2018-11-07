@@ -1,7 +1,7 @@
 Title: 解決安裝 IRKernel 缺少 zmq.h 
 Date: 2016-02-20 03:42
-Category: R
-Tags: Jupyter
+Category: Tech
+Tags: R, Jupyter
 Slug: resolve-irkernel-missing-zmqh
 Authors: Lee-W
 Summary: 

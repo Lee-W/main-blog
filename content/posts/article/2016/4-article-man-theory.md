@@ -1,6 +1,6 @@
 Title: 男子漢理論
 Date: 2016-03-15 02:13
-Category: Article
+Category: Tech
 Tags: Inspiring, Vim
 Slug: article-man-theory
 Authors: Lee-W

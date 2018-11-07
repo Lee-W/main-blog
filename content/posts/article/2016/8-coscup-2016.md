@@ -1,7 +1,7 @@
 Title: COSCUP 2016
 Date: 2016-08-22 15:36
-Category: Conference
-Tags: COSCUP
+Category: Tech
+Tags: Conference, COSCUP
 Slug: coscup-2016
 Authors: Lee-W
 Summary: 

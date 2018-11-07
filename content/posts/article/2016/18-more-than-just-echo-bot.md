@@ -1,7 +1,7 @@
 Title: More than Just Echo Bot
 Date: 2016-11-29 01:57
-Category: Bot
-Tags: NLP, Machine Learning
+Category: Tech
+Tags: Chat Bot, NLP, Machine Learning
 Slug: more-than-just-echo-bot
 Authors: Lee-W
 Summary: 

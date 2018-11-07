@@ -1,7 +1,7 @@
 Title: [Book] 演算法統治世界
 Date: 2016-05-04 12:00
 Category: Book
-Tags: Programming
+Tags: Algorithm
 Slug: automate-this-how-algorithms-came-to-rule-our-world
 Authors: Lee-W
 Summary: 

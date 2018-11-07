@@ -1,7 +1,7 @@
 Title: PyCon TW 2017 - Sprint
 Date: 2017-06-17 16:07
-Category: Python
-Tags: PyCon
+Category: Tech
+Tags: Python, Conference, PyCon
 Slug: PyCon-TW-2017-Sprint
 Authors: Lee-W
 Summary: 

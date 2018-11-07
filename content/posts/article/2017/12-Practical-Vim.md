@@ -1,7 +1,7 @@
-Title: Practial Vim
+Title: Practical Vim
 Date: 2017-06-26 08:50
-Category: Vim
-Tags: Note
+Category: Tech
+Tags: Vim, Note
 Slug: Practical-Vim
 Authors: Lee-W
 Summary: 

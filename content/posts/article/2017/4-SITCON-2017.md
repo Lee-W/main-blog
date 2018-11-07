@@ -1,7 +1,7 @@
 Title: SITCON 2017
 Date: 2017-03-20 21:07
-Category: Conference
-Tags: SITCON
+Category: Tech
+Tags: Conference, SITCON
 Slug: sitcon-2017
 Authors: Lee-W
 Summary: 

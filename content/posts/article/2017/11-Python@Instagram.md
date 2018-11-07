@@ -1,7 +1,7 @@
 Title: Python@Instagram
 Date: 2017-06-22 22:10
-Category: Python
-Tags: PyCon
+Category: Tech
+Tags: Python, PyCon
 Slug: Python-at-IG
 Authors: Lee-W
 Summary: 

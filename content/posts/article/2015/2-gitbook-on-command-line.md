@@ -1,6 +1,6 @@
 Title: Gitbook on Command Line
 Date: 2015-01-23 07:34
-Category: Git
+Category: Tech
 Tags: Git Book
 Slug: gitbook-on-command-line
 Authors: Lee-W

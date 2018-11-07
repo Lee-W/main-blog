@@ -1,7 +1,7 @@
 Title: Create a Telegram EchoBot
 Date: 2017-03-31 19:24
-Category: Bot
-Tags: Telegram Bot, Flask
+Category: Tech
+Tags: Chat Bot, Flask
 Slug: create-a-telegram-echobot
 Authors: Lee-W
 Summary: 

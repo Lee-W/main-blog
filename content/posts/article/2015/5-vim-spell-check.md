@@ -1,7 +1,7 @@
 Title: vimspell - vim 檢查英文文法的套件
 Date: 2015-02-14 09:59
-Category: Vim
-Tags: Plug In
+Category: Tech
+Tags: Vim, Plugin
 Slug: vim-spell-check
 Authors: Lee-W
 Summary: 

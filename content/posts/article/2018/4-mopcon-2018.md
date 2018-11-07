@@ -1,7 +1,7 @@
 Title: MOPCON 2018
 Date: 2018-11-06 17:50
-Category: Conference
-Tags: MOPCON
+Category: Tech
+Tags: Conference, MOPCON
 Slug: mopcon-2018
 Authors: Lee-W
 Summary: 

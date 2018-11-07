@@ -1,7 +1,7 @@
 Title: GitHub Resume
 Date: 2017-08-01 23:00
-Category: Git
-Tags: Resume
+Category: Tech
+Tags: GitHub, Resume
 Slug: GitHub-Resume
 Authors: Lee-W
 Summary: 

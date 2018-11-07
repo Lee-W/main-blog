@@ -1,6 +1,6 @@
 Title: 我如何更有效率的使用時間
 Date: 2017-02-03 00:53
-Category: Thought
+Category: Gossiping
 Tags: Productivity
 Slug: how-do-i-manage-my-time
 Authors: Lee-W

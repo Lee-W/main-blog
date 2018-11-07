@@ -1,7 +1,7 @@
 Title: Git and Git Hub
 Date: 2014-02-22 16:18
-Category: Git
-Tags: Tutorial, Deprecated
+Category: Tech
+Tags: Git, Tutorial, Deprecated
 Slug: git-and-git-hub
 Authors: Lee-W
 Summary: 

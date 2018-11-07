@@ -1,7 +1,7 @@
 Title: Tool for Checking Python Coding Style
 Date: 2017-03-15 19:13
-Category: Python
-Tags: Code Quality, Vim
+Category: Tech
+Tags: Python, Code Quality, Vim
 Slug: tools-for-checking-python-coding-style
 Authors: Lee-W
 Summary: 

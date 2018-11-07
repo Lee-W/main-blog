@@ -1,7 +1,7 @@
 Title: 在 mac 上安裝 gcc
 Date: 2016-01-06 06:40
-Category: C++
-Tags: mac
+Category: Tech
+Tags: C++, mac, Deprecated
 Slug: install-gcc-on-mac
 Authors: Lee-W
 Summary: 

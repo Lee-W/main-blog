@@ -4,22 +4,25 @@ Modified: 2017-03-30 22:28
 
 **Welcome to Wei Lee's blog.**
 
-There are 3 kinds of articles in this blog.
+Let me introduce you to my blog.
 
-#### 1. Tech Articles (or Other Articles)
-Originally, this blog should be a tech blog.
-But now, I also share what I like and think.
+#### 1. Tech
+Since I'm a developer and like sharing, most of my article would be related to programming or other tech topics.
 
-#### 2. Book Digestion
-I love reading but I forget what I read quickly.
-So I take notes for them.
+#### 2. Book
+I love reading as well.
+It would be a shame if I finish reading the book and forget everything.
+Thus, I take notes for them.
 
-#### 3. Paper Summary
-Since I'm now a graduate student, I read papers and do summarization.
-I think it would be a pity if I share them only with my labmates.
-Thus, I share them with all you guys.
+#### 3. Gossiping
+Sometimes I just want to share my thought, and those posts would be placed here.
+
+#### 4. Paper Summary
+I was a graduate student and had read some papers.
+Here are summarizations for those papers.
 
 ---
 
 As you can see, I'm not a native English user.
 If you find any error, please leave a comment below the article or contact me.
+Thanks in advance!

@@ -1,7 +1,7 @@
 Title: gitignore.io
 Date: 2015-02-03 05:58
-Category: Git
-Tags: Deprecated, Utility
+Category: Tech
+Tags: Git, Deprecated, Utility
 Slug: gitignoreio
 Authors: Lee-W
 Summary: 

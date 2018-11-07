@@ -6,10 +6,10 @@ Slug: decoded
 Authors: Lee-W
 Summary: 
 
-
 ![decode](http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/061/88/0010618819.jpg&v=529dcf77&w=348&h=348)
 
 <!--more-->
+
 ## 定錨 (anchoring)
 Steve Jobs 在推出 iPad 的時候說「我們應該給他設定何種價格？如果你聽信自以為聰明的人，我們會把它的價格訂在 1000 美元以下」  
 螢幕出現了 999，然後「我很高興地向大家宣佈，iPad 的起價不是 999 美元，而是只要 499 美元」  
