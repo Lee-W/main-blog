@@ -75,6 +75,7 @@ MARKDOWN = {
         'markdown.extensions.codehilite': {},
         'markdown.extensions.nl2br': {},
         'del_ins': {},
+        'toc': {},
     },
     'output_format': 'html5'
 }
@@ -83,7 +84,8 @@ MARKDOWN = {
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = [
     'another_read_more_link', 'series', 'render_math',
-    'neighbors', 'share_post', 'i18n_subsites', 'tipue_search', 'tag_cloud'
+    'neighbors', 'share_post', 'i18n_subsites', 'tipue_search', 'tag_cloud',
+    'extract_toc'
 ]
 ANOTHER_READ_MORE_LINK = ''
 
