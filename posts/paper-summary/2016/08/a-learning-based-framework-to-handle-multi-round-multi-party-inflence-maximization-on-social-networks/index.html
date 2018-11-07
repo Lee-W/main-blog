@@ -130,7 +130,7 @@ Life Lies in Traveling            </a>
                 <p><a href="http://dl.acm.org/citation.cfm?id=2783392">Paper</a></p>
 <!--more-->
 
-<h2>1. Introduction</h2>
+<h2 id="1-introduction">1. Introduction</h2>
 <ul>
 <li>
 <p>Problem Description</p>
@@ -163,7 +163,7 @@ Life Lies in Traveling            </a>
 </ul>
 </li>
 </ul>
-<h3>Difference with Others</h3>
+<h3 id="difference-with-others">Difference with Others</h3>
 <ol>
 <li>Known strategy -&gt; Both know and unknown<ul>
 <li>Known or Unknown but available to compete -&gt; Train a model to learn strategy</li>
@@ -174,17 +174,17 @@ Life Lies in Traveling            </a>
 <li>Model driven -&gt; learning-based, data-drivern</li>
 <li>Not considering different network topology -&gt; General to adapt both opponent's strategy and environment setting (e.g. underlying network topology)</li>
 </ol>
-<h2>2. Problem Statment</h2>
-<h3>Def 1: Competive Linear Threshold (CLT)</h3>
+<h2 id="2-problem-statment">2. Problem Statment</h2>
+<h3 id="def-1-competive-linear-threshold-clt">Def 1: Competive Linear Threshold (CLT)</h3>
 <ul>
 <li>CLT model is a multi-party diffusion model</li>
 <li>The party who has the highest influence occupied the node</li>
 </ul>
-<h3>Def 2: Multi-Round Competitive Influence Maximization (MRCIM)</h3>
+<h3 id="def-2-multi-round-competitive-influence-maximization-mrcim">Def 2: Multi-Round Competitive Influence Maximization (MRCIM)</h3>
 <ul>
 <li>Max its overall relative influence</li>
 </ul>
-<h2>4. Methodology</h2>
+<h2 id="4-methodology">4. Methodology</h2>
 <ul>
 <li>NP-hardness of MRCIM -&gt; looks for approxmiate solution</li>
 <li>Max the inflence for each round does not guarantee overall max<ul>
@@ -192,7 +192,7 @@ Life Lies in Traveling            </a>
 </ul>
 </li>
 </ul>
-<h3>4.1 Preliminary: Reinforcement Learning</h3>
+<h3 id="41-preliminary-reinforcement-learning">4.1 Preliminary: Reinforcement Learning</h3>
 <ul>
 <li>Learn a policy <span class="math">\(\pi(s)\)</span> to determine which action to take state s (environment)</li>
 <li>How to estimated <span class="math">\(\pi\)</span>?<ul>
@@ -210,8 +210,8 @@ Life Lies in Traveling            </a>
 <p>The optimal <span class="math">\(\pi\)</span> can be obtained through Q functinon</p>
 <p><span class="math">\( \pi = \arg \min_{a\in A}Q(s,a)\)</span></p>
 <p>(i.e. For all "a" in A, find the "a" such that min Q(s, a))</p>
-<h3>4.2 Strategy-Oriented Reinforcement-Learning</h3>
-<h4>Setup</h4>
+<h3 id="42-strategy-oriented-reinforcement-learning">4.2 Strategy-Oriented Reinforcement-Learning</h3>
+<h4 id="setup">Setup</h4>
 <ul>
 <li>Env<ul>
 <li>Influence propagation process</li>
@@ -277,14 +277,14 @@ Life Lies in Traveling            </a>
 </ul>
 </li>
 </ul>
-<h4>Data For Training</h4>
+<h4 id="data-for-training">Data For Training</h4>
 <ul>
 <li>Propagation model is known (e.g. LT in the experiments)</li>
 <li>Strategies served as actions are predefined</li>
 </ul>
 <p>In training phase, train the agent aginst a certain strategy and see how it performs on the given network<br>
 These data can be used to learn the value functions</p>
-<h4>Training Against Opponents</h4>
+<h4 id="training-against-opponents">Training Against Opponents</h4>
 <ul>
 <li>Opponent Strategy<ul>
 <li>Known: Simulate the strategy during training</li>
@@ -293,7 +293,7 @@ These data can be used to learn the value functions</p>
 </ul>
 </li>
 </ul>
-<h4>Phase</h4>
+<h4 id="phase">Phase</h4>
 <ul>
 <li>Phase 1: Training<ul>
 <li>The agent update its Q function from the simulation experiences throughout the training rounds</li>
@@ -306,7 +306,7 @@ These data can be used to learn the value functions</p>
 </ul>
 </li>
 </ul>
-<h2>4.3 STORM with Strategy Known</h2>
+<h2 id="43-storm-with-strategy-known">4.3 STORM with Strategy Known</h2>
 <ul>
 <li>Training the model compete against the strategy to learn <span class="math">\(\pi\)</span></li>
 <li>STORM-Q<ul>
@@ -325,8 +325,8 @@ These data can be used to learn the value functions</p>
 </li>
 </ul>
 <p>$ Algorithm $</p>
-<h2>4.4 STORM with Strategy Unknown</h2>
-<h3>Unknown but available to train</h3>
+<h2 id="44-storm-with-strategy-unknown">4.4 STORM with Strategy Unknown</h2>
+<h3 id="unknown-but-available-to-train">Unknown but available to train</h3>
 <ul>
 <li>The differece between the known case is that experience cannot be obtained through simulation</li>
 <li>Train against unknown opponent's strategy during competition<ul>
@@ -334,7 +334,7 @@ These data can be used to learn the value functions</p>
 </ul>
 </li>
 </ul>
-<h3>Unknown</h3>
+<h3 id="unknown">Unknown</h3>
 <ul>
 <li>Goal: Create a general model to compete a variety of rational strategies</li>
 <li>Assumption: The oppoent is rational (Wants to max influence and knows its oppoent wants so)</li>
@@ -534,15 +534,30 @@ These data can be used to learn the value functions</p>
   <a href="http://lee-w.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
     <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/algorithm.html">Algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/android.html">Android</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/autobiography.html">Autobiography</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/big-five-theory.html">Big Five Theory</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/c.html">C++</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/chat-bot.html">Chat Bot</a>
+    </li>
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/code-quality.html">Code Quality</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/conference.html">Conference</a>
+    </li>
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/coscup.html">COSCUP</a>
     </li>
     <li class="list-group-item tag-4">
@@ -557,10 +572,13 @@ These data can be used to learn the value functions</p>
     <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/design.html">Design</a>
     </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/develop.html">Develop</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/django.html">django</a>
     </li>
-    <li class="list-group-item tag-1">
+    <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/dual-boot.html">Dual Boot</a>
     </li>
     <li class="list-group-item tag-4">
@@ -575,31 +593,37 @@ These data can be used to learn the value functions</p>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/flask.html">Flask</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/game-theory.html">Game Theory</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/git.html">Git</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/git-book.html">Git Book</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/github.html">GitHub</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/heroku.html">Heroku</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/innovation.html">Innovation</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/inspiring.html">Inspiring</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/javascript.html">JavaScript</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/jupyter.html">Jupyter</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="http://lee-w.github.io/tag/life.html">Life</a>
-    </li>
     <li class="list-group-item tag-1">
-      <a href="http://lee-w.github.io/tag/line-bot.html">Line Bot</a>
+      <a href="http://lee-w.github.io/tag/linux-unix.html">Linux-Unix</a>
     </li>
-    <li class="list-group-item tag-1">
+    <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/mac.html">mac</a>
     </li>
     <li class="list-group-item tag-1">
@@ -614,29 +638,35 @@ These data can be used to learn the value functions</p>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/neovim.html">Neovim</a>
     </li>
-    <li class="list-group-item tag-1">
+    <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/nlp.html">NLP</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/note.html">Note</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/open-source.html">Open Source</a>
+    </li>
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/other.html">Other</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/personality.html">Personality</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="http://lee-w.github.io/tag/plug-in.html">Plug In</a>
+      <a href="http://lee-w.github.io/tag/plugin.html">Plugin</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="http://lee-w.github.io/tag/productivity.html">Productivity</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="http://lee-w.github.io/tag/programming.html">Programming</a>
-    </li>
     <li class="list-group-item tag-1">
       <a href="http://lee-w.github.io/tag/pycon.html">PyCon</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/python.html">Python</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/r.html">R</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/resume.html">Resume</a>
@@ -644,7 +674,7 @@ These data can be used to learn the value functions</p>
     <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/revealjs.html">reveal.js</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/sales.html">Sales</a>
     </li>
     <li class="list-group-item tag-4">
@@ -653,28 +683,25 @@ These data can be used to learn the value functions</p>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/sitcon.html">SITCON</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/social-network.html">Social Network</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/software-engineering.html">Software Engineering</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="http://lee-w.github.io/tag/start-up.html">Start Up</a>
+      <a href="http://lee-w.github.io/tag/startup.html">Startup</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/story.html">Story</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/team.html">Team</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/tedx.html">TEDx</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="http://lee-w.github.io/tag/telegram-bot.html">Telegram Bot</a>
-    </li>
-    <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/thinking.html">Thinking</a>
     </li>
     <li class="list-group-item tag-4">
@@ -689,7 +716,7 @@ These data can be used to learn the value functions</p>
     <li class="list-group-item tag-1">
       <a href="http://lee-w.github.io/tag/utility.html">Utility</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-1">
       <a href="http://lee-w.github.io/tag/vim.html">Vim</a>
     </li>
     <li class="list-group-item tag-4">

@@ -144,39 +144,39 @@ Life Lies in Traveling            </a>
 </ul>
 <!--more-->
 
-<h2>Practical Application of Personality Detection</h2>
+<h2 id="practical-application-of-personality-detection">Practical Application of Personality Detection</h2>
 <ul>
 <li>Product and Service Recommandation (People with similiar personalities might have similiar favors)</li>
 <li>Mental Health Diagnosis</li>
 <li>Forensics: Reduce the circle of suspects</li>
 <li>Human Resource: One's suitablitlty for certain jobs</li>
 </ul>
-<h2>Personality Theory Used in This Paper</h2>
+<h2 id="personality-theory-used-in-this-paper">Personality Theory Used in This Paper</h2>
 <p><a href="https://en.wikipedia.org/wiki/Big_Five_personality_traits">Big Five Personality Trait</a></p>
-<h2>Basic Idea of the Method</h2>
+<h2 id="basic-idea-of-the-method">Basic Idea of the Method</h2>
 <ol>
 <li>Feed sentences from essays to convolution filter → Sentence model in the form of n-gram feature vectors</li>
 <li>Aggregate the vectors of a document's sentences and combine them with Masiresse features to represent the document</li>
 <li>Classification: Feed the document vectors into a fully connected neural network</li>
 </ol>
-<h2>Overview of the Method</h2>
-<h3>1. Preprocessing</h3>
+<h2 id="overview-of-the-method">Overview of the Method</h2>
+<h3 id="1-preprocessing">1. Preprocessing</h3>
 <ul>
 <li>Sentence Splitting</li>
 <li>Data Cleaning</li>
 <li>Unification (e.g. lowercase)</li>
 </ul>
-<h3>2. Document-level feature extraction</h3>
+<h3 id="2-document-level-feature-extraction">2. Document-level feature extraction</h3>
 <p>Mairesse baseline feature set (e.g. word count, average sentence length)</p>
-<h3>3. Filtering</h3>
+<h3 id="3-filtering">3. Filtering</h3>
 <p>Sentences without personliaty clues are dropped<br>
 (Based on <a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm">NRC Word-Emotion Association Lexicon</a>)</p>
-<h3>4. Word-level feature extraction</h3>
+<h3 id="4-word-level-feature-extraction">4. Word-level feature extraction</h3>
 <ul>
 <li>word2vec</li>
 <li>Variable number of fixed-length word feature vectors → Variable number of sentences → Document</li>
 </ul>
-<h3>5. Classfication</h3>
+<h3 id="5-classfication">5. Classfication</h3>
 <p>Deep CNN (Conolutional Nerual Network)</p>
 <ul>
 <li>Input<ul>
@@ -196,9 +196,9 @@ Life Lies in Traveling            </a>
 </ul>
 </li>
 </ul>
-<h2>Network Architecture in Detail</h2>
-<h3>Main Steps (7 Layers)</h3>
-<h4>Word Vectorization</h4>
+<h2 id="network-architecture-in-detail">Network Architecture in Detail</h2>
+<h3 id="main-steps-7-layers">Main Steps (7 Layers)</h3>
+<h4 id="word-vectorization">Word Vectorization</h4>
 <ul>
 <li>Layer 1: Input<ul>
 <li><span class="math">\( R ^{D \times S\times W \times E}\)</span> </li>
@@ -208,7 +208,7 @@ Life Lies in Traveling            </a>
 </ul>
 </li>
 </ul>
-<h4>Sentence Vectorization</h4>
+<h4 id="sentence-vectorization">Sentence Vectorization</h4>
 <ul>
 <li>Layer 2: Convolution<ul>
 <li>3 convolutional filters: unigram, bigram, trigram </li>
@@ -216,11 +216,11 @@ Life Lies in Traveling            </a>
 </li>
 <li>Layer 3: Max Polling</li>
 </ul>
-<h4>Document Vectorization</h4>
+<h4 id="document-vectorization">Document Vectorization</h4>
 <ul>
 <li>Layer 4: 1-max pooling</li>
 </ul>
-<h4>Classification: (Yes/No)</h4>
+<h4 id="classification-yesno">Classification: (Yes/No)</h4>
 <ul>
 <li>Layer 5: Linear with Sigmoid activation</li>
 <li>Layer 6, 7<ul>
@@ -229,7 +229,7 @@ Life Lies in Traveling            </a>
 </ul>
 </li>
 </ul>
-<h3>Training</h3>
+<h3 id="training">Training</h3>
 <p>Objective Function: Negative Log Likelihood</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
@@ -371,15 +371,30 @@ Life Lies in Traveling            </a>
   <a href="http://lee-w.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
     <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/algorithm.html">Algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/android.html">Android</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/autobiography.html">Autobiography</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/big-five-theory.html">Big Five Theory</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/c.html">C++</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/chat-bot.html">Chat Bot</a>
+    </li>
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/code-quality.html">Code Quality</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/conference.html">Conference</a>
+    </li>
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/coscup.html">COSCUP</a>
     </li>
     <li class="list-group-item tag-4">
@@ -394,10 +409,13 @@ Life Lies in Traveling            </a>
     <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/design.html">Design</a>
     </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/develop.html">Develop</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/django.html">django</a>
     </li>
-    <li class="list-group-item tag-1">
+    <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/dual-boot.html">Dual Boot</a>
     </li>
     <li class="list-group-item tag-4">
@@ -412,31 +430,37 @@ Life Lies in Traveling            </a>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/flask.html">Flask</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/game-theory.html">Game Theory</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/git.html">Git</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/git-book.html">Git Book</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/github.html">GitHub</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/heroku.html">Heroku</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/innovation.html">Innovation</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/inspiring.html">Inspiring</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/javascript.html">JavaScript</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/jupyter.html">Jupyter</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="http://lee-w.github.io/tag/life.html">Life</a>
-    </li>
     <li class="list-group-item tag-1">
-      <a href="http://lee-w.github.io/tag/line-bot.html">Line Bot</a>
+      <a href="http://lee-w.github.io/tag/linux-unix.html">Linux-Unix</a>
     </li>
-    <li class="list-group-item tag-1">
+    <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/mac.html">mac</a>
     </li>
     <li class="list-group-item tag-1">
@@ -451,29 +475,35 @@ Life Lies in Traveling            </a>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/neovim.html">Neovim</a>
     </li>
-    <li class="list-group-item tag-1">
+    <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/nlp.html">NLP</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/note.html">Note</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/open-source.html">Open Source</a>
+    </li>
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/other.html">Other</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/personality.html">Personality</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="http://lee-w.github.io/tag/plug-in.html">Plug In</a>
+      <a href="http://lee-w.github.io/tag/plugin.html">Plugin</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="http://lee-w.github.io/tag/productivity.html">Productivity</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="http://lee-w.github.io/tag/programming.html">Programming</a>
-    </li>
     <li class="list-group-item tag-1">
       <a href="http://lee-w.github.io/tag/pycon.html">PyCon</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/python.html">Python</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/r.html">R</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/resume.html">Resume</a>
@@ -481,7 +511,7 @@ Life Lies in Traveling            </a>
     <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/revealjs.html">reveal.js</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/sales.html">Sales</a>
     </li>
     <li class="list-group-item tag-4">
@@ -490,28 +520,25 @@ Life Lies in Traveling            </a>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/sitcon.html">SITCON</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/social-network.html">Social Network</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/software-engineering.html">Software Engineering</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="http://lee-w.github.io/tag/start-up.html">Start Up</a>
+      <a href="http://lee-w.github.io/tag/startup.html">Startup</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/story.html">Story</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-3">
       <a href="http://lee-w.github.io/tag/team.html">Team</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="http://lee-w.github.io/tag/tedx.html">TEDx</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="http://lee-w.github.io/tag/telegram-bot.html">Telegram Bot</a>
-    </li>
-    <li class="list-group-item tag-2">
       <a href="http://lee-w.github.io/tag/thinking.html">Thinking</a>
     </li>
     <li class="list-group-item tag-4">
@@ -526,7 +553,7 @@ Life Lies in Traveling            </a>
     <li class="list-group-item tag-1">
       <a href="http://lee-w.github.io/tag/utility.html">Utility</a>
     </li>
-    <li class="list-group-item tag-2">
+    <li class="list-group-item tag-1">
       <a href="http://lee-w.github.io/tag/vim.html">Vim</a>
     </li>
     <li class="list-group-item tag-4">

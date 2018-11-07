@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Introduction to Chatbot - Life Lies in Traveling</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://lee-w.github.io/posts/tech/2016/11/introduction-to-chatbot">
+
+        <meta name="author" content="Lee-W" />
+        <meta name="keywords" content="Chat Bot" />
+        <meta name="description" content="有人說聊天機器人 Chat Bot 將要取代 APP Why chatbots are replacing apps This is how Chatbots will Kill 99% of Apps 各大軟體公司也爭相提供 Bot 的服務" />
+
+        <meta property="og:site_name" content="Life Lies in Traveling" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Introduction to Chatbot"/>
+        <meta property="og:url" content="http://lee-w.github.io/posts/tech/2016/11/introduction-to-chatbot"/>
+        <meta property="og:description" content="有人說聊天機器人 Chat Bot 將要取代 APP Why chatbots are replacing apps This is how Chatbots will Kill 99% of Apps 各大軟體公司也爭相提供 Bot 的服務"/>
+        <meta property="article:published_time" content="2016-11-21" />
+            <meta property="article:section" content="Tech" />
+            <meta property="article:tag" content="Chat Bot" />
+            <meta property="article:author" content="Lee-W" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://lee-w.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href="http://lee-w.github.io/theme/css/pygments/xcode.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Life Lies in Traveling ATOM Feed"/>
+
+
+
+        <link href="http://lee-w.github.io/feeds/tech.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Life Lies in Traveling Tech ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://lee-w.github.io/" class="navbar-brand">
+Life Lies in Traveling            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/archives.html">Archives</a></li>
+                    <li><a href="/categories.html">Categories</a></li>
+                         <li><a href="http://lee-w.github.io/pages/about-me.html">
+                             About Me
+                          </a></li>
+                         <li><a href="http://lee-w.github.io/pages/about-this-blog.html">
+                             About This Blog
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://lee-w.github.io/posts/tech/2016/11/introduction-to-chatbot"
+                       rel="bookmark"
+                       title="Permalink to Introduction to Chatbot">
+                        Introduction to Chatbot
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-11-21T08:18:00+08:00"> 2016/11/21 - 一</time>
+    </span>
+
+            <span class="label label-default">Series</span>
+            Part 1 of Line Bot Tutorial
+
+
+        <span class="label label-default">Category</span>
+        <a href="http://lee-w.github.io/category/tech.html">Tech</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://lee-w.github.io/tag/chat-bot.html">Chat Bot</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>有人說聊天機器人 Chat Bot 將要取代 APP</p>
+<ul>
+<li><a href="http://venturebeat.com/2016/08/02/why-chatbots-are-replacing-apps/">Why chatbots are replacing apps</a></li>
+<li><a href="https://chatbotslife.com/this-is-how-chatbots-will-kill-99-of-apps-2fd938a22c99#.tdfugot4m">This is how Chatbots will Kill 99% of Apps</a></li>
+</ul>
+<p>各大軟體公司也爭相提供 Bot 的服務<br>
+<!--more--></p>
+<ul>
+<li><a href="https://messengerplatform.fb.com">Facebook Messenger Platform</a></li>
+<li><a href="https://developers.line.me/messaging-api/overview">Line Messaging API</a></li>
+<li><a href="https://api.slack.com">Slack API</a></li>
+<li><a href="https://core.telegram.org/bots/api">Telegram Bot Platform</a></li>
+</ul>
+<h2 id="what-can-bot-do">What can Bot Do?</h2>
+<p>那 Chat Bot 究竟能幹嘛呢 ?</p>
+<p>先來看段影片吧<br>
+<a href="https://www.youtube.com/watch?v=C7ZuzJe24y4">【公式】BOT &amp; THE NEW WORLD by LINE</a></p>
+<h3 id="_1">影片中出現了什麼？</h3>
+<ul>
+<li>預約餐廳</li>
+<li>訂車</li>
+<li>偵測 Beacon 提供 coupon</li>
+<li>遠端控制家中的 IoT 設備澆水</li>
+</ul>
+<p>原本在 App 上處理的這些服務<br>
+未來都有可能逐漸被 Chat Bot 所取代</p>
+<h3 id="_2">背後發生了什麼事</h3>
+<p>e.g. 預約餐廳</p>
+<ol>
+<li>User 傳一個訊息給 Bot 的帳號</li>
+<li>Bot 把訊息傳給服務提供者的 Server</li>
+<li>服務提供者的 Server 把訊息，傳給指定的 Server</li>
+<li>指定的 Server 做了適當的運算和判斷，把結果回傳給服務提供者 Server</li>
+<li>服務提供者 Server 收到後，再傳給 User 的帳號</li>
+</ol>
+<p>e.g. Line Chat Bot 架構<br>
+<img alt="Line Chat Bot Architect" src="https://developers.line.me/media/messaging-api/overview/messaging-api-architecture-ee0356bd.png"></p>
+<h2 id="why-chat-bot">Why Chat Bot?</h2>
+<ul>
+<li>市面上 App 太多了，要開發使用者黏著度高的 App 很困難</li>
+<li>每一個 App 都有自己的介面，對使用者都是一次學習成本<ul>
+<li>不如把服務嵌入現在使用者常用的 App<br>
+  (e.g. Facebook Messenger, Line)</li>
+</ul>
+</li>
+<li>文字是人類相對直覺的溝通方式</li>
+</ul>
+<h2 id="why-not-chat-bot">Why not Chat Bot?</h2>
+<ul>
+<li>設計彈性不如 App<ul>
+<li>雖然 Chat Bot 大多提供按鍵等功能，但使用上的彈性不像 App 那麼大</li>
+</ul>
+</li>
+<li>文字處理依然不夠好<ul>
+<li>簡單的 Bot，如果使用者一直無法對應到相對的關鍵字，就無法觸發功能 </li>
+</ul>
+</li>
+</ul>
+<h2 id="how-to-design-a-bot">How to Design a Bot?</h2>
+<p>那麼開發一個 Bot 需要什麼呢？</p>
+<ol>
+<li>選擇使用的 Bot 平台 (e.g., Facebook Messenger Platform, Line Messaging API and etc.)</li>
+<li>寫一些服務 (e.g., 訂票、新聞推播)</li>
+<li>把服務架在一台 https server</li>
+<li>用 Bot 平台提供的 sdk，把 Server 跟平台串起來</li>
+<li>用 NLP 判斷使用者的意思，串接到服務上</li>
+</ol>
+<h2 id="chatbot-platform-line-messaging-api">Chatbot Platform - Line Messaging API</h2>
+<p>既然看了 Line Bot 的新功能</p>
+<p>接下來的幾篇文章會談要如何在 Line 平台上<br>
+做一個最簡單只會 Echo 的 Chat Bot</p>
+<h1 id="reference">Reference</h1>
+<p>這篇文章整理了相當多的相關資源<br>
+<a href="https://stanfy.com/blog/the-rise-of-chat-bots-useful-links-articles-libraries-and-platforms/">The Rise of Chat Bots: Useful Links, Articles, Libraries and Platforms</a><br>
+相當推薦對 ChatBot 有興趣的人參考</p>
+<h1 id="slide">Slide</h1>
+<p>如果有點不喜歡看文章的，也可以看看<a href="https://hackmd.io/p/HkW8LjRfl#/">slide</a> 的版本</p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Part 1 of the Line Bot Tutorial series</h4>
+       <h5>Next articles</h5>
+       <ul>
+           <li><a href="http://lee-w.github.io/posts/tech/2016/11/apply-line-messaging-api">Apply Line Messaging API</a></li>
+           <li><a href="http://lee-w.github.io/posts/tech/2016/11/line-echo-bot-on-django">Line Echo Bot on Django</a></li>
+           <li><a href="http://lee-w.github.io/posts/tech/2016/11/deploy-linebot-on-heroku">Deploy LineBot on Heroku</a></li>
+           <li><a href="http://lee-w.github.io/posts/tech/2016/11/more-about-line-messaging-api-template-messages">More About Line Messaging API - Template Messages</a></li>
+           <li><a href="http://lee-w.github.io/posts/tech/2016/11/more-than-just-echo-bot">More than Just Echo Bot</a></li>
+       </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'lee-w-blog'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "zh";
+
+                        this.page.identifier = '2016-11-21-introduction-to-chatbot';
+                        this.page.url = 'http://lee-w.github.io/posts/tech/2016/11/introduction-to-chatbot';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social" style="list-style-type: none;">
+          <li>
+              <a href="http://tw.linkedin.com/in/clleew">
+                      <i class="fab fa-linkedin"></i>
+                    Linkedin
+              </a>
+          </li>
+          <li>
+              <a href="http://github.com/Lee-W">
+                      <i class="fab fa-github"></i>
+                    GitHub
+              </a>
+          </li>
+          <li>
+              <a href="https://gitlab.com/Lee-W">
+                      <i class="fab fa-gitlab"></i>
+                    Gitlab
+              </a>
+          </li>
+          <li>
+              <a href="http://www.facebook.com/clleew">
+                      <i class="fab fa-facebook"></i>
+                    Facebook
+              </a>
+          </li>
+          <li>
+              <a href="//lee-w.github.io/feeds/all.atom.xml">
+                      <i class="fas fa-rss"></i>
+                    RSS
+              </a>
+          </li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="http://lee-w.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/algorithm.html">Algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/android.html">Android</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/autobiography.html">Autobiography</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/big-five-theory.html">Big Five Theory</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/c.html">C++</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/chat-bot.html">Chat Bot</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/code-quality.html">Code Quality</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/conference.html">Conference</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/coscup.html">COSCUP</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/deep-learning.html">Deep Learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/deploy.html">deploy</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/deprecated.html">Deprecated</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/design.html">Design</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/develop.html">Develop</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/dual-boot.html">Dual Boot</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/economics.html">Economics</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/education.html">Education</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/emotion.html">Emotion</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/flask.html">Flask</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/game-theory.html">Game Theory</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/git.html">Git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/git-book.html">Git Book</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/github.html">GitHub</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/heroku.html">Heroku</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/innovation.html">Innovation</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/inspiring.html">Inspiring</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/javascript.html">JavaScript</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/jupyter.html">Jupyter</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/linux-unix.html">Linux-Unix</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/machine-learning.html">Machine Learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/mbti.html">MBTI</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/mopcon.html">MOPCON</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/neovim.html">Neovim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/nlp.html">NLP</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/note.html">Note</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/open-source.html">Open Source</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/other.html">Other</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/personality.html">Personality</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/plugin.html">Plugin</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/productivity.html">Productivity</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/pycon.html">PyCon</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/python.html">Python</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/r.html">R</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/resume.html">Resume</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/revealjs.html">reveal.js</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/sales.html">Sales</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/shell-script.html">Shell Script</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/sitcon.html">SITCON</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/social-network.html">Social Network</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/software-engineering.html">Software Engineering</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/startup.html">Startup</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/story.html">Story</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/team.html">Team</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/tedx.html">TEDx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/thinking.html">Thinking</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/thread.html">Thread</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/tutorial.html">Tutorial</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/unboxing.html">unboxing</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/utility.html">Utility</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/vim.html">Vim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/visualization.html">Visualization</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/x-village.html">X-Village</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Series -->
+<li class="list-group-item">
+  <h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Series</span></h4>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <h5>Next article</h5>
+      <a href="http://lee-w.github.io/posts/tech/2016/11/apply-line-messaging-api">Apply Line Messaging API</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Series -->
+
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 Lee-W
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://lee-w.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://lee-w.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://lee-w.github.io/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'lee-w-blog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-96190677-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>

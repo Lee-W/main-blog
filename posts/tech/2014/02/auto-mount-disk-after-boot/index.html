@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Linux 開機自動掛載分割區 - Life Lies in Traveling</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://lee-w.github.io/posts/tech/2014/02/auto-mount-disk-after-boot">
+
+        <meta name="author" content="Lee-W" />
+        <meta name="keywords" content="Linux-Unix,Dual Boot" />
+        <meta name="description" content="分割區的掛載資訊，存在 /etc/fstab 中，所以需要自動掛載分割區時可以針對此檔案做修改 需要注意的是，如果設定不好，可能會沒辦法開機的！！！" />
+
+        <meta property="og:site_name" content="Life Lies in Traveling" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Linux 開機自動掛載分割區"/>
+        <meta property="og:url" content="http://lee-w.github.io/posts/tech/2014/02/auto-mount-disk-after-boot"/>
+        <meta property="og:description" content="分割區的掛載資訊，存在 /etc/fstab 中，所以需要自動掛載分割區時可以針對此檔案做修改 需要注意的是，如果設定不好，可能會沒辦法開機的！！！"/>
+        <meta property="article:published_time" content="2014-02-01" />
+            <meta property="article:section" content="Tech" />
+            <meta property="article:tag" content="Linux-Unix" />
+            <meta property="article:tag" content="Dual Boot" />
+            <meta property="article:author" content="Lee-W" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://lee-w.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href="http://lee-w.github.io/theme/css/pygments/xcode.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Life Lies in Traveling ATOM Feed"/>
+
+
+
+        <link href="http://lee-w.github.io/feeds/tech.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Life Lies in Traveling Tech ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://lee-w.github.io/" class="navbar-brand">
+Life Lies in Traveling            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/archives.html">Archives</a></li>
+                    <li><a href="/categories.html">Categories</a></li>
+                         <li><a href="http://lee-w.github.io/pages/about-me.html">
+                             About Me
+                          </a></li>
+                         <li><a href="http://lee-w.github.io/pages/about-this-blog.html">
+                             About This Blog
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://lee-w.github.io/posts/tech/2014/02/auto-mount-disk-after-boot"
+                       rel="bookmark"
+                       title="Permalink to Linux 開機自動掛載分割區">
+                        Linux 開機自動掛載分割區
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-02-01T16:44:00+08:00"> 2014/02/01 - 六</time>
+    </span>
+
+
+
+        <span class="label label-default">Category</span>
+        <a href="http://lee-w.github.io/category/tech.html">Tech</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://lee-w.github.io/tag/linux-unix.html">Linux-Unix</a>
+        /
+	<a href="http://lee-w.github.io/tag/dual-boot.html">Dual Boot</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>分割區的掛載資訊，存在 /etc/fstab 中，所以需要自動掛載分割區時可以針對此檔案做修改<br>
+需要注意的是，如果設定不好，可能會沒辦法開機的！！！</p>
+<!--more-->
+
+<p>我們先來看一下 /etc/fstab 內的東西</p>
+<div class="codehilite"><pre><span></span>sudo cat /etc/fstab
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span># /etc/fstab: static file system information.
+#
+# Use &#39;blkid&#39; to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;
+# / was on /dev/sda1 during installation
+UUID=c5744283-f105-47e9-8a2e-21f477d895b7 /               ext4    errors=remount-ro 0       1
+# swap was on /dev/sda5 during installation
+UUID=72b6a10a-f0b6-43ef-927d-0d74673febe7 none            swap    sw              0       0
+#data
+UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
+</pre></div>
+
+
+<p># 是註解<br>
+最後六行是比較重要的<br>
+1~2 是 root 的掛載<br>
+3~4 是 swap 的掛載<br>
+5~6 是我自己的 data 的掛載</p>
+<div class="codehilite"><pre><span></span>#data
+UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
+</pre></div>
+
+
+<p>總共有 6 個欄位</p>
+<ol>
+<li>掛載硬碟的標籤<ul>
+<li>掛載硬碟的標籤我用的是 UUID 的標籤，可以用下面的指令查詢<br>
+<code>ls -l /dev/disk/by-uuid/</code></li>
+<li>也可以直接使用 /dev/sda1 這樣的格式，只是如果硬碟的代號改變，就要再去手動改變比較麻煩 </li>
+</ul>
+</li>
+<li>掛載位置<ul>
+<li>掛載的位置要是一個已經存在的位置，建議是一個空的資料夾</li>
+<li>如果不是空的，裏面的東西應該都會被清空</li>
+<li>另外，一個掛載點只能掛載一個 disk</li>
+<li>另外，注意在 Linux 中大小寫是不同的</li>
+</ul>
+</li>
+<li>分隔區格式<ul>
+<li>而一般的檔案朝的分割驅格式都是都是 ntfs，不過也可以用指令來查詢<br>
+<code>df</code></li>
+</ul>
+</li>
+<li>選項</li>
+<li>是否被 dump 備份指令作用</li>
+<li>是否以 fsck 檢驗磁區</li>
+</ol>
+<p>基本上 4 5 6 我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到</p>
+<h1 id="_1">測試</h1>
+<p>先看一下是否有掛載成功</p>
+<div class="codehilite"><pre><span></span>df
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>檔案系統         1K-區段      已用      可用 已用 % 掛載點
+/dev/sda1      103081248   9259936  88562048   10% /
+none                   4         0         4    0% /sys/fs/cgroup
+udev             3992780         4   3992776    1% /dev
+tmpfs             801368      1168    800200    1% /run
+none                5120         0      5120    0% /run/lock
+none             4006840      1032   4005808    1% /run/shm
+none              102400        44    102356    1% /run/user
+/dev/sda6      459942908 229176172 230766736   50% /media/lee/data
+</pre></div>
+
+
+<p>像我的最後面就出現了 data</p>
+<p>之後暫時將它卸載 (若 <code>df</code> 之後，分割區沒有出現，那就不用做這步了)</p>
+<div class="codehilite"><pre><span></span>sudo umount /dev/sda6
+</pre></div>
+
+
+<p>(/dev/sda6 要取代成你自己的位置 )<br>
+接著再執行一次</p>
+<div class="codehilite"><pre><span></span>df
+</pre></div>
+
+
+<p>剛剛的分割區應該會不見，然後執行<br>
+開機自動掛載分割區</p>
+<div class="codehilite"><pre><span></span>sudo mount -a
+</pre></div>
+
+
+<p>如果沒有錯誤訊息，就在執行一次</p>
+<div class="codehilite"><pre><span></span>df
+</pre></div>
+
+
+<p>如果掛載的分隔驅再裡面就是成功了</p>
+<p>如果有任何異常，就去看一下 /etc/fstab 是不是有哪裡寫錯了</p>
+<h1 id="reference">Reference</h1>
+<p><a href="http://255121.blogspot.tw/2010/05/linux.html">巴特的微花盆： 筆記： Linux 中設定開機時自動掛載分割區</a></p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'lee-w-blog'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "zh";
+
+                        this.page.identifier = '2014-02-01-auto-mount-disk-after-boot';
+                        this.page.url = 'http://lee-w.github.io/posts/tech/2014/02/auto-mount-disk-after-boot';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social" style="list-style-type: none;">
+          <li>
+              <a href="http://tw.linkedin.com/in/clleew">
+                      <i class="fab fa-linkedin"></i>
+                    Linkedin
+              </a>
+          </li>
+          <li>
+              <a href="http://github.com/Lee-W">
+                      <i class="fab fa-github"></i>
+                    GitHub
+              </a>
+          </li>
+          <li>
+              <a href="https://gitlab.com/Lee-W">
+                      <i class="fab fa-gitlab"></i>
+                    Gitlab
+              </a>
+          </li>
+          <li>
+              <a href="http://www.facebook.com/clleew">
+                      <i class="fab fa-facebook"></i>
+                    Facebook
+              </a>
+          </li>
+          <li>
+              <a href="//lee-w.github.io/feeds/all.atom.xml">
+                      <i class="fas fa-rss"></i>
+                    RSS
+              </a>
+          </li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="http://lee-w.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/algorithm.html">Algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/android.html">Android</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/autobiography.html">Autobiography</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/big-five-theory.html">Big Five Theory</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/c.html">C++</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/chat-bot.html">Chat Bot</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/code-quality.html">Code Quality</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/conference.html">Conference</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/coscup.html">COSCUP</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/deep-learning.html">Deep Learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/deploy.html">deploy</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/deprecated.html">Deprecated</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/design.html">Design</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/develop.html">Develop</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/dual-boot.html">Dual Boot</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/economics.html">Economics</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/education.html">Education</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/emotion.html">Emotion</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/flask.html">Flask</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/game-theory.html">Game Theory</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/git.html">Git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/git-book.html">Git Book</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/github.html">GitHub</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/heroku.html">Heroku</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/innovation.html">Innovation</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/inspiring.html">Inspiring</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/javascript.html">JavaScript</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/jupyter.html">Jupyter</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/linux-unix.html">Linux-Unix</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/machine-learning.html">Machine Learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/mbti.html">MBTI</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/mopcon.html">MOPCON</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/neovim.html">Neovim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/nlp.html">NLP</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/note.html">Note</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/open-source.html">Open Source</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/other.html">Other</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/personality.html">Personality</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/plugin.html">Plugin</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/productivity.html">Productivity</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/pycon.html">PyCon</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/python.html">Python</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/r.html">R</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/resume.html">Resume</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/revealjs.html">reveal.js</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/sales.html">Sales</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/shell-script.html">Shell Script</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/sitcon.html">SITCON</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/social-network.html">Social Network</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/software-engineering.html">Software Engineering</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/startup.html">Startup</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/story.html">Story</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/team.html">Team</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/tedx.html">TEDx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/thinking.html">Thinking</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/thread.html">Thread</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/tutorial.html">Tutorial</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/unboxing.html">unboxing</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/utility.html">Utility</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/vim.html">Vim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/visualization.html">Visualization</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/x-village.html">X-Village</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 Lee-W
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://lee-w.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://lee-w.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://lee-w.github.io/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'lee-w-blog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-96190677-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>

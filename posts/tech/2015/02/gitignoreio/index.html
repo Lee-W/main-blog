@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>gitignore.io - Life Lies in Traveling</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://lee-w.github.io/posts/tech/2015/02/gitignoreio">
+
+        <meta name="author" content="Lee-W" />
+        <meta name="keywords" content="Git,Deprecated,Utility" />
+        <meta name="description" content="每次開一個 git 專案，要為它找適當的 .gitignore，都要上網找模板蠻麻煩的 能不能有個簡單的方法，我開什麼專案就產生怎樣的 .gitignore 然後我就發現了gitignore.io" />
+
+        <meta property="og:site_name" content="Life Lies in Traveling" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="gitignore.io"/>
+        <meta property="og:url" content="http://lee-w.github.io/posts/tech/2015/02/gitignoreio"/>
+        <meta property="og:description" content="每次開一個 git 專案，要為它找適當的 .gitignore，都要上網找模板蠻麻煩的 能不能有個簡單的方法，我開什麼專案就產生怎樣的 .gitignore 然後我就發現了gitignore.io"/>
+        <meta property="article:published_time" content="2015-02-03" />
+            <meta property="article:section" content="Tech" />
+            <meta property="article:tag" content="Git" />
+            <meta property="article:tag" content="Deprecated" />
+            <meta property="article:tag" content="Utility" />
+            <meta property="article:author" content="Lee-W" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://lee-w.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href="http://lee-w.github.io/theme/css/pygments/xcode.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Life Lies in Traveling ATOM Feed"/>
+
+
+
+        <link href="http://lee-w.github.io/feeds/tech.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Life Lies in Traveling Tech ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://lee-w.github.io/" class="navbar-brand">
+Life Lies in Traveling            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/archives.html">Archives</a></li>
+                    <li><a href="/categories.html">Categories</a></li>
+                         <li><a href="http://lee-w.github.io/pages/about-me.html">
+                             About Me
+                          </a></li>
+                         <li><a href="http://lee-w.github.io/pages/about-this-blog.html">
+                             About This Blog
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://lee-w.github.io/posts/tech/2015/02/gitignoreio"
+                       rel="bookmark"
+                       title="Permalink to gitignore.io">
+                        gitignore.io
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-02-03T05:58:00+08:00"> 2015/02/03 - 二</time>
+    </span>
+
+
+
+        <span class="label label-default">Category</span>
+        <a href="http://lee-w.github.io/category/tech.html">Tech</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://lee-w.github.io/tag/git.html">Git</a>
+        /
+	<a href="http://lee-w.github.io/tag/deprecated.html">Deprecated</a>
+        /
+	<a href="http://lee-w.github.io/tag/utility.html">Utility</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>每次開一個 git 專案，要為它找適當的 .gitignore，都要上網找模板蠻麻煩的<br>
+能不能有個簡單的方法，我開什麼專案就產生怎樣的 .gitignore<br>
+然後我就發現了<a href="https://www.gitignore.io">gitignore.io</a></p>
+<!--more-->
+
+<p>簡單來說 gitignore.io 提供各式各樣的 gitignore，而且可以自動合併成一個 file<br>
+最棒的是它有提供 api 讓我們在 command line 上使用</p>
+<h1 id="gitignoreio-on-command">gitignore.io on command</h1>
+<p>這是 gitignore.io 的官方文件<br>
+https://www.gitignore.io/docs</p>
+<h2 id="_1">設定</h2>
+<p>以 mac 的 zsh 的使用者為例，只要在執行下面這段</p>
+<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
+</pre></div>
+
+
+<p>或者在 ~/.zshrc 加入下面這段後，執行 <code>source ~/.zshrc</code></p>
+<div class="codehilite"><pre><span></span><span class="k">function</span> gi<span class="o">()</span> <span class="o">{</span> curl -L -s https://www.gitignore.io/api/<span class="nv">$@</span> <span class="p">;</span><span class="o">}</span>
+</pre></div>
+
+
+<p>設定完成後就可以使用 gi 的功能</p>
+<h2 id="_2">使用</h2>
+<p>基本上只有兩種用法<br>
+首先當然要先看 gi 支援哪些 .gitignore</p>
+<div class="codehilite"><pre><span></span>gi list
+</pre></div>
+
+
+<p>執行完會看到一長串的結果</p>
+<div class="codehilite"><pre><span></span>actionscript,ada,agda,android...
+</pre></div>
+
+
+<p>接著在 gi 後面輸入想產生的 .gitignore 的 types</p>
+<div class="codehilite"><pre><span></span>gi <span class="s2">&quot;types&quot;</span>
+</pre></div>
+
+
+<p>如果有超過一個必須用 <code>,</code> 隔開<br>
+e.g.,</p>
+<div class="codehilite"><pre><span></span>gi vim,osx
+</pre></div>
+
+
+<p>不過這樣還不會產生 .gitignore，只會顯示在螢幕上<br>
+還要再使用 output redirection 才會有 .gitignore</p>
+<div class="codehilite"><pre><span></span>gi vim,osx &gt;&gt; .gitignore
+</pre></div>
+
+
+<h1 id="my-custom-gi">My Custom gi</h1>
+<p>但用起來還是有點小小的不順手<br>
+尤其每次要看 list 都要重新連上網抓一次，挺浪費時間<br>
+所以就自己寫了一個新的 gi<br>
+我把它放在我的 GitHub 上<br>
+https://github.com/Lee-W/gi_extension</p>
+<p>那我的 Custom gi 到底多支援了什麼呢？<br>
+1. 線下查看 gitignore.io 支援的類型，用更適合閱讀當方式印出<br>
+2. 將 output redirection 寫成一個 option<br>
+3. 支援以空格作為類型的分隔 ( 逗號依然支援 )<br>
+   e.g., <code>vim,osx</code> -&gt; <code>vim osx</code></p>
+<h2 id="_3">安裝</h2>
+<div class="codehilite"><pre><span></span>git clone https://github.com/Lee-W/gi_extension <span class="o">&amp;&amp;</span> <span class="nb">cd</span> gi_extension
+sudo cp gi_extension.sh /usr/bin/gi
+</pre></div>
+
+
+<p>如果之前有在 shell 的設定檔中，設定過 gitignore.io 提供的 gi<br>
+記得要把它註解掉，不然那個 gi 會蓋過我的 gi</p>
+<p>如果想移除掉</p>
+<div class="codehilite"><pre><span></span>git clone https://github.com/Lee-W/gi_extension <span class="o">&amp;&amp;</span> <span class="nb">cd</span> gi_extension
+sudo rm gi_extension.sh /usr/bin/gi
+</pre></div>
+
+
+<h2 id="_4">使用</h2>
+<p>第一次使用的時候要先下 <code>gi -u</code><br>
+將原本 <code>gi list</code> 的 output，儲存到 <code>~/.gi_list</code></p>
+<h3 id="_5">顯示支援類型</h3>
+<ol>
+<li>以表格的方式輸出支援的類型<br>
+目前設定一個 row 容納 5 個 column，每個 column 長度為 25  </li>
+</ol>
+<div class="codehilite"><pre><span></span>gi -l
+</pre></div>
+
+
+<p><img alt="1_gi_l.png" src="https://i0.wp.com/f6daa3706f14a40c04cb86aa98ffd752d68309b0.googledrive.com/host/0BzTRBX34Y857ZDZxM3dNYm9VcDg/gitignore_io/1_gi_l.png"></p>
+<ol>
+<li>以字母的順序輸出</li>
+</ol>
+<div class="codehilite"><pre><span></span>gi -L
+</pre></div>
+
+
+<p><img alt="2_gi_L.png" src="https://i0.wp.com/f6daa3706f14a40c04cb86aa98ffd752d68309b0.googledrive.com/host/0BzTRBX34Y857ZDZxM3dNYm9VcDg/gitignore_io/2_gi_L.png"></p>
+<h3 id="gitignore">顯示 .gitignore 的內容</h3>
+<p>跟原本的 gi 一樣，只是多支援了以空白作為分隔</p>
+<div class="codehilite"><pre><span></span>gi <span class="s2">&quot;types&quot;</span>
+<span class="c1"># e.g., gi vim osx </span>
+</pre></div>
+
+
+<h3 id="gitignore_1">輸出 .gitignore</h3>
+<p>將結果加入目前資料夾下的 .gitignore</p>
+<div class="codehilite"><pre><span></span>gi -a <span class="s2">&quot;types&quot;</span>
+<span class="c1"># e.g., gi -a vim osx</span>
+</pre></div>
+
+
+<p>在目前的資料夾產生一份新的 .gitignore 取代舊有的</p>
+<div class="codehilite"><pre><span></span>gi -e <span class="s2">&quot;types&quot;</span>
+<span class="c1"># e.g.,e.g.,, gi -e vim osx</span>
+</pre></div>
+
+
+<h3 id="_6">更新本地端的支援列表</h3>
+<div class="codehilite"><pre><span></span>gi -u
+</pre></div>
+
+
+<p>其實每次 gi 被執行的時候，都會在 backgroud 更新列表<br>
+但是這次的更新，下次才能被使用<br>
+所以如果想要強制更新就可以用上這個指令</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'lee-w-blog'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "zh";
+
+                        this.page.identifier = '2015-02-03-gitignoreio';
+                        this.page.url = 'http://lee-w.github.io/posts/tech/2015/02/gitignoreio';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social" style="list-style-type: none;">
+          <li>
+              <a href="http://tw.linkedin.com/in/clleew">
+                      <i class="fab fa-linkedin"></i>
+                    Linkedin
+              </a>
+          </li>
+          <li>
+              <a href="http://github.com/Lee-W">
+                      <i class="fab fa-github"></i>
+                    GitHub
+              </a>
+          </li>
+          <li>
+              <a href="https://gitlab.com/Lee-W">
+                      <i class="fab fa-gitlab"></i>
+                    Gitlab
+              </a>
+          </li>
+          <li>
+              <a href="http://www.facebook.com/clleew">
+                      <i class="fab fa-facebook"></i>
+                    Facebook
+              </a>
+          </li>
+          <li>
+              <a href="//lee-w.github.io/feeds/all.atom.xml">
+                      <i class="fas fa-rss"></i>
+                    RSS
+              </a>
+          </li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="http://lee-w.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/algorithm.html">Algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/android.html">Android</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/autobiography.html">Autobiography</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/big-five-theory.html">Big Five Theory</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/c.html">C++</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/chat-bot.html">Chat Bot</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/code-quality.html">Code Quality</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/conference.html">Conference</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/coscup.html">COSCUP</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/deep-learning.html">Deep Learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/deploy.html">deploy</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/deprecated.html">Deprecated</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/design.html">Design</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/develop.html">Develop</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/dual-boot.html">Dual Boot</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/economics.html">Economics</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/education.html">Education</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/emotion.html">Emotion</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/flask.html">Flask</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/game-theory.html">Game Theory</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/git.html">Git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/git-book.html">Git Book</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/github.html">GitHub</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/heroku.html">Heroku</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/innovation.html">Innovation</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/inspiring.html">Inspiring</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/javascript.html">JavaScript</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/jupyter.html">Jupyter</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/linux-unix.html">Linux-Unix</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/machine-learning.html">Machine Learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/mbti.html">MBTI</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/mopcon.html">MOPCON</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/neovim.html">Neovim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/nlp.html">NLP</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/note.html">Note</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/open-source.html">Open Source</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/other.html">Other</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/personality.html">Personality</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/plugin.html">Plugin</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/productivity.html">Productivity</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/pycon.html">PyCon</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/python.html">Python</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/r.html">R</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/resume.html">Resume</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/revealjs.html">reveal.js</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/sales.html">Sales</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/shell-script.html">Shell Script</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/sitcon.html">SITCON</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/social-network.html">Social Network</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/software-engineering.html">Software Engineering</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/startup.html">Startup</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/story.html">Story</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/team.html">Team</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/tedx.html">TEDx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/thinking.html">Thinking</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/thread.html">Thread</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/tutorial.html">Tutorial</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/unboxing.html">unboxing</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/utility.html">Utility</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/vim.html">Vim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/visualization.html">Visualization</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/x-village.html">X-Village</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 Lee-W
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://lee-w.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://lee-w.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://lee-w.github.io/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'lee-w-blog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-96190677-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>
