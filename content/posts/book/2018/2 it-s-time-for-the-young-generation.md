@@ -2,7 +2,7 @@ Title: [Book] 告別菜尾時代
 Date: 2018-11-07 14:00
 Category: Book
 Tags: 
-Slug: it-s-time-for-the-young-generation-to-se-and-to-be-seen-by-the-world
+Slug: it-s-time-for-the-young-generation
 Authors: Lee-W
 Summary: 
 
