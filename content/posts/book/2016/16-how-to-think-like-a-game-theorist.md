@@ -7,7 +7,7 @@ Authors: Lee-W
 Summary: 
 
 
-![How to think like a game theorist](http://i.imgur.com/a4TS6Y0m.jpg)
+![How to think like a game theorist](http://pic.eslite.com/Upload/Product/201402/m/635279634797871250.jpg)
 
 <!--more-->
 
