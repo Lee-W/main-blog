@@ -47,11 +47,11 @@ DISPLAY_TAGS_ON_SIDEBAR = True
 DISPLAY_TAGS_INLINE = True
 SHOW_SERIES = True
 SHOW_ARTICLE_CATEGORY = True
-PYGMENTS_STYLE = 'xcode'
 EXTRA_PATH_METADATA = {
     'images': {'path': 'images'},
 }
 CSS_OVERRIDE = '/static/custom.css'
+PYGMENTS_STYLE = 'default'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -72,7 +72,7 @@ SOCIAL = (('Linkedin', 'http://tw.linkedin.com/in/clleew'),
 MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.extra': {},
-        'markdown.extensions.codehilite': {},
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
         'markdown.extensions.nl2br': {},
         'del_ins': {},
         'toc': {},
