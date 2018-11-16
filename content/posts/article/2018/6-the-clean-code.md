@@ -269,56 +269,57 @@ final String outputDir = scratchDir.getAbsolutePath();
 * 別回傳 null，試著拋出例外事件是更好的作法  
     * 函式回傳 null 已經夠糟了，但傳遞 null 進去更是糟糕透頂
 * 從呼叫者的角度定義例外class，這裡有個書上很棒的例子
-
-	```java
-	ACMEPort port = new ACMEPort(12);
-
-	try {
-		port.open();
-	} catch (DeviceResponseException e) {
-		reportPortError(e);
-		logger.log("Device reponse exception", "e");
-	} catch (ATM1212UnlockedException e) {
-		reportPortError(e);
-		logger.log("ATM1212UnlockedException");
-	} catch (HMXError e) {
-		reportPortError(e);
-		logger.log("Device response exception");
-	} finally {
-		...
-	}
-
-
-	//    refactored
-	LocalPort port = new LocalPort(12);
-	try {
-		port.open();
-	} catch (PortDeviceFailure e) {
-		reportPortError(e);
-		logger.log(e.getMessage, e);
-	}
-
-	public class LocalPort {
-		private ACMEPort innerPort;
-
-		public LocalPort(int portNumber) {
-			innerPort = new ACMEPort(portNumber);
-		}
-
-		public void open() {
-			try {
-				innerPort.open();
-			} catch (DeviceResponseException e) {
-				throw new PortDeviceFailure(e);
-			} catch (ATM1212UnlockedException e) {
-				throw new PortDeviceFailure(e);
-			} catch (GMXError e) {
-				throw new PortDeviceFailure(e);
-			}
-		}
-	}
-	```
     * 這種技巧被稱為Wrapper，這樣的技巧可以使依賴減少
+
+```Java
+ACMEPort port = new ACMEPort(12);
+
+try {
+	port.open();
+} catch (DeviceResponseException e) {
+	reportPortError(e);
+	logger.log("Device reponse exception", "e");
+} catch (ATM1212UnlockedException e) {
+	reportPortError(e);
+	logger.log("ATM1212UnlockedException");
+} catch (HMXError e) {
+	reportPortError(e);
+	logger.log("Device response exception");
+} finally {
+	...
+}
+
+
+//    refactored
+LocalPort port = new LocalPort(12);
+try {
+	port.open();
+} catch (PortDeviceFailure e) {
+	reportPortError(e);
+	logger.log(e.getMessage, e);
+}
+
+public class LocalPort {
+	private ACMEPort innerPort;
+
+	public LocalPort(int portNumber) {
+		innerPort = new ACMEPort(portNumber);
+	}
+
+	public void open() {
+		try {
+			innerPort.open();
+		} catch (DeviceResponseException e) {
+			throw new PortDeviceFailure(e);
+		} catch (ATM1212UnlockedException e) {
+			throw new PortDeviceFailure(e);
+		} catch (GMXError e) {
+			throw new PortDeviceFailure(e);
+		}
+	}
+}
+```
+
 
 ## 第8章：邊界
 * 學習型測試： 不要在產品程式裡實驗新的東西，而是另外寫測試程式，來了解第三方軟體
