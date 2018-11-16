@@ -63,7 +63,7 @@ help:
 	@echo '                                                                          '
 
 init:
-	pipenv install .
+	pipenv install
 
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
