@@ -34,7 +34,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/xcode.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -480,55 +480,58 @@ public class Quadratic {
 <li>函式回傳 null 已經夠糟了，但傳遞 null 進去更是糟糕透頂</li>
 </ul>
 </li>
-<li>
-<p>從呼叫者的角度定義例外class，這裡有個書上很棒的例子</p>
-<p>```java<br/>
-ACMEPort port = new ACMEPort(12);</p>
-<p>try {<br/>
-    port.open();<br/>
-} catch (DeviceResponseException e) {<br/>
-    reportPortError(e);<br/>
-    logger.log("Device reponse exception", "e");<br/>
-} catch (ATM1212UnlockedException e) {<br/>
-    reportPortError(e);<br/>
-    logger.log("ATM1212UnlockedException");<br/>
-} catch (HMXError e) {<br/>
-    reportPortError(e);<br/>
-    logger.log("Device response exception");<br/>
-} finally {<br/>
-    ...<br/>
-}</p>
-<p>//    refactored<br/>
-LocalPort port = new LocalPort(12);<br/>
-try {<br/>
-    port.open();<br/>
-} catch (PortDeviceFailure e) {<br/>
-    reportPortError(e);<br/>
-    logger.log(e.getMessage, e);<br/>
-}</p>
-<p>public class LocalPort {<br/>
-    private ACMEPort innerPort;</p>
-<div class="codehilite"><pre><span></span>public LocalPort(int portNumber) {
-    innerPort = new ACMEPort(portNumber);
-}
-
-public void open() {
-    try {
-        innerPort.open();
-    } catch (DeviceResponseException e) {
-        throw new PortDeviceFailure(e);
-    } catch (ATM1212UnlockedException e) {
-        throw new PortDeviceFailure(e);
-    } catch (GMXError e) {
-        throw new PortDeviceFailure(e);
-    }
-}
-</pre></div>
-<p>}<br/>
-```<br/>
-* 這種技巧被稱為Wrapper，這樣的技巧可以使依賴減少</p>
+<li>從呼叫者的角度定義例外class，這裡有個書上很棒的例子<ul>
+<li>這種技巧被稱為Wrapper，這樣的技巧可以使依賴減少</li>
+</ul>
 </li>
 </ul>
+<div class="codehilite"><pre><span></span><span class="n">ACMEPort</span> <span class="n">port</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ACMEPort</span><span class="o">(</span><span class="mi">12</span><span class="o">);</span>
+
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">port</span><span class="o">.</span><span class="na">open</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">DeviceResponseException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">reportPortError</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+    <span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="s">"Device reponse exception"</span><span class="o">,</span> <span class="s">"e"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ATM1212UnlockedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">reportPortError</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+    <span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="s">"ATM1212UnlockedException"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">HMXError</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">reportPortError</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+    <span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="s">"Device response exception"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+
+
+<span class="c1">//    refactored</span>
+<span class="n">LocalPort</span> <span class="n">port</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LocalPort</span><span class="o">(</span><span class="mi">12</span><span class="o">);</span>
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">port</span><span class="o">.</span><span class="na">open</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">PortDeviceFailure</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">reportPortError</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+    <span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LocalPort</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">ACMEPort</span> <span class="n">innerPort</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">LocalPort</span><span class="o">(</span><span class="kt">int</span> <span class="n">portNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">innerPort</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ACMEPort</span><span class="o">(</span><span class="n">portNumber</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">open</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">innerPort</span><span class="o">.</span><span class="na">open</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">DeviceResponseException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="n">PortDeviceFailure</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ATM1212UnlockedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="n">PortDeviceFailure</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">GMXError</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="n">PortDeviceFailure</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
 <h2 id="8">第8章：邊界</h2>
 <ul>
 <li>學習型測試： 不要在產品程式裡實驗新的東西，而是另外寫測試程式，來了解第三方軟體<ul>
