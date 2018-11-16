@@ -25,7 +25,7 @@ As a programmer, I'm familiar with web backend development (mainly flask) but op
 
 * Software Development
 
-### [May 2018 - Present]
+### [May 2018 - Nov 2018]
 **Chief Teaching Assistant, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
 
 * Managing
@@ -124,7 +124,8 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-v
 #### Books
 * [Learning Python 5e Note](https://github.com/Lee-W/Learning_Python)
 * [Python Cookbook](https://github.com/Lee-W/Python_Cookbook)
-* [Clean Code](https://lee-w.gitbooks.io/clean-code/content/)
+* [The Clean Coder](http://lee-w.github.io/posts/tech/2018/11/the-clean-code/)
+* [The Clean Coder](http://lee-w.github.io/posts/tech/2018/11/the-clean-coder/)
 
 #### MOOCs
 * [Machine Learning (Coursera)](https://github.com/Lee-W/Machine-Learning-Coursera)
