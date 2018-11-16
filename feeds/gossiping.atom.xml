@@ -86,7 +86,7 @@
 我在寫 Lisp 的時候，連 Syntax Highlight 都不懂&lt;br&gt;
 還要不斷數括號數量，才知道程式能不能跑的&lt;/p&gt;
 &lt;p&gt;e.g., &lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(cond ((eq &amp;#39;a &amp;#39;b) &amp;#39;first)  (atom &amp;#39;a)  &amp;#39;second))
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(cond ((eq &amp;#39;a &amp;#39;b) &amp;#39;first)  (atom &amp;#39;a)  &amp;#39;second))
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -119,7 +119,7 @@
 就是帶了一些影片，讓大家 Recap 一下白天老師教的內容&lt;br&gt;
 我主要把時間都花在 Exercise 的設計上&lt;/p&gt;
 &lt;h3 id="exercise4-python-ex4py"&gt;Exercise4 用 Python 做排序 (ex4.py)&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;some_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;some_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
     &lt;span class="mi"&gt;65&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;81&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;65&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;86&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;72&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;27&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="mi"&gt;76&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;46&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;98&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;49&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;57&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;52&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;46&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;47&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;59&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;74&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;61&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;47&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;33&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;89&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;99&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -145,7 +145,7 @@
 甚至我第一次用 Python 爬選課系統的時候，連 json 模組都不會用&lt;br&gt;
 只會照著 json 規定的格式，慢慢地做字串處理&lt;br&gt;
 e.g., &lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;json_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;course_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;: &amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;course_id&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;}&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;json_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;course_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;: &amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;course_id&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;}&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -180,7 +180,7 @@ e.g., &lt;/p&gt;
 總覺得要寫一個稍微有用的程式是非常非常遙遠的事&lt;br&gt;
 所以大二下的 C++ ，對我來我說是寫程式很大的里程碑&lt;/p&gt;
 &lt;p&gt;這題的解答也是差不多一行而已&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ptt_data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;some_key&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ptt_data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;some_key&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -277,7 +277,7 @@ e.g., &lt;/p&gt;
 然後這個目標就會擺在這，等到很久以後再想起它&lt;br&gt;
 恩，就像新年新希望一樣&lt;/p&gt;
 &lt;h3 id="_2"&gt;怎麼樣才能達到目標呢？&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;每天做一點點
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;每天做一點點
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -326,7 +326,7 @@ e.g., &lt;/p&gt;
 &lt;h3 id="_4"&gt;一天不做，不會怎樣啦&lt;/h3&gt;
 &lt;p&gt;花了好久時間建立的習慣，還是會有想怠惰的時候&lt;/p&gt;
 &lt;p&gt;我很喜歡「&lt;a href="http://lee-w.github.io/posts/book/2016/08/how-will-you-measure-your-life"&gt;你如何衡量你的人生&lt;/a&gt;」的一句話&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;百分之百的堅持比百分之九十八容易
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;百分之百的堅持比百分之九十八容易
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -394,7 +394,7 @@ e.g., &lt;/p&gt;
 雖然平常有在看 CNN，多少有接觸到這樣的訊息&lt;br&gt;
 但不同的情境不同的講者，同樣的故事還是有很不同的溫度&lt;/p&gt;
 &lt;p&gt;最後講者阿富汗朋友的一句話，讓我印象很深刻&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;雖然現在是黑夜
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;雖然現在是黑夜
 但在黑夜中期待光
 很美
 &lt;/pre&gt;&lt;/div&gt;
@@ -402,7 +402,7 @@ e.g., &lt;/p&gt;
 
 &lt;hr&gt;
 &lt;h3 id="_2"&gt;貓不&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;當一個溫柔的人，也要當一個有原則的人
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;當一個溫柔的人，也要當一個有原則的人
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -414,7 +414,7 @@ e.g., &lt;/p&gt;
 講者分享遇到的各個街友的故事&lt;br&gt;
 顛覆一些人認為街友總是好吃懶做的印象&lt;/p&gt;
 &lt;p&gt;最後結尾時的這句話，才讓我去反思，這場說了這麼多街友的故事，背後想帶出的意義&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果今天換作是我們遇到同樣的處境
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果今天換作是我們遇到同樣的處境
 
 我們真的能處理得更好嗎？
 &lt;/pre&gt;&lt;/div&gt;</content><category term="Inspiring"></category><category term="TEDx"></category></entry><entry><title>No More Zero Day</title><link href="http://lee-w.github.io/posts/gossiping/2015/10/no-more-zero-day" rel="alternate"></link><published>2015-10-27T06:53:00+08:00</published><updated>2015-10-27T06:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-10-27:/posts/gossiping/2015/10/no-more-zero-day</id><summary type="html">&lt;p&gt;決定開始來寫些程式以外的內容&lt;br&gt;

@@ -36,7 +36,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -157,7 +157,7 @@ Heroku 則是用來讓其他人測試功能<br>
 <h3 id="add-remote">Add Remote</h3>
 <p>在部署之前要先安裝<a href="https://devcenter.heroku.com/articles/heroku-command-line">Heroku CLI</a></p>
 <p>再來我們要到原本 line-echobot，將 heroku 加入這個專案的 remote</p>
-<div class="codehilite"><pre><span></span>heroku login
+<div class="highlight"><pre><span></span>heroku login
 heroku git:remote -a leewbot
 </pre></div>
 
@@ -168,7 +168,7 @@ heroku git:remote -a leewbot
 <h3 id="environment-variables">Environment Variables</h3>
 <p>首先是我們原先設定的環境變數<br>
 Heroku 是透過這個指令來做設定</p>
-<div class="codehilite"><pre><span></span>heroku config:set <span class="s2">&quot;env key&quot;</span>:<span class="s2">&quot;env value&quot;</span>
+<div class="highlight"><pre><span></span>heroku config:set <span class="s2">&quot;env key&quot;</span>:<span class="s2">&quot;env value&quot;</span>
 </pre></div>
 
 
@@ -189,7 +189,7 @@ Heroku 是透過這個指令來做設定</p>
 <p>這裡使用的部署套件是 gunicorn<br>
 先在 <code>requirements.txt</code> 加入 <code>gunicorn==19.0.0</code><br>
 再來創一個 <code>Profile</code>，內容是</p>
-<div class="codehilite"><pre><span></span><span class="n">web</span><span class="o">:</span> <span class="n">gunicorn</span> <span class="n">line_echobot</span><span class="o">.</span><span class="na">wsgi</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span>
+<div class="highlight"><pre><span></span><span class="n">web</span><span class="o">:</span> <span class="n">gunicorn</span> <span class="n">line_echobot</span><span class="o">.</span><span class="na">wsgi</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span>
 </pre></div>
 
 

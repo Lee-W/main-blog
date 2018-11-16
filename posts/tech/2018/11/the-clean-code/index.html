@@ -34,7 +34,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -253,7 +253,7 @@ Life Lies in Traveling            </a>
 </li>
 <li>函式要能<strong>做好某件事</strong>，或<strong>回答某個問題</strong>，而這代表<strong>兩者不該同時發生！！！</strong></li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">set</span><span class="o">(</span><span class="s">"username"</span><span class="o">,</span> <span class="s">"bob"</span><span class="o">))</span> <span class="o">......</span>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">set</span><span class="o">(</span><span class="s">"username"</span><span class="o">,</span> <span class="s">"bob"</span><span class="o">))</span> <span class="o">......</span>
 
 <span class="c1">// refactored</span>
 <span class="k">if</span> <span class="o">(</span><span class="n">attrExists</span><span class="o">(</span><span class="s">"userName"</span><span class="o">))</span> <span class="o">{</span>
@@ -267,7 +267,7 @@ Life Lies in Traveling            </a>
 </ul>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">deletePage</span><span class="o">(</span><span class="n">page</span><span class="o">)</span> <span class="o">==</span> <span class="n">E_OK</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">deletePage</span><span class="o">(</span><span class="n">page</span><span class="o">)</span> <span class="o">==</span> <span class="n">E_OK</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">registry</span><span class="o">.</span><span class="na">deleteReference</span><span class="o">(</span><span class="n">page</span><span class="o">.</span><span class="na">name</span><span class="o">)</span> <span class="o">==</span> <span class="n">E_OK</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">configKeys</span><span class="o">.</span><span class="na">deleteKey</span><span class="o">(</span><span class="n">page</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">makeKey</span><span class="o">())</span> <span class="o">==</span> <span class="n">E_OK</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="s">"page deleted"</span><span class="o">);</span>
@@ -329,14 +329,14 @@ Life Lies in Traveling            </a>
 </li>
 <li>利用建立物件的方式，減少函式參數的數量</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="n">Circle</span> <span class="nf">makeCircle</span><span class="o">(</span><span class="kt">double</span> <span class="n">x</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y</span><span class="o">,</span> <span class="kt">double</span> <span class="n">radius</span><span class="o">);</span>
+<div class="highlight"><pre><span></span><span class="n">Circle</span> <span class="nf">makeCircle</span><span class="o">(</span><span class="kt">double</span> <span class="n">x</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y</span><span class="o">,</span> <span class="kt">double</span> <span class="n">radius</span><span class="o">);</span>
 <span class="c1">// refactored</span>
 <span class="n">Circle</span> <span class="nf">makeCirecle</span><span class="o">(</span><span class="n">POoint</span> <span class="n">center</span><span class="o">,</span> <span class="kt">double</span> <span class="n">radiue</span><span class="o">);</span>
 </pre></div>
 <ul>
 <li>避免使用輸出型參數，這十分的讓人困惑</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="n">appendFooter</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+<div class="highlight"><pre><span></span><span class="n">appendFooter</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
 
 <span class="c1">// refactored</span>
 <span class="n">s</span><span class="o">.</span><span class="na">appendFooter</span><span class="o">();</span>
@@ -361,7 +361,7 @@ Life Lies in Traveling            </a>
 <ul>
 <li>提供資訊的註解</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="c1">//format matched kk:mm:ss EEE, MMM dd, yyyy</span>
+<div class="highlight"><pre><span></span><span class="c1">//format matched kk:mm:ss EEE, MMM dd, yyyy</span>
 <span class="n">Pattern</span> <span class="n">tiMatcher</span> <span class="o">=</span> <span class="n">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span>
     <span class="s">"\\d*:\\d*:\\d* \\w*, \\w* \\d*, \\d*"</span>
 <span class="o">)</span>
@@ -376,7 +376,7 @@ Life Lies in Traveling            </a>
 <li>大部分的註解</li>
 <li>多餘的註解： 沒比程式碼本身透露更多資訊的註解</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
+<div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
     <span class="err">#</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="k">this</span> <span class="n">person</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
 <span class="o">}</span>
@@ -426,7 +426,7 @@ Life Lies in Traveling            </a>
 <p>有時候if, while或簡單的函式，可以被縮減為一行，讓我們違反一般的縮排規則，<strong>不建議這麼做</strong></p>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">render</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span><span class="k">return</span> <span class="s">""</span><span class="o">;}</span>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">render</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span><span class="k">return</span> <span class="s">""</span><span class="o">;}</span>
 
 <span class="c1">//better</span>
 <span class="kd">public</span> <span class="n">String</span> <span class="nf">render</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
@@ -459,7 +459,7 @@ public class Quadratic {
 <li>模組不該知道它操作的物件的內部操作</li>
 <li>別使用一連串的程式呼叫</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">String</span> <span class="n">outputDir</span> <span class="o">=</span> <span class="n">ctxt</span><span class="o">.</span><span class="na">getOptions</span><span class="o">().</span><span class="na">getScratchDir</span><span class="o">().</span><span class="na">getAbsolutePaty</span><span class="o">();</span>
+<div class="highlight"><pre><span></span><span class="kd">final</span> <span class="n">String</span> <span class="n">outputDir</span> <span class="o">=</span> <span class="n">ctxt</span><span class="o">.</span><span class="na">getOptions</span><span class="o">().</span><span class="na">getScratchDir</span><span class="o">().</span><span class="na">getAbsolutePaty</span><span class="o">();</span>
 
 <span class="c1">//refactored</span>
 <span class="n">Option</span> <span class="n">opts</span> <span class="o">=</span> <span class="n">ctxt</span><span class="o">.</span><span class="na">getOptions</span><span class="o">();</span>
@@ -485,7 +485,7 @@ public class Quadratic {
 </ul>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="n">ACMEPort</span> <span class="n">port</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ACMEPort</span><span class="o">(</span><span class="mi">12</span><span class="o">);</span>
+<div class="highlight"><pre><span></span><span class="n">ACMEPort</span> <span class="n">port</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ACMEPort</span><span class="o">(</span><span class="mi">12</span><span class="o">);</span>
 
 <span class="k">try</span> <span class="o">{</span>
     <span class="n">port</span><span class="o">.</span><span class="na">open</span><span class="o">();</span>

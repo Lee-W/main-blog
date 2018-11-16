@@ -33,7 +33,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -133,7 +133,7 @@ Life Lies in Traveling            </a>
 雖然有 Gitbook 編輯器，但有時候用起來還是會出點問題<br>
 所以最後還是決定來學如何用 command line + sublime 寫 Gitbook</p>
 <h2 id="gitbook">安裝 Gitbook</h2>
-<div class="codehilite"><pre><span></span>npm install gitbook -g
+<div class="highlight"><pre><span></span>npm install gitbook -g
 </pre></div>
 
 
@@ -148,7 +148,7 @@ book.json 是這本書的額外設定<br>
 <p>最重要的是 SUMMARY.md，它會定義整本 gitbook 的架構<br>
 每個章節下面都還可以給予更多的小節<br>
 下面是我 Learning Python 的 SUMMARY.md</p>
-<div class="codehilite"><pre><span></span><span class="cp"># Summary</span>
+<div class="highlight"><pre><span></span><span class="cp"># Summary</span>
 
 <span class="o">*</span> <span class="p">[</span><span class="n">Introduction</span><span class="p">](</span><span class="n">README</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
 <span class="o">*</span> <span class="p">[</span><span class="n">Getting</span> <span class="n">Started</span><span class="p">](</span><span class="mi">1</span><span class="n">_getting_started</span><span class="o">/</span><span class="n">README</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
@@ -165,14 +165,14 @@ book.json 是這本書的額外設定<br>
 <p>這是預覽的結果<br>
 <img alt="2_learning_python_web" src="http://i.imgur.com/d3NP0xi.png"></p>
 <p>下了這個指令後就會根據 SUMMARY.md 的定義，自動產生相對應資料夾和檔案</p>
-<div class="codehilite"><pre><span></span>gitbook init
+<div class="highlight"><pre><span></span>gitbook init
 </pre></div>
 
 
 <p>接著就可以開始編輯裡面的檔案了</p>
 <h2 id="_1">預覽</h2>
 <p>寫完之後當然預覽一下</p>
-<div class="codehilite"><pre><span></span>gitbook serve 
+<div class="highlight"><pre><span></span>gitbook serve 
 </pre></div>
 
 
@@ -186,12 +186,12 @@ book.json 是這本書的額外設定<br>
 http://calibre-ebook.com/download</p>
 <p>以 mac 為例<br>
 需要下面這個指令，為 ebook-covert 建立一個捷徑，讓 gitbook 可以找到這個功能</p>
-<div class="codehilite"><pre><span></span>ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin
+<div class="highlight"><pre><span></span>ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin
 </pre></div>
 
 
 <p>以下的四個指令依序可以產生 html, pdf, epub, mobi</p>
-<div class="codehilite"><pre><span></span>gitbook build ./ 
+<div class="highlight"><pre><span></span>gitbook build ./ 
 gitbook pdf ./
 gitbook epub ./
 gitbook mobi ./
@@ -206,7 +206,7 @@ gitbook mobi ./
 接著 create a new book，到 setting 頁面往下拉，就會看到一個 URL</p>
 <p>接下來的操作就跟 git 基本上是一樣的，init, add, commit ... 等<br>
 只有在 remote 的設定有點不同</p>
-<div class="codehilite"><pre><span></span>git remote add gitbook &quot;URL&quot;
+<div class="highlight"><pre><span></span>git remote add gitbook &quot;URL&quot;
 git push -u gitbook
 </pre></div>
 

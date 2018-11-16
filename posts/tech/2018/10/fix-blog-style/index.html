@@ -33,7 +33,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -151,7 +151,7 @@ Life Lies in Traveling            </a>
 <h2 id="3">3. 第二行縮了四分之一字元</h2>
 <p>這個問題就比較頭痛了<br>
 因為我在模板找到這段的內容是</p>
-<div class="codehilite"><pre><span></span>{{ article.content }}
+<div class="highlight"><pre><span></span>{{ article.content }}
 </pre></div>
 
 
@@ -177,7 +177,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 <h4 id="setuppy">setup.py</h4>
 <p>平常我都是透過 <code>pelican -r -o output -s pelicanconf.py</code>這個指令來產生文章<br>
 所以第一步就是要從 <a href="https://github.com/getpelican/pelican/blob/master/setup.py#L15">setup.py</a> 找出 pelican 這個指令是哪裡來的</p>
-<div class="codehilite"><pre><span></span>        <span class="o">...</span>
+<div class="highlight"><pre><span></span>        <span class="o">...</span>
         <span class="s1">&#39;pelican = pelican:main&#39;</span><span class="p">,</span>
         <span class="o">...</span>
 </pre></div>
@@ -188,14 +188,14 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 那 Python 還能找到 <code>main</code> 就只剩下 <code>__init__.py</code> <br>
 扣除掉一些 parse 指令參數的程式碼<br>
 接下來最像是產生文章的程式碼就是<a href="https://github.com/getpelican/pelican/blob/master/pelican/__init__.py#L147">147行</a> 的 <code>run</code></p>
-<div class="codehilite"><pre><span></span>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">generators</span><span class="p">:</span>
+<div class="highlight"><pre><span></span>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">generators</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s1">&#39;generate_context&#39;</span><span class="p">):</span>
                 <span class="n">p</span><span class="o">.</span><span class="n">generate_context</span><span class="p">()</span>
 </pre></div>
 
 
 <p>下一步就是要從 <code>generators</code> 找出 <code>generate_context</code> 這個函式</p>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pelican.generators</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ArticlesGenerator</span><span class="p">,</span> <span class="n">PagesGenerator</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pelican.generators</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ArticlesGenerator</span><span class="p">,</span> <span class="n">PagesGenerator</span><span class="p">,</span>
                                 <span class="n">SourceFileGenerator</span><span class="p">,</span> <span class="n">StaticGenerator</span><span class="p">,</span>
                                 <span class="n">TemplatePagesGenerator</span><span class="p">)</span>
 </pre></div>
@@ -204,7 +204,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 <h4 id="pelicangeneratorspy">pelican/generators.py</h4>
 <p><code>generators</code>中看起來最有關的就是 <code>ArticlesGenerator</code><br>
 這個 class 也找到了 <code>generate_context</code></p>
-<div class="codehilite"><pre><span></span>                <span class="k">try</span><span class="p">:</span>
+<div class="highlight"><pre><span></span>                <span class="k">try</span><span class="p">:</span>
                     <span class="n">article_or_draft</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readers</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
                         <span class="n">base_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">content_class</span><span class="o">=</span><span class="n">Article</span><span class="p">,</span>
                         <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">,</span>
@@ -223,7 +223,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 接著 trace 這個 class 到<a href="https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L526">526行</a>就真的是文章內容第一次被產生的地方<br>
 到目前為止，文章的內容還是沒有多餘的空白<br>
 所以順利的話只要從這繼續 trace 下去就能找出問題</p>
-<div class="codehilite"><pre><span></span>        <span class="n">content</span><span class="p">,</span> <span class="n">reader_metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cached_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">))</span>
+<div class="highlight"><pre><span></span>        <span class="n">content</span><span class="p">,</span> <span class="n">reader_metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cached_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">content</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">content</span><span class="p">,</span> <span class="n">reader_metadata</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">cache_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">reader_metadata</span><span class="p">))</span>
@@ -231,7 +231,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 
 
 <p>最後發現問題是出在 <a href="https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L555">555行</a></p>
-<div class="codehilite"><pre><span></span>            <span class="k">if</span> <span class="n">content</span><span class="p">:</span>
+<div class="highlight"><pre><span></span>            <span class="k">if</span> <span class="n">content</span><span class="p">:</span>
                 <span class="n">content</span> <span class="o">=</span> <span class="n">typogrify_wrapper</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
 
@@ -240,7 +240,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 <p><a id='transport'></a></p>
 <h4 id="typogrify">typogrify</h4>
 <p>typogrify 是 <code>pelicanconf.py</code> (pelican 的設定檔) 中的一個設定</p>
-<div class="codehilite"><pre><span></span><span class="n">TYPOGRIFY</span><span class="o">=</span><span class="bp">False</span>
+<div class="highlight"><pre><span></span><span class="n">TYPOGRIFY</span><span class="o">=</span><span class="bp">False</span>
 </pre></div>
 
 

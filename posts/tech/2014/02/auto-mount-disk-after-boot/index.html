@@ -34,7 +34,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -129,11 +129,11 @@ Life Lies in Traveling            </a>
 <!--more-->
 
 <p>我們先來看一下 /etc/fstab 內的東西</p>
-<div class="codehilite"><pre><span></span>sudo cat /etc/fstab
+<div class="highlight"><pre><span></span>sudo cat /etc/fstab
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span># /etc/fstab: static file system information.
+<div class="highlight"><pre><span></span># /etc/fstab: static file system information.
 #
 # Use &#39;blkid&#39; to print the universally unique identifier for a
 # device; this may be used with UUID= as a more robust way to name devices
@@ -154,7 +154,7 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 1~2 是 root 的掛載<br>
 3~4 是 swap 的掛載<br>
 5~6 是我自己的 data 的掛載</p>
-<div class="codehilite"><pre><span></span>#data
+<div class="highlight"><pre><span></span>#data
 UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 </pre></div>
 
@@ -186,11 +186,11 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 <p>基本上 4 5 6 我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到</p>
 <h1 id="_1">測試</h1>
 <p>先看一下是否有掛載成功</p>
-<div class="codehilite"><pre><span></span>df
+<div class="highlight"><pre><span></span>df
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>檔案系統         1K-區段      已用      可用 已用 % 掛載點
+<div class="highlight"><pre><span></span>檔案系統         1K-區段      已用      可用 已用 % 掛載點
 /dev/sda1      103081248   9259936  88562048   10% /
 none                   4         0         4    0% /sys/fs/cgroup
 udev             3992780         4   3992776    1% /dev
@@ -204,24 +204,24 @@ none              102400        44    102356    1% /run/user
 
 <p>像我的最後面就出現了 data</p>
 <p>之後暫時將它卸載 (若 <code>df</code> 之後，分割區沒有出現，那就不用做這步了)</p>
-<div class="codehilite"><pre><span></span>sudo umount /dev/sda6
+<div class="highlight"><pre><span></span>sudo umount /dev/sda6
 </pre></div>
 
 
 <p>(/dev/sda6 要取代成你自己的位置 )<br>
 接著再執行一次</p>
-<div class="codehilite"><pre><span></span>df
+<div class="highlight"><pre><span></span>df
 </pre></div>
 
 
 <p>剛剛的分割區應該會不見，然後執行<br>
 開機自動掛載分割區</p>
-<div class="codehilite"><pre><span></span>sudo mount -a
+<div class="highlight"><pre><span></span>sudo mount -a
 </pre></div>
 
 
 <p>如果沒有錯誤訊息，就在執行一次</p>
-<div class="codehilite"><pre><span></span>df
+<div class="highlight"><pre><span></span>df
 </pre></div>
 
 

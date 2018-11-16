@@ -97,7 +97,7 @@
 &lt;/li&gt;
 &lt;li&gt;函式要能&lt;strong&gt;做好某件事&lt;/strong&gt;，或&lt;strong&gt;回答某個問題&lt;/strong&gt;，而這代表&lt;strong&gt;兩者不該同時發生！！！&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"username"&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"bob"&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt; &lt;span class="o"&gt;......&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"username"&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"bob"&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt; &lt;span class="o"&gt;......&lt;/span&gt;
 
 &lt;span class="c1"&gt;// refactored&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrExists&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"userName"&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
@@ -111,7 +111,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;deletePage&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;E_OK&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;deletePage&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;E_OK&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;registry&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;deleteReference&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;E_OK&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;configKeys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;deleteKey&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;makeKey&lt;/span&gt;&lt;span class="o"&gt;())&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;E_OK&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
             &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;log&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"page deleted"&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
@@ -173,14 +173,14 @@
 &lt;/li&gt;
 &lt;li&gt;利用建立物件的方式，減少函式參數的數量&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Circle&lt;/span&gt; &lt;span class="nf"&gt;makeCircle&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Circle&lt;/span&gt; &lt;span class="nf"&gt;makeCircle&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
 &lt;span class="c1"&gt;// refactored&lt;/span&gt;
 &lt;span class="n"&gt;Circle&lt;/span&gt; &lt;span class="nf"&gt;makeCirecle&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;POoint&lt;/span&gt; &lt;span class="n"&gt;center&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;radiue&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;避免使用輸出型參數，這十分的讓人困惑&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;appendFooter&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;appendFooter&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
 
 &lt;span class="c1"&gt;// refactored&lt;/span&gt;
 &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;appendFooter&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
@@ -205,7 +205,7 @@
 &lt;ul&gt;
 &lt;li&gt;提供資訊的註解&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;//format matched kk:mm:ss EEE, MMM dd, yyyy&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;//format matched kk:mm:ss EEE, MMM dd, yyyy&lt;/span&gt;
 &lt;span class="n"&gt;Pattern&lt;/span&gt; &lt;span class="n"&gt;tiMatcher&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Pattern&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;compile&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;
     &lt;span class="s"&gt;"\\d*:\\d*:\\d* \\w*, \\w* \\d*, \\d*"&lt;/span&gt;
 &lt;span class="o"&gt;)&lt;/span&gt;
@@ -220,7 +220,7 @@
 &lt;li&gt;大部分的註解&lt;/li&gt;
 &lt;li&gt;多餘的註解： 沒比程式碼本身透露更多資訊的註解&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nf"&gt;Person&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nf"&gt;Person&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt; &lt;span class="n"&gt;person&lt;/span&gt;
     &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
 &lt;span class="o"&gt;}&lt;/span&gt;
@@ -270,7 +270,7 @@
 &lt;p&gt;有時候if, while或簡單的函式，可以被縮減為一行，讓我們違反一般的縮排規則，&lt;strong&gt;不建議這麼做&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;render&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="kd"&gt;throws&lt;/span&gt; &lt;span class="n"&gt;Exception&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="o"&gt;;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;render&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="kd"&gt;throws&lt;/span&gt; &lt;span class="n"&gt;Exception&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="o"&gt;;}&lt;/span&gt;
 
 &lt;span class="c1"&gt;//better&lt;/span&gt;
 &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;render&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="kd"&gt;throws&lt;/span&gt; &lt;span class="n"&gt;Exception&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
@@ -303,7 +303,7 @@ public class Quadratic {
 &lt;li&gt;模組不該知道它操作的物件的內部操作&lt;/li&gt;
 &lt;li&gt;別使用一連串的程式呼叫&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;final&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;outputDir&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ctxt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getOptions&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getScratchDir&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getAbsolutePaty&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;final&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;outputDir&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ctxt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getOptions&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getScratchDir&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getAbsolutePaty&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
 
 &lt;span class="c1"&gt;//refactored&lt;/span&gt;
 &lt;span class="n"&gt;Option&lt;/span&gt; &lt;span class="n"&gt;opts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ctxt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getOptions&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
@@ -329,7 +329,7 @@ public class Quadratic {
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ACMEPort&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;ACMEPort&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ACMEPort&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;ACMEPort&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
 
 &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;open&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
@@ -1330,7 +1330,7 @@ Uncle Bob 的書真的每個階段看都會有很不一樣的感覺&lt;br/&gt;
 &lt;h2 id="3"&gt;3. 第二行縮了四分之一字元&lt;/h2&gt;
 &lt;p&gt;這個問題就比較頭痛了&lt;br&gt;
 因為我在模板找到這段的內容是&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{{ article.content }}
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{{ article.content }}
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1356,7 +1356,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 &lt;h4 id="setuppy"&gt;setup.py&lt;/h4&gt;
 &lt;p&gt;平常我都是透過 &lt;code&gt;pelican -r -o output -s pelicanconf.py&lt;/code&gt;這個指令來產生文章&lt;br&gt;
 所以第一步就是要從 &lt;a href="https://github.com/getpelican/pelican/blob/master/setup.py#L15"&gt;setup.py&lt;/a&gt; 找出 pelican 這個指令是哪裡來的&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        &lt;span class="o"&gt;...&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        &lt;span class="o"&gt;...&lt;/span&gt;
         &lt;span class="s1"&gt;&amp;#39;pelican = pelican:main&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
         &lt;span class="o"&gt;...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1367,14 +1367,14 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 那 Python 還能找到 &lt;code&gt;main&lt;/code&gt; 就只剩下 &lt;code&gt;__init__.py&lt;/code&gt; &lt;br&gt;
 扣除掉一些 parse 指令參數的程式碼&lt;br&gt;
 接下來最像是產生文章的程式碼就是&lt;a href="https://github.com/getpelican/pelican/blob/master/pelican/__init__.py#L147"&gt;147行&lt;/a&gt; 的 &lt;code&gt;run&lt;/code&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;generators&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;generators&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
             &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;hasattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;generate_context&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
                 &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;generate_context&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;下一步就是要從 &lt;code&gt;generators&lt;/code&gt; 找出 &lt;code&gt;generate_context&lt;/code&gt; 這個函式&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pelican.generators&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ArticlesGenerator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;PagesGenerator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pelican.generators&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ArticlesGenerator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;PagesGenerator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                                 &lt;span class="n"&gt;SourceFileGenerator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;StaticGenerator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                                 &lt;span class="n"&gt;TemplatePagesGenerator&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1383,7 +1383,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 &lt;h4 id="pelicangeneratorspy"&gt;pelican/generators.py&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;generators&lt;/code&gt;中看起來最有關的就是 &lt;code&gt;ArticlesGenerator&lt;/code&gt;&lt;br&gt;
 這個 class 也找到了 &lt;code&gt;generate_context&lt;/code&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;                &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;                &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
                     &lt;span class="n"&gt;article_or_draft&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readers&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
                         &lt;span class="n"&gt;base_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;content_class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Article&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                         &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -1402,7 +1402,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 接著 trace 這個 class 到&lt;a href="https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L526"&gt;526行&lt;/a&gt;就真的是文章內容第一次被產生的地方&lt;br&gt;
 到目前為止，文章的內容還是沒有多餘的空白&lt;br&gt;
 所以順利的話只要從這繼續 trace 下去就能找出問題&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;reader_metadata&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cached_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;reader_metadata&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cached_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
             &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;reader_metadata&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;reader&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
             &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cache_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;reader_metadata&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -1410,7 +1410,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 
 
 &lt;p&gt;最後發現問題是出在 &lt;a href="https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L555"&gt;555行&lt;/a&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
                 &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;typogrify_wrapper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1419,7 +1419,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 &lt;p&gt;&lt;a id='transport'&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id="typogrify"&gt;typogrify&lt;/h4&gt;
 &lt;p&gt;typogrify 是 &lt;code&gt;pelicanconf.py&lt;/code&gt; (pelican 的設定檔) 中的一個設定&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TYPOGRIFY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TYPOGRIFY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1522,7 +1522,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 我在寫 Lisp 的時候，連 Syntax Highlight 都不懂&lt;br&gt;
 還要不斷數括號數量，才知道程式能不能跑的&lt;/p&gt;
 &lt;p&gt;e.g., &lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(cond ((eq &amp;#39;a &amp;#39;b) &amp;#39;first)  (atom &amp;#39;a)  &amp;#39;second))
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(cond ((eq &amp;#39;a &amp;#39;b) &amp;#39;first)  (atom &amp;#39;a)  &amp;#39;second))
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1555,7 +1555,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 就是帶了一些影片，讓大家 Recap 一下白天老師教的內容&lt;br&gt;
 我主要把時間都花在 Exercise 的設計上&lt;/p&gt;
 &lt;h3 id="exercise4-python-ex4py"&gt;Exercise4 用 Python 做排序 (ex4.py)&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;some_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;some_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
     &lt;span class="mi"&gt;65&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;81&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;65&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;86&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;72&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;27&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="mi"&gt;76&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;46&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;98&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;49&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;57&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;52&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;46&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;47&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;59&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;74&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;61&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;47&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;33&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;89&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;99&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -1581,7 +1581,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 甚至我第一次用 Python 爬選課系統的時候，連 json 模組都不會用&lt;br&gt;
 只會照著 json 規定的格式，慢慢地做字串處理&lt;br&gt;
 e.g., &lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;json_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;course_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;: &amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;course_id&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;}&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;json_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;course_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;: &amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;course_id&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;}&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1616,7 +1616,7 @@ e.g., &lt;/p&gt;
 總覺得要寫一個稍微有用的程式是非常非常遙遠的事&lt;br&gt;
 所以大二下的 C++ ，對我來我說是寫程式很大的里程碑&lt;/p&gt;
 &lt;p&gt;這題的解答也是差不多一行而已&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ptt_data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;some_key&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ptt_data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;some_key&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1774,7 +1774,7 @@ btw MOZE 有說之後會提供 web 版的匯入工具&lt;/p&gt;
 &lt;p&gt;當然我也寫了一個小 script&lt;br&gt;
 &lt;strong&gt;&lt;a href="https://github.com/Lee-W/AndroMoney_to_MOZE_transformater"&gt;AndroMoney_to_MOZE_transformater&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="script"&gt;Script 使用方式&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python transformater.py --input_file &lt;span class="s2"&gt;&amp;quot;Your input filename&amp;quot;&lt;/span&gt; extract
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python transformater.py --input_file &lt;span class="s2"&gt;&amp;quot;Your input filename&amp;quot;&lt;/span&gt; extract
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1788,7 +1788,7 @@ btw MOZE 有說之後會提供 web 版的匯入工具&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;後來發現還有另一個問題是不同幣別的轉帳， AndroMoney 匯出的資料不會有轉入的金額&lt;br&gt;
 所以沒辦法自動化，這點倒是比較麻煩&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python transformater.py transformat --input_file &lt;span class="s2"&gt;&amp;quot;Your input filename&amp;quot;&lt;/span&gt; --output_file MOZE.csv
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python transformater.py transformat --input_file &lt;span class="s2"&gt;&amp;quot;Your input filename&amp;quot;&lt;/span&gt; --output_file MOZE.csv
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -2112,7 +2112,7 @@ Google 一下「PyCon」、「Instagram」有很多很清楚地整理&lt;br&gt;
 這就會導致我們必須先確認他的型態是否符合預期&lt;br&gt;
 如果不符合就要在做 encode 或 decode&lt;/p&gt;
 &lt;p&gt;可能就會像下面這樣&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;abc&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;abc&amp;#39;&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;six&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text_type&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;encode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;encode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;mymac&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;hamc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -2189,7 +2189,7 @@ Google 一下「PyCon」、「Instagram」有很多很清楚地整理&lt;br&gt;
 &lt;p&gt;&lt;img alt="Chinese Intro" src="http://lee-w.github.io/images/posts-image/2017-06-11-PyCon-TW-2017-Day3/1-Keynote-Chineses.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Russell 開場就講了一串中文，引來如雷的掌聲 xd&lt;/p&gt;
 &lt;p&gt;他在 PyCon 官網的介紹也很有趣 xd&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;他剩下兩洲就能完成 Python 會議基調演講全大洲制霸；
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;他剩下兩洲就能完成 Python 會議基調演講全大洲制霸；
 只要企鵝們願意舉辦 PyCon 南極洲，他很樂意提供演說。
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2320,14 +2320,14 @@ Parallel: 一個時間點同時跑&lt;/p&gt;
 大家都得講得很快&lt;/p&gt;
 &lt;p&gt;今年的 PyCon 金句大概就是 Hisahiro Ohmura 推坑 PyCon JP 的&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Buy First, Consider Second" src="http://lee-w.github.io/images/posts-image/2017-06-11-PyCon-TW-2017-Day3/2-buy-first.jpg"&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;聽不懂日文？
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;聽不懂日文？
 沒關係
 我也聽不太懂中文
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;另外，就像 jserv 的 slide 上說的&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;每年的 pycon 好像都有其他語言的東西混進來，像是 15 年有人根本是在講 d3.js
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;每年的 pycon 好像都有其他語言的東西混進來，像是 15 年有人根本是在講 d3.js
 只是用 python 幫忙準備資料 ;
 今年是有人全部都在講 Rust，只是我們用 Rust 寫了個 python module XDDD
 &lt;/pre&gt;&lt;/div&gt;
@@ -2401,7 +2401,7 @@ Parallel: 一個時間點同時跑&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Raise clear, verbose exception&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;http://api.com/user&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;RequestError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;APIFetchError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Could not get user list&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -2946,14 +2946,14 @@ The sequence of words and expression is important sequential data.&lt;/p&gt;
 &lt;p&gt;這場我真的就有點聽不太懂了＠＠&lt;/p&gt;</content><category term="Python"></category><category term="Conference"></category><category term="PyCon"></category></entry><entry><title>Common Neovim Problems</title><link href="http://lee-w.github.io/posts/tech/2017/05/common-neovim-problems" rel="alternate"></link><published>2017-05-14T13:13:00+08:00</published><updated>2017-05-14T13:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-05-14:/posts/tech/2017/05/common-neovim-problems</id><summary type="html"></summary><content type="html">&lt;!--more--&gt;
 
 &lt;h2 id="load-vimrc-from-neovim"&gt;Load ~/.vimrc from neovim&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;XDG_CONFIG_HOME&lt;/span&gt;&lt;span class="p"&gt;:=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="p"&gt;/.config&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;XDG_CONFIG_HOME&lt;/span&gt;&lt;span class="p"&gt;:=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="p"&gt;/.config&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
 ln -s ~/.vim &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim
 ln -s ~/.vimrc &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim/init.vim
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2 id="no-python-interpreter-found"&gt;No python interpreter found.&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install neovim
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install neovim
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3324,7 +3324,7 @@ However, I think this method might still be useful to gain insight in other kind
 然後你就可以從 &lt;code&gt;https://telegram.me/&amp;lt;bot_username&amp;gt;&lt;/code&gt; 找到剛申請的 bot&lt;/p&gt;
 &lt;h2 id="telegram-bot-api-wrapper"&gt;Telegram Bot API Wrapper&lt;/h2&gt;
 &lt;p&gt;開發上，我使用的是&lt;a href="https://github.com/python-telegram-bot/python-telegram-bot"&gt;python-telegram-bot&lt;/a&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install python-telegram-bot
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install python-telegram-bot
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3334,7 +3334,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)&lt;br&gt;
 而它是兩種都支援&lt;/p&gt;
 &lt;h2 id="star-programming"&gt;Star Programming&lt;/h2&gt;
 &lt;p&gt;先附上全部的 code，後面再慢慢解釋&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
 
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;telegram&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;
@@ -3371,14 +3371,14 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)&lt;br&gt;
 &lt;h3 id="setup"&gt;Setup&lt;/h3&gt;
 &lt;p&gt;其中有兩個地方，必須要改成自己的設定&lt;/p&gt;
 &lt;h4 id="1-api-token"&gt;1. API Token&lt;/h4&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;bot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;telegram&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your API Token&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;bot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;telegram&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Bot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your API Token&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Your API Token 要改成剛剛取得的 API Token&lt;/p&gt;
 &lt;h4 id="2-webhook-url"&gt;2. Webhook URL&lt;/h4&gt;
 &lt;p&gt;_set_webhook 中的 Your URL&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;statue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_webhook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://Your URL/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;statue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_webhook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://Your URL/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3396,7 +3396,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)&lt;br&gt;
 也就是告訴 Telegram 要把 Bot 收到的訊息傳到哪&lt;br&gt;
 而 &lt;code&gt;set_webhook&lt;/code&gt; 前面要有個 _的原因是我不希望它被其他的 code 使用&lt;br&gt;
 但 Python 本身並不支援 Private 的概念，而是慣例上在前面加一個底線&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_webhook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://Your URL/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Webhook setup failed&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -3405,7 +3405,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)&lt;br&gt;
 
 
 &lt;p&gt;在最後 run Flask app 前，要先把 webhook URL 設定好&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;_set_webhook&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -3413,7 +3413,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)&lt;br&gt;
 
 &lt;h3 id="wehook95handler"&gt;wehook_handler&lt;/h3&gt;
 &lt;p&gt;這裡就是 bot 收到訊息要怎麼處理&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/hook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;webhook_handler&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;POST&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;telegram&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Update&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;de_json&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_json&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;force&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -3432,7 +3432,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)&lt;br&gt;
 跟 django 不同的是&lt;br&gt;
 Flask 把 request 這種幾乎所有 view function 都會用到的參數直接變成全域可讀取的變數&lt;br&gt;
 也就是最一開始的&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3471,27 +3471,27 @@ Flask 把 request 這種幾乎所有 view function 都會用到的參數直接�
 也是在故事中，讓我有感觸的部分&lt;br&gt;
 記錄下它們，是為了提醒我不要忘了現在看完這本書的感受&lt;/p&gt;
 &lt;h3 id="-"&gt;推薦序 - 如果在工地，一個年輕作家的養成&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;他看見，年輕不羈的工人願意將寶特瓶壓扁資源回收，是為了讓附近的低收入戶可以拿去賣錢。
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;他看見，年輕不羈的工人願意將寶特瓶壓扁資源回收，是為了讓附近的低收入戶可以拿去賣錢。
 學有專精的電焊師傅，在得知外勞的悲慘待遇後，會願意將一身技藝傾囊相授，好讓弱者掙脫被壓榨的命運。
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3 id="_2"&gt;阿忠之死&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;晚上，阿忠的嫂嫂說阿忠的喪事已經辦好了，打來是為了要告訴我：「阿忠對於自己沒能還你那五千元，很對不起。」
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;晚上，阿忠的嫂嫂說阿忠的喪事已經辦好了，打來是為了要告訴我：「阿忠對於自己沒能還你那五千元，很對不起。」
 
 生命是有層次的，一層一層剝開後，每一片回憶都會讓人流淚。
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3 id="_3"&gt;台灣媳婦&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果我們判斷人的標準，是用刻苦，是用勤奮，是用力爭上游的努力和對於生活的認真，去決定一個人的品格
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果我們判斷人的標準，是用刻苦，是用勤奮，是用力爭上游的努力和對於生活的認真，去決定一個人的品格
 那我們不可能看不出來她們值得擁有尊敬，我們又怎麼能夠允許這個社會將它們分別列上不同的標籤呢？
 我們既然知道以一個人的經濟條件去判定其社會階級以及地位是錯的，並深惡譴責，那又為什麼不改變對她們的看法呢？
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3 id="_4"&gt;隔閡&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;那種講理財和產業動態的書從來就無法引起我的興趣。
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;那種講理財和產業動態的書從來就無法引起我的興趣。
 曾幾何時，我發現自己在看任何文字或是哥與、電影時，總感覺到一股不舒服感。
 這些文字似乎與我有著隔閡。
 我想，是那種對於內容的不快感使我感到很大的不舒服。
@@ -3506,7 +3506,7 @@ Flask 把 request 這種幾乎所有 view function 都會用到的參數直接�
 
 
 &lt;h3 id="_5"&gt;看板人&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;這社會要求他人有尊嚴活著的，幾乎都是不需為下一餐煩憂，並且收入穩定的人。
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;這社會要求他人有尊嚴活著的，幾乎都是不需為下一餐煩憂，並且收入穩定的人。
 而我不是，我能理解他們只是想活著，卑微和努力的活著。
 對於那些喊著尊嚴的人，因為那傷痕我無言以對。
 &lt;/pre&gt;&lt;/div&gt;
@@ -3529,7 +3529,7 @@ Flask 把 request 這種幾乎所有 view function 都會用到的參數直接�
 自以為是的正義，不見得就是正義&lt;br&gt;
 而我們又是多麼習慣於帶著有色的眼鏡，去看、去批評、去攻擊與我們不同的人們&lt;/p&gt;
 &lt;p&gt;我很喜歡張獻忠先生在 TEDx Tainan 2016 說的話&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果今天換作是我們遇到同樣的處境
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果今天換作是我們遇到同樣的處境
 
 我們真的能處理得更好嗎？
 &lt;/pre&gt;&lt;/div&gt;
@@ -3539,7 +3539,7 @@ Flask 把 request 這種幾乎所有 view function 都會用到的參數直接�
 這樣的同理並不是、也不會讓對的事情變錯的，或錯的事情就變成對的&lt;br&gt;
 而是嘗試去思考，除了對錯以外的事&lt;/p&gt;
 &lt;p&gt;最後我想分享一段節錄自實驗室學長在上大學部的課時說過的話&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;回高中聊天的時候，會發現有些在比較後面學校的同學
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;回高中聊天的時候，會發現有些在比較後面學校的同學
 他們的家境可能並不是那麼好，可能要打工存學費
 生存都是件辛苦的事了，很難有餘力在做出太多的改變
 而我們是一群夠幸運的人，能順利地唸到成大
@@ -3591,25 +3591,25 @@ The force is strong in this session&lt;/p&gt;
 &lt;p&gt;一把最簡單的光劍大概台幣 1000 可以起來&lt;br&gt;
 感覺有時間蠻值得來玩玩的 xD&lt;/p&gt;</content><category term="Conference"></category><category term="SITCON"></category></entry><entry><title>Tool for Checking Python Coding Style</title><link href="http://lee-w.github.io/posts/tech/2017/03/tools-for-checking-python-coding-style" rel="alternate"></link><published>2017-03-15T19:13:00+08:00</published><updated>2017-03-15T19:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-15:/posts/tech/2017/03/tools-for-checking-python-coding-style</id><summary type="html">&lt;p&gt;&lt;a href="https://www.pylint.org"&gt;Pylint&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="setup"&gt;Setup&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pylint
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pylint
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2 id="usage"&gt;Usage&lt;/h2&gt;
 &lt;h3 id="generate-a-code-quality-report"&gt;Generate a code quality report&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pylint your_code.py
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pylint your_code.py
 &lt;/pre&gt;&lt;/div&gt;
 
 
 </summary><content type="html">&lt;p&gt;&lt;a href="https://www.pylint.org"&gt;Pylint&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="setup"&gt;Setup&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pylint
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pylint
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2 id="usage"&gt;Usage&lt;/h2&gt;
 &lt;h3 id="generate-a-code-quality-report"&gt;Generate a code quality report&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pylint your_code.py
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pylint your_code.py
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3621,7 +3621,7 @@ The force is strong in this session&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Generate &lt;code&gt;pylintrc&lt;/code&gt; file&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pylint --generate-rcfile &amp;gt; ~/.pylintrc
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pylint --generate-rcfile &amp;gt; ~/.pylintrc
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3630,7 +3630,7 @@ For further customization, you'll have to change this file.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Generate a code quality report using you &lt;code&gt;pylintrc&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pylint --rcfile ~/.pylintrc you_code.py
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pylint --rcfile ~/.pylintrc you_code.py
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3641,7 +3641,7 @@ For further customization, you'll have to change this file.&lt;/p&gt;
 It uses the new async feature in vim 8.&lt;br&gt;
 Thus, it checks your code when you are typing. (You can disable it.)&lt;/p&gt;
 &lt;p&gt;The following settings are for pylint in &lt;code&gt;~/.vimrc&lt;/code&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# The default value is pytlinh&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# The default value is pytlinh&lt;/span&gt;
 &lt;span class="c1"&gt;# If your pylint executable is not pylint, it should be set &lt;/span&gt;
 &lt;span class="nb"&gt;let&lt;/span&gt; g:ale_python_pylint_executable &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pylint&amp;#39;&lt;/span&gt;
 
@@ -3654,7 +3654,7 @@ Thus, it checks your code when you are typing. (You can disable it.)&lt;/p&gt;
 For Python, &lt;code&gt;flake8&lt;/code&gt;, &lt;code&gt;mypy&lt;/code&gt; are also used.&lt;br&gt;
 Thus, you might find that even if you ignore some rules in &lt;code&gt;pylintc&lt;/code&gt;, you are still notified.&lt;/p&gt;
 &lt;p&gt;In this case, add the following setting in &lt;code&gt;~/.vimrc&lt;/code&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;let&lt;/span&gt; g:ale_linters &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;let&lt;/span&gt; g:ale_linters &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 &lt;span class="se"&gt;\ &lt;/span&gt;  &lt;span class="s1"&gt;&amp;#39;python&amp;#39;&lt;/span&gt;: &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pylint&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;,
 &lt;span class="se"&gt;\}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -3667,7 +3667,7 @@ Thus, you might find that even if you ignore some rules in &lt;code&gt;pylintc&l
 &lt;p&gt;&lt;img alt="python-mode-screenshot" src="https://i.imgur.com/5FffIqN.png"&gt;&lt;br&gt;
 Unlike &lt;code&gt;ale&lt;/code&gt;, &lt;code&gt;python-mode&lt;/code&gt; check your code only when you save or open your python file (You can set this in your &lt;code&gt;~/.vimrc&lt;/code&gt;)&lt;/p&gt;
 &lt;p&gt;Add these lines in &lt;code&gt;~/.vimrc&lt;/code&gt;  to enable &lt;code&gt;pylint&lt;/code&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;let g:pymode_lint_checkers = [&amp;#39;pyflakes&amp;#39;, &amp;#39;pylint&amp;#39;, &amp;#39;pep8&amp;#39;]
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;let g:pymode_lint_checkers = [&amp;#39;pyflakes&amp;#39;, &amp;#39;pylint&amp;#39;, &amp;#39;pep8&amp;#39;]
 let g:pymode_lint_ignore = &amp;quot;C0111,W0621,E501,F0002&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -3763,13 +3763,13 @@ let g:pymode_lint_ignore = &amp;quot;C0111,W0621,E501,F0002&amp;quot;
 &lt;h2 id="git-ignore-io"&gt;git ignore-io&lt;/h2&gt;
 &lt;p&gt;這個工具主要是從&lt;a href="https://www.gitignore.io"&gt;gitignoore.io&lt;/a&gt; 上下載 .gitignore 的範本&lt;br&gt;
 e.g. &lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git ignore-io -a vim osx python
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git ignore-io -a vim osx python
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;像這就是 vim 常見的暫存檔們&lt;br&gt;
 一般來說應該被忽略掉，不用被 commit&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Created by https://www.gitignore.io/api/vim
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Created by https://www.gitignore.io/api/vim
 
 ### Vim ###
 # swap
@@ -3793,7 +3793,7 @@ tags
 &lt;p&gt;當初可是連文件都要寫好，才會被作者接受&lt;br&gt;
 所以我這裡就直接沿用我當初寫的文件了 xd&lt;/p&gt;
 &lt;p&gt;Without option, &lt;code&gt;git ignore-io &amp;lt;type&amp;gt;&lt;/code&gt; shows the sample gitignore of specified types on screen.  &lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git ignore-io vim
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git ignore-io vim
 
     &lt;span class="c1"&gt;# Created by https://www.gitignore.io/api/vim&lt;/span&gt;
 
@@ -3812,7 +3812,7 @@ tags
 &lt;li&gt;&lt;code&gt;-a&lt;/code&gt; or &lt;code&gt;--append&lt;/code&gt; to append the result to &lt;code&gt;.gitignore&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-r&lt;/code&gt; or &lt;code&gt;--replace&lt;/code&gt; to export &lt;code&gt;.gitignore&lt;/code&gt; with the result&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git ignore-io vim python
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git ignore-io vim python
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3825,7 +3825,7 @@ To list all the available types:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;-s &amp;lt;word&amp;gt;&lt;/code&gt; or &lt;code&gt;--search &amp;lt;word&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git ignore-io -s ja
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git ignore-io -s ja
 
     django
     jabref
@@ -3934,7 +3934,7 @@ To list all the available types:&lt;/p&gt;
 &lt;p&gt;助人的感覺驅使我們努力改變他們，不管做不做得到，也不顧會不會產生意想不到的後果&lt;/p&gt;
 &lt;h3 id="_9"&gt;犧牲奉獻做公益&lt;/h3&gt;
 &lt;p&gt;這是你想擁有但很可能缺乏的力量之一：&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;神奇的後見之明
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;神奇的後見之明
 保證你的援助不會損及對方文化，也不會引發嫉妒
 不會因為破壞而造成反彈，更保證人們對你的援助只有感激與敬佩
 &lt;/pre&gt;&lt;/div&gt;
@@ -4043,7 +4043,7 @@ To list all the available types:&lt;/p&gt;
 然後這個目標就會擺在這，等到很久以後再想起它&lt;br&gt;
 恩，就像新年新希望一樣&lt;/p&gt;
 &lt;h3 id="_2"&gt;怎麼樣才能達到目標呢？&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;每天做一點點
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;每天做一點點
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4092,7 +4092,7 @@ To list all the available types:&lt;/p&gt;
 &lt;h3 id="_4"&gt;一天不做，不會怎樣啦&lt;/h3&gt;
 &lt;p&gt;花了好久時間建立的習慣，還是會有想怠惰的時候&lt;/p&gt;
 &lt;p&gt;我很喜歡「&lt;a href="http://lee-w.github.io/posts/book/2016/08/how-will-you-measure-your-life"&gt;你如何衡量你的人生&lt;/a&gt;」的一句話&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;百分之百的堅持比百分之九十八容易
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;百分之百的堅持比百分之九十八容易
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4163,7 +4163,7 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別&l
 也就是使用者的「意圖」&lt;/p&gt;
 &lt;h2 id="based-on-keyword"&gt;Based on Keyword&lt;/h2&gt;
 &lt;p&gt;上一篇文章，輸入關鍵字就能回傳 template message 的 bot 也是用這樣的方式實作的&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;button&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;button&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="c1"&gt;# Send ButtonTemplate&lt;/span&gt;
     &lt;span class="o"&gt;......&lt;/span&gt;
 &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;confirm&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -4182,7 +4182,7 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別&l
 可以試著找出「天氣」是否有出現在使用者的問句中&lt;br&gt;
 再來判斷「今天」, 「明天」這樣敘述時間的詞&lt;/p&gt;
 &lt;p&gt;e.g.&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;天氣&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;天氣&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;今天&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;today_s_weather&lt;/span&gt;
     &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;明天&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -4208,7 +4208,7 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別&l
 &lt;p&gt;Artificial Intelligence Modelling Language&lt;br&gt;
 它是一款基於 XML 的 markup language&lt;/p&gt;
 &lt;p&gt;這是最基本的 AIML&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;aiml&lt;/span&gt; &lt;span class="na"&gt;version=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1.0.1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;encoding=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;UTF-8&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;aiml&lt;/span&gt; &lt;span class="na"&gt;version=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1.0.1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;encoding=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;UTF-8&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
    &lt;span class="nt"&gt;&amp;lt;category&amp;gt;&lt;/span&gt;
       &lt;span class="nt"&gt;&amp;lt;pattern&amp;gt;&lt;/span&gt; HELLO ALICE &lt;span class="nt"&gt;&amp;lt;/pattern&amp;gt;&lt;/span&gt;
 
@@ -4223,7 +4223,7 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別&l
 
 &lt;p&gt;只要符合特定的 pattern，就回傳指定的 template&lt;br&gt;
 也能透過 &lt;code&gt;&amp;lt;random&amp;gt;&lt;/code&gt; 這樣的 tag，從多種回覆隨機丟一種回傳&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;random&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;random&amp;gt;&lt;/span&gt;
    &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt; response1 &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
    &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt; response2 &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
    ...
@@ -4268,14 +4268,14 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別&l
 &lt;ul&gt;
 &lt;li&gt;Question&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;how is the weather in the Taipei
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;how is the weather in the Taipei
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;ul&gt;
 &lt;li&gt;Response&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="nt"&gt;&amp;quot;query&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;how is the weather in the Taipei&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="nt"&gt;&amp;quot;topScoringIntent&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
         &lt;span class="nt"&gt;&amp;quot;intent&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;GetCurrentWeather&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -4308,7 +4308,7 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別&l
 &lt;ul&gt;
 &lt;li&gt;Question&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Hey Calendar, schedule lunch with 
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Hey Calendar, schedule lunch with 
 Mary Johnson at 12 pm tomorrow.
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -4316,7 +4316,7 @@ Mary Johnson at 12 pm tomorrow.
 &lt;ul&gt;
 &lt;li&gt;Response&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="nt"&gt;&amp;quot;action&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;meeting.create&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="nt"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Lunch with Mary Johnson&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="nt"&gt;&amp;quot;invitees&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Mary Johnson&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
@@ -4491,7 +4491,7 @@ Heroku 則是用來讓其他人測試功能&lt;br&gt;
 &lt;h3 id="add-remote"&gt;Add Remote&lt;/h3&gt;
 &lt;p&gt;在部署之前要先安裝&lt;a href="https://devcenter.heroku.com/articles/heroku-command-line"&gt;Heroku CLI&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;再來我們要到原本 line-echobot，將 heroku 加入這個專案的 remote&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;heroku login
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;heroku login
 heroku git:remote -a leewbot
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -4502,7 +4502,7 @@ heroku git:remote -a leewbot
 &lt;h3 id="environment-variables"&gt;Environment Variables&lt;/h3&gt;
 &lt;p&gt;首先是我們原先設定的環境變數&lt;br&gt;
 Heroku 是透過這個指令來做設定&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;heroku config:set &lt;span class="s2"&gt;&amp;quot;env key&amp;quot;&lt;/span&gt;:&lt;span class="s2"&gt;&amp;quot;env value&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;heroku config:set &lt;span class="s2"&gt;&amp;quot;env key&amp;quot;&lt;/span&gt;:&lt;span class="s2"&gt;&amp;quot;env value&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4523,7 +4523,7 @@ Heroku 是透過這個指令來做設定&lt;/p&gt;
 &lt;p&gt;這裡使用的部署套件是 gunicorn&lt;br&gt;
 先在 &lt;code&gt;requirements.txt&lt;/code&gt; 加入 &lt;code&gt;gunicorn==19.0.0&lt;/code&gt;&lt;br&gt;
 再來創一個 &lt;code&gt;Profile&lt;/code&gt;，內容是&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;gunicorn&lt;/span&gt; &lt;span class="n"&gt;line_echobot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;wsgi&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;gunicorn&lt;/span&gt; &lt;span class="n"&gt;line_echobot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;wsgi&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4556,14 +4556,14 @@ Heroku 是透過這個指令來做設定&lt;/p&gt;
 可以在&lt;a href="https://devdocs.line.me/en/"&gt;API Reference - Messaging API&lt;/a&gt; 找到&lt;br&gt;
 之後的文章，會談如何使用文字以外的功能&lt;/p&gt;
 &lt;p&gt;這裡直接使用官方提供的&lt;a href="https://github.com/line/line-bot-sdk-python"&gt;line-bot-sdk-python&lt;/a&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip3 install line-bot-sdk
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip3 install line-bot-sdk
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;另外官方也提供&lt;a href="https://github.com/line/line-bot-sdk-java"&gt;java&lt;/a&gt;, &lt;a href="https://github.com/line/line-bot-sdk-go"&gt;go&lt;/a&gt;, &lt;a href="https://github.com/line/line-bot-sdk-php"&gt;php&lt;/a&gt;, &lt;a href="https://github.com/line/line-bot-sdk-ruby"&gt;ruby&lt;/a&gt;, &lt;a href="https://github.com/line/line-bot-sdk-perl"&gt;perl&lt;/a&gt; 的版本&lt;/p&gt;
 &lt;h1 id="start-project"&gt;Start Project&lt;/h1&gt;
 &lt;h2 id="create-project"&gt;Create Project&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a line_echobot project&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create a line_echobot project&lt;/span&gt;
 django-admin startproject line_echobot
 
 &lt;span class="c1"&gt;# Create an echobot app&lt;/span&gt;
@@ -4576,7 +4576,7 @@ python3 manage.py startapp echobot
 ( 可以在 Line Bot 的 &lt;code&gt;Line Deverloper&lt;/code&gt; 頁面取得 )&lt;/p&gt;
 &lt;p&gt;不過這些值不該被 git 記錄，所以不該被寫死在 &lt;code&gt;settings.py&lt;/code&gt; 中&lt;br&gt;
 建議將這些值寫入環境變數&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;SECRET_KEY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your django secret key&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;SECRET_KEY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your django secret key&amp;#39;&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LINE_CHANNEL_ACCESS_TOKEN&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your line channel access token&amp;#39;&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your line channel secret&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -4585,7 +4585,7 @@ python3 manage.py startapp echobot
 &lt;p&gt;執行時，讓設定檔先去讀取這些環境變數&lt;br&gt;
 下面的 &lt;code&gt;get_env_variable&lt;/code&gt; 函式是用來取得環境變數&lt;br&gt;
 只要有少設定，就會丟出 ImproperlyConfigured 的例外事件中斷執行&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# line_echobot/settings.py&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# line_echobot/settings.py&lt;/span&gt;
 
 &lt;span class="o"&gt;......&lt;/span&gt;
 
@@ -4621,7 +4621,7 @@ python3 manage.py startapp echobot
 讓 Line 可以把 Bot 收到的訊息傳給我們&lt;/p&gt;
 &lt;p&gt;先在 project 的 &lt;code&gt;urls.py&lt;/code&gt; 設定&lt;br&gt;
 讓 project 可以找到 echobot 這個 app 的 &lt;code&gt;urls.py&lt;/code&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# line_echobot/urls.py&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# line_echobot/urls.py&lt;/span&gt;
 &lt;span class="o"&gt;......&lt;/span&gt;
 
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;echobot&lt;/span&gt;
@@ -4637,7 +4637,7 @@ python3 manage.py startapp echobot
 
 &lt;p&gt;接著在 echobot 內，創一個 &lt;code&gt;urls.py&lt;/code&gt;&lt;br&gt;
 並將 url 再導到 &lt;code&gt;callback&lt;/code&gt;，呼叫 &lt;code&gt;views.py&lt;/code&gt; 裡面的 &lt;code&gt;callback&lt;/code&gt; 函式 ( 接下來才會實作 )&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# echobot/urls.py&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# echobot/urls.py&lt;/span&gt;
 
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.conf.urls&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;
 
@@ -4655,7 +4655,7 @@ python3 manage.py startapp echobot
 &lt;p&gt;接下來就是要在 &lt;code&gt;echobot/views.py&lt;/code&gt; 實作 &lt;code&gt;callback&lt;/code&gt; 了&lt;/p&gt;
 &lt;h3 id="initial"&gt;Initial&lt;/h3&gt;
 &lt;p&gt;先 import 相關的函式庫&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.conf&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.conf&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.http&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;HttpResponse&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HttpResponseBadRequest&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HttpResponseForbidden&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.views.decorators.csrf&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;csrf_exempt&lt;/span&gt;
 
@@ -4666,14 +4666,14 @@ python3 manage.py startapp echobot
 
 
 &lt;p&gt;透過 line_bot_api 傳訊息給 Line，讓 Line 轉傳給使用者&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;line_bot_api&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LineBotApi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_ACCESS_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;line_bot_api&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LineBotApi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_ACCESS_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3 id="callback-function"&gt;Callback Function&lt;/h3&gt;
 &lt;p&gt;有兩種方法可以處理 Line Server 送過來的訊息&lt;br&gt;
 這裡先用 Todo 記著，待會再來補上&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# TODO: Define Receiver&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# TODO: Define Receiver&lt;/span&gt;
 
 
 &lt;span class="nd"&gt;@csrf_exempt&lt;/span&gt;
@@ -4697,7 +4697,7 @@ python3 manage.py startapp echobot
 - request 的 body&lt;br&gt;
 - request header 中的 X-Line-Signature&lt;/p&gt;
 &lt;p&gt;也就是上面的&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;signature&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;META&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;HTTP_X_LINE_SIGNATURE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;signature&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;META&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;HTTP_X_LINE_SIGNATURE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -4716,7 +4716,7 @@ e.g.&lt;br&gt;
 - and etc.&lt;/p&gt;
 &lt;p&gt;在&lt;a href="https://github.com/line/line-bot-sdk-python#webhook-event-object"&gt;這裡&lt;/a&gt; 可以找到有哪些欄位&lt;/p&gt;
 &lt;p&gt;這段 code 要取代上面的 &lt;code&gt;# TODO: Define Receiver&lt;/code&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebhookParser&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebhookParser&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4724,7 +4724,7 @@ e.g.&lt;br&gt;
 &lt;p&gt;parser 會 parse 所有的 event 跟各個 event 中的所有欄位&lt;br&gt;
 如果 request 不是從 Line Server 來的，就會丟出 InvalidSignatureError&lt;br&gt;
 其他使用錯誤，或 Line Server 的問題都會是丟出 LineBotApiError&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;events&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;signature&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;InvalidSignatureError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;HttpResponseForbidden&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -4736,7 +4736,7 @@ e.g.&lt;br&gt;
 &lt;p&gt;再來要判斷收到的事件是什麼事件&lt;br&gt;
 這個 Bot 只需要 echo 純文字訊息&lt;br&gt;
 所以先判斷這個事件是不是訊息事件，而這個訊息是不是文字訊息&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;event&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;events&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;event&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;events&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;MessageEvent&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TextMessage&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
             &lt;span class="n"&gt;line_bot_api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
@@ -4760,14 +4760,14 @@ e.g.&lt;br&gt;
 只要收到這樣的訊息，就會丟給對應的處理器&lt;br&gt;
 如果確定每一類訊息，在任何情況下都會有相似的處理方式，就很適合這樣的設計&lt;/p&gt;
 &lt;p&gt;接下來的三段 code 要取代 &lt;code&gt;# TODO: Define Receiver&lt;/code&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;handler&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebhookHandler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;handler&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebhookHandler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LINE_CHANNEL_SECRET&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;先為 handler 加入，TextMessage 的處理器&lt;br&gt;
 參數是接收到的 event&lt;br&gt;
 這裡做的也是讀取到原本 event 中的文字，並回傳回去&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@handler.add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MessageEvent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;TextMessage&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@handler.add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MessageEvent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;TextMessage&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;handle_text_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;line_bot_api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
         &lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_token&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -4779,7 +4779,7 @@ e.g.&lt;br&gt;
 &lt;p&gt;因為沒有要處理其他訊息&lt;br&gt;
 如果收到其他訊息 (e.g. 貼圖 , 照片 ) 或訊息以外的事件&lt;br&gt;
 使用 default 來回傳 "Currently Not Support None Text Message" 的文字訊息&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@handler.default&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@handler.default&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;default&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;line_bot_api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reply_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
@@ -4791,7 +4791,7 @@ e.g.&lt;br&gt;
 
 &lt;p&gt;下面的這段 code 是要取代 &lt;code&gt;# TODO: Handler when receiver Line Message&lt;/code&gt;&lt;br&gt;
 handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那個函式處理&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;handler&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;handle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;signature&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;InvalidSignatureError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;HttpResponseForbidden&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -4806,7 +4806,7 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
 &lt;ul&gt;
 &lt;li&gt;WebhookParser&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# line_echobot/echobot/views.py&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# line_echobot/echobot/views.py&lt;/span&gt;
 &lt;span class="c1"&gt;# WebhookParser version&lt;/span&gt;
 
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.conf&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;
@@ -4851,7 +4851,7 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
 &lt;ul&gt;
 &lt;li&gt;WebhookHandler&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# line_echobot/echobot/views.py&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# line_echobot/echobot/views.py&lt;/span&gt;
 &lt;span class="c1"&gt;# WebhookHandler version&lt;/span&gt;
 
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.conf&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;
@@ -4916,13 +4916,13 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
 回傳時也是從你的 server 傳給 ngrok 的 server，再把訊息傳出去&lt;br&gt;
 所以外部都只會看到 ngrok 的 server&lt;/p&gt;
 &lt;p&gt;&lt;img alt="ngrok" src="https://ngrok.com/static/img/demo.png"&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Install ngrok on mac&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Install ngrok on mac&lt;/span&gt;
 brew cask install ngrok
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;先把 django 的 server run 起來&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python3  manage.py runserver
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python3  manage.py runserver
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4930,7 +4930,7 @@ brew cask install ngrok
 這裡並不需要使用 0.0.0.0:8000，讓外部可以連到這個 django server&lt;br&gt;
 ngrok 會把 request 傳到 local 端相對應的 port&lt;/p&gt;
 &lt;p&gt;接著就要用 ngrok 將 request 導到本地端的 port 8000&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ngrok http &lt;span class="m"&gt;8000&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ngrok http &lt;span class="m"&gt;8000&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -5117,7 +5117,7 @@ ngrok 會把 request 傳到 local 端相對應的 port&lt;/p&gt;
 雖然平常有在看 CNN，多少有接觸到這樣的訊息&lt;br&gt;
 但不同的情境不同的講者，同樣的故事還是有很不同的溫度&lt;/p&gt;
 &lt;p&gt;最後講者阿富汗朋友的一句話，讓我印象很深刻&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;雖然現在是黑夜
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;雖然現在是黑夜
 但在黑夜中期待光
 很美
 &lt;/pre&gt;&lt;/div&gt;
@@ -5125,7 +5125,7 @@ ngrok 會把 request 傳到 local 端相對應的 port&lt;/p&gt;
 
 &lt;hr&gt;
 &lt;h3 id="_2"&gt;貓不&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;當一個溫柔的人，也要當一個有原則的人
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;當一個溫柔的人，也要當一個有原則的人
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -5137,7 +5137,7 @@ ngrok 會把 request 傳到 local 端相對應的 port&lt;/p&gt;
 講者分享遇到的各個街友的故事&lt;br&gt;
 顛覆一些人認為街友總是好吃懶做的印象&lt;/p&gt;
 &lt;p&gt;最後結尾時的這句話，才讓我去反思，這場說了這麼多街友的故事，背後想帶出的意義&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果今天換作是我們遇到同樣的處境
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果今天換作是我們遇到同樣的處境
 
 我們真的能處理得更好嗎？
 &lt;/pre&gt;&lt;/div&gt;</content><category term="Inspiring"></category><category term="TEDx"></category></entry><entry><title>[Paper] Mining Online Social Data for Detecting Social Network Mental Disorders</title><link href="http://lee-w.github.io/posts/paper-summary/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders" rel="alternate"></link><published>2016-11-18T16:53:00+08:00</published><updated>2016-11-18T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-18:/posts/paper-summary/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders</id><summary type="html">&lt;ul&gt;
@@ -5188,7 +5188,7 @@ Through Tucker Decomposition, it's possible to combine data from different sourc
 &lt;h2 id="ch1"&gt;Ch1: 合理的下一步是 ......? 「囚犯賽局」與「合理的豬」&lt;/h2&gt;
 &lt;h3 id="_2"&gt;囚犯賽局&lt;/h3&gt;
 &lt;p&gt;相信接觸過賽局理論的人，一定會聽過囚犯賽局&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;假設今天有兩個囚犯 A 和 B，他們被分開訊問，並且知道
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;假設今天有兩個囚犯 A 和 B，他們被分開訊問，並且知道
 如果都不認罪的話，兩個人都會被關一年
 都認罪的話，兩個人都會被關兩年
 但是要是一方認罪，另一方不認罪的話，則認罪方無罪釋放，不認罪方要關三年
@@ -5224,7 +5224,7 @@ Through Tucker Decomposition, it's possible to combine data from different sourc
 &lt;h2 id="ch2-"&gt;Ch2: 協調賽局 - 為何你拿蘋果、用微軟&lt;/h2&gt;
 &lt;p&gt;參加賽局的玩家，透過協調讓雙方得到利益&lt;/p&gt;
 &lt;h3 id="_3"&gt;協調賽局&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;以朋友出去玩作為案例
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;以朋友出去玩作為案例
 假設 A, B 有音樂劇和電影兩個方案
 兩人一起去看音樂劇，滿足度是 10
 一起去看電影是 9
@@ -5269,7 +5269,7 @@ Through Tucker Decomposition, it's possible to combine data from different sourc
 &lt;/ul&gt;
 &lt;h2 id="ch3-"&gt;Ch3: 知彼知己，百戰不殆 - 三種賽局，搞懂你的對手&lt;/h2&gt;
 &lt;h3 id="_5"&gt;膽小鬼賽局&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;假設兩人各開一台車，朝向牆壁全速前進
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;假設兩人各開一台車，朝向牆壁全速前進
 看誰能不採煞車前，到離牆最近的地方 → 先踩剎車的人就輸了
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -5323,7 +5323,7 @@ Through Tucker Decomposition, it's possible to combine data from different sourc
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="_6"&gt;猜銅板賽局&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;某個城市中，有警察和小偷
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;某個城市中，有警察和小偷
 警察的選擇是「巡邏」和「偷懶」
 小偷則是「進入偷竊」和「不進入」
 &lt;/pre&gt;&lt;/div&gt;
@@ -5358,7 +5358,7 @@ Through Tucker Decomposition, it's possible to combine data from different sourc
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="_7"&gt;霍特琳賽局&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;某片沙灘上，A, B 兩家冰淇淋店都想開店
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;某片沙灘上，A, B 兩家冰淇淋店都想開店
 沙灘約 100m，遊客也均勻分散
 那兩家店的老闆會在哪開店呢
 左右兩邊是海，一個 - 代表離沙灘 10m
@@ -5395,7 +5395,7 @@ B 就會像把店往左移，如此就能吸引到更大範圍的顧客&lt;/p&gt
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="_8"&gt;擴散型賽局&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;假設目前城市中已經有一家 A 工廠，B 工廠在考慮是否進入
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;假設目前城市中已經有一家 A 工廠，B 工廠在考慮是否進入
 A 工廠的選項是「戰鬥」和「合作」
 B 工廠是「進入」和「不進入」
 
@@ -5433,7 +5433,7 @@ B 工廠是「進入」和「不進入」
 &lt;ul&gt;
 &lt;li&gt;這時候就可以透過「賽局樹」來觀察時間流&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;                            - 戰鬥 -&amp;gt; (-1, -1)
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;                            - 戰鬥 -&amp;gt; (-1, -1)
                     A 工廠
         - 進入 -&amp;gt;     
                             - 合作 -&amp;gt; (1, 1)
@@ -5488,7 +5488,7 @@ A 工廠進入市場前的最佳行動是戰鬥，所以一定會表現出強硬
 &lt;p&gt;所有的賽局都是在一個共通條件上成立的 - &lt;strong&gt;玩家只考慮自己的利益，各自做出符合理性的行動&lt;/strong&gt;&lt;br&gt;
 而這個前提卻是常常不會成立的&lt;/p&gt;
 &lt;h3 id="-_2"&gt;人能預測未來嗎？ - 蜈蚣賽局&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;爸爸手上有 100 枚硬幣，要分配給 A, B 兩個兒子
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;爸爸手上有 100 枚硬幣，要分配給 A, B 兩個兒子
 但必須遵循以下兩個規定
 首先，爸爸會在 A 面前放 1 枚
 A 可以選擇「停止」或「繼續」
@@ -5503,7 +5503,7 @@ A 可以選擇「停止」或「繼續」
 但是在實際實驗中，卻沒有人做出了這樣的決定&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;人並沒有辦法預測未來&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="-_3"&gt;拍賣賽局 - 證明人會從理性到瘋狂&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;與一般拍賣不同
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;與一般拍賣不同
 競標成功後，未得標的前一位出價者，需要付他喊出的價錢
 而這個東西依然會給得標者
 也就是，前一位出價者付了錢卻什麼都拿不到
@@ -5522,7 +5522,7 @@ A 可以選擇「停止」或「繼續」
 &lt;h3 id="_10"&gt;只用金錢，無法驅動人心&lt;/h3&gt;
 &lt;p&gt;利益並非唯一能影響人心的，往往情感也是&lt;/p&gt;
 &lt;h4 id="_11"&gt;最後通牒賽局&lt;/h4&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;A, B 兩位玩家憑空得到 1000 元
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;A, B 兩位玩家憑空得到 1000 元
 由 B 決定分配方式，A 有同意或否決權
 A 同意的話則造這個分配方式
 A 否決的話就都拿不到錢
@@ -5570,7 +5570,7 @@ A 否決的話就都拿不到錢
 &lt;hr&gt;
 &lt;h2 id="_2"&gt;前言：彭博市府的機密任務&lt;/h2&gt;
 &lt;h3 id="_3"&gt;廢油處理問題 （跨部門的合作）&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;餐廳多半趁深夜偷偷倒油，數年來讓當局一直束手無策。
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;餐廳多半趁深夜偷偷倒油，數年來讓當局一直束手無策。
 弗勞爾斯小組從環保部取得廢油污染的資料，跟餐廳執照、退稅紀錄與廚房火警等不同資料互相比對。
 他們標定並未申請廢油處理的餐廳，列出可能偷倒廢油的餐廳名單。
 然後到市府另一個負責廣生柴油的部門，詢問部門人員時否願意跟食安稽查員與消防單位合作，
@@ -5763,7 +5763,7 @@ Among them, there is one Taiwanese.&lt;/p&gt;
 &lt;li&gt;Collaboration&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="tutorial"&gt;Tutorial&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init &amp;quot;path&amp;quot;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init &amp;quot;path&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -5771,7 +5771,7 @@ Among them, there is one Taiwanese.&lt;/p&gt;
 There is no daemon or background progress&lt;br&gt;
 Everything is operated in file&lt;br&gt;
 Never &lt;code&gt;rm -rf .git&lt;/code&gt; XD&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git stauts
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git stauts
 touch REAMDE.mdd
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -5810,14 +5810,14 @@ touch REAMDE.mdd
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add REAMDE.md
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add REAMDE.md
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;When we're ready&lt;br&gt;
 &lt;code&gt;git commit -m "add a blank commit"&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;After README.md is modified&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add REAMDE.md
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add REAMDE.md
 git status
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -6184,7 +6184,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 例如你希望家裡有和善的文化，那麼在孩子第一次碰到跟和善相關的選擇，你就得幫他做決定&lt;br&gt;
 若孩子沒這麼做，你就得針對這件事指導孩子，並解釋為什麼他們該採取和善的做法&lt;/p&gt;
 &lt;h2 id="ch10"&gt;Ch10 就這麼一次 ...&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;百分之百的堅持比百分之九十八來得容易
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;百分之百的堅持比百分之九十八來得容易
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -6196,7 +6196,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 如果你不越界，個人道德界限的力量就會很強大 &lt;br&gt;
 要是你用好理由說服自己，那就成了一個沒有原則的人，甚麼事都做得出來&lt;/p&gt;
 &lt;p&gt;為了變成自己理想中的，每一個人的過程都不同。不管如何，你應該要能回答這樣的問題 :「我真的想要變成那樣的人嗎 ?」&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;「如果我將每日禱告、反思的時間拿來研究迴歸分析，我將後悔莫及。
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;「如果我將每日禱告、反思的時間拿來研究迴歸分析，我將後悔莫及。
  每年，我用到計量經濟學工具不過只有幾次，而我對人生目的的認知卻天天都可派上用場」
 &lt;/pre&gt;&lt;/div&gt;</content><category term="Inspiring"></category></entry><entry><title>[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks</title><link href="http://lee-w.github.io/posts/paper-summary/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" rel="alternate"></link><published>2016-08-22T16:53:00+08:00</published><updated>2016-08-22T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/paper-summary/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks</id><summary type="html">&lt;p&gt;&lt;a href="http://dl.acm.org/citation.cfm?id=2783392"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="http://dl.acm.org/citation.cfm?id=2783392"&gt;Paper&lt;/a&gt;&lt;/p&gt;
@@ -6618,7 +6618,7 @@ These data can be used to learn the value functions&lt;/p&gt;
 之前一直覺得 Hackpad 的 Markdown support 沒有很好&lt;br&gt;
 終於有人做出這個東西了 XD&lt;/p&gt;
 &lt;h2 id="_3"&gt;開放公司文化之下的軟體開發 / 如何用開源軟體賺錢？&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;找到使用者的痛，解決他  
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;找到使用者的痛，解決他  
 如果其中部份剛好有開源軟體可用，算你撿到的  
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -6656,7 +6656,7 @@ These data can be used to learn the value functions&lt;/p&gt;
 在上方工具列點選 &lt;code&gt;Edit&lt;/code&gt; -&amp;gt; &lt;code&gt;Edit Notebook Metadata&lt;/code&gt;&lt;br&gt;
 接著在裡面加入 livereveal 的設定&lt;br&gt;
 如下 （只需加入 livereveal 的部分）&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="nt"&gt;&amp;quot;kernelspec&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="err"&gt;...&lt;/span&gt;
   &lt;span class="p"&gt;},&lt;/span&gt;
@@ -6692,7 +6692,7 @@ After several and long discussions with a lot of people, we have arrived to the 
 &lt;li&gt;認定某樣東西很受歡迎不會改變其價值，但如果認定某樣東西本來就是限量的，則會提高其身價&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="ch5-"&gt;Ch5 - 獎勵誘因：不只給錢、祭優惠、送獎品，怎樣獎勵最有效&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;幾年前的某個晚上，我和一群科技界的朋友，在舊金山一家高級餐廳聚餐，主客是遠道來的米娜拉。
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;幾年前的某個晚上，我和一群科技界的朋友，在舊金山一家高級餐廳聚餐，主客是遠道來的米娜拉。
 可是我們竟然集體冷落她，每個人都在低頭防著滑手機、寫簡訊、看推特、回電郵，簡直像在比賽誰能一直盯著手機似的。
 
 看不下去的米娜拉提議大家來玩手機疊疊樂遊戲，每個人都要交出手機，並疊在另一支手機上，第一個伸手去拿手機的人要負責買單。
@@ -6876,7 +6876,7 @@ After several and long discussions with a lot of people, we have arrived to the 
 &lt;li&gt;保存意志力的持久技巧：習慣&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Productivity"></category></entry><entry><title>解決更新 gcc 找不到 libgfortran.3.dylib (Octave,R)</title><link href="http://lee-w.github.io/posts/tech/2016/06/solve-libgfortran3dylib-not-found" rel="alternate"></link><published>2016-06-11T03:13:00+08:00</published><updated>2016-06-11T03:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-06-11:/posts/tech/2016/06/solve-libgfortran3dylib-not-found</id><summary type="html">&lt;p&gt;最近在 mac 上更新了 gcc 6 後，不管是開 Octave 還是 R&lt;br&gt;
 都會出現以下的錯誤訊息&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib
   Referenced from: /usr/local/Cellar/r/3.3.0/R.framework/Versions/3.2/Resources/lib/libR.dylib
   Reason: image not found
 Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
@@ -6885,7 +6885,7 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 
 </summary><content type="html">&lt;p&gt;最近在 mac 上更新了 gcc 6 後，不管是開 Octave 還是 R&lt;br&gt;
 都會出現以下的錯誤訊息&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dyld: Library not loaded: /usr/local/lib/gcc/5/libgfortran.3.dylib
   Referenced from: /usr/local/Cellar/r/3.3.0/R.framework/Versions/3.2/Resources/lib/libR.dylib
   Reason: image not found
 Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
@@ -6898,7 +6898,7 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 但是更新過後已經被變成 /usr/local/lib/gcc/6/ 了&lt;br&gt;
 所以只要從 &lt;code&gt;/usr/local/lib/gcc/5/&lt;/code&gt; 建立 soft link 到 &lt;code&gt;/usr/local/lib/gcc/6/&lt;/code&gt; 即可&lt;br&gt;
 ( 版本號則要根據自身 gcc 的版本來做修改 )&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /usr/local/lib/gcc/5/ /usr/local/lib/gcc/6/
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /usr/local/lib/gcc/5/ /usr/local/lib/gcc/6/
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -7118,7 +7118,7 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;li&gt;把 extneral 裡面的 external 資料夾放到 plugin 裡面&lt;/li&gt;
 &lt;li&gt;在 &lt;code&gt;index.html&lt;/code&gt; 中的 &lt;code&gt;Reveal.initalize&lt;/code&gt; 這個 block 加入下面的內容&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;src&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;plugin/external/external.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="o"&gt;!!&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[data-external]&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;src&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;plugin/external/external.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="o"&gt;!!&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[data-external]&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -7127,14 +7127,14 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;ol&gt;
 &lt;li&gt;git submodule&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git submodule add https://github.com/calevans/external plugin/external
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git submodule add https://github.com/calevans/external plugin/external
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;ol&gt;
 &lt;li&gt;在 &lt;code&gt;index.html&lt;/code&gt; 中的 &lt;code&gt;Reveal.initalize&lt;/code&gt; 這個 block 加入下面的內容&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;src&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;plugin/external/external/external.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="o"&gt;!!&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[data-external]&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;src&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;plugin/external/external/external.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="o"&gt;!!&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[data-external]&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -7142,18 +7142,18 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;h1 id="usage"&gt;Usage&lt;/h1&gt;
 &lt;p&gt;之後就能使用 &lt;code&gt;data-external&lt;/code&gt; 這個 tag 來載入外部的 html&lt;/p&gt;
 &lt;h2 id="indexhtml"&gt;原本的 index.html&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;data-external&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;module_01/index.html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;data-external&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;module_01/index.html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2 id="html"&gt;外部 html&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;&amp;lt;!-- module_01/index.html --&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;&amp;lt;!-- module_01/index.html --&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; This is external &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2 id="html_1"&gt;載入後的 html&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;data-external&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;module_01/index.html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;data-external&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;module_01/index.html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="c"&gt;&amp;lt;!-- module_01/index.html --&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; This is external &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -7162,7 +7162,7 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;!--more--&gt;
 
 &lt;h1 id="_1"&gt;男子漢理論&lt;/h1&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;真正的男子漢 programmer 是不會用那些亂七八糟，花枝招展的，所謂整合開發環境。
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;真正的男子漢 programmer 是不會用那些亂七八糟，花枝招展的，所謂整合開發環境。
 真正的男子漢 programmer 就是直接用 emacs, 或是 vi 這些男子漢編輯器直接寫程式。
 如果你不知道這是甚麼東東，簡單來說，就是男子漢用的”記事本”。
 當然在花枝招展，看來很娘的 Wxxxxws下要找到這些男子漢編輯器有一定難度，
@@ -7188,13 +7188,13 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 
 
 &lt;p&gt;From &lt;a href="http://cpmarkchang.logdown.com/pages/about-me"&gt;MARK CHANG'S BLOG - About Me&lt;/a&gt;&lt;/p&gt;</content><category term="Inspiring"></category><category term="Vim"></category></entry><entry><title>[Book] 少，但是更好</title><link href="http://lee-w.github.io/posts/book/2016/03/essentialism" rel="alternate"></link><published>2016-03-11T14:29:00+08:00</published><updated>2016-03-11T14:29:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-03-11:/posts/book/2016/03/essentialism</id><summary type="html">&lt;p&gt;&lt;img alt="Essentialism" src="http://i.imgur.com/zJS927hm.jpg"&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Weniger aber besser
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Weniger aber besser
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;德語的 Less is more&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="Essentialism" src="http://i.imgur.com/zJS927hm.jpg"&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Weniger aber besser
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Weniger aber besser
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -7335,13 +7335,13 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;/ul&gt;
 &lt;h1 id="_10"&gt;心流&lt;/h1&gt;
 &lt;p&gt;習慣的力量 ( 可以參考&lt;a href="http://lee-w.github.io/posts/book/2015/11/the-power-of-habit"&gt;「為什麼我們這樣生活，那樣工作」&lt;/a&gt;)&lt;/p&gt;</content><category term="Productivity"></category></entry><entry><title>Reveal.js 安裝錯誤</title><link href="http://lee-w.github.io/posts/tech/2016/02/reveal-s-installation-error" rel="alternate"></link><published>2016-02-20T03:57:00+08:00</published><updated>2016-02-20T03:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-02-20:/posts/tech/2016/02/reveal-s-installation-error</id><summary type="html">&lt;p&gt;當我安裝步驟執行到&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;會跳出很多錯誤訊息&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;當我安裝步驟執行到&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -7351,7 +7351,7 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;p&gt;這才發現 Reveal.js 要用 python &amp;gt;= 2.5 and &amp;lt; 3.0.0&lt;br&gt;
 而我預設的 python 是 python3.5&lt;br&gt;
 所以只要像下面的指令把 python 指到 python2 就可以了&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install --python&lt;span class="o"&gt;=&lt;/span&gt;python2.7
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install --python&lt;span class="o"&gt;=&lt;/span&gt;python2.7
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -7364,14 +7364,14 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;h2 id="irkernel"&gt;安裝 IRKernel&lt;/h2&gt;
 &lt;p&gt;進入 R 的命令列，輸入下面的指令&lt;br&gt;
 就能安裝 IRKernel，以後就能在 jupyter 中使用 R&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;install.packages(c(&amp;#39;rzmq&amp;#39;,&amp;#39;repr&amp;#39;,&amp;#39;IRkernel&amp;#39;,&amp;#39;IRdisplay&amp;#39;),
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;install.packages(c(&amp;#39;rzmq&amp;#39;,&amp;#39;repr&amp;#39;,&amp;#39;IRkernel&amp;#39;,&amp;#39;IRdisplay&amp;#39;),
                  repos = c(&amp;#39;http://irkernel.github.io/&amp;#39;, getOption(&amp;#39;repos&amp;#39;)))
 IRkernel::installspec()
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2 id="_1"&gt;錯誤訊息&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;interface&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nl"&gt;cpp&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;fatal&lt;/span&gt; &lt;span class="nl"&gt;error&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;zmq&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;interface&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nl"&gt;cpp&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;fatal&lt;/span&gt; &lt;span class="nl"&gt;error&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;zmq&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;zmq.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
          &lt;span class="o"&gt;^&lt;/span&gt;
 &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt; &lt;span class="n"&gt;generated&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
@@ -7382,13 +7382,13 @@ IRkernel::installspec()
 
 &lt;h2 id="_2"&gt;解決&lt;/h2&gt;
 &lt;p&gt;這時候就要將缺少的套件補齊&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install czmq zmq
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install czmq zmq
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;再執行一次最上面的安裝指令&lt;/p&gt;
 &lt;p&gt;接著在指令列執行輸入下面的指令&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;jupyter qtconsole --kernel=ir
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;jupyter qtconsole --kernel=ir
 jupyter console --kernel=ir
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -7412,7 +7412,7 @@ jupyter console --kernel=ir
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;托兒所常有家長遲到接小孩的問題。如果我們提出遲到十分鐘以上的人要罰三美元，結果會如何呢？
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;托兒所常有家長遲到接小孩的問題。如果我們提出遲到十分鐘以上的人要罰三美元，結果會如何呢？
 
 遲到的人竟然大幅增加了！
 因為這是用經濟誘因（三美元）取代道德誘因（愧疚感），而低額的罰款似乎也在告訴家長這不是一件很嚴重的事 
@@ -7421,7 +7421,7 @@ jupyter console --kernel=ir
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果捐血可以得到一些錢，是否會增加捐血的人數呢？
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果捐血可以得到一些錢，是否會增加捐血的人數呢？
 
 肯定會的
 那是要增加到 50 元、500 元或甚至 5000 元呢？ 
@@ -7440,7 +7440,7 @@ jupyter console --kernel=ir
 &lt;li&gt;專家透過資訊讓人們害怕就能產生很巨大的操控力&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="_3"&gt;因果關係&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;美國殺人案比率偏高，部分要歸咎於槍枝取得太容易。研究結果的確也支持這樣的說法
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;美國殺人案比率偏高，部分要歸咎於槍枝取得太容易。研究結果的確也支持這樣的說法
 不過槍枝並非唯一的原因
 以瑞士為例，政府發給每名成年男子一把步槍作為民兵服役用，而且可以存放家中
 瑞士擁有了相當高的武器持有率，卻被認為幾乎是最安全的地方
@@ -8084,25 +8084,25 @@ jupyter console --kernel=ir
 &lt;p&gt;成功的全職接案者，在某些時間點，必須放手一搏雇用人手，來處理一些不必親自處理的簡單事務&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</content><category term="Design"></category></entry><entry><title>在 jupyter 中同時使用 Python2 Python3</title><link href="http://lee-w.github.io/posts/tech/2015/11/used-in-the-jupyter-python2-python3" rel="alternate"></link><published>2015-11-02T15:12:00+08:00</published><updated>2015-11-02T15:12:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-11-02:/posts/tech/2015/11/used-in-the-jupyter-python2-python3</id><summary type="html">&lt;p&gt;先安裝 Python2 和 Python3 的 ipython notebook&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip2 install ipython notebook
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip2 install ipython notebook
 pip3 install ipython notebook
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;分別用各自的 ipython 執行下面的指令&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ipython2 kernelspec install-self
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ipython2 kernelspec install-self
 ipython3 kernelspec install-self
 &lt;/pre&gt;&lt;/div&gt;
 
 
 </summary><content type="html">&lt;p&gt;先安裝 Python2 和 Python3 的 ipython notebook&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip2 install ipython notebook
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip2 install ipython notebook
 pip3 install ipython notebook
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;分別用各自的 ipython 執行下面的指令&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ipython2 kernelspec install-self
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ipython2 kernelspec install-self
 ipython3 kernelspec install-self
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -8289,7 +8289,7 @@ Python2 上面是另一個也被 jupyter notebook 支援的語言 julia&lt;br&gt
 &lt;/ul&gt;</content><category term="Innovation"></category></entry><entry><title>解決 django-admin 在 mac 找不到 django.core</title><link href="http://lee-w.github.io/posts/tech/2015/05/solve-django-admin-cant-find-the-djangocore-on-mac" rel="alternate"></link><published>2015-05-10T23:42:00+08:00</published><updated>2015-05-10T23:42:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-05-10:/posts/tech/2015/05/solve-django-admin-cant-find-the-djangocore-on-mac</id><summary type="html">&lt;h2 id="_1"&gt;問題&lt;/h2&gt;
 &lt;p&gt;在 mac 上，用 pip3 安裝完 django 1.8.1 後&lt;br&gt;
 執行 &lt;code&gt;django-admin&lt;/code&gt; 出現了以下的錯誤訊息&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
   &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/usr/local/bin/django-admin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.core&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;management&lt;/span&gt;
 &lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt;
@@ -8299,7 +8299,7 @@ Python2 上面是另一個也被 jupyter notebook 支援的語言 julia&lt;br&gt
 </summary><content type="html">&lt;h2 id="_1"&gt;問題&lt;/h2&gt;
 &lt;p&gt;在 mac 上，用 pip3 安裝完 django 1.8.1 後&lt;br&gt;
 執行 &lt;code&gt;django-admin&lt;/code&gt; 出現了以下的錯誤訊息&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
   &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/usr/local/bin/django-admin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.core&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;management&lt;/span&gt;
 &lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;core&lt;/span&gt;
@@ -8321,12 +8321,12 @@ Python2 上面是另一個也被 jupyter notebook 支援的語言 julia&lt;br&gt
 &lt;h3 id="ubuntu-linux-mint"&gt;Ubuntu, Linux Mint&lt;/h3&gt;
 &lt;p&gt;預設就已經安裝好了&lt;/p&gt;
 &lt;h3 id="mac"&gt;Mac&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install rename
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install rename
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1 id="_2"&gt;使用&lt;/h1&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rename s/pattern1/pattern2/ files
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rename s/pattern1/pattern2/ files
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -8343,7 +8343,7 @@ files 要使用萬用字元，pattern 則是使用 regular expression&lt;/p&gt;
 &lt;p&gt;例如，我們希望把檔名從 01~05 這五個檔案改成 01A~05A&lt;br&gt;
 我們如果只用 &lt;code&gt;rename -n s/\[0-\9]{2}/\[0-9\]{2}A/ *&lt;/code&gt; 就會錯誤&lt;br&gt;
 必須要改成像下面這樣&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rename -n s/&lt;span class="se"&gt;\(\[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;-&lt;span class="se"&gt;\9&lt;/span&gt;&lt;span class="o"&gt;]{&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="se"&gt;\)&lt;/span&gt;/&lt;span class="se"&gt;\$&lt;/span&gt;1A/ *
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rename -n s/&lt;span class="se"&gt;\(\[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;-&lt;span class="se"&gt;\9&lt;/span&gt;&lt;span class="o"&gt;]{&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="se"&gt;\)&lt;/span&gt;/&lt;span class="se"&gt;\$&lt;/span&gt;1A/ *
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -8503,7 +8503,7 @@ The most important part of failure is not to give up.&lt;/p&gt;</content><catego
 
 &lt;h1 id="vundle"&gt;用 vundle 安裝&lt;/h1&gt;
 &lt;p&gt;在 vimrc 中加入下面這行&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Bundle &amp;#39;vimspell&amp;#39;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Bundle &amp;#39;vimspell&amp;#39;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -8516,7 +8516,7 @@ http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/diction
 應該會看到下面這樣&lt;br&gt;
 &lt;img alt="1_directory" src="http://i.imgur.com/gLWMnmW.png"&gt;&lt;/p&gt;
 &lt;p&gt;接著進入 vim 在 normal mode 輸入&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:mkspell en en_US
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:mkspell en en_US
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -8524,7 +8524,7 @@ http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/diction
 檢查一下 vim 資料夾下的 spell 資料夾有沒有新增字典檔，確定有了後就新增完成了&lt;/p&gt;
 &lt;h1 id="_2"&gt;設定&lt;/h1&gt;
 &lt;p&gt;首先要先定義要根據哪個字典檔&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:set spelllang=en
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:set spelllang=en
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -8533,7 +8533,7 @@ http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/diction
 &lt;code&gt;:set nospell&lt;/code&gt; 則是關閉&lt;/p&gt;
 &lt;p&gt;如果每次都要設定一次，就太麻煩了&lt;br&gt;
 我在 vimrc 加入了下面這些&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;spelllang&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="k"&gt;en&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;spelllang&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="k"&gt;en&lt;/span&gt;
 nmap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;F7&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; :&lt;span class="k"&gt;setlocal&lt;/span&gt; &lt;span class="k"&gt;spell&lt;/span&gt;&lt;span class="p"&gt;!&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;cr&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 autocmd &lt;span class="nb"&gt;BufRead&lt;/span&gt; *.txt&lt;span class="p"&gt;,&lt;/span&gt;*.md&lt;span class="p"&gt;,&lt;/span&gt;*.tex &lt;span class="k"&gt;setlocal&lt;/span&gt; &lt;span class="k"&gt;spell&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -8579,12 +8579,12 @@ autocmd &lt;span class="nb"&gt;BufRead&lt;/span&gt; *.txt&lt;span class="p"&gt;,
 https://www.gitignore.io/docs&lt;/p&gt;
 &lt;h2 id="_1"&gt;設定&lt;/h2&gt;
 &lt;p&gt;以 mac 的 zsh 的使用者為例，只要在執行下面這段&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;source&lt;/span&gt; ~/.zshrc
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;source&lt;/span&gt; ~/.zshrc
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;或者在 ~/.zshrc 加入下面這段後，執行 &lt;code&gt;source ~/.zshrc&lt;/code&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; gi&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; curl -L -s https://www.gitignore.io/api/&lt;span class="nv"&gt;$@&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; gi&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; curl -L -s https://www.gitignore.io/api/&lt;span class="nv"&gt;$@&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -8592,29 +8592,29 @@ https://www.gitignore.io/docs&lt;/p&gt;
 &lt;h2 id="_2"&gt;使用&lt;/h2&gt;
 &lt;p&gt;基本上只有兩種用法&lt;br&gt;
 首先當然要先看 gi 支援哪些 .gitignore&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi list
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi list
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;執行完會看到一長串的結果&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;actionscript,ada,agda,android...
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;actionscript,ada,agda,android...
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;接著在 gi 後面輸入想產生的 .gitignore 的 types&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi &lt;span class="s2"&gt;&amp;quot;types&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi &lt;span class="s2"&gt;&amp;quot;types&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;如果有超過一個必須用 &lt;code&gt;,&lt;/code&gt; 隔開&lt;br&gt;
 e.g.,&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi vim,osx
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi vim,osx
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;不過這樣還不會產生 .gitignore，只會顯示在螢幕上&lt;br&gt;
 還要再使用 output redirection 才會有 .gitignore&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi vim,osx &amp;gt;&amp;gt; .gitignore
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi vim,osx &amp;gt;&amp;gt; .gitignore
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -8630,7 +8630,7 @@ https://github.com/Lee-W/gi_extension&lt;/p&gt;
 3. 支援以空格作為類型的分隔 ( 逗號依然支援 )&lt;br&gt;
    e.g., &lt;code&gt;vim,osx&lt;/code&gt; -&amp;gt; &lt;code&gt;vim osx&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id="_3"&gt;安裝&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/Lee-W/gi_extension &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; gi_extension
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/Lee-W/gi_extension &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; gi_extension
 sudo cp gi_extension.sh /usr/bin/gi
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -8638,7 +8638,7 @@ sudo cp gi_extension.sh /usr/bin/gi
 &lt;p&gt;如果之前有在 shell 的設定檔中，設定過 gitignore.io 提供的 gi&lt;br&gt;
 記得要把它註解掉，不然那個 gi 會蓋過我的 gi&lt;/p&gt;
 &lt;p&gt;如果想移除掉&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/Lee-W/gi_extension &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; gi_extension
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/Lee-W/gi_extension &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; gi_extension
 sudo rm gi_extension.sh /usr/bin/gi
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -8651,7 +8651,7 @@ sudo rm gi_extension.sh /usr/bin/gi
 &lt;li&gt;以表格的方式輸出支援的類型&lt;br&gt;
 目前設定一個 row 容納 5 個 column，每個 column 長度為 25  &lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -l
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -l
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -8659,33 +8659,33 @@ sudo rm gi_extension.sh /usr/bin/gi
 &lt;ol&gt;
 &lt;li&gt;以字母的順序輸出&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -L
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -L
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;img alt="2_gi_L.png" src="https://i0.wp.com/f6daa3706f14a40c04cb86aa98ffd752d68309b0.googledrive.com/host/0BzTRBX34Y857ZDZxM3dNYm9VcDg/gitignore_io/2_gi_L.png"&gt;&lt;/p&gt;
 &lt;h3 id="gitignore"&gt;顯示 .gitignore 的內容&lt;/h3&gt;
 &lt;p&gt;跟原本的 gi 一樣，只是多支援了以空白作為分隔&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi &lt;span class="s2"&gt;&amp;quot;types&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi &lt;span class="s2"&gt;&amp;quot;types&amp;quot;&lt;/span&gt;
 &lt;span class="c1"&gt;# e.g., gi vim osx &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3 id="gitignore_1"&gt;輸出 .gitignore&lt;/h3&gt;
 &lt;p&gt;將結果加入目前資料夾下的 .gitignore&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -a &lt;span class="s2"&gt;&amp;quot;types&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -a &lt;span class="s2"&gt;&amp;quot;types&amp;quot;&lt;/span&gt;
 &lt;span class="c1"&gt;# e.g., gi -a vim osx&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;在目前的資料夾產生一份新的 .gitignore 取代舊有的&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -e &lt;span class="s2"&gt;&amp;quot;types&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -e &lt;span class="s2"&gt;&amp;quot;types&amp;quot;&lt;/span&gt;
 &lt;span class="c1"&gt;# e.g.,e.g.,, gi -e vim osx&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3 id="_6"&gt;更新本地端的支援列表&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -u
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gi -u
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -8778,12 +8778,12 @@ sudo rm gi_extension.sh /usr/bin/gi
 &lt;!--more--&gt;
 
 &lt;p&gt;先確定你的網卡是不是 BC43228&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lspci &lt;span class="p"&gt;|&lt;/span&gt; grep Network
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lspci &lt;span class="p"&gt;|&lt;/span&gt; grep Network
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;如果是的話就能開始進行安裝了&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install linux-headers-generic
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install linux-headers-generic
 sudo apt-get install --reinstall bcmwl-kernel-source
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -8805,7 +8805,7 @@ sudo apt-get install --reinstall bcmwl-kernel-source
 雖然有 Gitbook 編輯器，但有時候用起來還是會出點問題&lt;br&gt;
 所以最後還是決定來學如何用 command line + sublime 寫 Gitbook&lt;/p&gt;
 &lt;h2 id="gitbook"&gt;安裝 Gitbook&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install gitbook -g
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install gitbook -g
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -8820,7 +8820,7 @@ book.json 是這本書的額外設定&lt;br&gt;
 &lt;p&gt;最重要的是 SUMMARY.md，它會定義整本 gitbook 的架構&lt;br&gt;
 每個章節下面都還可以給予更多的小節&lt;br&gt;
 下面是我 Learning Python 的 SUMMARY.md&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;# Summary&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;# Summary&lt;/span&gt;
 
 &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Introduction&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="n"&gt;README&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Getting&lt;/span&gt; &lt;span class="n"&gt;Started&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;_getting_started&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;README&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -8837,14 +8837,14 @@ book.json 是這本書的額外設定&lt;br&gt;
 &lt;p&gt;這是預覽的結果&lt;br&gt;
 &lt;img alt="2_learning_python_web" src="http://i.imgur.com/d3NP0xi.png"&gt;&lt;/p&gt;
 &lt;p&gt;下了這個指令後就會根據 SUMMARY.md 的定義，自動產生相對應資料夾和檔案&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gitbook init
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gitbook init
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;接著就可以開始編輯裡面的檔案了&lt;/p&gt;
 &lt;h2 id="_1"&gt;預覽&lt;/h2&gt;
 &lt;p&gt;寫完之後當然預覽一下&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gitbook serve 
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gitbook serve 
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -8858,12 +8858,12 @@ book.json 是這本書的額外設定&lt;br&gt;
 http://calibre-ebook.com/download&lt;/p&gt;
 &lt;p&gt;以 mac 為例&lt;br&gt;
 需要下面這個指令，為 ebook-covert 建立一個捷徑，讓 gitbook 可以找到這個功能&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;以下的四個指令依序可以產生 html, pdf, epub, mobi&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gitbook build ./ 
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gitbook build ./ 
 gitbook pdf ./
 gitbook epub ./
 gitbook mobi ./
@@ -8878,7 +8878,7 @@ gitbook mobi ./
 接著 create a new book，到 setting 頁面往下拉，就會看到一個 URL&lt;/p&gt;
 &lt;p&gt;接下來的操作就跟 git 基本上是一樣的，init, add, commit ... 等&lt;br&gt;
 只有在 remote 的設定有點不同&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote add gitbook &amp;quot;URL&amp;quot;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote add gitbook &amp;quot;URL&amp;quot;
 git push -u gitbook
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -9109,7 +9109,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;br&gt;
 &lt;h2 id="install-sdk-manager"&gt;Install SDK manager&lt;/h2&gt;
 &lt;p&gt;自從 0.8.14 版之後，SDK Manager 就不會再跟 Android Studio 綁在一起&lt;br&gt;
 所以要額外&lt;a href="https://developer.android.com/sdk/index.html?hl=i"&gt;下載 SDK tools&lt;/a&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果是在 0.8.14 版前安裝的也不用擔心，更新後需要多做設定
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果是在 0.8.14 版前安裝的也不用擔心，更新後需要多做設定
 Android Studio 會自動幫你把 SDK 的路徑設定到原本的位置
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -9196,12 +9196,12 @@ MarkDown: 這個 Plugin 提供直接在 Android Studio 中，Preview Markdown �
 
 &lt;h2 id="freebsd-grub"&gt;加入 FreeBSD 到 grub 開機選單&lt;/h2&gt;
 &lt;h3 id="grub"&gt;更改 grub 的設定檔&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vi /etc/grub.d/40_Custom
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vi /etc/grub.d/40_Custom
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;加入下面這幾行&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;menuentry &amp;quot;FreeBSD (/boot/loader)&amp;quot; {
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;menuentry &amp;quot;FreeBSD (/boot/loader)&amp;quot; {
     insmod ufs2
     set root=(hd0,1,a)
     kfreebsd /boot/loader
@@ -9212,7 +9212,7 @@ MarkDown: 這個 Plugin 提供直接在 Android Studio 中，Preview Markdown �
 &lt;p&gt;&lt;code&gt;FreeBSD (/boot/loader)&lt;/code&gt; 是在開機時顯示的名稱&lt;br&gt;
 &lt;code&gt;(hd0,1,a)&lt;/code&gt; 要根據你的 FreeBSD 灌在磁碟的哪一塊決定&lt;/p&gt;
 &lt;h3 id="grub_1"&gt;更新 grub 設定檔&lt;/h3&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-grub
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-grub
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -9221,12 +9221,12 @@ MarkDown: 這個 Plugin 提供直接在 Android Studio 中，Preview Markdown �
 可以參考&lt;a href="http://unix.stackexchange.com/questions/16886/set-up-grub2-to-boot-freebsd-using-either-ubuntu-tools-or-liveusb-to-find-what-p"&gt;Set up Grub2 to boot Freebsd&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="grub_2"&gt;換 grub 開機順序&lt;/h2&gt;
 &lt;p&gt;如果希望改變預設的開機順序，就必須要修改下面的檔案 &lt;code&gt;/etc/default/grub&lt;/code&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vi /etc/default/grub
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vi /etc/default/grub
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;會看到下面這串&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;GRUB_DEFAULT=0
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;GRUB_DEFAULT=0
 #GRUB_HIDDEN_TIMEOUT=0
 GRUB_HIDDEN_TIMEOUT_QUIET=true
 GRUB_TIMEOUT=10
@@ -9238,7 +9238,7 @@ GRUB_CMDLINE_LINUX=&amp;quot;&amp;quot;
 
 &lt;p&gt;把第 1 行設定為多少 (注意是從 0 開始)，就會預設從那裡開機&lt;/p&gt;
 &lt;h2 id="ubuntu-mount-freebsd"&gt;在 ubuntu mount FreeBSD&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount -t ufs -r -o &lt;span class="nv"&gt;ufstype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ufs2 /dev/sda4 ~/freebsd
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount -t ufs -r -o &lt;span class="nv"&gt;ufstype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ufs2 /dev/sda4 ~/freebsd
 &lt;/pre&gt;&lt;/div&gt;</content><category term="Linux-Unix"></category><category term="Dual Boot"></category></entry><entry><title>powerline on zsh, vim, tmux</title><link href="http://lee-w.github.io/posts/tech/2014/07/powerline-on-zsh-vim-tmux" rel="alternate"></link><published>2014-07-30T15:01:00+08:00</published><updated>2014-07-30T15:01:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2014-07-30:/posts/tech/2014/07/powerline-on-zsh-vim-tmux</id><summary type="html">&lt;p&gt;用了 vim 的 powerline 後覺得很酷，就找了很多的 powerline 來玩&lt;br&gt;
 於是這篇文章產生了 XDD&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;用了 vim 的 powerline 後覺得很酷，就找了很多的 powerline 來玩&lt;br&gt;
@@ -9257,7 +9257,7 @@ GRUB_CMDLINE_LINUX=&amp;quot;&amp;quot;
 不然可能會無法正常顯示&lt;br&gt;
 在 &lt;a href="https://github.com/Lokaltog/powerline-fonts"&gt;powerline-fonts&lt;/a&gt; 下載後，之後安裝就完成了&lt;br&gt;
 &lt;em&gt;記得要把終端機的字體條成這些有 powerline 結尾的字體，我當初就是沒用這個卡了很久 = =&lt;/em&gt;&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/Lokaltog/powerline-fonts /tmp/git/clone
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/Lokaltog/powerline-fonts /tmp/git/clone
 sudo mv /tmp/git-clone/powerline-fonts /usr/share/fonts/powerline-fonts
 sudo fc-cache -v -f
 &lt;/pre&gt;&lt;/div&gt;
@@ -9271,7 +9271,7 @@ sudo fc-cache -v -f
 &lt;p&gt;ZSH_THEME="powerline"&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;如果要更多客制化設定可以參考 repo 內的設定&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme /tmp/oh-my-zsh-powerline-theme
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme /tmp/oh-my-zsh-powerline-theme
 /tmp/oh-my-zsh-powerline-theme/oh-my-zsh-powerline-theme/install_in_omz.sh
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -9323,7 +9323,7 @@ sudo fc-cache -v -f
 
 &lt;p&gt;&lt;img alt="1_guake" src="http://i.imgur.com/0L95Qtg.png"&gt;&lt;/p&gt;
 &lt;h1 id="guake-terminal"&gt;安裝 Guake Terminal&lt;/h1&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install guake
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install guake
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -9342,18 +9342,18 @@ sudo fc-cache -v -f
 &lt;p&gt;e.g.&lt;br&gt;
 有個資料夾是 /a/b/c/d/e/f/g/h&lt;br&gt;
 原本要輸入&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /a/b/c/d/e/f/g/h
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /a/b/c/d/e/f/g/h
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;可是現在有了 autojump，而且你也去過這個 h 資料夾，你就可以&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;j h
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;j h
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;很方便吧！！！&lt;/p&gt;
 &lt;h1 id="_1"&gt;安裝&lt;/h1&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /tmp
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /tmp
 git clone https://github.com/joelthelion/autojump
 &lt;span class="nb"&gt;cd&lt;/span&gt; autojump
 chmod +x install.py
@@ -9370,24 +9370,24 @@ chmod +x install.py
 &lt;ol&gt;
 &lt;li&gt;最基本的功能當然就是跳轉囉&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;j word
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;j word
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果有重複的名稱 (e.g. worda, wordb)，就在打一次同樣的指令，就會跳到下一個
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果有重複的名稱 (e.g. worda, wordb)，就在打一次同樣的指令，就會跳到下一個
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;strong text&lt;/strong&gt;&lt;br&gt;
 2. list 現在 autojump 可以跳到的資料夾&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;j -s 
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;j -s 
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;ol&gt;
 &lt;li&gt;刪除已經背改變路徑或刪除的紀錄&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; j --purge
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; j --purge
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -9399,11 +9399,11 @@ chmod +x install.py
 &lt;!--more--&gt;
 
 &lt;p&gt;我們先來看一下 /etc/fstab 內的東西&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo cat /etc/fstab
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo cat /etc/fstab
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# /etc/fstab: static file system information.
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# /etc/fstab: static file system information.
 #
 # Use &amp;#39;blkid&amp;#39; to print the universally unique identifier for a
 # device; this may be used with UUID= as a more robust way to name devices
@@ -9424,7 +9424,7 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 1~2 是 root 的掛載&lt;br&gt;
 3~4 是 swap 的掛載&lt;br&gt;
 5~6 是我自己的 data 的掛載&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#data
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#data
 UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -9456,11 +9456,11 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 &lt;p&gt;基本上 4 5 6 我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到&lt;/p&gt;
 &lt;h1 id="_1"&gt;測試&lt;/h1&gt;
 &lt;p&gt;先看一下是否有掛載成功&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;檔案系統         1K-區段      已用      可用 已用 % 掛載點
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;檔案系統         1K-區段      已用      可用 已用 % 掛載點
 /dev/sda1      103081248   9259936  88562048   10% /
 none                   4         0         4    0% /sys/fs/cgroup
 udev             3992780         4   3992776    1% /dev
@@ -9474,24 +9474,24 @@ none              102400        44    102356    1% /run/user
 
 &lt;p&gt;像我的最後面就出現了 data&lt;/p&gt;
 &lt;p&gt;之後暫時將它卸載 (若 &lt;code&gt;df&lt;/code&gt; 之後，分割區沒有出現，那就不用做這步了)&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo umount /dev/sda6
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo umount /dev/sda6
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;(/dev/sda6 要取代成你自己的位置 )&lt;br&gt;
 接著再執行一次&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;剛剛的分割區應該會不見，然後執行&lt;br&gt;
 開機自動掛載分割區&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount -a
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount -a
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;如果沒有錯誤訊息，就在執行一次&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -9517,7 +9517,7 @@ join 是開啟這個 thread 的上層程式必須等待到這個 thread 的工�
 &lt;h2 id="main-thread"&gt;在 main 裡面直接開啟 thread&lt;/h2&gt;
 &lt;p&gt;直接宣告 thread 型態的變數&lt;br&gt;
 thread 的 constructor 的第一個參數是函數名稱，第二個以後就是原本函數的參數&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;thread&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 &lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="k"&gt;namespace&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;    
 
@@ -9548,7 +9548,7 @@ cout 似乎是每一個 &amp;lt;&amp;lt; 會去搶一次，所以如果想要一
 第 2 個用 this&lt;br&gt;
 第 3 個以後才是原本 function 的參數&lt;br&gt;
 p.s. 如果 fun1 是 static，則不用 this&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;thread&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 &lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="k"&gt;namespace&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
@@ -9574,7 +9574,7 @@ p.s. 如果 fun1 是 static，則不用 this&lt;/p&gt;
 
 &lt;p&gt;最後是如何呼叫其他 class 的 function，這裡包含兩個例子 (main, class B)&lt;br&gt;
 想法跟上面那種很接近，只是第 2 個參數改成那個物件的實體&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;thread&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 &lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="k"&gt;namespace&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
@@ -9610,7 +9610,7 @@ p.s. 如果 fun1 是 static，則不用 this&lt;/p&gt;
 
 
 &lt;h2 id="pthread"&gt;基本的 pthread 使用&lt;/h2&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;pthread.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 &lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="k"&gt;namespace&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 

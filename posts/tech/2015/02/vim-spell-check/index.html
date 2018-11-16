@@ -34,7 +34,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -130,7 +130,7 @@ Life Lies in Traveling            </a>
 
 <h1 id="vundle">用 vundle 安裝</h1>
 <p>在 vimrc 中加入下面這行</p>
-<div class="codehilite"><pre><span></span>Bundle &#39;vimspell&#39;
+<div class="highlight"><pre><span></span>Bundle &#39;vimspell&#39;
 </pre></div>
 
 
@@ -143,7 +143,7 @@ http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/diction
 應該會看到下面這樣<br>
 <img alt="1_directory" src="http://i.imgur.com/gLWMnmW.png"></p>
 <p>接著進入 vim 在 normal mode 輸入</p>
-<div class="codehilite"><pre><span></span>:mkspell en en_US
+<div class="highlight"><pre><span></span>:mkspell en en_US
 </pre></div>
 
 
@@ -151,7 +151,7 @@ http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/diction
 檢查一下 vim 資料夾下的 spell 資料夾有沒有新增字典檔，確定有了後就新增完成了</p>
 <h1 id="_2">設定</h1>
 <p>首先要先定義要根據哪個字典檔</p>
-<div class="codehilite"><pre><span></span>:set spelllang=en
+<div class="highlight"><pre><span></span>:set spelllang=en
 </pre></div>
 
 
@@ -160,7 +160,7 @@ http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/diction
 <code>:set nospell</code> 則是關閉</p>
 <p>如果每次都要設定一次，就太麻煩了<br>
 我在 vimrc 加入了下面這些</p>
-<div class="codehilite"><pre><span></span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
+<div class="highlight"><pre><span></span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
 nmap <span class="p">&lt;</span>F7<span class="p">&gt;</span> :<span class="k">setlocal</span> <span class="k">spell</span><span class="p">!&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 autocmd <span class="nb">BufRead</span> *.txt<span class="p">,</span>*.md<span class="p">,</span>*.tex <span class="k">setlocal</span> <span class="k">spell</span>
 </pre></div>

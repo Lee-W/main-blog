@@ -34,7 +34,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -162,7 +162,7 @@ Google 一下「PyCon」、「Instagram」有很多很清楚地整理<br>
 這就會導致我們必須先確認他的型態是否符合預期<br>
 如果不符合就要在做 encode 或 decode</p>
 <p>可能就會像下面這樣</p>
-<div class="codehilite"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
+<div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">text_type</span><span class="p">):</span>
     <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encode</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
 <span class="n">mymac</span> <span class="o">=</span> <span class="n">hamc</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>

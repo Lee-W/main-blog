@@ -35,7 +35,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -129,13 +129,13 @@ Life Lies in Traveling            </a>
                 </div>
                 <p><a href="https://www.pylint.org">Pylint</a></p>
 <h2 id="setup">Setup</h2>
-<div class="codehilite"><pre><span></span>pip install pylint
+<div class="highlight"><pre><span></span>pip install pylint
 </pre></div>
 
 
 <h2 id="usage">Usage</h2>
 <h3 id="generate-a-code-quality-report">Generate a code quality report</h3>
-<div class="codehilite"><pre><span></span>pylint your_code.py
+<div class="highlight"><pre><span></span>pylint your_code.py
 </pre></div>
 
 
@@ -147,7 +147,7 @@ Life Lies in Traveling            </a>
 <ul>
 <li>Generate <code>pylintrc</code> file</li>
 </ul>
-<div class="codehilite"><pre><span></span>pylint --generate-rcfile &gt; ~/.pylintrc
+<div class="highlight"><pre><span></span>pylint --generate-rcfile &gt; ~/.pylintrc
 </pre></div>
 
 
@@ -156,7 +156,7 @@ For further customization, you'll have to change this file.</p>
 <ul>
 <li>Generate a code quality report using you <code>pylintrc</code></li>
 </ul>
-<div class="codehilite"><pre><span></span>pylint --rcfile ~/.pylintrc you_code.py
+<div class="highlight"><pre><span></span>pylint --rcfile ~/.pylintrc you_code.py
 </pre></div>
 
 
@@ -167,7 +167,7 @@ For further customization, you'll have to change this file.</p>
 It uses the new async feature in vim 8.<br>
 Thus, it checks your code when you are typing. (You can disable it.)</p>
 <p>The following settings are for pylint in <code>~/.vimrc</code></p>
-<div class="codehilite"><pre><span></span><span class="c1"># The default value is pytlinh</span>
+<div class="highlight"><pre><span></span><span class="c1"># The default value is pytlinh</span>
 <span class="c1"># If your pylint executable is not pylint, it should be set </span>
 <span class="nb">let</span> g:ale_python_pylint_executable <span class="o">=</span> <span class="s1">&#39;pylint&#39;</span>
 
@@ -180,7 +180,7 @@ Thus, it checks your code when you are typing. (You can disable it.)</p>
 For Python, <code>flake8</code>, <code>mypy</code> are also used.<br>
 Thus, you might find that even if you ignore some rules in <code>pylintc</code>, you are still notified.</p>
 <p>In this case, add the following setting in <code>~/.vimrc</code></p>
-<div class="codehilite"><pre><span></span><span class="nb">let</span> g:ale_linters <span class="o">=</span> <span class="o">{</span>
+<div class="highlight"><pre><span></span><span class="nb">let</span> g:ale_linters <span class="o">=</span> <span class="o">{</span>
 <span class="se">\ </span>  <span class="s1">&#39;python&#39;</span>: <span class="o">[</span><span class="s1">&#39;pylint&#39;</span><span class="o">]</span>,
 <span class="se">\}</span>
 </pre></div>
@@ -193,7 +193,7 @@ Thus, you might find that even if you ignore some rules in <code>pylintc</code>,
 <p><img alt="python-mode-screenshot" src="https://i.imgur.com/5FffIqN.png"><br>
 Unlike <code>ale</code>, <code>python-mode</code> check your code only when you save or open your python file (You can set this in your <code>~/.vimrc</code>)</p>
 <p>Add these lines in <code>~/.vimrc</code>  to enable <code>pylint</code></p>
-<div class="codehilite"><pre><span></span>let g:pymode_lint_checkers = [&#39;pyflakes&#39;, &#39;pylint&#39;, &#39;pep8&#39;]
+<div class="highlight"><pre><span></span>let g:pymode_lint_checkers = [&#39;pyflakes&#39;, &#39;pylint&#39;, &#39;pep8&#39;]
 let g:pymode_lint_ignore = &quot;C0111,W0621,E501,F0002&quot;
 </pre></div>
 

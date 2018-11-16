@@ -34,7 +34,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -130,18 +130,18 @@ Life Lies in Traveling            </a>
 <p>e.g.<br>
 有個資料夾是 /a/b/c/d/e/f/g/h<br>
 原本要輸入</p>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> /a/b/c/d/e/f/g/h
+<div class="highlight"><pre><span></span><span class="nb">cd</span> /a/b/c/d/e/f/g/h
 </pre></div>
 
 
 <p>可是現在有了 autojump，而且你也去過這個 h 資料夾，你就可以</p>
-<div class="codehilite"><pre><span></span>j h
+<div class="highlight"><pre><span></span>j h
 </pre></div>
 
 
 <p>很方便吧！！！</p>
 <h1 id="_1">安裝</h1>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> /tmp
+<div class="highlight"><pre><span></span><span class="nb">cd</span> /tmp
 git clone https://github.com/joelthelion/autojump
 <span class="nb">cd</span> autojump
 chmod +x install.py
@@ -158,24 +158,24 @@ chmod +x install.py
 <ol>
 <li>最基本的功能當然就是跳轉囉</li>
 </ol>
-<div class="codehilite"><pre><span></span>j word
+<div class="highlight"><pre><span></span>j word
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>如果有重複的名稱 (e.g. worda, wordb)，就在打一次同樣的指令，就會跳到下一個
+<div class="highlight"><pre><span></span>如果有重複的名稱 (e.g. worda, wordb)，就在打一次同樣的指令，就會跳到下一個
 </pre></div>
 
 
 <p><strong>strong text</strong><br>
 2. list 現在 autojump 可以跳到的資料夾</p>
-<div class="codehilite"><pre><span></span>j -s 
+<div class="highlight"><pre><span></span>j -s 
 </pre></div>
 
 
 <ol>
 <li>刪除已經背改變路徑或刪除的紀錄</li>
 </ol>
-<div class="codehilite"><pre><span></span> j --purge
+<div class="highlight"><pre><span></span> j --purge
 </pre></div>
 
 

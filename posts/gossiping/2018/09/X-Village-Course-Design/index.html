@@ -33,7 +33,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -208,7 +208,7 @@ Life Lies in Traveling            </a>
 我在寫 Lisp 的時候，連 Syntax Highlight 都不懂<br>
 還要不斷數括號數量，才知道程式能不能跑的</p>
 <p>e.g., </p>
-<div class="codehilite"><pre><span></span>(cond ((eq &#39;a &#39;b) &#39;first)  (atom &#39;a)  &#39;second))
+<div class="highlight"><pre><span></span>(cond ((eq &#39;a &#39;b) &#39;first)  (atom &#39;a)  &#39;second))
 </pre></div>
 
 
@@ -241,7 +241,7 @@ Life Lies in Traveling            </a>
 就是帶了一些影片，讓大家 Recap 一下白天老師教的內容<br>
 我主要把時間都花在 Exercise 的設計上</p>
 <h3 id="exercise4-python-ex4py">Exercise4 用 Python 做排序 (ex4.py)</h3>
-<div class="codehilite"><pre><span></span><span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight"><pre><span></span><span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span>
     <span class="mi">65</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span>
     <span class="mi">76</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span>
     <span class="mi">29</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span>
@@ -267,7 +267,7 @@ Life Lies in Traveling            </a>
 甚至我第一次用 Python 爬選課系統的時候，連 json 模組都不會用<br>
 只會照著 json 規定的格式，慢慢地做字串處理<br>
 e.g., </p>
-<div class="codehilite"><pre><span></span><span class="n">json_str</span> <span class="o">=</span> <span class="s1">&#39;{&quot;&#39;</span> <span class="o">+</span> <span class="n">course_name</span> <span class="o">+</span> <span class="s1">&#39;&quot;: &quot;&#39;</span> <span class="o">+</span> <span class="n">course_id</span> <span class="o">+</span> <span class="s1">&#39;&quot;}&#39;</span>
+<div class="highlight"><pre><span></span><span class="n">json_str</span> <span class="o">=</span> <span class="s1">&#39;{&quot;&#39;</span> <span class="o">+</span> <span class="n">course_name</span> <span class="o">+</span> <span class="s1">&#39;&quot;: &quot;&#39;</span> <span class="o">+</span> <span class="n">course_id</span> <span class="o">+</span> <span class="s1">&#39;&quot;}&#39;</span>
 </pre></div>
 
 
@@ -302,7 +302,7 @@ e.g., </p>
 總覺得要寫一個稍微有用的程式是非常非常遙遠的事<br>
 所以大二下的 C++ ，對我來我說是寫程式很大的里程碑</p>
 <p>這題的解答也是差不多一行而已</p>
-<div class="codehilite"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ptt_data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;some_key&#39;</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ptt_data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;some_key&#39;</span><span class="p">])</span>
 </pre></div>
 
 

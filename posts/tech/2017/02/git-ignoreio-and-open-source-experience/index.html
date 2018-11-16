@@ -33,7 +33,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -131,13 +131,13 @@ Life Lies in Traveling            </a>
 <h2 id="git-ignore-io">git ignore-io</h2>
 <p>這個工具主要是從<a href="https://www.gitignore.io">gitignoore.io</a> 上下載 .gitignore 的範本<br>
 e.g. </p>
-<div class="codehilite"><pre><span></span>git ignore-io -a vim osx python
+<div class="highlight"><pre><span></span>git ignore-io -a vim osx python
 </pre></div>
 
 
 <p>像這就是 vim 常見的暫存檔們<br>
 一般來說應該被忽略掉，不用被 commit</p>
-<div class="codehilite"><pre><span></span># Created by https://www.gitignore.io/api/vim
+<div class="highlight"><pre><span></span># Created by https://www.gitignore.io/api/vim
 
 ### Vim ###
 # swap
@@ -161,7 +161,7 @@ tags
 <p>當初可是連文件都要寫好，才會被作者接受<br>
 所以我這裡就直接沿用我當初寫的文件了 xd</p>
 <p>Without option, <code>git ignore-io &lt;type&gt;</code> shows the sample gitignore of specified types on screen.  </p>
-<div class="codehilite"><pre><span></span>$ git ignore-io vim
+<div class="highlight"><pre><span></span>$ git ignore-io vim
 
     <span class="c1"># Created by https://www.gitignore.io/api/vim</span>
 
@@ -180,7 +180,7 @@ tags
 <li><code>-a</code> or <code>--append</code> to append the result to <code>.gitignore</code></li>
 <li><code>-r</code> or <code>--replace</code> to export <code>.gitignore</code> with the result</li>
 </ul>
-<div class="codehilite"><pre><span></span>$ git ignore-io vim python
+<div class="highlight"><pre><span></span>$ git ignore-io vim python
 </pre></div>
 
 
@@ -193,7 +193,7 @@ To list all the available types:</p>
 <ul>
 <li><code>-s &lt;word&gt;</code> or <code>--search &lt;word&gt;</code></li>
 </ul>
-<div class="codehilite"><pre><span></span>$ git ignore-io -s ja
+<div class="highlight"><pre><span></span>$ git ignore-io -s ja
 
     django
     jabref

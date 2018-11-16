@@ -34,7 +34,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <link href="http://lee-w.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
 
@@ -137,7 +137,7 @@ Life Lies in Traveling            </a>
 <li>把 extneral 裡面的 external 資料夾放到 plugin 裡面</li>
 <li>在 <code>index.html</code> 中的 <code>Reveal.initalize</code> 這個 block 加入下面的內容</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;plugin/external/external.js&#39;</span><span class="p">,</span> <span class="nx">condition</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span> <span class="s1">&#39;[data-external]&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
+<div class="highlight"><pre><span></span><span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;plugin/external/external.js&#39;</span><span class="p">,</span> <span class="nx">condition</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span> <span class="s1">&#39;[data-external]&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
 </pre></div>
 
 
@@ -146,14 +146,14 @@ Life Lies in Traveling            </a>
 <ol>
 <li>git submodule</li>
 </ol>
-<div class="codehilite"><pre><span></span>git submodule add https://github.com/calevans/external plugin/external
+<div class="highlight"><pre><span></span>git submodule add https://github.com/calevans/external plugin/external
 </pre></div>
 
 
 <ol>
 <li>在 <code>index.html</code> 中的 <code>Reveal.initalize</code> 這個 block 加入下面的內容</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;plugin/external/external/external.js&#39;</span><span class="p">,</span> <span class="nx">condition</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span> <span class="s1">&#39;[data-external]&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
+<div class="highlight"><pre><span></span><span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;plugin/external/external/external.js&#39;</span><span class="p">,</span> <span class="nx">condition</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span> <span class="s1">&#39;[data-external]&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
 </pre></div>
 
 
@@ -161,18 +161,18 @@ Life Lies in Traveling            </a>
 <h1 id="usage">Usage</h1>
 <p>之後就能使用 <code>data-external</code> 這個 tag 來載入外部的 html</p>
 <h2 id="indexhtml">原本的 index.html</h2>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">&quot;module_01/index.html&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">&quot;module_01/index.html&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
 </pre></div>
 
 
 <h2 id="html">外部 html</h2>
-<div class="codehilite"><pre><span></span><span class="c">&lt;!-- module_01/index.html --&gt;</span>
+<div class="highlight"><pre><span></span><span class="c">&lt;!-- module_01/index.html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> This is external <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
 </pre></div>
 
 
 <h2 id="html_1">載入後的 html</h2>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">&quot;module_01/index.html&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">&quot;module_01/index.html&quot;</span><span class="p">&gt;</span>
     <span class="c">&lt;!-- module_01/index.html --&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> This is external <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
