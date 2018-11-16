@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="zh" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>[Note] The Clean Coder - Life Lies in Traveling</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://lee-w.github.io/posts/tech/2018/11/the-clean-coder">
+
+        <meta name="author" content="Lee-W" />
+        <meta name="keywords" content="clean-code" />
+        <meta name="description" content="過了幾年又重新看過這本書才慢慢能感受到裡面說的 Uncle Bob 的書真的每個階段看都會有很不一樣的感覺 很值得買回來收 xD" />
+
+        <meta property="og:site_name" content="Life Lies in Traveling" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="[Note] The Clean Coder"/>
+        <meta property="og:url" content="http://lee-w.github.io/posts/tech/2018/11/the-clean-coder"/>
+        <meta property="og:description" content="過了幾年又重新看過這本書才慢慢能感受到裡面說的 Uncle Bob 的書真的每個階段看都會有很不一樣的感覺 很值得買回來收 xD"/>
+        <meta property="article:published_time" content="2018-11-16" />
+            <meta property="article:section" content="Tech" />
+            <meta property="article:tag" content="clean-code" />
+            <meta property="article:author" content="Lee-W" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://lee-w.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href="http://lee-w.github.io/theme/css/pygments/xcode.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Life Lies in Traveling ATOM Feed"/>
+
+
+
+        <link href="http://lee-w.github.io/feeds/tech.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Life Lies in Traveling Tech ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://lee-w.github.io/" class="navbar-brand">
+Life Lies in Traveling            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/archives.html">Archives</a></li>
+                    <li><a href="/categories.html">Categories</a></li>
+                         <li><a href="http://lee-w.github.io/pages/about-me.html">
+                             About Me
+                          </a></li>
+                         <li><a href="http://lee-w.github.io/pages/about-this-blog.html">
+                             About This Blog
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://lee-w.github.io/posts/tech/2018/11/the-clean-coder"
+                       rel="bookmark"
+                       title="Permalink to [Note] The Clean Coder">
+                        [Note] The Clean Coder
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2018-11-16T15:03:00+08:00"> 2018/11/16 - 五</time>
+    </span>
+
+
+
+        <span class="label label-default">Category</span>
+        <a href="http://lee-w.github.io/category/tech.html">Tech</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://lee-w.github.io/tag/clean-code.html">clean-code</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <nav class="toc">
+                    <div class="toc">
+<ul>
+<li><a href="#_1">關於本書</a></li>
+<li><a href="#_2">第一章：專業主義</a><ul>
+<li><a href="#_3">擔當責任</a></li>
+<li><a href="#_4">自動化測試</a></li>
+<li><a href="#_5">結構</a></li>
+<li><a href="#_6">職業道德</a></li>
+<li><a href="#_7">了解你的領域</a></li>
+<li><a href="#_8">學習</a></li>
+<li><a href="#_9">了解業務領域</a></li>
+</ul>
+</li>
+<li><a href="#_10">第二章：説「不」</a></li>
+<li><a href="#_11">第三章：説「是」</a><ul>
+<li><a href="#_12">識別「缺乏承諾」的徵兆</a></li>
+<li><a href="#_13">真正的承諾聽起來是怎樣的</a></li>
+</ul>
+</li>
+<li><a href="#_14">第四章：寫程式</a><ul>
+<li><a href="#_15">做好準備</a></li>
+<li><a href="#_16">創意輸入</a></li>
+<li><a href="#_17">保持節奏、知道何時應該離開一會</a></li>
+<li><a href="#_18">進度延遲</a></li>
+<li><a href="#_19">交付失敗</a></li>
+<li><a href="#_20">幫助</a></li>
+</ul>
+</li>
+<li><a href="#_21">第五章：測試驅動開發</a><ul>
+<li><a href="#tdd">TDD 的三大法則</a></li>
+<li><a href="#tdd_1">TDD 的優勢</a></li>
+</ul>
+</li>
+<li><a href="#_22">第六章：練習</a><ul>
+<li><a href="#_23">自身經驗的拓展</a></li>
+</ul>
+</li>
+<li><a href="#_24">第七章：驗收測試</a><ul>
+<li><a href="#_25">測試的協商與被動推進</a></li>
+<li><a href="#_26">結論</a></li>
+</ul>
+</li>
+<li><a href="#_27">第八章：測試策略</a><ul>
+<li><a href="#_28">自動化測試金字塔</a></li>
+</ul>
+</li>
+<li><a href="#_29">第九章：時間管理</a><ul>
+<li><a href="#_30">會議</a><ul>
+<li><a href="#_31">離席</a></li>
+</ul>
+</li>
+<li><a href="#_32">爭論 / 反對</a></li>
+<li><a href="#manna">專注力 Manna</a></li>
+<li><a href="#_33">要避免的行為</a></li>
+<li><a href="#_34">死胡同</a></li>
+</ul>
+</li>
+<li><a href="#10">第10章：預估</a><ul>
+<li><a href="#pert-program-evaluation-and-review-technique">PERT (Program Evaluation and Review Technique)</a></li>
+<li><a href="#_35">大數法則</a></li>
+</ul>
+</li>
+<li><a href="#11">第11章：壓力</a><ul>
+<li><a href="#_36">避免壓力</a><ul>
+<li><a href="#_37">承諾</a></li>
+<li><a href="#_38">危機中的紀律</a></li>
+</ul>
+</li>
+<li><a href="#_39">應對壓力</a></li>
+</ul>
+</li>
+<li><a href="#12">第12章：協作</a></li>
+<li><a href="#13">第13章：團隊與專案</a></li>
+<li><a href="#14">第14章：輔導、學徒期與工藝典範</a></li>
+<li><a href="#appendix-a">Appendix A: 工具</a></li>
+</ul>
+</div>
+                </nav>
+                <br></br>
+                <p>過了幾年又重新看過這本書才慢慢能感受到裡面說的<br/>
+Uncle Bob 的書真的每個階段看都會有很不一樣的感覺<br/>
+很值得買回來收 xD</p>
+<p><img alt="Clean Coder" src="http://i.imgur.com/5a0LzcSm.jpg"/></p>
+<!--more-->
+<p>幾年前第一次看這本書的時候<br/>
+寫程式大多只是交作業，頂多就跟其他的同學一起交大一點的作業或開發一些小專案<br/>
+能不要被雷（或不要雷別人）就很不錯了<br/>
+當時記錄下的摘要也就沒什麼內容（<a href="http://lee-w.github.io/posts/book/2015/01/clean-coder/">[Book] Clean Coder</a>）<br/>
+到了現在。加減算是做過稍微大一點的專案，也帶過一些小專案<br/>
+重新看過這本書，就慢慢理解了一點 Uncle Bob 想說的</p>
+
+<h2 id="_1">關於本書</h2>
+<ul>
+<li>什麼是軟體專業人士？</li>
+<li>軟體專業人士如何行事？</li>
+<li>軟體專業人士如何處理衝突，「應對」緊湊的開發進度表？如何和不切實際的管理人員打交道？</li>
+<li>軟體專業人士何時應該說「不」？怎麼說？</li>
+<li>軟體專業人士如何「應對」壓力？</li>
+</ul>
+<h2 id="_2">第一章：專業主義</h2>
+<h3 id="_3">擔當責任</h3>
+<ul>
+<li>
+<p>專業人士如果犯了錯，只好<strong>自己</strong>收拾殘局</p>
+<ul>
+<li>專業主義就代表著<strong>「擔當責任」</strong></li>
+</ul>
+</li>
+<li>
+<p>你說的沒錯。軟體發展太複雜了，不可能沒什麼Bug。但很不幸，這個理由並不能為你開脫。人體太複雜了，不可能完全理解，但醫生仍誓言不傷害病人。如果他們不拿人體的複雜性做託辭，我們又怎麼能拿上述理由，開脫自已的責任呢？</p>
+<ul>
+<li>程式難免出現 bug ，但這不意味著你不用對他們負責；沒人能寫出完美的軟體，但這不代表你不用對不完美負責。</li>
+<li><strong>每次 QA 找出問題時，或者更糟糕的是「用戶找出問題」時，你都該震驚羞愧，並決心以此為戒。</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">自動化測試</h3>
+<ul>
+<li>寫一些隨時都能執行的「單元測試」，然後盡可能地多執行</li>
+<li>要測試多少程式碼呢？ -&gt; <strong>當然是全部！全部都要測！</strong></li>
+<li>但有些程式碼不是很難測嗎？<ul>
+<li>沒錯。但之所以難測，是因為設計時沒考慮如何測試</li>
+<li>唯一的解決辦法就是要設計<strong>「易於測試的程式碼」</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="_5">結構</h3>
+<ul>
+<li>想證明軟體易於修改，唯一的辦法就是「做些實際的修改」<ul>
+<li>如果發現這些修改不如想像中簡單，就應該改進設計，讓後續的改變更簡單</li>
+</ul>
+</li>
+</ul>
+<h3 id="_6">職業道德</h3>
+<ul>
+<li>你應該計畫每週的60小時中<ul>
+<li>40小時給雇主</li>
+<li>20小時給自己 （大約每天 3 小時）<ul>
+<li>不為雇主工作，為自己的職業發展工作</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="_7">了解你的領域</h3>
+<ul>
+<li>每個專業軟體發展人員<strong>至少</strong>必須精通的事項<ul>
+<li>Design patterns<ul>
+<li>GOF</li>
+<li>POSA</li>
+</ul>
+</li>
+<li>Design principles<ul>
+<li>SOLID</li>
+</ul>
+</li>
+<li>Methods<ul>
+<li>XP</li>
+<li>Scrum</li>
+<li>Lean</li>
+<li>Kanban</li>
+<li>Waterflow</li>
+<li>結構化分析</li>
+<li>結構化設計</li>
+<li>and etc.</li>
+</ul>
+</li>
+<li>Disciplines<ul>
+<li>TDD</li>
+<li>物件導向設計</li>
+<li>結構化程式設計</li>
+<li>CI</li>
+<li>Pair Programming</li>
+</ul>
+</li>
+<li>Artifacts<ul>
+<li>UML</li>
+<li>DFD (Data Flow Diagram)</li>
+<li>結構圖</li>
+<li>Petri net</li>
+<li>狀態遷移圖表</li>
+<li>流程圖</li>
+<li>決策表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="_8">學習</h3>
+<ul>
+<li>自我學習<ul>
+<li>讀書, 關注 blog, tweets, 參加 conference, 訪問用戶群, 參與讀書會 and etc.</li>
+</ul>
+</li>
+<li>協作</li>
+<li>輔導<ul>
+<li>專業人士會「視輔導新人為己任」，他們不會放任未經輔導的新手胡打亂撞 </li>
+</ul>
+</li>
+</ul>
+<h3 id="_9">了解業務領域</h3>
+<ul>
+<li>如果撰寫財務系統，你就該對財務領域有所了解<ul>
+<li>你未必要成為該領域的專家，但你仍需要勤勉，付出相當的努力來認識業務領域。</li>
+</ul>
+</li>
+<li><strong>最不專業的做法是，只簡單地按照規格說明來撰寫程式碼，但卻對於那些業務為什麼需要做那樣的規格定義不求甚解。相反的，你應該對該領域有所瞭解，能辨別、執行規格說明書的錯誤</strong></li>
+</ul>
+<h2 id="_10">第二章：説「不」</h2>
+<blockquote>
+<p>Do or do not ! There is no try!<br/>
+—— Yoda </p>
+</blockquote>
+<ul>
+<li>專業人士敢於說明真相而不屈從於權勢。專業人士有勇氣對他們的經理說「不」。<ul>
+<li>難道不該照你老闆說的去做嗎？<ul>
+<li>不該。只要你是一名專業人士，那就不該</li>
+<li>奴隸沒有權利說「不」。勞工或許也對說「不」有所顧慮。但是專業人士應該懂得說「不」</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>你的經理要求你在明天之前完成登入頁面，這就是他在追求和捍衛的一個目標，那是他的工作職責。如果你明知第二天之前不可能完成登入頁面，嘴上卻說「好的，我會試試看」，那麼便是你失職了。這時候，唯一盡責的方式便是說「不，這不可能」<ul>
+<li><strong>可能得最好結果</strong>是你和你的經理共同追求的目標。<strong>最關鍵的是要找到那個「共同目標」，而這往往有賴於「協商」。</strong></li>
+</ul>
+</li>
+<li>「為什麼」重要嗎？<ul>
+<li>如果你的主管恰好有「技術背景」和「好脾氣」去傾聽理解，這些解釋也許有用</li>
+<li>另一種狀況是，主管會不認同這樣的結論或做法不對，可能會說出不用做完整的測試和程式碼審核<ul>
+<li>有時候，提供太多細節，只會變成一個口令一個動作的管理方式。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_11">第三章：説「是」</h2>
+<ul>
+<li>作出承諾包含三步驟<ol>
+<li>口頭上說自己將會去做</li>
+<li>心裡認真對待自己所做出的能諾</li>
+<li>真的付諸行動去做</li>
+</ol>
+</li>
+</ul>
+<h3 id="_12">識別「缺乏承諾」的徵兆</h3>
+<ul>
+<li>need / should<ul>
+<li>我們需要把這工作做完</li>
+<li>我需要減肥</li>
+<li>有人應當負責去推動這件事</li>
+</ul>
+</li>
+<li>hope / wish<ul>
+<li>希望明天我能完成這個任務</li>
+<li>希望改天我們能見宴嗎</li>
+<li>但願我有時間做這件事</li>
+<li>但願電腦更快點</li>
+</ul>
+</li>
+<li>Let's (而不是「讓我」)<ul>
+<li>讓我們回頭見</li>
+<li>讓我們把這工作做完</li>
+</ul>
+</li>
+</ul>
+<h3 id="_13">真正的承諾聽起來是怎樣的</h3>
+<ul>
+<li><strong>我將在...之前...</strong><ul>
+<li>e.g., 我將在星期二之前完成這個任務</li>
+<li>你對自己會做某件事做了清晰的事實陳述，而且還明確說明了完成期限</li>
+</ul>
+</li>
+<li>之所以沒成功，是因為我寄望於某某人去做這件事<ul>
+<li>你只能承諾自己能<strong>完全掌控</strong>的事</li>
+<li>如果最終目標依賴於他人，那麼你就應該採取些具體行動以接近最終目標</li>
+</ul>
+</li>
+<li>之所以沒成功，是因為有些時候我真的無能為力<ul>
+<li><strong>如果你無法兌現承諾，那麼最重要的就是「儘早向你承諾對象發聲預警，越快越好，越早越好」。</strong></li>
+<li>如果你不儘早告訴他人可能的問題，就錯失了讓他們幫你兌現能諾的機會。    </li>
+</ul>
+</li>
+</ul>
+<h2 id="_14">第四章：寫程式</h2>
+<h3 id="_15">做好準備</h3>
+<p>寫程式是件累人的事，你必須做到</p>
+<ol>
+<li>讓程式碼能正常工作。理解當前要解決的問題和如何解決，並且確保程式碼忠實的依循解決方案</li>
+<li>幫客戶解決問題<ul>
+<li><strong>很多時候，客戶提出的需求其實並不能真正解決他們自己的問題。這有賴於你去發現這些問題並與客戶交流，以確保能滿足客戶的真實需求</strong>。</li>
+</ul>
+</li>
+<li>程式碼必須和現有系統整合，並妥善管理好各種相依關係，不能讓系統僵化<ul>
+<li>寫程式時必須遵循穩工程原則</li>
+</ul>
+</li>
+<li>
+<p>其他的程式設計師必須能讀懂你的程式碼</p>
+<ul>
+<li>這包括寫好註解、精心淬煉程式碼，這可能是程式設計師最難精通的一項。</li>
+</ul>
+</li>
+<li>
+<p>感到疲勞或心煩意亂，<strong>千萬別寫程式</strong></p>
+<ul>
+<li>奉獻精神和職業素養更主要的意義在於「遵守紀律原則」而非成為「長時間的工作狂」</li>
+<li>要確保自己已經幾睡眠、健康和生活方式調整到最佳狀態，這樣才能做到每天的8小時工作時間內<strong>全力以赴</strong></li>
+</ul>
+</li>
+</ol>
+<h3 id="_16">創意輸入</h3>
+<ul>
+<li>「創意輸出」依賴於「創意出入」 -&gt; 廣泛閱讀</li>
+</ul>
+<h3 id="_17">保持節奏、知道何時應該離開一會</h3>
+<ul>
+<li>軟體開發是一場馬拉松，不是短跑衝刺</li>
+<li>沒解決這個問題不能回家<ul>
+<li>噢不，你可以回家，而且是應該回家！</li>
+<li>創意和智力來自於大腦的高速運轉，當你感到疲勞時，它們就不翼而飛了</li>
+</ul>
+</li>
+</ul>
+<h3 id="_18">進度延遲</h3>
+<ul>
+<li>即使是最優秀的程式設計師、最敬業的員工，也不能避免碰到延遲<ul>
+<li>管理延遲的要訣就是<strong>早期檢測和保持透明</strong></li>
+<li>根據目標定期衡量進度，使用三個考慮到各種因素的期限，<strong>不要把預估和期望混淆在一起</strong><ul>
+<li>樂觀預估, 常態預估, 悲觀預估</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>不要經受不住誘惑盲目衝刺<ul>
+<li>你無法更快的寫完程式碼。試圖這麼做，最終只會讓自己變得更慢，同時也只能製造出一堆混亂，讓其他人也慢下來</li>
+</ul>
+</li>
+</ul>
+<h3 id="_19">交付失敗</h3>
+<ul>
+<li>程式設計師所能表現的不專業中，最糟糕的就是，明知道還沒有完成任務卻宣稱已經完成</li>
+<li>明確定義「完成」<ul>
+<li>最好的方法是讓業務分析師和測試人員建立一套自動化的驗收測試，只有完全通過這些驗收測試，開發任務才能算已經完成</li>
+</ul>
+</li>
+</ul>
+<h3 id="_20">幫助</h3>
+<ul>
+<li>作為專業人士，你要以能隨時幫助別人為榮<ul>
+<li>你的工作不可能重要到你不能花一丁點時間來幫助別人</li>
+<li>這並不是說你不需要獨處的時間 -&gt; 直接、禮貌的讓人知道某個時間區段不希望受到干擾，其餘的時段敞開大門樂於幫助他人</li>
+</ul>
+</li>
+<li>要學會如何請求幫助</li>
+<li>輔導<ul>
+<li>花時間親自輔導手底下的年輕程式設計師，是資深程式設計師的「專業職責所在」</li>
+<li>同樣的道理，向資深導師尋求輔導，也是年輕程式設計師的「專業職責」</li>
+</ul>
+</li>
+</ul>
+<h2 id="_21">第五章：測試驅動開發</h2>
+<h3 id="tdd">TDD 的三大法則</h3>
+<ol>
+<li>在撰寫一個單元測試（測試失敗的單元測試）前，不可撰寫任何產品程式</li>
+<li>只撰寫剛好無法通過的單元測試，不能編譯也算無法通過</li>
+<li>只撰寫剛好能通過當前測試失敗的產品程式</li>
+</ol>
+<h3 id="tdd_1">TDD 的優勢</h3>
+<ol>
+<li>確定性</li>
+<li>缺陷注入率</li>
+<li>勇氣<ul>
+<li>擁有一套值得信賴的測試，便可完全打消對修改程式碼的全部恐懼。當看見糟糕的程式碼時，就可以放手整理</li>
+</ul>
+</li>
+<li>文件<ul>
+<li>單元測試就是文件。他們描述了系統的最底層設計細節</li>
+</ul>
+</li>
+<li>設計<ul>
+<li>基於測試先行的需要，會迫使你去思考什麼才是<strong>好的設計</strong></li>
+<li>與採用測試先行方式編寫的測試程式碼比起來，後寫的測試在深度和捕捉錯誤的靈敏度方面要遜色很多</li>
+</ul>
+</li>
+</ol>
+<h2 id="_22">第六章：練習</h2>
+<h3 id="_23">自身經驗的拓展</h3>
+<ul>
+<li>老闆通常只會限定一種語言、一種平台，以及程式設計師工作目標的專業領域。這樣會導致經驗不夠豐富的程式設計師，其領域和思維都被侷限<ul>
+<li>程式設計師發現，面對這個行業的週期性變化造成的新局面，自己並沒有做好準備</li>
+</ul>
+</li>
+<li>保持不落伍的一種方法是為 open source project 貢獻程式碼<ul>
+<li>嘗試對自己不習慣的語言、平台、領域做出貢獻</li>
+</ul>
+</li>
+</ul>
+<h2 id="_24">第七章：驗收測試</h2>
+<ul>
+<li>定義驗收測試<ul>
+<li>「業務方與開發方合作編寫的測試」，其目的在於確認需求已經完成了</li>
+</ul>
+</li>
+<li>「完成」意味著<ol>
+<li>所有程式碼都寫完了</li>
+<li>所有的測試都通過了</li>
+<li>QA 和需求方已經認可</li>
+</ol>
+</li>
+</ul>
+<h3 id="_25">測試的協商與被動推進</h3>
+<p>身為專業開發人員，「與撰寫測試的人協商並改進測試」是你的職責。絕不能被動接受測試，更不能對自己說：「噢，測試就是這麼要求的，我又得這麼做。」</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>層級</th>
+<th>對象</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>單元測試</td>
+<td>系統內部</td>
+<td>呼叫特定類別方法</td>
+</tr>
+<tr>
+<td>驗收測試</td>
+<td>系統外部</td>
+<td>通常在 API 或 UI 層級進行</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_26">結論</h3>
+<p>細節交流是件麻煩事。尤其開發方和業務方交流關於程式的細節時，更是如此。<strong>通常，各方握手言歡，以為其他人都明白自己的意思。雙方以為取得了共識，然後帶著截然不同的想法離開，這種事屢見不顯。</strong><br/>
+要解決開發方和業務方的溝通問題，我 (Uncle Bob) 所知道的唯一有效辦法是「編寫自動化的驗收測試」。</p>
+<h2 id="_27">第八章：測試策略</h2>
+<table>
+<thead>
+<tr>
+<th>職位</th>
+<th>測試面向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>業務人員</td>
+<td>正常路徑測試 (happy-pathtest)</td>
+</tr>
+<tr>
+<td>QA</td>
+<td>包含極端狀況 (corner)、邊界條件 (boundary)的異常路徑測試(unhappy-path)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_28">自動化測試金字塔</h3>
+<table>
+<thead>
+<tr>
+<th>測試</th>
+<th>覆蓋率</th>
+<th>測試介面</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人工探索式測試</td>
+<td>~5%</td>
+<td></td>
+</tr>
+<tr>
+<td>系統測試</td>
+<td>~10%</td>
+<td>gui</td>
+</tr>
+<tr>
+<td>整合測試</td>
+<td>~20%</td>
+<td>api</td>
+</tr>
+<tr>
+<td>元件測試</td>
+<td>~50%</td>
+<td>api</td>
+</tr>
+<tr>
+<td>單元測試</td>
+<td>~100%</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>單元測試<ul>
+<li>目的： 在最低層次上定義系統<ul>
+<li>先寫測試，在寫程式碼</li>
+<li>這些應該作為 CI 的一部分執行，以確保程式設計師的程式碼意圖沒有遭到破壞</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>元件測試<ul>
+<li>需要使用合適的 mocking 或 test-doubling，解開「系統和其他元件」的耦合</li>
+<li>由 QA 和業務人員編寫，開發人員提供輔助</li>
+</ul>
+</li>
+<li>整合測試<ul>
+<li>目的： 確認系統架構層面結構正確</li>
+<li>只對元件很多的較大型系統才具有意義</li>
+<li>由系統架構師或 lead designers 來編寫</li>
+</ul>
+</li>
+<li>系統測試<ul>
+<li>針對「整個整合完畢的系統」來執行的自動化測試</li>
+<li>不會直接測試業務規則，而是測試系統是否以正確組裝完畢</li>
+<li>應包含產能測試和性能測試</li>
+<li>由系統架構師和 technical leads 來編寫</li>
+</ul>
+</li>
+<li>人工探索式測試<ul>
+<li>目的： 驗證預期行為時，探索系統預期以外的行為</li>
+</ul>
+</li>
+</ul>
+<h2 id="_29">第九章：時間管理</h2>
+<h3 id="_30">會議</h3>
+<p>關於會議，有兩條真理<br/>
+1. 會議是必須的<br/>
+2. 會議浪費了大量的時間</p>
+<h4 id="_31">離席</h4>
+<ul>
+<li>仔細管理自己的時間是你的責任。如果你發現參加某個會議是在浪費時間，就應當想個禮貌的辦法出來<ul>
+<li>顯然，你不該大喊「這會議真讓人厭煩」，沒有必要採取粗魯的辦法。可以選個適當時機來問問大家，你的出席是否必要。你可以解釋說，自己抽不出更多的時間用於這場會議，問問有沒有辦法加快討論，或者另選時間</li>
+<li>繼續參加對你沒有太多意義的會議，是不專業的行為</li>
+</ul>
+</li>
+</ul>
+<h3 id="_32">爭論 / 反對</h3>
+<ul>
+<li>如果觀點無法在短時間（5 ~ 30 分鐘）內達成一致，就永遠無法達成一致<ul>
+<li>唯一的解決方法是「去取得資料，讓資料來說話」</li>
+</ul>
+</li>
+<li>「既然其他人想要這樣做，就這麼做吧」這可能是非專業的行為中最糟糕的了，千萬千萬不要這麼做<ul>
+<li>如果你同意了，就<strong>必須</strong>拿出行動來</li>
+</ul>
+</li>
+</ul>
+<h3 id="manna">專注力 Manna</h3>
+<ul>
+<li>專注力是稀有的資源<ul>
+<li>如果你用光了自己的專注力 Manna，必須花一個小時或更多時間做不需要專注力的事情來補充它</li>
+</ul>
+</li>
+<li>專業開發人員會安排好他們的睡眠，保證清晨有飽滿的專注力 Manna 去上班</li>
+<li>肌肉專注力有助於改善新制專注力，而不僅僅是簡單恢復<ul>
+<li>定期訓練肌肉專注力，可以提升心智專注力的上限</li>
+</ul>
+</li>
+</ul>
+<h3 id="_33">要避免的行為</h3>
+<ul>
+<li>優先順序錯亂<ul>
+<li>無論什麼原因，我們都可以找到辦法逃避真正的工作。提高某項任務的優先順序，之後就有藉口延後真正急迫的任務</li>
+<li>專業開發人員會評估每項任務的優先順序，排除個人的喜好和需求，按照真實的緊急程度來執行任務</li>
+</ul>
+</li>
+</ul>
+<h3 id="_34">死胡同</h3>
+<ul>
+<li>專業開發人員不會執著於不容放棄也無法繞開的 idea。他們會保持開放的頭腦來聽取其他建議，所以即便走到盡頭，他們仍然有選擇</li>
+</ul>
+<h2 id="10">第10章：預估</h2>
+<ul>
+<li>承諾 v.s. 預估<ul>
+<li>承諾是必須做到的</li>
+<li>預估是一種「猜測」，不帶任何承諾的色彩。之所以要預估，是因為不知道要花多少時間</li>
+</ul>
+</li>
+</ul>
+<h3 id="pert-program-evaluation-and-review-technique">PERT (Program Evaluation and Review Technique)</h3>
+<ul>
+<li>三元分析法<ul>
+<li>O: Optimistic Estimate<ul>
+<li>一切都很順利的完成時間</li>
+</ul>
+</li>
+<li>N: Nominal Estimate<ul>
+<li>一般來說的完成時間</li>
+</ul>
+</li>
+<li>P: Pessimistic Estimate<ul>
+<li>遇到各種意外地完成時間</li>
+</ul>
+</li>
+<li>$ \mu = \frac{O+4N+P}{6} $<ul>
+<li>任務期望完成的時間</li>
+</ul>
+</li>
+<li>$ \sigma = \frac{P-O}{6} $<ul>
+<li>任務完成機率分布的標準差</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="_35">大數法則</h3>
+<ul>
+<li>把大任務分成許多小任務，分開預估再加總，結果會比單獨評估大任務要精確得多</li>
+</ul>
+<h2 id="11">第11章：壓力</h2>
+<h3 id="_36">避免壓力</h3>
+<h4 id="_37">承諾</h4>
+<ul>
+<li>避免對「沒有把握達成最後期限的工作」做出「承諾」<ul>
+<li>業務方總是期望能夠拿到這些承諾，因為他們想消除風險。我們要做的就是日風險量會，必將他們陳述給業務方，這樣他們就能做好相對的準備。</li>
+</ul>
+</li>
+<li>有時，有人會代我們做出承諾<ul>
+<li>出於責任感，我們必須主動協助找到方法來兌現這些承諾，但是一定<strong>不能接受</strong>這些承諾</li>
+</ul>
+</li>
+</ul>
+<h4 id="_38">危機中的紀律</h4>
+<ul>
+<li>如果在危機中你改變了行為，就說明你並不是真的相信常規行為中的紀律<ul>
+<li>如果在平時你會注意程式碼整潔，但在危機時刻，你卻會產出髒亂的程式碼，就說明你並不真正相信混亂會導致速度下降</li>
+</ul>
+</li>
+</ul>
+<h3 id="_39">應對壓力</h3>
+<ul>
+<li>不要驚慌失措</li>
+<li>溝通<ul>
+<li>讓你的團隊或主管知道你身陷困境。告訴他們你為走出困境置地的最佳計畫。請求他們的支援與指引。避免製造意料之外的詫異</li>
+</ul>
+</li>
+<li>依靠你的紀律原則<ul>
+<li>依靠那些你已經知道確實有效的東西 - 你平時遵守的紀律</li>
+</ul>
+</li>
+<li>尋求幫助<ul>
+<li>Pair Programming</li>
+</ul>
+</li>
+</ul>
+<h2 id="12">第12章：協作</h2>
+<ul>
+<li>專業程式設計師的主要職責是滿足雇主的需求<ul>
+<li>這意味著要含你的經理們、業務分析師們、測試工程師們和其他團隊成員有良好的協作，並且<strong>深刻理解</strong>業務項目</li>
+<li>你需要理解<strong>「手上正在撰寫的程式碼，其業務價值是什麼」</strong>，了解雇用你的企業將如何從你的工作中獲得回報</li>
+</ul>
+</li>
+<li>「需要長時間努力思考一個問題」、「任務極為簡單、和另一個人一起工作變成一種浪費」時單獨工作是正確的<ul>
+<li>但一般來說和其他人緊密協作、大部分時間採取 Pair Programming 是最好的作法</li>
+</ul>
+</li>
+<li><strong>程式設計意味著「與人協作」</strong><ul>
+<li>我們需要和業務人員一起工作，我們之間也需要互相合作</li>
+</ul>
+</li>
+</ul>
+<h2 id="13">第13章：團隊與專案</h2>
+<ul>
+<li>形成有凝聚力的團隊是需要時間的<ul>
+<li>可能需要6個月，甚至是1年</li>
+<li>團隊成員首先要建立關係。他們需要學習如何互相協作，需要瞭解彼此的癖好、強項、弱項，最終才能<strong>凝聚成</strong>團隊</li>
+</ul>
+</li>
+<li>有凝聚力的團隊通常有12名成員，多可以有20人，最少可以只有3人<ul>
+<li>e.g., 12名<ul>
+<li>7名程式設計師</li>
+<li>2名測試人員： 編寫「自動化測試」確認程式正確性</li>
+<li>2名分析師： 開發「需求」，為需求編寫「自動化測試」確認業務價值正確</li>
+<li>1名專案經理： 跟蹤團隊的「進度」，確保成員理解「專案時間表」和「優先順序」</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>團隊比專案更難建置<ul>
+<li>組織穩健的團隊，讓團隊在一個又一個專案中整體移動、共同工作是較好的做法</li>
+<li>團隊有了凝聚力，但卻因為專案結束了便將這樣的團隊解散，是極為荒謬可笑的做法</li>
+</ul>
+</li>
+</ul>
+<h2 id="14">第14章：輔導、學徒期與工藝典範</h2>
+<ul>
+<li>學校能夠傳授的是電腦程式設計的理論<ul>
+<li>但學校並不會、也無法傳授作為一名程式設計工匠所需要掌握的原則、實踐和技能<ul>
+<li>這些東西只有經由師徒個體間多年的細心監督和輔導才能獲得</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="appendix-a">Appendix A: 工具</h2>
+<ul>
+<li>Source code control<ul>
+<li>e.g., git</li>
+</ul>
+</li>
+<li>IDE / Editor<ul>
+<li>e.g., vi, emacs, IntelliJ, TextMate</li>
+</ul>
+</li>
+<li>問題追蹤<ul>
+<li>e.g., Pivotal Tracker, Lighthouse, wiki, Board (To-Do/ Doing/ Done)</li>
+</ul>
+</li>
+<li>CI<ul>
+<li>e.g., Jenkins</li>
+</ul>
+</li>
+<li>單元測試工具<ol>
+<li>快速便捷的執行測試</li>
+<li>在通過或失敗要有清楚的視覺提示</li>
+<li>對於測試進度也要有清楚的視覺提示</li>
+<li>避免 test cases 之間的彼此通訊</li>
+<li>讓編寫測試變得容易</li>
+</ol>
+</li>
+<li>元件測試工具<ul>
+<li>理想的情況是「業務分析師和QA」能夠使用這些工具來<strong>編寫</strong>規約</li>
+<li>e.g, FitNesse, RobotFX, Cucumber</li>
+</ul>
+</li>
+<li>整合測試工具<ul>
+<li>e.g., Selenium, Watir</li>
+</ul>
+</li>
+<li>UML / MDA</li>
+</ul>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'lee-w-blog'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "zh";
+
+                        this.page.identifier = '2018-11-16-the-clean-coder';
+                        this.page.url = 'http://lee-w.github.io/posts/tech/2018/11/the-clean-coder';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social" style="list-style-type: none;">
+          <li>
+              <a href="http://tw.linkedin.com/in/clleew">
+                      <i class="fab fa-linkedin"></i>
+                    Linkedin
+              </a>
+          </li>
+          <li>
+              <a href="http://github.com/Lee-W">
+                      <i class="fab fa-github"></i>
+                    GitHub
+              </a>
+          </li>
+          <li>
+              <a href="https://gitlab.com/Lee-W">
+                      <i class="fab fa-gitlab"></i>
+                    Gitlab
+              </a>
+          </li>
+          <li>
+              <a href="http://www.facebook.com/clleew">
+                      <i class="fab fa-facebook"></i>
+                    Facebook
+              </a>
+          </li>
+          <li>
+              <a href="//lee-w.github.io/feeds/all.atom.xml">
+                      <i class="fas fa-rss"></i>
+                    RSS
+              </a>
+          </li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="http://lee-w.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/algorithm.html">Algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/android.html">Android</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/autobiography.html">Autobiography</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/big-five-theory.html">Big Five Theory</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/c.html">C++</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/chat-bot.html">Chat Bot</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/clean-code.html">clean-code</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/code-quality.html">Code Quality</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/conference.html">Conference</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/coscup.html">COSCUP</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/deep-learning.html">Deep Learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/deploy.html">deploy</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/deprecated.html">Deprecated</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/design.html">Design</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/develop.html">Develop</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/dual-boot.html">Dual Boot</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/economics.html">Economics</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/education.html">Education</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/emotion.html">Emotion</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/flask.html">Flask</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/game-theory.html">Game Theory</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/git.html">Git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/git-book.html">Git Book</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/github.html">GitHub</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/heroku.html">Heroku</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/innovation.html">Innovation</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/inspiring.html">Inspiring</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/javascript.html">JavaScript</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/jupyter.html">Jupyter</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/linux-unix.html">Linux-Unix</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/machine-learning.html">Machine Learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/mbti.html">MBTI</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/mopcon.html">MOPCON</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/neovim.html">Neovim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/nlp.html">NLP</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/note.html">Note</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/open-source.html">Open Source</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/other.html">Other</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/personality.html">Personality</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/plugin.html">Plugin</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/productivity.html">Productivity</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/pycon.html">PyCon</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/python.html">Python</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/r.html">R</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/resume.html">Resume</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/revealjs.html">reveal.js</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/sales.html">Sales</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/shell-script.html">Shell Script</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/sitcon.html">SITCON</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/social-network.html">Social Network</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/software-engineering.html">Software Engineering</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/startup.html">Startup</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/story.html">Story</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/team.html">Team</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/tedx.html">TEDx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/thinking.html">Thinking</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/thread.html">Thread</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/tutorial.html">Tutorial</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/unboxing.html">unboxing</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/utility.html">Utility</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/vim.html">Vim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/visualization.html">Visualization</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/x-village.html">X-Village</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 Lee-W
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://lee-w.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://lee-w.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://lee-w.github.io/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'lee-w-blog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-96190677-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>
