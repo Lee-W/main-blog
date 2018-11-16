@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="zh" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>[Note] The Clean Code - Life Lies in Traveling</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://lee-w.github.io/posts/tech/2018/11/the-clean-code">
+
+        <meta name="author" content="Lee-W" />
+        <meta name="keywords" content="clean-code,Note" />
+        <meta name="description" content="既然都把 The Clean Coder 做完了 就順便把原本在 GitBook 的 The Clean Code 一起搬過來好了 不過到現在我還是沒看到過第 10 章 xD" />
+
+        <meta property="og:site_name" content="Life Lies in Traveling" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="[Note] The Clean Code"/>
+        <meta property="og:url" content="http://lee-w.github.io/posts/tech/2018/11/the-clean-code"/>
+        <meta property="og:description" content="既然都把 The Clean Coder 做完了 就順便把原本在 GitBook 的 The Clean Code 一起搬過來好了 不過到現在我還是沒看到過第 10 章 xD"/>
+        <meta property="article:published_time" content="2018-11-16" />
+            <meta property="article:section" content="Tech" />
+            <meta property="article:tag" content="clean-code" />
+            <meta property="article:tag" content="Note" />
+            <meta property="article:author" content="Lee-W" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://lee-w.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href="http://lee-w.github.io/theme/css/pygments/xcode.css" rel="stylesheet">
+    <link href="http://lee-w.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://lee-w.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="http://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Life Lies in Traveling ATOM Feed"/>
+
+
+
+        <link href="http://lee-w.github.io/feeds/tech.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Life Lies in Traveling Tech ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://lee-w.github.io/" class="navbar-brand">
+Life Lies in Traveling            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/archives.html">Archives</a></li>
+                    <li><a href="/categories.html">Categories</a></li>
+                         <li><a href="http://lee-w.github.io/pages/about-me.html">
+                             About Me
+                          </a></li>
+                         <li><a href="http://lee-w.github.io/pages/about-this-blog.html">
+                             About This Blog
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://lee-w.github.io/posts/tech/2018/11/the-clean-code"
+                       rel="bookmark"
+                       title="Permalink to [Note] The Clean Code">
+                        [Note] The Clean Code
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2018-11-16T17:08:00+08:00"> 2018/11/16 - 五</time>
+    </span>
+
+
+
+        <span class="label label-default">Category</span>
+        <a href="http://lee-w.github.io/category/tech.html">Tech</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://lee-w.github.io/tag/clean-code.html">clean-code</a>
+        /
+	<a href="http://lee-w.github.io/tag/note.html">Note</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <nav class="toc">
+                    <div class="toc">
+<ul>
+<li><a href="#1">第1章：無暇的程式碼</a></li>
+<li><a href="#2">第2章：有意義的命名</a></li>
+<li><a href="#3">第3章：函式</a><ul>
+<li><a href="#_1">錯誤處理</a></li>
+<li><a href="#_2">參數</a></li>
+<li><a href="#_3">如何寫出這樣函式？？？</a></li>
+</ul>
+</li>
+<li><a href="#4">第4章：註解</a><ul>
+<li><a href="#_4">有用的註解</a></li>
+<li><a href="#_5">糟糕的註解</a></li>
+</ul>
+</li>
+<li><a href="#5">第5章：編排</a><ul>
+<li><a href="#_6">函式間的編排</a></li>
+<li><a href="#_7">使用空行、空白</a></li>
+</ul>
+</li>
+<li><a href="#6">第6章：物件及資料結構</a></li>
+<li><a href="#7">第7章：錯誤處理</a></li>
+<li><a href="#8">第8章：邊界</a></li>
+<li><a href="#9">第9章：單元測試</a></li>
+<li><a href="#10">第10章：類別</a><ul>
+<li><a href="#_8">職責</a></li>
+<li><a href="#_9">凝聚性</a></li>
+</ul>
+</li>
+</ul>
+</div>
+                </nav>
+                <br></br>
+                <p>既然都把 The Clean Coder 做完了<br/>
+就順便把原本在 GitBook 的 The Clean Code 一起搬過來好了<br/>
+不過到現在我還是沒看到過第 10 章 xD</p>
+<!--more-->
+
+<h2 id="1">第1章：無暇的程式碼</h2>
+<ul>
+<li>LeBlanc's Law: 待會而等於永不<ul>
+<li>待會兒再回來整理程式，等於讓程式一直限於髒亂</li>
+</ul>
+</li>
+<li>之所以不一開始就寫乾淨的程式，是因為我們以為這讓我們開發速度變慢<ul>
+<li>實際上髒亂的程式只會讓開發速度更慢。<strong>趕上期限的方法是隨時都確保程式儘可能的乾淨</strong></li>
+</ul>
+</li>
+<li>What is Clean Code?<ul>
+<li>Clean Code 只做好一件事</li>
+<li>Clean Code 是可以被原作者以外的開發者閱讀與增強的</li>
+<li>Beck's rules for simple code<ul>
+<li>能通過所有測試</li>
+<li>沒有重複的程式碼</li>
+<li>充份表達系統設計的構思</li>
+<li>具有最少的 entities (e.g. class, methods, functions, and etc.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>每一次修改程式碼之後，都得讓程式碼變得比修改之前再更乾淨  <ul>
+<li>童子軍原則: 每次你到過的營地，離開後要比之前更乾淨</li>
+</ul>
+</li>
+</ul>
+<h2 id="2">第2章：有意義的命名</h2>
+<ul>
+<li>Variables, methods, classes 要能解釋他們為什麼在這、做什麼用和怎麼使用它</li>
+<li>變數名稱要唸得出來 (e.g., <del>genYMDHMS</del>)</li>
+<li>較小的名稱如果能表達足夠的意義，通常比較長的名稱好，儘量減少再命名上不必要的文字</li>
+<li>不要用變數型態作為變數名稱  <ul>
+<li>e.g., <code>accountList</code> -&gt; <code>accountGroup</code> or <code>accounts</code></li>
+</ul>
+</li>
+<li>要區別名稱，用<strong>讀者能分辨的區別方式</strong>！！！  </li>
+<li>e.g.,<ul>
+<li><del>moneyAmount</del> -&gt; <code>money</code></li>
+<li><del>customerInfo</del> -&gt; <code>customer</code></li>
+</ul>
+</li>
+<li>命名的長度應該要與 scope 大小對應</li>
+<li>一個常用到的變數或常數，最好給它一個容易被搜尋的名子</li>
+<li>詞性<ul>
+<li>class, object -&gt; 名詞  </li>
+<li>method -&gt; 動詞</li>
+</ul>
+</li>
+<li>替單一的概念選一個詞  <ul>
+<li>e.g., get, fetch, retrieve 混用是一件很糟的事</li>
+</ul>
+</li>
+<li>避免用雙關語，或可以表達兩個意思的字  <ul>
+<li>e.g., 加入一個新的值 : <del>add</del> -&gt; append, insert</li>
+</ul>
+</li>
+</ul>
+<h2 id="3">第3章：函式</h2>
+<ul>
+<li>寫一個好的函式有兩個守則<ul>
+<li>簡短</li>
+<li>比簡短來得更簡短</li>
+</ul>
+</li>
+<li>準則<ul>
+<li>每行應該少於150字，函式應該少於20行</li>
+<li>但最重要的是，<strong>每個函式都要能清楚的告訴你本身的意圖，並帶領你到下個函式</strong></li>
+</ul>
+</li>
+<li><strong>別去害怕取較長的函數名稱</strong> <ul>
+<li>長但具描述性質 &gt; 註解 &gt; 短而無法理解</li>
+</ul>
+</li>
+<li>降層準則： 由上而下閱讀的程式</li>
+<li>Don't repeat yourself at any cost!!!</li>
+<li>
+<p>if, else, while 這些敘述最好都只有一行，而那行通常是函式呼叫</p>
+<ul>
+<li>避免巢狀結構，<strong>函式內的縮排不該超過一或兩層</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>函式應該做一件事情，他們應該把這件事做好。而且只做好這件事</strong> </p>
+<ul>
+<li>做一件事的函式不應該被合理的分成不同的段落 (e.g., 宣告區, 初始區... and etc.)</li>
+</ul>
+</li>
+<li>函式要能<strong>做好某件事</strong>，或<strong>回答某個問題</strong>，而這代表<strong>兩者不該同時發生！！！</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">set</span><span class="o">(</span><span class="s">"username"</span><span class="o">,</span> <span class="s">"bob"</span><span class="o">))</span> <span class="o">......</span>
+
+<span class="c1">// refactored</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">attrExists</span><span class="o">(</span><span class="s">"userName"</span><span class="o">))</span> <span class="o">{</span>
+    <span class="n">setAttr</span><span class="o">(</span><span class="s">"userName"</span><span class="o">,</span> <span class="s">"bob"</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+<h3 id="_1">錯誤處理</h3>
+<ul>
+<li>用例外處理取代錯誤碼回傳<ul>
+<li>而錯誤處理是會混淆程式結構的，比較好的作法就是把 try catch 區塊提出來</li>
+</ul>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">deletePage</span><span class="o">(</span><span class="n">page</span><span class="o">)</span> <span class="o">==</span> <span class="n">E_OK</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">registry</span><span class="o">.</span><span class="na">deleteReference</span><span class="o">(</span><span class="n">page</span><span class="o">.</span><span class="na">name</span><span class="o">)</span> <span class="o">==</span> <span class="n">E_OK</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">configKeys</span><span class="o">.</span><span class="na">deleteKey</span><span class="o">(</span><span class="n">page</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">makeKey</span><span class="o">())</span> <span class="o">==</span> <span class="n">E_OK</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="s">"page deleted"</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="s">"configKey not delete"</span><span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="s">"deleteReference from registry failed"</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="s">"delete failed"</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="c1">// refactored</span>
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">deletePage</span><span class="o">(</span><span class="n">page</span><span class="o">);</span>
+    <span class="n">registry</span><span class="o">.</span><span class="na">deleteReference</span><span class="o">(</span><span class="n">page</span><span class="o">.</span><span class="na">name</span><span class="o">);</span>
+    <span class="n">configKeys</span><span class="o">.</span><span class="na">deleteKey</span><span class="o">(</span><span class="n">page</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">makeKey</span><span class="o">());</span>
+<span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+<span class="o">}</span>
+
+<span class="c1">// even more refactored</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">delete</span><span class="o">(</span><span class="n">Page</span> <span class="n">page</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">deletePageAndAllReferences</span><span class="o">(</span><span class="n">page</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">logError</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">deletePageAndAllReferences</span><span class="o">(</span><span class="n">Page</span> <span class="n">page</span><span class="o">)</span>
+            <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">deletePage</span><span class="o">(</span><span class="n">page</span><span class="o">);</span>
+    <span class="n">registry</span><span class="o">.</span><span class="na">deleteReference</span><span class="o">(</span><span class="n">page</span><span class="o">.</span><span class="na">name</span><span class="o">);</span>
+    <span class="n">configKeys</span><span class="o">.</span><span class="na">deleteKey</span><span class="o">(</span><span class="n">page</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">makeKey</span><span class="o">());</span>
+<span class="o">}</span>
+
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">logError</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+<span class="o">}</span>
+</pre></div>
+<h3 id="_2">參數</h3>
+<ul>
+<li>函式最好是不使用到參數，可以的話不要超過3個<ul>
+<li>除非有非常特殊的理由，否則都不該超過3個</li>
+</ul>
+</li>
+<li><strong>別傳flag參數(e.g. isSutie)進入函式</strong>，那代表這個函式一定做超過一件事！！！</li>
+<li>單一參數函式<ul>
+<li>問與這個參數有關的問題 (e.g., fileExists("MyFile"))</li>
+<li>對這個參數進行操作，並且 <strong>回傳</strong></li>
+<li>事件，利用參數去改變系統的狀態</li>
+</ul>
+</li>
+<li>2 ~ 3 個參數<ul>
+<li>注意參數順序性</li>
+</ul>
+</li>
+<li>利用建立物件的方式，減少函式參數的數量</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="n">Circle</span> <span class="nf">makeCircle</span><span class="o">(</span><span class="kt">double</span> <span class="n">x</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y</span><span class="o">,</span> <span class="kt">double</span> <span class="n">radius</span><span class="o">);</span>
+<span class="c1">// refactored</span>
+<span class="n">Circle</span> <span class="nf">makeCirecle</span><span class="o">(</span><span class="n">POoint</span> <span class="n">center</span><span class="o">,</span> <span class="kt">double</span> <span class="n">radiue</span><span class="o">);</span>
+</pre></div>
+<ul>
+<li>避免使用輸出型參數，這十分的讓人困惑</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="n">appendFooter</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+
+<span class="c1">// refactored</span>
+<span class="n">s</span><span class="o">.</span><span class="na">appendFooter</span><span class="o">();</span>
+</pre></div>
+<h3 id="_3">如何寫出這樣函式？？？</h3>
+<p>一直修改和重構，直到足夠精簡<br/>
+不用一開始就要寫到最精簡，實際上那也是辦不到的</p>
+<h2 id="4">第4章：註解</h2>
+<ul>
+<li><strong>不要替糟糕的程式碼寫註解 ─ 重寫它！！！</strong><ul>
+<li>與其花時間在寫註解來解釋混亂的程式碼，不如花時間去整理它!</li>
+</ul>
+</li>
+<li>即使是適當的使用註解，也只是用來彌補程式碼表達意思的失敗<ul>
+<li>每次要寫註解時，先思考是否能<strong>直接用程式碼表達</strong></li>
+</ul>
+</li>
+<li>註解只應該描述附近的程式碼，不要在區域性註解內放入系統全域資訊</li>
+<li>替只做一件事的小函式選一個好名稱，多半比將註解寫在函式標頭優雅</li>
+</ul>
+<h3 id="_4">有用的註解</h3>
+<ul>
+<li>提供資訊的註解</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="c1">//format matched kk:mm:ss EEE, MMM dd, yyyy</span>
+<span class="n">Pattern</span> <span class="n">tiMatcher</span> <span class="o">=</span> <span class="n">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span>
+    <span class="s">"\\d*:\\d*:\\d* \\w*, \\w* \\d*, \\d*"</span>
+<span class="o">)</span>
+</pre></div>
+<ul>
+<li>對後果的告誡： 警告會出現某種特殊後果的註解</li>
+<li>TODO</li>
+<li>公開 API 中的 Javadoc</li>
+</ul>
+<h3 id="_5">糟糕的註解</h3>
+<ul>
+<li>大部分的註解</li>
+<li>多餘的註解： 沒比程式碼本身透露更多資訊的註解</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="kd">class</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
+    <span class="err">#</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="k">this</span> <span class="n">person</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+<ul>
+<li><del>每個函式，每個變數都該有註解來說明</del>。<strong>不，別這麼做</strong></li>
+<li>把暫時無用的程式碼註解掉並留著，是很惱人的 -&gt; 版本控制會幫我們記下它</li>
+</ul>
+<h2 id="5">第5章：編排</h2>
+<ul>
+<li>選擇一些簡單的縮排規則，並持續的運用它<ul>
+<li>如果在一個團隊，所有成員都該依循著一套統一的編排規則</li>
+</ul>
+</li>
+<li>團隊合作時，事先決定編排方式是值得的<ul>
+<li>該在哪裡放括號</li>
+<li>縮排寬度多少</li>
+<li>如何命名變數、類別、方法</li>
+</ul>
+</li>
+<li>編排是一種溝通方式，可以嚴重影響可讀性，所以我們要很重視它</li>
+<li>垂直邊排： 一份程式檔大概多長比較好？<ul>
+<li>一份重要的大型專案也可以在大多數程式檔都只有200行左右的情況下完成</li>
+<li>這沒有硬性規定。但要知道<strong>簡短的程式檔總是比大型的程式檔容易理解</strong> </li>
+</ul>
+</li>
+<li>變數應該被宣告在接近它被使用的地方<ul>
+<li>區域變數應該在函式的最上方被宣告</li>
+<li>迴圈的控制變數應該在回圈敘述內宣告</li>
+</ul>
+</li>
+</ul>
+<h3 id="_6">函式間的編排</h3>
+<ul>
+<li>如果一個函式呼叫了另一個函式，這個函式最好放在被呼叫函式的上方</li>
+<li>概念高度相似的函式也應該垂直的放在一起<ul>
+<li>也許是類似的命名或相同工作的變異版本，就算沒相互呼叫，還是應該放在一起</li>
+</ul>
+</li>
+<li>
+<p>談到了垂直的寬度後，那水平的寬度呢?  </p>
+<ul>
+<li>雖然我們喜歡較短的程式碼，但只要是<strong>不需要用到捲軸捲到右方就可以稱為適當的寬度</strong></li>
+</ul>
+</li>
+<li>
+<p>有時候if, while或簡單的函式，可以被縮減為一行，讓我們違反一般的縮排規則，<strong>不建議這麼做</strong></p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">render</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span><span class="k">return</span> <span class="s">""</span><span class="o">;}</span>
+
+<span class="c1">//better</span>
+<span class="kd">public</span> <span class="n">String</span> <span class="nf">render</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+<h3 id="_7">使用空行、空白</h3>
+<ul>
+<li>每一段程式碼都代表一個完整思緒，而我們用空行來區隔它們  <ul>
+<li>而如果程式碼們是相關的，它們就該是垂直緊密的</li>
+<li>相似的概念應該要放在同一份檔案中</li>
+</ul>
+</li>
+<li>
+<p>我們用水平的空白來區分高度和低度相關的概念，也可以作為強調用，下面的程式碼是書中一個很棒的例子</p>
+<p><code>java
+public class Quadratic {
+    public static double root1(double a, double b, double c) {
+      double determinant = determinant(a, b, c);
+        return (-b + Math.sqrt(determinant)) / (2*a);
+   }
+    ......
+}</code><br/>
+* 注意到return那行，這裡用空格來強調運算子的優先權</p>
+</li>
+</ul>
+<h2 id="6">第6章：物件及資料結構</h2>
+<ul>
+<li><strong>資料結構容易新增函式，而物件容易增加新類別。</strong>反之亦然</li>
+<li>模組不該知道它操作的物件的內部操作</li>
+<li>別使用一連串的程式呼叫</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">String</span> <span class="n">outputDir</span> <span class="o">=</span> <span class="n">ctxt</span><span class="o">.</span><span class="na">getOptions</span><span class="o">().</span><span class="na">getScratchDir</span><span class="o">().</span><span class="na">getAbsolutePaty</span><span class="o">();</span>
+
+<span class="c1">//refactored</span>
+<span class="n">Option</span> <span class="n">opts</span> <span class="o">=</span> <span class="n">ctxt</span><span class="o">.</span><span class="na">getOptions</span><span class="o">();</span>
+<span class="n">File</span> <span class="n">scratchDir</span> <span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="na">getScractchDir</span><span class="o">();</span>
+<span class="kd">final</span> <span class="n">String</span> <span class="n">outputDir</span> <span class="o">=</span> <span class="n">scratchDir</span><span class="o">.</span><span class="na">getAbsolutePath</span><span class="o">();</span>
+</pre></div>
+<h2 id="7">第7章：錯誤處理</h2>
+<ul>
+<li>錯誤處理常大量存在於程式碼中  <ul>
+<li>它很重要，但別讓它混亂你的程式碼</li>
+</ul>
+</li>
+<li>例外處理應該要能提供<strong>有用的錯誤訊息</strong>，<ul>
+<li>e.g, 哪裡發生錯誤、錯誤型態是什麼</li>
+</ul>
+</li>
+<li>別回傳 null，試著拋出例外事件是更好的作法  <ul>
+<li>函式回傳 null 已經夠糟了，但傳遞 null 進去更是糟糕透頂</li>
+</ul>
+</li>
+<li>
+<p>從呼叫者的角度定義例外class，這裡有個書上很棒的例子</p>
+<p>```java<br/>
+ACMEPort port = new ACMEPort(12);</p>
+<p>try {<br/>
+    port.open();<br/>
+} catch (DeviceResponseException e) {<br/>
+    reportPortError(e);<br/>
+    logger.log("Device reponse exception", "e");<br/>
+} catch (ATM1212UnlockedException e) {<br/>
+    reportPortError(e);<br/>
+    logger.log("ATM1212UnlockedException");<br/>
+} catch (HMXError e) {<br/>
+    reportPortError(e);<br/>
+    logger.log("Device response exception");<br/>
+} finally {<br/>
+    ...<br/>
+}</p>
+<p>//    refactored<br/>
+LocalPort port = new LocalPort(12);<br/>
+try {<br/>
+    port.open();<br/>
+} catch (PortDeviceFailure e) {<br/>
+    reportPortError(e);<br/>
+    logger.log(e.getMessage, e);<br/>
+}</p>
+<p>public class LocalPort {<br/>
+    private ACMEPort innerPort;</p>
+<div class="codehilite"><pre><span></span>public LocalPort(int portNumber) {
+    innerPort = new ACMEPort(portNumber);
+}
+
+public void open() {
+    try {
+        innerPort.open();
+    } catch (DeviceResponseException e) {
+        throw new PortDeviceFailure(e);
+    } catch (ATM1212UnlockedException e) {
+        throw new PortDeviceFailure(e);
+    } catch (GMXError e) {
+        throw new PortDeviceFailure(e);
+    }
+}
+</pre></div>
+<p>}<br/>
+```<br/>
+* 這種技巧被稱為Wrapper，這樣的技巧可以使依賴減少</p>
+</li>
+</ul>
+<h2 id="8">第8章：邊界</h2>
+<ul>
+<li>學習型測試： 不要在產品程式裡實驗新的東西，而是另外寫測試程式，來了解第三方軟體<ul>
+<li>學習型測試不會花我們太多時間，而且能用來<strong>確認第三方軟體是否能照我們預期的執行</strong></li>
+<li>如果沒有這種<strong>邊界測試</strong>來減輕版本更新時的整合負擔，我們<strong>只能一直停留在舊的版本</strong></li>
+</ul>
+</li>
+<li>避免我們的程式過度的使用第三方軟體的特殊之處，最好是依靠在你可以控制的程式之上。免得到最後反而受到第三方軟體的控制</li>
+</ul>
+<h2 id="9">第9章：單元測試</h2>
+<ul>
+<li>為什麼要寫測試？<ul>
+<li>測試讓程式保有彈性</li>
+<li>有了測試，就不會怕修改程式會造成程式的結果不如預期</li>
+</ul>
+</li>
+<li>測試程式跟產品程式一樣重要，一樣需要整潔<ul>
+<li>醜陋的測試程式，如果沒讓程式更糟，最多也只是跟沒有測試程式一樣</li>
+<li>什麼東西造就了一個整潔的測試程式？ -&gt; <strong>可讀性</strong></li>
+<li>但是測試程式並不需要產品程式一樣的有效率</li>
+</ul>
+</li>
+<li>整潔測試程式的5個原則 F.I.R.S.T.<ol>
+<li>Fast: 能快速的被執行</li>
+<li>Independent: 測試程式不該相互依賴</li>
+<li>Repeatable: 應該要可以再任何環境重複執行</li>
+<li>Self-Validating: 應該輸出 boolean 。你不該手動比較兩個檔案才知道有沒有通過測試</li>
+<li>Timely: 單元測試要在恰好能使其通過的產品程式之前不久撰寫</li>
+</ol>
+</li>
+<li>
+<p>BUILD-OPERATE-CHECK</p>
+<ol>
+<li>建立測試資料</li>
+<li>操作測試資料</li>
+<li>檢查「操作測試資料」後的結果是否如預期</li>
+</ol>
+</li>
+<li>
+<p>一個測試只能有一個assert</p>
+<ul>
+<li>有必要嗎?</li>
+<li>更好的方法是<strong>一個測試只測試一個概念</strong></li>
+</ul>
+</li>
+<li>TDD (Test Driven Development) 三大法則<ol>
+<li>在撰寫一個單元測試前，不可撰寫任何產品程式</li>
+<li>只撰寫剛好無法通過的單元測試，不能編譯也算無法通過</li>
+<li>只撰寫剛好能通過當前測試的產品程式</li>
+</ol>
+</li>
+</ul>
+<h2 id="10">第10章：類別</h2>
+<ul>
+<li>Java的慣例<ul>
+<li>類別以變數開頭<ul>
+<li><code>public static final</code> -&gt; <code>private static</code> -&gt; <code>private</code> &gt;&gt;&gt;&gt;&gt; <code>public</code> (幾乎很少有理由要用到)</li>
+</ul>
+</li>
+<li>public 函式緊跟在變數</li>
+<li>private 的工具函式，會跟在呼叫它的函式後</li>
+</ul>
+</li>
+<li>不用過度執著於封裝，有時候為了讓測試程式存取， protected 是必要的</li>
+<li>設計程式時，一次只專注在「讓程式運作」或「讓程式整潔」之一，而兩者是同樣重要的</li>
+<li>系統應該要由很多小的 class 組成，而不是少數的大 class 組成</li>
+<li>我們架構的系統，在未來想新增或修改功能時，應該要儘可能不動到其他程式碼</li>
+<li>開放閉合原則<ul>
+<li>類別應該要對擴充有開放性，對修改有封閉性</li>
+</ul>
+</li>
+<li>相依性反向原則<ul>
+<li>類別應該要相依於抽象概念，而不是相依在具體細節</li>
+</ul>
+</li>
+</ul>
+<h3 id="_8">職責</h3>
+<ul>
+<li>
+<p>class 除了簡短還是要簡短</p>
+<ul>
+<li>在函式我們計算行數，class算的是<strong>職責的數量</strong></li>
+</ul>
+</li>
+<li>
+<p>class的命名要能足夠描寫他的職責</p>
+<ul>
+<li>如果無法取個明確的名稱，這個 class 可能就太大了</li>
+<li>模稜兩可的名稱，代表 class 可能包含愈多的職責，而這是我們不希望的</li>
+<li>用 25 個字詞為這個 class 寫出簡短的描述，而不使用到模糊的字眼，這樣的 class 就是職責數量恰當</li>
+</ul>
+</li>
+<li>單一職責原則<ul>
+<li>一個 class 或 module 應該有也只能有一個修改的理由</li>
+</ul>
+</li>
+</ul>
+<h3 id="_9">凝聚性</h3>
+<ul>
+<li>class 只應該要有少量的實體變數， class 的每個方法都應該操作一個或更多這些變數</li>
+<li>不用也不太可能產生最大凝聚性類別<ul>
+<li>但當凝聚性增加，就代表方法和變數結合成一個邏輯的整體，這是我們所希望的</li>
+</ul>
+</li>
+<li>class 累積越來越多實體變數，但只有少數函式操作著他們，就會開始喪失凝聚性<ul>
+<li>而這就是我們應該拆開 class 的時候了！！！</li>
+<li>我們不重新撰寫程式，而是改變它<ul>
+<li>先寫好一套驗證的測試程式，一次一個地改變</li>
+<li>每一次變動都重新驗證是否如預期執行</li>
+<li>重構完成</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'lee-w-blog'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "zh";
+
+                        this.page.identifier = '2018-11-16-the-clean-code';
+                        this.page.url = 'http://lee-w.github.io/posts/tech/2018/11/the-clean-code';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social" style="list-style-type: none;">
+          <li>
+              <a href="http://tw.linkedin.com/in/clleew">
+                      <i class="fab fa-linkedin"></i>
+                    Linkedin
+              </a>
+          </li>
+          <li>
+              <a href="http://github.com/Lee-W">
+                      <i class="fab fa-github"></i>
+                    GitHub
+              </a>
+          </li>
+          <li>
+              <a href="https://gitlab.com/Lee-W">
+                      <i class="fab fa-gitlab"></i>
+                    Gitlab
+              </a>
+          </li>
+          <li>
+              <a href="http://www.facebook.com/clleew">
+                      <i class="fab fa-facebook"></i>
+                    Facebook
+              </a>
+          </li>
+          <li>
+              <a href="//lee-w.github.io/feeds/all.atom.xml">
+                      <i class="fas fa-rss"></i>
+                    RSS
+              </a>
+          </li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="http://lee-w.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/algorithm.html">Algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/android.html">Android</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/autobiography.html">Autobiography</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/big-five-theory.html">Big Five Theory</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/c.html">C++</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/chat-bot.html">Chat Bot</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/clean-code.html">clean-code</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/code-quality.html">Code Quality</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/conference.html">Conference</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/coscup.html">COSCUP</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/deep-learning.html">Deep Learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/deploy.html">deploy</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/deprecated.html">Deprecated</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/design.html">Design</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/develop.html">Develop</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/dual-boot.html">Dual Boot</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/economics.html">Economics</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/education.html">Education</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/emotion.html">Emotion</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/flask.html">Flask</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/game-theory.html">Game Theory</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/git.html">Git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/git-book.html">Git Book</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/github.html">GitHub</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/heroku.html">Heroku</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/innovation.html">Innovation</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/inspiring.html">Inspiring</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/javascript.html">JavaScript</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/jupyter.html">Jupyter</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/linux-unix.html">Linux-Unix</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/machine-learning.html">Machine Learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/mbti.html">MBTI</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/mopcon.html">MOPCON</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/neovim.html">Neovim</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/nlp.html">NLP</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/note.html">Note</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/open-source.html">Open Source</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/other.html">Other</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/personality.html">Personality</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/plugin.html">Plugin</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/productivity.html">Productivity</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/pycon.html">PyCon</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/python.html">Python</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/r.html">R</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/resume.html">Resume</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/revealjs.html">reveal.js</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/sales.html">Sales</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/shell-script.html">Shell Script</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/sitcon.html">SITCON</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/social-network.html">Social Network</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/software-engineering.html">Software Engineering</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/startup.html">Startup</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/story.html">Story</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="http://lee-w.github.io/tag/team.html">Team</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/tedx.html">TEDx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/thinking.html">Thinking</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/thread.html">Thread</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="http://lee-w.github.io/tag/tutorial.html">Tutorial</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/unboxing.html">unboxing</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/utility.html">Utility</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="http://lee-w.github.io/tag/vim.html">Vim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/visualization.html">Visualization</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="http://lee-w.github.io/tag/x-village.html">X-Village</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 Lee-W
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://lee-w.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://lee-w.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://lee-w.github.io/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'lee-w-blog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-96190677-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>
