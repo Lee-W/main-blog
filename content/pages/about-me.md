@@ -36,7 +36,7 @@ As a programmer, I'm familiar with web backend development (mainly flask) but op
 
 *X-Village* is an experimental education program aiming to equip students not major in computer science with the ability of computational thinking and to enhance future cooperation between computer science and other areas. 
 
-I am the executor of the program and the leader of the teaching assistant team. Besides, I designed a half day exercise for *Data Structure* and lectured a four-hour web backend course for *Web Programming, Database/Cloud Computing*.
+I was the executor of the program and the leader of the teaching assistant team. Besides, I designed a half day exercise for *Data Structure* and lectured a four-hour web backend course for *Web Programming, Database/Cloud Computing*.
 * [Website](https://sites.google.com/view/x-village/home?authuser=0)
 * [Facebook Fan Page](https://www.facebook.com/X-Village-423736361424301/)
 
