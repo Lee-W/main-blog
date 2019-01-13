@@ -7,7 +7,7 @@ Authors: Lee-W
 
 
 去年剛看完這本書的時候，實在覺得跟想像的很不一樣
-直到現在終於有空好好的在翻過一遍，做一些紀錄了
+直到現在終於有空好好的再翻過一遍，做一些紀錄了
 
 
 ![think-through-note-taking](https://i.imgur.com/KnfcClDm.jpg)
