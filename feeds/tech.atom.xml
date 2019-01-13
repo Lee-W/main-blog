@@ -1467,10 +1467,12 @@ click 真的又更直覺了一點，難怪這麼多人推薦&lt;/p&gt;
 只要在 repo 上按了 star，你就可以透過&lt;a href="http://resume.github.io"&gt;他的頁面&lt;/a&gt; 產生你的 GitHub 履歷&lt;br&gt;
 基本上就是各種以往的專案和貢獻的統整&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://resume.github.io/?Lee-W"&gt;我的 GitHub 履歷&lt;/a&gt;&lt;br&gt;
-果然我光 Python 跟 Jupyter Notebook 加起來就六成了 xd&lt;/p&gt;</content><category term="GitHub"></category><category term="Resume"></category></entry><entry><title>Practical Vim</title><link href="http://lee-w.github.io/posts/tech/2017/06/Practical-Vim" rel="alternate"></link><published>2017-06-26T08:50:00+08:00</published><updated>2017-06-26T08:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-06-26:/posts/tech/2017/06/Practical-Vim</id><summary type="html">&lt;p&gt;每天一回一回的看，終於把&lt;a href="https://pragprog.com/book/dnvim/practical-vim"&gt;Practical Vim&lt;/a&gt;&lt;br&gt;
-不過到了後期，大部分就真的都看不太懂了＝ ＝&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;每天一回一回的看，終於把&lt;a href="https://pragprog.com/book/dnvim/practical-vim"&gt;Practical Vim&lt;/a&gt;&lt;br&gt;
-不過到了後期，大部分就真的都看不太懂了＝ ＝&lt;/p&gt;
+果然我光 Python 跟 Jupyter Notebook 加起來就六成了 xd&lt;/p&gt;</content><category term="GitHub"></category><category term="Resume"></category></entry><entry><title>Practical Vim</title><link href="http://lee-w.github.io/posts/tech/2017/06/Practical-Vim" rel="alternate"></link><published>2017-06-26T08:50:00+08:00</published><updated>2017-06-26T08:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-06-26:/posts/tech/2017/06/Practical-Vim</id><summary type="html">&lt;p&gt;每天一回一回的看，終於把&lt;a href="https://pragprog.com/book/dnvim/practical-vim"&gt;Practical Vim&lt;/a&gt;看完了&lt;br&gt;
+不過到了後期，大部分就真的都看不太懂了＝ ＝&lt;br&gt;
+所以大多還是只記錄了前期我比較看得懂的一些 tip&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;每天一回一回的看，終於把&lt;a href="https://pragprog.com/book/dnvim/practical-vim"&gt;Practical Vim&lt;/a&gt;看完了&lt;br&gt;
+不過到了後期，大部分就真的都看不太懂了＝ ＝&lt;br&gt;
+所以大多還是只記錄了前期我比較看得懂的一些 tip&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="ch1-the-vim-way"&gt;Ch1: The Vim Way&lt;/h2&gt;

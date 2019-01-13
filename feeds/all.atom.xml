@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Life Lies in Traveling</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2019-01-07T22:50:00+08:00</updated><entry><title>[Book] 電腦玩物站長的筆記思考術</title><link href="http://lee-w.github.io/posts/book/2019/01/think-through-note-taking" rel="alternate"></link><published>2019-01-07T22:50:00+08:00</published><updated>2019-01-07T22:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-01-07:/posts/book/2019/01/think-through-note-taking</id><summary type="html">&lt;p&gt;去年剛看完這本書的時候，實在覺得跟想像的很不一樣&lt;br&gt;
-直到現在終於有空好好的在翻過一遍，做一些紀錄了&lt;/p&gt;
+直到現在終於有空好好的再翻過一遍，做一些紀錄了&lt;/p&gt;
 &lt;p&gt;&lt;img alt="think-through-note-taking" src="https://i.imgur.com/KnfcClDm.jpg"&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;去年剛看完這本書的時候，實在覺得跟想像的很不一樣&lt;br&gt;
-直到現在終於有空好好的在翻過一遍，做一些紀錄了&lt;/p&gt;
+直到現在終於有空好好的再翻過一遍，做一些紀錄了&lt;/p&gt;
 &lt;p&gt;&lt;img alt="think-through-note-taking" src="https://i.imgur.com/KnfcClDm.jpg"&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -2091,10 +2091,12 @@ click 真的又更直覺了一點，難怪這麼多人推薦&lt;/p&gt;
 只要在 repo 上按了 star，你就可以透過&lt;a href="http://resume.github.io"&gt;他的頁面&lt;/a&gt; 產生你的 GitHub 履歷&lt;br&gt;
 基本上就是各種以往的專案和貢獻的統整&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://resume.github.io/?Lee-W"&gt;我的 GitHub 履歷&lt;/a&gt;&lt;br&gt;
-果然我光 Python 跟 Jupyter Notebook 加起來就六成了 xd&lt;/p&gt;</content><category term="GitHub"></category><category term="Resume"></category></entry><entry><title>Practical Vim</title><link href="http://lee-w.github.io/posts/tech/2017/06/Practical-Vim" rel="alternate"></link><published>2017-06-26T08:50:00+08:00</published><updated>2017-06-26T08:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-06-26:/posts/tech/2017/06/Practical-Vim</id><summary type="html">&lt;p&gt;每天一回一回的看，終於把&lt;a href="https://pragprog.com/book/dnvim/practical-vim"&gt;Practical Vim&lt;/a&gt;&lt;br&gt;
-不過到了後期，大部分就真的都看不太懂了＝ ＝&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;每天一回一回的看，終於把&lt;a href="https://pragprog.com/book/dnvim/practical-vim"&gt;Practical Vim&lt;/a&gt;&lt;br&gt;
-不過到了後期，大部分就真的都看不太懂了＝ ＝&lt;/p&gt;
+果然我光 Python 跟 Jupyter Notebook 加起來就六成了 xd&lt;/p&gt;</content><category term="GitHub"></category><category term="Resume"></category></entry><entry><title>Practical Vim</title><link href="http://lee-w.github.io/posts/tech/2017/06/Practical-Vim" rel="alternate"></link><published>2017-06-26T08:50:00+08:00</published><updated>2017-06-26T08:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-06-26:/posts/tech/2017/06/Practical-Vim</id><summary type="html">&lt;p&gt;每天一回一回的看，終於把&lt;a href="https://pragprog.com/book/dnvim/practical-vim"&gt;Practical Vim&lt;/a&gt;看完了&lt;br&gt;
+不過到了後期，大部分就真的都看不太懂了＝ ＝&lt;br&gt;
+所以大多還是只記錄了前期我比較看得懂的一些 tip&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;每天一回一回的看，終於把&lt;a href="https://pragprog.com/book/dnvim/practical-vim"&gt;Practical Vim&lt;/a&gt;看完了&lt;br&gt;
+不過到了後期，大部分就真的都看不太懂了＝ ＝&lt;br&gt;
+所以大多還是只記錄了前期我比較看得懂的一些 tip&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="ch1-the-vim-way"&gt;Ch1: The Vim Way&lt;/h2&gt;
@@ -6295,7 +6297,7 @@ If it's needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/p&gt;
 &lt;li&gt;當自己的秘書，將 To-Do 記下&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;搜集資訊會議&lt;ul&gt;
+&lt;li&gt;蒐集資訊會議&lt;ul&gt;
 &lt;li&gt;隨意瀏覽，只記下心中有感的內容&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
