@@ -110,7 +110,7 @@ squares = [x ** 2 for x in a]
 squares = map(lambda x: x ** 2, a)
 ```
 
-### 作法09: 考慮使用 generator 取代的行 list comprehension
+### 作法09: 考慮使用 generator 取代大型 list comprehension
 * 對於大型輸入來說 list comprehension 可能耗用相當大量的記憶體
 
 ### 作法11: 使用 zip 來平行處理 iterables
