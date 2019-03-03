@@ -21,10 +21,15 @@ As a programmer, I'm familiar with web backend development (mainly flask) but op
 
 ## Experience
 ### [Apr 2017 - Present]
-**Independent Contractor, Slice Technologies, Inc**
+**Independent Contractor, [Slice Technologies, Inc](https://www.slice.com/about)**
 
 * Develop the backend of an application in Flask with test coverage higher than 90%
 * Create a CI/CD pipeline for the existing code
+
+### [Jan 2019 - March 2019]
+**Project Manager, [DLT Lab](https://dlt.csie.ncku.edu.tw)**
+
+* Containerized and fix legacy projects ([The Mosquito Man](https://github.com/the-mosquito-man))
 
 ### [May 2018 - Nov 2018]
 **Chief Teaching Assistant, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
