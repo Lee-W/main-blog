@@ -116,7 +116,7 @@
 &lt;span class="c1"&gt;# map&lt;/span&gt;
 &lt;span class="n"&gt;squares&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="09-generator-list-comprehension"&gt;作法09: 考慮使用 generator 取代的行 list comprehension&lt;/h3&gt;
+&lt;h3 id="09-generator-list-comprehension"&gt;作法09: 考慮使用 generator 取代大型 list comprehension&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;對於大型輸入來說 list comprehension 可能耗用相當大量的記憶體&lt;/li&gt;
 &lt;/ul&gt;
