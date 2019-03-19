@@ -7,7 +7,7 @@ PATH = 'content'
 
 # Blog Conf
 AUTHOR = 'Lee-W'
-SITENAME = 'Life Lies in Traveling'
+SITENAME = 'Laziness makes Great Engineer'
 SITEURL = 'http://localhost:8000'
 SITETITLE = AUTHOR
 SITELOGO = None
