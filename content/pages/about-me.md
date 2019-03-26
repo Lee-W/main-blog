@@ -8,7 +8,7 @@ I'm a
   
 <i class="fab fa-lg fa-python"></i>  Python Programmer
 <i class="fas fa-lg fa-book"></i> Reader
-<a href="https://www.flickr.com/photos/10280407@N02/" target="_blank" title="Flickr" style="color:gray; text-decoration: none;"><i class="fas fa-lg fa-camera"></i> Traveler</a>
+<i class="fas fa-lg fa-camera"></i> Traveler
 <i class="fas fa-lg fa-music"></i> Ukulele Player
 <i class="fas fa-lg fa-lock"></i> Locker
 <i class="fab fa-lg fa-rebel"></i> Star Wars Fan
@@ -17,7 +17,7 @@ As a programmer, I'm familiar with web backend development (mainly flask) but op
 
 <a href="{filename}/static/resume.pdf"><button type="button" class="btn btn-default">Resume</button></a>
 
-----
+-----
 
 ## Experience
 ### [Apr 2017 - Present]
@@ -66,34 +66,42 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 
 
 ## Talk and Tutorial Experiences
-[2018/8/16]
+**[2019/03/24]**
+SITCON 2019
+[X-Village - 用不到兩個月準備兩個月的課程](https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng)
+
+**[2018/03/12]**
+NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence (資料科學與人工智慧競技)
+[Intro to Python Data Science Tools](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20190312)
+
+**[2018/8/16]**
 X-Village - Web Course
 [CRUD in Flask](https://speakerdeck.com/leew/x-village-crud-in-flask-1)
 
-[2018/2/27]
+**[2018/2/27]**
 NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence (資料科學與人工智慧競技)
-[Intro to Python Data Science Tools](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools)
+[Intro to Python Data Science Tools](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20180227)
 
-[2017/01/22]
+**[2017/01/22]**
 2018成大工資管營
 [資管講座 (一場工資管營的演講)](https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang)
 
-[2016/12/08]
+**[2016/12/08]**
 NCKU CSIE - Introduction to Knowledge Discovery and Data Engineering (知識挖掘與資料工程導論)
 [Bot Development](https://hackmd.io/p/HkW8LjRfl)
 
-[2016/11/03]
+**[2016/11/03]**
 深度之夜
 [Keras Demo](https://github.com/Lee-W/Keras-Mnist-Example)
 
 For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-village-crud-in-flask).
 
 ## Award
-- Honorable Mention, 2013 Railway Application Section Problem Solving Competition
+* Honorable Mention, 2013 Railway Application Section Problem Solving Competition
 
 ## Publication
-1. Wei Lee, Chien-Wei Chang, Po-An Yang, Chi-Hsuan Huang, Ming-Kuang Wu, Chu-Cheng Hsieh, Kun-Ta Chuang "Effective Quality Assurance for Data Labels through Crowdsourcing and Domain Expert Collaboration" 21st International Conference on Extending Database Technology, Demo Track (EDBT-2018)
-2. I-Lin Wang, Wei Lee,  Chiao-Yu Liao "Effective Heuristics for Scheduling Hump and Pullback Engines in Railroad Yard Operational Plans" Proceedings of the 10th Annual Conference of the Operations Research Society at Taiwan (ORSTW 2013)
+1. Wei Lee, Chien-Wei Chang, Po-An Yang, Chi-Hsuan Huang, Ming-Kuang Wu, Chu-Cheng Hsieh, Kun-Ta Chuang **"Effective Quality Assurance for Data Labels through Crowdsourcing and Domain Expert Collaboration"** 21st International Conference on Extending Database Technology, Demo Track (EDBT-2018)
+2. I-Lin Wang, Wei Lee,  Chiao-Yu Liao **"Effective Heuristics for Scheduling Hump and Pullback Engines in Railroad Yard Operational Plans"** Proceedings of the 10th Annual Conference of the Operations Research Society at Taiwan (ORSTW 2013)
 
 ## Projects
 
