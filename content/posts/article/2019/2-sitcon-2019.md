@@ -1,4 +1,4 @@
-Title: SITCON 2019 -「X-Village - 用不到兩個月準備兩個月的課程」
+Title: SITCON 2019
 Date: 2019-04-06 21:00
 Category: Tech
 Tags: Conference, SITCON
@@ -68,6 +68,10 @@ SITCON 都過了兩個禮拜
 倒是 R2 的三場 Espresso 都聽了
 每一場的內容跟表達方式都很有趣
 
+當然每年還是要參與一下編輯器大亂鬥
+今年終於不再是 vim 跟 emacs 互鬥，然後還把對方擦掉了 xDD
+<img src="{filename}/images/posts-image/2019-04-07-SITCON-2019/vs_code_wins.jpeg" alt="vs_code_wins" width="50%"/>
+
 ### 講者晚宴
 這也是這次 SITCON 我蠻期待的一個活動
 難得有機會能這樣子跟各路大神交流
@@ -78,7 +82,7 @@ SITCON 都過了兩個禮拜
 同桌之中，最老的就是我ＱＱ
 最年輕也有國高中的講者呢
 相比他們，我國高中的時候沒有什麼特別的想法
-就只是跟著大家認為正確的升學道路走
+只是跟著大家認為正確的升學道路走
 甚至高中還蠻討厭寫程式的呢
-沒想到最後竟然還是走上了寫程式這條路
+沒想到最後竟然還是走上了程式這條路
 出來混，早晚還是要還的嗎xD
