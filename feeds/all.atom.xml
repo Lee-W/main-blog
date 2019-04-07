@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2019-04-06T21:00:00+08:00</updated><entry><title>SITCON 2019 -「X-Village - 用不到兩個月準備兩個月的課程」</title><link href="http://lee-w.github.io/posts/tech/2019/04/sitcon-2019" rel="alternate"></link><published>2019-04-06T21:00:00+08:00</published><updated>2019-04-06T21:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-04-06:/posts/tech/2019/04/sitcon-2019</id><summary type="html">&lt;p&gt;SITCON 都過了兩個禮拜&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2019-04-06T21:00:00+08:00</updated><entry><title>SITCON 2019</title><link href="http://lee-w.github.io/posts/tech/2019/04/sitcon-2019" rel="alternate"></link><published>2019-04-06T21:00:00+08:00</published><updated>2019-04-06T21:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-04-06:/posts/tech/2019/04/sitcon-2019</id><summary type="html">&lt;p&gt;SITCON 都過了兩個禮拜&lt;br&gt;
 好不容易才騰出個時間整理一下想法&lt;br&gt;
 想想去年的 X-Village 的想法也一直還沒好好寫完&lt;br&gt;
 兩個禮拜似乎也不算太久（？&lt;/p&gt;
@@ -56,6 +56,9 @@
 大概有一半的時間都在外面的攤位閒晃 xD&lt;/p&gt;
 &lt;p&gt;倒是 R2 的三場 Espresso 都聽了&lt;br&gt;
 每一場的內容跟表達方式都很有趣&lt;/p&gt;
+&lt;p&gt;當然每年還是要參與一下編輯器大亂鬥&lt;br&gt;
+今年終於不再是 vim 跟 emacs 互鬥，然後還把對方擦掉了 xDD&lt;br&gt;
+&lt;img src="http://lee-w.github.io/images/posts-image/2019-04-07-SITCON-2019/vs_code_wins.jpeg" alt="vs_code_wins" width="50%"/&gt;&lt;/p&gt;
 &lt;h3 id="_3"&gt;講者晚宴&lt;/h3&gt;
 &lt;p&gt;這也是這次 SITCON 我蠻期待的一個活動&lt;br&gt;
 難得有機會能這樣子跟各路大神交流&lt;br&gt;
@@ -65,9 +68,9 @@
 同桌之中，最老的就是我ＱＱ&lt;br&gt;
 最年輕也有國高中的講者呢&lt;br&gt;
 相比他們，我國高中的時候沒有什麼特別的想法&lt;br&gt;
-就只是跟著大家認為正確的升學道路走&lt;br&gt;
+只是跟著大家認為正確的升學道路走&lt;br&gt;
 甚至高中還蠻討厭寫程式的呢&lt;br&gt;
-沒想到最後竟然還是走上了寫程式這條路&lt;br&gt;
+沒想到最後竟然還是走上了程式這條路&lt;br&gt;
 出來混，早晚還是要還的嗎xD&lt;/p&gt;</content><category term="Conference"></category><category term="SITCON"></category></entry><entry><title>[Note] Effective Python</title><link href="http://lee-w.github.io/posts/tech/2019/01/effective-python" rel="alternate"></link><published>2019-01-19T16:45:00+08:00</published><updated>2019-01-19T16:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-01-19:/posts/tech/2019/01/effective-python</id><summary type="html">&lt;p&gt;&lt;img alt="IMG_2732" src="https://i.imgur.com/aE00B2om.jpg"/&gt;&lt;/p&gt;
 &lt;p&gt;第二次看過終於有辦法把原本看不懂的部分都看懂了&lt;br/&gt;
 那些看不懂的大多是很抽象化的技巧&lt;br/&gt;
