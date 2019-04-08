@@ -220,7 +220,7 @@ Bouns 4 我也沒有正確解答
 從最原始的 [0.1](https://github.com/x-village/web-acccounting-example/tree/0.1) 版
 每次只做一點點的修改，每一個修改都給那個 commit 一個 tag
 
-![tags]({filename}/images/posts-image/2018-09-24-x-village-course-design/1-tag.jpg)
+![tags]({static}/images/posts-image/2018-09-24-x-village-course-design/1-tag.jpg)
 
 在 slide 的右下角，也會放目前到哪個版本
 也希望能從這樣的做法，帶到 frequent commit 的重要

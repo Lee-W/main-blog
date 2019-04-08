@@ -15,11 +15,11 @@ Summary:
 
 起源其實是我的上一篇文被嘴了 QAQ
 
-![your style is bad]({filename}/images/posts-image/2018-10-14-fix-blog-style/15385701963828.jpg)
+![your style is bad]({static}/images/posts-image/2018-10-14-fix-blog-style/15385701963828.jpg)
 
-![problem 1]({filename}/images/posts-image/2018-10-14-fix-blog-style/15385699268490.jpg)
+![problem 1]({static}/images/posts-image/2018-10-14-fix-blog-style/15385699268490.jpg)
 
-![problem 2]({filename}/images/posts-image/2018-10-14-fix-blog-style/15385700601798.jpg)
+![problem 2]({static}/images/posts-image/2018-10-14-fix-blog-style/15385700601798.jpg)
 
 整理下來大概有三個問題
 1. 大小標的 margin

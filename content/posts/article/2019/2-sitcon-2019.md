@@ -70,7 +70,8 @@ SITCON 都過了兩個禮拜
 
 當然每年還是要參與一下編輯器大亂鬥
 今年終於不再是 vim 跟 emacs 互鬥，然後還把對方擦掉了 xDD
-<img src="{filename}/images/posts-image/2019-04-07-SITCON-2019/vs_code_wins.jpeg" alt="vs_code_wins" width="50%"/>
+
+<img src="{static}/images/posts-image/2019-04-07-SITCON-2019/vs_code_wins.jpeg" alt="vs_code_wins" width="50%"/>
 
 ### 講者晚宴
 這也是這次 SITCON 我蠻期待的一個活動

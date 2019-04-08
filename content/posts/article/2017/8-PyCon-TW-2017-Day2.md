@@ -20,9 +20,9 @@ Series: PyCon TW 2017
 今年還有音樂會呢，覺得還蠻有趣的
 雖然聽完有點晚才去吃晚餐，剩的東西都不多了ＱＱ
 
-<img src="{filename}/images/posts-image/2017-06-10-PyCon-TW-2017-Day2/1-piano.jpg" alt="Piano" width="50%">
+<img src="{static}/images/posts-image/2017-06-10-PyCon-TW-2017-Day2/1-piano.jpg" alt="Piano" width="50%">
 
-<img src="{filename}/images/posts-image/2017-06-10-PyCon-TW-2017-Day2/2-symphony.jpg" alt="Symphony" width="50%">
+<img src="{static}/images/posts-image/2017-06-10-PyCon-TW-2017-Day2/2-symphony.jpg" alt="Symphony" width="50%">
 
 
 ---

@@ -36,7 +36,7 @@ Series: PyCon TW 2017
 <a name='1'></a>
 ## [Keynote] From Little Things, Big things grow.
 
-![Chinese Intro]({filename}/images/posts-image/2017-06-11-PyCon-TW-2017-Day3/1-Keynote-Chineses.jpg)
+![Chinese Intro]({static}/images/posts-image/2017-06-11-PyCon-TW-2017-Day3/1-Keynote-Chineses.jpg)
 
 Russell 開場就講了一串中文，引來如雷的掌聲 xd
 
@@ -169,7 +169,7 @@ Lightning Talk 大概是 PyCon 最歡樂的時候了
 
 今年的 PyCon 金句大概就是 Hisahiro Ohmura 推坑 PyCon JP 的
 
-![Buy First, Consider Second]({filename}/images/posts-image/2017-06-11-PyCon-TW-2017-Day3/2-buy-first.jpg)
+![Buy First, Consider Second]({static}/images/posts-image/2017-06-11-PyCon-TW-2017-Day3/2-buy-first.jpg)
 
 ```
 聽不懂日文？

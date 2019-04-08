@@ -15,7 +15,7 @@ I'm a
 
 As a programmer, I'm familiar with web backend development (mainly flask) but open to any opportunities.
 
-<a href="{filename}/static/resume.pdf"><button type="button" class="btn btn-default">Resume</button></a>
+<a href="{static}/static/resume.pdf"><button type="button" class="btn btn-default">Resume</button></a>
 
 -----
 
