@@ -23,13 +23,14 @@ As a programmer, I'm familiar with web backend development (mainly flask) but op
 ### [Apr 2017 - Present]
 **Independent Contractor, [Slice Technologies, Inc](https://www.slice.com/about)**
 
-* Develop the backend of an application in Flask with test coverage higher than 90%
+* Develop the backend of an application in [Flask](http://flask.pocoo.org) with test coverage higher than 90%
 * Create a CI/CD pipeline for the existing code
 
 ### [Jan 2019 - March 2019]
 **Project Manager, [DLT Lab](https://dlt.csie.ncku.edu.tw)**
 
 * Containerized and fix legacy projects ([The Mosquito Man](https://github.com/the-mosquito-man))
+* Setup CI/CD server and CI pipeline through [drone](https://github.com/drone/drone)
 
 ### [May 2018 - Nov 2018]
 **Chief Teaching Assistant, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
@@ -112,6 +113,8 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-v
 * [pipreqs](https://github.com/Lee-W/pipreqs) ([bndr/pipreqs](https://github.com/bndr/pipreqs))
 * [pip-check](https://github.com/Lee-W/pip-check) ([bartTC/pip-check](https://github.com/bartTC/pip-check))
 * [pelican-clean-blog](https://github.com/Lee-W/pelican-clean-blog) ([gilsondev/pelican-clean-blog](https://github.com/gilsondev/pelican-clean-blog))
+* [templater](https://github.com/Lee-W/templater)
+    * Update [templater](https://github.com/Lee-W/templater) to Python3 and release [templater3](https://pypi.org/project/templater3/)
 
 #### Web
 * [SITW 二手網](http://sitw-trade.herokuapp.com) (Backend Development)
