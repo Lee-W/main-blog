@@ -19,26 +19,34 @@ As a programmer, I'm familiar with web backend development (mainly flask) but op
 
 -----
 
+## Skill
+* **Intermidate**: Python, Web Backend Development, Git, Linux  
+* **Beginner**: Docker, Project Management, Data Analysis, Java
+
+
+
 ## Experience
 ### [Apr 2017 - Present]
-**Independent Contractor, [Slice Technologies, Inc](https://www.slice.com/about)**
+**Software Engineer, [Slice Technologies, Inc](https://www.slice.com/about)**
 
-* Develop the backend of an application in [Flask](http://flask.pocoo.org) with test coverage higher than 90%
-* Create a CI/CD pipeline for the existing code
+* Designed and developed the backend of a data labeling system that automates the interaction between crowdsourcing workers and experts. Implemented the system through [Flask](http://flask.pocco.org), achieved test coverage higher than 90% and set up the CI/CD pipeline
+* Set up the CI/CD pipeline for an existing system
+* Begin with analyzing template extraction problem
 
 ### [Jan 2019 - March 2019]
 **Project Manager, [DLT Lab](https://dlt.csie.ncku.edu.tw)**
 
-* Containerized and fix legacy projects ([The Mosquito Man](https://github.com/the-mosquito-man))
-* Setup CI/CD server and CI pipeline through [drone](https://github.com/drone/drone)
+* Containerized and fixed legacy projects in [The Mosquito Man](https://github.com/the-mosquito-man)
+* Introduced code review culture to a newly formed team
+* Set up a [drone](https://github.com/drone/drone) CI/CD server and created CI pipelines for two ongoing projects
 
 ### [May 2018 - Nov 2018]
 **Chief Teaching Assistant, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
 
-* Manage the executive team with 16 members
-* Review the teaching proposal of Python course, "Programming Design Foundation"
-* Design exercises for "Data Structure," the first section of "Computer Science Foundations"
-* Lecture "Web Programming, Database/Cloud Computing," the fourth section of "Computer Science Foundations"
+* Managed the executive team with 16 members
+* Reviewed the teaching proposal of Python course, "Programming Design Foundation"
+* Designed exercises for "Data Structure," the first section of "Computer Science Foundations"
+* Lectured "Web Programming, Database/Cloud Computing," the fourth section of "Computer Science Foundations"
 
 *X-Village* is an experimental education program aiming to equip students not major in computer science with the ability of computational thinking and to enhance future cooperation between computer science and other areas. 
 
@@ -49,9 +57,9 @@ I was the executor of the program and the leader of the teaching assistant team.
 ### [July 2015 - July 2016]
 **Substitute Military Service, K-12 Education Administration, Ministry of Education**
 
-* Maintain systems
-* Develop automation programs for generating reports
-* Deliver a human resource management system using Django
+* Maintained legacy systems implemented in multiple languages (e.g., `C#`, `VBScript`, `PHP`, and etc.)
+* Developed automation programs for generating reports which save 80% of human labor time
+* Delivered a human resource management system using [django](https://www.djangoproject.com)
 
 ## Education
 [2016-2018]
@@ -66,7 +74,7 @@ National Cheng Kung University, Tainan
 GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 
 
-## Talk and Tutorial Experiences
+## Talk and Tutorial
 **[2019/03/24]**
 SITCON 2019
 [X-Village - 用不到兩個月準備兩個月的課程](https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng)
@@ -104,11 +112,14 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-v
 1. Wei Lee, Chien-Wei Chang, Po-An Yang, Chi-Hsuan Huang, Ming-Kuang Wu, Chu-Cheng Hsieh, Kun-Ta Chuang **"Effective Quality Assurance for Data Labels through Crowdsourcing and Domain Expert Collaboration"** 21st International Conference on Extending Database Technology, Demo Track (EDBT-2018)
 2. I-Lin Wang, Wei Lee,  Chiao-Yu Liao **"Effective Heuristics for Scheduling Hump and Pullback Engines in Railroad Yard Operational Plans"** Proceedings of the 10th Annual Conference of the Operations Research Society at Taiwan (ORSTW 2013)
 
-## Projects
+## Additional Experience
 
 #### Open Source Contributions
 * [git-extras](https://github.com/Lee-W/git-extras) ([tj/git-extras](https://github.com/tj/git-extras))
-* [batavia](https://github.com/Lee-W/batavia) ([pybee/batavia](https://github.com/pybee/batavia))
+* [beeeware](https://beeware.org)
+    * [batavia](https://github.com/Lee-W/batavia) ([beeware/batavia](https://github.com/beeware/batavia))
+    * [toga](https://github.com/Lee-W/toga/tree/check-caps-lock-typo) ([beeware/toga](https://github.com/beeware/toga))
+    * [podium](https://github.com/Lee-W/podium) ([beeware/podium](https://github.com/beeware/podium))
 * [wtforms-json](https://github.com/Lee-W/wtforms-json) ([kvesteri/wtforms-json](https://github.com/kvesteri/wtforms-json))
 * [pipreqs](https://github.com/Lee-W/pipreqs) ([bndr/pipreqs](https://github.com/bndr/pipreqs))
 * [pip-check](https://github.com/Lee-W/pip-check) ([bartTC/pip-check](https://github.com/bartTC/pip-check))
