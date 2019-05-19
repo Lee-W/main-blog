@@ -116,10 +116,12 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-v
 
 #### Open Source Contributions
 * [git-extras](https://github.com/Lee-W/git-extras) ([tj/git-extras](https://github.com/tj/git-extras))
+* [flask](https://github.com/Lee-W/flask) ([pallets/flask](https://github.com/pallets/flask))
 * [beeeware](https://beeware.org)
     * [batavia](https://github.com/Lee-W/batavia) ([beeware/batavia](https://github.com/beeware/batavia))
     * [toga](https://github.com/Lee-W/toga/tree/check-caps-lock-typo) ([beeware/toga](https://github.com/beeware/toga))
     * [podium](https://github.com/Lee-W/podium) ([beeware/podium](https://github.com/beeware/podium))
+* [edx-documentation](https://github.com/Lee-W/edx-documentation) ([edx/edx-documentation](https://github.com/edx/edx-documentation))
 * [wtforms-json](https://github.com/Lee-W/wtforms-json) ([kvesteri/wtforms-json](https://github.com/kvesteri/wtforms-json))
 * [pipreqs](https://github.com/Lee-W/pipreqs) ([bndr/pipreqs](https://github.com/bndr/pipreqs))
 * [pip-check](https://github.com/Lee-W/pip-check) ([bartTC/pip-check](https://github.com/bartTC/pip-check))
