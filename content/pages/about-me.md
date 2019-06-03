@@ -13,7 +13,8 @@ I'm a
 <i class="fas fa-lg fa-lock"></i> Locker
 <i class="fab fa-lg fa-rebel"></i> Star Wars Fan
 
-As a programmer, I'm familiar with web backend development (mainly flask) but open to any opportunities.
+An experienced software developer proficient in web backend development and have basic knowledge about DevOps and data analysis. The two years of remote work experience proves that I'm self-disciplined and capable of co-operating with others. I'm also a passionate and self-motivated learner that frequently participate in tech conferences and contribute to open source projects.
+Beside programming skills, I also have experience in management and coordinate people. I held a 2-month educational program and led 16 team members.
 
 <a href="{static}/static/resume.pdf"><button type="button" class="btn btn-default">Resume</button></a>
 
