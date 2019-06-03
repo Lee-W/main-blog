@@ -35,11 +35,11 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['extra', 'images', 'static']
 
 # Theme Setting
-THEME = 'theme/pelican-themes/pelican-bootstrap3/'
+THEME = 'theme/elegant'
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n'],
 }
-DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search')
+DIRECT_TEMPLATES = ('index', 'categories', 'tags','authors', 'archives', 'search')
 DISPLAY_TAG_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_SERIES_ON_SIDEBAR = True
