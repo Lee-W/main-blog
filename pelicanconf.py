@@ -16,10 +16,7 @@ BROWSER_COLOR = '#333333'
 # Locale
 TIMEZONE = 'Asia/Taipei'
 DEFAULT_LANG = 'zh-tw'
-DATE_FORMATS = {
-    'zh': '%Y/%m/%d - %a',
-    'en': '%Y/%m/%d - %a',
-}
+DEFAULT_DATE_FORMAT = '%Y/%m/%d - %a'
 
 # Page Setting
 MAIN_MENU = True
