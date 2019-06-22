@@ -1,7 +1,7 @@
 Title: [Paper] Toward Personality Insights from Language Exploration in Social Media
 Date: 2017-04-04 18:45
-Category: Paper Summary
-Tags: Visualization, NLP, Big Five Theory, Personality
+Category: Tech
+Tags: Paper, Visualization, NLP, Big Five Theory, Personality
 Slug: Toward-Personality-Insights-from-Language-Exploration-in-Social-Media
 Authors: Lee-W
 Summary: 
