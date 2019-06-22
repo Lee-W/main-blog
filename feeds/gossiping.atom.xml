@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Gossiping</title><link href="http://lee-w.github.io/" rel="alternate"></link><link href="http://lee-w.github.io/feeds/gossiping.atom.xml" rel="self"></link><id>http://lee-w.github.io/</id><updated>2018-09-24T15:15:00+08:00</updated><entry><title>X-Village 課程設計</title><link href="http://lee-w.github.io/posts/gossiping/2018/09/X-Village-Course-Design" rel="alternate"></link><published>2018-09-24T15:15:00+08:00</published><updated>2018-09-24T15:15:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-09-24:/posts/gossiping/2018/09/X-Village-Course-Design</id><summary type="html">&lt;p&gt;要一次說完整個 X-Village ，還是有點太花時間&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Gossiping</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/gossiping.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2018-09-24T15:15:00+08:00</updated><entry><title>X-Village 課程設計</title><link href="https://lee-w.github.io/posts/gossiping/2018/09/X-Village-Course-Design" rel="alternate"></link><published>2018-09-24T15:15:00+08:00</published><updated>2018-09-24T15:15:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-09-24:/posts/gossiping/2018/09/X-Village-Course-Design</id><summary type="html">&lt;p&gt;要一次說完整個 X-Village ，還是有點太花時間&lt;br&gt;
 先來聊聊我這次接觸到跟課程設計有關的部分&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;要一次說完整個 X-Village ，還是有點太花時間&lt;br&gt;
 先來聊聊我這次接觸到跟課程設計有關的部分&lt;/p&gt;
@@ -224,7 +224,7 @@ e.g., &lt;/p&gt;
 我基於博安老師前一個半小時的程式碼在做延伸&lt;br&gt;
 從最原始的 &lt;a href="https://github.com/x-village/web-acccounting-example/tree/0.1"&gt;0.1&lt;/a&gt; 版&lt;br&gt;
 每次只做一點點的修改，每一個修改都給那個 commit 一個 tag&lt;/p&gt;
-&lt;p&gt;&lt;img alt="tags" src="http://lee-w.github.io/images/posts-image/2018-09-24-x-village-course-design/1-tag.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="tags" src="https://lee-w.github.io/images/posts-image/2018-09-24-x-village-course-design/1-tag.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;在 slide 的右下角，也會放目前到哪個版本&lt;br&gt;
 也希望能從這樣的做法，帶到 frequent commit 的重要&lt;/p&gt;
 &lt;p&gt;講解程式碼之前&lt;br&gt;
@@ -254,7 +254,7 @@ e.g., &lt;/p&gt;
 到底是這樣的方式不適合初學者？&lt;br&gt;
 還是我沒有把這樣的內容表達好？&lt;br&gt;
 如果還有下次的機會&lt;br&gt;
-除了思考課程的內容外，我還要多花點時間準備在台上的表達&lt;/p&gt;</content><category term="X-Village"></category><category term="Gossiping"></category></entry><entry><title>我如何更有效率的使用時間</title><link href="http://lee-w.github.io/posts/gossiping/2017/02/how-do-i-manage-my-time" rel="alternate"></link><published>2017-02-03T00:53:00+08:00</published><updated>2017-02-03T00:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-03:/posts/gossiping/2017/02/how-do-i-manage-my-time</id><summary type="html">&lt;p&gt;過年整理了好多以前的書摘&lt;br&gt;
+除了思考課程的內容外，我還要多花點時間準備在台上的表達&lt;/p&gt;</content><category term="X-Village"></category><category term="Gossiping"></category></entry><entry><title>我如何更有效率的使用時間</title><link href="https://lee-w.github.io/posts/gossiping/2017/02/how-do-i-manage-my-time" rel="alternate"></link><published>2017-02-03T00:53:00+08:00</published><updated>2017-02-03T00:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-03:/posts/gossiping/2017/02/how-do-i-manage-my-time</id><summary type="html">&lt;p&gt;過年整理了好多以前的書摘&lt;br&gt;
 好像該來發一點自己的東西了&lt;/p&gt;
 &lt;p&gt;前一段時間被找回母系演講&lt;br&gt;
 被問了，我是怎麼管理時間的&lt;/p&gt;
@@ -299,7 +299,7 @@ e.g., &lt;/p&gt;
 &lt;h2 id="_3"&gt;如何養成習慣&lt;/h2&gt;
 &lt;p&gt;那麼把目標拆解成很小的行動後&lt;br&gt;
 要怎麼堅持每天都要走這一小步，而不會半途而廢呢？&lt;/p&gt;
-&lt;p&gt;這裡非常推薦大家看「&lt;a href="http://lee-w.github.io/posts/book/2015/11/the-power-of-habit"&gt;為什麼我們這樣生活，那樣工作?&lt;/a&gt;」（連結是我的書摘）&lt;/p&gt;
+&lt;p&gt;這裡非常推薦大家看「&lt;a href="https://lee-w.github.io/posts/book/2015/11/the-power-of-habit"&gt;為什麼我們這樣生活，那樣工作?&lt;/a&gt;」（連結是我的書摘）&lt;/p&gt;
 &lt;p&gt;裡面提到要養成一個習慣的條件有以下四個&lt;br&gt;
 1. 提示&lt;br&gt;
 2. 慣性行為 （習慣）&lt;br&gt;
@@ -325,7 +325,7 @@ e.g., &lt;/p&gt;
 &lt;p&gt;除了 Daily Checklist，另外也推薦追蹤工作時間用的&lt;a href="https://www.toggl.com"&gt;Toggl&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id="_4"&gt;一天不做，不會怎樣啦&lt;/h3&gt;
 &lt;p&gt;花了好久時間建立的習慣，還是會有想怠惰的時候&lt;/p&gt;
-&lt;p&gt;我很喜歡「&lt;a href="http://lee-w.github.io/posts/book/2016/08/how-will-you-measure-your-life"&gt;你如何衡量你的人生&lt;/a&gt;」的一句話&lt;/p&gt;
+&lt;p&gt;我很喜歡「&lt;a href="https://lee-w.github.io/posts/book/2016/08/how-will-you-measure-your-life"&gt;你如何衡量你的人生&lt;/a&gt;」的一句話&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;百分之百的堅持比百分之九十八容易
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -337,7 +337,7 @@ e.g., &lt;/p&gt;
 想完成的事情太多，能分配的時間太少&lt;/p&gt;
 &lt;p&gt;這就是必須做出選擇的時候了&lt;br&gt;
 那麼要怎麼決定那些事情是真的很重要，要留下來的呢？&lt;br&gt;
-這裡我要推薦的書是「&lt;a href="http://lee-w.github.io/posts/book/2016/03/essentialism"&gt;少，但是更好&lt;/a&gt;」&lt;br&gt;
+這裡我要推薦的書是「&lt;a href="https://lee-w.github.io/posts/book/2016/03/essentialism"&gt;少，但是更好&lt;/a&gt;」&lt;br&gt;
 不過如果要給一個最簡單的原則，那就是&lt;a href="https://www.youtube.com/watch?time_continue=60&amp;amp;v=1ehWlVeMrqw"&gt;No more yes. It's Either HELL YEAH! Or No&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;如果這件事不是「太棒了！我一定要去做！！！」，那麼就不要做了&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;另外一個更明確的做法是&lt;a href="http://www.artofmanliness.com/2017/01/09/work-deliberately-instead-reactively-rule-3/?utm_source=pocket&amp;amp;utm_medium=email&amp;amp;utm_campaign=pockethits"&gt;Rule of Three&lt;/a&gt;&lt;br&gt;
@@ -378,7 +378,7 @@ e.g., &lt;/p&gt;
 這些事又要怎麼拆解才能不會讓我太費力，或只要多花一點力，不會很容易半途而廢的&lt;/p&gt;
 &lt;p&gt;這些只是我嘗試覺得有用的方法&lt;br&gt;
 不見得適用於每個人&lt;br&gt;
-不過也許都能去嘗試看看，相信總會有一些有幫助的部分&lt;/p&gt;</content><category term="Productivity"></category><category term="Gossiping"></category></entry><entry><title>TEDx Tainan 2016 - 0 到 1</title><link href="http://lee-w.github.io/posts/gossiping/2016/11/tedx-tainan-2016" rel="alternate"></link><published>2016-11-21T03:27:00+08:00</published><updated>2016-11-21T03:27:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-21:/posts/gossiping/2016/11/tedx-tainan-2016</id><summary type="html">&lt;p&gt;趁著昨天才剛結束&lt;br&gt;
+不過也許都能去嘗試看看，相信總會有一些有幫助的部分&lt;/p&gt;</content><category term="Productivity"></category><category term="Gossiping"></category></entry><entry><title>TEDx Tainan 2016 - 0 到 1</title><link href="https://lee-w.github.io/posts/gossiping/2016/11/tedx-tainan-2016" rel="alternate"></link><published>2016-11-21T03:27:00+08:00</published><updated>2016-11-21T03:27:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-21:/posts/gossiping/2016/11/tedx-tainan-2016</id><summary type="html">&lt;p&gt;趁著昨天才剛結束&lt;br&gt;
 把一些感受記錄下來&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;趁著昨天才剛結束&lt;br&gt;
 把一些感受記錄下來&lt;/p&gt;
@@ -417,7 +417,7 @@ e.g., &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果今天換作是我們遇到同樣的處境
 
 我們真的能處理得更好嗎？
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Inspiring"></category><category term="TEDx"></category><category term="Gossiping"></category></entry><entry><title>No More Zero Day</title><link href="http://lee-w.github.io/posts/gossiping/2015/10/no-more-zero-day" rel="alternate"></link><published>2015-10-27T06:53:00+08:00</published><updated>2015-10-27T06:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-10-27:/posts/gossiping/2015/10/no-more-zero-day</id><summary type="html">&lt;p&gt;決定開始來寫些程式以外的內容&lt;br&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Inspiring"></category><category term="TEDx"></category><category term="Gossiping"></category></entry><entry><title>No More Zero Day</title><link href="https://lee-w.github.io/posts/gossiping/2015/10/no-more-zero-day" rel="alternate"></link><published>2015-10-27T06:53:00+08:00</published><updated>2015-10-27T06:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-10-27:/posts/gossiping/2015/10/no-more-zero-day</id><summary type="html">&lt;p&gt;決定開始來寫些程式以外的內容&lt;br&gt;
 整理之前看過的書或文章，跟大家分享心得或書摘&lt;br&gt;
 反正都寫了，不分享一下也是蠻可惜的 (?)&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;決定開始來寫些程式以外的內容&lt;br&gt;
@@ -475,7 +475,7 @@ e.g., &lt;/p&gt;
 &lt;li&gt;至於書？所有我們能想得到的想法，或是感受、經驗、體驗、欲望、或是想知道怎麼做某件事，不管是什麼東西，都已經被某個人想出來了&lt;/li&gt;
 &lt;li&gt;讀網路上關於減重的文章並將他納入你的運動準則中&lt;/li&gt;
 &lt;li&gt;閱讀就像是瑪莉歐電玩中的水管快速通道，他是你到達下一個層級的快速捷徑。&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Productivity"></category><category term="Gossiping"></category></entry><entry><title>MacBook Pro Retina 開箱</title><link href="http://lee-w.github.io/posts/gossiping/2015/01/mbpr-out-of-the-box" rel="alternate"></link><published>2015-01-02T04:14:00+08:00</published><updated>2015-01-02T04:14:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-02:/posts/gossiping/2015/01/mbpr-out-of-the-box</id><summary type="html">&lt;p&gt;這篇只是想給自己換 MacBook Pro Retina 留下一個紀念&lt;br&gt;
+&lt;/ul&gt;</content><category term="Productivity"></category><category term="Gossiping"></category></entry><entry><title>MacBook Pro Retina 開箱</title><link href="https://lee-w.github.io/posts/gossiping/2015/01/mbpr-out-of-the-box" rel="alternate"></link><published>2015-01-02T04:14:00+08:00</published><updated>2015-01-02T04:14:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-02:/posts/gossiping/2015/01/mbpr-out-of-the-box</id><summary type="html">&lt;p&gt;這篇只是想給自己換 MacBook Pro Retina 留下一個紀念&lt;br&gt;
 順便紀錄一些從 Ubuntu 轉過來不習慣的地方&lt;br&gt;
 想要看更專業的開箱文就要再去翻別篇囉ＸＤ&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這篇只是想給自己換 MacBook Pro Retina 留下一個紀念&lt;br&gt;
