@@ -51,8 +51,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Social widget
-SOCIAL = (('Linkedin', 'http://tw.linkedin.com/in/clleew'),
-          ('GitHub', 'http://github.com/Lee-W'),
+SOCIAL = (('Linkedin', 'https://tw.linkedin.com/in/clleew'),
+          ('GitHub', 'https://github.com/Lee-W'),
           ('Gitlab', 'https://gitlab.com/Lee-W'),
           ('Twitter', 'https://twitter.com/clleew'),
           ('RSS', '//lee-w.github.io/feeds/all.atom.xml'),)
