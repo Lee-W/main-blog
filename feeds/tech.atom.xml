@@ -3156,7 +3156,334 @@ ln -s ~/.vimrc &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim/init.vi
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/3536"&gt;.nvimrc doesn't seem to be loaded up or working and it cannot create backups on editing existing files&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/1755"&gt;No python interpreter found.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Vim"></category><category term="Neovim"></category><category term="Tech"></category></entry><entry><title>Create a Telegram EchoBot</title><link href="http://lee-w.github.io/posts/tech/2017/03/create-a-telegram-echobot" rel="alternate"></link><published>2017-03-31T19:24:00+08:00</published><updated>2017-03-31T19:24:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-31:/posts/tech/2017/03/create-a-telegram-echobot</id><summary type="html">&lt;p&gt;最近當助教要出一個 Telegram Bot 相關的 Project&lt;br&gt;
+&lt;/ul&gt;</content><category term="Vim"></category><category term="Neovim"></category><category term="Tech"></category></entry><entry><title>[Paper] Deep Learning-Based Document Modeling for Personality Detection from Text</title><link href="http://lee-w.github.io/posts/tech/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text" rel="alternate"></link><published>2017-04-11T17:59:00+08:00</published><updated>2017-04-11T17:59:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-11:/posts/tech/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Data Set&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://mypersonality.org/wiki/doku.php?id=wcpr13"&gt;James Pennebaker and Laura King's stream-of-consciousness essay dataset&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;NRC Word-Emotion Association Lexicon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Data Set&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://mypersonality.org/wiki/doku.php?id=wcpr13"&gt;James Pennebaker and Laura King's stream-of-consciousness essay dataset&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;NRC Word-Emotion Association Lexicon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="practical-application-of-personality-detection"&gt;Practical Application of Personality Detection&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Product and Service Recommandation (People with similiar personalities might have similiar favors)&lt;/li&gt;
+&lt;li&gt;Mental Health Diagnosis&lt;/li&gt;
+&lt;li&gt;Forensics: Reduce the circle of suspects&lt;/li&gt;
+&lt;li&gt;Human Resource: One's suitablitlty for certain jobs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="personality-theory-used-in-this-paper"&gt;Personality Theory Used in This Paper&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Big_Five_personality_traits"&gt;Big Five Personality Trait&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="basic-idea-of-the-method"&gt;Basic Idea of the Method&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Feed sentences from essays to convolution filter → Sentence model in the form of n-gram feature vectors&lt;/li&gt;
+&lt;li&gt;Aggregate the vectors of a document's sentences and combine them with Masiresse features to represent the document&lt;/li&gt;
+&lt;li&gt;Classification: Feed the document vectors into a fully connected neural network&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="overview-of-the-method"&gt;Overview of the Method&lt;/h2&gt;
+&lt;h3 id="1-preprocessing"&gt;1. Preprocessing&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Sentence Splitting&lt;/li&gt;
+&lt;li&gt;Data Cleaning&lt;/li&gt;
+&lt;li&gt;Unification (e.g. lowercase)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-document-level-feature-extraction"&gt;2. Document-level feature extraction&lt;/h3&gt;
+&lt;p&gt;Mairesse baseline feature set (e.g. word count, average sentence length)&lt;/p&gt;
+&lt;h3 id="3-filtering"&gt;3. Filtering&lt;/h3&gt;
+&lt;p&gt;Sentences without personliaty clues are dropped&lt;br&gt;
+(Based on &lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;NRC Word-Emotion Association Lexicon&lt;/a&gt;)&lt;/p&gt;
+&lt;h3 id="4-word-level-feature-extraction"&gt;4. Word-level feature extraction&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;word2vec&lt;/li&gt;
+&lt;li&gt;Variable number of fixed-length word feature vectors → Variable number of sentences → Document&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="5-classfication"&gt;5. Classfication&lt;/h3&gt;
+&lt;p&gt;Deep CNN (Conolutional Nerual Network)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Input&lt;ul&gt;
+&lt;li&gt;Words: Fixed-length feature vector using word2vec&lt;/li&gt;
+&lt;li&gt;Sentences: Variable number of word vectors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Process&lt;ul&gt;
+&lt;li&gt;Word Vector is reduced to a fixed length vector of each sentence&lt;/li&gt;
+&lt;li&gt;Document: Variable number of such fixed-length sentence vector&lt;/li&gt;
+&lt;li&gt;Document vector is then reduced to a fixed-length document vector&lt;/li&gt;
+&lt;li&gt;This Document vector is then concatenated with document-level features&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Predict&lt;ul&gt;
+&lt;li&gt;Yes / No (5 different personality traits are trained seperately) &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="network-architecture-in-detail"&gt;Network Architecture in Detail&lt;/h2&gt;
+&lt;h3 id="main-steps-7-layers"&gt;Main Steps (7 Layers)&lt;/h3&gt;
+&lt;h4 id="word-vectorization"&gt;Word Vectorization&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer 1: Input&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\( R ^{D \times S\times W \times E}\)&lt;/span&gt; &lt;/li&gt;
+&lt;li&gt;Use Google's pretrained word2vec&lt;/li&gt;
+&lt;li&gt;In implementation, all the documents contain the same number of sentences.&lt;br&gt;
+  Shorter documents are padded shorter sentences with dummy words.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="sentence-vectorization"&gt;Sentence Vectorization&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer 2: Convolution&lt;ul&gt;
+&lt;li&gt;3 convolutional filters: unigram, bigram, trigram &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Layer 3: Max Polling&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="document-vectorization"&gt;Document Vectorization&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer 4: 1-max pooling&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="classification-yesno"&gt;Classification: (Yes/No)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer 5: Linear with Sigmoid activation&lt;/li&gt;
+&lt;li&gt;Layer 6, 7&lt;ul&gt;
+&lt;li&gt;2 Neuron (yes/no) Softmax Output (ReLU and tanh perform worse)&lt;/li&gt;
+&lt;li&gt;fully connected layer of size 200&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="training"&gt;Training&lt;/h3&gt;
+&lt;p&gt;Objective Function: Negative Log Likelihood&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Paper"></category><category term="Deep Learning"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category><category term="Tech"></category></entry><entry><title>[Paper] Understanding Personality through Social Media</title><link href="http://lee-w.github.io/posts/tech/2017/04/Understanding-Personality-through-Social-Media" rel="alternate"></link><published>2017-04-05T22:30:00+08:00</published><updated>2017-04-05T22:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-05:/posts/tech/2017/04/Understanding-Personality-through-Social-Media</id><summary type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Main Purpose: To see how linguistic features correlate with each personality trait.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Main Purpose: To see how linguistic features correlate with each personality trait.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;strong&gt;Use Twitter to predict MBIT personality.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id="problem-of-past-researches"&gt;Problem of Past Researches&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Language on social media has richer content that makes the typical linguistic analysis tool perform poorly (e.g. iono -&amp;gt; I don't know)&lt;/li&gt;
+&lt;li&gt;Gain personality information is costly (e.g. Big Five Questionnaire)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="mbti"&gt;MBTI&lt;/h3&gt;
+&lt;p&gt;Instead of commonly used big five theory, MBTI is used in this paper.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Myers–Briggs_Type_Indicator"&gt;Myers-Briggs Type Indicator&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There are 4 types of personality trait&lt;br&gt;
+i.e.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Introversion(I) / Extraversion(E)&lt;/li&gt;
+&lt;li&gt;Intuition(N) / Sensing(S)&lt;/li&gt;
+&lt;li&gt;Feeling(F) / Thinking(T)&lt;/li&gt;
+&lt;li&gt;Perception(P) / Judging(J)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Personality can be expressed as a code with 4 letters.&lt;br&gt;
+e.g. ENFJ, INTP&lt;/p&gt;
+&lt;h3 id="data"&gt;Data&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A Twitter dataset&lt;ul&gt;
+&lt;li&gt;Around 90,000 users&lt;/li&gt;
+&lt;li&gt;120,000 personality-related tweets from 2006~2015 (out of 1.7 M tweets)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="what-is-the-so-called-personliaty-related-tweets"&gt;What is the so-called personliaty-related tweets?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;English Tweets that contain users' own MBIT code. &lt;br&gt;
+    e.g.&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;"I'm an ENFJ"&lt;/code&gt; is qualified&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;"My friend is an ISFJ"&lt;/code&gt; is not qualified&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Heuristic rules is used (e.g. &lt;code&gt;"I'm"&lt;/code&gt;, &lt;code&gt;"I got"&lt;/code&gt;, &lt;code&gt;"I have been a"&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;No classification method is used for ensuring the personality code is indeed the user's &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="distribution"&gt;Distribution&lt;/h4&gt;
+&lt;p&gt;Personality distribution of this data is skewed.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="MBTI-bar" src="http://lee-w.github.io/images/posts-image/2017-04-05-understanding-personliaty-through-social-media/MBTI-bar.png"&gt;&lt;/p&gt;
+&lt;p&gt;However, in the real word, the personality distribution might also be skewed.&lt;/p&gt;
+&lt;h3 id="features"&gt;Features&lt;/h3&gt;
+&lt;h4 id="1-n-grams"&gt;1. n-grams&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Most frequent 1,000 unigram, bigram, trigram words and phrases&lt;/li&gt;
+&lt;li&gt;1,000 dimensions vectors for unigram, bigram trigram for each user&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="2-twitter-part-of-speech-tags"&gt;2. Twitter Part-of-speech tags&lt;/h4&gt;
+&lt;p&gt;Based on &lt;a href="http://www.cs.cmu.edu/~ark/TweetNLP/gimpel+etal.acl11.pdf"&gt;Part-of-Speech Tagging for Twitter: Annotation, Features, and Experiments&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;25 types with some Twitter-specific tag. &lt;br&gt;
+  e.g.&lt;ul&gt;
+&lt;li&gt;hashtag&lt;/li&gt;
+&lt;li&gt;at-mention&lt;/li&gt;
+&lt;li&gt;URL&lt;/li&gt;
+&lt;li&gt;emoticon &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="3word-vectors"&gt;3.word vectors&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Word Vector Settings&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2,334,564 words&lt;/li&gt;
+&lt;li&gt;500 dimension&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Extracted Features&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Average word vectors&lt;/li&gt;
+&lt;li&gt;Weighted average word vectors (weighted according to TF-IDF) &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="prediction"&gt;Prediction&lt;/h3&gt;
+&lt;p&gt;Logistic Regression is used (Random Forest and SVM produced similar results)&lt;/p&gt;
+&lt;h4 id="accuracy-measurement"&gt;Accuracy Measurement&lt;/h4&gt;
+&lt;p&gt;Since the data is skewed, AUC is used.&lt;/p&gt;
+&lt;h4 id="accuracy"&gt;Accuracy&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Indivisula Features&lt;ul&gt;
+&lt;li&gt;Word Vector Only -&amp;gt; (AUC=0.651) &lt;/li&gt;
+&lt;li&gt;n-gram only -&amp;gt; (AUC=0.607)&lt;/li&gt;
+&lt;li&gt;POS only -&amp;gt; (AUC=0.585)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Combinded Features&lt;ul&gt;
+&lt;li&gt;All three features -&amp;gt; (AUC=0.661)&lt;/li&gt;
+&lt;li&gt;POS + n-gram -&amp;gt; (AUC=0.616)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="insight"&gt;Insight&lt;/h4&gt;
+&lt;p&gt;Among the results, word vector performs best which might illustrate that predictions based on social media and language would work.&lt;/p&gt;
+&lt;p&gt;During the POS conversion process, information is compressed into 25 tags and might lost some important one.&lt;br&gt;
+This might be the reason why it performs worse.&lt;/p&gt;</content><category term="Paper"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="MBTI"></category><category term="Personality"></category><category term="Tech"></category></entry><entry><title>[Paper] Toward Personality Insights from Language Exploration in Social Media</title><link href="http://lee-w.github.io/posts/tech/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media" rel="alternate"></link><published>2017-04-04T18:45:00+08:00</published><updated>2017-04-04T18:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-04-04:/posts/tech/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/papers/sam2013-dla.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/personality_wc.html"&gt;Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media"&gt;My Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The main purpose of this paper is to show how social media can be used to gain psychological insights.&lt;/p&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/papers/sam2013-dla.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/personality_wc.html"&gt;Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media"&gt;My Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The main purpose of this paper is to show how social media can be used to gain psychological insights.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;Different from other papers in the past which use a pre-compiled word category list (e.g. LIWC),&lt;br&gt;
+it uses an open vocabulary approach that allowing discovery of unanticipated language.&lt;/p&gt;
+&lt;h3 id="data"&gt;Data&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;75,000 Volunteers&lt;ul&gt;
+&lt;li&gt;Facebook Status Update&lt;/li&gt;
+&lt;li&gt;Age&lt;/li&gt;
+&lt;li&gt;Gender&lt;/li&gt;
+&lt;li&gt;Personality (Through Standard Personality Questionnaire)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="architecture"&gt;Architecture&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Linguistic Feature Extraction&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;N-Gram&lt;ul&gt;
+&lt;li&gt;Point-Wise Mutual Information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Topic&lt;ul&gt;
+&lt;li&gt;Probability a person mentioning a topic (Derived from LDA)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Correlation analysis&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Least Squares Linear Regression   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Visualization&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://wwbp.org/personality_wc.html"&gt;Differential Word Clouds&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;Word size represents correlation strength.&lt;/li&gt;
+&lt;li&gt;Color represents relative frequency&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Standardized Frequency Plot&lt;ul&gt;
+&lt;li&gt;Plot the word frequency against age&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="result"&gt;Result&lt;/h3&gt;
+&lt;p&gt;Most results confirm what is already known or obvious.&lt;br&gt;
+However, I think this method might still be useful to gain insight in other kinds of datasets.&lt;/p&gt;</content><category term="Paper"></category><category term="Visualization"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category><category term="Tech"></category></entry><entry><title>Create a Telegram EchoBot</title><link href="http://lee-w.github.io/posts/tech/2017/03/create-a-telegram-echobot" rel="alternate"></link><published>2017-03-31T19:24:00+08:00</published><updated>2017-03-31T19:24:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-31:/posts/tech/2017/03/create-a-telegram-echobot</id><summary type="html">&lt;p&gt;最近當助教要出一個 Telegram Bot 相關的 Project&lt;br&gt;
 先來寫一篇簡單的教學，減少之後的問題 XDD&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最近當助教要出一個 Telegram Bot 相關的 Project&lt;br&gt;
 先來寫一篇簡單的教學，減少之後的問題 XDD&lt;/p&gt;
@@ -4493,7 +4820,31 @@ ngrok 會把 request 傳到 local 端相對應的 port&lt;/p&gt;
 &lt;a href="https://stanfy.com/blog/the-rise-of-chat-bots-useful-links-articles-libraries-and-platforms/"&gt;The Rise of Chat Bots: Useful Links, Articles, Libraries and Platforms&lt;/a&gt;&lt;br&gt;
 相當推薦對 ChatBot 有興趣的人參考&lt;/p&gt;
 &lt;h1 id="slide"&gt;Slide&lt;/h1&gt;
-&lt;p&gt;如果有點不喜歡看文章的，也可以看看&lt;a href="https://hackmd.io/p/HkW8LjRfl#/"&gt;slide&lt;/a&gt; 的版本&lt;/p&gt;</content><category term="Chat Bot"></category><category term="Tech"></category></entry><entry><title>COSCUP 2016 小啄如何實作的</title><link href="http://lee-w.github.io/posts/tech/2016/10/coscup-2016-how-to-implement-small-pecks" rel="alternate"></link><published>2016-10-01T11:50:00+08:00</published><updated>2016-10-01T11:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-01:/posts/tech/2016/10/coscup-2016-how-to-implement-small-pecks</id><summary type="html">&lt;p&gt;今年 COSCUP 的聊天機器人「小啄」&lt;br&gt;
+&lt;p&gt;如果有點不喜歡看文章的，也可以看看&lt;a href="https://hackmd.io/p/HkW8LjRfl#/"&gt;slide&lt;/a&gt; 的版本&lt;/p&gt;</content><category term="Chat Bot"></category><category term="Tech"></category></entry><entry><title>[Paper] Mining Online Social Data for Detecting Social Network Mental Disorders</title><link href="http://lee-w.github.io/posts/tech/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders" rel="alternate"></link><published>2016-11-18T16:53:00+08:00</published><updated>2016-11-18T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-18:/posts/tech/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www2016.net/proceedings/proceedings/p275.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders"&gt;My Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This paper proposes a model named SNMDD to detect Social Network Mental Disorder (SNMD) through users' behaviors on online social networks (OSN) instead of asking their mental condition.&lt;/p&gt;
+</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www2016.net/proceedings/proceedings/p275.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders"&gt;My Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This paper proposes a model named SNMDD to detect Social Network Mental Disorder (SNMD) through users' behaviors on online social networks (OSN) instead of asking their mental condition.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;In addition, multi-source learning (FB and IG) is used to improve performance through STM.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;SNMDD is a classification model based on TSVM&lt;br&gt;
+The use of domain knowledge from psychology to extract features is the core of this model.&lt;br&gt;
+The most interesting part is choosing features as the proxy features to replace ones that are hard to detect.&lt;br&gt;
+For example, distinguishing whether a social capital is a strong tie or a weak tie is crucial to the detection of SNMD. However, it's hard to detect through OSNs data. Thus, it guesses that friends you interacts (e.g. posts, likes, comments) with might be the strong tie ones.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;STM is a tensor model based on Tucker Decomposition&lt;br&gt;
+Through Tucker Decomposition, it's possible to combine data from different sources and extract new features vectors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Paper"></category><category term="Social Network"></category><category term="Machine Learning"></category><category term="Tech"></category></entry><entry><title>COSCUP 2016 小啄如何實作的</title><link href="http://lee-w.github.io/posts/tech/2016/10/coscup-2016-how-to-implement-small-pecks" rel="alternate"></link><published>2016-10-01T11:50:00+08:00</published><updated>2016-10-01T11:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-01:/posts/tech/2016/10/coscup-2016-how-to-implement-small-pecks</id><summary type="html">&lt;p&gt;今年 COSCUP 的聊天機器人「小啄」&lt;br&gt;
 終於在今天宣告退休了&lt;br&gt;
 退休前他讓我們詢問了「你是如何實作的」&lt;br&gt;
 這邊是我測試的所有結果&lt;br&gt;
@@ -4737,7 +5088,329 @@ Also, large files are not recommended to add to git.&lt;br&gt;
 If it's needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;git revert "SHA1"&lt;/code&gt; -&amp;gt; save another entry of undo&lt;/p&gt;
 &lt;p&gt;If you commit the password -&amp;gt; &lt;code&gt;git rebase&lt;/code&gt; can change commit, but it is not that recommended.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git submodule&lt;/code&gt; create a sub-module&lt;/p&gt;</content><category term="Git"></category><category term="GitHub"></category><category term="Tech"></category></entry><entry><title>COSCUP 2016</title><link href="http://lee-w.github.io/posts/tech/2016/08/coscup-2016" rel="alternate"></link><published>2016-08-22T15:36:00+08:00</published><updated>2016-08-22T15:36:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/tech/2016/08/coscup-2016</id><summary type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder 共筆&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git submodule&lt;/code&gt; create a sub-module&lt;/p&gt;</content><category term="Git"></category><category term="GitHub"></category><category term="Tech"></category></entry><entry><title>[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks</title><link href="http://lee-w.github.io/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" rel="alternate"></link><published>2016-08-22T16:53:00+08:00</published><updated>2016-08-22T16:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks</id><summary type="html">&lt;p&gt;&lt;a href="http://dl.acm.org/citation.cfm?id=2783392"&gt;Paper&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a href="http://dl.acm.org/citation.cfm?id=2783392"&gt;Paper&lt;/a&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="1-introduction"&gt;1. Introduction&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Problem Description&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A company intends to select a small set of customers to distribute praises of their trial products to a larger group&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Influence maximization&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Goal: Identify a small subset of seed nodes that have the best chance to influence the most number of nodes&lt;/li&gt;
+&lt;li&gt;Competitive Influence Maximization (CIM)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Assumption&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Influence is exclusive (Once a node is influenced by one party, it will not be influenced again)      &lt;/li&gt;
+&lt;li&gt;Each round all parties choose one node and then the influence propagates before the next round starts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;STORM (STrategy-Oriented Reinforcement-Learning based influence Maximization) performs&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data Generation&lt;ul&gt;
+&lt;li&gt;the data, which is the experience generated through simulation by applying the current model, will become the feedbacks to refine the model for better performance &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Model Learning &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="difference-with-others"&gt;Difference with Others&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Known strategy -&amp;gt; Both know and unknown&lt;ul&gt;
+&lt;li&gt;Known or Unknown but available to compete -&amp;gt; Train a model to learn strategy&lt;/li&gt;
+&lt;li&gt;Unknown -&amp;gt; Game-theoretical solution to seek the Nash equilibrium     &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Single-roung -&amp;gt; Multi-round&lt;/li&gt;
+&lt;li&gt;Model driven -&amp;gt; learning-based, data-drivern&lt;/li&gt;
+&lt;li&gt;Not considering different network topology -&amp;gt; General to adapt both opponent's strategy and environment setting (e.g. underlying network topology)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="2-problem-statment"&gt;2. Problem Statment&lt;/h2&gt;
+&lt;h3 id="def-1-competive-linear-threshold-clt"&gt;Def 1: Competive Linear Threshold (CLT)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;CLT model is a multi-party diffusion model&lt;/li&gt;
+&lt;li&gt;The party who has the highest influence occupied the node&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="def-2-multi-round-competitive-influence-maximization-mrcim"&gt;Def 2: Multi-Round Competitive Influence Maximization (MRCIM)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Max its overall relative influence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="4-methodology"&gt;4. Methodology&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;NP-hardness of MRCIM -&amp;gt; looks for approxmiate solution&lt;/li&gt;
+&lt;li&gt;Max the inflence for each round does not guarantee overall max&lt;ul&gt;
+&lt;li&gt;Due to the fact that each round are not independent&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="41-preliminary-reinforcement-learning"&gt;4.1 Preliminary: Reinforcement Learning&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn a policy &lt;span class="math"&gt;\(\pi(s)\)&lt;/span&gt; to determine which action to take state s (environment)&lt;/li&gt;
+&lt;li&gt;How to estimated &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;?&lt;ul&gt;
+&lt;li&gt;Expected Accmulated Reward of a state (V function)&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\( V^\pi(s) = E_\pi\{R_t|S_t=s\}=...\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Expected Accmulated Reward of a state-action pair (Q function)&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\( Q^\pi(s, a) = E_\pi\{R_t|S_t=s, a_t=a\}=...\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The optimal &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; can be obtained through Q functinon&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\( \pi = \arg \min_{a\in A}Q(s,a)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;(i.e. For all "a" in A, find the "a" such that min Q(s, a))&lt;/p&gt;
+&lt;h3 id="42-strategy-oriented-reinforcement-learning"&gt;4.2 Strategy-Oriented Reinforcement-Learning&lt;/h3&gt;
+&lt;h4 id="setup"&gt;Setup&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Env&lt;ul&gt;
+&lt;li&gt;Influence propagation process&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Reward&lt;ul&gt;
+&lt;li&gt;Delay Reward: The difference of activated nodes between parties at the last round&lt;ul&gt;
+&lt;li&gt;After the last round, rewards are propagated to the previous states through Q-function updating&lt;/li&gt;
+&lt;li&gt;Slow but more accurate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Action&lt;ul&gt;
+&lt;li&gt;&lt;s&gt;Choosing certain node to activate&lt;/s&gt;&lt;ul&gt;
+&lt;li&gt;too many&lt;/li&gt;
+&lt;li&gt;overfit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Single Party IM strategies&lt;ul&gt;
+&lt;li&gt;Namely, which strategy to choose given the current state&lt;/li&gt;
+&lt;li&gt;The size can be reduced to strategies choosen&lt;/li&gt;
+&lt;li&gt;Chosen Strategies&lt;ul&gt;
+&lt;li&gt;sub-greedy&lt;/li&gt;
+&lt;li&gt;degree-first&lt;/li&gt;
+&lt;li&gt;block&lt;/li&gt;
+&lt;li&gt;max-weight&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;State&lt;ul&gt;
+&lt;li&gt;Represents&lt;ul&gt;
+&lt;li&gt;network&lt;/li&gt;
+&lt;li&gt;environment status&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;s&gt;record the occupation status of all nodes&lt;/s&gt;&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(3^{|V|}\)&lt;/span&gt;, too many&lt;/li&gt;
+&lt;li&gt;overfit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Features Designed&lt;ul&gt;
+&lt;li&gt;Number of free nodes&lt;/li&gt;
+&lt;li&gt;Sum of degrees of all nodes&lt;/li&gt;
+&lt;li&gt;Sum of weight of the edges for which bot h vertices are free&lt;/li&gt;
+&lt;li&gt;Max degree among all free nodes&lt;/li&gt;
+&lt;li&gt;Max sum of free out-edge weight of a node among nodes which are the first player's neighbors&lt;/li&gt;
+&lt;li&gt;Second player's &lt;/li&gt;
+&lt;li&gt;Max activated nodes of a node for the first player alter two rounds of influence propagation&lt;/li&gt;
+&lt;li&gt;Second player's&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The feautres are quantize into&lt;ul&gt;
+&lt;li&gt;low&lt;/li&gt;
+&lt;li&gt;medium&lt;/li&gt;
+&lt;li&gt;high&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Totally, &lt;span class="math"&gt;\(3^9\)&lt;/span&gt; states&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="data-for-training"&gt;Data For Training&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Propagation model is known (e.g. LT in the experiments)&lt;/li&gt;
+&lt;li&gt;Strategies served as actions are predefined&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In training phase, train the agent aginst a certain strategy and see how it performs on the given network&lt;br&gt;
+These data can be used to learn the value functions&lt;/p&gt;
+&lt;h4 id="training-against-opponents"&gt;Training Against Opponents&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Opponent Strategy&lt;ul&gt;
+&lt;li&gt;Known: Simulate the strategy during training&lt;/li&gt;
+&lt;li&gt;Unknown but availble during training: Same as above&lt;/li&gt;
+&lt;li&gt;Unknown: More Gerneral Model in 4.4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="phase"&gt;Phase&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Phase 1: Training&lt;ul&gt;
+&lt;li&gt;The agent update its Q function from the simulation experiences throughout the training rounds&lt;/li&gt;
+&lt;li&gt;Update &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; in the meantime&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Phase 2: Competition&lt;ul&gt;
+&lt;li&gt;The agent would not update Q-table&lt;/li&gt;
+&lt;li&gt;Generates &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; according to Q-table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="43-storm-with-strategy-known"&gt;4.3 STORM with Strategy Known&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Training the model compete against the strategy to learn &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;STORM-Q&lt;ul&gt;
+&lt;li&gt;Update Q-function following the concept of Q-learning&lt;ul&gt;
+&lt;li&gt;Q-Learning: &lt;span class="math"&gt;\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t, a_t))\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\epsilon\)&lt;/span&gt;-greedy&lt;ul&gt;
+&lt;li&gt;Determine strategies on the current policy derived from Q-table.&lt;/li&gt;
+&lt;li&gt;Explore the new directions to avoid local optimum&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Pure Strategy&lt;/li&gt;
+&lt;li&gt;The most likely strategy is choosen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$ Algorithm $&lt;/p&gt;
+&lt;h2 id="44-storm-with-strategy-unknown"&gt;4.4 STORM with Strategy Unknown&lt;/h2&gt;
+&lt;h3 id="unknown-but-available-to-train"&gt;Unknown but available to train&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The differece between the known case is that experience cannot be obtained through simulation&lt;/li&gt;
+&lt;li&gt;Train against unknown opponent's strategy during competition&lt;ul&gt;
+&lt;li&gt;It's feasible because STORM-Q only needs to know the seed-selection outcoms of the opponent to update the Q-table, not exact strategy it takes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="unknown"&gt;Unknown&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Goal: Create a general model to compete a variety of rational strategies&lt;/li&gt;
+&lt;li&gt;Assumption: The oppoent is rational (Wants to max influence and knows its oppoent wants so)&lt;/li&gt;
+&lt;li&gt;STORM-QQ&lt;ul&gt;
+&lt;li&gt;Two STROM-Q compete and update Q-tabale at the same time&lt;/li&gt;
+&lt;li&gt;Using current Q-table during training phase&lt;/li&gt;
+&lt;li&gt;Pure Strategy&lt;ul&gt;
+&lt;li&gt;Does Not guarantee that equilibrium exists in MRCIM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;STORM-MM&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mix Strategy (Samples an action from the distribution of actions in each state)&lt;/li&gt;
+&lt;li&gt;In two-player zero-sum game&lt;ul&gt;
+&lt;li&gt;Nash equilibrium is graranteed to exist with miexed strategies&lt;/li&gt;
+&lt;li&gt;Use MINMAX theorem to find the equilibrium&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(Q(s, a, o)\)&lt;/span&gt;: The reward of first party when using strategy &lt;span class="math"&gt;\(a\)&lt;/span&gt; against oppoent's strategy &lt;span class="math"&gt;\(o\)&lt;/span&gt; in state &lt;span class="math"&gt;\(s\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma V(s_{t+1})]\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Operations  Research&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The differece between STROM-QQ and STORM-MM&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;STROM-QQ&lt;/th&gt;
+&lt;th&gt;STROM-MM&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Max the reward in their own Q-table&lt;/td&gt;
+&lt;td&gt;Finds equilibrium with one Q-table and determines both side's &lt;span class="math"&gt;\(a\)&lt;/span&gt; at the same time&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Pure Strategies&lt;/td&gt;
+&lt;td&gt;Mixed Strategies&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Choose strategy by greedy&lt;/td&gt;
+&lt;td&gt;Samples from the mixed strategy &lt;span class="math"&gt;\(\pi_a\)&lt;/span&gt; or &lt;span class="math"&gt;\(\pi_o\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Ideally, they should have simliar result in two-party MRCIM. In practice, the result might not due to&lt;ul&gt;
+&lt;li&gt;STORM-QQ does not guarantee equilibrium&lt;/li&gt;
+&lt;li&gt;Although equilibrium exists in STORM-MM. It does not guarantee to be found due to lack of training data or bad init or such problems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Paper"></category><category term="Social Network"></category><category term="Machine Learning"></category><category term="Game Theory"></category><category term="Tech"></category></entry><entry><title>COSCUP 2016</title><link href="http://lee-w.github.io/posts/tech/2016/08/coscup-2016" rel="alternate"></link><published>2016-08-22T15:36:00+08:00</published><updated>2016-08-22T15:36:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-22:/posts/tech/2016/08/coscup-2016</id><summary type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder 共筆&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder 共筆&lt;/a&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 

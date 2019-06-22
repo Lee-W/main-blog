@@ -9,18 +9,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Machine Learning, NLP, MBTI, Personality, Paper Summary, Paper Summary, " />
+<meta name="keywords" content="Paper, Social Network, Machine Learning, Tech, Tech, " />
 
-<meta property="og:title" content="[Paper] Understanding Personality through Social Media "/>
-<meta property="og:url" content="http://lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media" />
-<meta property="og:description" content="Paper Main Purpose: To see how linguistic features correlate with each personality trait." />
+<meta property="og:title" content="[Paper] Mining Online Social Data for Detecting Social Network Mental Disorders "/>
+<meta property="og:url" content="http://lee-w.github.io/posts/tech/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders" />
+<meta property="og:description" content="Paper My Slide This paper proposes a model named SNMDD to detect Social Network Mental Disorder (SNMD) through users&#39; behaviors on online social networks (OSN) instead of asking their mental condition." />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
-<meta property="og:article:published_time" content="2017-04-05T22:30:00+08:00" />
-<meta name="twitter:title" content="[Paper] Understanding Personality through Social Media ">
-<meta name="twitter:description" content="Paper Main Purpose: To see how linguistic features correlate with each personality trait.">
+<meta property="og:article:published_time" content="2016-11-18T16:53:00+08:00" />
+<meta name="twitter:title" content="[Paper] Mining Online Social Data for Detecting Social Network Mental Disorders ">
+<meta name="twitter:description" content="Paper My Slide This paper proposes a model named SNMDD to detect Social Network Mental Disorder (SNMD) through users&#39; behaviors on online social networks (OSN) instead of asking their mental condition.">
 
-        <title>[Paper] Understanding Personality through Social Media  · Laziness makes Great Engineer
+        <title>[Paper] Mining Online Social Data for Detecting Social Network Mental Disorders  · Laziness makes Great Engineer
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -75,7 +75,7 @@
 <article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media"> [Paper] Understanding Personality through Social Media  </a></h1>
+    <h1><a href="http://lee-w.github.io/posts/tech/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders"> [Paper] Mining Online Social Data for Detecting Social Network Mental Disorders  </a></h1>
     </header>
 </div>
 
@@ -83,120 +83,37 @@
         <div class="span8 offset2 article-content">
 
             
-            <p><a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf">Paper</a></p>
-<p>Main Purpose: To see how linguistic features correlate with each personality trait.</p>
+            <ul>
+<li><a href="http://www2016.net/proceedings/proceedings/p275.pdf">Paper</a></li>
+<li><a href="https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders">My Slide</a></li>
+</ul>
+<p>This paper proposes a model named SNMDD to detect Social Network Mental Disorder (SNMD) through users' behaviors on online social networks (OSN) instead of asking their mental condition.</p>
 <!--more-->
 
-<p><strong>Use Twitter to predict MBIT personality.</strong></p>
-<h3 id="problem-of-past-researches">Problem of Past Researches</h3>
-<ul>
-<li>Language on social media has richer content that makes the typical linguistic analysis tool perform poorly (e.g. iono -&gt; I don't know)</li>
-<li>Gain personality information is costly (e.g. Big Five Questionnaire)</li>
-</ul>
-<h3 id="mbti">MBTI</h3>
-<p>Instead of commonly used big five theory, MBTI is used in this paper.</p>
-<p><a href="https://en.wikipedia.org/wiki/Myers–Briggs_Type_Indicator">Myers-Briggs Type Indicator</a></p>
-<p>There are 4 types of personality trait<br>
-i.e.</p>
-<ul>
-<li>Introversion(I) / Extraversion(E)</li>
-<li>Intuition(N) / Sensing(S)</li>
-<li>Feeling(F) / Thinking(T)</li>
-<li>Perception(P) / Judging(J)</li>
-</ul>
-<p>Personality can be expressed as a code with 4 letters.<br>
-e.g. ENFJ, INTP</p>
-<h3 id="data">Data</h3>
-<ul>
-<li>A Twitter dataset<ul>
-<li>Around 90,000 users</li>
-<li>120,000 personality-related tweets from 2006~2015 (out of 1.7 M tweets)</li>
-</ul>
-</li>
-</ul>
-<h4 id="what-is-the-so-called-personliaty-related-tweets">What is the so-called personliaty-related tweets?</h4>
-<ul>
-<li>English Tweets that contain users' own MBIT code. <br>
-    e.g.<ul>
-<li><code>"I'm an ENFJ"</code> is qualified</li>
-<li><code>"My friend is an ISFJ"</code> is not qualified</li>
-</ul>
-</li>
-<li>Heuristic rules is used (e.g. <code>"I'm"</code>, <code>"I got"</code>, <code>"I have been a"</code>)</li>
-<li>No classification method is used for ensuring the personality code is indeed the user's </li>
-</ul>
-<h4 id="distribution">Distribution</h4>
-<p>Personality distribution of this data is skewed.</p>
-<p><img alt="MBTI-bar" src="http://lee-w.github.io/images/posts-image/2017-04-05-understanding-personliaty-through-social-media/MBTI-bar.png"></p>
-<p>However, in the real word, the personality distribution might also be skewed.</p>
-<h3 id="features">Features</h3>
-<h4 id="1-n-grams">1. n-grams</h4>
-<ul>
-<li>Most frequent 1,000 unigram, bigram, trigram words and phrases</li>
-<li>1,000 dimensions vectors for unigram, bigram trigram for each user</li>
-</ul>
-<h4 id="2-twitter-part-of-speech-tags">2. Twitter Part-of-speech tags</h4>
-<p>Based on <a href="http://www.cs.cmu.edu/~ark/TweetNLP/gimpel+etal.acl11.pdf">Part-of-Speech Tagging for Twitter: Annotation, Features, and Experiments</a></p>
-<ul>
-<li>25 types with some Twitter-specific tag. <br>
-  e.g.<ul>
-<li>hashtag</li>
-<li>at-mention</li>
-<li>URL</li>
-<li>emoticon </li>
-</ul>
-</li>
-</ul>
-<h4 id="3word-vectors">3.word vectors</h4>
+<p>In addition, multi-source learning (FB and IG) is used to improve performance through STM.</p>
 <ul>
 <li>
-<p>Word Vector Settings</p>
-<ul>
-<li>2,334,564 words</li>
-<li>500 dimension</li>
-</ul>
+<p>SNMDD is a classification model based on TSVM<br>
+The use of domain knowledge from psychology to extract features is the core of this model.<br>
+The most interesting part is choosing features as the proxy features to replace ones that are hard to detect.<br>
+For example, distinguishing whether a social capital is a strong tie or a weak tie is crucial to the detection of SNMD. However, it's hard to detect through OSNs data. Thus, it guesses that friends you interacts (e.g. posts, likes, comments) with might be the strong tie ones.</p>
 </li>
 <li>
-<p>Extracted Features</p>
-<ul>
-<li>Average word vectors</li>
-<li>Weighted average word vectors (weighted according to TF-IDF) </li>
-</ul>
+<p>STM is a tensor model based on Tucker Decomposition<br>
+Through Tucker Decomposition, it's possible to combine data from different sources and extract new features vectors.</p>
 </li>
 </ul>
-<h3 id="prediction">Prediction</h3>
-<p>Logistic Regression is used (Random Forest and SVM produced similar results)</p>
-<h4 id="accuracy-measurement">Accuracy Measurement</h4>
-<p>Since the data is skewed, AUC is used.</p>
-<h4 id="accuracy">Accuracy</h4>
-<ul>
-<li>Indivisula Features<ul>
-<li>Word Vector Only -&gt; (AUC=0.651) </li>
-<li>n-gram only -&gt; (AUC=0.607)</li>
-<li>POS only -&gt; (AUC=0.585)</li>
-</ul>
-</li>
-<li>Combinded Features<ul>
-<li>All three features -&gt; (AUC=0.661)</li>
-<li>POS + n-gram -&gt; (AUC=0.616)</li>
-</ul>
-</li>
-</ul>
-<h4 id="insight">Insight</h4>
-<p>Among the results, word vector performs best which might illustrate that predictions based on social media and language would work.</p>
-<p>During the POS conversion process, information is compressed into 25 tags and might lost some important one.<br>
-This might be the reason why it performs worse.</p>
             <div>
 </div>
 
             <section>
     <p id="post-share-links">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=%5BPaper%5D%20Understanding%20Personality%20through%20Social%20Media&url=http%3A//lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media&hashtags=machine-learning,nlp,mbti,personality,paper-summary" target="_blank" title="Share on Twitter">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?text=%5BPaper%5D%20Mining%20Online%20Social%20Data%20for%20Detecting%20Social%20Network%20Mental%20Disorders&url=http%3A//lee-w.github.io/posts/tech/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders&hashtags=paper,social-network,machine-learning,tech" target="_blank" title="Share on Twitter">Twitter</a>
     ❄
-    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media" target="_blank" title="Share on Facebook">Facebook</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//lee-w.github.io/posts/tech/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders" target="_blank" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="mailto:?subject=%5BPaper%5D%20Understanding%20Personality%20through%20Social%20Media&amp;body=http%3A//lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media" target="_blank" title="Share via Email">Email</a>
+    <a href="mailto:?subject=%5BPaper%5D%20Mining%20Online%20Social%20Data%20for%20Detecting%20Social%20Network%20Mental%20Disorders&amp;body=http%3A//lee-w.github.io/posts/tech/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders" target="_blank" title="Share via Email">Email</a>
     </p>
 </section>
 
@@ -205,7 +122,7 @@ This might be the reason why it performs worse.</p>
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media#disqus_thread",
+                href="http://lee-w.github.io/posts/tech/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders#disqus_thread",
                 id="disqus-accordion-toggle">
                 Comments
             </a>
@@ -216,8 +133,8 @@ This might be the reason why it performs worse.</p>
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'lee-w-blog';
-        var disqus_identifier = 'http://lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media';
-    var disqus_url = 'http://lee-w.github.io/posts/paper-summary/2017/04/Understanding-Personality-through-Social-Media';
+        var disqus_identifier = 'http://lee-w.github.io/posts/tech/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders';
+    var disqus_url = 'http://lee-w.github.io/posts/tech/2016/11/mining-online-social-data-for-detecting-social-network-mental-disorders';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -239,8 +156,8 @@ This might be the reason why it performs worse.</p>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="http://lee-w.github.io/posts/paper-summary/2017/04/Toward-Personality-Insights-from-Language-Exploration-in-Social-Media" title="Previous: [Paper] Toward Personality Insights from Language Exploration in Social Media">[Paper] Toward Personality Insights from Language Exploration in Social Media</a></li>
-                <li class="next-article"><a href="http://lee-w.github.io/posts/paper-summary/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text" title="Next: [Paper] Deep Learning-Based Document Modeling for Personality Detection from Text">[Paper] Deep Learning-Based Document Modeling for Personality Detection from Text</a> »</li>
+                <li class="previous-article">« <a href="http://lee-w.github.io/posts/book/2016/10/how-to-think-like-a-game-theorist" title="Previous: [Book] 所有問題都是一場賽局">[Book] 所有問題都是一場賽局</a></li>
+                <li class="next-article"><a href="http://lee-w.github.io/posts/gossiping/2016/11/tedx-tainan-2016" title="Next: TEDx Tainan 2016 - 0 到 1">TEDx Tainan 2016 - 0 到 1</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -248,24 +165,21 @@ This might be the reason why it performs worse.</p>
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2017-04-05T22:30:00+08:00"> 4 5, 2017</time>
+            <time itemprop="dateCreated" datetime="2016-11-18T16:53:00+08:00">11 18, 2016</time>
             <h4>Category</h4>
-            <a class="category-link" href="http://lee-w.github.io/categories.html#paper-summary-ref">Paper Summary</a>
+            <a class="category-link" href="http://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="http://lee-w.github.io/tags#machine-learning-ref">Machine Learning
                     <span>5</span>
 </a></li>
-                <li><a href="http://lee-w.github.io/tags#mbti-ref">MBTI
-                    <span>1</span>
+                <li><a href="http://lee-w.github.io/tags#paper-ref">Paper
+                    <span>5</span>
 </a></li>
-                <li><a href="http://lee-w.github.io/tags#nlp-ref">NLP
-                    <span>4</span>
+                <li><a href="http://lee-w.github.io/tags#social-network-ref">Social Network
+                    <span>2</span>
 </a></li>
-                <li><a href="http://lee-w.github.io/tags#personality-ref">Personality
-                    <span>3</span>
-</a></li>
-                <li><a href="http://lee-w.github.io/tags#paper-summary-ref">Paper Summary
+                <li><a href="http://lee-w.github.io/tags#tech-ref">Tech
 </a></li>
             </ul>
 <h4>Contact</h4>
