@@ -17,12 +17,8 @@ Thus, I take notes for them.
 #### 3. Gossiping
 Sometimes I just want to share my thought, and those posts would be placed here.
 
-#### 4. Paper Summary
-I was a graduate student and had read some papers.
-Here are summarizations for those papers.
-
 ---
 
 As you can see, I'm not a native English user.
 If you find any error, please leave a comment below the article or contact me.
-Thanks in advance!
+Hope you enjoy my blog!
