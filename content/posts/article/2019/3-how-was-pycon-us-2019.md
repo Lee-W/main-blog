@@ -30,7 +30,7 @@ PyCon 總共跨了 9 天
 會議期間除了同時會有 6 個軌的 talk 以外，還會有好幾間的 Open Space
 
 最大的會議廳長這樣
-
+![IMG_3033]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3033.jpg)
 ![IMG_3035]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3035.jpg)
 
 參加前，我有看了這篇 "[How to have a great first PyCon](https://treyhunner.com/2018/04/how-to-make-the-most-of-your-first-pycon/)"
@@ -139,6 +139,7 @@ PyCon 總共跨了 9 天
 而且相較之下 Open Space 會比較有跟人互動的機會
 
 ![IMG_3042]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3042.jpg)
+![IMG_3060]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3060.jpg)
 ![IMG_3064]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3064.jpg)
 
 除了一些比較技術性的討論外
@@ -159,11 +160,17 @@ PyCon 總共跨了 9 天
 ## Job Fair / Poster
 Job Fair 主要就是跟各個公司聊天，看看他們的工作性質跟開了什麼缺
 有聽到幾間 remote 的公司還蠻有趣的
+不過其實也不用等到 Job Fair 才問
+Job Fair 的公司反而比較少，不過應該就是專注在有開缺的公司
+前幾天的攤位反而更有機會聊聊
+![IMG_3025]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3025.jpg)
+
 
 Poster 也是一個能跟人互動蠻好的機會
 不過那些比較有趣的，通常旁邊都會圍著一群人 XD
 [Hypothesis](https://hypothesis.readthedocs.io) 好像整個 session 人都沒少過
 （話說 Hypothesis 還真的從 talk, tutorial, sprint 到 poster 每個場合都出現了）
+![IMG_3070]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3070.jpg)
 
 ## Development Sprint
 自從上次在 PyCon TW 參加了 PyBee 的 Sprint ，就覺得這樣一群人協作開源專案很有趣
