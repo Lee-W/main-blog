@@ -1,5 +1,6 @@
 Title: How was PyCon US 2019
 Date: 2019-06-22 21:49
+Modified: 2019-07-03 12:32
 Category: Tech
 Tags: Python, PyCon
 Slug: how-was-pycon-us
@@ -258,6 +259,39 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 所以立刻把明確的 action items 記錄下來，也許會讓這些事情成真的機會高一點
 
 寫下這篇文章，某種程度上也是想記錄下這次參加的感受呢
+
+## 食物 （20190703 update）
+
+![food]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/food.png)
+
+既然有人問了，就來補充一下吧 XD
+
+首先是從 Tutorial 開始到 Sprint 結束的九天
+每天都有星巴克可以喝
+雖然到 Sprint 的時候好像已經把經費花光
+臨時又有廠商在贊助才能撐到結束
+
+![IMG_3011]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3011.jpg)
+
+議程以外那幾天大多是自助式
+大概都是這樣的沙拉
+
+![IMG_3024]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3024.jpg)
+
+議程那幾天就有點像是餐盒
+有豬、牛、素、水果幾種可以選
+像這個就是牛排，吃起來就還不錯
+![IMG_3045]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3045.jpg)
+
+這個也是牛排
+但吃起來很可怕......
+上面那個餅皮我真的努力要吃過了，但我失敗了＠＠
+這是我待在美國這一個月最難吃的食物......
+
+![IMG_3061]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3061.jpg)
+
+恩，大概就只有這樣xD
+
 
 ## 雜談
 一開始對於要不要飛一趟去美國還蠻猶豫的
