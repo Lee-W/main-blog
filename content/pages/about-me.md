@@ -8,7 +8,7 @@ I'm a
   
 <i class="fab fa-lg fa-python"></i>  Python Programmer
 <i class="fas fa-lg fa-book"></i> Reader
-<i class="fas fa-lg fa-camera"></i> Traveler
+[<i class="fas fa-lg fa-camera"></i> Traveler](https://lee-w.github.io/travlog/)
 <i class="fas fa-lg fa-music"></i> Ukulele Player
 <i class="fas fa-lg fa-lock"></i> Locker
 <i class="fab fa-lg fa-rebel"></i> Star Wars Fan
@@ -23,7 +23,6 @@ Beside programming skills, I also have experience in management and coordinate p
 ## Skill
 * **Intermidate**: Python, Web Backend Development, Git, Linux  
 * **Beginner**: Docker, Project Management, Data Analysis, Java
-
 
 
 ## Experience
@@ -122,7 +121,9 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-v
     * [batavia](https://github.com/Lee-W/batavia) ([beeware/batavia](https://github.com/beeware/batavia))
     * [toga](https://github.com/Lee-W/toga/tree/check-caps-lock-typo) ([beeware/toga](https://github.com/beeware/toga))
     * [podium](https://github.com/Lee-W/podium) ([beeware/podium](https://github.com/beeware/podium))
-* [edx-documentation](https://github.com/Lee-W/edx-documentation) ([edx/edx-documentation](https://github.com/edx/edx-documentation))
+* [open-edx](https://github.com/edx)
+    * [edx-platform](https://github.com/Lee-W/edx-platform) ([edx/edx-platform](https://github.com/edx/edx-platform))
+    * [edx-documentation](https://github.com/Lee-W/edx-documentation) ([edx/edx-documentation](https://github.com/edx/edx-documentation))
 * [wtforms-json](https://github.com/Lee-W/wtforms-json) ([kvesteri/wtforms-json](https://github.com/kvesteri/wtforms-json))
 * [pipreqs](https://github.com/Lee-W/pipreqs) ([bndr/pipreqs](https://github.com/bndr/pipreqs))
 * [pip-check](https://github.com/Lee-W/pip-check) ([bartTC/pip-check](https://github.com/bartTC/pip-check))
