@@ -11,7 +11,7 @@ Summary:
 Uncle Bob 的書真的每個階段看都會有很不一樣的感覺
 很值得買回來收 xD
 
-![Clean Coder](http://i.imgur.com/5a0LzcSm.jpg)
+![Clean Coder]({static}/images/posts-image/books/5a0LzcS.jpg)
 
 <!--more-->
 

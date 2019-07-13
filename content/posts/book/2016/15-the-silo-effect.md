@@ -7,7 +7,7 @@ Authors: Lee-W
 Summary: 
 
 
-![The silo effect](http://i.imgur.com/MTSd8sYm.jpg?1)
+![The silo effect]({static}/images/posts-image/books/MTSd8sY.jpg)
 
 <!--more-->
 

@@ -7,7 +7,7 @@ Authors: Lee-W
 Summary: 
 
 
-![Two Awesome Hours](http://i.imgur.com/KQpJ2Ghm.jpg)
+![Two Awesome Hours]({static}/images/posts-image/books/KQpJ2Gh.jpg)
 
 <!--more-->
 ## 在日常事務中辨識每個決定點

@@ -6,7 +6,7 @@ Slug: the-power-of-habit
 Authors: Lee-W
 
 
-![The Power of Habit](http://i.imgur.com/Mo2J3YWm.jpg)
+![The Power of Habit]({static}/images/posts-image/books/Mo2J3YW.jpg)
 
 <!--more-->
 

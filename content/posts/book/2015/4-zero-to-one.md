@@ -7,7 +7,7 @@ Authors: Lee-W
 Summary: 
 
 
-![Zero to One](http://i.imgur.com/O3Uaatbm.jpg?1)
+![Zero to One]({static}/images/posts-image/books/O3Uaatb.jpg)
 
 <!--more-->
 

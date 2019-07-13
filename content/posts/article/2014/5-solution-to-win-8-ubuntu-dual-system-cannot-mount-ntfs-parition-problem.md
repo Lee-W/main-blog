@@ -14,11 +14,14 @@ Summary:
 
 <!--more-->
 
-# 解決
-![win8_start_up](http://i.imgur.com/ohEfCkR.png)
+## 解決
+
+![win8_start_up]({static}/images/posts-image/2014-02-25-solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem/ohEfCkR.png)
+
 > 控制台 \ 硬體和音效 \ 電源選項 \ 系統設定
 
-只要把 ` 開啟快速啟動 ` 取消掉就可以了
+只要把 `開啟快速啟動` 取消掉就可以了
 
-# Reference
+## Reference
+
 [Cannot mount NTFS partition in Ubuntu 13.04 [duplicate]](http://askubuntu.com/questions/291864/cannot-mount-ntfs-partition-in-ubuntu-13-04)

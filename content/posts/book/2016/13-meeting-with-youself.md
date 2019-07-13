@@ -7,7 +7,7 @@ Authors: Lee-W
 Summary: 
 
 
-![一個人的會議時間](http://i.imgur.com/ZZTHLlJm.jpg)
+![一個人的會議時間]({static}/images/posts-image/books/ZZTHLlJ.jpg)
 
 這本書其實是我幾年前買的
 最近開始覺得好想應該檢視一下自己每天的生活到底過得如何

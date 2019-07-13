@@ -102,13 +102,13 @@ sudo rm gi_extension.sh /usr/bin/gi
 gi -l
 ```
 
-![1_gi_l.png](https://i0.wp.com/f6daa3706f14a40c04cb86aa98ffd752d68309b0.googledrive.com/host/0BzTRBX34Y857ZDZxM3dNYm9VcDg/gitignore_io/1_gi_l.png)
+![1_gi_l.png]({static}/images/posts-image/2015-02-03-gitignoreio/WjrHpdZ.png)
 
 2. 以字母的順序輸出
 ```shell
 gi -L
 ```
-![2_gi_L.png](https://i0.wp.com/f6daa3706f14a40c04cb86aa98ffd752d68309b0.googledrive.com/host/0BzTRBX34Y857ZDZxM3dNYm9VcDg/gitignore_io/2_gi_L.png)
+![2_gi_L.png]({static}/images/posts-image/2015-02-03-gitignoreio/9j2PdP4.png)
 
 ### 顯示 .gitignore 的內容
 跟原本的 gi 一樣，只是多支援了以空白作為分隔

@@ -4,14 +4,12 @@ Category: Tech
 Tags: django, Chat Bot
 Slug: line-echo-bot-on-django
 Authors: Lee-W
-Summary: 
+Summary:
 Series: Line Bot Tutorial
-
 
 單純要寫一個只會 Echo 的 Line Chat Bot
 用 flask 只要 85 行的 code 就能解決
-官方已經有提供相當清楚的範例[flask-echo]
-(https://github.com/line/line-bot-sdk-python/tree/master/examples/flask-echo) 了
+官方已經有提供相當清楚的範例[flask-echo](https://github.com/line/line-bot-sdk-python/tree/master/examples/flask-echo) 了
 
 這篇文章則是提供了 django 的做法
 想直接看 code 也可以參考[line_echobot](https://github.com/Lee-W/line_echobot)
@@ -26,16 +24,17 @@ Series: Line Bot Tutorial
 
 這裡直接使用官方提供的[line-bot-sdk-python](https://github.com/line/line-bot-sdk-python)
 
-```sh
+```shell
 pip3 install line-bot-sdk
 ```
 
 另外官方也提供[java](https://github.com/line/line-bot-sdk-java), [go](https://github.com/line/line-bot-sdk-go), [php](https://github.com/line/line-bot-sdk-php), [ruby](https://github.com/line/line-bot-sdk-ruby), [perl](https://github.com/line/line-bot-sdk-perl) 的版本
 
 # Start Project
+
 ## Create Project
 
-```sh
+```shell
 # Create a line_echobot project
 django-admin startproject line_echobot
 
@@ -51,7 +50,7 @@ python3 manage.py startapp echobot
 不過這些值不該被 git 記錄，所以不該被寫死在 `settings.py` 中
 建議將這些值寫入環境變數
 
-```sh
+```shell
 export SECRET_KEY='Your django secret key'
 export LINE_CHANNEL_ACCESS_TOKEN='Your line channel access token'
 export LINE_CHANNEL_SECRET='Your line channel secret'
@@ -72,7 +71,7 @@ def get_env_variable(var_name):
     except KeyError:
         error_msg = 'Set the {} environment variable'.format(var_name)
         raise ImproperlyConfigured(error_msg)
-        
+
 SECRET_KEY = get_env_variable('SECRET_KEY')
 LINE_CHANNEL_ACCESS_TOKEN = get_env_variable('LINE_CHANNEL_ACCESS_TOKEN')
 LINE_CHANNEL_SECRET = get_env_variable('LINE_CHANNEL_SECRET')
@@ -80,7 +79,7 @@ LINE_CHANNEL_SECRET = get_env_variable('LINE_CHANNEL_SECRET')
 ......
 
 INSTALLED_APPS = [
-	 ......,
+    ......,
     'echobot'
 ]
 ```
@@ -96,6 +95,7 @@ INSTALLED_APPS = [
 如果還需要另外還要重新產生可以透過[django-secret-keygen.py](https://gist.github.com/mattseymour/9205591)
 
 ## Setup Line Webhook URL
+
 再來要設定一個 Webhook URL
 讓 Line 可以把 Bot 收到的訊息傳給我們
 
@@ -109,7 +109,7 @@ INSTALLED_APPS = [
 import echobot
 
 urlpatterns = [
-	......,
+    ......,
     url(r'^echobot/', include('echobot.urls')),
 ]
 
@@ -135,9 +135,11 @@ urlpatterns = [
 (`your domain name` 要設定什麼，會在這篇文章的[最後](#https-server) 說明)
 
 ## Implement Callback Funtion
+
 接下來就是要在 `echobot/views.py` 實作 `callback` 了
 
 ### Initial
+
 先 import 相關的函式庫
 
 ```python
@@ -157,19 +159,19 @@ line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 ```
 
 ### Callback Function
+
 有兩種方法可以處理 Line Server 送過來的訊息
 這裡先用 Todo 記著，待會再來補上
 
 ```python
 # TODO: Define Receiver
 
-
 @csrf_exempt
 def callback(request):
     if request.method == 'POST':
         signature = request.META['HTTP_X_LINE_SIGNATURE']
         body = request.body.decode('utf-8')
-        
+
         # TODO: Handler when receiver Line Message
 
         return HttpResponse()
@@ -178,11 +180,13 @@ def callback(request):
 ```
 
 ### Validate Signature
+
 處理訊息之前
 先確認這個 request 是不是真的是從 Line Server 傳來的
 要確認這件事，需要
-- request 的 body
-- request header 中的 X-Line-Signature
+
+* request 的 body
+* request header 中的 X-Line-Signature
 
 也就是上面的
 
@@ -192,6 +196,7 @@ body = request.body.decode('utf-8')
 ```
 
 ### Handle Recevied Message
+
 取得 body 跟 signature 後
 Line Bot API 會在處理訊息的同時，確認這個訊息是否來自 Line
 
@@ -202,10 +207,11 @@ Line Bot API 會在處理訊息的同時，確認這個訊息是否來自 Line
 WebhookParser 會 Parse 這個訊息的所有欄位
 讓我們針對各種不同型別的訊息做個別的處理
 e.g.
-- UserID
-- Event Type
-- Message Content
-- and etc.
+
+* UserID
+* Event Type
+* Message Content
+* and etc.
 
 在[這裡](https://github.com/line/line-bot-sdk-python#webhook-event-object) 可以找到有哪些欄位
 
@@ -223,11 +229,11 @@ parser 會 parse 所有的 event 跟各個 event 中的所有欄位
 
 ```python
 try:
-	events = parser.parse(body, signature)
+    events = parser.parse(body, signature)
 except InvalidSignatureError:
-	return HttpResponseForbidden()
+    return HttpResponseForbidden()
 except LineBotApiError:
-	return HttpResponseBadRequest()
+    return HttpResponseBadRequest()
 ```
 
 再來要判斷收到的事件是什麼事件
@@ -236,12 +242,12 @@ except LineBotApiError:
 
 ```python
 for event in events:
-	if isinstance(event, MessageEvent):
-		if isinstance(event.message, TextMessage):
-			line_bot_api.reply_message(
-				event.reply_token,
-				TextSendMessage(text=event.message.text)
-			)
+    if isinstance(event, MessageEvent):
+        if isinstance(event.message, TextMessage):
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text=event.message.text)
+            )
 ```
 
 最後的 `reply_message` 函式，讓我們傳訊息給 Line Server
@@ -256,6 +262,7 @@ for event in events:
 只要超過就會有 LineBotApiError
 
 #### WebhookHandler
+
 WebhookHandler 是針對每一種不同的訊息型態註冊一個處理器
 只要收到這樣的訊息，就會丟給對應的處理器
 如果確定每一類訊息，在任何情況下都會有相似的處理方式，就很適合這樣的設計
@@ -298,19 +305,20 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
 
 ```python
 try:
-	handler.handle(body, signature)
+    handler.handle(body, signature)
 except InvalidSignatureError:
-	return HttpResponseForbidden()
+    return HttpResponseForbidden()
 except LineBotApiError:
-	return HttpResponseBadRequest()
+    return HttpResponseBadRequest()
 ```
 
 #### Full Code
+
 由於上面的 code 說明比較分散
 這裡附上兩個版本各自的完整版
 
-- WebhookParser
- 
+* WebhookParser
+
 ```python
 # line_echobot/echobot/views.py
 # WebhookParser version
@@ -353,7 +361,7 @@ def callback(request):
         return HttpResponseBadRequest()
 ```
 
-- WebhookHandler
+* WebhookHandler
 
 ```python
 # line_echobot/echobot/views.py
@@ -407,8 +415,10 @@ def callback(request):
 
 到了這裡，echo bot 實作的部分就完成了
 
+<a name='https-server'></a>
 
-## <a name='https-server'></a> Https Server (Setup 'your domain name')
+## Https Server (Setup 'your domain name')
+
 使用這些 Bot 的服務時，大多會要求我們一定要先有一個 Https Server
 除了自己架 Http Server 外，還透過其他服務，更方便我們做測試
 接下來我會分享兩種做法
@@ -417,6 +427,7 @@ def callback(request):
 2. 使用[ngrok](https://ngrok.com)
 
 ### ngrok
+
 ngrok 提供的服務是
 讓外部的訊息先經過 ngrok 的 server，ngrok 再將這個訊息傳給你的 server
 回傳時也是從你的 server 傳給 ngrok 的 server，再把訊息傳出去
@@ -445,12 +456,12 @@ ngrok 會把 request 傳到 local 端相對應的 port
 ngrok http 8000
 ```
 
-![1_ngrok_example](http://i.imgur.com/r525wEI.png)
+![1_ngrok_example]({static}/images/posts-image/2016-11-24-line-echo-bot-on-django/r525wEI.png)
 
 再來到 Line Bot 的 `Line Developer` 頁面設定 Webhook URL
 這時候填上 ngrok 後的 https 那串 url，再加上 `echobot/callback/`( 我們設定的 callback url)
 (e.g. `https://2.....f.ngrok.io/echobot/callback/`)
-![2_webhook_url](http://i.imgur.com/qVWlwoK.png)
+![2_webhook_url]({static}/images/posts-image/2016-11-24-line-echo-bot-on-django/qVWlwoK.png)
 
 值得注意的是我的 Webhook URL 下面有一個 `Read timeout.`
 如果按了後面的 Verify，Line Server 會傳一些測試訊息過來
@@ -460,7 +471,7 @@ ngrok http 8000
 並沒有一定要通過才能使用 Line Bot
 
 這時候加 Bot 為好友，就可以開始跟它聊天了
-![3_message_sample](http://i.imgur.com/boxeHoG.png)
+![3_message_sample]({static}/images/posts-image/2016-11-24-line-echo-bot-on-django/boxeHoG.png)
 
 如果你發現除了 echo 訊息外，還有其他的訊息
 可能就是沒有把 Atuo Reply Message 關掉
@@ -470,7 +481,8 @@ ngrok http 8000
 
 
 # Reference 
-- [新版 Line@ Messaging API 使用心得 (Line Bot v2)
+
+* [新版 Line@ Messaging API 使用心得 (Line Bot v2)
 ](http://studyhost.blogspot.tw/2016/10/line-messaging-api-line-bot-v2.html)
-- [LineBot - Sinatra](http://jiunjiun.logdown.com/posts/2016/10/06/linebot-with-sinatra)
-- [ngrok](https://ngrok.com)
+* [LineBot - Sinatra](http://jiunjiun.logdown.com/posts/2016/10/06/linebot-with-sinatra)
+* [ngrok](https://ngrok.com)

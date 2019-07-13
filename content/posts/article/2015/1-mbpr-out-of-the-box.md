@@ -14,9 +14,9 @@ Summary:
 <!--more-->
 
 先附上幾張照片
-![1_mac](http://i.imgur.com/cZp8mpJ.jpg)
-![2_mac](http://i.imgur.com/NgvObR9.jpg)
-![3_mac](http://i.imgur.com/vc6HXcm.jpg)
+![1_mac]({static}/images/posts-image/2015-01-02-mbpr-out-of-the-box/cZp8mpJ.jpg)
+![2_mac]({static}/images/posts-image/2015-01-02-mbpr-out-of-the-box/NgvObR9.jpg)
+![3_mac]({static}/images/posts-image/2015-01-02-mbpr-out-of-the-box/vc6HXcm.jpg)
 
 從 Ubuntu 轉過來 MacBook，不用一天就上手了
 不過也可能是我常常把 Ubuntu 改得很像 MacBook 吧ＸＤ

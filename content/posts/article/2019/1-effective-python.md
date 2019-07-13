@@ -6,7 +6,7 @@ Slug: effective-python
 Authors: Lee-W
 Summary:
 
-![IMG_2732](https://i.imgur.com/aE00B2om.jpg)
+![effective python]({static}/images/posts-image/books/aE00B2o.jpg)
 
 第二次看過終於有辦法把原本看不懂的部分都看懂了
 那些看不懂的大多是很抽象化的技巧

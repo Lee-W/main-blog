@@ -8,7 +8,7 @@ Summary:
 
 
 Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie
-![Show Your Work](http://i.imgur.com/GQNwobGm.jpg)
+![Show Your Work]({static}/images/posts-image/books/GQNwobG.jpg)
 
 <!--more-->
 

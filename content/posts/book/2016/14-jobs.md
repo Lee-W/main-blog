@@ -13,7 +13,7 @@ Summary:
 
 <!--more-->
 
-![Steve Jobs](http://i.imgur.com/7zs4aDCm.jpg)
+![Steve Jobs]({static}/images/posts-image/books/7zs4aDC.jpg)
 
 ---
 

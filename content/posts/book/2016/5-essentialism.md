@@ -7,7 +7,7 @@ Authors: Lee-W
 Summary: 
 
 
-![Essentialism](http://i.imgur.com/zJS927hm.jpg)
+![Essentialism]({static}/images/posts-image/books/zJS927h.jpg)
 
 ```
 Weniger aber besser
