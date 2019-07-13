@@ -7,7 +7,7 @@ Authors: Lee-W
 Summary: 
 
 
-![Imgur](https://i.imgur.com/0he265Qm.jpg)
+![Imgur]({static}/images/books/0he265Q.jpg)
 
 <!--more-->
 

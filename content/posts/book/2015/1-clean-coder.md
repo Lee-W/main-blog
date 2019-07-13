@@ -7,7 +7,7 @@ Authors: Lee-W
 Summary: 
 
 
-![Clean Coder]({static}/images/posts-image/books/5a0LzcS.jpg)
+![Clean Coder]({static}/images/books/5a0LzcS.jpg)
 
 <!--more-->
 

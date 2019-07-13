@@ -6,7 +6,7 @@ Slug: fuck-feelings
 Authors: Lee-W
 
 
-![F*ck Feelings](http://i.imgur.com/tLNg7CJm.jpg)
+![F*ck Feelings]({static}/images/books/tLNg7CJ.jpg)
 
 本書鼓勵你接受一切無法改變的事情 (e.g. 你的個性、行為、感情、工作 and etc.)
 並提供方法更有效的管理人生難題，而**不是妄想去改變他們**

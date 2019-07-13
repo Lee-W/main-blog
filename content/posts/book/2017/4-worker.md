@@ -6,7 +6,7 @@ Slug: worker
 Authors: Lee-W
 
 
-![做工的人](http://i.imgur.com/SlWTvkOm.jpg)
+![做工的人]({static}/images/books/SlWTvkO.jpg)
 
 「做工的人」由一個個藍領階級的故事所組成
 說的是那些壓迫、歧視和無奈

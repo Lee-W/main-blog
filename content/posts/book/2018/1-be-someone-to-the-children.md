@@ -9,7 +9,7 @@ Summary: Story
 跟蘇老師合作了半年下來
 這還真的是我第一次真的有時間好好的看完這本書
 
-![Imgur](https://i.imgur.com/3sJOmbHm.jpg)
+![Imgur]({static}/images/books/3sJOmbH.jpg)
 
 <!--more-->
 

@@ -6,7 +6,7 @@ Slug: take-a-rest
 Authors: Lee-W
 
 
-![此人進廠維修中](http://i.imgur.com/M5ZXQkhm.jpg)
+![此人進廠維修中]({static}/images/books/M5ZXQkh.jpg)
 
 這本書不談情緒管理，而是如何與情緒共處
 

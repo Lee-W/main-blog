@@ -13,7 +13,7 @@ Summary:
 
 <!--more-->
 
-![Steve Jobs]({static}/images/posts-image/books/7zs4aDC.jpg)
+![Steve Jobs]({static}/images/books/7zs4aDC.jpg)
 
 ---
 

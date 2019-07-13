@@ -4,10 +4,9 @@ Category: Book
 Tags: Software Engineering, Team
 Slug: the-mythical-man-month
 Authors: Lee-W
-Summary: 
+Summary:
 
-
-![人月神話]({static}/images/posts-image/books/yEzGf5d.jpg)
+![人月神話]({static}/images/books/yEzGf5d.jpg)
 <!--more-->
 
 - 因為溝通的時間，人力和工時互換是不成立的，別用人月來衡量工作規模大小

@@ -6,7 +6,7 @@ Slug: how-to-read-a-book
 Authors: Lee-W
 
 
-![how-to-read-a-book](http://i.imgur.com/D1Obrmfm.jpg)
+![how-to-read-a-book]({static}/images/books/D1Obrmf.jpg)
 
 <!--more-->
 
