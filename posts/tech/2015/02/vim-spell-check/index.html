@@ -87,30 +87,30 @@
 有了 vimsepll，寫 Markdown 或 LaTeX 的時候，就不用再怕拼錯字了</p>
 <!--more-->
 
-<h1 id="vundle">用 vundle 安裝</h1>
+<h2 id="vundle">用 vundle 安裝</h2>
 <p>在 vimrc 中加入下面這行</p>
-<div class="highlight"><pre><span></span>Bundle &#39;vimspell&#39;
+<div class="highlight"><pre><span></span>Bundle <span class="s1">&#39;vimspell&#39;</span>
 </pre></div>
 
 
 <p>接著用 <code>:BundleInstall</code> 安裝</p>
-<h1 id="_1">字典檔</h1>
+<h2 id="_1">字典檔</h2>
 <p>到下面的網站下載字典檔<br>
 http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/dictionaries/</p>
 <p>我下載的是 <code>en_US.zip</code></p>
 <p>解壓縮完後，用 vim 開啟街壓縮完的資料夾<br>
 應該會看到下面這樣<br>
-<img alt="1_directory" src="http://i.imgur.com/gLWMnmW.png"></p>
+<img alt="1_directory" src="https://lee-w.github.io/images/posts-image/2015-02-14-vim-spell-check/gLWMnmW.png"></p>
 <p>接著進入 vim 在 normal mode 輸入</p>
-<div class="highlight"><pre><span></span>:mkspell en en_US
+<div class="highlight"><pre><span></span><span class="p">:</span><span class="k">mkspell</span> <span class="k">en</span> en_US
 </pre></div>
 
 
 <p><code>en</code> 可以自己定義，<code>en\_US</code> 必須是 .aff 和 .dic 的檔名<br>
 檢查一下 vim 資料夾下的 spell 資料夾有沒有新增字典檔，確定有了後就新增完成了</p>
-<h1 id="_2">設定</h1>
+<h2 id="_2">設定</h2>
 <p>首先要先定義要根據哪個字典檔</p>
-<div class="highlight"><pre><span></span>:set spelllang=en
+<div class="highlight"><pre><span></span><span class="p">:</span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
 </pre></div>
 
 
@@ -127,23 +127,23 @@ autocmd <span class="nb">BufRead</span> *.txt<span class="p">,</span>*.md<span c
 
 <p>第二行是每次按 F7 就能開啟或關閉 vimspell，也可以換成自己想要的快捷鍵<br>
 第三行則是每次遇到副檔名是 txt, md, tex 時就自動開啟 vimspell</p>
-<h1 id="_3">使用</h1>
+<h2 id="_3">使用</h2>
 <p>vimspell 被開啟後，就會自動把拼錯的字反白起來<br>
 如果有其他的語言一樣會被反白起來<br>
-<img alt="2_vimspell_sample" src="http://i.imgur.com/MGjdAoq.png"></p>
-<h2 id="_4">指令</h2>
+<img alt="2_vimspell_sample" src="https://lee-w.github.io/images/posts-image/2015-02-14-vim-spell-check/MGjdAoq.png"></p>
+<h3 id="_4">指令</h3>
 <ul>
 <li><code>]s</code> : 跳到下一個錯字</li>
 <li><code>[s</code> : 跳到上一個錯字</li>
 <li><code>z=</code> : 開啟建議，可以參考下面的圖，選擇完按 enter 後，就會替換原本的字</li>
 <li><code>zg</code> : 將目前游標上的字加入字典<br>
-    新增的字都會被加到 <code>~/.vim/spell/en.utf-8.add</code>( 根據語言不同，檔名會不同 )</li>
+         新增的字都會被加到 <code>~/.vim/spell/en.utf-8.add</code>( 根據語言不同，檔名會不同 )</li>
 <li><code>zug</code>: 復原加入字典的字 (刪除)</li>
 <li><code>zw</code> : 加入壞字字典，壞字也會被加入同樣的檔案中，最後面會另外加上 <code>/!</code></li>
 <li><code>zuw</code>: 復原加入壞字字典的字 (刪除)</li>
 </ul>
-<p><img alt="3_choose_word" src="http://i.imgur.com/NWHCakj.png"></p>
-<h1 id="reference">Reference</h1>
+<p><img alt="3_choose_word" src="https://lee-w.github.io/images/posts-image/2015-02-14-vim-spell-check/NWHCakj.png"></p>
+<h2 id="reference">Reference</h2>
 <ul>
 <li><a href="http://vimdoc.sourceforge.net/htmldoc/spell.html">Vim documentation: spell</a></li>
 <li><a href="http://www.go2linux.org/linux/2010/10/how-use-spell-check-vim-795">How to use spell check with vim</a></li>

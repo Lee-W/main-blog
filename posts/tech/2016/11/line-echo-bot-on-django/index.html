@@ -13,12 +13,12 @@
 
 <meta property="og:title" content="Line Echo Bot on Django "/>
 <meta property="og:url" content="https://lee-w.github.io/posts/tech/2016/11/line-echo-bot-on-django" />
-<meta property="og:description" content="單純要寫一個只會 Echo 的 Line Chat Bot 用 flask 只要 85 行的 code 就能解決 官方已經有提供相當清楚的範例[flask-echo] (https://github.com/line/line-bot-sdk-python/tree/master/examples/flask-echo) 了 這篇文章則是提供了 django 的做法 想直接看 code 也可以參考line_echobot" />
+<meta property="og:description" content="單純要寫一個只會 Echo 的 Line Chat Bot 用 flask 只要 85 行的 code 就能解決 官方已經有提供相當清楚的範例flask-echo 了 這篇文章則是提供了 django 的做法 想直接看 code 也可以參考line_echobot" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2016-11-24T03:26:00+08:00" />
 <meta name="twitter:title" content="Line Echo Bot on Django ">
-<meta name="twitter:description" content="單純要寫一個只會 Echo 的 Line Chat Bot 用 flask 只要 85 行的 code 就能解決 官方已經有提供相當清楚的範例[flask-echo] (https://github.com/line/line-bot-sdk-python/tree/master/examples/flask-echo) 了 這篇文章則是提供了 django 的做法 想直接看 code 也可以參考line_echobot">
+<meta name="twitter:description" content="單純要寫一個只會 Echo 的 Line Chat Bot 用 flask 只要 85 行的 code 就能解決 官方已經有提供相當清楚的範例flask-echo 了 這篇文章則是提供了 django 的做法 想直接看 code 也可以參考line_echobot">
 
         <title>Line Echo Bot on Django  · Laziness makes Great Engineer
 </title>
@@ -85,8 +85,7 @@
             
             <p>單純要寫一個只會 Echo 的 Line Chat Bot<br>
 用 flask 只要 85 行的 code 就能解決<br>
-官方已經有提供相當清楚的範例[flask-echo]<br>
-(https://github.com/line/line-bot-sdk-python/tree/master/examples/flask-echo) 了</p>
+官方已經有提供相當清楚的範例<a href="https://github.com/line/line-bot-sdk-python/tree/master/examples/flask-echo">flask-echo</a> 了</p>
 <p>這篇文章則是提供了 django 的做法<br>
 想直接看 code 也可以參考<a href="https://github.com/Lee-W/line_echobot">line_echobot</a></p>
 <!--more-->
@@ -143,7 +142,7 @@ python3 manage.py startapp echobot
 <span class="o">......</span>
 
 <span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-     <span class="o">......</span><span class="p">,</span>
+    <span class="o">......</span><span class="p">,</span>
     <span class="s1">&#39;echobot&#39;</span>
 <span class="p">]</span>
 </pre></div>
@@ -215,7 +214,6 @@ python3 manage.py startapp echobot
 這裡先用 Todo 記著，待會再來補上</p>
 <div class="highlight"><pre><span></span><span class="c1"># TODO: Define Receiver</span>
 
-
 <span class="nd">@csrf_exempt</span>
 <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
@@ -233,9 +231,11 @@ python3 manage.py startapp echobot
 <h3 id="validate-signature">Validate Signature</h3>
 <p>處理訊息之前<br>
 先確認這個 request 是不是真的是從 Line Server 傳來的<br>
-要確認這件事，需要<br>
-- request 的 body<br>
-- request header 中的 X-Line-Signature</p>
+要確認這件事，需要</p>
+<ul>
+<li>request 的 body</li>
+<li>request header 中的 X-Line-Signature</li>
+</ul>
 <p>也就是上面的</p>
 <div class="highlight"><pre><span></span><span class="n">signature</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s1">&#39;HTTP_X_LINE_SIGNATURE&#39;</span><span class="p">]</span>
 <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
@@ -249,11 +249,13 @@ Line Bot API 會在處理訊息的同時，確認這個訊息是否來自 Line</
 <h4 id="webhookparser">WebhookParser</h4>
 <p>WebhookParser 會 Parse 這個訊息的所有欄位<br>
 讓我們針對各種不同型別的訊息做個別的處理<br>
-e.g.<br>
-- UserID<br>
-- Event Type<br>
-- Message Content<br>
-- and etc.</p>
+e.g.</p>
+<ul>
+<li>UserID</li>
+<li>Event Type</li>
+<li>Message Content</li>
+<li>and etc.</li>
+</ul>
 <p>在<a href="https://github.com/line/line-bot-sdk-python#webhook-event-object">這裡</a> 可以找到有哪些欄位</p>
 <p>這段 code 要取代上面的 <code># TODO: Define Receiver</code></p>
 <div class="highlight"><pre><span></span><span class="n">parser</span> <span class="o">=</span> <span class="n">WebhookParser</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LINE_CHANNEL_SECRET</span><span class="p">)</span>
@@ -442,7 +444,8 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
 
 
 <p>到了這裡，echo bot 實作的部分就完成了</p>
-<h2 id="https-server-setup-your-domain-name"><a name='https-server'></a> Https Server (Setup 'your domain name')</h2>
+<p><a name='https-server'></a></p>
+<h2 id="https-server-setup-your-domain-name">Https Server (Setup 'your domain name')</h2>
 <p>使用這些 Bot 的服務時，大多會要求我們一定要先有一個 Https Server<br>
 除了自己架 Http Server 外，還透過其他服務，更方便我們做測試<br>
 接下來我會分享兩種做法</p>
@@ -474,11 +477,11 @@ ngrok 會把 request 傳到 local 端相對應的 port</p>
 </pre></div>
 
 
-<p><img alt="1_ngrok_example" src="http://i.imgur.com/r525wEI.png"></p>
+<p><img alt="1_ngrok_example" src="https://lee-w.github.io/images/posts-image/2016-11-24-line-echo-bot-on-django/r525wEI.png"></p>
 <p>再來到 Line Bot 的 <code>Line Developer</code> 頁面設定 Webhook URL<br>
 這時候填上 ngrok 後的 https 那串 url，再加上 <code>echobot/callback/</code>( 我們設定的 callback url)<br>
 (e.g. <code>https://2.....f.ngrok.io/echobot/callback/</code>)<br>
-<img alt="2_webhook_url" src="http://i.imgur.com/qVWlwoK.png"></p>
+<img alt="2_webhook_url" src="https://lee-w.github.io/images/posts-image/2016-11-24-line-echo-bot-on-django/qVWlwoK.png"></p>
 <p>值得注意的是我的 Webhook URL 下面有一個 <code>Read timeout.</code><br>
 如果按了後面的 Verify，Line Server 會傳一些測試訊息過來<br>
 但是那個 reply_token 是無法被回覆的<br>
@@ -486,7 +489,7 @@ ngrok 會把 request 傳到 local 端相對應的 port</p>
 不過沒關係，這只是給我們檢查用的<br>
 並沒有一定要通過才能使用 Line Bot</p>
 <p>這時候加 Bot 為好友，就可以開始跟它聊天了<br>
-<img alt="3_message_sample" src="http://i.imgur.com/boxeHoG.png"></p>
+<img alt="3_message_sample" src="https://lee-w.github.io/images/posts-image/2016-11-24-line-echo-bot-on-django/boxeHoG.png"></p>
 <p>如果你發現除了 echo 訊息外，還有其他的訊息<br>
 可能就是沒有把 Atuo Reply Message 關掉<br>
 這時候就可以去 Line Bot 的 <code>LINE@ Manger</code><br>
@@ -562,7 +565,7 @@ ngrok 會把 request 傳到 local 端相對應的 port</p>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2016-11-24T03:26:00+08:00">11 24, 2016</time>
-        <h4><built-in method index of str object at 0x10e7a1c90></h4>
+        <h4><built-in method index of str object at 0x11002bd20></h4>
     <ul class="multi-parts-list">
     </ul>
             <h4>Category</h4>

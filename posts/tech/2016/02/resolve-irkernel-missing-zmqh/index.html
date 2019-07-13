@@ -95,12 +95,12 @@ IRkernel::installspec()
 
 
 <h2 id="_1">錯誤訊息</h2>
-<div class="highlight"><pre><span></span><span class="n">interface</span><span class="p">.</span><span class="nl">cpp</span><span class="p">:</span><span class="mi">22</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span> <span class="n">fatal</span> <span class="nl">error</span><span class="p">:</span> <span class="err">&#39;</span><span class="n">zmq</span><span class="p">.</span><span class="n">h</span><span class="err">&#39;</span> <span class="n">file</span> <span class="n">not</span> <span class="n">found</span>
-<span class="cp">#include</span> <span class="cpf">&lt;zmq.h&gt;</span><span class="cp"></span>
-         <span class="o">^</span>
-<span class="mi">1</span> <span class="n">error</span> <span class="n">generated</span><span class="p">.</span>
-<span class="nl">make</span><span class="p">:</span> <span class="o">***</span> <span class="p">[</span><span class="n">interface</span><span class="p">.</span><span class="n">o</span><span class="p">]</span> <span class="n">Error</span> <span class="mi">1</span>
-<span class="nl">ERROR</span><span class="p">:</span> <span class="n">compilation</span> <span class="n">failed</span> <span class="k">for</span> <span class="n">package</span> <span class="err">&#39;</span><span class="n">rzmq</span><span class="err">&#39;</span>
+<div class="highlight"><pre><span></span>interface.cpp:22:10: fatal error: &#39;zmq.h&#39; file not found
+#include &lt;zmq.h&gt;
+         ^
+1 error generated.
+make: *** [interface.o] Error 1
+ERROR: compilation failed for package &#39;rzmq&#39;
 </pre></div>
 
 
@@ -112,14 +112,14 @@ IRkernel::installspec()
 
 <p>再執行一次最上面的安裝指令</p>
 <p>接著在指令列執行輸入下面的指令</p>
-<div class="highlight"><pre><span></span>jupyter qtconsole --kernel=ir
-jupyter console --kernel=ir
+<div class="highlight"><pre><span></span>jupyter qtconsole --kernel<span class="o">=</span>ir
+jupyter console --kernel<span class="o">=</span>ir
 </pre></div>
 
 
 <p>安裝成功後就可以看到<br>
-<img alt="R_in_jupyter" src="http://i.imgur.com/pWf6j0q.png"></p>
-<h1 id="reference">Reference</h1>
+<img alt="R_in_jupyter" src="https://lee-w.github.io/images/posts-image/2016-02-20-resolve-irkernel-missing-zmqh/pWf6j0q.png"></p>
+<h2 id="reference">Reference</h2>
 <ul>
 <li><a href="https://github.com/IRkernel/IRkernel/issues/50">Failed to install rzmq #50</a></li>
 <li><a href="https://github.com/IRkernel/IRkernel">IRkernel</a></li>
