@@ -74,6 +74,6 @@ PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = [
     'another_read_more_link', 'render_math',
     'neighbors', 'share_post', 'i18n_subsites', 'tipue_search', 'tag_cloud',
-    'extract_toc'
+    'extract_toc', 'post_stats'
 ]
 ANOTHER_READ_MORE_LINK = ''
