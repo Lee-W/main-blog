@@ -9,7 +9,7 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Paper, Social Network, Machine Learning, Game Theory, Tech, Tech, " />
+<meta name="keywords" content="Paper, Social Network, Machine Learning, Game Theory, Tech, " />
 
 <meta property="og:title" content="[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks "/>
 <meta property="og:url" content="https://lee-w.github.io/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" />
@@ -365,10 +365,13 @@ These data can be used to learn the value functions</p>
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
     mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -382,6 +385,8 @@ These data can be used to learn the value functions</p>
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -402,6 +407,8 @@ These data can be used to learn the value functions</p>
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
@@ -411,7 +418,7 @@ These data can be used to learn the value functions</p>
             <section>
     <p id="post-share-links">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=%5BPaper%5D%20A%20Learning-based%20Framework%20to%20Handle%20Multi-round%20Multi-party%20Influence%20Maximization%20on%20Social%20Networks&url=https%3A//lee-w.github.io/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks&hashtags=paper,social-network,machine-learning,game-theory,tech" target="_blank" title="Share on Twitter">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?text=%5BPaper%5D%20A%20Learning-based%20Framework%20to%20Handle%20Multi-round%20Multi-party%20Influence%20Maximization%20on%20Social%20Networks&url=https%3A//lee-w.github.io/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks&hashtags=paper,social-network,machine-learning,game-theory" target="_blank" title="Share on Twitter">Twitter</a>
     ❄
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" target="_blank" title="Share on Facebook">Facebook</a>
     ❄
@@ -487,8 +494,6 @@ These data can be used to learn the value functions</p>
 </a></li>
                 <li><a href="https://lee-w.github.io/tags#social-network-ref">Social Network
                     <span>2</span>
-</a></li>
-                <li><a href="https://lee-w.github.io/tags#tech-ref">Tech
 </a></li>
             </ul>
 <h4>Contact</h4>
