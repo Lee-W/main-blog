@@ -86,7 +86,7 @@ def publish(c):
 
 
 @task
-def gh_pages(c):
+def github(c):
     """Publish to GitHub Pages"""
     preview(c)
     c.run('pipenv run ghp-import -b {github_pages_branch} '
