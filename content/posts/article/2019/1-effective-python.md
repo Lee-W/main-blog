@@ -25,7 +25,9 @@ Summary:
 ---
 
 ## 第一章： Pythonic 思維
+
 ### 作法02： 遵循 PEP8 風格指南
+
 [PEP8](https://www.python.org/dev/peps/pep-0008/)
 (我只把我認為容易被忽略或特別重要的幾點留下來)
 
@@ -50,6 +52,7 @@ Summary:
 * 用 [pylint](https://www.pylint.org) 來檢查風格
 
 ### 作法04： 撰寫輔助函式而非複雜的運算式
+
 * 將複雜的運算式移到輔助函式 (helper function) 內，特別是在你需要重複用到同樣的邏輯的時候
 * 與其在運算式中使用 `or` 或 `and` ，不如使用 `if/else` 讓程式碼更易讀
 
@@ -81,6 +84,7 @@ red = get_first_int(my_values, 'red')
 ```
 
 ### 作法05: 知道如何切割序列
+
 * 省略 zero index, 最後的索引來降低視覺雜訊
     * 用 `a[:5]`, `a[5:]` 而不是 `a[0:5]`, `a[5:len(a)]`
 * copy value v.s. copy reference
@@ -97,8 +101,8 @@ assert b is a
 ```
 
 ### 作法07: 使用 list comprehension 而非 map 和 filter
-* 避免用 `map`, `filter` ，因為使用他們時需要建立一個 `lambda` ，這是種視覺雜訊
 
+* 避免用 `map`, `filter` ，因為使用他們時需要建立一個 `lambda` ，這是種視覺雜訊
 
 ```python
 a = [1, 2, 3, 4, 5]
@@ -111,6 +115,7 @@ squares = map(lambda x: x ** 2, a)
 ```
 
 ### 作法09: 考慮使用 generator 取代大型 list comprehension
+
 * 對於大型輸入來說 list comprehension 可能耗用相當大量的記憶體
 
 ### 作法11: 使用 zip 來平行處理 iterables
@@ -141,6 +146,7 @@ else:
 ```
 
 ### 作法13: 善用 try/except/else/finally 中的每個區塊
+
 * `finally`
     * 即使例外發生，但也想要在例外發生時執行清理用的 cleanup code
 * `else`
@@ -148,10 +154,13 @@ else:
     * 用來最小化 try 區塊的程式碼量 -> **讓 try 區塊只出現會丟出例外的程式碼**
 
 ## 第二章： 函式
+
 ### 作法14: 優先選用例外處理而非回傳 None
+
 * 回傳 `None` 帶有特殊意義的函式容易出錯，因為 `None` 與其他的值 (e.g., `0`, `[]`, `''`)，在做條件運算式運算的結果都是 `False`
 
 ### 作法20: 使用 None 與 Docstrings 來指定 mutable default arguments
+
 * default arguments 只會被 evaluate 一次：模組載入時、函式定義時。對於動態值 (e.g., `{}`, `[]`) 來說，這可能導致奇怪的行為
 
 ```python
@@ -182,6 +191,7 @@ def func(default=None):
 ```
 
 ### 作法19: 以 keyword argument 提供選擇性的行為 (Related to 作法21)
+
 ```python
 # original
 def flow_rate(weight_diff, time_diff, period):
@@ -195,6 +205,7 @@ def flow_rate(weight_diff, time_diff, period=1):
 不像「作法21」全面採取 keyword argement的原因是為了達到 backwards compatibility
 
 ### 作法21: 強制使用僅限 keyword argument 來讓程式碼更清楚易懂
+
 * 使用 keyword-only arguments 來強制要求呼叫者提供 keyword argument 以避免混淆，特別是在接收多個 Boolean flag 的函式中
 
 ```python
@@ -205,7 +216,9 @@ def safe_division(number, divisor, *,
 ```
 
 ## 第三章： 類別與繼承
+
 ### 作法22: 優先選用輔助 class 而非使用 dictionary 或 tuple 來管理紀錄
+
 * 如果還不需要用到較有彈性的完整 class，請使用 `namedtuple` 來製作輕量化、不可變的資料容器
     * `namedtuple` 不能指定預設引數值，如果資料有許多 optional properties，則還是適合用 class
 
@@ -218,6 +231,7 @@ class Implicit(BaseClass):
 ```
 
 ### 作法27: 優先選用公開屬性而非私有屬性
+
 * 為什麼私有屬性的語法不強制施行嚴格的可見性限制呢？
     * We are all consenting adults here.
 * 選擇私有屬性，只會讓子類別的 overrides 或 extensions 動作變得更麻煩更容易出錯
@@ -225,16 +239,18 @@ class Implicit(BaseClass):
 * 唯一得認真考慮使用 private attributes 的時機，是擔心子類別會有名稱衝突的時候
 
 ## 第四章： 元類別與屬性
+
 ### 作法33, 34, 35
+
 * Metaclass 的應用
     * 驗證 subclass 是否有被正確定義
     * 註冊 class 的存在
     * 在一個 class 被實際使用前，修改其特性
 
 ## 第五章： 共時與平行處理
+
 * 共時 (concurrency): 作業系統會在單一處理器快速切換多個執行程式
 * 平行處理 (parallelism): 真正在同一時間執行許多工作的處理方式
-
 
 ### 作法38: 使用 Lock 來避免執行緒中的 data race
 
@@ -309,6 +325,7 @@ print('Producer done')
     * 其他部分過於複雜，建議避免
 
 ## 第六章： 內建模組
+
 ### 作法34: 考慮使用 contextlib 與 with statement 來建立可重用的 try/finally 行為
 
 ```python
@@ -334,14 +351,15 @@ with log_level(logging.DEBUG, 'mylog') as logger:
 
 * `yield` 前是 contextmanager 的 `__enter__` 會執行的部分，之後則是 `__exit__`
 
-
 ### 作法45: 本地時鐘使用 datetime 而非 time
+
 * 搭配 `pytz` module 來使用 `datetime` built-in module 在不同時區的時間之間作轉換
 * 處理過程中，永遠用 UTC 來記錄，呈現給使用者前才轉換
 
-
 ## 第七章： 協作
+
 ### 作法49: 為每個 function, class, module 撰寫 Docstrings
+
 * General Docstring Guide
     * 用3個 double quotes (`"""`) 開頭
     * 第一行應該是單一句子，來描寫用途
@@ -361,8 +379,8 @@ with log_level(logging.DEBUG, 'mylog') as logger:
         * 預期從 yield 收到什麼
         * 什麼時候會停止
 
-
 ### 作法50: 使用 package 來組織 module 並提供穩定的 API
+
 * Python 可以透過 module 或 package 的 `__all__` 特殊屬性來限制要暴露給 API 使用者的「表面積」
     * 如此即使重構也不會影響到使用者
     * 這在提供明確、穩定、給外部使用的 API 是個很好的做法
@@ -371,11 +389,13 @@ with log_level(logging.DEBUG, 'mylog') as logger:
     * `import *` 可能造成變數名稱複寫，而且不容易被 debug
 
 ### 作法51: 定義一個 root exception 來隔離呼叫者與 API
+
 * 為什麼要自定義一個 root exception?
     * 讓使用者知道他們以錯誤的用法使用了你的 API
     * 幫助你找出 API 中的 bug → 只要不是提出這些自定義的例外，就很可能是 bug 的所在
 
 ### 作法52: 知道如何打破循環依存性
+
 * 最好的做法是重構程式碼
     * 但有時候清楚的劃分相當困難，或 cost 太高了，因此還是需要知道如何打破循環依存性
 
@@ -392,7 +412,6 @@ with log_level(logging.DEBUG, 'mylog') as logger:
     * 通常是最簡單的解法
     * 在 function/method 中才使用 import
     * 但一般來說來是最好避免， import 的 cost 並沒有小到可以被忽略
-
 
 ## 第八章： 推出產品
 
@@ -414,6 +433,7 @@ with log_level(logging.DEBUG, 'mylog') as logger:
     * `continue`: 執行程式，直到下一個 breakpoint 或 set_trace 再被呼叫
 
 ### 作法58: 最佳化之前先進行效能評估
+
 * 使用 `cProfile` module 而非 `profile` module
     * 因為對程式效能的影響較小
 
@@ -433,8 +453,8 @@ stats.sort_stats('cumulative')
 stats.print_stats()
 ```
 
-
 ### 作法59: 使用 tracemalloc 來了解記憶體用量或是否有洩漏
+
 * Python 的預設實作 CPython 中，記憶體管理的方式是使用 reference counting
 * Python 3.4 以後可以使用 tracemalloc
 

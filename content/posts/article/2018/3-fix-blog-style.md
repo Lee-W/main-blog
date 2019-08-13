@@ -4,8 +4,7 @@ Category: Tech
 Tags: Develop
 Slug: fix-blog-style
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 一直以來都有發現 Blog 的風格有點小問題
 但都懶得去好好地找出問題
@@ -22,15 +21,18 @@ Summary:
 ![problem 2]({static}/images/posts-image/2018-10-14-fix-blog-style/15385700601798.jpg)
 
 整理下來大概有三個問題
+
 1. 大小標的 margin
 2. 英文前後也空一格
 3. 第二行縮了四分之一字元
 
 ## 1. 大小標的 margin
+
 這應該是三個問題中最簡單的
 但我有點懶得動 CSS ，所以就先不修了 xD
 
 ## 2. 英文前後也空一格
+
 剛好最近看到了[中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines#中文文案排版指北)
 
 才發現原來
@@ -44,6 +46,7 @@ Summary:
 但也只要用 `git diff` 再確認一下哪裡有被 script 修改過就可以了
 
 ## 3. 第二行縮了四分之一字元
+
 這個問題就比較頭痛了
 因為我在模板找到這段的內容是
 
@@ -60,6 +63,7 @@ Summary:
 不想看可以透過[傳送門](#transport)直接跳到解法
 
 ### pelican/readers.py (first try)
+
 要找到 Markdown 是在哪被 parse 並產生內容的並不困難
 (`pelican/readers.py` 的 [334行](https://github.com/getpelican/pelican/blob/ee24ad1821774db2bfb199100eced17270a961d3/pelican/readers.py#L334))
 透過一些測試，發現這段的行為是因為有了多的 `\n` 造成了多的空白
@@ -76,6 +80,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 所以我還必須要切到 [3.7.1版](https://github.com/getpelican/pelican/tree/3.7.1) 才能開始解決我遇到的問題
 
 #### setup.py
+
 平常我都是透過 `pelican -r -o output -s pelicanconf.py`這個指令來產生文章
 所以第一步就是要從 [setup.py](https://github.com/getpelican/pelican/blob/master/setup.py#L15) 找出 pelican 這個指令是哪裡來的
 
@@ -83,11 +88,12 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
         ...
         'pelican = pelican:main',
         ...
-``` 
+```
 
 #### pelican/__init__.py
+
 既然在 [pelican](https://github.com/getpelican/pelican/tree/3.7.1/pelican) 這個 package 中沒有 `main.py`
-那 Python 還能找到 `main` 就只剩下 `__init__.py` 
+那 Python 還能找到 `main` 就只剩下 `__init__.py`
 扣除掉一些 parse 指令參數的程式碼
 接下來最像是產生文章的程式碼就是[147行](https://github.com/getpelican/pelican/blob/master/pelican/__init__.py#L147) 的 `run`
 
@@ -106,6 +112,7 @@ from pelican.generators import (ArticlesGenerator, PagesGenerator,
 ```
 
 #### pelican/generators.py
+
 `generators`中看起來最有關的就是 `ArticlesGenerator`
 這個 class 也找到了 `generate_context`
 
@@ -125,6 +132,7 @@ from pelican.generators import (ArticlesGenerator, PagesGenerator,
 所以下一步就是要再去找到 `Readers`
 
 #### pelican/reader.py
+
 `Readers` 在這個檔案的[486行](https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L486)
 接著 trace 這個 class 到[526行](https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L526)就真的是文章內容第一次被產生的地方
 到目前為止，文章的內容還是沒有多餘的空白
@@ -137,31 +145,34 @@ from pelican.generators import (ArticlesGenerator, PagesGenerator,
             self.cache_data(path, (content, reader_metadata))
 ```
 
-
 最後發現問題是出在 [555行](https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L555)
+
 ```python
             if content:
                 content = typogrify_wrapper(content)
 ```
+
 只要不對 `content` 做 `typogrify_wrapper`就不會產生多餘的空白
 
 <a id='transport'></a>
-#### typogrify
-typogrify 是 `pelicanconf.py` (pelican 的設定檔) 中的一個設定
 
+#### typogrify
+
+typogrify 是 `pelicanconf.py` (pelican 的設定檔) 中的一個設定
 
 ```python
 TYPOGRIFY=False
 ```
 
 只要關掉 typogrify 就不會再產生出多餘的空白
- 
+
 [typogrify](https://github.com/mintchaos/typogrify) 看來是某種加強 HTML 的工具
 我試過要把 `<br>` 跟 `&nbsp` 加入 `TYPOGRIFY_IGNORE_TAGS`
 不過看來還是沒辦法解決
 最後只好把 typogrify 整個關掉了
- 
+
 ## 後記
+
 其實這也只是個無傷大雅的小問題
 但真的是花了我不少時間才找到真正的問題所在
 

@@ -4,14 +4,14 @@ Category: Book
 Tags: Productivity
 Slug: measure-what-matters
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 ![measure-what-matters]({static}/images/books/measure-what-matters.jpg){: style="height:255px;"}
 
 <!--more-->
 
 ## Ch2 - OKR 之父
+
 * 「目標」和「關鍵結果」
     * 目標就是方向
         * e.g., 我們要主導中檔微電腦元件市場
@@ -26,15 +26,15 @@ Summary:
     * 工具而非武器
     * 要有耐心，也要堅定
 
-
 ## Ch4 - 超能力 1: 專注投入優先要務
+
 * 與目標配合的關鍵結果，應強調工作品質
     * e.g.,
         * 產量目標： 三項新功能
         * 品質目標： 品保測試中，每項功能少於五個錯誤
 
-
 ## Ch 10 - 超能力 3: 追蹤當責
+
 * 追蹤、審視 OKR 時，可以採用的選項
     * 繼續： 處於綠燈區（進度符合預期），不需調整
     * 更新： 處於黃燈區（需要關注），視流程或現實狀況調整時間和資源
@@ -47,8 +47,8 @@ Summary:
     * 如果重設一項可以完全達成的目標，應該如何修改？
     * 學到哪些教訓，可以改變下一週期 OKR 的做法？
 
-
 ## Ch 15 - 持續性績效管理: OKR 與 CFR
+
 * CFR (Conversations, Feedback, Recognition)
 * 主管與部屬對話涉及的五個關鍵面向
     * 設定目標和反省
@@ -58,6 +58,7 @@ Summary:
     * 輕量的績效考核
 
 ## 附錄一 - Google 的 OKR 攻略
+
 * 目標代表 What ，應該要
     * 表達目標與意圖
     * 進取但可行的

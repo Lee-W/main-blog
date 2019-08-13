@@ -4,7 +4,7 @@ Category: Gossiping
 Tags: X-Village
 Slug: X-Village-Course-Design
 Authors: Lee-W
-Summary: 
+Summary:
 Series: X-Village
 
 要一次說完整個 X-Village ，還是有點太花時間
@@ -16,13 +16,14 @@ Series: X-Village
 所以我要上的課也不多
 跟課程相關，我接觸比較多的大概是這幾個部分
 
-1.  Review 「程式設計基石」(a.k.a. Python 課)
+1. Review 「程式設計基石」(a.k.a. Python 課)
 2. 「資料結構」第三天下午的練習
 3. 「網頁開發、資料庫、雲端運算」第三天後半課程
 
 ## 1. Review 「程式設計基石」
 
 ### 課綱
+
 起初，我和另一位核心助教規劃了 Python 課程的大綱
 但這份課綱對初學者還是太難
 因為身上處理的事在太多
@@ -50,6 +51,7 @@ Series: X-Village
 | Day 10 | <ul> <li>Broaden Horizon</li> </ul> |
 
 ### Rehearsal
+
 Rehearsal 的時候，我看到了蠻多值得學習跟反省的地方
 不愧是從醒獅團的人們，我看到了一些很有趣的教學方式
 看著每個人不同的教學風格和內容
@@ -61,13 +63,16 @@ Rehearsal 的時候，我看到了蠻多值得學習跟反省的地方
 我在寫 Lisp 的時候，連 Syntax Highlight 都不懂
 還要不斷數括號數量，才知道程式能不能跑的
 
-e.g., 
-```
+e.g.,
+
+```text
 (cond ((eq 'a 'b) 'first)  (atom 'a)  'second))
 ```
+
 （其實上面有少一個括號 xD）
 
 ### 課程正式開始
+
 課程的前兩週因為在準備碩士論文口試
 我沒有投入教學，也沒辦法整天跟課
 但我中午跟晚上幾乎都會去 ~~拿便當、飲料~~ 關心課程狀況
@@ -84,6 +89,7 @@ e.g.,
 不過有了這次的經驗，明年應該就比較有底了（如果還有明年的話 xD）
 
 ## 2. 「資料結構」第三天下午的練習
+
 * Exercise ipynb: [DS-Exercise Day3](http://nbviewer.jupyter.org/github/x-village/data-structure-course/blob/master/DS_Exercise_Day3.ipynb)
 
 雖然先前大概有稍微想了一下準備怎樣的 Exercise
@@ -101,6 +107,7 @@ e.g.,
 我主要把時間都花在 Exercise 的設計上
 
 ### Exercise4 用 Python 做排序 (ex4.py)
+
 ```python
 some_list = [
     65, 81, 65, 19, 6, 28, 86, 40, 72, 27,
@@ -128,7 +135,7 @@ some_list = [
 回想以前的我，肯定也是埋頭就下去硬幹
 甚至我第一次用 Python 爬選課系統的時候，連 json 模組都不會用
 只會照著 json 規定的格式，慢慢地做字串處理
-e.g., 
+e.g.,
 
 ```python
 json_str = '{"' + course_name + '": "' + course_id + '"}'
@@ -143,6 +150,7 @@ json_str = '{"' + course_name + '": "' + course_id + '"}'
 透過痛過，來知道為什麼要使用工具
 
 ### Exercise5 深入淺出 Python 排序 (ex5.md)
+
 * Q1: Python 的 `some_list.sort()` 跟 `sorted(some_list)` 差別在哪
 * Q2: Python 的 `sorted()` 是用哪種排序演算法 ?
 
@@ -157,6 +165,7 @@ json_str = '{"' + course_name + '": "' + course_id + '"}'
 因為這個思考的過程才是重要的，答案一點也不重要
 
 ### Exercise6 用 Python 做排序
+
 我給了一筆 PTT 爬下來的資料，根據某個 key 做排序
 早上才從八卦版剛爬下來的（好像有爬到一些奇怪的東西 ...）
 靈感就只是前一天跟學員聊天，聊到他們的視覺化作業要用 PTT 的資料
@@ -170,13 +179,14 @@ json_str = '{"' + course_name + '": "' + course_id + '"}'
 所以大二下的 C++ ，對我來我說是寫程式很大的里程碑
 
 這題的解答也是差不多一行而已
+
 ```python
 data = sorted(ptt_data, key=lambda x: x['some_key'])
 ```
 
 但我認為這對新手來說，已經會是相對挑戰的練習了
 至少以初學的我來說，我可能就要花不少時間去 survey 、去思考
- 
+
 這個練習中，我還埋了一個坑是「key 可能是空的」
 ~~我前一天設計這個練習的時候也入坑了，此坑不能只有我入~~
 我也會下去跟大家討論要怎麼解決這個問題
@@ -185,8 +195,9 @@ data = sorted(ptt_data, key=lambda x: x['some_key'])
 但我也遇到學員們有很多不一樣的想法，我覺得挺好的
 
 ### Bouns
-- Bonus 3 實作各種 sort 作法 
-- Bouns 4 分析各種 sort 適合的情境
+
+* Bonus 3 實作各種 sort 作法
+* Bouns 4 分析各種 sort 適合的情境
 
 因為課程的速度放慢，有些學過的就會覺得比較無聊
 這兩個 Bouns 就是設計給這樣的人
@@ -197,11 +208,13 @@ Bouns 4 我也沒有正確解答
 不過這麼機車的題目最後看來是沒人寫 xD
 
 ### 「資料結構」練習後記
+
 後來有一次跟學員聊天的時候
 學員跟我分享他覺得這樣的練習設計，帶著大家思考很有幫助
 看來前一天沒什麼睡到是值得的
 
 ## 3. 「網頁開發、資料庫、雲端運算」第三天後半課程
+
 * Slide: [CRUD in Flask](https://speakerdeck.com/leew/x-village-crud-in-flask-1)
 * Sample Code: [web-acccounting-example](https://github.com/x-village/web-acccounting-example/)
 
@@ -240,6 +253,7 @@ Bouns 4 我也沒有正確解答
 我想從這裡帶出測試的重要性
 
 統整一下，我整個課程設計想帶給學員的思考
+
 1. 如何思考一個後端架構 ? → 其他人的記帳程式
 2. 溝通在寫程式是很重要的 → `README.md`, `requriements.txt`
 3. 如何除錯？ → 滿是錯誤的 view, postman 的使用

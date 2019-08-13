@@ -5,7 +5,7 @@ Category: Tech
 Tags: Python, PyCon
 Slug: how-was-pycon-us
 Authors: Lee-W
-Summary: 
+Summary:
 
 既然自稱 Python 的信徒
 總是要來世界最大的 PyCon 朝聖一下 XD
@@ -19,6 +19,7 @@ Summary:
 [TOC]
 
 ## 簡介一下 PyCon US
+
 PyCon 總共跨了 9 天
 除了主會議外，還有各種不同的活動跟討論
 
@@ -26,7 +27,7 @@ PyCon 總共跨了 9 天
 * 5/3 ~ 5/5: 主會議
 * 5/6 ~ 5/9: Development Sprint
 
-今年辦在 Cleveland 的 Huntington Convention Center 
+今年辦在 Cleveland 的 Huntington Convention Center
 會眾大概有 3000 人
 會議期間除了同時會有 6 個軌的 talk 以外，還會有好幾間的 Open Space
 
@@ -38,6 +39,7 @@ PyCon 總共跨了 9 天
 對我這次去參加 PyCon 很有幫助
 
 ## Tutorial
+
 我參加了兩場 Tutorial
 
 * [Getting started with Kubernetes and container orchestration](https://www.youtube.com/watch?v=J08MrW2NC1Y&list=PLPbTDk1hBo3xof51R8pk3kP1BVBuMYP9c&index=18&t=0s)
@@ -49,7 +51,7 @@ PyCon 總共跨了 9 天
 一天參加一場，我的體力上比較負荷的來
 但中午吃飯跟其他會眾聊天的時候，遇到了好幾個人都是兩天參加滿四場 Tutorial ...
 
-好幾個會眾都推薦了 David Beazley 的 [Lambda Calculus from the Ground Up ](https://www.youtube.com/watch?v=pkCLMl0e_0k)
+好幾個會眾都推薦了 David Beazley 的 [Lambda Calculus from the Ground Up](https://www.youtube.com/watch?v=pkCLMl0e_0k)
 這場 Tutorial 的介紹開宗明義就說了
 
 > You will learn nothing practically useful in this tutorial.
@@ -59,10 +61,12 @@ PyCon 總共跨了 9 天
 我甚至遇到一位會眾說看到名字就報名了，也不用看是什麼主題
 
 ## Talks
-稍微簡介幾場我還有印象的 talk 
+
+稍微簡介幾場我還有印象的 talk
 也許之後有時間會把筆記好好整理一下分享出來
 
 ### Day 1
+
 * **Keynote - Russell Keith-Magee**
     * Python's Black Swan
         * 你現在覺得 Python 的存在很自然，但 10 年後 Python 還會在嗎？
@@ -88,6 +92,7 @@ PyCon 總共跨了 9 天
     * 其實講題蠻瞎的，但講者講的真的很有趣很精彩 XD
 
 ### Day 2
+
 * **Keynote - Shadeed "Sha" Wallace-Stepter**
     * "How many people here are on probation or parole?" （這個開頭害我以為我是不是英文真的太差誤會了什麼...... ）
     * Sha 訴說自己如何一個從犯人變成創業家的故事，如何在獄中學習 Python，並在出獄後重新融入社會
@@ -115,11 +120,13 @@ PyCon 總共跨了 9 天
     * 恩對，這場 Lightening Talk 就真的是這樣而已 XD
 
 ### Day 3
+
 * **Keynote - Nina Zakharenko - Light up you life with Python & LEDS!**
     * 現場 Demo [MicroPython](https://micropython.org)，如何用 Python 操控硬體
     * 我想這場主要是想展示用 Python 能很簡單地做到一些原本想像中可能會比較困難的事
 
 ### Watch List
+
 我跟在 PyCon 認識的朋友整理了一些之後會想補帶的 talk
 
 * [API Evolution the Right Way](https://www.youtube.com/watch?v=dqDnB6jKzcE)
@@ -135,6 +142,7 @@ PyCon 總共跨了 9 天
 * [Break the Cycle: Three excellent Python tools to automate repetitive tasks](https://www.youtube.com/watch?v=-BHverY7IwU)
 
 ## Open Space
+
 畢竟 talk 都會錄影，而且很快就上傳了（大概結束後兩天就會上傳）
 所以後來我就越來越常去 Open Space
 而且相較之下 Open Space 會比較有跟人互動的機會
@@ -156,16 +164,16 @@ PyCon 總共跨了 9 天
 這是我去參加 Vim 討論會的照片
 當天就有人分享了討論的筆記 ([Vim BoF @PyCon2019](https://gist.github.com/pwlandoll/dcb252686ae3c2e2486fd6425eb00d91))
 
-我還有參加到一場幫忙做履歷健檢的跟討論 Tech Interview 
+我還有參加到一場幫忙做履歷健檢的跟討論 Tech Interview
 
 ## Job Fair / Poster
+
 Job Fair 主要就是跟各個公司聊天，看看他們的工作性質跟開了什麼缺
 有聽到幾間 remote 的公司還蠻有趣的
 不過其實也不用等到 Job Fair 才問
 Job Fair 的公司反而比較少，不過應該就是專注在有開缺的公司
 前幾天的攤位反而更有機會聊聊
 ![IMG_3025]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3025.jpg)
-
 
 Poster 也是一個能跟人互動蠻好的機會
 不過那些比較有趣的，通常旁邊都會圍著一群人 XD
@@ -174,6 +182,7 @@ Poster 也是一個能跟人互動蠻好的機會
 ![IMG_3070]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3070.jpg)
 
 ## Development Sprint
+
 自從上次在 PyCon TW 參加了 PyBee 的 Sprint ，就覺得這樣一群人協作開源專案很有趣
 所以這也是我這次 PyCon 幾乎最期待的活動
 
@@ -199,6 +208,7 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 ## 給自己下次去的建議
 
 ### 多跟人交流、多跟人交流、多跟人交流
+
 這是我感受到跟在台灣參加研討會最不一樣的地方
 （也可能是我在台灣的研討會都在舒適圈中...）
 只要你願意，在會場中幾乎每個人都很樂於跟你交流
@@ -206,6 +216,7 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 這個體驗真的蠻有趣的
 
 ### 練好英文口說
+
 原本覺得自己英文程度雖然稱不上好，但應該也沒到太差吧
 至少在旅行上是沒遇過什麼問題
 但這種程度跟要跟人討論或聊天還是差太多了
@@ -217,6 +228,7 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 剛到 PyCon 的前幾天對於這件事還真的蠻挫折的
 
 ### 準備好一段短的招呼語跟自我介紹
+
 一開始有人來找我聊天，還是會有些緊張，不知道要說什麼
 畢竟在台灣真的也沒什麼這樣練習英文口說的機會
 後來多跟幾個人聊過後
@@ -224,6 +236,7 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 之後話題就能比較順利地一直接下去
 
 ### 留點緩衝時間給調時差
+
 這次到美國的隔天就已經要開始 PyCon 了
 一到了傍晚就會開始想睡
 所以前幾天的 After Party 我參加一下就走了
@@ -232,6 +245,7 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 二來是真的太累了...
 
 ### 保留體力 - 不用每個活動都參與到
+
 剛來的時候會覺得，都花了這麼多錢特地跑來，一定要把握時間每
 就會勉強自己盡可能每個時段都要塞滿
 但 PyCon 的 talk, open space and etc. 實在太多了
@@ -243,6 +257,7 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 與其多衝一些場數，不如專注地把幾場真正想聽的專心聽完
 
 ### 多去 Open Space
+
 相較於 talk ， Open Space 除了沒有錄影可以補帶以外
 也是一個跟人們可以更有互動的機會
 有時候說不定也能聽到一些不能在 talk 說的事（笑
@@ -250,10 +265,12 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 （雖然我後來認識的大多是在走廊上或吃飯遇到的 XD）
 
 ### 事前對有興趣的 talk 準備好想問的問題
+
 雖然說看現場的感受跟看影片還是不一樣
 但既然都去聽了，如果能跟講者討論自己遇到的問題，應該會更有收穫
 
 ### 將當下的熱情紀錄下來，並列出 action items
+
 參加的當下的感受還蠻強烈的，但回來台灣好一段時間後
 當初的熱情跟想法，就會慢慢被生活給磨光
 所以立刻把明確的 action items 記錄下來，也許會讓這些事情成真的機會高一點
@@ -292,8 +309,8 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 
 恩，大概就只有這樣xD
 
-
 ## 雜談
+
 一開始對於要不要飛一趟去美國還蠻猶豫的
 畢竟 PyCon 的 talk 網路上都看得到，花這一大筆錢真的值得嗎？
 而且自己一個跑到一個人生地不熟的地方也是挺可怕的

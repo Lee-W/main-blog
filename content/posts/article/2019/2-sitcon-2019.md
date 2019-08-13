@@ -4,7 +4,7 @@ Category: Tech
 Tags: Conference, SITCON
 Slug: sitcon-2019
 Authors: Lee-W
-Summary: 
+Summary:
 
 SITCON 都過了兩個禮拜
 好不容易才騰出個時間整理一下想法
@@ -17,6 +17,7 @@ SITCON 都過了兩個禮拜
 就當作整合進這篇吧 xD
 
 ### 第一次站上中研院的舞台
+
 這是我第一次以講者的身份站在中研院的台上
 主要分享去年 X-Village 辦課程的經驗
 不過不出意外的，這樣的議題大家不會太感興趣 XD
@@ -61,6 +62,7 @@ SITCON 都過了兩個禮拜
 * [共筆](https://hackmd.io/P-oMfddFSuWbEeFX1WfIVg#X-Village---用不到兩個月準備兩個月的課程)
 
 ### 身為會眾
+
 比起之前參加的幾場 SITCON
 這次應該是我參加的議程最少的一次
 大概有一半的時間都在外面的攤位閒晃 xD
@@ -71,9 +73,10 @@ SITCON 都過了兩個禮拜
 當然每年還是要參與一下編輯器大亂鬥
 今年終於不再是 vim 跟 emacs 互鬥，然後還把對方擦掉了 xDD
 
-<img src="{static}/images/posts-image/2019-04-07-SITCON-2019/vs_code_wins.jpeg" alt="vs_code_wins" width="50%"/>
+![vs_code_wins]({static}/images/posts-image/2019-04-07-SITCON-2019/vs_code_wins.jpeg){: style="width:50%"}
 
 ### 講者晚宴
+
 這也是這次 SITCON 我蠻期待的一個活動
 難得有機會能這樣子跟各路大神交流
 不然每次參加 conference ，好像都沒有交到新朋友

@@ -4,7 +4,7 @@ Category: Tech
 Tags: Conference, MOPCON
 Slug: mopcon-2018
 Authors: Lee-W
-Summary: 
+Summary:
 
 今年其實是因為拿到去年講者用不到的邀請票才來參加的 xD
 總結來說，我覺得這趟來還算是蠻有收穫的
@@ -23,6 +23,7 @@ Summary:
 * [共筆連結](https://hackmd.io/c/mopcon-2018/%2FQeQiI7PvSeG5EdDQyb9NmQ)
 
 ## Day 1
+
 第一天比較有趣的是`從菜鳥警察到資料戰警`, `用 Drone 改善團隊自動化測試及部署流程`
 原本讓我有考慮來 MOPCON 就是想來聽聽 Drone 的使用
 不過果然還是要自己玩玩看才會知道怎麼用啊 xD
@@ -32,6 +33,7 @@ Summary:
 還好我很巧妙的避開了（？？？
 
 ## Day 2
+
 第二天我就幾乎都在 Unconference 了
 一般議程只聽了開頭 jserv 的`智慧電網背後的軟體建設` 跟結尾的`Flutter 踩雷心得`
 
@@ -54,4 +56,5 @@ Summary:
 還有如何叫老闆買新電腦（誤
 
 ### Lighting Talk
+
 話說今年好像彩蛋題太難解，好多場 Lighting Talk 都在講要怎麼打 MOPCON 的官方 APP xDDD

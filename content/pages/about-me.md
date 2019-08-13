@@ -21,12 +21,15 @@ Beside programming skills, I also have experience in management and coordinate p
 -----
 
 ## Skill
+
 * **Intermidate**: Python, Web Backend Development, Git, Linux  
 * **Beginner**: Docker, Project Management, Data Analysis, Java
 
 
 ## Experience
+
 ### [Apr 2017 - Present]
+
 **Software Engineer, [Slice Technologies, Inc](https://www.slice.com/about)**
 
 * Designed and developed the backend of a data labeling system that automates the interaction between crowdsourcing workers and experts. Implemented the system through [Flask](http://flask.pocco.org), achieved test coverage higher than 90% and set up the CI/CD pipeline
@@ -34,6 +37,7 @@ Beside programming skills, I also have experience in management and coordinate p
 * Begin with analyzing template extraction problem
 
 ### [Jan 2019 - March 2019]
+
 **Project Manager, [DLT Lab](https://dlt.csie.ncku.edu.tw)**
 
 * Containerized and fixed legacy projects in [The Mosquito Man](https://github.com/the-mosquito-man)
@@ -41,6 +45,7 @@ Beside programming skills, I also have experience in management and coordinate p
 * Set up a [drone](https://github.com/drone/drone) CI/CD server and created CI pipelines for two ongoing projects
 
 ### [May 2018 - Nov 2018]
+
 **Chief Teaching Assistant, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
 
 * Managed the executive team with 16 members
@@ -51,10 +56,12 @@ Beside programming skills, I also have experience in management and coordinate p
 *X-Village* is an experimental education program aiming to equip students not major in computer science with the ability of computational thinking and to enhance future cooperation between computer science and other areas. 
 
 I was the executor of the program and the leader of the teaching assistant team. Besides, I designed a half day exercise for *Data Structure* and lectured a four-hour web backend course for *Web Programming, Database/Cloud Computing*.
+
 * [Website](https://sites.google.com/view/x-village/home?authuser=0)
 * [Facebook Fan Page](https://www.facebook.com/X-Village-423736361424301/)
 
 ### [July 2015 - July 2016]
+
 **Substitute Military Service, K-12 Education Administration, Ministry of Education**
 
 * Maintained legacy systems implemented in multiple languages (e.g., `C#`, `VBScript`, `PHP`, and etc.)
@@ -62,6 +69,7 @@ I was the executor of the program and the leader of the teaching assistant team.
 * Delivered a human resource management system using [django](https://www.djangoproject.com)
 
 ## Education
+
 [2016-2018]
 **Master, Computer Science and Information Engineering**
 National Cheng Kung University, Tainan
@@ -73,8 +81,8 @@ GPA: 4.16/4.3
 National Cheng Kung University, Tainan
 GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 
-
 ## Talk and Tutorial
+
 **[2019/03/24]**
 SITCON 2019
 [X-Village - 用不到兩個月準備兩個月的課程](https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng)
@@ -106,15 +114,18 @@ NCKU CSIE - Introduction to Knowledge Discovery and Data Engineering (知識挖�
 For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-village-crud-in-flask).
 
 ## Award
+
 * Honorable Mention, 2013 Railway Application Section Problem Solving Competition
 
 ## Publication
+
 1. Wei Lee, Chien-Wei Chang, Po-An Yang, Chi-Hsuan Huang, Ming-Kuang Wu, Chu-Cheng Hsieh, Kun-Ta Chuang **"Effective Quality Assurance for Data Labels through Crowdsourcing and Domain Expert Collaboration"** 21st International Conference on Extending Database Technology, Demo Track (EDBT-2018)
 2. I-Lin Wang, Wei Lee,  Chiao-Yu Liao **"Effective Heuristics for Scheduling Hump and Pullback Engines in Railroad Yard Operational Plans"** Proceedings of the 10th Annual Conference of the Operations Research Society at Taiwan (ORSTW 2013)
 
 ## Additional Experience
 
 #### Open Source Contributions
+
 * [git-extras](https://github.com/Lee-W/git-extras) ([tj/git-extras](https://github.com/tj/git-extras))
 * [flask](https://github.com/Lee-W/flask) ([pallets/flask](https://github.com/pallets/flask))
 * [beeeware](https://beeware.org)
@@ -132,35 +143,43 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-v
     * Update [templater](https://github.com/Lee-W/templater) to Python3 and release [templater3](https://pypi.org/project/templater3/)
 
 #### Web
+
 * [SITW 二手網](http://sitw-trade.herokuapp.com) (Backend Development)
 
 #### Chat Bot
+
 * [Dengue Line Bot Server](https://github.com/NCKU-CCS/line_bot_server)
 * [Telegram EchoBot](https://github.com/Lee-W/telegram_echobot)
 * [Line EchoBot](https://github.com/Lee-W/line_echobot)
 
 #### Utility
+
 * [Flickr Album Downloader](https://github.com/Lee-W/Flickr_Album_Downloader)
 * [LINE Message Parser](https://github.com/Lee-W/LineMessageParser)
 * [PttCraweler](https://github.com/Lee-W/PttCrawler)
 
 #### NCKU Related
+
 * [NCKU Grade](https://github.com/Lee-W/NCKU_Grade)
 * [NCKU Course Parser](https://github.com/Lee-W/nckucourseparser)
 * [NCKU Course Checker](https://github.com/Lee-W/NCKU-course-checker)
 
 ## Tutorial and Study Note
+
 #### Slide
+
 * [Git Tutorial](https://github.com/Lee-W/git-tutorial)
     * Sample: [Git-Tutorial-Sample](https://github.com/Lee-W/Git-Tutorial-Sample)
 
 #### Books
+
 * [Learning Python 5e Note](https://github.com/Lee-W/Learning_Python)
 * [Python Cookbook](https://github.com/Lee-W/Python_Cookbook)
 * [The Clean Code](http://lee-w.github.io/posts/tech/2018/11/the-clean-code/)
 * [The Clean Coder](http://lee-w.github.io/posts/tech/2018/11/the-clean-coder/)
 
 #### MOOCs
+
 * [Machine Learning (Coursera)](https://github.com/Lee-W/Machine-Learning-Coursera)
 * [Intro to Machine Learning](https://github.com/Lee-W/Intro_to_Machine_Learning_Udacity)
 * [Intro to Data Science Udacity](https://github.com/Lee-W/Intro_to_Data_Science_Udacity)
