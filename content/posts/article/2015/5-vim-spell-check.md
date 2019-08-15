@@ -21,10 +21,9 @@ Bundle 'vimspell'
 
 接著用 `:BundleInstall` 安裝
 
-
 ## 字典檔
-到下面的網站下載字典檔
-http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/dictionaries/
+
+[下載字典檔](http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/dictionaries/)
 
 我下載的是 `en_US.zip`
 

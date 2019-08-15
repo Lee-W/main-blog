@@ -82,8 +82,7 @@ gitbook serve
 ## 輸出
 
 在 export 前，需要為 pdf, epub, mobi 三種格式多安裝程式才能使用
-先到的官網下載 Calibre
-http://calibre-ebook.com/download
+先到的官網下載 [Calibre](http://calibre-ebook.com/download)
 
 以 mac 為例
 需要下面這個指令，為 ebook-covert 建立一個捷徑，讓 gitbook 可以找到這個功能
@@ -112,16 +111,19 @@ gitbook mobi ./
 
 接下來的操作就跟 git 基本上是一樣的，init, add, commit ... 等
 只有在 remote 的設定有點不同
-```
+
+```shell
 git remote add gitbook "URL"
 git push -u gitbook
 ```
+
 這裡要輸入的帳號、密碼是 gitbook 上的，不是與其連結的帳號的
 如果還沒設定就要再去自己的 profile 內設定
 
 <a name="reference"></a>
 
 ## Reference
+
 * [Gitbook](https://github.com/GitbookIO/gitbook)
 * [GitBook Documentaion](http://help.gitbook.io/index.html)
 * [深入淺出 GitBook 寫作與自助出版，電子書也能多人協作](http://www.codedata.com.tw/social-coding/gitbook-self-publishing/)

@@ -4,9 +4,8 @@ Category: Tech
 Tags: Python, Conference, PyCon
 Slug: PyCon-TW-2017-Sprint
 Authors: Lee-W
-Summary: 
+Summary:
 Series: PyCon TW 2017
-
 
 這天的 Sprint 是由今年的 Keynote Speaker - Russell Keith-Magee 帶來他的開源專案[BeeWare](https://pybee.org)
 讓大家一起來貢獻
@@ -35,14 +34,13 @@ Russell 都會很友善地回答問題
 只要送了 PR 就可以得到[Challenge Coins](https://pybee.org/contributing/challenge-coins/)
 拿到這個 challenge coin 其實還蠻開心的 xd
 
-
-<img src="{static}/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/2-challenge-coin.jpg" alt="Challenge Coin" width="30%">
+![Challenge Coin]({static}/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/2-challenge-coin.jpg){: style="width:30%"}
 
 最後再附上在 twitter 上，這次參與 spinrt 的大合照
-<img src="{static}/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/3-all.jpg" alt="all" width="50%">
+![all]({static}/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/3-all.jpg){: style="width:50%"}
 
 2017/6/22
-折騰了許久，我的[PR](https://github.com/pybee/batavia/pull/569) 終於被 merge 回 batavia 了 xd
+折騰了許久，我的[PR](https://github.com/pybee/batavia/pull/569) 終於被 merge 回 batavia 了 XD
 
 ---
 

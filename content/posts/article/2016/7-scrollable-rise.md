@@ -4,8 +4,7 @@ Category: Tech
 Tags: Python, Jupyter, reveal.js
 Slug: scrollable-rise
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 RISE 是一套結合[jupyter-notebook](http://jupyter.org) 和[reveal.js](http://lab.hakim.se/reveal-js/#/) 的專案
 讓我們能在 jupyter notebook 直接開啟如同 reveal.js 的 slide
@@ -40,6 +39,6 @@ RISE 是一套結合[jupyter-notebook](http://jupyter.org) 和[reveal.js](http:/
 **damianavila commented on Jul 12**
 After several and long discussions with a lot of people, we have arrived to the conclusion that scrolling on reveal.js based slideshows brings more problems than benefits, so I will not add the scrolling as a default option BUT we should clearly document how to get scrolling slides with the config option available. I will mark this as a docs issue and prioritize properly.
 
+## Reference
 
-# Reference
-[scrolling vertically #185](https://github.com/damianavila/RISE/issues/185)
+* [scrolling vertically #185](https://github.com/damianavila/RISE/issues/185)

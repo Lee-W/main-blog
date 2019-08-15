@@ -19,7 +19,7 @@ Series: Line Bot Tutorial
   之後可以選擇付費升級為入門版等更多功能的版本
   主要拿來做正式發佈用的帳號
 
-* ` 開始使用 Developer Trial` 則是 Developer 的帳號
+* `開始使用 Developer Trial` 則是 Developer 的帳號
   雖然一開始就能使用 Push API，但好友人數只有 50 人
   如果還在開發階段，就適合辦這個帳號來測試
   不過需要注意的是 developer 帳號，並不能接升級成一般帳號
@@ -70,7 +70,6 @@ Series: Line Bot Tutorial
 再回到帳號清單就會看到，帳號已經開通 Messaging API 了
 ![9_finish_all_setting]({static}/images/posts-image/2016-11-22-apply-line-messaging-api/io9LuHs.png)
 
-
 進到 `LINE Developers` 就能取得你的 Channel Secret 和 Channel Access Token 了
 （這些都是運用 Line Messaging API 會用到的）
 
@@ -81,6 +80,6 @@ Series: Line Bot Tutorial
 另外要注意的是 `Webhook URL`
 這裡之後要填的就是你的 Server 的 Webhook url
 
-# Reference
+## Reference
 
 * [Enable the Messaging API for your LINE@ account](https://developers.line.me/messaging-api/getting-started#apply_messagingapi)

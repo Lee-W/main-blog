@@ -1,4 +1,4 @@
-Title: 解決安裝 IRKernel 缺少 zmq.h 
+Title: 解決安裝 IRKernel 缺少 zmq.h
 Date: 2016-02-20 03:42
 Category: Tech
 Tags: R, Jupyter
@@ -51,5 +51,6 @@ jupyter console --kernel=ir
 ![R_in_jupyter]({static}/images/posts-image/2016-02-20-resolve-irkernel-missing-zmqh/pWf6j0q.png)
 
 ## Reference
+
 * [Failed to install rzmq #50](https://github.com/IRkernel/IRkernel/issues/50)
 * [IRkernel](https://github.com/IRkernel/IRkernel)

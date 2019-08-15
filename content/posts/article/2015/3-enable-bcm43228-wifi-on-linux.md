@@ -4,8 +4,7 @@ Category: Tech
 Tags: Linux-Unix, Dual Boot
 Slug: enable-bcm43228-wifi-on-linux
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 最近本來下定決心要來玩 arch linux
 結果竟然被筆電的網卡搞死了
@@ -17,16 +16,20 @@ Summary:
 <!--more-->
 
 先確定你的網卡是不是 BC43228
+
 ```shell
 lspci | grep Network
 ```
 
 如果是的話就能開始進行安裝了
+
 ```shell
 sudo apt-get install linux-headers-generic
 sudo apt-get install --reinstall bcmwl-kernel-source
 ```
+
 如果成功的話，Wifi 應該馬上就能用了
 
-# Reference
-[Ubuntu14.04 Acer Aspire V5 571 Broadcom BCM43228 WiFi - BeyondLogic](http://wiki.beyondlogic.org/index.php?title=Ubuntu14.04_Acer_Aspire_V5_571_Broadcom_BCM43228_WiFi)
+## Reference
+
+* [Ubuntu14.04 Acer Aspire V5 571 Broadcom BCM43228 WiFi - BeyondLogic](http://wiki.beyondlogic.org/index.php?title=Ubuntu14.04_Acer_Aspire_V5_571_Broadcom_BCM43228_WiFi)

@@ -4,15 +4,15 @@ Category: Tech
 Tags: Inspiring, Vim
 Slug: article-man-theory
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 這篇文實在太有趣了，還是該留下來做個紀錄 XD
 
 <!--more-->
 
 # 男子漢理論
-```
+
+```text
 真正的男子漢 programmer 是不會用那些亂七八糟，花枝招展的，所謂整合開發環境。
 真正的男子漢 programmer 就是直接用 emacs, 或是 vi 這些男子漢編輯器直接寫程式。
 如果你不知道這是甚麼東東，簡單來說，就是男子漢用的”記事本”。

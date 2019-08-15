@@ -13,9 +13,9 @@ Series: Line Bot Tutorial
 * 貼圖 (Line Bot 所能使用的[貼圖清單](https://devdocs.line.me/files/sticker_list.pdf))
 * Imagemap
 * Tempalte
-  * Button
-  * Confirm
-  * Carousel
+    * Button
+    * Confirm
+    * Carousel
 
 大部分使用上很直覺，可以直接參考[API Reference - Messaging API](https://devdocs.line.me/en/) 和[line-bot-sdk-python](https://github.com/line/line-bot-sdk-python)
 
@@ -58,7 +58,7 @@ Template 分為 Button, Confirm 跟 Carousel 三種
 * Button 一次可以支援四個 action
 * Confirm 支援三個 action
 * Carousel 則可以用 5 個 CarouselColumn，每一個 Column 支援 3 個 Action
-	* 另外需要注意的是 Carousel 中每一個 Column 的 action 數量必須是一樣的
+    * 另外需要注意的是 Carousel 中每一個 Column 的 action 數量必須是一樣的
 
 # Action
 
@@ -72,7 +72,7 @@ e.g. 這是我按下上面 Button 的 postback 的效果
 ## Postback
 
 當使用者按了這個按鍵
-Line Server 會傳一個 postback event 給我們，裡面包含著 data 參數中設定的字串 
+Line Server 會傳一個 postback event 給我們，裡面包含著 data 參數中設定的字串
 在收到 event 的時候，透過 `event.postback.postback.data` 取出 data
 
 Postback 可以不給 text 參數
@@ -86,7 +86,7 @@ text 參數在 Message Action 是必須的，也不能給空字串
 
 使用者按下這個按鍵就會用 Line 的瀏覽器跳到外部網頁
 
-# Reference
+## Reference
 
-- [API Reference - Messaging API](https://devdocs.line.me/en/#template-messages)
-- [line-bot-sdk-python](https://github.com/line/line-bot-sdk-python#templatesendmessage---buttonstemplate)
+* [API Reference - Messaging API](https://devdocs.line.me/en/#template-messages)
+* [line-bot-sdk-python](https://github.com/line/line-bot-sdk-python#templatesendmessage---buttonstemplate)

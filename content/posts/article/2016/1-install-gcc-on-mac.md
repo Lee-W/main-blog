@@ -4,8 +4,7 @@ Category: Tech
 Tags: C++, mac, Deprecated
 Slug: install-gcc-on-mac
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 最近用 brew 來安裝 gcc 5.3，一直卡在 `make --bootstrap`
 放了幾個小時還是停在這
@@ -19,6 +18,7 @@ Summary:
 而 compile gcc 需要非常長的時間
 根據 Reference 中的文章，至少要超過 45 分鐘 ( 雖然我放了一天還是沒好 )
 
-# Reference
-- [brew install gcc too time consuming](http://stackoverflow.com/questions/24966404/brew-install-gcc-too-time-consuming)
-- [brew install gcc /Mac OS 10.9 Mavericks](http://superuser.com/questions/788256/brew-install-gcc-mac-os-10-9-mavericks)
+## Reference
+
+* [brew install gcc too time consuming](http://stackoverflow.com/questions/24966404/brew-install-gcc-too-time-consuming)
+* [brew install gcc /Mac OS 10.9 Mavericks](http://superuser.com/questions/788256/brew-install-gcc-mac-os-10-9-mavericks)

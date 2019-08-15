@@ -4,7 +4,7 @@ Category: Tech
 Tags: Vim, Neovim
 Slug: common-neovim-problems
 Authors: Lee-W
-Summary: 
+Summary:
 
 <!--more-->
 
@@ -22,7 +22,7 @@ ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
 pip install neovim
 ```
 
+## Reference
 
-# Reference
-- [.nvimrc doesn't seem to be loaded up or working and it cannot create backups on editing existing files](https://github.com/neovim/neovim/issues/3536)
-- [No python interpreter found.](https://github.com/neovim/neovim/issues/1755)
+* [.nvimrc doesn't seem to be loaded up or working and it cannot create backups on editing existing files](https://github.com/neovim/neovim/issues/3536)
+* [No python interpreter found.](https://github.com/neovim/neovim/issues/1755)

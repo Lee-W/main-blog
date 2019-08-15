@@ -4,27 +4,31 @@ Category: Tech
 Tags: Chat Bot, Flask
 Slug: create-a-telegram-echobot
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 最近當助教要出一個 Telegram Bot 相關的 Project
 先來寫一篇簡單的教學，減少之後的問題 XDD
 
 <!--more-->
 
+[TOC]
+
 如果對 Chat Bot 的基本運作概念不太熟
 可以參考[[Bot] Introduction to Chatbot](http://lee-w.github.io/posts/bot/2016/11/introduction-to-chatbot/#introduction-to-chatbot)
 
 ## What is Telegram
+
 在台灣，好像還沒有那麼多人用 Telegram
 簡單來說就跟 Facebook Messenger 或 Line 這類的 IM 差不多
 
 ## Why Telegram
+
 至於這次為什麼要選用 Telegram 麻
 是因為上次有聽其他開發者說 Telegram Bot 提供相當多的功能
 就想說來試試看
 
 ## Web Framework
+
 上次寫 Line EchoBot 的教學是用 django
 這次來試試 Flask
 
@@ -36,20 +40,21 @@ Source Code 一樣放在 GitHub 上
 只是架構比較複雜，有試一下 Flask 的 blueprint，之後可能還會多加一些奇怪的功能 xd
 
 ## Apply a telegram bot
+
 首先當然必須要有[Telegram](https://telegram.org) 的帳號
 再來要加[BotFather](https://telegram.me/botfather) 為好友
 
 跟他說 `/newbot`
 接著他會問你，Bot 的 name 跟 username
 
-- name 是 Bot 在聯絡人資訊顯示的名稱
-- username 則比較像 id 的概念，而且一定要用 Bot 結尾
+* name 是 Bot 在聯絡人資訊顯示的名稱
+* username 則比較像 id 的概念，而且一定要用 Bot 結尾
 
 之後就會得到剛申請 Bot 的 API Token
 然後你就可以從 `https://telegram.me/<bot_username>` 找到剛申請的 bot
 
-
 ## Telegram Bot API Wrapper
+
 開發上，我使用的是[python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot)
 
 ```shell
@@ -62,6 +67,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)
 而它是兩種都支援
 
 ## Star Programming
+
 先附上全部的 code，後面再慢慢解釋
 
 ```python
@@ -98,8 +104,8 @@ if __name__ == "__main__":
     app.run()
 ```
 
+### Setup
 
-### Setup 
 其中有兩個地方，必須要改成自己的設定
 
 #### 1. API Token
@@ -107,9 +113,11 @@ if __name__ == "__main__":
 ```python
 bot = telegram.Bot(token='Your API Token')
 ```
+
 Your API Token 要改成剛剛取得的 API Token
 
 #### 2. Webhook URL
+
 _set_webhook 中的 Your URL
 
 ```python
@@ -124,6 +132,7 @@ statue = bot.set_webhook('https://Your URL/hook')
 之後要 production 的時候，在 deploy 到適當的 server 就好了
 
 ### \_set\_webhook
+
 Telegram 有兩種接收訊息的方式
 隨時去監聽的 webhook，和主動去要求更新的 `get_updates`
 這裡使用的是 webhook
@@ -150,6 +159,7 @@ if __name__ == "__main__":
 ```
 
 ### wehook\_handler
+
 這裡就是 bot 收到訊息要怎麼處理
 
 ```python
@@ -188,5 +198,6 @@ from flask import Flask, request
 接下來可以從[python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) 的[wiki](https://github.com/python-telegram-bot/python-telegram-bot/wiki)，試更多 Telegram Bot 的功能
 
 ## Reference
-- [Simple-Echo-Telegram-Bot](https://github.com/sooyhwang/Simple-Echo-Telegram-Bot)
-- [開發 Telegram Bot 簡介](http://blog.30sparks.com/develop-telegram-bot-introduction/)
+
+* [Simple-Echo-Telegram-Bot](https://github.com/sooyhwang/Simple-Echo-Telegram-Bot)
+* [開發 Telegram Bot 簡介](http://blog.30sparks.com/develop-telegram-bot-introduction/)

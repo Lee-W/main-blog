@@ -1,11 +1,10 @@
 Title: 解決更新 gcc 找不到 libgfortran.3.dylib (Octave,R)
 Date: 2016-06-11 03:13
-Category: Tech 
+Category: Tech
 Tags: R, mac
 Slug: solve-libgfortran3dylib-not-found
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 最近在 mac 上更新了 gcc 6 後，不管是開 Octave 還是 R
 都會出現以下的錯誤訊息
@@ -27,5 +26,6 @@ Trace/BPT trap: 5
 ln -s /usr/local/lib/gcc/5/ /usr/local/lib/gcc/6/
 ```
 
-# Reference
-[R and julia won't start after upgrade (perhaps gcc 5.1, Xcode 6.3.2, or Command Line Tools 6.3)](https://github.com/Homebrew/legacy-homebrew/issues/39929)
+## Reference
+
+* [R and julia won't start after upgrade (perhaps gcc 5.1, Xcode 6.3.2, or Command Line Tools 6.3)](https://github.com/Homebrew/legacy-homebrew/issues/39929)

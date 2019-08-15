@@ -479,8 +479,7 @@ ngrok http 8000
 `Settings` -> `Bot Settings` 把它關掉
 或者到 `Messages` -> `Auto Reply Message` 做修改訊息內容
 
-
-# Reference 
+## Reference
 
 * [新版 Line@ Messaging API 使用心得 (Line Bot v2)
 ](http://studyhost.blogspot.tw/2016/10/line-messaging-api-line-bot-v2.html)

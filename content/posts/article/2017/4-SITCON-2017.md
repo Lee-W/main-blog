@@ -4,8 +4,7 @@ Category: Tech
 Tags: Conference, SITCON
 Slug: sitcon-2017
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 聽說這次 SITCON 一分鐘就賣完了＠＠
 還好我申請了開源貢獻票 xdddd
@@ -13,28 +12,30 @@ Summary:
 
 <!--more-->
 
-- [RO 共筆](https://hackmd.io/GYVgRgHAzALA7ABgLRjCGSYFMBMckCcOAJlEjjAnHAIYBsdIcwAjEA==?edit)
-- [R1 共筆](https://hackmd.io/JwdgRgTAjCEQtAMygBhPALBiAOeOBTAYwGZ4ATAVmAMuxUsQxCA=?both)
-- [R2 共筆](https://hackmd.io/CwVgnARghlBMAcBaAzAdgGzscDAzRUuUqi8AJrshBAAyqwCMZEQA?both)
-- [R3 共筆](https://hackmd.io/MwNhBYFMDMCMEMC0BWADARnI85kkbMDogEwDsssJwJAxrGarEA==?both)
-
+* [RO 共筆](https://hackmd.io/GYVgRgHAzALA7ABgLRjCGSYFMBMckCcOAJlEjjAnHAIYBsdIcwAjEA==?edit)
+* [R1 共筆](https://hackmd.io/JwdgRgTAjCEQtAMygBhPALBiAOeOBTAYwGZ4ATAVmAMuxUsQxCA=?both)
+* [R2 共筆](https://hackmd.io/CwVgnARghlBMAcBaAzAdgGzscDAzRUuUqi8AJrshBAAyqwCMZEQA?both)
+* [R3 共筆](https://hackmd.io/MwNhBYFMDMCMEMC0BWADARnI85kkbMDogEwDsssJwJAxrGarEA==?both)
 
 這次大概就這兩場比較印象深刻
 
 ## 前端工程的過去、現在與未來
+
 [slide](http://slides.com/tz5514/deck-1-2#/)
 
 整體算是給完全不懂前端的我，關於前端的知識 overview
 
 ### Present
-- [Webpack](https://webpack.github.io) 未來可能取代 Gulp 與 grunt
-- [Babel](https://babeljs.io): 目前最主流的 Javascript Transpiler
-	- e.g. 轉換 ES6 -> ES5  
-- 雖然 ES6 支援模組標準，但瀏覽器尚未有定論，目前前端依然無法支援模組
-	- 可以用 webpack 打包來模擬
-- 非同步處理 : ES6 Promise, async/await
+
+* [Webpack](https://webpack.github.io) 未來可能取代 Gulp 與 grunt
+* [Babel](https://babeljs.io): 目前最主流的 Javascript Transpiler
+    * e.g. 轉換 ES6 -> ES5
+* 雖然 ES6 支援模組標準，但瀏覽器尚未有定論，目前前端依然無法支援模組
+    * 可以用 webpack 打包來模擬
+* 非同步處理 : ES6 Promise, async/await
 
 ## 第一次做光劍就上手
+
 [slide](https://www.slideshare.net/mobile/ssuserb8be06/ss-73305383)
 
 雖然隔壁兩場，一場在講 Chat Bot，一場在講 AI
