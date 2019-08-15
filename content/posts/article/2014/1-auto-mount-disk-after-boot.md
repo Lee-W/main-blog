@@ -4,8 +4,7 @@ Category: Tech
 Tags: Linux-Unix, Dual Boot
 Slug: auto-mount-disk-after-boot
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 分割區的掛載資訊，存在 /etc/fstab 中，所以需要自動掛載分割區時可以針對此檔案做修改
 需要注意的是，如果設定不好，可能會沒辦法開機的！！！
@@ -18,7 +17,7 @@ Summary:
 sudo cat /etc/fstab
 ```
 
-```
+```text
 # /etc/fstab: static file system information.
 #
 # Use 'blkid' to print the universally unique identifier for a
@@ -33,13 +32,14 @@ UUID=72b6a10a-f0b6-43ef-927d-0d74673febe7 none            swap    sw            
 #data
 UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 ```
+
 \# 是註解
 最後六行是比較重要的
 1~2 是 root 的掛載
 3~4 是 swap 的掛載
 5~6 是我自己的 data 的掛載
 
-```
+```text
 #data
 UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 ```
@@ -49,7 +49,7 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 1. 掛載硬碟的標籤
     - 掛載硬碟的標籤我用的是 UUID 的標籤，可以用下面的指令查詢
     `ls -l /dev/disk/by-uuid/`
-    - 也可以直接使用 /dev/sda1 這樣的格式，只是如果硬碟的代號改變，就要再去手動改變比較麻煩 
+    - 也可以直接使用 /dev/sda1 這樣的格式，只是如果硬碟的代號改變，就要再去手動改變比較麻煩
 2. 掛載位置
     - 掛載的位置要是一個已經存在的位置，建議是一個空的資料夾
     - 如果不是空的，裏面的東西應該都會被清空
@@ -64,14 +64,15 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 
 基本上 4 5 6 我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到
 
-# 測試
+## 測試
+
 先看一下是否有掛載成功
 
 ```sh
 df
 ```
 
-```
+```text
 檔案系統         1K-區段      已用      可用 已用 % 掛載點
 /dev/sda1      103081248   9259936  88562048   10% /
 none                   4         0         4    0% /sys/fs/cgroup
@@ -82,6 +83,7 @@ none             4006840      1032   4005808    1% /run/shm
 none              102400        44    102356    1% /run/user
 /dev/sda6      459942908 229176172 230766736   50% /media/lee/data
 ```
+
 像我的最後面就出現了 data
 
 之後暫時將它卸載 (若 `df` 之後，分割區沒有出現，那就不用做這步了)
@@ -114,5 +116,6 @@ df
 
 如果有任何異常，就去看一下 /etc/fstab 是不是有哪裡寫錯了
 
-# Reference
+## Reference
+
 [巴特的微花盆： 筆記： Linux 中設定開機時自動掛載分割區](http://255121.blogspot.tw/2010/05/linux.html)

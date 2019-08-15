@@ -4,8 +4,7 @@ Category: Tech
 Tags: C++, Thread
 Slug: how-to-create-thread-in-c-plus-plus
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 之前因為作業需要使用到 multi-thread，就留下了這篇紀錄
 這篇會稍微介紹 C++11 的 `thread` 函式庫，還有一點點和 `pthread`
@@ -25,9 +24,9 @@ join 是開啟這個 thread 的上層程式必須等待到這個 thread 的工�
 
 那就直接來看 code 吧
 
+## C++ 11 thread
 
-# C++ 11 thread
-## 在 main 裡面直接開啟 thread
+### 在 main 裡面直接開啟 thread
 
 直接宣告 thread 型態的變數
 thread 的 constructor 的第一個參數是函數名稱，第二個以後就是原本函數的參數
@@ -35,7 +34,7 @@ thread 的 constructor 的第一個參數是函數名稱，第二個以後就是
 ```cpp
 #include <iostream>
 #include <thread>
-using namespace std;    
+using namespace std;
 
 void fun1() {
         cout<<"This is funtion1"<<endl;
@@ -56,8 +55,8 @@ main(){
 這樣就可以產生兩個 thread，他們會彼此搶 CPU 的資源
 cout 似乎是每一個 << 會去搶一次，所以如果想要一次印完全部，可能可以考慮使用 printf 或者是 thread 的 lock 功能
 
+### 在 class 內開啟 thread
 
-## 在 class 內開啟 thread
 用上面的方法直接呼叫同個 class 的 function 會出現錯誤
 所以就必須用下面的方法
 在宣告 thread 的時候
@@ -128,7 +127,6 @@ main()
 }
 ```
 
-
 ## 基本的 pthread 使用
 
 ```cpp
@@ -156,11 +154,13 @@ main()
         pthread_join(t1,NULL);
 }
 ```
+
 至於 pthread 如何用在 class 的 function 上
 可以將 function 加上 static
 同樣第 3 個參數也要改成 &A::fun1
 
-# Reference
-- [資訊小兵的胡言亂語 : [C++] Thread Function 相關測試](http://programmingpaul.blogspot.tw/2013/08/c-thread-function.html)
-- [解析 Linux 中多線程編程並傳遞多個參數實例](http://17089349.blog.hexun.com.tw/65836836_d.html)
-- [linux 下 C/C++, 多线程 pthread](http://www.cnblogs.com/xianghang123/archive/2011/08/11/2134927.html)
+## Reference
+
+* [資訊小兵的胡言亂語 : [C++] Thread Function 相關測試](http://programmingpaul.blogspot.tw/2013/08/c-thread-function.html)
+* [解析 Linux 中多線程編程並傳遞多個參數實例](http://17089349.blog.hexun.com.tw/65836836_d.html)
+* [linux 下 C/C++, 多线程 pthread](http://www.cnblogs.com/xianghang123/archive/2011/08/11/2134927.html)

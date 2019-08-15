@@ -4,8 +4,7 @@ Category: Tech
 Tags: Linux-Unix, Dual Boot
 Slug: dual-boot-freebsd-using-grub2
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 其實原本的標題是 `Dual Boot FreeBSD with Ubuntu`
 這篇文章寫的都是用 Ubuntu 測試的
@@ -17,12 +16,13 @@ Summary:
 
 ### 更改 grub 的設定檔
 
-```shell  
+```shell
 vi /etc/grub.d/40_Custom
 ```
 
 加入下面這幾行
-```
+
+```text
 menuentry "FreeBSD (/boot/loader)" {
     insmod ufs2
     set root=(hd0,1,a)
@@ -34,23 +34,27 @@ menuentry "FreeBSD (/boot/loader)" {
 `(hd0,1,a)` 要根據你的 FreeBSD 灌在磁碟的哪一塊決定
 
 ### 更新 grub 設定檔
+
 ```shell
 sudo update-grub
 ```
+
 這樣就會在開機選單上看到 FreeBSD 了
 
 其實還有一些其他的設定方法
 可以參考[Set up Grub2 to boot Freebsd](http://unix.stackexchange.com/questions/16886/set-up-grub2-to-boot-freebsd-using-either-ubuntu-tools-or-liveusb-to-find-what-p)
 
-
 ## 換 grub 開機順序
+
 如果希望改變預設的開機順序，就必須要修改下面的檔案 `/etc/default/grub`
+
 ```shell
 vi /etc/default/grub
 ```
 
 會看到下面這串
-```
+
+```text
 GRUB_DEFAULT=0
 #GRUB_HIDDEN_TIMEOUT=0
 GRUB_HIDDEN_TIMEOUT_QUIET=true
