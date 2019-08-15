@@ -6,6 +6,8 @@ Slug: steal-like-an-artist-10-things-nobody-told-you-about-being-creatvie
 Authors: Lee-W
 Summary:
 
+[TOC]
+
 Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie
 ![Show Your Work]({static}/images/books/GQNwobG.jpg)
 
@@ -17,9 +19,9 @@ Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie
 
 * Wiliam Ralph Inge: 「什麼是原創？就是沒被人看出來的抄襲」
 * Garbage in Gabage out
-  * 藝術是搜集好的想法，但不是囤積狂
+    * 藝術是搜集好的想法，但不是囤積狂
 * Save Your Theft for Latter
-  * 隨時都要養成紀錄的習慣。存在紀錄裡的東西是死的，只又讓它再重新被使用才會活過來
+    * 隨時都要養成紀錄的習慣。存在紀錄裡的東西是死的，只又讓它再重新被使用才會活過來
 * Steal from yourself. e.g. Dream, Memory
 
 ### 2. Don't wait until you know who you're until you get started.
@@ -55,14 +57,14 @@ Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie
 
 * Stand Next to Talent <- Garbage in Garbage out
 * Write Fan Letters
-  * 不用直接寫信給偶像。用行動、作品來像他致敬吧！
+    * 不用直接寫信給偶像。用行動、作品來像他致敬吧！
 
 ### 9. Be boring. (It's the only way to get work done.)
 
 * Gustave Flaubert: 「生活維持常態和規律」，工作上才有衝刺的動力和原創的靈感。
 * ***Make sure how much sleep you get.***
 * Get yourself a calendar.
-  * 在行事曆上記下每日的目標。完成後在行事曆畫一個叉，並且持續維持這個叉的連線
+    * 在行事曆上記下每日的目標。完成後在行事曆畫一個叉，並且持續維持這個叉的連線
 
 ### 10. Creatvity is substraction
 

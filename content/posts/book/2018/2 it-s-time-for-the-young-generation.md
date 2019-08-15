@@ -10,6 +10,8 @@ Summary:
 
 <!--more-->
 
+[TOC]
+
 > The plain fact is that the planet does not need more successful people. But it does desperately need more peacemakers, healers, restorers, storytellers and lovers of every kind. It needs people who live well in their places. It needs people of moral courage willing to join the fight to make the world habitable and humane. And these qualities have little to do with success as we have defined it.
 > –– David W. Orr
 

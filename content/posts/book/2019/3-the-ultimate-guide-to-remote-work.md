@@ -13,6 +13,8 @@ Hope this excerpt would help if you're working remotely or considering it.
 
 <!--more-->
 
+[TOC]
+
 ## Chapter 1: How to Run a Remote Team
 
 * Important ingredients to remote work
