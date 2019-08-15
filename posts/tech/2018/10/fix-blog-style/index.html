@@ -92,10 +92,12 @@
 <p><img alt="your style is bad" src="https://lee-w.github.io/images/posts-image/2018-10-14-fix-blog-style/15385701963828.jpg"></p>
 <p><img alt="problem 1" src="https://lee-w.github.io/images/posts-image/2018-10-14-fix-blog-style/15385699268490.jpg"></p>
 <p><img alt="problem 2" src="https://lee-w.github.io/images/posts-image/2018-10-14-fix-blog-style/15385700601798.jpg"></p>
-<p>整理下來大概有三個問題<br>
-1. 大小標的 margin<br>
-2. 英文前後也空一格<br>
-3. 第二行縮了四分之一字元</p>
+<p>整理下來大概有三個問題</p>
+<ol>
+<li>大小標的 margin</li>
+<li>英文前後也空一格</li>
+<li>第二行縮了四分之一字元</li>
+</ol>
 <h2 id="1-margin">1. 大小標的 margin</h2>
 <p>這應該是三個問題中最簡單的<br>
 但我有點懶得動 CSS ，所以就先不修了 xD</p>
@@ -147,7 +149,7 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 
 <h4 id="pelicaninitpy">pelican/<strong>init</strong>.py</h4>
 <p>既然在 <a href="https://github.com/getpelican/pelican/tree/3.7.1/pelican">pelican</a> 這個 package 中沒有 <code>main.py</code><br>
-那 Python 還能找到 <code>main</code> 就只剩下 <code>__init__.py</code> <br>
+那 Python 還能找到 <code>main</code> 就只剩下 <code>__init__.py</code><br>
 扣除掉一些 parse 指令參數的程式碼<br>
 接下來最像是產生文章的程式碼就是<a href="https://github.com/getpelican/pelican/blob/master/pelican/__init__.py#L147">147行</a> 的 <code>run</code></p>
 <div class="highlight"><pre><span></span>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">generators</span><span class="p">:</span>

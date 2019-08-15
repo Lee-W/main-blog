@@ -80,7 +80,38 @@
 </div>
 
 <div class="row-fluid">
-        <div class="span8 offset2 article-content">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#practical-application-of-personality-detection">Practical Application of Personality Detection</a></li>
+<li><a href="#personality-theory-used-in-this-paper">Personality Theory Used in This Paper</a></li>
+<li><a href="#basic-idea-of-the-method">Basic Idea of the Method</a></li>
+<li><a href="#overview-of-the-method">Overview of the Method</a><ul>
+<li><a href="#1-preprocessing">1. Preprocessing</a></li>
+<li><a href="#2-document-level-feature-extraction">2. Document-level feature extraction</a></li>
+<li><a href="#3-filtering">3. Filtering</a></li>
+<li><a href="#4-word-level-feature-extraction">4. Word-level feature extraction</a></li>
+<li><a href="#5-classfication">5. Classfication</a></li>
+</ul>
+</li>
+<li><a href="#network-architecture-in-detail">Network Architecture in Detail</a><ul>
+<li><a href="#main-steps-7-layers">Main Steps (7 Layers)</a><ul>
+<li><a href="#word-vectorization">Word Vectorization</a></li>
+<li><a href="#sentence-vectorization">Sentence Vectorization</a></li>
+<li><a href="#document-vectorization">Document Vectorization</a></li>
+<li><a href="#classification-yesno">Classification: (Yes/No)</a></li>
+</ul>
+</li>
+<li><a href="#training">Training</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
 
             
             <ul>
@@ -119,7 +150,7 @@
 <h3 id="2-document-level-feature-extraction">2. Document-level feature extraction</h3>
 <p>Mairesse baseline feature set (e.g. word count, average sentence length)</p>
 <h3 id="3-filtering">3. Filtering</h3>
-<p>Sentences without personliaty clues are dropped<br>
+<p>Sentences without personliaty clues are dropped<br/>
 (Based on <a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm">NRC Word-Emotion Association Lexicon</a>)</p>
 <h3 id="4-word-level-feature-extraction">4. Word-level feature extraction</h3>
 <ul>
@@ -142,7 +173,7 @@
 </ul>
 </li>
 <li>Predict<ul>
-<li>Yes / No (5 different personality traits are trained seperately) </li>
+<li>Yes / No (5 different personality traits are trained seperately)</li>
 </ul>
 </li>
 </ul>
@@ -151,9 +182,9 @@
 <h4 id="word-vectorization">Word Vectorization</h4>
 <ul>
 <li>Layer 1: Input<ul>
-<li><span class="math">\( R ^{D \times S\times W \times E}\)</span> </li>
+<li><span class="math">\(R ^{D \times S\times W \times E}\)</span></li>
 <li>Use Google's pretrained word2vec</li>
-<li>In implementation, all the documents contain the same number of sentences.<br>
+<li>In implementation, all the documents contain the same number of sentences.<br/>
   Shorter documents are padded shorter sentences with dummy words.</li>
 </ul>
 </li>
@@ -161,7 +192,7 @@
 <h4 id="sentence-vectorization">Sentence Vectorization</h4>
 <ul>
 <li>Layer 2: Convolution<ul>
-<li>3 convolutional filters: unigram, bigram, trigram </li>
+<li>3 convolutional filters: unigram, bigram, trigram</li>
 </ul>
 </li>
 <li>Layer 3: Max Polling</li>

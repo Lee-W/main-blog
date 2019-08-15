@@ -144,8 +144,7 @@ book.json 是這本書的額外設定<br>
 只要有更新後存擋，重新整理就能看到更新後的結果</p>
 <h2 id="_2">輸出</h2>
 <p>在 export 前，需要為 pdf, epub, mobi 三種格式多安裝程式才能使用<br>
-先到的官網下載 Calibre<br>
-http://calibre-ebook.com/download</p>
+先到的官網下載 <a href="http://calibre-ebook.com/download">Calibre</a></p>
 <p>以 mac 為例<br>
 需要下面這個指令，為 ebook-covert 建立一個捷徑，讓 gitbook 可以找到這個功能</p>
 <div class="highlight"><pre><span></span>ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin
@@ -168,7 +167,7 @@ gitbook mobi ./
 接著 create a new book，到 setting 頁面往下拉，就會看到一個 URL</p>
 <p>接下來的操作就跟 git 基本上是一樣的，init, add, commit ... 等<br>
 只有在 remote 的設定有點不同</p>
-<div class="highlight"><pre><span></span>git remote add gitbook &quot;URL&quot;
+<div class="highlight"><pre><span></span>git remote add gitbook <span class="s2">&quot;URL&quot;</span>
 git push -u gitbook
 </pre></div>
 

@@ -80,19 +80,32 @@
 </div>
 
 <div class="row-fluid">
-        <div class="span8 offset2 article-content">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#why-python">Why Python?</a></li>
+<li><a href="#but-python-is-still-slow-right">But Python is still slow, right?</a></li>
+<li><a href="#python-efficiency-strategy">Python Efficiency Strategy</a></li>
+<li><a href="#road-to-python3">Road to Python3</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
 
             
             <ul>
 <li><a href="https://www.youtube.com/watch?v=66XoCk79kjM">Lisa Guo, Hui Ding Keynote PyCon 2017</a></li>
 <li><a href="https://speakerdeck.com/pycon2017/keynote-lisa-guo-and-hui-ding-python-at-instagram">slide</a></li>
 </ul>
-<p>終於好好花個時間看完今年 IG 在 PyCon US 的 Talk 了<br>
+<p>終於好好花個時間看完今年 IG 在 PyCon US 的 Talk 了<br/>
 的確蠻值得大家花這個時間去看的</p>
 <!--more-->
 
-<p>如果要看懶人包<br>
-Google 一下「PyCon」、「Instagram」有很多很清楚地整理<br>
+<p>如果要看懶人包<br/>
+Google 一下「PyCon」、「Instagram」有很多很清楚地整理<br/>
 我也整理了一點點我覺得特別有意思的</p>
 <h2 id="why-python">Why Python?</h2>
 <p>(一開始主要是歷史因素，因為當初的創辦人就這麼用了 XD)</p>
@@ -105,7 +118,7 @@ Google 一下「PyCon」、「Instagram」有很多很清楚地整理<br>
 </ul>
 <h2 id="but-python-is-still-slow-right">But Python is still slow, right?</h2>
 <p>At instagram, our bottlenecck is development velocity, not pure code execution</p>
-<p>The conclusion is that you can get to a few hundred million users with Python before worrying about the performance of framework and language </p>
+<p>The conclusion is that you can get to a few hundred million users with Python before worrying about the performance of framework and language</p>
 <h2 id="python-efficiency-strategy">Python Efficiency Strategy</h2>
 <ol>
 <li>Build extensive tools to profile and understand performance bottleneck</li>
@@ -114,23 +127,21 @@ Google 一下「PyCon」、「Instagram」有很多很清楚地整理<br>
 <li>Async? New Pyton runtime?</li>
 </ol>
 <h2 id="road-to-python3">Road to Python3</h2>
-<p>這一段講到 Instragram 如何從 Python2 轉到 Python3 的過程<br>
+<p>這一段講到 Instragram 如何從 Python2 轉到 Python3 的過程<br/>
 我覺得很精彩，所以大家就自己去看吧 XD</p>
-<p>我只紀錄一個我覺得特別有趣的東西<br>
-如同大家所知道的 Python2 跟 Python3 一個很大的不同點，就是對於 byte 跟 str 的處理<br>
-這就會導致我們必須先確認他的型態是否符合預期<br>
+<p>我只紀錄一個我覺得特別有趣的東西<br/>
+如同大家所知道的 Python2 跟 Python3 一個很大的不同點，就是對於 byte 跟 str 的處理<br/>
+這就會導致我們必須先確認他的型態是否符合預期<br/>
 如果不符合就要在做 encode 或 decode</p>
 <p>可能就會像下面這樣</p>
-<div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
+<div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s1">'abc'</span>
 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">text_type</span><span class="p">):</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encode</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encode</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
 <span class="n">mymac</span> <span class="o">=</span> <span class="n">hamc</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </pre></div>
-
-
 <p>Instagram 處理這種問題的功能實作成 <code>ensure_binary</code>, <code>ensure_str</code>, <code>ensure_text</code> 這類的 helper functon</p>
-<p>這也是我之前在 trace <a href="https://github.com/pytransitions/transitions">transitions</a> 的 source code<br>
-發現有一個<a href="https://github.com/pytransitions/transitions/blob/2cb42916affe167a8d94cdfdf56ab08b41ccd05c/transitions/core.py#L25">listify</a> 的 function<br>
+<p>這也是我之前在 trace <a href="https://github.com/pytransitions/transitions">transitions</a> 的 source code<br/>
+發現有一個<a href="https://github.com/pytransitions/transitions/blob/2cb42916affe167a8d94cdfdf56ab08b41ccd05c/transitions/core.py#L25">listify</a> 的 function<br/>
 雖然是蠻簡單的小技巧，不過還算蠻實用的</p>
             <div>
 </div>

@@ -124,7 +124,7 @@ It uses the new async feature in vim 8.<br>
 Thus, it checks your code when you are typing. (You can disable it.)</p>
 <p>The following settings are for pylint in <code>~/.vimrc</code></p>
 <div class="highlight"><pre><span></span><span class="c1"># The default value is pytlinh</span>
-<span class="c1"># If your pylint executable is not pylint, it should be set </span>
+<span class="c1"># If your pylint executable is not pylint, it should be set</span>
 <span class="nb">let</span> g:ale_python_pylint_executable <span class="o">=</span> <span class="s1">&#39;pylint&#39;</span>
 
 <span class="c1"># options of your pylint command</span>
@@ -149,8 +149,8 @@ Thus, you might find that even if you ignore some rules in <code>pylintc</code>,
 <p><img alt="python-mode-screenshot" src="https://lee-w.github.io/images/posts-image/2017-03-15-tools-for-checking-python-coding-style/5FffIqN.png"><br>
 Unlike <code>ale</code>, <code>python-mode</code> check your code only when you save or open your python file (You can set this in your <code>~/.vimrc</code>)</p>
 <p>Add these lines in <code>~/.vimrc</code>  to enable <code>pylint</code></p>
-<div class="highlight"><pre><span></span>let g:pymode_lint_checkers = [&#39;pyflakes&#39;, &#39;pylint&#39;, &#39;pep8&#39;]
-let g:pymode_lint_ignore = &quot;C0111,W0621,E501,F0002&quot;
+<div class="highlight"><pre><span></span><span class="k">let</span> <span class="k">g</span>:pymode_lint_checkers <span class="p">=</span> [<span class="s1">&#39;pyflakes&#39;</span><span class="p">,</span> <span class="s1">&#39;pylint&#39;</span><span class="p">,</span> <span class="s1">&#39;pep8&#39;</span>]
+<span class="k">let</span> <span class="k">g</span>:pymode_lint_ignore <span class="p">=</span> <span class="s2">&quot;C0111,W0621,E501,F0002&quot;</span>
 </pre></div>
 
 

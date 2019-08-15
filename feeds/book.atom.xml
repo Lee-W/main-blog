@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Book</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/book.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2019-08-13T10:55:00+08:00</updated><entry><title>[Book] The Ultimate Guide to Remote Work</title><link href="https://lee-w.github.io/posts/book/2019/08/the-ultimate-guide-to-remote-work" rel="alternate"></link><published>2019-08-13T10:55:00+08:00</published><updated>2019-08-13T10:55:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-08-13:/posts/book/2019/08/the-ultimate-guide-to-remote-work</id><summary type="html">&lt;p&gt;This is an excerpt of Zapier's book &lt;a href="https://zapier.com/learn/remote-work/"&gt;The Ultimate Guide to Remote Work&lt;/a&gt;.&lt;br&gt;
-I had a good time chatting with Zapier in PyCon US and then found this book on their website.&lt;br&gt;
-Since I currently work remotely, I thrive on making myself a better remote worker.&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Book</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/book.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2019-08-13T10:55:00+08:00</updated><entry><title>[Book] The Ultimate Guide to Remote Work</title><link href="https://lee-w.github.io/posts/book/2019/08/the-ultimate-guide-to-remote-work" rel="alternate"></link><published>2019-08-13T10:55:00+08:00</published><updated>2019-08-13T10:55:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-08-13:/posts/book/2019/08/the-ultimate-guide-to-remote-work</id><summary type="html">&lt;p&gt;This is an excerpt of Zapier's book &lt;a href="https://zapier.com/learn/remote-work/"&gt;The Ultimate Guide to Remote Work&lt;/a&gt;.&lt;br/&gt;
+I had a good time chatting with Zapier in PyCon US and then found this book on their website.&lt;br/&gt;
+Since I currently work remotely, I thrive on making myself a better remote worker.&lt;br/&gt;
 Hope this excerpt would help if you're working remotely or considering it.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;This is an excerpt of Zapier's book &lt;a href="https://zapier.com/learn/remote-work/"&gt;The Ultimate Guide to Remote Work&lt;/a&gt;.&lt;br&gt;
-I had a good time chatting with Zapier in PyCon US and then found this book on their website.&lt;br&gt;
-Since I currently work remotely, I thrive on making myself a better remote worker.&lt;br&gt;
+</summary><content type="html">&lt;p&gt;This is an excerpt of Zapier's book &lt;a href="https://zapier.com/learn/remote-work/"&gt;The Ultimate Guide to Remote Work&lt;/a&gt;.&lt;br/&gt;
+I had a good time chatting with Zapier in PyCon US and then found this book on their website.&lt;br/&gt;
+Since I currently work remotely, I thrive on making myself a better remote worker.&lt;br/&gt;
 Hope this excerpt would help if you're working remotely or considering it.&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="chapter-1-how-to-run-a-remote-team"&gt;Chapter 1: How to Run a Remote Team&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Important ingredients to remote work&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Important ingredients to remote work&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;Team&lt;/li&gt;
 &lt;li&gt;Tools&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Process&lt;/p&gt;
+&lt;li&gt;Process&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Team&lt;/p&gt;
@@ -83,17 +85,19 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;/ul&gt;
 &lt;h2 id="chapter-5-how-to-build-strong-relationships-in-a-remote-team"&gt;Chapter 5: How to Build Strong Relationships in a Remote Team&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Performance Review combines the following 3 aspects&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Performance Review combines the following 3 aspects&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;Manager's own opinions&lt;/li&gt;
 &lt;li&gt;Thoughts from co-workers&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A self-evaluation from the actual employee&lt;/p&gt;
+&lt;li&gt;A self-evaluation from the actual employee&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;If you're setting up phone or video calls to meet your new teammates, try setting a time limit of 15 minutes.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Putting aside our own desires to contribute to the conversation and instead asking short, open questions like how, when, and why.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Putting aside our own desires to contribute to the conversation and instead asking short, open questions like how, when, and why.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Replying on Text the Right Way&lt;/p&gt;
@@ -104,13 +108,15 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Asserting Yourself When Needed&lt;/p&gt;
-&lt;/li&gt;
+&lt;ul&gt;
 &lt;li&gt;set up rules ahead of time&lt;ul&gt;
 &lt;li&gt;e.g., set up your focus time and ask others not to message you at this time&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Find a way to share the context of your situation with your teammates.&lt;ul&gt;
 &lt;li&gt;Keep in mind all the information you have about how you feel and your current needs that your teammates don't have. They need all the information you can give them to work with you in the best way they can.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -121,10 +127,10 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;How to deal with vast numbers of emails?&lt;/p&gt;
-&lt;/li&gt;
+&lt;ul&gt;
 &lt;li&gt;Company and department updates, project specs, design mock-ups, and individual "Friday Update" reports moved from email to our private internal blog&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Team and department feedback, along with questions and discussions, moved to Slack, which replaced one-on-one email threads with its private messaging feature, too.&lt;/p&gt;
+&lt;li&gt;Team and department feedback, along with questions and discussions, moved to Slack, which replaced one-on-one email threads with its private messaging feature, too.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Whether it's working in your own home or a nearby coffee shop, there's another aspect that pushes remote employees to work faster: &lt;strong&gt;You're responsible for your productivity&lt;/strong&gt;.&lt;/p&gt;
@@ -135,19 +141,25 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;/ul&gt;
 &lt;h2 id="chapter-11-how-to-find-your-optimal-work-environment-and-boost-productivity"&gt;Chapter 11: How to Find Your Optimal Work Environment and Boost Productivity&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;If you have different types of work, grouping similar tasks into time "chunks" can make you more productive than switching between different types of work.&lt;/li&gt;
+&lt;li&gt;If you have different types of work, grouping similar tasks into time "chunks" can make you more productive than switching between different types of work.&lt;ul&gt;
 &lt;li&gt;Small, simple tasks can be saved for the periods when you're low in energy, or in-between meetings.&lt;/li&gt;
 &lt;li&gt;Work on the big, intense projects first, and work on smaller tasks that don't have deadlines as you go through the day.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="chapter-12-how-to-work-in-different-timezones"&gt;Chapter 12: How to Work in Different Timezones&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Manage projects in an asynchronous way&lt;/li&gt;
+&lt;li&gt;Manage projects in an asynchronous way&lt;ul&gt;
 &lt;li&gt;Break things up into chunks that can be worked on individually&lt;/li&gt;
 &lt;li&gt;Find time to sync back up on what's been done, and make sure each person can self-direct their work&lt;/li&gt;
-&lt;li&gt;Work in an asynchronous way&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Work in an asynchronous way&lt;ul&gt;
 &lt;li&gt;Check in with your team before you start your workday and make sure you're on the same page as everyone else.&lt;/li&gt;
 &lt;li&gt;To work effectively with a time shift, you'll also need to work in public. In other words, communicate, and make sure everyone knows what you're working on.&lt;/li&gt;
 &lt;li&gt;Write what you've done that day, share where you're hung up on a project, and ping others with ideas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="chapter-13-how-to-avoid-burnout-in-a-remote-team"&gt;Chapter 13: How to Avoid Burnout in a Remote Team&lt;/h2&gt;
 &lt;ol&gt;
@@ -188,7 +200,7 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Where to Find Remote Jobs&lt;/p&gt;
-&lt;/li&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.flexjobs.com"&gt;FlexJobs&lt;/a&gt; is a job board that showcases not just telecommuting openings, but also job postings for other types of flexible arrangements, such as freelance or part-time work.&lt;ul&gt;
 &lt;li&gt;Price: &lt;code&gt;$14.95/month&lt;/code&gt; to &lt;code&gt;$49.95/year&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -196,12 +208,12 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;li&gt;&lt;a href="https://jobspresso.co"&gt;Jobspresso&lt;/a&gt; allows you to search for jobs in specific categories, such as marketing, copywriting, project management, and support. All of the jobs listed are curated for remote workers.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://remote.co"&gt;Remote.co&lt;/a&gt; is passionate about remote work and partners with startups that feel the same way.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://weworkremotely.com"&gt;We Work Remotely&lt;/a&gt; is sponsored by Basecamp and their book Remote, which delves into all things related to working remotely. The job board is updated daily, and you can subscribe to the site's RSS feed to get informed of new job postings.&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://www.workingnomads.co/jobs"&gt;Working Nomads&lt;/a&gt; provides a curated list of remote jobs for individuals who want to travel while they work.&lt;/p&gt;
+&lt;li&gt;&lt;a href="https://www.workingnomads.co/jobs"&gt;Working Nomads&lt;/a&gt; provides a curated list of remote jobs for individuals who want to travel while they work.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;How to Apply and Interview for a Remote Work Job&lt;/p&gt;
-&lt;/li&gt;
+&lt;ul&gt;
 &lt;li&gt;Prepare for the video interview&lt;ul&gt;
 &lt;li&gt;If you're positive, curious, and articulate in the video chat as well as other parts of the application process, hiring managers will be more confident about you.&lt;/li&gt;
 &lt;li&gt;Try out the video app before the interview.&lt;/li&gt;
@@ -223,37 +235,43 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;li&gt;How do you balance work and personal life? (time management skills)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Questions you should ask to make sure the company is really serious about remote work&lt;/p&gt;
-&lt;ul&gt;
+&lt;li&gt;Questions you should ask to make sure the company is really serious about remote work&lt;ul&gt;
 &lt;li&gt;How many people do you have working remotely full-time?&lt;/li&gt;
 &lt;li&gt;Is occasional travel needed to meet with co-workers?&lt;/li&gt;
 &lt;li&gt;How does the remote team usually communicate?&lt;/li&gt;
 &lt;li&gt;What would my typical schedule and day look like? How often would I be in touch with my manager?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;If you're applying for an employer in another country, before accepting a position it's a good idea to find out:&lt;/p&gt;
-&lt;/li&gt;
+&lt;ul&gt;
 &lt;li&gt;How will taxes be taken care of from my paycheck?&lt;/li&gt;
 &lt;li&gt;Will I need to buy my own health plan?&lt;/li&gt;
 &lt;li&gt;Would I need to get a work permit when visiting the employer?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="chapter-14-the-remote-workers-toolkit"&gt;Chapter 14: The Remote Workers' Toolkit&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Mind Maps:&lt;/li&gt;
-&lt;li&gt;Usage: collaborative brainstorming, project planning&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="https://www.mindmeister.com"&gt;MindMeister&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Mind Maps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Usage: collaborative brainstorming, project planning&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.mindmeister.com"&gt;MindMeister&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Program Blockers:&lt;/p&gt;
-&lt;/li&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://selfcontrolapp.com"&gt;SelfControl&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://getcoldturkey.com"&gt;Cold Turkey&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;More options: &lt;a href="http://www.quacklabs.in/blog/2017/03/17/14-tools-help-avoid-distractions-stay-focused-work/"&gt;14 Tools to Help You Avoid Distractions and Stay Focused at Work&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Remote Job"></category></entry><entry><title>[Book] OKR 做最重要的事</title><link href="https://lee-w.github.io/posts/book/2019/06/measure-what-matters" rel="alternate"></link><published>2019-06-16T17:18:00+08:00</published><updated>2019-06-16T17:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-06-16:/posts/book/2019/06/measure-what-matters</id><summary type="html">&lt;p&gt;&lt;img alt="measure-what-matters" src="https://lee-w.github.io/images/books/measure-what-matters.jpg" style="height:255px;"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="measure-what-matters" src="https://lee-w.github.io/images/books/measure-what-matters.jpg" style="height:255px;"&gt;&lt;/p&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Remote Job"></category></entry><entry><title>[Book] OKR 做最重要的事</title><link href="https://lee-w.github.io/posts/book/2019/06/measure-what-matters" rel="alternate"></link><published>2019-06-16T17:18:00+08:00</published><updated>2019-06-16T17:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-06-16:/posts/book/2019/06/measure-what-matters</id><summary type="html">&lt;p&gt;&lt;img alt="measure-what-matters" src="https://lee-w.github.io/images/books/measure-what-matters.jpg" style="height:255px;"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="measure-what-matters" src="https://lee-w.github.io/images/books/measure-what-matters.jpg" style="height:255px;"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="ch2-okr"&gt;Ch2 - OKR 之父&lt;/h2&gt;
@@ -360,24 +378,24 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;li&gt;如果寫下來的 OKR 未涵蓋團隊努力中相當顯著的部分，則需要再添加一些 OKR&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Productivity"></category></entry><entry><title>[Book] 電腦玩物站長的筆記思考術</title><link href="https://lee-w.github.io/posts/book/2019/01/think-through-note-taking" rel="alternate"></link><published>2019-01-07T22:50:00+08:00</published><updated>2019-01-07T22:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-01-07:/posts/book/2019/01/think-through-note-taking</id><summary type="html">&lt;p&gt;去年剛看完這本書的時候，實在覺得跟想像的很不一樣&lt;br&gt;
+&lt;/ul&gt;</content><category term="Productivity"></category></entry><entry><title>[Book] 電腦玩物站長的筆記思考術</title><link href="https://lee-w.github.io/posts/book/2019/01/think-through-note-taking" rel="alternate"></link><published>2019-01-07T22:50:00+08:00</published><updated>2019-01-07T22:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-01-07:/posts/book/2019/01/think-through-note-taking</id><summary type="html">&lt;p&gt;去年剛看完這本書的時候，實在覺得跟想像的很不一樣&lt;br/&gt;
 直到現在終於有空好好的再翻過一遍，做一些紀錄了&lt;/p&gt;
-&lt;p&gt;&lt;img alt="think-through-note-taking" src="https://lee-w.github.io/images/books/KnfcClD.jpg"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;去年剛看完這本書的時候，實在覺得跟想像的很不一樣&lt;br&gt;
+&lt;p&gt;&lt;img alt="think-through-note-taking" src="https://lee-w.github.io/images/books/KnfcClD.jpg"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;去年剛看完這本書的時候，實在覺得跟想像的很不一樣&lt;br/&gt;
 直到現在終於有空好好的再翻過一遍，做一些紀錄了&lt;/p&gt;
-&lt;p&gt;&lt;img alt="think-through-note-taking" src="https://lee-w.github.io/images/books/KnfcClD.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="think-through-note-taking" src="https://lee-w.github.io/images/books/KnfcClD.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
-&lt;p&gt;原本以為會是很明確的 xxx筆記法...如何在生活中實用之類的&lt;br&gt;
-不過這本書主要在講的「如何用記錄下來的東西帶起自己的行動」&lt;br&gt;
+&lt;p&gt;原本以為會是很明確的 xxx筆記法...如何在生活中實用之類的&lt;br/&gt;
+不過這本書主要在講的「如何用記錄下來的東西帶起自己的行動」&lt;br/&gt;
 至於怎麼做筆記（e.g., 什麼格式），就不是它的重點了&lt;/p&gt;
-&lt;p&gt;雖然跟原先期待的不一樣，但我反而蠻喜歡這樣的內容&lt;br&gt;
-尤其我自己也有一套反省、紀錄生活的方式&lt;br&gt;
+&lt;p&gt;雖然跟原先期待的不一樣，但我反而蠻喜歡這樣的內容&lt;br/&gt;
+尤其我自己也有一套反省、紀錄生活的方式&lt;br/&gt;
 翻著它就感嘆「原來還能這麼做啊」xD&lt;/p&gt;
-&lt;p&gt;這本書大概不會是那種即刻有效的考試筆記術之類的&lt;br&gt;
-它所提的想法和技巧，都是需要時間慢慢融入自己的生活當中&lt;br&gt;
+&lt;p&gt;這本書大概不會是那種即刻有效的考試筆記術之類的&lt;br/&gt;
+它所提的想法和技巧，都是需要時間慢慢融入自己的生活當中&lt;br/&gt;
 但相信這些思考都會對如何管理自己的人生很有幫助的&lt;/p&gt;
-&lt;hr&gt;
+&lt;hr/&gt;
 &lt;h2 id="_1"&gt;一、筆記技巧&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;記錄過去是為了改變未來，試著思考這些問題&lt;ul&gt;
@@ -620,12 +638,12 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Note-Taking"></category></entry><entry><title>[Book] 告別菜尾時代</title><link href="https://lee-w.github.io/posts/book/2018/11/it-s-time-for-the-young-generation" rel="alternate"></link><published>2018-11-07T14:00:00+08:00</published><updated>2018-11-07T14:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-11-07:/posts/book/2018/11/it-s-time-for-the-young-generation</id><summary type="html">&lt;p&gt;&lt;img alt="Imgur" src="https://lee-w.github.io/images/books/0he265Q.jpg"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="Imgur" src="https://lee-w.github.io/images/books/0he265Q.jpg"&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Note-Taking"></category></entry><entry><title>[Book] 告別菜尾時代</title><link href="https://lee-w.github.io/posts/book/2018/11/it-s-time-for-the-young-generation" rel="alternate"></link><published>2018-11-07T14:00:00+08:00</published><updated>2018-11-07T14:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-11-07:/posts/book/2018/11/it-s-time-for-the-young-generation</id><summary type="html">&lt;p&gt;&lt;img alt="Imgur" src="https://lee-w.github.io/images/books/0he265Q.jpg"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="Imgur" src="https://lee-w.github.io/images/books/0he265Q.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;The plain fact is that the planet does not need more successful people. But it does desperately need more peacemakers, healers, restorers, storytellers and lovers of every kind. It needs people who live well in their places. It needs people of moral courage willing to join the fight to make the world habitable and humane. And these qualities have little to do with success as we have defined it.&lt;br&gt;
+&lt;p&gt;The plain fact is that the planet does not need more successful people. But it does desperately need more peacemakers, healers, restorers, storytellers and lovers of every kind. It needs people who live well in their places. It needs people of moral courage willing to join the fight to make the world habitable and humane. And these qualities have little to do with success as we have defined it.&lt;br/&gt;
 –– David W. Orr&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id="_1"&gt;第一篇：如果舒適圈一點也不舒服&lt;/h2&gt;
@@ -653,7 +671,7 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;h2 id="_2"&gt;第二篇：只要敢闖，世界就是你的&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;聯合國與哈佛的面試： &lt;strong&gt;你的 Commitment 是什麼？&lt;/strong&gt;&lt;ul&gt;
-&lt;li&gt;我還特地問他（組織內的行政助理）：「難道美國人/西方人比較看重承諾？畢竟我過去從未在面試時被問到這樣的問題，就連我進醫學系的時候也沒有。」&lt;br&gt;
+&lt;li&gt;我還特地問他（組織內的行政助理）：「難道美國人/西方人比較看重承諾？畢竟我過去從未在面試時被問到這樣的問題，就連我進醫學系的時候也沒有。」&lt;br/&gt;
   他說：「真的！因為 Commitment 是個很慎重的字。」他沈默了也思考一下，然後說：「我的人生中還沒有在面試時被問到這個問題，但我可以想見，&lt;strong&gt;我們(哈佛大學)或聯合國想要找到對於這個世界有熱情、有理想的申請者，才會在面試的時候這麼詢問。&lt;/strong&gt;」&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -669,7 +687,7 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;li&gt;透過長住的機會，使我有不一樣的「成長」。這個「成長」，來自於我每天使用非母語的語言，每天努力融入另一個族群的文化、每天拼了命去學習全新的思考模式，然後在空閒時間，好好看著離家半個地球遠的當地風景。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;有一位我十分敬重的某 NGO 創辦人來台灣演講時，有學生問他：「如果我有四萬元，你希望我把四萬元捐給你？還是希望我用四萬元買一張機票，去看看你所創建的孤兒院呢？」&lt;br&gt;
+&lt;li&gt;有一位我十分敬重的某 NGO 創辦人來台灣演講時，有學生問他：「如果我有四萬元，你希望我把四萬元捐給你？還是希望我用四萬元買一張機票，去看看你所創建的孤兒院呢？」&lt;br/&gt;
   NGO創辦人豪不猶豫地說：「&lt;strong&gt;我希望你買一張機票來看看，因為當你買了那張機票，你才會明白我所說的一切貧窮、困苦都是真的。你會把這些震撼與故事帶回到你的生命裡，然後，我要你用你那四萬塊的機票，發揮你生命的影響力，把故事傳出去，讓更多人知道什麼是貧窮，在貧窮裡生活又是如何超乎你原本生活想像的艱難。&lt;/strong&gt;」&lt;/li&gt;
 &lt;li&gt;往後，我看到許多偏鄉志工、國際志工，不論是捐錢、捐物資等，也有相似的行為漠視：半吊子的助人，認為「有幫總比沒幫好」，或是助人後，完全不檢討自己的行為是否為對方帶來傷害、是否有改善的空間，也因此，我開始深刻的體會「做好事，不是只有善意就好」。&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.huffingtonpost.com/juliana-ruhfus/cambodias-orphanage-busin_b_1616255.html"&gt;Cambodia’s Orphanage Business&lt;/a&gt;&lt;/li&gt;
@@ -677,8 +695,8 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;為善，應該要更柔軟與敏感&lt;ul&gt;
-&lt;li&gt;心存善念幫助他人的同時，不要只憑一股衝勁去做，完全缺乏事前的評估，也沒有細心調查服務對象的需求，更不要在事後，完全沒有檢討、追蹤與改善。&lt;br&gt;
-  這就好像待人處事一樣，是需要互相尊重與同理心的，更不是自己的地位比受助人高。別忘了，今天的你只是相對幸運，能夠擁有比較多的資源，説不定，有天你也可能會成為需要幫助的人。行善之前，請試著多想一些。&lt;br&gt;
+&lt;li&gt;心存善念幫助他人的同時，不要只憑一股衝勁去做，完全缺乏事前的評估，也沒有細心調查服務對象的需求，更不要在事後，完全沒有檢討、追蹤與改善。&lt;br/&gt;
+  這就好像待人處事一樣，是需要互相尊重與同理心的，更不是自己的地位比受助人高。別忘了，今天的你只是相對幸運，能夠擁有比較多的資源，説不定，有天你也可能會成為需要幫助的人。行善之前，請試著多想一些。&lt;br/&gt;
   尤其做好事的人，內心往往要比一般人更柔軟與敏感才是。&lt;/li&gt;
 &lt;li&gt;The road to hell is paved with good intensions.&lt;/li&gt;
 &lt;/ul&gt;
@@ -692,6 +710,9 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;p&gt;&lt;img alt="Imgur" src="https://lee-w.github.io/images/books/3sJOmbH.jpg"&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
+&lt;div class="toc"&gt;
+&lt;ul&gt;&lt;/ul&gt;
+&lt;/div&gt;
 &lt;p&gt;第一次知道這本書大概是幾年前政大書城打得很大的標語&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我的研究若做好，只幫了幾個人，但走入偏鄉，我要影響的是我們的下一代。&lt;/p&gt;
@@ -729,49 +750,43 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 我們突然來到他們的生活，卻又突然的離開&lt;br&gt;
 其實他們是很難過的，覺得我們這樣是很過分的&lt;br&gt;
 也許真的想要做些什麼，還是需要很長期的付出和陪伴&lt;br&gt;
-我們以為的幫助，反而卻帶來了傷害&lt;/p&gt;</content><category term="Education"></category></entry><entry><title>[Book] 做工的人</title><link href="https://lee-w.github.io/posts/book/2017/03/worker" rel="alternate"></link><published>2017-03-24T18:48:00+08:00</published><updated>2017-03-24T18:48:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-24:/posts/book/2017/03/worker</id><summary type="html">&lt;p&gt;&lt;img alt="做工的人" src="https://lee-w.github.io/images/books/SlWTvkO.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;「做工的人」由一個個藍領階級的故事所組成&lt;br&gt;
-說的是那些壓迫、歧視和無奈&lt;br&gt;
+我們以為的幫助，反而卻帶來了傷害&lt;/p&gt;</content><category term="Education"></category></entry><entry><title>[Book] 做工的人</title><link href="https://lee-w.github.io/posts/book/2017/03/worker" rel="alternate"></link><published>2017-03-24T18:48:00+08:00</published><updated>2017-03-24T18:48:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-24:/posts/book/2017/03/worker</id><summary type="html">&lt;p&gt;&lt;img alt="做工的人" src="https://lee-w.github.io/images/books/SlWTvkO.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;「做工的人」由一個個藍領階級的故事所組成&lt;br/&gt;
+說的是那些壓迫、歧視和無奈&lt;br/&gt;
 看這本書是會讓人感到很難過的&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="做工的人" src="https://lee-w.github.io/images/books/SlWTvkO.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;「做工的人」由一個個藍領階級的故事所組成&lt;br&gt;
-說的是那些壓迫、歧視和無奈&lt;br&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="做工的人" src="https://lee-w.github.io/images/books/SlWTvkO.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;「做工的人」由一個個藍領階級的故事所組成&lt;br/&gt;
+說的是那些壓迫、歧視和無奈&lt;br/&gt;
 看這本書是會讓人感到很難過的&lt;/p&gt;
 &lt;!--more--&gt;
 
-&lt;p&gt;處於同溫層&lt;br&gt;
-常會覺得世界就只是我們看到的樣子&lt;br&gt;
-但世界並不是單一面貌的&lt;br&gt;
-每個人所看到的、所感受到的世界都是不同的&lt;br&gt;
+&lt;p&gt;處於同溫層&lt;br/&gt;
+常會覺得世界就只是我們看到的樣子&lt;br/&gt;
+但世界並不是單一面貌的&lt;br/&gt;
+每個人所看到的、所感受到的世界都是不同的&lt;br/&gt;
 而「做工的人」帶我們用不同的角度來看他們所看到的世界究竟是如何的&lt;/p&gt;
-&lt;p&gt;不同於以往這書摘&lt;br&gt;
-這篇會多了一點我自己的想法&lt;br&gt;
+&lt;p&gt;不同於以往這書摘&lt;br/&gt;
+這篇會多了一點我自己的想法&lt;br/&gt;
 同樣的，這也不過是這世界上一個微不足道的人的想法罷了&lt;/p&gt;
 &lt;h2 id="_1"&gt;摘錄&lt;/h2&gt;
-&lt;p&gt;我想如果只看這些摘錄文字，應該會不知道在說什麼 xd&lt;/p&gt;
-&lt;p&gt;不過它們都代表著每一個故事的一小部分&lt;br&gt;
-也是在故事中，讓我有感觸的部分&lt;br&gt;
+&lt;p&gt;我想如果只看這些摘錄文字，應該會不知道在說什麼 XD&lt;/p&gt;
+&lt;p&gt;不過它們都代表著每一個故事的一小部分&lt;br/&gt;
+也是在故事中，讓我有感觸的部分&lt;br/&gt;
 記錄下它們，是為了提醒我不要忘了現在看完這本書的感受&lt;/p&gt;
 &lt;h3 id="-"&gt;推薦序 - 如果在工地，一個年輕作家的養成&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;他看見，年輕不羈的工人願意將寶特瓶壓扁資源回收，是為了讓附近的低收入戶可以拿去賣錢。
 學有專精的電焊師傅，在得知外勞的悲慘待遇後，會願意將一身技藝傾囊相授，好讓弱者掙脫被壓榨的命運。
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;h3 id="_2"&gt;阿忠之死&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;晚上，阿忠的嫂嫂說阿忠的喪事已經辦好了，打來是為了要告訴我：「阿忠對於自己沒能還你那五千元，很對不起。」
 
 生命是有層次的，一層一層剝開後，每一片回憶都會讓人流淚。
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;h3 id="_3"&gt;台灣媳婦&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果我們判斷人的標準，是用刻苦，是用勤奮，是用力爭上游的努力和對於生活的認真，去決定一個人的品格
 那我們不可能看不出來她們值得擁有尊敬，我們又怎麼能夠允許這個社會將它們分別列上不同的標籤呢？
 我們既然知道以一個人的經濟條件去判定其社會階級以及地位是錯的，並深惡譴責，那又為什麼不改變對她們的看法呢？
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;h3 id="_4"&gt;隔閡&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;那種講理財和產業動態的書從來就無法引起我的興趣。
 曾幾何時，我發現自己在看任何文字或是哥與、電影時，總感覺到一股不舒服感。
@@ -785,40 +800,34 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 
 可是會不會哪天我也和那本商周一樣，只能在自己的世界裡，看著自己所要的內容？
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;h3 id="_5"&gt;看板人&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;這社會要求他人有尊嚴活著的，幾乎都是不需為下一餐煩憂，並且收入穩定的人。
 而我不是，我能理解他們只是想活著，卑微和努力的活著。
 對於那些喊著尊嚴的人，因為那傷痕我無言以對。
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;h2 id="_6"&gt;摘錄以外&lt;/h2&gt;
-&lt;p&gt;在翻開這本書之前&lt;br&gt;
-我有看到一篇關於它的文章&lt;br&gt;
-下面得回覆就有站在不同立場的師傅的評論&lt;br&gt;
-說它美化了很多不應該存在的錯誤&lt;br&gt;
+&lt;p&gt;在翻開這本書之前&lt;br/&gt;
+我有看到一篇關於它的文章&lt;br/&gt;
+下面得回覆就有站在不同立場的師傅的評論&lt;br/&gt;
+說它美化了很多不應該存在的錯誤&lt;br/&gt;
 並不是每個師傅都會犯這樣的錯，而那些錯並不是這麼的美麗&lt;/p&gt;
-&lt;p&gt;但翻完「做工的人」後&lt;br&gt;
-我覺得其實作者並沒有說那些事是對的&lt;br&gt;
+&lt;p&gt;但翻完「做工的人」後&lt;br/&gt;
+我覺得其實作者並沒有說那些事是對的&lt;br/&gt;
 只是敘述了這樣的事情確實存在著，而它們為什麼存在&lt;/p&gt;
-&lt;p&gt;「做工的人」不會是這世界的全貌&lt;br&gt;
-也不見得能代表整個藍領階級的故事&lt;br&gt;
+&lt;p&gt;「做工的人」不會是這世界的全貌&lt;br/&gt;
+也不見得能代表整個藍領階級的故事&lt;br/&gt;
 就像前面也提到有不同立場的師傅提出他們的看法&lt;/p&gt;
-&lt;p&gt;但我覺得它已經足夠讓我們重新去思考&lt;br&gt;
-那些認為是理所當然的事，並不是那麼理所當然&lt;br&gt;
-自以為是的正義，不見得就是正義&lt;br&gt;
+&lt;p&gt;但我覺得它已經足夠讓我們重新去思考&lt;br/&gt;
+那些認為是理所當然的事，並不是那麼理所當然&lt;br/&gt;
+自以為是的正義，不見得就是正義&lt;br/&gt;
 而我們又是多麼習慣於帶著有色的眼鏡，去看、去批評、去攻擊與我們不同的人們&lt;/p&gt;
 &lt;p&gt;我很喜歡張獻忠先生在 TEDx Tainan 2016 說的話&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果今天換作是我們遇到同樣的處境
 
 我們真的能處理得更好嗎？
 &lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;也許在下次評斷一件事前，去想想這樣的問題，能看到更多&lt;br&gt;
-這樣的同理並不是、也不會讓對的事情變錯的，或錯的事情就變成對的&lt;br&gt;
+&lt;p&gt;也許在下次評斷一件事前，去想想這樣的問題，能看到更多&lt;br/&gt;
+這樣的同理並不是、也不會讓對的事情變錯的，或錯的事情就變成對的&lt;br/&gt;
 而是嘗試去思考，除了對錯以外的事&lt;/p&gt;
 &lt;p&gt;最後我想分享一段節錄自實驗室學長在上大學部的課時說過的話&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;回高中聊天的時候，會發現有些在比較後面學校的同學
@@ -827,89 +836,95 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 而我們是一群夠幸運的人，能順利地唸到成大
 所以可以想想，我們是不是能再多做些什麼改變
 &lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;除了認知到這些幸運不是那麼的理所當然外&lt;br&gt;
-我想再補充的是&lt;br&gt;
-在想想還能做什麼改變的時候&lt;br&gt;
-是不是也能站在那些不那麼幸運的人們的角度，來思考這些改變&lt;br&gt;
-讓這些改變，也可以為他們發聲&lt;/p&gt;</content><category term="Story"></category></entry><entry><title>[Book] 此人進廠維修中</title><link href="https://lee-w.github.io/posts/book/2017/03/take-a-rest" rel="alternate"></link><published>2017-03-05T11:40:00+08:00</published><updated>2017-03-05T11:40:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-05:/posts/book/2017/03/take-a-rest</id><summary type="html">&lt;p&gt;&lt;img alt="此人進廠維修中" src="https://lee-w.github.io/images/books/M5ZXQkh.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;除了認知到這些幸運不是那麼的理所當然外&lt;br/&gt;
+我想再補充的是&lt;br/&gt;
+在想想還能做什麼改變的時候&lt;br/&gt;
+是不是也能站在那些不那麼幸運的人們的角度，來思考這些改變&lt;br/&gt;
+讓這些改變，也可以為他們發聲&lt;/p&gt;</content><category term="Story"></category></entry><entry><title>[Book] 此人進廠維修中</title><link href="https://lee-w.github.io/posts/book/2017/03/take-a-rest" rel="alternate"></link><published>2017-03-05T11:40:00+08:00</published><updated>2017-03-05T11:40:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-05:/posts/book/2017/03/take-a-rest</id><summary type="html">&lt;p&gt;&lt;img alt="此人進廠維修中" src="https://lee-w.github.io/images/books/M5ZXQkh.jpg"/&gt;&lt;/p&gt;
 &lt;p&gt;這本書不談情緒管理，而是如何與情緒共處&lt;/p&gt;
-&lt;p&gt;我總覺得這些有關情緒的書，要做筆記實在是一件很困難的事&lt;br&gt;
+&lt;p&gt;我總覺得這些有關情緒的書，要做筆記實在是一件很困難的事&lt;br/&gt;
 不過這裡就稍微紀錄比較能紀錄的部分吧&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="此人進廠維修中" src="https://lee-w.github.io/images/books/M5ZXQkh.jpg"&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="此人進廠維修中" src="https://lee-w.github.io/images/books/M5ZXQkh.jpg"/&gt;&lt;/p&gt;
 &lt;p&gt;這本書不談情緒管理，而是如何與情緒共處&lt;/p&gt;
-&lt;p&gt;我總覺得這些有關情緒的書，要做筆記實在是一件很困難的事&lt;br&gt;
+&lt;p&gt;我總覺得這些有關情緒的書，要做筆記實在是一件很困難的事&lt;br/&gt;
 不過這裡就稍微紀錄比較能紀錄的部分吧&lt;/p&gt;
 &lt;!--more--&gt;
 
-&lt;h1 id="_1"&gt;序： 接受不是認同，而是允許存在&lt;/h1&gt;
-&lt;p&gt;身體或心理的痛苦，其實都帶著一些訊號&lt;br&gt;
-當你願意接受、承認這份痛苦的存在，並允許它有存在的空間&lt;br&gt;
+&lt;h2 id="_1"&gt;序： 接受不是認同，而是允許存在&lt;/h2&gt;
+&lt;p&gt;身體或心理的痛苦，其實都帶著一些訊號&lt;br/&gt;
+當你願意接受、承認這份痛苦的存在，並允許它有存在的空間&lt;br/&gt;
 才可以客觀、中立的觀察它要傳達的訊息&lt;/p&gt;
-&lt;p&gt;負面情緒從來都不是問題，造成問題的常常是我們面對的方法&lt;br&gt;
+&lt;p&gt;負面情緒從來都不是問題，造成問題的常常是我們面對的方法&lt;br/&gt;
 允許這些情緒的存在，把用在對抗負面情緒的能量拿回來，放在理解情緒所帶來的訊息上，從中學習而成長&lt;/p&gt;
-&lt;h1 id="ch4-"&gt;Ch4 - 談後悔&lt;/h1&gt;
-&lt;p&gt;我們總在問別人：「該怎麼辦？」&lt;br&gt;
-美其名是參考別人的意見，實際上只是想要別人幫我們做決定&lt;br&gt;
-一旦後果不如預期，我們可以將責任歸咎於別人&lt;br&gt;
+&lt;h2 id="ch4-"&gt;Ch4 - 談後悔&lt;/h2&gt;
+&lt;p&gt;我們總在問別人：「該怎麼辦？」&lt;br/&gt;
+美其名是參考別人的意見，實際上只是想要別人幫我們做決定&lt;br/&gt;
+一旦後果不如預期，我們可以將責任歸咎於別人&lt;br/&gt;
 但事實上，最後決定是否聽取意見，也還是我們自己決定的&lt;/p&gt;
-&lt;p&gt;後悔，是在告訴我們原有的決定行不通了，該轉向了！就只是如此而已&lt;br&gt;
+&lt;p&gt;後悔，是在告訴我們原有的決定行不通了，該轉向了！就只是如此而已&lt;br/&gt;
 轉向很麻煩，但比堅持走那條不會抵達的老路還來得有效&lt;/p&gt;
-&lt;h1 id="ch5-"&gt;Ch5 - 談孤單&lt;/h1&gt;
+&lt;h2 id="ch5-"&gt;Ch5 - 談孤單&lt;/h2&gt;
 &lt;p&gt;孤單提醒我們建立有意義的人際連結&lt;/p&gt;
-&lt;p&gt;判定你與某人之間存在著「有意義的人際連結」的一個指標，是你們之間的對話內容&lt;br&gt;
+&lt;p&gt;判定你與某人之間存在著「有意義的人際連結」的一個指標，是你們之間的對話內容&lt;br/&gt;
 是不是有大部分會是聚焦在個人化的議題上，也就是個人的思想、觀點、情感、願景、期待、決定 ... 等&lt;/p&gt;
-&lt;h1 id="ch8-"&gt;Ch8 - 談憂鬱&lt;/h1&gt;
-&lt;p&gt;試圖安慰處於極度傷心難過中的人盡量往好處想，是沒有用的&lt;br&gt;
-反而只是會讓當事人感受到不被理解&lt;br&gt;
+&lt;h2 id="ch8-"&gt;Ch8 - 談憂鬱&lt;/h2&gt;
+&lt;p&gt;試圖安慰處於極度傷心難過中的人盡量往好處想，是沒有用的&lt;br/&gt;
+反而只是會讓當事人感受到不被理解&lt;br/&gt;
 因為這麼做無疑是否定了他們此時此刻的真實感受&lt;/p&gt;
-&lt;p&gt;如果真的得做點什麼，讓自己不再憂鬱，就試著做這兩件事吧&lt;br&gt;
-1. 保持正常作息&lt;br&gt;
-2. 出門運動並曬點陽光&lt;/p&gt;
+&lt;p&gt;如果真的得做點什麼，讓自己不再憂鬱，就試著做這兩件事吧&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;保持正常作息&lt;/li&gt;
+&lt;li&gt;出門運動並曬點陽光&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h1 id="ch9-"&gt;Ch9 - 談失落&lt;/h1&gt;
 &lt;p&gt;沒能好好說再見，常是關係失落中最令人遺憾的事情，也是人無法走出失落的原因之一&lt;/p&gt;
-&lt;p&gt;失落的情緒很可能會一在反覆出現，而這是再正常不過的&lt;br&gt;
-一旦來了，就允許它存在&lt;br&gt;
-只要知道，那都是在提醒我們曾經有著一段令我們在意的關係就好了&lt;/p&gt;</content><category term="Emotion"></category></entry><entry><title>[Book] 如何閱讀一本書</title><link href="https://lee-w.github.io/posts/book/2017/03/how-to-read-a-book" rel="alternate"></link><published>2017-03-03T20:41:00+08:00</published><updated>2017-03-03T20:41:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-03:/posts/book/2017/03/how-to-read-a-book</id><summary type="html">&lt;p&gt;&lt;img alt="how-to-read-a-book" src="https://lee-w.github.io/images/books/D1Obrmf.jpg"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="how-to-read-a-book" src="https://lee-w.github.io/images/books/D1Obrmf.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;失落的情緒很可能會一在反覆出現，而這是再正常不過的&lt;br/&gt;
+一旦來了，就允許它存在&lt;br/&gt;
+只要知道，那都是在提醒我們曾經有著一段令我們在意的關係就好了&lt;/p&gt;</content><category term="Emotion"></category></entry><entry><title>[Book] 如何閱讀一本書</title><link href="https://lee-w.github.io/posts/book/2017/03/how-to-read-a-book" rel="alternate"></link><published>2017-03-03T20:41:00+08:00</published><updated>2017-03-03T20:41:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-03-03:/posts/book/2017/03/how-to-read-a-book</id><summary type="html">&lt;p&gt;&lt;img alt="how-to-read-a-book" src="https://lee-w.github.io/images/books/D1Obrmf.jpg"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="how-to-read-a-book" src="https://lee-w.github.io/images/books/D1Obrmf.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
-&lt;h1 id="ch2-"&gt;Ch2 - 閱讀的層次&lt;/h1&gt;
+&lt;h2 id="ch2-"&gt;Ch2 - 閱讀的層次&lt;/h2&gt;
 &lt;p&gt;法蘭西斯 · 培根：「有些書可以淺嚐即止，有些書是要生吞活剝，只有少數的書是要咀嚼與消化的」&lt;/p&gt;
-&lt;h1 id="ch4-"&gt;Ch4 - 閱讀的第二層次：檢視閱讀&lt;/h1&gt;
-&lt;p&gt;假設一個常見的狀況「你想要發掘所有的東西，但時間卻很有限」&lt;br&gt;
-這時候得先做的就是略讀&lt;br&gt;
-1. 先看書名頁，有序就先看序&lt;br&gt;
-2. 目錄&lt;br&gt;
-3. 檢視索引&lt;br&gt;
-4. 出版者介紹&lt;br&gt;
-5. 挑幾個跟主題相關的章節看&lt;br&gt;
-6. 隨意在書中挑幾個小段落看&lt;/p&gt;
+&lt;h2 id="ch4-"&gt;Ch4 - 閱讀的第二層次：檢視閱讀&lt;/h2&gt;
+&lt;p&gt;假設一個常見的狀況「你想要發掘所有的東西，但時間卻很有限」&lt;br/&gt;
+這時候得先做的就是略讀&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先看書名頁，有序就先看序&lt;/li&gt;
+&lt;li&gt;目錄&lt;/li&gt;
+&lt;li&gt;檢視索引&lt;/li&gt;
+&lt;li&gt;出版者介紹&lt;/li&gt;
+&lt;li&gt;挑幾個跟主題相關的章節看&lt;/li&gt;
+&lt;li&gt;隨意在書中挑幾個小段落看&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;頭一次面對一本難讀的書的時候，從頭到尾先讀完一遍，碰到不懂的地方不要停下來查詢或思索&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id="ch5-"&gt;Ch5 - 如何做一個自我要求的讀者&lt;/h1&gt;
-&lt;h2 id="_1"&gt;主動的閱讀基礎 : 一個閱讀者要提出的四個基本問題&lt;/h2&gt;
+&lt;h2 id="ch5-"&gt;Ch5 - 如何做一個自我要求的讀者&lt;/h2&gt;
+&lt;h3 id="_1"&gt;主動的閱讀基礎 : 一個閱讀者要提出的四個基本問題&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;整體來說，這本書在談什麼？&lt;/li&gt;
 &lt;li&gt;作者細部說了什麼，怎麼說的？&lt;/li&gt;
 &lt;li&gt;這本書說得有道理嗎？全部都有道理呢？還是部份有道理？&lt;/li&gt;
 &lt;li&gt;這本書跟你有什麼關係？&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id="ch7-"&gt;Ch7 - 透視一本書&lt;/h1&gt;
-&lt;p&gt;對於「整體內容」這件事，模糊的認知是不夠的&lt;br&gt;
-只有一個方法能知道你是否確切清楚的了解&lt;br&gt;
+&lt;h2 id="ch7-"&gt;Ch7 - 透視一本書&lt;/h2&gt;
+&lt;p&gt;對於「整體內容」這件事，模糊的認知是不夠的&lt;br/&gt;
+只有一個方法能知道你是否確切清楚的了解&lt;br/&gt;
 你必須要能用幾句話，告訴你自己或別人，這整本書在說的是什麼&lt;/p&gt;
-&lt;p&gt;分析閱讀的第一個階段，找出一本書在談些什麼的四個規則：&lt;br&gt;
-1. 依照書本的種類與主題做分類&lt;br&gt;
-2. 用最簡短的句子說出整本書在談些什麼&lt;br&gt;
-3. 按照順序與關係，列出全書的重要部分。將全書的綱要擬出來之後，再將各個部分的綱要也一一列出&lt;br&gt;
-4. 找出作者在問的問題，或作者想要解決的問題&lt;/p&gt;
-&lt;h1 id="ch9-"&gt;Ch9 - 判斷作者的主旨&lt;/h1&gt;
-&lt;p&gt;分析閱讀的第二個階段，找出一本書到底在說什麼的規則：&lt;br&gt;
-5. 詮釋作者使用的關鍵字，與作者達到共識&lt;br&gt;
-6. 從最重要的句子中抓出作者的重要主旨&lt;br&gt;
-7. 找出作者的論述，重新架構這些論述的前因後果，以明白作者的主張&lt;br&gt;
-8. 確定作者已經解決了那些問題，還有哪些未解決的。在未解決的問題中，確定哪些是作者認為自己無法解決的&lt;/p&gt;
+&lt;p&gt;分析閱讀的第一個階段，找出一本書在談些什麼的四個規則：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;依照書本的種類與主題做分類&lt;/li&gt;
+&lt;li&gt;用最簡短的句子說出整本書在談些什麼&lt;/li&gt;
+&lt;li&gt;按照順序與關係，列出全書的重要部分。將全書的綱要擬出來之後，再將各個部分的綱要也一一列出&lt;/li&gt;
+&lt;li&gt;找出作者在問的問題，或作者想要解決的問題&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="ch9-"&gt;Ch9 - 判斷作者的主旨&lt;/h2&gt;
+&lt;p&gt;分析閱讀的第二個階段，找出一本書到底在說什麼的規則：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;詮釋作者使用的關鍵字，與作者達到共識&lt;/li&gt;
+&lt;li&gt;從最重要的句子中抓出作者的重要主旨&lt;/li&gt;
+&lt;li&gt;找出作者的論述，重新架構這些論述的前因後果，以明白作者的主張&lt;/li&gt;
+&lt;li&gt;確定作者已經解決了那些問題，還有哪些未解決的。在未解決的問題中，確定哪些是作者認為自己無法解決的&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h1 id="ch13-"&gt;Ch13 - 如何閱讀實用型的書&lt;/h1&gt;
 &lt;p&gt;任何實用型的書都不能解決該書所關心的實際問題。一本理論性的作品可以解決自己提出的問題。但實際的問題卻只能靠行動解決&lt;/p&gt;</content><category term="Other"></category></entry><entry><title>[Book] 看！情緒幹得好事</title><link href="https://lee-w.github.io/posts/book/2017/02/fuck-feelings" rel="alternate"></link><published>2017-02-04T10:16:00+08:00</published><updated>2017-02-04T10:16:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-04:/posts/book/2017/02/fuck-feelings</id><summary type="html">&lt;p&gt;&lt;img alt="F*ck Feelings" src="https://lee-w.github.io/images/books/tLNg7CJ.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;本書鼓勵你接受一切無法改變的事情 (e.g. 你的個性、行為、感情、工作 and etc.)&lt;br&gt;
@@ -961,8 +976,8 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;li&gt;你能做的事&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;真心話練習腳本 （一個範本，讓你可以帶入各種角色、事件，對你或其他人說） &lt;/li&gt;
-&lt;li&gt;不一定會有的額外補充  &lt;/li&gt;
+&lt;li&gt;真心話練習腳本 （一個範本，讓你可以帶入各種角色、事件，對你或其他人說）&lt;/li&gt;
+&lt;li&gt;不一定會有的額外補充&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id="-"&gt;&lt;a name='0'&gt;&lt;/a&gt; 前言 - 你訂下什麼目標&lt;/h2&gt;
@@ -1004,9 +1019,11 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;h2 id="_10"&gt;&lt;a name='5'&gt;&lt;/a&gt; 該死的心平氣和&lt;/h2&gt;
 &lt;p&gt;緊張、恐懼還或是憤怒，人生所有的都不愉快是無法避免的&lt;br&gt;
 另一個角度來看，這些情緒都是有益的，它們讓我們對外在世界多一份警戒&lt;/p&gt;
-&lt;p&gt;如果你真的想致力過完全平靜的人生，你只能這麼做&lt;br&gt;
-1. 大腦額葉切除成功，成功過著完全平靜的人生&lt;br&gt;
-2. 因為做不到而自認失敗者&lt;/p&gt;
+&lt;p&gt;如果你真的想致力過完全平靜的人生，你只能這麼做&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;大腦額葉切除成功，成功過著完全平靜的人生&lt;/li&gt;
+&lt;li&gt;因為做不到而自認失敗者&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id="_11"&gt;我愛你，我不要恨你&lt;/h3&gt;
 &lt;p&gt;你可以試著化解造成仇恨的負面情緒&lt;br&gt;
 但努力後還是無法不恨的話，也不要對此感到絕望&lt;br&gt;
@@ -1081,8 +1098,8 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 而人生艱難 ...&lt;/p&gt;
 &lt;p&gt;如此你的日子大概就會過得比較ＯＫ&lt;br&gt;
 即使不快樂，因為你的目標很實際&lt;br&gt;
-而為了達成目標付出的努力也會讓你很驕傲&lt;/p&gt;</content><category term="Emotion"></category></entry><entry><title>[Book] 所有問題都是一場賽局</title><link href="https://lee-w.github.io/posts/book/2016/10/how-to-think-like-a-game-theorist" rel="alternate"></link><published>2016-10-15T11:04:00+08:00</published><updated>2016-10-15T11:04:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-15:/posts/book/2016/10/how-to-think-like-a-game-theorist</id><summary type="html">&lt;p&gt;&lt;img alt="How to think like a game theorist" src="http://pic.eslite.com/Upload/Product/201402/m/635279634797871250.jpg"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="How to think like a game theorist" src="http://pic.eslite.com/Upload/Product/201402/m/635279634797871250.jpg"&gt;&lt;/p&gt;
+而為了達成目標付出的努力也會讓你很驕傲&lt;/p&gt;</content><category term="Emotion"></category></entry><entry><title>[Book] 所有問題都是一場賽局</title><link href="https://lee-w.github.io/posts/book/2016/10/how-to-think-like-a-game-theorist" rel="alternate"></link><published>2016-10-15T11:04:00+08:00</published><updated>2016-10-15T11:04:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-15:/posts/book/2016/10/how-to-think-like-a-game-theorist</id><summary type="html">&lt;p&gt;&lt;img alt="How to think like a game theorist" src="http://pic.eslite.com/Upload/Product/201402/m/635279634797871250.jpg"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="How to think like a game theorist" src="http://pic.eslite.com/Upload/Product/201402/m/635279634797871250.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="_1"&gt;序章 : 用賽局來思考，培養解決問題的「三種能力」&lt;/h2&gt;
@@ -1110,9 +1127,7 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 都認罪的話，兩個人都會被關兩年
 但是要是一方認罪，另一方不認罪的話，則認罪方無罪釋放，不認罪方要關三年
 &lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;將上述狀況畫成表格就會像下面這樣&lt;br&gt;
+&lt;p&gt;將上述狀況畫成表格就會像下面這樣&lt;br/&gt;
 ( 每一格左邊的數字代表左邊參與者的獲益，右邊的數字代表上面參與者的獲益 )&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1135,7 +1150,7 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;在考量了對方所會做的最佳選擇後，所做的最佳選擇就會導向 A 和 B 都認罪&lt;br&gt;
+&lt;p&gt;在考量了對方所會做的最佳選擇後，所做的最佳選擇就會導向 A 和 B 都認罪&lt;br/&gt;
 然而對他們來說共同的最大利益，卻是都保持沈默&lt;/p&gt;
 &lt;p&gt;最後導向的這個點就是所謂的奈許均衡 (Nash Equilibrium)&lt;/p&gt;
 &lt;h2 id="ch2-"&gt;Ch2: 協調賽局 - 為何你拿蘋果、用微軟&lt;/h2&gt;
@@ -1147,8 +1162,6 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 一起去看電影是 9
 分開去的兩種結果，雙方滿意度都是 0
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1171,12 +1184,12 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;此時的奈許均衡有兩個，就是雙方選擇同樣行動的兩個點&lt;/p&gt;
-&lt;p&gt;這時候只要有一方先做了選擇，則另一方就會趨向於&lt;strong&gt;一樣的選擇&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;這時候只要有一方先做了選擇，則另一方就會趨向於&lt;strong&gt;一樣的選擇&lt;/strong&gt;&lt;br/&gt;
 協調賽局的根本就是「和大家一樣」&lt;/p&gt;
 &lt;h4 id="_4"&gt;協調的失敗&lt;/h4&gt;
-&lt;p&gt;協調賽局中，有多個奈許均衡點&lt;br&gt;
-但最後仍有可能落在對大家都不利的均衡點上 (e.g. 以上面的例子來說就是看電影 )&lt;br&gt;
-而且協調賽局具有「穩定了就很難改變」的性質&lt;br&gt;
+&lt;p&gt;協調賽局中，有多個奈許均衡點&lt;br/&gt;
+但最後仍有可能落在對大家都不利的均衡點上 (e.g. 以上面的例子來說就是看電影 )&lt;br/&gt;
+而且協調賽局具有「穩定了就很難改變」的性質&lt;br/&gt;
 所以陷入這個不好的平衡點是相當危險的&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;實際案例&lt;ul&gt;
@@ -1189,8 +1202,6 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;假設兩人各開一台車，朝向牆壁全速前進
 看誰能不採煞車前，到離牆最近的地方 → 先踩剎車的人就輸了
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1244,8 +1255,6 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 警察的選擇是「巡邏」和「偷懶」
 小偷則是「進入偷竊」和「不進入」
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1270,7 +1279,7 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;p&gt;&lt;strong&gt;這樣的賽局並不存在奈許均衡&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果改變規則，則賽局構造也會改變&lt;ul&gt;
-&lt;li&gt;e.g. 增加警察抓到小偷的利益，或沒抓到的懲罰 &lt;/li&gt;
+&lt;li&gt;e.g. 增加警察抓到小偷的利益，或沒抓到的懲罰&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1288,15 +1297,13 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 左邊的 50m 都是 A 的範圍，反之亦然
 但所有顧客都要走 50m
 
-2. 
+2.
      A           B
 |- - - - - - - - - - -|
 對顧客最方便，因為對顧客來說最遠也不過就走 30m
 &lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;最後的奈許平衡會是 1，即使 2 才是最好的結果&lt;br&gt;
-然而當 A 想要設店在離海 30m 的地方的時候&lt;br&gt;
+&lt;p&gt;最後的奈許平衡會是 1，即使 2 才是最好的結果&lt;br/&gt;
+然而當 A 想要設店在離海 30m 的地方的時候&lt;br/&gt;
 B 就會像把店往左移，如此就能吸引到更大範圍的顧客&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;實際案例&lt;ul&gt;
@@ -1321,9 +1328,7 @@ B 工廠是「進入」和「不進入」
 如果 B 工廠加入，而 A 工廠選擇合作，則雙方利益為 1
 如果 B 工廠加入，A 工廠選擇戰鬥則雙方都是 -1
 &lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;如果用原本的 2x2 表格來做計算&lt;br&gt;
+&lt;p&gt;如果用原本的 2x2 表格來做計算&lt;br/&gt;
 可以發現奈許均衡在「A 戰鬥 Ｘ B 不進入」「A 合作 X B 進入」&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1352,22 +1357,22 @@ B 工廠是「進入」和「不進入」
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;                            - 戰鬥 -&amp;gt; (-1, -1)
                     A 工廠
-        - 進入 -&amp;gt;     
+        - 進入 -&amp;gt;
                             - 合作 -&amp;gt; (1, 1)
 B 工廠
         - 不進入 -&amp;gt; (3, 0)
 &lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;這種賽局要使用反向歸納（backward induction），排除「奇怪的奈許均衡」&lt;br&gt;
-1. 如果 B 工廠進入，A 工廠就會合作&lt;br&gt;
-2. 則「A 戰鬥 X B 進入」可以被排除&lt;br&gt;
-3. 再來 B 工廠去比較「A 合作 X B 不進入」和「B 不進入」&lt;br&gt;
-4. 就能消除不進入的選項&lt;/p&gt;
+&lt;p&gt;這種賽局要使用反向歸納（backward induction），排除「奇怪的奈許均衡」&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果 B 工廠進入，A 工廠就會合作&lt;/li&gt;
+&lt;li&gt;則「A 戰鬥 X B 進入」可以被排除&lt;/li&gt;
+&lt;li&gt;再來 B 工廠去比較「A 合作 X B 不進入」和「B 不進入」&lt;/li&gt;
+&lt;li&gt;就能消除不進入的選項&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id="-"&gt;時間矛盾的問題 - 空包彈式的威脅&lt;/h3&gt;
-&lt;p&gt;就前面的 A, B 工廠例子來說&lt;br&gt;
-A 工廠進入市場前的最佳行動是戰鬥，所以一定會表現出強硬的姿態&lt;br&gt;
-然而 B 工廠一旦進入，A 工廠就會為了利益選擇合作&lt;br&gt;
+&lt;p&gt;就前面的 A, B 工廠例子來說&lt;br/&gt;
+A 工廠進入市場前的最佳行動是戰鬥，所以一定會表現出強硬的姿態&lt;br/&gt;
+然而 B 工廠一旦進入，A 工廠就會為了利益選擇合作&lt;br/&gt;
 像這樣 A 工廠的強勢姿態就只是「空包彈」&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;實際案例&lt;ul&gt;
@@ -1385,24 +1390,24 @@ A 工廠進入市場前的最佳行動是戰鬥，所以一定會表現出強硬
 &lt;/li&gt;
 &lt;li&gt;高級品決不降價&lt;ul&gt;
 &lt;li&gt;一旦降價，就會產生「等一段時間，價格會下降」的想法&lt;/li&gt;
-&lt;li&gt;以後的物品更不可能用原價把商品賣出 &lt;/li&gt;
+&lt;li&gt;以後的物品更不可能用原價把商品賣出&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="_9"&gt;「重複賽局」和「扣板機策略」&lt;/h3&gt;
-&lt;p&gt;回到最一開始的囚犯賽局&lt;br&gt;
-如果這個賽局會執行不止一次&lt;br&gt;
+&lt;p&gt;回到最一開始的囚犯賽局&lt;br/&gt;
+如果這個賽局會執行不止一次&lt;br/&gt;
 最終兩人就會選擇都不認罪的最佳利益&lt;/p&gt;
-&lt;p&gt;這兩人本來就已經知道最好的選擇是都不認罪&lt;br&gt;
-但因為無法抹去「如果對方背叛了 ...」的想法，才會不做出最佳選擇&lt;br&gt;
-但是如果「對方背叛我，我就讓他好看」的策略成為可能&lt;br&gt;
+&lt;p&gt;這兩人本來就已經知道最好的選擇是都不認罪&lt;br/&gt;
+但因為無法抹去「如果對方背叛了 ...」的想法，才會不做出最佳選擇&lt;br/&gt;
+但是如果「對方背叛我，我就讓他好看」的策略成為可能&lt;br/&gt;
 就會產生某種信賴關係，讓兩人都導向選擇不認罪&lt;/p&gt;
-&lt;p&gt;將無限重複的賽局視為大型賽局，而會成為奈許均衡的選項，即是採取合作關係&lt;br&gt;
-這稱為「無名氏定理」(folk theorem)&lt;br&gt;
-就算是在短期關係中極可能背叛對方的狀況&lt;br&gt;
+&lt;p&gt;將無限重複的賽局視為大型賽局，而會成為奈許均衡的選項，即是採取合作關係&lt;br/&gt;
+這稱為「無名氏定理」(folk theorem)&lt;br/&gt;
+就算是在短期關係中極可能背叛對方的狀況&lt;br/&gt;
 只要關係變成長期的，就有可能表現出能好好維持合作的關係&lt;/p&gt;
 &lt;h2 id="ch5-"&gt;Ch5: 人為什麼無法理性？ - 情感和賽局理論&lt;/h2&gt;
-&lt;p&gt;所有的賽局都是在一個共通條件上成立的 - &lt;strong&gt;玩家只考慮自己的利益，各自做出符合理性的行動&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;所有的賽局都是在一個共通條件上成立的 - &lt;strong&gt;玩家只考慮自己的利益，各自做出符合理性的行動&lt;/strong&gt;&lt;br/&gt;
 而這個前提卻是常常不會成立的&lt;/p&gt;
 &lt;h3 id="-_2"&gt;人能預測未來嗎？ - 蜈蚣賽局&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;爸爸手上有 100 枚硬幣，要分配給 A, B 兩個兒子
@@ -1413,10 +1418,8 @@ A 可以選擇「停止」或「繼續」
 選擇「繼續」，則爸爸會從 A 那邊拿起 1 枚 ( 即使後期 A 有不止 1 枚，還是只會拿 1 枚 )
 並且再加上手上的 1 枚，2 枚一起給 B
 &lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;這個狀況用反向歸納預測的結果是「A 在第一回合就應該選擇停止」&lt;br&gt;
-如此 A 便能獲得比 B 還多的硬幣&lt;br&gt;
+&lt;p&gt;這個狀況用反向歸納預測的結果是「A 在第一回合就應該選擇停止」&lt;br/&gt;
+如此 A 便能獲得比 B 還多的硬幣&lt;br/&gt;
 但是在實際實驗中，卻沒有人做出了這樣的決定&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;人並沒有辦法預測未來&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="-_3"&gt;拍賣賽局 - 證明人會從理性到瘋狂&lt;/h3&gt;
@@ -1425,8 +1428,6 @@ A 可以選擇「停止」或「繼續」
 而這個東西依然會給得標者
 也就是，前一位出價者付了錢卻什麼都拿不到
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;p&gt;這種賽局一直執行下去，玩家就必須一直往高價喊&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;實際案例&lt;ul&gt;
@@ -1445,16 +1446,14 @@ A 同意的話則造這個分配方式
 A 否決的話就都拿不到錢
 只執行一次賽局
 &lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;如果人是理性的，A 即使只拿到 1 元都應該接受&lt;br&gt;
+&lt;p&gt;如果人是理性的，A 即使只拿到 1 元都應該接受&lt;br/&gt;
 然而實際上這樣的狀況卻幾乎不會發生&lt;/p&gt;
 &lt;h4 id="dicatator-game"&gt;獨裁者賽局 (Dicatator game)&lt;/h4&gt;
-&lt;p&gt;跟上面同樣的情境&lt;br&gt;
-只是這次 A 沒有任何決定權，只能接受 B 的分配&lt;br&gt;
-此時 B 的最佳選擇就是 1000 元全部拿走&lt;br&gt;
-然而實驗結果，相當多的人依然會給對方一定程度的金額&lt;/p&gt;</content><category term="Game Theory"></category></entry><entry><title>[Book] 穀倉效應</title><link href="https://lee-w.github.io/posts/book/2016/10/the-silo-effect" rel="alternate"></link><published>2016-10-04T15:00:00+08:00</published><updated>2016-10-04T15:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-04:/posts/book/2016/10/the-silo-effect</id><summary type="html">&lt;p&gt;&lt;img alt="The silo effect" src="https://lee-w.github.io/images/books/MTSd8sY.jpg"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="The silo effect" src="https://lee-w.github.io/images/books/MTSd8sY.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;跟上面同樣的情境&lt;br/&gt;
+只是這次 A 沒有任何決定權，只能接受 B 的分配&lt;br/&gt;
+此時 B 的最佳選擇就是 1000 元全部拿走&lt;br/&gt;
+然而實驗結果，相當多的人依然會給對方一定程度的金額&lt;/p&gt;</content><category term="Game Theory"></category></entry><entry><title>[Book] 穀倉效應</title><link href="https://lee-w.github.io/posts/book/2016/10/the-silo-effect" rel="alternate"></link><published>2016-10-04T15:00:00+08:00</published><updated>2016-10-04T15:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-10-04:/posts/book/2016/10/the-silo-effect</id><summary type="html">&lt;p&gt;&lt;img alt="The silo effect" src="https://lee-w.github.io/images/books/MTSd8sY.jpg"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="The silo effect" src="https://lee-w.github.io/images/books/MTSd8sY.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h3 id="_1"&gt;什麼是穀倉？&lt;/h3&gt;
@@ -1482,9 +1481,9 @@ A 否決的話就都拿不到錢
 &lt;/li&gt;
 &lt;li&gt;第 8 章則是在穀倉造成問題及打破穀倉各提一些&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;如果要快速看過，建議順序是&lt;br&gt;
-&lt;code&gt;前言 -&amp;gt; ( 第 1 章，可看可不看 ) -&amp;gt; 2~4 選一章 -&amp;gt; 5~7 選一章 -&amp;gt; 結語&lt;/code&gt;&lt;/p&gt;
-&lt;hr&gt;
+&lt;p&gt;如果要快速看過，建議順序是&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;前言 -&amp;gt; ( 第 1 章，可看可不看 ) -&amp;gt; 2~4 選一章 -&amp;gt; 5~7 選一章 -&amp;gt; 結語&lt;/code&gt;&lt;/p&gt;
+&lt;hr/&gt;
 &lt;h2 id="_2"&gt;前言：彭博市府的機密任務&lt;/h2&gt;
 &lt;h3 id="_3"&gt;廢油處理問題 （跨部門的合作）&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;餐廳多半趁深夜偷偷倒油，數年來讓當局一直束手無策。
@@ -1495,8 +1494,6 @@ A 否決的話就都拿不到錢
 福勞爾斯說：「現在稽查員發現餐廳偷倒廢油時，不會只是走上前說：『喂，搞什麼鬼啊！罰緩二萬五千美元！』
 他們改成說：『別傻了，拿這些來換錢吧！賣給生質柴油公司吧！外頭一大堆公司巴不得要購買這些廢油呢！』」
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;h2 id="ch1-"&gt;Ch1 - 局外人：從人類學照見穀倉&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;環境裡的習性不僅反映我們頭腦裡的心理地圖與分類系統，還會加以強化&lt;/li&gt;
@@ -1508,8 +1505,8 @@ A 否決的話就都拿不到錢
 &lt;li&gt;
 &lt;p&gt;儘管專業化穀倉讓公司顯得更有效率，至少短期如此，但有利也有弊&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;管理階層發現要自負盈虧，他們開始試著「保護」自己的部分&lt;br&gt;
-不只對抗公司外的競爭對手，也對抗公司裡的其他部門&lt;/li&gt;
+&lt;li&gt;管理階層發現要自負盈虧，他們開始試著「保護」自己的部分&lt;br/&gt;
+  不只對抗公司外的競爭對手，也對抗公司裡的其他部門&lt;/li&gt;
 &lt;li&gt;不願彼此分享點子&lt;/li&gt;
 &lt;li&gt;優秀人員不在跨部門輪調，合作程度降低&lt;/li&gt;
 &lt;li&gt;連創新實驗與長期投資也逐漸減少，大家短視近利，不願承受風險。&lt;/li&gt;
@@ -1521,7 +1518,7 @@ A 否決的話就都拿不到錢
 &lt;/ul&gt;
 &lt;h2 id="ch4-"&gt;Ch4 - 俄羅斯娃娃：穀倉如何造成狹隘視野&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;決策者看不見危機的最大原因在於整個系統過度分工&lt;br&gt;
+&lt;li&gt;決策者看不見危機的最大原因在於整個系統過度分工&lt;br/&gt;
   e.g.&lt;ul&gt;
 &lt;li&gt;總體經濟研究者關注經濟數字，卻忽略金融系統的細微變化&lt;/li&gt;
 &lt;li&gt;銀行監管機關監督個別銀行，卻忽略其他金融機構&lt;/li&gt;
@@ -1532,11 +1529,11 @@ A 否決的話就都拿不到錢
 &lt;h2 id="ch6-"&gt;Ch6 - 改寫社會規則：打開穀倉大門&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;每一個進入臉書的員工都必須參加新兵訓練營，在不同部門論調，藉此了解整間公司，透過這個想達到是的是兩件事&lt;ul&gt;
-&lt;li&gt;人員分為不同的專案團隊，各自專門負責特定任務&lt;br&gt;
-  編寫程式需要針對特定專案進行密切的團隊合作&lt;br&gt;
-  穀倉是臉書這類的公司的必要之惡&lt;br&gt;
+&lt;li&gt;人員分為不同的專案團隊，各自專門負責特定任務&lt;br/&gt;
+  編寫程式需要針對特定專案進行密切的團隊合作&lt;br/&gt;
+  穀倉是臉書這類的公司的必要之惡&lt;br/&gt;
   如果沒有專業部門和團隊，根本無法完成工作，也難以集中火力與區分權責&lt;/li&gt;
-&lt;li&gt;讓不同專案團隊的成員之間斯底亞有第二套人際關係，不受正式的部分區分所限&lt;br&gt;
+&lt;li&gt;讓不同專案團隊的成員之間斯底亞有第二套人際關係，不受正式的部分區分所限&lt;br/&gt;
   藉此避免專案團隊變得僵化與封閉，讓人員不只對所屬團隊有感情，也對整個公司有向心力&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1579,6 +1576,9 @@ A 否決的話就都拿不到錢
 終於把他看完了，算一算竟然花了 11 個小時&lt;/p&gt;
 &lt;!--more--&gt;
 
+&lt;div class="toc"&gt;
+&lt;ul&gt;&lt;/ul&gt;
+&lt;/div&gt;
 &lt;p&gt;&lt;img alt="Steve Jobs" src="https://lee-w.github.io/images/books/7zs4aDC.jpg"&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;亞特金森也用高階程式語言 Pascal，為蘋果二號寫程式。&lt;br&gt;
@@ -1610,40 +1610,45 @@ A 否決的話就都拿不到錢
 &lt;hr&gt;
 &lt;p&gt;賈伯斯的企業經營原則是，決不害怕吃掉自既有的市場。&lt;br&gt;
 他說：「你不自己吃，別人也會吃下去！」&lt;br&gt;
-因此，即使 iPhone 有可能侵蝕 iPod 的市場，iPad 也可能吃掉蘋果筆電的是長，賈伯斯也從不卻步。&lt;/p&gt;</content><category term="Autobiography"></category></entry><entry><title>[Book] 一個人的會議時間</title><link href="https://lee-w.github.io/posts/book/2016/08/meeting-with-youself" rel="alternate"></link><published>2016-08-27T00:50:00+08:00</published><updated>2016-08-27T00:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-27:/posts/book/2016/08/meeting-with-youself</id><summary type="html">&lt;p&gt;&lt;img alt="一個人的會議時間" src="https://lee-w.github.io/images/books/ZZTHLlJ.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;這本書其實是我幾年前買的&lt;br&gt;
-最近開始覺得好想應該檢視一下自己每天的生活到底過得如何&lt;br&gt;
+因此，即使 iPhone 有可能侵蝕 iPod 的市場，iPad 也可能吃掉蘋果筆電的是長，賈伯斯也從不卻步。&lt;/p&gt;</content><category term="Autobiography"></category></entry><entry><title>[Book] 一個人的會議時間</title><link href="https://lee-w.github.io/posts/book/2016/08/meeting-with-youself" rel="alternate"></link><published>2016-08-27T00:50:00+08:00</published><updated>2016-08-27T00:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-27:/posts/book/2016/08/meeting-with-youself</id><summary type="html">&lt;p&gt;&lt;img alt="一個人的會議時間" src="https://lee-w.github.io/images/books/ZZTHLlJ.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;這本書其實是我幾年前買的&lt;br/&gt;
+最近開始覺得好想應該檢視一下自己每天的生活到底過得如何&lt;br/&gt;
 突然才想起還有這樣的一本書&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;學會跟自己開會，才懂得怎麼經營「自己」這家公司&lt;/strong&gt;&lt;br&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="一個人的會議時間" src="https://lee-w.github.io/images/books/ZZTHLlJ.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;這本書其實是我幾年前買的&lt;br&gt;
-最近開始覺得好想應該檢視一下自己每天的生活到底過得如何&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;學會跟自己開會，才懂得怎麼經營「自己」這家公司&lt;/strong&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="一個人的會議時間" src="https://lee-w.github.io/images/books/ZZTHLlJ.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;這本書其實是我幾年前買的&lt;br/&gt;
+最近開始覺得好想應該檢視一下自己每天的生活到底過得如何&lt;br/&gt;
 突然才想起還有這樣的一本書&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;學會跟自己開會，才懂得怎麼經營「自己」這家公司&lt;/strong&gt;&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;學會跟自己開會，才懂得怎麼經營「自己」這家公司&lt;/strong&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;h2 id="ch2-3"&gt;Ch2-3 問題對策會議&lt;/h2&gt;
-&lt;p&gt;人們大多愛瞎操心&lt;br&gt;
-問題本身不見得是大問題&lt;br&gt;
+&lt;p&gt;人們大多愛瞎操心&lt;br/&gt;
+問題本身不見得是大問題&lt;br/&gt;
 反而是「有問題還沒處理」所引發的這種煩躁造成了問題&lt;/p&gt;
-&lt;p&gt;試著全都寫下來&lt;br&gt;
-即使被事情壓得喘不過氣&lt;br&gt;
+&lt;p&gt;試著全都寫下來&lt;br/&gt;
+即使被事情壓得喘不過氣&lt;br/&gt;
 把它們寫下來就能讓自己心安許多&lt;/p&gt;
-&lt;p&gt;接著將他們分類成以下四種&lt;br&gt;
-1. 「何時要做」（列入 TO-Do）&lt;br&gt;
-2. 「拜託、請教別人」（列入 To-Do）&lt;br&gt;
-    - 成功、達成目標的人，大多是「擅長拜託別人」的人&lt;br&gt;
-    - 訣竅在於弄清楚要「拜託誰」、「拜託什麼」&lt;br&gt;
-3. 「接受」（煩惱也沒用的事）&lt;br&gt;
-4. 「捨棄」（丟掉那些對人生並不是那麼重要的事） &lt;/p&gt;
+&lt;p&gt;接著將他們分類成以下四種&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;「何時要做」（列入 TO-Do）&lt;/li&gt;
+&lt;li&gt;「拜託、請教別人」（列入 To-Do）&lt;ul&gt;
+&lt;li&gt;成功、達成目標的人，大多是「擅長拜託別人」的人&lt;/li&gt;
+&lt;li&gt;訣竅在於弄清楚要「拜託誰」、「拜託什麼」&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;「接受」（煩惱也沒用的事）&lt;/li&gt;
+&lt;li&gt;「捨棄」（丟掉那些對人生並不是那麼重要的事）&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id="ch2-8"&gt;Ch2-8 行程會議的訣竅：醞釀期待感&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;列出「如果有 5 分鐘，要做的事」&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;試著總是把明天排成令人期待的日子&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="ch3-2"&gt;Ch3-2 自己的行動方式&lt;/h2&gt;
-&lt;p&gt;如何將 To-Do 迅速地付諸行動  &lt;/p&gt;
+&lt;p&gt;如何將 To-Do 迅速地付諸行動&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;del&gt; 不得不做，只好做了 &lt;/del&gt;&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;不得不做，只好做了&lt;/del&gt;&lt;ul&gt;
 &lt;li&gt;長久以來內心會累&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1656,8 +1661,8 @@ A 否決的話就都拿不到錢
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="ch3-3"&gt;Ch3-3 回覆的方式&lt;/h2&gt;
-&lt;p&gt;E-mail 從新的開始回覆，就可以令對方感到「回應的速度真快」&lt;br&gt;
-若從舊的開始依序回覆，新的就會變成舊的&lt;br&gt;
+&lt;p&gt;E-mail 從新的開始回覆，就可以令對方感到「回應的速度真快」&lt;br/&gt;
+若從舊的開始依序回覆，新的就會變成舊的&lt;br/&gt;
 如果舊的真的很重要，對方就會打電話或再寫 E-mail 來催促&lt;/p&gt;
 &lt;p&gt;忙碌的時候要從新的工作開始處理&lt;/p&gt;
 &lt;h2 id="ch4-2"&gt;Ch4-2 一個月跟自己開一次進階版會議&lt;/h2&gt;
@@ -1675,7 +1680,7 @@ A 否決的話就都拿不到錢
 &lt;li&gt;你在人生中的什麼時候實現了夢想？&lt;/li&gt;
 &lt;li&gt;人生在最耀眼那一瞬間的情緒？&lt;/li&gt;
 &lt;li&gt;目標是什麼？什麼進展得順利？什麼又不順利呢？該做什麼？透過這些問題，獲得了什麼？&lt;/li&gt;
-&lt;li&gt;該怎麼做才能改變現在的狀況？ &lt;/li&gt;
+&lt;li&gt;該怎麼做才能改變現在的狀況？&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1715,37 +1720,36 @@ A 否決的話就都拿不到錢
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;一個月跟自己開一次進階版的會議&lt;/li&gt;
-&lt;/ol&gt;</content><category term="Productivity"></category></entry><entry><title>[Book] 你如何衡量你的人生</title><link href="https://lee-w.github.io/posts/book/2016/08/how-will-you-measure-your-life" rel="alternate"></link><published>2016-08-26T03:26:00+08:00</published><updated>2016-08-26T03:26:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-26:/posts/book/2016/08/how-will-you-measure-your-life</id><summary type="html">&lt;p&gt;&lt;img alt="你要如何衡量你的人生" src="http://pic.eslite.com/Upload/Product/201207/m/634778514624800000.jpg"&gt;&lt;br&gt;
-最近發現竟然沒有把這本還蠻喜歡的書 po 上來&lt;br&gt;
+&lt;/ol&gt;</content><category term="Productivity"></category></entry><entry><title>[Book] 你如何衡量你的人生</title><link href="https://lee-w.github.io/posts/book/2016/08/how-will-you-measure-your-life" rel="alternate"></link><published>2016-08-26T03:26:00+08:00</published><updated>2016-08-26T03:26:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-26:/posts/book/2016/08/how-will-you-measure-your-life</id><summary type="html">&lt;p&gt;&lt;img alt="你要如何衡量你的人生" src="http://pic.eslite.com/Upload/Product/201207/m/634778514624800000.jpg"/&gt;&lt;br/&gt;
+最近發現竟然沒有把這本還蠻喜歡的書 po 上來&lt;br/&gt;
 就好好的把之前整理的書摘，再重新整理過一遍&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="你要如何衡量你的人生" src="http://pic.eslite.com/Upload/Product/201207/m/634778514624800000.jpg"&gt;&lt;br&gt;
-最近發現竟然沒有把這本還蠻喜歡的書 po 上來&lt;br&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="你要如何衡量你的人生" src="http://pic.eslite.com/Upload/Product/201207/m/634778514624800000.jpg"/&gt;&lt;br/&gt;
+最近發現竟然沒有把這本還蠻喜歡的書 po 上來&lt;br/&gt;
 就好好的把之前整理的書摘，再重新整理過一遍&lt;/p&gt;
 &lt;!--more--&gt;
 
-&lt;p&gt;這本書的每一個章節都是先講商業上的案例和處置，之後再將這些套用到生涯中&lt;/p&gt;
 &lt;h1 id="part-1"&gt;Part 1 發現生涯之樂&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;希望你也能有這種感覺 — 每天一睜開眼睛，為了可以做自己喜歡的事而欣喜&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;有很多人看什麼是最緊急就花時間在上面，或是把心血注入到最快得到回饋的事&lt;br&gt;
+&lt;p&gt;有很多人看什麼是最緊急就花時間在上面，或是把心血注入到最快得到回饋的事 。&lt;br/&gt;
   這都是建構策略時必須小心的陷阱&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="ch2"&gt;Ch2 如何讓你的熱情燃燒 ( 誘因理論 )&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;為什麼經理人在營運的時候不考慮股東的最佳利益？&lt;br&gt;
-  因為你付多少錢給經理人，他們就做多少事&lt;br&gt;
-  只有經理人的利益跟股東的利益相連才能解決這個問題&lt;br&gt;
-  e.g. 公司股價上升，經理人也獲得較高的酬勞&lt;/p&gt;
+&lt;p&gt;為什麼經理人在營運的時候不考慮股東的最佳利益？&lt;br/&gt;
+  因為你付多少錢給經理人，他們就做多少事&lt;br/&gt;
+  只有經理人的利益跟股東的利益相連才能解決這個問題&lt;br/&gt;
+  e.g., 公司股價上升，經理人也獲得較高的酬勞&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;一個理論是否可靠，最好的驗證方式就是找出反常的例子，也就是該理論無法解釋的現象&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;e.g. 最先研究飛行的先驅認為羽毛是必要&lt;ul&gt;
+&lt;li&gt;e.g., 最先研究飛行的先驅認為羽毛是必要&lt;ul&gt;
 &lt;li&gt;卻發現蝙蝠沒羽毛會飛，鴕鳥有羽毛卻不會飛&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1754,28 +1758,28 @@ A 否決的話就都拿不到錢
 &lt;/ul&gt;
 &lt;h3 id="vs"&gt;保健因素 vs 動機因素&lt;/h3&gt;
 &lt;p&gt;保健因素 : 工作的某些因素如果出問題，讓我們覺得不滿意，這些就是保健因素&lt;/p&gt;
-&lt;p&gt;有趣的是，薪水對於工作來說只是保健因素&lt;br&gt;
-即使不斷改善工作的保健因素，也不能讓一個人熱愛工作，頂多就是不討厭而已&lt;br&gt;
+&lt;p&gt;有趣的是，薪水對於工作來說只是保健因素&lt;br/&gt;
+即使不斷改善工作的保健因素，也不能讓一個人熱愛工作，頂多就是不討厭而已&lt;br/&gt;
 需要的是動機因素&lt;/p&gt;
-&lt;p&gt;追逐薪水頂多緩和工作的挫折感&lt;br&gt;
-為了發掘真正的快樂，你必須不斷找尋有意義的機會，讓你得以學到新的東西，肩負更多責任&lt;br&gt;
+&lt;p&gt;追逐薪水頂多緩和工作的挫折感&lt;br/&gt;
+為了發掘真正的快樂，你必須不斷找尋有意義的機會，讓你得以學到新的東西，肩負更多責任&lt;br/&gt;
 如果你找到你愛的工作，你將沒有一天覺得自己在工作，而是在做一件有意義的事&lt;/p&gt;
 &lt;h2 id="ch3"&gt;Ch3 計劃與變化&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;在工作生涯當中，你會發現你最喜歡的領域是甚麼，最後必然可找到能滿足保健因素，也能使動機因素發揮最大效用的工作&lt;br&gt;
+&lt;p&gt;在工作生涯當中，你會發現你最喜歡的領域是甚麼，最後必然可找到能滿足保健因素，也能使動機因素發揮最大效用的工作&lt;br/&gt;
 最重要的是，&lt;strong&gt;你一定要走出去嘗試&lt;/strong&gt;，才能知道甚麼樣的工作最符合你的才能和興趣&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;如果要工作愉快，哪些假設必須證明為真 ?&lt;br&gt;
-  接受這份工作的動機是出自內在，還是外在因素 ?&lt;br&gt;
-  為什麼你認為自己可以愉快勝任 ?&lt;br&gt;
+&lt;p&gt;如果要工作愉快，哪些假設必須證明為真 ?&lt;br/&gt;
+  接受這份工作的動機是出自內在，還是外在因素 ?&lt;br/&gt;
+  為什麼你認為自己可以愉快勝任 ?&lt;br/&gt;
   每次考慮換工作時，請你想想最重要的假設是甚麼，如何去證明他 ?&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="ch4"&gt;Ch4 策略的試金石&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;個人的誘因跟公司長遠目標衝突，是常見的現象  &lt;ul&gt;
+&lt;li&gt;個人的誘因跟公司長遠目標衝突，是常見的現象&lt;ul&gt;
 &lt;li&gt;e.g. 立委任期為四年&lt;ul&gt;
 &lt;li&gt;一個好的國家計劃要五年十年&lt;/li&gt;
 &lt;li&gt;然而要讓自己繼續連任，只有提出短期能有成效的計劃才能達到讓自己連任的目標&lt;/li&gt;
@@ -1788,8 +1792,8 @@ A 否決的話就都拿不到錢
 &lt;h1 id="part-2"&gt;Part 2 圓滿的人際關係&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;在做資源分配時，你必須注意是否與心中的優先順序相符&lt;br&gt;
-對你來說，什麼是成功 ? 什麼是不重要的 ?&lt;/p&gt;
+&lt;p&gt;在做資源分配時，你必須注意是否與心中的優先順序相符&lt;br/&gt;
+  對你來說，什麼是成功 ? 什麼是不重要的 ?&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;沒有結果並非代表你失敗了，只能證明你用的方法還不對&lt;/p&gt;
@@ -1798,20 +1802,20 @@ A 否決的話就都拿不到錢
 &lt;h2 id="ch5"&gt;Ch5 時鐘滴答響&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;在所有成功的公司當中，有 93% 都必須改變最初的策略&lt;br&gt;
+&lt;p&gt;在所有成功的公司當中，有 93% 都必須改變最初的策略&lt;br/&gt;
   所以&lt;strong&gt;不一定要訂定一個固定的生涯目標，而是隨著自己不斷的成長而一直改變&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;稍微想想，就會發現在忙碌時我們疏忽了哪些人&lt;br&gt;
-  你或許覺得家人很愛你，你和朋友友誼深厚，他們不會在乎被疏忽&lt;br&gt;
-  其實不然&lt;br&gt;
+&lt;p&gt;稍微想想，就會發現在忙碌時我們疏忽了哪些人&lt;br/&gt;
+  你或許覺得家人很愛你，你和朋友友誼深厚，他們不會在乎被疏忽&lt;br/&gt;
+  其實不然&lt;br/&gt;
   長久不花時間、精力去培養人際關係，身邊的人最後還是會離你而去&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="ch6"&gt;Ch6 一杯奶昔的任務&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;每一個成功的產品或服務之所以能大受歡迎，是因為這種東西&lt;strong&gt;幫我們完成了不得不做的工作&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;每一個成功的產品或服務之所以能大受歡迎，是因為這種東西&lt;strong&gt;幫我們完成了不得不做的工作&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果一個人開發出一種有趣的產品，但沒能幫上消費者的忙，這種東西就難以成功&lt;/li&gt;
 &lt;/ul&gt;
@@ -1826,8 +1830,8 @@ A 否決的話就都拿不到錢
 &lt;/ul&gt;
 &lt;h2 id="ch7"&gt;Ch7 席瑟司之船&lt;/h2&gt;
 &lt;h3 id="_1"&gt;別把未來外包&lt;/h3&gt;
-&lt;p&gt;你得了解未來要成功必須具備的能力，無論如何都別把這樣的能力外包了，否則就是把未來交給別人&lt;br&gt;
-e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌，DELL 就不再具有優勢了&lt;/p&gt;
+&lt;p&gt;你得了解未來要成功必須具備的能力，無論如何都別把這樣的能力外包了，否則就是把未來交給別人&lt;br/&gt;
+e.g., DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌，DELL 就不再具有優勢了&lt;/p&gt;
 &lt;p&gt;「我父母給我最好的禮物並非他們為我做了甚麼，而是他們沒為我做的」&lt;/p&gt;
 &lt;h2 id="ch8"&gt;Ch8 經驗學校&lt;/h2&gt;
 &lt;ul&gt;
@@ -1841,45 +1845,43 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/ul&gt;
 &lt;h2 id="ch9"&gt;Ch9 一隻看不見的手&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;在孩子還小，尚未面臨困難的選擇時，就必須培養他們心中設定優先順序的能力&lt;br&gt;
+&lt;li&gt;在孩子還小，尚未面臨困難的選擇時，就必須培養他們心中設定優先順序的能力&lt;br/&gt;
   長大以後，他們才知道如何評估各種選擇，做出最好的決定&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="_2"&gt;企業文化&lt;/h3&gt;
-&lt;p&gt;文化不是管理階級花時間和員工溝通、講述就可以形成的，當然也不是寫寫標語就好了&lt;br&gt;
-文化會建立在員工做的一連串決定上&lt;br&gt;
-每次碰到問題或挑戰時，如何去解決他的決定&lt;br&gt;
-例如 :「新產品是不是品質尚可就達到出貨標準了 ?」&lt;br&gt;
-如果面對這樣的問題，負責的人討論後決定只要品質尚可就能出貨&lt;br&gt;
-下一次員工面臨類似問題的時候就會做出同樣的決定&lt;br&gt;
+&lt;p&gt;文化不是管理階級花時間和員工溝通、講述就可以形成的，當然也不是寫寫標語就好了&lt;br/&gt;
+文化會建立在員工做的一連串決定上&lt;br/&gt;
+每次碰到問題或挑戰時，如何去解決他的決定&lt;br/&gt;
+例如 :「新產品是不是品質尚可就達到出貨標準了 ?」&lt;br/&gt;
+如果面對這樣的問題，負責的人討論後決定只要品質尚可就能出貨&lt;br/&gt;
+下一次員工面臨類似問題的時候就會做出同樣的決定&lt;br/&gt;
 碰到問題時，不只是解決就好了，還必須從解決的過程了解什麼是最重要的&lt;/p&gt;
-&lt;p&gt;同樣的道理，如果你希望家人都能在家庭文化的影響下&lt;br&gt;
-依循依定的優先順序做事，這樣的優先順序則必須跟文化相符合&lt;br&gt;
-例如你希望家裡有和善的文化，那麼在孩子第一次碰到跟和善相關的選擇，你就得幫他做決定&lt;br&gt;
+&lt;p&gt;同樣的道理，如果你希望家人都能在家庭文化的影響下&lt;br/&gt;
+依循依定的優先順序做事，這樣的優先順序則必須跟文化相符合&lt;br/&gt;
+例如你希望家裡有和善的文化，那麼在孩子第一次碰到跟和善相關的選擇，你就得幫他做決定&lt;br/&gt;
 若孩子沒這麼做，你就得針對這件事指導孩子，並解釋為什麼他們該採取和善的做法&lt;/p&gt;
 &lt;h2 id="ch10"&gt;Ch10 就這麼一次 ...&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;百分之百的堅持比百分之九十八來得容易
 &lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;有很多人都相信自己真的只是一次妥協，下不為例&lt;br&gt;
-如果是小小的選擇，我們都有很好的理由&lt;br&gt;
-這些選擇往往不是攸關一生的重大決定。乍看之下邊計成本都很低&lt;br&gt;
+&lt;p&gt;有很多人都相信自己真的只是一次妥協，下不為例&lt;br/&gt;
+如果是小小的選擇，我們都有很好的理由&lt;br/&gt;
+這些選擇往往不是攸關一生的重大決定。乍看之下邊計成本都很低&lt;br/&gt;
 然而一個又一個決定累積下來，你就會慢慢走上不歸路，變成不一樣的人&lt;/p&gt;
-&lt;p&gt;百分之百堅守原則，比百分之九十八來得容易&lt;br&gt;
-如果你不越界，個人道德界限的力量就會很強大 &lt;br&gt;
+&lt;p&gt;百分之百堅守原則，比百分之九十八來得容易&lt;br/&gt;
+如果你不越界，個人道德界限的力量就會很強大&lt;br/&gt;
 要是你用好理由說服自己，那就成了一個沒有原則的人，甚麼事都做得出來&lt;/p&gt;
 &lt;p&gt;為了變成自己理想中的，每一個人的過程都不同。不管如何，你應該要能回答這樣的問題 :「我真的想要變成那樣的人嗎 ?」&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;「如果我將每日禱告、反思的時間拿來研究迴歸分析，我將後悔莫及。
  每年，我用到計量經濟學工具不過只有幾次，而我對人生目的的認知卻天天都可派上用場」
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Inspiring"></category></entry><entry><title>[Book] 引誘科學</title><link href="https://lee-w.github.io/posts/book/2016/08/captivology-the-science-of-capturing-people-s-attention" rel="alternate"></link><published>2016-08-07T12:11:00+08:00</published><updated>2016-08-07T12:11:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-07:/posts/book/2016/08/captivology-the-science-of-capturing-people-s-attention</id><summary type="html">&lt;p&gt;&lt;img alt="captivology-the-science-of-capturing-people-s-attention" src="http://pic.eslite.com/Upload/Product/201605/m/635988115711024504.jpg"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="captivology-the-science-of-capturing-people-s-attention" src="http://pic.eslite.com/Upload/Product/201605/m/635988115711024504.jpg"&gt;&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Inspiring"></category></entry><entry><title>[Book] 引誘科學</title><link href="https://lee-w.github.io/posts/book/2016/08/captivology-the-science-of-capturing-people-s-attention" rel="alternate"></link><published>2016-08-07T12:11:00+08:00</published><updated>2016-08-07T12:11:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-08-07:/posts/book/2016/08/captivology-the-science-of-capturing-people-s-attention</id><summary type="html">&lt;p&gt;&lt;img alt="captivology-the-science-of-capturing-people-s-attention" src="http://pic.eslite.com/Upload/Product/201605/m/635988115711024504.jpg"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="captivology-the-science-of-capturing-people-s-attention" src="http://pic.eslite.com/Upload/Product/201605/m/635988115711024504.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="ch1-"&gt;Ch1 - 注意力有三種 : 即時、短期、長期，怎樣抓住&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;顏色應用的一般性原則&lt;ul&gt;
 &lt;li&gt;藍色多代表平靜&lt;/li&gt;
-&lt;li&gt;最令人喜歡的顏色或組合：藍色、藍綠色、綠色、綠紫色、紅紫色、紫色 &lt;/li&gt;
+&lt;li&gt;最令人喜歡的顏色或組合：藍色、藍綠色、綠色、綠紫色、紅紫色、紫色&lt;/li&gt;
 &lt;li&gt;最不討喜：綠黃色、黃色&lt;/li&gt;
 &lt;li&gt;令人感到興奮、激勵或警覺，應該選用暖色系&lt;/li&gt;
 &lt;/ul&gt;
@@ -1897,12 +1899,10 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 
 後來再也沒有人去碰手機了，我們終於有機會開懷大聊。
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;ul&gt;
 &lt;li&gt;內源性獎勵&lt;ul&gt;
-&lt;li&gt;外源性獎勵和內源性獎勵的差異，在於想要得到獎勵的東擊是不同的&lt;br&gt;
-  我們會為外源性獎勵而去注意或做某件事&lt;br&gt;
+&lt;li&gt;外源性獎勵和內源性獎勵的差異，在於想要得到獎勵的東擊是不同的&lt;br/&gt;
+  我們會為外源性獎勵而去注意或做某件事&lt;br/&gt;
   內源性獎勵的動機則是來自事情本身，我們會去注意或從事我們認為值得的事，不在乎是否能得到任何外源性獎勵&lt;/li&gt;
 &lt;li&gt;通用內源性獎勵&lt;ul&gt;
 &lt;li&gt;權力&lt;/li&gt;
@@ -1919,7 +1919,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;li&gt;報復&lt;/li&gt;
 &lt;li&gt;飲食&lt;/li&gt;
 &lt;li&gt;體能活動&lt;/li&gt;
-&lt;li&gt;平靜（安全） &lt;/li&gt;
+&lt;li&gt;平靜（安全）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1928,14 +1928,14 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;h1 id="ch7-"&gt;Ch7 - 懸念誘因：弔胃口、待解之謎 讓完成強迫症發作&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;懸念誘因必須具備懸而未決、情感投入、逆轉劇情以及結局未卜四個要件，才能持續吸引注意力&lt;/li&gt;
-&lt;li&gt;如果個人或公司遇上了危機，而且社會大眾和媒體都睜大眼睛等著下一步作為時，正確的收尾行動乃是第一要務&lt;br&gt;
+&lt;li&gt;如果個人或公司遇上了危機，而且社會大眾和媒體都睜大眼睛等著下一步作為時，正確的收尾行動乃是第一要務&lt;br/&gt;
   因為這樣事件才能做個了斷。如果你的收尾行動無法讓人滿意，就會留下一個結局未卜的小缺口，讓人們有機會不斷議論及報導&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="ch8-"&gt;Ch8 - 肯定誘因：想被認得、想被賞識、想被同理心對待&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;「球場蓋好，人就會來」在現代世界裡事行不通的&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Sales"></category></entry><entry><title>[Book] 增強你的意志力</title><link href="https://lee-w.github.io/posts/book/2016/06/willpower" rel="alternate"></link><published>2016-06-27T02:55:00+08:00</published><updated>2016-06-27T02:55:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-06-27:/posts/book/2016/06/willpower</id><summary type="html">&lt;p&gt;&lt;img alt="willpower" src="http://pic.eslite.com/Upload/Product/201307/m/635093011219915000.jpg"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="willpower" src="http://pic.eslite.com/Upload/Product/201307/m/635093011219915000.jpg"&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Sales"></category></entry><entry><title>[Book] 增強你的意志力</title><link href="https://lee-w.github.io/posts/book/2016/06/willpower" rel="alternate"></link><published>2016-06-27T02:55:00+08:00</published><updated>2016-06-27T02:55:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-06-27:/posts/book/2016/06/willpower</id><summary type="html">&lt;p&gt;&lt;img alt="willpower" src="http://pic.eslite.com/Upload/Product/201307/m/635093011219915000.jpg"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="willpower" src="http://pic.eslite.com/Upload/Product/201307/m/635093011219915000.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="-"&gt;前言 - 意志力：人類最強大的力量&lt;/h2&gt;
@@ -1995,7 +1995,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/ul&gt;
 &lt;h2 id="ch5-"&gt;Ch5 - 錢都花到哪去了？&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;遠視：太過擔心未來，而損及眼前的生活。   &lt;ul&gt;
+&lt;li&gt;遠視：太過擔心未來，而損及眼前的生活。&lt;ul&gt;
 &lt;li&gt;這樣的吝嗇心態會讓人花更多時間、與朋友疏離、讓家人抓狂也讓自己痛苦&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -2003,7 +2003,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;h2 id="ch6-"&gt;Ch6 - 意志力可以鍛鍊嗎&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;「讓你的大腦習慣訂定小目標，並加以達成，能幫助你做到原本做不到的大事情」&lt;ul&gt;
-&lt;li&gt;「不光為了練習特定的技能，還要把困難度加高，決不寬貸，如此一來，你才會行有餘力，超過原本設定的目標。對我來說，這就是紀律。全靠不斷重複和練習而來」 &lt;/li&gt;
+&lt;li&gt;不光為了練習特定的技能，還要把困難度加高，決不寬貸，如此一來，你才會行有餘力，超過原本設定的目標。對我來說，這就是紀律。全靠不斷重複和練習而來」&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;練習控制情緒並不能強化意志力。意志力也無法用來控制情緒&lt;ul&gt;
@@ -2028,7 +2028,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;h2 id="ch10-"&gt;Ch10 - 節食風暴&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;What-the-hell Effect&lt;ul&gt;
-&lt;li&gt;e.g. 節食者已經定下每日最高卡路里攝取量，當他們因為某種原因而吃進超標的熱量時，例如實驗喝下兩大杯奶昔，他們便認為當日的節食努力告吹。這時候就會放縱自己去享受，甚至讓自己吃比原本超標的量還多得多的食物 &lt;/li&gt;
+&lt;li&gt;e.g., 節食者已經定下每日最高卡路里攝取量，當他們因為某種原因而吃進超標的熱量時，例如實驗喝下兩大杯奶昔，他們便認為當日的節食努力告吹。這時候就會放縱自己去享受，甚至讓自己吃比原本超標的量還多得多的食物&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;延遲享樂 vs 不&lt;ul&gt;
@@ -2065,7 +2065,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;li&gt;&lt;strong&gt;更重要的是，你的人生逐月進步&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;「在管理上，我們要求公司主管和其他員工訂出每週的優先目標，目標不能超過三個，小於三個也沒關係。我們每週逐一檢討上週的成果。如果三個目標中，你只完成一個或兩個，無妨，但在前三個目標未完成前，你不能進行其他目標，就這樣，這就是我們的管理方式。它很簡單，但能強迫你先處理最優先的事情，而且嚴格執行」 &lt;/li&gt;
+&lt;li&gt;「在管理上，我們要求公司主管和其他員工訂出每週的優先目標，目標不能超過三個，小於三個也沒關係。我們每週逐一檢討上週的成果。如果三個目標中，你只完成一個或兩個，無妨，但在前三個目標未完成前，你不能進行其他目標，就這樣，這就是我們的管理方式。它很簡單，但能強迫你先處理最優先的事情，而且嚴格執行」&lt;/li&gt;
 &lt;li&gt;正向拖延的力量&lt;ul&gt;
 &lt;li&gt;等一下再享受&lt;/li&gt;
 &lt;li&gt;把惡習拖延，最後可能就不會去做&lt;/li&gt;
@@ -2076,6 +2076,9 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 </summary><content type="html">&lt;p&gt;&lt;img alt="最後的演講" src="http://pic.eslite.com/Upload/Product/200806/m/633519138950888496.jpg"&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
+&lt;div class="toc"&gt;
+&lt;ul&gt;&lt;/ul&gt;
+&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;不論在工作上還是感情關係裡，就算自己居於主導地位，也絕對不能為所欲為&lt;/p&gt;
@@ -2138,6 +2141,9 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 </summary><content type="html">&lt;p&gt;&lt;img alt="automate-this-how-algorithms-came-to-rule-our-world" src="http://pic.eslite.com/Upload/Product/201407/m/635416147773839348.jpg"&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
+&lt;div class="toc"&gt;
+&lt;ul&gt;&lt;/ul&gt;
+&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;演算法可以被視為由一連串二元決策構成的大型決策樹&lt;br&gt;
@@ -2161,6 +2167,9 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 </summary><content type="html">&lt;p&gt;&lt;img alt="leise-menschen-starke-wirkung" src="http://pic.eslite.com/Upload/Product/201404/m/635319380267441240.jpg"&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
+&lt;div class="toc"&gt;
+&lt;ul&gt;&lt;/ul&gt;
+&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;與恐懼周旋&lt;/p&gt;
@@ -2187,8 +2196,8 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;li&gt;
 &lt;p&gt;當你身為會議主持人，請特別留意會場裡的內向者，他們可能需要較長的時間才願意表達意見，而且他們說起話來往往比外向的與會者小聲。設法讓這些內向者也能暢所欲言&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Emotion"></category></entry><entry><title>[Book] 隨機騙局</title><link href="https://lee-w.github.io/posts/book/2016/04/fooled-by-randomness" rel="alternate"></link><published>2016-04-05T14:02:00+08:00</published><updated>2016-04-05T14:02:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-04-05:/posts/book/2016/04/fooled-by-randomness</id><summary type="html">&lt;p&gt;&lt;img alt="fooled by randomness" src="http://pic.eslite.com/Upload/Product/201405/m/635359124106127500.jpg"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="fooled by randomness" src="http://pic.eslite.com/Upload/Product/201405/m/635359124106127500.jpg"&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Emotion"></category></entry><entry><title>[Book] 隨機騙局</title><link href="https://lee-w.github.io/posts/book/2016/04/fooled-by-randomness" rel="alternate"></link><published>2016-04-05T14:02:00+08:00</published><updated>2016-04-05T14:02:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-04-05:/posts/book/2016/04/fooled-by-randomness</id><summary type="html">&lt;p&gt;&lt;img alt="fooled by randomness" src="http://pic.eslite.com/Upload/Product/201405/m/635359124106127500.jpg"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="fooled by randomness" src="http://pic.eslite.com/Upload/Product/201405/m/635359124106127500.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="_1"&gt;序：不必把知識看得那麼重&lt;/h2&gt;
@@ -2254,11 +2263,11 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;h2 id="_6"&gt;歸納的問題&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;下面的一段話是單純解讀過去的資料所發生的問題&lt;ul&gt;
-&lt;li&gt;我剛對布希總統的一生進行完整的統計檢視。從五十八年來，接近二萬一千次的觀察值，發現他不曾一次死掉。所以我可以宣稱他將萬壽無疆，而且統計顯著性很高 &lt;/li&gt;
+&lt;li&gt;我剛對布希總統的一生進行完整的統計檢視。從五十八年來，接近二萬一千次的觀察值，發現他不曾一次死掉。所以我可以宣稱他將萬壽無疆，而且統計顯著性很高&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;當一個人使用的策略可能包含偏態，也就是大賠的機率低，小賺的機率高，則將贏的機率極大化，不會使競賽的期望值極大化&lt;ul&gt;
-&lt;li&gt;如果你用的是俄羅斯輪盤式的策略，大賠的機率低，也就是每隔幾年才會使你破產，那麼幾乎所有樣本中，你都是贏家，除了你死掉的那年 &lt;/li&gt;
+&lt;li&gt;如果你用的是俄羅斯輪盤式的策略，大賠的機率低，也就是每隔幾年才會使你破產，那麼幾乎所有樣本中，你都是贏家，除了你死掉的那年&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2268,24 +2277,20 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;ul&gt;
 &lt;li&gt;一點小小的不確定性，可以讓我們當個足夠滿意者，而不是極大滿意者&lt;/li&gt;
 &lt;li&gt;你的行為展現輕微的不可預測性，可以在發生衝突的情況保護自己&lt;ul&gt;
-&lt;li&gt;如果你一定要被罵了十七次，才在第十八次生氣，這樣的行為就很容易被操縱 &lt;/li&gt;
+&lt;li&gt;如果你一定要被罵了十七次，才在第十八次生氣，這樣的行為就很容易被操縱&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Other"></category></entry><entry><title>[Book] 少，但是更好</title><link href="https://lee-w.github.io/posts/book/2016/03/essentialism" rel="alternate"></link><published>2016-03-11T14:29:00+08:00</published><updated>2016-03-11T14:29:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-03-11:/posts/book/2016/03/essentialism</id><summary type="html">&lt;p&gt;&lt;img alt="Essentialism" src="https://lee-w.github.io/images/books/zJS927h.jpg"&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Other"></category></entry><entry><title>[Book] 少，但是更好</title><link href="https://lee-w.github.io/posts/book/2016/03/essentialism" rel="alternate"></link><published>2016-03-11T14:29:00+08:00</published><updated>2016-03-11T14:29:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-03-11:/posts/book/2016/03/essentialism</id><summary type="html">&lt;p&gt;&lt;img alt="Essentialism" src="https://lee-w.github.io/images/books/zJS927h.jpg"/&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Weniger aber besser
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;p&gt;德語的 Less is more&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="Essentialism" src="https://lee-w.github.io/images/books/zJS927h.jpg"&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="Essentialism" src="https://lee-w.github.io/images/books/zJS927h.jpg"/&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Weniger aber besser
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;p&gt;德語的 Less is more&lt;/p&gt;
 &lt;!--more--&gt;
 
-&lt;h1 id="_1"&gt;如何成為「精‧簡‧準」的人&lt;/h1&gt;
+&lt;h2 id="_1"&gt;如何成為「精‧簡‧準」的人&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;專準主義 (Essentialism) 者之道摒棄「我們甚麼都可以做」&lt;ul&gt;
 &lt;li&gt;而這需要費心去做出真正的取捨和艱難的決定&lt;/li&gt;
@@ -2294,7 +2299,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;li&gt;如果你不替自己的生活排定優先次序，別人就會為你代勞&lt;/li&gt;
 &lt;li&gt;彼得杜拉克 :「幾百年後，當以長遠的角度書寫我們這個時代的歷史時，歷史學者看見的最重要事件，很可能不是科技，不是網路，不是電子商務，而是人類形勢前所未有的改變。這是第一次─真的是史上頭一遭─有為數可觀且級數增加的人們&lt;strong&gt;擁有選擇&lt;/strong&gt;的餘地。這是第一次，他們將不得不管理自己。而社會對此毫無準備。」&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id="_2"&gt;懂得取捨&lt;/h1&gt;
+&lt;h2 id="_2"&gt;懂得取捨&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;「我要如何兩者兼顧 ?」&lt;ul&gt;
 &lt;li&gt;不，那是非專準主義者的想法&lt;/li&gt;
@@ -2311,9 +2316,9 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id="_3"&gt;玩樂&lt;/h1&gt;
+&lt;h2 id="_3"&gt;玩樂&lt;/h2&gt;
 &lt;p&gt;玩不只幫助我們，探索必要的事物。它本身就是不可或缺的事。&lt;/p&gt;
-&lt;h1 id="_4"&gt;睡眠&lt;/h1&gt;
+&lt;h2 id="_4"&gt;睡眠&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;如果對自己投資得不夠，這裡指的是我們的身心靈，我們便會損害用來做出最高貢獻的必備工具&lt;/li&gt;
 &lt;/ul&gt;
@@ -2343,14 +2348,14 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h1 id="_5"&gt;嚴選&lt;/h1&gt;
+&lt;h2 id="_5"&gt;嚴選&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?time_continue=60&amp;amp;v=1ehWlVeMrqw"&gt;No more yes. It's Either HELL YEAH! Or No&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;如果答案不是明確的好，那它就應該是不&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id="_6"&gt;釐清&lt;/h1&gt;
+&lt;h2 id="_6"&gt;釐清&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2381,7 +2386,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id="_7"&gt;取消承諾&lt;/h1&gt;
+&lt;h2 id="_7"&gt;取消承諾&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;沉沒成本偏誤&lt;ul&gt;
 &lt;li&gt;對已知虧本的生亦持續投入時間、金錢或精力的傾向&lt;/li&gt;
@@ -2399,7 +2404,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id="_8"&gt;界限&lt;/h1&gt;
+&lt;h2 id="_8"&gt;界限&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;不推辭的成本往往更高，它會使我們在選擇生命中最重要的事情上變得無能為力&lt;ul&gt;
 &lt;li&gt;找出那些你不該接受的絆腳石&lt;ul&gt;
@@ -2410,16 +2415,16 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id="_9"&gt;進展&lt;/h1&gt;
+&lt;h2 id="_9"&gt;進展&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;當我們從小地方著手並獎勵進展時，最後所達到的成就，將比訂下偉大、崇高卻往往遙不可及的目標時更大&lt;ul&gt;
 &lt;li&gt;更棒的是，積極強化自身成孤的舉懂，能使從這個過程獲得更多的樂趣和滿足&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id="_10"&gt;心流&lt;/h1&gt;
-&lt;p&gt;習慣的力量 ( 可以參考&lt;a href="https://lee-w.github.io/posts/book/2015/11/the-power-of-habit"&gt;「為什麼我們這樣生活，那樣工作」&lt;/a&gt;)&lt;/p&gt;</content><category term="Productivity"></category></entry><entry><title>[Book] 蘋果橘子經濟學</title><link href="https://lee-w.github.io/posts/book/2016/02/freakonomics" rel="alternate"></link><published>2016-02-09T11:52:00+08:00</published><updated>2016-02-09T11:52:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-02-09:/posts/book/2016/02/freakonomics</id><summary type="html">&lt;p&gt;&lt;img alt="freakonomics" src="http://pic.eslite.com/Upload/Product/201001/m/633996933876873707.JPG"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="freakonomics" src="http://pic.eslite.com/Upload/Product/201001/m/633996933876873707.JPG"&gt;&lt;/p&gt;
+&lt;h2 id="_10"&gt;心流&lt;/h2&gt;
+&lt;p&gt;習慣的力量 ( 可以參考&lt;a href="https://lee-w.github.io/posts/book/2015/11/the-power-of-habit"&gt;「為什麼我們這樣生活，那樣工作」&lt;/a&gt;)&lt;/p&gt;</content><category term="Productivity"></category></entry><entry><title>[Book] 蘋果橘子經濟學</title><link href="https://lee-w.github.io/posts/book/2016/02/freakonomics" rel="alternate"></link><published>2016-02-09T11:52:00+08:00</published><updated>2016-02-09T11:52:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-02-09:/posts/book/2016/02/freakonomics</id><summary type="html">&lt;p&gt;&lt;img alt="freakonomics" src="http://pic.eslite.com/Upload/Product/201001/m/633996933876873707.JPG"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="freakonomics" src="http://pic.eslite.com/Upload/Product/201001/m/633996933876873707.JPG"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="_1"&gt;誘因&lt;/h2&gt;
@@ -2438,19 +2443,15 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 然而很有趣的是，之後取消了罰款制度，遲到的人數並未因此減少
 因為他們遲到不用罰款，也不再覺得於心不安
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果捐血可以得到一些錢，是否會增加捐血的人數呢？
 
 肯定會的
-那是要增加到 50 元、500 元或甚至 5000 元呢？ 
+那是要增加到 50 元、500 元或甚至 5000 元呢？
 然而也會讓有些事情變得不同，每項誘因都有黑暗的一面
 如果 500cc 的血值 5000 元，可能會有人偷採別人的血，或用豬血混充
 不論誘因如何，總會有不誠實的人想盡各種辦法來謀取利益
 這樣的欺騙是一種本能的經濟行為：以更少的代價來獲得更多
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;h2 id="_2"&gt;資訊&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;在很多狀況下，與專家面對面接觸可能使資訊不對稱更為嚴重 —— 專家更可以利用資運優勢讓你覺得自己愚蠢無知&lt;/li&gt;
@@ -2464,8 +2465,6 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 以瑞士為例，政府發給每名成年男子一把步槍作為民兵服役用，而且可以存放家中
 瑞士擁有了相當高的武器持有率，卻被認為幾乎是最安全的地方
 &lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;我們習慣把因果關係連結到周遭可以實際接觸戶感受的事物上，而不是遙遠或不易理解的狀況&lt;/p&gt;
@@ -2479,11 +2478,11 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;li&gt;
 &lt;p&gt;就算兩件事相關，也不一定有因果關係。只代表他們之間存在某種關係&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;假設這兩件事是 X, Y，可能Ｘ導致Ｙ，也可能Ｙ導致Ｘ，甚至是另一個因素Ｚ同時影響Ｘ、Ｙ  - 回歸分析所能顯示的是相關性，但無法證明因果性&lt;/li&gt;
+&lt;li&gt;假設這兩件事是 X, Y，可能Ｘ導致Ｙ，也可能Ｙ導致Ｘ，甚至是另一個因素Ｚ同時影響Ｘ、Ｙ    - 回歸分析所能顯示的是相關性，但無法證明因果性&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Economics"></category></entry><entry><title>[Book] 每天最重要的兩小時</title><link href="https://lee-w.github.io/posts/book/2016/01/two-awesome-hours" rel="alternate"></link><published>2016-01-10T02:31:00+08:00</published><updated>2016-01-10T02:31:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-01-10:/posts/book/2016/01/two-awesome-hours</id><summary type="html">&lt;p&gt;&lt;img alt="Two Awesome Hours" src="https://lee-w.github.io/images/books/KQpJ2Gh.jpg"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="Two Awesome Hours" src="https://lee-w.github.io/images/books/KQpJ2Gh.jpg"&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Economics"></category></entry><entry><title>[Book] 每天最重要的兩小時</title><link href="https://lee-w.github.io/posts/book/2016/01/two-awesome-hours" rel="alternate"></link><published>2016-01-10T02:31:00+08:00</published><updated>2016-01-10T02:31:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-01-10:/posts/book/2016/01/two-awesome-hours</id><summary type="html">&lt;p&gt;&lt;img alt="Two Awesome Hours" src="https://lee-w.github.io/images/books/KQpJ2Gh.jpg"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="Two Awesome Hours" src="https://lee-w.github.io/images/books/KQpJ2Gh.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="_1"&gt;在日常事務中辨識每個決定點&lt;/h2&gt;
@@ -2493,7 +2492,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;li&gt;如果總以「效率」為理由，略過這些決定點，隨便找一件事做，最後會落入事情做不完的迴圈，而做的那些事很可能都不是最重要或最適合的，這樣想想反而損失了更多的時間&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;我們常常面對了很多「緊急」的事，然後那些「重要，但不急迫」的事往後放，漸漸的我們就會忘記處理這些真正重要的事，最後這些事情就變得「重要且急迫」 &lt;/li&gt;
+&lt;li&gt;我們常常面對了很多「緊急」的事，然後那些「重要，但不急迫」的事往後放，漸漸的我們就會忘記處理這些真正重要的事，最後這些事情就變得「重要且急迫」&lt;/li&gt;
 &lt;li&gt;利用決定點的秘訣&lt;ul&gt;
 &lt;li&gt;珍惜決定點&lt;/li&gt;
 &lt;li&gt;事先計劃在決定點要做的事&lt;/li&gt;
@@ -2525,14 +2524,14 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="_5"&gt;減輕心智疲勞&lt;/h3&gt;
-&lt;p&gt;學會辨識那些最可能顯著消耗心智能量的事物&lt;br&gt;
+&lt;p&gt;學會辨識那些最可能顯著消耗心智能量的事物&lt;br/&gt;
 從事重要的工作前，避免去做那些消耗心智能量的事&lt;/p&gt;
-&lt;p&gt;那麼該如何判斷的？&lt;br&gt;
+&lt;p&gt;那麼該如何判斷的？&lt;br/&gt;
 如果這件事做完後會感到疲倦，那在某種程度上都已經使用到自制力&lt;/p&gt;
-&lt;p&gt;實際上我們不可能完全避開消耗心智的事，也不實際&lt;br&gt;
-我們不是機器，不用隨時都表現得很好&lt;br&gt;
-&lt;strong&gt;與其讓自己時時刻刻表現傑出，應該策略性的選擇待辦事項的執行順序&lt;br&gt;
-在大腦不疲憊的時候，創造出最高效率的時段，最優異的完成重要的事物&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;實際上我們不可能完全避開消耗心智的事，也不實際&lt;br/&gt;
+我們不是機器，不用隨時都表現得很好&lt;br/&gt;
+&lt;strong&gt;與其讓自己時時刻刻表現傑出，應該策略性的選擇待辦事項的執行順序&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;在大腦不疲憊的時候，創造出最高效率的時段，最優異的完成重要的事物&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;下列四點是減輕心智疲勞的策略&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;早上優先完成最重要的工作，避免腦力被小決定消耗&lt;ul&gt;
@@ -2540,7 +2539,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;區分待辦事項，「重要」、「創意」、「雜項」&lt;ul&gt;
-&lt;li&gt;將雜項安排在心智力最弱的時候 &lt;/li&gt;
+&lt;li&gt;將雜項安排在心智力最弱的時候&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;偶爾試著只在下午花一個小時看郵件和回郵件&lt;/li&gt;
@@ -2552,17 +2551,17 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;li&gt;設法讓自己大笑&lt;/li&gt;
 &lt;li&gt;小睡十分鐘，研究指出十分鐘可以回復人體的認知功能，大約可維持兩小時半&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;好好選擇在何時有巔峰表現，並且大方做出其他犧牲&lt;br&gt;
+&lt;p&gt;好好選擇在何時有巔峰表現，並且大方做出其他犧牲&lt;br/&gt;
 &lt;strong&gt;為了好好善用心智能量，應該把少數的事做到優異，而不是企圖做完所有的事&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id="_6"&gt;調整對抗分心的方法，學會放自己一馬&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;靜坐，有助於鍛鍊專注力&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;沒關係就讓大腦分心吧&lt;/strong&gt;&lt;ul&gt;
-&lt;li&gt;人類的注意力系統天生就會刷新，以對抗臨時產生的事件 &lt;ul&gt;
+&lt;li&gt;人類的注意力系統天生就會刷新，以對抗臨時產生的事件&lt;ul&gt;
 &lt;li&gt;但別讓思緒回不來&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;下列不會造成認知能力的沈重負擔，都是分心時可以試試的 &lt;ul&gt;
+&lt;li&gt;下列不會造成認知能力的沈重負擔，都是分心時可以試試的&lt;ul&gt;
 &lt;li&gt;欣賞景色&lt;/li&gt;
 &lt;li&gt;簡單收拾桌面&lt;/li&gt;
 &lt;li&gt;聽聽音樂&lt;/li&gt;
@@ -2617,31 +2616,31 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/li&gt;
 &lt;li&gt;咖啡因要三十分鐘後才會產生效果，在此之前請不要再喝，否則再感受到它的助益前，會先感受到它導致的焦慮&lt;ul&gt;
 &lt;li&gt;即使在你很累的時候，也只應該攝取正常的量&lt;/li&gt;
-&lt;li&gt;如果咖啡因沒辦法提升你的注意力，喝再多可能也沒用，請考慮小睡一下  &lt;/li&gt;
+&lt;li&gt;如果咖啡因沒辦法提升你的注意力，喝再多可能也沒用，請考慮小睡一下&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="_9"&gt;噪音、光線、雜物？自己動手打造最有益的工作環境&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;安靜是最有助益的工作環境&lt;ul&gt;
-&lt;li&gt;聽音樂雖然能產生正面情緒，但在也會降低專注力上 &lt;/li&gt;
+&lt;li&gt;聽音樂雖然能產生正面情緒，但在也會降低專注力上&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;桌邊的雜亂會影響專注力&lt;ul&gt;
-&lt;li&gt;因為桌上的那些東西都會使你分心   &lt;/li&gt;
+&lt;li&gt;因為桌上的那些東西都會使你分心&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="_10"&gt;總結&lt;/h2&gt;
-&lt;p&gt;看完這本書後，不要再想盡辦法擠出更多時間工作，而是試著去調整作法，讓自己每天都能有穩定高工作成效的時段，留一點時間來品味生活&lt;/p&gt;</content><category term="Productivity"></category></entry><entry><title>[Book] IDEA 物語</title><link href="https://lee-w.github.io/posts/book/2016/01/the-art-of-innovation" rel="alternate"></link><published>2016-01-01T11:39:00+08:00</published><updated>2016-01-01T11:39:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-01-01:/posts/book/2016/01/the-art-of-innovation</id><summary type="html">&lt;p&gt;&lt;img alt="the-art-of-innovation" src="http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/018/29/0010182963.jpg&amp;amp;v=3c3d169c&amp;amp;w=348&amp;amp;h=348"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="the-art-of-innovation" src="http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/018/29/0010182963.jpg&amp;amp;v=3c3d169c&amp;amp;w=348&amp;amp;h=348"&gt;&lt;/p&gt;
+&lt;p&gt;看完這本書後，不要再想盡辦法擠出更多時間工作，而是試著去調整作法，讓自己每天都能有穩定高工作成效的時段，留一點時間來品味生活&lt;/p&gt;</content><category term="Productivity"></category></entry><entry><title>[Book] IDEA 物語</title><link href="https://lee-w.github.io/posts/book/2016/01/the-art-of-innovation" rel="alternate"></link><published>2016-01-01T11:39:00+08:00</published><updated>2016-01-01T11:39:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-01-01:/posts/book/2016/01/the-art-of-innovation</id><summary type="html">&lt;p&gt;&lt;img alt="the-art-of-innovation" src="http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/018/29/0010182963.jpg&amp;amp;v=3c3d169c&amp;amp;w=348&amp;amp;h=348"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="the-art-of-innovation" src="http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/018/29/0010182963.jpg&amp;amp;v=3c3d169c&amp;amp;w=348&amp;amp;h=348"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="_1"&gt;創新始於雙眼&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;跳脫慣有的節奏，到國外旅行、新運動、體驗新活動，創新就是從這些地方開始的&lt;/li&gt;
-&lt;li&gt;不管藝術、科學或商業，靈感通常來自&lt;strong&gt;親身體驗&lt;/strong&gt;&lt;br&gt;
-  即使是網路時代，地理位置依然重要&lt;br&gt;
+&lt;li&gt;不管藝術、科學或商業，靈感通常來自&lt;strong&gt;親身體驗&lt;/strong&gt;&lt;br/&gt;
+  即使是網路時代，地理位置依然重要&lt;br/&gt;
   這就是為什麼高科技發源地是矽谷不是康乃狄克州  &lt;/li&gt;
 &lt;li&gt;「當個左撇子」哲學： 我們應該關懷消費者的需要，即使是習慣不同於一般人的消費者&lt;/li&gt;
 &lt;/ul&gt;
@@ -2670,7 +2669,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;h2 id="_3"&gt;活力團隊創造優質企業&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Francis Jehl: 「愛迪生實際上是眾人之力的集合詞」 &lt;/p&gt;
+&lt;p&gt;Francis Jehl: 「愛迪生實際上是眾人之力的集合詞」&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;孤獨天才的傳說是阻礙公司創新與創造力的絆腳石&lt;/li&gt;
 &lt;/ul&gt;
@@ -2684,19 +2683,19 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;每個人都應該有表演的機會，每個人的立足點是平等的，然後接受各種挫折的機會&lt;br&gt;
-  IDEO 通常會讓新人在新專案中擔任吃重的角色，甚至負責整個專案  &lt;/p&gt;
+&lt;p&gt;每個人都應該有表演的機會，每個人的立足點是平等的，然後接受各種挫折的機會&lt;br/&gt;
+  IDEO 通常會讓新人在新專案中擔任吃重的角色，甚至負責整個專案&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="_4"&gt;原型製造是創新的捷徑&lt;/h2&gt;
-&lt;p&gt;使用自動提款機時，如果有人在旁邊常會令我們感到不自在甚至害怕&lt;br&gt;
-所以當 IDEO 接到這個銀行專案時，先觀察消費者使用自動提款機的行為，然後腦力激盪各種可能的方案，包括昂貴的攝影機&lt;br&gt;
-結果發現，只要在自動提款機上頭裝上一個 1.8 美元的魚眼睛，就有良好的效果&lt;br&gt;
-當然，也可以找出更高科技、更貴的解決方法&lt;br&gt;
+&lt;p&gt;使用自動提款機時，如果有人在旁邊常會令我們感到不自在甚至害怕&lt;br/&gt;
+所以當 IDEO 接到這個銀行專案時，先觀察消費者使用自動提款機的行為，然後腦力激盪各種可能的方案，包括昂貴的攝影機&lt;br/&gt;
+結果發現，只要在自動提款機上頭裝上一個 1.8 美元的魚眼睛，就有良好的效果&lt;br/&gt;
+當然，也可以找出更高科技、更貴的解決方法&lt;br/&gt;
 但製作原型後能提醒你，有時候最簡單、便宜的方式往往也是最有效的方案&lt;/p&gt;
 &lt;h2 id="_5"&gt;跨越障礙&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;海洋和文化差異都是難以改變的巨大障礙，手機這類高科技消費性產品，之所以能大舉入侵各種不同文化並不令人意外，因為大家對手機沒有歷史的情節或傳統的包袱&lt;br&gt;
+&lt;li&gt;海洋和文化差異都是難以改變的巨大障礙，手機這類高科技消費性產品，之所以能大舉入侵各種不同文化並不令人意外，因為大家對手機沒有歷史的情節或傳統的包袱&lt;br/&gt;
   然而，像家具或廚具這類有悠久傳統的產品，便問題重重。&lt;/li&gt;
 &lt;li&gt;除了用起來好用以外，還要看起來好用&lt;/li&gt;
 &lt;li&gt;真正優良的設計來自和人們的接觸&lt;/li&gt;
@@ -2707,28 +2706,32 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;li&gt;不能忽略傳統到創新之間的橋樑，否則消費者會不知道這是什麼產品&lt;/li&gt;
 &lt;li&gt;即使是一項史無前例的重大創新，還是得具備傳教士的銷售精神&lt;/li&gt;
 &lt;li&gt;產品的價值固然重要，但真正對潛在客戶和消費者銷售的，還有設計過的使用經驗&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Design"></category></entry><entry><title>[Book] 行銷前必修的購物心理學</title><link href="https://lee-w.github.io/posts/book/2016/01/decoded" rel="alternate"></link><published>2016-01-01T03:16:00+08:00</published><updated>2016-01-01T03:16:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-01-01:/posts/book/2016/01/decoded</id><summary type="html">&lt;p&gt;&lt;img alt="decode" src="http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/061/88/0010618819.jpg&amp;amp;v=529dcf77&amp;amp;w=348&amp;amp;h=348"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="decode" src="http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/061/88/0010618819.jpg&amp;amp;v=529dcf77&amp;amp;w=348&amp;amp;h=348"&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Design"></category></entry><entry><title>[Book] 行銷前必修的購物心理學</title><link href="https://lee-w.github.io/posts/book/2016/01/decoded" rel="alternate"></link><published>2016-01-01T03:16:00+08:00</published><updated>2016-01-01T03:16:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-01-01:/posts/book/2016/01/decoded</id><summary type="html">&lt;p&gt;&lt;img alt="decode" src="http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/061/88/0010618819.jpg&amp;amp;v=529dcf77&amp;amp;w=348&amp;amp;h=348"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="decode" src="http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/061/88/0010618819.jpg&amp;amp;v=529dcf77&amp;amp;w=348&amp;amp;h=348"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="anchoring"&gt;定錨 (anchoring)&lt;/h2&gt;
-&lt;p&gt;Steve Jobs 在推出 iPad 的時候說「我們應該給他設定何種價格？如果你聽信自以為聰明的人，我們會把它的價格訂在 1000 美元以下」&lt;br&gt;
-螢幕出現了 999，然後「我很高興地向大家宣佈，iPad 的起價不是 999 美元，而是只要 499 美元」  &lt;/p&gt;
+&lt;p&gt;Steve Jobs 在推出 iPad 的時候說「我們應該給他設定何種價格？如果你聽信自以為聰明的人，我們會把它的價格訂在 1000 美元以下」&lt;br/&gt;
+螢幕出現了 999，然後「我很高興地向大家宣佈，iPad 的起價不是 999 美元，而是只要 499 美元」&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;這麼做降低了知覺成本，因為已經被一開始的 999 給定錨了。第二次的價格就會被拿來跟第一次的錨比較&lt;/li&gt;
 &lt;li&gt;另外，他沒有拿來跟筆電比較，維護了產品的獨特性，也不減少筆電的行銷&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="-"&gt;「價值 - 成本」是相對的&lt;/h2&gt;
-&lt;p&gt;下面三種，哪種會最多人訂閱？&lt;br&gt;
-1. 電子版       59.00 美元&lt;br&gt;
-2. 紙本       125.00 美元 &lt;br&gt;
-3. 紙本 + 電子版 125.00 美元  &lt;/p&gt;
+&lt;p&gt;下面三種，哪種會最多人訂閱？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;電子版       59.00 美元&lt;/li&gt;
+&lt;li&gt;紙本         125.00 美元&lt;/li&gt;
+&lt;li&gt;紙本 + 電子版 125.00 美元&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;答案是「紙本 + 電子報」，紙本則不被考慮&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;那下面兩種呢？&lt;br&gt;
-1. 電子版      59.00 美元&lt;br&gt;
-2. 紙本 + 電子版 125.00 美元&lt;/p&gt;
+&lt;p&gt;那下面兩種呢？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;電子版        59.00 美元&lt;/li&gt;
+&lt;li&gt;紙本 + 電子版 125.00 美元&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;只訂電子版的大大的增加了&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;看似沒用的「紙本」選項，實際上很有用，影響了「價值 - 成本」關係的計算&lt;br&gt;
+&lt;p&gt;看似沒用的「紙本」選項，實際上很有用，影響了「價值 - 成本」關係的計算&lt;br/&gt;
 我們必須凸顯出人們正在尋找的那個價值，而且這個價值必須要能讓系統一偵測和知覺到&lt;/p&gt;
 &lt;h2 id="-_1"&gt;購買決策： 「淨值 ＝ 報償 - 痛苦」，淨值越高帶來越大的購買&lt;/h2&gt;
 &lt;h3 id="_1"&gt;如何提升淨值？&lt;/h3&gt;
@@ -2747,17 +2750,10 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;h2 id="_2"&gt;知覺流暢性&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;下面這兩張圖你比較想買哪個呢？&lt;br&gt;
-&lt;img alt="which-to-buy" src="http://dalli1xpb6z64.cloudfront.net/content/jcr/38/6/988/F6.large.jpg"&gt; &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一般的右撇子會比較想選右邊的。這完全符合我們的習慣，讓系統一更容易處理這樣的資訊&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;如果健身房要你每年付 600 英鎊年費或每月付 50 英鎊，哪個容易讓你頻繁地去健身房？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;答案是 50 英鎊的月費&lt;/li&gt;
-&lt;li&gt;因為每次付費後都會特別有感覺。費用就會變得具體&lt;/li&gt;
+&lt;li&gt;為每次付費後都會特別有感覺。費用就會變得具體&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -2770,23 +2766,27 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;li&gt;
 &lt;p&gt;Just Noticeable Difference （恰辨差）&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;750 萬畫素的照相功能才能給消費者帶來有差別的感受 &lt;/li&gt;
+&lt;li&gt;750 萬畫素的照相功能才能給消費者帶來有差別的感受&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Sales"></category></entry><entry><title>[Book] 為什麼我們這樣生活，那樣工作 ?</title><link href="https://lee-w.github.io/posts/book/2015/11/the-power-of-habit" rel="alternate"></link><published>2015-11-30T05:43:00+08:00</published><updated>2015-11-30T05:43:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-11-30:/posts/book/2015/11/the-power-of-habit</id><summary type="html">&lt;p&gt;&lt;img alt="The Power of Habit" src="https://lee-w.github.io/images/books/Mo2J3YW.jpg"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="The Power of Habit" src="https://lee-w.github.io/images/books/Mo2J3YW.jpg"&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Sales"></category></entry><entry><title>[Book] 為什麼我們這樣生活，那樣工作 ?</title><link href="https://lee-w.github.io/posts/book/2015/11/the-power-of-habit" rel="alternate"></link><published>2015-11-30T05:43:00+08:00</published><updated>2015-11-30T05:43:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-11-30:/posts/book/2015/11/the-power-of-habit</id><summary type="html">&lt;p&gt;&lt;img alt="The Power of Habit" src="https://lee-w.github.io/images/books/Mo2J3YW.jpg"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="The Power of Habit" src="https://lee-w.github.io/images/books/Mo2J3YW.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Wiliam James: 「我們這輩子所做所為均已定型，一切不過是習慣的總和」&lt;/li&gt;
-&lt;li&gt;我們看似的深思熟慮，其實常常都只是因為習慣&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;2006 年杜克大學的論文提出，人們每天的活動中，40% 是習慣使然，而非決定&lt;/p&gt;
+&lt;p&gt;Wiliam James: 「我們這輩子所做所為均已定型，一切不過是習慣的總和」&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我們看似的深思熟慮，其實常常都只是因為習慣&lt;/li&gt;
+&lt;li&gt;2006 年杜克大學的論文提出，人們每天的活動中，40% 是習慣使然，而非決定&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;習慣：刻意或深思後而做了選擇，過了一段時間後，不經思考卻依然繼續、往往每天在做的行為。&lt;/p&gt;
-&lt;/li&gt;
+&lt;ul&gt;
 &lt;li&gt;e.g., 早餐吃什麼？ 什麼時候去跑步？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="_1"&gt;大腦的渴求&lt;/h2&gt;
 &lt;h3 id="_2"&gt;養成新的習慣&lt;/h3&gt;
@@ -2796,16 +2796,20 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/ol&gt;
 &lt;h4 id="examples"&gt;Examples&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;白速得牙膏&lt;/li&gt;
-&lt;li&gt;牙齒上的黏斑&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;一口白牙&lt;/p&gt;
+&lt;p&gt;白速得牙膏&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;牙齒上的黏斑&lt;/li&gt;
+&lt;li&gt;一口白牙&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;慢跑習慣&lt;/p&gt;
-&lt;/li&gt;
+&lt;ol&gt;
 &lt;li&gt;下班&lt;/li&gt;
 &lt;li&gt;無罪惡感地放鬆休息&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="cont"&gt;養成新的習慣 (Cont.)&lt;/h3&gt;
 &lt;ol&gt;
@@ -2817,25 +2821,29 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;電腦或手機的提示音響起&lt;/code&gt; (1)，&lt;code&gt;習慣打開訊息&lt;/code&gt; (2)，&lt;code&gt;以便自己可以有短暫的分心&lt;/code&gt; (3)&lt;/p&gt;
-&lt;/li&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;如果這份期待跟渴望沒被滿足，就會讓人充滿焦躁不安&lt;/code&gt; (4)&lt;/li&gt;
 &lt;li&gt;其實這些訊息可能根本無關緊要&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;所以可以用關掉手機或 Do Not Disturb 來關閉提示訊號，就能專心工作了&lt;/p&gt;
+&lt;li&gt;所以可以用關掉手機或 Do Not Disturb 來關閉提示訊號，就能專心工作了&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;如果你想養成每天晨跑的習慣&lt;/p&gt;
-&lt;/li&gt;
+&lt;ul&gt;
 &lt;li&gt;簡單的提示 (e.g. 早餐前綁好鞋帶、把慢跑鞋擺在床邊 )&lt;/li&gt;
 &lt;li&gt;清楚的獎籌 (e.g. 中午大吃一頓、記錄慢跑里程的成就感、腦內啡的分泌 )&lt;/li&gt;
 &lt;li&gt;除此之外還必須要讓大腦對獎籌有期待才有辦法養成習慣 (e.g. 渴望這份成就感或腦內啡 )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id="_3"&gt;渴望的養成&lt;/h3&gt;
 &lt;p&gt;渴望是建立全新慣性模式很重要的一環&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;想建立新的飲食習慣嗎？&lt;/li&gt;
+&lt;li&gt;想建立新的飲食習慣嗎？&lt;ul&gt;
 &lt;li&gt;成功節食的人通常有吃早餐的習慣，而成功減重的人另外還會預設獎籌，告訴自己只要嚴守節食計畫就能得到獎籌&lt;/li&gt;
 &lt;li&gt;獎籌必須經過仔細挑選，所以誘惑或讓人分心的事出現時，才能不為所動，專注於對獎籌的渴望&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="_4"&gt;扭轉習慣的黃金律&lt;/h2&gt;
 &lt;ul&gt;
@@ -2843,7 +2851,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;p&gt;沿用相同的提示訊號和獎籌，加入新的慣性行為&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;改變舊習，和培養新習慣不同&lt;br&gt;
+&lt;p&gt;改變舊習，和培養新習慣不同&lt;br/&gt;
   必須同時顧及根深柢固的舊渴望&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -2852,7 +2860,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/ul&gt;
 &lt;h3 id="example"&gt;Example&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;假設你想戒掉上班吃點心的習慣&lt;/li&gt;
+&lt;li&gt;假設你想戒掉上班吃點心的習慣&lt;ul&gt;
 &lt;li&gt;你是為了什麼吃點心？&lt;ul&gt;
 &lt;li&gt;為了消除飢餓？&lt;/li&gt;
 &lt;li&gt;為了擺脫無聊？&lt;/li&gt;
@@ -2861,13 +2869,15 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/li&gt;
 &lt;li&gt;如果只是短暫放鬆，上網三分鐘，散個步都是可以達到的目的，但那卻不會讓你變胖&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id="_5"&gt;相信&lt;/h3&gt;
-&lt;p&gt;還有很重要的一點，你必須相信改變是會成真的&lt;br&gt;
-戒酒無名會就是仰賴團體的力量，讓個體學習相信&lt;br&gt;
+&lt;p&gt;還有很重要的一點，你必須相信改變是會成真的&lt;br/&gt;
+戒酒無名會就是仰賴團體的力量，讓個體學習相信&lt;br/&gt;
 而在團體中，人比較容易去相信&lt;/p&gt;
 &lt;h3 id="_6"&gt;總結&lt;/h3&gt;
-&lt;p&gt;想改變習慣，要&lt;strong&gt;找到替代舊習慣的行為模式&lt;/strong&gt;&lt;br&gt;
-如果能的話，加入某個互助團體，跟著大家一起努力改掉舊習，成功的機率會大增&lt;br&gt;
+&lt;p&gt;想改變習慣，要&lt;strong&gt;找到替代舊習慣的行為模式&lt;/strong&gt;&lt;br/&gt;
+如果能的話，加入某個互助團體，跟著大家一起努力改掉舊習，成功的機率會大增&lt;br/&gt;
 &lt;strong&gt;必須相信人可以改變&lt;/strong&gt;。而相信得靠他人幫忙，即使只是兩人的團體也沒關係&lt;/p&gt;
 &lt;h2 id="_7"&gt;星巴克讓人成功的習慣&lt;/h2&gt;
 &lt;ul&gt;
@@ -2876,39 +2886,41 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;意志力是可以訓練的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這就是為什麼讓孩子上鋼琴課或參加運動是重要的。不是一定要培養這些技能，而是強迫自己練習和運動的過程，增加自我規範的力量。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;這就是為什麼讓孩子上鋼琴課或參加運動是重要的。不是一定要培養這些技能，而是強迫自己練習和運動的過程，增加自我規範的力量。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;星巴克的員工手冊詳細地寫出員工遇到困難時應該採取什麼樣的措施&lt;br&gt;
+&lt;p&gt;星巴克的員工手冊詳細地寫出員工遇到困難時應該採取什麼樣的措施&lt;br/&gt;
   提供員工意志力的習慣迴路，讓他們知道如何處理不愉快的情況&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="_8"&gt;危機就是轉機&lt;/h2&gt;
 &lt;p&gt;危機是非常珍貴的契機，有智慧的領導者通常會故意延長危機感，讓大家正視問題&lt;/p&gt;
 &lt;h2 id="_9"&gt;連鎖零售商搶先知道你要什麼&lt;/h2&gt;
-&lt;p&gt;以推銷新歌的例子 ( 兩首舊歌中間夾一首新歌 )&lt;br&gt;
+&lt;p&gt;以推銷新歌的例子 ( 兩首舊歌中間夾一首新歌 )&lt;br/&gt;
 如果你能&lt;strong&gt;用舊習慣包裝新東西&lt;/strong&gt;，就能讓大眾比較接受新東西。&lt;/p&gt;
 &lt;h2 id="_10"&gt;蒙哥馬利公車抵制事件&lt;/h2&gt;
-&lt;p&gt;格蘭若維特發現如果&lt;strong&gt;要找到工作，弱連結的點頭之交時常比強連結的朋友更為重要&lt;/strong&gt;，因為弱連結可以讓我們進入我們不屬於的社交網路。&lt;br&gt;
-我們隨時都在跟親密的朋友相處，他們聽到新的機會時，我們大概也已經知道&lt;br&gt;
+&lt;p&gt;格蘭若維特發現如果&lt;strong&gt;要找到工作，弱連結的點頭之交時常比強連結的朋友更為重要&lt;/strong&gt;，因為弱連結可以讓我們進入我們不屬於的社交網路。&lt;br/&gt;
+我們隨時都在跟親密的朋友相處，他們聽到新的機會時，我們大概也已經知道&lt;br/&gt;
 另一方面，弱連結則可以告訴我們，我們原本不知道的&lt;/p&gt;
 &lt;h2 id="_11"&gt;自由意志的神經學&lt;/h2&gt;
-&lt;p&gt;習慣是讓我們能「第一次做一件困難的事，但很快那件事就會越來越簡單，最後有了充分的練習後，就可以半機械式地做下去，或是幾乎不需要任何的意識」&lt;br&gt;
+&lt;p&gt;習慣是讓我們能「第一次做一件困難的事，但很快那件事就會越來越簡單，最後有了充分的練習後，就可以半機械式地做下去，或是幾乎不需要任何的意識」&lt;br/&gt;
 人們會朝他們練習的方式前進，就像一張紙，一旦被摺過，之後就容易折成相同的摺&lt;/p&gt;
 &lt;h2 id="_12"&gt;附錄：習慣改造指南&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;方法架構&lt;/li&gt;
+&lt;li&gt;方法架構&lt;ul&gt;
 &lt;li&gt;認出慣性行為&lt;/li&gt;
 &lt;li&gt;做實驗找出獎勵&lt;ul&gt;
 &lt;li&gt;那些造成習慣的渴望&lt;/li&gt;
-&lt;li&gt;用不同的行為來測試自己是否有滿足了&lt;/li&gt;
+&lt;li&gt;用不同的行為來測試自己是否有滿足了&lt;ul&gt;
 &lt;li&gt;如果做完這件事，還是想重複原本的習慣，代表這個不是獎勵&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;篩選提示&lt;ul&gt;
-&lt;li&gt;事先選好要檢查哪種行為類別，可以歸為下列五大類&lt;/li&gt;
+&lt;li&gt;事先選好要檢查哪種行為類別，可以歸為下列五大類&lt;ul&gt;
 &lt;li&gt;地點&lt;/li&gt;
 &lt;li&gt;時間&lt;/li&gt;
 &lt;li&gt;情緒狀態&lt;/li&gt;
@@ -2916,7 +2928,11 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;li&gt;緊接在前的行為&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;訂定計畫&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Productivity"></category></entry><entry><title>[Book] 為什麼他接的案子比我多</title><link href="https://lee-w.github.io/posts/book/2015/11/burn-your-portfolio-stuff-they-don-t-teach-you-in-design-school-but-should" rel="alternate"></link><published>2015-11-29T12:16:00+08:00</published><updated>2015-11-29T12:16:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-11-29:/posts/book/2015/11/burn-your-portfolio-stuff-they-don-t-teach-you-in-design-school-but-should</id><summary type="html">&lt;p&gt;&lt;img alt="burn-your-portfolio" src="http://pic.eslite.com/Upload/Product/201403/m/635309876178920000.jpg"&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="burn-your-portfolio" src="http://pic.eslite.com/Upload/Product/201403/m/635309876178920000.jpg"&gt;&lt;/p&gt;
 &lt;!--more--&gt;
@@ -3057,9 +3073,9 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;下一個籌錢日 &lt;/p&gt;
+&lt;p&gt;下一個籌錢日&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;銀行現金 + 應收款 + 當月剩餘請款 + 次月剩餘請款 - 稅金 ( 季稅金預留 ) - 救急金 = 現金流量&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;銀行現金 + 應收款 + 當月剩餘請款 + 次月剩餘請款 * 稅金 ( 季稅金預留 ) * 救急金 = 現金流量&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;現金流量 / 每月經常開支 = 現金流量覆蓋月數&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;現金流量覆蓋月數 - 1 個月 = 下一個籌錢日&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -3074,7 +3090,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;解決問題不能只是把問題倒過來，就當作想到辦法了&lt;br&gt;
-    e.g.「商品沒競爭力，所以要加強商品競爭力」 &lt;br&gt;
+    e.g.「商品沒競爭力，所以要加強商品競爭力」&lt;br&gt;
     該如何增加商品競爭力才是重點！&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -3116,10 +3132,10 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;讀完每天的報紙後，提出五個疑問&lt;br&gt;
-   接著提出自己可以運用怎樣的方式、進行怎樣的調查，是否可以提出完成度更高的報導內容     &lt;/p&gt;
+   接著提出自己可以運用怎樣的方式、進行怎樣的調查，是否可以提出完成度更高的報導內容&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="Thinking"></category></entry><entry><title>[Book] 創新是一種態度</title><link href="https://lee-w.github.io/posts/book/2015/10/innovation-is-an-attitude" rel="alternate"></link><published>2015-10-06T12:04:00+08:00</published><updated>2015-10-06T12:04:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-10-06:/posts/book/2015/10/innovation-is-an-attitude</id><summary type="html">&lt;p&gt;&lt;img alt="innovation-is-an-attitude" src="http://pic.eslite.com/Upload/Product/201506/m/635689172041107500.jpg"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="innovation-is-an-attitude" src="http://pic.eslite.com/Upload/Product/201506/m/635689172041107500.jpg"&gt;&lt;/p&gt;
+&lt;/ol&gt;</content><category term="Thinking"></category></entry><entry><title>[Book] 創新是一種態度</title><link href="https://lee-w.github.io/posts/book/2015/10/innovation-is-an-attitude" rel="alternate"></link><published>2015-10-06T12:04:00+08:00</published><updated>2015-10-06T12:04:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-10-06:/posts/book/2015/10/innovation-is-an-attitude</id><summary type="html">&lt;p&gt;&lt;img alt="innovation-is-an-attitude" src="http://pic.eslite.com/Upload/Product/201506/m/635689172041107500.jpg"/&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="innovation-is-an-attitude" src="http://pic.eslite.com/Upload/Product/201506/m/635689172041107500.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;h2 id="_1"&gt;想解決問題，先突破框架&lt;/h2&gt;
@@ -3132,9 +3148,9 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;給魚不如給釣竿 ? &lt;/p&gt;
+&lt;p&gt;給魚不如給釣竿 ?&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;那教他釣竿怎麼做呢 ? &lt;/li&gt;
+&lt;li&gt;那教他釣竿怎麼做呢 ?&lt;/li&gt;
 &lt;li&gt;或者教他甚麼是釣竿的原理 ? (bachelor)&lt;/li&gt;
 &lt;li&gt;為什麼一定要用釣竿 ? (master)&lt;/li&gt;
 &lt;li&gt;為什麼一定要吃魚 ? (doctor)&lt;/li&gt;
@@ -3172,10 +3188,10 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;h2 id="_5"&gt;「人才是企業資產」不是口號&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;誰闖了禍不重要，重要的是誰能解決問題，更重要的是防止問題再發生&lt;ul&gt;
-&lt;li&gt;「誰的錯」 -&amp;gt; 「我們的制度有甚麼問題」 &lt;/li&gt;
+&lt;li&gt;「誰的錯」 → 「我們的制度有甚麼問題」&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;曾有一個故事，IBM 一個經理人犯了重大錯誤，賠了公司兩百萬美金，他慚愧的像老闆辭職。老闆拍桌大罵 :「你這個人做事怎麼這麼沒責任感」還沒等他開口說自己是辭職以示負責，老闆就說「我們才花了兩百萬幫你上了一課，你現在就想跑」  &lt;/li&gt;
+&lt;li&gt;曾有一個故事，IBM 一個經理人犯了重大錯誤，賠了公司兩百萬美金，他慚愧的像老闆辭職。老闆拍桌大罵 :「你這個人做事怎麼這麼沒責任感」還沒等他開口說自己是辭職以示負責，老闆就說「我們才花了兩百萬幫你上了一課，你現在就想跑」&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="_6"&gt;機會成本，才是公司最大的成本&lt;/h2&gt;
 &lt;ul&gt;
@@ -3188,8 +3204,8 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;h2 id="book"&gt;Book&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;從 1 到 n，只是複製別人的做法 -&amp;gt; 全球化&lt;br&gt;
-  從 0 到 1，則是創新 -&amp;gt; 科技的進步&lt;/p&gt;
+&lt;p&gt;從 1 到 n，只是複製別人的做法 → 全球化&lt;br&gt;
+  從 0 到 1，則是創新 → 科技的進步&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;「有什麼是你跟其他人有不同看法，但是你覺得很重要的事實？」&lt;/p&gt;
@@ -3266,7 +3282,7 @@ e.g. DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌�
 &lt;li&gt;It is large &lt;strong&gt;market share&lt;/strong&gt; that matters instead of a big market.&lt;/li&gt;
 &lt;li&gt;All happy companies are unique. The others are those who stuck in compete.&lt;/li&gt;
 &lt;li&gt;Well defined, well differentiate jobs&lt;/li&gt;
-&lt;li&gt;&lt;del&gt;~run away from big data or clouding XD&lt;/del&gt;~&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;run away from big data or clouding XD&lt;/del&gt;&lt;/li&gt;
 &lt;li&gt;What makes facebook valuable might not be purely social networking but real identity in social networking.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="qa"&gt;Q&amp;amp;A&lt;/h3&gt;
@@ -3281,7 +3297,7 @@ Startup is something new and by definition, you will not learn from others.&lt;b
 Thus, you might not be able to learn from working experience.&lt;br&gt;
 Idea matters.&lt;br&gt;
 Although management is important, when it compares to the new idea, it might be not that important.&lt;br&gt;
-e.g. Twitter &lt;/p&gt;
+e.g., Twitter&lt;/p&gt;
 &lt;p&gt;Somebody might say that they gonna startup 5 or 10 years later.&lt;br&gt;
 However, that's rare.&lt;br&gt;
 The fact is that most of these people would be stuck in many different problems and not that willing to take risks.&lt;br&gt;
@@ -3302,7 +3318,7 @@ Complementary skills and alike interests would be good.&lt;/p&gt;
 &lt;h4 id="q-education-problems-how-about-the-flip-classroom-or-moocs"&gt;Q: Education problems. How about the flip classroom or MOOCS?&lt;/h4&gt;
 &lt;p&gt;It's education bubble.&lt;br&gt;
 Peter cannot give an ultimate way to replace the university system.&lt;br&gt;
-The suggestion is that don't get up the same or similar track.  &lt;/p&gt;
+The suggestion is that don't get up the same or similar track.&lt;/p&gt;
 &lt;p&gt;What makes education bubbles is that everyone treats university as church or religion.&lt;br&gt;
 If you don't go into a college, your life would ruin.&lt;br&gt;
 Such thought is the main problem.&lt;/p&gt;
@@ -3321,20 +3337,25 @@ For example, office and hiring people there is expensive.&lt;/p&gt;
 &lt;p&gt;It was the law school story wrote in the book.&lt;br&gt;
 The interesting part is that this failure turns out to be not failure.&lt;br&gt;
 Failure is overrated.&lt;br&gt;
-The most important part of failure is not to give up.&lt;/p&gt;</content><category term="Startup"></category></entry><entry><title>[Book] 點子都是偷來的</title><link href="https://lee-w.github.io/posts/book/2015/01/steal-like-an-artist-10-things-nobody-told-you-about-being-creatvie" rel="alternate"></link><published>2015-01-31T08:43:00+08:00</published><updated>2015-01-31T08:43:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-31:/posts/book/2015/01/steal-like-an-artist-10-things-nobody-told-you-about-being-creatvie</id><summary type="html">&lt;p&gt;Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie&lt;br&gt;
-&lt;img alt="Show Your Work" src="https://lee-w.github.io/images/books/GQNwobG.jpg"&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie&lt;br&gt;
-&lt;img alt="Show Your Work" src="https://lee-w.github.io/images/books/GQNwobG.jpg"&gt;&lt;/p&gt;
+The most important part of failure is not to give up.&lt;/p&gt;</content><category term="Startup"></category></entry><entry><title>[Book] 點子都是偷來的</title><link href="https://lee-w.github.io/posts/book/2015/01/steal-like-an-artist-10-things-nobody-told-you-about-being-creatvie" rel="alternate"></link><published>2015-01-31T08:43:00+08:00</published><updated>2015-01-31T08:43:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-31:/posts/book/2015/01/steal-like-an-artist-10-things-nobody-told-you-about-being-creatvie</id><summary type="html">
+&lt;p&gt;Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie&lt;br/&gt;
+&lt;img alt="Show Your Work" src="https://lee-w.github.io/images/books/GQNwobG.jpg"/&gt;&lt;/p&gt;
+</summary><content type="html">
+&lt;p&gt;Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie&lt;br/&gt;
+&lt;img alt="Show Your Work" src="https://lee-w.github.io/images/books/GQNwobG.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
-
 &lt;p&gt;所有的建言都只是經驗談&lt;/p&gt;
 &lt;h3 id="1-steal-like-an-artist"&gt;1. Steal like an artist&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Wiliam Ralph Inge: 「什麼是原創？就是沒被人看出來的抄襲」&lt;/li&gt;
-&lt;li&gt;Garbage in Gabage out&lt;/li&gt;
+&lt;li&gt;Garbage in Gabage out&lt;ul&gt;
 &lt;li&gt;藝術是搜集好的想法，但不是囤積狂&lt;/li&gt;
-&lt;li&gt;Save Your Theft for Latter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Save Your Theft for Latter&lt;ul&gt;
 &lt;li&gt;隨時都要養成紀錄的習慣。存在紀錄裡的東西是死的，只又讓它再重新被使用才會活過來&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Steal from yourself. e.g. Dream, Memory&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="2-dont-wait-until-you-know-who-youre-until-you-get-started"&gt;2. Don't wait until you know who you're until you get started.&lt;/h3&gt;
@@ -3353,29 +3374,33 @@ The most important part of failure is not to give up.&lt;/p&gt;</content><catego
 &lt;h3 id="6-the-secret-do-good-work-and-share-it-with-people"&gt;6. &lt;strong&gt;&lt;em&gt;The Secret&lt;/em&gt;&lt;/strong&gt;: Do good work and share it with people&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;一開始，不受注意是好事。一旦人們開始注意你，隨性的自由就不再復返。盡力享受和善用未成名的時期&lt;/li&gt;
-&lt;li&gt;Step 1: Wonder at Something.&lt;br&gt;
+&lt;li&gt;Step 1: Wonder at Something.&lt;br/&gt;
   Step 2: Invite Others to Wonder with You.&lt;/li&gt;
-&lt;li&gt;Howard Aiken: 「別擔心別人偷你的構想，若你的想法真的很棒，你會盡力說服別人接受」&lt;br&gt;
+&lt;li&gt;Howard Aiken: 「別擔心別人偷你的構想，若你的想法真的很棒，你會盡力說服別人接受」&lt;br/&gt;
   Don't worry about people stealing your ideas. If your ideas are any good, you'll have to ram them down people's throats.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="7-geography-is-no-longer-our-master"&gt;7. Geography is no longer our master.&lt;/h3&gt;
-&lt;p&gt;在日常環境裡，大腦會開始變得安逸，所以你必須顛覆現狀&lt;br&gt;
+&lt;p&gt;在日常環境裡，大腦會開始變得安逸，所以你必須顛覆現狀&lt;br/&gt;
 旅行讓世界變得新鮮，也能活化大腦運作&lt;/p&gt;
 &lt;h3 id="8-be-nice-the-world-is-a-small-town"&gt;8. Be nice. (The world is a small town.)&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Stand Next to Talent &amp;lt;- Garbage in Garbage out&lt;/li&gt;
-&lt;li&gt;Write Fan Letters&lt;/li&gt;
+&lt;li&gt;Write Fan Letters&lt;ul&gt;
 &lt;li&gt;不用直接寫信給偶像。用行動、作品來像他致敬吧！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="9-be-boring-its-the-only-way-to-get-work-done"&gt;9. Be boring. (It's the only way to get work done.)&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Gustave Flaubert: 「生活維持常態和規律」，工作上才有衝刺的動力和原創的靈感。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;em&gt;Make sure how much sleep you get.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Get yourself a calendar.&lt;/li&gt;
+&lt;li&gt;Get yourself a calendar.&lt;ul&gt;
 &lt;li&gt;在行事曆上記下每日的目標。完成後在行事曆畫一個叉，並且持續維持這個叉的連線&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id="10-creatvity-is-substraction"&gt;10. Creatvity is substraction&lt;/h3&gt;
-&lt;hr&gt;
+&lt;hr/&gt;
 &lt;h2 id="whats-next"&gt;What's Next?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Take a walk&lt;/li&gt;
@@ -3453,7 +3478,7 @@ The most important part of failure is not to give up.&lt;/p&gt;</content><catego
   在規劃時程的時候，把必然的一次失敗納入正式計劃之中。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;規劃軟體開發專案的文件 &lt;/p&gt;
+&lt;p&gt;規劃軟體開發專案的文件&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;目標&lt;/li&gt;
 &lt;li&gt;產品規格&lt;/li&gt;
@@ -3519,6 +3544,6 @@ The most important part of failure is not to give up.&lt;/p&gt;</content><catego
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;以註解的形式在程式中加入一些註解&lt;br&gt;
-  但許多程式為了這個逐行加入註解，這更會讓人感到困惑。&lt;/p&gt;
+  但許多程式為了這個逐行加入註解，這更會讓人感到困惑&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</content><category term="Software Engineering"></category><category term="Team"></category></entry></feed>

@@ -96,13 +96,13 @@
 join 是開啟這個 thread 的上層程式必須等待到這個 thread 的工作結束了，才可以繼續下面的工作<br>
 也就是 join 以上的程式會與 thread 搶 CPU，join 以後的程式就會等待到 thread 結束才開始</p>
 <p>那就直接來看 code 吧</p>
-<h1 id="c-11-thread">C++ 11 thread</h1>
-<h2 id="main-thread">在 main 裡面直接開啟 thread</h2>
+<h2 id="c-11-thread">C++ 11 thread</h2>
+<h3 id="main-thread">在 main 裡面直接開啟 thread</h3>
 <p>直接宣告 thread 型態的變數<br>
 thread 的 constructor 的第一個參數是函數名稱，第二個以後就是原本函數的參數</p>
 <div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>    
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="kt">void</span> <span class="nf">fun1</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;This is funtion1&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
@@ -123,7 +123,7 @@ thread 的 constructor 的第一個參數是函數名稱，第二個以後就是
 
 <p>這樣就可以產生兩個 thread，他們會彼此搶 CPU 的資源<br>
 cout 似乎是每一個 &lt;&lt; 會去搶一次，所以如果想要一次印完全部，可能可以考慮使用 printf 或者是 thread 的 lock 功能</p>
-<h2 id="class-thread">在 class 內開啟 thread</h2>
+<h3 id="class-thread">在 class 內開啟 thread</h3>
 <p>用上面的方法直接呼叫同個 class 的 function 會出現錯誤<br>
 所以就必須用下面的方法<br>
 在宣告 thread 的時候<br>
@@ -222,7 +222,7 @@ p.s. 如果 fun1 是 static，則不用 this</p>
 <p>至於 pthread 如何用在 class 的 function 上<br>
 可以將 function 加上 static<br>
 同樣第 3 個參數也要改成 &amp;A::fun1</p>
-<h1 id="reference">Reference</h1>
+<h2 id="reference">Reference</h2>
 <ul>
 <li><a href="http://programmingpaul.blogspot.tw/2013/08/c-thread-function.html">資訊小兵的胡言亂語 : [C++] Thread Function 相關測試</a></li>
 <li><a href="http://17089349.blog.hexun.com.tw/65836836_d.html">解析 Linux 中多線程編程並傳遞多個參數實例</a></li>

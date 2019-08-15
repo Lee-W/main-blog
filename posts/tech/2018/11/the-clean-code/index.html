@@ -160,24 +160,28 @@
 <li>e.g., <code>accountList</code> -&gt; <code>accountGroup</code> or <code>accounts</code></li>
 </ul>
 </li>
-<li>要區別名稱，用<strong>讀者能分辨的區別方式</strong>！！！  </li>
+<li>要區別名稱，用<strong>讀者能分辨的區別方式</strong>！！！<ul>
 <li>e.g.,<ul>
 <li><del>moneyAmount</del> -&gt; <code>money</code></li>
 <li><del>customerInfo</del> -&gt; <code>customer</code></li>
 </ul>
 </li>
-<li>命名的長度應該要與 scope 大小對應</li>
+</ul>
+</li>
+<li>命名的長度應該要與 scope 大小對應<ul>
 <li>一個常用到的變數或常數，最好給它一個容易被搜尋的名子</li>
+</ul>
+</li>
 <li>詞性<ul>
-<li>class, object -&gt; 名詞  </li>
+<li>class, object -&gt; 名詞</li>
 <li>method -&gt; 動詞</li>
 </ul>
 </li>
-<li>替單一的概念選一個詞  <ul>
+<li>替單一的概念選一個詞<ul>
 <li>e.g., get, fetch, retrieve 混用是一件很糟的事</li>
 </ul>
 </li>
-<li>避免用雙關語，或可以表達兩個意思的字  <ul>
+<li>避免用雙關語，或可以表達兩個意思的字<ul>
 <li>e.g., 加入一個新的值 : <del>add</del> -&gt; append, insert</li>
 </ul>
 </li>
@@ -194,21 +198,17 @@
 <li>但最重要的是，<strong>每個函式都要能清楚的告訴你本身的意圖，並帶領你到下個函式</strong></li>
 </ul>
 </li>
-<li><strong>別去害怕取較長的函數名稱</strong> <ul>
+<li><strong>別去害怕取較長的函數名稱</strong><ul>
 <li>長但具描述性質 &gt; 註解 &gt; 短而無法理解</li>
 </ul>
 </li>
 <li>降層準則： 由上而下閱讀的程式</li>
 <li>Don't repeat yourself at any cost!!!</li>
-<li>
-<p>if, else, while 這些敘述最好都只有一行，而那行通常是函式呼叫</p>
-<ul>
+<li>if, else, while 這些敘述最好都只有一行，而那行通常是函式呼叫<ul>
 <li>避免巢狀結構，<strong>函式內的縮排不該超過一或兩層</strong></li>
 </ul>
 </li>
-<li>
-<p><strong>函式應該做一件事情，他們應該把這件事做好。而且只做好這件事</strong> </p>
-<ul>
+<li><strong>函式應該做一件事情，他們應該把這件事做好。而且只做好這件事</strong><ul>
 <li>做一件事的函式不應該被合理的分成不同的段落 (e.g., 宣告區, 初始區... and etc.)</li>
 </ul>
 </li>
@@ -361,7 +361,7 @@
 <li>編排是一種溝通方式，可以嚴重影響可讀性，所以我們要很重視它</li>
 <li>垂直邊排： 一份程式檔大概多長比較好？<ul>
 <li>一份重要的大型專案也可以在大多數程式檔都只有200行左右的情況下完成</li>
-<li>這沒有硬性規定。但要知道<strong>簡短的程式檔總是比大型的程式檔容易理解</strong> </li>
+<li>這沒有硬性規定。但要知道<strong>簡短的程式檔總是比大型的程式檔容易理解</strong></li>
 </ul>
 </li>
 <li>變數應該被宣告在接近它被使用的地方<ul>
@@ -378,7 +378,7 @@
 </ul>
 </li>
 <li>
-<p>談到了垂直的寬度後，那水平的寬度呢?  </p>
+<p>談到了垂直的寬度後，那水平的寬度呢?</p>
 <ul>
 <li>雖然我們喜歡較短的程式碼，但只要是<strong>不需要用到捲軸捲到右方就可以稱為適當的寬度</strong></li>
 </ul>
@@ -396,27 +396,27 @@
 </pre></div>
 <h3 id="_7">使用空行、空白</h3>
 <ul>
-<li>每一段程式碼都代表一個完整思緒，而我們用空行來區隔它們  <ul>
+<li>每一段程式碼都代表一個完整思緒，而我們用空行來區隔它們<ul>
 <li>而如果程式碼們是相關的，它們就該是垂直緊密的</li>
 <li>相似的概念應該要放在同一份檔案中</li>
 </ul>
 </li>
-<li>
-<p>我們用水平的空白來區分高度和低度相關的概念，也可以作為強調用，下面的程式碼是書中一個很棒的例子</p>
-<p><code>java
-public class Quadratic {
-    public static double root1(double a, double b, double c) {
-      double determinant = determinant(a, b, c);
-        return (-b + Math.sqrt(determinant)) / (2*a);
-   }
-    ......
-}</code><br/>
-* 注意到return那行，這裡用空格來強調運算子的優先權</p>
+<li>我們用水平的空白來區分高度和低度相關的概念，也可以作為強調用，下面的程式碼是書中一個很棒的例子<ul>
+<li>注意到return那行，這裡用空格來強調運算子的優先權</li>
+</ul>
 </li>
 </ul>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Quadratic</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">root1</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">,</span> <span class="kt">double</span> <span class="n">b</span><span class="o">,</span> <span class="kt">double</span> <span class="n">c</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">double</span> <span class="n">determinant</span> <span class="o">=</span> <span class="n">determinant</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">c</span><span class="o">);</span>
+        <span class="k">return</span> <span class="o">(-</span><span class="n">b</span> <span class="o">+</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">determinant</span><span class="o">))</span> <span class="o">/</span> <span class="o">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="o">......</span>
+<span class="o">}</span>
+</pre></div>
 <h2 id="6">第6章：物件及資料結構</h2>
 <ul>
-<li><strong>資料結構容易新增函式，而物件容易增加新類別。</strong>反之亦然</li>
+<li><strong>資料結構容易新增函式，而物件容易增加新類別。</strong> 反之亦然</li>
 <li>模組不該知道它操作的物件的內部操作</li>
 <li>別使用一連串的程式呼叫</li>
 </ul>
@@ -429,7 +429,7 @@ public class Quadratic {
 </pre></div>
 <h2 id="7">第7章：錯誤處理</h2>
 <ul>
-<li>錯誤處理常大量存在於程式碼中  <ul>
+<li>錯誤處理常大量存在於程式碼中<ul>
 <li>它很重要，但別讓它混亂你的程式碼</li>
 </ul>
 </li>
@@ -437,7 +437,7 @@ public class Quadratic {
 <li>e.g, 哪裡發生錯誤、錯誤型態是什麼</li>
 </ul>
 </li>
-<li>別回傳 null，試著拋出例外事件是更好的作法  <ul>
+<li>別回傳 null，試著拋出例外事件是更好的作法<ul>
 <li>函式回傳 null 已經夠糟了，但傳遞 null 進去更是糟糕透頂</li>
 </ul>
 </li>

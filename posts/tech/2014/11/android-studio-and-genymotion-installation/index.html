@@ -80,135 +80,163 @@
 </div>
 
 <div class="row-fluid">
-        <div class="span8 offset2 article-content">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#20141123">2014/11/23 更新</a></li>
+<li><a href="#20141229">2014/12/29 更新</a></li>
+<li><a href="#installation">Installation</a><ul>
+<li><a href="#download-android-studio">Download Android Studio</a></li>
+<li><a href="#install-jdk">Install JDK</a><ul>
+<li><a href="#_1">設定環境變數</a></li>
+</ul>
+</li>
+<li><a href="#install-android-studio">Install Android Studio</a></li>
+<li><a href="#install-sdk-manager">Install SDK manager</a></li>
+<li><a href="#sdk-setup">SDK setup</a></li>
+<li><a href="#emulator-accelerator">Emulator Accelerator</a></li>
+</ul>
+</li>
+<li><a href="#genymotion">Genymotion</a><ul>
+<li><a href="#download">Download</a></li>
+<li><a href="#install-ide-plug-in">Install IDE plug-in</a></li>
+<li><a href="#plugins">Plugins</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
 
             
             <p>最近 Google 在推行的 Android IDE，前身是 IntelliJ IDEA</p>
 <!--more-->
 
-<p>它的檔案架構跟 eclipse 差蠻多的，所以用不同的 IDE 來協作會有點麻煩<br>
-就我的經驗 Android Studio 比 eclipse 來得穩定一些<br>
+<p>它的檔案架構跟 eclipse 差蠻多的，所以用不同的 IDE 來協作會有點麻煩<br/>
+就我的經驗 Android Studio 比 eclipse 來得穩定一些<br/>
 反正現在還有 Google 在背後支持它，就來試試看吧 XD</p>
 <h3 id="20141123">2014/11/23 更新</h3>
-<p><a href="#1123 update 1">Install SDK</a>: 更新了 Android Studio 0.8.14 後需要的額外設定<br>
+<p><a href="#1123 update 1">Install SDK</a>: 更新了 Android Studio 0.8.14 後需要的額外設定<br/>
 <a href="#1123 update 2">Setup SDK</a>: SDK 版本更新至 API21(Android 5.0)</p>
 <h3 id="20141229">2014/12/29 更新</h3>
-<p>Android Studio 正式版已經發布了，現在好像完全無法把 sdk 放在 Android Studio 資料夾內<br>
+<p>Android Studio 正式版已經發布了，現在好像完全無法把 sdk 放在 Android Studio 資料夾內<br/>
 所以之前沒有把 sdk 獨立出來的，記得要獨立出來，不然可能會發生無法更新的問題</p>
 <h1 id="installation">Installation</h1>
 <h2 id="download-android-studio">Download Android Studio</h2>
-<p>先到官網下載 Android Studio ( 這篇文以 Windows 為例 )<br>
-https://developer.android.com/sdk/installing/studio.html<br>
-<img alt="1_download" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/iFQ6JJY.png"></p>
-<p>下載後會進入到下面的教學頁面<br>
-其實寫得還蠻清楚的，所以如果可以接受就可以跳過以下的教學了 XD<br>
-<img alt="2_Installation_Guide" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/gkttlS9.png"></p>
+<p>先到<a href="https://developer.android.com/sdk/installing/studio.html">官網</a>下載 Android Studio ( 這篇文以 Windows 為例 )</p>
+<p><img alt="1_download" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/iFQ6JJY.png"/></p>
+<p>下載後會進入到下面的教學頁面<br/>
+其實寫得還蠻清楚的，所以如果可以接受就可以跳過以下的教學了 XD<br/>
+<img alt="2_Installation_Guide" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/gkttlS9.png"/></p>
 <h2 id="install-jdk">Install JDK</h2>
-<p>在安裝 Android Studio 前，要先安裝好 JDK<br>
-現在最新的版本是 JDK 8，可以到下面的連結下載<br>
-http://www.oracle.com/technetwork/java/javase/downloads/index.html<br>
-<img alt="3_jdk1" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/0om5D2M.png"><br>
-選好自己的作業系統<br>
-<img alt="4_jdk2" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/D0G7XLq.png"><br>
+<p>在安裝 Android Studio 前，要先安裝好 JDK<br/>
+現在最新的版本是 JDK 8，可以到<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">這個連結</a>下載</p>
+<p><img alt="3_jdk1" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/0om5D2M.png"/><br/>
+選好自己的作業系統<br/>
+<img alt="4_jdk2" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/D0G7XLq.png"/><br/>
 再來就是一直下一步囉 XD</p>
 <h3 id="_1">設定環境變數</h3>
-<p>安裝完 JDK 後，我們還需要設定環境變數<br>
+<p>安裝完 JDK 後，我們還需要設定環境變數<br/>
 以 Win7 為例</p>
 <blockquote>
 <p>電腦 -&gt; 內容 -&gt; 進階系統設定 -&gt; 進階 -&gt; 環境變數</p>
 </blockquote>
-<p>接著在 <code>系統變數</code> 這個欄位按下 <code>新增</code> <br>
-變數名稱 輸入 <code>JAVA_HOME</code> ( 可能會因為 Android Studio 的版本而不同 )<br>
-變數值 輸入 你安裝 JDK 的路徑 (e.g. <code>C:\Program Files\Java\jdk1.8.0_20</code>)<br>
-<img alt="5_env_var" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/KYG8pBO.png"></p>
+<p>接著在 <code>系統變數</code> 這個欄位按下 <code>新增</code><br/>
+變數名稱 輸入 <code>JAVA_HOME</code> ( 可能會因為 Android Studio 的版本而不同 )<br/>
+變數值 輸入 你安裝 JDK 的路徑 (e.g. <code>C:\Program Files\Java\jdk1.8.0_20</code>)<br/>
+<img alt="5_env_var" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/KYG8pBO.png"/></p>
 <h2 id="install-android-studio">Install Android Studio</h2>
-<p>安裝過程中會問要讓<strong>目前使用者</strong>使用還是<strong>所有使用者</strong>使用<br>
-再來會要你選安裝目錄<br>
-如果不想理它，就一直下一步吧<br>
-除了 Android Studio 外，可能還會安裝一些 Dependent 的套件<br>
+<p>安裝過程中會問要讓<strong>目前使用者</strong>使用還是<strong>所有使用者</strong>使用<br/>
+再來會要你選安裝目錄<br/>
+如果不想理它，就一直下一步吧<br/>
+除了 Android Studio 外，可能還會安裝一些 Dependent 的套件<br/>
 不過就放著讓他跑就可以了</p>
 <p><a name="1123 update 1"></a></p>
 <h2 id="install-sdk-manager">Install SDK manager</h2>
-<p>自從 0.8.14 版之後，SDK Manager 就不會再跟 Android Studio 綁在一起<br>
+<p>自從 0.8.14 版之後，SDK Manager 就不會再跟 Android Studio 綁在一起<br/>
 所以要額外<a href="https://developer.android.com/sdk/index.html?hl=i">下載 SDK tools</a></p>
 <div class="highlight"><pre><span></span>如果是在 0.8.14 版前安裝的也不用擔心，更新後需要多做設定
 Android Studio 會自動幫你把 SDK 的路徑設定到原本的位置
 </pre></div>
-
-
-<p>把網頁往下拉會看到 SDK Tools Only<br>
-<img alt="18_sdk_download" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/TctIzTa.png"><br>
-下載完解壓縮到你要的路徑<br>
+<p>把網頁往下拉會看到 SDK Tools Only<br/>
+<img alt="18_sdk_download" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/TctIzTa.png"/><br/>
+下載完解壓縮到你要的路徑<br/>
 之後設定 SDK manager 設定到這個路徑就可以了</p>
 <p>開始 Android Studio</p>
 <blockquote>
 <p>Configure -&gt; Project Default -&gt; Project Structure</p>
 </blockquote>
-<p><img alt="20_set_sdk_1" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/Tj82hvs.png"></p>
-<p>記得要把 SDK 的路徑改成剛剛安裝的路徑<br>
-<img alt="21_set_sdk_2" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/ETqkNhX.png"></p>
+<p><img alt="20_set_sdk_1" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/Tj82hvs.png"/></p>
+<p>記得要把 SDK 的路徑改成剛剛安裝的路徑<br/>
+<img alt="21_set_sdk_2" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/ETqkNhX.png"/></p>
 <p><a name="1123 update 1"></a></p>
 <h2 id="sdk-setup">SDK setup</h2>
-<p>接著我們要設定 SDK<br>
+<p>接著我們要設定 SDK<br/>
 現在最新的版本是 Android 5.0 (API 21)</p>
-<p>先開啟 Android Studio，進入 <code>Configure</code><br>
-<img alt="6_SDK1" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/c8rDZxZ.png"><br>
-進入 <code>SDK Manager</code><br>
-<img alt="7_SDK2" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/pBVHp7S.png"><br>
-把選單拉到 API 21 選起來<br>
-<img alt="19_sdk_21" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/3lytBi2.png"></p>
-<p>接著把選單拉到最後選<br>
-- <strong>Android Support Repository</strong><br>
-- <strong>Android support Libarary</strong><br>
-- <strong>Coogle Play services</strong><br>
-- <strong>Google Repository</strong><br>
-- <strong>Google USB Driver</strong><br>
-- <strong>Intel X86 Emulator Accelerator(HAXM installer)</strong><br>
-    最後的這個 HAXM 是為了讓模擬器加速用的，從 SDK manager 下載完之後，還有另外的安裝步驟<br>
-<img alt="9_SDK4" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/UM8w30n.png"></p>
+<p>先開啟 Android Studio，進入 <code>Configure</code><br/>
+<img alt="6_SDK1" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/c8rDZxZ.png"/><br/>
+進入 <code>SDK Manager</code><br/>
+<img alt="7_SDK2" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/pBVHp7S.png"/><br/>
+把選單拉到 API 21 選起來<br/>
+<img alt="19_sdk_21" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/3lytBi2.png"/></p>
+<p>接著把選單拉到最後選</p>
+<ul>
+<li><strong>Android Support Repository</strong></li>
+<li><strong>Android support Libarary</strong></li>
+<li><strong>Coogle Play services</strong></li>
+<li><strong>Google Repository</strong></li>
+<li><strong>Google USB Driver</strong></li>
+<li><strong>Intel X86 Emulator Accelerator(HAXM installer)</strong><br/>
+    最後的這個 HAXM 是為了讓模擬器加速用的，從 SDK manager 下載完之後，還有另外的安裝步驟<br/>
+<img alt="9_SDK4" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/UM8w30n.png"/></li>
+</ul>
 <p><strong>安裝到這裡 Android Studio 已經可以使用了</strong>，不過還可以再做一些設定讓手機模擬器跑得更快</p>
 <h2 id="emulator-accelerator">Emulator Accelerator</h2>
-<p>在安裝 HAXM 前要先確定 Intel VT-x 是否有在你的 BIOS 被啟用<br>
-我沒遇到這個問題，所以我也不知道怎麼解決＠＠<br>
+<p>在安裝 HAXM 前要先確定 Intel VT-x 是否有在你的 BIOS 被啟用<br/>
+我沒遇到這個問題，所以我也不知道怎麼解決＠＠<br/>
 可以在 cmd 下 <code>sc query intelhaxm</code> 來看有沒有開啓，只要有看到 Running 應該就是沒問題了</p>
-<p>再來到 Android Studio 的目錄下找到 HAXM 的安裝檔<br>
-它被放在 <code>...\android-studio\sdk\extras\intel\Hardware_Accelerated_Execution_Manager</code><br>
+<p>再來到 Android Studio 的目錄下找到 HAXM 的安裝檔<br/>
+它被放在 <code>...\android-studio\sdk\extras\intel\Hardware_Accelerated_Execution_Manager</code><br/>
 ... 指的是安裝的目錄</p>
-<p>看到 <code>intelhaxm</code> 按下去 !<br>
-<img alt="10_Intel_accelator" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/NX8lULd.png"><br>
+<p>看到 <code>intelhaxm</code> 按下去 !<br/>
+<img alt="10_Intel_accelator" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/NX8lULd.png"/><br/>
 一直按下一步就大功告成了</p>
-<p>不過 ...<br>
-這樣還是不夠快，我們需要更快的模擬器！<br>
+<p>不過 ...<br/>
+這樣還是不夠快，我們需要更快的模擬器！<br/>
 Genymotion ！！！</p>
 <h1 id="genymotion">Genymotion</h1>
-<p>安裝 Genymotion 的模擬器前，我們必須先註冊<br>
-http://www.genymotion.com/</p>
+<p>安裝 Genymotion 的模擬器前，我們必須先到<a href="http://www.genymotion.com/">官網</a>註冊</p>
 <h2 id="download">Download</h2>
 <p>進入下載頁面後，往下拉會看到 Windows，mac 和 Liunx 版</p>
-<p>Windows 只要直接安裝就可以了，它會連 Oracle Virtual Box 一起安裝<br>
-<img alt="11_genymotiong_win" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/4oUXeea.png"></p>
-<p>mac 和 Linux 還要額外先安裝 <a href="https://www.virtualbox.org/wiki/Downloads">Oracle Virtual Box</a><br>
-<img alt="12_genymotion_Unix" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/NMQD2Jc.png"></p>
+<p>Windows 只要直接安裝就可以了，它會連 Oracle Virtual Box 一起安裝<br/>
+<img alt="11_genymotiong_win" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/4oUXeea.png"/></p>
+<p>mac 和 Linux 還要額外先安裝 <a href="https://www.virtualbox.org/wiki/Downloads">Oracle Virtual Box</a><br/>
+<img alt="12_genymotion_Unix" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/NMQD2Jc.png"/></p>
 <h2 id="install-ide-plug-in">Install IDE plug-in</h2>
-<p>在下載頁面往下拉會看到 genymotion 在 IDE 上的 plugin，可以讓我們從 IDE 內直接開啟 Genymothion<br>
-Android Studio 屬於 IntelliJ IDEA，所以我們就照著他上面的指示設定<br>
-<img alt="13_genymotion_plug in" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/7C0d8aU.png"></p>
+<p>在下載頁面往下拉會看到 genymotion 在 IDE 上的 plugin，可以讓我們從 IDE 內直接開啟 Genymothion<br/>
+Android Studio 屬於 IntelliJ IDEA，所以我們就照著他上面的指示設定<br/>
+<img alt="13_genymotion_plug in" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/7C0d8aU.png"/></p>
 <p>開啟 Android Studio</p>
 <blockquote>
 <p>File -&gt; Settings</p>
 </blockquote>
-<p><img alt="14_plug-in" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/vemudkb.png"></p>
-<p>找到 Plungins ，接著點 Browse repositories<br>
-<img alt="15_plug-in2" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/UnP1hiQ.png"></p>
-<p>上方輸入 Genymotion 就可找到，接著就安裝它吧<br>
-<img alt="16_plug-in3" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/xzjsTmz.png"></p>
-<p>安裝完記得重新啟動 Android Studio，就會在工具列看到多一個按鈕，Genymotion 就安裝完成囉<br>
-<img alt="17_plug-in4" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/I2RbFEG.png"></p>
-<p>第一次使用會要求設定 Genymotion 安裝的資料夾 (e.g. <code>C:\Program Files\Genymobile\Genymotion</code>)<br>
+<p><img alt="14_plug-in" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/vemudkb.png"/></p>
+<p>找到 Plungins ，接著點 Browse repositories<br/>
+<img alt="15_plug-in2" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/UnP1hiQ.png"/></p>
+<p>上方輸入 Genymotion 就可找到，接著就安裝它吧<br/>
+<img alt="16_plug-in3" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/xzjsTmz.png"/></p>
+<p>安裝完記得重新啟動 Android Studio，就會在工具列看到多一個按鈕，Genymotion 就安裝完成囉<br/>
+<img alt="17_plug-in4" src="https://lee-w.github.io/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/I2RbFEG.png"/></p>
+<p>第一次使用會要求設定 Genymotion 安裝的資料夾 (e.g. <code>C:\Program Files\Genymobile\Genymotion</code>)<br/>
 設定完就可以開始使用 Genymotion 了</p>
 <h2 id="plugins">Plugins</h2>
-<p>IdeaVim: 如果你是重度 Vim 狂熱者，這絕對是你不能不裝的 plugin!!!<br>
-MarkDown: 這個 Plugin 提供直接在 Android Studio 中，Preview Markdown 的功能</p>
+<ul>
+<li>IdeaVim: 如果你是重度 Vim 狂熱者，這絕對是你不能不裝的 plugin!!!</li>
+<li>MarkDown: 這個 Plugin 提供直接在 Android Studio 中，Preview Markdown 的功能</li>
+</ul>
             <div>
 </div>
 

@@ -123,7 +123,7 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 <li>掛載硬碟的標籤<ul>
 <li>掛載硬碟的標籤我用的是 UUID 的標籤，可以用下面的指令查詢<br>
 <code>ls -l /dev/disk/by-uuid/</code></li>
-<li>也可以直接使用 /dev/sda1 這樣的格式，只是如果硬碟的代號改變，就要再去手動改變比較麻煩 </li>
+<li>也可以直接使用 /dev/sda1 這樣的格式，只是如果硬碟的代號改變，就要再去手動改變比較麻煩</li>
 </ul>
 </li>
 <li>掛載位置<ul>
@@ -143,7 +143,7 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 <li>是否以 fsck 檢驗磁區</li>
 </ol>
 <p>基本上 4 5 6 我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到</p>
-<h1 id="_1">測試</h1>
+<h2 id="_1">測試</h2>
 <p>先看一下是否有掛載成功</p>
 <div class="highlight"><pre><span></span>df
 </pre></div>
@@ -186,7 +186,7 @@ none              102400        44    102356    1% /run/user
 
 <p>如果掛載的分隔驅再裡面就是成功了</p>
 <p>如果有任何異常，就去看一下 /etc/fstab 是不是有哪裡寫錯了</p>
-<h1 id="reference">Reference</h1>
+<h2 id="reference">Reference</h2>
 <p><a href="http://255121.blogspot.tw/2010/05/linux.html">巴特的微花盆： 筆記： Linux 中設定開機時自動掛載分割區</a></p>
             <div>
 </div>

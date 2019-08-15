@@ -13,12 +13,12 @@
 
 <meta property="og:title" content="More than Just Echo Bot "/>
 <meta property="og:url" content="https://lee-w.github.io/posts/tech/2016/11/more-than-just-echo-bot" />
-<meta property="og:description" content="知道怎麼實作一個會 Echo 的 Bot 後 再來就要思考，開發一個 Bot 我們要提供什麼功能 (e.g. 天氣查詢, 訂票, 推薦旅遊景點 ) 不過這裡要討論的不是 Bot 的功能 Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別 接下來來談如何從使用者說的話來判斷，使用者要使用的功能" />
+<meta property="og:description" content="知道怎麼實作一個會 Echo 的 Bot 後 再來就要思考，開發一個 Bot 我們要提供什麼功能 (e.g., 天氣查詢, 訂票, 推薦旅遊景點) 不過這裡要討論的不是 Bot 的功能 Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別 接下來來談如何從使用者說的話來判斷，使用者要使用的功能" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2016-11-29T01:57:00+08:00" />
 <meta name="twitter:title" content="More than Just Echo Bot ">
-<meta name="twitter:description" content="知道怎麼實作一個會 Echo 的 Bot 後 再來就要思考，開發一個 Bot 我們要提供什麼功能 (e.g. 天氣查詢, 訂票, 推薦旅遊景點 ) 不過這裡要討論的不是 Bot 的功能 Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別 接下來來談如何從使用者說的話來判斷，使用者要使用的功能">
+<meta name="twitter:description" content="知道怎麼實作一個會 Echo 的 Bot 後 再來就要思考，開發一個 Bot 我們要提供什麼功能 (e.g., 天氣查詢, 訂票, 推薦旅遊景點) 不過這裡要討論的不是 Bot 的功能 Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別 接下來來談如何從使用者說的話來判斷，使用者要使用的功能">
 
         <title>More than Just Echo Bot  · Laziness makes Great Engineer
 </title>
@@ -85,7 +85,7 @@
             
             <p>知道怎麼實作一個會 Echo 的 Bot 後<br>
 再來就要思考，開發一個 Bot 我們要提供什麼功能<br>
-(e.g. 天氣查詢, 訂票, 推薦旅遊景點 )</p>
+(e.g., 天氣查詢, 訂票, 推薦旅遊景點)</p>
 <p>不過這裡要討論的不是 Bot 的功能<br>
 Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</p>
 <p>接下來來談如何從使用者說的話來判斷，使用者要使用的功能</p>
@@ -132,7 +132,7 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <ul>
 <li>建立規則很麻煩</li>
 <li>規則很容易就會出現例外，很難定義得完整<ul>
-<li>只要使用者無法觸發到關鍵字，就無法使用功能 </li>
+<li>只要使用者無法觸發到關鍵字，就無法使用功能</li>
 </ul>
 </li>
 <li>一堆 if else 造成程式冗長，不易擴充和維護</li>
@@ -241,7 +241,7 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <ul>
 <li>Question</li>
 </ul>
-<div class="highlight"><pre><span></span>Hey Calendar, schedule lunch with 
+<div class="highlight"><pre><span></span>Hey Calendar, schedule lunch with
 Mary Johnson at 12 pm tomorrow.
 </pre></div>
 
@@ -263,7 +263,7 @@ Mary Johnson at 12 pm tomorrow.
 這時候就能用上 Python 強大的函式庫們，來實作自己的版本</p>
 <ul>
 <li><a href="http://www.nltk.org">NLTK</a><ul>
-<li>Python 經典的 NLP 函式庫  </li>
+<li>Python 經典的 NLP 函式庫</li>
 </ul>
 </li>
 <li><a href="https://radimrehurek.com/gensim/">word2vec</a><ul>
@@ -271,7 +271,7 @@ Mary Johnson at 12 pm tomorrow.
 </ul>
 </li>
 <li><a href="https://github.com/fxsjy/jieba">jieba</a><ul>
-<li>中文斷詞 </li>
+<li>中文斷詞</li>
 <li>判斷句子中的關鍵詞</li>
 </ul>
 </li>
@@ -300,7 +300,7 @@ Mary Johnson at 12 pm tomorrow.
 <li><a href="http://www.topbots.com/common-chatbot-ux-mistakes-in-bot-design/">WHEN BOTS GO BAD: COMMON UX MISTAKES IN CHATBOT DESIGN</a></li>
 <li><a href="https://www.smashingmagazine.com/2016/11/does-conversation-hurt-or-help-the-chatbot-ux/">Does Conversation Hurt Or Help The Chatbot UX?</a></li>
 </ul>
-<h1 id="reference">Reference</h1>
+<h2 id="reference">Reference</h2>
 <ul>
 <li><a href="https://hackmd.io/s/SyJUciYWg">Head First ChatBot</a></li>
 <li><a href="https://www.tutorialspoint.com/aiml/index.htm">AIML Tutorial</a></li>
@@ -372,7 +372,7 @@ Mary Johnson at 12 pm tomorrow.
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2016-11-29T01:57:00+08:00">2016/11/29 - 二</time>
-        <h4><built-in method index of str object at 0x1112bb0c0></h4>
+        <h4><built-in method index of str object at 0x10952ed20></h4>
     <ul class="multi-parts-list">
     </ul>
                 <h4>Read Time</h4>

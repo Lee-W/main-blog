@@ -92,7 +92,7 @@
 <h1 id="install">Install</h1>
 <h2 id="method1-download">Method1: Download</h2>
 <ol>
-<li>到 https://github.com/calevans/external 下載</li>
+<li>到 <a href="https://github.com/calevans/external">external</a> 下載</li>
 <li>把 extneral 裡面的 external 資料夾放到 plugin 裡面</li>
 <li>在 <code>index.html</code> 中的 <code>Reveal.initalize</code> 這個 block 加入下面的內容</li>
 </ol>
@@ -102,16 +102,16 @@
 
 <h2 id="method2-submodule">Method2: Submodule</h2>
 <p>不過為了讓他的更新也能被追蹤，我使用了 git submodule</p>
-<ol>
+<ul>
 <li>git submodule</li>
-</ol>
+</ul>
 <div class="highlight"><pre><span></span>git submodule add https://github.com/calevans/external plugin/external
 </pre></div>
 
 
-<ol>
+<ul>
 <li>在 <code>index.html</code> 中的 <code>Reveal.initalize</code> 這個 block 加入下面的內容</li>
-</ol>
+</ul>
 <div class="highlight"><pre><span></span><span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;plugin/external/external/external.js&#39;</span><span class="p">,</span> <span class="nx">condition</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span> <span class="s1">&#39;[data-external]&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
 </pre></div>
 

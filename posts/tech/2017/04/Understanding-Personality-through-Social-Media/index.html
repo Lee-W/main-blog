@@ -80,7 +80,35 @@
 </div>
 
 <div class="row-fluid">
-        <div class="span8 offset2 article-content">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#problem-of-past-researches">Problem of Past Researches</a></li>
+<li><a href="#mbti">MBTI</a></li>
+<li><a href="#data">Data</a><ul>
+<li><a href="#what-is-the-so-called-personliaty-related-tweets">What is the so-called personliaty-related tweets?</a></li>
+<li><a href="#distribution">Distribution</a></li>
+</ul>
+</li>
+<li><a href="#features">Features</a><ul>
+<li><a href="#1-n-grams">1. n-grams</a></li>
+<li><a href="#2-twitter-part-of-speech-tags">2. Twitter Part-of-speech tags</a></li>
+<li><a href="#3word-vectors">3.word vectors</a></li>
+</ul>
+</li>
+<li><a href="#prediction">Prediction</a><ul>
+<li><a href="#accuracy-measurement">Accuracy Measurement</a></li>
+<li><a href="#accuracy">Accuracy</a></li>
+<li><a href="#insight">Insight</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
 
             
             <p><a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf">Paper</a></p>
@@ -96,7 +124,7 @@
 <h3 id="mbti">MBTI</h3>
 <p>Instead of commonly used big five theory, MBTI is used in this paper.</p>
 <p><a href="https://en.wikipedia.org/wiki/Myers–Briggs_Type_Indicator">Myers-Briggs Type Indicator</a></p>
-<p>There are 4 types of personality trait<br>
+<p>There are 4 types of personality trait<br/>
 i.e.</p>
 <ul>
 <li>Introversion(I) / Extraversion(E)</li>
@@ -104,7 +132,7 @@ i.e.</p>
 <li>Feeling(F) / Thinking(T)</li>
 <li>Perception(P) / Judging(J)</li>
 </ul>
-<p>Personality can be expressed as a code with 4 letters.<br>
+<p>Personality can be expressed as a code with 4 letters.<br/>
 e.g. ENFJ, INTP</p>
 <h3 id="data">Data</h3>
 <ul>
@@ -116,18 +144,18 @@ e.g. ENFJ, INTP</p>
 </ul>
 <h4 id="what-is-the-so-called-personliaty-related-tweets">What is the so-called personliaty-related tweets?</h4>
 <ul>
-<li>English Tweets that contain users' own MBIT code. <br>
+<li>English Tweets that contain users' own MBIT code.<br/>
     e.g.<ul>
 <li><code>"I'm an ENFJ"</code> is qualified</li>
 <li><code>"My friend is an ISFJ"</code> is not qualified</li>
 </ul>
 </li>
 <li>Heuristic rules is used (e.g. <code>"I'm"</code>, <code>"I got"</code>, <code>"I have been a"</code>)</li>
-<li>No classification method is used for ensuring the personality code is indeed the user's </li>
+<li>No classification method is used for ensuring the personality code is indeed the user's</li>
 </ul>
 <h4 id="distribution">Distribution</h4>
 <p>Personality distribution of this data is skewed.</p>
-<p><img alt="MBTI-bar" src="https://lee-w.github.io/images/posts-image/2017-04-05-understanding-personliaty-through-social-media/MBTI-bar.png"></p>
+<p><img alt="MBTI-bar" src="https://lee-w.github.io/images/posts-image/2017-04-05-understanding-personliaty-through-social-media/MBTI-bar.png"/></p>
 <p>However, in the real word, the personality distribution might also be skewed.</p>
 <h3 id="features">Features</h3>
 <h4 id="1-n-grams">1. n-grams</h4>
@@ -138,12 +166,12 @@ e.g. ENFJ, INTP</p>
 <h4 id="2-twitter-part-of-speech-tags">2. Twitter Part-of-speech tags</h4>
 <p>Based on <a href="http://www.cs.cmu.edu/~ark/TweetNLP/gimpel+etal.acl11.pdf">Part-of-Speech Tagging for Twitter: Annotation, Features, and Experiments</a></p>
 <ul>
-<li>25 types with some Twitter-specific tag. <br>
+<li>25 types with some Twitter-specific tag.<br/>
   e.g.<ul>
 <li>hashtag</li>
 <li>at-mention</li>
 <li>URL</li>
-<li>emoticon </li>
+<li>emoticon</li>
 </ul>
 </li>
 </ul>
@@ -160,7 +188,7 @@ e.g. ENFJ, INTP</p>
 <p>Extracted Features</p>
 <ul>
 <li>Average word vectors</li>
-<li>Weighted average word vectors (weighted according to TF-IDF) </li>
+<li>Weighted average word vectors (weighted according to TF-IDF)</li>
 </ul>
 </li>
 </ul>
@@ -171,7 +199,7 @@ e.g. ENFJ, INTP</p>
 <h4 id="accuracy">Accuracy</h4>
 <ul>
 <li>Indivisula Features<ul>
-<li>Word Vector Only -&gt; (AUC=0.651) </li>
+<li>Word Vector Only -&gt; (AUC=0.651)</li>
 <li>n-gram only -&gt; (AUC=0.607)</li>
 <li>POS only -&gt; (AUC=0.585)</li>
 </ul>
@@ -184,7 +212,7 @@ e.g. ENFJ, INTP</p>
 </ul>
 <h4 id="insight">Insight</h4>
 <p>Among the results, word vector performs best which might illustrate that predictions based on social media and language would work.</p>
-<p>During the POS conversion process, information is compressed into 25 tags and might lost some important one.<br>
+<p>During the POS conversion process, information is compressed into 25 tags and might lost some important one.<br/>
 This might be the reason why it performs worse.</p>
             <div>
 </div>
