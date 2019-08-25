@@ -42,7 +42,7 @@ Series: Line Bot Tutorial
 
 ![5_bot_page]({static}/images/posts-image/2016-11-22-apply-line-messaging-api/8DC4TSG.png)
 
-接著到設定頁面左下方，找到 `Settings`->`Bot Settings`
+接著到設定頁面左下方，找到 `Settings`  → `Bot Settings`
 
 進入以下的畫面開啟 Messaging API
 ![6_bot_setting]({static}/images/posts-image/2016-11-22-apply-line-messaging-api/BtaSwa5.png)

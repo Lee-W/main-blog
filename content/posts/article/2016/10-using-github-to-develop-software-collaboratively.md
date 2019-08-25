@@ -53,9 +53,9 @@ There are three main stages
 
 |Stage|Action||Stage|
 |---|---|---|---|
-|working| `add`| ->|staging|
-|staging|`commit`| ->|repo|
-|working|<- |`checkout`|repo|
+|working| `add`| →|staging|
+|staging|`commit`| →|repo|
+|working|← |`checkout`|repo|
 
 ```shell
 git add REAMDE.md
@@ -150,7 +150,7 @@ origin is a short hand name of that remote url. In other word, your repo.
 ### difference between fetch and pull
 
 git fetch : go to remote and copy it
-git pull -> fetch + merge
+git pull → fetch + merge
 
 ### on-site
 
@@ -158,8 +158,8 @@ pull request on GitHub
 `@person-name` → notification
 Have a conversation with the whole team
 
-Write "fix #2 ...." in git commit -> special meaning -> specify the bug in issue on GitHub
-Wiki -> documentation
+Write "fix #2 ...." in git commit → special meaning → specify the bug in issue on GitHub
+Wiki → documentation
 
 ## How to write a good git commit
 
@@ -185,8 +185,8 @@ Don't version control these kinds of files.
 Also, large files are not recommended to add to git.
 If it's needed, try `git-annex`(web-site).
 
-`git revert "SHA1"` -> save another entry of undo
+`git revert "SHA1"` → save another entry of undo
 
-If you commit the password -> `git rebase` can change commit, but it is not that recommended.
+If you commit the password → `git rebase` can change commit, but it is not that recommended.
 
 `git submodule` create a sub-module

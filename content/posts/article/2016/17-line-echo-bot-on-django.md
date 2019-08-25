@@ -476,8 +476,8 @@ ngrok http 8000
 如果你發現除了 echo 訊息外，還有其他的訊息
 可能就是沒有把 Atuo Reply Message 關掉
 這時候就可以去 Line Bot 的 `LINE@ Manger`
-`Settings` -> `Bot Settings` 把它關掉
-或者到 `Messages` -> `Auto Reply Message` 做修改訊息內容
+`Settings` → `Bot Settings` 把它關掉
+或者到 `Messages` → `Auto Reply Message` 做修改訊息內容
 
 ## Reference
 

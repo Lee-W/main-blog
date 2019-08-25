@@ -41,7 +41,7 @@ Open Source|OpenAPI
 開放程式碼 | 開放呼叫功能
 Read/Write model|Read-Only model
 貢獻者社群 | 使用者社群
-產業聯盟 -> 產業標準 | 相互競爭 -> 寡佔市場
+產業聯盟 → 產業標準 | 相互競爭 → 寡佔市場
 
 另外比較有趣的是
 華為有個部門就是專門在預測未來哪種 Open Source 會火

@@ -34,7 +34,7 @@ Line 的帳號也是 ngrok, heroku 跟上線需要的各申請一個
 先上[Heroku](https://www.heroku.com) 辦個帳號
 
 到個人的 dashboard
-`New` -> `Create New App`
+`New` → `Create New App`
 選一個名字，就創好 App 了
 
 ## Deploy
@@ -61,7 +61,7 @@ Heroku 是透過這個指令來做設定
 heroku config:set "env key":"env value"
 ```
 
-或者也能到 dashboard 的 `Settings` -> `Config Variables` -> `Reveal Config Vars` 做設定
+或者也能到 dashboard 的 `Settings` → `Config Variables` → `Reveal Config Vars` 做設定
 
 ### Python Envrionments
 因為 Heroku 支援多種不同的語言

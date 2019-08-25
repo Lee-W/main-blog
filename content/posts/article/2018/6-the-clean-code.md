@@ -28,7 +28,7 @@ Summary:
         * 沒有重複的程式碼
         * 充份表達系統設計的構思
         * 具有最少的 entities (e.g. class, methods, functions, and etc.)
-* 每一次修改程式碼之後，都得讓程式碼變得比修改之前再更乾淨  
+* 每一次修改程式碼之後，都得讓程式碼變得比修改之前再更乾淨
     * 童子軍原則: 每次你到過的營地，離開後要比之前更乾淨
 
 ## 第2章：有意義的命名
@@ -36,21 +36,21 @@ Summary:
 * Variables, methods, classes 要能解釋他們為什麼在這、做什麼用和怎麼使用它
 * 變數名稱要唸得出來 (e.g., ~~genYMDHMS~~)
 * 較小的名稱如果能表達足夠的意義，通常比較長的名稱好，儘量減少再命名上不必要的文字
-* 不要用變數型態作為變數名稱  
-    * e.g., `accountList` -> `accountGroup` or `accounts`
+* 不要用變數型態作為變數名稱
+    * e.g., `accountList` → `accountGroup` or `accounts`
 * 要區別名稱，用**讀者能分辨的區別方式**！！！
     * e.g.,
-        * ~~moneyAmount~~ -> `money`
-        * ~~customerInfo~~ -> `customer`
+        * ~~moneyAmount~~ → `money`
+        * ~~customerInfo~~ → `customer`
 * 命名的長度應該要與 scope 大小對應
     * 一個常用到的變數或常數，最好給它一個容易被搜尋的名子
 * 詞性
-    * class, object -> 名詞
-    * method -> 動詞
+    * class, object → 名詞
+    * method → 動詞
 * 替單一的概念選一個詞
     * e.g., get, fetch, retrieve 混用是一件很糟的事
 * 避免用雙關語，或可以表達兩個意思的字
-    * e.g., 加入一個新的值 : ~~add~~ -> append, insert
+    * e.g., 加入一個新的值 : ~~add~~ → append, insert
 
 ## 第3章：函式
 
@@ -199,7 +199,7 @@ class Person() {
 ```
 
 * ~~每個函式，每個變數都該有註解來說明~~。**不，別這麼做**
-* 把暫時無用的程式碼註解掉並留著，是很惱人的 -> 版本控制會幫我們記下它
+* 把暫時無用的程式碼註解掉並留著，是很惱人的 → 版本控制會幫我們記下它
 
 ## 第5章：編排
 
@@ -343,7 +343,7 @@ public class LocalPort {
     * 有了測試，就不會怕修改程式會造成程式的結果不如預期
 * 測試程式跟產品程式一樣重要，一樣需要整潔
     * 醜陋的測試程式，如果沒讓程式更糟，最多也只是跟沒有測試程式一樣
-    * 什麼東西造就了一個整潔的測試程式？ -> **可讀性**
+    * 什麼東西造就了一個整潔的測試程式？ → **可讀性**
     * 但是測試程式並不需要產品程式一樣的有效率
 * 整潔測試程式的5個原則 F.I.R.S.T.
     1. Fast: 能快速的被執行
@@ -368,7 +368,7 @@ public class LocalPort {
 
 * Java的慣例
     * 類別以變數開頭
-        * `public static final` -> `private static` -> `private` >>>>> `public` (幾乎很少有理由要用到)
+        * `public static final` → `private static` → `private` >>>>> `public` (幾乎很少有理由要用到)
     * public 函式緊跟在變數
     * private 的工具函式，會跟在呼叫它的函式後
 * 不用過度執著於封裝，有時候為了讓測試程式存取， protected 是必要的

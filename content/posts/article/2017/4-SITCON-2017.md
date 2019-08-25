@@ -29,7 +29,7 @@ Summary:
 
 * [Webpack](https://webpack.github.io) 未來可能取代 Gulp 與 grunt
 * [Babel](https://babeljs.io): 目前最主流的 Javascript Transpiler
-    * e.g. 轉換 ES6 -> ES5
+    * e.g. 轉換 ES6 → ES5
 * 雖然 ES6 支援模組標準，但瀏覽器尚未有定論，目前前端依然無法支援模組
     * 可以用 webpack 打包來模擬
 * 非同步處理 : ES6 Promise, async/await

@@ -32,12 +32,12 @@ Summary:
 
 ### Difference with Others
 
-1. Known strategy -> Both know and unknown
-    * Known or Unknown but available to compete -> Train a model to learn strategy
-    * Unknown -> Game-theoretical solution to seek the Nash equilibrium
-2. Single-roung -> Multi-round
-3. Model driven -> learning-based, data-drivern
-4. Not considering different network topology -> General to adapt both opponent's strategy and environment setting (e.g. underlying network topology)
+1. Known strategy → Both know and unknown
+    * Known or Unknown but available to compete → Train a model to learn strategy
+    * Unknown → Game-theoretical solution to seek the Nash equilibrium
+2. Single-roung → Multi-round
+3. Model driven → learning-based, data-drivern
+4. Not considering different network topology → General to adapt both opponent's strategy and environment setting (e.g. underlying network topology)
 
 ## 2. Problem Statment
 
@@ -52,7 +52,7 @@ Summary:
 
 ## 4. Methodology
 
-* NP-hardness of MRCIM -> looks for approxmiate solution
+* NP-hardness of MRCIM → looks for approxmiate solution
 * Max the inflence for each round does not guarantee overall max
     * Due to the fact that each round are not independent
 

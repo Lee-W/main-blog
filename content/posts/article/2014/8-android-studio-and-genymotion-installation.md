@@ -53,7 +53,7 @@ Android Studio 正式版已經發布了，現在好像完全無法把 sdk 放在
 安裝完 JDK 後，我們還需要設定環境變數
 以 Win7 為例
 
-> 電腦 -> 內容 -> 進階系統設定 -> 進階 -> 環境變數
+> 電腦  內容 → 進階系統設定 → 進階 → 環境變數
 
 接著在 `系統變數` 這個欄位按下 `新增`
 變數名稱 輸入 `JAVA_HOME` ( 可能會因為 Android Studio 的版本而不同 )
@@ -86,7 +86,7 @@ Android Studio 會自動幫你把 SDK 的路徑設定到原本的位置
 之後設定 SDK manager 設定到這個路徑就可以了
 
 開始 Android Studio
-> Configure -> Project Default -> Project Structure
+> Configure → Project Default → Project Structure
 
 ![20_set_sdk_1]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/Tj82hvs.png)
 
@@ -159,7 +159,7 @@ Android Studio 屬於 IntelliJ IDEA，所以我們就照著他上面的指示設
 ![13_genymotion_plug in]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/7C0d8aU.png)
 
 開啟 Android Studio
-> File -> Settings
+> File → Settings
 
 ![14_plug-in]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/vemudkb.png)
 

@@ -84,7 +84,7 @@ gi vim,osx >> .gitignore
 1. 線下查看 gitignore.io 支援的類型，用更適合閱讀當方式印出
 2. 將 output redirection 寫成一個 option
 3. 支援以空格作為類型的分隔 ( 逗號依然支援 )  
-   e.g., `vim,osx` -> `vim osx`
+   e.g., `vim,osx` → `vim osx`
 
 ### 安裝
 

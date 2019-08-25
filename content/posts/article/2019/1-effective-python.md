@@ -34,10 +34,10 @@ Summary:
 * Whitespace
     * 過長的 expressions 要接續到其他文字行時，除了原本的縮排層次，應再加上額外的**四個空格**來縮排
 * Naming
-    * protected instance attributes -> _leading_underscore
-    * private instance attributes -> __double_leading_underscore
-    * Class, exceptions -> CapitalizedWord
-    * model-level constant -> ALL_CAPS
+    * protected instance attributes → _leading_underscore
+    * private instance attributes → __double_leading_underscore
+    * Class, exceptions → CapitalizedWord
+    * model-level constant → ALL_CAPS
 * Statements
     * 使用行內否定 (inline negation, e.g., `if a is not b`)，而非否定正向的運算式 (negation of positive expressions, e.g., `if not a is b`)
     * 別用查驗長度的方式 (`if len(somelist) == 0`) 來檢查空值。使用 `if not somelist`
@@ -151,7 +151,7 @@ else:
     * 即使例外發生，但也想要在例外發生時執行清理用的 cleanup code
 * `else`
     * 如果 try 沒有丟出例外， else 區塊就會執行
-    * 用來最小化 try 區塊的程式碼量 -> **讓 try 區塊只出現會丟出例外的程式碼**
+    * 用來最小化 try 區塊的程式碼量 → **讓 try 區塊只出現會丟出例外的程式碼**
 
 ## 第二章： 函式
 

@@ -17,7 +17,7 @@ RISE 是一套結合[jupyter-notebook](http://jupyter.org) 和[reveal.js](http:/
 所以這裡記錄該如何讓 RISE 可以滾動
 
 進入 jupyter notebook 的任一個 notebook 後
-在上方工具列點選 `Edit` -> `Edit Notebook Metadata`
+在上方工具列點選 `Edit` → `Edit Notebook Metadata`
 接著在裡面加入 livereveal 的設定
 如下 （只需加入 livereveal 的部分）
 

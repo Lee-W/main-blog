@@ -55,7 +55,7 @@ Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie
 
 ### 8. Be nice. (The world is a small town.)
 
-* Stand Next to Talent <- Garbage in Garbage out
+* Stand Next to Talent ← Garbage in Garbage out
 * Write Fan Letters
     * 不用直接寫信給偶像。用行動、作品來像他致敬吧！
 

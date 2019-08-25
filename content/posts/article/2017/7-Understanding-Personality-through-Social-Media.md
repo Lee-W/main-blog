@@ -18,7 +18,7 @@ Main Purpose: To see how linguistic features correlate with each personality tra
 
 ### Problem of Past Researches
 
-* Language on social media has richer content that makes the typical linguistic analysis tool perform poorly (e.g. iono -> I don't know)
+* Language on social media has richer content that makes the typical linguistic analysis tool perform poorly (e.g. iono → I don't know)
 * Gain personality information is costly (e.g. Big Five Questionnaire)
 
 ### MBTI
@@ -100,12 +100,12 @@ Since the data is skewed, AUC is used.
 #### Accuracy
 
 * Indivisula Features
-    * Word Vector Only -> (AUC=0.651)
-    * n-gram only -> (AUC=0.607)
-    * POS only -> (AUC=0.585)
+    * Word Vector Only → (AUC=0.651)
+    * n-gram only → (AUC=0.607)
+    * POS only → (AUC=0.585)
 * Combinded Features
-    * All three features -> (AUC=0.661)
-    * POS + n-gram -> (AUC=0.616)
+    * All three features → (AUC=0.661)
+    * POS + n-gram → (AUC=0.616)
 
 #### Insight
 
