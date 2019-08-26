@@ -1355,12 +1355,12 @@ B 工廠是「進入」和「不進入」
 &lt;ul&gt;
 &lt;li&gt;這時候就可以透過「賽局樹」來觀察時間流&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;                            - 戰鬥 -&amp;gt; (-1, -1)
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;                            - 戰鬥 → (-1, -1)
                     A 工廠
-        - 進入 -&amp;gt;
-                            - 合作 -&amp;gt; (1, 1)
+        - 進入 →
+                            - 合作 → (1, 1)
 B 工廠
-        - 不進入 -&amp;gt; (3, 0)
+        - 不進入 → (3, 0)
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;這種賽局要使用反向歸納（backward induction），排除「奇怪的奈許均衡」&lt;/p&gt;
 &lt;ol&gt;
@@ -1482,7 +1482,7 @@ A 否決的話就都拿不到錢
 &lt;li&gt;第 8 章則是在穀倉造成問題及打破穀倉各提一些&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;如果要快速看過，建議順序是&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;前言 -&amp;gt; ( 第 1 章，可看可不看 ) -&amp;gt; 2~4 選一章 -&amp;gt; 5~7 選一章 -&amp;gt; 結語&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;前言 → ( 第 1 章，可看可不看 ) → 2~4 選一章 → 5~7 選一章 → 結語&lt;/code&gt;&lt;/p&gt;
 &lt;hr/&gt;
 &lt;h2 id="_2"&gt;前言：彭博市府的機密任務&lt;/h2&gt;
 &lt;h3 id="_3"&gt;廢油處理問題 （跨部門的合作）&lt;/h3&gt;
@@ -2379,7 +2379,7 @@ e.g., DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌
 &lt;/table&gt;
 &lt;ul&gt;
 &lt;li&gt;問「我們怎麼知道自己做到了 ?」&lt;ul&gt;
-&lt;li&gt;e.g. 「消除世間的飢餓」 &amp;lt;--&amp;gt; 「位住在低久區的家庭打造一百五十間經濟實惠、環保，又能抵抗暴風的住家」(Make It Right)&lt;ul&gt;
+&lt;li&gt;e.g. 「消除世間的飢餓」 ⇔ 「位住在低久區的家庭打造一百五十間經濟實惠、環保，又能抵抗暴風的住家」(Make It Right)&lt;ul&gt;
 &lt;li&gt;後者回答了「我們怎麼之道自己成功了」，而他也成功鼓舞人心&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -3384,7 +3384,7 @@ The most important part of failure is not to give up.&lt;/p&gt;</content><catego
 旅行讓世界變得新鮮，也能活化大腦運作&lt;/p&gt;
 &lt;h3 id="8-be-nice-the-world-is-a-small-town"&gt;8. Be nice. (The world is a small town.)&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Stand Next to Talent &amp;lt;- Garbage in Garbage out&lt;/li&gt;
+&lt;li&gt;Stand Next to Talent ← Garbage in Garbage out&lt;/li&gt;
 &lt;li&gt;Write Fan Letters&lt;ul&gt;
 &lt;li&gt;不用直接寫信給偶像。用行動、作品來像他致敬吧！&lt;/li&gt;
 &lt;/ul&gt;

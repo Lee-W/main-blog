@@ -167,18 +167,18 @@ touch REAMDE.mdd
 <tr>
 <td>working</td>
 <td><code>add</code></td>
-<td>-&gt;</td>
+<td>→</td>
 <td>staging</td>
 </tr>
 <tr>
 <td>staging</td>
 <td><code>commit</code></td>
-<td>-&gt;</td>
+<td>→</td>
 <td>repo</td>
 </tr>
 <tr>
 <td>working</td>
-<td>&lt;-</td>
+<td>←</td>
 <td><code>checkout</code></td>
 <td>repo</td>
 </tr>
@@ -243,13 +243,13 @@ In such case, this new appended commit might not be able to be referenced.<br/>
 <code>git pull --prune</code></p>
 <h3 id="difference-between-fetch-and-pull">difference between fetch and pull</h3>
 <p>git fetch : go to remote and copy it<br/>
-git pull -&gt; fetch + merge</p>
+git pull → fetch + merge</p>
 <h3 id="on-site">on-site</h3>
 <p>pull request on GitHub<br/>
 <code>@person-name</code> → notification<br/>
 Have a conversation with the whole team</p>
-<p>Write "fix #2 ...." in git commit -&gt; special meaning -&gt; specify the bug in issue on GitHub<br/>
-Wiki -&gt; documentation</p>
+<p>Write "fix #2 ...." in git commit → special meaning → specify the bug in issue on GitHub<br/>
+Wiki → documentation</p>
 <h2 id="how-to-write-a-good-git-commit">How to write a good git commit</h2>
 <h3 id="principle">Principle</h3>
 <ul>
@@ -270,8 +270,8 @@ Wiki -&gt; documentation</p>
 Don't version control these kinds of files.<br/>
 Also, large files are not recommended to add to git.<br/>
 If it's needed, try <code>git-annex</code>(web-site).</p>
-<p><code>git revert "SHA1"</code> -&gt; save another entry of undo</p>
-<p>If you commit the password -&gt; <code>git rebase</code> can change commit, but it is not that recommended.</p>
+<p><code>git revert "SHA1"</code> → save another entry of undo</p>
+<p>If you commit the password → <code>git rebase</code> can change commit, but it is not that recommended.</p>
 <p><code>git submodule</code> create a sub-module</p>
             <div>
 </div>
