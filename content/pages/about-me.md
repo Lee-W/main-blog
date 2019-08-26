@@ -1,12 +1,12 @@
 Title: About Me
 Date: 2017-02-14 12:30
-Modified: 2018-11-06 14:56
+Modified: 2019-08-26 12:09
 
-Hi, this is Wei Lee.
+Hi, my name is Wei Lee.
 
 I'm a
   
-<i class="fab fa-lg fa-python"></i>  Python Programmer
+[<i class="fab fa-lg fa-python"></i> Python Programmer](https://lee-w.github.io/pycon-note/)
 <i class="fas fa-lg fa-book"></i> Reader
 [<i class="fas fa-lg fa-camera"></i> Traveler](https://lee-w.github.io/travlog/)
 <i class="fas fa-lg fa-music"></i> Ukulele Player
