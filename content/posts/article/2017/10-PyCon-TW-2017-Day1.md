@@ -205,7 +205,7 @@ Linear (Simpler) Model First
 
 <a name='4'></a>
 
-## [Keynote] The State of Python for <s>Education</s> Learning
+## [Keynote] The State of Python for ~~Education~~ Learning
 
 * [slide](https://speakerdeck.com/willingc/the-state-of-python-for-education)
 * [共筆](https://hackfoldr.org/pycontw2017/https%253A%252F%252Fhackmd.io%252Fs%252FHk-NVGXke)
