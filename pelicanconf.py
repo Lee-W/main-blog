@@ -31,7 +31,7 @@ DIRECT_TEMPLATES = ('index', 'categories', 'tags', 'authors', 'archives', 'searc
 DEFAULT_CATEGORY = 'Article'
 ARTICLE_URL = 'posts/{category}/{date:%Y}/{date:%m}/{slug}'
 ARTICLE_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{slug}/index.html'
-STATIC_PATHS = ['images', 'static']
+STATIC_PATHS = ['static', 'images']
 
 # Theme Setting
 THEME = 'theme/elegant'
