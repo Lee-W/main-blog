@@ -246,7 +246,7 @@ python3 manage.py startapp echobot
 <p>取得 body 跟 signature 後<br>
 Line Bot API 會在處理訊息的同時，確認這個訊息是否來自 Line</p>
 <p>而處理 Line 傳過來給我們的訊息，有兩種不同的做法</p>
-<h4 id="webhookparser">WebhookParser</h4>
+<h4>WebhookParser</h4>
 <p>WebhookParser 會 Parse 這個訊息的所有欄位<br>
 讓我們針對各種不同型別的訊息做個別的處理<br>
 e.g.</p>
@@ -297,7 +297,7 @@ e.g.</p>
 也可以傳一個都是訊息的 list 或 tuple<br>
 不過一次最多只能傳 5 個<br>
 只要超過就會有 LineBotApiError</p>
-<h4 id="webhookhandler">WebhookHandler</h4>
+<h4>WebhookHandler</h4>
 <p>WebhookHandler 是針對每一種不同的訊息型態註冊一個處理器<br>
 只要收到這樣的訊息，就會丟給對應的處理器<br>
 如果確定每一類訊息，在任何情況下都會有相似的處理方式，就很適合這樣的設計</p>
@@ -342,7 +342,7 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
 </pre></div>
 
 
-<h4 id="full-code">Full Code</h4>
+<h4>Full Code</h4>
 <p>由於上面的 code 說明比較分散<br>
 這裡附上兩個版本各自的完整版</p>
 <ul>
@@ -565,7 +565,7 @@ ngrok 會把 request 傳到 local 端相對應的 port</p>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2016-11-24T03:26:00+08:00">2016/11/24 - 四</time>
-        <h4><built-in method index of str object at 0x10378edb0></h4>
+        <h4><built-in method index of str object at 0x110845b70></h4>
     <ul class="multi-parts-list">
     </ul>
                 <h4>Read Time</h4>

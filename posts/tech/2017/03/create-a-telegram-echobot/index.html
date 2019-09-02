@@ -91,11 +91,7 @@
 <li><a href="#apply-a-telegram-bot">Apply a telegram bot</a></li>
 <li><a href="#telegram-bot-api-wrapper">Telegram Bot API Wrapper</a></li>
 <li><a href="#star-programming">Star Programming</a><ul>
-<li><a href="#setup">Setup</a><ul>
-<li><a href="#1-api-token">1. API Token</a></li>
-<li><a href="#2-webhook-url">2. Webhook URL</a></li>
-</ul>
-</li>
+<li><a href="#setup">Setup</a></li>
 <li><a href="#95set95webhook">_set_webhook</a></li>
 <li><a href="#wehook95handler">wehook_handler</a></li>
 </ul>
@@ -184,11 +180,11 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 </pre></div>
 <h3 id="setup">Setup</h3>
 <p>其中有兩個地方，必須要改成自己的設定</p>
-<h4 id="1-api-token">1. API Token</h4>
+<h4>1. API Token</h4>
 <div class="highlight"><pre><span></span><span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">'Your API Token'</span><span class="p">)</span>
 </pre></div>
 <p>Your API Token 要改成剛剛取得的 API Token</p>
-<h4 id="2-webhook-url">2. Webhook URL</h4>
+<h4>2. Webhook URL</h4>
 <p>_set_webhook 中的 Your URL</p>
 <div class="highlight"><pre><span></span><span class="n">statue</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">'https://Your URL/hook'</span><span class="p">)</span>
 </pre></div>

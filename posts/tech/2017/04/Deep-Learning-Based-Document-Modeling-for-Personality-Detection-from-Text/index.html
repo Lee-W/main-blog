@@ -97,13 +97,7 @@
 </ul>
 </li>
 <li><a href="#network-architecture-in-detail">Network Architecture in Detail</a><ul>
-<li><a href="#main-steps-7-layers">Main Steps (7 Layers)</a><ul>
-<li><a href="#word-vectorization">Word Vectorization</a></li>
-<li><a href="#sentence-vectorization">Sentence Vectorization</a></li>
-<li><a href="#document-vectorization">Document Vectorization</a></li>
-<li><a href="#classification-yesno">Classification: (Yes/No)</a></li>
-</ul>
-</li>
+<li><a href="#main-steps-7-layers">Main Steps (7 Layers)</a></li>
 <li><a href="#training">Training</a></li>
 </ul>
 </li>
@@ -179,7 +173,7 @@
 </ul>
 <h2 id="network-architecture-in-detail">Network Architecture in Detail</h2>
 <h3 id="main-steps-7-layers">Main Steps (7 Layers)</h3>
-<h4 id="word-vectorization">Word Vectorization</h4>
+<h4>Word Vectorization</h4>
 <ul>
 <li>Layer 1: Input<ul>
 <li><span class="math">\(R ^{D \times S\times W \times E}\)</span></li>
@@ -189,7 +183,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="sentence-vectorization">Sentence Vectorization</h4>
+<h4>Sentence Vectorization</h4>
 <ul>
 <li>Layer 2: Convolution<ul>
 <li>3 convolutional filters: unigram, bigram, trigram</li>
@@ -197,11 +191,11 @@
 </li>
 <li>Layer 3: Max Polling</li>
 </ul>
-<h4 id="document-vectorization">Document Vectorization</h4>
+<h4>Document Vectorization</h4>
 <ul>
 <li>Layer 4: 1-max pooling</li>
 </ul>
-<h4 id="classification-yesno">Classification: (Yes/No)</h4>
+<h4>Classification: (Yes/No)</h4>
 <ul>
 <li>Layer 5: Linear with Sigmoid activation</li>
 <li>Layer 6, 7<ul>
