@@ -4,10 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-typogrify = "==2.0.7"
-Markdown = "==3.1.1"
+typogrify = "*"
+Markdown = "*"
 "bs4" = "*"
-pelican = "==4.0.1"
+pelican = "*"
 ghp-import = "*"
 python-gettext = "*"
 mdx-del-ins = {editable = true,git = "https://github.com/Lee-W/mdx_del_ins"}
