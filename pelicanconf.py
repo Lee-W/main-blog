@@ -64,6 +64,7 @@ MARKDOWN = {
         'markdown.extensions.codehilite': {'css_class': 'highlight'},
         'markdown.extensions.nl2br': {},
         'markdown.extensions.toc': {'toc_depth': '1-3'},
+        'mdx_del_ins': {},
     },
     'output_format': 'html5'
 }

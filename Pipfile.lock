@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a6aa515a00498d978f636e7d5639588e9ba0f3533606d154e2c3dcd956fc4803"
+            "sha256": "c1a9b21dcd0810202672d19998f78ed178821c772bf378a0a105b9aa6a676595"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -107,11 +107,9 @@
             "version": "==1.1.1"
         },
         "mdx-del-ins": {
-            "hashes": [
-                "sha256:7c41f2940dc4f5da22d6fbc8c5318b133e5290b17bd6291d92ce473a1a79f963"
-            ],
-            "index": "pypi",
-            "version": "==1.0"
+            "editable": true,
+            "git": "https://github.com/Lee-W/mdx_del_ins",
+            "ref": "707028ef6b119449ea563269990c5924e9e9d8ee"
         },
         "pelican": {
             "hashes": [
