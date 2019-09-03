@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2019-09-02T14:10:00+08:00</updated><entry><title>COPCUP 2019</title><link href="https://lee-w.github.io/posts/tech/2019/09/coscup-2019" rel="alternate"></link><published>2019-09-02T14:10:00+08:00</published><updated>2019-09-02T14:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-09-02:/posts/tech/2019/09/coscup-2019</id><summary type="html">&lt;p&gt;事隔了兩年又再次參加了 COSCUP&lt;br/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2019-09-02T14:10:00+08:00</updated><entry><title>COSCUP 2019</title><link href="https://lee-w.github.io/posts/tech/2019/09/coscup-2019" rel="alternate"></link><published>2019-09-02T14:10:00+08:00</published><updated>2019-09-02T14:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-09-02:/posts/tech/2019/09/coscup-2019</id><summary type="html">&lt;p&gt;事隔了兩年又再次參加了 COSCUP&lt;br/&gt;
 上一次好像是還在中研院的時候&lt;/p&gt;
 &lt;p&gt;現在會議都會有共筆，就不太需要再另外做筆記&lt;br/&gt;
 所以大概就是聊聊這次去比較喜歡的幾場 talk&lt;/p&gt;
@@ -5541,10 +5541,10 @@ Through Tucker Decomposition, it's possible to combine data from different sourc
 &lt;li&gt;
 &lt;p&gt;開發團隊有報名閃電秀，可惜沒有被抽到，想進一步鼓勵團隊明年投稿，歡迎用力回饋：明年想看 小啄 @LINE 分享&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="COSCUP"></category><category term="Chat Bot"></category></entry><entry><title>Basic Git Tutorial</title><link href="https://lee-w.github.io/posts/tech/2016/09/basic-git-tutorial" rel="alternate"></link><published>2016-09-16T15:41:00+08:00</published><updated>2016-09-16T15:41:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-09-16:/posts/tech/2016/09/basic-git-tutorial</id><summary type="html">&lt;p&gt;最近終於下定決定把很久以前的這份&lt;a href="https://lee-w.github.io/posts/tech/2014/02/git-and-git-hub"&gt;Git and GitHub&lt;/a&gt; 改版了&lt;br&gt;
+&lt;/ul&gt;</content><category term="COSCUP"></category><category term="Chat Bot"></category></entry><entry><title>Basic Git Tutorial</title><link href="https://lee-w.github.io/posts/tech/2016/09/basic-git-tutorial" rel="alternate"></link><published>2016-09-16T15:41:00+08:00</published><updated>2016-09-16T15:41:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-09-16:/posts/tech/2016/09/basic-git-tutorial</id><summary type="html">&lt;p&gt;最近終於下定決定把很久以前的這份&lt;a href="{filename}/posts/article/2014/4-git-and-git-hub.md"&gt;Git and GitHub&lt;/a&gt; 改版了&lt;br&gt;
 聽說這份在我進實驗室前，就已經被不想教大家 Git 的學長拿去流傳 ...&lt;/p&gt;
 &lt;p&gt;新版： &lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;Git Tutorial&lt;/a&gt;&lt;br&gt;
-</summary><content type="html">&lt;p&gt;最近終於下定決定把很久以前的這份&lt;a href="https://lee-w.github.io/posts/tech/2014/02/git-and-git-hub"&gt;Git and GitHub&lt;/a&gt; 改版了&lt;br&gt;
+</summary><content type="html">&lt;p&gt;最近終於下定決定把很久以前的這份&lt;a href="{filename}/posts/article/2014/4-git-and-git-hub.md"&gt;Git and GitHub&lt;/a&gt; 改版了&lt;br&gt;
 聽說這份在我進實驗室前，就已經被不想教大家 Git 的學長拿去流傳 ...&lt;/p&gt;
 &lt;p&gt;新版： &lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;Git Tutorial&lt;/a&gt;&lt;br&gt;
 &lt;!--more--&gt;&lt;/p&gt;
