@@ -59,7 +59,7 @@ Summary:
 那麼把目標拆解成很小的行動後
 要怎麼堅持每天都要走這一小步，而不會半途而廢呢？
 
-這裡非常推薦大家看「[為什麼我們這樣生活，那樣工作?]({filename}/posts/book/2015/8-the-power-of-habit.md)」（連結是我的書摘）
+這裡非常推薦大家看「[為什麼我們這樣生活，那樣工作?]({filename}/posts/book/2015/08-the-power-of-habit.md)」（連結是我的書摘）
 
 裡面提到要養成一個習慣的條件有以下四個
 
@@ -112,7 +112,7 @@ Summary:
 
 這就是必須做出選擇的時候了
 那麼要怎麼決定那些事情是真的很重要，要留下來的呢？
-這裡我要推薦的書是「[少，但是更好]({filename}/posts/book/2016/5-essentialism.md)」
+這裡我要推薦的書是「[少，但是更好]({filename}/posts/book/2016/05-essentialism.md)」
 不過如果要給一個最簡單的原則，那就是[No more yes. It's Either HELL YEAH! Or No](https://www.youtube.com/watch?time_continue=60&v=1ehWlVeMrqw)
 `如果這件事不是「太棒了！我一定要去做！！！」，那麼就不要做了`
 
