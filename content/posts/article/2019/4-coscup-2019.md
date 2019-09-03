@@ -1,4 +1,4 @@
-Title: COPCUP 2019
+Title: COSCUP 2019
 Date: 2019-09-02 14:10
 Category: Tech
 Tags: Conference, COSCUP
