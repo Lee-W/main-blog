@@ -2,7 +2,7 @@ Title: About Me
 Date: 2017-02-14 12:30
 Modified: 2019-08-26 12:09
 
-<script src="https://kit.fontawesome.com/37a5280bc1.js"></script>
+<script src="{static}/static/fontawesome-free-5.11.2-web/js/all.js"></script>
 
 Hi, my name is Wei Lee.
 
@@ -84,6 +84,10 @@ National Cheng Kung University, Tainan
 GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 
 ## Talk and Tutorial
+
+**[2019/09/16]**
+PyCon JP 2019 - Peer Reviewed Lightening Talk
+[How to get more than PyCon in a PyCon](https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9)
 
 **[2019/03/24]**
 SITCON 2019
