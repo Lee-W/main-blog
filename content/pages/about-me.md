@@ -2,7 +2,7 @@ Title: About Me
 Date: 2017-02-14 12:30
 Modified: 2019-08-26 12:09
 
-<script src="{static}/static/fontawesome-free-5.11.2-web/js/all.js"></script>
+<script src="{static}/static/fontawesome-free-5.11.2-web/js/all.js"></script>__
 
 Hi, my name is Wei Lee.
 
