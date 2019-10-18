@@ -2,7 +2,7 @@ Title: About Me
 Date: 2017-02-14 12:30
 Modified: 2019-08-26 12:09
 
-<script src="{static}/static/fontawesome-free-5.11.2-web/js/all.js"></script>__
+<script src="{static}/static/fontawesome-free-5.11.2-web/js/all.js"></script>
 
 Hi, my name is Wei Lee.
 
@@ -26,7 +26,6 @@ Beside programming skills, I also have experience in management and coordinate p
 
 * **Intermidate**: Python, Web Backend Development, Git, Linux  
 * **Beginner**: Docker, Project Management, Data Analysis, Java
-
 
 ## Experience
 
