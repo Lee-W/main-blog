@@ -1,7 +1,7 @@
 Title: PyCon JP 2019
 Date: 2019-10-12 22:30
 Category: Tech
-Tags: Conference, PyCon JP
+Tags: Conference, PyCon JP, Python
 Slug: pycon-jp-2019
 Authors: Lee-W
 Summary:
