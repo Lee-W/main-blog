@@ -84,6 +84,14 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 
 ## Talk and Tutorial
 
+**[2019/11/17]**
+PyCon CA 2019
+Python table manners: a clean style
+
+**[2019/10/24]**
+Taipei.py
+Python table manners: a clean style
+
 **[2019/09/16]**
 PyCon JP 2019 - Peer Reviewed Lightening Talk
 [How to get more than PyCon in a PyCon](https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9)
