@@ -138,16 +138,16 @@ Heroku 是透過這個指令來做設定</p>
 並且安裝 <code>requirements.txt</code> 內的函式庫<br>
 名稱如果打錯，可能會讓 Heroku 不知道這是 Python 專案，導致部署失敗</p>
 <p>另外可以透過 <code>runtime.txt</code> 來指定 Python 的版本<br>
-目前支援這兩種版本<br>
-- <code>python-2.7.12</code><br>
-- <code>python-3.5.2</code></p>
+目前支援這兩種版本
+* <code>python-2.7.12</code>
+* <code>python-3.5.2</code></p>
 <h3 id="deploy-settings-procfile">Deploy Settings - Procfile</h3>
 <p>再來必須要讓 Heroku 知道我們執行專案的指令是什麼<br>
 這個指令就是寫在 <code>Profile</code> 中</p>
 <p>這裡使用的部署套件是 gunicorn<br>
 先在 <code>requirements.txt</code> 加入 <code>gunicorn==19.0.0</code><br>
 再來創一個 <code>Profile</code>，內容是</p>
-<div class="highlight"><pre><span></span><span class="n">web</span><span class="o">:</span> <span class="n">gunicorn</span> <span class="n">line_echobot</span><span class="o">.</span><span class="na">wsgi</span> <span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">file</span> <span class="o">-</span>
+<div class="highlight"><pre><span></span>web: gunicorn line_echobot.wsgi --log-file -
 </pre></div>
 
 
@@ -245,7 +245,7 @@ Heroku 是透過這個指令來做設定</p>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2016-11-27T06:05:00+08:00">2016/11/27 - 日</time>
-        <h4><built-in method index of str object at 0x107aa3d20></h4>
+        <h4><built-in method index of str object at 0x103de5348></h4>
     <ul class="multi-parts-list">
     </ul>
                 <h4>Read Time</h4>
