@@ -29,7 +29,7 @@ Authors: Lee-W
 （台南真的很安逸啊 ˊ_>ˋ）
 台北的 meetup 真的非常的多
 以我想找的語言交換來說，一週七天都有不同的人在辦
-而我就剛好參加了時間對得到的 [English/Chinese language and cultural exchange 中英文語言文化交流](https://www.meetup.com/languageexchange/events/hgxvdryzmbcb/) 
+而我就剛好參加了時間對得到的 [English/Chinese language and cultural exchange 中英文語言文化交流](https://www.meetup.com/languageexchange/events/hgxvdryzmbcb/)
 
 時間： 每週日早上 10:00 ~ 你想走或大家想走
 地點： 忠孝新生捷運站旁的伯朗咖啡館

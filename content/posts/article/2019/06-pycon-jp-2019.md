@@ -137,7 +137,7 @@ Dustin 的 [Modern development environments for Pythonistas](https://www.youtube
 btw Dustin 在 PyCon TW / US / ... 給的 talks "PEP 572"，真的非常精彩
 錯過的話，非常推薦可以補帶
 
-當然還有 KK 大的 [When AI meets 3000-year-old Chinese Palmistry](https://www.youtube.com/watch?v=NLLhYKscuMk) 
+當然還有 KK 大的 [When AI meets 3000-year-old Chinese Palmistry](https://www.youtube.com/watch?v=NLLhYKscuMk)
 其實我這次來比較少聽 AI 相關的 talk，但分析手相實在太有趣了
 
 最後我有嘗試去聽一場日文的 talk

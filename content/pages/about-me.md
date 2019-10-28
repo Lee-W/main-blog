@@ -54,7 +54,7 @@ Beside programming skills, I also have experience in management and coordinate p
 * Designed exercises for "Data Structure," the first section of "Computer Science Foundations"
 * Lectured "Web Programming, Database/Cloud Computing," the fourth section of "Computer Science Foundations"
 
-*X-Village* is an experimental education program aiming to equip students not major in computer science with the ability of computational thinking and to enhance future cooperation between computer science and other areas. 
+*X-Village* is an experimental education program aiming to equip students not major in computer science with the ability of computational thinking and to enhance future cooperation between computer science and other areas.
 
 I was the executor of the program and the leader of the teaching assistant team. Besides, I designed a half day exercise for *Data Structure* and lectured a four-hour web backend course for *Web Programming, Database/Cloud Computing*.
 
@@ -137,7 +137,7 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-v
 
 ## Additional Experience
 
-#### Open Source Contributions
+### Open Source Contributions
 
 * [git-extras](https://github.com/Lee-W/git-extras) ([tj/git-extras](https://github.com/tj/git-extras))
 * [flask](https://github.com/Lee-W/flask) ([pallets/flask](https://github.com/pallets/flask))
@@ -155,44 +155,37 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-v
 * [templater](https://github.com/Lee-W/templater)
     * Update [templater](https://github.com/Lee-W/templater) to Python3 and release [templater3](https://pypi.org/project/templater3/)
 
-#### Web
-
+### Web
 * [SITW 二手網](http://sitw-trade.herokuapp.com) (Backend Development)
 
 #### Chat Bot
-
 * [Dengue Line Bot Server](https://github.com/NCKU-CCS/line_bot_server)
 * [Telegram EchoBot](https://github.com/Lee-W/telegram_echobot)
 * [Line EchoBot](https://github.com/Lee-W/line_echobot)
 
 #### Utility
-
 * [Flickr Album Downloader](https://github.com/Lee-W/Flickr_Album_Downloader)
 * [LINE Message Parser](https://github.com/Lee-W/LineMessageParser)
 * [PttCraweler](https://github.com/Lee-W/PttCrawler)
 
 #### NCKU Related
-
 * [NCKU Grade](https://github.com/Lee-W/NCKU_Grade)
 * [NCKU Course Parser](https://github.com/Lee-W/nckucourseparser)
 * [NCKU Course Checker](https://github.com/Lee-W/NCKU-course-checker)
 
 ## Tutorial and Study Note
 
-#### Slide
-
+### Slide
 * [Git Tutorial](https://github.com/Lee-W/git-tutorial)
     * Sample: [Git-Tutorial-Sample](https://github.com/Lee-W/Git-Tutorial-Sample)
 
-#### Books
-
+### Books
 * [Learning Python 5e Note](https://github.com/Lee-W/Learning_Python)
 * [Python Cookbook](https://github.com/Lee-W/Python_Cookbook)
 * [The Clean Code](http://lee-w.github.io/posts/tech/2018/11/the-clean-code/)
 * [The Clean Coder](http://lee-w.github.io/posts/tech/2018/11/the-clean-coder/)
 
-#### MOOCs
-
+### MOOCs
 * [Machine Learning (Coursera)](https://github.com/Lee-W/Machine-Learning-Coursera)
 * [Intro to Machine Learning](https://github.com/Lee-W/Intro_to_Machine_Learning_Udacity)
 * [Intro to Data Science Udacity](https://github.com/Lee-W/Intro_to_Data_Science_Udacity)

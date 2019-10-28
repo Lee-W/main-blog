@@ -37,7 +37,7 @@ chmod +x install.py
 ```
 
 然後把下面這行加入 shell 的設定檔 (e.g. ~/.bashrc  ,  ~/.zshrc)
-> [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh 
+> [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
 最後只要重開 shell 就完成了
 

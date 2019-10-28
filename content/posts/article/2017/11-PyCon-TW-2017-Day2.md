@@ -34,7 +34,7 @@ Series: PyCon TW 2017
 * [對話機器人的腦子與靈魂 Bot's Brain and Soul](#3)
 * [鄉民教我做的聊天機器人](#4)
 * Why do projects fail?
-    * [Slide](https://www.slideshare.net/ssuser2cbb78/pycon-tw-2017-why-do-projects-fail-lets-talk-about-the-story-of-sinonpy) 
+    * [Slide](https://www.slideshare.net/ssuser2cbb78/pycon-tw-2017-why-do-projects-fail-lets-talk-about-the-story-of-sinonpy)
 * [利用 Python 與人工智慧快速打造人性化聊天機器人 (IBM)](#6)
 * [Chatbot @ E.Sun Bank – 玉山小i隨身金融顧問的兩三事 (玉山)](#7)
 
@@ -124,7 +124,7 @@ except RequestError:
 
 ## 對話機器人的腦子與靈魂 Bot's Brain and Soul
 
-* [共筆](https://hackmd.io/s/Hyt_yvak-#1130-1215-talk- 對話機器人的腦子與靈魂-bot’s-brain-and-soul)
+* [共筆](https://hackmd.io/s/Hyt_yvak-#1130-1215-talk-對話機器人的腦子與靈魂-bot’s-brain-and-soul)
 
 這場人太多了，連坐下來的位置都沒有ＱＱ
 不過共筆寫得很清楚了

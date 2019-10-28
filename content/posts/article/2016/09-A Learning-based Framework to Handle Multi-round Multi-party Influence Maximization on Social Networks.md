@@ -149,7 +149,7 @@ These data can be used to learn the value functions
         * Determine strategies on the current policy derived from Q-table.
         * Explore the new directions to avoid local optimum
     * Pure Strategy
-       * The most likely strategy is choosen
+        * The most likely strategy is choosen
 
 $ Algorithm $
 

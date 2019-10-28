@@ -140,7 +140,7 @@ Parallel: 一個時間點同時跑
 還附上 Sample Code 了
 哪天比較懂 Concurrent 的時候再回來看應該會比較有感覺吧
 
-------
+---
 
 <a name='5'></a>
 
@@ -161,7 +161,7 @@ Parallel: 一個時間點同時跑
 就有會眾分享如何寫一個 bot 自動去達大會的題目 xdd
 覺得很有趣
 
-###  What Steve Jobs Taught Me about Software Development and Life in General
+### What Steve Jobs Taught Me about Software Development and Life in General
 
 這就是 Carosell 待過 Apple 的 VP
 大致上覺得跟[少，但是更好](http://lee-w.github.io/posts/book/2016/03/essentialism/#essentialism)

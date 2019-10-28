@@ -4,8 +4,7 @@ Category: Gossiping
 Tags: mac, unboxing
 Slug: mbpr-out-of-the-box
 Authors: Lee-W
-Summary: 
-
+Summary:
 
 這篇只是想給自己換 MacBook Pro Retina 留下一個紀念
 順便紀錄一些從 Ubuntu 轉過來不習慣的地方
@@ -29,7 +28,7 @@ Summary:
 guake terminal 實在太好用了啊ＸＤ
 雖然可以用 iTerm2 做出類似的效果，但感覺還是不太對
 [SETUP ITERM2 TO BEHAVE LIKE GUAKE](http://ivanvillareal.com/osx/setup-iterm2-to-behave-like-guake/)
-	
+
 2. 不支援 NTFS 寫入
 下面這裡提供一個在 PTT 找到的解決方案
 不過寫入速度好像只有 USB 2.0

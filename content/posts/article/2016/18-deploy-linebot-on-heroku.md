@@ -4,9 +4,8 @@ Category: Tech
 Tags: Heroku, django, Chat Bot, deploy
 Slug: deploy-linebot-on-heroku
 Authors: Lee-W
-Summary: 
+Summary:
 Series: Line Bot Tutorial
-
 
 上一篇提到如何用 ngrok
 讓我們可以不用架 Https Server，直接在本地端測試 Bot
@@ -73,8 +72,8 @@ Heroku 可過專案中是否有 `requirements.txt` 來判斷這個專案是否�
 
 另外可以透過 `runtime.txt` 來指定 Python 的版本
 目前支援這兩種版本
-- `python-2.7.12`
-- `python-3.5.2`
+* `python-2.7.12`
+* `python-3.5.2`
 
 ### Deploy Settings - Procfile
 再來必須要讓 Heroku 知道我們執行專案的指令是什麼
@@ -84,7 +83,7 @@ Heroku 可過專案中是否有 `requirements.txt` 來判斷這個專案是否�
 先在 `requirements.txt` 加入 `gunicorn==19.0.0`
 再來創一個 `Profile`，內容是
 
-```
+```text
 web: gunicorn line_echobot.wsgi --log-file -
 ```
 
@@ -98,5 +97,5 @@ web: gunicorn line_echobot.wsgi --log-file -
 設定到 Line Bot 的 Webhook URL，就完成了
 
 # Reference
-- [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
-- [Deploying Python and Django Apps on Heroku](https://devcenter.heroku.com/articles/deploying-python)
+* [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
+* [Deploying Python and Django Apps on Heroku](https://devcenter.heroku.com/articles/deploying-python)
