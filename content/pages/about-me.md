@@ -28,12 +28,14 @@ Beside programming skills, I also have experience in management and coordinate p
 
 ## Experience
 
- [Apr 2017 - Present]
+### [Apr 2017 - Present]
 **Software Engineer, [Slice Technologies, Inc](https://www.slice.com/about)**
 
 * Designed and developed the backend of a data labeling system that automates the interaction between crowdsourcing workers and experts. Implemented the system through [Flask](http://flask.pocco.org), achieved test coverage higher than 90% and set up the CI/CD pipeline
-* Set up the CI/CD pipeline for an existing system
-* Begin with analyzing template extraction problem
+* Set up the CI/CD pipeline through Jenkins for existing systems to enhance productivity
+* Built data pipeline through [Airflow](https://airflow.apache.org/)
+* Added test for existing projects to ensure the functionality correctness
+* Cooperate with oversea teams in San Francisco and Ukraine
 
 ### [Jul 2019 – Present]
 **Program Team Member, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)]**
