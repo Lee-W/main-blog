@@ -166,14 +166,14 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 <span class="k">def</span> <span class="nf">_set_webhook</span><span class="p">():</span>
     <span class="n">status</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">'https://Your URL/hook'</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">status</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">'Webhook setup failed'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Webhook setup failed'</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s1">'/hook'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'POST'</span><span class="p">])</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/hook'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'POST'</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">webhook_handler</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"POST"</span><span class="p">:</span>
-        <span class="n">update</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Update</span><span class="o">.</span><span class="n">de_json</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span> <span class="n">bot</span><span class="p">)</span>
+        <span class="n">update</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Update</span><span class="o">.</span><span class="n">de_json</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">bot</span><span class="p">)</span>
 
         <span class="n">text</span> <span class="o">=</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span>
 
@@ -212,7 +212,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_set_webhook</span><span class="p">():</span>
     <span class="n">status</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">'https://Your URL/hook'</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">status</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">'Webhook setup failed'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Webhook setup failed'</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 <p>在最後 run Flask app 前，要先把 webhook URL 設定好</p>
@@ -222,10 +222,10 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 </pre></div>
 <h3 id="wehook95handler">wehook_handler</h3>
 <p>這裡就是 bot 收到訊息要怎麼處理</p>
-<div class="highlight"><pre><span></span><span class="nd">@app.route</span><span class="p">(</span><span class="s1">'/hook'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'POST'</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/hook'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'POST'</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">webhook_handler</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"POST"</span><span class="p">:</span>
-        <span class="n">update</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Update</span><span class="o">.</span><span class="n">de_json</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span> <span class="n">bot</span><span class="p">)</span>
+        <span class="n">update</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Update</span><span class="o">.</span><span class="n">de_json</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">bot</span><span class="p">)</span>
 
         <span class="n">text</span> <span class="o">=</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span>
 
@@ -335,7 +335,7 @@ Flask 把 request 這種幾乎所有 view function 都會用到的參數直接�
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2017-03-31T19:24:00+08:00">2017/03/31 - 五</time>
+            <time itemprop="dateCreated" datetime="2017-03-31T19:24:00+08:00">2017/03/31 - Fri</time>
                 <h4>Read Time</h4>
                  2 min
             <h4>Category</h4>

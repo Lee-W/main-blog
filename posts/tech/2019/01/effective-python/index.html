@@ -269,11 +269,11 @@
 
 <span class="c1"># without zip</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
 <span class="c1"># with zip</span>
 <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 <ul>
 <li>如果提供了不同長度的 iterables ， zip 會 truncate 掉較長的 input</li>
@@ -309,7 +309,7 @@
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">default</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">default</span><span class="p">)</span>
 
 <span class="c1"># The two results would be the same but should be different</span>
 <span class="n">func</span><span class="p">()</span>
@@ -318,7 +318,7 @@
 <p><strong>Fix</strong></p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
-<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">"""Demonstration</span>
 
 <span class="sd">    Args:</span>
@@ -326,7 +326,7 @@
 <span class="sd">    """</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">default</span><span class="p">:</span>
         <span class="n">default</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">default</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">default</span><span class="p">)</span>
 </pre></div>
 <h3 id="19-keyword-argument-related-to-21">作法19: 以 keyword argument 提供選擇性的行為 (Related to 作法21)</h3>
 <div class="highlight"><pre><span></span><span class="c1"># original</span>
@@ -344,7 +344,7 @@
 </ul>
 <div class="highlight"><pre><span></span><span class="c1"># * indicates the end of positional arguments</span>
 <span class="k">def</span> <span class="nf">safe_division</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">divisor</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span>
-                  <span class="n">ignore_overflow</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+                  <span class="n">ignore_overflow</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="o">...</span>
 </pre></div>
 <h2 id="_2">第三章： 類別與繼承</h2>
@@ -418,17 +418,17 @@
 <span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">consumer</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">'consumer waiting'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'consumer waiting'</span><span class="p">)</span>
     <span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">'consumer done'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'consumer done'</span><span class="p">)</span>
 
 <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">consumer</span><span class="p">)</span>
 <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">'Producer putting'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Producer putting'</span><span class="p">)</span>
 <span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="nb">object</span><span class="p">())</span>
 <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'Producer done'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Producer done'</span><span class="p">)</span>
 </pre></div>
 <h3 id="41-concurrentfutures">作法41: 考慮使用 concurrent.futures 來達成真正的平行處理</h3>
 <ul>
@@ -626,7 +626,7 @@
 
 <span class="n">stats</span> <span class="o">=</span> <span class="n">time2</span><span class="o">.</span><span class="n">compare_to</span><span class="p">(</span><span class="n">time1</span><span class="p">,</span> <span class="s1">'lineno'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">stat</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">stat</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">stat</span><span class="p">)</span>
 </pre></div>
 
 
@@ -712,7 +712,7 @@
     <h4>Reading Time</h4>
     <p>~5 min read</p>
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2019-01-19T16:45:00+08:00">2019/01/19 - 六</time>
+            <time itemprop="dateCreated" datetime="2019-01-19T16:45:00+08:00">2019/01/19 - Sat</time>
                 <h4>Read Time</h4>
                  5 min
             <h4>Category</h4>
