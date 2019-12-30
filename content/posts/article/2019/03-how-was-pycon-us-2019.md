@@ -1,6 +1,6 @@
 Title: How was PyCon US 2019
 Date: 2019-06-22 21:49
-Modified: 2019-07-03 12:32
+Modified: 2019-12-30 09:38
 Category: Tech
 Tags: Python, PyCon, Conference
 Slug: how-was-pycon-us-2019
@@ -39,7 +39,6 @@ PyCon 總共跨了 9 天
 對我這次去參加 PyCon 很有幫助
 
 ## Tutorial
-
 我參加了兩場 Tutorial
 
 * [Getting started with Kubernetes and container orchestration](https://www.youtube.com/watch?v=J08MrW2NC1Y&list=PLPbTDk1hBo3xof51R8pk3kP1BVBuMYP9c&index=18&t=0s)
@@ -61,12 +60,10 @@ PyCon 總共跨了 9 天
 我甚至遇到一位會眾說看到名字就報名了，也不用看是什麼主題
 
 ## Talks
-
 稍微簡介幾場我還有印象的 talk
 也許之後有時間會把筆記好好整理一下分享出來
 
 ### Day 1
-
 * **Keynote - Russell Keith-Magee**
     * Python's Black Swan
         * 你現在覺得 Python 的存在很自然，但 10 年後 Python 還會在嗎？
@@ -92,7 +89,6 @@ PyCon 總共跨了 9 天
     * 其實講題蠻瞎的，但講者講的真的很有趣很精彩 XD
 
 ### Day 2
-
 * **Keynote - Shadeed "Sha" Wallace-Stepter**
     * "How many people here are on probation or parole?" （這個開頭害我以為我是不是英文真的太差誤會了什麼...... ）
     * Sha 訴說自己如何一個從犯人變成創業家的故事，如何在獄中學習 Python，並在出獄後重新融入社會
@@ -120,6 +116,13 @@ PyCon 總共跨了 9 天
     * 恩對，這場 Lightening Talk 就真的是這樣而已 XD
 
 ### Day 3
+* **Keynote - Python Steering Council**
+    * 現在的 Python 政府討論 Python的過去與未來
+        * Python Governance
+        * PEP 8000
+        * PEP 13
+    * Q: Where to start to become a core dev?
+        * [Python Developer’s Guide](https://devguide.python.org)
 
 * **Keynote - Nina Zakharenko - Light up you life with Python & LEDS!**
     * 現場 Demo [MicroPython](https://micropython.org)，如何用 Python 操控硬體
