@@ -21,7 +21,6 @@ Summary:
 不過也可能是我常常把 Ubuntu 改得很像 MacBook 吧ＸＤ
 轉過來 MacBook 最大的好處就是超強大的觸控板
 
-
 不過還是有一些比較不習慣的地方
 
 1. 沒有 guake terminal
