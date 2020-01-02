@@ -12,7 +12,7 @@ Authors: Lee-W
 整體來說，這本書在講的跟[為什麼我們這樣生活，那樣工作 ?](https://lee-w.github.io/posts/book/2015/11/the-power-of-habit/)差不多
 但文字上淺顯易懂了很多
 
-![-w438](media/15779570755819.jpg)
+![atmoic-habit]({static}/images/books/atmoic-habit.jpg)
 
 <!--more-->
 
