@@ -1,5 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2019-12-30T09:38:00+08:00</updated><entry><title>PyCon CA 2019</title><link href="https://lee-w.github.io/posts/tech/2019/12/pycon-ca-2019" rel="alternate"></link><published>2019-12-23T17:51:00+08:00</published><updated>2019-12-23T17:51:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-12-23:/posts/tech/2019/12/pycon-ca-2019</id><summary type="html">&lt;p&gt;隔了一個多月，終於有時間可以來補 PyCon CA 2019 的心得&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-01-03T15:30:00+08:00</updated><entry><title>EDBT-ICDT 2018</title><link href="https://lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018" rel="alternate"></link><published>2020-01-03T15:30:00+08:00</published><updated>2020-01-03T15:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-01-03:/posts/tech/2020/01/edbt-icdt-2018</id><summary type="html">&lt;p&gt;整理筆記時，翻到兩年前去研討會的筆記&lt;br/&gt;
+想說放著也不會增值，就整理出來了&lt;br/&gt;
+雖然大部分的內容的印象都已經有點模糊了&lt;br/&gt;
+不過就加減把當初的筆記湊起來&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;整理筆記時，翻到兩年前去研討會的筆記&lt;br/&gt;
+想說放著也不會增值，就整理出來了&lt;br/&gt;
+雖然大部分的內容的印象都已經有點模糊了&lt;br/&gt;
+不過就加減把當初的筆記湊起來&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;當時我覺得最有趣的論文是 &lt;a href="http://www.vldb.org/pvldb/vol9/p1465-milo.pdf"&gt;Interactive Rule Refinement for Fraud Detection.&lt;/a&gt;&lt;br/&gt;
+不過竟然沒有做到太多筆記&lt;/p&gt;
+
+&lt;h2 id="day-1-keynote"&gt;Day 1 - Keynote&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;In theoretical CS&lt;ul&gt;
+&lt;li&gt;Polynomial time → easy/fast&lt;ul&gt;
+&lt;li&gt;However, that's not always the case&lt;/li&gt;
+&lt;li&gt;e.g., &lt;span class="math"&gt;\(O(n^{100})\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;When &lt;code&gt;n&lt;/code&gt; grows, even &lt;span class="math"&gt;\(O(n^2)\)&lt;/span&gt; is not efficient&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;We're stuck on many problems even just in &lt;span class="math"&gt;\(O(n^2)\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;No &lt;span class="math"&gt;\(N^{2-\epsilon}\)&lt;/span&gt; time algorithms known for&lt;ul&gt;
+&lt;li&gt;String matching&lt;/li&gt;
+&lt;li&gt;computational geometry&lt;/li&gt;
+&lt;li&gt;graph problem in sparse graphs&lt;/li&gt;
+&lt;li&gt;many problems from database&lt;/li&gt;
+&lt;li&gt;many other problems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Why are we stuck?&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;The traditional hardness in complexity tells us little about runtime&lt;/li&gt;
+&lt;li&gt;fine-grained hardness idea&lt;ol&gt;
+&lt;li&gt;identify key hard problem&lt;/li&gt;
+&lt;li&gt;......&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="large-scale-machine-learning-where-do-relational-systems-fit-in-by-chris-jermaine"&gt;Large Scale Machine Learning: Where Do Relational Systems Fit In? (by Chris Jermaine)&lt;/h2&gt;
+&lt;p&gt;Currently, ML community cares about new models instead of theory and fundamental ML design&lt;/p&gt;
+&lt;h3 id="ml-vs-ai"&gt;ML vs AI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ML is one approach to AI&lt;/li&gt;
+&lt;li&gt;Classic AI: a programmer/expert imparting knowledge to a system&lt;/li&gt;
+&lt;li&gt;ML is fundamentally statistical&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="intro-to-ml"&gt;Intro to ML&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Distributed ML&lt;ul&gt;
+&lt;li&gt;Most ML systems use a "parameter server" model&lt;ul&gt;
+&lt;li&gt;Essentially a distributed key-value pair&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Negatives&lt;ul&gt;
+&lt;li&gt;Parameter server compute model very limiting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Data Parallel ML&lt;ul&gt;
+&lt;li&gt;Each compute server runs same computation on different data&lt;/li&gt;
+&lt;li&gt;Global state updated via aggregation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Want to scale out to speed up learning?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;scale out ineffective in data parallel param server&lt;ul&gt;
+&lt;li&gt;no easy way to add machines and have a graph execute faster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Only easy way to scale out is to add compute servers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="take-home-point"&gt;Take-Home Point&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Current ML systems are &lt;strong&gt;easily&lt;/strong&gt; applicable only to&lt;ul&gt;
+&lt;li&gt;Relatively small model problems&lt;/li&gt;
+&lt;li&gt;That is run on a single machine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="detecting-database-file-tampering-through-page-carving"&gt;Detecting Database File Tampering through Page Carving&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Attack Vector: File Tampering&lt;ul&gt;
+&lt;li&gt;Occurs at the OS level → outside DBMS control&lt;ul&gt;
+&lt;li&gt;Bypass DBMS control&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Page Deconstruction&lt;ul&gt;
+&lt;li&gt;Page Header&lt;ul&gt;
+&lt;li&gt;Checksum&lt;/li&gt;
+&lt;li&gt;PageID&lt;/li&gt;
+&lt;li&gt;Row Count&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DBStorageAuditor&lt;ul&gt;
+&lt;li&gt;Goal: find inconsistency in storage&lt;ul&gt;
+&lt;li&gt;which is created by direct file manipulation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="extracting-statistical-graph-features-for-accurate-and-efficient-time-series-classification"&gt;Extracting Statistical Graph Features for Accurate and Efficient Time Series Classification&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Time series: Any data that is ordered&lt;/li&gt;
+&lt;li&gt;Time Series Classification&lt;ul&gt;
+&lt;li&gt;similarity-based kNN (e.g., kNN-ED, kNN-DTW)&lt;ul&gt;
+&lt;li&gt;similarity can be unreliable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Shaplets&lt;ul&gt;
+&lt;li&gt;high computation complexity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Why multiscale&lt;ul&gt;
+&lt;li&gt;sometimes global features are more important while sometimes local features are more important&lt;/li&gt;
+&lt;li&gt;in this research, both global and local are considered&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Visibility Graphs&lt;/li&gt;
+&lt;li&gt;Multiscale Visibility Graphs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Conference"></category></entry><entry><title>PyCon CA 2019</title><link href="https://lee-w.github.io/posts/tech/2019/12/pycon-ca-2019" rel="alternate"></link><published>2019-12-23T17:51:00+08:00</published><updated>2019-12-23T17:51:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-12-23:/posts/tech/2019/12/pycon-ca-2019</id><summary type="html">&lt;p&gt;隔了一個多月，終於有時間可以來補 PyCon CA 2019 的心得&lt;br&gt;
 這是我今年參加的第四場 PyCon&lt;br&gt;
 終於是因為當 Regular Talk 的講者參加&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;隔了一個多月，終於有時間可以來補 PyCon CA 2019 的心得&lt;br&gt;
