@@ -45,8 +45,8 @@ Beside programming skills, I also have experience in management and coordinate p
 ### [Jul 2019 – Nov 2019]
 **Program Team Member, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)]**
 
-* Contact keynote speakers and financial aid applicants for program team
-* Contribute to post event report generator
+* Contact keynote speakers and financial aid applicants for the program team
+* Contribute to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
 
 ### [Jan 2019 - March 2019]
 **Project Manager, [DLT Lab](https://dlt.csie.ncku.edu.tw)**
