@@ -37,7 +37,12 @@ Beside programming skills, I also have experience in management and coordinate p
 * Added test for existing projects to ensure the functionality correctness
 * Cooperate with oversea teams in San Francisco and Ukraine
 
-### [Jul 2019 – Present]
+### [Dec 2019 - Present]
+**Program Chair, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)]**
+
+* Manage the program team
+
+### [Jul 2019 – Nov 2019]
 **Program Team Member, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)]**
 
 * Contact keynote speakers and financial aid applicants for program team
@@ -167,13 +172,10 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 
 #### Utility
 * [Flickr Album Downloader](https://github.com/Lee-W/Flickr_Album_Downloader)
-* [LINE Message Parser](https://github.com/Lee-W/LineMessageParser)
 * [PttCraweler](https://github.com/Lee-W/PttCrawler)
 
 #### NCKU Related
 * [NCKU Grade](https://github.com/Lee-W/NCKU_Grade)
-* [NCKU Course Parser](https://github.com/Lee-W/nckucourseparser)
-* [NCKU Course Checker](https://github.com/Lee-W/NCKU-course-checker)
 
 ## Tutorial and Study Note
 
