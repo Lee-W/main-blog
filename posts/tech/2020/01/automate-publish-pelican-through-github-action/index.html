@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Lee-W" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Python, GitHub Action, Tech, " />
+
+<meta property="og:title" content="透過 GitHub Action 自動發佈 Pelican 部落格文章 "/>
+<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action" />
+<meta property="og:description" content="最近因為在貢獻 commitizen，開始碰到 GitHub Action （ Python 也有自己的 commitizen 了！！！） 記錄一下怎麼應用到發布部落格文章" />
+<meta property="og:site_name" content="Laziness makes Great Engineer" />
+<meta property="og:article:author" content="Lee-W" />
+<meta property="og:article:published_time" content="2020-01-16T15:35:00+08:00" />
+<meta name="twitter:title" content="透過 GitHub Action 自動發佈 Pelican 部落格文章 ">
+<meta name="twitter:description" content="最近因為在貢獻 commitizen，開始碰到 GitHub Action （ Python 也有自己的 commitizen 了！！！） 記錄一下怎麼應用到發布部落格文章">
+
+        <title>透過 GitHub Action 自動發佈 Pelican 部落格文章  · Laziness makes Great Engineer
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="https://lee-w.github.io/theme/css/elegant.prod.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://lee-w.github.io/theme/css/custom.css" media="screen">
+
+        <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-96190677-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://lee-w.github.io/"><span class=site-name>Laziness makes Great Engineer</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://lee-w.github.io
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                                <li ><a href="https://lee-w.github.io/pages/about-this-blog.html">About This Blog</a></li>
+                                <li ><a href="https://lee-w.github.io/categories.html">Categories</a></li>
+                                <li ><a href="https://lee-w.github.io/tags.html">Tags</a></li>
+                                <li ><a href="https://lee-w.github.io/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="https://lee-w.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action">
+                透過 GitHub Action 自動發佈 Pelican 部落格文章
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#before-github-action">Before GitHub Action</a></li>
+<li><a href="#working-on-github-action">Working on GitHub Action</a></li>
+<li><a href="#after-github-action">After GitHub Action</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            <p>最近因為在貢獻 <a href="https://github.com/Woile/commitizen">commitizen</a>，開始碰到 <a href="https://github.com/features/actions">GitHub Action</a><br/>
+（ Python 也有自己的 commitizen 了！！！）<br/>
+記錄一下怎麼應用到發布部落格文章</p>
+<!--more-->
+
+<h2 id="before-github-action">Before GitHub Action</h2>
+<p>要發佈一個新文章，我會做兩件事<br/>
+1. 將原始碼推到 GitHub 上<br/>
+2. 透過原始碼產生靜態頁面，並且推到 gh-pages 這個分支上</p>
+<p>只有第二步是必要的，但也沒不把原始碼推上去的理由</p>
+<p><a href="https://github.com/getpelican/pelican">Pelican</a> 初始化部落格時會產生 <code>Makefile</code> 和給 <a href="https://github.com/pyinvoke/invoke">invoke</a> 用的 <code>tasks.py</code><br/>
+裡面會包好如 build, publish 等常見指令<br/>
+預設會透過 <a href="https://github.com/davisp/ghp-import">ghp-import</a> 推到 GitHub Page</p>
+<h2 id="working-on-github-action">Working on GitHub Action</h2>
+<p>將我原本做的事整理成 GitHub Action 該做的事，就會變成這樣<br/>
+1. <strong>Check out</strong>: Check Out 到這個分支<br/>
+2. <strong>Set up Python</strong>: 設定 Python 環境<br/>
+3. <strong>Install dependencies</strong>: 安裝 <a href="https://github.com/getpelican/pelican">Pelican</a> 和相關套件<br/>
+4. <strong>Build and Deploy</strong>: 產生原始碼推上去</p>
+<div class="highlight"><pre><span></span><span class="nn">---</span>
+
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">publish post</span>
+
+<span class="nt">on</span><span class="p">:</span>
+  <span class="nt">push</span><span class="p">:</span>
+    <span class="nt">branches</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">content</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+  <span class="nt">publish</span><span class="p">:</span>
+    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+    <span class="nt">steps</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Check out</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span>
+        <span class="nt">with</span><span class="p">:</span>
+          <span class="nt">python-version</span><span class="p">:</span> <span class="s">'3.7'</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+        <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+          <span class="no">python -m pip install pipenv</span>
+          <span class="no">pipenv --version</span>
+          <span class="no">pipenv install</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build and Deploy</span>
+        <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+          <span class="no">pipenv run inv github</span>
+</pre></div>
+<p>這份設定檔要放在專案目錄的 <code>.github/workflows/</code> 下<br/>
+至於要命名成什麼都可以<br/>
+另外建議使用 yamllint 來檢查 yaml 語法<br/>
+我遇過太多次縮排造成的錯誤了</p>
+<p>這份設定檔大致上算直觀</p>
+<ol>
+<li>name: 這個 workflow 的名稱</li>
+<li>on: 在什麼情況下才要執行這個 workflow</li>
+<li>jobs: 要執行哪些任務，目前我只執行 publish 這件事，下面的 step 則是描述我前面說要做的事</li>
+</ol>
+<p>這麼做之後，我遇到了兩個問題: <strong>submodule</strong> 跟 <strong>ghp-import</strong></p>
+<p>我的部落格把主題跟套件都分出去各自成一個專案<br/>
+所以要建立部落格必須要把每一個 submodule 都一併 clone 下來<br/>
+所幸原本 GitHub Action 就有提供 (Ref: <a href="https://github.com/actions/checkout#Checkout-submodules">Check-out-submodule</a>)<br/>
+加上下面這段就解決了</p>
+<div class="highlight"><pre><span></span>      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Checkout submodules</span>
+        <span class="nt">shell</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bash</span>
+        <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+          <span class="no">auth_header="$(git config --local --get http.https://github.com/.extraheader)"</span>
+          <span class="no">git submodule sync --recursive</span>
+          <span class="no">git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1</span>
+</pre></div>
+<p>ghp-import 的問題則是，我沒有在上面的環境設定我的 git 資訊<br/>
+他沒有權限推到 gh-pages<br/>
+也可以透過把 URL 改成 <code>https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${repo_name}</code> 來解決<br/>
+但我實在不太想再多去設定一些 credential<br/>
+最後找到了 <a href="https://github.com/peaceiris/actions-gh-pages">actions-gh-page</a><br/>
+只要把靜態網頁在 GitHub 上 build 出來，再把結果透過這個 action 推到 gh-pages 即可<br/>
+這樣我就只需要設定 <code>{{ secrets.PERSONAL_ACCESS_TOKEN}}</code> 這個我在其他 GitHub Action 也都用得到的 token</p>
+<div class="highlight"><pre><span></span>      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Deploy</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v2</span>
+        <span class="nt">env</span><span class="p">:</span>
+          <span class="nt">PERSONAL_TOKEN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ secrets.PERSONAL_ACCESS_TOKEN }}</span>
+          <span class="nt">PUBLISH_BRANCH</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+          <span class="nt">PUBLISH_DIR</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./output</span>
+</pre></div>
+<p><img alt="token" src="https://lee-w.github.io/images/posts-image/2020-01-16-automate-publish-pelican-through-github-action/token.png"/></p>
+<p>另外，最近 GitHub 終於提供可以 rerun 的選項了<br/>
+原本失敗的時候還必須要 reset 來強制 GitHub 重新執行 Action</p>
+<div class="highlight"><pre><span></span>git reset —soft HEAD^
+git commit --amend -m <span class="s2">"new message"</span>
+git push origin master -f
+</pre></div>
+<h2 id="after-github-action">After GitHub Action</h2>
+<p>下面就是我最後的 <code>.github/workflows/publish.yaml</code></p>
+<div class="highlight"><pre><span></span><span class="nn">---</span>
+
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">publish post</span>
+
+<span class="nt">on</span><span class="p">:</span>
+  <span class="nt">push</span><span class="p">:</span>
+    <span class="nt">branches</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">content</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+  <span class="nt">publish</span><span class="p">:</span>
+    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+    <span class="nt">steps</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Check out</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Checkout submodules</span>
+        <span class="nt">shell</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bash</span>
+        <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+          <span class="no">auth_header="$(git config --local --get http.https://github.com/.extraheader)"</span>
+          <span class="no">git submodule sync --recursive</span>
+          <span class="no">git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span>
+        <span class="nt">with</span><span class="p">:</span>
+          <span class="nt">python-version</span><span class="p">:</span> <span class="s">'3.7'</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+        <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+          <span class="no">python -m pip install pipenv</span>
+          <span class="no">pipenv --version</span>
+          <span class="no">pipenv install</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build</span>
+        <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+          <span class="no">pipenv run inv publish</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Deploy</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v2</span>
+        <span class="nt">env</span><span class="p">:</span>
+          <span class="nt">PERSONAL_TOKEN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ secrets.PERSONAL_ACCESS_TOKEN }}</span>
+          <span class="nt">PUBLISH_BRANCH</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+          <span class="nt">PUBLISH_DIR</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./output</span>
+</pre></div>
+
+
+             
+ 
+                <p id="post-share-links">
+    Share on:
+    <a href="https://twitter.com/intent/tweet?text=%E9%80%8F%E9%81%8E%20GitHub%20Action%20%E8%87%AA%E5%8B%95%E7%99%BC%E4%BD%88%20Pelican%20%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0&url=https%3A//lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action&hashtags=python,github-action" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="mailto:?subject=%E9%80%8F%E9%81%8E%20GitHub%20Action%20%E8%87%AA%E5%8B%95%E7%99%BC%E4%BD%88%20Pelican%20%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0&amp;body=https%3A//lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+    </p>
+
+            
+            
+
+
+
+
+
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message"> </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action"
+                   href="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+                        <div id="disqus_thread"></div>
+                        <script>
+    var disqus_shortname = 'lee-w-blog';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action';
+    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018" title="Previous: EDBT-ICDT 2018">EDBT-ICDT 2018</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2020-01-16T15:35:00+08:00">2020/01/16 - Thu</time>
+                <h4>Read Time</h4>
+                 2 min
+            <h4>Category</h4>
+            <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://lee-w.github.io/tags.html#github-action-ref">GitHub Action
+                    <span>1</span>
+</a></li>
+                <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
+                    <span>14</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="https://tw.linkedin.com/in/clleew" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+    </a>
+    <a href="https://github.com/Lee-W" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="https://gitlab.com/Lee-W" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitLab" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#30353e"/><path fill="#e24329" d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133"/><path fill="#fc6d26" d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z"/><path fill="#fca326" d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z"/></svg>
+    </a>
+    <a href="https://twitter.com/clleew" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+    <a href="//lee-w.github.io/feeds/all.atom.xml" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="RSS" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f80"/><circle cx="145" cy="367" r="35" fill="#fff"/><path fill="none" stroke="#fff" stroke-width="60" d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
