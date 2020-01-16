@@ -112,13 +112,9 @@ ghp-import 的問題則是，我沒有在上面的環境設定我的 git 資訊
 ![token]({static}/images/posts-image/2020-01-16-automate-publish-pelican-through-github-action/token.png)
 
 另外，最近 GitHub 終於提供可以 rerun 的選項了
-原本失敗的時候還必須要 reset 來強制 GitHub 重新執行 Action
+原本失敗的時候還必須要 git reset 來強制 GitHub 重新執行 Action
 
-```sh
-git reset —soft HEAD^
-git commit --amend -m "new message"
-git push origin master -f
-```
+![rebuild]({static}/images/posts-image/2020-01-16-automate-publish-pelican-through-github-action/rebuild.png)
 
 ## After GitHub Action
 
