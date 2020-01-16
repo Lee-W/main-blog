@@ -184,11 +184,8 @@
 </pre></div>
 <p><img alt="token" src="https://lee-w.github.io/images/posts-image/2020-01-16-automate-publish-pelican-through-github-action/token.png"/></p>
 <p>另外，最近 GitHub 終於提供可以 rerun 的選項了<br/>
-原本失敗的時候還必須要 reset 來強制 GitHub 重新執行 Action</p>
-<div class="highlight"><pre><span></span>git reset —soft HEAD^
-git commit --amend -m <span class="s2">"new message"</span>
-git push origin master -f
-</pre></div>
+原本失敗的時候還必須要 git reset 來強制 GitHub 重新執行 Action</p>
+<p><img alt="rebuild" src="https://lee-w.github.io/images/posts-image/2020-01-16-automate-publish-pelican-through-github-action/rebuild.png"/></p>
 <h2 id="after-github-action">After GitHub Action</h2>
 <p>下面就是我最後的 <code>.github/workflows/publish.yaml</code></p>
 <div class="highlight"><pre><span></span><span class="nn">---</span>
