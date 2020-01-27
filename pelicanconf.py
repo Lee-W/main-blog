@@ -9,6 +9,7 @@ AUTHOR = "Lee-W"
 SITENAME = "Laziness makes Great Engineer"
 SITEURL = "http://localhost:8000"
 DISQUS_SITENAME = "lee-w-blog"
+DISQUS_FILTER = False
 SITETITLE = AUTHOR
 SITELOGO = None
 BROWSER_COLOR = "#333333"
