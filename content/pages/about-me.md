@@ -1,6 +1,8 @@
+---
 Title: About Me
 Date: 2017-02-14 12:30
-Modified: 2019-08-26 12:09
+Modified: 2020-01-31 17:30
+---
 
 <script src="{static}/static/fontawesome-free-5.11.2-web/js/all.js"></script>
 
@@ -9,22 +11,29 @@ Hi, my name is Wei Lee.
 I'm a
 
 [<i class="fab fa-lg fa-python"></i> Python Programmer](https://lee-w.github.io/pycon-note/)
-<i class="fas fa-lg fa-book"></i> Reader
+<i class="fas fa-laptop-code">Remote Worker</i>
 [<i class="fas fa-lg fa-camera"></i> Traveler](https://lee-w.github.io/travlog/)
+<i class="fas fa-lg fa-book"></i> Reader
 <i class="fas fa-lg fa-music"></i> Ukulele Player
 <i class="fas fa-lg fa-lock"></i> Locker
 <i class="fab fa-lg fa-rebel"></i> Star Wars Fan
 
-An experienced software developer proficient in web backend development and have basic knowledge about DevOps and data analysis. The two years of remote work experience proves that I'm self-disciplined and capable of co-operating with others. I'm also a passionate and self-motivated learner that frequently participate in tech conferences and contribute to open source projects.
-Beside programming skills, I also have experience in management and coordinate people. I held a 2-month educational program and led 16 team members.
+Being a lazy software engineer, I like to automate borning stuff and deliver quality code.
 
-<a href="{static}/static/resume.pdf"><button type="button" class="btn btn-default">Resume</button></a>
+I love traveling and make new friends. Hope to become a PyCon (or tech conf) Nomad and explore the world.
+
+I share my tech note, book review, and sometimes my thought in this blog. I also have [another blog](https://lee-w.github.io/travlog/) which is more about entertainment.
+
+If you find any error, please leave a comment below the article or contact me.
+I hope you enjoy my blog!
 
 -----
 
+<a href="{static}/static/resume.pdf"><button type="button" class="btn btn-default">Resume</button></a>
+
 ## Skill
-* **Intermediate**: Python, Web Backend Development, Git, Linux
-* **Beginner**: Docker, Project Management, Data Analysis, Java
+* ***Advance**: Python, Docker, Web Backend Development, Git, Linux
+* **Intermediate**: AWS, Project Management, Data Analysis, Java
 
 ## Experience
 
@@ -32,10 +41,10 @@ Beside programming skills, I also have experience in management and coordinate p
 **Software Engineer, [Slice Technologies, Inc](https://www.slice.com/about)**
 
 * Designed and developed the backend of a data labeling system that automates the interaction between crowdsourcing workers and experts. Implemented the system through [Flask](http://flask.pocco.org), achieved test coverage higher than 90% and set up the CI/CD pipeline
-* Set up the CI/CD pipeline through Jenkins for existing systems to enhance productivity
 * Built data pipeline through [Airflow](https://airflow.apache.org/)
+* Set up the CI/CD pipeline through Jenkins for existing systems to enhance productivity
 * Added test for existing projects to ensure the functionality correctness
-* Cooperate with oversea teams in San Francisco and Ukraine
+* Cooperate with oversea teams in San Mateo and Ukraine
 
 ### [Dec 2019 - Present]
 **Program Chair, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)]**
@@ -59,13 +68,14 @@ Beside programming skills, I also have experience in management and coordinate p
 **Chief Teaching Assistant, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
 
 * Managed the executive team with 16 members
+* Organized two months of full-time courses and a one-semester 3 credit course
 * Reviewed the teaching proposal of Python course, "Programming Design Foundation"
 * Designed exercises for "Data Structure," the first section of "Computer Science Foundations"
 * Lectured "Web Programming, Database/Cloud Computing," the fourth section of "Computer Science Foundations"
 
 *X-Village* is an experimental education program aiming to equip students not major in computer science with the ability of computational thinking and to enhance future cooperation between computer science and other areas.
 
-I was the executor of the program and the leader of the teaching assistant team. Besides, I designed a half day exercise for *Data Structure* and lectured a four-hour web backend course for *Web Programming, Database/Cloud Computing*.
+I was the executor of the program and the leader of the teaching assistant team. Besides, I designed a half-day exercise for *Data Structure* and lectured a four-hour web backend course for *Web Programming, Database/Cloud Computing*.
 
 * [Website](https://sites.google.com/view/x-village/home?authuser=0)
 * [Facebook Fan Page](https://www.facebook.com/X-Village-423736361424301/)
@@ -73,7 +83,7 @@ I was the executor of the program and the leader of the teaching assistant team.
 ### [July 2015 - July 2016]
 **Substitute Military Service, K-12 Education Administration, Ministry of Education**
 
-* Maintained legacy systems implemented in multiple languages (e.g., `C#`, `VBScript`, `PHP`, and etc.)
+* Maintained legacy systems implemented in multiple languages (e.g., `C#`, `VBScript`, `PHP`, etc.)
 * Developed automation programs for generating reports which save 80% of human labor time
 * Delivered a human resource management system using [django](https://www.djangoproject.com)
 
