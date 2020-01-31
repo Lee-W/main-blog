@@ -12,6 +12,8 @@ ghp-import = "*"
 python-gettext = "*"
 mdx-del-ins = {editable = true,git = "https://github.com/Lee-W/mdx_del_ins"}
 invoke = "*"
+webassets = "*"
+cssmin = "*"
 
 [dev-packages]
 pylint = "*"
