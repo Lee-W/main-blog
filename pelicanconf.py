@@ -77,5 +77,7 @@ PLUGINS = [
     "tag_cloud",
     "extract_toc",
     "post_stats",
+    "assets"
 ]
 ANOTHER_READ_MORE_LINK = ""
+APPLAUSE_BUTTON = True
