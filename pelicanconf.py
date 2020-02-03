@@ -8,11 +8,23 @@ PATH = "content"
 AUTHOR = "Lee-W"
 SITENAME = "Laziness makes Great Engineer"
 SITEURL = "http://localhost:8000"
-DISQUS_SITENAME = "lee-w-blog"
-DISQUS_FILTER = False
 SITETITLE = AUTHOR
 SITELOGO = None
 BROWSER_COLOR = "#333333"
+LANDING_PAGE_TITLE = "Hi, I'm Wei Lee"
+PROJECTS_TITLE = "Projects"
+PROJECTS = [
+    {
+        "name": "Commitizen",
+        "url": "https://github.com/Woile/commitizen",
+        "description": "Python 3 command-line utility to standardize commit messages and bump version",
+    }
+]
+DISQUS_SITENAME = "lee-w-blog"
+DISQUS_FILTER = False
+COMMENTS_INTRO = (
+    "Do you like this article? What do your tink about it? Leave you comment below"
+)
 
 # Locale
 TIMEZONE = "Asia/Taipei"
@@ -21,9 +33,7 @@ DEFAULT_DATE_FORMAT = "%Y/%m/%d - %a"
 
 # Page Setting
 MAIN_MENU = True
-DEFAULT_PAGINATION = 10
-MENUITEMS = (("Archives", "/archives.html"), ("Categories", "/categories.html"))
-DIRECT_TEMPLATES = ("index", "categories", "tags", "authors", "archives", "search")
+DIRECT_TEMPLATES = ("index", "categories", "tags", "archives", "search")
 
 # Content Setting
 DEFAULT_CATEGORY = "Article"
@@ -36,6 +46,7 @@ THEME = "theme/elegant"
 JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
 EXTRA_PATH_METADATA = {"images": {"path": "images"}}
 PYGMENTS_STYLE = "default"
+APPLAUSE_BUTTON = True
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -45,12 +56,13 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Social widget
+SOCIAL_PROFILE_LABEL = "Keep In Touch"
 SOCIAL = (
     ("Linkedin", "https://tw.linkedin.com/in/clleew"),
     ("GitHub", "https://github.com/Lee-W"),
     ("Gitlab", "https://gitlab.com/Lee-W"),
     ("Twitter", "https://twitter.com/clleew"),
-    ("RSS", "//lee-w.github.io/feeds/all.atom.xml"),
+    ("RSS", "https://lee-w.github.io/feeds/all.atom.xml"),
 )
 
 # Markdown extension
@@ -77,7 +89,6 @@ PLUGINS = [
     "tag_cloud",
     "extract_toc",
     "post_stats",
-    "assets"
+    "assets",
 ]
 ANOTHER_READ_MORE_LINK = ""
-APPLAUSE_BUTTON = True

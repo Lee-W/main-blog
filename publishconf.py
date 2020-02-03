@@ -7,18 +7,18 @@ from __future__ import unicode_literals
 
 import os
 import sys
+
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'https://lee-w.github.io'
+SITEURL = "https://lee-w.github.io"
 RELATIVE_URLS = False
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
+FEED_ALL_ATOM = "feeds/all.atom.xml"
+CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 
 DELETE_OUTPUT_DIRECTORY = False
 
 # Following items are often useful when publishing
-
 DISQUS_SITENAME = "lee-w-blog"
 GOOGLE_ANALYTICS = "UA-96190677-1"
