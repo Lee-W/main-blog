@@ -1,6 +1,6 @@
 Title: How was PyCon US 2019
 Date: 2019-06-22 21:49
-Modified: 2019-12-30 09:38
+Modified: 2020-02-04 18:43
 Category: Tech
 Tags: Python, PyCon, Conference
 Slug: how-was-pycon-us-2019
