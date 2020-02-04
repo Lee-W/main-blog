@@ -114,6 +114,20 @@ PyCon 總共跨了 9 天
     * 因為 badge 太長了，吃午餐的時候其他人會看不到你的名字
         * 那就在 badge 後面打個結，讓帶子短一點，大家就能看到你的名字了
     * 恩對，這場 Lightening Talk 就真的是這樣而已 XD
+* [Lightening Talk - 3 Quick Tips for Software Blogging](https://www.youtube.com/watch?v=sRwHWPDJBnk&list=PLPbTDk1hBo3x9H3_WOWv_p6wD01B5eBvn&index=2&t=5m19s)
+    1. Set a Purpose
+        * Why do you want to blog?
+            * Publish info, guides, help
+            * Personal journalling /notes
+            * connect with others
+            * electronic biz card
+            * be self-motivated
+        * Don't
+            * ~~become famous~~
+            * ~~make money from ads~~
+    2. Write new, helpful content
+        * Don't repeat existing content. Make something new!
+    3. Tools and Platforms Don't Matter (Content matters)
 
 ### Day 3
 * **Keynote - Python Steering Council**
@@ -207,6 +221,33 @@ Poster 也是一個能跟人互動蠻好的機會
 Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 也蠻多人去找他搭話跟拍照的
 不過害羞的我就有點不敢過去了 QQ
+
+記錄一下這四天丟了哪些 PR
+
+* [pallets](https://github.com/pallets)
+    * Pull Request
+        * [Fix MethodView inheritance Error (#3138) #3179](https://github.com/pallets/flask/pull/3179)
+* [Beeware](https://beeware.org)
+    * Pull Request
+        * [Fix the CAPSLOCK typo in toga_cocoa #679](https://github.com/beeware/toga/pull/679)
+        * [Fix open file not working when using open command and double click files #686](https://github.com/beeware/toga/pull/686)
+        * [Fix the error that UP arrow won't go the previous page #28](https://github.com/beeware/podium/pull/28)
+* CPython
+    * Project
+        * [Python Developer’s Guide](https://devguide.python.org)
+        * [The Ultimate Guide to the CPython Source Code](https://realpython.com/cpython-source-code-guide/?preview=cpython-sprints)
+    * Pull Request (not yet merged)
+        * [bpo-36841: Supporting customization of float encoding in JSON](https://github.com/python/cpython/pull/13233)
+* OpenEdx
+    * Project
+        * [Contributing to Open edX](https://contributing-to-open-edx.readthedocs.io/en/latest/)
+        * [open edx slack](https://openedx.slack.com)
+            * openedx-slack-invite.herokuapp.com
+        * [Sites powered by Open edX](https://openedx.atlassian.net/wiki/spaces/COMM/pages/162245773/Sites+powered+by+Open+edX)
+    * Pull Request
+        * [Add pull upstream reminder in contribute](https://github.com/edx/edx-documentation/pull/1825)
+        * [INCR-236](https://github.com/edx/edx-platform/pull/20502)
+
 
 ## 給自己下次去的建議
 

@@ -8,15 +8,16 @@ typogrify = "*"
 Markdown = "*"
 "bs4" = "*"
 pelican = "==4.0.1"
-ghp-import = "*"
 python-gettext = "*"
 mdx-del-ins = {editable = true,git = "https://github.com/Lee-W/mdx_del_ins"}
-invoke = "*"
 webassets = "*"
 cssmin = "*"
+ghp-import = "*"
 
 [dev-packages]
 pylint = "*"
+pre-commit-hooks = "*"
+invoke = "*"
 
 [requires]
 python_version = "3.7"
