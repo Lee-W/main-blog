@@ -9,18 +9,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Conference, Tech, " />
+<meta name="keywords" content="Python, Dependency, Tech, " />
 
-<meta property="og:title" content="EDBT-ICDT 2018"/>
-<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018" />
-<meta property="og:description" content="整理筆記時，翻到兩年前去研討會的筆記 想說放著也不會增值，就整理出來了 雖然大部分的內容的印象都已經有點模糊了 不過就加減把當初的筆記湊起來" />
+<meta property="og:title" content="pipenv 和 poerty 如何處理在不同作業系統下相依套件不同"/>
+<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" />
+<meta property="og:description" content="遇到的問題 用 twine 上傳 Python 套件 在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 jeepney 套件 問題的根源 目前最新版 (3.1.1) 的 twine 相依於套件 keyring (setup.cfg#L44) 而 keyring 在不同的作業系統中，相依的套件是不同的 (setup.cfg#L30) install_requires = pywin32-ctypes!=0.1.0,!=0.1.1; sys_platform==&#34;win32&#34; SecretStorage&gt;=3; sys_platform …" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
-<meta property="og:article:published_time" content="2020-01-03T15:30:00+08:00" />
-<meta name="twitter:title" content="EDBT-ICDT 2018">
-<meta name="twitter:description" content="整理筆記時，翻到兩年前去研討會的筆記 想說放著也不會增值，就整理出來了 雖然大部分的內容的印象都已經有點模糊了 不過就加減把當初的筆記湊起來">
+<meta property="og:article:published_time" content="2020-02-12T11:45:00+08:00" />
+<meta name="twitter:title" content="pipenv 和 poerty 如何處理在不同作業系統下相依套件不同">
+<meta name="twitter:description" content="遇到的問題 用 twine 上傳 Python 套件 在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 jeepney 套件 問題的根源 目前最新版 (3.1.1) 的 twine 相依於套件 keyring (setup.cfg#L44) 而 keyring 在不同的作業系統中，相依的套件是不同的 (setup.cfg#L30) install_requires = pywin32-ctypes!=0.1.0,!=0.1.1; sys_platform==&#34;win32&#34; SecretStorage&gt;=3; sys_platform …">
 
-        <title>EDBT-ICDT 2018 · Laziness makes Great Engineer
+        <title>pipenv 和 poerty 如何處理在不同作業系統下相依套件不同 · Laziness makes Great Engineer
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -75,8 +75,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018">
-                EDBT-ICDT 2018
+            <a href="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent">
+                pipenv 和 poerty 如何處理在不同作業系統下相依套件不同
             </a>
         </h1>
     </header>
@@ -88,212 +88,92 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#day-1-keynote">Day 1 - Keynote</a></li>
-<li><a href="#large-scale-machine-learning-where-do-relational-systems-fit-in-by-chris-jermaine">Large Scale Machine Learning: Where Do Relational Systems Fit In? (by Chris Jermaine)</a><ul>
-<li><a href="#ml-vs-ai">ML vs AI</a></li>
-<li><a href="#intro-to-ml">Intro to ML</a></li>
-<li><a href="#take-home-point">Take-Home Point</a></li>
-</ul>
-</li>
-<li><a href="#detecting-database-file-tampering-through-page-carving">Detecting Database File Tampering through Page Carving</a></li>
-<li><a href="#extracting-statistical-graph-features-for-accurate-and-efficient-time-series-classification">Extracting Statistical Graph Features for Accurate and Efficient Time Series Classification</a></li>
+<li><a href="#_1">遇到的問題</a></li>
+<li><a href="#_2">問題的根源</a></li>
+<li><a href="#pipenv">pipenv 怎麼處理</a></li>
+<li><a href="#poetry">Poetry 怎麼處理</a></li>
+<li><a href="#_3">總結</a></li>
 </ul>
 </div>
         </nav>
     </div>
     <div class="span8 article-content">
             
-            <p>整理筆記時，翻到兩年前去研討會的筆記<br/>
-想說放著也不會增值，就整理出來了<br/>
-雖然大部分的內容的印象都已經有點模糊了<br/>
-不過就加減把當初的筆記湊起來</p>
-<!--more-->
-<p>當時我覺得最有趣的論文是 <a href="http://www.vldb.org/pvldb/vol9/p1465-milo.pdf">Interactive Rule Refinement for Fraud Detection.</a><br/>
-不過竟然沒有做到太多筆記</p>
+            
+<h2 id="_1">遇到的問題</h2>
+<p>用 <a href="https://twine.readthedocs.io/en/latest/">twine</a> 上傳 Python 套件<br/>
+在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 <code>jeepney</code> 套件</p>
+<h2 id="_2">問題的根源</h2>
+<p>目前最新版 (3.1.1) 的 twine 相依於套件 <a href="https://github.com/jaraco/keyring">keyring</a> (<a href="https://github.com/pypa/twine/blob/3.1.1/setup.cfg#L44">setup.cfg#L44</a>)<br/>
+而 keyring 在不同的作業系統中，相依的套件是不同的 (<a href="https://github.com/jaraco/keyring/blob/master/setup.cfg#L30">setup.cfg#L30</a>)</p>
+<div class="highlight"><pre><span></span><span class="n">install_requires</span> <span class="o">=</span>
+    <span class="n">pywin32-ctypes</span><span class="err">!</span><span class="o">=</span><span class="mf">0.1.0</span><span class="p">,</span><span class="err">!</span><span class="o">=</span><span class="mf">0.1.1</span><span class="p">;</span> <span class="n">sys_platform</span><span class="o">==</span><span class="s">"win32"</span>
+    <span class="n">SecretStorage</span><span class="err">&gt;</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span> <span class="n">sys_platform</span><span class="o">==</span><span class="s">"linux"</span>
+    <span class="n">jeepney</span><span class="err">&gt;</span><span class="o">=</span><span class="mf">0.4.2</span><span class="p">;</span> <span class="n">sys_platform</span><span class="o">==</span><span class="s">"linux"</span>
+    <span class="n">importlib_metadata</span><span class="p">;</span> <span class="n">python_version</span> <span class="err">&lt;</span> <span class="s">"3.8"</span>
+</pre></div>
+<p>我缺少的的確就是那幾個 <code>sys_platform=="linux"</code> 的套件</p>
+<h2 id="pipenv">pipenv 怎麼處理</h2>
+<p>基本上 <code>pipenv</code> 不算有解決這個問題， <code>pipenv</code> 只會將目前系統的所需套件寫進 <strong>Pipfile.lock</strong></p>
+<p>以 twine 為例，在 macOS 透過 <code>pipenv</code> 安裝 ，跑 <code>pipenv graph</code>指令<br/>
+就會發現 keyring 只會直接相依於 importlib-metadata</p>
+<div class="highlight"><pre><span></span>  - keyring [required: &gt;=15.1, installed: 21.1.0]
+    - importlib-metadata [required: Any, installed: 1.5.0]
+      - zipp [required: &gt;=0.5, installed: 2.2.0]
+</pre></div>
+<p>但換到 Ubuntu 上跑，就會多了 SecretStorage 跟 jeepney</p>
+<div class="highlight"><pre><span></span>  - keyring [required: &gt;=15.1, installed: 21.1.0]
+    - importlib-metadata [required: Any, installed: 1.5.0]
+      - zipp [required: &gt;=0.5, installed: 2.2.0]
+    - jeepney [required: &gt;=0.4.2, installed: 0.4.2]
+    - SecretStorage [required: &gt;=3, installed: 3.1.2]
+      - cryptography [required: Any, installed: 2.8]
+        - cffi [required: &gt;=1.8,!=1.11.3, installed: 1.14.0]
+          - pycparser [required: Any, installed: 2.19]
+        - six [required: &gt;=1.4.1, installed: 1.14.0]
+      - jeepney [required: &gt;=0.4.2, installed: 0.4.2]
+</pre></div>
+<p>這個問題也有其他人提過 (<a href="https://github.com/pypa/pipenv/issues/3902">Cross-platform Pipenv.lock? #3902</a>)</p>
+<p><code>pipenv</code> 貢獻者給的建議是使用 <code>pipenv install --keep-outdated</code><br/>
+但這個指令的說明是 <strong>Keep out-dated dependencies from being updated in Pipfile.lock.</strong><br/>
+總覺得好像不是在這個 use case 下使用的</p>
+<p>最後我的解決方案是是把那幾個平台相依的套件安裝進去<br/>
+原因是在 production 的環境就是需要這幾個多安裝的套件，我在 local 多裝幾個套件好像也沒什麼差<br/>
+但如果今天是相反的狀況，我可能就會傾向 local 跑在 docker 裡</p>
+<h2 id="poetry">Poetry 怎麼處理</h2>
+<p><a href="https://python-poetry.org/">poerty</a> 對這個問題則是有比較好的解法</p>
+<p>透過 poetry 安裝 twine 後<br/>
+產生的 <strong>poetry.lock</strong> 會把 <code>marker = "sys_platform == \"linux\""</code> 記錄下來<br/>
+實際 <code>poetry shell</code> 進去看，的確也沒多安裝這些套件</p>
+<div class="highlight"><pre><span></span><span class="k">[[package]]</span>
+<span class="n">category</span> <span class="o">=</span> <span class="s">"main"</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s">"Store and access your passwords safely."</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">"keyring"</span>
+<span class="n">optional</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="n">python-versions</span> <span class="o">=</span> <span class="s">"&gt;=3.6"</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s">"21.1.0"</span>
 
-<h2 id="day-1-keynote">Day 1 - Keynote</h2>
-<ul>
-<li>In theoretical CS<ul>
-<li>Polynomial time → easy/fast<ul>
-<li>However, that's not always the case</li>
-<li>e.g., <span class="math">\(O(n^{100})\)</span></li>
-<li>When <code>n</code> grows, even <span class="math">\(O(n^2)\)</span> is not efficient</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>We're stuck on many problems even just in <span class="math">\(O(n^2)\)</span></li>
-<li>No <span class="math">\(N^{2-\epsilon}\)</span> time algorithms known for<ul>
-<li>String matching</li>
-<li>computational geometry</li>
-<li>graph problem in sparse graphs</li>
-<li>many problems from database</li>
-<li>many other problems</li>
-</ul>
-</li>
-<li><strong>Why are we stuck?</strong><ul>
-<li>The traditional hardness in complexity tells us little about runtime</li>
-<li>fine-grained hardness idea<ol>
-<li>identify key hard problem</li>
-<li>......</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="large-scale-machine-learning-where-do-relational-systems-fit-in-by-chris-jermaine">Large Scale Machine Learning: Where Do Relational Systems Fit In? (by Chris Jermaine)</h2>
-<p>Currently, ML community cares about new models instead of theory and fundamental ML design</p>
-<h3 id="ml-vs-ai">ML vs AI</h3>
-<ul>
-<li>ML is one approach to AI</li>
-<li>Classic AI: a programmer/expert imparting knowledge to a system</li>
-<li>ML is fundamentally statistical</li>
-</ul>
-<h3 id="intro-to-ml">Intro to ML</h3>
-<ul>
-<li>Distributed ML<ul>
-<li>Most ML systems use a "parameter server" model<ul>
-<li>Essentially a distributed key-value pair</li>
-</ul>
-</li>
-<li>Negatives<ul>
-<li>Parameter server compute model very limiting</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Data Parallel ML<ul>
-<li>Each compute server runs same computation on different data</li>
-<li>Global state updated via aggregation</li>
-</ul>
-</li>
-</ul>
-<h4>Want to scale out to speed up learning?</h4>
-<ul>
-<li>scale out ineffective in data parallel param server<ul>
-<li>no easy way to add machines and have a graph execute faster</li>
-</ul>
-</li>
-<li>Only easy way to scale out is to add compute servers</li>
-</ul>
-<h3 id="take-home-point">Take-Home Point</h3>
-<ul>
-<li>Current ML systems are <strong>easily</strong> applicable only to<ul>
-<li>Relatively small model problems</li>
-<li>That is run on a single machine</li>
-</ul>
-</li>
-</ul>
-<h2 id="detecting-database-file-tampering-through-page-carving">Detecting Database File Tampering through Page Carving</h2>
-<ul>
-<li>Attack Vector: File Tampering<ul>
-<li>Occurs at the OS level → outside DBMS control<ul>
-<li>Bypass DBMS control</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Page Deconstruction<ul>
-<li>Page Header<ul>
-<li>Checksum</li>
-<li>PageID</li>
-<li>Row Count</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>DBStorageAuditor<ul>
-<li>Goal: find inconsistency in storage<ul>
-<li>which is created by direct file manipulation</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="extracting-statistical-graph-features-for-accurate-and-efficient-time-series-classification">Extracting Statistical Graph Features for Accurate and Efficient Time Series Classification</h2>
-<ul>
-<li>Time series: Any data that is ordered</li>
-<li>Time Series Classification<ul>
-<li>similarity-based kNN (e.g., kNN-ED, kNN-DTW)<ul>
-<li>similarity can be unreliable</li>
-</ul>
-</li>
-<li>Shaplets<ul>
-<li>high computation complexity</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Why multiscale<ul>
-<li>sometimes global features are more important while sometimes local features are more important</li>
-<li>in this research, both global and local are considered</li>
-</ul>
-</li>
-<li>Visibility Graphs</li>
-<li>Multiscale Visibility Graphs</li>
-</ul>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
+<span class="k">[package.dependencies]</span>
+<span class="n">SecretStorage</span> <span class="o">=</span> <span class="s">"&gt;=3"</span>
+<span class="n">jeepney</span> <span class="o">=</span> <span class="s">"&gt;=0.4.2"</span>
+<span class="n">pywin32-ctypes</span> <span class="o">=</span> <span class="s">"&lt;0.1.0 || &gt;0.1.0,&lt;0.1.1 || &gt;0.1.1"</span>
 
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
+<span class="p">......</span>
 
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
+<span class="k">[[package]]</span>
+<span class="n">category</span> <span class="o">=</span> <span class="s">"main"</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s">"Python bindings to FreeDesktop.org Secret Service API"</span>
+<span class="n">marker</span> <span class="o">=</span> <span class="s">"sys_platform == \"linux\""</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">"secretstorage"</span>
+<span class="n">optional</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="n">python-versions</span> <span class="o">=</span> <span class="s">"&gt;=3.5"</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s">"3.1.2"</span>
+</pre></div>
+<h2 id="_3">總結</h2>
+<p>poetry 在處理不同平台相依套件不同的狀況，處理得比較好<br/>
+它會把所有需要的資訊記錄下來，在不同的平台進行不同的安裝</p>
+<p>如果要用 pipenv 則可以使用 <code>pipenv install --keep-outdated</code><br/>
+或者就直接多安裝這幾個不是每個平台都需要的套件</p>
 
 
             
@@ -301,17 +181,17 @@
 
 <script src="https://lee-w.github.io/theme/applause-button/applause-button.js"></script>
 <div class="applause_button">
-    <applause-button url=https://lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018> </applause-button>
+    <applause-button url=https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent> </applause-button>
 </div>
 
 
                 <p id="post-share-links">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=EDBT-ICDT%202018&url=https%3A//lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018&hashtags=conference" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?text=pipenv%20%E5%92%8C%20poerty%20%E5%A6%82%E4%BD%95%E8%99%95%E7%90%86%E5%9C%A8%E4%B8%8D%E5%90%8C%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E4%B8%8B%E7%9B%B8%E4%BE%9D%E5%A5%97%E4%BB%B6%E4%B8%8D%E5%90%8C&url=https%3A//lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent&hashtags=python,dependency" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
     ❄
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="mailto:?subject=EDBT-ICDT%202018&amp;body=https%3A//lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+    <a href="mailto:?subject=pipenv%20%E5%92%8C%20poerty%20%E5%A6%82%E4%BD%95%E8%99%95%E7%90%86%E5%9C%A8%E4%B8%8D%E5%90%8C%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E4%B8%8B%E7%9B%B8%E4%BE%9D%E5%A5%97%E4%BB%B6%E4%B8%8D%E5%90%8C&amp;body=https%3A//lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
     </p>
 
             
@@ -332,8 +212,8 @@
                 <a class="accordion-toggle disqus-comment-count comment-count"
                    data-toggle="collapse"
                    data-parent="#accordion2"
-                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018"
-                   href="https://lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018#comment_thread"
+                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent"
+                   href="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent#comment_thread"
                    id="comment-accordion-toggle">
                     Comments
                 </a>
@@ -351,8 +231,8 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 
-    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018';
-    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018';
+    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent';
+    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -376,23 +256,25 @@
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://lee-w.github.io/posts/book/2020/01/atmoic-habit" title="Previous: [Book] 原子習慣">[Book] 原子習慣</a></li>
-                <li class="next-article"><a href="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action" title="Next: 透過 GitHub Action 自動發佈 Pelican 部落格文章">透過 GitHub Action 自動發佈 Pelican 部落格文章</a> »</li>
+                <li class="previous-article">« <a href="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action" title="Previous: 透過 GitHub Action 自動發佈 Pelican 部落格文章">透過 GitHub Action 自動發佈 Pelican 部落格文章</a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2020-01-03T15:30:00+08:00">2020/01/03 - Fri</time>
+            <time itemprop="dateCreated" datetime="2020-02-12T11:45:00+08:00">2020/02/12 - Wed</time>
                 <h4>Read Time</h4>
-                 2 min
+                 1 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://lee-w.github.io/tags.html#conference-ref">Conference
-                    <span>14</span>
+                <li><a href="https://lee-w.github.io/tags.html#dependency-ref">Dependency
+                    <span>1</span>
+</a></li>
+                <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
+                    <span>15</span>
 </a></li>
             </ul>
 <h4>Keep In Touch</h4>

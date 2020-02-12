@@ -1,5 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-02-04T18:43:00+08:00</updated><entry><title>透過 GitHub Action 自動發佈 Pelican 部落格文章</title><link href="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action" rel="alternate"></link><published>2020-01-16T15:35:00+08:00</published><updated>2020-01-16T15:35:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-01-16:/posts/tech/2020/01/automate-publish-pelican-through-github-action</id><summary type="html">&lt;p&gt;最近因為在貢獻 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt;，開始碰到 &lt;a href="https://github.com/features/actions"&gt;GitHub Action&lt;/a&gt;&lt;br/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-02-12T11:45:00+08:00</updated><entry><title>pipenv 和 poerty 如何處理在不同作業系統下相依套件不同</title><link href="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" rel="alternate"></link><published>2020-02-12T11:45:00+08:00</published><updated>2020-02-12T11:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-12:/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent</id><summary type="html">
+&lt;h2 id="_1"&gt;遇到的問題&lt;/h2&gt;
+&lt;p&gt;用 &lt;a href="https://twine.readthedocs.io/en/latest/"&gt;twine&lt;/a&gt; 上傳 Python 套件&lt;br/&gt;
+在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 &lt;code&gt;jeepney&lt;/code&gt; 套件&lt;/p&gt;
+&lt;h2 id="_2"&gt;問題的根源&lt;/h2&gt;
+&lt;p&gt;目前最新版 (3.1.1) 的 twine 相依於套件 &lt;a href="https://github.com/jaraco/keyring"&gt;keyring&lt;/a&gt; (&lt;a href="https://github.com/pypa/twine/blob/3.1.1/setup.cfg#L44"&gt;setup.cfg#L44&lt;/a&gt;)&lt;br/&gt;
+而 keyring 在不同的作業系統中，相依的套件是不同的 (&lt;a href="https://github.com/jaraco/keyring/blob/master/setup.cfg#L30"&gt;setup.cfg#L30&lt;/a&gt;)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;install_requires&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+    &lt;span class="n"&gt;pywin32-ctypes&lt;/span&gt;&lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.1.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.1.1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;sys_platform&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s"&gt;"win32"&lt;/span&gt;
+    &lt;span class="n"&gt;SecretStorage&lt;/span&gt;&lt;span class="err"&gt;&amp;gt;&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;sys_platform …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">
+&lt;h2 id="_1"&gt;遇到的問題&lt;/h2&gt;
+&lt;p&gt;用 &lt;a href="https://twine.readthedocs.io/en/latest/"&gt;twine&lt;/a&gt; 上傳 Python 套件&lt;br/&gt;
+在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 &lt;code&gt;jeepney&lt;/code&gt; 套件&lt;/p&gt;
+&lt;h2 id="_2"&gt;問題的根源&lt;/h2&gt;
+&lt;p&gt;目前最新版 (3.1.1) 的 twine 相依於套件 &lt;a href="https://github.com/jaraco/keyring"&gt;keyring&lt;/a&gt; (&lt;a href="https://github.com/pypa/twine/blob/3.1.1/setup.cfg#L44"&gt;setup.cfg#L44&lt;/a&gt;)&lt;br/&gt;
+而 keyring 在不同的作業系統中，相依的套件是不同的 (&lt;a href="https://github.com/jaraco/keyring/blob/master/setup.cfg#L30"&gt;setup.cfg#L30&lt;/a&gt;)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;install_requires&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+    &lt;span class="n"&gt;pywin32-ctypes&lt;/span&gt;&lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.1.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.1.1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;sys_platform&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s"&gt;"win32"&lt;/span&gt;
+    &lt;span class="n"&gt;SecretStorage&lt;/span&gt;&lt;span class="err"&gt;&amp;gt;&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;sys_platform&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s"&gt;"linux"&lt;/span&gt;
+    &lt;span class="n"&gt;jeepney&lt;/span&gt;&lt;span class="err"&gt;&amp;gt;&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.4.2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;sys_platform&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s"&gt;"linux"&lt;/span&gt;
+    &lt;span class="n"&gt;importlib_metadata&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;python_version&lt;/span&gt; &lt;span class="err"&gt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;"3.8"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;我缺少的的確就是那幾個 &lt;code&gt;sys_platform=="linux"&lt;/code&gt; 的套件&lt;/p&gt;
+&lt;h2 id="pipenv"&gt;pipenv 怎麼處理&lt;/h2&gt;
+&lt;p&gt;基本上 &lt;code&gt;pipenv&lt;/code&gt; 不算有解決這個問題， &lt;code&gt;pipenv&lt;/code&gt; 只會將目前系統的所需套件寫進 &lt;strong&gt;Pipfile.lock&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;以 twine 為例，在 macOS 透過 &lt;code&gt;pipenv&lt;/code&gt; 安裝 ，跑 &lt;code&gt;pipenv graph&lt;/code&gt;指令&lt;br/&gt;
+就會發現 keyring 只會直接相依於 importlib-metadata&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  - keyring [required: &amp;gt;=15.1, installed: 21.1.0]
+    - importlib-metadata [required: Any, installed: 1.5.0]
+      - zipp [required: &amp;gt;=0.5, installed: 2.2.0]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;但換到 Ubuntu 上跑，就會多了 SecretStorage 跟 jeepney&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  - keyring [required: &amp;gt;=15.1, installed: 21.1.0]
+    - importlib-metadata [required: Any, installed: 1.5.0]
+      - zipp [required: &amp;gt;=0.5, installed: 2.2.0]
+    - jeepney [required: &amp;gt;=0.4.2, installed: 0.4.2]
+    - SecretStorage [required: &amp;gt;=3, installed: 3.1.2]
+      - cryptography [required: Any, installed: 2.8]
+        - cffi [required: &amp;gt;=1.8,!=1.11.3, installed: 1.14.0]
+          - pycparser [required: Any, installed: 2.19]
+        - six [required: &amp;gt;=1.4.1, installed: 1.14.0]
+      - jeepney [required: &amp;gt;=0.4.2, installed: 0.4.2]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;這個問題也有其他人提過 (&lt;a href="https://github.com/pypa/pipenv/issues/3902"&gt;Cross-platform Pipenv.lock? #3902&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pipenv&lt;/code&gt; 貢獻者給的建議是使用 &lt;code&gt;pipenv install --keep-outdated&lt;/code&gt;&lt;br/&gt;
+但這個指令的說明是 &lt;strong&gt;Keep out-dated dependencies from being updated in Pipfile.lock.&lt;/strong&gt;&lt;br/&gt;
+總覺得好像不是在這個 use case 下使用的&lt;/p&gt;
+&lt;p&gt;最後我的解決方案是是把那幾個平台相依的套件安裝進去&lt;br/&gt;
+原因是在 production 的環境就是需要這幾個多安裝的套件，我在 local 多裝幾個套件好像也沒什麼差&lt;br/&gt;
+但如果今天是相反的狀況，我可能就會傾向 local 跑在 docker 裡&lt;/p&gt;
+&lt;h2 id="poetry"&gt;Poetry 怎麼處理&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://python-poetry.org/"&gt;poerty&lt;/a&gt; 對這個問題則是有比較好的解法&lt;/p&gt;
+&lt;p&gt;透過 poetry 安裝 twine 後&lt;br/&gt;
+產生的 &lt;strong&gt;poetry.lock&lt;/strong&gt; 會把 &lt;code&gt;marker = "sys_platform == \"linux\""&lt;/code&gt; 記錄下來&lt;br/&gt;
+實際 &lt;code&gt;poetry shell&lt;/code&gt; 進去看，的確也沒多安裝這些套件&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[[package]]&lt;/span&gt;
+&lt;span class="n"&gt;category&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"main"&lt;/span&gt;
+&lt;span class="n"&gt;description&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"Store and access your passwords safely."&lt;/span&gt;
+&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"keyring"&lt;/span&gt;
+&lt;span class="n"&gt;optional&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;
+&lt;span class="n"&gt;python-versions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"&amp;gt;=3.6"&lt;/span&gt;
+&lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"21.1.0"&lt;/span&gt;
+
+&lt;span class="k"&gt;[package.dependencies]&lt;/span&gt;
+&lt;span class="n"&gt;SecretStorage&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"&amp;gt;=3"&lt;/span&gt;
+&lt;span class="n"&gt;jeepney&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"&amp;gt;=0.4.2"&lt;/span&gt;
+&lt;span class="n"&gt;pywin32-ctypes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;0.1.0 || &amp;gt;0.1.0,&amp;lt;0.1.1 || &amp;gt;0.1.1"&lt;/span&gt;
+
+&lt;span class="p"&gt;......&lt;/span&gt;
+
+&lt;span class="k"&gt;[[package]]&lt;/span&gt;
+&lt;span class="n"&gt;category&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"main"&lt;/span&gt;
+&lt;span class="n"&gt;description&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"Python bindings to FreeDesktop.org Secret Service API"&lt;/span&gt;
+&lt;span class="n"&gt;marker&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"sys_platform == \"linux\""&lt;/span&gt;
+&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"secretstorage"&lt;/span&gt;
+&lt;span class="n"&gt;optional&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;
+&lt;span class="n"&gt;python-versions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"&amp;gt;=3.5"&lt;/span&gt;
+&lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"3.1.2"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="_3"&gt;總結&lt;/h2&gt;
+&lt;p&gt;poetry 在處理不同平台相依套件不同的狀況，處理得比較好&lt;br/&gt;
+它會把所有需要的資訊記錄下來，在不同的平台進行不同的安裝&lt;/p&gt;
+&lt;p&gt;如果要用 pipenv 則可以使用 &lt;code&gt;pipenv install --keep-outdated&lt;/code&gt;&lt;br/&gt;
+或者就直接多安裝這幾個不是每個平台都需要的套件&lt;/p&gt;</content><category term="Python"></category><category term="Dependency"></category></entry><entry><title>透過 GitHub Action 自動發佈 Pelican 部落格文章</title><link href="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action" rel="alternate"></link><published>2020-01-16T15:35:00+08:00</published><updated>2020-01-16T15:35:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-01-16:/posts/tech/2020/01/automate-publish-pelican-through-github-action</id><summary type="html">&lt;p&gt;最近因為在貢獻 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt;，開始碰到 &lt;a href="https://github.com/features/actions"&gt;GitHub Action&lt;/a&gt;&lt;br/&gt;
 （ Python 也有自己的 commitizen 了！！！）&lt;br/&gt;
 記錄一下怎麼應用到發布部落格文章&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最近因為在貢獻 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt;，開始碰到 &lt;a href="https://github.com/features/actions"&gt;GitHub Action&lt;/a&gt;&lt;br/&gt;
@@ -130,7 +213,7 @@
           &lt;span class="nt"&gt;PERSONAL_TOKEN&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;${{ secrets.PERSONAL_ACCESS_TOKEN }}&lt;/span&gt;
           &lt;span class="nt"&gt;PUBLISH_BRANCH&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;master&lt;/span&gt;
           &lt;span class="nt"&gt;PUBLISH_DIR&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;./output&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Python"></category><category term="GitHub Action"></category></entry><entry><title>EDBT-ICDT 2018</title><link href="https://lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018" rel="alternate"></link><published>2020-01-03T15:30:00+08:00</published><updated>2020-01-03T15:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-01-03:/posts/tech/2020/01/edbt-icdt-2018</id><summary type="html">&lt;p&gt;整理筆記時，翻到兩年前去研討會的筆記&lt;br/&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Python"></category><category term="GitHub Action"></category><category term="Blog"></category><category term="CI/CD"></category></entry><entry><title>EDBT-ICDT 2018</title><link href="https://lee-w.github.io/posts/tech/2020/01/edbt-icdt-2018" rel="alternate"></link><published>2020-01-03T15:30:00+08:00</published><updated>2020-01-03T15:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-01-03:/posts/tech/2020/01/edbt-icdt-2018</id><summary type="html">&lt;p&gt;整理筆記時，翻到兩年前去研討會的筆記&lt;br/&gt;
 想說放著也不會增值，就整理出來了&lt;br/&gt;
 雖然大部分的內容的印象都已經有點模糊了&lt;br/&gt;
 不過就加減把當初的筆記湊起來&lt;/p&gt;
@@ -830,7 +913,7 @@ PyCon CA 給我的感覺是所有參與者之間最沒有隔閡的&lt;br&gt;
 &lt;p&gt;紀念品也還蠻有趣的，是當地很需要的毛帽&lt;br&gt;
 有一度想要買，因為真的很冷...&lt;br&gt;
 我在加拿大期間最冷的期間就是會期這兩天&lt;br&gt;
--8 度真的很瘋狂，但又不能不出門......&lt;/p&gt;</content><category term="Python"></category><category term="PyCon CA"></category></entry><entry><title>PyCon TW 2019 - Do you know PyCon JP</title><link href="https://lee-w.github.io/posts/tech/2019/10/pycon-tw-2019-do-you-know-pycon-jp" rel="alternate"></link><published>2019-10-28T12:35:00+08:00</published><updated>2019-10-28T12:35:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-10-28:/posts/tech/2019/10/pycon-tw-2019-do-you-know-pycon-jp</id><summary type="html"></summary><content type="html">
+-8 度真的很瘋狂，但又不能不出門......&lt;/p&gt;</content><category term="Python"></category><category term="PyCon"></category><category term="Conference"></category></entry><entry><title>PyCon TW 2019 - Do you know PyCon JP</title><link href="https://lee-w.github.io/posts/tech/2019/10/pycon-tw-2019-do-you-know-pycon-jp" rel="alternate"></link><published>2019-10-28T12:35:00+08:00</published><updated>2019-10-28T12:35:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-10-28:/posts/tech/2019/10/pycon-tw-2019-do-you-know-pycon-jp</id><summary type="html"></summary><content type="html">
 &lt;p&gt;每年的 PyCon TW 都是我在台灣蠻期待的研討會&lt;br/&gt;
 雖然第一年來的時候，幾乎什麼都聽不懂&lt;br/&gt;
 但還是被各種大家正在做正在研究的事有些震撼到&lt;br/&gt;
@@ -3603,7 +3686,7 @@ Job Fair 的公司反而比較少，不過應該就是專注在有開缺的公�
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="clean-code"></category><category term="Note"></category></entry><entry><title>[Note] The Clean Coder</title><link href="https://lee-w.github.io/posts/tech/2018/11/the-clean-coder" rel="alternate"></link><published>2018-11-16T15:03:00+08:00</published><updated>2018-11-16T15:03:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-11-16:/posts/tech/2018/11/the-clean-coder</id><summary type="html">&lt;p&gt;過了幾年又重新看過這本書才慢慢能感受到裡面說的&lt;br/&gt;
+&lt;/ul&gt;</content><category term="Note"></category><category term="Software Engineering"></category></entry><entry><title>[Note] The Clean Coder</title><link href="https://lee-w.github.io/posts/tech/2018/11/the-clean-coder" rel="alternate"></link><published>2018-11-16T15:03:00+08:00</published><updated>2018-11-16T15:03:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-11-16:/posts/tech/2018/11/the-clean-coder</id><summary type="html">&lt;p&gt;過了幾年又重新看過這本書才慢慢能感受到裡面說的&lt;br/&gt;
 Uncle Bob 的書真的每個階段看都會有很不一樣的感覺&lt;br/&gt;
 很值得買回來收 xD&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Clean Coder" src="https://lee-w.github.io/images/books/5a0LzcS.jpg"/&gt;&lt;/p&gt;
@@ -4261,7 +4344,7 @@ Uncle Bob 的書真的每個階段看都會有很不一樣的感覺&lt;br/&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;UML / MDA&lt;/li&gt;
-&lt;/ul&gt;</content><category term="clean-code"></category><category term="Note"></category></entry><entry><title>[Book] 告別菜尾時代</title><link href="https://lee-w.github.io/posts/book/2018/11/it-s-time-for-the-young-generation" rel="alternate"></link><published>2018-11-07T14:00:00+08:00</published><updated>2018-11-07T14:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-11-07:/posts/book/2018/11/it-s-time-for-the-young-generation</id><summary type="html">&lt;p&gt;&lt;img alt="Imgur" src="https://lee-w.github.io/images/books/0he265Q.jpg"/&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Note"></category><category term="Software Engineering"></category></entry><entry><title>[Book] 告別菜尾時代</title><link href="https://lee-w.github.io/posts/book/2018/11/it-s-time-for-the-young-generation" rel="alternate"></link><published>2018-11-07T14:00:00+08:00</published><updated>2018-11-07T14:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-11-07:/posts/book/2018/11/it-s-time-for-the-young-generation</id><summary type="html">&lt;p&gt;&lt;img alt="Imgur" src="https://lee-w.github.io/images/books/0he265Q.jpg"/&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="Imgur" src="https://lee-w.github.io/images/books/0he265Q.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -4812,7 +4895,7 @@ e.g.,&lt;/p&gt;
 到底是這樣的方式不適合初學者？&lt;br&gt;
 還是我沒有把這樣的內容表達好？&lt;br&gt;
 如果還有下次的機會&lt;br&gt;
-除了思考課程的內容外，我還要多花點時間準備在台上的表達&lt;/p&gt;</content><category term="X-Village"></category></entry><entry><title>從 Andromoney 到 MOZE</title><link href="https://lee-w.github.io/posts/tech/2018/09/from-andromoney-to-moze" rel="alternate"></link><published>2018-09-09T16:00:00+08:00</published><updated>2018-09-09T16:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-09-09:/posts/tech/2018/09/from-andromoney-to-moze</id><summary type="html">&lt;p&gt;最近不小心被 &lt;a href="https://www.mozeapp.com"&gt;MOZE&lt;/a&gt; 的介面燒到&lt;br&gt;
+除了思考課程的內容外，我還要多花點時間準備在台上的表達&lt;/p&gt;</content><category term="Education"></category></entry><entry><title>從 Andromoney 到 MOZE</title><link href="https://lee-w.github.io/posts/tech/2018/09/from-andromoney-to-moze" rel="alternate"></link><published>2018-09-09T16:00:00+08:00</published><updated>2018-09-09T16:00:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-09-09:/posts/tech/2018/09/from-andromoney-to-moze</id><summary type="html">&lt;p&gt;最近不小心被 &lt;a href="https://www.mozeapp.com"&gt;MOZE&lt;/a&gt; 的介面燒到&lt;br&gt;
 一個衝動就從 &lt;a href="https://web.andromoney.com"&gt;AndroMoney&lt;/a&gt; 轉到 MOZE&lt;br&gt;
 這篇算是來記錄從 AndroMoney 把資料轉換到 MOZE 的過程&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最近不小心被 &lt;a href="https://www.mozeapp.com"&gt;MOZE&lt;/a&gt; 的介面燒到&lt;br&gt;
@@ -5765,7 +5848,7 @@ Parallel: 一個時間點同時跑&lt;/p&gt;
 &lt;li&gt;&lt;a href="#1"&gt;[Keynote] Choices for Smarter AI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#2"&gt;Python 開源軟體考古 - 以Viper為例&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#3"&gt;整合 Slack 與 Docker 搭建 Jupyter 線上程式面試系統&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#4"&gt;[Keynote] The State of Python for &lt;s&gt;Education&lt;/s&gt; Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#4"&gt;[Keynote] The State of Python for &lt;del&gt;Education&lt;/del&gt; Learning&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Building Microservices in Python 個案分享&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.slideshare.net/jonascheng3/building-microservices-in-python-pycon2017"&gt;Slide&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://hackmd.io/s/Sk5LNzQke#1455-1540-talk-building-microservices-in-python-個案分享"&gt;共筆&lt;/a&gt;&lt;/li&gt;
@@ -12012,7 +12095,7 @@ git push -u gitbook
 &lt;li&gt;&lt;a href="https://github.com/GitbookIO/gitbook"&gt;Gitbook&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://help.gitbook.io/index.html"&gt;GitBook Documentaion&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.codedata.com.tw/social-coding/gitbook-self-publishing/"&gt;深入淺出 GitBook 寫作與自助出版，電子書也能多人協作&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Git Book"></category></entry><entry><title>[Book] Clean Coder</title><link href="https://lee-w.github.io/posts/book/2015/01/clean-coder" rel="alternate"></link><published>2015-01-17T09:35:00+08:00</published><updated>2015-01-17T09:35:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-17:/posts/book/2015/01/clean-coder</id><summary type="html">&lt;p&gt;&lt;img alt="Clean Coder" src="https://lee-w.github.io/images/books/5a0LzcS.jpg"&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Git Book"></category></entry><entry><title>[Book] Clean Coder</title><link href="https://lee-w.github.io/posts/book/2015/01/Soft" rel="alternate"></link><published>2015-01-17T09:35:00+08:00</published><updated>2015-01-17T09:35:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-17:/posts/book/2015/01/Soft</id><summary type="html">&lt;p&gt;&lt;img alt="Clean Coder" src="https://lee-w.github.io/images/books/5a0LzcS.jpg"&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;img alt="Clean Coder" src="https://lee-w.github.io/images/books/5a0LzcS.jpg"&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
