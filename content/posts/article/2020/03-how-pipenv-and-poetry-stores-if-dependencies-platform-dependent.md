@@ -1,7 +1,7 @@
 Title: pipenv 和 poerty 如何處理在不同作業系統下相依套件不同
 Date: 2020-02-12 11:45
 Category: Tech
-Tags: Python
+Tags: Python, Dependency
 Slug: how-pipenv-and-poetry-stores-if-dependencies-platform-dependent
 Authors: Lee-W
 
@@ -28,7 +28,7 @@ install_requires =
 ## pipenv 怎麼處理
 基本上 `pipenv` 不算有解決這個問題， `pipenv` 只會將目前系統的所需套件寫進 **Pipfile.lock**
 
-以 twine 為例，在 macOS 透過 `pipenv `安裝 ，跑 `pipenv graph`指令
+以 twine 為例，在 macOS 透過 `pipenv` 安裝 ，跑 `pipenv graph`指令
 就會發現 keyring 只會直接相依於 importlib-metadata
 
 ```text

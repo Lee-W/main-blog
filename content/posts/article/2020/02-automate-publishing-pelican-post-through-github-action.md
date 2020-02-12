@@ -1,11 +1,9 @@
 Title: 透過 GitHub Action 自動發佈 Pelican 部落格文章
 Date: 2020-01-16 15:35
 Category: Tech
-Tags: Python, GitHub Action
+Tags: Python, GitHub Action, Blog, CI/CD
 Slug: automate-publish-pelican-through-github-action
 Authors: Lee-W
-Status:
-Summary:
 
 最近因為在貢獻 [commitizen](https://github.com/Woile/commitizen)，開始碰到 [GitHub Action](https://github.com/features/actions)
 （ Python 也有自己的 commitizen 了！！！）

@@ -1,7 +1,7 @@
 Title: [Note] The Clean Coder
 Date: 2018-11-16 15:03
 Category: Tech
-Tags: clean-code, Note
+Tags: Note, Software Engineering
 Slug: the-clean-coder
 Authors: Lee-W
 Summary:

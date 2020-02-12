@@ -24,7 +24,7 @@ Series: PyCon TW 2017
 * [[Keynote] Choices for Smarter AI](#1)
 * [Python 開源軟體考古 - 以Viper為例](#2)
 * [整合 Slack 與 Docker 搭建 Jupyter 線上程式面試系統](#3)
-* [[Keynote] The State of Python for <s>Education</s> Learning](#4)
+* [[Keynote] The State of Python for ~~Education~~ Learning](#4)
 * Building Microservices in Python 個案分享
     * [Slide](https://www.slideshare.net/jonascheng3/building-microservices-in-python-pycon2017)
     * [共筆](https://hackmd.io/s/Sk5LNzQke#1455-1540-talk-building-microservices-in-python-個案分享)

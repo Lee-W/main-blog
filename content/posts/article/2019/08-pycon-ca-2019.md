@@ -1,7 +1,7 @@
 Title: PyCon CA 2019
 Date: 2019-12-23 17:51
 Category: Tech
-Tags: Python, PyCon CA 
+Tags: Python, PyCon, Conference
 Slug: pycon-ca-2019
 Authors: Lee-W
 Summary:
