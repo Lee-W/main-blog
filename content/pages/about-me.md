@@ -25,12 +25,12 @@ slug: about-me
 * Cooperate with oversea teams in San Mateo and Ukraine
 
 ### [Dec 2019 - Present]
-**Program Chair, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)]**
+**Program Chair, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)**
 
 * Manage the program team
 
 ### [Jul 2019 – Nov 2019]
-**Program Team Member, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)]**
+**Program Team Member, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)**
 
 * Contact keynote speakers and financial aid applicants for the program team
 * Contribute to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
