@@ -6,8 +6,8 @@ name = "pypi"
 [packages]
 typogrify = "*"
 Markdown = "*"
-"bs4" = "*"
-pelican = "==4.0.1"
+bs4 = "*"
+pelican = "*"
 python-gettext = "*"
 mdx-del-ins = {editable = true,git = "https://github.com/Lee-W/mdx_del_ins"}
 webassets = "*"
