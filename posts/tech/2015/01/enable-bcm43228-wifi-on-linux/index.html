@@ -93,14 +93,14 @@
 <!--more-->
 
 <p>先確定你的網卡是不是 BC43228</p>
-<div class="highlight"><pre><span></span>lspci <span class="p">|</span> grep Network
-</pre></div>
+<div class="highlight"><pre><span></span><code>lspci <span class="p">|</span> grep Network
+</code></pre></div>
 
 
 <p>如果是的話就能開始進行安裝了</p>
-<div class="highlight"><pre><span></span>sudo apt-get install linux-headers-generic
+<div class="highlight"><pre><span></span><code>sudo apt-get install linux-headers-generic
 sudo apt-get install --reinstall bcmwl-kernel-source
-</pre></div>
+</code></pre></div>
 
 
 <p>如果成功的話，Wifi 應該馬上就能用了</p>

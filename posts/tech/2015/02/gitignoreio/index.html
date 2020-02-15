@@ -97,43 +97,43 @@
 <a href="https://www.gitignore.io/docs">doc</a></p>
 <h3 id="_1">設定</h3>
 <p>以 mac 的 zsh 的使用者為例，只要在執行下面這段</p>
-<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
+</code></pre></div>
 
 
 <p>或者在 ~/.zshrc 加入下面這段後，執行 <code>source ~/.zshrc</code></p>
-<div class="highlight"><pre><span></span><span class="k">function</span> gi<span class="o">()</span> <span class="o">{</span> curl -L -s https://www.gitignore.io/api/<span class="nv">$@</span> <span class="p">;</span><span class="o">}</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> gi<span class="o">()</span> <span class="o">{</span> curl -L -s https://www.gitignore.io/api/<span class="nv">$@</span> <span class="p">;</span><span class="o">}</span>
+</code></pre></div>
 
 
 <p>設定完成後就可以使用 gi 的功能</p>
 <h3 id="_2">使用</h3>
 <p>基本上只有兩種用法<br>
 首先當然要先看 gi 支援哪些 .gitignore</p>
-<div class="highlight"><pre><span></span>gi list
-</pre></div>
+<div class="highlight"><pre><span></span><code>gi list
+</code></pre></div>
 
 
 <p>執行完會看到一長串的結果</p>
-<div class="highlight"><pre><span></span>actionscript,ada,agda,android...
-</pre></div>
+<div class="highlight"><pre><span></span><code>actionscript,ada,agda,android...
+</code></pre></div>
 
 
 <p>接著在 gi 後面輸入想產生的 .gitignore 的 types</p>
-<div class="highlight"><pre><span></span>gi <span class="s2">&quot;types&quot;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>gi <span class="s2">&quot;types&quot;</span>
+</code></pre></div>
 
 
 <p>如果有超過一個必須用 <code>,</code> 隔開<br>
 e.g.,</p>
-<div class="highlight"><pre><span></span>gi vim,osx
-</pre></div>
+<div class="highlight"><pre><span></span><code>gi vim,osx
+</code></pre></div>
 
 
 <p>不過這樣還不會產生 .gitignore，只會顯示在螢幕上<br>
 還要再使用 output redirection 才會有 .gitignore</p>
-<div class="highlight"><pre><span></span>gi vim,osx &gt;&gt; .gitignore
-</pre></div>
+<div class="highlight"><pre><span></span><code>gi vim,osx &gt;&gt; .gitignore
+</code></pre></div>
 
 
 <h2 id="my-custom-gi">My Custom gi</h2>
@@ -150,17 +150,17 @@ e.g.,</p>
    e.g., <code>vim,osx</code> → <code>vim osx</code></li>
 </ol>
 <h3 id="_3">安裝</h3>
-<div class="highlight"><pre><span></span>git clone https://github.com/Lee-W/gi_extension <span class="o">&amp;&amp;</span> <span class="nb">cd</span> gi_extension
+<div class="highlight"><pre><span></span><code>git clone https://github.com/Lee-W/gi_extension <span class="o">&amp;&amp;</span> <span class="nb">cd</span> gi_extension
 sudo cp gi_extension.sh /usr/bin/gi
-</pre></div>
+</code></pre></div>
 
 
 <p>如果之前有在 shell 的設定檔中，設定過 gitignore.io 提供的 gi<br>
 記得要把它註解掉，不然那個 gi 會蓋過我的 gi</p>
 <p>如果想移除掉</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/Lee-W/gi_extension <span class="o">&amp;&amp;</span> <span class="nb">cd</span> gi_extension
+<div class="highlight"><pre><span></span><code>git clone https://github.com/Lee-W/gi_extension <span class="o">&amp;&amp;</span> <span class="nb">cd</span> gi_extension
 sudo rm gi_extension.sh /usr/bin/gi
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_4">使用</h2>
@@ -171,42 +171,42 @@ sudo rm gi_extension.sh /usr/bin/gi
 <li>以表格的方式輸出支援的類型<br>
    目前設定一個 row 容納 5 個 column，每個 column 長度為 25  </li>
 </ul>
-<div class="highlight"><pre><span></span>gi -l
-</pre></div>
+<div class="highlight"><pre><span></span><code>gi -l
+</code></pre></div>
 
 
-<p><img alt="1_gi_l.png" src="https://lee-w.github.io/images/posts-image/2015-02-03-gitignoreio/WjrHpdZ.png"></p>
+<p><img alt="1_gi_l.png" src="https://lee-w.github.io/images"></p>
 <ul>
 <li>以字母的順序輸出</li>
 </ul>
-<div class="highlight"><pre><span></span>gi -L
-</pre></div>
+<div class="highlight"><pre><span></span><code>gi -L
+</code></pre></div>
 
 
-<p><img alt="2_gi_L.png" src="https://lee-w.github.io/images/posts-image/2015-02-03-gitignoreio/9j2PdP4.png"></p>
+<p><img alt="2_gi_L.png" src="https://lee-w.github.io/images"></p>
 <h3 id="gitignore">顯示 .gitignore 的內容</h3>
 <p>跟原本的 gi 一樣，只是多支援了以空白作為分隔</p>
-<div class="highlight"><pre><span></span>gi <span class="s2">&quot;types&quot;</span>
+<div class="highlight"><pre><span></span><code>gi <span class="s2">&quot;types&quot;</span>
 <span class="c1"># e.g., gi vim osx</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="gitignore_1">輸出 .gitignore</h3>
 <p>將結果加入目前資料夾下的 .gitignore</p>
-<div class="highlight"><pre><span></span>gi -a <span class="s2">&quot;types&quot;</span>
+<div class="highlight"><pre><span></span><code>gi -a <span class="s2">&quot;types&quot;</span>
 <span class="c1"># e.g., gi -a vim osx</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>在目前的資料夾產生一份新的 .gitignore 取代舊有的</p>
-<div class="highlight"><pre><span></span>gi -e <span class="s2">&quot;types&quot;</span>
+<div class="highlight"><pre><span></span><code>gi -e <span class="s2">&quot;types&quot;</span>
 <span class="c1"># e.g.,e.g.,, gi -e vim osx</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="_6">更新本地端的支援列表</h3>
-<div class="highlight"><pre><span></span>gi -u
-</pre></div>
+<div class="highlight"><pre><span></span><code>gi -u
+</code></pre></div>
 
 
 <p>其實每次 gi 被執行的時候，都會在 backgroud 更新列表<br>

@@ -110,9 +110,9 @@ Heroku 則是用來讓其他人測試功能<br>
 <h3 id="add-remote">Add Remote</h3>
 <p>在部署之前要先安裝<a href="https://devcenter.heroku.com/articles/heroku-command-line">Heroku CLI</a></p>
 <p>再來我們要到原本 line-echobot，將 heroku 加入這個專案的 remote</p>
-<div class="highlight"><pre><span></span>heroku login
+<div class="highlight"><pre><span></span><code>heroku login
 heroku git:remote -a leewbot
-</pre></div>
+</code></pre></div>
 
 
 <p>接著用 <code>git remote -v</code> 就能看到 <code>heroku</code> 已經被加入 remote 了<br>
@@ -121,8 +121,8 @@ heroku git:remote -a leewbot
 <h3 id="environment-variables">Environment Variables</h3>
 <p>首先是我們原先設定的環境變數<br>
 Heroku 是透過這個指令來做設定</p>
-<div class="highlight"><pre><span></span>heroku config:set <span class="s2">&quot;env key&quot;</span>:<span class="s2">&quot;env value&quot;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>heroku config:set <span class="s2">&quot;env key&quot;</span>:<span class="s2">&quot;env value&quot;</span>
+</code></pre></div>
 
 
 <p>或者也能到 dashboard 的 <code>Settings</code> → <code>Config Variables</code> → <code>Reveal Config Vars</code> 做設定</p>
@@ -142,8 +142,8 @@ Heroku 是透過這個指令來做設定</p>
 <p>這裡使用的部署套件是 gunicorn<br>
 先在 <code>requirements.txt</code> 加入 <code>gunicorn==19.0.0</code><br>
 再來創一個 <code>Profile</code>，內容是</p>
-<div class="highlight"><pre><span></span>web: gunicorn line_echobot.wsgi --log-file -
-</pre></div>
+<div class="highlight"><pre><span></span><code>web: gunicorn line_echobot.wsgi --log-file -
+</code></pre></div>
 
 
 <p>如果用其他的部署套件，則需要修改 web 後面的指令</p>
@@ -248,7 +248,7 @@ Heroku 是透過這個指令來做設定</p>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2016-11-27T06:05:00+08:00">2016/11/27 - Sun</time>
-        <h4><built-in method index of str object at 0x7f4ab2c3e710></h4>
+        <h4><built-in method index of str object at 0x7efdaebb6580></h4>
     <ul class="multi-parts-list">
     </ul>
                 <h4>Read Time</h4>

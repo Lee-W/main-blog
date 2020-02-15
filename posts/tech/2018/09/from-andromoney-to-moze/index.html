@@ -111,10 +111,10 @@ AndroMoney 的各種功能都很方便，只是介面上就比較普通 xD<br>
 <p>再來就要說說其他我喜歡 MOZE 的原因</p>
 <h3 id="andromoney">AndroMoney 沒有 (或我不會用) 的功能</h3>
 <h4>借款事件</h4>
-<p><img alt="3-borrow.png" src="https://lee-w.github.io/images/posts-image/2018-09-09-andromoney-to-moze/3-borrow.png"></p>
+<p><img alt="3-borrow.png" src="https://lee-w.github.io/images"></p>
 <p>MOZE 會幫我記住我借錢給誰，而且會一直提醒我誰跟我借了錢<br>
 以前都還要特地記錄到其他 app</p>
-<p><img alt="4-borrow.png" src="https://lee-w.github.io/images/posts-image/2018-09-09-andromoney-to-moze/4-borrow.png"><br>
+<p><img alt="4-borrow.png" src="https://lee-w.github.io/images"><br>
 而且借出的錢，不會算在我的支出，所以也不會影響到我的預算<br>
 算是蠻方便的功能</p>
 <h4>繳費事件</h4>
@@ -127,7 +127,7 @@ AndroMoney 的各種功能都很方便，只是介面上就比較普通 xD<br>
 <h4>帳戶 icon</h4>
 <p>每個帳戶都能加入自己的 icon<br>
 只要是付費版的 MOZE 就會有各家銀行的 icon<br>
-<img alt="5-icon.jpeg" src="https://lee-w.github.io/images/posts-image/2018-09-09-andromoney-to-moze/5-icon.jpeg"><br>
+<img alt="5-icon.jpeg" src="https://lee-w.github.io/images"><br>
 雖然他說是付費圖示，但其實這幾個是免費的<br>
 只有其他類別的彩色圖是要購買<br>
 但我是覺得原本的我比較喜歡 xD<br>
@@ -166,8 +166,8 @@ btw MOZE 有說之後會提供 web 版的匯入工具</p>
 <p>當然我也寫了一個小 script<br>
 <strong><a href="https://github.com/Lee-W/AndroMoney_to_MOZE_transformater">AndroMoney_to_MOZE_transformater</a></strong></p>
 <h3 id="script">Script 使用方式</h3>
-<div class="highlight"><pre><span></span>python transformater.py --input_file <span class="s2">&quot;Your input filename&quot;</span> extract
-</pre></div>
+<div class="highlight"><pre><span></span><code>python transformater.py --input_file <span class="s2">&quot;Your input filename&quot;</span> extract
+</code></pre></div>
 
 
 <p>在轉換的過程中，會有一些資料還是要手動輸入的<br>
@@ -180,8 +180,8 @@ btw MOZE 有說之後會提供 web 版的匯入工具</p>
 </ul>
 <p>後來發現還有另一個問題是不同幣別的轉帳， AndroMoney 匯出的資料不會有轉入的金額<br>
 所以沒辦法自動化，這點倒是比較麻煩</p>
-<div class="highlight"><pre><span></span>python transformater.py transformat --input_file <span class="s2">&quot;Your input filename&quot;</span> --output_file MOZE.csv
-</pre></div>
+<div class="highlight"><pre><span></span><code>python transformater.py transformat --input_file <span class="s2">&quot;Your input filename&quot;</span> --output_file MOZE.csv
+</code></pre></div>
 
 
 <p>再來就是要把原本 AndroMoney 的紀錄轉成 MOZE 的格式<br>
@@ -205,9 +205,9 @@ click 真的又更直覺了一點，難怪這麼多人推薦</p>
 我試了各種可能的類別後<br>
 自己去匯出了一筆轉帳紀錄，才解決<br>
 原來轉帳的主類別分別會是「轉入」跟「轉出」<br>
-<img alt="1-doc.png" src="https://lee-w.github.io/images/posts-image/2018-09-09-andromoney-to-moze/1-doc.png"></p>
+<img alt="1-doc.png" src="https://lee-w.github.io/images"></p>
 <p>後來弄完後有再去看一下文件，才發現下面其實有寫 ......<br>
-<img alt="2-doc.png" src="https://lee-w.github.io/images/posts-image/2018-09-09-andromoney-to-moze/2-doc.png"></p>
+<img alt="2-doc.png" src="https://lee-w.github.io/images"></p>
 <p>這些問題我都跟作者反應了，他都超快就回了<br>
 他是說之後會透過 web 版的工具匯入</p>
 <h2 id="future-improvement">Future Improvement</h2>

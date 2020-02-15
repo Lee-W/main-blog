@@ -92,24 +92,24 @@
 
 <h2 id="freebsd-grub">加入 FreeBSD 到 grub 開機選單</h2>
 <h3 id="grub">更改 grub 的設定檔</h3>
-<div class="highlight"><pre><span></span>vi /etc/grub.d/40_Custom
-</pre></div>
+<div class="highlight"><pre><span></span><code>vi /etc/grub.d/40_Custom
+</code></pre></div>
 
 
 <p>加入下面這幾行</p>
-<div class="highlight"><pre><span></span>menuentry &quot;FreeBSD (/boot/loader)&quot; {
+<div class="highlight"><pre><span></span><code>menuentry &quot;FreeBSD (/boot/loader)&quot; {
     insmod ufs2
     set root=(hd0,1,a)
     kfreebsd /boot/loader
 }
-</pre></div>
+</code></pre></div>
 
 
 <p><code>FreeBSD (/boot/loader)</code> 是在開機時顯示的名稱<br>
 <code>(hd0,1,a)</code> 要根據你的 FreeBSD 灌在磁碟的哪一塊決定</p>
 <h3 id="grub_1">更新 grub 設定檔</h3>
-<div class="highlight"><pre><span></span>sudo update-grub
-</pre></div>
+<div class="highlight"><pre><span></span><code>sudo update-grub
+</code></pre></div>
 
 
 <p>這樣就會在開機選單上看到 FreeBSD 了</p>
@@ -117,25 +117,25 @@
 可以參考<a href="http://unix.stackexchange.com/questions/16886/set-up-grub2-to-boot-freebsd-using-either-ubuntu-tools-or-liveusb-to-find-what-p">Set up Grub2 to boot Freebsd</a></p>
 <h2 id="grub_2">換 grub 開機順序</h2>
 <p>如果希望改變預設的開機順序，就必須要修改下面的檔案 <code>/etc/default/grub</code></p>
-<div class="highlight"><pre><span></span>vi /etc/default/grub
-</pre></div>
+<div class="highlight"><pre><span></span><code>vi /etc/default/grub
+</code></pre></div>
 
 
 <p>會看到下面這串</p>
-<div class="highlight"><pre><span></span>GRUB_DEFAULT=0
+<div class="highlight"><pre><span></span><code>GRUB_DEFAULT=0
 #GRUB_HIDDEN_TIMEOUT=0
 GRUB_HIDDEN_TIMEOUT_QUIET=true
 GRUB_TIMEOUT=10
 GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
 GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
 GRUB_CMDLINE_LINUX=&quot;&quot;
-</pre></div>
+</code></pre></div>
 
 
 <p>把第 1 行設定為多少 (注意是從 0 開始)，就會預設從那裡開機</p>
 <h2 id="ubuntu-mount-freebsd">在 ubuntu mount FreeBSD</h2>
-<div class="highlight"><pre><span></span>sudo mount -t ufs -r -o <span class="nv">ufstype</span><span class="o">=</span>ufs2 /dev/sda4 ~/freebsd
-</pre></div>
+<div class="highlight"><pre><span></span><code>sudo mount -t ufs -r -o <span class="nv">ufstype</span><span class="o">=</span>ufs2 /dev/sda4 ~/freebsd
+</code></pre></div>
 
 
             

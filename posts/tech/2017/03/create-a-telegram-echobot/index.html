@@ -95,8 +95,8 @@
 <li><a href="#telegram-bot-api-wrapper">Telegram Bot API Wrapper</a></li>
 <li><a href="#star-programming">Star Programming</a><ul>
 <li><a href="#setup">Setup</a></li>
-<li><a href="#95set95webhook">_set_webhook</a></li>
-<li><a href="#wehook95handler">wehook_handler</a></li>
+<li><a href="#_set_webhook">_set_webhook</a></li>
+<li><a href="#wehook_handler">wehook_handler</a></li>
 </ul>
 </li>
 <li><a href="#reference">Reference</a></li>
@@ -140,15 +140,15 @@
 然後你就可以從 <code>https://telegram.me/&lt;bot_username&gt;</code> 找到剛申請的 bot</p>
 <h2 id="telegram-bot-api-wrapper">Telegram Bot API Wrapper</h2>
 <p>開發上，我使用的是<a href="https://github.com/python-telegram-bot/python-telegram-bot">python-telegram-bot</a></p>
-<div class="highlight"><pre><span></span>pip install python-telegram-bot
-</pre></div>
+<div class="highlight"><pre><span></span><code>pip install python-telegram-bot
+</code></pre></div>
 <p>它其中一點設計的很不錯的是<br/>
 Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 但 Python 的命名 convention 卻是 lowercase_separated_by_underscores (e.g. send_message)<br/>
 而它是兩種都支援</p>
 <h2 id="star-programming">Star Programming</h2>
 <p>先附上全部的 code，後面再慢慢解釋</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="kn">import</span> <span class="nn">telegram</span>
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
@@ -179,24 +179,24 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">_set_webhook</span><span class="p">()</span>
     <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 <h3 id="setup">Setup</h3>
 <p>其中有兩個地方，必須要改成自己的設定</p>
 <h4>1. API Token</h4>
-<div class="highlight"><pre><span></span><span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">'Your API Token'</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">'Your API Token'</span><span class="p">)</span>
+</code></pre></div>
 <p>Your API Token 要改成剛剛取得的 API Token</p>
 <h4>2. Webhook URL</h4>
 <p>_set_webhook 中的 Your URL</p>
-<div class="highlight"><pre><span></span><span class="n">statue</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">'https://Your URL/hook'</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">statue</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">'https://Your URL/hook'</span><span class="p">)</span>
+</code></pre></div>
 <p>這裡的 URL 就是設定成你這個 Bot Server 的 URL<br/>
 不過 Telegram 一樣要求必須要是 https<br/>
 最簡單的方式就是使用 ngrok<br/>
 (ngrok 的使用在<a href="http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django/#line-echo-bot-on-django">[Bot] Line Echo Bot on Django</a> 最後面有介紹 )<br/>
 平常測試使用 ngrok 就很足夠了<br/>
 之後要 production 的時候，在 deploy 到適當的 server 就好了</p>
-<h3 id="95set95webhook">_set_webhook</h3>
+<h3 id="_set_webhook">_set_webhook</h3>
 <p>Telegram 有兩種接收訊息的方式<br/>
 隨時去監聽的 webhook，和主動去要求更新的 <code>get_updates</code><br/>
 這裡使用的是 webhook</p>
@@ -204,20 +204,20 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 也就是告訴 Telegram 要把 Bot 收到的訊息傳到哪<br/>
 而 <code>set_webhook</code> 前面要有個 _的原因是我不希望它被其他的 code 使用<br/>
 但 Python 本身並不支援 Private 的概念，而是慣例上在前面加一個底線</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_set_webhook</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_set_webhook</span><span class="p">():</span>
     <span class="n">status</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">'https://Your URL/hook'</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">status</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">'Webhook setup failed'</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 <p>在最後 run Flask app 前，要先把 webhook URL 設定好</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">_set_webhook</span><span class="p">()</span>
     <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
-<h3 id="wehook95handler">wehook_handler</h3>
+</code></pre></div>
+<h3 id="wehook_handler">wehook_handler</h3>
 <p>這裡就是 bot 收到訊息要怎麼處理</p>
-<div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/hook'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'POST'</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/hook'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'POST'</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">webhook_handler</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"POST"</span><span class="p">:</span>
         <span class="n">update</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Update</span><span class="o">.</span><span class="n">de_json</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">bot</span><span class="p">)</span>
@@ -226,7 +226,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 
         <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
     <span class="k">return</span> <span class="s1">'ok'</span>
-</pre></div>
+</code></pre></div>
 <p><code>app.route</code> 這個 decorator 是 Flask 的語法<br/>
 表示 <code>https:/Your URL/hook</code> 會導到這個 function，而它只能接受 POST<br/>
 這裡設定的 <code>/hook</code> 也就是為什麼在 <code>_set_webhook</code> 中的 URL 最後面必須有 <code>/hook</code></p>
@@ -234,8 +234,8 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 跟 django 不同的是<br/>
 Flask 把 request 這種幾乎所有 view function 都會用到的參數直接變成全域可讀取的變數<br/>
 也就是最一開始的</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+</code></pre></div>
 <p>接下來 <code>webhook_handler</code> 內做的就只是把收到的訊息轉成 <code>update</code><br/>
 再從裡面讀到對方傳來的 <code>text</code><br/>
 最後用 <code>reply_text</code> 回傳同樣的 text 回去</p>

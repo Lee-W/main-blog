@@ -136,11 +136,11 @@ Google 一下「PyCon」、「Instagram」有很多很清楚地整理<br/>
 這就會導致我們必須先確認他的型態是否符合預期<br/>
 如果不符合就要在做 encode 或 decode</p>
 <p>可能就會像下面這樣</p>
-<div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s1">'abc'</span>
+<div class="highlight"><pre><span></span><code><span class="n">value</span> <span class="o">=</span> <span class="s1">'abc'</span>
 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">text_type</span><span class="p">):</span>
     <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encode</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
 <span class="n">mymac</span> <span class="o">=</span> <span class="n">hamc</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 <p>Instagram 處理這種問題的功能實作成 <code>ensure_binary</code>, <code>ensure_str</code>, <code>ensure_text</code> 這類的 helper functon</p>
 <p>這也是我之前在 trace <a href="https://github.com/pytransitions/transitions">transitions</a> 的 source code<br/>
 發現有一個<a href="https://github.com/pytransitions/transitions/blob/2cb42916affe167a8d94cdfdf56ab08b41ccd05c/transitions/core.py#L25">listify</a> 的 function<br/>

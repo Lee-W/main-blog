@@ -92,21 +92,21 @@
 <p>這是各個 powerline 的預覽圖</p>
 <ol>
 <li>vim<br>
-<img alt="1_vim" src="https://lee-w.github.io/images/posts-image/2014-07-30-powerline-on-zsh-vim-tmux/VTM4866.png"></li>
+<img alt="1_vim" src="images/06/VTM4866.png"></li>
 <li>tmux<br>
-<img alt="2_tmux" src="https://lee-w.github.io/images/posts-image/2014-07-30-powerline-on-zsh-vim-tmux/LLJ9xjk.png"></li>
+<img alt="2_tmux" src="images/06/LLJ9xjk.png"></li>
 <li>zsh<br>
-<img alt="3_zsh" src="https://lee-w.github.io/images/posts-image/2014-07-30-powerline-on-zsh-vim-tmux/tOvzhK3.png"></li>
+<img alt="3_zsh" src="images/06/tOvzhK3.png"></li>
 </ol>
 <h2 id="powerline">powerline 字體</h2>
 <p>安裝這些 powerline 之前要先下載 powerline 字體<br>
 不然可能會無法正常顯示<br>
 在 <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> 下載後，之後安裝就完成了<br>
 <em>記得要把終端機的字體條成這些有 powerline 結尾的字體，我當初就是沒用這個卡了很久 = =</em></p>
-<div class="highlight"><pre><span></span>git clone https://github.com/Lokaltog/powerline-fonts /tmp/git/clone
+<div class="highlight"><pre><span></span><code>git clone https://github.com/Lokaltog/powerline-fonts /tmp/git/clone
 sudo mv /tmp/git-clone/powerline-fonts /usr/share/fonts/powerline-fonts
 sudo fc-cache -v -f
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="zsh">zsh</h2>
@@ -117,9 +117,9 @@ sudo fc-cache -v -f
 <p>ZSH_THEME="powerline"</p>
 </blockquote>
 <p>如果要更多客制化設定可以參考 repo 內的設定</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme /tmp/oh-my-zsh-powerline-theme
+<div class="highlight"><pre><span></span><code>git clone https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme /tmp/oh-my-zsh-powerline-theme
 /tmp/oh-my-zsh-powerline-theme/oh-my-zsh-powerline-theme/install_in_omz.sh
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="vim">vim</h2>

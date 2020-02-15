@@ -91,8 +91,8 @@
 
 <h2 id="vundle">用 vundle 安裝</h2>
 <p>在 vimrc 中加入下面這行</p>
-<div class="highlight"><pre><span></span>Bundle <span class="s1">&#39;vimspell&#39;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>Bundle <span class="s1">&#39;vimspell&#39;</span>
+</code></pre></div>
 
 
 <p>接著用 <code>:BundleInstall</code> 安裝</p>
@@ -101,18 +101,18 @@
 <p>我下載的是 <code>en_US.zip</code></p>
 <p>解壓縮完後，用 vim 開啟街壓縮完的資料夾<br>
 應該會看到下面這樣<br>
-<img alt="1_directory" src="https://lee-w.github.io/images/posts-image/2015-02-14-vim-spell-check/gLWMnmW.png"></p>
+<img alt="1_directory" src="https://lee-w.github.io/images"></p>
 <p>接著進入 vim 在 normal mode 輸入</p>
-<div class="highlight"><pre><span></span><span class="p">:</span><span class="k">mkspell</span> <span class="k">en</span> en_US
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">:</span><span class="k">mkspell</span> <span class="k">en</span> en_US
+</code></pre></div>
 
 
 <p><code>en</code> 可以自己定義，<code>en\_US</code> 必須是 .aff 和 .dic 的檔名<br>
 檢查一下 vim 資料夾下的 spell 資料夾有沒有新增字典檔，確定有了後就新增完成了</p>
 <h2 id="_2">設定</h2>
 <p>首先要先定義要根據哪個字典檔</p>
-<div class="highlight"><pre><span></span><span class="p">:</span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">:</span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
+</code></pre></div>
 
 
 <p>en 就是剛剛所定義的名稱</p>
@@ -120,10 +120,10 @@
 <code>:set nospell</code> 則是關閉</p>
 <p>如果每次都要設定一次，就太麻煩了<br>
 我在 vimrc 加入了下面這些</p>
-<div class="highlight"><pre><span></span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
 nmap <span class="p">&lt;</span>F7<span class="p">&gt;</span> :<span class="k">setlocal</span> <span class="k">spell</span><span class="p">!&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 autocmd <span class="nb">BufRead</span> *.txt<span class="p">,</span>*.md<span class="p">,</span>*.tex <span class="k">setlocal</span> <span class="k">spell</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>第二行是每次按 F7 就能開啟或關閉 vimspell，也可以換成自己想要的快捷鍵<br>
@@ -131,7 +131,7 @@ autocmd <span class="nb">BufRead</span> *.txt<span class="p">,</span>*.md<span c
 <h2 id="_3">使用</h2>
 <p>vimspell 被開啟後，就會自動把拼錯的字反白起來<br>
 如果有其他的語言一樣會被反白起來<br>
-<img alt="2_vimspell_sample" src="https://lee-w.github.io/images/posts-image/2015-02-14-vim-spell-check/MGjdAoq.png"></p>
+<img alt="2_vimspell_sample" src="https://lee-w.github.io/images"></p>
 <h3 id="_4">指令</h3>
 <ul>
 <li><code>]s</code> : 跳到下一個錯字</li>
@@ -143,7 +143,7 @@ autocmd <span class="nb">BufRead</span> *.txt<span class="p">,</span>*.md<span c
 <li><code>zw</code> : 加入壞字字典，壞字也會被加入同樣的檔案中，最後面會另外加上 <code>/!</code></li>
 <li><code>zuw</code>: 復原加入壞字字典的字 (刪除)</li>
 </ul>
-<p><img alt="3_choose_word" src="https://lee-w.github.io/images/posts-image/2015-02-14-vim-spell-check/NWHCakj.png"></p>
+<p><img alt="3_choose_word" src="https://lee-w.github.io/images"></p>
 <h2 id="reference">Reference</h2>
 <ul>
 <li><a href="http://vimdoc.sourceforge.net/htmldoc/spell.html">Vim documentation: spell</a></li>

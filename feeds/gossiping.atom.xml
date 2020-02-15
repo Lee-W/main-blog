@@ -108,7 +108,7 @@
 大致上課程不算太困難&lt;br/&gt;
 但我的答對率其實還是蠻低的，大概 7 成左右吧&lt;br/&gt;
 不背單字、不好好看完問題就會這樣 XD&lt;/p&gt;
-&lt;p&gt;&lt;img alt="finished" src="https://lee-w.github.io/images/posts-image/2019-09-09-how-i-learn-english-recently/finished.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="finished" src="https://lee-w.github.io/images"/&gt;&lt;/p&gt;
 &lt;p&gt;最後我不小心太早完課&lt;br/&gt;
 但每週基本任務（三堂課新課、三堂複習課）還是得繼續完成到跳戰結束&lt;br/&gt;
 所以有幾堂課多上了幾次&lt;br/&gt;
@@ -118,7 +118,7 @@
 真的是馬上就會有回覆那種&lt;br/&gt;
 有一次我遇到系統錯誤，說我挑戰失敗（嚇死我了）&lt;br/&gt;
 問完客服，馬上就修正了&lt;/p&gt;
-&lt;p&gt;&lt;img alt="mission-failed" src="https://lee-w.github.io/images/posts-image/2019-09-09-how-i-learn-english-recently/mission-failed.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="mission-failed" src="https://lee-w.github.io/images"/&gt;&lt;/p&gt;
 &lt;p&gt;好像應該來總結一下我對 VoiceTube Hero 的想法&lt;br/&gt;
 我覺得他的課程還蠻不錯的&lt;br/&gt;
 不是死板板的教科書對話，有時候還能獲取到一些原本不知道的知識&lt;br/&gt;
@@ -126,7 +126,7 @@
 拼字、時態都要很注意才能一次通過整個課程&lt;br/&gt;
 我認為他最能幫助到的應該還是養成撥出時間唸英文的習慣&lt;br/&gt;
 畢竟語言這種東西不太是一蹴可幾的&lt;br/&gt;
-VoiceTube Hero 比較像是讓英文一直進步的開端&lt;/p&gt;</content><category term="English"></category></entry><entry><title>X-Village 課程設計</title><link href="https://lee-w.github.io/posts/gossiping/2018/09/X-Village-Course-Design" rel="alternate"></link><published>2018-09-24T15:15:00+08:00</published><updated>2018-09-24T15:15:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-09-24:/posts/gossiping/2018/09/X-Village-Course-Design</id><summary type="html">&lt;p&gt;要一次說完整個 X-Village ，還是有點太花時間&lt;br&gt;
+VoiceTube Hero 比較像是讓英文一直進步的開端&lt;/p&gt;</content><category term="Gossiping"></category><category term="English"></category></entry><entry><title>X-Village 課程設計</title><link href="https://lee-w.github.io/posts/gossiping/2018/09/X-Village-Course-Design" rel="alternate"></link><published>2018-09-24T15:15:00+08:00</published><updated>2018-09-24T15:15:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-09-24:/posts/gossiping/2018/09/X-Village-Course-Design</id><summary type="html">&lt;p&gt;要一次說完整個 X-Village ，還是有點太花時間&lt;br&gt;
 先來聊聊我這次接觸到跟課程設計有關的部分&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;要一次說完整個 X-Village ，還是有點太花時間&lt;br&gt;
 先來聊聊我這次接觸到跟課程設計有關的部分&lt;/p&gt;
@@ -213,8 +213,8 @@ VoiceTube Hero 比較像是讓英文一直進步的開端&lt;/p&gt;</content><ca
 我在寫 Lisp 的時候，連 Syntax Highlight 都不懂&lt;br&gt;
 還要不斷數括號數量，才知道程式能不能跑的&lt;/p&gt;
 &lt;p&gt;e.g.,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(cond ((eq &amp;#39;a &amp;#39;b) &amp;#39;first)  (atom &amp;#39;a)  &amp;#39;second))
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;(cond ((eq &amp;#39;a &amp;#39;b) &amp;#39;first)  (atom &amp;#39;a)  &amp;#39;second))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;（其實上面有少一個括號 xD）&lt;/p&gt;
@@ -246,7 +246,7 @@ VoiceTube Hero 比較像是讓英文一直進步的開端&lt;/p&gt;</content><ca
 就是帶了一些影片，讓大家 Recap 一下白天老師教的內容&lt;br&gt;
 我主要把時間都花在 Exercise 的設計上&lt;/p&gt;
 &lt;h3 id="exercise4-python-ex4py"&gt;Exercise4 用 Python 做排序 (ex4.py)&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;some_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;some_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
     &lt;span class="mi"&gt;65&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;81&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;65&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;86&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;72&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;27&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="mi"&gt;76&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;46&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;98&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;49&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;57&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;52&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;46&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;47&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;59&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;74&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;61&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;47&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;33&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;89&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;99&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -258,7 +258,7 @@ VoiceTube Hero 比較像是讓英文一直進步的開端&lt;/p&gt;</content><ca
     &lt;span class="mi"&gt;66&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;68&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;96&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;23&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;51&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;77&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;93&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;35&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;64&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;51&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;76&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;76&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;96&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;
 &lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;寫過 Python 的人，一定馬上就會想到用 &lt;code&gt;sort&lt;/code&gt; 或 &lt;code&gt;sorted&lt;/code&gt;&lt;br&gt;
@@ -272,8 +272,8 @@ VoiceTube Hero 比較像是讓英文一直進步的開端&lt;/p&gt;</content><ca
 甚至我第一次用 Python 爬選課系統的時候，連 json 模組都不會用&lt;br&gt;
 只會照著 json 規定的格式，慢慢地做字串處理&lt;br&gt;
 e.g.,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;json_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;course_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;: &amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;course_id&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;}&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;json_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;course_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;: &amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;course_id&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;}&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;因為在我的 Knowledget Base，對函式庫的概念還是很模糊&lt;br&gt;
@@ -307,8 +307,8 @@ e.g.,&lt;/p&gt;
 總覺得要寫一個稍微有用的程式是非常非常遙遠的事&lt;br&gt;
 所以大二下的 C++ ，對我來我說是寫程式很大的里程碑&lt;/p&gt;
 &lt;p&gt;這題的解答也是差不多一行而已&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ptt_data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;some_key&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ptt_data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;some_key&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;但我認為這對新手來說，已經會是相對挑戰的練習了&lt;br&gt;
@@ -351,7 +351,7 @@ e.g.,&lt;/p&gt;
 我基於博安老師前一個半小時的程式碼在做延伸&lt;br&gt;
 從最原始的 &lt;a href="https://github.com/x-village/web-acccounting-example/tree/0.1"&gt;0.1&lt;/a&gt; 版&lt;br&gt;
 每次只做一點點的修改，每一個修改都給那個 commit 一個 tag&lt;/p&gt;
-&lt;p&gt;&lt;img alt="tags" src="https://lee-w.github.io/images/posts-image/2018-09-24-x-village-course-design/1-tag.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="tags" src="https://lee-w.github.io/images"&gt;&lt;/p&gt;
 &lt;p&gt;在 slide 的右下角，也會放目前到哪個版本&lt;br&gt;
 也希望能從這樣的做法，帶到 frequent commit 的重要&lt;/p&gt;
 &lt;p&gt;講解程式碼之前&lt;br&gt;
@@ -383,7 +383,7 @@ e.g.,&lt;/p&gt;
 到底是這樣的方式不適合初學者？&lt;br&gt;
 還是我沒有把這樣的內容表達好？&lt;br&gt;
 如果還有下次的機會&lt;br&gt;
-除了思考課程的內容外，我還要多花點時間準備在台上的表達&lt;/p&gt;</content><category term="Education"></category></entry><entry><title>我如何更有效率的使用時間</title><link href="https://lee-w.github.io/posts/gossiping/2017/02/how-do-i-manage-my-time" rel="alternate"></link><published>2017-02-03T00:53:00+08:00</published><updated>2017-02-03T00:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-03:/posts/gossiping/2017/02/how-do-i-manage-my-time</id><summary type="html">&lt;p&gt;過年整理了好多以前的書摘&lt;br&gt;
+除了思考課程的內容外，我還要多花點時間準備在台上的表達&lt;/p&gt;</content><category term="Gossiping"></category><category term="Education"></category></entry><entry><title>我如何更有效率的使用時間</title><link href="https://lee-w.github.io/posts/gossiping/2017/02/how-do-i-manage-my-time" rel="alternate"></link><published>2017-02-03T00:53:00+08:00</published><updated>2017-02-03T00:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-02-03:/posts/gossiping/2017/02/how-do-i-manage-my-time</id><summary type="html">&lt;p&gt;過年整理了好多以前的書摘&lt;br&gt;
 好像該來發一點自己的東西了&lt;/p&gt;
 &lt;p&gt;前一段時間被找回母系演講&lt;br&gt;
 被問了，我是怎麼管理時間的&lt;/p&gt;
@@ -406,8 +406,8 @@ e.g.,&lt;/p&gt;
 然後這個目標就會擺在這，等到很久以後再想起它&lt;br&gt;
 恩，就像新年新希望一樣&lt;/p&gt;
 &lt;h3 id="_2"&gt;怎麼樣才能達到目標呢？&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;每天做一點點
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;每天做一點點
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;我非常喜歡&lt;a href="https://youtu.be/by0tCDO36qQ"&gt;Act Small&lt;/a&gt; 這支影片&lt;br&gt;
@@ -459,8 +459,8 @@ e.g.,&lt;/p&gt;
 &lt;h3 id="_4"&gt;一天不做，不會怎樣啦&lt;/h3&gt;
 &lt;p&gt;花了好久時間建立的習慣，還是會有想怠惰的時候&lt;/p&gt;
 &lt;p&gt;我很喜歡「&lt;a href="https://lee-w.github.io/posts/book/2016/08/how-will-you-measure-your-life"&gt;你如何衡量你的人生&lt;/a&gt;」的一句話&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;百分之百的堅持比百分之九十八容易
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;百分之百的堅持比百分之九十八容易
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;一旦你放下了這個堅持，之後就會更容易放下&lt;br&gt;
@@ -511,7 +511,7 @@ e.g.,&lt;/p&gt;
 這些事又要怎麼拆解才能不會讓我太費力，或只要多花一點力，不會很容易半途而廢的&lt;/p&gt;
 &lt;p&gt;這些只是我嘗試覺得有用的方法&lt;br&gt;
 不見得適用於每個人&lt;br&gt;
-不過也許都能去嘗試看看，相信總會有一些有幫助的部分&lt;/p&gt;</content><category term="Productivity"></category></entry><entry><title>TEDx Tainan 2016 - 0 到 1</title><link href="https://lee-w.github.io/posts/gossiping/2016/11/tedx-tainan-2016" rel="alternate"></link><published>2016-11-21T03:27:00+08:00</published><updated>2016-11-21T03:27:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-21:/posts/gossiping/2016/11/tedx-tainan-2016</id><summary type="html">&lt;p&gt;趁著昨天才剛結束&lt;br&gt;
+不過也許都能去嘗試看看，相信總會有一些有幫助的部分&lt;/p&gt;</content><category term="Gossiping"></category><category term="Productivity"></category></entry><entry><title>TEDx Tainan 2016 - 0 到 1</title><link href="https://lee-w.github.io/posts/gossiping/2016/11/tedx-tainan-2016" rel="alternate"></link><published>2016-11-21T03:27:00+08:00</published><updated>2016-11-21T03:27:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-11-21:/posts/gossiping/2016/11/tedx-tainan-2016</id><summary type="html">&lt;p&gt;趁著昨天才剛結束&lt;br&gt;
 把一些感受記錄下來&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;趁著昨天才剛結束&lt;br&gt;
 把一些感受記錄下來&lt;/p&gt;
@@ -527,16 +527,16 @@ e.g.,&lt;/p&gt;
 雖然平常有在看 CNN，多少有接觸到這樣的訊息&lt;br&gt;
 但不同的情境不同的講者，同樣的故事還是有很不同的溫度&lt;/p&gt;
 &lt;p&gt;最後講者阿富汗朋友的一句話，讓我印象很深刻&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;雖然現在是黑夜
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;雖然現在是黑夜
 但在黑夜中期待光
 很美
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;hr&gt;
 &lt;h3 id="_2"&gt;貓不&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;當一個溫柔的人，也要當一個有原則的人
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;當一個溫柔的人，也要當一個有原則的人
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;赫然發現 google 一下找得到講者在其他地方講的&lt;br&gt;
@@ -547,10 +547,10 @@ e.g.,&lt;/p&gt;
 講者分享遇到的各個街友的故事&lt;br&gt;
 顛覆一些人認為街友總是好吃懶做的印象&lt;/p&gt;
 &lt;p&gt;最後結尾時的這句話，才讓我去反思，這場說了這麼多街友的故事，背後想帶出的意義&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;如果今天換作是我們遇到同樣的處境
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;如果今天換作是我們遇到同樣的處境
 
 我們真的能處理得更好嗎？
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Inspiring"></category><category term="TEDx"></category></entry><entry><title>No More Zero Day</title><link href="https://lee-w.github.io/posts/gossiping/2015/10/no-more-zero-day" rel="alternate"></link><published>2015-10-27T06:53:00+08:00</published><updated>2015-10-27T06:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-10-27:/posts/gossiping/2015/10/no-more-zero-day</id><summary type="html">&lt;p&gt;決定開始來寫些程式以外的內容&lt;br&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Gossiping"></category><category term="Inspiring"></category><category term="TEDx"></category></entry><entry><title>No More Zero Day</title><link href="https://lee-w.github.io/posts/gossiping/2015/10/no-more-zero-day" rel="alternate"></link><published>2015-10-27T06:53:00+08:00</published><updated>2015-10-27T06:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-10-27:/posts/gossiping/2015/10/no-more-zero-day</id><summary type="html">&lt;p&gt;決定開始來寫些程式以外的內容&lt;br&gt;
 整理之前看過的書或文章，跟大家分享心得或書摘&lt;br&gt;
 反正都寫了，不分享一下也是蠻可惜的 (?)&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;決定開始來寫些程式以外的內容&lt;br&gt;
@@ -608,7 +608,7 @@ e.g.,&lt;/p&gt;
 &lt;li&gt;至於書？所有我們能想得到的想法，或是感受、經驗、體驗、欲望、或是想知道怎麼做某件事，不管是什麼東西，都已經被某個人想出來了&lt;/li&gt;
 &lt;li&gt;讀網路上關於減重的文章並將他納入你的運動準則中&lt;/li&gt;
 &lt;li&gt;閱讀就像是瑪莉歐電玩中的水管快速通道，他是你到達下一個層級的快速捷徑。&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Productivity"></category></entry><entry><title>MacBook Pro Retina 開箱</title><link href="https://lee-w.github.io/posts/gossiping/2015/01/mbpr-out-of-the-box" rel="alternate"></link><published>2015-01-02T04:14:00+08:00</published><updated>2015-01-02T04:14:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-02:/posts/gossiping/2015/01/mbpr-out-of-the-box</id><summary type="html">&lt;p&gt;這篇只是想給自己換 MacBook Pro Retina 留下一個紀念&lt;br&gt;
+&lt;/ul&gt;</content><category term="Gossiping"></category><category term="Productivity"></category></entry><entry><title>MacBook Pro Retina 開箱</title><link href="https://lee-w.github.io/posts/gossiping/2015/01/mbpr-out-of-the-box" rel="alternate"></link><published>2015-01-02T04:14:00+08:00</published><updated>2015-01-02T04:14:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-02:/posts/gossiping/2015/01/mbpr-out-of-the-box</id><summary type="html">&lt;p&gt;這篇只是想給自己換 MacBook Pro Retina 留下一個紀念&lt;br&gt;
 順便紀錄一些從 Ubuntu 轉過來不習慣的地方&lt;br&gt;
 想要看更專業的開箱文就要再去翻別篇囉ＸＤ&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這篇只是想給自己換 MacBook Pro Retina 留下一個紀念&lt;br&gt;
@@ -617,9 +617,9 @@ e.g.,&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;先附上幾張照片&lt;br&gt;
-&lt;img alt="1_mac" src="https://lee-w.github.io/images/posts-image/2015-01-02-mbpr-out-of-the-box/cZp8mpJ.jpg"&gt;&lt;br&gt;
-&lt;img alt="2_mac" src="https://lee-w.github.io/images/posts-image/2015-01-02-mbpr-out-of-the-box/NgvObR9.jpg"&gt;&lt;br&gt;
-&lt;img alt="3_mac" src="https://lee-w.github.io/images/posts-image/2015-01-02-mbpr-out-of-the-box/vc6HXcm.jpg"&gt;&lt;/p&gt;
+&lt;img alt="1_mac" src="https://lee-w.github.io/images"&gt;&lt;br&gt;
+&lt;img alt="2_mac" src="https://lee-w.github.io/images"&gt;&lt;br&gt;
+&lt;img alt="3_mac" src="https://lee-w.github.io/images"&gt;&lt;/p&gt;
 &lt;p&gt;從 Ubuntu 轉過來 MacBook，不用一天就上手了&lt;br&gt;
 不過也可能是我常常把 Ubuntu 改得很像 MacBook 吧ＸＤ&lt;br&gt;
 轉過來 MacBook 最大的好處就是超強大的觸控板&lt;/p&gt;
@@ -643,4 +643,4 @@ guake terminal 實在太好用了啊ＸＤ&lt;br&gt;
 &lt;a href="https://www.android.com/filetransfer/"&gt;Android File Transfer&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;總之我現在也是個 MacBook user 了 lol&lt;/p&gt;</content><category term="mac"></category><category term="unboxing"></category></entry></feed>
+&lt;p&gt;總之我現在也是個 MacBook user 了 lol&lt;/p&gt;</content><category term="Gossiping"></category><category term="mac"></category><category term="unboxing"></category></entry></feed>
