@@ -134,7 +134,7 @@ Authors: Lee-W
 但我的答對率其實還是蠻低的，大概 7 成左右吧
 不背單字、不好好看完問題就會這樣 XD
 
-![finished]({static}/images/posts-image/2019-09-09-how-i-learn-english-recently/finished.jpg)
+![finished](/images/posts-image/2019-09-09-how-i-learn-english-recently/finished.jpg)
 
 最後我不小心太早完課
 但每週基本任務（三堂課新課、三堂複習課）還是得繼續完成到跳戰結束
@@ -147,7 +147,7 @@ Authors: Lee-W
 有一次我遇到系統錯誤，說我挑戰失敗（嚇死我了）
 問完客服，馬上就修正了
 
-![mission-failed]({static}/images/posts-image/2019-09-09-how-i-learn-english-recently/mission-failed.png)
+![mission-failed](/images/posts-image/2019-09-09-how-i-learn-english-recently/mission-failed.png)
 
 好像應該來總結一下我對 VoiceTube Hero 的想法
 我覺得他的課程還蠻不錯的

@@ -6,7 +6,7 @@ Slug: Soft
 Authors: Lee-W
 Summary:
 
-![Clean Coder]({static}/images/books/5a0LzcS.jpg)
+![Clean Coder](/images/books/5a0LzcS.jpg)
 
 <!--more-->
 

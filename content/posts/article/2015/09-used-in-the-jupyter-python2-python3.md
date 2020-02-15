@@ -22,7 +22,7 @@ ipython3 kernelspec install-self
 <!--more-->
 
 就能在 ipython notebook 裡面同時使用兩種版本的 Python 了
-![1_jupyter]({static}/images/posts-image/2015-11-02-used-in-the-jupyter-python2-python3/IxopQfG.png)
+![1_jupyter](/images/posts-image/2015-11-02-used-in-the-jupyter-python2-python3/IxopQfG.png)
 Python2 上面是另一個也被 jupyter notebook 支援的語言 julia
 最近才剛開始碰，有機會再來分享 julia 的心得
 

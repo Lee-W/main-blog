@@ -30,7 +30,7 @@ npm install gitbook -g
 
 一本 Gitbook 一般都會包含 `SUMMARY.md`, `README.md`, `package.json`, `book.json`
 像我的 Learning Python 筆記的檔案架構大概長的是這樣
-![1_learning_python_project_structure]({static}/images/posts-image/2015-01-23-gitbook-on-command-line/6RDgdVZ.png)
+![1_learning_python_project_structure](/images/posts-image/2015-01-23-gitbook-on-command-line/6RDgdVZ.png)
 
 README.md 是這本書的簡介
 package.json 是額外使用的 package 的定義和設定
@@ -56,7 +56,7 @@ book.json 是這本書的額外設定
 ```
 
 這是預覽的結果
-![2_learning_python_web]({static}/images/posts-image/2015-01-23-gitbook-on-command-line/d3NP0xi.png)
+![2_learning_python_web](/images/posts-image/2015-01-23-gitbook-on-command-line/d3NP0xi.png)
 
 下了這個指令後就會根據 SUMMARY.md 的定義，自動產生相對應資料夾和檔案
 

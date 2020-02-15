@@ -456,12 +456,12 @@ ngrok 會把 request 傳到 local 端相對應的 port
 ngrok http 8000
 ```
 
-![1_ngrok_example]({static}/images/posts-image/2016-11-24-line-echo-bot-on-django/r525wEI.png)
+![1_ngrok_example](/images/posts-image/2016-11-24-line-echo-bot-on-django/r525wEI.png)
 
 再來到 Line Bot 的 `Line Developer` 頁面設定 Webhook URL
 這時候填上 ngrok 後的 https 那串 url，再加上 `echobot/callback/`( 我們設定的 callback url)
 (e.g. `https://2.....f.ngrok.io/echobot/callback/`)
-![2_webhook_url]({static}/images/posts-image/2016-11-24-line-echo-bot-on-django/qVWlwoK.png)
+![2_webhook_url](/images/posts-image/2016-11-24-line-echo-bot-on-django/qVWlwoK.png)
 
 值得注意的是我的 Webhook URL 下面有一個 `Read timeout.`
 如果按了後面的 Verify，Line Server 會傳一些測試訊息過來
@@ -471,7 +471,7 @@ ngrok http 8000
 並沒有一定要通過才能使用 Line Bot
 
 這時候加 Bot 為好友，就可以開始跟它聊天了
-![3_message_sample]({static}/images/posts-image/2016-11-24-line-echo-bot-on-django/boxeHoG.png)
+![3_message_sample](/images/posts-image/2016-11-24-line-echo-bot-on-django/boxeHoG.png)
 
 如果你發現除了 echo 訊息外，還有其他的訊息
 可能就是沒有把 Atuo Reply Message 關掉

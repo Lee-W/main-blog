@@ -11,7 +11,7 @@ Series:
 不知道哪根筋不對，就覺得不然就來投稿一下吧
 雖然後來投稿並沒有上，但突然發現 PyCon TW 想揪團一起去
 
-![visiting-group-post]({static}/images/posts-image/2019-10-12-pycon-jp-2019/visiting-group-post.png)
+![visiting-group-post](/images/posts-image/2019-10-12-pycon-jp-2019/visiting-group-post.png)
 
 想說這次不去，說不定就不會再有這樣的揪團了
 就衝動的報名下去了 XD
@@ -40,11 +40,11 @@ awaitwhat 的目標是想挖到 async 更深的 traceback，讓 async 的除錯�
 最後就是花了點時間對專案做了一些 refactor
 雖然看起來改動很大，但其實貢獻真的很還好（笑
 
-![sprint-demo]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700839086070.jpg)
+![sprint-demo](/images/posts-image/2019-10-12-pycon-jp-2019/15700839086070.jpg)
 
 晚餐倒是很有趣，他們好像想把餐點排成一隻蛇 xD
 
-![sprint-dinner-snake]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700839118735.jpg)
+![sprint-dinner-snake](/images/posts-image/2019-10-12-pycon-jp-2019/15700839118735.jpg)
 
 ## Welcome Party
 只有上台 5 分鐘的 Lightning Talk 講者也能來參加講者晚宴（笑
@@ -55,7 +55,7 @@ awaitwhat 的目標是想挖到 async 更深的 traceback，讓 async 的除錯�
 
 然後每一個圓桌上都有啤酒 XD
 
-![welcome-beer]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700839787175.jpg)
+![welcome-beer](/images/posts-image/2019-10-12-pycon-jp-2019/15700839787175.jpg)
 
 ## PyCon JP - Day 1
 如果想看每場 talk 的細節的話，筆記都整理 PyCon TW Visiting Group 的[共筆](https://hackmd.io/pYYzA4hLROGFKbXR0QMTMA?view)上了
@@ -69,7 +69,7 @@ Keynote 演講的空間後面馬上就是海報，在更後面就是贊助商
 倒是 Keynote 會有英日互轉的即時口譯，覺得還挺不錯的
 
 海報的部分則是要感謝 Ohmura-san 幫 PyCon TW 做了精美海報 🙏
-![poster]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700840034582.jpg)
+![poster](/images/posts-image/2019-10-12-pycon-jp-2019/15700840034582.jpg)
 
 整天下來我最喜歡的 talk 是 Takanori-san 的 [Automate the Boring Stuff with Slackbot](https://www.youtube.com/watch?v=rbNI2LzwaqE)
 雖然只是被一些有趣的點打到了（笑
@@ -78,12 +78,12 @@ Keynote 演講的空間後面馬上就是海報，在更後面就是贊助商
 雖然 Noah 好像今年參加了 11 場？
 後來跟一些外國講者聊到 Noah，他們說不管到哪場 PyCon 都會遇到他 XD
 
-![pycon-tour]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700840070533.jpg)
+![pycon-tour](/images/posts-image/2019-10-12-pycon-jp-2019/15700840070533.jpg)
 
-![programmer-is-lazy]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700840091662.jpg)
+![programmer-is-lazy](/images/posts-image/2019-10-12-pycon-jp-2019/15700840091662.jpg)
 
 因為明年是 Python 2 的 End of Life
-![262688.art]({static}/images/posts-image/2019-10-12-pycon-jp-2019/262688.art.jp2){: style="height:150px;width:150px"}
+![262688.art](/images/posts-image/2019-10-12-pycon-jp-2019/262688.art.jp2){: style="height:150px;width:150px"}
 <small>Designed by [Lisa Roach](https://twitter.com/lisroach)</small>
 
 有好幾場 Talk 都跟 Python 2 to 3 相關，像是 ["It’s 2019 and I’m still using Python 2. Should I be worried?"](https://www.youtube.com/watch?v=8a_TEjCl8NQ) 跟 Kir 大大的 ["SupportingPython3 in Large Scale Project"](https://www.youtube.com/watch?v=BS-HyV3V7GI)
@@ -95,7 +95,7 @@ Keynote 演講的空間後面馬上就是海報，在更後面就是贊助商
 ### Peer Reviewed Lightning Talk
 最後想提到我的 Lightning Talk
 
-![lightning]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700840162587.jpg)
+![lightning](/images/posts-image/2019-10-12-pycon-jp-2019/15700840162587.jpg)
 
 [slide](https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9) 跟 [video](https://www.youtube.com/watch?v=7U2D5tcMZb4&t=1110s) 都已經釋出了
 
@@ -118,11 +118,11 @@ Peter 說得對 "Never live Demo. Never Internet......"
 還好在我上台前，網路有稍微恢復，才沒有出包
 
 雖然只有 5 分鐘，但第一次上台給全英文的 talk 還是挺緊張的
-![down-stair]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700840143063.jpg)
+![down-stair](/images/posts-image/2019-10-12-pycon-jp-2019/15700840143063.jpg)
 
 原本 PyCon JP 的 party 結束後
 Takanori-san 很熱情的帶我們去續攤
-![beer]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700840215951.jpg)
+![beer](/images/posts-image/2019-10-12-pycon-jp-2019/15700840215951.jpg)
 
 ## PyCon JP - Day 2
 這天的 Keynote [Pythonで切り開く新しい農業](https://www.youtube.com/watch?v=0bTPOsVvG7g) 主要是在講他透過 Python 來分辨小黃瓜的故事
@@ -149,20 +149,20 @@ btw Dustin 在 PyCon TW / US / ... 給的 talks "PEP 572"，真的非常精彩
 最後閉幕的時候聽到 Python 這個商標在日本被[ARK](http://www.gigamall.ne.jp/ark/ai/python.html)註冊走
 PSF 要著手處理這件事了
 
-![drone]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700840284965.jpg)
+![drone](/images/posts-image/2019-10-12-pycon-jp-2019/15700840284965.jpg)
 <small>最後大合照的無人機</small>
 
-![coffee]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700840254045.jpg)
+![coffee](/images/posts-image/2019-10-12-pycon-jp-2019/15700840254045.jpg)
 <small>某人把還沒打開的奶精加入咖啡</small>
 
-![after-party]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700840345989.jpg)
+![after-party](/images/posts-image/2019-10-12-pycon-jp-2019/15700840345989.jpg)
 <small>離開日本前， Visiting Group 小聚</small>
 
 ## Speaker Tour
 會議結束後的一天，PyCon JP 還有帶講者們到淺草寺等有名的景點走走
 可惜那天下著大雨 QQ
 
-![speaker-tour]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700840364273.jpg)
+![speaker-tour](/images/posts-image/2019-10-12-pycon-jp-2019/15700840364273.jpg)
 
 ## Final Words
 整體來說，我覺得 PyCon JP 辦得比我想像的來得更好
@@ -170,7 +170,7 @@ PSF 要著手處理這件事了
 如果下次還有揪團，我應該也還會再來
 
 恩對，大概就是這樣
-![me-with-badge]({static}/images/posts-image/2019-10-12-pycon-jp-2019/15700840325586.jpg){: style="width:80%"}
+![me-with-badge](/images/posts-image/2019-10-12-pycon-jp-2019/15700840325586.jpg){: style="width:80%"}
 
 在找一些東西的時候，發現同行的前輩 Kir 也發了一篇 PyCon JP 的文
 [My journey of PyCon JP/TW 2019](https://medium.com/@Kir.Chou/my-journey-of-pycon-jp-tw-2019-220555e8e3b1)

@@ -42,12 +42,12 @@ AndroMoney 的各種功能都很方便，只是介面上就比較普通 xD
   
 #### 借款事件
 
-![3-borrow.png]({static}/images/posts-image/2018-09-09-andromoney-to-moze/3-borrow.png)
+![3-borrow.png](/images/posts-image/2018-09-09-andromoney-to-moze/3-borrow.png)
 
 MOZE 會幫我記住我借錢給誰，而且會一直提醒我誰跟我借了錢
 以前都還要特地記錄到其他 app
 
-![4-borrow.png]({static}/images/posts-image/2018-09-09-andromoney-to-moze/4-borrow.png)
+![4-borrow.png](/images/posts-image/2018-09-09-andromoney-to-moze/4-borrow.png)
 而且借出的錢，不會算在我的支出，所以也不會影響到我的預算
 算是蠻方便的功能
 
@@ -66,7 +66,7 @@ MOZE 會幫我記住我借錢給誰，而且會一直提醒我誰跟我借了錢
 
 每個帳戶都能加入自己的 icon
 只要是付費版的 MOZE 就會有各家銀行的 icon
-![5-icon.jpeg]({static}/images/posts-image/2018-09-09-andromoney-to-moze/5-icon.jpeg)
+![5-icon.jpeg](/images/posts-image/2018-09-09-andromoney-to-moze/5-icon.jpeg)
 雖然他說是付費圖示，但其實這幾個是免費的
 只有其他類別的彩色圖是要購買
 但我是覺得原本的我比較喜歡 xD
@@ -170,10 +170,10 @@ click 真的又更直覺了一點，難怪這麼多人推薦
 我試了各種可能的類別後
 自己去匯出了一筆轉帳紀錄，才解決
 原來轉帳的主類別分別會是「轉入」跟「轉出」
-![1-doc.png]({static}/images/posts-image/2018-09-09-andromoney-to-moze/1-doc.png)
+![1-doc.png](/images/posts-image/2018-09-09-andromoney-to-moze/1-doc.png)
 
 後來弄完後有再去看一下文件，才發現下面其實有寫 ......
-![2-doc.png]({static}/images/posts-image/2018-09-09-andromoney-to-moze/2-doc.png)
+![2-doc.png](/images/posts-image/2018-09-09-andromoney-to-moze/2-doc.png)
 
 這些問題我都跟作者反應了，他都超快就回了
 他是說之後會透過 web 版的工具匯入

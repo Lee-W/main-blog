@@ -33,17 +33,17 @@ Template 分為 Button, Confirm 跟 Carousel 三種
 以下的測試是 bot 收到關鍵字，回傳相對應的訊息
 
 * Button
-![button_example]({static}/images/posts-image/2016-11-27-more-about-line-messaging-api-template-messages/KYN6kDR.png)
+![button_example](/images/posts-image/2016-11-27-more-about-line-messaging-api-template-messages/KYN6kDR.png)
 
 * Confirm
-![confirm_example]({static}/images/posts-image/2016-11-27-more-about-line-messaging-api-template-messages/pUFboL5.png)
+![confirm_example](/images/posts-image/2016-11-27-more-about-line-messaging-api-template-messages/pUFboL5.png)
 
 * Carousel (如果超出版面，則可以左右滑動)
-![carousel_example]({static}/images/posts-image/2016-11-27-more-about-line-messaging-api-template-messages/Pxvj6om.png)
+![carousel_example](/images/posts-image/2016-11-27-more-about-line-messaging-api-template-messages/Pxvj6om.png)
 
 另外必須要注意的是，這些功能目前都只支援手機版
 在電腦版上的 Line 看到的訊息會是這樣
-![template_message_on_pc]({static}/images/posts-image/2016-11-27-more-about-line-messaging-api-template-messages/ZdGQjc6.png)
+![template_message_on_pc](/images/posts-image/2016-11-27-more-about-line-messaging-api-template-messages/ZdGQjc6.png)
 這個文字內容可以透過 template 的 alt\_text 參數設定
 
 上面的例子是[line-bot-sdk-python](https://github.com/line/line-bot-sdk-python#templatesendmessage---buttonstemplaten) 的使用範例
@@ -66,7 +66,7 @@ Template 分為 Button, Confirm 跟 Carousel 三種
 
 text 參數則是按下這個按鍵，會由使用者回傳設定的文字
 e.g. 這是我按下上面 Button 的 postback 的效果
-![text_example]({static}/images/posts-image/2016-11-27-more-about-line-messaging-api-template-messages/ow2G8wU.png)
+![text_example](/images/posts-image/2016-11-27-more-about-line-messaging-api-template-messages/ow2G8wU.png)
 而 text 就是設定為 postback ( 注意並非 label 的 'postback')
 
 ## Postback

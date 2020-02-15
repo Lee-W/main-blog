@@ -17,7 +17,7 @@ Series:
 多誤打誤撞呢
 大概就是我在報名了 PyCon JP 參訪團後不久突然收到了這個訊息
 
-![recruit]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15720876979484.jpg)
+![recruit](/images/posts-image/2019-10-29-pycon-tw-2019/15720876979484.jpg)
 
 我是到最近才確認了當初敲我的是誰，雖然一直有在猜 XD
 
@@ -40,36 +40,36 @@ Series:
 但當主持人真的是一個跟能跟講者多交流的機會，還蠻有趣的
 
 話說這是我第一次站上了 R0 的舞台了呢（笑
-![Session Chair]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721878688895.jpg)
+![Session Chair](/images/posts-image/2019-10-29-pycon-tw-2019/15721878688895.jpg)
 
 所以就不要猶豫了，明年來加入議程組吧！
 或者加入各個你有興趣的組都好
 總之先填單吧 XD
 **[PyCon TW 2020 志工報名](https://docs.google.com/forms/d/e/1FAIpQLSe6whkZAEZD10LlPQuSWRYsshySoNR_pux8grGZ0OgmOIkQ3g/viewform?fbclid=IwAR3N-eLvw5iyKJX14sO2LuOUYuOrnar8m-lhK5NOvI2L25y4rGNKIBk788g)**
-![program team]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721879831813.jpg)
+![program team](/images/posts-image/2019-10-29-pycon-tw-2019/15721879831813.jpg)
 
 ## During the conference
 不知道是不是因為我今年當了志工才有這樣的感覺
 總覺得今年在於讓會眾交流這點，有做得比往年更好一些
 至少我很努力的帶我拉來的人去認識各路的大大
 
-![make new friends]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721878520540.jpg)
+![make new friends](/images/posts-image/2019-10-29-pycon-tw-2019/15721878520540.jpg)
 
 雖然原本也在懷疑多擺個高腳桌到底是不是真的會促進會眾交流
 但就結果來看，應該是真的蠻有幫助的（？
 
-![high-table]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721878386503.jpg)
+![high-table](/images/posts-image/2019-10-29-pycon-tw-2019/15721878386503.jpg)
 
 今年的 PyNight 依然是少不了各式的音樂表演
 ~~我來 PyCon TW 聽音樂會~~
 還有一位用機器學習做音樂伴奏的講者
 直接在 PyNight demo 他的作品，真得挺有趣的
 
-![pynight]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721879523324.jpg)
+![pynight](/images/posts-image/2019-10-29-pycon-tw-2019/15721879523324.jpg)
 
 在走廊那邊，大家也玩白板玩得很開心
 日本、波蘭、馬來西亞來的朋友，都在這個白板畫上了自己的 PyCon
-![map]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721879605000.jpg)
+![map](/images/posts-image/2019-10-29-pycon-tw-2019/15721879605000.jpg)
 
 甚至在 PyNight 後
 除了帶各國 PyCon 來的朋友一起吃熱炒，還邀請了一些會眾一同參與
@@ -77,7 +77,7 @@ Series:
 我倒酒倒到一半的時候，當突然現場一片歡呼
 我才知道我倒太多了...
 
-![after-py-night]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721879668571.jpg)
+![after-py-night](/images/posts-image/2019-10-29-pycon-tw-2019/15721879668571.jpg)
 
 今年特別擴大舉辦的 Open Space
 在那個時段完全沒有其他的議程
@@ -94,18 +94,18 @@ or just traveling experiences
 ~~Help me decide where to go~~
 ```
 
-![open-space-host]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721878736938.jpg)
+![open-space-host](/images/posts-image/2019-10-29-pycon-tw-2019/15721878736938.jpg)
 
 今年好像是第一年讓 Speaker Tour 成真（？
 原本抱著大概只會去一些台北觀光客景點的心態來參加
 沒想到這個導覽真的超出我的預期
 即使這些地方我都去過不知道幾次了，我還是覺得這趟挺有趣的
 
-![taipei]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721880418930.jpg)
+![taipei](/images/posts-image/2019-10-29-pycon-tw-2019/15721880418930.jpg)
 
 這還是我第一次從這個角度看台北呢
 
-![boat]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721880369566.jpg)
+![boat](/images/posts-image/2019-10-29-pycon-tw-2019/15721880369566.jpg)
 
 ## Talks
 既然是技術研討會，總覺得還是要分享一下有趣的 talk
@@ -120,7 +120,7 @@ or just traveling experiences
 就結果來說這場非常的精彩
 主要在講 PEP 572 造成整個 Python 管理階層重組的事件
 
-![:=]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721878608003.jpg)
+![:=](/images/posts-image/2019-10-29-pycon-tw-2019/15721878608003.jpg)
 
 ### Keynote: Programming Language Tourism: Leave Python and see the world!
 這場主要在談 Python 以外的程式語言的各種特性
@@ -143,15 +143,15 @@ btw 我也很喜歡講者 Sebastian 在第三天結束給的 Lightning Talk
 
 In conclusion, there is no true programmer.
 
-![Tracy]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721879760129.jpg)
+![Tracy](/images/posts-image/2019-10-29-pycon-tw-2019/15721879760129.jpg)
 
 出去外面才知道台灣的好啊 XD
 中研院這個場地真的是有夠高級
-![-w375]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721880099317.jpg)
+![-w375](/images/posts-image/2019-10-29-pycon-tw-2019/15721880099317.jpg)
 
 阿對了，還是要炫耀一下
 我有搶到 Tracy 親簽的書
-![book]({static}/images/posts-image/2019-10-29-pycon-tw-2019/15721880028577.jpg)
+![book](/images/posts-image/2019-10-29-pycon-tw-2019/15721880028577.jpg)
 
 ## Do you know PyCon JP?
 最後回來聊聊，副標 Do you know PyCon JP 是怎麼回事

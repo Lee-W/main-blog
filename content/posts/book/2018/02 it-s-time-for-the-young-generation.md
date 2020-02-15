@@ -6,7 +6,7 @@ Slug: it-s-time-for-the-young-generation
 Authors: Lee-W
 Summary:
 
-![Imgur]({static}/images/books/0he265Q.jpg)
+![Imgur](/images/books/0he265Q.jpg)
 
 <!--more-->
 

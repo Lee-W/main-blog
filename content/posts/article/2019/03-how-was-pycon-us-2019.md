@@ -10,7 +10,7 @@ Summary:
 既然自稱 Python 的信徒
 總是要來世界最大的 PyCon 朝聖一下 XD
 
-![IMG_3010]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3010.jpg)
+![IMG_3010](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3010.jpg)
 
 （我還因為寫了 GitHub ，被以為是 GitHub 的員工 XD）
 
@@ -32,8 +32,8 @@ PyCon 總共跨了 9 天
 會議期間除了同時會有 6 個軌的 talk 以外，還會有好幾間的 Open Space
 
 最大的會議廳長這樣
-![IMG_3033]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3033.jpg)
-![IMG_3035]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3035.jpg)
+![IMG_3033](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3033.jpg)
+![IMG_3035](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3035.jpg)
 
 參加前，我有看了這篇 "[How to have a great first PyCon](https://treyhunner.com/2018/04/how-to-make-the-most-of-your-first-pycon/)"
 對我這次去參加 PyCon 很有幫助
@@ -107,7 +107,7 @@ PyCon 總共跨了 9 天
     * 你要注意些什麼才能成為一個好的 remote worker
 * **Python Security Tool**
     * 這場很實際地提了幾個跟 Python 有關的 Security Tool  
-      ![IMG_3063]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3063.jpg)
+      ![IMG_3063](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3063.jpg)
 * [Lightening Talk - Writing Selfless Python](https://www.youtube.com/watch?v=sRwHWPDJBnk&list=PLPbTDk1hBo3x9H3_WOWv_p6wD01B5eBvn&index=2&t=39m35s)
     * 無私的 Python： 有了 [selfless](https://pypi.org/project/selfless/) 我們不用在 Python 中寫自私的 (**self**fish) class 也能有同樣的功能
 * [Lightening Talk - One Weird Trick for people to see your name in lunch](https://www.youtube.com/watch?v=sRwHWPDJBnk&list=PLPbTDk1hBo3x9H3_WOWv_p6wD01B5eBvn&index=2&t=8m45s)
@@ -164,19 +164,19 @@ PyCon 總共跨了 9 天
 所以後來我就越來越常去 Open Space
 而且相較之下 Open Space 會比較有跟人互動的機會
 
-![IMG_3042]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3042.jpg)
-![IMG_3060]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3060.jpg)
-![IMG_3064]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3064.jpg)
+![IMG_3042](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3042.jpg)
+![IMG_3060](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3060.jpg)
+![IMG_3064](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3064.jpg)
 
 除了一些比較技術性的討論外
 也會有不少娛樂性的 Open Space（通常在晚上）
 像這個就是揪團要一起看 Game of Throne XD
 
-![IMG_3062]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3062.jpg)
+![IMG_3062](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3062.jpg)
 
 大部分討論性質的 Open Space 會像這樣圍成一圈
 
-![open-space]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/15611957026963.jpg)
+![open-space](/images/posts-image/2019-06-22-how-was-pycon-us-2019/15611957026963.jpg)
 
 這是我去參加 Vim 討論會的照片
 當天就有人分享了討論的筆記 ([Vim BoF @PyCon2019](https://gist.github.com/pwlandoll/dcb252686ae3c2e2486fd6425eb00d91))
@@ -190,13 +190,13 @@ Job Fair 主要就是跟各個公司聊天，看看他們的工作性質跟開�
 不過其實也不用等到 Job Fair 才問
 Job Fair 的公司反而比較少，不過應該就是專注在有開缺的公司
 前幾天的攤位反而更有機會聊聊
-![IMG_3025]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3025.jpg)
+![IMG_3025](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3025.jpg)
 
 Poster 也是一個能跟人互動蠻好的機會
 不過那些比較有趣的，通常旁邊都會圍著一群人 XD
 [Hypothesis](https://hypothesis.readthedocs.io) 好像整個 session 人都沒少過
 （話說 Hypothesis 還真的從 talk, tutorial, sprint 到 poster 每個場合都出現了）
-![IMG_3070]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3070.jpg)
+![IMG_3070](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3070.jpg)
 
 ## Development Sprint
 
@@ -216,7 +216,7 @@ Poster 也是一個能跟人互動蠻好的機會
 
 這幾個專案之中，我覺得 [pybee](https://github.com/pybee), [OpenEdx](https://github.com/edx) 算是最新手友善的
 
-![IMG_3195]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3195.jpg)
+![IMG_3195](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3195.jpg)
 
 Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 也蠻多人去找他搭話跟拍照的
@@ -296,7 +296,7 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 真的要塞滿，體力就有點負荷不來，後來就都是邊睡邊聽......
 中間可以留一些時間在 Quiet Room 稍微休息
 
-![IMG_3187]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3187.jpg)
+![IMG_3187](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3187.jpg)
 
 與其多衝一些場數，不如專注地把幾場真正想聽的專心聽完
 
@@ -323,7 +323,7 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 
 ## 食物 （20190703 update）
 
-![food]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/food.png)
+![food](/images/posts-image/2019-06-22-how-was-pycon-us-2019/food.png)
 
 既然有人問了，就來補充一下吧 XD
 
@@ -332,24 +332,24 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
 雖然到 Sprint 的時候好像已經把經費花光
 臨時又有廠商在贊助才能撐到結束
 
-![IMG_3011]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3011.jpg)
+![IMG_3011](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3011.jpg)
 
 議程以外那幾天大多是自助式
 大概都是這樣的沙拉
 
-![IMG_3024]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3024.jpg)
+![IMG_3024](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3024.jpg)
 
 議程那幾天就有點像是餐盒
 有豬、牛、素、水果幾種可以選
 像這個就是牛排，吃起來就還不錯
-![IMG_3045]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3045.jpg)
+![IMG_3045](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3045.jpg)
 
 這個也是牛排
 但吃起來很可怕......
 上面那個餅皮我真的努力要吃過了，但我失敗了＠＠
 這是我待在美國這一個月最難吃的食物......
 
-![IMG_3061]({static}/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3061.jpg)
+![IMG_3061](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3061.jpg)
 
 恩，大概就只有這樣xD
 

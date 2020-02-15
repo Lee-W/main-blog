@@ -48,7 +48,7 @@ pylint --rcfile ~/.pylintrc you_code.py
 
 ### 1. [ale](https://github.com/w0rp/ale)
 
-![ale-screenshot]({static}/images/posts-image/2017-03-15-tools-for-checking-python-coding-style/vwpqY4G.png)
+![ale-screenshot](/images/posts-image/2017-03-15-tools-for-checking-python-coding-style/vwpqY4G.png)
 
 `ale` also supports other linters in other languages.
 It uses the new async feature in vim 8.
@@ -85,7 +85,7 @@ p.s. `mypy`, `flake8` are also great linters. I'm just not familiar with it
 
 It's a powerful package supports not only linters but also plenty of useful features a python programer would need.
 
-![python-mode-screenshot]({static}/images/posts-image/2017-03-15-tools-for-checking-python-coding-style/5FffIqN.png)
+![python-mode-screenshot](/images/posts-image/2017-03-15-tools-for-checking-python-coding-style/5FffIqN.png)
 Unlike `ale`, `python-mode` check your code only when you save or open your python file (You can set this in your `~/.vimrc`)
 
 Add these lines in `~/.vimrc`  to enable `pylint`

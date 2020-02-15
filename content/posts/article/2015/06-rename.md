@@ -55,7 +55,7 @@ rename -n s/\(\[0-\9]{2}\)/\$1A/ *
 這個例子在 `[0-9]{2}` 外面加上 `()`，將他們視為群組
 在 pattern2 用 `$1`，代替第一個 group
 
-![1_mac_rename]({static}/images/posts-image/2015-02-22-rename/h1NV6ro.png)
+![1_mac_rename](/images/posts-image/2015-02-22-rename/h1NV6ro.png)
 
 ## Reference
 

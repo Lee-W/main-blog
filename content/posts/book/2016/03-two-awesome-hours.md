@@ -6,7 +6,7 @@ Slug: two-awesome-hours
 Authors: Lee-W
 Summary:
 
-![Two Awesome Hours]({static}/images/books/KQpJ2Gh.jpg)
+![Two Awesome Hours](/images/books/KQpJ2Gh.jpg)
 
 <!--more-->
 

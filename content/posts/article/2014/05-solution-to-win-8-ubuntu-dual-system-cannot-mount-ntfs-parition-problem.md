@@ -16,7 +16,7 @@ Summary:
 
 ## 解決
 
-![win8_start_up]({static}/images/posts-image/2014-02-25-solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem/ohEfCkR.png)
+![win8_start_up](/images/posts-image/2014-02-25-solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem/ohEfCkR.png)
 
 > 控制台 \ 硬體和音效 \ 電源選項 \ 系統設定
 

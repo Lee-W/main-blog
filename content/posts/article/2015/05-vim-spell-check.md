@@ -29,7 +29,7 @@ Bundle 'vimspell'
 
 解壓縮完後，用 vim 開啟街壓縮完的資料夾
 應該會看到下面這樣
-![1_directory]({static}/images/posts-image/2015-02-14-vim-spell-check/gLWMnmW.png)
+![1_directory](/images/posts-image/2015-02-14-vim-spell-check/gLWMnmW.png)
 
 接著進入 vim 在 normal mode 輸入
 
@@ -69,7 +69,7 @@ autocmd BufRead *.txt,*.md,*.tex setlocal spell
 
 vimspell 被開啟後，就會自動把拼錯的字反白起來
 如果有其他的語言一樣會被反白起來
-![2_vimspell_sample]({static}/images/posts-image/2015-02-14-vim-spell-check/MGjdAoq.png)
+![2_vimspell_sample](/images/posts-image/2015-02-14-vim-spell-check/MGjdAoq.png)
 
 ### 指令
 
@@ -82,7 +82,7 @@ vimspell 被開啟後，就會自動把拼錯的字反白起來
 * `zw` : 加入壞字字典，壞字也會被加入同樣的檔案中，最後面會另外加上 `/!`
 * `zuw`: 復原加入壞字字典的字 (刪除)
 
-![3_choose_word]({static}/images/posts-image/2015-02-14-vim-spell-check/NWHCakj.png)
+![3_choose_word](/images/posts-image/2015-02-14-vim-spell-check/NWHCakj.png)
 
 ## Reference
 

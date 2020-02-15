@@ -44,7 +44,6 @@ STATIC_PATHS = ["static", "images"]
 # Theme Setting
 THEME = "theme/elegant"
 JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
-# EXTRA_PATH_METADATA = {"images": {"path": "images/"}}
 PYGMENTS_STYLE = "default"
 APPLAUSE_BUTTON = True
 

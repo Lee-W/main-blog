@@ -6,7 +6,7 @@ Slug: measure-what-matters
 Authors: Lee-W
 Summary:
 
-![measure-what-matters]({static}/images/books/measure-what-matters.jpg){: style="height:255px;"}
+![measure-what-matters](/images/books/measure-what-matters.jpg){: style="height:255px;"}
 
 <!--more-->
 

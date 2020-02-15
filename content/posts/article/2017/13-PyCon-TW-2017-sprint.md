@@ -17,7 +17,7 @@ Series: PyCon TW 2017
 而且這個專案對新手還蠻友善的，文件中就有提供[First Time Contributor](https://pybee.org/contributing/how/first-time/what/)
 第一次貢獻的人建議貢獻的專案是[voc](https://github.com/pybee/voc)(Android) 和[batavia](https://github.com/pybee/batavia)(JavaScript)
 而且在裡面的 issue 還會標注 first timer only
-![first-timer-only]({static}/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/1-new-comer.png)
+![first-timer-only](/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/1-new-comer.png)
 
 雖然我其實對 Java 跟 JavaScript 都不熟
 但比起來還是對 JavaScript 多了一點愛
@@ -34,10 +34,10 @@ Russell 都會很友善地回答問題
 只要送了 PR 就可以得到[Challenge Coins](https://pybee.org/contributing/challenge-coins/)
 拿到這個 challenge coin 其實還蠻開心的 xd
 
-![Challenge Coin]({static}/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/2-challenge-coin.jpg){: style="width:30%"}
+![Challenge Coin](/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/2-challenge-coin.jpg){: style="width:30%"}
 
 最後再附上在 twitter 上，這次參與 spinrt 的大合照
-![all]({static}/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/3-all.jpg){: style="width:50%"}
+![all](/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/3-all.jpg){: style="width:50%"}
 
 2017/6/22
 折騰了許久，我的[PR](https://github.com/pybee/batavia/pull/569) 終於被 merge 回 batavia 了 XD

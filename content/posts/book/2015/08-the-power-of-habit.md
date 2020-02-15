@@ -5,7 +5,7 @@ Tags: Productivity
 Slug: the-power-of-habit
 Authors: Lee-W
 
-![The Power of Habit]({static}/images/books/Mo2J3YW.jpg)
+![The Power of Habit](/images/books/Mo2J3YW.jpg)
 
 <!--more-->
 

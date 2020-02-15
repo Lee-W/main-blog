@@ -14,7 +14,7 @@ Summary:
 
 [TOC]
 
-![Steve Jobs]({static}/images/books/7zs4aDC.jpg)
+![Steve Jobs](/images/books/7zs4aDC.jpg)
 
 ---
 

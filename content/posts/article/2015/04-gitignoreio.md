@@ -117,7 +117,7 @@ sudo rm gi_extension.sh /usr/bin/gi
 gi -l
 ```
 
-![1_gi_l.png]({static}/images/posts-image/2015-02-03-gitignoreio/WjrHpdZ.png)
+![1_gi_l.png](/images/posts-image/2015-02-03-gitignoreio/WjrHpdZ.png)
 
 * 以字母的順序輸出
 
@@ -125,7 +125,7 @@ gi -l
 gi -L
 ```
 
-![2_gi_L.png]({static}/images/posts-image/2015-02-03-gitignoreio/9j2PdP4.png)
+![2_gi_L.png](/images/posts-image/2015-02-03-gitignoreio/9j2PdP4.png)
 
 ### 顯示 .gitignore 的內容
 

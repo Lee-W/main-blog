@@ -57,7 +57,7 @@ e.g. ENFJ, INTP
 
 Personality distribution of this data is skewed.
 
-![MBTI-bar]({static}/images/posts-image/2017-04-05-understanding-personliaty-through-social-media/MBTI-bar.png)
+![MBTI-bar](/images/posts-image/2017-04-05-understanding-personliaty-through-social-media/MBTI-bar.png)
 
 However, in the real word, the personality distribution might also be skewed.
 

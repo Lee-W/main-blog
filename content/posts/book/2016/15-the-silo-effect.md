@@ -6,7 +6,7 @@ Slug: the-silo-effect
 Authors: Lee-W
 Summary:
 
-![The silo effect]({static}/images/books/MTSd8sY.jpg)
+![The silo effect](/images/books/MTSd8sY.jpg)
 
 <!--more-->
 

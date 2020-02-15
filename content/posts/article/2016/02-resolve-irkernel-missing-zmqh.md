@@ -48,7 +48,7 @@ jupyter console --kernel=ir
 ```
 
 安裝成功後就可以看到
-![R_in_jupyter]({static}/images/posts-image/2016-02-20-resolve-irkernel-missing-zmqh/pWf6j0q.png)
+![R_in_jupyter](/images/posts-image/2016-02-20-resolve-irkernel-missing-zmqh/pWf6j0q.png)
 
 ## Reference
 

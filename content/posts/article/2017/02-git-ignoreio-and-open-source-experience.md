@@ -13,7 +13,7 @@ Summary:
 <!--more-->
 
 當初看到這封信的時候，很是感動啊 xd
-![accepted]({static}/images/posts-image/2017-02-28-git-ignoreio-and-open-source-experience/1-accepted.jpg)
+![accepted](/images/posts-image/2017-02-28-git-ignoreio-and-open-source-experience/1-accepted.jpg)
 
 ## git ignore-io
 

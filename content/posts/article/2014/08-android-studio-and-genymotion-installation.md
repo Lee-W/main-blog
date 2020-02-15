@@ -32,20 +32,20 @@ Android Studio 正式版已經發布了，現在好像完全無法把 sdk 放在
 
 先到[官網](https://developer.android.com/sdk/installing/studio.html)下載 Android Studio ( 這篇文以 Windows 為例 )
 
-![1_download]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/iFQ6JJY.png)
+![1_download](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/iFQ6JJY.png)
 
 下載後會進入到下面的教學頁面
 其實寫得還蠻清楚的，所以如果可以接受就可以跳過以下的教學了 XD
-![2_Installation_Guide]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/gkttlS9.png)
+![2_Installation_Guide](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/gkttlS9.png)
 
 ## Install JDK
 
 在安裝 Android Studio 前，要先安裝好 JDK
 現在最新的版本是 JDK 8，可以到[這個連結](http://www.oracle.com/technetwork/java/javase/downloads/index.html)下載
 
-![3_jdk1]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/0om5D2M.png)
+![3_jdk1](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/0om5D2M.png)
 選好自己的作業系統
-![4_jdk2]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/D0G7XLq.png)
+![4_jdk2](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/D0G7XLq.png)
 再來就是一直下一步囉 XD
 
 ### 設定環境變數
@@ -58,7 +58,7 @@ Android Studio 正式版已經發布了，現在好像完全無法把 sdk 放在
 接著在 `系統變數` 這個欄位按下 `新增`
 變數名稱 輸入 `JAVA_HOME` ( 可能會因為 Android Studio 的版本而不同 )
 變數值 輸入 你安裝 JDK 的路徑 (e.g. `C:\Program Files\Java\jdk1.8.0_20`)
-![5_env_var]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/KYG8pBO.png)
+![5_env_var](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/KYG8pBO.png)
 
 ## Install Android Studio
 
@@ -81,17 +81,17 @@ Android Studio 會自動幫你把 SDK 的路徑設定到原本的位置
 ```
 
 把網頁往下拉會看到 SDK Tools Only
-![18_sdk_download]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/TctIzTa.png)
+![18_sdk_download](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/TctIzTa.png)
 下載完解壓縮到你要的路徑
 之後設定 SDK manager 設定到這個路徑就可以了
 
 開始 Android Studio
 > Configure → Project Default → Project Structure
 
-![20_set_sdk_1]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/Tj82hvs.png)
+![20_set_sdk_1](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/Tj82hvs.png)
 
 記得要把 SDK 的路徑改成剛剛安裝的路徑
-![21_set_sdk_2]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/ETqkNhX.png)
+![21_set_sdk_2](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/ETqkNhX.png)
 
 <a name="1123 update 1"></a>
 
@@ -101,11 +101,11 @@ Android Studio 會自動幫你把 SDK 的路徑設定到原本的位置
 現在最新的版本是 Android 5.0 (API 21)
 
 先開啟 Android Studio，進入 `Configure`
-![6_SDK1]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/c8rDZxZ.png)
+![6_SDK1](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/c8rDZxZ.png)
 進入 `SDK Manager`
-![7_SDK2]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/pBVHp7S.png)
+![7_SDK2](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/pBVHp7S.png)
 把選單拉到 API 21 選起來
-![19_sdk_21]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/3lytBi2.png)
+![19_sdk_21](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/3lytBi2.png)
 
 接著把選單拉到最後選
 
@@ -116,7 +116,7 @@ Android Studio 會自動幫你把 SDK 的路徑設定到原本的位置
 * **Google USB Driver**
 * **Intel X86 Emulator Accelerator(HAXM installer)**  
 	最後的這個 HAXM 是為了讓模擬器加速用的，從 SDK manager 下載完之後，還有另外的安裝步驟
-![9_SDK4]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/UM8w30n.png)
+![9_SDK4](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/UM8w30n.png)
 
 **安裝到這裡 Android Studio 已經可以使用了**，不過還可以再做一些設定讓手機模擬器跑得更快
 
@@ -131,7 +131,7 @@ Android Studio 會自動幫你把 SDK 的路徑設定到原本的位置
 ... 指的是安裝的目錄
 
 看到 `intelhaxm` 按下去 !
-![10_Intel_accelator]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/NX8lULd.png)
+![10_Intel_accelator](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/NX8lULd.png)
 一直按下一步就大功告成了
 
 不過 ...
@@ -147,30 +147,30 @@ Genymotion ！！！
 進入下載頁面後，往下拉會看到 Windows，mac 和 Liunx 版
 
 Windows 只要直接安裝就可以了，它會連 Oracle Virtual Box 一起安裝
-![11_genymotiong_win]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/4oUXeea.png)
+![11_genymotiong_win](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/4oUXeea.png)
 
 mac 和 Linux 還要額外先安裝 [Oracle Virtual Box](https://www.virtualbox.org/wiki/Downloads)
-![12_genymotion_Unix]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/NMQD2Jc.png)
+![12_genymotion_Unix](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/NMQD2Jc.png)
 
 ## Install IDE plug-in
 
 在下載頁面往下拉會看到 genymotion 在 IDE 上的 plugin，可以讓我們從 IDE 內直接開啟 Genymothion
 Android Studio 屬於 IntelliJ IDEA，所以我們就照著他上面的指示設定
-![13_genymotion_plug in]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/7C0d8aU.png)
+![13_genymotion_plug in](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/7C0d8aU.png)
 
 開啟 Android Studio
 > File → Settings
 
-![14_plug-in]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/vemudkb.png)
+![14_plug-in](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/vemudkb.png)
 
 找到 Plungins ，接著點 Browse repositories
-![15_plug-in2]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/UnP1hiQ.png)
+![15_plug-in2](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/UnP1hiQ.png)
 
 上方輸入 Genymotion 就可找到，接著就安裝它吧
-![16_plug-in3]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/xzjsTmz.png)
+![16_plug-in3](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/xzjsTmz.png)
 
 安裝完記得重新啟動 Android Studio，就會在工具列看到多一個按鈕，Genymotion 就安裝完成囉
-![17_plug-in4]({static}/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/I2RbFEG.png)
+![17_plug-in4](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/I2RbFEG.png)
 
 第一次使用會要求設定 Genymotion 安裝的資料夾 (e.g. `C:\Program Files\Genymobile\Genymotion`)
 設定完就可以開始使用 Genymotion 了

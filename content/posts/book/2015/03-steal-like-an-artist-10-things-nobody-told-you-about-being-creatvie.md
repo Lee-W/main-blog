@@ -9,7 +9,7 @@ Summary:
 [TOC]
 
 Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie
-![Show Your Work]({static}/images/books/GQNwobG.jpg)
+![Show Your Work](/images/books/GQNwobG.jpg)
 
 <!--more-->
 

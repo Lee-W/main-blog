@@ -6,7 +6,7 @@ Slug: essentialism
 Authors: Lee-W
 Summary:
 
-![Essentialism]({static}/images/books/zJS927h.jpg)
+![Essentialism](/images/books/zJS927h.jpg)
 
 ```text
 Weniger aber besser
