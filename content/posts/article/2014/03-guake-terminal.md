@@ -11,7 +11,7 @@ Summary:
 
 <!--more-->
 
-![1_guake]({static}/images/posts-image/2014-02-09-guake-terminal/0L95Qtg.png)
+![1_guake](/images/posts-image/2014-02-09-guake-terminal/0L95Qtg.png)
 
 ## 安裝 Guake Terminal
 
@@ -23,12 +23,12 @@ sudo apt-get install guake
 
 ### 滑鼠一移開就自動隱藏
 從「偏好設定 （Preferences)」勾選「Hide on lost focus」
-![2_hide on focus]({static}/images/posts-image/2014-02-09-guake-terminal/Ibp8MX0.png)
+![2_hide on focus](/images/posts-image/2014-02-09-guake-terminal/Ibp8MX0.png)
 
 ## 開機就啟動 Guake Terminal
 
 在「初始應用程式 （Startup Applications) 」把 guake terminal 加上去
-![3_guake start up]({static}/images/posts-image/2014-02-09-guake-terminal/sYQ6Klw.png)
+![3_guake start up](/images/posts-image/2014-02-09-guake-terminal/sYQ6Klw.png)
 
 ## Reference
 
