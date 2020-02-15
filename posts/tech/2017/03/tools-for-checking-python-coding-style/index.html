@@ -120,7 +120,7 @@ For further customization, you'll have to change this file.</p>
 
 <h2 id="integrate-with-vim">Integrate with Vim</h2>
 <h3 id="1-ale">1. <a href="https://github.com/w0rp/ale">ale</a></h3>
-<p><img alt="ale-screenshot" src="https://lee-w.github.io/images/"></p>
+<p><img alt="ale-screenshot" src="https://lee-w.github.io/images/posts-image/2017-03-15-tools-for-checking-python-coding-style/vwpqY4G.png"></p>
 <p><code>ale</code> also supports other linters in other languages.<br>
 It uses the new async feature in vim 8.<br>
 Thus, it checks your code when you are typing. (You can disable it.)</p>
@@ -148,7 +148,7 @@ Thus, you might find that even if you ignore some rules in <code>pylintc</code>,
 <p>p.s. <code>mypy</code>, <code>flake8</code> are also great linters. I'm just not familiar with it</p>
 <h3 id="2-python-mode">2. <a href="https://github.com/python-mode/python-mode">python-mode</a></h3>
 <p>It's a powerful package supports not only linters but also plenty of useful features a python programer would need.</p>
-<p><img alt="python-mode-screenshot" src="https://lee-w.github.io/images/"><br>
+<p><img alt="python-mode-screenshot" src="https://lee-w.github.io/images/posts-image/2017-03-15-tools-for-checking-python-coding-style/5FffIqN.png"><br>
 Unlike <code>ale</code>, <code>python-mode</code> check your code only when you save or open your python file (You can set this in your <code>~/.vimrc</code>)</p>
 <p>Add these lines in <code>~/.vimrc</code>  to enable <code>pylint</code></p>
 <div class="highlight"><pre><span></span><code><span class="k">let</span> <span class="k">g</span>:pymode_lint_checkers <span class="p">=</span> [<span class="s1">&#39;pyflakes&#39;</span><span class="p">,</span> <span class="s1">&#39;pylint&#39;</span><span class="p">,</span> <span class="s1">&#39;pep8&#39;</span>]
