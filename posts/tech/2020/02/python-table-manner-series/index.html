@@ -11,16 +11,16 @@
 
 <meta name="keywords" content="Python, Tech, " />
 
-<meta property="og:title" content="Python Table Manner 系列"/>
-<meta property="og:url" content="https://lee-w.github.io/drafts/python-table-manner-series.html" />
-<meta property="og:description" content="Python Table Manner - A Clean Style 是我在 PyCon CA 2019 給的一個分享 內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流 原本打算找個時間把這些內容整理成文章 但在沒人督促的情況下，當然就忘了 XD 剛好看到第 01 屆開發者寫作松 Coder Blogathon【連續七天寫作挑戰，解放你的技術創作力】 就給個理由來督處一下自己 除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 commitizen 學到的工具 目前預計會包含以下的內容 Dependency Management Testing Coding Style Task Automation pre-commit Commitizen Security Cookiecutter 當初整理 PyCon CA …" />
+<meta property="og:title" content="Python Table Manners 系列"/>
+<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-series" />
+<meta property="og:description" content="Python Table Manners - A Clean Style 是我在 PyCon CA 2019 給的一個分享 內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流 希望能讓剛接觸 Python 的朋友們，能在早期就碰到這些好用的工具，少踩一些雷 原本打算找個時間把這些內容整理成文章 但在沒人督促的情況下，當然就忘了 XD 剛好看到第 01 屆開發者寫作松 Coder Blogathon【連續七天寫作挑戰，解放你的技術創作力】 就給個理由來督處一下自己 除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 commitizen 學到的工具 目前預計會包含以下的內容 虛擬環境和套件管理 測試 程式碼風格 自動化繁瑣任務 pre-commit: git commit 前做完檢查 Commitizen …" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
-<meta property="og:article:published_time" content="2020-02-22T21:00:00+08:00" />
-<meta name="twitter:title" content="Python Table Manner 系列">
-<meta name="twitter:description" content="Python Table Manner - A Clean Style 是我在 PyCon CA 2019 給的一個分享 內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流 原本打算找個時間把這些內容整理成文章 但在沒人督促的情況下，當然就忘了 XD 剛好看到第 01 屆開發者寫作松 Coder Blogathon【連續七天寫作挑戰，解放你的技術創作力】 就給個理由來督處一下自己 除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 commitizen 學到的工具 目前預計會包含以下的內容 Dependency Management Testing Coding Style Task Automation pre-commit Commitizen Security Cookiecutter 當初整理 PyCon CA …">
+<meta property="og:article:published_time" content="2020-02-22T19:32:00+08:00" />
+<meta name="twitter:title" content="Python Table Manners 系列">
+<meta name="twitter:description" content="Python Table Manners - A Clean Style 是我在 PyCon CA 2019 給的一個分享 內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流 希望能讓剛接觸 Python 的朋友們，能在早期就碰到這些好用的工具，少踩一些雷 原本打算找個時間把這些內容整理成文章 但在沒人督促的情況下，當然就忘了 XD 剛好看到第 01 屆開發者寫作松 Coder Blogathon【連續七天寫作挑戰，解放你的技術創作力】 就給個理由來督處一下自己 除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 commitizen 學到的工具 目前預計會包含以下的內容 虛擬環境和套件管理 測試 程式碼風格 自動化繁瑣任務 pre-commit: git commit 前做完檢查 Commitizen …">
 
-        <title>Python Table Manner 系列 · Laziness makes Great Engineer
+        <title>Python Table Manners 系列 · Laziness makes Great Engineer
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -75,8 +75,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://lee-w.github.io/drafts/python-table-manner-series.html">
-                Python Table Manner 系列
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-series">
+                Python Table Manners 系列
             </a>
         </h1>
     </header>
@@ -87,8 +87,9 @@
             
             <!--more-->
 
-<p><a href="https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019">Python Table Manner - A Clean Style</a> 是我在 <a href="https://lee-w.github.io/posts/tech/2019/12/pycon-ca-2019/">PyCon CA 2019</a> 給的一個分享<br>
-內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流</p>
+<p><a href="https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019">Python Table Manners - A Clean Style</a> 是我在 <a href="https://lee-w.github.io/posts/tech/2019/12/pycon-ca-2019/">PyCon CA 2019</a> 給的一個分享<br>
+內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流<br>
+希望能讓剛接觸 Python 的朋友們，能在早期就碰到這些好用的工具，少踩一些雷</p>
 <p>原本打算找個時間把這些內容整理成文章<br>
 但在沒人督促的情況下，當然就忘了 XD<br>
 剛好看到<a href="https://www.accupass.com/event/2001190943344186137000">第 01 屆開發者寫作松 Coder Blogathon【連續七天寫作挑戰，解放你的技術創作力】</a><br>
@@ -96,24 +97,34 @@
 <p>除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 <a href="https://github.com/Woile/commitizen">commitizen</a> 學到的工具</p>
 <p>目前預計會包含以下的內容</p>
 <ul>
-<li>Dependency Management</li>
-<li>Testing</li>
-<li>Coding Style</li>
-<li>Task Automation</li>
-<li>pre-commit</li>
-<li>Commitizen</li>
-<li>Security</li>
-<li>Cookiecutter</li>
+<li>虛擬環境和套件管理</li>
+<li>測試</li>
+<li>程式碼風格</li>
+<li>自動化繁瑣任務</li>
+<li>pre-commit: git commit 前做完檢查</li>
+<li>Commitizen: 規格化 git commit</li>
+<li>安全性檢查</li>
+<li>文件</li>
+<li>Cookiecutter: 程式專案模板</li>
+<li>持續整合</li>
 </ul>
 <p>當初整理 PyCon CA 2019 投影片的時候，大多是把這些工具應用到 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a><br>
-這是 PyCon TW 自動產生會後分析報表的工具，歡迎一起來貢獻<br>
+這是 PyCon TW 用來自動產生會後分析報表的工具，歡迎一起來貢獻～<br>
 當然能一起來當志工就更棒了 🎉<br>
 👉 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6whkZAEZD10LlPQuSWRYsshySoNR_pux8grGZ0OgmOIkQ3g/viewform">PyCon Taiwan 志工招募</a></p>
-<h2 id="reference">Reference</h2>
+<h2 id="_1">參考資料</h2>
+<p>有些文章會同時涵括多過我想提的主題，我會把那些參考資料放在這<br>
+如果是我聽過的 PyCon 演講，我會連結到我自己的 <a href="https://lee-w.github.io/pycon-note/">PyCon Note</a>，裡面會有該場演講的相關資訊和我的筆記</p>
 <ul>
-<li><a href="https://medium.com/@jonas.r.kemper/understanding-best-practice-python-tooling-by-comparing-popular-project-templates-6eba49229106">Understanding best-practice Python tooling by comparing popular project templates</a></li>
+<li><a href="https://medium.com/@jonas.r.kemper/understanding-best-practice-python-tooling-by-comparing-popular-project-templates-6eba49229106">Understanding best-practice Python tooling by comparing popular project templates</a><ul>
+<li>這篇文章整理和比較了 18 個比較有名的 Python 專案模板</li>
+</ul>
+</li>
+<li><a href="https://sourcery.ai/blog/python-best-practices/">How to set up a perfect Python project</a><ul>
+<li>這篇文章整理上面那篇文章很推薦其中一個模板</li>
+</ul>
+</li>
 <li><a href="https://jacobian.org/2019/nov/11/python-environment-2020/">My Python Development Environment, 2020 Edition</a></li>
-<li><a href="https://sourcery.ai/blog/python-best-practices/">How to set up a perfect Python project</a></li>
 <li><a href="https://lee-w.github.io/pycon-note/posts/pycon-jp-2019/2019/10/modern-development-environments-for-pythonistas/">Modern development environments for Pythonistas - PyCon JP 2019</a></li>
 </ul>
 
@@ -123,25 +134,90 @@
 
 <script src="https://lee-w.github.io/theme/applause-button/applause-button.js"></script>
 <div class="applause_button">
-    <applause-button url=https://lee-w.github.io/drafts/python-table-manner-series.html> </applause-button>
+    <applause-button url=https://lee-w.github.io/posts/tech/2020/02/python-table-manner-series> </applause-button>
 </div>
 
 
+                <p id="post-share-links">
+    Share on:
+    <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20%E7%B3%BB%E5%88%97&url=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manner-series&hashtags=python" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manner-series" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="mailto:?subject=Python%20Table%20Manners%20%E7%B3%BB%E5%88%97&amp;body=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manner-series" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+    </p>
+
             
             
-            
 
 
 
 
 
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-series"
+                   href="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-series#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+                        <div id="disqus_thread"></div>
+                        <script>
+    var disqus_shortname = 'lee-w-blog';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/02/python-table-manner-series';
+    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/02/python-table-manner-series';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
             <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" title="Previous: pipenv 和 poerty 如何處理在不同作業系統下相依套件不同">pipenv 和 poerty 如何處理在不同作業系統下相依套件不同</a></li>
+            </ul>
+            </nav>
+            </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2020-02-22T21:00:00+08:00">2020/02/22 - Sat</time>
-        <h4><built-in method index of str object at 0x7fcfd69a5350></h4>
+            <time itemprop="dateCreated" datetime="2020-02-22T19:32:00+08:00">2020/02/22 - Sat</time>
+        <h4><built-in method index of str object at 0x7f29ee184f30></h4>
     <ul class="multi-parts-list">
     </ul>
                 <h4>Read Time</h4>
@@ -151,7 +227,7 @@
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
-                    <span>15</span>
+                    <span>16</span>
 </a></li>
             </ul>
 <h4>Keep In Touch</h4>

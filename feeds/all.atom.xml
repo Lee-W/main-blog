@@ -1,5 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-02-12T11:45:00+08:00</updated><entry><title>pipenv 和 poerty 如何處理在不同作業系統下相依套件不同</title><link href="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" rel="alternate"></link><published>2020-02-12T11:45:00+08:00</published><updated>2020-02-12T11:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-12:/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-02-22T19:32:00+08:00</updated><entry><title>Python Table Manners 系列</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-series" rel="alternate"></link><published>2020-02-22T19:32:00+08:00</published><updated>2020-02-22T19:32:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-22:/posts/tech/2020/02/python-table-manner-series</id><summary type="html">&lt;!--more--&gt;
+
+&lt;p&gt;&lt;a href="https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019"&gt;Python Table Manners - A Clean Style&lt;/a&gt; 是我在 &lt;a href="https://lee-w.github.io/posts/tech/2019/12/pycon-ca-2019/"&gt;PyCon CA 2019&lt;/a&gt; 給的一個分享&lt;br&gt;
+內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流&lt;br&gt;
+希望能讓剛接觸 Python 的朋友們，能在早期就碰到這些好用的工具，少踩一些雷&lt;/p&gt;
+&lt;p&gt;原本打算找個時間把這些內容整理成文章&lt;br&gt;
+但在沒人督促的情況下，當然就忘了 XD&lt;br&gt;
+剛好看到&lt;a href="https://www.accupass.com/event/2001190943344186137000"&gt;第 01 屆開發者寫作松 Coder Blogathon【連續七天寫作挑戰，解放你的技術創作力】&lt;/a&gt;&lt;br&gt;
+就給個理由來督處一下自己&lt;/p&gt;
+&lt;p&gt;除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt; 學到的工具&lt;/p&gt;
+&lt;p&gt;目前預計會包含以下的內容&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;虛擬環境和套件管理&lt;/li&gt;
+&lt;li&gt;測試&lt;/li&gt;
+&lt;li&gt;程式碼風格&lt;/li&gt;
+&lt;li&gt;自動化繁瑣任務&lt;/li&gt;
+&lt;li&gt;pre-commit: git commit 前做完檢查&lt;/li&gt;
+&lt;li&gt;Commitizen …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;!--more--&gt;
+
+&lt;p&gt;&lt;a href="https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019"&gt;Python Table Manners - A Clean Style&lt;/a&gt; 是我在 &lt;a href="https://lee-w.github.io/posts/tech/2019/12/pycon-ca-2019/"&gt;PyCon CA 2019&lt;/a&gt; 給的一個分享&lt;br&gt;
+內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流&lt;br&gt;
+希望能讓剛接觸 Python 的朋友們，能在早期就碰到這些好用的工具，少踩一些雷&lt;/p&gt;
+&lt;p&gt;原本打算找個時間把這些內容整理成文章&lt;br&gt;
+但在沒人督促的情況下，當然就忘了 XD&lt;br&gt;
+剛好看到&lt;a href="https://www.accupass.com/event/2001190943344186137000"&gt;第 01 屆開發者寫作松 Coder Blogathon【連續七天寫作挑戰，解放你的技術創作力】&lt;/a&gt;&lt;br&gt;
+就給個理由來督處一下自己&lt;/p&gt;
+&lt;p&gt;除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt; 學到的工具&lt;/p&gt;
+&lt;p&gt;目前預計會包含以下的內容&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;虛擬環境和套件管理&lt;/li&gt;
+&lt;li&gt;測試&lt;/li&gt;
+&lt;li&gt;程式碼風格&lt;/li&gt;
+&lt;li&gt;自動化繁瑣任務&lt;/li&gt;
+&lt;li&gt;pre-commit: git commit 前做完檢查&lt;/li&gt;
+&lt;li&gt;Commitizen: 規格化 git commit&lt;/li&gt;
+&lt;li&gt;安全性檢查&lt;/li&gt;
+&lt;li&gt;文件&lt;/li&gt;
+&lt;li&gt;Cookiecutter: 程式專案模板&lt;/li&gt;
+&lt;li&gt;持續整合&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;當初整理 PyCon CA 2019 投影片的時候，大多是把這些工具應用到 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator"&gt;pycontw-postevent-report-generator&lt;/a&gt;&lt;br&gt;
+這是 PyCon TW 用來自動產生會後分析報表的工具，歡迎一起來貢獻～&lt;br&gt;
+當然能一起來當志工就更棒了 🎉&lt;br&gt;
+👉 &lt;a href="https://docs.google.com/forms/d/e/1FAIpQLSe6whkZAEZD10LlPQuSWRYsshySoNR_pux8grGZ0OgmOIkQ3g/viewform"&gt;PyCon Taiwan 志工招募&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="_1"&gt;參考資料&lt;/h2&gt;
+&lt;p&gt;有些文章會同時涵括多過我想提的主題，我會把那些參考資料放在這&lt;br&gt;
+如果是我聽過的 PyCon 演講，我會連結到我自己的 &lt;a href="https://lee-w.github.io/pycon-note/"&gt;PyCon Note&lt;/a&gt;，裡面會有該場演講的相關資訊和我的筆記&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@jonas.r.kemper/understanding-best-practice-python-tooling-by-comparing-popular-project-templates-6eba49229106"&gt;Understanding best-practice Python tooling by comparing popular project templates&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;這篇文章整理和比較了 18 個比較有名的 Python 專案模板&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sourcery.ai/blog/python-best-practices/"&gt;How to set up a perfect Python project&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;這篇文章整理上面那篇文章很推薦其中一個模板&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://jacobian.org/2019/nov/11/python-environment-2020/"&gt;My Python Development Environment, 2020 Edition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-jp-2019/2019/10/modern-development-environments-for-pythonistas/"&gt;Modern development environments for Pythonistas - PyCon JP 2019&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category></entry><entry><title>pipenv 和 poerty 如何處理在不同作業系統下相依套件不同</title><link href="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" rel="alternate"></link><published>2020-02-12T11:45:00+08:00</published><updated>2020-02-12T11:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-12:/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent</id><summary type="html">
 &lt;h2 id="_1"&gt;遇到的問題&lt;/h2&gt;
 &lt;p&gt;用 &lt;a href="https://twine.readthedocs.io/en/latest/"&gt;twine&lt;/a&gt; 上傳 Python 套件&lt;br/&gt;
 在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 &lt;code&gt;jeepney&lt;/code&gt; 套件&lt;/p&gt;
