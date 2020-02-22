@@ -14,7 +14,7 @@ Series: Python Table Manner
 
 原本打算找個時間把這些內容整理成文章
 但在沒人督促的情況下，當然就忘了 XD
-剛好看到 [第 01 屆開發者寫作松 Coder Blogathon【連續七天寫作挑戰，解放你的技術創作力】](https://www.accupass.com/event/2001190943344186137000)
+剛好看到 [連續七天寫作挑戰，解放你的技術創作力](https://www.accupass.com/event/2001190943344186137000)
 就給個理由來督處一下自己
 
 除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 [commitizen](https://github.com/Woile/commitizen) 學到的工具
