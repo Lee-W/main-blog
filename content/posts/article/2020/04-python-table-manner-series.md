@@ -2,9 +2,9 @@ Title: Python Table Manners 系列
 Date: 2020-02-22 19:32
 Category: Tech
 Tags: Python
-Slug: python-table-manner-series
+Slug: python-table-manners-series
 Authors: Lee-W
-Series: Python Table Manner
+Series: Python Table Manners
 
 <!--more-->
 
