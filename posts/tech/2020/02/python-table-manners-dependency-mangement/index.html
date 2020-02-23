@@ -11,16 +11,16 @@
 
 <meta name="keywords" content="Python, Dependency, Tech, " />
 
-<meta property="og:title" content="Python Table Manner - 虛擬環境和套件管理"/>
-<meta property="og:url" content="https://lee-w.github.io/drafts/python-table-manner-dependency-mangement.html" />
-<meta property="og:description" content="為了避免不同 Python 專案使用的套件版本不同 開始一個 Python 專案時，第一步就是要先建立虛擬環境 理想上，本機的環境是不用安裝套件的 因為每一個專案都會在虛擬環境內執行，並且在裡面安裝各自的套件 如果要在本機安裝 Python 的工具的話，我建議使用 pipx python -m pip install --user pipx python -m pipx ensurepath pipx install [PACKAGE] virutalenv 創建虛擬環境，最基本就是使用 virtualenv 透過以下幾個指令建立一個，並把相關的套件寫入 requirements.txt # 創建 Python 虛擬環境 python -m venv ./venv # 啟動 Python 虛擬環境 source venv/bin …" />
+<meta property="og:title" content="Python Table Manners - 虛擬環境和套件管理"/>
+<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" />
+<meta property="og:description" content="為了避免不同 Python 專案使用的套件版本不同，導致本機的套件版本打架 開始 Python 專案時，第一步就是先建立一個專屬於專案的虛擬環境 理想上，本機的環境是不太需要安裝套件的 因為每一個專案都會在自己的虛擬環境內執行，並且在裡面安裝各自的套件" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
-<meta property="og:article:published_time" content="2020-02-23T00:00:00+08:00" />
-<meta name="twitter:title" content="Python Table Manner - 虛擬環境和套件管理">
-<meta name="twitter:description" content="為了避免不同 Python 專案使用的套件版本不同 開始一個 Python 專案時，第一步就是要先建立虛擬環境 理想上，本機的環境是不用安裝套件的 因為每一個專案都會在虛擬環境內執行，並且在裡面安裝各自的套件 如果要在本機安裝 Python 的工具的話，我建議使用 pipx python -m pip install --user pipx python -m pipx ensurepath pipx install [PACKAGE] virutalenv 創建虛擬環境，最基本就是使用 virtualenv 透過以下幾個指令建立一個，並把相關的套件寫入 requirements.txt # 創建 Python 虛擬環境 python -m venv ./venv # 啟動 Python 虛擬環境 source venv/bin …">
+<meta property="og:article:published_time" content="2020-02-23T12:24:00+08:00" />
+<meta name="twitter:title" content="Python Table Manners - 虛擬環境和套件管理">
+<meta name="twitter:description" content="為了避免不同 Python 專案使用的套件版本不同，導致本機的套件版本打架 開始 Python 專案時，第一步就是先建立一個專屬於專案的虛擬環境 理想上，本機的環境是不太需要安裝套件的 因為每一個專案都會在自己的虛擬環境內執行，並且在裡面安裝各自的套件">
 
-        <title>Python Table Manner - 虛擬環境和套件管理 · Laziness makes Great Engineer
+        <title>Python Table Manners - 虛擬環境和套件管理 · Laziness makes Great Engineer
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -75,8 +75,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://lee-w.github.io/drafts/python-table-manner-dependency-mangement.html">
-                Python Table Manner - 虛擬環境和套件管理
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement">
+                Python Table Manners - 虛擬環境和套件管理
             </a>
         </h1>
     </header>
@@ -88,17 +88,17 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#virutalenv">virutalenv</a><ul>
-<li><a href="#_1">遇到的問題</a></li>
-</ul>
-</li>
+<li><a href="#virutalenv">virutalenv</a></li>
 <li><a href="#pipenv">pipenv</a><ul>
 <li><a href="#pipenv_1">安裝 pipenv</a></li>
-<li><a href="#_2">初始化環境</a></li>
-<li><a href="#_3">安裝套件</a></li>
+<li><a href="#_1">初始化環境</a></li>
+<li><a href="#_2">安裝套件</a></li>
+</ul>
+</li>
+<li><a href="#_3">安裝開發環境套件</a><ul>
 <li><a href="#_4">在虛擬環境中執行指令</a></li>
 <li><a href="#_5">其他功能</a></li>
-<li><a href="#pipenv_2">pipenv 已經很久沒更新了，還要使用嗎？</a></li>
+<li><a href="#pipenv_2">pipenv 已經很久沒更新了，沒有問題嗎？</a></li>
 </ul>
 </li>
 <li><a href="#_6">其他工具</a><ul>
@@ -108,6 +108,7 @@
 </ul>
 </li>
 <li><a href="#_7">自動將舊版套件升級</a></li>
+<li><a href="#bouns-pipx-python">Bouns: pipx - 在系統安裝 Python 工具</a></li>
 <li><a href="#reference">Reference</a></li>
 </ul>
 </div>
@@ -115,52 +116,50 @@
     </div>
     <div class="span8 article-content">
             
-            <p>為了避免不同 Python 專案使用的套件版本不同<br/>
-開始一個 Python 專案時，第一步就是要先建立虛擬環境<br/>
-理想上，本機的環境是不用安裝套件的<br/>
-因為每一個專案都會在虛擬環境內執行，並且在裡面安裝各自的套件</p>
+            <p>為了避免不同 Python 專案使用的套件版本不同，導致本機的套件版本打架<br/>
+開始 Python 專案時，第一步就是先建立一個專屬於專案的虛擬環境<br/>
+理想上，本機的環境是不太需要安裝套件的<br/>
+因為每一個專案都會在自己的虛擬環境內執行，並且在裡面安裝各自的套件</p>
 <!--more-->
-<p>如果要在本機安裝 Python 的工具的話，我建議使用 <a href="https://pipxproject.github.io/pipx/">pipx</a></p>
-<div class="highlight"><pre><span></span><code>python -m pip install --user pipx
-python -m pipx ensurepath
-pipx install <span class="o">[</span>PACKAGE<span class="o">]</span>
-</code></pre></div>
 
 <h2 id="virutalenv">virutalenv</h2>
-<p>創建虛擬環境，最基本就是使用 <a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a><br/>
+<p>創建虛擬環境，最基本作法就是使用 <a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a><br/>
 透過以下幾個指令建立一個，並把相關的套件寫入 <code>requirements.txt</code></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 創建 Python 虛擬環境</span>
 python -m venv ./venv
 
-<span class="c1"># 啟動 Python 虛擬環境</span>
+<span class="c1"># 啟動 Python 虛擬環境 (Unix like)</span>
 <span class="nb">source</span> venv/bin/activate
 
 <span class="c1"># 將虛擬環境用到的套件寫入 requirements.txt</span>
 pip freeze &gt;&gt; requirements.txt
 </code></pre></div>
-<h3 id="_1">遇到的問題</h3>
+<p>p.s. 基本上這個系列文會以 Unix 系統（macOS, Linux）為主</p>
+<p>但這個做法會遇到幾個問題</p>
 <ol>
 <li>忘記開啟/關閉虛擬環境</li>
 <li>忘記把新安裝的套件寫入 <code>requirements.txt</code></li>
-<li><code>pip freeze</code> 會安裝過多不必要的套件</li>
+<li><code>pip freeze</code> 安裝一些不必要的套件</li>
 </ol>
-<p>一開始我會使用 <a href="https://github.com/bndr/pipreqs">pipreqs</a> 來解決 <code>pip freeze</code> 所造成的雜亂</p>
-<p>但是忘記寫入套件跟忘記開關虛擬環境的問題還是存在<br/>
-造成我常常在本地測試成功，送上去 CI 就出錯，只好再送一個 Pull Request 上去</p>
+<p>一開始我會使用 <a href="https://github.com/bndr/pipreqs">pipreqs</a> 來解決 <code>pip freeze</code> 所造成的雜亂<br/>
+但是忘記寫入套件跟忘記開關虛擬環境的問題還是存在<br/>
+常常我在本地測試成功，丟到伺服器就會告訴我又少了套件<br/>
+只好再送一個 Pull Request 上去</p>
 <h2 id="pipenv">pipenv</h2>
 <p><a href="https://pipenv.readthedocs.io/en/latest/">pipenv</a> 可以用來同時管理虛擬環境跟套件<br/>
-<code>pipenv</code> 不使用 <code>requriements.txt</code>，而是使用自定義的 <code>Pipfile</code> 跟 <code>Pipfile.lock</code> 來管理套件<br/>
-只要一個指令就能將套件安裝到虛擬環境中，並且更新到 <code>Pipfile</code> 以及 <code>Pipfile.lock</code></p>
+<code>pipenv</code> 不使用 <code>requriements.txt</code>，而是使用自定義的 <code>Pipfile</code> 跟 <code>Pipfile.lock</code> 管理套件<br/>
+它的好處是能透過單一指令將套件安裝到虛擬環境中，並且更新到 <code>Pipfile</code> 以及 <code>Pipfile.lock</code></p>
 <h3 id="pipenv_1">安裝 pipenv</h3>
 <p>根據不同的系統，可以在 <a href="https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv">Installing Pipenv</a> 找到安裝 pipenv 的方式</p>
-<div class="highlight"><pre><span></span><code>pipx install pipenv
+<p>不過最簡單的做法就是直接透過 <code>pip</code> 安裝</p>
+<div class="highlight"><pre><span></span><code>python -m pip install --user pipenv
 </code></pre></div>
-<h3 id="_2">初始化環境</h3>
+<h3 id="_1">初始化環境</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 初始化虛擬環境</span>
 <span class="c1"># 如果 Pipfile 跟 Pipfile.lock 還不存在，則會產生</span>
 pipenv install
 
-<span class="c1"># 指定不同版本的 Python</span>
+<span class="c1"># 指定用特定版本的 Python 來產生虛擬環境</span>
 pipenv install --python <span class="m">3</span>.6.4
 
 <span class="c1"># 移除虛擬環境</span>
@@ -172,10 +171,10 @@ pipenv --where
 <p>初始化虛擬環境後，會產生 <code>Pipfile</code> 跟 <code>Pipfile.lock</code></p>
 <ul>
 <li><code>Pipfile</code> 是一個 <a href="https://github.com/toml-lang/toml">toml</a> 格式的檔案<ul>
-<li>source: 指定要去找套件的 pypi ，比較常見的 use case 是換到私有的 pypi</li>
-<li>dev-package: 開發環境所需套件</li>
-<li>packages: 預設安裝套件（通常是 Production 用）</li>
-<li>requires: 是否需要限定在某個版本的 Python</li>
+<li><strong>source</strong>: 指定要去找套件的 PyPI ，比較常見的使用案例是加上自己私有的 PyPI</li>
+<li><strong>dev-package</strong>: 開發環境所需套件</li>
+<li><strong>packages</strong>: 預設安裝套件（通常是 Production 用）</li>
+<li><strong>requires</strong>: 限定在某個版本的 Python</li>
 </ul>
 </li>
 </ul>
@@ -193,7 +192,7 @@ pipenv --where
 </code></pre></div>
 <ul>
 <li><code>Pipfile.lock</code> 則是 JSON 格式的檔案<ul>
-<li>記錄下安裝的套件，以及其相依的套件（假設安裝了 A 套件，而它相依於 B 套件，則 A 跟 B 套件都會列在這）</li>
+<li>同樣是記錄安裝的套件，但會同時記錄下套件相依的其他套件（假設安裝了 <code>requests</code> 套件，而 <code>requests</code> 相依於 <code>urllib3</code> ，則 <code>requests</code> 跟 <code>urllibs</code> 都會列在這）</li>
 </ul>
 </li>
 </ul>
@@ -220,7 +219,7 @@ pipenv --where
 </code></pre></div>
 <p>通常沒有什麼特別的理由，可以不用動到 <code>Pipfile</code> 跟 <code>Pipfile.lock</code><br/>
 交給 <code>pipenv</code> 去管理就好</p>
-<h3 id="_3">安裝套件</h3>
+<h3 id="_2">安裝套件</h3>
 <p><code>pipenv</code> 另一個好處是，它的 API 基本上跟 <a href="https://pip.pypa.io/en/stable/">pip</a> 是一樣的</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安裝套件</span>
 pipenv install &lt;package&gt;<span class="o">==</span>&lt;version&gt;
@@ -231,12 +230,12 @@ pipenv uninstall &lt;package&gt;
 <span class="c1"># 更新套件</span>
 pipenv update &lt;package&gt;
 </code></pre></div>
-<p>以安裝 <a href="https://requests.readthedocs.io/en/master/">requests</a> 為例，<br/>
-會更新在 <code>Pipfile</code> 中的 <strong>packages</strong></p>
+<p>以安裝 <a href="https://requests.readthedocs.io/en/master/">requests</a> 為例</p>
+<p><code>Pipfile</code> 會更新在 <strong>packages</strong></p>
 <div class="highlight"><pre><span></span><code><span class="k">[packages]</span>
 <span class="n">requests</span> <span class="o">=</span> <span class="s">"*"</span>
 </code></pre></div>
-<p><code>Pipfile.lock</code> 中除了 <code>requests</code> 外，還會安裝他的相依套件 urllib3 (Ref: <a href="https://github.com/psf/requests/blob/v2.22.0/setup.py#L47">setup.py#L47</a>)</p>
+<p><code>Pipfile.lock</code> 中除了 <code>requests</code> 外，還會列出 <code>requests</code> 的相依套件 <code>urllib3</code> (Ref: <a href="https://github.com/psf/requests/blob/v2.22.0/setup.py#L47">setup.py#L47</a>)</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="err">......</span>
     <span class="nt">"default"</span><span class="p">:</span> <span class="p">{</span>
@@ -261,26 +260,31 @@ pipenv update &lt;package&gt;
     <span class="err">......</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>hashes</strong> 欄位會記錄下，安裝套件時產生的 hash 值<br/>
-只要套件內容有改變，就會產生不同的 hash 值<br/>
-主要可以用於驗證下次安裝時，這個套件是否跟這次是一樣的<br/>
-能解決的問題是有些套件雖然改了內容，卻沒有升版<br/>
-下面兩個指令就會運用到這個欄位</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 直接使用 Pipfile.lock 安裝套件</span>
-pipenv install --ignore-pipfile
-
-<span class="c1"># 安裝時同時確認 Pipfile.lock ，如果 lock 檔跟實際安裝的有衝突，則會跳出</span>
+<p>可以注意到每個安裝的套件會有三個欄位 <strong>index</strong>, <strong>version</strong> 和 <strong>hashes</strong></p>
+<ul>
+<li><strong>index</strong>: 套件從哪裡裝的</li>
+<li><strong>version</strong>: 安裝的版本</li>
+<li><strong>hashes</strong> 安裝這個套件時產生的雜湊值 (hashing)<br/>
+  只要套件內容有改變，就會產生不同的雜湊值<br/>
+  可以用於驗證下次安裝時，這個套件的內容是否跟這次相同<br/>
+  有些套件雖然改了內容，但沒有更新版本號<br/>
+  雜湊值可以用來避免安裝了不同的內容卻渾然不知</li>
+</ul>
+<p>下面兩個指令就會運用到 <strong>hashes</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安裝時同時確認 Pipfile.lock ，如果 lock 檔跟實際安裝的有衝突，則會跳出安裝</span>
 pipenv install --deploy
+
+<span class="c1"># 直接使用 Pipfile.lock 安裝套件</span>
+pipenv install --ignore-pipfile
 </code></pre></div>
-<p><code>pipenv</code> 另外還可以做到將開發時才需要的到的套件分開來<br/>
-取代以往在不同的環境下，使用不同的 <code>requirements.txt</code> (e.g.,  <code>requirments/dev.txt</code>, <code>requirements/prod.txt</code>)</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Install dev only package</span>
+<h2 id="_3">安裝開發環境套件</h2>
+<p>有些套件（e.g., 測試工具）不需要跟著系統一起上線<br/>
+以往會將不同的套件用不同的 <code>requirements.txt</code> 來管理 (e.g.,  <code>requirments/dev.txt</code>, <code>requirements/prod.txt</code>)</p>
+<p><code>pipenv</code> 則是將開發環境才需要的套件寫在 <code>Pipfile</code> 的 <strong>dev-packages</strong> 內<br/>
+只要在安裝時後面加上選項 <code>--dev</code></p>
+<p>e.g.,</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安裝開發環境套件</span>
 pipenv install &lt;package&gt;<span class="o">==</span>&lt;version&gt; --dev
-</code></pre></div>
-<p>以安裝 <a href="https://docs.pytest.org/en/latest/">pytest</a> 為例<br/>
-就會更新到 <code>Pipfile</code> 的 <strong>dev-packages</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">[dev-packages]</span>
-<span class="n">pytest</span> <span class="o">=</span> <span class="s">"*"</span>
 </code></pre></div>
 <h3 id="_4">在虛擬環境中執行指令</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 在虛擬環境中執行 [command]</span>
@@ -291,38 +295,54 @@ pipenv run python your_program.py
 </code></pre></div>
 <p>雖然可以透過 <code>pipenv shell</code> 進入到虛擬環境，但我不太建議使用<br/>
 原因是我常常會進入虛擬環境後，亂下 <code>pip install &lt;package&gt;</code> 的指令<br/>
-然後就沒被 <code>Pipfile</code> 給記錄到了...</p>
+然後就沒被 <code>Pipfile</code> 給記錄到...</p>
 <h3 id="_5">其他功能</h3>
 <ul>
 <li><code>pipenv check</code>: 檢查安裝的套件是否有已知的安全性問題</li>
 <li><code>pipenv graph</code>: 檢視整個相依套件的相依圖</li>
 <li><code>pipenv open &lt;package&gt;</code>: 直接安裝的套件 （不知道什麼時候養成了「懶得看文件，直接 trace code」的習慣...）</li>
 </ul>
-<h3 id="pipenv_2">pipenv 已經很久沒更新了，還要使用嗎？</h3>
+<h3 id="pipenv_2">pipenv 已經很久沒更新了，沒有問題嗎？</h3>
 <p>雖然我的確遇過一些小問題 (e.g., <a href="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent/">pipenv 和 poerty 如何處理在不同作業系統下相依套件不同</a>)<br/>
-但就我的使用上，我也不認為 <code>poetry</code> 有到完美<br/>
-目前也還沒找到其他足夠好的工具<br/>
-而且大部分的狀況下， <code>pipenv</code> 也足夠解決我的問題<br/>
+但大部分的狀況下， <code>pipenv</code> 已經足夠解決我的問題<br/>
 所以沒什麼意外我大概還是會繼續使用 <code>pipenv</code></p>
 <h2 id="_6">其他工具</h2>
 <h3 id="poetry">poetry</h3>
 <p><a href="https://python-poetry.org/">poetry</a> 是目前最多人說可以取代 <code>pipenv</code> 的工具<br/>
 除了 <code>pipenv</code> 包含的功能外，它還能用來初始化專案、上傳套件</p>
-<p>但我比較不喜歡的一點是，它採用的 API 跟版本標示方式都跟 <code>pip</code> 不同<br/>
-就會再增加學習成本</p>
-<p>不過它採用 <code>pyproject.toml</code> 來做 configuration 我倒是蠻喜歡的</p>
+<p>我使用下來體驗還算不錯<br/>
+而且 <code>poetry</code> 採用 <code>pyproject.toml</code> 來做配置設定，這點我就蠻喜歡的</p>
+<p>但我比較不喜歡的點是，它採用的 API 跟版本標示方式都跟 <code>pip</code> 不同<br/>
+會多增加學習成本</p>
 <h3 id="pip-tools">pip-tools</h3>
-<p><a href="https://github.com/jazzband/pip-tools">pip-tools</a> 只做產生 lock 檔的部分，不能用來管理虛擬環境<br/>
-這套工具比較適合習慣使用 <code>pip</code> 跟 <code>virtualenv</code> ，但又想要有 lock 檔的狀況</p>
+<p><a href="https://github.com/jazzband/pip-tools">pip-tools</a> 主要的功能是產生 hashes ，並不能用來管理虛擬環境<br/>
+這套工具比較適合習慣使用 <code>pip</code> 跟 <code>virtualenv</code> ，但又想要有 <code>Pipfile.lock</code> 的功能的情況</p>
 <h3 id="dephell">dephell</h3>
 <p><a href="https://github.com/dephell/dephell">dephell</a> 是一個 all-in-one 的工具<br/>
 當初看到覺得很有趣，但還沒有時間好好研究<br/>
 目前使用到對我最有幫助的功能是它能在轉換不同的格式 (e.g., <code>Pipfile</code> → <code>pyproject.toml</code>)</p>
 <h2 id="_7">自動將舊版套件升級</h2>
+<p>以下再多提供兩個可以自動將相依套件升級的服務</p>
 <ul>
 <li><a href="https://pyup.io">pyup.io</a></li>
 <li><a href="https://dependabot.com">dependabot</a></li>
 </ul>
+<h2 id="bouns-pipx-python">Bouns: pipx - 在系統安裝 Python 工具</h2>
+<p>雖然說建議 Python 的套件都裝在虛擬環境<br/>
+但如果平時要使用的工具 (e.g., <code>invoke</code>, <code>awscli</code>) 都裝在虛擬環境<br/>
+還必須要每次進入虛擬環境就太麻煩了<br/>
+所以，在這樣的情況下，我就會建議使用 <a href="https://pipxproject.github.io/pipx/">pipx</a></p>
+<ul>
+<li>安裝 pipx</li>
+</ul>
+<div class="highlight"><pre><span></span><code>python -m pip install --user pipx
+python -m pipx ensurepath
+</code></pre></div>
+<ul>
+<li>安裝工具</li>
+</ul>
+<div class="highlight"><pre><span></span><code>pipx install <span class="o">[</span>package<span class="o">]</span>
+</code></pre></div>
 <h2 id="reference">Reference</h2>
 <ul>
 <li><a href="https://lee-w.github.io/pycon-note/posts/pycon-tw-2018/2019/10/is-your-dev-env-alright/">這樣的開發環境沒問題嗎？ - PyCon TW 2018</a></li>
@@ -336,25 +356,90 @@ pipenv run python your_program.py
 
 <script src="https://lee-w.github.io/theme/applause-button/applause-button.js"></script>
 <div class="applause_button">
-    <applause-button url=https://lee-w.github.io/drafts/python-table-manner-dependency-mangement.html> </applause-button>
+    <applause-button url=https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement> </applause-button>
 </div>
 
 
+                <p id="post-share-links">
+    Share on:
+    <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20-%20%E8%99%9B%E6%93%AC%E7%92%B0%E5%A2%83%E5%92%8C%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86&url=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement&hashtags=python,dependency" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="mailto:?subject=Python%20Table%20Manners%20-%20%E8%99%9B%E6%93%AC%E7%92%B0%E5%A2%83%E5%92%8C%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86&amp;body=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+    </p>
+
             
             
-            
 
 
 
 
 
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement"
+                   href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+                        <div id="disqus_thread"></div>
+                        <script>
+    var disqus_shortname = 'lee-w-blog';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement';
+    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
             <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series" title="Previous: Python Table Manners 系列">Python Table Manners 系列</a></li>
+            </ul>
+            </nav>
+            </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2020-02-23T00:00:00+08:00">2020/02/23 - Sun</time>
-        <h4><built-in method index of str object at 0x7f31802543a0></h4>
+            <time itemprop="dateCreated" datetime="2020-02-23T12:24:00+08:00">2020/02/23 - Sun</time>
+        <h4><built-in method index of str object at 0x7f9aec4e2cb0></h4>
     <ul class="multi-parts-list">
     </ul>
                 <h4>Read Time</h4>
@@ -364,10 +449,10 @@ pipenv run python your_program.py
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://lee-w.github.io/tags.html#dependency-ref">Dependency
-                    <span>1</span>
+                    <span>2</span>
 </a></li>
                 <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
-                    <span>16</span>
+                    <span>17</span>
 </a></li>
             </ul>
 <h4>Keep In Touch</h4>

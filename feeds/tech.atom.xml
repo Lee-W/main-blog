@@ -1,5 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-02-22T19:32:00+08:00</updated><entry><title>Python Table Manners 系列</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-series" rel="alternate"></link><published>2020-02-22T19:32:00+08:00</published><updated>2020-02-22T19:32:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-22:/posts/tech/2020/02/python-table-manner-series</id><summary type="html">&lt;!--more--&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-02-23T12:24:00+08:00</updated><entry><title>Python Table Manners - 虛擬環境和套件管理</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" rel="alternate"></link><published>2020-02-23T12:24:00+08:00</published><updated>2020-02-23T12:24:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-23:/posts/tech/2020/02/python-table-manners-dependency-mangement</id><summary type="html">&lt;p&gt;為了避免不同 Python 專案使用的套件版本不同，導致本機的套件版本打架&lt;br/&gt;
+開始 Python 專案時，第一步就是先建立一個專屬於專案的虛擬環境&lt;br/&gt;
+理想上，本機的環境是不太需要安裝套件的&lt;br/&gt;
+因為每一個專案都會在自己的虛擬環境內執行，並且在裡面安裝各自的套件&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;為了避免不同 Python 專案使用的套件版本不同，導致本機的套件版本打架&lt;br/&gt;
+開始 Python 專案時，第一步就是先建立一個專屬於專案的虛擬環境&lt;br/&gt;
+理想上，本機的環境是不太需要安裝套件的&lt;br/&gt;
+因為每一個專案都會在自己的虛擬環境內執行，並且在裡面安裝各自的套件&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="virutalenv"&gt;virutalenv&lt;/h2&gt;
+&lt;p&gt;創建虛擬環境，最基本作法就是使用 &lt;a href="https://virtualenv.pypa.io/en/latest/"&gt;virtualenv&lt;/a&gt;&lt;br/&gt;
+透過以下幾個指令建立一個，並把相關的套件寫入 &lt;code&gt;requirements.txt&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 創建 Python 虛擬環境&lt;/span&gt;
+python -m venv ./venv
+
+&lt;span class="c1"&gt;# 啟動 Python 虛擬環境 (Unix like)&lt;/span&gt;
+&lt;span class="nb"&gt;source&lt;/span&gt; venv/bin/activate
+
+&lt;span class="c1"&gt;# 將虛擬環境用到的套件寫入 requirements.txt&lt;/span&gt;
+pip freeze &amp;gt;&amp;gt; requirements.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;p.s. 基本上這個系列文會以 Unix 系統（macOS, Linux）為主&lt;/p&gt;
+&lt;p&gt;但這個做法會遇到幾個問題&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;忘記開啟/關閉虛擬環境&lt;/li&gt;
+&lt;li&gt;忘記把新安裝的套件寫入 &lt;code&gt;requirements.txt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pip freeze&lt;/code&gt; 安裝一些不必要的套件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;一開始我會使用 &lt;a href="https://github.com/bndr/pipreqs"&gt;pipreqs&lt;/a&gt; 來解決 &lt;code&gt;pip freeze&lt;/code&gt; 所造成的雜亂&lt;br/&gt;
+但是忘記寫入套件跟忘記開關虛擬環境的問題還是存在&lt;br/&gt;
+常常我在本地測試成功，丟到伺服器就會告訴我又少了套件&lt;br/&gt;
+只好再送一個 Pull Request 上去&lt;/p&gt;
+&lt;h2 id="pipenv"&gt;pipenv&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://pipenv.readthedocs.io/en/latest/"&gt;pipenv&lt;/a&gt; 可以用來同時管理虛擬環境跟套件&lt;br/&gt;
+&lt;code&gt;pipenv&lt;/code&gt; 不使用 &lt;code&gt;requriements.txt&lt;/code&gt;，而是使用自定義的 &lt;code&gt;Pipfile&lt;/code&gt; 跟 &lt;code&gt;Pipfile.lock&lt;/code&gt; 管理套件&lt;br/&gt;
+它的好處是能透過單一指令將套件安裝到虛擬環境中，並且更新到 &lt;code&gt;Pipfile&lt;/code&gt; 以及 &lt;code&gt;Pipfile.lock&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="pipenv_1"&gt;安裝 pipenv&lt;/h3&gt;
+&lt;p&gt;根據不同的系統，可以在 &lt;a href="https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv"&gt;Installing Pipenv&lt;/a&gt; 找到安裝 pipenv 的方式&lt;/p&gt;
+&lt;p&gt;不過最簡單的做法就是直接透過 &lt;code&gt;pip&lt;/code&gt; 安裝&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m pip install --user pipenv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="_1"&gt;初始化環境&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 初始化虛擬環境&lt;/span&gt;
+&lt;span class="c1"&gt;# 如果 Pipfile 跟 Pipfile.lock 還不存在，則會產生&lt;/span&gt;
+pipenv install
+
+&lt;span class="c1"&gt;# 指定用特定版本的 Python 來產生虛擬環境&lt;/span&gt;
+pipenv install --python &lt;span class="m"&gt;3&lt;/span&gt;.6.4
+
+&lt;span class="c1"&gt;# 移除虛擬環境&lt;/span&gt;
+pipenv --rm
+
+&lt;span class="c1"&gt;# 列出虛擬環境的所在位置&lt;/span&gt;
+pipenv --where
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;初始化虛擬環境後，會產生 &lt;code&gt;Pipfile&lt;/code&gt; 跟 &lt;code&gt;Pipfile.lock&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Pipfile&lt;/code&gt; 是一個 &lt;a href="https://github.com/toml-lang/toml"&gt;toml&lt;/a&gt; 格式的檔案&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;source&lt;/strong&gt;: 指定要去找套件的 PyPI ，比較常見的使用案例是加上自己私有的 PyPI&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;dev-package&lt;/strong&gt;: 開發環境所需套件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;packages&lt;/strong&gt;: 預設安裝套件（通常是 Production 用）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;requires&lt;/strong&gt;: 限定在某個版本的 Python&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[[source]]&lt;/span&gt;
+&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"pypi"&lt;/span&gt;
+&lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"https://pypi.org/simple"&lt;/span&gt;
+&lt;span class="n"&gt;verify_ssl&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+
+&lt;span class="k"&gt;[dev-packages]&lt;/span&gt;
+
+&lt;span class="k"&gt;[packages]&lt;/span&gt;
+
+&lt;span class="k"&gt;[requires]&lt;/span&gt;
+&lt;span class="n"&gt;python_version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"3.7"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Pipfile.lock&lt;/code&gt; 則是 JSON 格式的檔案&lt;ul&gt;
+&lt;li&gt;同樣是記錄安裝的套件，但會同時記錄下套件相依的其他套件（假設安裝了 &lt;code&gt;requests&lt;/code&gt; 套件，而 &lt;code&gt;requests&lt;/code&gt; 相依於 &lt;code&gt;urllib3&lt;/code&gt; ，則 &lt;code&gt;requests&lt;/code&gt; 跟 &lt;code&gt;urllibs&lt;/code&gt; 都會列在這）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nt"&gt;"_meta"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nt"&gt;"hash"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nt"&gt;"sha256"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"..."&lt;/span&gt;
+        &lt;span class="p"&gt;},&lt;/span&gt;
+        &lt;span class="nt"&gt;"pipfile-spec"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="nt"&gt;"requires"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nt"&gt;"python_version"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"3.7"&lt;/span&gt;
+        &lt;span class="p"&gt;},&lt;/span&gt;
+        &lt;span class="nt"&gt;"sources"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+            &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="nt"&gt;"name"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"pypi"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="nt"&gt;"url"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"https://pypi.org/simple"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="nt"&gt;"verify_ssl"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="nt"&gt;"default"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{},&lt;/span&gt;
+    &lt;span class="nt"&gt;"develop"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;通常沒有什麼特別的理由，可以不用動到 &lt;code&gt;Pipfile&lt;/code&gt; 跟 &lt;code&gt;Pipfile.lock&lt;/code&gt;&lt;br/&gt;
+交給 &lt;code&gt;pipenv&lt;/code&gt; 去管理就好&lt;/p&gt;
+&lt;h3 id="_2"&gt;安裝套件&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pipenv&lt;/code&gt; 另一個好處是，它的 API 基本上跟 &lt;a href="https://pip.pypa.io/en/stable/"&gt;pip&lt;/a&gt; 是一樣的&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝套件&lt;/span&gt;
+pipenv install &amp;lt;package&amp;gt;&lt;span class="o"&gt;==&lt;/span&gt;&amp;lt;version&amp;gt;
+
+&lt;span class="c1"&gt;# 解除安裝套件&lt;/span&gt;
+pipenv uninstall &amp;lt;package&amp;gt;
+
+&lt;span class="c1"&gt;# 更新套件&lt;/span&gt;
+pipenv update &amp;lt;package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;以安裝 &lt;a href="https://requests.readthedocs.io/en/master/"&gt;requests&lt;/a&gt; 為例&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Pipfile&lt;/code&gt; 會更新在 &lt;strong&gt;packages&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[packages]&lt;/span&gt;
+&lt;span class="n"&gt;requests&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"*"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;Pipfile.lock&lt;/code&gt; 中除了 &lt;code&gt;requests&lt;/code&gt; 外，還會列出 &lt;code&gt;requests&lt;/code&gt; 的相依套件 &lt;code&gt;urllib3&lt;/code&gt; (Ref: &lt;a href="https://github.com/psf/requests/blob/v2.22.0/setup.py#L47"&gt;setup.py#L47&lt;/a&gt;)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="err"&gt;......&lt;/span&gt;
+    &lt;span class="nt"&gt;"default"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="err"&gt;......&lt;/span&gt;
+
+        &lt;span class="nt"&gt;"requests"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nt"&gt;"hashes"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+                &lt;span class="s2"&gt;"sha256:11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s2"&gt;"sha256:9cf5292fcd0f598c671cfc1e0d7d1a7f13bb8085e9a590f48c010551dc6c4b31"&lt;/span&gt;
+            &lt;span class="p"&gt;],&lt;/span&gt;
+            &lt;span class="nt"&gt;"index"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"pypi"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="nt"&gt;"version"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"==2.22.0"&lt;/span&gt;
+        &lt;span class="p"&gt;},&lt;/span&gt;
+        &lt;span class="nt"&gt;"urllib3"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="nt"&gt;"hashes"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+                &lt;span class="s2"&gt;"sha256:3de946ffbed6e6746608990594d08faac602528ac7015ac28d33cee6a45b7398"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s2"&gt;"sha256:9a107b99a5393caf59c7aa3c1249c16e6879447533d0887f4336dde834c7be86"&lt;/span&gt;
+            &lt;span class="p"&gt;],&lt;/span&gt;
+            &lt;span class="nt"&gt;"version"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"==1.25.6"&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="err"&gt;......&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;可以注意到每個安裝的套件會有三個欄位 &lt;strong&gt;index&lt;/strong&gt;, &lt;strong&gt;version&lt;/strong&gt; 和 &lt;strong&gt;hashes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;index&lt;/strong&gt;: 套件從哪裡裝的&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;version&lt;/strong&gt;: 安裝的版本&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;hashes&lt;/strong&gt; 安裝這個套件時產生的雜湊值 (hashing)&lt;br/&gt;
+  只要套件內容有改變，就會產生不同的雜湊值&lt;br/&gt;
+  可以用於驗證下次安裝時，這個套件的內容是否跟這次相同&lt;br/&gt;
+  有些套件雖然改了內容，但沒有更新版本號&lt;br/&gt;
+  雜湊值可以用來避免安裝了不同的內容卻渾然不知&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面兩個指令就會運用到 &lt;strong&gt;hashes&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝時同時確認 Pipfile.lock ，如果 lock 檔跟實際安裝的有衝突，則會跳出安裝&lt;/span&gt;
+pipenv install --deploy
+
+&lt;span class="c1"&gt;# 直接使用 Pipfile.lock 安裝套件&lt;/span&gt;
+pipenv install --ignore-pipfile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="_3"&gt;安裝開發環境套件&lt;/h2&gt;
+&lt;p&gt;有些套件（e.g., 測試工具）不需要跟著系統一起上線&lt;br/&gt;
+以往會將不同的套件用不同的 &lt;code&gt;requirements.txt&lt;/code&gt; 來管理 (e.g.,  &lt;code&gt;requirments/dev.txt&lt;/code&gt;, &lt;code&gt;requirements/prod.txt&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pipenv&lt;/code&gt; 則是將開發環境才需要的套件寫在 &lt;code&gt;Pipfile&lt;/code&gt; 的 &lt;strong&gt;dev-packages&lt;/strong&gt; 內&lt;br/&gt;
+只要在安裝時後面加上選項 &lt;code&gt;--dev&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;e.g.,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝開發環境套件&lt;/span&gt;
+pipenv install &amp;lt;package&amp;gt;&lt;span class="o"&gt;==&lt;/span&gt;&amp;lt;version&amp;gt; --dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="_4"&gt;在虛擬環境中執行指令&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 在虛擬環境中執行 [command]&lt;/span&gt;
+pipenv run &amp;lt;command&amp;gt;
+
+&lt;span class="c1"&gt;# e.g.,&lt;/span&gt;
+pipenv run python your_program.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;雖然可以透過 &lt;code&gt;pipenv shell&lt;/code&gt; 進入到虛擬環境，但我不太建議使用&lt;br/&gt;
+原因是我常常會進入虛擬環境後，亂下 &lt;code&gt;pip install &amp;lt;package&amp;gt;&lt;/code&gt; 的指令&lt;br/&gt;
+然後就沒被 &lt;code&gt;Pipfile&lt;/code&gt; 給記錄到...&lt;/p&gt;
+&lt;h3 id="_5"&gt;其他功能&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pipenv check&lt;/code&gt;: 檢查安裝的套件是否有已知的安全性問題&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pipenv graph&lt;/code&gt;: 檢視整個相依套件的相依圖&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pipenv open &amp;lt;package&amp;gt;&lt;/code&gt;: 直接安裝的套件 （不知道什麼時候養成了「懶得看文件，直接 trace code」的習慣...）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="pipenv_2"&gt;pipenv 已經很久沒更新了，沒有問題嗎？&lt;/h3&gt;
+&lt;p&gt;雖然我的確遇過一些小問題 (e.g., &lt;a href="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent/"&gt;pipenv 和 poerty 如何處理在不同作業系統下相依套件不同&lt;/a&gt;)&lt;br/&gt;
+但大部分的狀況下， &lt;code&gt;pipenv&lt;/code&gt; 已經足夠解決我的問題&lt;br/&gt;
+所以沒什麼意外我大概還是會繼續使用 &lt;code&gt;pipenv&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="_6"&gt;其他工具&lt;/h2&gt;
+&lt;h3 id="poetry"&gt;poetry&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://python-poetry.org/"&gt;poetry&lt;/a&gt; 是目前最多人說可以取代 &lt;code&gt;pipenv&lt;/code&gt; 的工具&lt;br/&gt;
+除了 &lt;code&gt;pipenv&lt;/code&gt; 包含的功能外，它還能用來初始化專案、上傳套件&lt;/p&gt;
+&lt;p&gt;我使用下來體驗還算不錯&lt;br/&gt;
+而且 &lt;code&gt;poetry&lt;/code&gt; 採用 &lt;code&gt;pyproject.toml&lt;/code&gt; 來做配置設定，這點我就蠻喜歡的&lt;/p&gt;
+&lt;p&gt;但我比較不喜歡的點是，它採用的 API 跟版本標示方式都跟 &lt;code&gt;pip&lt;/code&gt; 不同&lt;br/&gt;
+會多增加學習成本&lt;/p&gt;
+&lt;h3 id="pip-tools"&gt;pip-tools&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/jazzband/pip-tools"&gt;pip-tools&lt;/a&gt; 主要的功能是產生 hashes ，並不能用來管理虛擬環境&lt;br/&gt;
+這套工具比較適合習慣使用 &lt;code&gt;pip&lt;/code&gt; 跟 &lt;code&gt;virtualenv&lt;/code&gt; ，但又想要有 &lt;code&gt;Pipfile.lock&lt;/code&gt; 的功能的情況&lt;/p&gt;
+&lt;h3 id="dephell"&gt;dephell&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/dephell/dephell"&gt;dephell&lt;/a&gt; 是一個 all-in-one 的工具&lt;br/&gt;
+當初看到覺得很有趣，但還沒有時間好好研究&lt;br/&gt;
+目前使用到對我最有幫助的功能是它能在轉換不同的格式 (e.g., &lt;code&gt;Pipfile&lt;/code&gt; → &lt;code&gt;pyproject.toml&lt;/code&gt;)&lt;/p&gt;
+&lt;h2 id="_7"&gt;自動將舊版套件升級&lt;/h2&gt;
+&lt;p&gt;以下再多提供兩個可以自動將相依套件升級的服務&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://pyup.io"&gt;pyup.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://dependabot.com"&gt;dependabot&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="bouns-pipx-python"&gt;Bouns: pipx - 在系統安裝 Python 工具&lt;/h2&gt;
+&lt;p&gt;雖然說建議 Python 的套件都裝在虛擬環境&lt;br/&gt;
+但如果平時要使用的工具 (e.g., &lt;code&gt;invoke&lt;/code&gt;, &lt;code&gt;awscli&lt;/code&gt;) 都裝在虛擬環境&lt;br/&gt;
+還必須要每次進入虛擬環境就太麻煩了&lt;br/&gt;
+所以，在這樣的情況下，我就會建議使用 &lt;a href="https://pipxproject.github.io/pipx/"&gt;pipx&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安裝 pipx&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m pip install --user pipx
+python -m pipx ensurepath
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;安裝工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipx install &lt;span class="o"&gt;[&lt;/span&gt;package&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-tw-2018/2019/10/is-your-dev-env-alright/"&gt;這樣的開發環境沒問題嗎？ - PyCon TW 2018&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/11/pipenv-the-future-of-python-dependency-management/"&gt;Pipenv: The Future of Python Dependency Management - PyCon US 2018&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-de-2018/2019/12/python-dependency-management/"&gt;Python Dependency Management - PyCon DE 2018&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Dependency"></category></entry><entry><title>Python Table Manners 系列</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series" rel="alternate"></link><published>2020-02-22T19:32:00+08:00</published><updated>2020-02-22T19:32:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-22:/posts/tech/2020/02/python-table-manners-series</id><summary type="html">&lt;!--more--&gt;
 
 &lt;p&gt;&lt;a href="https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019"&gt;Python Table Manners - A Clean Style&lt;/a&gt; 是我在 &lt;a href="https://lee-w.github.io/posts/tech/2019/12/pycon-ca-2019/"&gt;PyCon CA 2019&lt;/a&gt; 給的一個分享&lt;br&gt;
 內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流&lt;br&gt;
