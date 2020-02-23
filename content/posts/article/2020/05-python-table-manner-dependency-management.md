@@ -1,64 +1,60 @@
-Title: Python Table Manner - 虛擬環境和套件管理
-Date: 2020-02-23 00:00
+Title: Python Table Manners - 虛擬環境和套件管理
+Date: 2020-02-23 12:24
 Category: Tech
 Tags: Python, Dependency
-Slug: python-table-manner-dependency-mangement
+Slug: python-table-manners-dependency-mangement
 Authors: Lee-W
-Status: draft
-Series: Python Table Manner
+Series: Python Table Manners
 
-為了避免不同 Python 專案使用的套件版本不同
-開始一個 Python 專案時，第一步就是要先建立虛擬環境
-理想上，本機的環境是不用安裝套件的
-因為每一個專案都會在虛擬環境內執行，並且在裡面安裝各自的套件
+為了避免不同 Python 專案使用的套件版本不同，導致本機的套件版本打架
+開始 Python 專案時，第一步就是先建立一個專屬於專案的虛擬環境
+理想上，本機的環境是不太需要安裝套件的
+因為每一個專案都會在自己的虛擬環境內執行，並且在裡面安裝各自的套件
 
 <!--more-->
-
-如果要在本機安裝 Python 的工具的話，我建議使用 [pipx](https://pipxproject.github.io/pipx/)
-
-```sh
-python -m pip install --user pipx
-python -m pipx ensurepath
-pipx install [PACKAGE]
-```
 
 [TOC]
 
 ## virutalenv
-創建虛擬環境，最基本就是使用 [virtualenv](https://virtualenv.pypa.io/en/latest/)
+創建虛擬環境，最基本作法就是使用 [virtualenv](https://virtualenv.pypa.io/en/latest/)
 透過以下幾個指令建立一個，並把相關的套件寫入 `requirements.txt`
 
 ```sh
 # 創建 Python 虛擬環境
 python -m venv ./venv
 
-# 啟動 Python 虛擬環境
+# 啟動 Python 虛擬環境 (Unix like)
 source venv/bin/activate
 
 # 將虛擬環境用到的套件寫入 requirements.txt
 pip freeze >> requirements.txt
 ```
 
-### 遇到的問題
+p.s. 基本上這個系列文會以 Unix 系統（macOS, Linux）為主
+
+但這個做法會遇到幾個問題
+
 1. 忘記開啟/關閉虛擬環境
 2. 忘記把新安裝的套件寫入 `requirements.txt`
-3. `pip freeze` 會安裝過多不必要的套件
+3. `pip freeze` 安裝一些不必要的套件
 
 一開始我會使用 [pipreqs](https://github.com/bndr/pipreqs) 來解決 `pip freeze` 所造成的雜亂
-
 但是忘記寫入套件跟忘記開關虛擬環境的問題還是存在
-造成我常常在本地測試成功，送上去 CI 就出錯，只好再送一個 Pull Request 上去
+常常我在本地測試成功，丟到伺服器就會告訴我又少了套件
+只好再送一個 Pull Request 上去
 
 ## pipenv
 [pipenv](https://pipenv.readthedocs.io/en/latest/) 可以用來同時管理虛擬環境跟套件
-`pipenv` 不使用 `requriements.txt`，而是使用自定義的 `Pipfile` 跟 `Pipfile.lock` 來管理套件
-只要一個指令就能將套件安裝到虛擬環境中，並且更新到 `Pipfile` 以及 `Pipfile.lock`
+`pipenv` 不使用 `requriements.txt`，而是使用自定義的 `Pipfile` 跟 `Pipfile.lock` 管理套件
+它的好處是能透過單一指令將套件安裝到虛擬環境中，並且更新到 `Pipfile` 以及 `Pipfile.lock`
 
 ### 安裝 pipenv
 根據不同的系統，可以在 [Installing Pipenv](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv) 找到安裝 pipenv 的方式
 
+不過最簡單的做法就是直接透過 `pip` 安裝
+
 ```sh
-pipx install pipenv
+python -m pip install --user pipenv
 ```
 
 ### 初始化環境
@@ -68,7 +64,7 @@ pipx install pipenv
 # 如果 Pipfile 跟 Pipfile.lock 還不存在，則會產生
 pipenv install
 
-# 指定不同版本的 Python
+# 指定用特定版本的 Python 來產生虛擬環境
 pipenv install --python 3.6.4
 
 # 移除虛擬環境
@@ -81,10 +77,10 @@ pipenv --where
 初始化虛擬環境後，會產生 `Pipfile` 跟 `Pipfile.lock`
 
 * `Pipfile` 是一個 [toml](https://github.com/toml-lang/toml) 格式的檔案
-    * source: 指定要去找套件的 pypi ，比較常見的 use case 是換到私有的 pypi
-    * dev-package: 開發環境所需套件
-    * packages: 預設安裝套件（通常是 Production 用）
-    * requires: 是否需要限定在某個版本的 Python
+    * **source**: 指定要去找套件的 PyPI ，比較常見的使用案例是加上自己私有的 PyPI
+    * **dev-package**: 開發環境所需套件
+    * **packages**: 預設安裝套件（通常是 Production 用）
+    * **requires**: 限定在某個版本的 Python
 
 ```toml
 [[source]]
@@ -101,7 +97,7 @@ python_version = "3.7"
 ```
 
 * `Pipfile.lock` 則是 JSON 格式的檔案
-    * 記錄下安裝的套件，以及其相依的套件（假設安裝了 A 套件，而它相依於 B 套件，則 A 跟 B 套件都會列在這）
+    * 同樣是記錄安裝的套件，但會同時記錄下套件相依的其他套件（假設安裝了 `requests` 套件，而 `requests` 相依於 `urllib3` ，則 `requests` 跟 `urllibs` 都會列在這）
 
 ```json
 {
@@ -143,15 +139,16 @@ pipenv uninstall <package>
 pipenv update <package>
 ```
 
-以安裝 [requests](https://requests.readthedocs.io/en/master/) 為例，
-會更新在 `Pipfile` 中的 **packages**
+以安裝 [requests](https://requests.readthedocs.io/en/master/) 為例
+
+`Pipfile` 會更新在 **packages**
 
 ```toml
 [packages]
 requests = "*"
 ```
 
-`Pipfile.lock` 中除了 `requests` 外，還會安裝他的相依套件 urllib3 (Ref: [setup.py#L47](https://github.com/psf/requests/blob/v2.22.0/setup.py#L47))
+`Pipfile.lock` 中除了 `requests` 外，還會列出 `requests` 的相依套件 `urllib3` (Ref: [setup.py#L47](https://github.com/psf/requests/blob/v2.22.0/setup.py#L47))
 
 ```json
 {
@@ -179,34 +176,38 @@ requests = "*"
 }
 ```
 
-**hashes** 欄位會記錄下，安裝套件時產生的 hash 值
-只要套件內容有改變，就會產生不同的 hash 值
-主要可以用於驗證下次安裝時，這個套件是否跟這次是一樣的
-能解決的問題是有些套件雖然改了內容，卻沒有升版
-下面兩個指令就會運用到這個欄位
+可以注意到每個安裝的套件會有三個欄位 **index**, **version** 和 **hashes**
+
+* **index**: 套件從哪裡裝的
+* **version**: 安裝的版本
+* **hashes** 安裝這個套件時產生的雜湊值 (hashing)  
+  只要套件內容有改變，就會產生不同的雜湊值  
+  可以用於驗證下次安裝時，這個套件的內容是否跟這次相同
+  有些套件雖然改了內容，但沒有更新版本號  
+  雜湊值可以用來避免安裝了不同的內容卻渾然不知
+
+下面兩個指令就會運用到 **hashes**
 
 ```sh
+# 安裝時同時確認 Pipfile.lock ，如果 lock 檔跟實際安裝的有衝突，則會跳出安裝
+pipenv install --deploy
+
 # 直接使用 Pipfile.lock 安裝套件
 pipenv install --ignore-pipfile
-
-# 安裝時同時確認 Pipfile.lock ，如果 lock 檔跟實際安裝的有衝突，則會跳出
-pipenv install --deploy
 ```
 
-`pipenv` 另外還可以做到將開發時才需要的到的套件分開來
-取代以往在不同的環境下，使用不同的 `requirements.txt` (e.g.,  `requirments/dev.txt`, `requirements/prod.txt`)
+## 安裝開發環境套件
+有些套件（e.g., 測試工具）不需要跟著系統一起上線
+以往會將不同的套件用不同的 `requirements.txt` 來管理 (e.g.,  `requirments/dev.txt`, `requirements/prod.txt`)
+
+`pipenv` 則是將開發環境才需要的套件寫在 `Pipfile` 的 **dev-packages** 內
+只要在安裝時後面加上選項 `--dev`
+
+e.g.,
 
 ```sh
-# Install dev only package
+# 安裝開發環境套件
 pipenv install <package>==<version> --dev
-```
-
-以安裝 [pytest](https://docs.pytest.org/en/latest/) 為例
-就會更新到 `Pipfile` 的 **dev-packages**
-
-```toml
-[dev-packages]
-pytest = "*"
 ```
 
 ### 在虛擬環境中執行指令
@@ -221,18 +222,16 @@ pipenv run python your_program.py
 
 雖然可以透過 `pipenv shell` 進入到虛擬環境，但我不太建議使用
 原因是我常常會進入虛擬環境後，亂下 `pip install <package>` 的指令
-然後就沒被 `Pipfile` 給記錄到了...
+然後就沒被 `Pipfile` 給記錄到...
 
 ### 其他功能
 * `pipenv check`: 檢查安裝的套件是否有已知的安全性問題
 * `pipenv graph`: 檢視整個相依套件的相依圖
 * `pipenv open <package>`: 直接安裝的套件 （不知道什麼時候養成了「懶得看文件，直接 trace code」的習慣...）
 
-### pipenv 已經很久沒更新了，還要使用嗎？
+### pipenv 已經很久沒更新了，沒有問題嗎？
 雖然我的確遇過一些小問題 (e.g., [pipenv 和 poerty 如何處理在不同作業系統下相依套件不同](https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent/))
-但就我的使用上，我也不認為 `poetry` 有到完美
-目前也還沒找到其他足夠好的工具
-而且大部分的狀況下， `pipenv` 也足夠解決我的問題
+但大部分的狀況下， `pipenv` 已經足夠解決我的問題
 所以沒什麼意外我大概還是會繼續使用 `pipenv`
 
 ## 其他工具
@@ -241,14 +240,15 @@ pipenv run python your_program.py
 [poetry](https://python-poetry.org/) 是目前最多人說可以取代 `pipenv` 的工具
 除了 `pipenv` 包含的功能外，它還能用來初始化專案、上傳套件
 
-但我比較不喜歡的一點是，它採用的 API 跟版本標示方式都跟 `pip` 不同
-就會再增加學習成本
+我使用下來體驗還算不錯
+而且 `poetry` 採用 `pyproject.toml` 來做配置設定，這點我就蠻喜歡的
 
-不過它採用 `pyproject.toml` 來做 configuration 我倒是蠻喜歡的
+但我比較不喜歡的點是，它採用的 API 跟版本標示方式都跟 `pip` 不同
+會多增加學習成本
 
 ### pip-tools
-[pip-tools](https://github.com/jazzband/pip-tools) 只做產生 lock 檔的部分，不能用來管理虛擬環境
-這套工具比較適合習慣使用 `pip` 跟 `virtualenv` ，但又想要有 lock 檔的狀況
+[pip-tools](https://github.com/jazzband/pip-tools) 主要的功能是產生 hashes ，並不能用來管理虛擬環境
+這套工具比較適合習慣使用 `pip` 跟 `virtualenv` ，但又想要有 `Pipfile.lock` 的功能的情況
 
 ### dephell
 [dephell](https://github.com/dephell/dephell) 是一個 all-in-one 的工具
@@ -256,8 +256,29 @@ pipenv run python your_program.py
 目前使用到對我最有幫助的功能是它能在轉換不同的格式 (e.g., `Pipfile` → `pyproject.toml`)
 
 ## 自動將舊版套件升級
+以下再多提供兩個可以自動將相依套件升級的服務
+
 * [pyup.io](https://pyup.io)
 * [dependabot](https://dependabot.com)
+
+## Bouns: pipx - 在系統安裝 Python 工具
+雖然說建議 Python 的套件都裝在虛擬環境
+但如果平時要使用的工具 (e.g., `invoke`, `awscli`) 都裝在虛擬環境
+還必須要每次進入虛擬環境就太麻煩了
+所以，在這樣的情況下，我就會建議使用 [pipx](https://pipxproject.github.io/pipx/)
+
+* 安裝 pipx
+
+```sh
+python -m pip install --user pipx
+python -m pipx ensurepath
+```
+
+* 安裝工具
+
+```sh
+pipx install [package]
+```
 
 ## Reference
 * [這樣的開發環境沒問題嗎？ - PyCon TW 2018](https://lee-w.github.io/pycon-note/posts/pycon-tw-2018/2019/10/is-your-dev-env-alright/)
