@@ -89,5 +89,6 @@ PLUGINS = [
     "extract_toc",
     "post_stats",
     "assets",
+    "series",
 ]
 ANOTHER_READ_MORE_LINK = ""
