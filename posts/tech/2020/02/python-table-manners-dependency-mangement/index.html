@@ -147,7 +147,7 @@ pip freeze &gt;&gt; requirements.txt
 只好再送一個 Pull Request 上去</p>
 <h2 id="pipenv">pipenv</h2>
 <p><a href="https://pipenv.readthedocs.io/en/latest/">pipenv</a> 可以用來同時管理虛擬環境跟套件<br/>
-<code>pipenv</code> 不使用 <code>requriements.txt</code>，而是使用自定義的 <code>Pipfile</code> 跟 <code>Pipfile.lock</code> 管理套件<br/>
+pipenv 不使用 <code>requriements.txt</code>，而是使用自定義的 <code>Pipfile</code> 跟 <code>Pipfile.lock</code> 管理套件<br/>
 它的好處是能透過單一指令將套件安裝到虛擬環境中，並且更新到 <code>Pipfile</code> 以及 <code>Pipfile.lock</code></p>
 <h3 id="pipenv_1">安裝 pipenv</h3>
 <p>根據不同的系統，可以在 <a href="https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv">Installing Pipenv</a> 找到安裝 pipenv 的方式</p>
@@ -220,7 +220,7 @@ pipenv --where
 <p>通常沒有什麼特別的理由，可以不用動到 <code>Pipfile</code> 跟 <code>Pipfile.lock</code><br/>
 交給 <code>pipenv</code> 去管理就好</p>
 <h3 id="_2">安裝套件</h3>
-<p><code>pipenv</code> 另一個好處是，它的 API 基本上跟 <a href="https://pip.pypa.io/en/stable/">pip</a> 是一樣的</p>
+<p>pipenv 的另一個好處是，它的 API 基本上跟 <a href="https://pip.pypa.io/en/stable/">pip</a> 是一樣的</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安裝套件</span>
 pipenv install &lt;package&gt;<span class="o">==</span>&lt;version&gt;
 
@@ -231,11 +231,11 @@ pipenv uninstall &lt;package&gt;
 pipenv update &lt;package&gt;
 </code></pre></div>
 <p>以安裝 <a href="https://requests.readthedocs.io/en/master/">requests</a> 為例</p>
-<p><code>Pipfile</code> 會更新在 <strong>packages</strong></p>
+<p>Pipfile 會更新在 <strong>packages</strong></p>
 <div class="highlight"><pre><span></span><code><span class="k">[packages]</span>
 <span class="n">requests</span> <span class="o">=</span> <span class="s">"*"</span>
 </code></pre></div>
-<p><code>Pipfile.lock</code> 中除了 <code>requests</code> 外，還會列出 <code>requests</code> 的相依套件 <code>urllib3</code> (Ref: <a href="https://github.com/psf/requests/blob/v2.22.0/setup.py#L47">setup.py#L47</a>)</p>
+<p>Pipfile.lock 中除了 <code>requests</code> 外，還會列出 <code>requests</code> 的相依套件 <code>urllib3</code> (Ref: <a href="https://github.com/psf/requests/blob/v2.22.0/setup.py#L47">setup.py#L47</a>)</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="err">......</span>
     <span class="nt">"default"</span><span class="p">:</span> <span class="p">{</span>
@@ -280,7 +280,7 @@ pipenv install --ignore-pipfile
 <h2 id="_3">安裝開發環境套件</h2>
 <p>有些套件（e.g., 測試工具）不需要跟著系統一起上線<br/>
 以往會將不同的套件用不同的 <code>requirements.txt</code> 來管理 (e.g.,  <code>requirments/dev.txt</code>, <code>requirements/prod.txt</code>)</p>
-<p><code>pipenv</code> 則是將開發環境才需要的套件寫在 <code>Pipfile</code> 的 <strong>dev-packages</strong> 內<br/>
+<p>pipenv 則是將開發環境才需要的套件寫在 Pipfile 的 <strong>dev-packages</strong> 內<br/>
 只要在安裝時後面加上選項 <code>--dev</code></p>
 <p>e.g.,</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安裝開發環境套件</span>
@@ -295,7 +295,7 @@ pipenv run python your_program.py
 </code></pre></div>
 <p>雖然可以透過 <code>pipenv shell</code> 進入到虛擬環境，但我不太建議使用<br/>
 原因是我常常會進入虛擬環境後，亂下 <code>pip install &lt;package&gt;</code> 的指令<br/>
-然後就沒被 <code>Pipfile</code> 給記錄到...</p>
+然後就沒被 Pipfile 給記錄到...</p>
 <h3 id="_5">其他功能</h3>
 <ul>
 <li><code>pipenv check</code>: 檢查安裝的套件是否有已知的安全性問題</li>
@@ -304,23 +304,23 @@ pipenv run python your_program.py
 </ul>
 <h3 id="pipenv_2">pipenv 已經很久沒更新了，沒有問題嗎？</h3>
 <p>雖然我的確遇過一些小問題 (e.g., <a href="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent/">pipenv 和 poerty 如何處理在不同作業系統下相依套件不同</a>)<br/>
-但大部分的狀況下， <code>pipenv</code> 已經足夠解決我的問題<br/>
-所以沒什麼意外我大概還是會繼續使用 <code>pipenv</code></p>
+但大部分的狀況下， pipenv 已經足夠解決我的問題<br/>
+所以沒什麼意外我大概還是會繼續使用 pipenv</p>
 <h2 id="_6">其他工具</h2>
 <h3 id="poetry">poetry</h3>
-<p><a href="https://python-poetry.org/">poetry</a> 是目前最多人說可以取代 <code>pipenv</code> 的工具<br/>
-除了 <code>pipenv</code> 包含的功能外，它還能用來初始化專案、上傳套件</p>
+<p><a href="https://python-poetry.org/">poetry</a> 是目前最多人說可以取代 pipenv 的工具<br/>
+除了 pipenv 包含的功能外，它還能用來初始化專案、上傳套件</p>
 <p>我使用下來體驗還算不錯<br/>
-而且 <code>poetry</code> 採用 <code>pyproject.toml</code> 來做配置設定，這點我就蠻喜歡的</p>
-<p>但我比較不喜歡的點是，它採用的 API 跟版本標示方式都跟 <code>pip</code> 不同<br/>
+而且 poetry 採用 pyproject.toml 來做配置設定，這點我就蠻喜歡的</p>
+<p>但我比較不喜歡的點是，它採用的 API 跟版本標示方式都跟 pip 不同<br/>
 會多增加學習成本</p>
 <h3 id="pip-tools">pip-tools</h3>
 <p><a href="https://github.com/jazzband/pip-tools">pip-tools</a> 主要的功能是產生 hashes ，並不能用來管理虛擬環境<br/>
-這套工具比較適合習慣使用 <code>pip</code> 跟 <code>virtualenv</code> ，但又想要有 <code>Pipfile.lock</code> 的功能的情況</p>
+這套工具比較適合習慣使用 pip 跟 virtualenv ，但又想要有 Pipfile.lock 的功能的情況</p>
 <h3 id="dephell">dephell</h3>
 <p><a href="https://github.com/dephell/dephell">dephell</a> 是一個 all-in-one 的工具<br/>
 當初看到覺得很有趣，但還沒有時間好好研究<br/>
-目前使用到對我最有幫助的功能是它能在轉換不同的格式 (e.g., <code>Pipfile</code> → <code>pyproject.toml</code>)</p>
+目前使用到對我最有幫助的功能是它能在轉換不同的格式 (e.g., Pipfile → pyproject.toml)</p>
 <h2 id="_7">自動將舊版套件升級</h2>
 <p>以下再多提供兩個可以自動將相依套件升級的服務</p>
 <ul>
@@ -329,7 +329,7 @@ pipenv run python your_program.py
 </ul>
 <h2 id="bouns-pipx-python">Bouns: pipx - 在系統安裝 Python 工具</h2>
 <p>雖然說建議 Python 的套件都裝在虛擬環境<br/>
-但如果平時要使用的工具 (e.g., <code>invoke</code>, <code>awscli</code>) 都裝在虛擬環境<br/>
+但如果平時要使用的工具 (e.g., <a href="http://www.pyinvoke.org/">invoke</a>, <a href="https://pypi.org/project/awscli/">awscli</a>) 都裝在虛擬環境<br/>
 還必須要每次進入虛擬環境就太麻煩了<br/>
 所以，在這樣的情況下，我就會建議使用 <a href="https://pipxproject.github.io/pipx/">pipx</a></p>
 <ul>
@@ -451,6 +451,9 @@ python -m pipx ensurepath
             <li >
             <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" title="Python Table Manners - 測試 (一)">Part 3: Python Table Manners - 測試 (一)</a>
             </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 4: Python Table Manners - 測試 (二)</a>
+            </li>
     </ul>
                 <h4>Read Time</h4>
                  2 min
@@ -462,7 +465,7 @@ python -m pipx ensurepath
                     <span>2</span>
 </a></li>
                 <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
-                    <span>18</span>
+                    <span>19</span>
 </a></li>
             </ul>
 <h4>Keep In Touch</h4>

@@ -156,7 +156,7 @@
 <ul>
 <li>為什麼要用 pytest<ul>
 <li>更符合 Python 程式碼風格 (Pythonic)</li>
-<li><code>pytest</code> 支援舊有的 <code>unittest</code> 風格</li>
+<li>pytest 支援舊有的 unittest 風格</li>
 <li>扁平化（不用繼承）</li>
 <li>只需要使用 <code>assert</code>，不需要去記 <code>assert.+</code> (e.g., <code>assertEqual</code>) 等 API</li>
 <li>更好的<a href="https://docs.pytest.org/en/latest/goodpractices.html#test-discovery">測試探索 (test discovery)</a></li>
@@ -166,7 +166,7 @@
 </li>
 </ul>
 <p>以下是取自 <a href="https://docs.pytest.org/en/latest/getting-started.html#create-your-first-test">pytest - Create your first test</a> 的範例<br/>
-相比於 <code>unittest</code> 寫法相對簡潔</p>
+相比於 unittest 寫法相對簡潔</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># content of test_sample.py</span>
 <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
@@ -176,9 +176,9 @@
     <span class="k">assert</span> <span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
 </code></pre></div>
 <h2 id="unittest-pytest">從 Unittest 到 Pytest</h2>
-<p>前面的比較其實不太公平，<code>unittest</code> 的範例要測的內容本身就比 <code>pytest</code> 的複雜</p>
+<p>前面的比較其實不太公平，unittest 的範例要測的內容本身就比 pytest 的複雜</p>
 <p>所以我會用 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 為例子<br/>
-討論我們如何從 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/v1.0">v1.0</a> 的 <code>unittest</code> 風格測試，在 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/83e48c6443303045ed1de2f020297c3110bb1300">commit 83e4</a> 改成 <code>pytest</code> 風格</p>
+討論我們如何從 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/v1.0">v1.0</a> 的 unittest 風格測試，在 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/83e48c6443303045ed1de2f020297c3110bb1300">commit 83e4</a> 改成 pytest 風格</p>
 <p>如果想跟著程式碼跑，可以把專案 clone 下來<br/>
 （當然能貢獻專案就更棒了 XD）</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># clone 專案到本地</span>
@@ -194,19 +194,19 @@ pipenv install --dev
 </code></pre></div>
 <h3 id="test-discovery">測試探索 (test discovery)</h3>
 <p>原本在 <code>REAMDE.md</code> 中要跑測試的指令相當的冗長<br/>
-而且還必須要切換到 <code>test</code> 資料夾 (i.e., <code>cd test</code>)</p>
+而且還必須要切換到 test 資料夾 (i.e., <code>cd test</code>)</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="nb">test</span>
 python -m unittest discover -s ./ -p <span class="s1">'test_*.py'</span>
 </code></pre></div>
 <p>不過這其實是一開始的設計有誤<br/>
-以下是 <code>test</code> 資料夾的內容</p>
+以下是 test 資料夾的內容</p>
 <div class="highlight"><pre><span></span><code>└── test
     …
     ├── test_sponsor.py
     └── test_title.py
 </code></pre></div>
-<p><code>test</code> (或者 <code>tests</code>) 本身也必須是一個套件<br/>
-所以必須先在 <code>test</code> 內加入 <code>__init__.py</code><br/>
+<p>test (或 tests) 本身也必須是一個套件<br/>
+所以必須先在 test 內加入 <code>__init__.py</code><br/>
 （這是我在寫程式初期想開始寫測試遇到一個很大的坎 😢）</p>
 <div class="highlight"><pre><span></span><code>└── test
     ├── __init__.py
@@ -217,13 +217,13 @@ python -m unittest discover -s ./ -p <span class="s1">'test_*.py'</span>
 <p>做了改變後，就能改用更簡潔的指令跑測試了</p>
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
 </code></pre></div>
-<p>因為 <code>pytest</code> 也支援 <code>unittest</code> 風格<br/>
-所以也可以直接使用 <code>pytest</code> 跑測試</p>
+<p>因為 pytest 也支援 unittest 風格<br/>
+所以也可以直接使用 <code>pytest</code> 指令跑測試</p>
 <div class="highlight"><pre><span></span><code>pytest
 </code></pre></div>
 <p>不過在前一篇有提到使用虛擬環境的概念了<br/>
 所以應該要確保每個專案的指令，都只在虛擬環境中跑<br/>
-（因為前一篇建議使用 <code>pipenv</code>，之後的範例都會用 <code>pipenv</code> ）</p>
+（因為前一篇建議使用 pipenv，之後的範例都會用 pipenv）</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 將 pytest 安裝到開發環境</span>
 pipenv install pytest --dev
 
@@ -247,12 +247,12 @@ test/test_title.py F                                     [100%]
 <p><code>F</code> 表示測試沒有通過，如果出現 <code>.</code> 則表示成功</p>
 <h3 id="step-0">Step 0: 追朔程式碼</h3>
 <p>以 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/blob/v1.0/test/test_sponsor.py#L6">test/test_sponsor.py::TestSponsor::test_sponsor_number</a> 為例<br/>
-（在套件以及模組的層級後， <code>pytest</code> 會使用 <code>::</code> 來區別不同的層級，試試 <code>pipenv run pytest -v</code> 指令）</p>
-<p>原本 <code>unittest</code> 風格的程式碼中，做了三件事</p>
+（在套件以及模組的層級後， pytest 會使用 <code>::</code> 來區別不同的層級，試試 <code>pipenv run pytest -v</code> 指令）</p>
+<p>原本 unittest 風格的程式碼中，做了三件事</p>
 <ol>
 <li>使用了 <code>setUp</code> 做 <code>self.sponsors</code> 的初始化</li>
 <li>在 <code>test_sonpsor_number</code> 取用 <code>setUp</code> 中初始過的 <code>self.sponsors</code></li>
-<li>使用 <code>self.assertEqual</code> 來看 <code>self.sponsors</code> 的長度是否等於 <code>1</code></li>
+<li>使用 <code>self.assertEqual</code> 來看 <code>self.sponsors</code> 的長度是否等於 1</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">unittest</span>
 <span class="kn">from</span> <span class="nn">atta.partner</span> <span class="kn">import</span> <span class="n">sponsor</span>
@@ -273,11 +273,11 @@ test/test_title.py F                                     [100%]
 </code></pre></div>
 <h3 id="step-1-fixture-setup-teardown">Step 1: 使用 fixture 取代 setUp / tearDown</h3>
 <p>先將 <code>unittest.TestCase</code> 移除<br/>
-改用 <code>pytest</code> 的 <a href="https://docs.pytest.org/en/latest/fixture.html">fixture</a> 取代 <code>setUp</code><br/>
-<code>fixture</code> 跟 <code>setUp / tearDown</code> 的概念上相近，都是用來準備（清除）資源<br/>
-但 <code>fixture</code> 更加的輕量且更有彈性</p>
+改用 pytest 的 <a href="https://docs.pytest.org/en/latest/fixture.html">fixture</a> 取代 <code>setUp</code><br/>
+fixture 跟 <code>setUp / tearDown</code> 的概念上相近，都是用來準備（清除）資源<br/>
+但 fixture 更加的輕量且更有彈性</p>
 <p>在 <code>test_sponsor_number</code> 中加入參數 <code>sponsors</code><br/>
-<code>pytest</code> 會去找 <code>fixtures</code> 中是否有 <code>sponsors</code> 並將之代入</p>
+pytest 會去找 fixtures 中是否有 <code>sponsors</code> 並將之代入</p>
 <p>接著也可以將較為冗長的 <code>assertEqual</code>，改為 <code>assert</code></p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 
@@ -441,6 +441,7 @@ test/test_title.py .              [100%]
             <nav>
             <ul class="articles-timeline">
                 <li class="previous-article">« <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" title="Previous: Python Table Manners - 虛擬環境和套件管理">Python Table Manners - 虛擬環境和套件管理</a></li>
+                <li class="next-article"><a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Next: Python Table Manners - 測試 (二)">Python Table Manners - 測試 (二)</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -459,6 +460,9 @@ test/test_title.py .              [100%]
             <li  class="active-part">
             Part 3: Python Table Manners - 測試 (一)
             </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 4: Python Table Manners - 測試 (二)</a>
+            </li>
     </ul>
                 <h4>Read Time</h4>
                  3 min
@@ -467,10 +471,10 @@ test/test_title.py .              [100%]
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
-                    <span>18</span>
+                    <span>19</span>
 </a></li>
                 <li><a href="https://lee-w.github.io/tags.html#test-ref">Test
-                    <span>1</span>
+                    <span>2</span>
 </a></li>
             </ul>
 <h4>Keep In Touch</h4>
