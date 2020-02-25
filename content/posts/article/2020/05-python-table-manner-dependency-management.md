@@ -45,7 +45,7 @@ p.s. 基本上這個系列文會以 Unix 系統（macOS, Linux）為主
 
 ## pipenv
 [pipenv](https://pipenv.readthedocs.io/en/latest/) 可以用來同時管理虛擬環境跟套件
-`pipenv` 不使用 `requriements.txt`，而是使用自定義的 `Pipfile` 跟 `Pipfile.lock` 管理套件
+pipenv 不使用 `requriements.txt`，而是使用自定義的 `Pipfile` 跟 `Pipfile.lock` 管理套件
 它的好處是能透過單一指令將套件安裝到虛擬環境中，並且更新到 `Pipfile` 以及 `Pipfile.lock`
 
 ### 安裝 pipenv
@@ -126,7 +126,7 @@ python_version = "3.7"
 交給 `pipenv` 去管理就好
 
 ### 安裝套件
-`pipenv` 另一個好處是，它的 API 基本上跟 [pip](https://pip.pypa.io/en/stable/) 是一樣的
+pipenv 的另一個好處是，它的 API 基本上跟 [pip](https://pip.pypa.io/en/stable/) 是一樣的
 
 ```sh
 # 安裝套件
@@ -141,14 +141,14 @@ pipenv update <package>
 
 以安裝 [requests](https://requests.readthedocs.io/en/master/) 為例
 
-`Pipfile` 會更新在 **packages**
+Pipfile 會更新在 **packages**
 
 ```toml
 [packages]
 requests = "*"
 ```
 
-`Pipfile.lock` 中除了 `requests` 外，還會列出 `requests` 的相依套件 `urllib3` (Ref: [setup.py#L47](https://github.com/psf/requests/blob/v2.22.0/setup.py#L47))
+Pipfile.lock 中除了 `requests` 外，還會列出 `requests` 的相依套件 `urllib3` (Ref: [setup.py#L47](https://github.com/psf/requests/blob/v2.22.0/setup.py#L47))
 
 ```json
 {
@@ -200,7 +200,7 @@ pipenv install --ignore-pipfile
 有些套件（e.g., 測試工具）不需要跟著系統一起上線
 以往會將不同的套件用不同的 `requirements.txt` 來管理 (e.g.,  `requirments/dev.txt`, `requirements/prod.txt`)
 
-`pipenv` 則是將開發環境才需要的套件寫在 `Pipfile` 的 **dev-packages** 內
+pipenv 則是將開發環境才需要的套件寫在 Pipfile 的 **dev-packages** 內
 只要在安裝時後面加上選項 `--dev`
 
 e.g.,
@@ -222,7 +222,7 @@ pipenv run python your_program.py
 
 雖然可以透過 `pipenv shell` 進入到虛擬環境，但我不太建議使用
 原因是我常常會進入虛擬環境後，亂下 `pip install <package>` 的指令
-然後就沒被 `Pipfile` 給記錄到...
+然後就沒被 Pipfile 給記錄到...
 
 ### 其他功能
 * `pipenv check`: 檢查安裝的套件是否有已知的安全性問題
@@ -231,29 +231,29 @@ pipenv run python your_program.py
 
 ### pipenv 已經很久沒更新了，沒有問題嗎？
 雖然我的確遇過一些小問題 (e.g., [pipenv 和 poerty 如何處理在不同作業系統下相依套件不同](https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent/))
-但大部分的狀況下， `pipenv` 已經足夠解決我的問題
-所以沒什麼意外我大概還是會繼續使用 `pipenv`
+但大部分的狀況下， pipenv 已經足夠解決我的問題
+所以沒什麼意外我大概還是會繼續使用 pipenv
 
 ## 其他工具
 
 ### poetry
-[poetry](https://python-poetry.org/) 是目前最多人說可以取代 `pipenv` 的工具
-除了 `pipenv` 包含的功能外，它還能用來初始化專案、上傳套件
+[poetry](https://python-poetry.org/) 是目前最多人說可以取代 pipenv 的工具
+除了 pipenv 包含的功能外，它還能用來初始化專案、上傳套件
 
 我使用下來體驗還算不錯
-而且 `poetry` 採用 `pyproject.toml` 來做配置設定，這點我就蠻喜歡的
+而且 poetry 採用 pyproject.toml 來做配置設定，這點我就蠻喜歡的
 
-但我比較不喜歡的點是，它採用的 API 跟版本標示方式都跟 `pip` 不同
+但我比較不喜歡的點是，它採用的 API 跟版本標示方式都跟 pip 不同
 會多增加學習成本
 
 ### pip-tools
 [pip-tools](https://github.com/jazzband/pip-tools) 主要的功能是產生 hashes ，並不能用來管理虛擬環境
-這套工具比較適合習慣使用 `pip` 跟 `virtualenv` ，但又想要有 `Pipfile.lock` 的功能的情況
+這套工具比較適合習慣使用 pip 跟 virtualenv ，但又想要有 Pipfile.lock 的功能的情況
 
 ### dephell
 [dephell](https://github.com/dephell/dephell) 是一個 all-in-one 的工具
 當初看到覺得很有趣，但還沒有時間好好研究
-目前使用到對我最有幫助的功能是它能在轉換不同的格式 (e.g., `Pipfile` → `pyproject.toml`)
+目前使用到對我最有幫助的功能是它能在轉換不同的格式 (e.g., Pipfile → pyproject.toml)
 
 ## 自動將舊版套件升級
 以下再多提供兩個可以自動將相依套件升級的服務
@@ -263,7 +263,7 @@ pipenv run python your_program.py
 
 ## Bouns: pipx - 在系統安裝 Python 工具
 雖然說建議 Python 的套件都裝在虛擬環境
-但如果平時要使用的工具 (e.g., `invoke`, `awscli`) 都裝在虛擬環境
+但如果平時要使用的工具 (e.g., [invoke](http://www.pyinvoke.org/), [awscli](https://pypi.org/project/awscli/)) 都裝在虛擬環境
 還必須要每次進入虛擬環境就太麻煩了
 所以，在這樣的情況下，我就會建議使用 [pipx](https://pipxproject.github.io/pipx/)
 

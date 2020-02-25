@@ -64,7 +64,7 @@ class WidgetTestCase(unittest.TestCase):
 
 * 為什麼要用 pytest
     * 更符合 Python 程式碼風格 (Pythonic)
-    * `pytest` 支援舊有的 `unittest` 風格
+    * pytest 支援舊有的 unittest 風格
     * 扁平化（不用繼承）
     * 只需要使用 `assert`，不需要去記 `assert.+` (e.g., `assertEqual`) 等 API
     * 更好的[測試探索 (test discovery)](https://docs.pytest.org/en/latest/goodpractices.html#test-discovery)
@@ -72,7 +72,7 @@ class WidgetTestCase(unittest.TestCase):
     * 強大的套件
 
 以下是取自 [pytest - Create your first test](https://docs.pytest.org/en/latest/getting-started.html#create-your-first-test) 的範例
-相比於 `unittest` 寫法相對簡潔
+相比於 unittest 寫法相對簡潔
 
 ```python
 # content of test_sample.py
@@ -85,10 +85,10 @@ def test_answer():
 ```
 
 ## 從 Unittest 到 Pytest
-前面的比較其實不太公平，`unittest` 的範例要測的內容本身就比 `pytest` 的複雜
+前面的比較其實不太公平，unittest 的範例要測的內容本身就比 pytest 的複雜
 
 所以我會用 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator) 為例子
-討論我們如何從 [v1.0](https://github.com/pycontw/pycontw-postevent-report-generator/tree/v1.0) 的 `unittest` 風格測試，在 [commit 83e4](https://github.com/pycontw/pycontw-postevent-report-generator/commit/83e48c6443303045ed1de2f020297c3110bb1300) 改成 `pytest` 風格
+討論我們如何從 [v1.0](https://github.com/pycontw/pycontw-postevent-report-generator/tree/v1.0) 的 unittest 風格測試，在 [commit 83e4](https://github.com/pycontw/pycontw-postevent-report-generator/commit/83e48c6443303045ed1de2f020297c3110bb1300) 改成 pytest 風格
 
 如果想跟著程式碼跑，可以把專案 clone 下來
 （當然能貢獻專案就更棒了 XD）
@@ -108,7 +108,7 @@ pipenv install --dev
 
 ### 測試探索 (test discovery)
 原本在 `REAMDE.md` 中要跑測試的指令相當的冗長
-而且還必須要切換到 `test` 資料夾 (i.e., `cd test`)
+而且還必須要切換到 test 資料夾 (i.e., `cd test`)
 
 ```sh
 cd test
@@ -116,7 +116,7 @@ python -m unittest discover -s ./ -p 'test_*.py'
 ```
 
 不過這其實是一開始的設計有誤
-以下是 `test` 資料夾的內容
+以下是 test 資料夾的內容
 
 ```text
 └── test
@@ -125,8 +125,8 @@ python -m unittest discover -s ./ -p 'test_*.py'
     └── test_title.py
 ```
 
-`test` (或者 `tests`) 本身也必須是一個套件
-所以必須先在 `test` 內加入 `__init__.py`
+test (或 tests) 本身也必須是一個套件
+所以必須先在 test 內加入 `__init__.py`
 （這是我在寫程式初期想開始寫測試遇到一個很大的坎 😢）
 
 ```text
@@ -143,8 +143,8 @@ python -m unittest discover -s ./ -p 'test_*.py'
 python -m unittest
 ```
 
-因為 `pytest` 也支援 `unittest` 風格
-所以也可以直接使用 `pytest` 跑測試
+因為 pytest 也支援 unittest 風格
+所以也可以直接使用 `pytest` 指令跑測試
 
 ```sh
 pytest
@@ -152,7 +152,7 @@ pytest
 
 不過在前一篇有提到使用虛擬環境的概念了
 所以應該要確保每個專案的指令，都只在虛擬環境中跑
-（因為前一篇建議使用 `pipenv`，之後的範例都會用 `pipenv` ）
+（因為前一篇建議使用 pipenv，之後的範例都會用 pipenv）
 
 ```sh
 # 將 pytest 安裝到開發環境
@@ -183,13 +183,13 @@ test/test_title.py F                                     [100%]
 
 ### Step 0: 追朔程式碼
 以 [test/test_sponsor.py::TestSponsor::test_sponsor_number](https://github.com/pycontw/pycontw-postevent-report-generator/blob/v1.0/test/test_sponsor.py#L6) 為例
-（在套件以及模組的層級後， `pytest` 會使用 `::` 來區別不同的層級，試試 `pipenv run pytest -v` 指令）
+（在套件以及模組的層級後， pytest 會使用 `::` 來區別不同的層級，試試 `pipenv run pytest -v` 指令）
 
-原本 `unittest` 風格的程式碼中，做了三件事
+原本 unittest 風格的程式碼中，做了三件事
 
 1. 使用了 `setUp` 做 `self.sponsors` 的初始化
 2. 在 `test_sonpsor_number` 取用 `setUp` 中初始過的 `self.sponsors`
-3. 使用 `self.assertEqual` 來看 `self.sponsors` 的長度是否等於 `1`
+3. 使用 `self.assertEqual` 來看 `self.sponsors` 的長度是否等於 1
 
 ```python
 import unittest
@@ -212,12 +212,12 @@ class TestSponsor(unittest.TestCase):
 
 ### Step 1: 使用 fixture 取代 setUp / tearDown
 先將 `unittest.TestCase` 移除
-改用 `pytest` 的 [fixture](https://docs.pytest.org/en/latest/fixture.html) 取代 `setUp`
-`fixture` 跟 `setUp / tearDown` 的概念上相近，都是用來準備（清除）資源
-但 `fixture` 更加的輕量且更有彈性
+改用 pytest 的 [fixture](https://docs.pytest.org/en/latest/fixture.html) 取代 `setUp`
+fixture 跟 `setUp / tearDown` 的概念上相近，都是用來準備（清除）資源
+但 fixture 更加的輕量且更有彈性
 
 在 `test_sponsor_number` 中加入參數 `sponsors`
-`pytest` 會去找 `fixtures` 中是否有 `sponsors` 並將之代入
+pytest 會去找 fixtures 中是否有 `sponsors` 並將之代入
 
 接著也可以將較為冗長的 `assertEqual`，改為 `assert`
 
