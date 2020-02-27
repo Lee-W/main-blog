@@ -1,5 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-02-26T18:39:00+08:00</updated><entry><title>Python Table Manner - 程式碼風格</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" rel="alternate"></link><published>2020-02-26T18:39:00+08:00</published><updated>2020-02-26T18:39:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-26:/posts/tech/2020/02/python-table-manners-coding-style</id><summary type="html">&lt;p&gt;接下來要介紹的是 linter&lt;br/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-02-27T20:04:00+08:00</updated><entry><title>Python Table Manners - 管理繁瑣任務</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" rel="alternate"></link><published>2020-02-27T20:04:00+08:00</published><updated>2020-02-27T20:04:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-27:/posts/tech/2020/02/python-table-manners-manage-trival-tasks</id><summary type="html">&lt;p&gt;前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具&lt;br&gt;
+每一個工具又有各自的參數和設定&lt;br&gt;
+這麼多指令怎麼可能記得起來 😱&lt;/p&gt;
+&lt;p&gt;&lt;img alt="too-many-commands" src="/images/posts-image/2020-02-22-python-table-manner-series/too-many-commands.jpg"&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具&lt;br&gt;
+每一個工具又有各自的參數和設定&lt;br&gt;
+這麼多指令怎麼可能記得起來 😱&lt;/p&gt;
+&lt;p&gt;&lt;img alt="too-many-commands" src="/images/posts-image/2020-02-22-python-table-manner-series/too-many-commands.jpg"&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;所以在這篇，我要來介紹如何用 &lt;a href="http://www.pyinvoke.org/"&gt;invoke&lt;/a&gt; 管理這些指令&lt;/p&gt;
+&lt;h2 id="invoke"&gt;invoke 是什麼&lt;/h2&gt;
+&lt;p&gt;invoke 是一套任務執行工具 (task execution tool)，主要的功能是統一管理各種指令&lt;br&gt;
+並提供各種指令列上用得到的功能&lt;br&gt;
+有點像是 Python 的 &lt;code&gt;Makefile&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="invoke_1"&gt;安裝 invoke&lt;/h2&gt;
+&lt;p&gt;不同於 pytest, flake8 等套件，我會同時將 invoke 安裝在系統和虛擬環境中&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝 invoke 到系統&lt;/span&gt;
+pipx install invoke
+
+&lt;span class="c1"&gt;# 安裝 invoke 到虛擬環境中&lt;/span&gt;
+pipenv install invoke --dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;裝在系統的原因是想把它當成類似 &lt;code&gt;make&lt;/code&gt; 的指令來使用&lt;/p&gt;
+&lt;p&gt;在虛擬環境還需要裝的原因是，部署時系統通常不會預裝 invoke&lt;br&gt;
+如果想在部署時也能使用 invoke 的功能，最方便的方法透過 pipenv 安裝&lt;/p&gt;
+&lt;h2 id="invoke_2"&gt;如何使用 invoke&lt;/h2&gt;
+&lt;p&gt;我們再回到 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator"&gt;pycontw-postevent-report-generator&lt;/a&gt; 的例子&lt;br&gt;
+checkout 到 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/83e48c6443303045ed1de2f020297c3110bb1300"&gt;commit 83e4&lt;/a&gt;，回到使用 invoke 管理指令前&lt;br&gt;
+從當時的文件可以看到，還需要使用相對冗長的指令&lt;/p&gt;
+&lt;p&gt;&lt;img alt="before-invoke" src="/images/posts-image/2020-02-22-python-table-manner-series/before-invoke.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;到了 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/72ad956fd200867dc292a156c97a99a09ebe0104"&gt;commit 72ad&lt;/a&gt; (實作已經在 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/bc98eec28037a9bed5063fef0f0f564893fce3ac"&gt;commit bc98&lt;/a&gt; 完成，只是在 commit 72ad 才更新文件)，已經可以使用較短且較為統一的指令 (以 &lt;code&gt;inv&lt;/code&gt; 作為開頭)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="after-invoke" src="/images/posts-image/2020-02-22-python-table-manner-series/after-invoke.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;除此之外，引入 invoke 後，也不用每次都去翻文件&lt;br&gt;
+invoke 可以列出所有可用的指令&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 列出可用的 invoke 指令&lt;/span&gt;
+&lt;span class="c1"&gt;# p.s. invoke 指令可以縮寫為 inv&lt;/span&gt;
+$ inv --list
+
+Available tasks:
+
+  clean      Remove all the tmp files in .gitignore
+  develop    Install script in pipenv environement in development mode
+  init-dev   Install development dependencies
+  install    Install script in pipenv environement
+  &lt;span class="nb"&gt;test&lt;/span&gt;       Run testcase
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;執行的方式則是在 invoke 後面直接加上任務&lt;/p&gt;
+&lt;p&gt;e.g.,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;inv clean
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="invoke_3"&gt;實作 invoke 任務&lt;/h2&gt;
+&lt;p&gt;我們先試著將前面的 &lt;code&gt;python setup.py develop&lt;/code&gt; 改成 invoke 的任務&lt;/p&gt;
+&lt;p&gt;預設 invoke 會去找目錄下的 &lt;code&gt;tasks.py&lt;/code&gt;&lt;br&gt;
+所以我們先在專案最上層創 &lt;code&gt;tasks.py&lt;/code&gt;&lt;br&gt;
+接著撰寫一個函式叫 &lt;code&gt;develop&lt;/code&gt; ，這就會是之後的任務名稱 (i.e., 透過 &lt;code&gt;inv develop&lt;/code&gt; 執行)&lt;br&gt;
+在函式前加上裝飾器 (decorator) &lt;code&gt;@task&lt;/code&gt;&lt;br&gt;
+invoke 會傳入一個 context 做為第一個參數 (Read More 👉 &lt;a href="http://docs.pyinvoke.org/en/stable/getting-started.html#aside-what-exactly-is-this-context-arg-anyway"&gt;what exactly is this ‘context’ arg anyway?&lt;/a&gt;)&lt;br&gt;
+(p.s. 原本的程式碼中是使用 &lt;code&gt;cmd&lt;/code&gt; ，那是錯誤的用法)&lt;br&gt;
+最後就可以用這個 context （參數 &lt;code&gt;ctx&lt;/code&gt;） 執行指令&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;invoke&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;task&lt;/span&gt;
+
+&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;develop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;python setup.py develop&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如同先前所提到的，操作都應該在虛擬環境內被完成&lt;br&gt;
+所以我將 &lt;code&gt;pipenv run&lt;/code&gt; 的前綴提出來&lt;br&gt;
+這樣就能確保之後的操作一定都會在虛擬環境內執行&lt;br&gt;
+如果之後更換了管理虛擬環境的工具(e.g. &lt;code&gt;poetry run&lt;/code&gt;)，也可以更輕易的改動 &lt;code&gt;tasks.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;invoke&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;task&lt;/span&gt;
+
+&lt;span class="n"&gt;PIPENV_PREFIX&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;pipenv run&amp;quot;&lt;/span&gt;
+
+&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;develop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{PIPENV_PREFIX}&lt;/span&gt;&lt;span class="s2"&gt; python setup.py develop&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="_1"&gt;任務相依&lt;/h2&gt;
+&lt;p&gt;如果任務之間有相依性，可以在 &lt;code&gt;@task&lt;/code&gt; 後加入 &lt;code&gt;pre&lt;/code&gt; 或 &lt;code&gt;post&lt;/code&gt;&lt;br&gt;
+表示任務執行前或後還要執行其他任務&lt;/p&gt;
+&lt;p&gt;e.g., 在初始環境 (&lt;code&gt;init&lt;/code&gt;) 前，常會先清除不必要的檔案 (&lt;code&gt;clean&lt;/code&gt;)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;invoke&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;task&lt;/span&gt;
+
+&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;clean&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;clean up&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nd"&gt;@task&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pre&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;clean&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;init&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;initial&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="_2"&gt;任務模組化&lt;/h2&gt;
+&lt;p&gt;當任務便多時，為了方便維護，就會傾向將相似的任務模組化&lt;br&gt;
+這時候就可以使用到 &lt;code&gt;namespace&lt;/code&gt; 的概念&lt;br&gt;
+(Read More 👉 &lt;a href="http://docs.pyinvoke.org/en/stable/concepts/namespaces.html"&gt;Constructing namespaces&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;不過我不會在這篇文章深入探討要怎麼說&lt;br&gt;
+一般來說，除非任務真的非常多，這並不是必要的&lt;/p&gt;
+&lt;p&gt;如果有興趣看我怎麼把 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator"&gt;pycontw-postevent-report-generator&lt;/a&gt; 的任務模組化&lt;br&gt;
+可以參考 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/f1050eabf44a8b8e662370bd97b2a79ad57723c2"&gt;commit f105&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最後修改後 &lt;code&gt;tasks&lt;/code&gt; 套件中有這些模組&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;├── tasks
+│   ├── __init__.py
+│   ├── build.py
+│   ├── common.py
+│   ├── env.py
+│   ├── style.py
+│   └── test.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;和各個模組下的指令&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ inv --list
+
+Available tasks:
+
+  secure              Check package security
+  build.clean         Remove all the tmp files in .gitignore
+  build.develop       Install script in pipenv environment in development mode
+  build.install       Install script in pipenv environment
+  build.test-cli      Test whether the cli is runnable
+  env.clean           Remove virtual environment
+  env.init            Install production dependencies
+  env.init-dev        Install development dependencies
+  style.flake8        Check style through flake8
+  style.mypy          Check style through mypy
+  style.pylint        Check style through pylint
+  style.reformat      Reformat python files throgh black
+  style.run &lt;span class="o"&gt;(&lt;/span&gt;style&lt;span class="o"&gt;)&lt;/span&gt;   Check style throgh linter &lt;span class="o"&gt;(&lt;/span&gt;Note that pylint is not included&lt;span class="o"&gt;)&lt;/span&gt;
+  test.cov            Run &lt;span class="nb"&gt;test&lt;/span&gt; coverage check
+  test.run &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;     Run &lt;span class="nb"&gt;test&lt;/span&gt; cases
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="auto-completion"&gt;自動補完 （Auto-completion）&lt;/h2&gt;
+&lt;p&gt;工程師是很懶惰的&lt;br&gt;
+這種指令列工具沒有自動補完怎麼行&lt;br&gt;
+invoke 當然也想到了&lt;br&gt;
+透過參數 &lt;code&gt;--print-completion-script=[shell]&lt;/code&gt; 就能取得 invoke 預先寫好的自動補完腳步&lt;br&gt;
+目前支援 bash, zsh, fish 三種 shell&lt;/p&gt;
+&lt;p&gt;e.g., 將 invoke 產生的 zsh 自動補完腳本寫入 &lt;code&gt;~/.zsh&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;inv --print-completion-script&lt;span class="o"&gt;=&lt;/span&gt;zsh &amp;gt;&amp;gt; ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="makefile"&gt;為什麼不用 Makefile 就好？&lt;/h2&gt;
+&lt;p&gt;因為有些 shell script 並不見得那麼好寫&lt;br&gt;
+（也可能只是我不熟啦...）&lt;/p&gt;
+&lt;p&gt;e.g.,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;invoke&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;task&lt;/span&gt;
+
+
+&lt;span class="n"&gt;PIPENV_PREFIX&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;pipenv run&amp;quot;&lt;/span&gt;
+
+&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;clean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Remove all the tmp files in .gitignore&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;files_to_remove&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.gitignore&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;input_file&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;input_file&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readlines&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;startswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+                &lt;span class="n"&gt;files_to_remove&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+    &lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;rm -rf {&amp;#39; &amp;#39;.join(files_to_remove)}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;（雖然後來發現上面的一串，可以用 &lt;code&gt;git clean -Xdf&lt;/code&gt; 取代...）&lt;/p&gt;
+&lt;p&gt;除此之外，invoke 也可以讓 shell script 的結果，直接跟 Python 互動&lt;br&gt;
+更容易實作出想要的功能&lt;/p&gt;
+&lt;h2 id="_3"&gt;其他進階應用&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;如何在任務加上參數？&lt;ul&gt;
+&lt;li&gt;任務的函式後面加上除了 context 意外的參數&lt;/li&gt;
+&lt;li&gt;👉 &lt;a href="http://docs.pyinvoke.org/en/stable/getting-started.html#task-parameters"&gt;Task parameters&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;為什麼用 invoke 的結果跟指令列上的執行結果不完全相同？&lt;ul&gt;
+&lt;li&gt;在 &lt;code&gt;run&lt;/code&gt; 函式中加上 &lt;code&gt;pty=True&lt;/code&gt; 參數通常能解決，但建議可以看看 invoke 為什麼不將這設定為預設行為&lt;/li&gt;
+&lt;li&gt;👉 &lt;a href="http://www.pyinvoke.org/faq.html#why-is-my-command-behaving-differently-under-invoke-versus-being-run-by-hand"&gt;Why is my command behaving differently under Invoke versus being run by hand?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;如何在任務執行失敗時，只做警告，不要跳錯&lt;ul&gt;
+&lt;li&gt;在 &lt;code&gt;run&lt;/code&gt; 函式加上 &lt;code&gt;warn=True&lt;/code&gt; (預設是 &lt;code&gt;False&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;👉 &lt;a href="http://docs.pyinvoke.org/en/1.2/api/runners.html#invoke.runners.Runner.run"&gt;invoke.runners.Runner.run&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/"&gt;Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Task"></category></entry><entry><title>Python Table Manner - 程式碼風格</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" rel="alternate"></link><published>2020-02-26T18:39:00+08:00</published><updated>2020-02-26T18:39:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-26:/posts/tech/2020/02/python-table-manners-coding-style</id><summary type="html">&lt;p&gt;接下來要介紹的是 linter&lt;br/&gt;
 它用來檢查程式是否符合特定的程式碼風格的一類工具&lt;br/&gt;
 以 Python 來說，則是應該遵守 &lt;a href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP 8&lt;/a&gt;&lt;br/&gt;
 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤&lt;/p&gt;
@@ -1075,7 +1278,7 @@ python -m pipx ensurepath
 &lt;li&gt;虛擬環境和套件管理&lt;/li&gt;
 &lt;li&gt;測試&lt;/li&gt;
 &lt;li&gt;程式碼風格&lt;/li&gt;
-&lt;li&gt;自動化繁瑣任務&lt;/li&gt;
+&lt;li&gt;管理繁瑣任務&lt;/li&gt;
 &lt;li&gt;pre-commit: git commit 前做完檢查&lt;/li&gt;
 &lt;li&gt;Commitizen: 規格化 git commit&lt;/li&gt;
 &lt;li&gt;安全性檢查&lt;/li&gt;
@@ -1094,7 +1297,7 @@ python -m pipx ensurepath
 &lt;li&gt;虛擬環境和套件管理&lt;/li&gt;
 &lt;li&gt;測試&lt;/li&gt;
 &lt;li&gt;程式碼風格&lt;/li&gt;
-&lt;li&gt;自動化繁瑣任務&lt;/li&gt;
+&lt;li&gt;管理繁瑣任務&lt;/li&gt;
 &lt;li&gt;pre-commit: git commit 前做完檢查&lt;/li&gt;
 &lt;li&gt;Commitizen: 規格化 git commit&lt;/li&gt;
 &lt;li&gt;安全性檢查&lt;/li&gt;
