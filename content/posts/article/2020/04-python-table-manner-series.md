@@ -24,7 +24,7 @@ Series: Python Table Manners
 * 虛擬環境和套件管理
 * 測試
 * 程式碼風格
-* 自動化繁瑣任務
+* 管理繁瑣任務
 * pre-commit: git commit 前做完檢查
 * Commitizen: 規格化 git commit
 * 安全性檢查
