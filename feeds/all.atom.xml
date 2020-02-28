@@ -1,5 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-02-27T20:04:00+08:00</updated><entry><title>Python Table Manners - 管理繁瑣任務</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" rel="alternate"></link><published>2020-02-27T20:04:00+08:00</published><updated>2020-02-27T20:04:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-27:/posts/tech/2020/02/python-table-manners-manage-trival-tasks</id><summary type="html">&lt;p&gt;前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-02-28T23:10:00+08:00</updated><entry><title>Python Table Manners - pre-commit: git commit 前做完檢查</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit" rel="alternate"></link><published>2020-02-28T23:10:00+08:00</published><updated>2020-02-28T23:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-28:/posts/tech/2020/02/python-table-manner-pre-commit</id><summary type="html">&lt;p&gt;在前一篇提到了 invoke，透過它可以簡化很多繁瑣的指令&lt;br&gt;
+但人類是懶惰的&lt;br&gt;
+即使已經更簡便了，沒被督促常常還是會忘了執行&lt;br&gt;
+就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑&lt;br&gt;
+所以這次要來聊聊 &lt;a href="https://pre-commit.com"&gt;pre-commit&lt;/a&gt; 如何強制做檢查&lt;/p&gt;
+&lt;h2 id="pre-commit"&gt;pre-commit&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://pre-commit.com/"&gt;pre-commit&lt;/a&gt; 主要的用途就是讓我們能方便的加入 &lt;a href="https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks"&gt;Git Hook&lt;/a&gt;，並在各種 git 的相關操作前進行檢查&lt;/p&gt;
+&lt;p&gt;正如它的命名，它可以在進行 &lt;code&gt;git commit&lt;/code&gt; 前執行一些操作&lt;br&gt;
+不過並不僅限於 commit 前，也可以在其它 git 的階段進行&lt;br&gt;
+之所以要這麼做就是為了讓不符合要求的程式碼，從最一開始就不會進入到版本庫 （pre commit）或 git 伺服器 （pre push）&lt;/p&gt;
+&lt;h2 id="pre-commit_1"&gt;使用 pre-commit&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝 pre-commit&lt;/span&gt;
+pipenv install pre-commit --dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;之後可以開始寫設定檔 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;在前一篇提到了 invoke，透過它可以簡化很多繁瑣的指令&lt;br&gt;
+但人類是懶惰的&lt;br&gt;
+即使已經更簡便了，沒被督促常常還是會忘了執行&lt;br&gt;
+就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑&lt;br&gt;
+所以這次要來聊聊 &lt;a href="https://pre-commit.com"&gt;pre-commit&lt;/a&gt; 如何強制做檢查&lt;/p&gt;
+&lt;h2 id="pre-commit"&gt;pre-commit&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://pre-commit.com/"&gt;pre-commit&lt;/a&gt; 主要的用途就是讓我們能方便的加入 &lt;a href="https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks"&gt;Git Hook&lt;/a&gt;，並在各種 git 的相關操作前進行檢查&lt;/p&gt;
+&lt;p&gt;正如它的命名，它可以在進行 &lt;code&gt;git commit&lt;/code&gt; 前執行一些操作&lt;br&gt;
+不過並不僅限於 commit 前，也可以在其它 git 的階段進行&lt;br&gt;
+之所以要這麼做就是為了讓不符合要求的程式碼，從最一開始就不會進入到版本庫 （pre commit）或 git 伺服器 （pre push）&lt;/p&gt;
+&lt;h2 id="pre-commit_1"&gt;使用 pre-commit&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝 pre-commit&lt;/span&gt;
+pipenv install pre-commit --dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;之後可以開始寫設定檔 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt;，告訴 pre-commit 要做哪些檢查&lt;br&gt;
+需要注意的是，專案必須要是一個 git 專案&lt;br&gt;
+這些設定都會被寫入 &lt;code&gt;.git/hooks/&lt;/code&gt; 中&lt;/p&gt;
+&lt;p&gt;e.g.,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;repos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;repo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;https://github.com/pre-commit/pre-commit-hooks&lt;/span&gt;
+    &lt;span class="nt"&gt;rev&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;v2.3.0&lt;/span&gt;
+    &lt;span class="nt"&gt;hooks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;end-of-file-fixer&lt;/span&gt;
+      &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;trailing-whitespace&lt;/span&gt;
+        &lt;span class="nt"&gt;args&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;--markdown-linebreak-ext=md&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;以上面的例子來說&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;repos&lt;/code&gt; 告訴 pre-commit 要去哪邊找到這些 hook&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;repo&lt;/code&gt;: 去找專案 &lt;a href="https://github.com/pre-commit/pre-commit-hooks"&gt;pre-commit-hooks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rev&lt;/code&gt;: 在專案 pre-commit-hooks 找到 rev &lt;a href="https://github.com/pre-commit/pre-commit-hooks/tree/v2.3.0"&gt;v2.3.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hooks&lt;/code&gt;: 在 pre-commit-hooks rev v2.3.0 的 &lt;a href="https://github.com/pre-commit/pre-commit-hooks/blob/v2.3.0/.pre-commit-hooks.yaml"&gt;.pre-commit-hooks.yaml&lt;/a&gt; 中尋找指定的 hook&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;id&lt;/code&gt;: hook id&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;args&lt;/code&gt;: 執行這個 hook 的額外參數&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大部分常見的 hook 都被定義在&lt;a href="https://github.com/pre-commit/pre-commit-hooks"&gt;pre-commit-hooks&lt;/a&gt;&lt;br&gt;
+除此之外，如 &lt;a href="https://github.com/psf/black"&gt;black&lt;/a&gt; 和 &lt;a href="https://gitlab.com/pycqa/flake8"&gt;flake8&lt;/a&gt; 等工具也都有提供 pre commit hook&lt;/p&gt;
+&lt;p&gt;另外，&lt;strong&gt;建議 rev 不要使用 master，而應該使用版本號等明確的 rev&lt;/strong&gt;&lt;br&gt;
+原因是預設 pre-commit 會將已知的專案存下來&lt;br&gt;
+如果沒有特別設定， pre-commit 不會把最新版 pull 下來&lt;br&gt;
+那指到的 master 就只會第一次 pre-commit 抓到時的 master，不會是真正最新版的 master&lt;/p&gt;
+&lt;p&gt;寫完設定檔後，接著就是把 pre-commit hook 安裝到 git 專案中&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 將 pre-commit hook 安裝到 git 專案&lt;/span&gt;
+pipenv run pre-commit install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;需要注意的是每次重新 clone 之後，都必須要執行一次&lt;br&gt;
+雖然可以將 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt; 加入版本控制&lt;br&gt;
+但 &lt;code&gt;.git/hook/&lt;/code&gt; 是不能被加入版本控制的&lt;/p&gt;
+&lt;p&gt;執行完會出現以下訊息&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pre-commit installed at .git/hooks/pre-commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;第一次進行 git commit 時，會將 &lt;a href="https://github.com/pre-commit/pre-commit-hooks"&gt;pre-commit-hooks&lt;/a&gt; clone 到 pre-commit 統一管理的地方&lt;br&gt;
+之後就會進行 &lt;code&gt;Fix End of Files&lt;/code&gt; 跟 &lt;code&gt;Trim Trailing Whitespace&lt;/code&gt; 的檢查&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Initializing environment &lt;span class="k"&gt;for&lt;/span&gt; https://github.com/pre-commit/pre-commit-hooks.
+&lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Installing environment &lt;span class="k"&gt;for&lt;/span&gt; https://github.com/pre-commit/pre-commit-hooks.
+&lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; Once installed this environment will be reused.
+&lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt; This may take a few minutes...
+Fix End of Files.........................................................Passed
+Trim Trailing Whitespace.................................................Passed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果沒有通過， git 會阻止你進行 commit&lt;/p&gt;
+&lt;h2 id="pre-commit_2"&gt;使用自定義的 pre-commit&lt;/h2&gt;
+&lt;p&gt;除了使用現成的 pre-commit hook，也可以寫客製化的檢查&lt;/p&gt;
+&lt;p&gt;下面的例子就是在 commit 前，要進行 pytest 的檢查&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;repos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;repo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;local&lt;/span&gt;
+    &lt;span class="nt"&gt;hooks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pytest&lt;/span&gt;
+        &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pytest&lt;/span&gt;
+        &lt;span class="nt"&gt;stages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;commit&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
+        &lt;span class="nt"&gt;language&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;system&lt;/span&gt;
+        &lt;span class="nt"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pipenv run pytest&lt;/span&gt;
+        &lt;span class="nt"&gt;types&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;repo: local&lt;/code&gt;: 直接在本地資料夾執行&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;hooks&lt;/code&gt;: 有哪些 hook 要執行&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;id&lt;/code&gt;, &lt;code&gt;name&lt;/code&gt;: hook 的 id / name 是 &lt;code&gt;pytest&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stages&lt;/code&gt;: 在 &lt;code&gt;commit&lt;/code&gt; 前執行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;language&lt;/code&gt;: 直接使用系統執行 &lt;code&gt;entry&lt;/code&gt; 內的指令&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;entry&lt;/code&gt;: 這個 hook 要執行的指令是 &lt;code&gt;pipenv run pytest&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;types&lt;/code&gt;: 只有在 python 這種檔案類型才進行檢查&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中 &lt;code&gt;stages&lt;/code&gt; 總共有六種&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;commit&lt;/li&gt;
+&lt;li&gt;merge-commit&lt;/li&gt;
+&lt;li&gt;push&lt;/li&gt;
+&lt;li&gt;prepare-commit-msg&lt;/li&gt;
+&lt;li&gt;commit-msg&lt;/li&gt;
+&lt;li&gt;manual&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這裡需要注意的是當執行 &lt;code&gt;pipenv run pre-commit commit&lt;/code&gt; 時&lt;br&gt;
+預設只會寫入 &lt;code&gt;.git/hooks/pre-commit&lt;/code&gt;&lt;br&gt;
+如果要加入其他階段，則必須要在後面加入參數 &lt;code&gt;-t [hook-type]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;e.g.,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv install pre-commit install pre-push
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;支援的 6 種 hook-type&lt;ul&gt;
+&lt;li&gt;pre-commit&lt;/li&gt;
+&lt;li&gt;pre-merge-commit&lt;/li&gt;
+&lt;li&gt;pre-push&lt;/li&gt;
+&lt;li&gt;prepare-commit-msg&lt;/li&gt;
+&lt;li&gt;commit-msg&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;像是 pytest 這種需要執行比較久的&lt;br&gt;
+我就不見得會在 commit 這個 stage 做檢查&lt;br&gt;
+而是會把 &lt;code&gt;stages&lt;/code&gt; 改成 &lt;code&gt;push&lt;/code&gt;&lt;br&gt;
+並安裝 pre-push 的 hook (i.e. &lt;code&gt;pipenv run pre-commit install -t pre-push&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;如果不想要每個 hook 都各自做設定，可以在 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt; 加上 &lt;code&gt;default_stages&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;default_stages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;push&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;表示如果沒有特定指定 &lt;code&gt;stages&lt;/code&gt; 的 hook 都只在 &lt;code&gt;push&lt;/code&gt; 的階段做檢查&lt;/p&gt;
+&lt;h2 id="pre-commit-hook"&gt;為自己做的工具加上 pre-commit hook&lt;/h2&gt;
+&lt;p&gt;如果你有寫檢查工具，加上 pre-commit hook 就能讓人更方便使用你的工具&lt;br&gt;
+在工具加入 &lt;code&gt;.pre-commit-hooks.yaml&lt;/code&gt; 讓 pre-commit 知道其他人引入你的工具時要怎麼做檢查&lt;br&gt;
+撰寫的方式跟 local 的 repo 的寫法相似&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;repos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;repo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;local&lt;/span&gt;
+      &lt;span class="nt"&gt;hooks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;...&lt;/span&gt;
+          &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;...&lt;/span&gt;
+          &lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;...&lt;/span&gt;
+          &lt;span class="nt"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://mropengate.blogspot.com/2019/08/pre-commit-git-hooks_4.html"&gt;提升程式碼品質：使用 Pre-Commit (Git Hooks) &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python. Code Quality"></category></entry><entry><title>Python Table Manners - 管理繁瑣任務</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" rel="alternate"></link><published>2020-02-27T20:04:00+08:00</published><updated>2020-02-27T20:04:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-27:/posts/tech/2020/02/python-table-manners-manage-trival-tasks</id><summary type="html">&lt;p&gt;前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具&lt;br&gt;
 每一個工具又有各自的參數和設定&lt;br&gt;
 這麼多指令怎麼可能記得起來 😱&lt;/p&gt;
 &lt;p&gt;&lt;img alt="too-many-commands" src="/images/posts-image/2020-02-22-python-table-manner-series/too-many-commands.jpg"&gt;&lt;/p&gt;
