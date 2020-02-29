@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Lee-W" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Python, Tech, " />
+
+<meta property="og:title" content="Python Table Manners - Commitizen: 規格化提交訊息"/>
+<meta property="og:url" content="https://lee-w.github.io/drafts/python-table-manners-commitizen.html" />
+<meta property="og:description" content="接續著前一篇的 pre-commit ，這篇來聊聊如何透過 commitizen 規範 commit message 為什麼要好好寫 commit message 如果不寫好 commit message，哪天系統出錯時，必須回朔到某個版本就會變得相對困難 (from hackjutsu/bad-commit-example) 撰寫好的 commit message 能讓團隊間的溝通更順利 送 Pull Request / Merge Request 時，reviewers 能更快速地知道這次增加了哪些功能，也能找到其脈絡 新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案 Commitizen 比起通泛的 commit message 撰寫建議，commitizen 更進一步規範 commit message 如何被撰寫 過互動式介面，讓使用者能夠輕鬆地產生符合規範的 commit message …" />
+<meta property="og:site_name" content="Laziness makes Great Engineer" />
+<meta property="og:article:author" content="Lee-W" />
+<meta property="og:article:published_time" content="2020-03-01T00:45:00+08:00" />
+<meta name="twitter:title" content="Python Table Manners - Commitizen: 規格化提交訊息">
+<meta name="twitter:description" content="接續著前一篇的 pre-commit ，這篇來聊聊如何透過 commitizen 規範 commit message 為什麼要好好寫 commit message 如果不寫好 commit message，哪天系統出錯時，必須回朔到某個版本就會變得相對困難 (from hackjutsu/bad-commit-example) 撰寫好的 commit message 能讓團隊間的溝通更順利 送 Pull Request / Merge Request 時，reviewers 能更快速地知道這次增加了哪些功能，也能找到其脈絡 新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案 Commitizen 比起通泛的 commit message 撰寫建議，commitizen 更進一步規範 commit message 如何被撰寫 過互動式介面，讓使用者能夠輕鬆地產生符合規範的 commit message …">
+
+        <title>Python Table Manners - Commitizen: 規格化提交訊息 · Laziness makes Great Engineer
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?bec7d543">
+
+        <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-96190677-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://lee-w.github.io/"><span class=site-name>Laziness makes Great Engineer</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://lee-w.github.io
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                                <li ><a href="https://lee-w.github.io/categories.html">Categories</a></li>
+                                <li ><a href="https://lee-w.github.io/tags.html">Tags</a></li>
+                                <li ><a href="https://lee-w.github.io/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="https://lee-w.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://lee-w.github.io/drafts/python-table-manners-commitizen.html">
+                Python Table Manners - Commitizen: 規格化提交訊息
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <p>接續著前一篇的 pre-commit ，這篇來聊聊如何透過 <a href="https://github.com/Woile/commitizen">commitizen</a> 規範 commit message</p>
+<h2 id="commit-message">為什麼要好好寫 commit message</h2>
+<p><img alt="no-good-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/no-good-commit.jpg"></p>
+<p>如果不寫好 commit message，哪天系統出錯時，必須回朔到某個版本就會變得相對困難</p>
+<p><img alt="bad-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/bad-commit.jpg"><br>
+(from <a href="https://github.com/hackjutsu/bad-commit-example/commits/master">hackjutsu/bad-commit-example</a>)</p>
+<p>撰寫好的 commit message 能讓團隊間的溝通更順利</p>
+<ul>
+<li>送 Pull Request / Merge Request 時，reviewers 能更快速地知道這次增加了哪些功能，也能找到其脈絡</li>
+<li>新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案</li>
+</ul>
+<h2 id="commitizen">Commitizen</h2>
+<p>比起通泛的 commit message 撰寫建議，<a href="https://woile.github.io/commitizen/">commitizen</a> 更進一步規範 commit message 如何被撰寫<br>
+過互動式介面，讓使用者能夠輕鬆地產生符合規範的 commit message</p>
+<p>同時也整合了前一篇所提到的 pre-commit hook，避免使用者將不符合規範的 commit message 寫入</p>
+<p>除了採用來自 Angular 社群的 <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> (約定式提交) 外， commitizen 提供了高度的客製化，讓每個團隊或專案都可以依照自己的需求，撰寫相對應的規範</p>
+<p>規範了 commit message 後，除了增加可讀性增加外，也讓這些訊息有可以被解析做其他運用 （e.g., 升版, 產生更新日誌）</p>
+<h2 id="commitizen_1">安裝與設定 Commitizen</h2>
+<p>跟 invoke 一樣，我會把 commitizen 同時安裝在系統和虛擬環境</p>
+<p>安裝在虛擬環境主要是為了能在 CI/CD 伺服器上自動升版</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安裝 commitizen 到系統</span>
+pipx install commitizen
+
+<span class="c1"># 安裝 commitizen 到虛擬環境中</span>
+pipenv install commitizen --dev
+</code></pre></div>
+
+
+<p>在專案中第一次使用 commitizen 可以使用初始化指令來完成基本的設定</p>
+<div class="highlight"><pre><span></span><code>cz init
+</code></pre></div>
+
+
+<p>一開始會問要將設定寫在哪個檔案內<br>
+ini 格式的設定（i.e., <code>.cz</code>, <code>setup.cfg</code>, <code>.cz.cfg</code>） 在 2.0 之後將不再支援<br>
+因此建議選擇 <code>pyproject.toml</code></p>
+<p><img alt="cz-init-1" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-1.jpg"></p>
+<p>接著會選擇一套 commit message 規範<br>
+預設有三種，我最常使用的是 <code>cz_conventional_commits</code></p>
+<p><img alt="cz-init-2" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-2.jpg"></p>
+<p>再來回詢問抓最新的 git tag 來確認是否為目前的版本號<br>
+如果選擇否，就會列出 <code>git tag</code> 所有的結果<br>
+如果 <code>git tag</code> 沒有結果，就會預設為 0.0.1</p>
+<p><img alt="cz-init-3" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-3.jpg"></p>
+<p>最後會詢問版本的格式要是如何<br>
+常用的格式有 <code>$version</code> (e.g., <code>1.0.0</code>) 或 <code>v$version</code> (e.g., <code>v1.0.0</code>)</p>
+<p><img alt="cz-init-4" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-4.jpg"></p>
+<p>完成後就會產生對應的 <code>pyproject.toml</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.commitizen]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;cz_conventional_commits&quot;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s">&quot;1.0.2&quot;</span>
+<span class="n">tag_format</span> <span class="o">=</span> <span class="s">&quot;$version&quot;</span>
+</code></pre></div>
+
+
+<h2 id="commitizen_2">使用 Commitizen</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># 也可以使用簡短版 cz c</span>
+cz commit
+</code></pre></div>
+
+
+<p>以 <code>cz_conventional_commits</code> 為例<br>
+使用 commitizen 來做 commit 時，會先詢問這次的 commit 做了哪一種改動</p>
+<p><img alt="commitizen-1" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-1.jpg"></p>
+<p>接著會要求輸入這次改動的細節</p>
+<p><img alt="commitizen-2-w1024" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-2.jpg"></p>
+<p>以上面的例子來說，產生出的 commit message 就會是 <strong>feat(tasks): add `inv git.commit`</strong></p>
+<p>當一個專案一直都是使用 commitizen 來做 commit ，就能產生如同下圖那樣清楚的紀錄</p>
+<p><img alt="commitizen-log" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-log.jpg"></p>
+<h2 id="commit-message_1">強制檢查 commit message</h2>
+<p>剛開始引入 commitizen 時，可能會常常忘記要使用它來做 commit<br>
+這時候就能使用到前一篇提到的 <a href="https://pre-commit.com/">pre-commit</a><br>
+我在 <a href="https://github.com/Woile/commitizen">commitizen</a> 中有加入 <a href="https://github.com/Woile/commitizen/blob/master/.pre-commit-hooks.yaml">.pre-commit-hooks.yaml</a></p>
+<p>因此只要在專案的 <code>.pre-commit-config.yaml</code> 加入以下這段</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">repos</span>
+  <span class="l l-Scalar l-Scalar-Plain">- repo</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/Woile/commitizen</span>
+    <span class="l l-Scalar l-Scalar-Plain">rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+    <span class="l l-Scalar l-Scalar-Plain">hooks</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">commitizen</span>
+        <span class="nt">stages</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">commit-msg</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+
+
+<p>並將 pre-commit 設定到 commit-msg</p>
+<div class="highlight"><pre><span></span><code>pipenv run pre-commit install -t commit-msg
+</code></pre></div>
+
+
+<p>在 commit 執行完，要進訊息寫入前<br>
+commitizen 會執行 <code>cz check</code> 來確認輸入的訊息是否符合規範<br>
+如果不符合規範就會拒絕這次的 commit</p>
+<p>需要注意到的是檢查在產生 commit message 後才能執行，因此要設定要將 stage 設定成 commit-msg，並要將 pre-commit hook 設定到 commit-msg (i.e., <code>.git/hooks/commit-msg</code>)</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/">How to Write Good Commit Messages: A Practical Git Guide</a></li>
+</ul>
+
+
+            
+
+
+<script src="https://lee-w.github.io/theme/applause-button/applause-button.js"></script>
+<div class="applause_button">
+    <applause-button url=https://lee-w.github.io/drafts/python-table-manners-commitizen.html> </applause-button>
+</div>
+
+
+            
+            
+            
+
+
+
+
+
+
+            <hr/>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2020-03-01T00:45:00+08:00">2020/03/01 - Sun</time>
+        <h4><built-in method index of str object at 0x7fc91f00f440></h4>
+    <ul class="multi-parts-list">
+    </ul>
+                <h4>Read Time</h4>
+                 1 min
+            <h4>Category</h4>
+            <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
+                    <span>21</span>
+</a></li>
+            </ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+    <a href="https://tw.linkedin.com/in/clleew" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+    </a>
+    <a href="https://github.com/Lee-W" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="https://gitlab.com/Lee-W" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitLab" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#30353e"/><path fill="#e24329" d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133"/><path fill="#fc6d26" d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z"/><path fill="#fca326" d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z"/></svg>
+    </a>
+    <a href="https://twitter.com/clleew" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+    <a href="https://lee-w.github.io/feeds/all.atom.xml" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="RSS" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f80"/><circle cx="145" cy="367" r="35" fill="#fff"/><path fill="none" stroke="#fff" stroke-width="60" d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
