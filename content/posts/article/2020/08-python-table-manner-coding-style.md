@@ -1,4 +1,4 @@
-Title: Python Table Manner - 程式碼風格
+Title: Python Table Manners - 程式碼風格
 Date: 2020-02-26 18:39
 Category: Tech
 Tags: Python, Code Quality
