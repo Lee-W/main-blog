@@ -1,5 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-02-28T23:10:00+08:00</updated><entry><title>Python Table Manners - pre-commit: git commit 前做完檢查</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit" rel="alternate"></link><published>2020-02-28T23:10:00+08:00</published><updated>2020-02-28T23:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-28:/posts/tech/2020/02/python-table-manner-pre-commit</id><summary type="html">&lt;p&gt;在前一篇提到了 invoke，透過它可以簡化很多繁瑣的指令&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-03-01T00:45:00+08:00</updated><entry><title>Python Table Manners - Commitizen: 規格化提交訊息</title><link href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" rel="alternate"></link><published>2020-03-01T00:45:00+08:00</published><updated>2020-03-01T00:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-03-01:/posts/tech/2020/03/python-table-manners-commitizen</id><summary type="html">&lt;p&gt;接續著前一篇的 pre-commit ，這篇來聊聊如何透過 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt; 規範 commit message&lt;/p&gt;
+&lt;h2 id="commit-message"&gt;為什麼要好好寫 commit message&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="no-good-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/no-good-commit.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;如果不寫好 commit message，哪天系統出錯時，必須回朔到某個版本就會變得相對困難&lt;/p&gt;
+&lt;p&gt;&lt;img alt="bad-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/bad-commit.jpg"&gt;&lt;br&gt;
+(from &lt;a href="https://github.com/hackjutsu/bad-commit-example/commits/master"&gt;hackjutsu/bad-commit-example&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;撰寫好的 commit message 能讓團隊間的溝通更順利&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;送 Pull Request / Merge Request 時，reviewers 能更快速地知道這次增加了哪些功能，也能找到其脈絡&lt;/li&gt;
+&lt;li&gt;新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="commitizen"&gt;Commitizen&lt;/h2&gt;
+&lt;p&gt;比起通泛的 commit message 撰寫建議，&lt;a href="https://woile.github.io/commitizen/"&gt;commitizen&lt;/a&gt; 更進一步規範 commit message 如何被撰寫&lt;br&gt;
+過互動式介面，讓使用者能夠輕鬆地產生符合規範的 commit message …&lt;/p&gt;</summary><content type="html">&lt;p&gt;接續著前一篇的 pre-commit ，這篇來聊聊如何透過 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt; 規範 commit message&lt;/p&gt;
+&lt;h2 id="commit-message"&gt;為什麼要好好寫 commit message&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="no-good-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/no-good-commit.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;如果不寫好 commit message，哪天系統出錯時，必須回朔到某個版本就會變得相對困難&lt;/p&gt;
+&lt;p&gt;&lt;img alt="bad-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/bad-commit.jpg"&gt;&lt;br&gt;
+(from &lt;a href="https://github.com/hackjutsu/bad-commit-example/commits/master"&gt;hackjutsu/bad-commit-example&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;撰寫好的 commit message 能讓團隊間的溝通更順利&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;送 Pull Request / Merge Request 時，reviewers 能更快速地知道這次增加了哪些功能，也能找到其脈絡&lt;/li&gt;
+&lt;li&gt;新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="commitizen"&gt;Commitizen&lt;/h2&gt;
+&lt;p&gt;比起通泛的 commit message 撰寫建議，&lt;a href="https://woile.github.io/commitizen/"&gt;commitizen&lt;/a&gt; 更進一步規範 commit message 如何被撰寫&lt;br&gt;
+過互動式介面，讓使用者能夠輕鬆地產生符合規範的 commit message&lt;/p&gt;
+&lt;p&gt;同時也整合了前一篇所提到的 pre-commit hook，避免使用者將不符合規範的 commit message 寫入&lt;/p&gt;
+&lt;p&gt;除了採用來自 Angular 社群的 &lt;a href="https://www.conventionalcommits.org/en/v1.0.0/"&gt;Conventional Commits&lt;/a&gt; (約定式提交) 外， commitizen 提供了高度的客製化，讓每個團隊或專案都可以依照自己的需求，撰寫相對應的規範&lt;/p&gt;
+&lt;p&gt;規範了 commit message 後，除了增加可讀性增加外，也讓這些訊息有可以被解析做其他運用 （e.g., 升版, 產生更新日誌）&lt;/p&gt;
+&lt;h2 id="commitizen_1"&gt;安裝與設定 Commitizen&lt;/h2&gt;
+&lt;p&gt;跟 invoke 一樣，我會把 commitizen 同時安裝在系統和虛擬環境&lt;/p&gt;
+&lt;p&gt;安裝在虛擬環境主要是為了能在 CI/CD 伺服器上自動升版&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝 commitizen 到系統&lt;/span&gt;
+pipx install commitizen
+
+&lt;span class="c1"&gt;# 安裝 commitizen 到虛擬環境中&lt;/span&gt;
+pipenv install commitizen --dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;在專案中第一次使用 commitizen 可以使用初始化指令來完成基本的設定&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cz init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;一開始會問要將設定寫在哪個檔案內&lt;br&gt;
+ini 格式的設定（i.e., &lt;code&gt;.cz&lt;/code&gt;, &lt;code&gt;setup.cfg&lt;/code&gt;, &lt;code&gt;.cz.cfg&lt;/code&gt;） 在 2.0 之後將不再支援&lt;br&gt;
+因此建議選擇 &lt;code&gt;pyproject.toml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="cz-init-1" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-1.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;接著會選擇一套 commit message 規範&lt;br&gt;
+預設有三種，我最常使用的是 &lt;code&gt;cz_conventional_commits&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="cz-init-2" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-2.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;再來回詢問抓最新的 git tag 來確認是否為目前的版本號&lt;br&gt;
+如果選擇否，就會列出 &lt;code&gt;git tag&lt;/code&gt; 所有的結果&lt;br&gt;
+如果 &lt;code&gt;git tag&lt;/code&gt; 沒有結果，就會預設為 0.0.1&lt;/p&gt;
+&lt;p&gt;&lt;img alt="cz-init-3" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-3.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;最後會詢問版本的格式要是如何&lt;br&gt;
+常用的格式有 &lt;code&gt;$version&lt;/code&gt; (e.g., &lt;code&gt;1.0.0&lt;/code&gt;) 或 &lt;code&gt;v$version&lt;/code&gt; (e.g., &lt;code&gt;v1.0.0&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="cz-init-4" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-4.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;完成後就會產生對應的 &lt;code&gt;pyproject.toml&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tool.commitizen]&lt;/span&gt;
+&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;cz_conventional_commits&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;1.0.2&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;tag_format&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;$version&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="commitizen_2"&gt;使用 Commitizen&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 也可以使用簡短版 cz c&lt;/span&gt;
+cz commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;以 &lt;code&gt;cz_conventional_commits&lt;/code&gt; 為例&lt;br&gt;
+使用 commitizen 來做 commit 時，會先詢問這次的 commit 做了哪一種改動&lt;/p&gt;
+&lt;p&gt;&lt;img alt="commitizen-1" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-1.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;接著會要求輸入這次改動的細節&lt;/p&gt;
+&lt;p&gt;&lt;img alt="commitizen-2-w1024" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-2.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;以上面的例子來說，產生出的 commit message 就會是 &lt;strong&gt;feat(tasks): add `inv git.commit`&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;當一個專案一直都是使用 commitizen 來做 commit ，就能產生如同下圖那樣清楚的紀錄&lt;/p&gt;
+&lt;p&gt;&lt;img alt="commitizen-log" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-log.jpg"&gt;&lt;/p&gt;
+&lt;h2 id="commit-message_1"&gt;強制檢查 commit message&lt;/h2&gt;
+&lt;p&gt;剛開始引入 commitizen 時，可能會常常忘記要使用它來做 commit&lt;br&gt;
+這時候就能使用到前一篇提到的 &lt;a href="https://pre-commit.com/"&gt;pre-commit&lt;/a&gt;&lt;br&gt;
+我在 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt; 中有加入 &lt;a href="https://github.com/Woile/commitizen/blob/master/.pre-commit-hooks.yaml"&gt;.pre-commit-hooks.yaml&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;因此只要在專案的 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt; 加入以下這段&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;repos&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;- repo&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;https://github.com/Woile/commitizen&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;rev&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;master&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;hooks&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+      &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;commitizen&lt;/span&gt;
+        &lt;span class="nt"&gt;stages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;commit-msg&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;並將 pre-commit 設定到 commit-msg&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run pre-commit install -t commit-msg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;在 commit 執行完，要進訊息寫入前&lt;br&gt;
+commitizen 會執行 &lt;code&gt;cz check&lt;/code&gt; 來確認輸入的訊息是否符合規範&lt;br&gt;
+如果不符合規範就會拒絕這次的 commit&lt;/p&gt;
+&lt;p&gt;需要注意到的是檢查在產生 commit message 後才能執行，因此要設定要將 stage 設定成 commit-msg，並要將 pre-commit hook 設定到 commit-msg (i.e., &lt;code&gt;.git/hooks/commit-msg&lt;/code&gt;)&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/"&gt;How to Write Good Commit Messages: A Practical Git Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category></entry><entry><title>Python Table Manners - pre-commit: git commit 前做完檢查</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit" rel="alternate"></link><published>2020-02-28T23:10:00+08:00</published><updated>2020-02-28T23:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-28:/posts/tech/2020/02/python-table-manner-pre-commit</id><summary type="html">&lt;p&gt;在前一篇提到了 invoke，透過它可以簡化很多繁瑣的指令&lt;br&gt;
 但人類是懶惰的&lt;br&gt;
 即使已經更簡便了，沒被督促常常還是會忘了執行&lt;br&gt;
 就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑&lt;br&gt;
