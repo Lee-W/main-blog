@@ -11,16 +11,16 @@
 
 <meta name="keywords" content="Python, Tech, " />
 
-<meta property="og:title" content="Python Table Manners - Commitizen: 規格化提交訊息"/>
+<meta property="og:title" content="Python Table Manners - Commitizen: 規格化 commit message"/>
 <meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" />
 <meta property="og:description" content="接續著前一篇的 pre-commit ，這篇來聊聊如何透過 commitizen 規範 commit message 為什麼要好好寫 commit message 如果不寫好 commit message，哪天系統出錯時，必須回朔到某個版本就會變得相對困難 (from hackjutsu/bad-commit-example) 撰寫好的 commit message 能讓團隊間的溝通更順利 送 Pull Request / Merge Request 時，reviewers 能更快速地知道這次增加了哪些功能，也能找到其脈絡 新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案 Commitizen 比起通泛的 commit message 撰寫建議，commitizen 更進一步規範 commit message 如何被撰寫 過互動式介面，讓使用者能夠輕鬆地產生符合規範的 commit message …" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2020-03-01T00:45:00+08:00" />
-<meta name="twitter:title" content="Python Table Manners - Commitizen: 規格化提交訊息">
+<meta name="twitter:title" content="Python Table Manners - Commitizen: 規格化 commit message">
 <meta name="twitter:description" content="接續著前一篇的 pre-commit ，這篇來聊聊如何透過 commitizen 規範 commit message 為什麼要好好寫 commit message 如果不寫好 commit message，哪天系統出錯時，必須回朔到某個版本就會變得相對困難 (from hackjutsu/bad-commit-example) 撰寫好的 commit message 能讓團隊間的溝通更順利 送 Pull Request / Merge Request 時，reviewers 能更快速地知道這次增加了哪些功能，也能找到其脈絡 新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案 Commitizen 比起通泛的 commit message 撰寫建議，commitizen 更進一步規範 commit message 如何被撰寫 過互動式介面，讓使用者能夠輕鬆地產生符合規範的 commit message …">
 
-        <title>Python Table Manners - Commitizen: 規格化提交訊息 · Laziness makes Great Engineer
+        <title>Python Table Manners - Commitizen: 規格化 commit message · Laziness makes Great Engineer
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -76,7 +76,7 @@
     <header class="page-header span10 offset2">
         <h1>
             <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen">
-                Python Table Manners - Commitizen: 規格化提交訊息
+                Python Table Manners - Commitizen: 規格化 commit message
             </a>
         </h1>
     </header>
@@ -194,11 +194,11 @@ commitizen 會執行 <code>cz check</code> 來確認輸入的訊息是否符合�
 
                 <p id="post-share-links">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20-%20Commitizen%3A%20%E8%A6%8F%E6%A0%BC%E5%8C%96%E6%8F%90%E4%BA%A4%E8%A8%8A%E6%81%AF&url=https%3A//lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen&hashtags=python" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20-%20Commitizen%3A%20%E8%A6%8F%E6%A0%BC%E5%8C%96%20commit%20message&url=https%3A//lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen&hashtags=python" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
     ❄
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="mailto:?subject=Python%20Table%20Manners%20-%20Commitizen%3A%20%E8%A6%8F%E6%A0%BC%E5%8C%96%E6%8F%90%E4%BA%A4%E8%A8%8A%E6%81%AF&amp;body=https%3A//lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+    <a href="mailto:?subject=Python%20Table%20Manners%20-%20Commitizen%3A%20%E8%A6%8F%E6%A0%BC%E5%8C%96%20commit%20message&amp;body=https%3A//lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
     </p>
 
             
@@ -286,13 +286,13 @@ commitizen 會執行 <code>cz check</code> 來確認輸入的訊息是否符合�
             <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 4: Python Table Manners - 測試 (二)</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Python Table Manner - 程式碼風格">Part 5: Python Table Manner - 程式碼風格</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Python Table Manners - 程式碼風格">Part 5: Python Table Manners - 程式碼風格</a>
             </li>
             <li >
             <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" title="Python Table Manners - 管理繁瑣任務">Part 6: Python Table Manners - 管理繁瑣任務</a>
             </li>
             <li  class="active-part">
-            Part 7: Python Table Manners - Commitizen: 規格化提交訊息
+            Part 7: Python Table Manners - Commitizen: 規格化 commit message
             </li>
     </ul>
                 <h4>Read Time</h4>
