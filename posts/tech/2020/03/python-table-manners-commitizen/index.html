@@ -13,12 +13,13 @@
 
 <meta property="og:title" content="Python Table Manners - Commitizen: 規格化 commit message"/>
 <meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" />
-<meta property="og:description" content="接續著前一篇的 pre-commit ，這篇來聊聊如何透過 commitizen 規範 commit message 為什麼要好好寫 commit message 如果不寫好 commit message，哪天系統出錯時，必須回朔到某個版本就會變得相對困難 (from hackjutsu/bad-commit-example) 撰寫好的 commit message 能讓團隊間的溝通更順利 送 Pull Request / Merge Request 時，reviewers 能更快速地知道這次增加了哪些功能，也能找到其脈絡 新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案 Commitizen 比起通泛的 commit message 撰寫建議，commitizen 更進一步規範 commit message 如何被撰寫 過互動式介面，讓使用者能夠輕鬆地產生符合規範的 commit message …" />
+<meta property="og:description" content="接續著前一篇的 pre-commit 繼續談 git 相關的工具 這篇來聊聊如何透過 commitizen 規範 commit message 還有我們能拿規範過的 commit message 做什麼" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2020-03-01T00:45:00+08:00" />
+<meta property="og:article:modified_time" content="2020-03-03T20:12:00+08:00" />
 <meta name="twitter:title" content="Python Table Manners - Commitizen: 規格化 commit message">
-<meta name="twitter:description" content="接續著前一篇的 pre-commit ，這篇來聊聊如何透過 commitizen 規範 commit message 為什麼要好好寫 commit message 如果不寫好 commit message，哪天系統出錯時，必須回朔到某個版本就會變得相對困難 (from hackjutsu/bad-commit-example) 撰寫好的 commit message 能讓團隊間的溝通更順利 送 Pull Request / Merge Request 時，reviewers 能更快速地知道這次增加了哪些功能，也能找到其脈絡 新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案 Commitizen 比起通泛的 commit message 撰寫建議，commitizen 更進一步規範 commit message 如何被撰寫 過互動式介面，讓使用者能夠輕鬆地產生符合規範的 commit message …">
+<meta name="twitter:description" content="接續著前一篇的 pre-commit 繼續談 git 相關的工具 這篇來聊聊如何透過 commitizen 規範 commit message 還有我們能拿規範過的 commit message 做什麼">
 
         <title>Python Table Manners - Commitizen: 規格化 commit message · Laziness makes Great Engineer
 </title>
@@ -83,25 +84,61 @@
 </div>
 
 <div class="row-fluid">
-        <div class="span8 offset2 article-content">
-            
-            <p>接續著前一篇的 pre-commit ，這篇來聊聊如何透過 <a href="https://github.com/Woile/commitizen">commitizen</a> 規範 commit message</p>
-<h2 id="commit-message">為什麼要好好寫 commit message</h2>
-<p><img alt="no-good-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/no-good-commit.jpg"></p>
-<p>如果不寫好 commit message，哪天系統出錯時，必須回朔到某個版本就會變得相對困難</p>
-<p><img alt="bad-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/bad-commit.jpg"><br>
-(from <a href="https://github.com/hackjutsu/bad-commit-example/commits/master">hackjutsu/bad-commit-example</a>)</p>
-<p>撰寫好的 commit message 能讓團隊間的溝通更順利</p>
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
 <ul>
-<li>送 Pull Request / Merge Request 時，reviewers 能更快速地知道這次增加了哪些功能，也能找到其脈絡</li>
+<li><a href="#commit-message">為什麼要好好寫 commit message</a></li>
+<li><a href="#commitizen">Commitizen</a></li>
+<li><a href="#commitizen_1">安裝與設定 Commitizen</a></li>
+<li><a href="#commitizen_2">使用 Commitizen</a></li>
+<li><a href="#commit-message_1">強制檢查 commit message</a></li>
+<li><a href="#_1">自動提升版本號</a></li>
+<li><a href="#commit">客製化 commit 規範</a><ul>
+<li><a href="#_2">直接在設定檔設定</a></li>
+<li><a href="#commit-python">將 commit 規範寫成 Python 套件發佈</a></li>
+</ul>
+</li>
+<li><a href="#changelog">自動產生更新日誌（Changelog）</a></li>
+<li><a href="#commitizen_3">其他 commitizen 指令和常用參數</a></li>
+<li><a href="#commitizen_4">關於 commitizen 的雜談</a><ul>
+<li><a href="#java-script-commitizen">為什麼不用 Java Script 的 commitizen 就好了</a></li>
+<li><a href="#_3">持續貢獻</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            <p>接續著前一篇的 pre-commit 繼續談 git 相關的工具<br/>
+這篇來聊聊如何透過 <a href="https://github.com/Woile/commitizen">commitizen</a> 規範 commit message<br/>
+還有我們能拿規範過的 commit message 做什麼</p>
+<!--more-->
+
+<h2 id="commit-message">為什麼要好好寫 commit message</h2>
+<p><img alt="no-good-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/no-good-commit.jpg"/></p>
+<p>如果不好好寫有意義的 commit message，每次都只用 "update" 當訊息<br/>
+當你下了 <code>git log</code> 指令，就會看到一堆 "update"<br/>
+然後哪天系統出錯的時候，你也會不知道要回朔到哪一個版本</p>
+<p><img alt="bad-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/bad-commit.jpg"/><br/>
+(from <a href="https://github.com/hackjutsu/bad-commit-example/commits/master">hackjutsu/bad-commit-example</a>)</p>
+<p>撰寫好的 commit message，除了讓未來的自己知道自己在幹嘛<br/>
+也能讓團隊之間的溝通更順利</p>
+<ul>
+<li>送 Pull Request / Merge Request 時，reviewers 能更快速地知道增加了哪些功能</li>
 <li>新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案</li>
 </ul>
 <h2 id="commitizen">Commitizen</h2>
-<p>比起通泛的 commit message 撰寫建議，<a href="https://woile.github.io/commitizen/">commitizen</a> 更進一步規範 commit message 如何被撰寫<br>
-過互動式介面，讓使用者能夠輕鬆地產生符合規範的 commit message</p>
+<p>除了提供的 commit message 撰寫建議和規範 （👉 <a href="https://woile.github.io/commitizen/tutorials/writing_commits/">Writing commits</a>）<br/>
+<a href="https://woile.github.io/commitizen/">commitizen</a> 更進一步提供互動式介面，讓使用者可以夠輕鬆地產生符合規範的 commit message</p>
 <p>同時也整合了前一篇所提到的 pre-commit hook，避免使用者將不符合規範的 commit message 寫入</p>
 <p>除了採用來自 Angular 社群的 <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> (約定式提交) 外， commitizen 提供了高度的客製化，讓每個團隊或專案都可以依照自己的需求，撰寫相對應的規範</p>
-<p>規範了 commit message 後，除了增加可讀性增加外，也讓這些訊息有可以被解析做其他運用 （e.g., 升版, 產生更新日誌）</p>
+<p>規範了 commit message 後，除了增加可讀性增加外，也讓訊息有可以被解析做其他運用<br/>
+e.g., 提升版本號, 產生更新日誌</p>
 <h2 id="commitizen_1">安裝與設定 Commitizen</h2>
 <p>跟 invoke 一樣，我會把 commitizen 同時安裝在系統和虛擬環境</p>
 <p>安裝在虛擬環境主要是為了能在 CI/CD 伺服器上自動升版</p>
@@ -111,75 +148,261 @@ pipx install commitizen
 <span class="c1"># 安裝 commitizen 到虛擬環境中</span>
 pipenv install commitizen --dev
 </code></pre></div>
-
-
 <p>在專案中第一次使用 commitizen 可以使用初始化指令來完成基本的設定</p>
 <div class="highlight"><pre><span></span><code>cz init
 </code></pre></div>
-
-
-<p>一開始會問要將設定寫在哪個檔案內<br>
-ini 格式的設定（i.e., <code>.cz</code>, <code>setup.cfg</code>, <code>.cz.cfg</code>） 在 2.0 之後將不再支援<br>
-因此建議選擇 <code>pyproject.toml</code></p>
-<p><img alt="cz-init-1" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-1.jpg"></p>
-<p>接著會選擇一套 commit message 規範<br>
-預設有三種，我最常使用的是 <code>cz_conventional_commits</code></p>
-<p><img alt="cz-init-2" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-2.jpg"></p>
-<p>再來回詢問抓最新的 git tag 來確認是否為目前的版本號<br>
-如果選擇否，就會列出 <code>git tag</code> 所有的結果<br>
-如果 <code>git tag</code> 沒有結果，就會預設為 0.0.1</p>
-<p><img alt="cz-init-3" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-3.jpg"></p>
-<p>最後會詢問版本的格式要是如何<br>
+<p>一開始會問要將設定寫在哪個檔案內<br/>
+ini 格式的設定（i.e., <code>.cz</code>, <code>setup.cfg</code>, <code>.cz.cfg</code>） 在 2.0 之後將不再支援<br/>
+因此建議選擇 <code>pyproject.toml</code> 或 <code>.cz.toml</code></p>
+<p><img alt="cz-init-1" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-1.jpg"/></p>
+<p>接著會選擇一套 commit 規範<br/>
+預設有三種，這裡先以 <code>cz_conventional_commits</code> 為例</p>
+<p><img alt="cz-init-2" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-2.jpg"/></p>
+<p>再來回詢問最新的 git tag 來確認是否為最新的版本號<br/>
+如果不是，就會列出 <code>git tag</code> 所有的結果<br/>
+如果完全沒有用過 git tag，預設會是 <code>0.0.1</code></p>
+<p><img alt="cz-init-3" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-3.jpg"/></p>
+<p>最後會詢問版本的格式要是如何<br/>
 常用的格式有 <code>$version</code> (e.g., <code>1.0.0</code>) 或 <code>v$version</code> (e.g., <code>v1.0.0</code>)</p>
-<p><img alt="cz-init-4" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-4.jpg"></p>
-<p>完成後就會產生對應的 <code>pyproject.toml</code></p>
+<p><img alt="cz-init-4" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-4.jpg"/></p>
+<p>完成後就會將相對應的內容加入到設定檔</p>
 <div class="highlight"><pre><span></span><code><span class="k">[tool.commitizen]</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;cz_conventional_commits&quot;</span>
-<span class="n">version</span> <span class="o">=</span> <span class="s">&quot;1.0.2&quot;</span>
-<span class="n">tag_format</span> <span class="o">=</span> <span class="s">&quot;$version&quot;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">"cz_conventional_commits"</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s">"1.0.2"</span>
+<span class="n">tag_format</span> <span class="o">=</span> <span class="s">"$version"</span>
 </code></pre></div>
-
-
 <h2 id="commitizen_2">使用 Commitizen</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># 也可以使用簡短版 cz c</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 使用 commitizen 做 commit</span>
+<span class="c1"># (也可以用簡短版的 cz c)</span>
 cz commit
 </code></pre></div>
-
-
-<p>以 <code>cz_conventional_commits</code> 為例<br>
-使用 commitizen 來做 commit 時，會先詢問這次的 commit 做了哪一種改動</p>
-<p><img alt="commitizen-1" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-1.jpg"></p>
-<p>接著會要求輸入這次改動的細節</p>
-<p><img alt="commitizen-2-w1024" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-2.jpg"></p>
-<p>以上面的例子來說，產生出的 commit message 就會是 <strong>feat(tasks): add `inv git.commit`</strong></p>
-<p>當一個專案一直都是使用 commitizen 來做 commit ，就能產生如同下圖那樣清楚的紀錄</p>
-<p><img alt="commitizen-log" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-log.jpg"></p>
+<p>以 <code>cz_conventional_commits</code> 這套規則為例<br/>
+會先詢問這次的 commit 做了哪一種改動</p>
+<p><img alt="commitizen-1" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-1.jpg"/></p>
+<p>接著會要求輸入這次改動各項細節</p>
+<ul>
+<li>Scope： 改動範圍</li>
+<li>Subject： 簡短敘述這次的改動</li>
+<li>Is this a BREAKING CHANGE？： 這是否是一個重大改動</li>
+<li>Body： 詳細敘述這次的改動</li>
+<li>Footer： 參考，通常可以將 Issue 的編號寫在這</li>
+</ul>
+<p><img alt="commitizen-2-w1024" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-2.jpg"/></p>
+<p>回答完，就會產生 commit message <strong>feat(tasks): add `inv git.commit`</strong></p>
 <h2 id="commit-message_1">強制檢查 commit message</h2>
-<p>剛開始引入 commitizen 時，可能會常常忘記要使用它來做 commit<br>
-這時候就能使用到前一篇提到的 <a href="https://pre-commit.com/">pre-commit</a><br>
-我在 <a href="https://github.com/Woile/commitizen">commitizen</a> 中有加入 <a href="https://github.com/Woile/commitizen/blob/master/.pre-commit-hooks.yaml">.pre-commit-hooks.yaml</a></p>
-<p>因此只要在專案的 <code>.pre-commit-config.yaml</code> 加入以下這段</p>
+<p>剛開始引入 commitizen 時，可能會常常忘記要使用它來做 commit<br/>
+這時候就能使用到前一篇提到的 <a href="https://pre-commit.com/">pre-commit</a></p>
+<p>我在 <a href="https://github.com/Woile/commitizen">commitizen</a> 中有加入 <a href="https://github.com/Woile/commitizen/blob/master/.pre-commit-hooks.yaml">.pre-commit-hooks.yaml</a><br/>
+因此只要在專案的 <code>.pre-commit-config.yaml</code> 加入以下這段</p>
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">repos</span>
   <span class="l l-Scalar l-Scalar-Plain">- repo</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/Woile/commitizen</span>
-    <span class="l l-Scalar l-Scalar-Plain">rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+    <span class="l l-Scalar l-Scalar-Plain">rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">v1.16.3</span>
     <span class="l l-Scalar l-Scalar-Plain">hooks</span><span class="p p-Indicator">:</span>
       <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">commitizen</span>
         <span class="nt">stages</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">commit-msg</span><span class="p p-Indicator">]</span>
 </code></pre></div>
-
-
-<p>並將 pre-commit 設定到 commit-msg</p>
+<p>並透過 pre-commit 設定 commit-msg 階段的 git hook</p>
 <div class="highlight"><pre><span></span><code>pipenv run pre-commit install -t commit-msg
 </code></pre></div>
-
-
-<p>在 commit 執行完，要進訊息寫入前<br>
-commitizen 會執行 <code>cz check</code> 來確認輸入的訊息是否符合規範<br>
+<p>在 commit 執行完，要進訊息寫入前<br/>
+git 會執行 <code>cz check</code> 來確認輸入的訊息是否符合規範<br/>
 如果不符合規範就會拒絕這次的 commit</p>
-<p>需要注意到的是檢查在產生 commit message 後才能執行，因此要設定要將 stage 設定成 commit-msg，並要將 pre-commit hook 設定到 commit-msg (i.e., <code>.git/hooks/commit-msg</code>)</p>
+<p>需要注意的是檢查會在產生 commit message 後才能執行<br/>
+因此要設定 commit-msg 階段的 git hook （i.e., <code>.git/hooks/commit-msg</code>）<br/>
+如果只下 <code>pipenv run pre-commit install</code> 是不會成功的</p>
+<p>接著就可以開始談，能將這些 commit message 做什麼應用了</p>
+<h2 id="_1">自動提升版本號</h2>
+<p>與 commit message 規範可以做客製化不同<br/>
+commitizen 目前並沒有提供不同版本表示方式的客製化<br/>
+一律都會遵守 <a href="https://semver.org/">Semantic Version</a> （語意化版本）<br/>
+這種版本號採用 <code>MAJOR.MINOR.PATCH</code> (e.g., <code>1.10.20</code>) 的格式</p>
+<ul>
+<li><code>MAJOR</code>： 重大改動，不向後相容</li>
+<li><code>MINOR</code>： 新增功能，必須向後相容</li>
+<li><code>PATCH</code>： 修正功能，必須向後相容</li>
+</ul>
+<p>以 commitizen 預設使用的 <code>cz_conventional_commits</code> 來說，相對應的 commit 種類和應該提升的版本號如下</p>
+<ul>
+<li><code>MAJOR</code>: BREAKING CHANGE (每次 commit 都會問的，這次是否為重大改動)</li>
+<li><code>MINOR</code>: feat</li>
+<li><code>PATCH</code>: fix, refactor, perf</li>
+</ul>
+<p>p.s. conventional commit 可以有很多種延伸，這裡指的只是 commitizen 採用的版本</p>
+<p>每次提升版本號只會提升 1 ，而且以最前面的為主<br/>
+e.g., 要 merge 回 master 的改動中出現 BREAKING CHANGE，不管其他有多少 feat 或 fix ，都只會讓 <code>MAJOR</code> 提升 1</p>
+<p>目前只有 <code>cz_conventional_commits</code> 有預設的版本對應<br/>
+如果為 <code>cz_jira</code>, <code>cz_customize</code> 或自己客製化規則加上提升版本的功能，可以參考commitizen 文件中 <a href="https://woile.github.io/commitizen/customization/">customization</a> ，並加上 <code>bump_pattern</code>（比對 commit 是哪個種類） 和 <code>bump_map</code> （哪個種類的 commit 要提升哪個版本號）</p>
+<p>稍微解釋了一下提升版本的規則，接下來要來講該如何使用了</p>
+<div class="highlight"><pre><span></span><code>cz bump
+</code></pre></div>
+<p>第一次提升版本的時候，會先確認目前在設定檔 (e.g., <code>pyproject.toml</code>）中的版本是否已經有相對應的 git tag</p>
+<p>如果沒有則會確認這是否是第一次為這個專案加上 git tag</p>
+<div class="highlight"><pre><span></span><code>Tag v0.0.1 could not be found.
+Possible causes:
+- version in configuration is not the current version
+- tag_format is missing, check them using 'git tag --list'
+
+? Is this the first tag created?  (Y/n)
+</code></pre></div>
+<p>如果想跳過這個確認可以在後面加上參數 <code>--yes</code></p>
+<div class="highlight"><pre><span></span><code>cz bump --yes
+</code></pre></div>
+<p>接著 commitizen 就會新增一個相對應的 git tag 和更新設定檔中的版本號<br/>
+因為要將設定檔中的改動儲存， commitizen 這時會再新增一個 commit<br/>
+(e.g., <code>bump: version 0.0.1 → 0.0.2</code>)</p>
+<p>除了設定檔中的版本號外，有時候專案本身也有其他地方會使用到版本號<br/>
+如果每次透過 commitizen 提升版本號後，還要手動更新其他部分，就失去了自動的好處了<br/>
+所以 commitizen 另外提供了 <code>version_files</code> 這個設定，將需要改動的檔案也寫進來<br/>
+commitizen 提升版本號時，就會一併更新檔案的內容<br/>
+（Read More 👉 <a href="https://woile.github.io/commitizen/bump/">bump</a> ）</p>
+<p>透過 <code>cz bump</code> 指令雖然可以省下很多步驟<br/>
+但更好的做法是將自動升版加入到加入到持續整合（Continuous Integration）<br/>
+在 git repo 上將分支 merge 到 master 時，自動提升版本號<br/>
+這部分因為會牽涉到各個不同平台的做法，不會敘述太多<br/>
+這裡附上 commitizen 文件中 <a href="https://woile.github.io/commitizen/tutorials/github_actions/">Github Actions</a> 和 <a href="https://woile.github.io/commitizen/tutorials/gitlab_ci/">Gitlab CI</a> 的做法<br/>
+除此之外，我建議在持續整合時執行 <code>cz bump --yes</code> 前面可以加上 <code>-</code> (i.e., <code>- cz bump --yes</code>)<br/>
+有些情況下版本號不用提升（e.g., 只做文件更新）， <code>cz bump --yes</code> 會因為不用提升版本號而出現版本號已經存在的錯誤，但這其實可以被忽略</p>
+<h2 id="commit">客製化 commit 規範</h2>
+<p>目前 commitizen 提供兩種方式</p>
+<ol>
+<li>直接在設定檔設定 → 適合只需要改動問題，不需要使用到複雜的功能</li>
+<li>將 commit 規範寫成 Python 套件發佈 → 適合需要加入複雜的驗證</li>
+</ol>
+<h3 id="_2">直接在設定檔設定</h3>
+<p>這種做法只支援 toml 格式的設定檔 （i.e., <code>pyproject.toml</code>, <code>.cz.toml</code>）</p>
+<p>首先必須先將 name 指定到 <code>cz_customize</code> 這套 commit 規範</p>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.commitizen]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">"cz_customize"</span>
+</code></pre></div>
+<p>再來要設定下面的欄位<br/>
+其中最重要的只有 <code>message_template</code>（支援<a href="https://jinja.palletsprojects.com/en/2.11.x/">Jinja</a>）<br/>
+以 <code>"{{change_type}}:{% if show_message %} {{message}}{% endif %}"</code> 這個例子來說<br/>
+需要 <code>change_type</code>, <code>show_message</code>, <code>message</code> 三個變數來產生 commit message</p>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.commitizen.customize]</span>
+<span class="n">message_template</span> <span class="o">=</span> <span class="s">"{{change_type}}:{% if show_message %} {{message}}{% endif %}"</span>
+<span class="n">example</span> <span class="o">=</span> <span class="s">"feature: this feature eanable customize through config file"</span>
+<span class="n">schema</span> <span class="o">=</span> <span class="s">"&lt;type&gt;: &lt;body&gt;"</span>
+<span class="n">bump_pattern</span> <span class="o">=</span> <span class="s">"^(break|new|fix|hotfix)"</span>
+<span class="n">bump_map</span> <span class="o">=</span> <span class="p">{</span><span class="s">"break"</span> <span class="o">=</span> <span class="s">"MAJOR"</span><span class="p">,</span> <span class="s">"new"</span> <span class="o">=</span> <span class="s">"MINOR"</span><span class="p">,</span> <span class="s">"fix"</span> <span class="o">=</span> <span class="s">"PATCH"</span><span class="p">,</span> <span class="s">"hotfix"</span> <span class="o">=</span> <span class="s">"PATCH"</span><span class="p">}</span>
+<span class="n">info_path</span> <span class="o">=</span> <span class="s">"cz_customize_info.txt"</span>
+<span class="n">info</span> <span class="o">=</span> <span class="s">"""</span>
+<span class="s">This is customized info</span>
+<span class="s">"""</span>
+</code></pre></div>
+<p>變數要在 <code>[[tool.commitizen.customize.questions]]</code> 的區段作定義<br/>
+這裡使用到的是套件 <a href="https://github.com/tmbo/questionary">questionary</a></p>
+<ul>
+<li><code>name</code>： 必須跟前面 <code>message_template</code> 定義的一模一樣，而且裡面用到的變數都要有對應的問題能取得值</li>
+<li><code>message</code>： 顯示給使用者的問題</li>
+<li><code>type</code>： <a href="https://github.com/tmbo/questionary">questionary</a> 中的問題型態</li>
+<li>其他欄位 (e.g., <code>choice</code>) 則是靠 <code>type</code> 來決定是否需要</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">[[tool.commitizen.customize.questions]]</span>
+<span class="n">type</span> <span class="o">=</span> <span class="s">"list"</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">"change_type"</span>
+<span class="n">choices</span> <span class="o">=</span> <span class="k">["feature", "bug fix"]</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s">"Select the type of change you are committing"</span>
+
+<span class="k">[[tool.commitizen.customize.questions]]</span>
+<span class="n">type</span> <span class="o">=</span> <span class="s">"input"</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">"message"</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s">"Body."</span>
+
+<span class="k">[[tool.commitizen.customize.questions]]</span>
+<span class="n">type</span> <span class="o">=</span> <span class="s">"confirm"</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">"show_message"</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s">"Do you want to add body message in commit?"</span>
+</code></pre></div>
+<p>設定完之後，再使用 <code>cz commit</code> 就可以看到客製化過後的問題了<br/>
+<img alt="customize" src="/images/posts-image/2020-02-22-python-table-manner-series/customize.jpg"/></p>
+<h3 id="commit-python">將 commit 規範寫成 Python 套件發佈</h3>
+<p>這個做法比較複雜，也比較不常會用到，所以我只會概略地講<br/>
+（Read More 👉 <a href="https://woile.github.io/commitizen/customization/">Customization</a>）</p>
+<p>我已經先將套件的架構驟寫成一個 <a href="https://cookiecutter.readthedocs.io/en/1.7.0/">cookiecutter</a> 範本<br/>
+透過以下指令，可以進入 cookiecutter 的互動式介面，並初始化專案</p>
+<div class="highlight"><pre><span></span><code>cookiecutter gh:Lee-W/commitizen_cz_template
+</code></pre></div>
+<p>最主要需要實作的函式有 <code>questions</code>, <code>message</code><br/>
+實作完成後，必須要在要使用這個 commit 規範的環境安裝這個套件<br/>
+安裝之後會在 <code>cz ls</code> 看到這個新的 commit 規範<br/>
+在設定檔中設定 <code>name</code> 或在指令列加上參數 <code>-n name</code> (e.g., <code>cz -n cz_test commit</code>) 就可以開始使用</p>
+<h2 id="changelog">自動產生更新日誌（Changelog）</h2>
+<p>commitizen 另外也支援產生 <a href="https://keepachangelog.com/en/1.1.0/">keep a changelog</a> 格式的更新日誌<br/>
+不過還沒被 merge 到 master 內<br/>
+這個功能現在也還只是剛實作一個初版，應該會有一些問題<br/>
+有興趣可以到 <a href="https://github.com/Woile/commitizen/tree/command-changelog">command-changelog</a> 這個 branch 玩玩看，一起來除錯（？）</p>
+<p>產生更新日誌（預設會取代 <code>CHANGELOG.md</code>）</p>
+<div class="highlight"><pre><span></span><code>cz changelog
+</code></pre></div>
+<p>參數</p>
+<ul>
+<li><code>--dry-run</code>： 將更新日誌的內容輸出到終端機，不更新到檔案</li>
+<li><code>--file-name FILE_NAME</code>： 指定更新日誌名稱</li>
+<li><code>--start-rev START_REV</code>： 更新日誌開始的點（結束的點為目前所在的 commit）</li>
+</ul>
+<h2 id="commitizen_3">其他 commitizen 指令和常用參數</h2>
+<ul>
+<li><code>cz bump</code>： 提升版本號<ul>
+<li><code>--dry-run</code>： 將提升版本號的訊息輸出到終端機，不會實際產生 tag 和改變檔案</li>
+<li><code>--increment {MAJOR,MINOR,PATCH}</code>： 提升特定版本號</li>
+</ul>
+</li>
+<li><code>cz -n NAME [command]</code>： 使用不同的 commit 規則 （e.g., <code>cz -n cz_jira commit</code>）</li>
+<li><code>cz version</code>： 顯示版本<ul>
+<li><code>-p</code>（<code>--project</code>）： 顯示專案版本</li>
+<li><code>-c</code>（<code>--commitizen</code>）： 顯示 commitizen 版本（預設）</li>
+</ul>
+</li>
+</ul>
+<h2 id="commitizen_4">關於 commitizen 的雜談</h2>
+<p>我在 Taipei.py 第一次試講 Python Table Manners 時<br/>
+有一頁就提到了，雖然 Python 也有 commitizen 這個工具，但還不太成熟</p>
+<p><img alt="commitizen is not mature" src="/images/posts-image/2020-02-22-python-table-manner-series/not-mature-1.jpg"/></p>
+<p>沒想到在 PyCon CA 的前一個禮拜我認真測試時<br/>
+才發現其實 commitizen 已經很夠用了，該有的功能都有<br/>
+只是我剛好都用一些奇怪的測試方式，測到一些 edge case<br/>
+這時就覺得信奉 Python （？？？）的我，好像應該好好的介紹 Python 的工具<br/>
+而不是 JavaScript 的 <a href="https://github.com/commitizen">commitizen</a></p>
+<p><img alt="i am the one who's not mature" src="/images/posts-image/2020-02-22-python-table-manner-series/not-mature-2.jpg"/></p>
+<p>於是我就在 PyCon CA 前一個禮拜，開始貢獻起 <a href="https://github.com/woile/commitizen">commitizen</a><br/>
+把我遇到的 issues 都修了，就順便把投影片中相關的內容一起翻新了</p>
+<p>貢獻的過程中也發現了很多還能再增加的新功能，於是就在 PyCon CA 2019 帶了這個專案去 Develop Sprint<br/>
+第一次當 Sprint Leader 還蠻好玩的，也蠻有成就感的<br/>
+（Read More 👉 <a href="https://lee-w.github.io/posts/tech/2019/12/pycon-ca-2019/">PyCon CA 2019</a> ）</p>
+<h3 id="java-script-commitizen">為什麼不用 Java Script 的 commitizen 就好了</h3>
+<p><del>因為我是 Python 的開發者啊！！！</del></p>
+<p>起初我也是從 Java Script 的版本開始使用 （畢竟兩個專案 star 的數量差了一百倍）<br/>
+原本我就有寫好 commit message 的習慣<br/>
+能有工具幫助我把這件事做得更好，當然就再好不過了</p>
+<p>用了一段時間後，我開始覺得我明明都已經認真寫好 commit message 了<br/>
+為什麼每次 Pull Request / Merge Request 還是花那麼多時間寫<br/>
+是不是有什麼工具可以自動透過寫好的 commit 產生一些訊息？<br/>
+再來就找到了 <a href="https://github.com/commitizen/cz-conventional-changelog">cz-conventional-changelog</a></p>
+<p>但 <a href="https://github.com/commitizen/cz-conventional-changelog">cz-conventional-changelog</a> 不能跟 <a href="https://github.com/leonardoanalista/cz-customizable">cz-customizable</a> 同時使用<br/>
+（Read More 👉 <a href="https://github.com/commitizen/cz-cli/issues/434">Possible to use multiple adapters? #434</a>）</p>
+<p>而且這些擴充常常要用到 <code>package.json</code> 來做設定<br/>
+可是我就不是 Java Script 的專案，就不想加入這個檔案來設定啊 🤷‍♂️<br/>
+所以才開始來找是不是有 Python 版本的替代方案<br/>
+（Python 的 <a href="https://github.com/woile/commitizen">commitizen</a> 支援的 toml （<code>.cz.toml</code>）是通用的格式，裡面 Python 相關的內容，適用於各語言）</p>
+<h3 id="_3">持續貢獻</h3>
+<p>整體來說， commitizen 是一個讓我貢獻得很有成就感的專案<br/>
+最主要的原因之一就是這是我想用的工具</p>
+<p>貢獻的過程，也會很快就收到作者 <a href="https://github.com/Woile">Woile</a> 的回饋<br/>
+它也會用很友善的文字，讓我覺得貢獻 commitizen 所花的時間，是有受到重視的</p>
+<p><img alt="friendly-response-1" src="/images/posts-image/2020-02-22-python-table-manner-series/friendly-response-1.jpg"/></p>
+<p><img alt="friendly-response-2" src="/images/posts-image/2020-02-22-python-table-manner-series/friendly-response-2.jpg"/></p>
+<p>除此之外， commitizen 測試覆蓋率很高，比較不需要怕改錯了會不會弄壞舊有的功能<br/>
+程式碼風格上，透過 black 跟 flake8 來規範，讓程式碼閱讀起來輕鬆很多<br/>
+在貢獻的過程中，也學到了不少很實用的工具（e.g., pre-commit, cookiecutter）</p>
+<p>所以我說<strong>一起來貢獻 <a href="https://github.com/Woile/commitizen">commitizen</a> 吧 💪</strong><br/>
+我最近開始比較忙，有一段時間沒辦法積極地送 Pull Request 了 😢<br/>
+但還是希望新功能能在 commitizen 上出現 🎉</p>
 <h2 id="reference">Reference</h2>
 <ul>
+<li><a href="https://medium.com/@klauskpm/how-to-create-good-commit-messages-67943d30cced">how to create a good commit message</a></li>
 <li><a href="https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/">How to Write Good Commit Messages: A Practical Git Guide</a></li>
+<li><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commit</a></li>
+<li><a href="https://semver.org/">Semantic Version</a></li>
 </ul>
 
 
@@ -271,6 +494,10 @@ commitizen 會執行 <code>cz check</code> 來確認輸入的訊息是否符合�
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-03-01T00:45:00+08:00">2020/03/01 - Sun</time>
+
+<h4>Last Updated</h4>
+<time datetime="2020-03-03T20:12:00+08:00">2020/03/03 - Tue</time>
+
         <h4>Python Table Manners</h4>
     <ul class="multi-parts-list">
             <li >
@@ -296,7 +523,7 @@ commitizen 會執行 <code>cz check</code> 來確認輸入的訊息是否符合�
             </li>
     </ul>
                 <h4>Read Time</h4>
-                 1 min
+                 4 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

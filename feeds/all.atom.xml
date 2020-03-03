@@ -1,34 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-03-01T00:45:00+08:00</updated><entry><title>Python Table Manners - Commitizen: 規格化 commit message</title><link href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" rel="alternate"></link><published>2020-03-01T00:45:00+08:00</published><updated>2020-03-01T00:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-03-01:/posts/tech/2020/03/python-table-manners-commitizen</id><summary type="html">&lt;p&gt;接續著前一篇的 pre-commit ，這篇來聊聊如何透過 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt; 規範 commit message&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-03-03T20:12:00+08:00</updated><entry><title>Python Table Manners - Commitizen: 規格化 commit message</title><link href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" rel="alternate"></link><published>2020-03-01T00:45:00+08:00</published><updated>2020-03-03T20:12:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-03-01:/posts/tech/2020/03/python-table-manners-commitizen</id><summary type="html">&lt;p&gt;接續著前一篇的 pre-commit 繼續談 git 相關的工具&lt;br/&gt;
+這篇來聊聊如何透過 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt; 規範 commit message&lt;br/&gt;
+還有我們能拿規範過的 commit message 做什麼&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;接續著前一篇的 pre-commit 繼續談 git 相關的工具&lt;br/&gt;
+這篇來聊聊如何透過 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt; 規範 commit message&lt;br/&gt;
+還有我們能拿規範過的 commit message 做什麼&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;h2 id="commit-message"&gt;為什麼要好好寫 commit message&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="no-good-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/no-good-commit.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;如果不寫好 commit message，哪天系統出錯時，必須回朔到某個版本就會變得相對困難&lt;/p&gt;
-&lt;p&gt;&lt;img alt="bad-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/bad-commit.jpg"&gt;&lt;br&gt;
+&lt;p&gt;&lt;img alt="no-good-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/no-good-commit.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;如果不好好寫有意義的 commit message，每次都只用 "update" 當訊息&lt;br/&gt;
+當你下了 &lt;code&gt;git log&lt;/code&gt; 指令，就會看到一堆 "update"&lt;br/&gt;
+然後哪天系統出錯的時候，你也會不知道要回朔到哪一個版本&lt;/p&gt;
+&lt;p&gt;&lt;img alt="bad-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/bad-commit.jpg"/&gt;&lt;br/&gt;
 (from &lt;a href="https://github.com/hackjutsu/bad-commit-example/commits/master"&gt;hackjutsu/bad-commit-example&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;撰寫好的 commit message 能讓團隊間的溝通更順利&lt;/p&gt;
+&lt;p&gt;撰寫好的 commit message，除了讓未來的自己知道自己在幹嘛&lt;br/&gt;
+也能讓團隊之間的溝通更順利&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;送 Pull Request / Merge Request 時，reviewers 能更快速地知道這次增加了哪些功能，也能找到其脈絡&lt;/li&gt;
+&lt;li&gt;送 Pull Request / Merge Request 時，reviewers 能更快速地知道增加了哪些功能&lt;/li&gt;
 &lt;li&gt;新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="commitizen"&gt;Commitizen&lt;/h2&gt;
-&lt;p&gt;比起通泛的 commit message 撰寫建議，&lt;a href="https://woile.github.io/commitizen/"&gt;commitizen&lt;/a&gt; 更進一步規範 commit message 如何被撰寫&lt;br&gt;
-過互動式介面，讓使用者能夠輕鬆地產生符合規範的 commit message …&lt;/p&gt;</summary><content type="html">&lt;p&gt;接續著前一篇的 pre-commit ，這篇來聊聊如何透過 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt; 規範 commit message&lt;/p&gt;
-&lt;h2 id="commit-message"&gt;為什麼要好好寫 commit message&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="no-good-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/no-good-commit.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;如果不寫好 commit message，哪天系統出錯時，必須回朔到某個版本就會變得相對困難&lt;/p&gt;
-&lt;p&gt;&lt;img alt="bad-commit" src="/images/posts-image/2020-02-22-python-table-manner-series/bad-commit.jpg"&gt;&lt;br&gt;
-(from &lt;a href="https://github.com/hackjutsu/bad-commit-example/commits/master"&gt;hackjutsu/bad-commit-example&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;撰寫好的 commit message 能讓團隊間的溝通更順利&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;送 Pull Request / Merge Request 時，reviewers 能更快速地知道這次增加了哪些功能，也能找到其脈絡&lt;/li&gt;
-&lt;li&gt;新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="commitizen"&gt;Commitizen&lt;/h2&gt;
-&lt;p&gt;比起通泛的 commit message 撰寫建議，&lt;a href="https://woile.github.io/commitizen/"&gt;commitizen&lt;/a&gt; 更進一步規範 commit message 如何被撰寫&lt;br&gt;
-過互動式介面，讓使用者能夠輕鬆地產生符合規範的 commit message&lt;/p&gt;
+&lt;p&gt;除了提供的 commit message 撰寫建議和規範 （👉 &lt;a href="https://woile.github.io/commitizen/tutorials/writing_commits/"&gt;Writing commits&lt;/a&gt;）&lt;br/&gt;
+&lt;a href="https://woile.github.io/commitizen/"&gt;commitizen&lt;/a&gt; 更進一步提供互動式介面，讓使用者可以夠輕鬆地產生符合規範的 commit message&lt;/p&gt;
 &lt;p&gt;同時也整合了前一篇所提到的 pre-commit hook，避免使用者將不符合規範的 commit message 寫入&lt;/p&gt;
 &lt;p&gt;除了採用來自 Angular 社群的 &lt;a href="https://www.conventionalcommits.org/en/v1.0.0/"&gt;Conventional Commits&lt;/a&gt; (約定式提交) 外， commitizen 提供了高度的客製化，讓每個團隊或專案都可以依照自己的需求，撰寫相對應的規範&lt;/p&gt;
-&lt;p&gt;規範了 commit message 後，除了增加可讀性增加外，也讓這些訊息有可以被解析做其他運用 （e.g., 升版, 產生更新日誌）&lt;/p&gt;
+&lt;p&gt;規範了 commit message 後，除了增加可讀性增加外，也讓訊息有可以被解析做其他運用&lt;br/&gt;
+e.g., 提升版本號, 產生更新日誌&lt;/p&gt;
 &lt;h2 id="commitizen_1"&gt;安裝與設定 Commitizen&lt;/h2&gt;
 &lt;p&gt;跟 invoke 一樣，我會把 commitizen 同時安裝在系統和虛擬環境&lt;/p&gt;
 &lt;p&gt;安裝在虛擬環境主要是為了能在 CI/CD 伺服器上自動升版&lt;/p&gt;
@@ -38,75 +36,261 @@ pipx install commitizen
 &lt;span class="c1"&gt;# 安裝 commitizen 到虛擬環境中&lt;/span&gt;
 pipenv install commitizen --dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;p&gt;在專案中第一次使用 commitizen 可以使用初始化指令來完成基本的設定&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cz init
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;一開始會問要將設定寫在哪個檔案內&lt;br&gt;
-ini 格式的設定（i.e., &lt;code&gt;.cz&lt;/code&gt;, &lt;code&gt;setup.cfg&lt;/code&gt;, &lt;code&gt;.cz.cfg&lt;/code&gt;） 在 2.0 之後將不再支援&lt;br&gt;
-因此建議選擇 &lt;code&gt;pyproject.toml&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="cz-init-1" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-1.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;接著會選擇一套 commit message 規範&lt;br&gt;
-預設有三種，我最常使用的是 &lt;code&gt;cz_conventional_commits&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="cz-init-2" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-2.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;再來回詢問抓最新的 git tag 來確認是否為目前的版本號&lt;br&gt;
-如果選擇否，就會列出 &lt;code&gt;git tag&lt;/code&gt; 所有的結果&lt;br&gt;
-如果 &lt;code&gt;git tag&lt;/code&gt; 沒有結果，就會預設為 0.0.1&lt;/p&gt;
-&lt;p&gt;&lt;img alt="cz-init-3" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-3.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;最後會詢問版本的格式要是如何&lt;br&gt;
+&lt;p&gt;一開始會問要將設定寫在哪個檔案內&lt;br/&gt;
+ini 格式的設定（i.e., &lt;code&gt;.cz&lt;/code&gt;, &lt;code&gt;setup.cfg&lt;/code&gt;, &lt;code&gt;.cz.cfg&lt;/code&gt;） 在 2.0 之後將不再支援&lt;br/&gt;
+因此建議選擇 &lt;code&gt;pyproject.toml&lt;/code&gt; 或 &lt;code&gt;.cz.toml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="cz-init-1" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-1.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;接著會選擇一套 commit 規範&lt;br/&gt;
+預設有三種，這裡先以 &lt;code&gt;cz_conventional_commits&lt;/code&gt; 為例&lt;/p&gt;
+&lt;p&gt;&lt;img alt="cz-init-2" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-2.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;再來回詢問最新的 git tag 來確認是否為最新的版本號&lt;br/&gt;
+如果不是，就會列出 &lt;code&gt;git tag&lt;/code&gt; 所有的結果&lt;br/&gt;
+如果完全沒有用過 git tag，預設會是 &lt;code&gt;0.0.1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="cz-init-3" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-3.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;最後會詢問版本的格式要是如何&lt;br/&gt;
 常用的格式有 &lt;code&gt;$version&lt;/code&gt; (e.g., &lt;code&gt;1.0.0&lt;/code&gt;) 或 &lt;code&gt;v$version&lt;/code&gt; (e.g., &lt;code&gt;v1.0.0&lt;/code&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="cz-init-4" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-4.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;完成後就會產生對應的 &lt;code&gt;pyproject.toml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="cz-init-4" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-4.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;完成後就會將相對應的內容加入到設定檔&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tool.commitizen]&lt;/span&gt;
-&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;cz_conventional_commits&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;1.0.2&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;tag_format&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;$version&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"cz_conventional_commits"&lt;/span&gt;
+&lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"1.0.2"&lt;/span&gt;
+&lt;span class="n"&gt;tag_format&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"$version"&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;h2 id="commitizen_2"&gt;使用 Commitizen&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 也可以使用簡短版 cz c&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 使用 commitizen 做 commit&lt;/span&gt;
+&lt;span class="c1"&gt;# (也可以用簡短版的 cz c)&lt;/span&gt;
 cz commit
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;以 &lt;code&gt;cz_conventional_commits&lt;/code&gt; 為例&lt;br&gt;
-使用 commitizen 來做 commit 時，會先詢問這次的 commit 做了哪一種改動&lt;/p&gt;
-&lt;p&gt;&lt;img alt="commitizen-1" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-1.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;接著會要求輸入這次改動的細節&lt;/p&gt;
-&lt;p&gt;&lt;img alt="commitizen-2-w1024" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-2.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;以上面的例子來說，產生出的 commit message 就會是 &lt;strong&gt;feat(tasks): add `inv git.commit`&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;當一個專案一直都是使用 commitizen 來做 commit ，就能產生如同下圖那樣清楚的紀錄&lt;/p&gt;
-&lt;p&gt;&lt;img alt="commitizen-log" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-log.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;以 &lt;code&gt;cz_conventional_commits&lt;/code&gt; 這套規則為例&lt;br/&gt;
+會先詢問這次的 commit 做了哪一種改動&lt;/p&gt;
+&lt;p&gt;&lt;img alt="commitizen-1" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-1.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;接著會要求輸入這次改動各項細節&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Scope： 改動範圍&lt;/li&gt;
+&lt;li&gt;Subject： 簡短敘述這次的改動&lt;/li&gt;
+&lt;li&gt;Is this a BREAKING CHANGE？： 這是否是一個重大改動&lt;/li&gt;
+&lt;li&gt;Body： 詳細敘述這次的改動&lt;/li&gt;
+&lt;li&gt;Footer： 參考，通常可以將 Issue 的編號寫在這&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="commitizen-2-w1024" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-2.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;回答完，就會產生 commit message &lt;strong&gt;feat(tasks): add `inv git.commit`&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id="commit-message_1"&gt;強制檢查 commit message&lt;/h2&gt;
-&lt;p&gt;剛開始引入 commitizen 時，可能會常常忘記要使用它來做 commit&lt;br&gt;
-這時候就能使用到前一篇提到的 &lt;a href="https://pre-commit.com/"&gt;pre-commit&lt;/a&gt;&lt;br&gt;
-我在 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt; 中有加入 &lt;a href="https://github.com/Woile/commitizen/blob/master/.pre-commit-hooks.yaml"&gt;.pre-commit-hooks.yaml&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;因此只要在專案的 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt; 加入以下這段&lt;/p&gt;
+&lt;p&gt;剛開始引入 commitizen 時，可能會常常忘記要使用它來做 commit&lt;br/&gt;
+這時候就能使用到前一篇提到的 &lt;a href="https://pre-commit.com/"&gt;pre-commit&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我在 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt; 中有加入 &lt;a href="https://github.com/Woile/commitizen/blob/master/.pre-commit-hooks.yaml"&gt;.pre-commit-hooks.yaml&lt;/a&gt;&lt;br/&gt;
+因此只要在專案的 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt; 加入以下這段&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;repos&lt;/span&gt;
   &lt;span class="l l-Scalar l-Scalar-Plain"&gt;- repo&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;https://github.com/Woile/commitizen&lt;/span&gt;
-    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;rev&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;master&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;rev&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;v1.16.3&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;hooks&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
       &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;commitizen&lt;/span&gt;
         &lt;span class="nt"&gt;stages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;commit-msg&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;並將 pre-commit 設定到 commit-msg&lt;/p&gt;
+&lt;p&gt;並透過 pre-commit 設定 commit-msg 階段的 git hook&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run pre-commit install -t commit-msg
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;在 commit 執行完，要進訊息寫入前&lt;br&gt;
-commitizen 會執行 &lt;code&gt;cz check&lt;/code&gt; 來確認輸入的訊息是否符合規範&lt;br&gt;
+&lt;p&gt;在 commit 執行完，要進訊息寫入前&lt;br/&gt;
+git 會執行 &lt;code&gt;cz check&lt;/code&gt; 來確認輸入的訊息是否符合規範&lt;br/&gt;
 如果不符合規範就會拒絕這次的 commit&lt;/p&gt;
-&lt;p&gt;需要注意到的是檢查在產生 commit message 後才能執行，因此要設定要將 stage 設定成 commit-msg，並要將 pre-commit hook 設定到 commit-msg (i.e., &lt;code&gt;.git/hooks/commit-msg&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;需要注意的是檢查會在產生 commit message 後才能執行&lt;br/&gt;
+因此要設定 commit-msg 階段的 git hook （i.e., &lt;code&gt;.git/hooks/commit-msg&lt;/code&gt;）&lt;br/&gt;
+如果只下 &lt;code&gt;pipenv run pre-commit install&lt;/code&gt; 是不會成功的&lt;/p&gt;
+&lt;p&gt;接著就可以開始談，能將這些 commit message 做什麼應用了&lt;/p&gt;
+&lt;h2 id="_1"&gt;自動提升版本號&lt;/h2&gt;
+&lt;p&gt;與 commit message 規範可以做客製化不同&lt;br/&gt;
+commitizen 目前並沒有提供不同版本表示方式的客製化&lt;br/&gt;
+一律都會遵守 &lt;a href="https://semver.org/"&gt;Semantic Version&lt;/a&gt; （語意化版本）&lt;br/&gt;
+這種版本號採用 &lt;code&gt;MAJOR.MINOR.PATCH&lt;/code&gt; (e.g., &lt;code&gt;1.10.20&lt;/code&gt;) 的格式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MAJOR&lt;/code&gt;： 重大改動，不向後相容&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MINOR&lt;/code&gt;： 新增功能，必須向後相容&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PATCH&lt;/code&gt;： 修正功能，必須向後相容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以 commitizen 預設使用的 &lt;code&gt;cz_conventional_commits&lt;/code&gt; 來說，相對應的 commit 種類和應該提升的版本號如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MAJOR&lt;/code&gt;: BREAKING CHANGE (每次 commit 都會問的，這次是否為重大改動)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MINOR&lt;/code&gt;: feat&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PATCH&lt;/code&gt;: fix, refactor, perf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;p.s. conventional commit 可以有很多種延伸，這裡指的只是 commitizen 採用的版本&lt;/p&gt;
+&lt;p&gt;每次提升版本號只會提升 1 ，而且以最前面的為主&lt;br/&gt;
+e.g., 要 merge 回 master 的改動中出現 BREAKING CHANGE，不管其他有多少 feat 或 fix ，都只會讓 &lt;code&gt;MAJOR&lt;/code&gt; 提升 1&lt;/p&gt;
+&lt;p&gt;目前只有 &lt;code&gt;cz_conventional_commits&lt;/code&gt; 有預設的版本對應&lt;br/&gt;
+如果為 &lt;code&gt;cz_jira&lt;/code&gt;, &lt;code&gt;cz_customize&lt;/code&gt; 或自己客製化規則加上提升版本的功能，可以參考commitizen 文件中 &lt;a href="https://woile.github.io/commitizen/customization/"&gt;customization&lt;/a&gt; ，並加上 &lt;code&gt;bump_pattern&lt;/code&gt;（比對 commit 是哪個種類） 和 &lt;code&gt;bump_map&lt;/code&gt; （哪個種類的 commit 要提升哪個版本號）&lt;/p&gt;
+&lt;p&gt;稍微解釋了一下提升版本的規則，接下來要來講該如何使用了&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cz bump
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;第一次提升版本的時候，會先確認目前在設定檔 (e.g., &lt;code&gt;pyproject.toml&lt;/code&gt;）中的版本是否已經有相對應的 git tag&lt;/p&gt;
+&lt;p&gt;如果沒有則會確認這是否是第一次為這個專案加上 git tag&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Tag v0.0.1 could not be found.
+Possible causes:
+- version in configuration is not the current version
+- tag_format is missing, check them using 'git tag --list'
+
+? Is this the first tag created?  (Y/n)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果想跳過這個確認可以在後面加上參數 &lt;code&gt;--yes&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cz bump --yes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;接著 commitizen 就會新增一個相對應的 git tag 和更新設定檔中的版本號&lt;br/&gt;
+因為要將設定檔中的改動儲存， commitizen 這時會再新增一個 commit&lt;br/&gt;
+(e.g., &lt;code&gt;bump: version 0.0.1 → 0.0.2&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;除了設定檔中的版本號外，有時候專案本身也有其他地方會使用到版本號&lt;br/&gt;
+如果每次透過 commitizen 提升版本號後，還要手動更新其他部分，就失去了自動的好處了&lt;br/&gt;
+所以 commitizen 另外提供了 &lt;code&gt;version_files&lt;/code&gt; 這個設定，將需要改動的檔案也寫進來&lt;br/&gt;
+commitizen 提升版本號時，就會一併更新檔案的內容&lt;br/&gt;
+（Read More 👉 &lt;a href="https://woile.github.io/commitizen/bump/"&gt;bump&lt;/a&gt; ）&lt;/p&gt;
+&lt;p&gt;透過 &lt;code&gt;cz bump&lt;/code&gt; 指令雖然可以省下很多步驟&lt;br/&gt;
+但更好的做法是將自動升版加入到加入到持續整合（Continuous Integration）&lt;br/&gt;
+在 git repo 上將分支 merge 到 master 時，自動提升版本號&lt;br/&gt;
+這部分因為會牽涉到各個不同平台的做法，不會敘述太多&lt;br/&gt;
+這裡附上 commitizen 文件中 &lt;a href="https://woile.github.io/commitizen/tutorials/github_actions/"&gt;Github Actions&lt;/a&gt; 和 &lt;a href="https://woile.github.io/commitizen/tutorials/gitlab_ci/"&gt;Gitlab CI&lt;/a&gt; 的做法&lt;br/&gt;
+除此之外，我建議在持續整合時執行 &lt;code&gt;cz bump --yes&lt;/code&gt; 前面可以加上 &lt;code&gt;-&lt;/code&gt; (i.e., &lt;code&gt;- cz bump --yes&lt;/code&gt;)&lt;br/&gt;
+有些情況下版本號不用提升（e.g., 只做文件更新）， &lt;code&gt;cz bump --yes&lt;/code&gt; 會因為不用提升版本號而出現版本號已經存在的錯誤，但這其實可以被忽略&lt;/p&gt;
+&lt;h2 id="commit"&gt;客製化 commit 規範&lt;/h2&gt;
+&lt;p&gt;目前 commitizen 提供兩種方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;直接在設定檔設定 → 適合只需要改動問題，不需要使用到複雜的功能&lt;/li&gt;
+&lt;li&gt;將 commit 規範寫成 Python 套件發佈 → 適合需要加入複雜的驗證&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="_2"&gt;直接在設定檔設定&lt;/h3&gt;
+&lt;p&gt;這種做法只支援 toml 格式的設定檔 （i.e., &lt;code&gt;pyproject.toml&lt;/code&gt;, &lt;code&gt;.cz.toml&lt;/code&gt;）&lt;/p&gt;
+&lt;p&gt;首先必須先將 name 指定到 &lt;code&gt;cz_customize&lt;/code&gt; 這套 commit 規範&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tool.commitizen]&lt;/span&gt;
+&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"cz_customize"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;再來要設定下面的欄位&lt;br/&gt;
+其中最重要的只有 &lt;code&gt;message_template&lt;/code&gt;（支援&lt;a href="https://jinja.palletsprojects.com/en/2.11.x/"&gt;Jinja&lt;/a&gt;）&lt;br/&gt;
+以 &lt;code&gt;"{{change_type}}:{% if show_message %} {{message}}{% endif %}"&lt;/code&gt; 這個例子來說&lt;br/&gt;
+需要 &lt;code&gt;change_type&lt;/code&gt;, &lt;code&gt;show_message&lt;/code&gt;, &lt;code&gt;message&lt;/code&gt; 三個變數來產生 commit message&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tool.commitizen.customize]&lt;/span&gt;
+&lt;span class="n"&gt;message_template&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"{{change_type}}:{% if show_message %} {{message}}{% endif %}"&lt;/span&gt;
+&lt;span class="n"&gt;example&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"feature: this feature eanable customize through config file"&lt;/span&gt;
+&lt;span class="n"&gt;schema&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;type&amp;gt;: &amp;lt;body&amp;gt;"&lt;/span&gt;
+&lt;span class="n"&gt;bump_pattern&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"^(break|new|fix|hotfix)"&lt;/span&gt;
+&lt;span class="n"&gt;bump_map&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;"break"&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"MAJOR"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"new"&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"MINOR"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"fix"&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"PATCH"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"hotfix"&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"PATCH"&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="n"&gt;info_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"cz_customize_info.txt"&lt;/span&gt;
+&lt;span class="n"&gt;info&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"""&lt;/span&gt;
+&lt;span class="s"&gt;This is customized info&lt;/span&gt;
+&lt;span class="s"&gt;"""&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;變數要在 &lt;code&gt;[[tool.commitizen.customize.questions]]&lt;/code&gt; 的區段作定義&lt;br/&gt;
+這裡使用到的是套件 &lt;a href="https://github.com/tmbo/questionary"&gt;questionary&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;name&lt;/code&gt;： 必須跟前面 &lt;code&gt;message_template&lt;/code&gt; 定義的一模一樣，而且裡面用到的變數都要有對應的問題能取得值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;message&lt;/code&gt;： 顯示給使用者的問題&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;type&lt;/code&gt;： &lt;a href="https://github.com/tmbo/questionary"&gt;questionary&lt;/a&gt; 中的問題型態&lt;/li&gt;
+&lt;li&gt;其他欄位 (e.g., &lt;code&gt;choice&lt;/code&gt;) 則是靠 &lt;code&gt;type&lt;/code&gt; 來決定是否需要&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[[tool.commitizen.customize.questions]]&lt;/span&gt;
+&lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"list"&lt;/span&gt;
+&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"change_type"&lt;/span&gt;
+&lt;span class="n"&gt;choices&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;["feature", "bug fix"]&lt;/span&gt;
+&lt;span class="n"&gt;message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"Select the type of change you are committing"&lt;/span&gt;
+
+&lt;span class="k"&gt;[[tool.commitizen.customize.questions]]&lt;/span&gt;
+&lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"input"&lt;/span&gt;
+&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"message"&lt;/span&gt;
+&lt;span class="n"&gt;message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"Body."&lt;/span&gt;
+
+&lt;span class="k"&gt;[[tool.commitizen.customize.questions]]&lt;/span&gt;
+&lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"confirm"&lt;/span&gt;
+&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"show_message"&lt;/span&gt;
+&lt;span class="n"&gt;message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"Do you want to add body message in commit?"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;設定完之後，再使用 &lt;code&gt;cz commit&lt;/code&gt; 就可以看到客製化過後的問題了&lt;br/&gt;
+&lt;img alt="customize" src="/images/posts-image/2020-02-22-python-table-manner-series/customize.jpg"/&gt;&lt;/p&gt;
+&lt;h3 id="commit-python"&gt;將 commit 規範寫成 Python 套件發佈&lt;/h3&gt;
+&lt;p&gt;這個做法比較複雜，也比較不常會用到，所以我只會概略地講&lt;br/&gt;
+（Read More 👉 &lt;a href="https://woile.github.io/commitizen/customization/"&gt;Customization&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;我已經先將套件的架構驟寫成一個 &lt;a href="https://cookiecutter.readthedocs.io/en/1.7.0/"&gt;cookiecutter&lt;/a&gt; 範本&lt;br/&gt;
+透過以下指令，可以進入 cookiecutter 的互動式介面，並初始化專案&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cookiecutter gh:Lee-W/commitizen_cz_template
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;最主要需要實作的函式有 &lt;code&gt;questions&lt;/code&gt;, &lt;code&gt;message&lt;/code&gt;&lt;br/&gt;
+實作完成後，必須要在要使用這個 commit 規範的環境安裝這個套件&lt;br/&gt;
+安裝之後會在 &lt;code&gt;cz ls&lt;/code&gt; 看到這個新的 commit 規範&lt;br/&gt;
+在設定檔中設定 &lt;code&gt;name&lt;/code&gt; 或在指令列加上參數 &lt;code&gt;-n name&lt;/code&gt; (e.g., &lt;code&gt;cz -n cz_test commit&lt;/code&gt;) 就可以開始使用&lt;/p&gt;
+&lt;h2 id="changelog"&gt;自動產生更新日誌（Changelog）&lt;/h2&gt;
+&lt;p&gt;commitizen 另外也支援產生 &lt;a href="https://keepachangelog.com/en/1.1.0/"&gt;keep a changelog&lt;/a&gt; 格式的更新日誌&lt;br/&gt;
+不過還沒被 merge 到 master 內&lt;br/&gt;
+這個功能現在也還只是剛實作一個初版，應該會有一些問題&lt;br/&gt;
+有興趣可以到 &lt;a href="https://github.com/Woile/commitizen/tree/command-changelog"&gt;command-changelog&lt;/a&gt; 這個 branch 玩玩看，一起來除錯（？）&lt;/p&gt;
+&lt;p&gt;產生更新日誌（預設會取代 &lt;code&gt;CHANGELOG.md&lt;/code&gt;）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cz changelog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;參數&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--dry-run&lt;/code&gt;： 將更新日誌的內容輸出到終端機，不更新到檔案&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--file-name FILE_NAME&lt;/code&gt;： 指定更新日誌名稱&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--start-rev START_REV&lt;/code&gt;： 更新日誌開始的點（結束的點為目前所在的 commit）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="commitizen_3"&gt;其他 commitizen 指令和常用參數&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cz bump&lt;/code&gt;： 提升版本號&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--dry-run&lt;/code&gt;： 將提升版本號的訊息輸出到終端機，不會實際產生 tag 和改變檔案&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--increment {MAJOR,MINOR,PATCH}&lt;/code&gt;： 提升特定版本號&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cz -n NAME [command]&lt;/code&gt;： 使用不同的 commit 規則 （e.g., &lt;code&gt;cz -n cz_jira commit&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cz version&lt;/code&gt;： 顯示版本&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-p&lt;/code&gt;（&lt;code&gt;--project&lt;/code&gt;）： 顯示專案版本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-c&lt;/code&gt;（&lt;code&gt;--commitizen&lt;/code&gt;）： 顯示 commitizen 版本（預設）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="commitizen_4"&gt;關於 commitizen 的雜談&lt;/h2&gt;
+&lt;p&gt;我在 Taipei.py 第一次試講 Python Table Manners 時&lt;br/&gt;
+有一頁就提到了，雖然 Python 也有 commitizen 這個工具，但還不太成熟&lt;/p&gt;
+&lt;p&gt;&lt;img alt="commitizen is not mature" src="/images/posts-image/2020-02-22-python-table-manner-series/not-mature-1.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;沒想到在 PyCon CA 的前一個禮拜我認真測試時&lt;br/&gt;
+才發現其實 commitizen 已經很夠用了，該有的功能都有&lt;br/&gt;
+只是我剛好都用一些奇怪的測試方式，測到一些 edge case&lt;br/&gt;
+這時就覺得信奉 Python （？？？）的我，好像應該好好的介紹 Python 的工具&lt;br/&gt;
+而不是 JavaScript 的 &lt;a href="https://github.com/commitizen"&gt;commitizen&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="i am the one who's not mature" src="/images/posts-image/2020-02-22-python-table-manner-series/not-mature-2.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;於是我就在 PyCon CA 前一個禮拜，開始貢獻起 &lt;a href="https://github.com/woile/commitizen"&gt;commitizen&lt;/a&gt;&lt;br/&gt;
+把我遇到的 issues 都修了，就順便把投影片中相關的內容一起翻新了&lt;/p&gt;
+&lt;p&gt;貢獻的過程中也發現了很多還能再增加的新功能，於是就在 PyCon CA 2019 帶了這個專案去 Develop Sprint&lt;br/&gt;
+第一次當 Sprint Leader 還蠻好玩的，也蠻有成就感的&lt;br/&gt;
+（Read More 👉 &lt;a href="https://lee-w.github.io/posts/tech/2019/12/pycon-ca-2019/"&gt;PyCon CA 2019&lt;/a&gt; ）&lt;/p&gt;
+&lt;h3 id="java-script-commitizen"&gt;為什麼不用 Java Script 的 commitizen 就好了&lt;/h3&gt;
+&lt;p&gt;&lt;del&gt;因為我是 Python 的開發者啊！！！&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;起初我也是從 Java Script 的版本開始使用 （畢竟兩個專案 star 的數量差了一百倍）&lt;br/&gt;
+原本我就有寫好 commit message 的習慣&lt;br/&gt;
+能有工具幫助我把這件事做得更好，當然就再好不過了&lt;/p&gt;
+&lt;p&gt;用了一段時間後，我開始覺得我明明都已經認真寫好 commit message 了&lt;br/&gt;
+為什麼每次 Pull Request / Merge Request 還是花那麼多時間寫&lt;br/&gt;
+是不是有什麼工具可以自動透過寫好的 commit 產生一些訊息？&lt;br/&gt;
+再來就找到了 &lt;a href="https://github.com/commitizen/cz-conventional-changelog"&gt;cz-conventional-changelog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但 &lt;a href="https://github.com/commitizen/cz-conventional-changelog"&gt;cz-conventional-changelog&lt;/a&gt; 不能跟 &lt;a href="https://github.com/leonardoanalista/cz-customizable"&gt;cz-customizable&lt;/a&gt; 同時使用&lt;br/&gt;
+（Read More 👉 &lt;a href="https://github.com/commitizen/cz-cli/issues/434"&gt;Possible to use multiple adapters? #434&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;而且這些擴充常常要用到 &lt;code&gt;package.json&lt;/code&gt; 來做設定&lt;br/&gt;
+可是我就不是 Java Script 的專案，就不想加入這個檔案來設定啊 🤷‍♂️&lt;br/&gt;
+所以才開始來找是不是有 Python 版本的替代方案&lt;br/&gt;
+（Python 的 &lt;a href="https://github.com/woile/commitizen"&gt;commitizen&lt;/a&gt; 支援的 toml （&lt;code&gt;.cz.toml&lt;/code&gt;）是通用的格式，裡面 Python 相關的內容，適用於各語言）&lt;/p&gt;
+&lt;h3 id="_3"&gt;持續貢獻&lt;/h3&gt;
+&lt;p&gt;整體來說， commitizen 是一個讓我貢獻得很有成就感的專案&lt;br/&gt;
+最主要的原因之一就是這是我想用的工具&lt;/p&gt;
+&lt;p&gt;貢獻的過程，也會很快就收到作者 &lt;a href="https://github.com/Woile"&gt;Woile&lt;/a&gt; 的回饋&lt;br/&gt;
+它也會用很友善的文字，讓我覺得貢獻 commitizen 所花的時間，是有受到重視的&lt;/p&gt;
+&lt;p&gt;&lt;img alt="friendly-response-1" src="/images/posts-image/2020-02-22-python-table-manner-series/friendly-response-1.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="friendly-response-2" src="/images/posts-image/2020-02-22-python-table-manner-series/friendly-response-2.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;除此之外， commitizen 測試覆蓋率很高，比較不需要怕改錯了會不會弄壞舊有的功能&lt;br/&gt;
+程式碼風格上，透過 black 跟 flake8 來規範，讓程式碼閱讀起來輕鬆很多&lt;br/&gt;
+在貢獻的過程中，也學到了不少很實用的工具（e.g., pre-commit, cookiecutter）&lt;/p&gt;
+&lt;p&gt;所以我說&lt;strong&gt;一起來貢獻 &lt;a href="https://github.com/Woile/commitizen"&gt;commitizen&lt;/a&gt; 吧 💪&lt;/strong&gt;&lt;br/&gt;
+我最近開始比較忙，有一段時間沒辦法積極地送 Pull Request 了 😢&lt;br/&gt;
+但還是希望新功能能在 commitizen 上出現 🎉&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@klauskpm/how-to-create-good-commit-messages-67943d30cced"&gt;how to create a good commit message&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/"&gt;How to Write Good Commit Messages: A Practical Git Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.conventionalcommits.org/en/v1.0.0/"&gt;Conventional Commit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://semver.org/"&gt;Semantic Version&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category></entry><entry><title>Python Table Manners - pre-commit: git commit 前做完檢查</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit" rel="alternate"></link><published>2020-02-28T23:10:00+08:00</published><updated>2020-02-28T23:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-28:/posts/tech/2020/02/python-table-manner-pre-commit</id><summary type="html">&lt;p&gt;在前一篇提到了 invoke，透過它可以簡化很多繁瑣的指令&lt;br&gt;
 但人類是懶惰的&lt;br&gt;
 即使已經更簡便了，沒被督促常常還是會忘了執行&lt;br&gt;
@@ -2518,7 +2702,28 @@ PyCon CA 給我的感覺是所有參與者之間最沒有隔閡的&lt;br&gt;
 &lt;p&gt;紀念品也還蠻有趣的，是當地很需要的毛帽&lt;br&gt;
 有一度想要買，因為真的很冷...&lt;br&gt;
 我在加拿大期間最冷的期間就是會期這兩天&lt;br&gt;
--8 度真的很瘋狂，但又不能不出門......&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="PyCon"></category><category term="Conference"></category></entry><entry><title>PyCon TW 2019 - Do you know PyCon JP</title><link href="https://lee-w.github.io/posts/tech/2019/10/pycon-tw-2019-do-you-know-pycon-jp" rel="alternate"></link><published>2019-10-28T12:35:00+08:00</published><updated>2019-10-28T12:35:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-10-28:/posts/tech/2019/10/pycon-tw-2019-do-you-know-pycon-jp</id><summary type="html"></summary><content type="html">
+-8 度真的很瘋狂，但又不能不出門......&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="PyCon"></category><category term="Conference"></category></entry><entry><title>PyCon TW 2019 - Do you know PyCon JP</title><link href="https://lee-w.github.io/posts/tech/2019/10/pycon-tw-2019-do-you-know-pycon-jp" rel="alternate"></link><published>2019-10-28T12:35:00+08:00</published><updated>2019-10-28T12:35:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-10-28:/posts/tech/2019/10/pycon-tw-2019-do-you-know-pycon-jp</id><summary type="html">
+&lt;p&gt;每年的 PyCon TW 都是我在台灣蠻期待的研討會&lt;br/&gt;
+雖然第一年來的時候，幾乎什麼都聽不懂&lt;br/&gt;
+但還是被各種大家正在做正在研究的事有些震撼到&lt;br/&gt;
+而今年跟往年不同的是，我誤打誤撞的成為了 PyCon TW 志工&lt;/p&gt;
+&lt;p&gt;多誤打誤撞呢&lt;br/&gt;
+大概就是我在報名了 PyCon JP 參訪團後不久突然收到了這個訊息&lt;/p&gt;
+&lt;p&gt;&lt;img alt="recruit" src="/images/posts-image/2019-10-29-pycon-tw-2019/15720876979484.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;我是到最近才確認了當初敲我的是誰，雖然一直有在猜 XD&lt;/p&gt;
+&lt;h2 id="being-a-volunteer"&gt;Being a volunteer&lt;/h2&gt;
+&lt;p&gt;我大概到七月才加入，往年這都是辦完 PyCon TW 的時間了&lt;br/&gt;
+所以我真的完全是菜鳥一枚&lt;br/&gt;
+一進入議程組，就接了聯絡 Keynote Speakers 的工作&lt;br/&gt;
+一開始就丟這種應該挺重要的工作給菜鳥真的是可以的嗎 XD&lt;/p&gt;
+&lt;p&gt;今年我主要工作是負責各式的英文書信&lt;br/&gt;
+包含後來跟財務補助申請人的書信往來，我都有碰到&lt;br/&gt;
+英文書信還真的不是一件簡單的事啊.....&lt;br/&gt;
+每一封信常常還是要花我不少時間才能擬好&lt;br/&gt;
+不過是真的蠻有趣的，會有更多跟來自各個國家的人相處的機會&lt;br/&gt;
+每個 Keynote 都是很有個性的人 XD&lt;/p&gt;
+&lt;p&gt;會議期間，我大概有一半的時間都在當主持人&lt;br/&gt;
+而且我大多都主持英文場 …&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;每年的 PyCon TW 都是我在台灣蠻期待的研討會&lt;br/&gt;
 雖然第一年來的時候，幾乎什麼都聽不懂&lt;br/&gt;
 但還是被各種大家正在做正在研究的事有些震撼到&lt;br/&gt;
@@ -2633,7 +2838,26 @@ btw 我也很喜歡講者 Sebastian 在第三天結束給的 Lightning Talk&lt;/
 第五位講者雖然不是來自日本，但也跟進了這個梗&lt;br/&gt;
 連第二天的 Keynote Paul 都玩這個梗玩得很開心呢&lt;/p&gt;
 &lt;p&gt;So...&lt;br/&gt;
-Do you know PyCon JP?&lt;/p&gt;</content><category term="Tech"></category><category term="Conference"></category><category term="PyCon"></category></entry><entry><title>PyCon JP 2019</title><link href="https://lee-w.github.io/posts/tech/2019/10/pycon-jp-2019" rel="alternate"></link><published>2019-10-12T22:30:00+08:00</published><updated>2019-10-12T22:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-10-12:/posts/tech/2019/10/pycon-jp-2019</id><summary type="html"></summary><content type="html">&lt;p&gt;當初在 PyCon US 看到 PyCon JP 上去介紹他們自己&lt;br/&gt;
+Do you know PyCon JP?&lt;/p&gt;</content><category term="Tech"></category><category term="Conference"></category><category term="PyCon"></category></entry><entry><title>PyCon JP 2019</title><link href="https://lee-w.github.io/posts/tech/2019/10/pycon-jp-2019" rel="alternate"></link><published>2019-10-12T22:30:00+08:00</published><updated>2019-10-12T22:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2019-10-12:/posts/tech/2019/10/pycon-jp-2019</id><summary type="html">&lt;p&gt;當初在 PyCon US 看到 PyCon JP 上去介紹他們自己&lt;br/&gt;
+不知道哪根筋不對，就覺得不然就來投稿一下吧&lt;br/&gt;
+雖然後來投稿並沒有上，但突然發現 PyCon TW 想揪團一起去&lt;/p&gt;
+&lt;p&gt;&lt;img alt="visiting-group-post" src="/images/posts-image/2019-10-12-pycon-jp-2019/visiting-group-post.png"/&gt;&lt;/p&gt;
+&lt;p&gt;想說這次不去，說不定就不會再有這樣的揪團了&lt;br/&gt;
+就衝動的報名下去了 XD&lt;/p&gt;
+
+&lt;h2 id="development-sprint"&gt;Development Sprint&lt;/h2&gt;
+&lt;p&gt;sprint 的報名有分 Leader 跟 Attendee&lt;br/&gt;
+現場到的人大概 100 人&lt;br/&gt;
+雖然不用錢，但就是要統計一下人數&lt;br/&gt;
+而且他們還有不斷寄信提醒「如果無法出席，請釋出位置給想參加的人」&lt;br/&gt;
+感覺人好像蠻多的&lt;br/&gt;
+雖然他們的 sprint 辦在假日，這樣比好像不太公平&lt;br/&gt;
+但感覺上比之前在台灣參加的 sprint 熱絡了不少&lt;/p&gt;
+&lt;p&gt;一開始會公佈有哪些專案可以參與&lt;br/&gt;
+到結束前，大家各自分組討論和開發&lt;br/&gt;
+最後來個 demo，分享大家一天的成果&lt;/p&gt;
+&lt;p&gt;總共十來個專案中，只有三個是英文的&lt;br/&gt;
+有兩個就是台灣人 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;當初在 PyCon US 看到 PyCon JP 上去介紹他們自己&lt;br/&gt;
 不知道哪根筋不對，就覺得不然就來投稿一下吧&lt;br/&gt;
 雖然後來投稿並沒有上，但突然發現 PyCon TW 想揪團一起去&lt;/p&gt;
 &lt;p&gt;&lt;img alt="visiting-group-post" src="/images/posts-image/2019-10-12-pycon-jp-2019/visiting-group-post.png"/&gt;&lt;/p&gt;
@@ -7757,7 +7981,24 @@ Parallel: 一個時間點同時跑&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Log is also natural language.&lt;br&gt;
 The sequence of words and expression is important sequential data.&lt;/p&gt;
-&lt;p&gt;這場我真的就有點聽不太懂了＠＠&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Conference"></category><category term="PyCon"></category></entry><entry><title>Common Neovim Problems</title><link href="https://lee-w.github.io/posts/tech/2017/05/common-neovim-problems" rel="alternate"></link><published>2017-05-14T13:13:00+08:00</published><updated>2017-05-14T13:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-05-14:/posts/tech/2017/05/common-neovim-problems</id><summary type="html"></summary><content type="html">&lt;!--more--&gt;
+&lt;p&gt;這場我真的就有點聽不太懂了＠＠&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Conference"></category><category term="PyCon"></category></entry><entry><title>Common Neovim Problems</title><link href="https://lee-w.github.io/posts/tech/2017/05/common-neovim-problems" rel="alternate"></link><published>2017-05-14T13:13:00+08:00</published><updated>2017-05-14T13:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2017-05-14:/posts/tech/2017/05/common-neovim-problems</id><summary type="html">&lt;!--more--&gt;
+
+&lt;h2 id="load-vimrc-from-neovim"&gt;Load ~/.vimrc from neovim&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir -p &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;XDG_CONFIG_HOME&lt;/span&gt;&lt;span class="p"&gt;:=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="p"&gt;/.config&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
+ln -s ~/.vim &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim
+ln -s ~/.vimrc &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim/init.vim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="no-python-interpreter-found"&gt;No python interpreter found.&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip install neovim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/3536"&gt;.nvimrc doesn't seem to be loaded up or working and it cannot create backups on editing existing files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/1755"&gt;No python interpreter …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;!--more--&gt;
 
 &lt;h2 id="load-vimrc-from-neovim"&gt;Load ~/.vimrc from neovim&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir -p &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;XDG_CONFIG_HOME&lt;/span&gt;&lt;span class="p"&gt;:=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="p"&gt;/.config&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
@@ -12174,7 +12415,23 @@ Trace/BPT trap: &lt;span class="m"&gt;5&lt;/span&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/hakimel/reveal.js/"&gt;Reveal.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="JavaScript"></category><category term="reveal.js"></category></entry><entry><title>解決安裝 IRKernel 缺少 zmq.h</title><link href="https://lee-w.github.io/posts/tech/2016/02/resolve-irkernel-missing-zmqh" rel="alternate"></link><published>2016-02-20T03:42:00+08:00</published><updated>2016-02-20T03:42:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-02-20:/posts/tech/2016/02/resolve-irkernel-missing-zmqh</id><summary type="html"></summary><content type="html">&lt;!--more--&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="JavaScript"></category><category term="reveal.js"></category></entry><entry><title>解決安裝 IRKernel 缺少 zmq.h</title><link href="https://lee-w.github.io/posts/tech/2016/02/resolve-irkernel-missing-zmqh" rel="alternate"></link><published>2016-02-20T03:42:00+08:00</published><updated>2016-02-20T03:42:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2016-02-20:/posts/tech/2016/02/resolve-irkernel-missing-zmqh</id><summary type="html">&lt;!--more--&gt;
+
+&lt;h2 id="irkernel"&gt;安裝 IRKernel&lt;/h2&gt;
+&lt;p&gt;進入 R 的命令列，輸入下面的指令&lt;br&gt;
+就能安裝 IRKernel，以後就能在 jupyter 中使用 R&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;install.packages(c(&amp;#39;rzmq&amp;#39;,&amp;#39;repr&amp;#39;,&amp;#39;IRkernel&amp;#39;,&amp;#39;IRdisplay&amp;#39;),
+                 repos = c(&amp;#39;http://irkernel.github.io/&amp;#39;, getOption(&amp;#39;repos&amp;#39;)))
+IRkernel::installspec()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="_1"&gt;錯誤訊息&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;interface.cpp:22:10: fatal error: &amp;#39;zmq.h&amp;#39; file not found
+#include &amp;lt;zmq.h&amp;gt;
+         ^
+1 error generated.
+make: *** [interface.o …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;!--more--&gt;
 
 &lt;h2 id="irkernel"&gt;安裝 IRKernel&lt;/h2&gt;
 &lt;p&gt;進入 R 的命令列，輸入下面的指令&lt;br&gt;
