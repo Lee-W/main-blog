@@ -4,7 +4,6 @@ Category: Tech
 Tags: Heroku, django, Chat Bot, deploy
 Slug: deploy-linebot-on-heroku
 Authors: Lee-W
-Summary:
 Series: Line Bot Tutorial
 
 上一篇提到如何用 ngrok

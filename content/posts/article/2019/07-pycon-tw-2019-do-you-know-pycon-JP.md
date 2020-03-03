@@ -4,8 +4,6 @@ Category: Tech
 Tags: Conference, PyCon
 Slug: pycon-tw-2019-do-you-know-pycon-jp
 Authors: Lee-W
-Summary:
-Series:
 
 [TOC]
 

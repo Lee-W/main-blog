@@ -4,7 +4,6 @@ Category: Tech
 Tags: Chat Bot
 Slug: more-about-line-messaging-api-template-messages
 Authors: Lee-W
-Summary:
 Series: Line Bot Tutorial
 
 除了傳送文字外，Line Bot 還可以傳

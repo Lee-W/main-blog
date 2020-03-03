@@ -5,7 +5,6 @@ Category: Tech
 Tags: Python, Conference, PyCon
 Slug: PyCon-TW-2017-Day2
 Authors: Lee-W
-Summary:
 Series: PyCon TW 2017
 
 第二天有一整個時段的 Job Fair，可以出去晃晃到各個攤販聊天

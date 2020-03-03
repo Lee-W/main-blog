@@ -4,7 +4,6 @@ Category: Book
 Tags: Economics
 Slug: freakonomics
 Authors: Lee-W
-Summary:
 
 ![freakonomics](http://pic.eslite.com/Upload/Product/201001/m/633996933876873707.JPG)
 

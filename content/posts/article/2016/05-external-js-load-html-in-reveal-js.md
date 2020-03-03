@@ -4,7 +4,6 @@ Category: Tech
 Tags: JavaScript, reveal.js
 Slug: external-js-load-html-in-reveal-js
 Authors: Lee-W
-Summary:
 
 reavel.js 提供了 `data-markdown="example.md"` 這個 tag 可以載入外部的 markdown
 卻沒提供可以載入 html 的 tag

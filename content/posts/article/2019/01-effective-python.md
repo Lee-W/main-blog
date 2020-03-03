@@ -4,7 +4,6 @@ Category: Tech
 Tags: Python, Note
 Slug: effective-python
 Authors: Lee-W
-Summary:
 
 ![effective python](/images/books/aE00B2o.jpg)
 

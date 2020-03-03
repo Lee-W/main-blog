@@ -4,7 +4,6 @@ Category: Tech
 Tags: Chat Bot, NLP, Machine Learning
 Slug: more-than-just-echo-bot
 Authors: Lee-W
-Summary:
 Series: Line Bot Tutorial
 
 知道怎麼實作一個會 Echo 的 Bot 後

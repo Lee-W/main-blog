@@ -4,7 +4,6 @@ Category: Book
 Tags: Inspiring
 Slug: how-will-you-measure-your-life
 Authors: Lee-W
-Summary:
 
 ![你要如何衡量你的人生](http://pic.eslite.com/Upload/Product/201207/m/634778514624800000.jpg)
 最近發現竟然沒有把這本還蠻喜歡的書 po 上來

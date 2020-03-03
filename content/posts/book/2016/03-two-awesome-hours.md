@@ -4,7 +4,6 @@ Category: Book
 Tags: Productivity
 Slug: two-awesome-hours
 Authors: Lee-W
-Summary:
 
 ![Two Awesome Hours](/images/books/KQpJ2Gh.jpg)
 

@@ -4,7 +4,6 @@ Category: Tech
 Tags: Paper, Visualization, NLP, Big Five Theory, Personality
 Slug: Toward-Personality-Insights-from-Language-Exploration-in-Social-Media
 Authors: Lee-W
-Summary:
 
 * [Paper](http://wwbp.org/papers/sam2013-dla.pdf)
 * [Demo](http://wwbp.org/personality_wc.html)

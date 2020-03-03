@@ -4,7 +4,6 @@ Category: Tech
 Tags: Vim, Neovim
 Slug: common-neovim-problems
 Authors: Lee-W
-Summary:
 
 <!--more-->
 

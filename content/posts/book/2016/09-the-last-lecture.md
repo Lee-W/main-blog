@@ -4,7 +4,6 @@ Category: Book
 Tags: Inspiring
 Slug: the-last-lecture
 Authors: Lee-W
-Summary:
 
 ![最後的演講](http://pic.eslite.com/Upload/Product/200806/m/633519138950888496.jpg)
 

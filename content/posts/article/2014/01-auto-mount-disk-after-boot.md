@@ -4,7 +4,6 @@ Category: Tech
 Tags: Linux-Unix, Dual Boot
 Slug: auto-mount-disk-after-boot
 Authors: Lee-W
-Summary:
 
 分割區的掛載資訊，存在 /etc/fstab 中，所以需要自動掛載分割區時可以針對此檔案做修改
 需要注意的是，如果設定不好，可能會沒辦法開機的！！！

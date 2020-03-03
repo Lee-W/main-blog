@@ -4,7 +4,6 @@ Category: Book
 Tags: Thinking
 Slug: thinking-technique
 Authors: Lee-W
-Summary:
 
 ![thinking-technique](http://pic.eslite.com/Upload/Product/201506/m/635696947482798750.jpg)
 

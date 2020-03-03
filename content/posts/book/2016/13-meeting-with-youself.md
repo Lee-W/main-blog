@@ -4,7 +4,6 @@ Category: Book
 Tags: Productivity
 Slug: meeting-with-youself
 Authors: Lee-W
-Summary:
 
 ![一個人的會議時間](/images/books/ZZTHLlJ.jpg)
 

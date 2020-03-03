@@ -4,7 +4,6 @@ Category: Book
 Tags: Startup
 Slug: zero-to-one
 Authors: Lee-W
-Summary:
 
 ![Zero to One](/images/books/O3Uaatb.jpg)
 

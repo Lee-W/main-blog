@@ -4,7 +4,6 @@ Category: Tech
 Tags: Develop
 Slug: fix-blog-style
 Authors: Lee-W
-Summary:
 
 一直以來都有發現 Blog 的風格有點小問題
 但都懶得去好好地找出問題

@@ -4,7 +4,6 @@ Category: Tech
 Tags: Python, Conference, PyCon
 Slug: PyCon-TW-2017-Sprint
 Authors: Lee-W
-Summary:
 Series: PyCon TW 2017
 
 這天的 Sprint 是由今年的 Keynote Speaker - Russell Keith-Magee 帶來他的開源專案[BeeWare](https://pybee.org)

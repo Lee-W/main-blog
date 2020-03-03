@@ -5,7 +5,6 @@ Category: Tech
 Tags: Python, Conference, PyCon
 Slug: PyCon-TW-2017-Day3
 Authors: Lee-W
-Summary:
 Series: PyCon TW 2017
 
 這天就是 PyCon 的最後一天了

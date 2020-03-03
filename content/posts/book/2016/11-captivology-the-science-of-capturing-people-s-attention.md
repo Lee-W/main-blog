@@ -4,7 +4,6 @@ Category: Book
 Tags: Sales
 Slug: captivology-the-science-of-capturing-people-s-attention
 Authors: Lee-W
-Summary:
 
 ![captivology-the-science-of-capturing-people-s-attention](http://pic.eslite.com/Upload/Product/201605/m/635988115711024504.jpg)
 

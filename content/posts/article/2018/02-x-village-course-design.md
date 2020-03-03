@@ -4,7 +4,6 @@ Category: Gossiping
 Tags: Education
 Slug: X-Village-Course-Design
 Authors: Lee-W
-Summary:
 Series: X-Village
 
 要一次說完整個 X-Village ，還是有點太花時間

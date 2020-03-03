@@ -4,7 +4,6 @@ Category: Tech
 Tags: Develop, Utility
 Slug: from-andromoney-to-moze
 Authors: Lee-W
-Summary:
 
 最近不小心被 [MOZE](https://www.mozeapp.com) 的介面燒到
 一個衝動就從 [AndroMoney](https://web.andromoney.com) 轉到 MOZE
@@ -39,7 +38,7 @@ AndroMoney 的各種功能都很方便，只是介面上就比較普通 xD
 再來就要說說其他我喜歡 MOZE 的原因
 
 ### AndroMoney 沒有 (或我不會用) 的功能
-  
+
 #### 借款事件
 
 ![3-borrow.png](/images/posts-image/2018-09-09-andromoney-to-moze/3-borrow.png)
@@ -92,7 +91,7 @@ MOZE 會幫我記住我借錢給誰，而且會一直提醒我誰跟我借了錢
 所以還是想列一下 xD
 
 ### MOZE 沒有 (或我不會用) 的功能
-  
+
 #### 專案不能跨幣別
 
 我之前去歐洲的那些紀錄就因為這樣，必須用標籤來分類 QQ

@@ -4,7 +4,6 @@ Category: Book
 Tags: Design
 Slug: burn-your-portfolio-stuff-they-don-t-teach-you-in-design-school-but-should
 Authors: Lee-W
-Summary:
 
 ![burn-your-portfolio](http://pic.eslite.com/Upload/Product/201403/m/635309876178920000.jpg)
 

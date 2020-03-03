@@ -4,7 +4,6 @@ Category: Tech
 Tags: Git, GitHub
 Slug: using-github-to-develop-software-collaboratively
 Authors: Lee-W
-Summary:
 
 這是兩年前 GitHub 來成大教育課程的筆記
 最近在整理 git 的筆記才翻出來

@@ -4,8 +4,6 @@ Category: Tech
 Tags: Conference, PyCon JP, Python
 Slug: pycon-jp-2019
 Authors: Lee-W
-Summary:
-Series:
 
 當初在 PyCon US 看到 PyCon JP 上去介紹他們自己
 不知道哪根筋不對，就覺得不然就來投稿一下吧

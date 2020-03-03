@@ -4,7 +4,6 @@ Category: Book
 Tags: Emotion
 Slug: leise-menschen-starke-wirkung
 Authors: Lee-W
-Summary:
 
 ![leise-menschen-starke-wirkung](http://pic.eslite.com/Upload/Product/201404/m/635319380267441240.jpg)
 

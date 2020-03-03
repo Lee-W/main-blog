@@ -4,7 +4,6 @@ Category: Tech
 Tags: Linux-Unix, Shell Script
 Slug: rename
 Authors: Lee-W
-Summary:
 
 只是要改變一兩個檔案的檔名，只要 `mv` 就很夠用了
 但如果要一次改很多相似的檔名就用到 `rename` 指令就會更有效率

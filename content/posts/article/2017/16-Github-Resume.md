@@ -4,7 +4,6 @@ Category: Tech
 Tags: GitHub, Resume
 Slug: GitHub-Resume
 Authors: Lee-W
-Summary:
 
 最近發現了這個可以自動從自己的 Github 上產生履歷的東西
 [GitHub Résumé](https://github.com/resume/resume.github.com)

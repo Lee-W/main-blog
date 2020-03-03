@@ -4,7 +4,6 @@ Category: Gossiping
 Tags: Productivity
 Slug: how-do-i-manage-my-time
 Authors: Lee-W
-Summary:
 
 過年整理了好多以前的書摘
 好像該來發一點自己的東西了

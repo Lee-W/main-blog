@@ -4,7 +4,6 @@ Category: Tech
 Tags: Android, Tutorial
 Slug: android-studio-and-genymotion-installation
 Authors: Lee-W
-Summary:
 
 最近 Google 在推行的 Android IDE，前身是 IntelliJ IDEA
 

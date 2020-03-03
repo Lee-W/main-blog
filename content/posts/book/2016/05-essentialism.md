@@ -4,7 +4,6 @@ Category: Book
 Tags: Productivity
 Slug: essentialism
 Authors: Lee-W
-Summary:
 
 ![Essentialism](/images/books/zJS927h.jpg)
 

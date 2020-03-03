@@ -4,7 +4,6 @@ Category: Tech
 Tags: Python, PyCon
 Slug: Python-at-IG
 Authors: Lee-W
-Summary:
 
 * [Lisa Guo, Hui Ding Keynote PyCon 2017](https://www.youtube.com/watch?v=66XoCk79kjM)
 * [slide](https://speakerdeck.com/pycon2017/keynote-lisa-guo-and-hui-ding-python-at-instagram)

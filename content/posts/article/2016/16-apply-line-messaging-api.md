@@ -4,7 +4,6 @@ Category: Tech
 Tags: Chat Bot
 Slug: apply-line-messaging-api
 Authors: Lee-W
-Summary:
 Series: Line Bot Tutorial
 
 先到[Messaging API](https://business.line.me/zh-hant/services/bot) 申請帳號

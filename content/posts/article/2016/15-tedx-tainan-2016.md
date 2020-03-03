@@ -4,7 +4,6 @@ Category: Gossiping
 Tags: Inspiring, TEDx
 Slug: tedx-tainan-2016
 Authors: Lee-W
-Summary:
 
 趁著昨天才剛結束
 把一些感受記錄下來

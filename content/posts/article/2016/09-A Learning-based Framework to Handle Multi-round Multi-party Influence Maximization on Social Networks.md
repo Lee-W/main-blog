@@ -4,7 +4,6 @@ Category: Tech
 Tags: Paper, Social Network, Machine Learning, Game Theory
 Slug: a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks
 Authors: Lee-W
-Summary:
 
 [Paper](http://dl.acm.org/citation.cfm?id=2783392)
 

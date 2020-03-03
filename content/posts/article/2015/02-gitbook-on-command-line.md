@@ -4,7 +4,6 @@ Category: Tech
 Tags: Git Book
 Slug: gitbook-on-command-line
 Authors: Lee-W
-Summary:
 
 最近比較認真在寫 Gitbook，順便記錄一下該怎麼用
 簡單來說 Gitbook 就是可以使用 Markdown 來寫書的平台，可以轉成各種電子書的格式
@@ -90,7 +89,7 @@ gitbook serve
 ```shell
 ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin
 ```
-  
+
 以下的四個指令依序可以產生 html, pdf, epub, mobi
 
 ```shell

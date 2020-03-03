@@ -4,7 +4,6 @@ Category: Book
 Tags: Team
 Slug: the-silo-effect
 Authors: Lee-W
-Summary:
 
 ![The silo effect](/images/books/MTSd8sY.jpg)
 

@@ -5,7 +5,6 @@ Category: Tech
 Tags: Python, Conference, PyCon
 Slug: PyCon-TW-2017-Day1
 Authors: Lee-W
-Summary:
 Series: PyCon TW 2017
 
 今年 PyCon 終於比起上次聽得懂多了！

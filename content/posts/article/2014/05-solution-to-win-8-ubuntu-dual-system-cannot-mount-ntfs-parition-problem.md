@@ -4,7 +4,6 @@ Category: Tech
 Tags: Linux-Unix, Dual Boot
 Slug: solution-to-win-8-ubuntu-dual-system-cannot-mount-ntfs-parition-problem
 Authors: Lee-W
-Summary:
 
 現在安裝了 Win8 和 Ubuntu 雙系統
 每次只要開 Win 8 ，再重新開機進到 Ubuntu 就會出現 file system 無法掛載的問題

@@ -4,7 +4,6 @@ Category: Book
 Tags: Productivity
 Slug: willpower
 Authors: Lee-W
-Summary:
 
 ![willpower](http://pic.eslite.com/Upload/Product/201307/m/635093011219915000.jpg)
 
