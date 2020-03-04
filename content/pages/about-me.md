@@ -11,7 +11,7 @@ slug: about-me
 
 ## Skill
 * **Advance**: Python, Docker, Web Backend Development, Git, Linux
-* **Intermediate**: AWS, Project Management, Data Analysis, Java
+* **Intermediate**: AWS, Project Management, Data Analysis
 
 ## Experience
 
@@ -20,19 +20,20 @@ slug: about-me
 
 * Designed and developed the backend of a data labeling system that automates the interaction between crowdsourcing workers and experts. Implemented the system through [Flask](http://flask.pocco.org), achieved test coverage higher than 90% and set up the CI/CD pipeline
 * Built data pipeline through [Airflow](https://airflow.apache.org/)
-* Set up the CI/CD pipeline through Jenkins for existing systems to enhance productivity
+* Built best practice template for internal Python projects
+* Set up the CI/CD pipeline through [Jenkins](https://jenkins.io/) for existing systems to enhance productivity
 * Added test for existing projects to ensure the functionality correctness
 * Cooperate with oversea teams in San Mateo and Ukraine
 
 ### [Dec 2019 - Present]
 **Program Chair, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)**
 
-* Manage the program team
+* Coordinate the program committee with 15 volunteers
 
 ### [Jul 2019 – Nov 2019]
-**Program Team Member, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)**
+**Program Committee Member, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)**
 
-* Contact keynote speakers and financial aid applicants for the program team
+* Contact keynote speakers and financial aid applicants
 * Contribute to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
 
 ### [Jan 2019 - March 2019]
