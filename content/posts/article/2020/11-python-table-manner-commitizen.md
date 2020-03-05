@@ -214,8 +214,6 @@ commitizen 提升版本號時，就會一併更新檔案的內容
 在 git repo 上將分支 merge 到 master 時，自動提升版本號
 這部分因為會牽涉到各個不同平台的做法，不會敘述太多
 這裡附上 commitizen 文件中 [Github Actions](https://woile.github.io/commitizen/tutorials/github_actions/) 和 [Gitlab CI](https://woile.github.io/commitizen/tutorials/gitlab_ci/) 的做法
-除此之外，我建議在持續整合時執行 `cz bump --yes` 前面可以加上 `-` (i.e., `- cz bump --yes`)
-有些情況下版本號不用提升（e.g., 只做文件更新）， `cz bump --yes` 會因為不用提升版本號而出現版本號已經存在的錯誤，但這其實可以被忽略
 
 ## 客製化 commit 規範
 目前 commitizen 提供兩種方式
