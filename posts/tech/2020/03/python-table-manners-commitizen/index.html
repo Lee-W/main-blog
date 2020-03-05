@@ -259,9 +259,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 但更好的做法是將自動升版加入到加入到持續整合（Continuous Integration）<br/>
 在 git repo 上將分支 merge 到 master 時，自動提升版本號<br/>
 這部分因為會牽涉到各個不同平台的做法，不會敘述太多<br/>
-這裡附上 commitizen 文件中 <a href="https://woile.github.io/commitizen/tutorials/github_actions/">Github Actions</a> 和 <a href="https://woile.github.io/commitizen/tutorials/gitlab_ci/">Gitlab CI</a> 的做法<br/>
-除此之外，我建議在持續整合時執行 <code>cz bump --yes</code> 前面可以加上 <code>-</code> (i.e., <code>- cz bump --yes</code>)<br/>
-有些情況下版本號不用提升（e.g., 只做文件更新）， <code>cz bump --yes</code> 會因為不用提升版本號而出現版本號已經存在的錯誤，但這其實可以被忽略</p>
+這裡附上 commitizen 文件中 <a href="https://woile.github.io/commitizen/tutorials/github_actions/">Github Actions</a> 和 <a href="https://woile.github.io/commitizen/tutorials/gitlab_ci/">Gitlab CI</a> 的做法</p>
 <h2 id="commit">客製化 commit 規範</h2>
 <p>目前 commitizen 提供兩種方式</p>
 <ol>
