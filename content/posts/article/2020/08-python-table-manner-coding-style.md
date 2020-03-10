@@ -350,9 +350,9 @@ pipenv run isort --atomic --apply
 ```toml
 [tool.isort]
 multi_line_output=3
-include_trailing_comma=True
+include_trailing_comma=true
 force_grid_wrap=0
-use_parentheses=True
+use_parentheses=true
 line_length=88
 ```
 
