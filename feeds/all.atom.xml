@@ -929,9 +929,9 @@ pipenv run isort --atomic --apply
 &lt;p&gt;為了跟前面提到的工具相容（主要應該是 black），以下是我在 &lt;code&gt;pyproject.toml&lt;/code&gt; 內的設定&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tool.isort]&lt;/span&gt;
 &lt;span class="n"&gt;multi_line_output&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
-&lt;span class="n"&gt;include_trailing_comma&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;include_trailing_comma&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;
 &lt;span class="n"&gt;force_grid_wrap&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;
-&lt;span class="n"&gt;use_parentheses&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;use_parentheses&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;
 &lt;span class="n"&gt;line_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;88&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id="_13"&gt;其他工具&lt;/h2&gt;
