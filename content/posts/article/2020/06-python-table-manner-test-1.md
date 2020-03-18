@@ -265,7 +265,6 @@ class TestSponsor:
 
 執行 `pipenv run pytest` 後，就會發現有部分的測試案例變成了 `s`
 
-
 ```text
 ========== test session starts ==========
 platform darwin -- Python 3.7.3, pytest-5.3.5, py-1.8.1, pluggy-0.13.1

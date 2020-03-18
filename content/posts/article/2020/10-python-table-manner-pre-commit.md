@@ -12,6 +12,8 @@ Series: Python Table Manner
 就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑
 所以這次要來聊聊 [pre-commit](https://pre-commit.com) 如何強制做檢查
 
+[TOC]
+
 ## pre-commit
 [pre-commit](https://pre-commit.com/) 主要的用途就是讓我們能方便的加入 [Git Hook](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks)，並在各種 git 的相關操作前進行檢查
 
@@ -170,4 +172,4 @@ repos:
 ```
 
 ## Reference
-* [提升程式碼品質：使用 Pre-Commit (Git Hooks) ](https://mropengate.blogspot.com/2019/08/pre-commit-git-hooks_4.html)
+* [提升程式碼品質：使用 Pre-Commit (Git Hooks)](https://mropengate.blogspot.com/2019/08/pre-commit-git-hooks_4.html)

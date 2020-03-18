@@ -16,6 +16,8 @@ Series: Python Table Manners
 
 所以在這篇，我要來介紹如何用 [invoke](http://www.pyinvoke.org/) 管理這些指令
 
+[TOC]
+
 ## invoke 是什麼
 invoke 是一套任務執行工具 (task execution tool)，主要的功能是統一管理各種指令
 並提供各種指令列上用得到的功能

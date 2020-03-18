@@ -117,7 +117,6 @@ cz commit
 
 回答完，就會產生 commit message **feat(tasks): add \`inv git.commit\`**
 
-
 ## 強制檢查 commit message
 剛開始引入 commitizen 時，可能會常常忘記要使用它來做 commit
 這時候就能使用到前一篇提到的 [pre-commit](https://pre-commit.com/)
@@ -309,7 +308,7 @@ cz changelog
 參數
 
 * `--dry-run`： 將更新日誌的內容輸出到終端機，不更新到檔案
-* ` --file-name FILE_NAME`： 指定更新日誌名稱
+* `--file-name FILE_NAME`： 指定更新日誌名稱
 * `--start-rev START_REV`： 更新日誌開始的點（結束的點為目前所在的 commit）
 
 ## 其他 commitizen 指令和常用參數

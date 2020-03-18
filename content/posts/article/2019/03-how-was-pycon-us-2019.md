@@ -247,7 +247,6 @@ Sprint 的這幾天還蠻常看到 Guido 在走廊走來走去
         * [Add pull upstream reminder in contribute](https://github.com/edx/edx-documentation/pull/1825)
         * [INCR-236](https://github.com/edx/edx-platform/pull/20502)
 
-
 ## 給自己下次去的建議
 
 ### 多跟人交流、多跟人交流、多跟人交流

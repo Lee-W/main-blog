@@ -129,7 +129,6 @@ fixture 的 [scope](https://docs.pytest.org/en/latest/fixture.html#scope-sharing
 * [capsys](https://docs.pytest.org/en/latest/reference.html#std:fixture-capsys): 用來抓 std out, std err
 * [tmpdir](https://docs.pytest.org/en/latest/reference.html#std:fixture-tmpdir): 主要可以用來測檔案相關的測試
 
-
 ## 參數化 (parameterize)
 在測試資料比較簡單的時候，可以使用 [parameterize](https://docs.pytest.org/en/latest/parametrize.html) 來減少撰寫重複的程式碼
 
@@ -233,7 +232,6 @@ def test_index_error():
 * `-k EXPRESSION`: 只測試名稱符合 "EXPRESIION" 的案例
 * `-m MARKEXPR`: 只測試有 "MARKEXPR" maker 的案例
 * `--fixtures`: 列出所有 `fixtures`
-
 
 ## pytest-cov 測試覆蓋率
 [pytest-cov](https://github.com/pytest-dev/pytest-cov) 可以用來產生測試覆蓋率的報告，讓我們知道程式碼還有哪些沒被測試到
