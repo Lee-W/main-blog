@@ -115,7 +115,7 @@
     <div class="span8 article-content">
             
             <p>接續著前一篇的 pre-commit 繼續談 git 相關的工具<br/>
-這篇來聊聊如何透過 <a href="https://github.com/Woile/commitizen">commitizen</a> 規範 commit message<br/>
+這篇來聊聊如何透過 <a href="https://github.com/commitizen-tools/commitizen">commitizen</a> 規範 commit message<br/>
 還有我們能拿規範過的 commit message 做什麼</p>
 <!--more-->
 
@@ -133,8 +133,8 @@
 <li>新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案</li>
 </ul>
 <h2 id="commitizen">Commitizen</h2>
-<p>除了提供的 commit message 撰寫建議和規範 （👉 <a href="https://woile.github.io/commitizen/tutorials/writing_commits/">Writing commits</a>）<br/>
-<a href="https://woile.github.io/commitizen/">commitizen</a> 更進一步提供互動式介面，讓使用者可以夠輕鬆地產生符合規範的 commit message</p>
+<p>除了提供的 commit message 撰寫建議和規範 （👉 <a href="https://commitizen-tools.github.io/commitizen/tutorials/writing_commits/">Writing commits</a>）<br/>
+<a href="https://commitizen-tools.github.io/commitizen/">commitizen</a> 更進一步提供互動式介面，讓使用者可以夠輕鬆地產生符合規範的 commit message</p>
 <p>同時也整合了前一篇所提到的 pre-commit hook，避免使用者將不符合規範的 commit message 寫入</p>
 <p>除了採用來自 Angular 社群的 <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> (約定式提交) 外， commitizen 提供了高度的客製化，讓每個團隊或專案都可以依照自己的需求，撰寫相對應的規範</p>
 <p>規範了 commit message 後，除了增加可讀性增加外，也讓訊息有可以被解析做其他運用<br/>
@@ -192,11 +192,11 @@ cz commit
 <h2 id="commit-message_1">強制檢查 commit message</h2>
 <p>剛開始引入 commitizen 時，可能會常常忘記要使用它來做 commit<br/>
 這時候就能使用到前一篇提到的 <a href="https://pre-commit.com/">pre-commit</a></p>
-<p>我在 <a href="https://github.com/Woile/commitizen">commitizen</a> 中有加入 <a href="https://github.com/Woile/commitizen/blob/master/.pre-commit-hooks.yaml">.pre-commit-hooks.yaml</a><br/>
+<p>我在 <a href="https://github.com/commitizen-tools/commitizen">commitizen</a> 中有加入 <a href="https://github.com/commitizen-tools/commitizen/blob/master/.pre-commit-hooks.yaml">.pre-commit-hooks.yaml</a><br/>
 因此只要在專案的 <code>.pre-commit-config.yaml</code> 加入以下這段</p>
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">repos</span>
-  <span class="l l-Scalar l-Scalar-Plain">- repo</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/Woile/commitizen</span>
-    <span class="l l-Scalar l-Scalar-Plain">rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">v1.16.3</span>
+  <span class="l l-Scalar l-Scalar-Plain">- repo</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/commitizen-tools/commitizen</span>
+    <span class="l l-Scalar l-Scalar-Plain">rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">v1.17.0</span>
     <span class="l l-Scalar l-Scalar-Plain">hooks</span><span class="p p-Indicator">:</span>
       <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">commitizen</span>
         <span class="nt">stages</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">commit-msg</span><span class="p p-Indicator">]</span>
@@ -231,7 +231,7 @@ commitizen 目前並沒有提供不同版本表示方式的客製化<br/>
 <p>每次提升版本號只會提升 1 ，而且以最前面的為主<br/>
 e.g., 要 merge 回 master 的改動中出現 BREAKING CHANGE，不管其他有多少 feat 或 fix ，都只會讓 <code>MAJOR</code> 提升 1</p>
 <p>目前只有 <code>cz_conventional_commits</code> 有預設的版本對應<br/>
-如果為 <code>cz_jira</code>, <code>cz_customize</code> 或自己客製化規則加上提升版本的功能，可以參考commitizen 文件中 <a href="https://woile.github.io/commitizen/customization/">customization</a> ，並加上 <code>bump_pattern</code>（比對 commit 是哪個種類） 和 <code>bump_map</code> （哪個種類的 commit 要提升哪個版本號）</p>
+如果為 <code>cz_jira</code>, <code>cz_customize</code> 或自己客製化規則加上提升版本的功能，可以參考commitizen 文件中 <a href="https://commitizen-tools.github.io/commitizen/customization/">customization</a> ，並加上 <code>bump_pattern</code>（比對 commit 是哪個種類） 和 <code>bump_map</code> （哪個種類的 commit 要提升哪個版本號）</p>
 <p>稍微解釋了一下提升版本的規則，接下來要來講該如何使用了</p>
 <div class="highlight"><pre><span></span><code>cz bump
 </code></pre></div>
@@ -254,12 +254,12 @@ Possible causes:
 如果每次透過 commitizen 提升版本號後，還要手動更新其他部分，就失去了自動的好處了<br/>
 所以 commitizen 另外提供了 <code>version_files</code> 這個設定，將需要改動的檔案也寫進來<br/>
 commitizen 提升版本號時，就會一併更新檔案的內容<br/>
-（Read More 👉 <a href="https://woile.github.io/commitizen/bump/">bump</a> ）</p>
+（Read More 👉 <a href="https://commitizen-tools.github.io/commitizen/bump/">bump</a> ）</p>
 <p>透過 <code>cz bump</code> 指令雖然可以省下很多步驟<br/>
 但更好的做法是將自動升版加入到加入到持續整合（Continuous Integration）<br/>
 在 git repo 上將分支 merge 到 master 時，自動提升版本號<br/>
 這部分因為會牽涉到各個不同平台的做法，不會敘述太多<br/>
-這裡附上 commitizen 文件中 <a href="https://woile.github.io/commitizen/tutorials/github_actions/">Github Actions</a> 和 <a href="https://woile.github.io/commitizen/tutorials/gitlab_ci/">Gitlab CI</a> 的做法</p>
+這裡附上 commitizen 文件中 <a href="https://commitizen-tools.github.io/commitizen/tutorials/github_actions/">Github Actions</a> 和 <a href="https://commitizen-tools.github.io/commitizen/tutorials/gitlab_ci/">Gitlab CI</a> 的做法</p>
 <h2 id="commit">客製化 commit 規範</h2>
 <p>目前 commitizen 提供兩種方式</p>
 <ol>
@@ -315,7 +315,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <img alt="customize" src="/images/posts-image/2020-02-22-python-table-manner-series/customize.jpg"/></p>
 <h3 id="commit-python">將 commit 規範寫成 Python 套件發佈</h3>
 <p>這個做法比較複雜，也比較不常會用到，所以我只會概略地講<br/>
-（Read More 👉 <a href="https://woile.github.io/commitizen/customization/">Customization</a>）</p>
+（Read More 👉 <a href="https://commitizen-tools.github.io/commitizen/customization/">Customization</a>）</p>
 <p>我已經先將套件的架構驟寫成一個 <a href="https://cookiecutter.readthedocs.io/en/1.7.0/">cookiecutter</a> 範本<br/>
 透過以下指令，可以進入 cookiecutter 的互動式介面，並初始化專案</p>
 <div class="highlight"><pre><span></span><code>cookiecutter gh:Lee-W/commitizen_cz_template
@@ -328,7 +328,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <p>commitizen 另外也支援產生 <a href="https://keepachangelog.com/en/1.1.0/">keep a changelog</a> 格式的更新日誌<br/>
 不過還沒被 merge 到 master 內<br/>
 這個功能現在也還只是剛實作一個初版，應該會有一些問題<br/>
-有興趣可以到 <a href="https://github.com/Woile/commitizen/tree/command-changelog">command-changelog</a> 這個 branch 玩玩看，一起來除錯（？）</p>
+有興趣可以到 <a href="https://github.com/commitizen-tools/commitizen/tree/command-changelog">command-changelog</a> 這個 branch 玩玩看，一起來除錯（？）</p>
 <p>產生更新日誌（預設會取代 <code>CHANGELOG.md</code>）</p>
 <div class="highlight"><pre><span></span><code>cz changelog
 </code></pre></div>
@@ -362,7 +362,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 這時就覺得信奉 Python （？？？）的我，好像應該好好的介紹 Python 的工具<br/>
 而不是 JavaScript 的 <a href="https://github.com/commitizen">commitizen</a></p>
 <p><img alt="i am the one who's not mature" src="/images/posts-image/2020-02-22-python-table-manner-series/not-mature-2.jpg"/></p>
-<p>於是我就在 PyCon CA 前一個禮拜，開始貢獻起 <a href="https://github.com/woile/commitizen">commitizen</a><br/>
+<p>於是我就在 PyCon CA 前一個禮拜，開始貢獻起 <a href="https://github.com/commitizen-tools/commitizen">commitizen</a><br/>
 把我遇到的 issues 都修了，就順便把投影片中相關的內容一起翻新了</p>
 <p>貢獻的過程中也發現了很多還能再增加的新功能，於是就在 PyCon CA 2019 帶了這個專案去 Develop Sprint<br/>
 第一次當 Sprint Leader 還蠻好玩的，也蠻有成就感的<br/>
@@ -381,7 +381,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <p>而且這些擴充常常要用到 <code>package.json</code> 來做設定<br/>
 可是我就不是 Java Script 的專案，就不想加入這個檔案來設定啊 🤷‍♂️<br/>
 所以才開始來找是不是有 Python 版本的替代方案<br/>
-（Python 的 <a href="https://github.com/woile/commitizen">commitizen</a> 支援的 toml （<code>.cz.toml</code>）是通用的格式，裡面 Python 相關的內容，適用於各語言）</p>
+（Python 的 <a href="https://github.com/commitizen-tools/commitizen">commitizen</a> 支援的 toml （<code>.cz.toml</code>）是通用的格式，裡面 Python 相關的內容，適用於各語言）</p>
 <h3 id="_3">持續貢獻</h3>
 <p>整體來說， commitizen 是一個讓我貢獻得很有成就感的專案<br/>
 最主要的原因之一就是這是我想用的工具</p>
@@ -392,7 +392,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <p>除此之外， commitizen 測試覆蓋率很高，比較不需要怕改錯了會不會弄壞舊有的功能<br/>
 程式碼風格上，透過 black 跟 flake8 來規範，讓程式碼閱讀起來輕鬆很多<br/>
 在貢獻的過程中，也學到了不少很實用的工具（e.g., pre-commit, cookiecutter）</p>
-<p>所以我說<strong>一起來貢獻 <a href="https://github.com/Woile/commitizen">commitizen</a> 吧 💪</strong><br/>
+<p>所以我說<strong>一起來貢獻 <a href="https://github.com/commitizen-tools/commitizen">commitizen</a> 吧 💪</strong><br/>
 我最近開始比較忙，有一段時間沒辦法積極地送 Pull Request 了 😢<br/>
 但還是希望新功能能在 commitizen 上出現 🎉</p>
 <h2 id="reference">Reference</h2>

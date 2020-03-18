@@ -83,18 +83,37 @@
 </div>
 
 <div class="row-fluid">
-        <div class="span8 offset2 article-content">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#invoke">invoke 是什麼</a></li>
+<li><a href="#invoke_1">安裝 invoke</a></li>
+<li><a href="#invoke_2">如何使用 invoke</a></li>
+<li><a href="#invoke_3">實作 invoke 任務</a></li>
+<li><a href="#_1">任務相依</a></li>
+<li><a href="#_2">任務模組化</a></li>
+<li><a href="#auto-completion">自動補完 （Auto-completion）</a></li>
+<li><a href="#makefile">為什麼不用 Makefile 就好？</a></li>
+<li><a href="#_3">其他進階應用</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
             
-            <p>前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具<br>
-每一個工具又有各自的參數和設定<br>
+            <p>前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具<br/>
+每一個工具又有各自的參數和設定<br/>
 這麼多指令怎麼可能記得起來 😱</p>
-<p><img alt="too-many-commands" src="/images/posts-image/2020-02-22-python-table-manner-series/too-many-commands.jpg"></p>
+<p><img alt="too-many-commands" src="/images/posts-image/2020-02-22-python-table-manner-series/too-many-commands.jpg"/></p>
 <!--more-->
-
 <p>所以在這篇，我要來介紹如何用 <a href="http://www.pyinvoke.org/">invoke</a> 管理這些指令</p>
+
 <h2 id="invoke">invoke 是什麼</h2>
-<p>invoke 是一套任務執行工具 (task execution tool)，主要的功能是統一管理各種指令<br>
-並提供各種指令列上用得到的功能<br>
+<p>invoke 是一套任務執行工具 (task execution tool)，主要的功能是統一管理各種指令<br/>
+並提供各種指令列上用得到的功能<br/>
 有點像是 Python 的 <code>Makefile</code></p>
 <h2 id="invoke_1">安裝 invoke</h2>
 <p>不同於 pytest, flake8 等套件，我會同時將 invoke 安裝在系統和虛擬環境中</p>
@@ -104,19 +123,17 @@ pipx install invoke
 <span class="c1"># 安裝 invoke 到虛擬環境中</span>
 pipenv install invoke --dev
 </code></pre></div>
-
-
 <p>裝在系統的原因是想把它當成類似 <code>make</code> 的指令來使用</p>
-<p>在虛擬環境還需要裝的原因是，部署時系統通常不會預裝 invoke<br>
+<p>在虛擬環境還需要裝的原因是，部署時系統通常不會預裝 invoke<br/>
 如果想在部署時也能使用 invoke 的功能，最方便的方法透過 pipenv 安裝</p>
 <h2 id="invoke_2">如何使用 invoke</h2>
-<p>我們再回到 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 的例子<br>
-checkout 到 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/83e48c6443303045ed1de2f020297c3110bb1300">commit 83e4</a>，回到使用 invoke 管理指令前<br>
+<p>我們再回到 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 的例子<br/>
+checkout 到 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/83e48c6443303045ed1de2f020297c3110bb1300">commit 83e4</a>，回到使用 invoke 管理指令前<br/>
 從當時的文件可以看到，還需要使用相對冗長的指令</p>
-<p><img alt="before-invoke" src="/images/posts-image/2020-02-22-python-table-manner-series/before-invoke.jpg"></p>
+<p><img alt="before-invoke" src="/images/posts-image/2020-02-22-python-table-manner-series/before-invoke.jpg"/></p>
 <p>到了 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/72ad956fd200867dc292a156c97a99a09ebe0104">commit 72ad</a> (實作已經在 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/bc98eec28037a9bed5063fef0f0f564893fce3ac">commit bc98</a> 完成，只是在 commit 72ad 才更新文件)，已經可以使用較短且較為統一的指令 (以 <code>inv</code> 作為開頭)</p>
-<p><img alt="after-invoke" src="/images/posts-image/2020-02-22-python-table-manner-series/after-invoke.jpg"></p>
-<p>除此之外，引入 invoke 後，也不用每次都去翻文件<br>
+<p><img alt="after-invoke" src="/images/posts-image/2020-02-22-python-table-manner-series/after-invoke.jpg"/></p>
+<p>除此之外，引入 invoke 後，也不用每次都去翻文件<br/>
 invoke 可以列出所有可用的指令</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 列出可用的 invoke 指令</span>
 <span class="c1"># p.s. invoke 指令可以縮寫為 inv</span>
@@ -130,68 +147,58 @@ Available tasks:
   install    Install script in pipenv environement
   <span class="nb">test</span>       Run testcase
 </code></pre></div>
-
-
 <p>執行的方式則是在 invoke 後面直接加上任務</p>
 <p>e.g.,</p>
 <div class="highlight"><pre><span></span><code>inv clean
 </code></pre></div>
-
-
 <h2 id="invoke_3">實作 invoke 任務</h2>
 <p>我們先試著將前面的 <code>python setup.py develop</code> 改成 invoke 的任務</p>
-<p>預設 invoke 會去找目錄下的 <code>tasks.py</code><br>
-所以我們先在專案最上層創 <code>tasks.py</code><br>
-接著撰寫一個函式叫 <code>develop</code> ，這就會是之後的任務名稱 (i.e., 透過 <code>inv develop</code> 執行)<br>
-在函式前加上裝飾器 (decorator) <code>@task</code><br>
-invoke 會傳入一個 context 做為第一個參數 (Read More 👉 <a href="http://docs.pyinvoke.org/en/stable/getting-started.html#aside-what-exactly-is-this-context-arg-anyway">what exactly is this ‘context’ arg anyway?</a>)<br>
-(p.s. 原本的程式碼中是使用 <code>cmd</code> ，那是錯誤的用法)<br>
+<p>預設 invoke 會去找目錄下的 <code>tasks.py</code><br/>
+所以我們先在專案最上層創 <code>tasks.py</code><br/>
+接著撰寫一個函式叫 <code>develop</code> ，這就會是之後的任務名稱 (i.e., 透過 <code>inv develop</code> 執行)<br/>
+在函式前加上裝飾器 (decorator) <code>@task</code><br/>
+invoke 會傳入一個 context 做為第一個參數 (Read More 👉 <a href="http://docs.pyinvoke.org/en/stable/getting-started.html#aside-what-exactly-is-this-context-arg-anyway">what exactly is this ‘context’ arg anyway?</a>)<br/>
+(p.s. 原本的程式碼中是使用 <code>cmd</code> ，那是錯誤的用法)<br/>
 最後就可以用這個 context （參數 <code>ctx</code>） 執行指令</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">invoke</span> <span class="kn">import</span> <span class="n">task</span>
 
 <span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">develop</span><span class="p">(</span><span class="n">ctx</span><span class="p">):</span>
-    <span class="n">ctx</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;python setup.py develop&quot;</span><span class="p">)</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">"python setup.py develop"</span><span class="p">)</span>
 </code></pre></div>
-
-
-<p>如同先前所提到的，操作都應該在虛擬環境內被完成<br>
-所以我將 <code>pipenv run</code> 的前綴提出來<br>
-這樣就能確保之後的操作一定都會在虛擬環境內執行<br>
+<p>如同先前所提到的，操作都應該在虛擬環境內被完成<br/>
+所以我將 <code>pipenv run</code> 的前綴提出來<br/>
+這樣就能確保之後的操作一定都會在虛擬環境內執行<br/>
 如果之後更換了管理虛擬環境的工具(e.g. <code>poetry run</code>)，也可以更輕易的改動 <code>tasks.py</code></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">invoke</span> <span class="kn">import</span> <span class="n">task</span>
 
-<span class="n">PIPENV_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;pipenv run&quot;</span>
+<span class="n">PIPENV_PREFIX</span> <span class="o">=</span> <span class="s2">"pipenv run"</span>
 
 <span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">develop</span><span class="p">(</span><span class="n">ctx</span><span class="p">):</span>
-    <span class="n">ctx</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{PIPENV_PREFIX}</span><span class="s2"> python setup.py develop&quot;</span><span class="p">)</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{PIPENV_PREFIX}</span><span class="s2"> python setup.py develop"</span><span class="p">)</span>
 </code></pre></div>
-
-
 <h2 id="_1">任務相依</h2>
-<p>如果任務之間有相依性，可以在 <code>@task</code> 後加入 <code>pre</code> 或 <code>post</code><br>
+<p>如果任務之間有相依性，可以在 <code>@task</code> 後加入 <code>pre</code> 或 <code>post</code><br/>
 表示任務執行前或後還要執行其他任務</p>
 <p>e.g., 在初始環境 (<code>init</code>) 前，常會先清除不必要的檔案 (<code>clean</code>)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">invoke</span> <span class="kn">import</span> <span class="n">task</span>
 
 <span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">clean</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;clean up&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"clean up"</span><span class="p">)</span>
 
 <span class="nd">@task</span><span class="p">(</span><span class="n">pre</span><span class="o">=</span><span class="p">[</span><span class="n">clean</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;initial&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"initial"</span><span class="p">)</span>
 </code></pre></div>
-
-
 <h2 id="_2">任務模組化</h2>
-<p>當任務便多時，為了方便維護，就會傾向將相似的任務模組化<br>
-這時候就可以使用到 <code>namespace</code> 的概念<br>
+<p>當任務便多時，為了方便維護，就會傾向將相似的任務模組化<br/>
+這時候就可以使用到 <code>namespace</code> 的概念<br/>
 (Read More 👉 <a href="http://docs.pyinvoke.org/en/stable/concepts/namespaces.html">Constructing namespaces</a>)</p>
-<p>不過我不會在這篇文章深入探討要怎麼說<br>
+<p>不過我不會在這篇文章深入探討要怎麼說<br/>
 一般來說，除非任務真的非常多，這並不是必要的</p>
-<p>如果有興趣看我怎麼把 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 的任務模組化<br>
+<p>如果有興趣看我怎麼把 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 的任務模組化<br/>
 可以參考 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/f1050eabf44a8b8e662370bd97b2a79ad57723c2">commit f105</a></p>
 <p>最後修改後 <code>tasks</code> 套件中有這些模組</p>
 <div class="highlight"><pre><span></span><code>├── tasks
@@ -202,8 +209,6 @@ invoke 會傳入一個 context 做為第一個參數 (Read More 👉 <a href="ht
 │   ├── style.py
 │   └── test.py
 </code></pre></div>
-
-
 <p>和各個模組下的指令</p>
 <div class="highlight"><pre><span></span><code>$ inv --list
 
@@ -225,43 +230,37 @@ Available tasks:
   test.cov            Run <span class="nb">test</span> coverage check
   test.run <span class="o">(</span><span class="nb">test</span><span class="o">)</span>     Run <span class="nb">test</span> cases
 </code></pre></div>
-
-
 <h2 id="auto-completion">自動補完 （Auto-completion）</h2>
-<p>工程師是很懶惰的<br>
-這種指令列工具沒有自動補完怎麼行<br>
-invoke 當然也想到了<br>
-透過參數 <code>--print-completion-script=[shell]</code> 就能取得 invoke 預先寫好的自動補完腳步<br>
+<p>工程師是很懶惰的<br/>
+這種指令列工具沒有自動補完怎麼行<br/>
+invoke 當然也想到了<br/>
+透過參數 <code>--print-completion-script=[shell]</code> 就能取得 invoke 預先寫好的自動補完腳步<br/>
 目前支援 bash, zsh, fish 三種 shell</p>
 <p>e.g., 將 invoke 產生的 zsh 自動補完腳本寫入 <code>~/.zsh</code></p>
 <div class="highlight"><pre><span></span><code>inv --print-completion-script<span class="o">=</span>zsh &gt;&gt; ~/.zshrc
 </code></pre></div>
-
-
 <h2 id="makefile">為什麼不用 Makefile 就好？</h2>
-<p>因為有些 shell script 並不見得那麼好寫<br>
+<p>因為有些 shell script 並不見得那麼好寫<br/>
 （也可能只是我不熟啦...）</p>
 <p>e.g.,</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">invoke</span> <span class="kn">import</span> <span class="n">task</span>
 
 
-<span class="n">PIPENV_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;pipenv run&quot;</span>
+<span class="n">PIPENV_PREFIX</span> <span class="o">=</span> <span class="s2">"pipenv run"</span>
 
 <span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Remove all the tmp files in .gitignore&quot;&quot;&quot;</span>
+    <span class="sd">"""Remove all the tmp files in .gitignore"""</span>
     <span class="n">files_to_remove</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;.gitignore&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'.gitignore'</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">input_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
                 <span class="n">files_to_remove</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-    <span class="n">cmd</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rm -rf {&#39; &#39;.join(files_to_remove)}&quot;</span><span class="p">)</span>
+    <span class="n">cmd</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="sa">f</span><span class="s2">"rm -rf {' '.join(files_to_remove)}"</span><span class="p">)</span>
 </code></pre></div>
-
-
 <p>（雖然後來發現上面的一串，可以用 <code>git clean -Xdf</code> 取代...）</p>
-<p>除此之外，invoke 也可以讓 shell script 的結果，直接跟 Python 互動<br>
+<p>除此之外，invoke 也可以讓 shell script 的結果，直接跟 Python 互動<br/>
 更容易實作出想要的功能</p>
 <h2 id="_3">其他進階應用</h2>
 <ul>
