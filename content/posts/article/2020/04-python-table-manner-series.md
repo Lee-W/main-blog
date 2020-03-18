@@ -1,5 +1,6 @@
 Title: Python Table Manners 系列
 Date: 2020-02-22 19:32
+Modified: 2020-03-18 10:20
 Category: Tech
 Tags: Python
 Slug: python-table-manners-series
@@ -15,7 +16,7 @@ Series: Python Table Manners
 原本打算找個時間把這些內容整理成文章
 但在沒人督促的情況下，當然就忘了 XD
 剛好看到 [連續七天寫作挑戰，解放你的技術創作力](https://www.accupass.com/event/2001190943344186137000)
-就給個理由來督處一下自己
+就給個理由來督促一下自己
 
 除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 [commitizen](https://github.com/Woile/commitizen) 學到的工具
 
@@ -29,8 +30,8 @@ Series: Python Table Manners
 * Commitizen: 規格化 git commit
 * 安全性檢查
 * 文件
-* Cookiecutter: 程式專案模板
 * 持續整合
+* Cookiecutter: 程式專案模板
 
 當初整理 PyCon CA 2019 投影片的時候，大多是把這些工具應用到 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator)
 這是 PyCon TW 用來自動產生會後分析報表的工具，歡迎一起來貢獻～

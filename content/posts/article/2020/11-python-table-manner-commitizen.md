@@ -8,7 +8,7 @@ Authors: Lee-W
 Series: Python Table Manners
 
 接續著前一篇的 pre-commit 繼續談 git 相關的工具
-這篇來聊聊如何透過 [commitizen](https://github.com/Woile/commitizen) 規範 commit message
+這篇來聊聊如何透過 [commitizen](https://github.com/commitizen-tools/commitizen) 規範 commit message
 還有我們能拿規範過的 commit message 做什麼
 
 <!--more-->
@@ -32,8 +32,8 @@ Series: Python Table Manners
 * 新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案
 
 ## Commitizen
-除了提供的 commit message 撰寫建議和規範 （👉 [Writing commits](https://woile.github.io/commitizen/tutorials/writing_commits/)）
-[commitizen](https://woile.github.io/commitizen/) 更進一步提供互動式介面，讓使用者可以夠輕鬆地產生符合規範的 commit message
+除了提供的 commit message 撰寫建議和規範 （👉 [Writing commits](https://commitizen-tools.github.io/commitizen/tutorials/writing_commits/)）
+[commitizen](https://commitizen-tools.github.io/commitizen/) 更進一步提供互動式介面，讓使用者可以夠輕鬆地產生符合規範的 commit message
 
 同時也整合了前一篇所提到的 pre-commit hook，避免使用者將不符合規範的 commit message 寫入
 
@@ -121,13 +121,13 @@ cz commit
 剛開始引入 commitizen 時，可能會常常忘記要使用它來做 commit
 這時候就能使用到前一篇提到的 [pre-commit](https://pre-commit.com/)
 
-我在 [commitizen](https://github.com/Woile/commitizen) 中有加入 [.pre-commit-hooks.yaml](https://github.com/Woile/commitizen/blob/master/.pre-commit-hooks.yaml)
+我在 [commitizen](https://github.com/commitizen-tools/commitizen) 中有加入 [.pre-commit-hooks.yaml](https://github.com/commitizen-tools/commitizen/blob/master/.pre-commit-hooks.yaml)
 因此只要在專案的 `.pre-commit-config.yaml` 加入以下這段
 
 ```yaml
 - repos
-  - repo: https://github.com/Woile/commitizen
-    rev: v1.16.3
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v1.17.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
@@ -171,7 +171,7 @@ p.s. conventional commit 可以有很多種延伸，這裡指的只是 commitize
 e.g., 要 merge 回 master 的改動中出現 BREAKING CHANGE，不管其他有多少 feat 或 fix ，都只會讓 `MAJOR` 提升 1
 
 目前只有 `cz_conventional_commits` 有預設的版本對應
-如果為 `cz_jira`, `cz_customize` 或自己客製化規則加上提升版本的功能，可以參考commitizen 文件中 [customization](https://woile.github.io/commitizen/customization/) ，並加上 `bump_pattern`（比對 commit 是哪個種類） 和 `bump_map` （哪個種類的 commit 要提升哪個版本號）
+如果為 `cz_jira`, `cz_customize` 或自己客製化規則加上提升版本的功能，可以參考commitizen 文件中 [customization](https://commitizen-tools.github.io/commitizen/customization/) ，並加上 `bump_pattern`（比對 commit 是哪個種類） 和 `bump_map` （哪個種類的 commit 要提升哪個版本號）
 
 稍微解釋了一下提升版本的規則，接下來要來講該如何使用了
 
@@ -206,13 +206,13 @@ cz bump --yes
 如果每次透過 commitizen 提升版本號後，還要手動更新其他部分，就失去了自動的好處了
 所以 commitizen 另外提供了 `version_files` 這個設定，將需要改動的檔案也寫進來
 commitizen 提升版本號時，就會一併更新檔案的內容
-（Read More 👉 [bump](https://woile.github.io/commitizen/bump/) ）
+（Read More 👉 [bump](https://commitizen-tools.github.io/commitizen/bump/) ）
 
 透過 `cz bump` 指令雖然可以省下很多步驟
 但更好的做法是將自動升版加入到加入到持續整合（Continuous Integration）
 在 git repo 上將分支 merge 到 master 時，自動提升版本號
 這部分因為會牽涉到各個不同平台的做法，不會敘述太多
-這裡附上 commitizen 文件中 [Github Actions](https://woile.github.io/commitizen/tutorials/github_actions/) 和 [Gitlab CI](https://woile.github.io/commitizen/tutorials/gitlab_ci/) 的做法
+這裡附上 commitizen 文件中 [Github Actions](https://commitizen-tools.github.io/commitizen/tutorials/github_actions/) 和 [Gitlab CI](https://commitizen-tools.github.io/commitizen/tutorials/gitlab_ci/) 的做法
 
 ## 客製化 commit 規範
 目前 commitizen 提供兩種方式
@@ -279,7 +279,7 @@ message = "Do you want to add body message in commit?"
 
 ### 將 commit 規範寫成 Python 套件發佈
 這個做法比較複雜，也比較不常會用到，所以我只會概略地講
-（Read More 👉 [Customization](https://woile.github.io/commitizen/customization/)）
+（Read More 👉 [Customization](https://commitizen-tools.github.io/commitizen/customization/)）
 
 我已經先將套件的架構驟寫成一個 [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.0/) 範本
 透過以下指令，可以進入 cookiecutter 的互動式介面，並初始化專案
@@ -297,7 +297,7 @@ cookiecutter gh:Lee-W/commitizen_cz_template
 commitizen 另外也支援產生 [keep a changelog](https://keepachangelog.com/en/1.1.0/) 格式的更新日誌
 不過還沒被 merge 到 master 內
 這個功能現在也還只是剛實作一個初版，應該會有一些問題
-有興趣可以到 [command-changelog](https://github.com/Woile/commitizen/tree/command-changelog) 這個 branch 玩玩看，一起來除錯（？）
+有興趣可以到 [command-changelog](https://github.com/commitizen-tools/commitizen/tree/command-changelog) 這個 branch 玩玩看，一起來除錯（？）
 
 產生更新日誌（預設會取代 `CHANGELOG.md`）
 
@@ -334,7 +334,7 @@ cz changelog
 
 ![i am the one who's not mature](/images/posts-image/2020-02-22-python-table-manner-series/not-mature-2.jpg)
 
-於是我就在 PyCon CA 前一個禮拜，開始貢獻起 [commitizen](https://github.com/woile/commitizen)
+於是我就在 PyCon CA 前一個禮拜，開始貢獻起 [commitizen](https://github.com/commitizen-tools/commitizen)
 把我遇到的 issues 都修了，就順便把投影片中相關的內容一起翻新了
 
 貢獻的過程中也發現了很多還能再增加的新功能，於是就在 PyCon CA 2019 帶了這個專案去 Develop Sprint
@@ -359,7 +359,7 @@ cz changelog
 而且這些擴充常常要用到 `package.json` 來做設定
 可是我就不是 Java Script 的專案，就不想加入這個檔案來設定啊 🤷‍♂️
 所以才開始來找是不是有 Python 版本的替代方案
-（Python 的 [commitizen](https://github.com/woile/commitizen) 支援的 toml （`.cz.toml`）是通用的格式，裡面 Python 相關的內容，適用於各語言）
+（Python 的 [commitizen](https://github.com/commitizen-tools/commitizen) 支援的 toml （`.cz.toml`）是通用的格式，裡面 Python 相關的內容，適用於各語言）
 
 ### 持續貢獻
 整體來說， commitizen 是一個讓我貢獻得很有成就感的專案
@@ -376,7 +376,7 @@ cz changelog
 程式碼風格上，透過 black 跟 flake8 來規範，讓程式碼閱讀起來輕鬆很多
 在貢獻的過程中，也學到了不少很實用的工具（e.g., pre-commit, cookiecutter）
 
-所以我說**一起來貢獻 [commitizen](https://github.com/Woile/commitizen) 吧 💪**
+所以我說**一起來貢獻 [commitizen](https://github.com/commitizen-tools/commitizen) 吧 💪**
 我最近開始比較忙，有一段時間沒辦法積極地送 Pull Request 了 😢
 但還是希望新功能能在 commitizen 上出現 🎉
 

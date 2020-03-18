@@ -1,5 +1,6 @@
 Title: Python Table Manners - pre-commit: git commit 前做完檢查
 Date: 2020-02-28 23:10
+Modified: 2020-03-18 10:20
 Category: Tech
 Tags: Python. Code Quality
 Slug: python-table-manner-pre-commit
@@ -21,7 +22,7 @@ Series: Python Table Manner
 不過並不僅限於 commit 前，也可以在其它 git 的階段進行
 之所以要這麼做就是為了讓不符合要求的程式碼，從最一開始就不會進入到版本庫 （pre commit）或 git 伺服器 （pre push）
 
-## 使用 pre-commit
+## 使用 pre-commit 進行檢查
 
 ```sh
 # 安裝 pre-commit
@@ -37,7 +38,7 @@ e.g.,
 ```yaml
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+    rev: v2.5.0
     hooks:
       - id: end-of-file-fixer
       - id: trailing-whitespace
@@ -92,7 +93,7 @@ Trim Trailing Whitespace.................................................Passed
 
 如果沒有通過， git 會阻止你進行 commit
 
-## 使用自定義的 pre-commit
+## 使用自定義的 pre-commit hook
 除了使用現成的 pre-commit hook，也可以寫客製化的檢查
 
 下面的例子就是在 commit 前，要進行 pytest 的檢查
@@ -156,7 +157,7 @@ default_stages: [push]
 
 表示如果沒有特定指定 `stages` 的 hook 都只在 `push` 的階段做檢查
 
-## 為自己做的工具加上 pre-commit hook
+## 為自己的工具加上 pre-commit hook
 如果你有寫檢查工具，加上 pre-commit hook 就能讓人更方便使用你的工具
 在工具加入 `.pre-commit-hooks.yaml` 讓 pre-commit 知道其他人引入你的工具時要怎麼做檢查
 撰寫的方式跟 local 的 repo 的寫法相似
