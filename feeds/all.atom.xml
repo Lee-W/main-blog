@@ -1,5 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-03-18T10:20:00+08:00</updated><entry><title>Python Table Manners - Commitizen: 規格化 commit message</title><link href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" rel="alternate"></link><published>2020-03-01T00:45:00+08:00</published><updated>2020-03-03T20:12:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-03-01:/posts/tech/2020/03/python-table-manners-commitizen</id><summary type="html">&lt;p&gt;接續著前一篇的 pre-commit 繼續談 git 相關的工具&lt;br/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-03-22T13:10:00+08:00</updated><entry><title>Python Table Manners - 安全性檢查</title><link href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" rel="alternate"></link><published>2020-03-22T13:10:00+08:00</published><updated>2020-03-22T13:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-03-22:/posts/tech/2020/03/python-table-manners-security</id><summary type="html">&lt;p&gt;果然在沒有寫作松的督促下，馬上就拖稿了 XD&lt;br/&gt;
+接下來要介紹在 Python 專案中做安全性檢查的工具&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;果然在沒有寫作松的督促下，馬上就拖稿了 XD&lt;br/&gt;
+接下來要介紹在 Python 專案中做安全性檢查的工具&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="safety-"&gt;Safety - 檢查相依套件&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="depbot" src="/images/posts-image/2020-02-22-python-table-manner-series/depbot.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;不知道大家有沒有在 GitHub 上看過這樣的畫面&lt;br/&gt;
+這個訊息告訴我們，專案的相依套件中可能有安全漏洞&lt;/p&gt;
+&lt;p&gt;透過 &lt;a href="https://github.com/pyupio/safety"&gt;Safety&lt;/a&gt;，就能像這樣在本地做相依套件安全漏洞的檢查&lt;br/&gt;
+它會到 &lt;a href="https://github.com/pyupio/safety-db"&gt;safety-db&lt;/a&gt; 去查找已知的安全性漏洞&lt;br/&gt;
+這個資料庫則是從 &lt;a href="https://cve.mitre.org/"&gt;CVE&lt;/a&gt; (Common Vulnerabilities and Exposures) 整理出來的&lt;br/&gt;
+如果是免費版，一個月會更新一次資料庫&lt;br/&gt;
+付費版則可以達到即時更新&lt;/p&gt;
+&lt;h3 id="_1"&gt;安裝&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv install safety --dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="_2"&gt;執行&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run safety check
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="safety-not-found" src="/images/posts-image/2020-02-22-python-table-manner-series/safety-not-found.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;在 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/1.1.0"&gt;pycontw-postevent-report-generator 1.1.0&lt;/a&gt; ，透過 safety 不會找到任何安全漏洞&lt;/p&gt;
+&lt;p&gt;如果想要測試 safety 的功能可以安裝套件 &lt;a href="https://pypi.org/project/insecure-package/"&gt;insecure-package&lt;/a&gt; (&lt;strong&gt;這個套件是真的存在的，而且是不安全的，僅作為測試用途&lt;/strong&gt;)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv install insecure-package --dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;再試一次就能看到 safety 將 insecure-package 列為不安全的套件&lt;/p&gt;
+&lt;p&gt;&lt;img alt="safety-found-insecure" src="/images/posts-image/2020-02-22-python-table-manner-series/safety-found-insecure.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;另外需要注意的是 &lt;code&gt;safety check&lt;/code&gt; 是對當前環境做檢查&lt;br/&gt;
+務必確定已經有進入專案的虛擬環境，不然 safety 只會檢查到本機使用的套件有沒有漏洞&lt;/p&gt;
+&lt;p&gt;如果想要對 &lt;code&gt;requriements.txt&lt;/code&gt; 做檢查，則可以加上參數 &lt;code&gt;-r&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 因為這個 case 不是針對 pipenv ，所以前面沒有加上 pipenv run&lt;/span&gt;
+safety check -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;雖然 safety 並不支援對 Pipfile 進行檢查 (Ref: &lt;a href="https://github.com/pyupio/safety/issues/47"&gt;Add Pipfile support #47&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;但 pipenv 就內建有安全性檢查的指令&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv check
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;雖然 safety 跟 pipenv 都是去查找 &lt;a href="https://cve.mitre.org/"&gt;CVE&lt;/a&gt;，但有時候結果會有些不同&lt;/p&gt;
+&lt;p&gt;以下是 &lt;code&gt;pipenv check&lt;/code&gt; 針對 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/1.1.0"&gt;pycontw-postevent-report-generator 1.1.0&lt;/a&gt; 的執行結果&lt;br/&gt;
+&lt;img alt="pipenv-check-pillow" src="/images/posts-image/2020-02-22-python-table-manner-series/pipenv-check-pillow.jpg"/&gt;&lt;/p&gt;
+&lt;h2 id="bandit-"&gt;bandit - 程式碼靜態分析&lt;/h2&gt;
+&lt;p&gt;確認完相依套件的安全性後，接著可以透過 &lt;a href="https://github.com/PyCQA/bandit"&gt;bandit&lt;/a&gt; 來對自己的程式碼做靜態分析找出常見的漏洞&lt;/p&gt;
+&lt;h3 id="_3"&gt;安裝&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv install bandit --dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="_4"&gt;使用&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run bandit -r &amp;lt;package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="bandit-result" src="/images/posts-image/2020-02-22-python-table-manner-series/bandit-result.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;執行後就會看到一個列表，整理出專案中可能有的安全性漏洞&lt;br/&gt;
+每一個項目中會有以下五個欄位&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Issue: 問題&lt;/li&gt;
+&lt;li&gt;Severity: 嚴重性&lt;/li&gt;
+&lt;li&gt;Confidence: 可信度&lt;/li&gt;
+&lt;li&gt;Location: 位置（在程式碼的哪一行）&lt;/li&gt;
+&lt;li&gt;More Info: 詳細的原因和可能的解決方案 （也可以從 &lt;a href="https://bandit.readthedocs.io/en/latest/plugins/#complete-test-plugin-listing"&gt;Complete Test Plugin Listing&lt;/a&gt; 找到全部的列表）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;加上參數 &lt;code&gt;-i&lt;/code&gt; (可信度) 和 &lt;code&gt;-l&lt;/code&gt; （嚴重性），就可以讓 bandit 只回報特定程度的漏洞&lt;br/&gt;
+越多的 i / l 代表程度越高&lt;br/&gt;
+以下指令就是讓 bandit 只回報高嚴重性 (&lt;code&gt;-lll&lt;/code&gt;)、高可信度 (&lt;code&gt;-iii&lt;/code&gt;)的漏洞&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run bandit -iii -lll -r &amp;lt;package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="_5"&gt;局部跳過檢查&lt;/h3&gt;
+&lt;p&gt;有時候 bandit 給的警告不會在所有狀況都適用&lt;br/&gt;
+以 &lt;a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html#module-bandit.plugins.asserts"&gt;B101: assert_used&lt;/a&gt; 為例&lt;br/&gt;
+警告不該使用 &lt;code&gt;assert&lt;/code&gt;&lt;br/&gt;
+在使用 &lt;code&gt;python -o&lt;/code&gt; 指令產生優化過的 byte code 時，會跳過 &lt;code&gt;assert&lt;/code&gt;&lt;br/&gt;
+如果系統使用 &lt;code&gt;assert&lt;/code&gt; 來進行登入的檢查，就會讓使用者在完全沒驗證的情況下成功登入&lt;br/&gt;
+但大部分的時候，我們不太會這麼實作&lt;br/&gt;
+而 &lt;code&gt;assert&lt;/code&gt; 也是在測試中很常使用到的語法&lt;/p&gt;
+&lt;p&gt;這時候就可以在專案的最上層加入設定檔 &lt;code&gt;.bandit&lt;/code&gt;&lt;br/&gt;
+而它的格式會長這樣&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;[bandit]
+# 要執行 bandit 檢查的檔案或資料夾（逗號分隔）
+targets:
+# 跳過 bandit 檢查的檔案或資料夾（逗號分隔）
+exclude:
+# 要跳過的檢查種類 （逗號分隔）
+skips:
+# 要執行的檢查種類 （逗號分隔）
+tests:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果不是整個檔案或種類要跳過，則可以在程式碼後面加上 &lt;code&gt;# nosec&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/10/python-security-tool/"&gt;Python Security Tool - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-au-2018/2019/08/watch-out-for-safety-bandits/"&gt;Watch out for Safety Bandits! - PyCon AU 2018&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://myapollo.com.tw/zh-tw/secure-your-python-code-with-bandit/"&gt;用 Bandit 靜態掃描工具，掃描 Python 專案中的安全性問題&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Security"></category></entry><entry><title>Python Table Manners - Commitizen: 規格化 commit message</title><link href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" rel="alternate"></link><published>2020-03-01T00:45:00+08:00</published><updated>2020-03-03T20:12:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-03-01:/posts/tech/2020/03/python-table-manners-commitizen</id><summary type="html">&lt;p&gt;接續著前一篇的 pre-commit 繼續談 git 相關的工具&lt;br/&gt;
 這篇來聊聊如何透過 &lt;a href="https://github.com/commitizen-tools/commitizen"&gt;commitizen&lt;/a&gt; 規範 commit message&lt;br/&gt;
 還有我們能拿規範過的 commit message 做什麼&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;接續著前一篇的 pre-commit 繼續談 git 相關的工具&lt;br/&gt;

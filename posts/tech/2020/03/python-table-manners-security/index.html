@@ -9,19 +9,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Python, Tech, " />
+<meta name="keywords" content="Python, Security, Tech, " />
 
-<meta property="og:title" content="Python Table Manners 系列"/>
-<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series" />
-<meta property="og:description" content="Python Table Manners - A Clean Style 是我在 PyCon CA 2019 給的一個分享 內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流 希望能讓剛接觸 Python 的朋友們，能在早期就碰到這些好用的工具，少踩一些雷 原本打算找個時間把這些內容整理成文章 但在沒人督促的情況下，當然就忘了 XD 剛好看到 連續七天寫作挑戰，解放你的技術創作力 就給個理由來督促一下自己 除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 commitizen 學到的工具 目前預計會包含以下的內容 虛擬環境和套件管理 測試 程式碼風格 管理繁瑣任務 pre-commit: git commit 前做完檢查 Commitizen: 規格化 git commit 安全性檢查 文件 …" />
+<meta property="og:title" content="Python Table Manners - 安全性檢查"/>
+<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" />
+<meta property="og:description" content="果然在沒有寫作松的督促下，馬上就拖稿了 XD 接下來要介紹在 Python 專案中做安全性檢查的工具" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
-<meta property="og:article:published_time" content="2020-02-22T19:32:00+08:00" />
-<meta property="og:article:modified_time" content="2020-03-18T10:20:00+08:00" />
-<meta name="twitter:title" content="Python Table Manners 系列">
-<meta name="twitter:description" content="Python Table Manners - A Clean Style 是我在 PyCon CA 2019 給的一個分享 內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流 希望能讓剛接觸 Python 的朋友們，能在早期就碰到這些好用的工具，少踩一些雷 原本打算找個時間把這些內容整理成文章 但在沒人督促的情況下，當然就忘了 XD 剛好看到 連續七天寫作挑戰，解放你的技術創作力 就給個理由來督促一下自己 除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 commitizen 學到的工具 目前預計會包含以下的內容 虛擬環境和套件管理 測試 程式碼風格 管理繁瑣任務 pre-commit: git commit 前做完檢查 Commitizen: 規格化 git commit 安全性檢查 文件 …">
+<meta property="og:article:published_time" content="2020-03-22T13:10:00+08:00" />
+<meta name="twitter:title" content="Python Table Manners - 安全性檢查">
+<meta name="twitter:description" content="果然在沒有寫作松的督促下，馬上就拖稿了 XD 接下來要介紹在 Python 專案中做安全性檢查的工具">
 
-        <title>Python Table Manners 系列 · Laziness makes Great Engineer
+        <title>Python Table Manners - 安全性檢查 · Laziness makes Great Engineer
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -76,57 +75,125 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series">
-                Python Table Manners 系列
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security">
+                Python Table Manners - 安全性檢查
             </a>
         </h1>
     </header>
 </div>
 
 <div class="row-fluid">
-        <div class="span8 offset2 article-content">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#safety-">Safety - 檢查相依套件</a><ul>
+<li><a href="#_1">安裝</a></li>
+<li><a href="#_2">執行</a></li>
+</ul>
+</li>
+<li><a href="#bandit-">bandit - 程式碼靜態分析</a><ul>
+<li><a href="#_3">安裝</a></li>
+<li><a href="#_4">使用</a></li>
+<li><a href="#_5">局部跳過檢查</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
             
-            <!--more-->
+            <p>果然在沒有寫作松的督促下，馬上就拖稿了 XD<br/>
+接下來要介紹在 Python 專案中做安全性檢查的工具</p>
+<!--more-->
 
-<p><a href="https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019">Python Table Manners - A Clean Style</a> 是我在 <a href="https://lee-w.github.io/posts/tech/2019/12/pycon-ca-2019/">PyCon CA 2019</a> 給的一個分享<br>
-內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流<br>
-希望能讓剛接觸 Python 的朋友們，能在早期就碰到這些好用的工具，少踩一些雷</p>
-<p>原本打算找個時間把這些內容整理成文章<br>
-但在沒人督促的情況下，當然就忘了 XD<br>
-剛好看到 <a href="https://www.accupass.com/event/2001190943344186137000">連續七天寫作挑戰，解放你的技術創作力</a><br>
-就給個理由來督促一下自己</p>
-<p>除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 <a href="https://github.com/Woile/commitizen">commitizen</a> 學到的工具</p>
-<p>目前預計會包含以下的內容</p>
+<h2 id="safety-">Safety - 檢查相依套件</h2>
+<p><img alt="depbot" src="/images/posts-image/2020-02-22-python-table-manner-series/depbot.jpg"/></p>
+<p>不知道大家有沒有在 GitHub 上看過這樣的畫面<br/>
+這個訊息告訴我們，專案的相依套件中可能有安全漏洞</p>
+<p>透過 <a href="https://github.com/pyupio/safety">Safety</a>，就能像這樣在本地做相依套件安全漏洞的檢查<br/>
+它會到 <a href="https://github.com/pyupio/safety-db">safety-db</a> 去查找已知的安全性漏洞<br/>
+這個資料庫則是從 <a href="https://cve.mitre.org/">CVE</a> (Common Vulnerabilities and Exposures) 整理出來的<br/>
+如果是免費版，一個月會更新一次資料庫<br/>
+付費版則可以達到即時更新</p>
+<h3 id="_1">安裝</h3>
+<div class="highlight"><pre><span></span><code>pipenv install safety --dev
+</code></pre></div>
+<h3 id="_2">執行</h3>
+<div class="highlight"><pre><span></span><code>pipenv run safety check
+</code></pre></div>
+<p><img alt="safety-not-found" src="/images/posts-image/2020-02-22-python-table-manner-series/safety-not-found.jpg"/></p>
+<p>在 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/1.1.0">pycontw-postevent-report-generator 1.1.0</a> ，透過 safety 不會找到任何安全漏洞</p>
+<p>如果想要測試 safety 的功能可以安裝套件 <a href="https://pypi.org/project/insecure-package/">insecure-package</a> (<strong>這個套件是真的存在的，而且是不安全的，僅作為測試用途</strong>)</p>
+<div class="highlight"><pre><span></span><code>pipenv install insecure-package --dev
+</code></pre></div>
+<p>再試一次就能看到 safety 將 insecure-package 列為不安全的套件</p>
+<p><img alt="safety-found-insecure" src="/images/posts-image/2020-02-22-python-table-manner-series/safety-found-insecure.jpg"/></p>
+<p>另外需要注意的是 <code>safety check</code> 是對當前環境做檢查<br/>
+務必確定已經有進入專案的虛擬環境，不然 safety 只會檢查到本機使用的套件有沒有漏洞</p>
+<p>如果想要對 <code>requriements.txt</code> 做檢查，則可以加上參數 <code>-r</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 因為這個 case 不是針對 pipenv ，所以前面沒有加上 pipenv run</span>
+safety check -r requirements.txt
+</code></pre></div>
+<p>雖然 safety 並不支援對 Pipfile 進行檢查 (Ref: <a href="https://github.com/pyupio/safety/issues/47">Add Pipfile support #47</a>)</p>
+<p>但 pipenv 就內建有安全性檢查的指令</p>
+<div class="highlight"><pre><span></span><code>pipenv check
+</code></pre></div>
+<p>雖然 safety 跟 pipenv 都是去查找 <a href="https://cve.mitre.org/">CVE</a>，但有時候結果會有些不同</p>
+<p>以下是 <code>pipenv check</code> 針對 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/1.1.0">pycontw-postevent-report-generator 1.1.0</a> 的執行結果<br/>
+<img alt="pipenv-check-pillow" src="/images/posts-image/2020-02-22-python-table-manner-series/pipenv-check-pillow.jpg"/></p>
+<h2 id="bandit-">bandit - 程式碼靜態分析</h2>
+<p>確認完相依套件的安全性後，接著可以透過 <a href="https://github.com/PyCQA/bandit">bandit</a> 來對自己的程式碼做靜態分析找出常見的漏洞</p>
+<h3 id="_3">安裝</h3>
+<div class="highlight"><pre><span></span><code>pipenv install bandit --dev
+</code></pre></div>
+<h3 id="_4">使用</h3>
+<div class="highlight"><pre><span></span><code>pipenv run bandit -r &lt;package&gt;
+</code></pre></div>
+<p><img alt="bandit-result" src="/images/posts-image/2020-02-22-python-table-manner-series/bandit-result.jpg"/></p>
+<p>執行後就會看到一個列表，整理出專案中可能有的安全性漏洞<br/>
+每一個項目中會有以下五個欄位</p>
 <ul>
-<li>虛擬環境和套件管理</li>
-<li>測試</li>
-<li>程式碼風格</li>
-<li>管理繁瑣任務</li>
-<li>pre-commit: git commit 前做完檢查</li>
-<li>Commitizen: 規格化 git commit</li>
-<li>安全性檢查</li>
-<li>文件</li>
-<li>持續整合</li>
-<li>Cookiecutter: 程式專案模板</li>
+<li>Issue: 問題</li>
+<li>Severity: 嚴重性</li>
+<li>Confidence: 可信度</li>
+<li>Location: 位置（在程式碼的哪一行）</li>
+<li>More Info: 詳細的原因和可能的解決方案 （也可以從 <a href="https://bandit.readthedocs.io/en/latest/plugins/#complete-test-plugin-listing">Complete Test Plugin Listing</a> 找到全部的列表）</li>
 </ul>
-<p>當初整理 PyCon CA 2019 投影片的時候，大多是把這些工具應用到 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a><br>
-這是 PyCon TW 用來自動產生會後分析報表的工具，歡迎一起來貢獻～<br>
-當然能一起來當志工就更棒了 🎉<br>
-👉 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6whkZAEZD10LlPQuSWRYsshySoNR_pux8grGZ0OgmOIkQ3g/viewform">PyCon Taiwan 志工招募</a></p>
-<h2 id="_1">參考資料</h2>
-<p>有些文章會同時涵括多過我想提的主題，我會把那些參考資料放在這<br>
-如果是我聽過的 PyCon 演講，我會連結到我自己的 <a href="https://lee-w.github.io/pycon-note/">PyCon Note</a>，裡面會有該場演講的相關資訊和我的筆記</p>
+<p>加上參數 <code>-i</code> (可信度) 和 <code>-l</code> （嚴重性），就可以讓 bandit 只回報特定程度的漏洞<br/>
+越多的 i / l 代表程度越高<br/>
+以下指令就是讓 bandit 只回報高嚴重性 (<code>-lll</code>)、高可信度 (<code>-iii</code>)的漏洞</p>
+<div class="highlight"><pre><span></span><code>pipenv run bandit -iii -lll -r &lt;package&gt;
+</code></pre></div>
+<h3 id="_5">局部跳過檢查</h3>
+<p>有時候 bandit 給的警告不會在所有狀況都適用<br/>
+以 <a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html#module-bandit.plugins.asserts">B101: assert_used</a> 為例<br/>
+警告不該使用 <code>assert</code><br/>
+在使用 <code>python -o</code> 指令產生優化過的 byte code 時，會跳過 <code>assert</code><br/>
+如果系統使用 <code>assert</code> 來進行登入的檢查，就會讓使用者在完全沒驗證的情況下成功登入<br/>
+但大部分的時候，我們不太會這麼實作<br/>
+而 <code>assert</code> 也是在測試中很常使用到的語法</p>
+<p>這時候就可以在專案的最上層加入設定檔 <code>.bandit</code><br/>
+而它的格式會長這樣</p>
+<div class="highlight"><pre><span></span><code>[bandit]
+# 要執行 bandit 檢查的檔案或資料夾（逗號分隔）
+targets:
+# 跳過 bandit 檢查的檔案或資料夾（逗號分隔）
+exclude:
+# 要跳過的檢查種類 （逗號分隔）
+skips:
+# 要執行的檢查種類 （逗號分隔）
+tests:
+</code></pre></div>
+<p>如果不是整個檔案或種類要跳過，則可以在程式碼後面加上 <code># nosec</code></p>
+<h2 id="reference">Reference</h2>
 <ul>
-<li><a href="https://medium.com/@jonas.r.kemper/understanding-best-practice-python-tooling-by-comparing-popular-project-templates-6eba49229106">Understanding best-practice Python tooling by comparing popular project templates</a><ul>
-<li>這篇文章整理和比較了 18 個比較有名的 Python 專案模板</li>
-</ul>
-</li>
-<li><a href="https://sourcery.ai/blog/python-best-practices/">How to set up a perfect Python project</a><ul>
-<li>這篇文章整理上面那篇文章很推薦其中一個模板</li>
-</ul>
-</li>
-<li><a href="https://jacobian.org/2019/nov/11/python-environment-2020/">My Python Development Environment, 2020 Edition</a></li>
-<li><a href="https://lee-w.github.io/pycon-note/posts/pycon-jp-2019/2019/10/modern-development-environments-for-pythonistas/">Modern development environments for Pythonistas - PyCon JP 2019</a></li>
+<li><a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/10/python-security-tool/">Python Security Tool - PyCon US 2019</a></li>
+<li><a href="https://lee-w.github.io/pycon-note/posts/pycon-au-2018/2019/08/watch-out-for-safety-bandits/">Watch out for Safety Bandits! - PyCon AU 2018</a></li>
+<li><a href="https://myapollo.com.tw/zh-tw/secure-your-python-code-with-bandit/">用 Bandit 靜態掃描工具，掃描 Python 專案中的安全性問題</a></li>
 </ul>
 
 
@@ -135,17 +202,17 @@
 
 <script src="https://lee-w.github.io/theme/applause-button/applause-button.js"></script>
 <div class="applause_button">
-    <applause-button url=https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series> </applause-button>
+    <applause-button url=https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security> </applause-button>
 </div>
 
 
                 <p id="post-share-links">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20%E7%B3%BB%E5%88%97&url=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manners-series&hashtags=python" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20-%20%E5%AE%89%E5%85%A8%E6%80%A7%E6%AA%A2%E6%9F%A5&url=https%3A//lee-w.github.io/posts/tech/2020/03/python-table-manners-security&hashtags=python,security" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
     ❄
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manners-series" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/03/python-table-manners-security" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="mailto:?subject=Python%20Table%20Manners%20%E7%B3%BB%E5%88%97&amp;body=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manners-series" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+    <a href="mailto:?subject=Python%20Table%20Manners%20-%20%E5%AE%89%E5%85%A8%E6%80%A7%E6%AA%A2%E6%9F%A5&amp;body=https%3A//lee-w.github.io/posts/tech/2020/03/python-table-manners-security" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
     </p>
 
             
@@ -166,8 +233,8 @@
                 <a class="accordion-toggle disqus-comment-count comment-count"
                    data-toggle="collapse"
                    data-parent="#accordion2"
-                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series"
-                   href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series#comment_thread"
+                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security"
+                   href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security#comment_thread"
                    id="comment-accordion-toggle">
                     Comments
                 </a>
@@ -185,8 +252,8 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 
-    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series';
-    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series';
+    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security';
+    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -210,23 +277,18 @@
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" title="Previous: pipenv 和 poerty 如何處理在不同作業系統下相依套件不同">pipenv 和 poerty 如何處理在不同作業系統下相依套件不同</a></li>
-                <li class="next-article"><a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" title="Next: Python Table Manners - 虛擬環境和套件管理">Python Table Manners - 虛擬環境和套件管理</a> »</li>
+                <li class="previous-article">« <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" title="Previous: Python Table Manners - Commitizen: 規格化 commit message">Python Table Manners - Commitizen: 規格化 commit message</a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2020-02-22T19:32:00+08:00">2020/02/22 - Sat</time>
-
-<h4>Last Updated</h4>
-<time datetime="2020-03-18T10:20:00+08:00">2020/03/18 - Wed</time>
-
+            <time itemprop="dateCreated" datetime="2020-03-22T13:10:00+08:00">2020/03/22 - Sun</time>
         <h4>Python Table Manners</h4>
     <ul class="multi-parts-list">
-            <li  class="active-part">
-            Part 1: Python Table Manners 系列
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series" title="Python Table Manners 系列">Part 1: Python Table Manners 系列</a>
             </li>
             <li >
             <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" title="Python Table Manners - 虛擬環境和套件管理">Part 2: Python Table Manners - 虛擬環境和套件管理</a>
@@ -246,8 +308,8 @@
             <li >
             <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" title="Python Table Manners - Commitizen: 規格化 commit message">Part 7: Python Table Manners - Commitizen: 規格化 commit message</a>
             </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 8: Python Table Manners - 安全性檢查</a>
+            <li  class="active-part">
+            Part 8: Python Table Manners - 安全性檢查
             </li>
     </ul>
                 <h4>Read Time</h4>
@@ -258,6 +320,9 @@
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
                     <span>23</span>
+</a></li>
+                <li><a href="https://lee-w.github.io/tags.html#security-ref">Security
+                    <span>1</span>
 </a></li>
             </ul>
 <h4>Keep In Touch</h4>
