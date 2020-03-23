@@ -2,7 +2,7 @@ Title: Python Table Manners - Commitizen: 規格化 commit message
 Date: 2020-03-01 00:45
 Modified: 2020-03-03 20:12
 Category: Tech
-Tags: Python
+Tags: Python, Git
 Slug: python-table-manners-commitizen
 Authors: Lee-W
 Series: Python Table Manners

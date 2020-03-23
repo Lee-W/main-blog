@@ -2,7 +2,7 @@ Title: Python Table Manners - pre-commit: git commit 前做完檢查
 Date: 2020-02-28 23:10
 Modified: 2020-03-18 10:20
 Category: Tech
-Tags: Python. Code Quality
+Tags: Python, Git, Code Quality
 Slug: python-table-manner-pre-commit
 Authors: Lee-W
 Series: Python Table Manner
