@@ -16,7 +16,7 @@ PROJECTS_TITLE = "Projects"
 PROJECTS = [
     {
         "name": "Commitizen",
-        "url": "https://github.com/Woile/commitizen",
+        "url": "https://github.com/commitizen-tools/commitizen",
         "description": "Python 3 command-line utility to standardize commit messages and bump version",
     }
 ]

@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2020-02-03 13:06
+modified: 2020-04-04 13:06
 slug: about-me
 ---
 
@@ -131,16 +131,18 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 ## Additional Experience
 
 ### Open Source Contributions
-* [Woile/commitizen](https://github.com/Woile/commitizen)
+* [commitizen-tools](https://github.com/Woile/commitizen): Maintainer
+    * [commitizen](https://github.com/commitizen-tools/commitizen)
+    * [commitizen_cz_template](https://github.com/commitizen-tools/commitizen_cz_template)
 * [git-extras](https://github.com/tj/git-extras)
-* [flask](https://github.com/pallets/flask)
 * [beeeware](https://beeware.org)
     * [batavia](https://github.com/beeware/batavia)
     * [toga](https://github.com/beeware/toga)
     * [podium](https://github.com/beeware/podium)
+* [flask](https://github.com/pallets/flask)
 * [pycontw](https://github.com/pycontw)
-    * [mail_handler](https://github.com/pycontw/mail_handler)
-    * [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator)
+    * [mail_handler](https://github.com/pycontw/mail_handler): Author
+    * [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator): Maintainer
 * [open-edx](https://github.com/edx)
     * [edx-platform](https://github.com/edx/edx-platform)
     * [edx-documentation](https://github.com/edx/edx-documentation)
