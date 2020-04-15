@@ -1,7 +1,7 @@
 Title: Python Table Manners - 文件
 Date: 2020-04-15 19:13
 Category: Tech
-Tags: Python
+Tags: Python, Documentation
 Slug: python-table-manners-documentation
 Authors: Lee-W
 Series: Python Table Manners
