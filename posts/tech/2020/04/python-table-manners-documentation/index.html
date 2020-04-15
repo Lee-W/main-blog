@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Lee-W" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Python, Documentation, Tech, " />
+
+<meta property="og:title" content="Python Table Manners - 文件"/>
+<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" />
+<meta property="og:description" content="Python 開源專案中，Sphinx 是很常見的文件產生工具 它能將 reStructuredText 寫成的文件轉成網頁 Read the Docs 也直接支援 Sphinx 產生的網頁" />
+<meta property="og:site_name" content="Laziness makes Great Engineer" />
+<meta property="og:article:author" content="Lee-W" />
+<meta property="og:article:published_time" content="2020-04-15T19:13:00+08:00" />
+<meta name="twitter:title" content="Python Table Manners - 文件">
+<meta name="twitter:description" content="Python 開源專案中，Sphinx 是很常見的文件產生工具 它能將 reStructuredText 寫成的文件轉成網頁 Read the Docs 也直接支援 Sphinx 產生的網頁">
+
+        <title>Python Table Manners - 文件 · Laziness makes Great Engineer
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?bec7d543">
+
+        <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-96190677-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://lee-w.github.io/"><span class=site-name>Laziness makes Great Engineer</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://lee-w.github.io
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                                <li ><a href="https://lee-w.github.io/categories.html">Categories</a></li>
+                                <li ><a href="https://lee-w.github.io/tags.html">Tags</a></li>
+                                <li ><a href="https://lee-w.github.io/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="https://lee-w.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation">
+                Python Table Manners - 文件
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#_1">安裝</a></li>
+<li><a href="#_2">使用</a><ul>
+<li><a href="#_3">初始化</a></li>
+<li><a href="#_4">修改網站名稱</a></li>
+<li><a href="#_5">增加頁面</a></li>
+<li><a href="#_6">內部連結</a></li>
+<li><a href="#_7">更改主題</a></li>
+<li><a href="#_8">輸出靜態網頁</a></li>
+<li><a href="#github-page">部署至 GitHub Page</a></li>
+<li><a href="#mkdocsyml">其他 mkdocs.yml 常用設定</a></li>
+</ul>
+</li>
+<li><a href="#bonus">Bonus: 徽章</a><ul>
+<li><a href="#_9">自製測試覆蓋率徽章</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            <p>Python 開源專案中，<a href="https://www.sphinx-doc.org/en/master/">Sphinx</a> 是很常見的文件產生工具<br/>
+它能將 <a href="https://docutils.sourceforge.io/rst.html">reStructuredText</a> 寫成的文件轉成網頁<br/>
+<a href="https://readthedocs.org/">Read the Docs</a> 也直接支援 Sphinx 產生的網頁</p>
+<!--more-->
+<p>但我今天要介紹的工具是 <a href="https://www.mkdocs.org/">mkdocs</a><br/>
+最簡單的原因就是，我只會寫 Markdown 不會寫 reStructuredText XD<br/>
+Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx<br/>
+（我又要搬同一張截圖出來救援了 XD）</p>
+<p><img alt="because-guido-say-so" src="/images/posts-image/2020-02-22-python-table-manner-series/because-guido-say-so.png"/></p>
+
+<h2 id="_1">安裝</h2>
+<div class="highlight"><pre><span></span><code>pipenv install mkdocs --dev
+</code></pre></div>
+<h2 id="_2">使用</h2>
+<p>這次依然是將 mkdocs 運用到 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 為例子<br/>
+在 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/1.2.0">1.2.0</a> 版之後產生將文件從 <code>README.md</code> 移動到 <code>docs</code> 並產生 GitHub Page</p>
+<h3 id="_3">初始化</h3>
+<p>首先進到專案資料夾中，初始化 mkdocs 需要的檔案</p>
+<div class="highlight"><pre><span></span><code>pipenv run mkdir new .
+</code></pre></div>
+<p>執行後，資料夾會多出以下兩個檔案</p>
+<ul>
+<li><code>mkdocs.yml</code>: mkdocs 的設定檔</li>
+<li><code>doc/index.md</code>: 空白的範例文件</li>
+</ul>
+<p>透過這個指令在本機將伺服器跑起來</p>
+<div class="highlight"><pre><span></span><code>pipenv run mkdocs serve
+</code></pre></div>
+<p>打開瀏覽器，進入 <code>http://127.0.0.1:8000/</code> 就能看到最初始的頁面</p>
+<p><img alt="initial document" src="/images/posts-image/2020-02-22-python-table-manner-series/initial document.jpg"/></p>
+<h3 id="_4">修改網站名稱</h3>
+<p>初始的 <code>mkdocs.yml</code> 預設只會有這一行</p>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">My Docs</span>
+</code></pre></div>
+<p>指的是文件的頁面名稱，先把它改成專案的名稱</p>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PyCon TW post-event report generator (rg-cli)</span>
+</code></pre></div>
+<h3 id="_5">增加頁面</h3>
+<p>因為 GitHub 也會讀 <code>docs/READMD.md</code> 作為進入專案時看到的文件<br/>
+為了減少維護文件的時間，可以將 <code>README.md</code> 移動到 <code>docs</code> ，並取代掉 <code>index.md</code> 做為首頁</p>
+<p>因為原先在 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 中的 <code>README.md</code> 有點長<br/>
+我將 <strong>How to contribute</strong> 的內容拆出來放到 <code>contribute.md</code></p>
+<div class="highlight"><pre><span></span><code>├── docs
+│   ├── README.md
+│   └── contribute.md
+</code></pre></div>
+<p>接著在 <code>mkdocs.yml</code> 加入 <code>nav</code> 參數，指定不同頁面對應的檔案</p>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PyCon TW post-event report generator (rg-cli)</span>
+<span class="nt">nav</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">Home</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
+    <span class="p p-Indicator">-</span> <span class="nt">Contribute</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">contribute.md</span>
+</code></pre></div>
+<p>位置是透過參數 <code>docs_dir</code> 來決定相對路徑<br/>
+如果沒有設定，預設是相對於 <code>docs</code></p>
+<p><img alt="separate page" src="/images/posts-image/2020-02-22-python-table-manner-series/separate page.jpg"/></p>
+<h3 id="_6">內部連結</h3>
+<p>撰寫文件時，為了讓使用者更容易找到其他頁面，會使用到內部連結<br/>
+這時只要在文件中使用跟 <code>mkdocs.yml</code> 一樣的相對路徑即可</p>
+<p>e.g., 在 <code>README.md</code> 連結到 <code>contribute.md</code></p>
+<div class="highlight"><pre><span></span><code>Please see the [<span class="nt">Contribute</span>](<span class="na">contribute.md</span>) for further details.
+</code></pre></div>
+<h3 id="_7">更改主題</h3>
+<p>mkdocs 預設有 <code>mkdocs</code>, <code>readthedocs</code> 兩種主題<br/>
+如果想嘗試其他主題則可以在 <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">MkDocs Themes</a> 找到<br/>
+以主題 <a href="https://github.com/squidfunk/mkdocs-material">mkdocs-material</a> 為例</p>
+<p>首先先將主題安裝到開發環境內</p>
+<div class="highlight"><pre><span></span><code>pipenv install mkdocs-material --dev
+</code></pre></div>
+<p>在 <code>mkdocs.yml</code> 加上 <code>theme</code> 參數<br/>
+需要注意的是這裡的 <code>name</code> 不需要加上前綴的 <code>mkdocs-</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rg-cli</span>
+<span class="nt">nav</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">Home</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
+    <span class="p p-Indicator">-</span> <span class="nt">Contribute</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">contribute.md</span>
+<span class="nt">theme</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="s">'material'</span>
+</code></pre></div>
+<p><img alt="material theme" src="/images/posts-image/2020-02-22-python-table-manner-series/material theme.jpg"/></p>
+<h3 id="_8">輸出靜態網頁</h3>
+<p>為了要能部署到其他服務 (e.g., GitHub Page）上，要先在本地將 Markdown 寫成的文件輸出成網頁</p>
+<div class="highlight"><pre><span></span><code>pipenv run mkdocs build
+</code></pre></div>
+<p>接著就可以在資料夾 <code>site</code> 找到輸出的網頁<br/>
+因為 <code>site</code> 的內容都會跟著 <code>docs</code> 改變，專案中只需要留有原始的 Markdown 文件就好<br/>
+可以在 <code>.gitignore</code> 加入 <code>site/</code></p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">"site/"</span> &gt;&gt; .gitignore
+</code></pre></div>
+<p>下次輸出時，在指令後面加上 <code>--clean</code> 就可以清空上次的內容，重新輸出</p>
+<div class="highlight"><pre><span></span><code>pipenv run mkdocs build --clean
+</code></pre></div>
+<h3 id="github-page">部署至 GitHub Page</h3>
+<p>在開源專案中，將文件部署到 GitHub Page 上是相當常見的<br/>
+mkdocs 也為我們考慮到這點</p>
+<p>只要在 <code>mkdocs.yml</code> 加入專案的 remote 相關設定</p>
+<div class="highlight"><pre><span></span><code><span class="nt">repo_url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/pycontw/pycontw-postevent-report-generator</span>
+<span class="nt">remote_branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gh-pages</span>
+<span class="nt">remote_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">origin</span>
+</code></pre></div>
+<p>並執行 <code>pipenv run mkdocs gh-deploy</code> 就會自動將文件部署到 GitHub Page 上</p>
+<p>如果想更近一步透過 GitHub Action 來達到 push 原始碼，就自動產生 GitHub Page<br/>
+可以參考我之前寫的 <a href="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action/">透過 GitHub Action 自動發佈 Pelican 部落格文章</a><br/>
+雖然裡面使用的例子是 Pelican ，但只要把建置頁面的指令換掉就可以了</p>
+<h3 id="mkdocsyml">其他 mkdocs.yml 常用設定</h3>
+<ul>
+<li>site_description, site_author, copyright</li>
+<li>google_analytics</li>
+<li>markdown_extensions<ul>
+<li>mkdocs 解析 Markdown 文件時要使用 <a href="https://python-markdown.github.io/">Python Markdown</a> 的 <a href="https://python-markdown.github.io/extensions/">extension</a> 和其設定</li>
+</ul>
+</li>
+<li>plugins<ul>
+<li>預設會使用 <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins#search--tables-of-content">search</a> 套件，如果想使用其它套件可以在 <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins">MkDocs-Plugins</a> 找到</li>
+</ul>
+</li>
+</ul>
+<h2 id="bonus">Bonus: 徽章</h2>
+<p>在開源專案中，常常可以見到一些有趣的徽章<br/>
+它們很可能就是用 <a href="https://shields.io/">shields.io</a> 產生的<br/>
+除了常見的徽章外，也可以透過修改 url 製作客製化的徽章</p>
+<p>像是在 markdown 文件加入</p>
+<div class="highlight"><pre><span></span><code><span class="o">!</span><span class="p">[</span><span class="n">shields</span> <span class="n">badge</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//img.shields.io/badge/&lt;LABEL&gt;-&lt;MESSAGE&gt;-&lt;COLOR&gt;)</span>
+</code></pre></div>
+<p>就會出現</p>
+<p><img alt="shields badge" src="https://img.shields.io/badge/&lt;LABEL&gt;-&lt;MESSAGE&gt;-&lt;COLOR&gt;"/></p>
+<h3 id="_9">自製測試覆蓋率徽章</h3>
+<p>最近發現另一個有趣的小工具 - <a href="https://github.com/dbrgn/coverage-badge">coverage-badge</a><br/>
+它可以不透過 <a href="https://codecov.io/">codecov</a> 直接去讀 <a href="https://github.com/pytest-dev/pytest-cov">pytest-cov</a> 產生的 <code>.coverage</code>  產生測試覆蓋率徽章</p>
+<div class="highlight"><pre><span></span><code>pipenv install coverage-badge --dev
+pipenv run coverage-badge -o docs/coverage.svg
+</code></pre></div>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://lee-w.github.io/pycon-note/posts/europython-2019/2020/03/publish-a-perfetc-python-package-on-pypi/">Publish a (Perfect) Python Package on PyPI</a></li>
+<li><a href="https://www.mkdocs.org/">MkDocs</a></li>
+<li><a href="https://github.com/squidfunk/mkdocs-material">mkdocs-material</a></li>
+<li><a href="https://shields.io/">shield.io</a></li>
+</ul>
+
+
+            
+
+
+<script src="https://lee-w.github.io/theme/applause-button/applause-button.js"></script>
+<div class="applause_button">
+    <applause-button url=https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation> </applause-button>
+</div>
+
+
+                <p id="post-share-links">
+    Share on:
+    <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20-%20%E6%96%87%E4%BB%B6&url=https%3A//lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation&hashtags=python,documentation" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="mailto:?subject=Python%20Table%20Manners%20-%20%E6%96%87%E4%BB%B6&amp;body=https%3A//lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+    </p>
+
+            
+            
+
+
+
+
+
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation"
+                   href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+                        <div id="disqus_thread"></div>
+                        <script>
+    var disqus_shortname = 'lee-w-blog';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation';
+    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Previous: Python Table Manners - 安全性檢查">Python Table Manners - 安全性檢查</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2020-04-15T19:13:00+08:00">2020/04/15 - Wed</time>
+        <h4>Python Table Manners</h4>
+    <ul class="multi-parts-list">
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series" title="Python Table Manners 系列">Part 1: Python Table Manners 系列</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" title="Python Table Manners - 虛擬環境和套件管理">Part 2: Python Table Manners - 虛擬環境和套件管理</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" title="Python Table Manners - 測試 (一)">Part 3: Python Table Manners - 測試 (一)</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 4: Python Table Manners - 測試 (二)</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Python Table Manners - 程式碼風格">Part 5: Python Table Manners - 程式碼風格</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" title="Python Table Manners - 管理繁瑣任務">Part 6: Python Table Manners - 管理繁瑣任務</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" title="Python Table Manners - pre-commit: git commit 前做完檢查">Part 7: Python Table Manners - pre-commit: git commit 前做完檢查</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" title="Python Table Manners - Commitizen: 規格化 commit message">Part 8: Python Table Manners - Commitizen: 規格化 commit message</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 9: Python Table Manners - 安全性檢查</a>
+            </li>
+            <li  class="active-part">
+            Part 10: Python Table Manners - 文件
+            </li>
+    </ul>
+                <h4>Read Time</h4>
+                 2 min
+            <h4>Category</h4>
+            <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://lee-w.github.io/tags.html#documentation-ref">Documentation
+                    <span>1</span>
+</a></li>
+                <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
+                    <span>25</span>
+</a></li>
+            </ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+    <a href="https://tw.linkedin.com/in/clleew" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+    </a>
+    <a href="https://github.com/Lee-W" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="https://gitlab.com/Lee-W" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitLab" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#30353e"/><path fill="#e24329" d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133"/><path fill="#fc6d26" d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z"/><path fill="#fca326" d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z"/></svg>
+    </a>
+    <a href="https://twitter.com/clleew" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+    <a href="https://lee-w.github.io/feeds/all.atom.xml" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="RSS" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f80"/><circle cx="145" cy="367" r="35" fill="#fff"/><path fill="none" stroke="#fff" stroke-width="60" d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

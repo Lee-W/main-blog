@@ -1,5 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-03-22T13:10:00+08:00</updated><entry><title>Python Table Manners - 安全性檢查</title><link href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" rel="alternate"></link><published>2020-03-22T13:10:00+08:00</published><updated>2020-03-22T13:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-03-22:/posts/tech/2020/03/python-table-manners-security</id><summary type="html">&lt;p&gt;果然在沒有寫作松的督促下，馬上就拖稿了 XD&lt;br/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-04-15T19:13:00+08:00</updated><entry><title>Python Table Manners - 文件</title><link href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" rel="alternate"></link><published>2020-04-15T19:13:00+08:00</published><updated>2020-04-15T19:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-04-15:/posts/tech/2020/04/python-table-manners-documentation</id><summary type="html">&lt;p&gt;Python 開源專案中，&lt;a href="https://www.sphinx-doc.org/en/master/"&gt;Sphinx&lt;/a&gt; 是很常見的文件產生工具&lt;br/&gt;
+它能將 &lt;a href="https://docutils.sourceforge.io/rst.html"&gt;reStructuredText&lt;/a&gt; 寫成的文件轉成網頁&lt;br/&gt;
+&lt;a href="https://readthedocs.org/"&gt;Read the Docs&lt;/a&gt; 也直接支援 Sphinx 產生的網頁&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Python 開源專案中，&lt;a href="https://www.sphinx-doc.org/en/master/"&gt;Sphinx&lt;/a&gt; 是很常見的文件產生工具&lt;br/&gt;
+它能將 &lt;a href="https://docutils.sourceforge.io/rst.html"&gt;reStructuredText&lt;/a&gt; 寫成的文件轉成網頁&lt;br/&gt;
+&lt;a href="https://readthedocs.org/"&gt;Read the Docs&lt;/a&gt; 也直接支援 Sphinx 產生的網頁&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;但我今天要介紹的工具是 &lt;a href="https://www.mkdocs.org/"&gt;mkdocs&lt;/a&gt;&lt;br/&gt;
+最簡單的原因就是，我只會寫 Markdown 不會寫 reStructuredText XD&lt;br/&gt;
+Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx&lt;br/&gt;
+（我又要搬同一張截圖出來救援了 XD）&lt;/p&gt;
+&lt;p&gt;&lt;img alt="because-guido-say-so" src="/images/posts-image/2020-02-22-python-table-manner-series/because-guido-say-so.png"/&gt;&lt;/p&gt;
+
+&lt;h2 id="_1"&gt;安裝&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv install mkdocs --dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="_2"&gt;使用&lt;/h2&gt;
+&lt;p&gt;這次依然是將 mkdocs 運用到 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator"&gt;pycontw-postevent-report-generator&lt;/a&gt; 為例子&lt;br/&gt;
+在 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/1.2.0"&gt;1.2.0&lt;/a&gt; 版之後產生將文件從 &lt;code&gt;README.md&lt;/code&gt; 移動到 &lt;code&gt;docs&lt;/code&gt; 並產生 GitHub Page&lt;/p&gt;
+&lt;h3 id="_3"&gt;初始化&lt;/h3&gt;
+&lt;p&gt;首先進到專案資料夾中，初始化 mkdocs 需要的檔案&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run mkdir new .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;執行後，資料夾會多出以下兩個檔案&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mkdocs.yml&lt;/code&gt;: mkdocs 的設定檔&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;doc/index.md&lt;/code&gt;: 空白的範例文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;透過這個指令在本機將伺服器跑起來&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run mkdocs serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;打開瀏覽器，進入 &lt;code&gt;http://127.0.0.1:8000/&lt;/code&gt; 就能看到最初始的頁面&lt;/p&gt;
+&lt;p&gt;&lt;img alt="initial document" src="/images/posts-image/2020-02-22-python-table-manner-series/initial document.jpg"/&gt;&lt;/p&gt;
+&lt;h3 id="_4"&gt;修改網站名稱&lt;/h3&gt;
+&lt;p&gt;初始的 &lt;code&gt;mkdocs.yml&lt;/code&gt; 預設只會有這一行&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;site_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;My Docs&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;指的是文件的頁面名稱，先把它改成專案的名稱&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;site_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;PyCon TW post-event report generator (rg-cli)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="_5"&gt;增加頁面&lt;/h3&gt;
+&lt;p&gt;因為 GitHub 也會讀 &lt;code&gt;docs/READMD.md&lt;/code&gt; 作為進入專案時看到的文件&lt;br/&gt;
+為了減少維護文件的時間，可以將 &lt;code&gt;README.md&lt;/code&gt; 移動到 &lt;code&gt;docs&lt;/code&gt; ，並取代掉 &lt;code&gt;index.md&lt;/code&gt; 做為首頁&lt;/p&gt;
+&lt;p&gt;因為原先在 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator"&gt;pycontw-postevent-report-generator&lt;/a&gt; 中的 &lt;code&gt;README.md&lt;/code&gt; 有點長&lt;br/&gt;
+我將 &lt;strong&gt;How to contribute&lt;/strong&gt; 的內容拆出來放到 &lt;code&gt;contribute.md&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;├── docs
+│   ├── README.md
+│   └── contribute.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;接著在 &lt;code&gt;mkdocs.yml&lt;/code&gt; 加入 &lt;code&gt;nav&lt;/code&gt; 參數，指定不同頁面對應的檔案&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;site_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;PyCon TW post-event report generator (rg-cli)&lt;/span&gt;
+&lt;span class="nt"&gt;nav&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;Home&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;index.md&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;Contribute&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;contribute.md&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;位置是透過參數 &lt;code&gt;docs_dir&lt;/code&gt; 來決定相對路徑&lt;br/&gt;
+如果沒有設定，預設是相對於 &lt;code&gt;docs&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="separate page" src="/images/posts-image/2020-02-22-python-table-manner-series/separate page.jpg"/&gt;&lt;/p&gt;
+&lt;h3 id="_6"&gt;內部連結&lt;/h3&gt;
+&lt;p&gt;撰寫文件時，為了讓使用者更容易找到其他頁面，會使用到內部連結&lt;br/&gt;
+這時只要在文件中使用跟 &lt;code&gt;mkdocs.yml&lt;/code&gt; 一樣的相對路徑即可&lt;/p&gt;
+&lt;p&gt;e.g., 在 &lt;code&gt;README.md&lt;/code&gt; 連結到 &lt;code&gt;contribute.md&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Please see the [&lt;span class="nt"&gt;Contribute&lt;/span&gt;](&lt;span class="na"&gt;contribute.md&lt;/span&gt;) for further details.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="_7"&gt;更改主題&lt;/h3&gt;
+&lt;p&gt;mkdocs 預設有 &lt;code&gt;mkdocs&lt;/code&gt;, &lt;code&gt;readthedocs&lt;/code&gt; 兩種主題&lt;br/&gt;
+如果想嘗試其他主題則可以在 &lt;a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes"&gt;MkDocs Themes&lt;/a&gt; 找到&lt;br/&gt;
+以主題 &lt;a href="https://github.com/squidfunk/mkdocs-material"&gt;mkdocs-material&lt;/a&gt; 為例&lt;/p&gt;
+&lt;p&gt;首先先將主題安裝到開發環境內&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv install mkdocs-material --dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在 &lt;code&gt;mkdocs.yml&lt;/code&gt; 加上 &lt;code&gt;theme&lt;/code&gt; 參數&lt;br/&gt;
+需要注意的是這裡的 &lt;code&gt;name&lt;/code&gt; 不需要加上前綴的 &lt;code&gt;mkdocs-&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;site_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;rg-cli&lt;/span&gt;
+&lt;span class="nt"&gt;nav&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;Home&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;index.md&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;Contribute&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;contribute.md&lt;/span&gt;
+&lt;span class="nt"&gt;theme&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'material'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="material theme" src="/images/posts-image/2020-02-22-python-table-manner-series/material theme.jpg"/&gt;&lt;/p&gt;
+&lt;h3 id="_8"&gt;輸出靜態網頁&lt;/h3&gt;
+&lt;p&gt;為了要能部署到其他服務 (e.g., GitHub Page）上，要先在本地將 Markdown 寫成的文件輸出成網頁&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run mkdocs build
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;接著就可以在資料夾 &lt;code&gt;site&lt;/code&gt; 找到輸出的網頁&lt;br/&gt;
+因為 &lt;code&gt;site&lt;/code&gt; 的內容都會跟著 &lt;code&gt;docs&lt;/code&gt; 改變，專案中只需要留有原始的 Markdown 文件就好&lt;br/&gt;
+可以在 &lt;code&gt;.gitignore&lt;/code&gt; 加入 &lt;code&gt;site/&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"site/"&lt;/span&gt; &amp;gt;&amp;gt; .gitignore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;下次輸出時，在指令後面加上 &lt;code&gt;--clean&lt;/code&gt; 就可以清空上次的內容，重新輸出&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run mkdocs build --clean
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="github-page"&gt;部署至 GitHub Page&lt;/h3&gt;
+&lt;p&gt;在開源專案中，將文件部署到 GitHub Page 上是相當常見的&lt;br/&gt;
+mkdocs 也為我們考慮到這點&lt;/p&gt;
+&lt;p&gt;只要在 &lt;code&gt;mkdocs.yml&lt;/code&gt; 加入專案的 remote 相關設定&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;repo_url&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;https://github.com/pycontw/pycontw-postevent-report-generator&lt;/span&gt;
+&lt;span class="nt"&gt;remote_branch&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;gh-pages&lt;/span&gt;
+&lt;span class="nt"&gt;remote_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;origin&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;並執行 &lt;code&gt;pipenv run mkdocs gh-deploy&lt;/code&gt; 就會自動將文件部署到 GitHub Page 上&lt;/p&gt;
+&lt;p&gt;如果想更近一步透過 GitHub Action 來達到 push 原始碼，就自動產生 GitHub Page&lt;br/&gt;
+可以參考我之前寫的 &lt;a href="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action/"&gt;透過 GitHub Action 自動發佈 Pelican 部落格文章&lt;/a&gt;&lt;br/&gt;
+雖然裡面使用的例子是 Pelican ，但只要把建置頁面的指令換掉就可以了&lt;/p&gt;
+&lt;h3 id="mkdocsyml"&gt;其他 mkdocs.yml 常用設定&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;site_description, site_author, copyright&lt;/li&gt;
+&lt;li&gt;google_analytics&lt;/li&gt;
+&lt;li&gt;markdown_extensions&lt;ul&gt;
+&lt;li&gt;mkdocs 解析 Markdown 文件時要使用 &lt;a href="https://python-markdown.github.io/"&gt;Python Markdown&lt;/a&gt; 的 &lt;a href="https://python-markdown.github.io/extensions/"&gt;extension&lt;/a&gt; 和其設定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;plugins&lt;ul&gt;
+&lt;li&gt;預設會使用 &lt;a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins#search--tables-of-content"&gt;search&lt;/a&gt; 套件，如果想使用其它套件可以在 &lt;a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins"&gt;MkDocs-Plugins&lt;/a&gt; 找到&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="bonus"&gt;Bonus: 徽章&lt;/h2&gt;
+&lt;p&gt;在開源專案中，常常可以見到一些有趣的徽章&lt;br/&gt;
+它們很可能就是用 &lt;a href="https://shields.io/"&gt;shields.io&lt;/a&gt; 產生的&lt;br/&gt;
+除了常見的徽章外，也可以透過修改 url 製作客製化的徽章&lt;/p&gt;
+&lt;p&gt;像是在 markdown 文件加入&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;shields&lt;/span&gt; &lt;span class="n"&gt;badge&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="nl"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//img.shields.io/badge/&amp;lt;LABEL&amp;gt;-&amp;lt;MESSAGE&amp;gt;-&amp;lt;COLOR&amp;gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;就會出現&lt;/p&gt;
+&lt;p&gt;&lt;img alt="shields badge" src="https://img.shields.io/badge/&amp;lt;LABEL&amp;gt;-&amp;lt;MESSAGE&amp;gt;-&amp;lt;COLOR&amp;gt;"/&gt;&lt;/p&gt;
+&lt;h3 id="_9"&gt;自製測試覆蓋率徽章&lt;/h3&gt;
+&lt;p&gt;最近發現另一個有趣的小工具 - &lt;a href="https://github.com/dbrgn/coverage-badge"&gt;coverage-badge&lt;/a&gt;&lt;br/&gt;
+它可以不透過 &lt;a href="https://codecov.io/"&gt;codecov&lt;/a&gt; 直接去讀 &lt;a href="https://github.com/pytest-dev/pytest-cov"&gt;pytest-cov&lt;/a&gt; 產生的 &lt;code&gt;.coverage&lt;/code&gt;  產生測試覆蓋率徽章&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv install coverage-badge --dev
+pipenv run coverage-badge -o docs/coverage.svg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/europython-2019/2020/03/publish-a-perfetc-python-package-on-pypi/"&gt;Publish a (Perfect) Python Package on PyPI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.mkdocs.org/"&gt;MkDocs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/squidfunk/mkdocs-material"&gt;mkdocs-material&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://shields.io/"&gt;shield.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Documentation"></category></entry><entry><title>Python Table Manners - 安全性檢查</title><link href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" rel="alternate"></link><published>2020-03-22T13:10:00+08:00</published><updated>2020-03-22T13:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-03-22:/posts/tech/2020/03/python-table-manners-security</id><summary type="html">&lt;p&gt;果然在沒有寫作松的督促下，馬上就拖稿了 XD&lt;br/&gt;
 接下來要介紹在 Python 專案中做安全性檢查的工具&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;果然在沒有寫作松的督促下，馬上就拖稿了 XD&lt;br/&gt;
 接下來要介紹在 Python 專案中做安全性檢查的工具&lt;/p&gt;
@@ -379,7 +518,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容&lt;br/&gt;
 &lt;li&gt;&lt;a href="https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/"&gt;How to Write Good Commit Messages: A Practical Git Guide&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.conventionalcommits.org/en/v1.0.0/"&gt;Conventional Commit&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://semver.org/"&gt;Semantic Version&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Git"></category></entry><entry><title>Python Table Manners - pre-commit: git commit 前做完檢查</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit" rel="alternate"></link><published>2020-02-28T23:10:00+08:00</published><updated>2020-03-18T10:20:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-28:/posts/tech/2020/02/python-table-manner-pre-commit</id><summary type="html">&lt;p&gt;在前一篇提到了 invoke，透過它可以簡化很多繁瑣的指令&lt;br/&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Git"></category></entry><entry><title>Python Table Manners - pre-commit: git commit 前做完檢查</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" rel="alternate"></link><published>2020-02-28T23:10:00+08:00</published><updated>2020-03-18T10:20:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-28:/posts/tech/2020/02/python-table-manners-pre-commit</id><summary type="html">&lt;p&gt;在前一篇提到了 invoke，透過它可以簡化很多繁瑣的指令&lt;br/&gt;
 但人類是懶惰的&lt;br/&gt;
 即使已經更簡便了，沒被督促常常還是會忘了執行&lt;br/&gt;
 就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑&lt;br/&gt;

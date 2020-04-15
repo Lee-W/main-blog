@@ -12,7 +12,7 @@
 <meta name="keywords" content="Python, Git, Code Quality, Tech, " />
 
 <meta property="og:title" content="Python Table Manners - pre-commit: git commit 前做完檢查"/>
-<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit" />
+<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" />
 <meta property="og:description" content="在前一篇提到了 invoke，透過它可以簡化很多繁瑣的指令 但人類是懶惰的 即使已經更簡便了，沒被督促常常還是會忘了執行 就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑 所以這次要來聊聊 pre-commit 如何強制做檢查 pre-commit pre-commit 主要的用途就是讓我們能方便的加入 Git Hook，並在各種 git 的相關操作前進行檢查 正如它的命名，它可以在進行 git commit 前執行一些操作 不過並不僅限於 commit 前，也可以在其它 git 的階段進行 之所以要這麼做就是為了讓不符合要求的程式碼，從最一開始就不會進入到版本庫 （pre commit）或 git 伺服器 （pre push） 使用 pre-commit 進行檢查 # 安裝 pre-commit pipenv install pre-commit --dev …" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
@@ -76,7 +76,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit">
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit">
                 Python Table Manners - pre-commit: git commit 前做完檢查
             </a>
         </h1>
@@ -248,17 +248,17 @@ Trim Trailing Whitespace.................................................Passed
 
 <script src="https://lee-w.github.io/theme/applause-button/applause-button.js"></script>
 <div class="applause_button">
-    <applause-button url=https://lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit> </applause-button>
+    <applause-button url=https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit> </applause-button>
 </div>
 
 
                 <p id="post-share-links">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20-%20pre-commit%3A%20git%20commit%20%E5%89%8D%E5%81%9A%E5%AE%8C%E6%AA%A2%E6%9F%A5&url=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit&hashtags=python,git,code-quality" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20-%20pre-commit%3A%20git%20commit%20%E5%89%8D%E5%81%9A%E5%AE%8C%E6%AA%A2%E6%9F%A5&url=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit&hashtags=python,git,code-quality" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
     ❄
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="mailto:?subject=Python%20Table%20Manners%20-%20pre-commit%3A%20git%20commit%20%E5%89%8D%E5%81%9A%E5%AE%8C%E6%AA%A2%E6%9F%A5&amp;body=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+    <a href="mailto:?subject=Python%20Table%20Manners%20-%20pre-commit%3A%20git%20commit%20%E5%89%8D%E5%81%9A%E5%AE%8C%E6%AA%A2%E6%9F%A5&amp;body=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
     </p>
 
             
@@ -279,8 +279,8 @@ Trim Trailing Whitespace.................................................Passed
                 <a class="accordion-toggle disqus-comment-count comment-count"
                    data-toggle="collapse"
                    data-parent="#accordion2"
-                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit"
-                   href="https://lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit#comment_thread"
+                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit"
+                   href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit#comment_thread"
                    id="comment-accordion-toggle">
                     Comments
                 </a>
@@ -298,8 +298,8 @@ Trim Trailing Whitespace.................................................Passed
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 
-    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit';
-    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/02/python-table-manner-pre-commit';
+    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit';
+    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -336,10 +336,37 @@ Trim Trailing Whitespace.................................................Passed
 <h4>Last Updated</h4>
 <time datetime="2020-03-18T10:20:00+08:00">2020/03/18 - Wed</time>
 
-        <h4>Python Table Manner</h4>
+        <h4>Python Table Manners</h4>
     <ul class="multi-parts-list">
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series" title="Python Table Manners 系列">Part 1: Python Table Manners 系列</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" title="Python Table Manners - 虛擬環境和套件管理">Part 2: Python Table Manners - 虛擬環境和套件管理</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" title="Python Table Manners - 測試 (一)">Part 3: Python Table Manners - 測試 (一)</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 4: Python Table Manners - 測試 (二)</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Python Table Manners - 程式碼風格">Part 5: Python Table Manners - 程式碼風格</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" title="Python Table Manners - 管理繁瑣任務">Part 6: Python Table Manners - 管理繁瑣任務</a>
+            </li>
             <li  class="active-part">
-            Part 1: Python Table Manners - pre-commit: git commit 前做完檢查
+            Part 7: Python Table Manners - pre-commit: git commit 前做完檢查
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" title="Python Table Manners - Commitizen: 規格化 commit message">Part 8: Python Table Manners - Commitizen: 規格化 commit message</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 9: Python Table Manners - 安全性檢查</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" title="Python Table Manners - 文件">Part 10: Python Table Manners - 文件</a>
             </li>
     </ul>
                 <h4>Read Time</h4>
@@ -355,7 +382,7 @@ Trim Trailing Whitespace.................................................Passed
                     <span>6</span>
 </a></li>
                 <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
-                    <span>24</span>
+                    <span>25</span>
 </a></li>
             </ul>
 <h4>Keep In Touch</h4>
