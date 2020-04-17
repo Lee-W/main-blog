@@ -17,7 +17,7 @@ Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx&lt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id="_2"&gt;使用&lt;/h2&gt;
 &lt;p&gt;這次依然是將 mkdocs 運用到 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator"&gt;pycontw-postevent-report-generator&lt;/a&gt; 為例子&lt;br/&gt;
-在 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/1.2.0"&gt;1.2.0&lt;/a&gt; 版之後產生將文件從 &lt;code&gt;README.md&lt;/code&gt; 移動到 &lt;code&gt;docs&lt;/code&gt; 並產生 GitHub Page&lt;/p&gt;
+在 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/3fab5b9e7171d8302b012ad40ec1292d99c297a0"&gt;commit 3fab5b&lt;/a&gt; 版之後產生將文件從 &lt;code&gt;README.md&lt;/code&gt; 移動到 &lt;code&gt;docs&lt;/code&gt; 並產生 GitHub Page&lt;/p&gt;
 &lt;h3 id="_3"&gt;初始化&lt;/h3&gt;
 &lt;p&gt;首先進到專案資料夾中，初始化 mkdocs 需要的檔案&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run mkdir new .
@@ -160,7 +160,7 @@ pipenv run coverage-badge -o docs/coverage.svg
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run safety check
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img alt="safety-not-found" src="/images/posts-image/2020-02-22-python-table-manner-series/safety-not-found.jpg"/&gt;&lt;/p&gt;
-&lt;p&gt;在 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/1.1.0"&gt;pycontw-postevent-report-generator 1.1.0&lt;/a&gt; ，透過 safety 不會找到任何安全漏洞&lt;/p&gt;
+&lt;p&gt;在 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/128d271942099b94faca3693d6c146c879e3b414"&gt;pycontw-postevent-report-generator commit 128d&lt;/a&gt; ，透過 safety 不會找到任何安全漏洞&lt;/p&gt;
 &lt;p&gt;如果想要測試 safety 的功能可以安裝套件 &lt;a href="https://pypi.org/project/insecure-package/"&gt;insecure-package&lt;/a&gt; (&lt;strong&gt;這個套件是真的存在的，而且是不安全的，僅作為測試用途&lt;/strong&gt;)&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv install insecure-package --dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
