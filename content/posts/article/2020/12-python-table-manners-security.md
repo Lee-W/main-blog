@@ -40,7 +40,7 @@ pipenv run safety check
 
 ![safety-not-found](/images/posts-image/2020-02-22-python-table-manner-series/safety-not-found.jpg)
 
-在 [pycontw-postevent-report-generator 1.1.0](https://github.com/pycontw/pycontw-postevent-report-generator/tree/1.1.0) ，透過 safety 不會找到任何安全漏洞
+在 [pycontw-postevent-report-generator commit 128d](https://github.com/pycontw/pycontw-postevent-report-generator/commit/128d271942099b94faca3693d6c146c879e3b414) ，透過 safety 不會找到任何安全漏洞
 
 如果想要測試 safety 的功能可以安裝套件 [insecure-package](https://pypi.org/project/insecure-package/) (**這個套件是真的存在的，而且是不安全的，僅作為測試用途**)
 
