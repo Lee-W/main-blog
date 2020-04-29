@@ -182,10 +182,11 @@ pipenv run pytest -m "not slow"
 
 但上面的做法，如果有案例不小心打成 `@pytest.mark.slwo`，可能不太容易被發現
 但 pytest 還是會正常執行
-這時候可以在專案加入設定檔 `setup.cfg` (或 `tox.ini`, `pytest.ini`，但設定有一點不同) 定義 marker
+這時候可以在專案加入設定檔 `pytest.ini` (或 `tox.ini` ，但設定方式有一點不同) 定義 marker
+p.s. 不建議使用 `setup.cfg` 做為 pytest 的設定檔 (Read More 👉 [deprecate setup.cfg support #3523](https://github.com/pytest-dev/pytest/issues/3523))
 
 ```ini
-[tool:pytest]
+[pytest]
 markers =
     slow
 ```
@@ -198,11 +199,11 @@ pipenv run pytest --strict-markers -m "not slow"
 
 pytest 就會告訴我們 `slwo` 並不是被定義過的 maker
 
-我們可以把 `--strict-markers` 直接寫入 `setup.cfg`
+我們可以把 `--strict-markers` 直接寫入 `pytest.ini`
 最為執行 `pytest` 的預設行為
 
 ```ini
-[tool:pytest]
+[pytest]
 addopts = --strict-markers
 markers =
     slow

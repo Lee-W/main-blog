@@ -363,15 +363,17 @@ line_length=88
 
 ## Bouns: 設定檔的選用
 從前面的測試到現在有提到多種設定檔的格式
-通常每個工具都會有自己的設定檔 (e.g., `.coveragerc`, `.flake8`) 或者會用 Python 比較通用的格式 (e.g., `pyproject.toml`, `setup.cfg`)
-其中`pyproject.toml` 是在 [PEP 518](https://www.python.org/dev/peps/pep-0518/) 提出的設定檔格式
+通常每個工具都會有自己的設定檔 (e.g., `.coveragerc`, `.flake8`) 或者用 Python 比較通用的格式 (e.g., `pyproject.toml`, `setup.cfg`)
+其中 `pyproject.toml` 是在 [PEP 518](https://www.python.org/dev/peps/pep-0518/) 提出的設定檔格式
 不過還沒有被所有的工具支援
 [awesome-pyproject](https://github.com/carlosperate/awesome-pyproject) 整理了目前已經支援或討論是否要支援 `proproject.toml` 的工具
 
-比起讓多份設定散落在各個設定檔
+比起讓多個工具的設定散落在各個設定檔
 我傾向統一管理在 `pyproject.toml` 或 `setup.cfg`
-不過如果像是 `.pylintrc` ，這種比較長的設定檔
-我就會讓它獨立成自己的設定檔
+其中有兩個例外
+
+* `.pylintrc`: 設定內容太長，如果併入通用的設定檔，容易造成其他設定閱讀困難
+* `pytest.ini`: pytest 即將放棄對 `setup.cfg` 的支援，而且容易出錯 （Read More 👉 [deprecate setup.cfg support #3523](https://github.com/pytest-dev/pytest/issues/3523)）
 
 ## Reference
 * [Automating Code Quality - PyCon US 2018](https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/)
