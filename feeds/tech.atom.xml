@@ -518,27 +518,27 @@ commitizen 提升版本號時，就會一併更新檔案的內容&lt;br/&gt;
 &lt;li&gt;&lt;a href="https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/"&gt;How to Write Good Commit Messages: A Practical Git Guide&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.conventionalcommits.org/en/v1.0.0/"&gt;Conventional Commit&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://semver.org/"&gt;Semantic Version&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Git"></category></entry><entry><title>Python Table Manners - pre-commit: git commit 前做完檢查</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" rel="alternate"></link><published>2020-02-28T23:10:00+08:00</published><updated>2020-03-18T10:20:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-28:/posts/tech/2020/02/python-table-manners-pre-commit</id><summary type="html">&lt;p&gt;在前一篇提到了 invoke，透過它可以簡化很多繁瑣的指令&lt;br/&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Git"></category></entry><entry><title>Python Table Manners - pre-commit: git commit 前做完檢查</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" rel="alternate"></link><published>2020-02-28T23:10:00+08:00</published><updated>2020-03-18T10:20:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-28:/posts/tech/2020/02/python-table-manners-pre-commit</id><summary type="html">&lt;p&gt;前一篇提到了透過 &lt;a href="http://www.pyinvoke.org/"&gt;invoke&lt;/a&gt; 簡化繁瑣的指令&lt;br/&gt;
 但人類是懶惰的&lt;br/&gt;
 即使已經更簡便了，沒被督促常常還是會忘了執行&lt;br/&gt;
 就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑&lt;br/&gt;
-所以這次要來聊聊 &lt;a href="https://pre-commit.com"&gt;pre-commit&lt;/a&gt; 如何強制做檢查&lt;/p&gt;
+這次來聊聊如何透過 &lt;a href="https://pre-commit.com"&gt;pre-commit&lt;/a&gt; 強制做檢查&lt;/p&gt;
 
 &lt;h2 id="pre-commit"&gt;pre-commit&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://pre-commit.com/"&gt;pre-commit&lt;/a&gt; 主要的用途就是讓我們能方便的加入 &lt;a href="https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks"&gt;Git Hook&lt;/a&gt;，並在各種 git 的相關操作前進行檢查&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://pre-commit.com/"&gt;pre-commit&lt;/a&gt; 讓我們能方便的加入 &lt;a href="https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks"&gt;Git Hook&lt;/a&gt;，並在各種 git 的相關操作前進行檢查&lt;/p&gt;
 &lt;p&gt;正如它的命名，它可以在進行 &lt;code&gt;git commit&lt;/code&gt; 前執行一些操作&lt;br/&gt;
 不過並不僅限於 commit 前，也可以在其它 git 的階段進行&lt;br/&gt;
 之所以要這麼做就是為了讓不符合要求的程式碼，從最一開始就不會進入到版本庫 （pre commit）或 git 伺服器 （pre push）&lt;/p&gt;
 &lt;h2 id="pre-commit_1"&gt;使用 pre-commit 進行檢查&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝 pre-commit&lt;/span&gt;
-pipenv install pre-commit --dev …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;在前一篇提到了 invoke，透過它可以簡化很多繁瑣的指令&lt;br/&gt;
+pipenv install pre-commit --dev …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;前一篇提到了透過 &lt;a href="http://www.pyinvoke.org/"&gt;invoke&lt;/a&gt; 簡化繁瑣的指令&lt;br/&gt;
 但人類是懶惰的&lt;br/&gt;
 即使已經更簡便了，沒被督促常常還是會忘了執行&lt;br/&gt;
 就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑&lt;br/&gt;
-所以這次要來聊聊 &lt;a href="https://pre-commit.com"&gt;pre-commit&lt;/a&gt; 如何強制做檢查&lt;/p&gt;
+這次來聊聊如何透過 &lt;a href="https://pre-commit.com"&gt;pre-commit&lt;/a&gt; 強制做檢查&lt;/p&gt;
 
 &lt;h2 id="pre-commit"&gt;pre-commit&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://pre-commit.com/"&gt;pre-commit&lt;/a&gt; 主要的用途就是讓我們能方便的加入 &lt;a href="https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks"&gt;Git Hook&lt;/a&gt;，並在各種 git 的相關操作前進行檢查&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://pre-commit.com/"&gt;pre-commit&lt;/a&gt; 讓我們能方便的加入 &lt;a href="https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks"&gt;Git Hook&lt;/a&gt;，並在各種 git 的相關操作前進行檢查&lt;/p&gt;
 &lt;p&gt;正如它的命名，它可以在進行 &lt;code&gt;git commit&lt;/code&gt; 前執行一些操作&lt;br/&gt;
 不過並不僅限於 commit 前，也可以在其它 git 的階段進行&lt;br/&gt;
 之所以要這麼做就是為了讓不符合要求的程式碼，從最一開始就不會進入到版本庫 （pre commit）或 git 伺服器 （pre push）&lt;/p&gt;
@@ -546,9 +546,9 @@ pipenv install pre-commit --dev …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summar
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝 pre-commit&lt;/span&gt;
 pipenv install pre-commit --dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;之後可以開始寫設定檔 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt;，告訴 pre-commit 要做哪些檢查&lt;br/&gt;
+&lt;p&gt;接著可以透過設定檔 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt;，告訴 pre-commit 要做哪些檢查&lt;br/&gt;
 需要注意的是，專案必須要是一個 git 專案&lt;br/&gt;
-這些設定都會被寫入 &lt;code&gt;.git/hooks/&lt;/code&gt; 中&lt;/p&gt;
+這些 git hook 都會被寫入 &lt;code&gt;.git/hooks/&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;e.g.,&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;repos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;repo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;https://github.com/pre-commit/pre-commit-hooks&lt;/span&gt;
@@ -571,12 +571,12 @@ pipenv install pre-commit --dev
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;大部分常見的 hook 都被定義在&lt;a href="https://github.com/pre-commit/pre-commit-hooks"&gt;pre-commit-hooks&lt;/a&gt;&lt;br/&gt;
+&lt;p&gt;pre-commit 整理了將常見並較為通用的 hook 都被整理在 &lt;a href="https://github.com/pre-commit/pre-commit-hooks"&gt;pre-commit-hooks&lt;/a&gt;&lt;br/&gt;
 除此之外，如 &lt;a href="https://github.com/psf/black"&gt;black&lt;/a&gt; 和 &lt;a href="https://gitlab.com/pycqa/flake8"&gt;flake8&lt;/a&gt; 等工具也都有提供 pre commit hook&lt;/p&gt;
 &lt;p&gt;另外，&lt;strong&gt;建議 rev 不要使用 master，而應該使用版本號等明確的 rev&lt;/strong&gt;&lt;br/&gt;
-原因是預設 pre-commit 會將已知的專案存下來&lt;br/&gt;
+原因是預設 pre-commit 會在執行時將 hook 專案 clone 下來&lt;br/&gt;
 如果沒有特別設定， pre-commit 不會把最新版 pull 下來&lt;br/&gt;
-那指到的 master 就只會第一次 pre-commit 抓到時的 master，不會是真正最新版的 master&lt;/p&gt;
+指到的 master 就會是第一次 pre-commit 抓到時的 master，不是最新版的 master&lt;/p&gt;
 &lt;p&gt;寫完設定檔後，接著就是把 pre-commit hook 安裝到 git 專案中&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 將 pre-commit hook 安裝到 git 專案&lt;/span&gt;
 pipenv run pre-commit install
@@ -597,6 +597,10 @@ Fix End of Files.........................................................Passed
 Trim Trailing Whitespace.................................................Passed
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果沒有通過， git 會阻止你進行 commit&lt;/p&gt;
+&lt;p&gt;另外需要注意的是 pre-commit 每次都只會針對要 commit 的檔案做檢查&lt;br/&gt;
+所以建議第一次引入 pre-commit 時，可以先檢查所有的檔案&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run pre-commit run --all-files
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id="pre-commit-hook"&gt;使用自定義的 pre-commit hook&lt;/h2&gt;
 &lt;p&gt;除了使用現成的 pre-commit hook，也可以寫客製化的檢查&lt;/p&gt;
 &lt;p&gt;下面的例子就是在 commit 前，要進行 pytest 的檢查&lt;/p&gt;
@@ -608,6 +612,7 @@ Trim Trailing Whitespace.................................................Passed
         &lt;span class="nt"&gt;stages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;commit&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
         &lt;span class="nt"&gt;language&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;system&lt;/span&gt;
         &lt;span class="nt"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pipenv run pytest&lt;/span&gt;
+        &lt;span class="nt"&gt;pass_filenames&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;false&lt;/span&gt;
         &lt;span class="nt"&gt;types&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
@@ -618,6 +623,7 @@ Trim Trailing Whitespace.................................................Passed
 &lt;li&gt;&lt;code&gt;language&lt;/code&gt;: 直接使用系統執行 &lt;code&gt;entry&lt;/code&gt; 內的指令&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;entry&lt;/code&gt;: 這個 hook 要執行的指令是 &lt;code&gt;pipenv run pytest&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;types&lt;/code&gt;: 只有在 python 這種檔案類型才進行檢查&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pass_filenames&lt;/code&gt;: 是否要將 commit 的檔案名稱作為 &lt;code&gt;entry&lt;/code&gt; 中指令的參數&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -638,15 +644,13 @@ Trim Trailing Whitespace.................................................Passed
 &lt;p&gt;e.g.,&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv install pre-commit install pre-push
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;支援 6 種 hook-type&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;支援的 6 種 hook-type&lt;ul&gt;
 &lt;li&gt;pre-commit&lt;/li&gt;
 &lt;li&gt;pre-merge-commit&lt;/li&gt;
 &lt;li&gt;pre-push&lt;/li&gt;
 &lt;li&gt;prepare-commit-msg&lt;/li&gt;
 &lt;li&gt;commit-msg&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;像是 pytest 這種需要執行比較久的&lt;br/&gt;
 我就不見得會在 commit 這個 stage 做檢查&lt;br/&gt;
@@ -668,6 +672,9 @@ Trim Trailing Whitespace.................................................Passed
           &lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;...&lt;/span&gt;
           &lt;span class="nt"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;...&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="bouns-commit"&gt;Bouns: 可以只跳警告不擋下 commit 嗎？&lt;/h2&gt;
+&lt;p&gt;根據 &lt;a href="https://github.com/pre-commit/pre-commit/issues/923"&gt;Can I show warning message without blocking the commit? #923&lt;/a&gt; 提到的， pre-commit 認為這不是好的作法&lt;br/&gt;
+但仍然可以透過對 &lt;code&gt;entry&lt;/code&gt; 內指令的操作達到類似的效果&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://mropengate.blogspot.com/2019/08/pre-commit-git-hooks_4.html"&gt;提升程式碼品質：使用 Pre-Commit (Git Hooks)&lt;/a&gt;&lt;/li&gt;
@@ -1130,14 +1137,17 @@ pipenv run isort --atomic --apply
 &lt;/ul&gt;
 &lt;h2 id="bouns"&gt;Bouns: 設定檔的選用&lt;/h2&gt;
 &lt;p&gt;從前面的測試到現在有提到多種設定檔的格式&lt;br/&gt;
-通常每個工具都會有自己的設定檔 (e.g., &lt;code&gt;.coveragerc&lt;/code&gt;, &lt;code&gt;.flake8&lt;/code&gt;) 或者會用 Python 比較通用的格式 (e.g., &lt;code&gt;pyproject.toml&lt;/code&gt;, &lt;code&gt;setup.cfg&lt;/code&gt;)&lt;br/&gt;
-其中&lt;code&gt;pyproject.toml&lt;/code&gt; 是在 &lt;a href="https://www.python.org/dev/peps/pep-0518/"&gt;PEP 518&lt;/a&gt; 提出的設定檔格式&lt;br/&gt;
+通常每個工具都會有自己的設定檔 (e.g., &lt;code&gt;.coveragerc&lt;/code&gt;, &lt;code&gt;.flake8&lt;/code&gt;) 或者用 Python 比較通用的格式 (e.g., &lt;code&gt;pyproject.toml&lt;/code&gt;, &lt;code&gt;setup.cfg&lt;/code&gt;)&lt;br/&gt;
+其中 &lt;code&gt;pyproject.toml&lt;/code&gt; 是在 &lt;a href="https://www.python.org/dev/peps/pep-0518/"&gt;PEP 518&lt;/a&gt; 提出的設定檔格式&lt;br/&gt;
 不過還沒有被所有的工具支援&lt;br/&gt;
 &lt;a href="https://github.com/carlosperate/awesome-pyproject"&gt;awesome-pyproject&lt;/a&gt; 整理了目前已經支援或討論是否要支援 &lt;code&gt;proproject.toml&lt;/code&gt; 的工具&lt;/p&gt;
-&lt;p&gt;比起讓多份設定散落在各個設定檔&lt;br/&gt;
+&lt;p&gt;比起讓多個工具的設定散落在各個設定檔&lt;br/&gt;
 我傾向統一管理在 &lt;code&gt;pyproject.toml&lt;/code&gt; 或 &lt;code&gt;setup.cfg&lt;/code&gt;&lt;br/&gt;
-不過如果像是 &lt;code&gt;.pylintrc&lt;/code&gt; ，這種比較長的設定檔&lt;br/&gt;
-我就會讓它獨立成自己的設定檔&lt;/p&gt;
+其中有兩個例外&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.pylintrc&lt;/code&gt;: 設定內容太長，如果併入通用的設定檔，容易造成其他設定閱讀困難&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pytest.ini&lt;/code&gt;: pytest 即將放棄對 &lt;code&gt;setup.cfg&lt;/code&gt; 的支援，而且容易出錯 （Read More 👉 &lt;a href="https://github.com/pytest-dev/pytest/issues/3523"&gt;deprecate setup.cfg support #3523&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/"&gt;Automating Code Quality - PyCon US 2018&lt;/a&gt;&lt;/li&gt;
@@ -1296,8 +1306,9 @@ pipenv run isort --atomic --apply
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;但上面的做法，如果有案例不小心打成 &lt;code&gt;@pytest.mark.slwo&lt;/code&gt;，可能不太容易被發現&lt;br/&gt;
 但 pytest 還是會正常執行&lt;br/&gt;
-這時候可以在專案加入設定檔 &lt;code&gt;setup.cfg&lt;/code&gt; (或 &lt;code&gt;tox.ini&lt;/code&gt;, &lt;code&gt;pytest.ini&lt;/code&gt;，但設定有一點不同) 定義 marker&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tool:pytest]&lt;/span&gt;
+這時候可以在專案加入設定檔 &lt;code&gt;pytest.ini&lt;/code&gt; (或 &lt;code&gt;tox.ini&lt;/code&gt; ，但設定方式有一點不同) 定義 marker&lt;br/&gt;
+p.s. 不建議使用 &lt;code&gt;setup.cfg&lt;/code&gt; 做為 pytest 的設定檔 (Read More 👉 &lt;a href="https://github.com/pytest-dev/pytest/issues/3523"&gt;deprecate setup.cfg support #3523&lt;/a&gt;)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[pytest]&lt;/span&gt;
 &lt;span class="na"&gt;markers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&lt;/span&gt;
 &lt;span class="s"&gt;    slow&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1305,9 +1316,9 @@ pipenv run isort --atomic --apply
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run pytest --strict-markers -m &lt;span class="s2"&gt;"not slow"&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;pytest 就會告訴我們 &lt;code&gt;slwo&lt;/code&gt; 並不是被定義過的 maker&lt;/p&gt;
-&lt;p&gt;我們可以把 &lt;code&gt;--strict-markers&lt;/code&gt; 直接寫入 &lt;code&gt;setup.cfg&lt;/code&gt;&lt;br/&gt;
+&lt;p&gt;我們可以把 &lt;code&gt;--strict-markers&lt;/code&gt; 直接寫入 &lt;code&gt;pytest.ini&lt;/code&gt;&lt;br/&gt;
 最為執行 &lt;code&gt;pytest&lt;/code&gt; 的預設行為&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tool:pytest]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[pytest]&lt;/span&gt;
 &lt;span class="na"&gt;addopts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;--strict-markers&lt;/span&gt;
 &lt;span class="na"&gt;markers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&lt;/span&gt;
 &lt;span class="s"&gt;    slow&lt;/span&gt;

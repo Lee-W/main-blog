@@ -265,8 +265,9 @@
 </code></pre></div>
 <p>但上面的做法，如果有案例不小心打成 <code>@pytest.mark.slwo</code>，可能不太容易被發現<br/>
 但 pytest 還是會正常執行<br/>
-這時候可以在專案加入設定檔 <code>setup.cfg</code> (或 <code>tox.ini</code>, <code>pytest.ini</code>，但設定有一點不同) 定義 marker</p>
-<div class="highlight"><pre><span></span><code><span class="k">[tool:pytest]</span>
+這時候可以在專案加入設定檔 <code>pytest.ini</code> (或 <code>tox.ini</code> ，但設定方式有一點不同) 定義 marker<br/>
+p.s. 不建議使用 <code>setup.cfg</code> 做為 pytest 的設定檔 (Read More 👉 <a href="https://github.com/pytest-dev/pytest/issues/3523">deprecate setup.cfg support #3523</a>)</p>
+<div class="highlight"><pre><span></span><code><span class="k">[pytest]</span>
 <span class="na">markers</span> <span class="o">=</span><span class="s"></span>
 <span class="s">    slow</span>
 </code></pre></div>
@@ -274,9 +275,9 @@
 <div class="highlight"><pre><span></span><code>pipenv run pytest --strict-markers -m <span class="s2">"not slow"</span>
 </code></pre></div>
 <p>pytest 就會告訴我們 <code>slwo</code> 並不是被定義過的 maker</p>
-<p>我們可以把 <code>--strict-markers</code> 直接寫入 <code>setup.cfg</code><br/>
+<p>我們可以把 <code>--strict-markers</code> 直接寫入 <code>pytest.ini</code><br/>
 最為執行 <code>pytest</code> 的預設行為</p>
-<div class="highlight"><pre><span></span><code><span class="k">[tool:pytest]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[pytest]</span>
 <span class="na">addopts</span> <span class="o">=</span> <span class="s">--strict-markers</span>
 <span class="na">markers</span> <span class="o">=</span><span class="s"></span>
 <span class="s">    slow</span>
