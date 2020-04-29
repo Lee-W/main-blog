@@ -7,16 +7,16 @@ Slug: python-table-manners-pre-commit
 Authors: Lee-W
 Series: Python Table Manners
 
-在前一篇提到了 invoke，透過它可以簡化很多繁瑣的指令
+前一篇提到了透過 [invoke](http://www.pyinvoke.org/) 簡化繁瑣的指令
 但人類是懶惰的
 即使已經更簡便了，沒被督促常常還是會忘了執行
 就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑
-所以這次要來聊聊 [pre-commit](https://pre-commit.com) 如何強制做檢查
+這次來聊聊如何透過 [pre-commit](https://pre-commit.com) 強制做檢查
 
 [TOC]
 
 ## pre-commit
-[pre-commit](https://pre-commit.com/) 主要的用途就是讓我們能方便的加入 [Git Hook](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks)，並在各種 git 的相關操作前進行檢查
+[pre-commit](https://pre-commit.com/) 讓我們能方便的加入 [Git Hook](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks)，並在各種 git 的相關操作前進行檢查
 
 正如它的命名，它可以在進行 `git commit` 前執行一些操作
 不過並不僅限於 commit 前，也可以在其它 git 的階段進行
@@ -29,9 +29,9 @@ Series: Python Table Manners
 pipenv install pre-commit --dev
 ```
 
-之後可以開始寫設定檔 `.pre-commit-config.yaml`，告訴 pre-commit 要做哪些檢查
+接著可以透過設定檔 `.pre-commit-config.yaml`，告訴 pre-commit 要做哪些檢查
 需要注意的是，專案必須要是一個 git 專案
-這些設定都會被寫入 `.git/hooks/` 中
+這些 git hook 都會被寫入 `.git/hooks/`
 
 e.g.,
 
@@ -54,13 +54,13 @@ repos:
         * `id`: hook id
         * `args`: 執行這個 hook 的額外參數
 
-大部分常見的 hook 都被定義在[pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks)
+pre-commit 整理了將常見並較為通用的 hook 都被整理在 [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks)
 除此之外，如 [black](https://github.com/psf/black) 和 [flake8](https://gitlab.com/pycqa/flake8) 等工具也都有提供 pre commit hook
 
 另外，**建議 rev 不要使用 master，而應該使用版本號等明確的 rev**
-原因是預設 pre-commit 會將已知的專案存下來
+原因是預設 pre-commit 會在執行時將 hook 專案 clone 下來
 如果沒有特別設定， pre-commit 不會把最新版 pull 下來
-那指到的 master 就只會第一次 pre-commit 抓到時的 master，不會是真正最新版的 master
+指到的 master 就會是第一次 pre-commit 抓到時的 master，不是最新版的 master
 
 寫完設定檔後，接著就是把 pre-commit hook 安裝到 git 專案中
 
@@ -93,6 +93,13 @@ Trim Trailing Whitespace.................................................Passed
 
 如果沒有通過， git 會阻止你進行 commit
 
+另外需要注意的是 pre-commit 每次都只會針對要 commit 的檔案做檢查
+所以建議第一次引入 pre-commit 時，可以先檢查所有的檔案
+
+```sh
+pipenv run pre-commit run --all-files
+```
+
 ## 使用自定義的 pre-commit hook
 除了使用現成的 pre-commit hook，也可以寫客製化的檢查
 
@@ -107,6 +114,7 @@ repos:
         stages: [commit]
         language: system
         entry: pipenv run pytest
+        pass_filenames: false
         types: [python]
 ```
 
@@ -117,6 +125,7 @@ repos:
         * `language`: 直接使用系統執行 `entry` 內的指令
         * `entry`: 這個 hook 要執行的指令是 `pipenv run pytest`
         * `types`: 只有在 python 這種檔案類型才進行檢查
+        * `pass_filenames`: 是否要將 commit 的檔案名稱作為 `entry` 中指令的參數
 
 其中 `stages` 總共有六種
 
@@ -137,12 +146,13 @@ e.g.,
 pipenv install pre-commit install pre-push
 ```
 
-* 支援的 6 種 hook-type
-    * pre-commit
-    * pre-merge-commit
-    * pre-push
-    * prepare-commit-msg
-    * commit-msg
+支援 6 種 hook-type
+
+* pre-commit
+* pre-merge-commit
+* pre-push
+* prepare-commit-msg
+* commit-msg
 
 像是 pytest 這種需要執行比較久的
 我就不見得會在 commit 這個 stage 做檢查
@@ -171,6 +181,10 @@ repos:
           description: ...
           entry: ...
 ```
+
+## Bouns: 可以只跳警告不擋下 commit 嗎？
+根據 [Can I show warning message without blocking the commit? #923](https://github.com/pre-commit/pre-commit/issues/923) 提到的， pre-commit 認為這不是好的作法
+但仍然可以透過對 `entry` 內指令的操作達到類似的效果
 
 ## Reference
 * [提升程式碼品質：使用 Pre-Commit (Git Hooks)](https://mropengate.blogspot.com/2019/08/pre-commit-git-hooks_4.html)
