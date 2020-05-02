@@ -18,8 +18,9 @@ slug: about-me
 ### [Apr 2017 - Present]
 **Software Engineer, [Slice Technologies, Inc](https://www.slice.com/about)**
 
-* Designed and developed the backend of a data labeling system that automates the interaction between crowdsourcing workers and experts. Implemented the system through [Flask](http://flask.pocco.org), achieved test coverage higher than 90% and set up the CI/CD pipeline
-* Built data pipeline through [Airflow](https://airflow.apache.org/)
+* Designed and developed the backend of a data labeling system which automates the interaction between crowdsourcing workers and experts to generate high quality labeled data. Implemented the system through [Flask](http://flask.pocco.org), achieved test coverage higher than 90% and set up the CI/CD pipeline
+* Build ETL processes
+* Built data pipelines through [Airflow](https://airflow.apache.org/)
 * Built best practice template for internal Python projects
 * Set up the CI/CD pipeline through [Jenkins](https://jenkins.io/) for existing systems to enhance productivity
 * Added test for existing projects to ensure the functionality correctness
@@ -28,7 +29,7 @@ slug: about-me
 ### [Dec 2019 - Present]
 **Program Chair, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)**
 
-* Coordinate the program committee with 15 volunteers
+* Coordinate the program committee with 18 volunteers
 
 ### [Jul 2019 – Nov 2019]
 **Program Committee Member, [PyCon Taiwan](https://tw.pycon.org/2019/en-us/)**
@@ -67,6 +68,10 @@ I was the executor of the program and the leader of the teaching assistant team.
 * Delivered a human resource management system using [django](https://www.djangoproject.com)
 
 ## Talk and Tutorial
+**[2020/04/25]**
+[Remote Python Pizza 2020](https://remote.python.pizza/)
+[commitizen-tools: What can we gain from crafting a git message convention?](https://speakerdeck.com/leew/what-can-we-gain-from-crafting-a-git-message-convention-at-remote-python-pizza-2020)
+
 **[2019/11/17]**
 [PyCon CA 2019](https://2019.pycon.ca/)
 [Python table manners: a clean style](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019)
