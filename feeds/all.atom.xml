@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-05-03T16:52:00+08:00</updated><entry><title>Remote Python Pizza 🍕 2020</title><link href="https://lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020" rel="alternate"></link><published>2020-05-03T16:52:00+08:00</published><updated>2020-05-03T16:52:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-05-03:/posts/tech/2020/05/remote-python-pizza-2020</id><summary type="html">&lt;p&gt;上週六參加了第一場遠端的 Python 研討會 &lt;a href="https://remote.python.pizza/"&gt;Remote Python Pizza&lt;/a&gt;&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/all.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-05-04T11:07:00+08:00</updated><entry><title>Remote Python Pizza 🍕 2020</title><link href="https://lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020" rel="alternate"></link><published>2020-05-03T16:52:00+08:00</published><updated>2020-05-03T16:52:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-05-03:/posts/tech/2020/05/remote-python-pizza-2020</id><summary type="html">&lt;p&gt;上週六參加了第一場遠端的 Python 研討會 &lt;a href="https://remote.python.pizza/"&gt;Remote Python Pizza&lt;/a&gt;&lt;br&gt;
 由於疫情的關係，國外的 PyCon 大多轉往線上或取消&lt;br&gt;
 雖然目前還不確定今年台灣的狀況會如何&lt;br&gt;
 但先觀摩一下其他社群怎麼做的，對我們也很有幫助&lt;/p&gt;
@@ -70,7 +70,7 @@
 因為時差的關係，我大概撐到 12 點就差不多了&lt;br&gt;
 畢竟整個會議有 50 場演講，延續了 12 個小時&lt;br&gt;
 要全部參加完實在太累了&lt;br&gt;
-之後再來補帶吧&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category></entry><entry><title>Python Table Manners - 文件</title><link href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" rel="alternate"></link><published>2020-04-15T19:13:00+08:00</published><updated>2020-04-15T19:13:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-04-15:/posts/tech/2020/04/python-table-manners-documentation</id><summary type="html">&lt;p&gt;Python 開源專案中，&lt;a href="https://www.sphinx-doc.org/en/master/"&gt;Sphinx&lt;/a&gt; 是很常見的文件產生工具&lt;br/&gt;
+之後再來補帶吧&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category></entry><entry><title>Python Table Manners - 文件</title><link href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" rel="alternate"></link><published>2020-04-15T19:13:00+08:00</published><updated>2020-05-04T11:07:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-04-15:/posts/tech/2020/04/python-table-manners-documentation</id><summary type="html">&lt;p&gt;Python 開源專案中，&lt;a href="https://www.sphinx-doc.org/en/master/"&gt;Sphinx&lt;/a&gt; 是很常見的文件產生工具&lt;br/&gt;
 它能將 &lt;a href="https://docutils.sourceforge.io/rst.html"&gt;reStructuredText&lt;/a&gt; 寫成的文件轉成網頁&lt;br/&gt;
 &lt;a href="https://readthedocs.org/"&gt;Read the Docs&lt;/a&gt; 也直接支援 Sphinx 產生的網頁&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Python 開源專案中，&lt;a href="https://www.sphinx-doc.org/en/master/"&gt;Sphinx&lt;/a&gt; 是很常見的文件產生工具&lt;br/&gt;
@@ -114,16 +114,18 @@ Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx&lt
 &lt;p&gt;因為 GitHub 也會讀 &lt;code&gt;docs/READMD.md&lt;/code&gt; 作為進入專案時看到的文件&lt;br/&gt;
 為了減少維護文件的時間，可以將 &lt;code&gt;README.md&lt;/code&gt; 移動到 &lt;code&gt;docs&lt;/code&gt; ，並取代掉 &lt;code&gt;index.md&lt;/code&gt; 做為首頁&lt;/p&gt;
 &lt;p&gt;因為原先在 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator"&gt;pycontw-postevent-report-generator&lt;/a&gt; 中的 &lt;code&gt;README.md&lt;/code&gt; 有點長&lt;br/&gt;
-我將 &lt;strong&gt;How to contribute&lt;/strong&gt; 的內容拆出來放到 &lt;code&gt;contribute.md&lt;/code&gt;&lt;/p&gt;
+我將 &lt;strong&gt;How to contribute&lt;/strong&gt; 的內容拆出來放到 &lt;code&gt;contributing.md&lt;/code&gt;&lt;br/&gt;
+將檔案命名成 &lt;code&gt;contributing.md&lt;/code&gt; 在 GitHub 開 issue 時自動出現這個頁面的連結（See more 👉 &lt;a href="https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors"&gt;Setting guidelines for repository contributors&lt;/a&gt;）&lt;br/&gt;
+至於要怎麼寫好 &lt;code&gt;contributing.md&lt;/code&gt; 則可以參考 &lt;a href="https://mozillascience.github.io/working-open-workshop/contributing/"&gt;Wrangling Web Contributions: How to Build a CONTRIBUTING.md&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;├── docs
 │   ├── README.md
-│   └── contribute.md
+│   └── contributing.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;接著在 &lt;code&gt;mkdocs.yml&lt;/code&gt; 加入 &lt;code&gt;nav&lt;/code&gt; 參數，指定不同頁面對應的檔案&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;site_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;PyCon TW post-event report generator (rg-cli)&lt;/span&gt;
 &lt;span class="nt"&gt;nav&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;Home&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;index.md&lt;/span&gt;
-    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;Contribute&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;contribute.md&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;Contributing&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;contributing.md&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;位置是透過參數 &lt;code&gt;docs_dir&lt;/code&gt; 來決定相對路徑&lt;br/&gt;
 如果沒有設定，預設是相對於 &lt;code&gt;docs&lt;/code&gt;&lt;/p&gt;
@@ -131,8 +133,8 @@ Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx&lt
 &lt;h3 id="_6"&gt;內部連結&lt;/h3&gt;
 &lt;p&gt;撰寫文件時，為了讓使用者更容易找到其他頁面，會使用到內部連結&lt;br/&gt;
 這時只要在文件中使用跟 &lt;code&gt;mkdocs.yml&lt;/code&gt; 一樣的相對路徑即可&lt;/p&gt;
-&lt;p&gt;e.g., 在 &lt;code&gt;README.md&lt;/code&gt; 連結到 &lt;code&gt;contribute.md&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Please see the [&lt;span class="nt"&gt;Contribute&lt;/span&gt;](&lt;span class="na"&gt;contribute.md&lt;/span&gt;) for further details.
+&lt;p&gt;e.g., 在 &lt;code&gt;README.md&lt;/code&gt; 連結到 &lt;code&gt;contributing.md&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Please see the [&lt;span class="nt"&gt;Contributing&lt;/span&gt;](&lt;span class="na"&gt;contributing.md&lt;/span&gt;) for further details.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="_7"&gt;更改主題&lt;/h3&gt;
 &lt;p&gt;mkdocs 預設有 &lt;code&gt;mkdocs&lt;/code&gt;, &lt;code&gt;readthedocs&lt;/code&gt; 兩種主題&lt;br/&gt;
@@ -146,7 +148,7 @@ Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx&lt
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;site_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;rg-cli&lt;/span&gt;
 &lt;span class="nt"&gt;nav&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;Home&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;index.md&lt;/span&gt;
-    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;Contribute&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;contribute.md&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;Contributing&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;contributing.md&lt;/span&gt;
 &lt;span class="nt"&gt;theme&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'material'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
