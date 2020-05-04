@@ -1,5 +1,6 @@
 Title: Python Table Manners - 文件
 Date: 2020-04-15 19:13
+Modified: 2020-05-04 11:07
 Category: Tech
 Tags: Python, Documentation
 Slug: python-table-manners-documentation
@@ -72,12 +73,15 @@ site_name: PyCon TW post-event report generator (rg-cli)
 為了減少維護文件的時間，可以將 `README.md` 移動到 `docs` ，並取代掉 `index.md` 做為首頁
 
 因為原先在 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator) 中的 `README.md` 有點長
-我將 **How to contribute** 的內容拆出來放到 `contribute.md`
+我將 **How to contribute** 的內容拆出來放到 `contributing.md`
+將檔案命名成 `contributing.md` 在 GitHub 開 issue 時自動出現這個頁面的連結（See more 👉 [Setting guidelines for repository contributors](https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors)）
+至於要怎麼寫好 `contributing.md` 則可以參考 [Wrangling Web Contributions: How to Build a CONTRIBUTING.md](https://mozillascience.github.io/working-open-workshop/contributing/)
+
 
 ```text
 ├── docs
 │   ├── README.md
-│   └── contribute.md
+│   └── contributing.md
 ```
 
 接著在 `mkdocs.yml` 加入 `nav` 參數，指定不同頁面對應的檔案
@@ -86,7 +90,7 @@ site_name: PyCon TW post-event report generator (rg-cli)
 site_name: PyCon TW post-event report generator (rg-cli)
 nav:
     - Home: index.md
-    - Contribute: contribute.md
+    - Contributing: contributing.md
 ```
 
 位置是透過參數 `docs_dir` 來決定相對路徑
@@ -94,15 +98,14 @@ nav:
 
 ![separate page](/images/posts-image/2020-02-22-python-table-manner-series/separate page.jpg)
 
-
 ### 內部連結
 撰寫文件時，為了讓使用者更容易找到其他頁面，會使用到內部連結
 這時只要在文件中使用跟 `mkdocs.yml` 一樣的相對路徑即可
 
-e.g., 在 `README.md` 連結到 `contribute.md`
+e.g., 在 `README.md` 連結到 `contributing.md`
 
 ```md
-Please see the [Contribute](contribute.md) for further details.
+Please see the [Contributing](contributing.md) for further details.
 ```
 
 ### 更改主題
@@ -123,7 +126,7 @@ pipenv install mkdocs-material --dev
 site_name: rg-cli
 nav:
     - Home: index.md
-    - Contribute: contribute.md
+    - Contributing: contributing.md
 theme:
   name: 'material'
 ```
