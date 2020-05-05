@@ -1,7 +1,7 @@
 Title: Remote Python Pizza 🍕 2020
 Date: 2020-05-03 16:52
 Category: Tech
-Tags: Python
+Tags: Python, PyCon
 Slug: remote-python-pizza-2020
 Authors: Lee-W
 

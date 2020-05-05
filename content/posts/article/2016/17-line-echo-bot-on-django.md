@@ -1,7 +1,7 @@
 Title: Line Echo Bot on Django
 Date: 2016-11-24 03:26
 Category: Tech
-Tags: django, Chat Bot
+Tags: Django, Chat Bot
 Slug: line-echo-bot-on-django
 Authors: Lee-W
 Series: Line Bot Tutorial

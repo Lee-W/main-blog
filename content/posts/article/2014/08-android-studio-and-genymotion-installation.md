@@ -1,29 +1,22 @@
-Title: Android Studio+Genymotion 安裝 (12/29 更新 )
-Date: 2014-11-23 09:26
+Title: Android Studio + Genymotion 安裝
+Date: 2014-12-29 09:26
 Category: Tech
-Tags: Android, Tutorial
+Tags: Android
 Slug: android-studio-and-genymotion-installation
 Authors: Lee-W
 
-最近 Google 在推行的 Android IDE，前身是 IntelliJ IDEA
+Android Studio 最近 Google 在推行的 Android IDE，前身是 IntelliJ IDEA
 
 <!--more-->
-
-[TOC]
 
 它的檔案架構跟 eclipse 差蠻多的，所以用不同的 IDE 來協作會有點麻煩
 就我的經驗 Android Studio 比 eclipse 來得穩定一些
 反正現在還有 Google 在背後支持它，就來試試看吧 XD
 
-### 2014/11/23 更新
-
-[Install SDK](#1123 update 1): 更新了 Android Studio 0.8.14 後需要的額外設定
-[Setup SDK](#1123 update 2): SDK 版本更新至 API21(Android 5.0)
-
-### 2014/12/29 更新
-
 Android Studio 正式版已經發布了，現在好像完全無法把 sdk 放在 Android Studio 資料夾內
 所以之前沒有把 sdk 獨立出來的，記得要獨立出來，不然可能會發生無法更新的問題
+
+[TOC]
 
 # Installation
 
@@ -67,8 +60,6 @@ Android Studio 正式版已經發布了，現在好像完全無法把 sdk 放在
 除了 Android Studio 外，可能還會安裝一些 Dependent 的套件
 不過就放著讓他跑就可以了
 
-<a name="1123 update 1"></a>
-
 ## Install SDK manager
 
 自從 0.8.14 版之後，SDK Manager 就不會再跟 Android Studio 綁在一起
@@ -91,8 +82,6 @@ Android Studio 會自動幫你把 SDK 的路徑設定到原本的位置
 
 記得要把 SDK 的路徑改成剛剛安裝的路徑
 ![21_set_sdk_2](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/ETqkNhX.png)
-
-<a name="1123 update 1"></a>
 
 ## SDK setup
 
