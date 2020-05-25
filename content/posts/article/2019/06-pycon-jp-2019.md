@@ -81,7 +81,7 @@ Keynote 演講的空間後面馬上就是海報，在更後面就是贊助商
 ![programmer-is-lazy](/images/posts-image/2019-10-12-pycon-jp-2019/15700840091662.jpg)
 
 因為明年是 Python 2 的 End of Life
-![262688.art](/images/posts-image/2019-10-12-pycon-jp-2019/262688.art.jp2){: style="height:150px;width:150px"}
+![python 2 rip](/images/posts-image/2019-10-12-pycon-jp-2019/python 2 rip.png){: style="height:150px;width:150px"}
 <small>Designed by [Lisa Roach](https://twitter.com/lisroach)</small>
 
 有好幾場 Talk 都跟 Python 2 to 3 相關，像是 ["It’s 2019 and I’m still using Python 2. Should I be worried?"](https://www.youtube.com/watch?v=8a_TEjCl8NQ) 跟 Kir 大大的 ["SupportingPython3 in Large Scale Project"](https://www.youtube.com/watch?v=BS-HyV3V7GI)
