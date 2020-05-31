@@ -83,7 +83,7 @@ PyCon 總共跨了 9 天
     * 介紹跟比較 5 種 Python 的 Concurrency Model (asyncio, Python threads, GIL-released thread, multiprocessing, distributed tasks)
 * **Supporting Engineers with Mental Health Issues**
     * Enginner 常常因為壓力太大造成一些心理的狀況，該如何正視自己的狀況並試著調適或尋求幫助
-* [Lightening Talk - Overthinking T-Shirts with Scipy](https://www.youtube.com/watch?v=yFcCuinRVnU&list=PLPbTDk1hBo3x9H3_WOWv_p6wD01B5eBvn&index=1&t=16m35s)
+* [Lightning Talk - Overthinking T-Shirts with Scipy](https://www.youtube.com/watch?v=yFcCuinRVnU&list=PLPbTDk1hBo3x9H3_WOWv_p6wD01B5eBvn&index=1&t=16m35s)
     * 這是他們用自己公司的產品 Demo 他們計算要帶多少 T-Shirts 來發，並且快速的視覺化
     * 其實講題蠻瞎的，但講者講的真的很有趣很精彩 XD
 
@@ -107,13 +107,13 @@ PyCon 總共跨了 9 天
 * **Python Security Tool**
     * 這場很實際地提了幾個跟 Python 有關的 Security Tool  
       ![IMG_3063](/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3063.jpg)
-* [Lightening Talk - Writing Selfless Python](https://www.youtube.com/watch?v=sRwHWPDJBnk&list=PLPbTDk1hBo3x9H3_WOWv_p6wD01B5eBvn&index=2&t=39m35s)
+* [Lightning Talk - Writing Selfless Python](https://www.youtube.com/watch?v=sRwHWPDJBnk&list=PLPbTDk1hBo3x9H3_WOWv_p6wD01B5eBvn&index=2&t=39m35s)
     * 無私的 Python： 有了 [selfless](https://pypi.org/project/selfless/) 我們不用在 Python 中寫自私的 (**self**fish) class 也能有同樣的功能
-* [Lightening Talk - One Weird Trick for people to see your name in lunch](https://www.youtube.com/watch?v=sRwHWPDJBnk&list=PLPbTDk1hBo3x9H3_WOWv_p6wD01B5eBvn&index=2&t=8m45s)
+* [Lightning Talk - One Weird Trick for people to see your name in lunch](https://www.youtube.com/watch?v=sRwHWPDJBnk&list=PLPbTDk1hBo3x9H3_WOWv_p6wD01B5eBvn&index=2&t=8m45s)
     * 因為 badge 太長了，吃午餐的時候其他人會看不到你的名字
         * 那就在 badge 後面打個結，讓帶子短一點，大家就能看到你的名字了
-    * 恩對，這場 Lightening Talk 就真的是這樣而已 XD
-* [Lightening Talk - 3 Quick Tips for Software Blogging](https://www.youtube.com/watch?v=sRwHWPDJBnk&list=PLPbTDk1hBo3x9H3_WOWv_p6wD01B5eBvn&index=2&t=5m19s)
+    * 恩對，這場 Lightning Talk 就真的是這樣而已 XD
+* [Lightning Talk - 3 Quick Tips for Software Blogging](https://www.youtube.com/watch?v=sRwHWPDJBnk&list=PLPbTDk1hBo3x9H3_WOWv_p6wD01B5eBvn&index=2&t=5m19s)
     1. Set a Purpose
         * Why do you want to blog?
             * Publish info, guides, help

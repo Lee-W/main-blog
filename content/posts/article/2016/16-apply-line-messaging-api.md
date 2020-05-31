@@ -28,7 +28,7 @@ Series: Line Bot Tutorial
 再來會詢問業務類別，跟要求設定 Bot 名稱和照片
 ![3_apply_account](/images/posts-image/2016-11-22-apply-line-messaging-api/VdCT8JX.png)
 
-回到[Line Bussiness Center](https://business.line.me/zh-hant/) 的帳號清單
+回到[Line Business Center](https://business.line.me/zh-hant/) 的帳號清單
 就能看到帳號已經創好了
 ![4_success_apply](/images/posts-image/2016-11-22-apply-line-messaging-api/4ViJbIR.png)
 

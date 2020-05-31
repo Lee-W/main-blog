@@ -29,7 +29,7 @@ Instead of commonly used big five theory, MBTI is used in this paper.
 There are 4 types of personality trait
 i.e.
 
-* Introversion(I) / Extraversion(E)
+* Introversion(I) / Extroversion(E)
 * Intuition(N) / Sensing(S)
 * Feeling(F) / Thinking(T)
 * Perception(P) / Judging(J)
@@ -102,7 +102,7 @@ Since the data is skewed, AUC is used.
     * Word Vector Only → (AUC=0.651)
     * n-gram only → (AUC=0.607)
     * POS only → (AUC=0.585)
-* Combinded Features
+* Combined Features
     * All three features → (AUC=0.661)
     * POS + n-gram → (AUC=0.616)
 

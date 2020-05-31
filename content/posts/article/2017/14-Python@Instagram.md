@@ -38,7 +38,7 @@ The conclusion is that you can get to a few hundred million users with Python be
 1. Build extensive tools to profile and understand performance bottleneck
 2. Moving stable, citical compenents to C/C++
 3. Cythonization
-4. Async? New Pyton runtime?
+4. Async? New Python runtime?
 
 ## Road to Python3
 
@@ -59,7 +59,7 @@ if isinstance(value, six.text_type):
 mymac = hamc.new(value)
 ```
 
-Instagram 處理這種問題的功能實作成 `ensure_binary`, `ensure_str`, `ensure_text` 這類的 helper functon
+Instagram 處理這種問題的功能實作成 `ensure_binary`, `ensure_str`, `ensure_text` 這類的 helper function
 
 這也是我之前在 trace [transitions](https://github.com/pytransitions/transitions) 的 source code
 發現有一個[listify](https://github.com/pytransitions/transitions/blob/2cb42916affe167a8d94cdfdf56ab08b41ccd05c/transitions/core.py#L25) 的 function

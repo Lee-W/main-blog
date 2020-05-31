@@ -17,7 +17,7 @@ Authors: Lee-W
 
 ## Practical Application of Personality Detection
 
-* Product and Service Recommandation (People with similiar personalities might have similiar favors)
+* Product and Service Recommandation (People with similar personalities might have similar favors)
 * Mental Health Diagnosis
 * Forensics: Reduce the circle of suspects
 * Human Resource: One's suitablitlty for certain jobs
@@ -67,7 +67,7 @@ Deep CNN (Conolutional Nerual Network)
     * Document vector is then reduced to a fixed-length document vector
     * This Document vector is then concatenated with document-level features
 * Predict
-    * Yes / No (5 different personality traits are trained seperately)
+    * Yes / No (5 different personality traits are trained separately)
 
 ## Network Architecture in Detail
 

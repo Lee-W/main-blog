@@ -144,7 +144,7 @@ private void logError(Exception e) {
 ```java
 Circle makeCircle(double x, double y, double radius);
 // refactored
-Circle makeCirecle(POoint center, double radiue);
+Circle makeCirecle(Point center, double radiue);
 ```
 
 * 避免使用輸出型參數，這十分的讓人困惑
@@ -286,7 +286,7 @@ try {
 	port.open();
 } catch (DeviceResponseException e) {
 	reportPortError(e);
-	logger.log("Device reponse exception", "e");
+	logger.log("Device response exception", "e");
 } catch (ATM1212UnlockedException e) {
 	reportPortError(e);
 	logger.log("ATM1212UnlockedException");

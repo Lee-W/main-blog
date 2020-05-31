@@ -238,7 +238,7 @@ name = "cz_customize"
 ```toml
 [tool.commitizen.customize]
 message_template = "{{change_type}}:{% if show_message %} {{message}}{% endif %}"
-example = "feature: this feature eanable customize through config file"
+example = "feature: this feature enable customize through config file"
 schema = "<type>: <body>"
 bump_pattern = "^(break|new|fix|hotfix)"
 bump_map = {"break" = "MAJOR", "new" = "MINOR", "fix" = "PATCH", "hotfix" = "PATCH"}

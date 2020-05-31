@@ -61,9 +61,9 @@ $ inv --list
 Available tasks:
 
   clean      Remove all the tmp files in .gitignore
-  develop    Install script in pipenv environement in development mode
+  develop    Install script in pipenv environment in development mode
   init-dev   Install development dependencies
-  install    Install script in pipenv environement
+  install    Install script in pipenv environment
   test       Run testcase
 ```
 
@@ -168,8 +168,8 @@ Available tasks:
   style.flake8        Check style through flake8
   style.mypy          Check style through mypy
   style.pylint        Check style through pylint
-  style.reformat      Reformat python files throgh black
-  style.run (style)   Check style throgh linter (Note that pylint is not included)
+  style.reformat      Reformat python files through black
+  style.run (style)   Check style through linter (Note that pylint is not included)
   test.cov            Run test coverage check
   test.run (test)     Run test cases
 ```

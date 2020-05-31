@@ -22,4 +22,4 @@ Authors: Lee-W
 還有各種我這些年開發上有用到的 Git 功能
 順便來練習一直想學的 reveal.js
 
-因為用了 exteral.js，一開始 load 的時間會稍微久一點
+因為用了 external.js，一開始 load 的時間會稍微久一點

@@ -124,5 +124,5 @@ git push -u gitbook
 ## Reference
 
 * [Gitbook](https://github.com/GitbookIO/gitbook)
-* [GitBook Documentaion](http://help.gitbook.io/index.html)
+* [GitBook Documentation](http://help.gitbook.io/index.html)
 * [深入淺出 GitBook 寫作與自助出版，電子書也能多人協作](http://www.codedata.com.tw/social-coding/gitbook-self-publishing/)

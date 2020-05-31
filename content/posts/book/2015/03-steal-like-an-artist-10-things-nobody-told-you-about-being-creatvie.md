@@ -17,7 +17,7 @@ Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie
 ### 1. Steal like an artist
 
 * Wiliam Ralph Inge: 「什麼是原創？就是沒被人看出來的抄襲」
-* Garbage in Gabage out
+* Garbage in Garbage out
     * 藝術是搜集好的想法，但不是囤積狂
 * Save Your Theft for Latter
     * 隨時都要養成紀錄的習慣。存在紀錄裡的東西是死的，只又讓它再重新被使用才會活過來
@@ -65,7 +65,7 @@ Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie
 * Get yourself a calendar.
     * 在行事曆上記下每日的目標。完成後在行事曆畫一個叉，並且持續維持這個叉的連線
 
-### 10. Creatvity is substraction
+### 10. Creatvity is subtraction
 
 ---
 
@@ -75,7 +75,7 @@ Steal Like an Artist - 10 Things Nobody Told You about Being Creatvie
 * Start you swipe file
 * Go to the library
 * Buy a notebook and use it
-* Get youself and calendar
+* Get yourself and calendar
 * Start your logbook
 * Give a copy of this book away (?)
 * Start a blog

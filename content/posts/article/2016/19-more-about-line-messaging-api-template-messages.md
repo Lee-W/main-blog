@@ -11,7 +11,7 @@ Series: Line Bot Tutorial
 * 圖片, 影像, 聲音, 地圖
 * 貼圖 (Line Bot 所能使用的[貼圖清單](https://devdocs.line.me/files/sticker_list.pdf))
 * Imagemap
-* Tempalte
+* Template
     * Button
     * Confirm
     * Carousel

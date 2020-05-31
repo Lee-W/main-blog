@@ -41,7 +41,7 @@ Never `rm -rf .git` XD
 
 ```shell
 git stauts
-touch REAMDE.mdd
+touch README.mdd
 ```
 
 There are three main stages
@@ -57,7 +57,7 @@ There are three main stages
 |working|← |`checkout`|repo|
 
 ```shell
-git add REAMDE.md
+git add README.md
 ```
 
 When we're ready
@@ -66,14 +66,14 @@ When we're ready
 After README.md is modified
 
 ```shell
-git add REAMDE.md
+git add README.md
 git status
 ```
 
 Now this file is in staging area
 
 So, how to go back to history?
-`git reset REAMDE.md`
+`git reset README.md`
 
 Take a look at our history
 `git log`

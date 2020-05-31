@@ -84,7 +84,7 @@ Python table manners: a clean style
 Python table manners: a clean style
 
 **[2019/09/16]**
-[PyCon JP 2019](https://pycon.jp/2019/) - Peer Reviewed Lightening Talk
+[PyCon JP 2019](https://pycon.jp/2019/) - Peer Reviewed Lightning Talk
 [How to get more than PyCon in a PyCon](https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9)
 
 **[2019/03/24]**

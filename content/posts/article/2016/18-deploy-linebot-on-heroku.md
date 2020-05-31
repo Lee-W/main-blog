@@ -61,7 +61,7 @@ heroku config:set "env key":"env value"
 
 或者也能到 dashboard 的 `Settings` → `Config Variables` → `Reveal Config Vars` 做設定
 
-### Python Envrionments
+### Python Environments
 因為 Heroku 支援多種不同的語言
 所以要讓 Heroku 知道我們使用的是 Python
 

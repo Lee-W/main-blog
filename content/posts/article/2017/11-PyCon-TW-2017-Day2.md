@@ -131,7 +131,7 @@ except RequestError:
 
 * Q: Language Generation 要怎麼做 Evaluation，怎樣才算是符合文法？怎樣算是合理的回答？
     * 判定很主觀
-    * 很多研究會導入 Human Evalutaion
+    * 很多研究會導入 Human Evaluation
     * 目前還是一個 Open Question
 
 * Q: 目前關於情緒判斷，是否已經到了 Production 了？

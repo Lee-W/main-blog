@@ -98,7 +98,7 @@ Android Studio 會自動幫你把 SDK 的路徑設定到原本的位置
 接著把選單拉到最後選
 
 * **Android Support Repository**
-* **Android support Libarary**
+* **Android support Library**
 * **Coogle Play services**
 * **Google Repository**
 * **Google USB Driver**

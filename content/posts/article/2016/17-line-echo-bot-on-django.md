@@ -133,7 +133,7 @@ urlpatterns = [
 這些都設定完後，要在 Line 那邊設定的 Webhook Url 就是 `https://"your domain name"/echobot/callback/`
 (`your domain name` 要設定什麼，會在這篇文章的[最後](#https-server) 說明)
 
-## Implement Callback Funtion
+## Implement Callback Function
 
 接下來就是要在 `echobot/views.py` 實作 `callback` 了
 
@@ -194,7 +194,7 @@ signature = request.META['HTTP_X_LINE_SIGNATURE']
 body = request.body.decode('utf-8')
 ```
 
-### Handle Recevied Message
+### Handle Received Message
 
 取得 body 跟 signature 後
 Line Bot API 會在處理訊息的同時，確認這個訊息是否來自 Line

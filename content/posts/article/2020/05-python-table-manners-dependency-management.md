@@ -16,7 +16,7 @@ Series: Python Table Manners
 
 [TOC]
 
-## virutalenv
+## virtualenv
 創建虛擬環境，最基本作法就是使用 [virtualenv](https://virtualenv.pypa.io/en/latest/)
 透過以下幾個指令建立一個，並把相關的套件寫入 `requirements.txt`
 
