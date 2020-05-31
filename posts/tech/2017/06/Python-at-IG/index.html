@@ -128,7 +128,7 @@ Google 一下「PyCon」、「Instagram」有很多很清楚地整理<br/>
 <li>Build extensive tools to profile and understand performance bottleneck</li>
 <li>Moving stable, citical compenents to C/C++</li>
 <li>Cythonization</li>
-<li>Async? New Pyton runtime?</li>
+<li>Async? New Python runtime?</li>
 </ol>
 <h2 id="road-to-python3">Road to Python3</h2>
 <p>這一段講到 Instragram 如何從 Python2 轉到 Python3 的過程<br/>
@@ -143,7 +143,7 @@ Google 一下「PyCon」、「Instagram」有很多很清楚地整理<br/>
     <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encode</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
 <span class="n">mymac</span> <span class="o">=</span> <span class="n">hamc</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </code></pre></div>
-<p>Instagram 處理這種問題的功能實作成 <code>ensure_binary</code>, <code>ensure_str</code>, <code>ensure_text</code> 這類的 helper functon</p>
+<p>Instagram 處理這種問題的功能實作成 <code>ensure_binary</code>, <code>ensure_str</code>, <code>ensure_text</code> 這類的 helper function</p>
 <p>這也是我之前在 trace <a href="https://github.com/pytransitions/transitions">transitions</a> 的 source code<br/>
 發現有一個<a href="https://github.com/pytransitions/transitions/blob/2cb42916affe167a8d94cdfdf56ab08b41ccd05c/transitions/core.py#L25">listify</a> 的 function<br/>
 雖然是蠻簡單的小技巧，不過還算蠻實用的</p>

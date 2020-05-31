@@ -94,8 +94,8 @@
 <li><a href="#difference-with-others">Difference with Others</a></li>
 </ul>
 </li>
-<li><a href="#2-problem-statment">2. Problem Statment</a><ul>
-<li><a href="#def-1-competive-linear-threshold-clt">Def 1: Competive Linear Threshold (CLT)</a></li>
+<li><a href="#2-problem-statement">2. Problem Statement</a><ul>
+<li><a href="#def-1-competitive-linear-threshold-clt">Def 1: Competitive Linear Threshold (CLT)</a></li>
 <li><a href="#def-2-multi-round-competitive-influence-maximization-mrcim">Def 2: Multi-Round Competitive Influence Maximization (MRCIM)</a></li>
 </ul>
 </li>
@@ -163,8 +163,8 @@
 <li>Model driven → learning-based, data-drivern</li>
 <li>Not considering different network topology → General to adapt both opponent's strategy and environment setting (e.g. underlying network topology)</li>
 </ol>
-<h2 id="2-problem-statment">2. Problem Statment</h2>
-<h3 id="def-1-competive-linear-threshold-clt">Def 1: Competive Linear Threshold (CLT)</h3>
+<h2 id="2-problem-statement">2. Problem Statement</h2>
+<h3 id="def-1-competitive-linear-threshold-clt">Def 1: Competitive Linear Threshold (CLT)</h3>
 <ul>
 <li>CLT model is a multi-party diffusion model</li>
 <li>The party who has the highest influence occupied the node</li>
@@ -222,7 +222,7 @@
 </li>
 <li>Single Party IM strategies<ul>
 <li>Namely, which strategy to choose given the current state</li>
-<li>The size can be reduced to strategies choosen</li>
+<li>The size can be reduced to strategies chosen</li>
 <li>Chosen Strategies<ul>
 <li>sub-greedy</li>
 <li>degree-first</li>
@@ -271,14 +271,14 @@
 <li>Propagation model is known (e.g. LT in the experiments)</li>
 <li>Strategies served as actions are predefined</li>
 </ul>
-<p>In training phase, train the agent aginst a certain strategy and see how it performs on the given network<br/>
+<p>In training phase, train the agent against a certain strategy and see how it performs on the given network<br/>
 These data can be used to learn the value functions</p>
 <h4>Training Against Opponents</h4>
 <ul>
 <li>Opponent Strategy<ul>
 <li>Known: Simulate the strategy during training</li>
-<li>Unknown but availble during training: Same as above</li>
-<li>Unknown: More Gerneral Model in 4.4</li>
+<li>Unknown but available during training: Same as above</li>
+<li>Unknown: More General Model in 4.4</li>
 </ul>
 </li>
 </ul>
@@ -309,7 +309,7 @@ These data can be used to learn the value functions</p>
 </ul>
 </li>
 <li>Pure Strategy<ul>
-<li>The most likely strategy is choosen</li>
+<li>The most likely strategy is chosen</li>
 </ul>
 </li>
 </ul>
@@ -379,7 +379,7 @@ These data can be used to learn the value functions</p>
 </tbody>
 </table>
 <ul>
-<li>Ideally, they should have simliar result in two-party MRCIM. In practice, the result might not due to<ul>
+<li>Ideally, they should have similar result in two-party MRCIM. In practice, the result might not due to<ul>
 <li>STORM-QQ does not guarantee equilibrium</li>
 <li>Although equilibrium exists in STORM-MM. It does not guarantee to be found due to lack of training data or bad init or such problems.</li>
 </ul>

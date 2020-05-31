@@ -296,7 +296,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><span class="n">Circle</span> <span class="nf">makeCircle</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">,</span> <span class="kt">double</span> <span class="n">radius</span><span class="p">);</span>
 <span class="c1">// refactored</span>
-<span class="n">Circle</span> <span class="nf">makeCirecle</span><span class="p">(</span><span class="n">POoint</span> <span class="n">center</span><span class="p">,</span> <span class="kt">double</span> <span class="n">radiue</span><span class="p">);</span>
+<span class="n">Circle</span> <span class="nf">makeCirecle</span><span class="p">(</span><span class="n">Point</span> <span class="n">center</span><span class="p">,</span> <span class="kt">double</span> <span class="n">radiue</span><span class="p">);</span>
 </code></pre></div>
 <ul>
 <li>避免使用輸出型參數，這十分的讓人困惑</li>
@@ -456,7 +456,7 @@
     <span class="n">port</span><span class="p">.</span><span class="na">open</span><span class="p">();</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">DeviceResponseException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">reportPortError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-    <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"Device reponse exception"</span><span class="p">,</span> <span class="s">"e"</span><span class="p">);</span>
+    <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"Device response exception"</span><span class="p">,</span> <span class="s">"e"</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">ATM1212UnlockedException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">reportPortError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
     <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"ATM1212UnlockedException"</span><span class="p">);</span>

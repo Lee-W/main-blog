@@ -194,7 +194,7 @@ python3 manage.py startapp echobot
 
 <p>這些都設定完後，要在 Line 那邊設定的 Webhook Url 就是 <code>https://"your domain name"/echobot/callback/</code><br>
 (<code>your domain name</code> 要設定什麼，會在這篇文章的<a href="#https-server">最後</a> 說明)</p>
-<h2 id="implement-callback-funtion">Implement Callback Funtion</h2>
+<h2 id="implement-callback-function">Implement Callback Function</h2>
 <p>接下來就是要在 <code>echobot/views.py</code> 實作 <code>callback</code> 了</p>
 <h3 id="initial">Initial</h3>
 <p>先 import 相關的函式庫</p>
@@ -246,7 +246,7 @@ python3 manage.py startapp echobot
 </code></pre></div>
 
 
-<h3 id="handle-recevied-message">Handle Recevied Message</h3>
+<h3 id="handle-received-message">Handle Received Message</h3>
 <p>取得 body 跟 signature 後<br>
 Line Bot API 會在處理訊息的同時，確認這個訊息是否來自 Line</p>
 <p>而處理 Line 傳過來給我們的訊息，有兩種不同的做法</p>

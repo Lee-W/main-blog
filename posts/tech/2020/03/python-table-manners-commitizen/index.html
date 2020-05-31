@@ -280,7 +280,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 需要 <code>change_type</code>, <code>show_message</code>, <code>message</code> 三個變數來產生 commit message</p>
 <div class="highlight"><pre><span></span><code><span class="k">[tool.commitizen.customize]</span>
 <span class="n">message_template</span> <span class="o">=</span> <span class="s">"{{change_type}}:{% if show_message %} {{message}}{% endif %}"</span>
-<span class="n">example</span> <span class="o">=</span> <span class="s">"feature: this feature eanable customize through config file"</span>
+<span class="n">example</span> <span class="o">=</span> <span class="s">"feature: this feature enable customize through config file"</span>
 <span class="n">schema</span> <span class="o">=</span> <span class="s">"&lt;type&gt;: &lt;body&gt;"</span>
 <span class="n">bump_pattern</span> <span class="o">=</span> <span class="s">"^(break|new|fix|hotfix)"</span>
 <span class="n">bump_map</span> <span class="o">=</span> <span class="p">{</span><span class="s">"break"</span> <span class="o">=</span> <span class="s">"MAJOR"</span><span class="p">,</span> <span class="s">"new"</span> <span class="o">=</span> <span class="s">"MINOR"</span><span class="p">,</span> <span class="s">"fix"</span> <span class="o">=</span> <span class="s">"PATCH"</span><span class="p">,</span> <span class="s">"hotfix"</span> <span class="o">=</span> <span class="s">"PATCH"</span><span class="p">}</span>
