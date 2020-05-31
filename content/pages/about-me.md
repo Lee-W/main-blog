@@ -18,11 +18,10 @@ slug: about-me
 ### [Apr 2017 - Present]
 **Software Engineer, [Slice Technologies, Inc](https://www.slice.com/about)**
 
-* Designed and developed the backend of a data labeling system which automates the interaction between crowdsourcing workers and experts to generate high quality labeled data. Implemented the system through [Flask](http://flask.pocco.org), achieved test coverage higher than 90% and set up the CI/CD pipeline
-* Build ETL processes
-* Built data pipelines through [Airflow](https://airflow.apache.org/)
+* Designed and developed the backend of a data labeling system which automates the interaction between crowdsourcing workers and experts to generate high quality labeled data
+* Built data pipelines through [Apache Airflow](https://airflow.apache.org/) for machine learning models
 * Built best practice template for internal Python projects
-* Set up the CI/CD pipeline through [Jenkins](https://jenkins.io/) for existing systems to enhance productivity
+* Set up the CI/CD pipeline through [Jenkins](https://jenkins.io/) for existing systems
 * Added test for existing projects to ensure the functionality correctness
 * Cooperate with oversea teams in San Mateo and Ukraine
 
@@ -68,6 +67,10 @@ I was the executor of the program and the leader of the teaching assistant team.
 * Delivered a human resource management system using [django](https://www.djangoproject.com)
 
 ## Talk and Tutorial
+**[2020/07/24]**
+[Euro Python 2020](https://ep2020.europython.eu/)
+Python table manners: a clean style
+
 **[2020/04/25]**
 [Remote Python Pizza 2020](https://remote.python.pizza/)
 [commitizen-tools: What can we gain from crafting a git message convention?](https://speakerdeck.com/leew/what-can-we-gain-from-crafting-a-git-message-convention-at-remote-python-pizza-2020)
@@ -140,14 +143,14 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
     * [commitizen](https://github.com/commitizen-tools/commitizen)
     * [commitizen_cz_template](https://github.com/commitizen-tools/commitizen_cz_template)
 * [git-extras](https://github.com/tj/git-extras)
+* [pycontw](https://github.com/pycontw)
+    * [mail_handler](https://github.com/pycontw/mail_handler): Author
+    * [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator): Maintainer
 * [beeeware](https://beeware.org)
     * [batavia](https://github.com/beeware/batavia)
     * [toga](https://github.com/beeware/toga)
     * [podium](https://github.com/beeware/podium)
 * [flask](https://github.com/pallets/flask)
-* [pycontw](https://github.com/pycontw)
-    * [mail_handler](https://github.com/pycontw/mail_handler): Author
-    * [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator): Maintainer
 * [open-edx](https://github.com/edx)
     * [edx-platform](https://github.com/edx/edx-platform)
     * [edx-documentation](https://github.com/edx/edx-documentation)
