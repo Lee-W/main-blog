@@ -1,6 +1,6 @@
 Title: Python Table Manners - pre-commit: git commit 前做完檢查
 Date: 2020-02-28 23:10
-Modified: 2020-04-29 09:56
+Modified: 2020-07-19 16:27
 Category: Tech
 Tags: Python, Git, Code Quality
 Slug: python-table-manners-pre-commit
@@ -29,7 +29,8 @@ Series: Python Table Manners
 pipenv install pre-commit --dev
 ```
 
-接著可以透過設定檔 `.pre-commit-config.yaml`，告訴 pre-commit 要做哪些檢查
+### 設定 pre-commit hook
+先透過設定檔 `.pre-commit-config.yaml`，告訴 pre-commit 要做哪些檢查
 需要注意的是，專案必須要是一個 git 專案
 這些 git hook 都會被寫入 `.git/hooks/`
 
@@ -38,7 +39,7 @@ e.g.,
 ```yaml
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.5.0
+    rev: v3.1.0
     hooks:
       - id: end-of-file-fixer
       - id: trailing-whitespace
@@ -54,8 +55,8 @@ repos:
         * `id`: hook id
         * `args`: 執行這個 hook 的額外參數
 
-pre-commit 整理了將常見並較為通用的 hook 都被整理在 [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks)
-除此之外，如 [black](https://github.com/psf/black) 和 [flake8](https://gitlab.com/pycqa/flake8) 等工具也都有提供 pre commit hook
+pre-commit 整理了較為通用的 hook 在 [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks)
+除此之外，如 [black](https://github.com/psf/black) 和 [flake8](https://gitlab.com/pycqa/flake8) 等工具也都有提供 pre-commit hook
 
 另外，**建議 rev 不要使用 master，而應該使用版本號等明確的 rev**
 原因是預設 pre-commit 會在執行時將 hook 專案 clone 下來
@@ -63,6 +64,8 @@ pre-commit 整理了將常見並較為通用的 hook 都被整理在 [pre-commit
 指到的 master 就會是第一次 pre-commit 抓到時的 master，不是最新版的 master
 
 寫完設定檔後，接著就是把 pre-commit hook 安裝到 git 專案中
+
+## 安裝 pre-commit 到專案中
 
 ```sh
 # 將 pre-commit hook 安裝到 git 專案
@@ -93,8 +96,8 @@ Trim Trailing Whitespace.................................................Passed
 
 如果沒有通過， git 會阻止你進行 commit
 
-另外需要注意的是 pre-commit 每次都只會針對要 commit 的檔案做檢查
-所以建議第一次引入 pre-commit 時，可以先檢查所有的檔案
+pre-commit 每次都只會針對要 commit 的檔案做檢查
+所以建議第一次加入 pre-commit 時，可以先檢查所有的檔案
 
 ```sh
 pipenv run pre-commit run --all-files
@@ -154,7 +157,7 @@ pipenv install pre-commit install pre-push
 * prepare-commit-msg
 * commit-msg
 
-像是 pytest 這種需要執行比較久的
+像是 pytest 這種需要執行比較久的任務
 我就不見得會在 commit 這個 stage 做檢查
 而是會把 `stages` 改成 `push`
 並安裝 pre-push 的 hook (i.e. `pipenv run pre-commit install -t pre-push`)

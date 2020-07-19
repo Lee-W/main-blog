@@ -1,5 +1,6 @@
 Title: Python Table Manners - 管理繁瑣任務
 Date: 2020-02-27 20:04
+Modified: 2020-07-19 16:25
 Category: Tech
 Tags: Python, Task
 Slug: python-table-manners-manage-trival-tasks
@@ -40,7 +41,7 @@ pipenv install invoke --dev
 如果想在部署時也能使用 invoke 的功能，最方便的方法透過 pipenv 安裝
 
 ## 如何使用 invoke
-我們再回到 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator) 的例子
+再回到 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator) 的例子
 checkout 到 [commit 83e4](https://github.com/pycontw/pycontw-postevent-report-generator/tree/83e48c6443303045ed1de2f020297c3110bb1300)，回到使用 invoke 管理指令前
 從當時的文件可以看到，還需要使用相對冗長的指令
 
