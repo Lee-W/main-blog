@@ -1,5 +1,6 @@
 Title: Python Table Manners - 測試 (一)
 Date: 2020-02-24 23:33
+Modified: 2020-07-19 15:58
 Category: Tech
 Tags: Python, Test
 Slug: python-table-manners-test-1
@@ -211,9 +212,8 @@ class TestSponsor(unittest.TestCase):
 ```
 
 ### Step 1: 使用 fixture 取代 setUp / tearDown
-先將 `unittest.TestCase` 移除
-改用 pytest 的 [fixture](https://docs.pytest.org/en/latest/fixture.html) 取代 `setUp`
-fixture 跟 `setUp / tearDown` 的概念上相近，都是用來準備（清除）資源
+將 `unittest.TestCase` 移除，改用 pytest 的 [fixture](https://docs.pytest.org/en/latest/fixture.html) 取代 `setUp`
+fixture 跟 `setUp / tearDown` 的概念上相近，都是用來 準備 / 清除 資源
 但 fixture 更加的輕量且更有彈性
 
 在 `test_sponsor_number` 中加入參數 `sponsors`

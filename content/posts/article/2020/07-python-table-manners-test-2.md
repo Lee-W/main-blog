@@ -1,6 +1,6 @@
 Title: Python Table Manners - 測試 (二)
 Date: 2020-02-25 18:05
-Modified: 2020-04-29 09:37
+Modified: 2020-07-19 16:03
 Category: Tech
 Tags: Python, Test
 Slug: python-table-manners-test-2
@@ -67,7 +67,7 @@ from db import DB
 from model import User
 
 
- @pytest.fixture(scope="function")
+@pytest.fixture(scope="function")
 def db():
     _db  = DB()
     _db.connect()
@@ -157,7 +157,7 @@ def test_add(x, y, expected_sum):
 前面已經介紹過 `parameterize` 和 `usefixtures`
 這裡會介紹 [markers](http://doc.pytest.org/en/latest/example/markers.html) 還可以做什麼
 
-### 內建 fixture
+### 內建 marker
 * [skip](http://doc.pytest.org/en/latest/skipping.html#skip): 跳過這個測試案例
 * [skipif](http://doc.pytest.org/en/latest/skipping.html#skipif): 如果符合某個條件，則跳過這個測試案例
 * [xfail](http://doc.pytest.org/en/latest/skipping.html#xfail): 預期會失敗 （其實前一篇想跳過會失敗的案例應該要用 `xfail`，而不是 `skip`）
@@ -231,7 +231,7 @@ def test_index_error():
 * `--lf` (`--last-failed`): 只測試上次失敗的案例
 * `--ff` (`--failed-first`): 從上次失敗的案例開始測試
 * `--nf` `--new-first`: 從新的案例開始測試
-* `-k EXPRESSION`: 只測試名稱符合 "EXPRESIION" 的案例
+* `-k EXPRESSION`: 只測試名稱符合 "EXPRESSION" 的案例
 * `-m MARKEXPR`: 只測試有 "MARKEXPR" maker 的案例
 * `--fixtures`: 列出所有 `fixtures`
 
@@ -243,11 +243,10 @@ def test_index_error():
 pipenv install pytest-cov --dev
 ```
 
-pytest-cov 的使用方式是在 `pytest` 指令後面加上參數
-
 e.g.,
 
 ```sh
+# 計算 myproj 的覆蓋率
 pipenv run pytest --cov=myproj tests/
 ```
 
@@ -310,6 +309,8 @@ Read More 👉 [Configuration reference](https://coverage.readthedocs.io/en/cove
 * [pytest-mock](https://github.com/pytest-dev/pytest-mock)
     * 使用 mocking 的技巧將部分不好測試的物件替換成假的物件
     * 推薦參考 [Demystifying the Patch Function - PyCon US 2018](https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/) （不過她不是用 pytest）
+* [pytest-regression](https://github.com/ESSS/pytest-regressions)
+    * 將冗長的測試結果寫成檔案，每次測試都去比對跟上次產生的結果是否相同
 * 尋找其他插件
     * [pytest - Installing and Using plugins¶](https://docs.pytest.org/en/latest/plugins.html)
     * [pytest-dev](https://github.com/pytest-dev)
