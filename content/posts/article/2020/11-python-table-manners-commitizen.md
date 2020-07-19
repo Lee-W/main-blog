@@ -1,6 +1,6 @@
 Title: Python Table Manners - Commitizen: 規格化 commit message
 Date: 2020-03-01 00:45
-Modified: 2020-03-03 20:12
+Modified: 2020-07-19 17:17
 Category: Tech
 Tags: Python, Git
 Slug: python-table-manners-commitizen
@@ -28,23 +28,19 @@ Series: Python Table Manners
 撰寫好的 commit message，除了讓未來的自己知道自己在幹嘛
 也能讓團隊之間的溝通更順利
 
-* 送 Pull Request / Merge Request 時，reviewers 能更快速地知道增加了哪些功能
+* 送 Pull Request / Merge Request 時，審核者能更快速地知道增加了哪些功能
 * 新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案
 
 ## Commitizen
 除了提供的 commit message 撰寫建議和規範 （👉 [Writing commits](https://commitizen-tools.github.io/commitizen/tutorials/writing_commits/)）
 [commitizen](https://commitizen-tools.github.io/commitizen/) 更進一步提供互動式介面，讓使用者可以夠輕鬆地產生符合規範的 commit message
-
 同時也整合了前一篇所提到的 pre-commit hook，避免使用者將不符合規範的 commit message 寫入
-
 除了採用來自 Angular 社群的 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) (約定式提交) 外， commitizen 提供了高度的客製化，讓每個團隊或專案都可以依照自己的需求，撰寫相對應的規範
-
 規範了 commit message 後，除了增加可讀性增加外，也讓訊息有可以被解析做其他運用
 e.g., 提升版本號, 產生更新日誌
 
 ## 安裝與設定 Commitizen
 跟 invoke 一樣，我會把 commitizen 同時安裝在系統和虛擬環境
-
 安裝在虛擬環境主要是為了能在 CI/CD 伺服器上自動升版
 
 ```sh
@@ -127,7 +123,7 @@ cz commit
 ```yaml
 - repos
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v1.17.0
+    rev: v1.23.1
     hooks:
       - id: commitizen
         stages: [commit-msg]
@@ -277,7 +273,7 @@ message = "Do you want to add body message in commit?"
 設定完之後，再使用 `cz commit` 就可以看到客製化過後的問題了
 ![customize](/images/posts-image/2020-02-22-python-table-manner-series/customize.jpg)
 
-### 將 commit 規範寫成 Python 套件發佈
+### 將客製化的 commit 規範寫成 Python 套件發佈
 這個做法比較複雜，也比較不常會用到，所以我只會概略地講
 （Read More 👉 [Customization](https://commitizen-tools.github.io/commitizen/customization/)）
 
@@ -294,27 +290,54 @@ cookiecutter gh:Lee-W/commitizen_cz_template
 在設定檔中設定 `name` 或在指令列加上參數 `-n name` (e.g., `cz -n cz_test commit`) 就可以開始使用
 
 ## 自動產生更新日誌（Changelog）
-commitizen 另外也支援產生 [keep a changelog](https://keepachangelog.com/en/1.1.0/) 格式的更新日誌
-不過還沒被 merge 到 master 內
-這個功能現在也還只是剛實作一個初版，應該會有一些問題
-有興趣可以到 [command-changelog](https://github.com/commitizen-tools/commitizen/tree/command-changelog) 這個 branch 玩玩看，一起來除錯（？）
+commitizen 可以透過過往的 commit message 產生 [keep a changelog](https://keepachangelog.com/en/1.1.0/) 格式的更新日誌
 
-產生更新日誌（預設會取代 `CHANGELOG.md`）
+透過以下指令，就能從最舊到最新的 commit message 產生更新日誌（預設是 `CHANGELOG.md`）
 
 ```sh
 cz changelog
 ```
 
-參數
+如果已經有現成的 `CHANGELOG.md`， 則可以使用 `cz changelog --incremental` 指令
 
-* `--dry-run`： 將更新日誌的內容輸出到終端機，不更新到檔案
-* `--file-name FILE_NAME`： 指定更新日誌名稱
-* `--start-rev START_REV`： 更新日誌開始的點（結束的點為目前所在的 commit）
+commitizen 會試著找出文件中最新釋出版本 (e.g., `1.0.5`) 的位置，將最新釋出版本以後的 commit 加入到更新日誌的最頂端
+
+例如目前有一個專案，最新的版本是 1.0.5，之後有 2 個 commit
+
+* feat: cool new features
+* ci: update jenkins file
+
+原本的更新日誌
+
+```markdown
+## 1.0.5
+### Feat
+- old features
+```
+
+則 commitizen 在釋出 1.1.0 時，就會產生如下的更新日誌
+
+```markdown
+## 1.1.0 (2020-07-19)
+
+### Feat
+
+- new cool new features
+
+## 1.0.5
+### Feat
+- some old features
+```
+
+因為產生更新日誌，通常適合在升版後執行
+在 `cz bump` 加上 `--changelog` 參數就可以提升版本的同時，產生更新日誌
 
 ## 其他 commitizen 指令和常用參數
 * `cz bump`： 提升版本號
     * `--dry-run`： 將提升版本號的訊息輸出到終端機，不會實際產生 tag 和改變檔案
     * `--increment {MAJOR,MINOR,PATCH}`： 提升特定版本號
+* `cz changelog`: 產生更新日誌
+    * `--dry-run`: 將產生的更新日誌書處到終端機，不產生或更新 `CHANGELOG.md`
 * `cz -n NAME [command]`： 使用不同的 commit 規則 （e.g., `cz -n cz_jira commit`）
 * `cz version`： 顯示版本
     * `-p`（`--project`）： 顯示專案版本
