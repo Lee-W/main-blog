@@ -19,11 +19,11 @@
 <meta name="keywords" content="Python, Test, Tech, " />
 
 <meta property="og:title" content="Python Table Manners - 測試 (一) "/>
-<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" />
+<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1" />
 <meta property="og:description" content="設定完環境後，接著開始要開發程式的各項功能 要驗證程式正確性時，我們就會用到測試" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
-<meta property="og:article:published_time" content="2020-02-24T23:33:00+08:00" />
+<meta property="og:article:published_time" content="2020-07-19T15:58:00+08:00" />
 <meta name="twitter:title" content="Python Table Manners - 測試 (一) ">
 <meta name="twitter:description" content="設定完環境後，接著開始要開發程式的各項功能 要驗證程式正確性時，我們就會用到測試">
 
@@ -77,7 +77,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1">
+            <a href="https://lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1">
                 Python Table Manners - 測試 (一)
             </a>
         </h1>
@@ -274,9 +274,8 @@ test/test_title.py F                                     [100%]
         <span class="o">.......</span>
 </code></pre></div>
 <h3 id="step-1-fixture-setup-teardown">Step 1: 使用 fixture 取代 setUp / tearDown</h3>
-<p>先將 <code>unittest.TestCase</code> 移除<br/>
-改用 pytest 的 <a href="https://docs.pytest.org/en/latest/fixture.html">fixture</a> 取代 <code>setUp</code><br/>
-fixture 跟 <code>setUp / tearDown</code> 的概念上相近，都是用來準備（清除）資源<br/>
+<p>將 <code>unittest.TestCase</code> 移除，改用 pytest 的 <a href="https://docs.pytest.org/en/latest/fixture.html">fixture</a> 取代 <code>setUp</code><br/>
+fixture 跟 <code>setUp / tearDown</code> 的概念上相近，都是用來 準備 / 清除 資源<br/>
 但 fixture 更加的輕量且更有彈性</p>
 <p>在 <code>test_sponsor_number</code> 中加入參數 <code>sponsors</code><br/>
 pytest 會去找 fixtures 中是否有 <code>sponsors</code> 並將之代入</p>
@@ -366,15 +365,15 @@ test/test_title.py .              [100%]
 
 
 <div class="applause_button">
-    <applause-button url=https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1> </applause-button>
+    <applause-button url=https://lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1> </applause-button>
 </div>
 
  
                 <p id="post-share-links">
     Share on:
-      <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20-%20%E6%B8%AC%E8%A9%A6%20%28%E4%B8%80%29&url=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1&hashtags=python,test" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=Python%20Table%20Manners%20-%20%E6%B8%AC%E8%A9%A6%20%28%E4%B8%80%29&amp;body=https%3A//lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20-%20%E6%B8%AC%E8%A9%A6%20%28%E4%B8%80%29&url=https%3A//lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1&hashtags=python,test" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Python%20Table%20Manners%20-%20%E6%B8%AC%E8%A9%A6%20%28%E4%B8%80%29&amp;body=https%3A//lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -395,8 +394,8 @@ test/test_title.py .              [100%]
                 <a class="accordion-toggle disqus-comment-count comment-count collapsed"
                    data-toggle="collapse"
                    data-parent="#accordion2"
-                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1"
-                   href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1#comment_thread"
+                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1"
+                   href="https://lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1#comment_thread"
                    id="comment-accordion-toggle">
                     Comments
                 </a>
@@ -414,8 +413,8 @@ test/test_title.py .              [100%]
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 
-    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1';
-    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1';
+    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1';
+    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -441,15 +440,15 @@ test/test_title.py .              [100%]
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" title="Previous: Python Table Manners - 虛擬環境和套件管理">Python Table Manners - 虛擬環境和套件管理</a></li>
-                <li class="next-article"><a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Next: Python Table Manners - 測試 (二)">Python Table Manners - 測試 (二)</a> »</li>
+                <li class="previous-article">« <a href="https://lee-w.github.io/posts/book/2020/07/escape-9-5-live-anywhere-and-join-the-new-rich" title="Previous: [Book] 一週工作四小時">[Book] 一週工作四小時</a></li>
+                <li class="next-article"><a href="https://lee-w.github.io/posts/book/2020/07/high-output-management" title="Next: [Book] 葛洛夫給經理人的第一課：從煮蛋、賣咖啡的早餐店談高效能管理之道">[Book] 葛洛夫給經理人的第一課：從煮蛋、賣咖啡的早餐店談高效能管理之道</a> »</li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2020-02-24T23:33:00+08:00">2020/02/24 - Mon</time>
+            <time itemprop="dateCreated" datetime="2020-07-19T15:58:00+08:00">2020/07/19 - Sun</time>
         <h4>Python Table Manners</h4>
     <ul class="multi-parts-list">
             <li >
@@ -458,29 +457,29 @@ test/test_title.py .              [100%]
             <li >
             <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" title="Python Table Manners - 虛擬環境和套件管理">Part 2: Python Table Manners - 虛擬環境和套件管理</a>
             </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 3: Python Table Manners - 測試 (二)</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Python Table Manners - 程式碼風格">Part 4: Python Table Manners - 程式碼風格</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" title="Python Table Manners - 管理繁瑣任務">Part 5: Python Table Manners - 管理繁瑣任務</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" title="Python Table Manners - pre-commit: git commit 前做完檢查">Part 6: Python Table Manners - pre-commit: git commit 前做完檢查</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" title="Python Table Manners - Commitizen: 規格化 commit message">Part 7: Python Table Manners - Commitizen: 規格化 commit message</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 8: Python Table Manners - 安全性檢查</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" title="Python Table Manners - 文件">Part 9: Python Table Manners - 文件</a>
+            </li>
             <li  class="active-part">
-            Part 3: Python Table Manners - 測試 (一)
-            </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 4: Python Table Manners - 測試 (二)</a>
-            </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Python Table Manners - 程式碼風格">Part 5: Python Table Manners - 程式碼風格</a>
-            </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" title="Python Table Manners - 管理繁瑣任務">Part 6: Python Table Manners - 管理繁瑣任務</a>
-            </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" title="Python Table Manners - pre-commit: git commit 前做完檢查">Part 7: Python Table Manners - pre-commit: git commit 前做完檢查</a>
-            </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" title="Python Table Manners - Commitizen: 規格化 commit message">Part 8: Python Table Manners - Commitizen: 規格化 commit message</a>
-            </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 9: Python Table Manners - 安全性檢查</a>
-            </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" title="Python Table Manners - 文件">Part 10: Python Table Manners - 文件</a>
+            Part 10: Python Table Manners - 測試 (一)
             </li>
     </ul>
                 <h4>Read Time</h4>

@@ -1,5 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-05-04T11:07:00+08:00</updated><entry><title>Remote Python Pizza 🍕 2020</title><link href="https://lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020" rel="alternate"></link><published>2020-05-03T16:52:00+08:00</published><updated>2020-05-03T16:52:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-05-03:/posts/tech/2020/05/remote-python-pizza-2020</id><summary type="html">&lt;p&gt;上週六參加了第一場遠端的 Python 研討會 &lt;a href="https://remote.python.pizza/"&gt;Remote Python Pizza&lt;/a&gt;&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-07-19T17:23:00+08:00</updated><entry><title>Python Table Manners - 測試 (一)</title><link href="https://lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1" rel="alternate"></link><published>2020-07-19T15:58:00+08:00</published><updated>2020-07-19T15:58:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-07-19:/posts/tech/2020/07/python-table-manners-test-1</id><summary type="html">&lt;p&gt;設定完環境後，接著開始要開發程式的各項功能&lt;br/&gt;
+要驗證程式正確性時，我們就會用到測試&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;設定完環境後，接著開始要開發程式的各項功能&lt;br/&gt;
+要驗證程式正確性時，我們就會用到測試&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="_1"&gt;為什麼要寫自動化測試&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;如果沒有自動化測試&lt;ul&gt;
+&lt;li&gt;必須手動去驗證程式的正確性，非常的麻煩，而且也不能確定每次的測試方式都是相同的&lt;br/&gt;
+ （因為很麻煩懶得測試，就會變成讓客戶去測試，然後就造成更多的麻煩了 😱）&lt;/li&gt;
+&lt;li&gt;增加重構 (refactoring）的風險，因為很難驗證程式的功能有沒有在重構的過程中被改動&lt;/li&gt;
+&lt;li&gt;加入新的功能不知道會不會動到原本沒問題的功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最後就會像是這樣&lt;/p&gt;
+&lt;p&gt;&lt;img alt="new-feature-without-test" src="/images/posts-image/2020-02-22-python-table-manner-series/new-feature.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;總之，要寫測試！&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="unittest"&gt;unittest&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.python.org/3/library/unittest.html"&gt;unittest&lt;/a&gt; 是 Python 標準函式庫的測試框架&lt;br/&gt;
+起源於 jUnit 的做法，所以在函式的命名上和設計上比較不符合 Python 風格&lt;br/&gt;
+雖然它不會是今天的主角，我也不太建議使用它&lt;br/&gt;
+不過我們還是可以稍微看一下它的用法&lt;/p&gt;
+&lt;p&gt;以下取自 &lt;a href="https://docs.python.org/3/library/unittest.html"&gt;unittest&lt;/a&gt; 文件中的其中一個範例&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;unittest&lt;/span&gt;
+
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;WidgetTestCase&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Widget&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'The widget'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_default_widget_size&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+                         &lt;span class="s1"&gt;'incorrect default size'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_widget_resize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;resize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+                         &lt;span class="s1"&gt;'wrong size after resize'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;可以看到幾個特點&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;測試案例必須要繼承 &lt;code&gt;unittest.TestCase&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;setUp&lt;/code&gt; 函式來初始化 &lt;code&gt;widget&lt;/code&gt; （如果有需要清除資源則會使用 &lt;code&gt;tearDown&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;assertEqual&lt;/code&gt; 來做正確性的驗證&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="pytest"&gt;pytest&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.pytest.org/en/latest/"&gt;pytest&lt;/a&gt; 是現在 Python 專案比較建議使用的測試框架，也會是這篇文章的主角&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;為什麼要用 pytest&lt;ul&gt;
+&lt;li&gt;更符合 Python 程式碼風格 (Pythonic)&lt;/li&gt;
+&lt;li&gt;pytest 支援舊有的 unittest 風格&lt;/li&gt;
+&lt;li&gt;扁平化（不用繼承）&lt;/li&gt;
+&lt;li&gt;只需要使用 &lt;code&gt;assert&lt;/code&gt;，不需要去記 &lt;code&gt;assert.+&lt;/code&gt; (e.g., &lt;code&gt;assertEqual&lt;/code&gt;) 等 API&lt;/li&gt;
+&lt;li&gt;更好的&lt;a href="https://docs.pytest.org/en/latest/goodpractices.html#test-discovery"&gt;測試探索 (test discovery)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;更多的進階功能 (e.g., fixture, mark, parameterize and etc.)&lt;/li&gt;
+&lt;li&gt;強大的套件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下是取自 &lt;a href="https://docs.pytest.org/en/latest/getting-started.html#create-your-first-test"&gt;pytest - Create your first test&lt;/a&gt; 的範例&lt;br/&gt;
+相比於 unittest 寫法相對簡潔&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# content of test_sample.py&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_answer&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="unittest-pytest"&gt;從 Unittest 到 Pytest&lt;/h2&gt;
+&lt;p&gt;前面的比較其實不太公平，unittest 的範例要測的內容本身就比 pytest 的複雜&lt;/p&gt;
+&lt;p&gt;所以我會用 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator"&gt;pycontw-postevent-report-generator&lt;/a&gt; 為例子&lt;br/&gt;
+討論我們如何從 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/v1.0"&gt;v1.0&lt;/a&gt; 的 unittest 風格測試，在 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/83e48c6443303045ed1de2f020297c3110bb1300"&gt;commit 83e4&lt;/a&gt; 改成 pytest 風格&lt;/p&gt;
+&lt;p&gt;如果想跟著程式碼跑，可以把專案 clone 下來&lt;br/&gt;
+（當然能貢獻專案就更棒了 XD）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# clone 專案到本地&lt;/span&gt;
+git clone https://github.com/pycontw/pycontw-postevent-report-generator
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; pycontw-postevent-report-generator
+
+&lt;span class="c1"&gt;# 切換到 commit 83e4 的前一個 commit (因為commit 83e4 已經完成修正)&lt;/span&gt;
+git checkout 83e4~1
+
+&lt;span class="c1"&gt;# 設定環境&lt;/span&gt;
+pipenv install --dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="test-discovery"&gt;測試探索 (test discovery)&lt;/h3&gt;
+&lt;p&gt;原本在 &lt;code&gt;REAMDE.md&lt;/code&gt; 中要跑測試的指令相當的冗長&lt;br/&gt;
+而且還必須要切換到 test 資料夾 (i.e., &lt;code&gt;cd test&lt;/code&gt;)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nb"&gt;test&lt;/span&gt;
+python -m unittest discover -s ./ -p &lt;span class="s1"&gt;'test_*.py'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;不過這其實是一開始的設計有誤&lt;br/&gt;
+以下是 test 資料夾的內容&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;└── test
+    …
+    ├── test_sponsor.py
+    └── test_title.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;test (或 tests) 本身也必須是一個套件&lt;br/&gt;
+所以必須先在 test 內加入 &lt;code&gt;__init__.py&lt;/code&gt;&lt;br/&gt;
+（這是我在寫程式初期想開始寫測試遇到一個很大的坎 😢）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;└── test
+    ├── __init__.py
+    ...
+    ├── test_sponsor.py
+    └── test_title.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;做了改變後，就能改用更簡潔的指令跑測試了&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;unittest&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;因為 pytest 也支援 unittest 風格&lt;br/&gt;
+所以也可以直接使用 &lt;code&gt;pytest&lt;/code&gt; 指令跑測試&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pytest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;不過在前一篇有提到使用虛擬環境的概念了&lt;br/&gt;
+所以應該要確保每個專案的指令，都只在虛擬環境中跑&lt;br/&gt;
+（因為前一篇建議使用 pipenv，之後的範例都會用 pipenv）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 將 pytest 安裝到開發環境&lt;/span&gt;
+pipenv install pytest --dev
+
+&lt;span class="c1"&gt;# 執行 pytest&lt;/span&gt;
+pipenv run pytest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;這時候的測試其實會有許多錯誤&lt;br/&gt;
+但執行後應該要能看到類似的畫面&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;===================== test session starts ======================
+platform darwin -- Python 3.7.3, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
+rootdir: /....../pycontw-postevent-report-generator
+plugins: mock-2.0.0, cov-2.8.1
+collected 9 items
+
+test/test_sponsor.py FFFFFFFF                            [ 88%]
+test/test_title.py F                                     [100%]
+
+=========================== FAILURES ===========================
+......
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;F&lt;/code&gt; 表示測試沒有通過，如果出現 &lt;code&gt;.&lt;/code&gt; 則表示成功&lt;/p&gt;
+&lt;h3 id="step-0"&gt;Step 0: 追朔程式碼&lt;/h3&gt;
+&lt;p&gt;以 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/blob/v1.0/test/test_sponsor.py#L6"&gt;test/test_sponsor.py::TestSponsor::test_sponsor_number&lt;/a&gt; 為例&lt;br/&gt;
+（在套件以及模組的層級後， pytest 會使用 &lt;code&gt;::&lt;/code&gt; 來區別不同的層級，試試 &lt;code&gt;pipenv run pytest -v&lt;/code&gt; 指令）&lt;/p&gt;
+&lt;p&gt;原本 unittest 風格的程式碼中，做了三件事&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用了 &lt;code&gt;setUp&lt;/code&gt; 做 &lt;code&gt;self.sponsors&lt;/code&gt; 的初始化&lt;/li&gt;
+&lt;li&gt;在 &lt;code&gt;test_sonpsor_number&lt;/code&gt; 取用 &lt;code&gt;setUp&lt;/code&gt; 中初始過的 &lt;code&gt;self.sponsors&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;self.assertEqual&lt;/code&gt; 來看 &lt;code&gt;self.sponsors&lt;/code&gt; 的長度是否等於 1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;unittest&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;atta.partner&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;
+
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TestSponsor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;sponsors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_all_sponsors&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'./data/packages.yaml'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                            &lt;span class="s1"&gt;'./data/sponsors.yaml'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sponsors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sponsors&lt;/span&gt;
+
+        &lt;span class="o"&gt;......&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_sponsor_number&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="o"&gt;.......&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="step-1-fixture-setup-teardown"&gt;Step 1: 使用 fixture 取代 setUp / tearDown&lt;/h3&gt;
+&lt;p&gt;將 &lt;code&gt;unittest.TestCase&lt;/code&gt; 移除，改用 pytest 的 &lt;a href="https://docs.pytest.org/en/latest/fixture.html"&gt;fixture&lt;/a&gt; 取代 &lt;code&gt;setUp&lt;/code&gt;&lt;br/&gt;
+fixture 跟 &lt;code&gt;setUp / tearDown&lt;/code&gt; 的概念上相近，都是用來 準備 / 清除 資源&lt;br/&gt;
+但 fixture 更加的輕量且更有彈性&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;test_sponsor_number&lt;/code&gt; 中加入參數 &lt;code&gt;sponsors&lt;/code&gt;&lt;br/&gt;
+pytest 會去找 fixtures 中是否有 &lt;code&gt;sponsors&lt;/code&gt; 並將之代入&lt;/p&gt;
+&lt;p&gt;接著也可以將較為冗長的 &lt;code&gt;assertEqual&lt;/code&gt;，改為 &lt;code&gt;assert&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pytest&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;report_generator.partner&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;
+
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TestSponsor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="nd"&gt;@pytest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fixture&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"class"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_all_sponsors&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"test/data/packages.yaml"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                        &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sponsors&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yaml&lt;/span&gt;&lt;span class="s2"&gt;")&lt;/span&gt;
+
+        &lt;span class="o"&gt;......&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_sponsor_number&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+
+        &lt;span class="o"&gt;......&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;(p.s. 在這裡 &lt;code&gt;atta&lt;/code&gt; 已經重新命名為 &lt;code&gt;report_generator&lt;/code&gt;)&lt;/p&gt;
+&lt;h3 id="step-2-markskip"&gt;Step 2: 使用 mark.skip 跳過部分測試&lt;/h3&gt;
+&lt;p&gt;原本的測試中有些邏輯錯誤&lt;br/&gt;
+但我只想先完成風格的轉換，還不打算修正&lt;br/&gt;
+因此先使用了 &lt;a href="http://doc.pytest.org/en/latest/example/markers.html"&gt;markers&lt;/a&gt;&lt;br/&gt;
+在想跳過的測試案例前面加上 &lt;code&gt;@pytest.mark.skip&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pytest&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;report_generator.partner&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;
+
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TestSponsor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="o"&gt;...&lt;/span&gt;
+    &lt;span class="nd"&gt;@pytest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mark&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;skip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"No bronze sponsor in test case"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_sponsor_promotion_web_click_rank_bronze&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;answer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NA_CONTENT_MESSAGE&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bronze_sponsor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;web_click_rank&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;answer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;執行 &lt;code&gt;pipenv run pytest&lt;/code&gt; 後，就會發現有部分的測試案例變成了 &lt;code&gt;s&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;========== test session starts ==========
+platform darwin -- Python 3.7.3, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
+rootdir: /....../pycontw-postevent-report-generator
+plugins: mock-2.0.0, cov-2.8.1
+collected 9 items
+
+test/test_sponsor.py ....ssss     [ 88%]
+test/test_title.py .              [100%]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="step-3-class"&gt;Step 3: 扁平化 - 移除不必要的 class&lt;/h3&gt;
+&lt;p&gt;從上面的範例可以看到， &lt;code&gt;self&lt;/code&gt; 其實並不必要&lt;br/&gt;
+這些測試案例不需要是一個類別&lt;br/&gt;
+因此可以更近一步，把 &lt;code&gt;TestSponsor&lt;/code&gt; 類別移除&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pytest&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;report_generator.partner&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;
+
+
+&lt;span class="nd"&gt;@pytest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fixture&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"function"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_all_sponsors&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"test/data/packages.yaml"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                    &lt;span class="s2"&gt;"test/data/sponsors.yaml"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_sponsor_number&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;不過這並不代表用類別就是錯的&lt;br/&gt;
+一般我會在模組內測試案例比較多的時候，使用類別來將相似的測試案例歸在同一類&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;因為篇幅的關係，我決定把測試分成兩篇文章&lt;br/&gt;
+&lt;del&gt;絕對不是因為我寫不完了&lt;/del&gt;&lt;br/&gt;
+盡請期待明天更深入的 pytest 應用 😄&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://pragprog.com/book/bopytest/python-testing-with-pytest"&gt;Python Testing with pytest&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;非常推薦用這本書上手 &lt;code&gt;pytest&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?time_continue=201&amp;amp;v=pX1_I_sEi8k"&gt;快快樂樂成為 Coding Ninja (by pytest) - PyCon APAC 2015&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/"&gt;Pytest: Rapid Simple Testing -  Swiss Python Summit 2016&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Test"></category></entry><entry><title>Remote Python Pizza 🍕 2020</title><link href="https://lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020" rel="alternate"></link><published>2020-05-03T16:52:00+08:00</published><updated>2020-05-03T16:52:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-05-03:/posts/tech/2020/05/remote-python-pizza-2020</id><summary type="html">&lt;p&gt;上週六參加了第一場遠端的 Python 研討會 &lt;a href="https://remote.python.pizza/"&gt;Remote Python Pizza&lt;/a&gt;&lt;br&gt;
 由於疫情的關係，國外的 PyCon 大多轉往線上或取消&lt;br&gt;
 雖然目前還不確定今年台灣的狀況會如何&lt;br&gt;
 但先觀摩一下其他社群怎麼做的，對我們也很有幫助&lt;/p&gt;
@@ -211,7 +463,7 @@ pipenv run coverage-badge -o docs/coverage.svg
 &lt;li&gt;&lt;a href="https://www.mkdocs.org/"&gt;MkDocs&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/squidfunk/mkdocs-material"&gt;mkdocs-material&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://shields.io/"&gt;shield.io&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Documentation"></category></entry><entry><title>Python Table Manners - 安全性檢查</title><link href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" rel="alternate"></link><published>2020-03-22T13:10:00+08:00</published><updated>2020-03-22T13:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-03-22:/posts/tech/2020/03/python-table-manners-security</id><summary type="html">&lt;p&gt;果然在沒有寫作松的督促下，馬上就拖稿了 XD&lt;br/&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Documentation"></category></entry><entry><title>Python Table Manners - 安全性檢查</title><link href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" rel="alternate"></link><published>2020-03-22T13:10:00+08:00</published><updated>2020-07-19T17:23:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-03-22:/posts/tech/2020/03/python-table-manners-security</id><summary type="html">&lt;p&gt;果然在沒有寫作松的督促下，馬上就拖稿了 XD&lt;br/&gt;
 接下來要介紹在 Python 專案中做安全性檢查的工具&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;果然在沒有寫作松的督促下，馬上就拖稿了 XD&lt;br/&gt;
 接下來要介紹在 Python 專案中做安全性檢查的工具&lt;/p&gt;
@@ -295,13 +547,16 @@ skips:
 # 要執行的檢查種類 （逗號分隔）
 tests:
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;執行 bandit 時要加上 &lt;code&gt;--ini .bandit&lt;/code&gt; 讓 bandit 知道要找這份設定檔&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;bandit --ini .bandit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果不是整個檔案或種類要跳過，則可以在程式碼後面加上 &lt;code&gt;# nosec&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/10/python-security-tool/"&gt;Python Security Tool - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-au-2018/2019/08/watch-out-for-safety-bandits/"&gt;Watch out for Safety Bandits! - PyCon AU 2018&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://myapollo.com.tw/zh-tw/secure-your-python-code-with-bandit/"&gt;用 Bandit 靜態掃描工具，掃描 Python 專案中的安全性問題&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Security"></category></entry><entry><title>Python Table Manners - Commitizen: 規格化 commit message</title><link href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" rel="alternate"></link><published>2020-03-01T00:45:00+08:00</published><updated>2020-03-03T20:12:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-03-01:/posts/tech/2020/03/python-table-manners-commitizen</id><summary type="html">&lt;p&gt;接續著前一篇的 pre-commit 繼續談 git 相關的工具&lt;br/&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Security"></category></entry><entry><title>Python Table Manners - Commitizen: 規格化 commit message</title><link href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" rel="alternate"></link><published>2020-03-01T00:45:00+08:00</published><updated>2020-07-19T17:17:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-03-01:/posts/tech/2020/03/python-table-manners-commitizen</id><summary type="html">&lt;p&gt;接續著前一篇的 pre-commit 繼續談 git 相關的工具&lt;br/&gt;
 這篇來聊聊如何透過 &lt;a href="https://github.com/commitizen-tools/commitizen"&gt;commitizen&lt;/a&gt; 規範 commit message&lt;br/&gt;
 還有我們能拿規範過的 commit message 做什麼&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;接續著前一篇的 pre-commit 繼續談 git 相關的工具&lt;br/&gt;
@@ -319,19 +574,19 @@ tests:
 &lt;p&gt;撰寫好的 commit message，除了讓未來的自己知道自己在幹嘛&lt;br/&gt;
 也能讓團隊之間的溝通更順利&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;送 Pull Request / Merge Request 時，reviewers 能更快速地知道增加了哪些功能&lt;/li&gt;
+&lt;li&gt;送 Pull Request / Merge Request 時，審核者能更快速地知道增加了哪些功能&lt;/li&gt;
 &lt;li&gt;新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="commitizen"&gt;Commitizen&lt;/h2&gt;
 &lt;p&gt;除了提供的 commit message 撰寫建議和規範 （👉 &lt;a href="https://commitizen-tools.github.io/commitizen/tutorials/writing_commits/"&gt;Writing commits&lt;/a&gt;）&lt;br/&gt;
-&lt;a href="https://commitizen-tools.github.io/commitizen/"&gt;commitizen&lt;/a&gt; 更進一步提供互動式介面，讓使用者可以夠輕鬆地產生符合規範的 commit message&lt;/p&gt;
-&lt;p&gt;同時也整合了前一篇所提到的 pre-commit hook，避免使用者將不符合規範的 commit message 寫入&lt;/p&gt;
-&lt;p&gt;除了採用來自 Angular 社群的 &lt;a href="https://www.conventionalcommits.org/en/v1.0.0/"&gt;Conventional Commits&lt;/a&gt; (約定式提交) 外， commitizen 提供了高度的客製化，讓每個團隊或專案都可以依照自己的需求，撰寫相對應的規範&lt;/p&gt;
-&lt;p&gt;規範了 commit message 後，除了增加可讀性增加外，也讓訊息有可以被解析做其他運用&lt;br/&gt;
+&lt;a href="https://commitizen-tools.github.io/commitizen/"&gt;commitizen&lt;/a&gt; 更進一步提供互動式介面，讓使用者可以夠輕鬆地產生符合規範的 commit message&lt;br/&gt;
+同時也整合了前一篇所提到的 pre-commit hook，避免使用者將不符合規範的 commit message 寫入&lt;br/&gt;
+除了採用來自 Angular 社群的 &lt;a href="https://www.conventionalcommits.org/en/v1.0.0/"&gt;Conventional Commits&lt;/a&gt; (約定式提交) 外， commitizen 提供了高度的客製化，讓每個團隊或專案都可以依照自己的需求，撰寫相對應的規範&lt;br/&gt;
+規範了 commit message 後，除了增加可讀性增加外，也讓訊息有可以被解析做其他運用&lt;br/&gt;
 e.g., 提升版本號, 產生更新日誌&lt;/p&gt;
 &lt;h2 id="commitizen_1"&gt;安裝與設定 Commitizen&lt;/h2&gt;
-&lt;p&gt;跟 invoke 一樣，我會把 commitizen 同時安裝在系統和虛擬環境&lt;/p&gt;
-&lt;p&gt;安裝在虛擬環境主要是為了能在 CI/CD 伺服器上自動升版&lt;/p&gt;
+&lt;p&gt;跟 invoke 一樣，我會把 commitizen 同時安裝在系統和虛擬環境&lt;br/&gt;
+安裝在虛擬環境主要是為了能在 CI/CD 伺服器上自動升版&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝 commitizen 到系統&lt;/span&gt;
 pipx install commitizen
 
@@ -386,7 +641,7 @@ cz commit
 因此只要在專案的 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt; 加入以下這段&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;repos&lt;/span&gt;
   &lt;span class="l l-Scalar l-Scalar-Plain"&gt;- repo&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;https://github.com/commitizen-tools/commitizen&lt;/span&gt;
-    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;rev&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;v1.17.0&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;rev&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;v1.23.1&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;hooks&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
       &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;commitizen&lt;/span&gt;
         &lt;span class="nt"&gt;stages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;commit-msg&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
@@ -503,7 +758,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容&lt;br/&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;設定完之後，再使用 &lt;code&gt;cz commit&lt;/code&gt; 就可以看到客製化過後的問題了&lt;br/&gt;
 &lt;img alt="customize" src="/images/posts-image/2020-02-22-python-table-manner-series/customize.jpg"/&gt;&lt;/p&gt;
-&lt;h3 id="commit-python"&gt;將 commit 規範寫成 Python 套件發佈&lt;/h3&gt;
+&lt;h3 id="commit-python"&gt;將客製化的 commit 規範寫成 Python 套件發佈&lt;/h3&gt;
 &lt;p&gt;這個做法比較複雜，也比較不常會用到，所以我只會概略地講&lt;br/&gt;
 （Read More 👉 &lt;a href="https://commitizen-tools.github.io/commitizen/customization/"&gt;Customization&lt;/a&gt;）&lt;/p&gt;
 &lt;p&gt;我已經先將套件的架構驟寫成一個 &lt;a href="https://cookiecutter.readthedocs.io/en/1.7.0/"&gt;cookiecutter&lt;/a&gt; 範本&lt;br/&gt;
@@ -515,24 +770,44 @@ commitizen 提升版本號時，就會一併更新檔案的內容&lt;br/&gt;
 安裝之後會在 &lt;code&gt;cz ls&lt;/code&gt; 看到這個新的 commit 規範&lt;br/&gt;
 在設定檔中設定 &lt;code&gt;name&lt;/code&gt; 或在指令列加上參數 &lt;code&gt;-n name&lt;/code&gt; (e.g., &lt;code&gt;cz -n cz_test commit&lt;/code&gt;) 就可以開始使用&lt;/p&gt;
 &lt;h2 id="changelog"&gt;自動產生更新日誌（Changelog）&lt;/h2&gt;
-&lt;p&gt;commitizen 另外也支援產生 &lt;a href="https://keepachangelog.com/en/1.1.0/"&gt;keep a changelog&lt;/a&gt; 格式的更新日誌&lt;br/&gt;
-不過還沒被 merge 到 master 內&lt;br/&gt;
-這個功能現在也還只是剛實作一個初版，應該會有一些問題&lt;br/&gt;
-有興趣可以到 &lt;a href="https://github.com/commitizen-tools/commitizen/tree/command-changelog"&gt;command-changelog&lt;/a&gt; 這個 branch 玩玩看，一起來除錯（？）&lt;/p&gt;
-&lt;p&gt;產生更新日誌（預設會取代 &lt;code&gt;CHANGELOG.md&lt;/code&gt;）&lt;/p&gt;
+&lt;p&gt;commitizen 可以透過過往的 commit message 產生 &lt;a href="https://keepachangelog.com/en/1.1.0/"&gt;keep a changelog&lt;/a&gt; 格式的更新日誌&lt;/p&gt;
+&lt;p&gt;透過以下指令，就能從最舊到最新的 commit message 產生更新日誌（預設是 &lt;code&gt;CHANGELOG.md&lt;/code&gt;）&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cz changelog
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;參數&lt;/p&gt;
+&lt;p&gt;如果已經有現成的 &lt;code&gt;CHANGELOG.md&lt;/code&gt;， 則可以使用 &lt;code&gt;cz changelog --incremental&lt;/code&gt; 指令&lt;/p&gt;
+&lt;p&gt;commitizen 會試著找出文件中最新釋出版本 (e.g., &lt;code&gt;1.0.5&lt;/code&gt;) 的位置，將最新釋出版本以後的 commit 加入到更新日誌的最頂端&lt;/p&gt;
+&lt;p&gt;例如目前有一個專案，最新的版本是 1.0.5，之後有 2 個 commit&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;--dry-run&lt;/code&gt;： 將更新日誌的內容輸出到終端機，不更新到檔案&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--file-name FILE_NAME&lt;/code&gt;： 指定更新日誌名稱&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--start-rev START_REV&lt;/code&gt;： 更新日誌開始的點（結束的點為目前所在的 commit）&lt;/li&gt;
+&lt;li&gt;feat: cool new features&lt;/li&gt;
+&lt;li&gt;ci: update jenkins file&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;原本的更新日誌&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;## 1.0.5&lt;/span&gt;
+&lt;span class="err"&gt;### Feat&lt;/span&gt;
+&lt;span class="err"&gt;- old features&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;則 commitizen 在釋出 1.1.0 時，就會產生如下的更新日誌&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;##&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2020&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;07&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;###&lt;/span&gt; &lt;span class="n"&gt;Feat&lt;/span&gt;
+
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;cool&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;features&lt;/span&gt;
+
+&lt;span class="o"&gt;##&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;
+&lt;span class="o"&gt;###&lt;/span&gt; &lt;span class="n"&gt;Feat&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="k"&gt;some&lt;/span&gt; &lt;span class="k"&gt;old&lt;/span&gt; &lt;span class="n"&gt;features&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;因為產生更新日誌，通常適合在升版後執行&lt;br/&gt;
+在 &lt;code&gt;cz bump&lt;/code&gt; 加上 &lt;code&gt;--changelog&lt;/code&gt; 參數就可以提升版本的同時，產生更新日誌&lt;/p&gt;
 &lt;h2 id="commitizen_3"&gt;其他 commitizen 指令和常用參數&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;cz bump&lt;/code&gt;： 提升版本號&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;--dry-run&lt;/code&gt;： 將提升版本號的訊息輸出到終端機，不會實際產生 tag 和改變檔案&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--increment {MAJOR,MINOR,PATCH}&lt;/code&gt;： 提升特定版本號&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cz changelog&lt;/code&gt;: 產生更新日誌&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--dry-run&lt;/code&gt;: 將產生的更新日誌書處到終端機，不產生或更新 &lt;code&gt;CHANGELOG.md&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;cz -n NAME [command]&lt;/code&gt;： 使用不同的 commit 規則 （e.g., &lt;code&gt;cz -n cz_jira commit&lt;/code&gt;）&lt;/li&gt;
@@ -591,7 +866,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容&lt;br/&gt;
 &lt;li&gt;&lt;a href="https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/"&gt;How to Write Good Commit Messages: A Practical Git Guide&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.conventionalcommits.org/en/v1.0.0/"&gt;Conventional Commit&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://semver.org/"&gt;Semantic Version&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Git"></category></entry><entry><title>Python Table Manners - pre-commit: git commit 前做完檢查</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" rel="alternate"></link><published>2020-02-28T23:10:00+08:00</published><updated>2020-04-29T09:56:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-28:/posts/tech/2020/02/python-table-manners-pre-commit</id><summary type="html">&lt;p&gt;前一篇提到了透過 &lt;a href="http://www.pyinvoke.org/"&gt;invoke&lt;/a&gt; 簡化繁瑣的指令&lt;br/&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Git"></category></entry><entry><title>Python Table Manners - pre-commit: git commit 前做完檢查</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" rel="alternate"></link><published>2020-02-28T23:10:00+08:00</published><updated>2020-07-19T16:27:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-28:/posts/tech/2020/02/python-table-manners-pre-commit</id><summary type="html">&lt;p&gt;前一篇提到了透過 &lt;a href="http://www.pyinvoke.org/"&gt;invoke&lt;/a&gt; 簡化繁瑣的指令&lt;br/&gt;
 但人類是懶惰的&lt;br/&gt;
 即使已經更簡便了，沒被督促常常還是會忘了執行&lt;br/&gt;
 就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑&lt;br/&gt;
@@ -619,13 +894,14 @@ pipenv install pre-commit --dev …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summar
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝 pre-commit&lt;/span&gt;
 pipenv install pre-commit --dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;接著可以透過設定檔 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt;，告訴 pre-commit 要做哪些檢查&lt;br/&gt;
+&lt;h3 id="pre-commit-hook"&gt;設定 pre-commit hook&lt;/h3&gt;
+&lt;p&gt;先透過設定檔 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt;，告訴 pre-commit 要做哪些檢查&lt;br/&gt;
 需要注意的是，專案必須要是一個 git 專案&lt;br/&gt;
 這些 git hook 都會被寫入 &lt;code&gt;.git/hooks/&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;e.g.,&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;repos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;repo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;https://github.com/pre-commit/pre-commit-hooks&lt;/span&gt;
-    &lt;span class="nt"&gt;rev&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;v2.5.0&lt;/span&gt;
+    &lt;span class="nt"&gt;rev&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;v3.1.0&lt;/span&gt;
     &lt;span class="nt"&gt;hooks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
       &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;end-of-file-fixer&lt;/span&gt;
       &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;trailing-whitespace&lt;/span&gt;
@@ -644,13 +920,14 @@ pipenv install pre-commit --dev
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;pre-commit 整理了將常見並較為通用的 hook 都被整理在 &lt;a href="https://github.com/pre-commit/pre-commit-hooks"&gt;pre-commit-hooks&lt;/a&gt;&lt;br/&gt;
-除此之外，如 &lt;a href="https://github.com/psf/black"&gt;black&lt;/a&gt; 和 &lt;a href="https://gitlab.com/pycqa/flake8"&gt;flake8&lt;/a&gt; 等工具也都有提供 pre commit hook&lt;/p&gt;
+&lt;p&gt;pre-commit 整理了較為通用的 hook 在 &lt;a href="https://github.com/pre-commit/pre-commit-hooks"&gt;pre-commit-hooks&lt;/a&gt;&lt;br/&gt;
+除此之外，如 &lt;a href="https://github.com/psf/black"&gt;black&lt;/a&gt; 和 &lt;a href="https://gitlab.com/pycqa/flake8"&gt;flake8&lt;/a&gt; 等工具也都有提供 pre-commit hook&lt;/p&gt;
 &lt;p&gt;另外，&lt;strong&gt;建議 rev 不要使用 master，而應該使用版本號等明確的 rev&lt;/strong&gt;&lt;br/&gt;
 原因是預設 pre-commit 會在執行時將 hook 專案 clone 下來&lt;br/&gt;
 如果沒有特別設定， pre-commit 不會把最新版 pull 下來&lt;br/&gt;
 指到的 master 就會是第一次 pre-commit 抓到時的 master，不是最新版的 master&lt;/p&gt;
 &lt;p&gt;寫完設定檔後，接著就是把 pre-commit hook 安裝到 git 專案中&lt;/p&gt;
+&lt;h2 id="pre-commit_2"&gt;安裝 pre-commit 到專案中&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 將 pre-commit hook 安裝到 git 專案&lt;/span&gt;
 pipenv run pre-commit install
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -670,11 +947,11 @@ Fix End of Files.........................................................Passed
 Trim Trailing Whitespace.................................................Passed
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果沒有通過， git 會阻止你進行 commit&lt;/p&gt;
-&lt;p&gt;另外需要注意的是 pre-commit 每次都只會針對要 commit 的檔案做檢查&lt;br/&gt;
-所以建議第一次引入 pre-commit 時，可以先檢查所有的檔案&lt;/p&gt;
+&lt;p&gt;pre-commit 每次都只會針對要 commit 的檔案做檢查&lt;br/&gt;
+所以建議第一次加入 pre-commit 時，可以先檢查所有的檔案&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run pre-commit run --all-files
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="pre-commit-hook"&gt;使用自定義的 pre-commit hook&lt;/h2&gt;
+&lt;h2 id="pre-commit-hook_1"&gt;使用自定義的 pre-commit hook&lt;/h2&gt;
 &lt;p&gt;除了使用現成的 pre-commit hook，也可以寫客製化的檢查&lt;/p&gt;
 &lt;p&gt;下面的例子就是在 commit 前，要進行 pytest 的檢查&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;repos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -725,7 +1002,7 @@ Trim Trailing Whitespace.................................................Passed
 &lt;li&gt;prepare-commit-msg&lt;/li&gt;
 &lt;li&gt;commit-msg&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;像是 pytest 這種需要執行比較久的&lt;br/&gt;
+&lt;p&gt;像是 pytest 這種需要執行比較久的任務&lt;br/&gt;
 我就不見得會在 commit 這個 stage 做檢查&lt;br/&gt;
 而是會把 &lt;code&gt;stages&lt;/code&gt; 改成 &lt;code&gt;push&lt;/code&gt;&lt;br/&gt;
 並安裝 pre-push 的 hook (i.e. &lt;code&gt;pipenv run pre-commit install -t pre-push&lt;/code&gt;)&lt;/p&gt;
@@ -733,7 +1010,7 @@ Trim Trailing Whitespace.................................................Passed
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;default_stages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;push&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;表示如果沒有特定指定 &lt;code&gt;stages&lt;/code&gt; 的 hook 都只在 &lt;code&gt;push&lt;/code&gt; 的階段做檢查&lt;/p&gt;
-&lt;h2 id="pre-commit-hook_1"&gt;為自己的工具加上 pre-commit hook&lt;/h2&gt;
+&lt;h2 id="pre-commit-hook_2"&gt;為自己的工具加上 pre-commit hook&lt;/h2&gt;
 &lt;p&gt;如果你有寫檢查工具，加上 pre-commit hook 就能讓人更方便使用你的工具&lt;br/&gt;
 在工具加入 &lt;code&gt;.pre-commit-hooks.yaml&lt;/code&gt; 讓 pre-commit 知道其他人引入你的工具時要怎麼做檢查&lt;br/&gt;
 撰寫的方式跟 local 的 repo 的寫法相似&lt;/p&gt;
@@ -751,7 +1028,7 @@ Trim Trailing Whitespace.................................................Passed
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://mropengate.blogspot.com/2019/08/pre-commit-git-hooks_4.html"&gt;提升程式碼品質：使用 Pre-Commit (Git Hooks)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Git"></category><category term="Code Quality"></category></entry><entry><title>Python Table Manners - 管理繁瑣任務</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" rel="alternate"></link><published>2020-02-27T20:04:00+08:00</published><updated>2020-02-27T20:04:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-27:/posts/tech/2020/02/python-table-manners-manage-trival-tasks</id><summary type="html">&lt;p&gt;前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具&lt;br/&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Git"></category><category term="Code Quality"></category></entry><entry><title>Python Table Manners - 管理繁瑣任務</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" rel="alternate"></link><published>2020-02-27T20:04:00+08:00</published><updated>2020-07-19T16:25:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-27:/posts/tech/2020/02/python-table-manners-manage-trival-tasks</id><summary type="html">&lt;p&gt;前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具&lt;br/&gt;
 每一個工具又有各自的參數和設定&lt;br/&gt;
 這麼多指令怎麼可能記得起來 😱&lt;/p&gt;
 &lt;p&gt;&lt;img alt="too-many-commands" src="/images/posts-image/2020-02-22-python-table-manner-series/too-many-commands.jpg"/&gt;&lt;/p&gt;
@@ -778,7 +1055,7 @@ pipenv install invoke --dev
 &lt;p&gt;在虛擬環境還需要裝的原因是，部署時系統通常不會預裝 invoke&lt;br/&gt;
 如果想在部署時也能使用 invoke 的功能，最方便的方法透過 pipenv 安裝&lt;/p&gt;
 &lt;h2 id="invoke_2"&gt;如何使用 invoke&lt;/h2&gt;
-&lt;p&gt;我們再回到 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator"&gt;pycontw-postevent-report-generator&lt;/a&gt; 的例子&lt;br/&gt;
+&lt;p&gt;再回到 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator"&gt;pycontw-postevent-report-generator&lt;/a&gt; 的例子&lt;br/&gt;
 checkout 到 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/83e48c6443303045ed1de2f020297c3110bb1300"&gt;commit 83e4&lt;/a&gt;，回到使用 invoke 管理指令前&lt;br/&gt;
 從當時的文件可以看到，還需要使用相對冗長的指令&lt;/p&gt;
 &lt;p&gt;&lt;img alt="before-invoke" src="/images/posts-image/2020-02-22-python-table-manner-series/before-invoke.jpg"/&gt;&lt;/p&gt;
@@ -934,11 +1211,11 @@ invoke 當然也想到了&lt;br/&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/"&gt;Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Task"></category></entry><entry><title>Python Table Manners - 程式碼風格</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" rel="alternate"></link><published>2020-02-26T18:39:00+08:00</published><updated>2020-04-29T09:37:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-26:/posts/tech/2020/02/python-table-manners-coding-style</id><summary type="html">&lt;p&gt;接下來要介紹的是 linter&lt;br/&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Task"></category></entry><entry><title>Python Table Manners - 程式碼風格</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" rel="alternate"></link><published>2020-02-26T18:39:00+08:00</published><updated>2020-07-19T16:20:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-26:/posts/tech/2020/02/python-table-manners-coding-style</id><summary type="html">&lt;p&gt;接下來要介紹的是 linters&lt;br/&gt;
 它用來檢查程式是否符合特定的程式碼風格的一類工具&lt;br/&gt;
 以 Python 來說，則是應該遵守 &lt;a href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP 8&lt;/a&gt;&lt;br/&gt;
 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;接下來要介紹的是 linter&lt;br/&gt;
+</summary><content type="html">&lt;p&gt;接下來要介紹的是 linters&lt;br/&gt;
 它用來檢查程式是否符合特定的程式碼風格的一類工具&lt;br/&gt;
 以 Python 來說，則是應該遵守 &lt;a href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP 8&lt;/a&gt;&lt;br/&gt;
 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤&lt;/p&gt;
@@ -965,11 +1242,11 @@ pipenv install flake8 --dev
 pipenv run flake8
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;flake8 預設對當前目錄下所有 Python 的檔案做檢查&lt;/p&gt;
-&lt;p&gt;執行後，&lt;code&gt;flake8&lt;/code&gt; 會將這些錯誤點出來&lt;/p&gt;
+&lt;p&gt;執行後，&lt;code&gt;flake8&lt;/code&gt; 會將這些錯誤找出來&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;./bad_code.py:4:1: F811 redefinition of unused 'os' from line 1
 ./bad_code.py:4:5: E222 multiple spaces after operator
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;透過這個錯誤碼（e.g., &lt;code&gt;F811&lt;/code&gt;）可以在 &lt;a href="https://www.flake8rules.com/"&gt;flake8 rules&lt;/a&gt; 找到為什麼這是個錯誤和怎麼修正比較好&lt;/p&gt;
+&lt;p&gt;透過錯誤碼（e.g., &lt;code&gt;F811&lt;/code&gt;）可以在 &lt;a href="https://www.flake8rules.com/"&gt;flake8 rules&lt;/a&gt; 找到為什麼這是個錯誤和怎麼修正比較好&lt;/p&gt;
 &lt;h3 id="_2"&gt;設定&lt;/h3&gt;
 &lt;p&gt;某些狀況下，我們會不完全依照 flake8 的風格&lt;br/&gt;
 例如 &lt;a href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP 8&lt;/a&gt; 的每行只能有 79 個字元，已經越來越不被使用&lt;/p&gt;
@@ -1019,18 +1296,24 @@ pipenv install pylint --dev
 pipenv run pylint &amp;lt;package&amp;gt; ......
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="_5"&gt;設定&lt;/h3&gt;
-&lt;p&gt;因為 pylint 的設定非常多，可以使用它提供的指令來產生預設的設定檔&lt;br/&gt;
-一般會建議透過內建的指令生成 &lt;code&gt;.pylintrc&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 將預設的 pylint 設定檔寫入 `.pylintrc`&lt;/span&gt;
-pipenv run pylint --generate-rcfile &amp;gt;&amp;gt; .pylintrc
+&lt;p&gt;原本我建議使用 &lt;code&gt;pipenv run pylint --generate-rcfile &amp;gt;&amp;gt; .pylintrc&lt;/code&gt; 來產生設定檔&lt;br/&gt;
+但現在我更傾向在 pyproject.toml 中只寫入想要客製化的設定&lt;br/&gt;
+原先的做法會在設定檔 .pylintrc 中有著大量的預設值，會不好找到哪些是修改過的設定，造成維護上的困難&lt;br/&gt;
+不過需要注意的一點是在某些版本的 pylint 這個設定方式會出錯&lt;br/&gt;
+所以必須安裝版本 2.5.3 以上的 pylint&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tool.pylint]&lt;/span&gt;
+    &lt;span class="k"&gt;[tool.pylint.messages_control]&lt;/span&gt;
+    &lt;span class="n"&gt;disable&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+        &lt;span class="s"&gt;"bad-continuation"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s"&gt;"missing-function-docstring"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s"&gt;"missing-module-docstring"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s"&gt;"invalid-name"&lt;/span&gt;
+    &lt;span class="p"&gt;]&lt;/span&gt;
+
+    &lt;span class="k"&gt;[tool.pylint.format]&lt;/span&gt;
+    &lt;span class="n"&gt;max-line-length&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;88&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;我常用到的欄位有 &lt;code&gt;disable&lt;/code&gt; 跟 &lt;code&gt;max-line-length&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;disable 的錯誤可以在 &lt;a href="http://pylint-messages.wikidot.com/all-codes"&gt;pylint-messages&lt;/a&gt; 找到&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;..&lt;/span&gt;
-&lt;span class="na"&gt;disable&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;print-statement,&lt;/span&gt;
-&lt;span class="na"&gt;...&lt;/span&gt;
-&lt;span class="na"&gt;max-line-length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;88&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;其中 disable 的錯誤可以在 &lt;a href="http://pylint-messages.wikidot.com/all-codes"&gt;pylint-messages&lt;/a&gt; 找到&lt;/p&gt;
 &lt;h3 id="_6"&gt;局部跳過檢查&lt;/h3&gt;
 &lt;p&gt;pylint 同樣可以忽略部分的程式碼&lt;br/&gt;
 只要在要忽略的程式碼前面一行加上 &lt;code&gt;# pylint: disable=[error]&lt;/code&gt;&lt;br/&gt;
@@ -1064,8 +1347,10 @@ e.g.,&lt;/p&gt;
 就會將變數的值取代掉原本引入的模組&lt;/p&gt;
 &lt;p&gt;除此之外，型別標記的程式碼也會增加可讀性&lt;br/&gt;
 因此近幾年越來越多人注意 Python 的型別標記&lt;/p&gt;
-&lt;p&gt;在 PyCon US 2017 中 Lisa Guo 和 Hui Ding 的 Keynote Session &lt;a href="https://lee-w.github.io/posts/tech/2017/06/Python-at-IG/"&gt;Python@Instagram&lt;/a&gt; 非常的精彩&lt;br/&gt;
-相當建議可以觀看&lt;/p&gt;
+&lt;p&gt;PyCon US 2017 中 Lisa Guo 和 Hui Ding 的 Keynote Session &lt;a href="https://lee-w.github.io/posts/tech/2017/06/Python-at-IG/"&gt;Python@Instagram&lt;/a&gt; 講了 Instagram 是為什麼要和如何將龐大的程式庫加上型別標示&lt;br/&gt;
+&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2020/2020/05/static-typing-in-python/"&gt;Static Typing in Python&lt;/a&gt; 則是 PyCon US 2020 年 Dustin 對型別標示和檢查的詳細介紹&lt;br/&gt;
+而 Vita Smid 在 EuroPython 2019 的 &lt;a href="https://lee-w.github.io/pycon-note/posts/europython-2019/2020/03/static-typing-beyond-the-basics-of-def-foo-x-int-str/"&gt;Static typing: beyond the basics of def foo(x: int) -str:&lt;/a&gt; 則講到了型別檢查更進階一點的應用&lt;br/&gt;
+這幾場演講都非常推薦可以觀看！&lt;/p&gt;
 &lt;h3 id="_7"&gt;使用&lt;/h3&gt;
 &lt;p&gt;以下列的程式碼為例&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# wrong_type_hint.py&lt;/span&gt;
@@ -1197,11 +1482,11 @@ pipenv run isort --atomic --apply
 &lt;h3 id="_12"&gt;設定&lt;/h3&gt;
 &lt;p&gt;為了跟前面提到的工具相容（主要應該是 black），以下是我在 &lt;code&gt;pyproject.toml&lt;/code&gt; 內的設定&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[tool.isort]&lt;/span&gt;
-&lt;span class="n"&gt;multi_line_output&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
-&lt;span class="n"&gt;include_trailing_comma&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;
-&lt;span class="n"&gt;force_grid_wrap&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;
-&lt;span class="n"&gt;use_parentheses&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;
-&lt;span class="n"&gt;line_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;88&lt;/span&gt;
+&lt;span class="n"&gt;multi_line_output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="n"&gt;include_trailing_comma&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;span class="n"&gt;force_grid_wrap&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="n"&gt;use_parentheses&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;span class="n"&gt;line_length&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;88&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id="_13"&gt;其他工具&lt;/h2&gt;
 &lt;ul&gt;
@@ -1215,18 +1500,31 @@ pipenv run isort --atomic --apply
 不過還沒有被所有的工具支援&lt;br/&gt;
 &lt;a href="https://github.com/carlosperate/awesome-pyproject"&gt;awesome-pyproject&lt;/a&gt; 整理了目前已經支援或討論是否要支援 &lt;code&gt;proproject.toml&lt;/code&gt; 的工具&lt;/p&gt;
 &lt;p&gt;比起讓多個工具的設定散落在各個設定檔&lt;br/&gt;
-我傾向統一管理在 &lt;code&gt;pyproject.toml&lt;/code&gt; 或 &lt;code&gt;setup.cfg&lt;/code&gt;&lt;br/&gt;
-其中有兩個例外&lt;/p&gt;
+我傾向統一管理在 &lt;code&gt;pyproject.toml&lt;/code&gt; 或 &lt;code&gt;setup.cfg&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;.pylintrc&lt;/code&gt;: 設定內容太長，如果併入通用的設定檔，容易造成其他設定閱讀困難&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pytest.ini&lt;/code&gt;: pytest 即將放棄對 &lt;code&gt;setup.cfg&lt;/code&gt; 的支援，而且容易出錯 （Read More 👉 &lt;a href="https://github.com/pytest-dev/pytest/issues/3523"&gt;deprecate setup.cfg support #3523&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pyproject.toml&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;black&lt;/li&gt;
+&lt;li&gt;isort&lt;/li&gt;
+&lt;li&gt;pylint&lt;/li&gt;
+&lt;li&gt;coverage&lt;/li&gt;
+&lt;li&gt;commitizen (之後才會介紹到)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;setup.cfg&lt;ul&gt;
+&lt;li&gt;flake8&lt;/li&gt;
+&lt;li&gt;mypy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;目前唯一的例外是 &lt;code&gt;pytest.ini&lt;/code&gt;&lt;br/&gt;
+不使用 &lt;code&gt;setup.cfg&lt;/code&gt; 的原因是 pytest 即將放棄對 &lt;code&gt;setup.cfg&lt;/code&gt; 的支援，而且容易出錯 （Read More 👉 &lt;a href="https://github.com/pytest-dev/pytest/issues/3523"&gt;deprecate setup.cfg support #3523&lt;/a&gt;）&lt;br/&gt;
+但是在 pytest 6.0 釋出之後，就可以把 pytest 的設定加入到 &lt;code&gt;pyproject.toml&lt;/code&gt; 了 🎉 (Read More 👉 &lt;a href="https://github.com/pytest-dev/pytest/issues/1556"&gt;implement support for PEP-518 - the tool.pytest key in pyproject.toml #1556&lt;/a&gt;)&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/"&gt;Automating Code Quality - PyCon US 2018&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/11/life-is-better-painted-black-or-how-to-stop-worrying-and-embrace-auto-formatting/"&gt;Life Is Better Painted Black, or: How to Stop Worrying and Embrace Auto-Formatting - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=wf-BqAjZb8M&amp;amp;feature=youtu.be"&gt;Beyond PEP 8 -- Best practices for beautiful intelligible code - PyCon 2015&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Code Quality"></category></entry><entry><title>Python Table Manners - 測試 (二)</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" rel="alternate"></link><published>2020-02-25T18:05:00+08:00</published><updated>2020-04-29T09:37:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-25:/posts/tech/2020/02/python-table-manners-test-2</id><summary type="html">&lt;p&gt;接續著前一篇提到的 &lt;a href="https://docs.pytest.org/en/latest/"&gt;pytest&lt;/a&gt;，繼續看它的其他功能吧&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Code Quality"></category></entry><entry><title>Python Table Manners - 測試 (二)</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" rel="alternate"></link><published>2020-02-25T18:05:00+08:00</published><updated>2020-07-19T16:03:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-25:/posts/tech/2020/02/python-table-manners-test-2</id><summary type="html">&lt;p&gt;接續著前一篇提到的 &lt;a href="https://docs.pytest.org/en/latest/"&gt;pytest&lt;/a&gt;，繼續看它的其他功能吧&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;接續著前一篇提到的 &lt;a href="https://docs.pytest.org/en/latest/"&gt;pytest&lt;/a&gt;，繼續看它的其他功能吧&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -1276,7 +1574,7 @@ pipenv run isort --atomic --apply
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;model&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt;
 
 
- &lt;span class="nd"&gt;@pytest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fixture&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"function"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@pytest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fixture&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"function"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;db&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="n"&gt;_db&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;DB&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="n"&gt;_db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -1358,13 +1656,13 @@ pipenv run isort --atomic --apply
 &lt;h2 id="marker"&gt;marker&lt;/h2&gt;
 &lt;p&gt;前面已經介紹過 &lt;code&gt;parameterize&lt;/code&gt; 和 &lt;code&gt;usefixtures&lt;/code&gt;&lt;br/&gt;
 這裡會介紹 &lt;a href="http://doc.pytest.org/en/latest/example/markers.html"&gt;markers&lt;/a&gt; 還可以做什麼&lt;/p&gt;
-&lt;h3 id="fixture_2"&gt;內建 fixture&lt;/h3&gt;
+&lt;h3 id="marker_1"&gt;內建 marker&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://doc.pytest.org/en/latest/skipping.html#skip"&gt;skip&lt;/a&gt;: 跳過這個測試案例&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://doc.pytest.org/en/latest/skipping.html#skipif"&gt;skipif&lt;/a&gt;: 如果符合某個條件，則跳過這個測試案例&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://doc.pytest.org/en/latest/skipping.html#xfail"&gt;xfail&lt;/a&gt;: 預期會失敗 （其實前一篇想跳過會失敗的案例應該要用 &lt;code&gt;xfail&lt;/code&gt;，而不是 &lt;code&gt;skip&lt;/code&gt;）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="marker_1"&gt;自定義 marker&lt;/h3&gt;
+&lt;h3 id="marker_2"&gt;自定義 marker&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;@pytest.mark.[any custom marker]&lt;/code&gt; 的用途是標記測試案例&lt;br/&gt;
 像是如果有些測試會特別慢，就可以透過標記 &lt;code&gt;@pytest.mark.slow&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;sleep&lt;/span&gt;
@@ -1415,7 +1713,7 @@ p.s. 不建議使用 &lt;code&gt;setup.cfg&lt;/code&gt; 做為 pytest 的設定�
 &lt;li&gt;&lt;code&gt;--lf&lt;/code&gt; (&lt;code&gt;--last-failed&lt;/code&gt;): 只測試上次失敗的案例&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--ff&lt;/code&gt; (&lt;code&gt;--failed-first&lt;/code&gt;): 從上次失敗的案例開始測試&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--nf&lt;/code&gt; &lt;code&gt;--new-first&lt;/code&gt;: 從新的案例開始測試&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-k EXPRESSION&lt;/code&gt;: 只測試名稱符合 "EXPRESIION" 的案例&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-k EXPRESSION&lt;/code&gt;: 只測試名稱符合 "EXPRESSION" 的案例&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-m MARKEXPR&lt;/code&gt;: 只測試有 "MARKEXPR" maker 的案例&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--fixtures&lt;/code&gt;: 列出所有 &lt;code&gt;fixtures&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1424,9 +1722,9 @@ p.s. 不建議使用 &lt;code&gt;setup.cfg&lt;/code&gt; 做為 pytest 的設定�
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝 pytest-cov&lt;/span&gt;
 pipenv install pytest-cov --dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;pytest-cov 的使用方式是在 &lt;code&gt;pytest&lt;/code&gt; 指令後面加上參數&lt;/p&gt;
 &lt;p&gt;e.g.,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv run pytest --cov&lt;span class="o"&gt;=&lt;/span&gt;myproj tests/
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 計算 myproj 的覆蓋率&lt;/span&gt;
+pipenv run pytest --cov&lt;span class="o"&gt;=&lt;/span&gt;myproj tests/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;比較重要的參數有&lt;/p&gt;
 &lt;ul&gt;
@@ -1479,6 +1777,10 @@ pipenv install pytest-cov --dev
 &lt;li&gt;推薦參考 &lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/"&gt;Demystifying the Patch Function - PyCon US 2018&lt;/a&gt; （不過她不是用 pytest）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/ESSS/pytest-regressions"&gt;pytest-regression&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;將冗長的測試結果寫成檔案，每次測試都去比對跟上次產生的結果是否相同&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;尋找其他插件&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://docs.pytest.org/en/latest/plugins.html"&gt;pytest - Installing and Using plugins¶&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/pytest-dev"&gt;pytest-dev&lt;/a&gt;&lt;/li&gt;
@@ -1510,260 +1812,7 @@ pipenv install pytest-cov --dev
 &lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/"&gt;Demystifying the Patch Function - PyCon US 2018&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/escape-from-auto-manual-testing-with-yypothesis/"&gt;Escape from auto-manual testing with Hypothesis!&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/"&gt;Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Test"></category></entry><entry><title>Python Table Manners - 測試 (一)</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" rel="alternate"></link><published>2020-02-24T23:33:00+08:00</published><updated>2020-02-24T23:33:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-24:/posts/tech/2020/02/python-table-manners-test-1</id><summary type="html">&lt;p&gt;設定完環境後，接著開始要開發程式的各項功能&lt;br/&gt;
-要驗證程式正確性時，我們就會用到測試&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;設定完環境後，接著開始要開發程式的各項功能&lt;br/&gt;
-要驗證程式正確性時，我們就會用到測試&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;h2 id="_1"&gt;為什麼要寫自動化測試&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;如果沒有自動化測試&lt;ul&gt;
-&lt;li&gt;必須手動去驗證程式的正確性，非常的麻煩，而且也不能確定每次的測試方式都是相同的&lt;br/&gt;
- （因為很麻煩懶得測試，就會變成讓客戶去測試，然後就造成更多的麻煩了 😱）&lt;/li&gt;
-&lt;li&gt;增加重構 (refactoring）的風險，因為很難驗證程式的功能有沒有在重構的過程中被改動&lt;/li&gt;
-&lt;li&gt;加入新的功能不知道會不會動到原本沒問題的功能&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;最後就會像是這樣&lt;/p&gt;
-&lt;p&gt;&lt;img alt="new-feature-without-test" src="/images/posts-image/2020-02-22-python-table-manner-series/new-feature.jpg"/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;總之，要寫測試！&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id="unittest"&gt;unittest&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://docs.python.org/3/library/unittest.html"&gt;unittest&lt;/a&gt; 是 Python 標準函式庫的測試框架&lt;br/&gt;
-起源於 jUnit 的做法，所以在函式的命名上和設計上比較不符合 Python 風格&lt;br/&gt;
-雖然它不會是今天的主角，我也不太建議使用它&lt;br/&gt;
-不過我們還是可以稍微看一下它的用法&lt;/p&gt;
-&lt;p&gt;以下取自 &lt;a href="https://docs.python.org/3/library/unittest.html"&gt;unittest&lt;/a&gt; 文件中的其中一個範例&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;unittest&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;WidgetTestCase&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Widget&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'The widget'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_default_widget_size&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-                         &lt;span class="s1"&gt;'incorrect default size'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_widget_resize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;resize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-                         &lt;span class="s1"&gt;'wrong size after resize'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;可以看到幾個特點&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;測試案例必須要繼承 &lt;code&gt;unittest.TestCase&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;setUp&lt;/code&gt; 函式來初始化 &lt;code&gt;widget&lt;/code&gt; （如果有需要清除資源則會使用 &lt;code&gt;tearDown&lt;/code&gt;）&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;assertEqual&lt;/code&gt; 來做正確性的驗證&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="pytest"&gt;pytest&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://docs.pytest.org/en/latest/"&gt;pytest&lt;/a&gt; 是現在 Python 專案比較建議使用的測試框架，也會是這篇文章的主角&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;為什麼要用 pytest&lt;ul&gt;
-&lt;li&gt;更符合 Python 程式碼風格 (Pythonic)&lt;/li&gt;
-&lt;li&gt;pytest 支援舊有的 unittest 風格&lt;/li&gt;
-&lt;li&gt;扁平化（不用繼承）&lt;/li&gt;
-&lt;li&gt;只需要使用 &lt;code&gt;assert&lt;/code&gt;，不需要去記 &lt;code&gt;assert.+&lt;/code&gt; (e.g., &lt;code&gt;assertEqual&lt;/code&gt;) 等 API&lt;/li&gt;
-&lt;li&gt;更好的&lt;a href="https://docs.pytest.org/en/latest/goodpractices.html#test-discovery"&gt;測試探索 (test discovery)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;更多的進階功能 (e.g., fixture, mark, parameterize and etc.)&lt;/li&gt;
-&lt;li&gt;強大的套件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以下是取自 &lt;a href="https://docs.pytest.org/en/latest/getting-started.html#create-your-first-test"&gt;pytest - Create your first test&lt;/a&gt; 的範例&lt;br/&gt;
-相比於 unittest 寫法相對簡潔&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# content of test_sample.py&lt;/span&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
-
-
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_answer&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-    &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="unittest-pytest"&gt;從 Unittest 到 Pytest&lt;/h2&gt;
-&lt;p&gt;前面的比較其實不太公平，unittest 的範例要測的內容本身就比 pytest 的複雜&lt;/p&gt;
-&lt;p&gt;所以我會用 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator"&gt;pycontw-postevent-report-generator&lt;/a&gt; 為例子&lt;br/&gt;
-討論我們如何從 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/v1.0"&gt;v1.0&lt;/a&gt; 的 unittest 風格測試，在 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/83e48c6443303045ed1de2f020297c3110bb1300"&gt;commit 83e4&lt;/a&gt; 改成 pytest 風格&lt;/p&gt;
-&lt;p&gt;如果想跟著程式碼跑，可以把專案 clone 下來&lt;br/&gt;
-（當然能貢獻專案就更棒了 XD）&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# clone 專案到本地&lt;/span&gt;
-git clone https://github.com/pycontw/pycontw-postevent-report-generator
-
-&lt;span class="nb"&gt;cd&lt;/span&gt; pycontw-postevent-report-generator
-
-&lt;span class="c1"&gt;# 切換到 commit 83e4 的前一個 commit (因為commit 83e4 已經完成修正)&lt;/span&gt;
-git checkout 83e4~1
-
-&lt;span class="c1"&gt;# 設定環境&lt;/span&gt;
-pipenv install --dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="test-discovery"&gt;測試探索 (test discovery)&lt;/h3&gt;
-&lt;p&gt;原本在 &lt;code&gt;REAMDE.md&lt;/code&gt; 中要跑測試的指令相當的冗長&lt;br/&gt;
-而且還必須要切換到 test 資料夾 (i.e., &lt;code&gt;cd test&lt;/code&gt;)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nb"&gt;test&lt;/span&gt;
-python -m unittest discover -s ./ -p &lt;span class="s1"&gt;'test_*.py'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;不過這其實是一開始的設計有誤&lt;br/&gt;
-以下是 test 資料夾的內容&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;└── test
-    …
-    ├── test_sponsor.py
-    └── test_title.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;test (或 tests) 本身也必須是一個套件&lt;br/&gt;
-所以必須先在 test 內加入 &lt;code&gt;__init__.py&lt;/code&gt;&lt;br/&gt;
-（這是我在寫程式初期想開始寫測試遇到一個很大的坎 😢）&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;└── test
-    ├── __init__.py
-    ...
-    ├── test_sponsor.py
-    └── test_title.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;做了改變後，就能改用更簡潔的指令跑測試了&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;unittest&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;因為 pytest 也支援 unittest 風格&lt;br/&gt;
-所以也可以直接使用 &lt;code&gt;pytest&lt;/code&gt; 指令跑測試&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pytest
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;不過在前一篇有提到使用虛擬環境的概念了&lt;br/&gt;
-所以應該要確保每個專案的指令，都只在虛擬環境中跑&lt;br/&gt;
-（因為前一篇建議使用 pipenv，之後的範例都會用 pipenv）&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 將 pytest 安裝到開發環境&lt;/span&gt;
-pipenv install pytest --dev
-
-&lt;span class="c1"&gt;# 執行 pytest&lt;/span&gt;
-pipenv run pytest
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;這時候的測試其實會有許多錯誤&lt;br/&gt;
-但執行後應該要能看到類似的畫面&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;===================== test session starts ======================
-platform darwin -- Python 3.7.3, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
-rootdir: /....../pycontw-postevent-report-generator
-plugins: mock-2.0.0, cov-2.8.1
-collected 9 items
-
-test/test_sponsor.py FFFFFFFF                            [ 88%]
-test/test_title.py F                                     [100%]
-
-=========================== FAILURES ===========================
-......
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;F&lt;/code&gt; 表示測試沒有通過，如果出現 &lt;code&gt;.&lt;/code&gt; 則表示成功&lt;/p&gt;
-&lt;h3 id="step-0"&gt;Step 0: 追朔程式碼&lt;/h3&gt;
-&lt;p&gt;以 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/blob/v1.0/test/test_sponsor.py#L6"&gt;test/test_sponsor.py::TestSponsor::test_sponsor_number&lt;/a&gt; 為例&lt;br/&gt;
-（在套件以及模組的層級後， pytest 會使用 &lt;code&gt;::&lt;/code&gt; 來區別不同的層級，試試 &lt;code&gt;pipenv run pytest -v&lt;/code&gt; 指令）&lt;/p&gt;
-&lt;p&gt;原本 unittest 風格的程式碼中，做了三件事&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;使用了 &lt;code&gt;setUp&lt;/code&gt; 做 &lt;code&gt;self.sponsors&lt;/code&gt; 的初始化&lt;/li&gt;
-&lt;li&gt;在 &lt;code&gt;test_sonpsor_number&lt;/code&gt; 取用 &lt;code&gt;setUp&lt;/code&gt; 中初始過的 &lt;code&gt;self.sponsors&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;self.assertEqual&lt;/code&gt; 來看 &lt;code&gt;self.sponsors&lt;/code&gt; 的長度是否等於 1&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;unittest&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;atta.partner&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TestSponsor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;sponsors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_all_sponsors&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'./data/packages.yaml'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                                            &lt;span class="s1"&gt;'./data/sponsors.yaml'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sponsors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sponsors&lt;/span&gt;
-
-        &lt;span class="o"&gt;......&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_sponsor_number&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-        &lt;span class="o"&gt;.......&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="step-1-fixture-setup-teardown"&gt;Step 1: 使用 fixture 取代 setUp / tearDown&lt;/h3&gt;
-&lt;p&gt;先將 &lt;code&gt;unittest.TestCase&lt;/code&gt; 移除&lt;br/&gt;
-改用 pytest 的 &lt;a href="https://docs.pytest.org/en/latest/fixture.html"&gt;fixture&lt;/a&gt; 取代 &lt;code&gt;setUp&lt;/code&gt;&lt;br/&gt;
-fixture 跟 &lt;code&gt;setUp / tearDown&lt;/code&gt; 的概念上相近，都是用來準備（清除）資源&lt;br/&gt;
-但 fixture 更加的輕量且更有彈性&lt;/p&gt;
-&lt;p&gt;在 &lt;code&gt;test_sponsor_number&lt;/code&gt; 中加入參數 &lt;code&gt;sponsors&lt;/code&gt;&lt;br/&gt;
-pytest 會去找 fixtures 中是否有 &lt;code&gt;sponsors&lt;/code&gt; 並將之代入&lt;/p&gt;
-&lt;p&gt;接著也可以將較為冗長的 &lt;code&gt;assertEqual&lt;/code&gt;，改為 &lt;code&gt;assert&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pytest&lt;/span&gt;
-
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;report_generator.partner&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TestSponsor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="nd"&gt;@pytest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fixture&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"class"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_all_sponsors&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"test/data/packages.yaml"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                                        &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sponsors&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yaml&lt;/span&gt;&lt;span class="s2"&gt;")&lt;/span&gt;
-
-        &lt;span class="o"&gt;......&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_sponsor_number&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
-
-        &lt;span class="o"&gt;......&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;(p.s. 在這裡 &lt;code&gt;atta&lt;/code&gt; 已經重新命名為 &lt;code&gt;report_generator&lt;/code&gt;)&lt;/p&gt;
-&lt;h3 id="step-2-markskip"&gt;Step 2: 使用 mark.skip 跳過部分測試&lt;/h3&gt;
-&lt;p&gt;原本的測試中有些邏輯錯誤&lt;br/&gt;
-但我只想先完成風格的轉換，還不打算修正&lt;br/&gt;
-因此先使用了 &lt;a href="http://doc.pytest.org/en/latest/example/markers.html"&gt;markers&lt;/a&gt;&lt;br/&gt;
-在想跳過的測試案例前面加上 &lt;code&gt;@pytest.mark.skip&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pytest&lt;/span&gt;
-
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;report_generator.partner&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TestSponsor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="o"&gt;...&lt;/span&gt;
-    &lt;span class="nd"&gt;@pytest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mark&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;skip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"No bronze sponsor in test case"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_sponsor_promotion_web_click_rank_bronze&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;answer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NA_CONTENT_MESSAGE&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bronze_sponsor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;web_click_rank&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;answer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;執行 &lt;code&gt;pipenv run pytest&lt;/code&gt; 後，就會發現有部分的測試案例變成了 &lt;code&gt;s&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;========== test session starts ==========
-platform darwin -- Python 3.7.3, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
-rootdir: /....../pycontw-postevent-report-generator
-plugins: mock-2.0.0, cov-2.8.1
-collected 9 items
-
-test/test_sponsor.py ....ssss     [ 88%]
-test/test_title.py .              [100%]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="step-3-class"&gt;Step 3: 扁平化 - 移除不必要的 class&lt;/h3&gt;
-&lt;p&gt;從上面的範例可以看到， &lt;code&gt;self&lt;/code&gt; 其實並不必要&lt;br/&gt;
-這些測試案例不需要是一個類別&lt;br/&gt;
-因此可以更近一步，把 &lt;code&gt;TestSponsor&lt;/code&gt; 類別移除&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pytest&lt;/span&gt;
-
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;report_generator.partner&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;
-
-
-&lt;span class="nd"&gt;@pytest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fixture&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"function"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sponsor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_all_sponsors&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"test/data/packages.yaml"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                                    &lt;span class="s2"&gt;"test/data/sponsors.yaml"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_sponsor_number&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sponsors&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;不過這並不代表用類別就是錯的&lt;br/&gt;
-一般我會在模組內測試案例比較多的時候，使用類別來將相似的測試案例歸在同一類&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;因為篇幅的關係，我決定把測試分成兩篇文章&lt;br/&gt;
-&lt;del&gt;絕對不是因為我寫不完了&lt;/del&gt;&lt;br/&gt;
-盡請期待明天更深入的 pytest 應用 😄&lt;/p&gt;
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://pragprog.com/book/bopytest/python-testing-with-pytest"&gt;Python Testing with pytest&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;非常推薦用這本書上手 &lt;code&gt;pytest&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?time_continue=201&amp;amp;v=pX1_I_sEi8k"&gt;快快樂樂成為 Coding Ninja (by pytest) - PyCon APAC 2015&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/"&gt;Pytest: Rapid Simple Testing -  Swiss Python Summit 2016&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Test"></category></entry><entry><title>Python Table Manners - 虛擬環境和套件管理</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" rel="alternate"></link><published>2020-02-23T12:24:00+08:00</published><updated>2020-03-18T10:20:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-23:/posts/tech/2020/02/python-table-manners-dependency-mangement</id><summary type="html">&lt;p&gt;為了避免不同 Python 專案使用的套件版本不同，導致本機的套件版本打架&lt;br/&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Test"></category></entry><entry><title>Python Table Manners - 虛擬環境和套件管理</title><link href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" rel="alternate"></link><published>2020-02-23T12:24:00+08:00</published><updated>2020-07-19T15:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-02-23:/posts/tech/2020/02/python-table-manners-dependency-mangement</id><summary type="html">&lt;p&gt;為了避免不同 Python 專案使用的套件版本不同，導致本機的套件版本打架&lt;br/&gt;
 開始 Python 專案時，第一步就是先建立一個專屬於專案的虛擬環境&lt;br/&gt;
 理想上，本機的環境是不太需要安裝套件的&lt;br/&gt;
 因為每一個專案都會在自己的虛擬環境內執行，並且在裡面安裝各自的套件&lt;/p&gt;
@@ -1773,8 +1822,8 @@ test/test_title.py .              [100%]
 因為每一個專案都會在自己的虛擬環境內執行，並且在裡面安裝各自的套件&lt;/p&gt;
 &lt;!--more--&gt;
 
-&lt;h2 id="virtualenv"&gt;virtualenv&lt;/h2&gt;
-&lt;p&gt;創建虛擬環境，最基本作法就是使用 &lt;a href="https://virtualenv.pypa.io/en/latest/"&gt;virtualenv&lt;/a&gt;&lt;br/&gt;
+&lt;h2 id="venv"&gt;venv&lt;/h2&gt;
+&lt;p&gt;建立虛擬環境，最基本作法就是使用 &lt;a href="https://docs.python.org/3/library/venv.html"&gt;venv&lt;/a&gt;&lt;br/&gt;
 透過以下幾個指令建立一個，並把相關的套件寫入 &lt;code&gt;requirements.txt&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 創建 Python 虛擬環境&lt;/span&gt;
 python -m venv ./venv
@@ -1795,14 +1844,14 @@ pip freeze &amp;gt;&amp;gt; requirements.txt
 &lt;p&gt;一開始我會使用 &lt;a href="https://github.com/bndr/pipreqs"&gt;pipreqs&lt;/a&gt; 來解決 &lt;code&gt;pip freeze&lt;/code&gt; 所造成的雜亂&lt;br/&gt;
 但是忘記寫入套件跟忘記開關虛擬環境的問題還是存在&lt;br/&gt;
 常常我在本地測試成功，丟到伺服器就會告訴我又少了套件&lt;br/&gt;
-只好再送一個 Pull Request 上去&lt;/p&gt;
+只好再送一個 Pull Request 修正&lt;/p&gt;
 &lt;h2 id="pipenv"&gt;pipenv&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://pipenv.readthedocs.io/en/latest/"&gt;pipenv&lt;/a&gt; 可以用來同時管理虛擬環境跟套件&lt;br/&gt;
 pipenv 不使用 &lt;code&gt;requriements.txt&lt;/code&gt;，而是使用自定義的 &lt;code&gt;Pipfile&lt;/code&gt; 跟 &lt;code&gt;Pipfile.lock&lt;/code&gt; 管理套件&lt;br/&gt;
 它的好處是能透過單一指令將套件安裝到虛擬環境中，並且更新到 &lt;code&gt;Pipfile&lt;/code&gt; 以及 &lt;code&gt;Pipfile.lock&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id="pipenv_1"&gt;安裝 pipenv&lt;/h3&gt;
 &lt;p&gt;根據不同的系統，可以在 &lt;a href="https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv"&gt;Installing Pipenv&lt;/a&gt; 找到安裝 pipenv 的方式&lt;/p&gt;
-&lt;p&gt;不過最簡單的做法就是直接透過 &lt;code&gt;pip&lt;/code&gt; 安裝&lt;/p&gt;
+&lt;p&gt;不過最簡單的做法還是透過 &lt;code&gt;pip&lt;/code&gt; 安裝&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m pip install --user pipenv
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="_1"&gt;初始化環境&lt;/h3&gt;
@@ -1822,10 +1871,10 @@ pipenv --where
 &lt;p&gt;初始化虛擬環境後，會產生 &lt;code&gt;Pipfile&lt;/code&gt; 跟 &lt;code&gt;Pipfile.lock&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Pipfile&lt;/code&gt; 是一個 &lt;a href="https://github.com/toml-lang/toml"&gt;toml&lt;/a&gt; 格式的檔案&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;source&lt;/strong&gt;: 指定要去找套件的 PyPI ，比較常見的使用案例是加上自己私有的 PyPI&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;source&lt;/strong&gt;: 指定要去找套件的 &lt;a href="https://pypi.org/"&gt;PyPI&lt;/a&gt; ，比較常見的使用案例是加上自己私有的 PyPI&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;dev-package&lt;/strong&gt;: 開發環境所需套件&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;packages&lt;/strong&gt;: 預設安裝套件（通常是 Production 用）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;requires&lt;/strong&gt;: 限定在某個版本的 Python&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;requires::python_versions&lt;/strong&gt;: 限定在某個版本的 Python&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1928,10 +1977,10 @@ pipenv install --deploy
 &lt;span class="c1"&gt;# 直接使用 Pipfile.lock 安裝套件&lt;/span&gt;
 pipenv install --ignore-pipfile
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="_3"&gt;安裝開發環境套件&lt;/h2&gt;
-&lt;p&gt;有些套件（e.g., 測試工具）不需要跟著系統一起上線&lt;br/&gt;
-以往會將不同的套件用不同的 &lt;code&gt;requirements.txt&lt;/code&gt; 來管理 (e.g.,  &lt;code&gt;requirments/dev.txt&lt;/code&gt;, &lt;code&gt;requirements/prod.txt&lt;/code&gt;)&lt;/p&gt;
-&lt;p&gt;pipenv 則是將開發環境才需要的套件寫在 Pipfile 的 &lt;strong&gt;dev-packages&lt;/strong&gt; 內&lt;br/&gt;
+&lt;h3 id="_3"&gt;安裝開發環境套件&lt;/h3&gt;
+&lt;p&gt;有些套件（e.g., 測試工具）不需要在 Production 的環境上安裝&lt;br/&gt;
+以往會將不同的套件用不同的 &lt;code&gt;requirements.txt&lt;/code&gt; 來管理 (e.g.,  &lt;code&gt;requirments/dev.txt&lt;/code&gt;, &lt;code&gt;requirements/prod.txt&lt;/code&gt;)&lt;br/&gt;
+pipenv 則是將開發環境才需要的套件寫在 Pipfile 的 &lt;strong&gt;dev-packages&lt;/strong&gt; 內&lt;br/&gt;
 只要在安裝時後面加上選項 &lt;code&gt;--dev&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;e.g.,&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝開發環境套件&lt;/span&gt;
@@ -1951,20 +2000,37 @@ pipenv run python your_program.py
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;pipenv check&lt;/code&gt;: 檢查安裝的套件是否有已知的安全性問題&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pipenv graph&lt;/code&gt;: 檢視整個相依套件的相依圖&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pipenv open &amp;lt;package&amp;gt;&lt;/code&gt;: 直接安裝的套件 （不知道什麼時候養成了「懶得看文件，直接 trace code」的習慣...）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pipenv open &amp;lt;package&amp;gt;&lt;/code&gt;: 開啟安裝的套件（不知道什麼時候養成了「懶得看文件，直接 trace code」的習慣...）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="pipenv_2"&gt;pipenv 已經很久沒更新了，沒有問題嗎？&lt;/h3&gt;
-&lt;p&gt;雖然我的確遇過一些小問題 (e.g., &lt;a href="https://lee-w.github.io/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent/"&gt;pipenv 和 poerty 如何處理在不同作業系統下相依套件不同&lt;/a&gt;)&lt;br/&gt;
-但大部分的狀況下， pipenv 已經足夠解決我的問題&lt;br/&gt;
-所以沒什麼意外我大概還是會繼續使用 pipenv&lt;/p&gt;
-&lt;h2 id="_6"&gt;其他工具&lt;/h2&gt;
-&lt;h3 id="poetry"&gt;poetry&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://python-poetry.org/"&gt;poetry&lt;/a&gt; 是目前最多人說可以取代 pipenv 的工具&lt;br/&gt;
+&lt;h2 id="poetry"&gt;Poetry&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://python-poetry.org/"&gt;poetry&lt;/a&gt; 是目前很多人說可以取代 pipenv 的工具&lt;br/&gt;
 除了 pipenv 包含的功能外，它還能用來初始化專案、上傳套件&lt;/p&gt;
-&lt;p&gt;我使用下來體驗還算不錯&lt;br/&gt;
-而且 poetry 採用 pyproject.toml 來做配置設定，這點我就蠻喜歡的&lt;/p&gt;
-&lt;p&gt;但我比較不喜歡的點是，它採用的 API 跟版本標示方式都跟 pip 不同&lt;br/&gt;
-會多增加學習成本&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pipenv 被抱怨的原因&lt;ul&gt;
+&lt;li&gt;之前有相隔快兩年沒有新的版本釋出&lt;/li&gt;
+&lt;li&gt;lock 太慢&lt;/li&gt;
+&lt;li&gt;不會自動跟 setup.py 中的 install_rquires&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;poetry 使用下來體驗還算不錯&lt;br/&gt;
+而且它採用 pyproject.toml 來做配置設定，這點我就蠻喜歡的&lt;/p&gt;
+&lt;p&gt;一般來說我會建議如果要寫 Python 函式庫的話，使用 poetry 是蠻方便的&lt;br/&gt;
+至於 Python 應用，我則覺得用 pipenv 或 poetry 就無所謂了&lt;/p&gt;
+&lt;h3 id="_6"&gt;基本使用&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 初始化 poetry 專案&lt;/span&gt;
+poetry init
+
+&lt;span class="c1"&gt;# 安裝套件&lt;/span&gt;
+poetry install
+
+&lt;span class="c1"&gt;# 加入新的套件&lt;/span&gt;
+poetry add &amp;lt;package&amp;gt;
+
+&lt;span class="c1"&gt;# 移除套件&lt;/span&gt;
+poetry remove &amp;lt;package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="_7"&gt;其他工具&lt;/h2&gt;
 &lt;h3 id="pip-tools"&gt;pip-tools&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://github.com/jazzband/pip-tools"&gt;pip-tools&lt;/a&gt; 主要的功能是產生 hashes ，並不能用來管理虛擬環境&lt;br/&gt;
 這套工具比較適合習慣使用 pip 跟 virtualenv ，但又想要有 Pipfile.lock 的功能的情況&lt;/p&gt;
@@ -1972,17 +2038,17 @@ pipenv run python your_program.py
 &lt;p&gt;&lt;a href="https://github.com/dephell/dephell"&gt;dephell&lt;/a&gt; 是一個 all-in-one 的工具&lt;br/&gt;
 當初看到覺得很有趣，但還沒有時間好好研究&lt;br/&gt;
 目前使用到對我最有幫助的功能是它能在轉換不同的格式 (e.g., Pipfile → pyproject.toml)&lt;/p&gt;
-&lt;h2 id="_7"&gt;自動將舊版套件升級&lt;/h2&gt;
+&lt;h2 id="_8"&gt;自動將舊版套件升級&lt;/h2&gt;
 &lt;p&gt;以下再多提供兩個可以自動將相依套件升級的服務&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://pyup.io"&gt;pyup.io&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://dependabot.com"&gt;dependabot&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="bouns-pipx-python"&gt;Bouns: pipx - 在系統安裝 Python 工具&lt;/h2&gt;
-&lt;p&gt;雖然說建議 Python 的套件都裝在虛擬環境&lt;br/&gt;
-但如果平時要使用的工具 (e.g., &lt;a href="http://www.pyinvoke.org/"&gt;invoke&lt;/a&gt;, &lt;a href="https://pypi.org/project/awscli/"&gt;awscli&lt;/a&gt;) 都裝在虛擬環境&lt;br/&gt;
-還必須要每次進入虛擬環境就太麻煩了&lt;br/&gt;
-所以，在這樣的情況下，我就會建議使用 &lt;a href="https://pipxproject.github.io/pipx/"&gt;pipx&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;雖然建議 Python 的套件都裝在虛擬環境，但如果平時要使用的工具 (e.g., &lt;a href="http://www.pyinvoke.org/"&gt;invoke&lt;/a&gt;, &lt;a href="https://pypi.org/project/awscli/"&gt;awscli&lt;/a&gt;) 都裝在虛擬環境&lt;br/&gt;
+每次使用這些工具都得進入虛擬環境就太麻煩了&lt;br/&gt;
+所以，在這樣的情況下，就可以使用 &lt;a href="https://pipxproject.github.io/pipx/"&gt;pipx&lt;/a&gt;&lt;br/&gt;
+pipx 會為每個工具創建一個專屬的虛擬環境，並且設定好 PATH&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;安裝 pipx&lt;/li&gt;
 &lt;/ul&gt;

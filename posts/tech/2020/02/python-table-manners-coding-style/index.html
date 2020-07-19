@@ -20,13 +20,13 @@
 
 <meta property="og:title" content="Python Table Manners - 程式碼風格 "/>
 <meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" />
-<meta property="og:description" content="接下來要介紹的是 linter 它用來檢查程式是否符合特定的程式碼風格的一類工具 以 Python 來說，則是應該遵守 PEP 8 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤" />
+<meta property="og:description" content="接下來要介紹的是 linters 它用來檢查程式是否符合特定的程式碼風格的一類工具 以 Python 來說，則是應該遵守 PEP 8 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2020-02-26T18:39:00+08:00" />
-<meta property="og:article:modified_time" content="2020-04-29T09:37:00+08:00" />
+<meta property="og:article:modified_time" content="2020-07-19T16:20:00+08:00" />
 <meta name="twitter:title" content="Python Table Manners - 程式碼風格 ">
-<meta name="twitter:description" content="接下來要介紹的是 linter 它用來檢查程式是否符合特定的程式碼風格的一類工具 以 Python 來說，則是應該遵守 PEP 8 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤">
+<meta name="twitter:description" content="接下來要介紹的是 linters 它用來檢查程式是否符合特定的程式碼風格的一類工具 以 Python 來說，則是應該遵守 PEP 8 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤">
 
         <title>Python Table Manners - 程式碼風格  · Laziness makes Great Engineer
 </title>
@@ -128,7 +128,7 @@
     </div>
     <div class="span8 article-content">
             
-            <p>接下來要介紹的是 linter<br/>
+            <p>接下來要介紹的是 linters<br/>
 它用來檢查程式是否符合特定的程式碼風格的一類工具<br/>
 以 Python 來說，則是應該遵守 <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a><br/>
 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤</p>
@@ -155,11 +155,11 @@ pipenv install flake8 --dev
 pipenv run flake8
 </code></pre></div>
 <p>flake8 預設對當前目錄下所有 Python 的檔案做檢查</p>
-<p>執行後，<code>flake8</code> 會將這些錯誤點出來</p>
+<p>執行後，<code>flake8</code> 會將這些錯誤找出來</p>
 <div class="highlight"><pre><span></span><code>./bad_code.py:4:1: F811 redefinition of unused 'os' from line 1
 ./bad_code.py:4:5: E222 multiple spaces after operator
 </code></pre></div>
-<p>透過這個錯誤碼（e.g., <code>F811</code>）可以在 <a href="https://www.flake8rules.com/">flake8 rules</a> 找到為什麼這是個錯誤和怎麼修正比較好</p>
+<p>透過錯誤碼（e.g., <code>F811</code>）可以在 <a href="https://www.flake8rules.com/">flake8 rules</a> 找到為什麼這是個錯誤和怎麼修正比較好</p>
 <h3 id="_2">設定</h3>
 <p>某些狀況下，我們會不完全依照 flake8 的風格<br/>
 例如 <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> 的每行只能有 79 個字元，已經越來越不被使用</p>
@@ -209,18 +209,24 @@ pipenv install pylint --dev
 pipenv run pylint &lt;package&gt; ......
 </code></pre></div>
 <h3 id="_5">設定</h3>
-<p>因為 pylint 的設定非常多，可以使用它提供的指令來產生預設的設定檔<br/>
-一般會建議透過內建的指令生成 <code>.pylintrc</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 將預設的 pylint 設定檔寫入 `.pylintrc`</span>
-pipenv run pylint --generate-rcfile &gt;&gt; .pylintrc
+<p>原本我建議使用 <code>pipenv run pylint --generate-rcfile &gt;&gt; .pylintrc</code> 來產生設定檔<br/>
+但現在我更傾向在 pyproject.toml 中只寫入想要客製化的設定<br/>
+原先的做法會在設定檔 .pylintrc 中有著大量的預設值，會不好找到哪些是修改過的設定，造成維護上的困難<br/>
+不過需要注意的一點是在某些版本的 pylint 這個設定方式會出錯<br/>
+所以必須安裝版本 2.5.3 以上的 pylint</p>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.pylint]</span>
+    <span class="k">[tool.pylint.messages_control]</span>
+    <span class="n">disable</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s">"bad-continuation"</span><span class="p">,</span>
+        <span class="s">"missing-function-docstring"</span><span class="p">,</span>
+        <span class="s">"missing-module-docstring"</span><span class="p">,</span>
+        <span class="s">"invalid-name"</span>
+    <span class="p">]</span>
+
+    <span class="k">[tool.pylint.format]</span>
+    <span class="n">max-line-length</span> <span class="o">=</span> <span class="mi">88</span>
 </code></pre></div>
-<p>我常用到的欄位有 <code>disable</code> 跟 <code>max-line-length</code></p>
-<p>disable 的錯誤可以在 <a href="http://pylint-messages.wikidot.com/all-codes">pylint-messages</a> 找到</p>
-<div class="highlight"><pre><span></span><code><span class="na">..</span>
-<span class="na">disable</span><span class="o">=</span><span class="s">print-statement,</span>
-<span class="na">...</span>
-<span class="na">max-line-length</span><span class="o">=</span><span class="s">88</span>
-</code></pre></div>
+<p>其中 disable 的錯誤可以在 <a href="http://pylint-messages.wikidot.com/all-codes">pylint-messages</a> 找到</p>
 <h3 id="_6">局部跳過檢查</h3>
 <p>pylint 同樣可以忽略部分的程式碼<br/>
 只要在要忽略的程式碼前面一行加上 <code># pylint: disable=[error]</code><br/>
@@ -254,8 +260,10 @@ e.g.,</p>
 就會將變數的值取代掉原本引入的模組</p>
 <p>除此之外，型別標記的程式碼也會增加可讀性<br/>
 因此近幾年越來越多人注意 Python 的型別標記</p>
-<p>在 PyCon US 2017 中 Lisa Guo 和 Hui Ding 的 Keynote Session <a href="https://lee-w.github.io/posts/tech/2017/06/Python-at-IG/">Python@Instagram</a> 非常的精彩<br/>
-相當建議可以觀看</p>
+<p>PyCon US 2017 中 Lisa Guo 和 Hui Ding 的 Keynote Session <a href="https://lee-w.github.io/posts/tech/2017/06/Python-at-IG/">Python@Instagram</a> 講了 Instagram 是為什麼要和如何將龐大的程式庫加上型別標示<br/>
+<a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2020/2020/05/static-typing-in-python/">Static Typing in Python</a> 則是 PyCon US 2020 年 Dustin 對型別標示和檢查的詳細介紹<br/>
+而 Vita Smid 在 EuroPython 2019 的 <a href="https://lee-w.github.io/pycon-note/posts/europython-2019/2020/03/static-typing-beyond-the-basics-of-def-foo-x-int-str/">Static typing: beyond the basics of def foo(x: int) -str:</a> 則講到了型別檢查更進階一點的應用<br/>
+這幾場演講都非常推薦可以觀看！</p>
 <h3 id="_7">使用</h3>
 <p>以下列的程式碼為例</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># wrong_type_hint.py</span>
@@ -387,11 +395,11 @@ pipenv run isort --atomic --apply
 <h3 id="_12">設定</h3>
 <p>為了跟前面提到的工具相容（主要應該是 black），以下是我在 <code>pyproject.toml</code> 內的設定</p>
 <div class="highlight"><pre><span></span><code><span class="k">[tool.isort]</span>
-<span class="n">multi_line_output</span><span class="o">=</span><span class="mi">3</span>
-<span class="n">include_trailing_comma</span><span class="o">=</span><span class="kc">true</span>
-<span class="n">force_grid_wrap</span><span class="o">=</span><span class="mi">0</span>
-<span class="n">use_parentheses</span><span class="o">=</span><span class="kc">true</span>
-<span class="n">line_length</span><span class="o">=</span><span class="mi">88</span>
+<span class="n">multi_line_output</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">include_trailing_comma</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="n">force_grid_wrap</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">use_parentheses</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="n">line_length</span> <span class="o">=</span> <span class="mi">88</span>
 </code></pre></div>
 <h2 id="_13">其他工具</h2>
 <ul>
@@ -405,12 +413,25 @@ pipenv run isort --atomic --apply
 不過還沒有被所有的工具支援<br/>
 <a href="https://github.com/carlosperate/awesome-pyproject">awesome-pyproject</a> 整理了目前已經支援或討論是否要支援 <code>proproject.toml</code> 的工具</p>
 <p>比起讓多個工具的設定散落在各個設定檔<br/>
-我傾向統一管理在 <code>pyproject.toml</code> 或 <code>setup.cfg</code><br/>
-其中有兩個例外</p>
+我傾向統一管理在 <code>pyproject.toml</code> 或 <code>setup.cfg</code></p>
 <ul>
-<li><code>.pylintrc</code>: 設定內容太長，如果併入通用的設定檔，容易造成其他設定閱讀困難</li>
-<li><code>pytest.ini</code>: pytest 即將放棄對 <code>setup.cfg</code> 的支援，而且容易出錯 （Read More 👉 <a href="https://github.com/pytest-dev/pytest/issues/3523">deprecate setup.cfg support #3523</a>）</li>
+<li><code>pyproject.toml</code><ul>
+<li>black</li>
+<li>isort</li>
+<li>pylint</li>
+<li>coverage</li>
+<li>commitizen (之後才會介紹到)</li>
 </ul>
+</li>
+<li>setup.cfg<ul>
+<li>flake8</li>
+<li>mypy</li>
+</ul>
+</li>
+</ul>
+<p>目前唯一的例外是 <code>pytest.ini</code><br/>
+不使用 <code>setup.cfg</code> 的原因是 pytest 即將放棄對 <code>setup.cfg</code> 的支援，而且容易出錯 （Read More 👉 <a href="https://github.com/pytest-dev/pytest/issues/3523">deprecate setup.cfg support #3523</a>）<br/>
+但是在 pytest 6.0 釋出之後，就可以把 pytest 的設定加入到 <code>pyproject.toml</code> 了 🎉 (Read More 👉 <a href="https://github.com/pytest-dev/pytest/issues/1556">implement support for PEP-518 - the tool.pytest key in pyproject.toml #1556</a>)</p>
 <h2 id="reference">Reference</h2>
 <ul>
 <li><a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/">Automating Code Quality - PyCon US 2018</a></li>
@@ -508,7 +529,7 @@ pipenv run isort --atomic --apply
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-02-26T18:39:00+08:00">2020/02/26 - Wed</time>
 <h4>Last Updated</h4>
-<time datetime="2020-04-29T09:37:00+08:00">2020/04/29 - Wed</time>
+<time datetime="2020-07-19T16:20:00+08:00">2020/07/19 - Sun</time>
 
         <h4>Python Table Manners</h4>
     <ul class="multi-parts-list">
@@ -519,32 +540,32 @@ pipenv run isort --atomic --apply
             <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" title="Python Table Manners - 虛擬環境和套件管理">Part 2: Python Table Manners - 虛擬環境和套件管理</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" title="Python Table Manners - 測試 (一)">Part 3: Python Table Manners - 測試 (一)</a>
-            </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 4: Python Table Manners - 測試 (二)</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 3: Python Table Manners - 測試 (二)</a>
             </li>
             <li  class="active-part">
-            Part 5: Python Table Manners - 程式碼風格
+            Part 4: Python Table Manners - 程式碼風格
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" title="Python Table Manners - 管理繁瑣任務">Part 6: Python Table Manners - 管理繁瑣任務</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" title="Python Table Manners - 管理繁瑣任務">Part 5: Python Table Manners - 管理繁瑣任務</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" title="Python Table Manners - pre-commit: git commit 前做完檢查">Part 7: Python Table Manners - pre-commit: git commit 前做完檢查</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" title="Python Table Manners - pre-commit: git commit 前做完檢查">Part 6: Python Table Manners - pre-commit: git commit 前做完檢查</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" title="Python Table Manners - Commitizen: 規格化 commit message">Part 8: Python Table Manners - Commitizen: 規格化 commit message</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" title="Python Table Manners - Commitizen: 規格化 commit message">Part 7: Python Table Manners - Commitizen: 規格化 commit message</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 9: Python Table Manners - 安全性檢查</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 8: Python Table Manners - 安全性檢查</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" title="Python Table Manners - 文件">Part 10: Python Table Manners - 文件</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" title="Python Table Manners - 文件">Part 9: Python Table Manners - 文件</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1" title="Python Table Manners - 測試 (一)">Part 10: Python Table Manners - 測試 (一)</a>
             </li>
     </ul>
                 <h4>Read Time</h4>
-                 3 min
+                 4 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

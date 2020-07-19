@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2020-02-25T18:05:00+08:00" />
-<meta property="og:article:modified_time" content="2020-04-29T09:37:00+08:00" />
+<meta property="og:article:modified_time" content="2020-07-19T16:03:00+08:00" />
 <meta name="twitter:title" content="Python Table Manners - 測試 (二) ">
 <meta name="twitter:description" content="接續著前一篇提到的 pytest，繼續看它的其他功能吧">
 
@@ -100,8 +100,8 @@
 </li>
 <li><a href="#parameterize">參數化 (parameterize)</a></li>
 <li><a href="#marker">marker</a><ul>
-<li><a href="#fixture_2">內建 fixture</a></li>
-<li><a href="#marker_1">自定義 marker</a></li>
+<li><a href="#marker_1">內建 marker</a></li>
+<li><a href="#marker_2">自定義 marker</a></li>
 </ul>
 </li>
 <li><a href="#_2">測試例外事件</a></li>
@@ -165,7 +165,7 @@
 <span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">User</span>
 
 
- <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">"function"</span><span class="p">)</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">"function"</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">db</span><span class="p">():</span>
     <span class="n">_db</span>  <span class="o">=</span> <span class="n">DB</span><span class="p">()</span>
     <span class="n">_db</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
@@ -247,13 +247,13 @@
 <h2 id="marker">marker</h2>
 <p>前面已經介紹過 <code>parameterize</code> 和 <code>usefixtures</code><br/>
 這裡會介紹 <a href="http://doc.pytest.org/en/latest/example/markers.html">markers</a> 還可以做什麼</p>
-<h3 id="fixture_2">內建 fixture</h3>
+<h3 id="marker_1">內建 marker</h3>
 <ul>
 <li><a href="http://doc.pytest.org/en/latest/skipping.html#skip">skip</a>: 跳過這個測試案例</li>
 <li><a href="http://doc.pytest.org/en/latest/skipping.html#skipif">skipif</a>: 如果符合某個條件，則跳過這個測試案例</li>
 <li><a href="http://doc.pytest.org/en/latest/skipping.html#xfail">xfail</a>: 預期會失敗 （其實前一篇想跳過會失敗的案例應該要用 <code>xfail</code>，而不是 <code>skip</code>）</li>
 </ul>
-<h3 id="marker_1">自定義 marker</h3>
+<h3 id="marker_2">自定義 marker</h3>
 <p><code>@pytest.mark.[any custom marker]</code> 的用途是標記測試案例<br/>
 像是如果有些測試會特別慢，就可以透過標記 <code>@pytest.mark.slow</code></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
@@ -304,7 +304,7 @@ p.s. 不建議使用 <code>setup.cfg</code> 做為 pytest 的設定檔 (Read Mor
 <li><code>--lf</code> (<code>--last-failed</code>): 只測試上次失敗的案例</li>
 <li><code>--ff</code> (<code>--failed-first</code>): 從上次失敗的案例開始測試</li>
 <li><code>--nf</code> <code>--new-first</code>: 從新的案例開始測試</li>
-<li><code>-k EXPRESSION</code>: 只測試名稱符合 "EXPRESIION" 的案例</li>
+<li><code>-k EXPRESSION</code>: 只測試名稱符合 "EXPRESSION" 的案例</li>
 <li><code>-m MARKEXPR</code>: 只測試有 "MARKEXPR" maker 的案例</li>
 <li><code>--fixtures</code>: 列出所有 <code>fixtures</code></li>
 </ul>
@@ -313,9 +313,9 @@ p.s. 不建議使用 <code>setup.cfg</code> 做為 pytest 的設定檔 (Read Mor
 <div class="highlight"><pre><span></span><code><span class="c1"># 安裝 pytest-cov</span>
 pipenv install pytest-cov --dev
 </code></pre></div>
-<p>pytest-cov 的使用方式是在 <code>pytest</code> 指令後面加上參數</p>
 <p>e.g.,</p>
-<div class="highlight"><pre><span></span><code>pipenv run pytest --cov<span class="o">=</span>myproj tests/
+<div class="highlight"><pre><span></span><code><span class="c1"># 計算 myproj 的覆蓋率</span>
+pipenv run pytest --cov<span class="o">=</span>myproj tests/
 </code></pre></div>
 <p>比較重要的參數有</p>
 <ul>
@@ -366,6 +366,10 @@ pipenv install pytest-cov --dev
 <li><a href="https://github.com/pytest-dev/pytest-mock">pytest-mock</a><ul>
 <li>使用 mocking 的技巧將部分不好測試的物件替換成假的物件</li>
 <li>推薦參考 <a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/">Demystifying the Patch Function - PyCon US 2018</a> （不過她不是用 pytest）</li>
+</ul>
+</li>
+<li><a href="https://github.com/ESSS/pytest-regressions">pytest-regression</a><ul>
+<li>將冗長的測試結果寫成檔案，每次測試都去比對跟上次產生的結果是否相同</li>
 </ul>
 </li>
 <li>尋找其他插件<ul>
@@ -481,7 +485,7 @@ pipenv install pytest-cov --dev
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" title="Previous: Python Table Manners - 測試 (一)">Python Table Manners - 測試 (一)</a></li>
+                <li class="previous-article">« <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" title="Previous: Python Table Manners - 虛擬環境和套件管理">Python Table Manners - 虛擬環境和套件管理</a></li>
                 <li class="next-article"><a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Next: Python Table Manners - 程式碼風格">Python Table Manners - 程式碼風格</a> »</li>
             </ul>
             </nav>
@@ -491,7 +495,7 @@ pipenv install pytest-cov --dev
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-02-25T18:05:00+08:00">2020/02/25 - Tue</time>
 <h4>Last Updated</h4>
-<time datetime="2020-04-29T09:37:00+08:00">2020/04/29 - Wed</time>
+<time datetime="2020-07-19T16:03:00+08:00">2020/07/19 - Sun</time>
 
         <h4>Python Table Manners</h4>
     <ul class="multi-parts-list">
@@ -501,29 +505,29 @@ pipenv install pytest-cov --dev
             <li >
             <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" title="Python Table Manners - 虛擬環境和套件管理">Part 2: Python Table Manners - 虛擬環境和套件管理</a>
             </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" title="Python Table Manners - 測試 (一)">Part 3: Python Table Manners - 測試 (一)</a>
-            </li>
             <li  class="active-part">
-            Part 4: Python Table Manners - 測試 (二)
+            Part 3: Python Table Manners - 測試 (二)
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Python Table Manners - 程式碼風格">Part 5: Python Table Manners - 程式碼風格</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Python Table Manners - 程式碼風格">Part 4: Python Table Manners - 程式碼風格</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" title="Python Table Manners - 管理繁瑣任務">Part 6: Python Table Manners - 管理繁瑣任務</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" title="Python Table Manners - 管理繁瑣任務">Part 5: Python Table Manners - 管理繁瑣任務</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" title="Python Table Manners - pre-commit: git commit 前做完檢查">Part 7: Python Table Manners - pre-commit: git commit 前做完檢查</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" title="Python Table Manners - pre-commit: git commit 前做完檢查">Part 6: Python Table Manners - pre-commit: git commit 前做完檢查</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" title="Python Table Manners - Commitizen: 規格化 commit message">Part 8: Python Table Manners - Commitizen: 規格化 commit message</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" title="Python Table Manners - Commitizen: 規格化 commit message">Part 7: Python Table Manners - Commitizen: 規格化 commit message</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 9: Python Table Manners - 安全性檢查</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 8: Python Table Manners - 安全性檢查</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" title="Python Table Manners - 文件">Part 10: Python Table Manners - 文件</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" title="Python Table Manners - 文件">Part 9: Python Table Manners - 文件</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1" title="Python Table Manners - 測試 (一)">Part 10: Python Table Manners - 測試 (一)</a>
             </li>
     </ul>
                 <h4>Read Time</h4>

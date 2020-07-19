@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2020-03-01T00:45:00+08:00" />
-<meta property="og:article:modified_time" content="2020-03-03T20:12:00+08:00" />
+<meta property="og:article:modified_time" content="2020-07-19T17:17:00+08:00" />
 <meta name="twitter:title" content="Python Table Manners - Commitizen: 規格化 commit message ">
 <meta name="twitter:description" content="接續著前一篇的 pre-commit 繼續談 git 相關的工具 這篇來聊聊如何透過 commitizen 規範 commit message 還有我們能拿規範過的 commit message 做什麼">
 
@@ -99,7 +99,7 @@
 <li><a href="#_1">自動提升版本號</a></li>
 <li><a href="#commit">客製化 commit 規範</a><ul>
 <li><a href="#_2">直接在設定檔設定</a></li>
-<li><a href="#commit-python">將 commit 規範寫成 Python 套件發佈</a></li>
+<li><a href="#commit-python">將客製化的 commit 規範寫成 Python 套件發佈</a></li>
 </ul>
 </li>
 <li><a href="#changelog">自動產生更新日誌（Changelog）</a></li>
@@ -131,19 +131,19 @@
 <p>撰寫好的 commit message，除了讓未來的自己知道自己在幹嘛<br/>
 也能讓團隊之間的溝通更順利</p>
 <ul>
-<li>送 Pull Request / Merge Request 時，reviewers 能更快速地知道增加了哪些功能</li>
+<li>送 Pull Request / Merge Request 時，審核者能更快速地知道增加了哪些功能</li>
 <li>新進人員可以從過往的 commit message 找到整個專案發展的脈絡，更容易上手專案</li>
 </ul>
 <h2 id="commitizen">Commitizen</h2>
 <p>除了提供的 commit message 撰寫建議和規範 （👉 <a href="https://commitizen-tools.github.io/commitizen/tutorials/writing_commits/">Writing commits</a>）<br/>
-<a href="https://commitizen-tools.github.io/commitizen/">commitizen</a> 更進一步提供互動式介面，讓使用者可以夠輕鬆地產生符合規範的 commit message</p>
-<p>同時也整合了前一篇所提到的 pre-commit hook，避免使用者將不符合規範的 commit message 寫入</p>
-<p>除了採用來自 Angular 社群的 <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> (約定式提交) 外， commitizen 提供了高度的客製化，讓每個團隊或專案都可以依照自己的需求，撰寫相對應的規範</p>
-<p>規範了 commit message 後，除了增加可讀性增加外，也讓訊息有可以被解析做其他運用<br/>
+<a href="https://commitizen-tools.github.io/commitizen/">commitizen</a> 更進一步提供互動式介面，讓使用者可以夠輕鬆地產生符合規範的 commit message<br/>
+同時也整合了前一篇所提到的 pre-commit hook，避免使用者將不符合規範的 commit message 寫入<br/>
+除了採用來自 Angular 社群的 <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> (約定式提交) 外， commitizen 提供了高度的客製化，讓每個團隊或專案都可以依照自己的需求，撰寫相對應的規範<br/>
+規範了 commit message 後，除了增加可讀性增加外，也讓訊息有可以被解析做其他運用<br/>
 e.g., 提升版本號, 產生更新日誌</p>
 <h2 id="commitizen_1">安裝與設定 Commitizen</h2>
-<p>跟 invoke 一樣，我會把 commitizen 同時安裝在系統和虛擬環境</p>
-<p>安裝在虛擬環境主要是為了能在 CI/CD 伺服器上自動升版</p>
+<p>跟 invoke 一樣，我會把 commitizen 同時安裝在系統和虛擬環境<br/>
+安裝在虛擬環境主要是為了能在 CI/CD 伺服器上自動升版</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安裝 commitizen 到系統</span>
 pipx install commitizen
 
@@ -198,7 +198,7 @@ cz commit
 因此只要在專案的 <code>.pre-commit-config.yaml</code> 加入以下這段</p>
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">repos</span>
   <span class="l l-Scalar l-Scalar-Plain">- repo</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/commitizen-tools/commitizen</span>
-    <span class="l l-Scalar l-Scalar-Plain">rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">v1.17.0</span>
+    <span class="l l-Scalar l-Scalar-Plain">rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">v1.23.1</span>
     <span class="l l-Scalar l-Scalar-Plain">hooks</span><span class="p p-Indicator">:</span>
       <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">commitizen</span>
         <span class="nt">stages</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">commit-msg</span><span class="p p-Indicator">]</span>
@@ -315,7 +315,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 </code></pre></div>
 <p>設定完之後，再使用 <code>cz commit</code> 就可以看到客製化過後的問題了<br/>
 <img alt="customize" src="/images/posts-image/2020-02-22-python-table-manner-series/customize.jpg"/></p>
-<h3 id="commit-python">將 commit 規範寫成 Python 套件發佈</h3>
+<h3 id="commit-python">將客製化的 commit 規範寫成 Python 套件發佈</h3>
 <p>這個做法比較複雜，也比較不常會用到，所以我只會概略地講<br/>
 （Read More 👉 <a href="https://commitizen-tools.github.io/commitizen/customization/">Customization</a>）</p>
 <p>我已經先將套件的架構驟寫成一個 <a href="https://cookiecutter.readthedocs.io/en/1.7.0/">cookiecutter</a> 範本<br/>
@@ -327,24 +327,44 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 安裝之後會在 <code>cz ls</code> 看到這個新的 commit 規範<br/>
 在設定檔中設定 <code>name</code> 或在指令列加上參數 <code>-n name</code> (e.g., <code>cz -n cz_test commit</code>) 就可以開始使用</p>
 <h2 id="changelog">自動產生更新日誌（Changelog）</h2>
-<p>commitizen 另外也支援產生 <a href="https://keepachangelog.com/en/1.1.0/">keep a changelog</a> 格式的更新日誌<br/>
-不過還沒被 merge 到 master 內<br/>
-這個功能現在也還只是剛實作一個初版，應該會有一些問題<br/>
-有興趣可以到 <a href="https://github.com/commitizen-tools/commitizen/tree/command-changelog">command-changelog</a> 這個 branch 玩玩看，一起來除錯（？）</p>
-<p>產生更新日誌（預設會取代 <code>CHANGELOG.md</code>）</p>
+<p>commitizen 可以透過過往的 commit message 產生 <a href="https://keepachangelog.com/en/1.1.0/">keep a changelog</a> 格式的更新日誌</p>
+<p>透過以下指令，就能從最舊到最新的 commit message 產生更新日誌（預設是 <code>CHANGELOG.md</code>）</p>
 <div class="highlight"><pre><span></span><code>cz changelog
 </code></pre></div>
-<p>參數</p>
+<p>如果已經有現成的 <code>CHANGELOG.md</code>， 則可以使用 <code>cz changelog --incremental</code> 指令</p>
+<p>commitizen 會試著找出文件中最新釋出版本 (e.g., <code>1.0.5</code>) 的位置，將最新釋出版本以後的 commit 加入到更新日誌的最頂端</p>
+<p>例如目前有一個專案，最新的版本是 1.0.5，之後有 2 個 commit</p>
 <ul>
-<li><code>--dry-run</code>： 將更新日誌的內容輸出到終端機，不更新到檔案</li>
-<li><code>--file-name FILE_NAME</code>： 指定更新日誌名稱</li>
-<li><code>--start-rev START_REV</code>： 更新日誌開始的點（結束的點為目前所在的 commit）</li>
+<li>feat: cool new features</li>
+<li>ci: update jenkins file</li>
 </ul>
+<p>原本的更新日誌</p>
+<div class="highlight"><pre><span></span><code><span class="err">## 1.0.5</span>
+<span class="err">### Feat</span>
+<span class="err">- old features</span>
+</code></pre></div>
+<p>則 commitizen 在釋出 1.1.0 時，就會產生如下的更新日誌</p>
+<div class="highlight"><pre><span></span><code><span class="o">##</span> <span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span> <span class="p">(</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">19</span><span class="p">)</span>
+
+<span class="o">###</span> <span class="n">Feat</span>
+
+<span class="o">-</span> <span class="k">new</span> <span class="n">cool</span> <span class="k">new</span> <span class="n">features</span>
+
+<span class="o">##</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span>
+<span class="o">###</span> <span class="n">Feat</span>
+<span class="o">-</span> <span class="k">some</span> <span class="k">old</span> <span class="n">features</span>
+</code></pre></div>
+<p>因為產生更新日誌，通常適合在升版後執行<br/>
+在 <code>cz bump</code> 加上 <code>--changelog</code> 參數就可以提升版本的同時，產生更新日誌</p>
 <h2 id="commitizen_3">其他 commitizen 指令和常用參數</h2>
 <ul>
 <li><code>cz bump</code>： 提升版本號<ul>
 <li><code>--dry-run</code>： 將提升版本號的訊息輸出到終端機，不會實際產生 tag 和改變檔案</li>
 <li><code>--increment {MAJOR,MINOR,PATCH}</code>： 提升特定版本號</li>
+</ul>
+</li>
+<li><code>cz changelog</code>: 產生更新日誌<ul>
+<li><code>--dry-run</code>: 將產生的更新日誌書處到終端機，不產生或更新 <code>CHANGELOG.md</code></li>
 </ul>
 </li>
 <li><code>cz -n NAME [command]</code>： 使用不同的 commit 規則 （e.g., <code>cz -n cz_jira commit</code>）</li>
@@ -495,7 +515,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-03-01T00:45:00+08:00">2020/03/01 - Sun</time>
 <h4>Last Updated</h4>
-<time datetime="2020-03-03T20:12:00+08:00">2020/03/03 - Tue</time>
+<time datetime="2020-07-19T17:17:00+08:00">2020/07/19 - Sun</time>
 
         <h4>Python Table Manners</h4>
     <ul class="multi-parts-list">
@@ -506,28 +526,28 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
             <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" title="Python Table Manners - 虛擬環境和套件管理">Part 2: Python Table Manners - 虛擬環境和套件管理</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" title="Python Table Manners - 測試 (一)">Part 3: Python Table Manners - 測試 (一)</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 3: Python Table Manners - 測試 (二)</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 4: Python Table Manners - 測試 (二)</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Python Table Manners - 程式碼風格">Part 4: Python Table Manners - 程式碼風格</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Python Table Manners - 程式碼風格">Part 5: Python Table Manners - 程式碼風格</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" title="Python Table Manners - 管理繁瑣任務">Part 5: Python Table Manners - 管理繁瑣任務</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-manage-trival-tasks" title="Python Table Manners - 管理繁瑣任務">Part 6: Python Table Manners - 管理繁瑣任務</a>
-            </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" title="Python Table Manners - pre-commit: git commit 前做完檢查">Part 7: Python Table Manners - pre-commit: git commit 前做完檢查</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" title="Python Table Manners - pre-commit: git commit 前做完檢查">Part 6: Python Table Manners - pre-commit: git commit 前做完檢查</a>
             </li>
             <li  class="active-part">
-            Part 8: Python Table Manners - Commitizen: 規格化 commit message
+            Part 7: Python Table Manners - Commitizen: 規格化 commit message
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 9: Python Table Manners - 安全性檢查</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 8: Python Table Manners - 安全性檢查</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" title="Python Table Manners - 文件">Part 10: Python Table Manners - 文件</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" title="Python Table Manners - 文件">Part 9: Python Table Manners - 文件</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1" title="Python Table Manners - 測試 (一)">Part 10: Python Table Manners - 測試 (一)</a>
             </li>
     </ul>
                 <h4>Read Time</h4>

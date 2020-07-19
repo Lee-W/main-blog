@@ -24,6 +24,7 @@
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2020-02-27T20:04:00+08:00" />
+<meta property="og:article:modified_time" content="2020-07-19T16:25:00+08:00" />
 <meta name="twitter:title" content="Python Table Manners - 管理繁瑣任務 ">
 <meta name="twitter:description" content="前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具 每一個工具又有各自的參數和設定 這麼多指令怎麼可能記得起來 😱">
 
@@ -129,7 +130,7 @@ pipenv install invoke --dev
 <p>在虛擬環境還需要裝的原因是，部署時系統通常不會預裝 invoke<br/>
 如果想在部署時也能使用 invoke 的功能，最方便的方法透過 pipenv 安裝</p>
 <h2 id="invoke_2">如何使用 invoke</h2>
-<p>我們再回到 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 的例子<br/>
+<p>再回到 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 的例子<br/>
 checkout 到 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/83e48c6443303045ed1de2f020297c3110bb1300">commit 83e4</a>，回到使用 invoke 管理指令前<br/>
 從當時的文件可以看到，還需要使用相對冗長的指令</p>
 <p><img alt="before-invoke" src="/images/posts-image/2020-02-22-python-table-manner-series/before-invoke.jpg"/></p>
@@ -376,6 +377,9 @@ invoke 當然也想到了<br/>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-02-27T20:04:00+08:00">2020/02/27 - Thu</time>
+<h4>Last Updated</h4>
+<time datetime="2020-07-19T16:25:00+08:00">2020/07/19 - Sun</time>
+
         <h4>Python Table Manners</h4>
     <ul class="multi-parts-list">
             <li >
@@ -385,28 +389,28 @@ invoke 當然也想到了<br/>
             <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" title="Python Table Manners - 虛擬環境和套件管理">Part 2: Python Table Manners - 虛擬環境和套件管理</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" title="Python Table Manners - 測試 (一)">Part 3: Python Table Manners - 測試 (一)</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 3: Python Table Manners - 測試 (二)</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-2" title="Python Table Manners - 測試 (二)">Part 4: Python Table Manners - 測試 (二)</a>
-            </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Python Table Manners - 程式碼風格">Part 5: Python Table Manners - 程式碼風格</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" title="Python Table Manners - 程式碼風格">Part 4: Python Table Manners - 程式碼風格</a>
             </li>
             <li  class="active-part">
-            Part 6: Python Table Manners - 管理繁瑣任務
+            Part 5: Python Table Manners - 管理繁瑣任務
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" title="Python Table Manners - pre-commit: git commit 前做完檢查">Part 7: Python Table Manners - pre-commit: git commit 前做完檢查</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-pre-commit" title="Python Table Manners - pre-commit: git commit 前做完檢查">Part 6: Python Table Manners - pre-commit: git commit 前做完檢查</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" title="Python Table Manners - Commitizen: 規格化 commit message">Part 8: Python Table Manners - Commitizen: 規格化 commit message</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen" title="Python Table Manners - Commitizen: 規格化 commit message">Part 7: Python Table Manners - Commitizen: 規格化 commit message</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 9: Python Table Manners - 安全性檢查</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security" title="Python Table Manners - 安全性檢查">Part 8: Python Table Manners - 安全性檢查</a>
             </li>
             <li >
-            <a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" title="Python Table Manners - 文件">Part 10: Python Table Manners - 文件</a>
+            <a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation" title="Python Table Manners - 文件">Part 9: Python Table Manners - 文件</a>
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2020/07/python-table-manners-test-1" title="Python Table Manners - 測試 (一)">Part 10: Python Table Manners - 測試 (一)</a>
             </li>
     </ul>
                 <h4>Read Time</h4>
