@@ -1,5 +1,6 @@
 Title: Python Table Manners - 安全性檢查
 Date: 2020-03-22 13:10
+Modified: 2020-07-19 17:23
 Category: Tech
 Tags: Python, Security
 Slug: python-table-manners-security
@@ -132,6 +133,12 @@ exclude:
 skips:
 # 要執行的檢查種類 （逗號分隔）
 tests:
+```
+
+執行 bandit 時要加上 `--ini .bandit` 讓 bandit 知道要找這份設定檔
+
+```sh
+bandit --ini .bandit
 ```
 
 如果不是整個檔案或種類要跳過，則可以在程式碼後面加上 `# nosec`
