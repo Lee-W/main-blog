@@ -1,13 +1,13 @@
 Title: Python Table Manners - 程式碼風格
 Date: 2020-02-26 18:39
-Modified: 2020-04-29 09:37
+Modified: 2020-07-19 16:20
 Category: Tech
 Tags: Python, Code Quality
 Slug: python-table-manners-coding-style
 Authors: Lee-W
 Series: Python Table Manners
 
-接下來要介紹的是 linter
+接下來要介紹的是 linters
 它用來檢查程式是否符合特定的程式碼風格的一類工具
 以 Python 來說，則是應該遵守 [PEP 8](https://www.python.org/dev/peps/pep-0008/)
 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤
@@ -44,14 +44,14 @@ pipenv run flake8
 
 flake8 預設對當前目錄下所有 Python 的檔案做檢查
 
-執行後，`flake8` 會將這些錯誤點出來
+執行後，`flake8` 會將這些錯誤找出來
 
 ```text
 ./bad_code.py:4:1: F811 redefinition of unused 'os' from line 1
 ./bad_code.py:4:5: E222 multiple spaces after operator
 ```
 
-透過這個錯誤碼（e.g., `F811`）可以在 [flake8 rules](https://www.flake8rules.com/) 找到為什麼這是個錯誤和怎麼修正比較好
+透過錯誤碼（e.g., `F811`）可以在 [flake8 rules](https://www.flake8rules.com/) 找到為什麼這是個錯誤和怎麼修正比較好
 
 ### 設定
 某些狀況下，我們會不完全依照 flake8 的風格
@@ -114,24 +114,27 @@ pipenv run pylint <package> ......
 ```
 
 ### 設定
-因為 pylint 的設定非常多，可以使用它提供的指令來產生預設的設定檔
-一般會建議透過內建的指令生成 `.pylintrc`
+原本我建議使用 `pipenv run pylint --generate-rcfile >> .pylintrc` 來產生設定檔
+但現在我更傾向在 pyproject.toml 中只寫入想要客製化的設定
+原先的做法會在設定檔 .pylintrc 中有著大量的預設值，會不好找到哪些是修改過的設定，造成維護上的困難
+不過需要注意的一點是在某些版本的 pylint 這個設定方式會出錯
+所以必須安裝版本 2.5.3 以上的 pylint
 
-```sh
-# 將預設的 pylint 設定檔寫入 `.pylintrc`
-pipenv run pylint --generate-rcfile >> .pylintrc
+```toml
+[tool.pylint]
+    [tool.pylint.messages_control]
+    disable = [
+        "bad-continuation",
+        "missing-function-docstring",
+        "missing-module-docstring",
+        "invalid-name"
+    ]
+
+    [tool.pylint.format]
+    max-line-length = 88
 ```
 
-我常用到的欄位有 `disable` 跟 `max-line-length`
-
-disable 的錯誤可以在 [pylint-messages](http://pylint-messages.wikidot.com/all-codes) 找到
-
-```ini
-..
-disable=print-statement,
-...
-max-line-length=88
-```
+其中 disable 的錯誤可以在 [pylint-messages](http://pylint-messages.wikidot.com/all-codes) 找到
 
 ### 局部跳過檢查
 pylint 同樣可以忽略部分的程式碼
@@ -179,8 +182,10 @@ str_var = 1
 除此之外，型別標記的程式碼也會增加可讀性
 因此近幾年越來越多人注意 Python 的型別標記
 
-在 PyCon US 2017 中 Lisa Guo 和 Hui Ding 的 Keynote Session [Python@Instagram](https://lee-w.github.io/posts/tech/2017/06/Python-at-IG/) 非常的精彩
-相當建議可以觀看
+PyCon US 2017 中 Lisa Guo 和 Hui Ding 的 Keynote Session [Python@Instagram](https://lee-w.github.io/posts/tech/2017/06/Python-at-IG/) 講了 Instagram 是為什麼要和如何將龐大的程式庫加上型別標示
+[Static Typing in Python](https://lee-w.github.io/pycon-note/posts/pycon-us-2020/2020/05/static-typing-in-python/) 則是 PyCon US 2020 年 Dustin 對型別標示和檢查的詳細介紹
+而 Vita Smid 在 EuroPython 2019 的 [Static typing: beyond the basics of def foo(x: int) -str:](https://lee-w.github.io/pycon-note/posts/europython-2019/2020/03/static-typing-beyond-the-basics-of-def-foo-x-int-str/) 則講到了型別檢查更進階一點的應用
+這幾場演講都非常推薦可以觀看！
 
 ### 使用
 以下列的程式碼為例
@@ -350,11 +355,11 @@ pipenv run isort --atomic --apply
 
 ```toml
 [tool.isort]
-multi_line_output=3
-include_trailing_comma=true
-force_grid_wrap=0
-use_parentheses=true
-line_length=88
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 88
 ```
 
 ## 其他工具
@@ -370,10 +375,20 @@ line_length=88
 
 比起讓多個工具的設定散落在各個設定檔
 我傾向統一管理在 `pyproject.toml` 或 `setup.cfg`
-其中有兩個例外
 
-* `.pylintrc`: 設定內容太長，如果併入通用的設定檔，容易造成其他設定閱讀困難
-* `pytest.ini`: pytest 即將放棄對 `setup.cfg` 的支援，而且容易出錯 （Read More 👉 [deprecate setup.cfg support #3523](https://github.com/pytest-dev/pytest/issues/3523)）
+* `pyproject.toml`
+    * black
+    * isort
+    * pylint
+    * coverage
+    * commitizen (之後才會介紹到)
+* setup.cfg
+    * flake8
+    * mypy
+
+目前唯一的例外是 `pytest.ini`
+不使用 `setup.cfg` 的原因是 pytest 即將放棄對 `setup.cfg` 的支援，而且容易出錯 （Read More 👉 [deprecate setup.cfg support #3523](https://github.com/pytest-dev/pytest/issues/3523)）
+但是在 pytest 6.0 釋出之後，就可以把 pytest 的設定加入到 `pyproject.toml` 了 🎉 (Read More 👉 [implement support for PEP-518 - the tool.pytest key in pyproject.toml #1556](https://github.com/pytest-dev/pytest/issues/1556))
 
 ## Reference
 * [Automating Code Quality - PyCon US 2018](https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/)
