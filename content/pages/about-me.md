@@ -64,7 +64,7 @@ I was the executor of the program and the leader of the teaching assistant team.
 **[2020/07/24] [Euro Python 2020](https://ep2020.europython.eu/)**
 [Python table manners: a clean style](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020)
 
-**[2019/10/24] [Taipei.py](https://www.meetup.com/Taipei-py/events/271185591/)**
+**[2020/06/18] [Taipei.py](https://www.meetup.com/Taipei-py/events/271185591/)**
 [commitizen-tools: What can we gain from crafting a git message convention?](https://speakerdeck.com/leew/commitizen-tools-what-can-we-gain-from-crafting-a-git-message-convention-at-taipey-dot-py)
 
 **[2020/04/25] [Remote Python Pizza 2020](https://remote.python.pizza/)**
