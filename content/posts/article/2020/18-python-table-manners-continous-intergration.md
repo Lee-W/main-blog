@@ -21,5 +21,16 @@ Series: Python Table Manner
 yamllint
 不然會出奇怪的問題
 
+
+
 ## Reference
 [Python in GitHub Actions](https://hynek.me/articles/python-github-actions/)
+
+
+---
+快速的紀錄一下
+
+在 pypi 上的 pypi-token 需要 ""
+
+e.g. 你的 pypi-thisisrandomestringrepresentingyourapitoken
+那你要在 secret 上丟 "pypi-thisisrandomestringrepresentingyourapitoken" 而不是 pypi-thisisrandomestringrepresentingyourapitoken
