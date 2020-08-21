@@ -44,15 +44,17 @@
 還好不是現場抽上台的那種，不然就太刺激了 XD&lt;/p&gt;
 &lt;p&gt;比起之前在 EuroPython 2020 即興的閃電秀，果然用自己的母語還是有差&lt;br/&gt;
 大致上，我的閃電秀得到的回饋還算熱烈（？）&lt;br/&gt;
-像是
-* 真的沒在寫 js， Java Script...
-* COSCUP 全大寫啊啊
-* 中文的 git 好不習慣XD
-* 根提交...
-* 啊 打錯了
-* 哎呀 怎麼會沒有時間了呢
-* 「先要買，再考慮好..」&lt;br/&gt;
-  - Pycon 2017&lt;/p&gt;
+像是&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;真的沒在寫 js， Java Script...&lt;/li&gt;
+&lt;li&gt;COSCUP 全大寫啊啊&lt;/li&gt;
+&lt;li&gt;中文的 git 好不習慣XD&lt;/li&gt;
+&lt;li&gt;根提交...&lt;/li&gt;
+&lt;li&gt;啊 打錯了&lt;/li&gt;
+&lt;li&gt;哎呀 怎麼會沒有時間了呢&lt;/li&gt;
+&lt;li&gt;「先要買，再考慮好..」&lt;br/&gt;
+  - Pycon 2017&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;其實我也很不習慣中文的 git ，但要改他實在有點麻煩 XD&lt;/p&gt;
 &lt;p&gt;&lt;img alt="java script" src="/images/posts-image/2020-coscup-2020-sitcon-2020/java script.jpg"/&gt;&lt;br/&gt;
 &lt;img alt="no space inside javascript" src="/images/posts-image/2020-coscup-2020-sitcon-2020/no space inside javascript.jpg"/&gt;&lt;br/&gt;
@@ -81,10 +83,12 @@
 &lt;p&gt;影片很快就出來了，所以想看我道歉的可以直接看&lt;a href="https://www.youtube.com/watch?v=M36UlGbO-mE&amp;amp;feature=youtu.be&amp;amp;t=454"&gt;道歉大會影片&lt;/a&gt;（到底是誰會想看這種東西？？？）&lt;br/&gt;
 順便附上&lt;a href="https://speakerdeck.com/leew/sitcon-2020-ligthning-talk"&gt;投影片&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;倒是會後有聽到也在 SITCON 幫忙的夥伴說，在閃電秀中，大家對我的最有印象...&lt;/p&gt;
-&lt;p&gt;這兩場閃電秀，我大致上的分配是
-* 讓人覺得有趣的點 → 像極了愛情（並沒有）、道歉大會
-* 想要傳達的知識 → commitizen-tools 很好用
-* 想要業配的訊息 → PyCon TW 售票&lt;/p&gt;
+&lt;p&gt;這兩場閃電秀，我大致上的分配是&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;讓人覺得有趣的點 → 像極了愛情（並沒有）、道歉大會&lt;/li&gt;
+&lt;li&gt;想要傳達的知識 → commitizen-tools 很好用&lt;/li&gt;
+&lt;li&gt;想要業配的訊息 → PyCon TW 售票&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;在我撰寫這段文字的時候 &lt;a href="https://github.com/commitizen-tools/commitizen"&gt;commitizen-tools&lt;/a&gt;，比起 COSCUP 前已經增加了 42 個 star&lt;br/&gt;
 看來這個行銷策略很成功呢（？&lt;/p&gt;
 &lt;p&gt;哦對了，如果看到這邊的你還沒買 PyCon TW 2020 的票&lt;br/&gt;
