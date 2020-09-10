@@ -22,6 +22,7 @@ Status: draft
 畢竟那段的 key 根本就不會被帶入 `session_id=$key`，誰知道 db 怎麼實作的 xD
 
 ---
+
 恩，真的有人知道了
 在我搜尋的過程中，就有找到兩篇文在探討
 看來後面還有很多 Python 的程式碼呢
@@ -50,26 +51,47 @@ Status: draft
 ```sql
 CREATE TABLE `USER` (
 	`account`	TEXT NOT NULL UNIQUE,
-	`passowrd`	TEXT NOT NULL,
+	`password`	TEXT NOT NULL,
 	PRIMARY KEY(`account`)
 );
 ```
 
+
+```sql
+INSERT INTO USER (account, password) VALUES ('pycontw', 'testpassword')
+```
+
+## delete
+
+```sql
+DELETE FROM USER WHERE account = '' OR ''=''
+```
+
+
+## Select
 [SQL Injection 常見的駭客攻擊方式](https://www.puritys.me/docs-blog/article-11-SQL-Injection-%E5%B8%B8%E8%A6%8B%E7%9A%84%E9%A7%AD%E5%AE%A2%E6%94%BB%E6%93%8A%E6%96%B9%E5%BC%8F.html)
 
 ```sql
 SELECT * FROM user WHERE account ='' or 1=1--' and password='';
 ```
 
+完了
+
 ```python
 import web
-db = web.database(dbn="sqlite", db="../kobayashi.db")
+db = web.database(dbn="sqlite", db="kobayashi.db")
+result_set = db.select('USER', where="account ='' or 1=1--' and password=''")
+```
+
+應該這麼做
+
+```python
+import web
+db = web.database(dbn="sqlite", db="kobayashi.db")
 account = "' or 1=1--"
 password = "anyway"
 db.select('user', where='account=$key and password=$password', vars=locals())
 ```
-
-結果是不會
 
 ```ipython
 In [9]: db.select('user', where='account=$key and password=$password', vars=locals())
@@ -113,3 +135,34 @@ Aug 23, 2007
 還是看 0f2b0019e7802768aaf6178e10939934d81b265a
 Fri Dec 30
 ![Screen Shot 2019-10-30 at 12.38.24 P](/images/posts-image/will-kobayashi-s-code-encounter-sql-injection/Screen%20Shot%202019-10-30%20at%2012.38.24%20PM.png)![Screen Shot 2019-11-10 at 10.01.35 P](/images/posts-image/will-kobayashi-s-code-encounter-sql-injection/Screen%20Shot%202019-11-10%20at%2010.01.35%20PM.png)
+
+---
+
+
+```python
+import web
+db = web.database(dbn="sqlite", db="kobayashi.db")
+
+result_set = db.select('USER', where="account ='' or 1=1--' and password=''")
+print(result_set.first())
+
+# ---
+db.delete('user', where="account = '' OR ''=''")
+
+# ---
+result_set = db.select('USER', where="account ='' or 1=1--' and password=''")
+print(result_set.first())
+
+# ---
+db.insert('USER', account='pycontw-r1', password='testpassword')
+db.insert('USER', account='pycontw-r2', password='testpassword')
+
+# ---
+account = 'pycontw-r1'
+db.delete('user', where="account=$account", vars=locals())
+
+#---
+
+account = "'' OR ''=''"
+db.delete('user', where="account=$account", vars=locals())
+```
