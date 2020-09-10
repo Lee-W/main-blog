@@ -114,26 +114,43 @@
 <a href="https://github.com/webpy/webpy/blob/master/web/db.py#L948">db.py#L948</a></p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="k">USER</span><span class="o">`</span> <span class="p">(</span>
     <span class="o">`</span><span class="n">account</span><span class="o">`</span>   <span class="nb">TEXT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">UNIQUE</span><span class="p">,</span>
-    <span class="o">`</span><span class="n">passowrd</span><span class="o">`</span>  <span class="nb">TEXT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="o">`</span><span class="n">password</span><span class="o">`</span>  <span class="nb">TEXT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
     <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">(</span><span class="o">`</span><span class="n">account</span><span class="o">`</span><span class="p">)</span>
 <span class="p">);</span>
 </code></pre></div>
 
 
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">USER</span> <span class="p">(</span><span class="n">account</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;pycontw&#39;</span><span class="p">,</span> <span class="s1">&#39;testpassword&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<h2 id="delete">delete</h2>
+<div class="highlight"><pre><span></span><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">USER</span> <span class="k">WHERE</span> <span class="n">account</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="k">OR</span> <span class="s1">&#39;&#39;</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+</code></pre></div>
+
+
+<h2 id="select">Select</h2>
 <p><a href="https://www.puritys.me/docs-blog/article-11-SQL-Injection-%E5%B8%B8%E8%A6%8B%E7%9A%84%E9%A7%AD%E5%AE%A2%E6%94%BB%E6%93%8A%E6%96%B9%E5%BC%8F.html">SQL Injection 常見的駭客攻擊方式</a></p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="k">user</span> <span class="k">WHERE</span> <span class="n">account</span> <span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="k">or</span> <span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="c1">--&#39; and password=&#39;&#39;;</span>
 </code></pre></div>
 
 
+<p>完了</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">web</span>
-<span class="n">db</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">database</span><span class="p">(</span><span class="n">dbn</span><span class="o">=</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s2">&quot;../kobayashi.db&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">database</span><span class="p">(</span><span class="n">dbn</span><span class="o">=</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s2">&quot;kobayashi.db&quot;</span><span class="p">)</span>
+<span class="n">result_set</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;USER&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;account =&#39;&#39; or 1=1--&#39; and password=&#39;&#39;&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>應該這麼做</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">web</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">database</span><span class="p">(</span><span class="n">dbn</span><span class="o">=</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s2">&quot;kobayashi.db&quot;</span><span class="p">)</span>
 <span class="n">account</span> <span class="o">=</span> <span class="s2">&quot;&#39; or 1=1--&quot;</span>
 <span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;anyway&quot;</span>
 <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s1">&#39;account=$key and password=$password&#39;</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
 </code></pre></div>
 
 
-<p>結果是不會</p>
 <div class="highlight"><pre><span></span><code><span class="k">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">db</span><span class="p">.</span><span class="k">select</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="k">where</span><span class="o">=</span><span class="s1">&#39;account=$key and password=$password&#39;</span><span class="p">,</span> <span class="n">vars</span><span class="o">=</span><span class="n">locals</span><span class="p">())</span>
 <span class="mi">0</span><span class="p">.</span><span class="mi">0</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="k">user</span> <span class="k">WHERE</span> <span class="n">account</span><span class="o">=</span><span class="ss">&quot;&#39; or 1=1--&quot;</span> <span class="k">and</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;anyway&#39;</span>
 <span class="k">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">web</span><span class="p">.</span><span class="n">db</span><span class="p">.</span><span class="n">SqliteResultSet</span> <span class="k">at</span> <span class="mi">0</span><span class="n">x113521780</span><span class="o">&gt;</span>
@@ -167,6 +184,33 @@ Aug 23, 2007</p>
 <p>還是看 0f2b0019e7802768aaf6178e10939934d81b265a<br>
 Fri Dec 30<br>
 <img alt="Screen Shot 2019-10-30 at 12.38.24 P" src="/images/posts-image/will-kobayashi-s-code-encounter-sql-injection/Screen%20Shot%202019-10-30%20at%2012.38.24%20PM.png"><img alt="Screen Shot 2019-11-10 at 10.01.35 P" src="/images/posts-image/will-kobayashi-s-code-encounter-sql-injection/Screen%20Shot%202019-11-10%20at%2010.01.35%20PM.png"></p>
+<hr>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">web</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">database</span><span class="p">(</span><span class="n">dbn</span><span class="o">=</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s2">&quot;kobayashi.db&quot;</span><span class="p">)</span>
+
+<span class="n">result_set</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;USER&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;account =&#39;&#39; or 1=1--&#39; and password=&#39;&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_set</span><span class="o">.</span><span class="n">first</span><span class="p">())</span>
+
+<span class="c1"># ---</span>
+<span class="n">db</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;account = &#39;&#39; OR &#39;&#39;=&#39;&#39;&quot;</span><span class="p">)</span>
+
+<span class="c1"># ---</span>
+<span class="n">result_set</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;USER&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;account =&#39;&#39; or 1=1--&#39; and password=&#39;&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_set</span><span class="o">.</span><span class="n">first</span><span class="p">())</span>
+
+<span class="c1"># ---</span>
+<span class="n">db</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;USER&#39;</span><span class="p">,</span> <span class="n">account</span><span class="o">=</span><span class="s1">&#39;pycontw-r1&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;testpassword&#39;</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;USER&#39;</span><span class="p">,</span> <span class="n">account</span><span class="o">=</span><span class="s1">&#39;pycontw-r2&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;testpassword&#39;</span><span class="p">)</span>
+
+<span class="c1"># ---</span>
+<span class="n">account</span> <span class="o">=</span> <span class="s1">&#39;pycontw-r1&#39;</span>
+<span class="n">db</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;account=$account&quot;</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
+
+<span class="c1">#---</span>
+
+<span class="n">account</span> <span class="o">=</span> <span class="s2">&quot;&#39;&#39; OR &#39;&#39;=&#39;&#39;&quot;</span>
+<span class="n">db</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;account=$account&quot;</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
+</code></pre></div>
 
 
              
