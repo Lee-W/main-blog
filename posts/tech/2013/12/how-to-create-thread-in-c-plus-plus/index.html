@@ -117,7 +117,7 @@ thread 的 constructor 的第一個參數是函數名稱，第二個以後就是
 <span class="p">}</span>
 
 <span class="n">main</span><span class="p">(){</span>
-        <span class="kr">thread</span> <span class="n">t1</span><span class="p">(</span><span class="n">fun1</span><span class="p">);</span>
+        <span class="kr">thread</span> <span class="nf">t1</span><span class="p">(</span><span class="n">fun1</span><span class="p">);</span>
         <span class="kr">thread</span> <span class="nf">t2</span><span class="p">(</span><span class="n">fun2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
         <span class="n">t1</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
         <span class="n">t2</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
@@ -146,7 +146,7 @@ p.s. 如果 fun1 是 static，則不用 this</p>
         <span class="p">}</span>
 
         <span class="kt">void</span> <span class="n">fun2</span><span class="p">()</span> <span class="p">{</span>
-                <span class="kr">thread</span> <span class="n">t</span><span class="p">(</span><span class="o">&amp;</span><span class="n">example</span><span class="o">::</span><span class="n">fun1</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="kr">thread</span> <span class="nf">t</span><span class="p">(</span><span class="o">&amp;</span><span class="n">example</span><span class="o">::</span><span class="n">fun1</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
                 <span class="n">t</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
         <span class="p">}</span>
 <span class="p">};</span>
@@ -201,7 +201,7 @@ p.s. 如果 fun1 是 static，則不用 this</p>
 <span class="cp">#include</span> <span class="cpf">&lt;pthread.h&gt;</span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="k">struct</span> <span class="n">arg</span> <span class="p">{</span>
+<span class="k">struct</span> <span class="nc">arg</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">p1</span><span class="p">;</span>
 <span class="p">};</span>
 
