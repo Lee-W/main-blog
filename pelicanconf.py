@@ -87,8 +87,6 @@ MARKDOWN = {
 PLUGIN_PATHS = ["pelican-plugins"]
 PLUGINS = [
     "another_read_more_link",
-    "render_math",
-    "neighbors",
     "share_post",
     "i18n_subsites",
     "tipue_search",

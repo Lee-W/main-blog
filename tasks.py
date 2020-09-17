@@ -20,7 +20,7 @@ CONFIG = {
 }
 
 
-PELICAN_CMD = "pipenv run pelican"
+PELICAN_CMD = "poetry run pelican"
 
 
 @task
@@ -88,7 +88,7 @@ def github(c):
     """Publish to GitHub Pages"""
     preview(c)
     c.run(
-        "pipenv run ghp-import -b {github_pages_branch} "
+        "poetry run ghp-import -b {github_pages_branch} "
         "-m {commit_message} "
         "{deploy_path} -p".format(**CONFIG)
     )
