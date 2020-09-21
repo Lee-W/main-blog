@@ -1,37 +1,40 @@
-Title: [Note] The Clean Code
+Title: [Note] Clean Code
 Date: 2018-11-16 17:08
+Modified: 2020-09-18 17:29
 Category: Tech
 Tags: Note, Software Engineering
-Slug: the-clean-code
+Slug: clean-code
 Authors: Lee-W
 
 既然都把 The Clean Coder 做完了
 就順便把原本在 GitBook 的 The Clean Code 一起搬過來好了
-不過到現在我還是沒看到過第 10 章 xD
+
+![clean code](/images/books/clean code.jpg)
 
 <!--more-->
+
+> Wei Lee @ 2020-09-18
+> 隔了幾年，終於又再回來翻這本書
+> 這次除了打算把後面的章節全部看完外，也會重新把筆記順過一次
 
 [TOC]
 
 ## 第1章：無暇的程式碼
-
 * LeBlanc's Law: 待會而等於永不
     * 待會兒再回來整理程式，等於讓程式一直限於髒亂
-* 之所以不一開始就寫乾淨的程式，是因為我們以為這讓我們開發速度變慢
-    * 實際上髒亂的程式只會讓開發速度更慢。**趕上期限的方法是隨時都確保程式儘可能的乾淨**
+* 髒亂的程式只會讓開發速度更慢。**趕上期限的方法是隨時都確保程式儘可能的乾淨**
 * What is Clean Code?
-    * Clean Code 只做好一件事
-    * Clean Code 是可以被原作者以外的開發者閱讀與增強的
+    * 只做好一件事
+    * 可以被原作者以外的開發者閱讀與擴充的
     * Beck's rules for simple code
-        * 能通過所有測試
+        * 通過所有測試
         * 沒有重複的程式碼
         * 充份表達系統設計的構思
-        * 具有最少的 entities (e.g. class, methods, functions, and etc.)
+        * 具有最少的 entities (e.g., class, methods, functions, and etc.)
 * 每一次修改程式碼之後，都得讓程式碼變得比修改之前再更乾淨
     * 童子軍原則: 每次你到過的營地，離開後要比之前更乾淨
 
 ## 第2章：有意義的命名
-
 * Variables, methods, classes 要能解釋他們為什麼在這、做什麼用和怎麼使用它
 * 變數名稱要唸得出來 (e.g., ~~genYMDHMS~~)
 * 較小的名稱如果能表達足夠的意義，通常比較長的名稱好，儘量減少再命名上不必要的文字
