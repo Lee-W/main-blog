@@ -20,12 +20,12 @@
 
 <meta property="og:title" content="小林的程式會不會遇到 SQL Injection "/>
 <meta property="og:url" content="https://lee-w.github.io/drafts/will-kobayashi-s-code-encounter-sql-injection.html" />
-<meta property="og:description" content="前言 最近開始看了京阿尼的作品小林家的龍女僕 第一集就看到小林寫的也是 Python 就很開心的分享了 然後就有強大的 CTO 來問我會不會有 SQL injection，才讓我開始了這一串奇怪的追程式碼的過程 看看其他人怎麼做 單看程式碼其實很難直接下定論 畢竟那段的 key 根本就不會被帶入 session_id=$key，誰知道 db 怎麼實作的 xD 恩，真的有人知道了 在我搜尋的過程中，就有找到兩篇文在探討 看來後面還有很多 Python 的程式碼呢 如何评价京都动画2017年1月新作 小林家的龙女仆? 這篇有稍微討論到，京阿尼用這段程式碼會不會有授權問題 小林さんちのメイドラゴンで出てきたコード（小林さんを探せ！） 這篇則是想直接找到小林到底是誰 X Ponkatsu - Tag: sql injection 另外有找到這則回覆是說會有 SQL injection 但身為 Python 工程師還是要眼見為憑啊，所以來看程式碼吧 webpy …" />
+<meta property="og:description" content="其實這篇文章應該一年前就該寫了... 今年為了在 PyCon TW 的 Lightning Talk 想個梗，就拿出來講 (slide) 沒想到被投影機擺了一道...... 前言雜談 去年看了京阿尼的作品小林家的龍女僕 第一集就發現主角小林也是寫 Python 的工程師，就開心地分享了這個消息 沒想到馬上就有朋友問我這段程式碼會不會有 SQL injection 單看這一段程式碼其實很難直接下定論 畢竟 key 根本就不會被帶入 session_id=$key，誰知道 db 怎麼實作的 當然，早就有人注意到這段程式碼了 它出自 webpy/web/session.py 如何评价京都动画2017年1月新作 小林家的龙女仆? 除了找到程式碼外，它還列出了劇情的其他 Python 程式碼，並討論了京都動畫使用這段程式碼會不會有法律問題 小林さんちのメイドラゴンで出てきたコード（小林さんを探せ！） 透過 git blame 來找出 …" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
-<meta property="og:article:published_time" content="2019-09-30T00:00:00+08:00" />
+<meta property="og:article:published_time" content="2020-09-22T11:00:00+08:00" />
 <meta name="twitter:title" content="小林的程式會不會遇到 SQL Injection ">
-<meta name="twitter:description" content="前言 最近開始看了京阿尼的作品小林家的龍女僕 第一集就看到小林寫的也是 Python 就很開心的分享了 然後就有強大的 CTO 來問我會不會有 SQL injection，才讓我開始了這一串奇怪的追程式碼的過程 看看其他人怎麼做 單看程式碼其實很難直接下定論 畢竟那段的 key 根本就不會被帶入 session_id=$key，誰知道 db 怎麼實作的 xD 恩，真的有人知道了 在我搜尋的過程中，就有找到兩篇文在探討 看來後面還有很多 Python 的程式碼呢 如何评价京都动画2017年1月新作 小林家的龙女仆? 這篇有稍微討論到，京阿尼用這段程式碼會不會有授權問題 小林さんちのメイドラゴンで出てきたコード（小林さんを探せ！） 這篇則是想直接找到小林到底是誰 X Ponkatsu - Tag: sql injection 另外有找到這則回覆是說會有 SQL injection 但身為 Python 工程師還是要眼見為憑啊，所以來看程式碼吧 webpy …">
+<meta name="twitter:description" content="其實這篇文章應該一年前就該寫了... 今年為了在 PyCon TW 的 Lightning Talk 想個梗，就拿出來講 (slide) 沒想到被投影機擺了一道...... 前言雜談 去年看了京阿尼的作品小林家的龍女僕 第一集就發現主角小林也是寫 Python 的工程師，就開心地分享了這個消息 沒想到馬上就有朋友問我這段程式碼會不會有 SQL injection 單看這一段程式碼其實很難直接下定論 畢竟 key 根本就不會被帶入 session_id=$key，誰知道 db 怎麼實作的 當然，早就有人注意到這段程式碼了 它出自 webpy/web/session.py 如何评价京都动画2017年1月新作 小林家的龙女仆? 除了找到程式碼外，它還列出了劇情的其他 Python 程式碼，並討論了京都動畫使用這段程式碼會不會有法律問題 小林さんちのメイドラゴンで出てきたコード（小林さんを探せ！） 透過 git blame 來找出 …">
 
         <title>小林的程式會不會遇到 SQL Injection  · Laziness makes Great Engineer
 </title>
@@ -85,132 +85,351 @@
 </div>
 
 <div class="row-fluid">
-        <div class="span8 offset2 article-content">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#_1">前言雜談</a></li>
+<li><a href="#sql-injection">什麼是 SQL injection</a></li>
+<li><a href="#webpy-sql-injection">web.py 到底會不會有 SQL injection？</a><ul>
+<li><a href="#_2">初始化資料庫</a></li>
+<li><a href="#_3">實作登入功能</a></li>
+<li><a href="#_4">該如何修正？</a></li>
+</ul>
+</li>
+<li><a href="#_5">知其然還要知其所以然啊！</a><ul>
+<li><a href="#pdbpp">pdbpp</a></li>
+<li><a href="#webpy">追 web.py 原始碼</a></li>
+<li><a href="#hmm-delete">hmm... 原本好像是要追 delete 才對</a></li>
+</ul>
+</li>
+<li><a href="#_6">結語</a></li>
+<li><a href="#one-more-thing">One more thing</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
             
-            <h2 id="_1">前言</h2>
-<p>最近開始看了京阿尼的作品<a href="https://zh.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E5%AE%B6%E7%9A%84%E9%BE%8D%E5%A5%B3%E5%83%95">小林家的龍女僕</a></p>
-<p>第一集就看到小林寫的也是 Python 就很開心的分享了<br>
-<img alt="-w560" src="/images/posts-image/will-kobayashi-s-code-encounter-sql-injection/15723300258537.jpg"></p>
-<p>然後就有強大的 CTO 來問我會不會有 SQL injection，才讓我開始了這一串奇怪的追程式碼的過程<br>
-<img alt="IMG_4508" src="/images/posts-image/will-kobayashi-s-code-encounter-sql-injection/IMG_4508.png"></p>
-<h2 id="_2">看看其他人怎麼做</h2>
-<p>單看程式碼其實很難直接下定論<br>
-畢竟那段的 key 根本就不會被帶入 <code>session_id=$key</code>，誰知道 db 怎麼實作的 xD</p>
-<hr>
-<p>恩，真的有人知道了<br>
-在我搜尋的過程中，就有找到兩篇文在探討<br>
-看來後面還有很多 Python 的程式碼呢</p>
-<p><a href="https://www.zhihu.com/question/51933296/answer/143492909">如何评价京都动画2017年1月新作 小林家的龙女仆?</a></p>
-<p>這篇有稍微討論到，京阿尼用這段程式碼會不會有授權問題</p>
-<p><a href="https://qiita.com/ygkn/items/6b3be1afa31e4092826e">小林さんちのメイドラゴンで出てきたコード（小林さんを探せ！）</a></p>
-<p>這篇則是想直接找到小林到底是誰 X</p>
-<p><a href="https://ponkatsu807462913.wordpress.com/tag/sql-injection/">Ponkatsu - Tag: sql injection</a></p>
-<p>另外有找到這則回覆是說會有 SQL injection<br>
-但身為 Python 工程師還是要眼見為憑啊，所以來看程式碼吧</p>
-<p><a href="https://github.com/webpy/webpy/blob/master/web/session.py">webpy - web/session.py</a></p>
-<h2 id="2019">2019</h2>
-<p><a href="https://github.com/webpy/webpy/blob/master/web/session.py#L336">session.py#L336</a><br>
-<a href="https://github.com/webpy/webpy/blob/master/web/db.py#L859">db.py#L859</a><br>
-<a href="https://github.com/webpy/webpy/blob/master/web/db.py#L948">db.py#L948</a></p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="k">USER</span><span class="o">`</span> <span class="p">(</span>
-    <span class="o">`</span><span class="n">account</span><span class="o">`</span>   <span class="nb">TEXT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">UNIQUE</span><span class="p">,</span>
-    <span class="o">`</span><span class="n">password</span><span class="o">`</span>  <span class="nb">TEXT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">(</span><span class="o">`</span><span class="n">account</span><span class="o">`</span><span class="p">)</span>
-<span class="p">);</span>
+            <p>其實這篇文章應該一年前就該寫了...<br/>
+今年為了在 PyCon TW 的 Lightning Talk 想個梗，就拿出來講 (<a href="https://speakerdeck.com/leew/xiao-lin-de-cheng-shi-ma-hui-bu-hui-yu-dao-sql-injection">slide</a>)<br/>
+沒想到被投影機擺了一道......</p>
+<!--more-->
+
+<h2 id="_1">前言雜談</h2>
+<p>去年看了京阿尼的作品<a href="https://zh.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E5%AE%B6%E7%9A%84%E9%BE%8D%E5%A5%B3%E5%83%95">小林家的龍女僕</a></p>
+<p>第一集就發現主角小林也是寫 Python 的工程師，就開心地分享了這個消息<br/>
+<img alt="del" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/del.jpg"/></p>
+<p>沒想到馬上就有朋友問我這段程式碼會不會有 SQL injection<br/>
+<img alt="will it encounter sql injection" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/will it encounter sql injection.png"/></p>
+<p>單看這一段程式碼其實很難直接下定論<br/>
+畢竟 key 根本就不會被帶入 <code>session_id=$key</code>，誰知道 db 怎麼實作的</p>
+<p>當然，早就有人注意到這段程式碼了<br/>
+它出自 <a href="https://github.com/webpy/webpy/blob/webpy-0.39/web/session.py#L313">webpy/web/session.py</a></p>
+<ul>
+<li><a href="https://www.zhihu.com/question/51933296/answer/143492909">如何评价京都动画2017年1月新作 小林家的龙女仆?</a><ul>
+<li>除了找到程式碼外，它還列出了劇情的其他 Python 程式碼，並討論了京都動畫使用這段程式碼會不會有法律問題</li>
+</ul>
+</li>
+<li><a href="https://qiita.com/ygkn/items/6b3be1afa31e4092826e">小林さんちのメイドラゴンで出てきたコード（小林さんを探せ！）</a><ul>
+<li>透過 <code>git blame</code> 來找出「到底誰是小林！」</li>
+</ul>
+</li>
+<li><a href="https://ponkatsu807462913.wordpress.com/tag/sql-injection/">Ponkatsu - Tag: sql injection</a><ul>
+<li>直接點出這段程式碼會遇到 SQL injection</li>
+</ul>
+</li>
+</ul>
+<p>但身為工程師還是要自己驗證一下到底會不會有 SQL injection</p>
+<h2 id="sql-injection">什麼是 SQL injection</h2>
+<p>根據 <a href="https://zh.wikipedia.org/wiki/SQL%E6%B3%A8%E5%85%A5">SQL注入</a> 維基百科頁面的例子<br/>
+假設有一段產生 SQL 字串的程式碼是這樣寫的</p>
+<div class="highlight"><pre><span></span><code><span class="n">sql_str</span> <span class="o">=</span> <span class="s2">"SELECT * FROM users WHERE (name = '"</span> <span class="o">+</span> <span class="n">username</span> <span class="o">+</span> <span class="s2">"') and (pw = '"</span><span class="o">+</span> <span class="n">password</span> <span class="o">+</span><span class="s2">"');"</span>
 </code></pre></div>
-
-
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">USER</span> <span class="p">(</span><span class="n">account</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;pycontw&#39;</span><span class="p">,</span> <span class="s1">&#39;testpassword&#39;</span><span class="p">)</span>
+<p>只要攻擊者輸入了</p>
+<div class="highlight"><pre><span></span><code><span class="n">username</span> <span class="o">=</span> <span class="s2">"1' OR '1'='1"</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s2">"1' OR '1'='1"</span>
 </code></pre></div>
-
-
-<h2 id="delete">delete</h2>
-<div class="highlight"><pre><span></span><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">USER</span> <span class="k">WHERE</span> <span class="n">account</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="k">OR</span> <span class="s1">&#39;&#39;</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<p>就會產生</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'1'</span> <span class="k">OR</span> <span class="s1">'1'</span><span class="o">=</span><span class="s1">'1'</span><span class="p">)</span> <span class="k">and</span> <span class="p">(</span><span class="n">pw</span> <span class="o">=</span> <span class="s1">'1'</span> <span class="k">OR</span> <span class="s1">'1'</span><span class="o">=</span><span class="s1">'1'</span><span class="p">);</span>
 </code></pre></div>
-
-
-<h2 id="select">Select</h2>
-<p><a href="https://www.puritys.me/docs-blog/article-11-SQL-Injection-%E5%B8%B8%E8%A6%8B%E7%9A%84%E9%A7%AD%E5%AE%A2%E6%94%BB%E6%93%8A%E6%96%B9%E5%BC%8F.html">SQL Injection 常見的駭客攻擊方式</a></p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="k">user</span> <span class="k">WHERE</span> <span class="n">account</span> <span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="k">or</span> <span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="c1">--&#39; and password=&#39;&#39;;</span>
+<p>因為 1 一定等於 1，這段 SQL 就會產生跟 <code>SELECT * FROM user;</code> 一樣的效果<br/>
+也就是攻擊者在完全不知道帳號密碼的情況下，就可以取得所有 users 的帳號密碼</p>
+<h2 id="webpy-sql-injection">web.py 到底會不會有 SQL injection？</h2>
+<p>因為小林家的龍女僕是在 2017 年的 1 月到 4 月播出<br/>
+根據 web.py 的 <a href="https://github.com/webpy/webpy/tags">tags</a> 頁面，在那之後的第一個發佈是 <code>webpy-0.39</code><br/>
+可以推測，這最有可能是第一個包含小林撰寫程式碼的發佈</p>
+<p><img alt="web.py release" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/webpy tag.jpg"/></p>
+<p>我們先從安裝 <code>web.py==0.39</code> 到虛擬環境中開始<br/>
+（p.s. web 跟 py 中間的<code>.</code> 是必要的，因為真的有個套件叫 webpy......）</p>
+<div class="highlight"><pre><span></span><code>poetry add web.py<span class="o">==</span><span class="m">0</span>.39
 </code></pre></div>
+<p>很不幸的，如果你使用的是 Python 3，會遇到以下的錯誤訊息</p>
+<div class="highlight"><pre><span></span><code>Creating virtualenv kobayashi-pwI4Cysh-py3.8 in /Users/weilee/Library/Caches/pypoetry/virtualenvs
+
+Updating dependencies
+Resolving dependencies... (0.1s)
+
+Writing lock file
 
 
-<p>完了</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">web</span>
-<span class="n">db</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">database</span><span class="p">(</span><span class="n">dbn</span><span class="o">=</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s2">&quot;kobayashi.db&quot;</span><span class="p">)</span>
-<span class="n">result_set</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;USER&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;account =&#39;&#39; or 1=1--&#39; and password=&#39;&#39;&quot;</span><span class="p">)</span>
+Package operations: 1 install, 0 updates, 0 removals
+
+  - Installing web.py (0.39)
+
+[EnvCommandError]
+Command ['/Users/weilee/Library/Caches/pypoetry/virtualenvs/kobayashi-pwI4Cysh-py3.8/bin/pip', 'install', '--no-deps', 'web.py==0.39'] errored with the following return code 1, and output:
+Collecting web.py==0.39
+  Using cached web.py-0.39.tar.gz (93 kB)
+    ERROR: Command errored out with exit status 1:
+     command: /Users/weilee/Library/Caches/pypoetry/virtualenvs/kobayashi-pwI4Cysh-py3.8/bin/python -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/.../web.py/setup.py'"'"'; __file__='"'"'/.../web.py/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /...
+         cwd: /.../web.py/
+    Complete output (7 lines):
+    Traceback (most recent call last):
+      File "&lt;string&gt;", line 1, in &lt;module&gt;
+      File "/.../web.py/setup.py", line 6, in &lt;module&gt;
+        from web import __version__
+      File "/.../web.py/web/__init__.py", line 14, in &lt;module&gt;
+        import utils, db, net, wsgi, http, webapi, httpserver, debugerror
+    ModuleNotFoundError: No module named 'utils'
+    ----------------------------------------
+ERROR: Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+WARNING: You are using pip version 20.1.1; however, version 20.2.3 is available.
+You should consider upgrading via the '/Users/weilee/Library/Caches/pypoetry/virtualenvs/kobayashi-pwI4Cysh-py3.8/bin/python -m pip install --upgrade pip' command.
 </code></pre></div>
+<p>web.py 要到 0.40 才支援 Python 3 (Ref: <a href="https://github.com/webpy/webpy/issues/180">python3 ImportError: No module named utils #180</a>)</p>
+<p>因為我不太想測試 Python 2，就假設小林的程式碼到 0.40 都沒什麼被改動到好了 😆</p>
+<h3 id="_2">初始化資料庫</h3>
+<p>要實驗到底有沒有辦法取得資料庫的資料，總是要先有一個資料庫<br/>
+這裏主要做了三件事</p>
+<ol>
+<li>用 <code>sqlite3</code> 跟 "kobayashi.db" 建立連線</li>
+<li>建立 <code>USER</code> 資料表</li>
+<li>將 kobayashi, tohru, kanna, elma 新增到 <code>USER</code> 資料表中</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlite3</span>
 
 
-<p>應該這麼做</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">web</span>
-<span class="n">db</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">database</span><span class="p">(</span><span class="n">dbn</span><span class="o">=</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s2">&quot;kobayashi.db&quot;</span><span class="p">)</span>
-<span class="n">account</span> <span class="o">=</span> <span class="s2">&quot;&#39; or 1=1--&quot;</span>
-<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;anyway&quot;</span>
-<span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s1">&#39;account=$key and password=$password&#39;</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
+<span class="k">def</span> <span class="nf">init_db</span><span class="p">():</span>
+    <span class="c1"># connect and create "kobayashi.db"</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"kobayashi.db"</span><span class="p">)</span>
+
+    <span class="c1"># create USER table</span>
+    <span class="n">create_table_sql</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">    CREATE TABLE `USER` (</span>
+<span class="s2">        `account`   TEXT NOT NULL UNIQUE,</span>
+<span class="s2">        `password`  TEXT NOT NULL,</span>
+<span class="s2">        PRIMARY KEY(`account`)</span>
+<span class="s2">    );</span>
+<span class="s2">    """</span>
+
+    <span class="c1"># insert users into USER table</span>
+    <span class="n">insert_user_sql</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">    INSERT INTO</span>
+<span class="s2">        USER (account, password)</span>
+<span class="s2">    VALUES</span>
+<span class="s2">        ('kobayashi', '1'),</span>
+<span class="s2">        ('tohru', '2'),</span>
+<span class="s2">        ('kanna', '3'),</span>
+<span class="s2">        ('elma', '3');</span>
+<span class="s2">    """</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">create_table_sql</span><span class="p">)</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">insert_user_sql</span><span class="p">)</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">init_db</span><span class="p">()</span>
 </code></pre></div>
+<h3 id="_3">實作登入功能</h3>
+<p>這裡實作的 <code>login</code> 函式會把使用者輸入的 account 跟 password 直接帶入 <code>where</code><br/>
+如果在資料庫找到正確的匹配，就會回傳找到的第一筆 user，否則回傳 <code>None</code></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span> <span class="nn">web</span>
 
 
-<div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s1">&#39;account=$key and password=$password&#39;</span><span class="p">,</span> <span class="n">vars</span><span class="o">=</span><span class="n">locals</span><span class="p">())</span>
-<span class="mf">0.0</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">user</span> <span class="n">WHERE</span> <span class="n">account</span><span class="o">=</span><span class="s2">&quot;&#39; or 1=1--&quot;</span> <span class="ow">and</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;anyway&#39;</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">web</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">SqliteResultSet</span> <span class="n">at</span> <span class="mh">0x113521780</span><span class="o">&gt;</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;&quot; or 1=1--&#39;</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s1">&#39;account=$key and password=$password&#39;</span><span class="p">,</span> <span class="n">vars</span><span class="o">=</span><span class="n">locals</span><span class="p">())</span>
-<span class="mf">0.0</span> <span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">user</span> <span class="n">WHERE</span> <span class="n">account</span><span class="o">=</span><span class="s1">&#39;&quot; or 1=1--&#39;</span> <span class="ow">and</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;anyway&#39;</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">web</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">SqliteResultSet</span> <span class="n">at</span> <span class="mh">0x1139148d0</span><span class="o">&gt;</span>
+<span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">web</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Storage</span><span class="p">]:</span>
+    <span class="n">result_set</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+        <span class="s2">"USER"</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="sa">f</span><span class="s2">"account ='</span><span class="si">{</span><span class="n">account</span><span class="si">}</span><span class="s2">' AND password='</span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">'"</span>
+    <span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">result_set</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">user</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"login succeeded"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">user</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"wrong username or password"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
 </code></pre></div>
+<p>接著使用三個案例來做測試</p>
+<ol>
+<li>錯誤的帳號密碼 -&gt; 不應該取得 user</li>
+<li>正確的帳號密碼 -&gt; 應該取得 user</li>
+<li>SQL injection -&gt; 理想上，也不該取得 user</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">database</span><span class="p">(</span><span class="n">dbn</span><span class="o">=</span><span class="s2">"sqlite"</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s2">"kobayashi.db"</span><span class="p">)</span>
 
-
-<h2 id="2017">2017</h2>
-<p>但這樣其實不對<br>
-因為這是 2017 年 1 月的動畫<br>
-（我沒追漫畫，所以就不）</p>
-<p>2014年5月10日</p>
-<p><a href="https://stackoverflow.com/questions/11533199/git-find-commit-where-file-was-added">git - Find commit where file was added</a></p>
-<div class="highlight"><pre><span></span><code>git log --diff-filter<span class="o">=</span>A -- foo.js
+    <span class="nb">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"kobayashi"</span><span class="p">,</span> <span class="s2">""</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"kobayashi"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"1' OR '1'='1"</span><span class="p">,</span> <span class="s2">"1' OR '1'='1"</span><span class="p">))</span>
 </code></pre></div>
+<p>但這個世界始終不理想，包含了 SQL injection 的程式還是成功取得 user<br/>
+之所以只取到一筆 user，單純只是因為我只回傳一個物件，但這段 SQL 是能取到整個資料庫的 user 的</p>
+<div class="highlight"><pre><span></span><code>0.0 (1): SELECT * FROM USER WHERE account ='kobayashi' AND password=''
+wrong username or password
+None
 
+0.0 (2): SELECT * FROM USER WHERE account ='kobayashi' AND password='1'
+login succeeded
+&lt;Storage {'account': 'kobayashi', 'password': '1'}&gt;
 
-<p>fd1d69523e126cc88506ac61e504e2684fedeb0a<br>
-Sep 20, 2007</p>
-<p>改名到 web/session.py</p>
-<p>原本是 <code>trunk/web/session.py</code></p>
-<p>看來還得追下去</p>
-<p>來自<br>
-05c8b7c743ea7d5dd6a01f091aef6f40332fd15f<br>
-Aug 23, 2007</p>
-<p>還是看 0f2b0019e7802768aaf6178e10939934d81b265a<br>
-Fri Dec 30<br>
-<img alt="Screen Shot 2019-10-30 at 12.38.24 P" src="/images/posts-image/will-kobayashi-s-code-encounter-sql-injection/Screen%20Shot%202019-10-30%20at%2012.38.24%20PM.png"><img alt="Screen Shot 2019-11-10 at 10.01.35 P" src="/images/posts-image/will-kobayashi-s-code-encounter-sql-injection/Screen%20Shot%202019-11-10%20at%2010.01.35%20PM.png"></p>
-<hr>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">web</span>
-<span class="n">db</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">database</span><span class="p">(</span><span class="n">dbn</span><span class="o">=</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s2">&quot;kobayashi.db&quot;</span><span class="p">)</span>
-
-<span class="n">result_set</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;USER&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;account =&#39;&#39; or 1=1--&#39; and password=&#39;&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result_set</span><span class="o">.</span><span class="n">first</span><span class="p">())</span>
-
-<span class="c1"># ---</span>
-<span class="n">db</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;account = &#39;&#39; OR &#39;&#39;=&#39;&#39;&quot;</span><span class="p">)</span>
-
-<span class="c1"># ---</span>
-<span class="n">result_set</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;USER&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;account =&#39;&#39; or 1=1--&#39; and password=&#39;&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result_set</span><span class="o">.</span><span class="n">first</span><span class="p">())</span>
-
-<span class="c1"># ---</span>
-<span class="n">db</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;USER&#39;</span><span class="p">,</span> <span class="n">account</span><span class="o">=</span><span class="s1">&#39;pycontw-r1&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;testpassword&#39;</span><span class="p">)</span>
-<span class="n">db</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;USER&#39;</span><span class="p">,</span> <span class="n">account</span><span class="o">=</span><span class="s1">&#39;pycontw-r2&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;testpassword&#39;</span><span class="p">)</span>
-
-<span class="c1"># ---</span>
-<span class="n">account</span> <span class="o">=</span> <span class="s1">&#39;pycontw-r1&#39;</span>
-<span class="n">db</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;account=$account&quot;</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
-
-<span class="c1">#---</span>
-
-<span class="n">account</span> <span class="o">=</span> <span class="s2">&quot;&#39;&#39; OR &#39;&#39;=&#39;&#39;&quot;</span>
-<span class="n">db</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;account=$account&quot;</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="nb">locals</span><span class="p">())</span>
+0.0 (3): SELECT * FROM USER WHERE account ='1' OR '1'='1' AND password='1' OR '1'='1'
+login succeeded
+&lt;Storage {'account': 'kobayashi', 'password': '1'}&gt;
 </code></pre></div>
+<h3 id="_4">該如何修正？</h3>
+<p>修正的方式也很簡單，只要在呼叫 select 的時候用 <code>vars</code> 將參數帶進 <code>where</code> 即可<br/>
+其實 web.py 的文件就有寫了 (Ref: <a href="https://webpy.org/cookbook/query">db.query</a>)</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">web</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Storage</span><span class="p">]:</span>
+    <span class="n">result_set</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+        <span class="s2">"USER"</span><span class="p">,</span>
+        <span class="n">where</span><span class="o">=</span><span class="sa">f</span><span class="s2">"account=$account AND password=$password"</span><span class="p">,</span>
+        <span class="nb">vars</span><span class="o">=</span><span class="p">{</span><span class="s2">"account"</span><span class="p">:</span> <span class="n">account</span><span class="p">,</span> <span class="s2">"password"</span><span class="p">:</span> <span class="n">password</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">result_set</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">user</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"login succeeded"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">user</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"wrong username or password"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+<p>這次就算用原本 SQL injetion 的作法，也取不到任何的資料<br/>
+因為沒有 account 是 <code>"1' OR '1'='1"</code></p>
+<div class="highlight"><pre><span></span><code>0.0 (3): SELECT * FROM USER WHERE account ="1' OR '1'='1" AND password="1' OR '1'='1"
+wrong username or password
+None
+</code></pre></div>
+<h2 id="_5">知其然還要知其所以然啊！</h2>
+<p>除了知道怎麼修正外，我還想知道 web.py 做了什麼<br/>
+接下來就是冗長的紀錄我追 web.py 原始碼的過程</p>
+<h3 id="pdbpp">pdbpp</h3>
+<p>為了寫這篇文章，大幅的提升我對 pdb 的熟悉度<br/>
+剛好聽到廣播 <a href="https://pythonbytes.fm/">Python Bytes</a> 推薦的 <a href="https://github.com/pdbpp/pdbpp">pdbpp</a> 就順手玩了一下<br/>
+安裝 <code>pdbpp</code>後，它會取代原生的 <code>pdb</code><br/>
+主要有這兩個功能比 <code>pdb</code> 好用</p>
+<ol>
+<li>syntax highlight (其實 <code>ipdb</code> 也做得到)</li>
+<li>sticky mode（在除錯器的上方一直顯示目前追到的程式碼）</li>
+</ol>
+<p>順便記錄一下常用到的 pdbpp 指令</p>
+<ul>
+<li><code>n</code>: 下一行</li>
+<li><code>s</code>: 進到函式內</li>
+<li><code>p [var]</code> (e.g., <code>p locals()</code>): 印出 var</li>
+<li><code>args</code>: 印出參數</li>
+<li><code>ll</code>: 顯示現在在原始碼的哪裡（原本 pdb 的 longlist）</li>
+</ul>
+<h3 id="webpy">追 web.py 原始碼</h3>
+<p>首先，從 <code>login</code> 呼叫的 <code>db.select</code> 函式開始，它在 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L845">web/db.py#L845</a></p>
+<p>跑完 874 行的 list comprehension 後，<code>clauses</code> 看起來已經將 SQL injection 的問題解決</p>
+<div class="highlight"><pre><span></span><code><span class="err">(Pdb++) p clauses</span>
+<span class="err">[&lt;sql: 'SELECT *'&gt;, &lt;sql: 'FROM USER'&gt;, &lt;sql: 'WHERE account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'&gt;]</span>
+</code></pre></div>
+<p>所以接著要去追 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L934">934行</a> 的<code>gen_clause</code><br/>
+當輸入的參數 sql 是 <code>WHERE</code> 時，會執行到 948 行的 <code>nout = reparam(val, vars)</code></p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">sql</span>
+<span class="s1">'WHERE'</span>
+
+<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">val</span>
+<span class="s1">'account =$account AND password=$password'</span>
+
+<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">vars</span>
+<span class="p">{</span><span class="s1">'account'</span><span class="p">:</span> <span class="s2">"1' OR '1'='1"</span><span class="p">,</span> <span class="s1">'password'</span><span class="p">:</span> <span class="s2">"1' OR '1'='1"</span><span class="p">}</span>
+</code></pre></div>
+<p>再來看 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L344">344行</a> 的 <code>reparam</code><br/>
+因為只會跑到 <code>safteval</code><br/>
+所以又要跳到 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1699">1699行</a><br/>
+此時帶入的參數會是</p>
+<ul>
+<li>text = <code>'account =$account AND password=$password'</code></li>
+<li>mapping = <code>{'account': "1' OR '1'='1", 'password': "1' OR '1'='1"}</code></li>
+</ul>
+<p>1700 行的 <code>Parser</code> 解析出的 node 則是長這樣</p>
+<div class="highlight"><pre><span></span><code><span class="err">(Pdb++) p list(nodes)</span>
+<span class="err">[Node('text', 'account =', None), Node('param', 'account', None), Node('text', ' AND password=', None), Node('param', 'password', None)]</span>
+</code></pre></div>
+<p>1701行會執行到 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1703">1703行</a> 的 <code>eval_node</code><br/>
+<code>self.eval_expr</code> 主要的功用只是讓 <code>node[1]</code> 才能抓到 <code>"1' OR '1'='1"</code> ，重點在 <code>sqlquote</code><br/>
+所以就要再去追 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L463">463行</a><br/>
+在 475 行， <code>"1' OR '1'='1"</code> 會被初始成一個 <code>SQLParam</code> ，然後再產生一個 <code>SQLQuery</code> 物件<br/>
+這時 <code>eval_node</code> 就會回傳 <code>&lt;sql: '"1\' OR \'1\'=\'1"'&gt;</code> (<code>SQLQuery</code> 物件)</p>
+<p>回到 <code>safeeval</code><br/>
+透過 <code>[self.eval_node(node, mapping) for node in nodes]</code> 所產生，進到 <code>SQLQuery.join</code> 的值會是 <code>['account =', &lt;sql: '"1\' OR \'1\'=\'1"'&gt;, ' AND password=', &lt;sql: '"1\' OR \'1\'=\'1"'&gt;]</code></p>
+<p>那就繼續回去追 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L254">254行</a> 的 <code>join</code><br/>
+277 ~ 285 行的 for loop 執行完會產生一個新的 target (<code>SQLQuery</code> 物件)<br/>
+裡面的內容如下</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span><span class="p">.</span><span class="n">items</span>
+<span class="p">[</span><span class="s1">'account ='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">param</span><span class="p">:</span> <span class="ss">"1' OR '1'='1"</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">' AND password='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">param</span><span class="p">:</span> <span class="ss">"1' OR '1'='1"</span><span class="o">&gt;</span><span class="p">]</span>
+
+<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span>
+<span class="o">&lt;</span><span class="k">sql</span><span class="p">:</span> <span class="s1">'account ="1\'</span> <span class="k">OR</span> <span class="err">\</span><span class="s1">'1\'</span><span class="o">=</span><span class="err">\</span><span class="s1">'1" AND password="1\'</span> <span class="k">OR</span> <span class="err">\</span><span class="s1">'1\'</span><span class="o">=</span><span class="err">\</span><span class="s1">'1"'</span><span class="o">&gt;</span>
+
+<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span><span class="p">.</span><span class="k">values</span><span class="p">()</span>
+<span class="p">[</span><span class="ss">"1' OR '1'='1"</span><span class="p">,</span> <span class="ss">"1' OR '1'='1"</span><span class="p">]</span>
+
+<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span><span class="p">.</span><span class="n">query</span><span class="p">()</span>
+<span class="s1">'account =%s AND password=%s'</span>
+</code></pre></div>
+<p>這時候回傳的 <code>SQLQuery</code> 物件已經把 query 跟要帶入的值分開儲存<br/>
+回傳回 948 行後，會在 956 行透過 <code>xjoin</code> 跟字串 <code>WHERE</code> 整合<br/>
+字串跟 <code>SQLQuery</code> 相加的行為被定義在 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L196">196 行</a> 的 <code>__radd__</code></p>
+<p>再來就可以回到最原本的 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L874">874行</a> 的 <code>clauses</code><br/>
+在 879行會 <code>clauses</code> 的三個 <code>SQLQuery</code>物件 變成一個 <code>SQLQuery</code> 物件</p>
+<p>最後產生的 qout 會是</p>
+<div class="highlight"><pre><span></span><code><span class="err">(Pdb++) p qout</span>
+<span class="err">&lt;sql: 'SELECT * FROM USER WHERE account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'&gt;</span>
+</code></pre></div>
+<p>最後就要看 884 行的 <code>self.query(qout, processed=True)</code> 是不是真的會以參數化的方式執行這段 SQL<br/>
+接下來要看<a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L807">807 行</a>中 <code>query</code> 函式的實作<br/>
+執行到 831 行 <code>self._db_execute(db_cursor, sql_query)</code> 才會用到傳進來的 <code>sql_query</code><br/>
+在 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L750">750行</a> <code>_db_execute</code><br/>
+會先在 756 行的 <code>_process_query</code> 產生要執行的 SQL query<br/>
+而它會在<a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L775">775行</a>將 <code>query</code>, <code>params</code> 分別取出，他們分別的回傳值會是</p>
+<ul>
+<li>query = <code>'SELECT * FROM USER WHERE account =? AND password=?'</code></li>
+<li>params = <code>["1' OR '1'='1", "1' OR '1'='1"])</code></li>
+</ul>
+<p>757 行的<code>out = cur.execute(query, params)</code> 就會拿他們做 SQL 查詢，所以就不會遇到 SQL injection 了</p>
+<h3 id="hmm-delete">hmm... 原本好像是要追 delete 才對</h3>
+<p>顧著重現維基百科的例子，跟找到為什麼，竟然忘記了原本的目的<br/>
+不過我想本質應該還是相同的<br/>
+有興趣的話，可以拿以下這段 SQL 來測測看 delete 的 SQL injection 是不是真的能清空整個資料表<br/>
+<strong>disclaimer: 請不要拿它用在任何的 production 環境</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">USER</span> <span class="k">WHERE</span> <span class="n">account</span> <span class="o">=</span> <span class="s1">''</span> <span class="k">OR</span> <span class="s1">''</span><span class="o">=</span><span class="s1">''</span>
+</code></pre></div>
+<p><img alt="xkcd joke" src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png"/></p>
+<blockquote>
+<p>你是不是真的把你的兒子取名為 <code>Rober'); DROP TABLE Students;</code></p>
+</blockquote>
+<h2 id="_6">結語</h2>
+<p>我完全不是資訊安全的專家，只是抱持著對京都動畫和 Python 的喜愛來追這段程式碼<br/>
+如果有說錯或可以補充的部分，再麻煩留言讓我知道 🙏</p>
+<p>其實小林家的龍女僕，還有其他場景也有出現 Python<br/>
+像是這段說小林自從開始寫 Python 後變得開朗了許多呢（誤</p>
+<p><img alt="kobayashi becomes hayppier" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/kobayashi becomes hayppier.png"/></p>
+<p>所以大家一起來寫 Python 吧<br/>
+那寫 Python 的人最好的交流平台是什麼呢？<br/>
+當然是 <a href="https://tw.pycon.org/">PyCon TW</a> 啊！<br/>
+來當 PyCon TW 志工，跟大家交流學 Python，變成一個開朗的人吧 💪</p>
+<h2 id="one-more-thing">One more thing</h2>
+<p>小林家的龍女僕宣佈將於 2021 年開播 🤩</p>
+<blockquote class="twitter-tweet"><p dir="ltr" lang="ja">TVアニメ第2期「小林さんちのメイドラゴンS」2021年放送決定！SuperでSupremeなSecond lifeがStartします！<br/>そして、メイドラゴンS(読み:エス)ティザービジュアル公開！ティザーサイトもぜひチェックお願いします！　<a href="https://t.co/pKOgbEe3sL">https://t.co/pKOgbEe3sL</a> <a href="https://twitter.com/hashtag/meidragon?src=hash&amp;ref_src=twsrc%5Etfw">#meidragon</a> <a href="https://t.co/XoyiBPbnvt">pic.twitter.com/XoyiBPbnvt</a></p>— TVアニメ「小林さんちのメイドラゴンS」公式 (@maidragon_anime) <a href="https://twitter.com/maidragon_anime/status/1292838380187746305?ref_src=twsrc%5Etfw">August 10, 2020</a></blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
 
 
              
@@ -234,10 +453,12 @@ Fri Dec 30<br>
             <hr/>
         </div>
         <section id="article-sidebar" class="span2">
+    <h4>Reading Time</h4>
+    <p>~5 min read</p>
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2019-09-30T00:00:00+08:00">2019/09/30 - Mon</time>
+            <time itemprop="dateCreated" datetime="2020-09-22T11:00:00+08:00">2020/09/22 - Tue</time>
                 <h4>Read Time</h4>
-                 1 min
+                 5 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

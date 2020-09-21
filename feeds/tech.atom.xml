@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-08-21T15:21:00+08:00</updated><entry><title>COSCUP 2020 / SITCON 2020</title><link href="https://lee-w.github.io/posts/tech/2020/08/coscup-2020-sitcon-2020" rel="alternate"></link><published>2020-08-21T15:21:00+08:00</published><updated>2020-08-21T15:21:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-08-21:/posts/tech/2020/08/coscup-2020-sitcon-2020</id><summary type="html">&lt;p&gt;因為這次 COSCUP 跟 SITCON 只隔了一週，就順手寫在一起了&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-09-18T17:29:00+08:00</updated><entry><title>COSCUP 2020 / SITCON 2020</title><link href="https://lee-w.github.io/posts/tech/2020/08/coscup-2020-sitcon-2020" rel="alternate"></link><published>2020-08-21T15:21:00+08:00</published><updated>2020-08-21T15:21:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-08-21:/posts/tech/2020/08/coscup-2020-sitcon-2020</id><summary type="html">&lt;p&gt;因為這次 COSCUP 跟 SITCON 只隔了一週，就順手寫在一起了&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;因為這次 COSCUP 跟 SITCON 只隔了一週，就順手寫在一起了&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;&lt;img alt="vip" src="/images/posts-image/2020-coscup-2020-sitcon-2020/vip.jpg"/&gt;&lt;/p&gt;
@@ -168,7 +168,7 @@ microsoft / brain/ ni /parrot 可以看成 PyCon TW 的 r0 / r1 /r2，總之就�
 他們的作法是講者會在演講開始前 15 分鐘加入 &lt;code&gt;.*-greenroom&lt;/code&gt;，讓 session manager 確定講者已經抵達&lt;br/&gt;
 接著， session manager 會讓講者加入 Zoom 跟 &lt;code&gt;.*-talkback&lt;/code&gt;&lt;br/&gt;
 用 Zoom 讓講者做演講並跟主持人做互動&lt;br/&gt;
-session manger 則是透過 &lt;code&gt;.*-talkback&lt;/code&gt; 跟講者說剩下的時間&lt;/p&gt;
+session manager 則是透過 &lt;code&gt;.*-talkback&lt;/code&gt; 跟講者說剩下的時間&lt;/p&gt;
 &lt;p&gt;在線上會議也有講者準備/休息室（greenroom）的概念真的蠻有趣的 XD&lt;/p&gt;
 &lt;h2 id="_2"&gt;會期&lt;/h2&gt;
 &lt;h3 id="day-1"&gt;Day 1&lt;/h3&gt;
@@ -4435,13 +4435,18 @@ Job Fair 的公司反而比較少，不過應該就是專注在有開缺的公�
 &lt;span class="n"&gt;stats&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;compare_to&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'lineno'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;stat&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;stats&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stat&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Note"></category></entry><entry><title>[Note] The Clean Code</title><link href="https://lee-w.github.io/posts/tech/2018/11/the-clean-code" rel="alternate"></link><published>2018-11-16T17:08:00+08:00</published><updated>2018-11-16T17:08:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-11-16:/posts/tech/2018/11/the-clean-code</id><summary type="html">&lt;p&gt;既然都把 The Clean Coder 做完了&lt;br/&gt;
-就順便把原本在 GitBook 的 The Clean Code 一起搬過來好了&lt;br/&gt;
-不過到現在我還是沒看到過第 10 章 xD&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Note"></category></entry><entry><title>[Note] Clean Code</title><link href="https://lee-w.github.io/posts/tech/2018/11/clean-code" rel="alternate"></link><published>2018-11-16T17:08:00+08:00</published><updated>2020-09-18T17:29:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2018-11-16:/posts/tech/2018/11/clean-code</id><summary type="html">&lt;p&gt;既然都把 The Clean Coder 做完了&lt;br/&gt;
+就順便把原本在 GitBook 的 The Clean Code 一起搬過來好了&lt;/p&gt;
+&lt;p&gt;&lt;img alt="clean code" src="/images/books/clean code.jpg"/&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;既然都把 The Clean Coder 做完了&lt;br/&gt;
-就順便把原本在 GitBook 的 The Clean Code 一起搬過來好了&lt;br/&gt;
-不過到現在我還是沒看到過第 10 章 xD&lt;/p&gt;
+就順便把原本在 GitBook 的 The Clean Code 一起搬過來好了&lt;/p&gt;
+&lt;p&gt;&lt;img alt="clean code" src="/images/books/clean code.jpg"/&gt;&lt;/p&gt;
 &lt;!--more--&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Wei Lee @ 2020-09-18&lt;br/&gt;
+隔了幾年，終於又再回來翻這本書&lt;br/&gt;
+這次除了打算把後面的章節全部看完外，也會重新把筆記順過一次&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id="1"&gt;第1章：無暇的程式碼&lt;/h2&gt;
 &lt;ul&gt;
@@ -4449,18 +4454,15 @@ Job Fair 的公司反而比較少，不過應該就是專注在有開缺的公�
 &lt;li&gt;待會兒再回來整理程式，等於讓程式一直限於髒亂&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;之所以不一開始就寫乾淨的程式，是因為我們以為這讓我們開發速度變慢&lt;ul&gt;
-&lt;li&gt;實際上髒亂的程式只會讓開發速度更慢。&lt;strong&gt;趕上期限的方法是隨時都確保程式儘可能的乾淨&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;髒亂的程式只會讓開發速度更慢。&lt;strong&gt;趕上期限的方法是隨時都確保程式儘可能的乾淨&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;What is Clean Code?&lt;ul&gt;
-&lt;li&gt;Clean Code 只做好一件事&lt;/li&gt;
-&lt;li&gt;Clean Code 是可以被原作者以外的開發者閱讀與增強的&lt;/li&gt;
+&lt;li&gt;只做好一件事&lt;/li&gt;
+&lt;li&gt;可以被原作者以外的開發者閱讀與擴充的&lt;/li&gt;
 &lt;li&gt;Beck's rules for simple code&lt;ul&gt;
-&lt;li&gt;能通過所有測試&lt;/li&gt;
+&lt;li&gt;通過所有測試&lt;/li&gt;
 &lt;li&gt;沒有重複的程式碼&lt;/li&gt;
 &lt;li&gt;充份表達系統設計的構思&lt;/li&gt;
-&lt;li&gt;具有最少的 entities (e.g. class, methods, functions, and etc.)&lt;/li&gt;
+&lt;li&gt;具有最少的 entities (e.g., class, methods, functions, and etc.)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
