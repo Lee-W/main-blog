@@ -100,7 +100,7 @@ microsoft / brain/ ni /parrot 可以看成 PyCon TW 的 r0 / r1 /r2，總之就�
 他們的作法是講者會在演講開始前 15 分鐘加入 `.*-greenroom`，讓 session manager 確定講者已經抵達
 接著， session manager 會讓講者加入 Zoom 跟 `.*-talkback`
 用 Zoom 讓講者做演講並跟主持人做互動
-session manger 則是透過 `.*-talkback` 跟講者說剩下的時間
+session manager 則是透過 `.*-talkback` 跟講者說剩下的時間
 
 在線上會議也有講者準備/休息室（greenroom）的概念真的蠻有趣的 XD
 
