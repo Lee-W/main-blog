@@ -1,10 +1,9 @@
 Title: 小林的程式會不會遇到 SQL Injection
-Date: 2020-09-22 11:00
+Date: 2020-09-22 12:50
 Category: Tech
 Tags: Python, Animate
 Slug: will-kobayashi-s-code-encounter-sql-injection
 Authors: Lee-W
-Status: draft
 
 其實這篇文章應該一年前就該寫了...
 今年為了在 PyCon TW 的 Lightning Talk 想個梗，就拿出來講 ([slide](https://speakerdeck.com/leew/xiao-lin-de-cheng-shi-ma-hui-bu-hui-yu-dao-sql-injection))
@@ -70,13 +69,13 @@ SELECT * FROM users WHERE (name = '1' OR '1'='1') and (pw = '1' OR '1'='1');
 ![web.py release](/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/webpy tag.jpg)
 
 我們先從安裝 `web.py==0.39` 到虛擬環境中開始
-（p.s. web 跟 py 中間的`.` 是必要的，因為真的有個套件叫 webpy......）
+（p.s. web 跟 py 中間的 . 是必要的，因為真的有個套件叫 webpy）
 
 ```sh
 poetry add web.py==0.39
 ```
 
-很不幸的，如果你使用的是 Python 3，會遇到以下的錯誤訊息
+很不幸，如果使用的是 Python 3，會遇到以下的錯誤訊息
 
 ```text
 Creating virtualenv kobayashi-pwI4Cysh-py3.8 in /Users/weilee/Library/Caches/pypoetry/virtualenvs
@@ -118,11 +117,11 @@ web.py 要到 0.40 才支援 Python 3 (Ref: [python3 ImportError: No module name
 
 ### 初始化資料庫
 要實驗到底有沒有辦法取得資料庫的資料，總是要先有一個資料庫
-這裏主要做了三件事
+這裡做了三件事
 
 1. 用 `sqlite3` 跟 "kobayashi.db" 建立連線
 2. 建立 `USER` 資料表
-3. 將 kobayashi, tohru, kanna, elma 新增到 `USER` 資料表中
+3. 將 "kobayashi", "tohru", "kanna", "elma" 新增到 `USER` 資料表中
 
 ```python
 import sqlite3
@@ -163,8 +162,9 @@ if __name__ == "__main__":
 ```
 
 ### 實作登入功能
-這裡實作的 `login` 函式會把使用者輸入的 account 跟 password 直接帶入 `where`
-如果在資料庫找到正確的匹配，就會回傳找到的第一筆 user，否則回傳 `None`
+`login` 會把使用者輸入的 account 跟 password 帶入 `where`
+如果在資料庫找到正確的匹配，就會回傳找到的第一筆 user
+如果找不到就回傳 `None`
 
 ```python
 from typing import Optional, Tuple
@@ -185,11 +185,11 @@ def login(account: str, password: str) -> Optional[web.utils.Storage]:
         return None
 ```
 
-接著使用三個案例來做測試
+這裡用三個案例來測試
 
-1. 錯誤的帳號密碼 -> 不應該取得 user
-2. 正確的帳號密碼 -> 應該取得 user
-3. SQL injection -> 理想上，也不該取得 user
+1. 錯誤的帳號密碼 → 不應該取得 user
+2. 正確的帳號密碼 → 應該取得 user
+3. SQL injection → 理想上，也不該取得 user
 
 ```python
 if __name__ == "__main__":
@@ -200,8 +200,8 @@ if __name__ == "__main__":
     print(login("1' OR '1'='1", "1' OR '1'='1"))
 ```
 
-但這個世界始終不理想，包含了 SQL injection 的程式還是成功取得 user
-之所以只取到一筆 user，單純只是因為我只回傳一個物件，但這段 SQL 是能取到整個資料庫的 user 的
+但這個世界始終不理想，包含了 SQL injection 的程式成功取得 user
+之所以只取到一筆 user，是因為 `login` 只會回傳第一個物件，但這段 SQL 是能取到整個資料庫的 user 的
 
 ```text
 0.0 (1): SELECT * FROM USER WHERE account ='kobayashi' AND password=''
@@ -218,7 +218,7 @@ login succeeded
 ```
 
 ### 該如何修正？
-修正的方式也很簡單，只要在呼叫 select 的時候用 `vars` 將參數帶進 `where` 即可
+修正的方式很簡單，只要在呼叫 select 的時候用 `vars` 將參數帶進 `where` 即可
 其實 web.py 的文件就有寫了 (Ref: [db.query](https://webpy.org/cookbook/query))
 
 ```python
@@ -248,37 +248,52 @@ None
 
 ## 知其然還要知其所以然啊！
 除了知道怎麼修正外，我還想知道 web.py 做了什麼
-接下來就是冗長的紀錄我追 web.py 原始碼的過程
+下面冗長的紀錄我追 web.py 原始碼的過程
 
 ### pdbpp
-為了寫這篇文章，大幅的提升我對 pdb 的熟悉度
+寫這篇文章最大的收穫，大概就是大幅的提升了我對 pdb 的熟悉度
 剛好聽到廣播 [Python Bytes](https://pythonbytes.fm/) 推薦的 [pdbpp](https://github.com/pdbpp/pdbpp) 就順手玩了一下
-安裝 `pdbpp`後，它會取代原生的 `pdb`
-主要有這兩個功能比 `pdb` 好用
+pdbpp 在安裝後會取代原生的 pdb
+主要有這兩個功能比 pdb 好用
 
-1. syntax highlight (其實 `ipdb` 也做得到)
+1. syntax highlight
+    * 不過需要注意的是，如果要能客製化 highlight 風格，需要直接從 master branch 安裝的版本，目前還沒把這個修正釋出到 PyPI 上
 2. sticky mode（在除錯器的上方一直顯示目前追到的程式碼）
+
+![sticky mode example](/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/sticky mode.jpg)
+
 
 順便記錄一下常用到的 pdbpp 指令
 
 * `n`: 下一行
-* `s`: 進到函式內
-* `p [var]` (e.g., `p locals()`): 印出 var
+* `s`: 進到函式
+* `p [var]` (e.g., `p locals()`): 印出變數 var
 * `args`: 印出參數
 * `ll`: 顯示現在在原始碼的哪裡（原本 pdb 的 longlist）
 
 ### 追 web.py 原始碼
-首先，從 `login` 呼叫的 `db.select` 函式開始，它在 [web/db.py#L845](https://github.com/webpy/webpy/blob/0.40/web/db.py#L845)
+這部分的紀錄方式會是每進到一次函式 (在 pdb 裡面使用 `s`) 就會加一個四級標題
+回到原本的函式，則會在標題後面加一個 back
 
-跑完 874 行的 list comprehension 後，`clauses` 看起來已經將 SQL injection 的問題解決
+首先當然是從 `login` 呼叫到 `db.select` 函式開始追回去
 
+#### web/db.py::DB::select
+* 位置: [web/db.py#L845](https://github.com/webpy/webpy/blob/0.40/web/db.py#L845)
+
+跑完 874 行的 list comprehension 後，`clauses` 會包含以下四個部分
 ```pdb
 (Pdb++) p clauses
 [<sql: 'SELECT *'>, <sql: 'FROM USER'>, <sql: 'WHERE account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'>]
 ```
 
-所以接著要去追 [934行](https://github.com/webpy/webpy/blob/0.40/web/db.py#L934) 的`gen_clause`
-當輸入的參數 sql 是 `WHERE` 時，會執行到 948 行的 `nout = reparam(val, vars)`
+看起來已經成功將特殊字元跳脫，解決 SQL injection
+所以接下來要去追產生 `clause` 的 `gen_clause`
+
+#### web/db.py::DB::gen_clause
+* 位置: [web/db.py#L934](https://github.com/webpy/webpy/blob/0.40/web/db.py#L934)
+
+`gen_clause` 會被呼叫三次，當輸入的參數 sql 是 `WHERE` 時，會執行到 948 行的 `nout = reparam(val, vars)`
+此時輸入的各個參數如下
 
 ```pdb
 (Pdb++) p sql
@@ -291,40 +306,67 @@ None
 {'account': "1' OR '1'='1", 'password': "1' OR '1'='1"}
 ```
 
-再來看 [344行](https://github.com/webpy/webpy/blob/0.40/web/db.py#L344) 的 `reparam`
-因為只會跑到 `safteval`
-所以又要跳到 [1699行](https://github.com/webpy/webpy/blob/0.40/web/db.py#L1699)
-此時帶入的參數會是
+#### web/db.py::reparam
+* 位置: [web/db.py#L344](https://github.com/webpy/webpy/blob/0.40/web/db.py#L344)
+* 參數:
+    * val = `'account =$account AND password=$password'`
+    * vars = `{'account': "1' OR '1'='1", 'password': "1' OR '1'='1"}`
 
-* text = `'account =$account AND password=$password'`
-* mapping = `{'account': "1' OR '1'='1", 'password': "1' OR '1'='1"}`
+一進到 `reparm` ，這些值就會繼續被傳到 `safteval`
 
-1700 行的 `Parser` 解析出的 node 則是長這樣
+#### web/db.py::SafeEval::safeeval
+* 位置: [web/db.py#L1699](https://github.com/webpy/webpy/blob/0.40/web/db.py#L1699)
+* 帶入參數
+    * text = `'account =$account AND password=$password'`
+    * mapping = `{'account': "1' OR '1'='1", 'password': "1' OR '1'='1"}`
+
+1700 行的 `Parser` 會將 text 分解成四個 SQL 的部分，並且將 nodes 連同 mapping 一個一個帶入 `eval_node`
 
 ```pdb
 (Pdb++) p list(nodes)
 [Node('text', 'account =', None), Node('param', 'account', None), Node('text', ' AND password=', None), Node('param', 'password', None)]
 ```
 
-1701行會執行到 [1703行](https://github.com/webpy/webpy/blob/0.40/web/db.py#L1703) 的 `eval_node`
-`self.eval_expr` 主要的功用只是讓 `node[1]` 才能抓到 `"1' OR '1'='1"` ，重點在 `sqlquote`
-所以就要再去追 [463行](https://github.com/webpy/webpy/blob/0.40/web/db.py#L463)
-在 475 行， `"1' OR '1'='1"` 會被初始成一個 `SQLParam` ，然後再產生一個 `SQLQuery` 物件
-這時 `eval_node` 就會回傳 `<sql: '"1\' OR \'1\'=\'1"'>` (`SQLQuery` 物件)
+#### web/db.py::SafeEval::eval_node
+* 位置: [web/db.py#L1703](https://github.com/webpy/webpy/blob/0.40/web/db.py#L1703)
 
-回到 `safeeval`
-透過 `[self.eval_node(node, mapping) for node in nodes]` 所產生，進到 `SQLQuery.join` 的值會是 `['account =', <sql: '"1\' OR \'1\'=\'1"'>, ' AND password=', <sql: '"1\' OR \'1\'=\'1"'>]`
+`self.eval_expr` 的功用是在讓 `node[1]` 能抓到 `"1' OR '1'='1"`
+抓到了字串 ``"1' OR '1'='1"`` 後會丟到 `sqlquote`
 
-那就繼續回去追 [254行](https://github.com/webpy/webpy/blob/0.40/web/db.py#L254) 的 `join`
+#### web/db.py::sqlquote
+* 位置: [463行](https://github.com/webpy/webpy/blob/0.40/web/db.py#L463)
+* 參數:
+    * a = `"1' OR '1'='1"`
+
+a 會在 475 行被初始化成 [SQLParam](https://github.com/webpy/webpy/blob/0.40/web/db.py#L93) 物件 ，然後再產生 [SQLQuery](https://github.com/webpy/webpy/blob/0.40/web/db.py#L142) 物件
+
+#### web/db.py::SafeEval::eval_node (back)
+* 位置: [web/db.py#L1703](https://github.com/webpy/webpy/blob/0.40/web/db.py#L1703)
+
+回到 `eval_node` ，就會把剛剛的結果 `<sql: '"1\' OR \'1\'=\'1"'>` (`SQLQuery` 物件印出的形式) 回傳
+
+#### web/db.py::SafeEval::safeeval (back)
+* 位置: [web/db.py#L1699](https://github.com/webpy/webpy/blob/0.40/web/db.py#L1699)
+
+1701 行的 `[self.eval_node(node, mapping) for node in nodes]` 會產生
+
+```python
+['account =', <sql: '"1\' OR \'1\'=\'1"'>, ' AND password=', <sql: '"1\' OR \'1\'=\'1"'>]
+```
+
+這個 list 會接著被帶入 `SQLQuery.join` 整合成一整個 SQL 的片段
+
+#### web/db.py::SQLQuery::join
+* 位置: [web/db.py#L254](https://github.com/webpy/webpy/blob/0.40/web/db.py#L254)
+
 277 ~ 285 行的 for loop 執行完會產生一個新的 target (`SQLQuery` 物件)
-裡面的內容如下
 
 ```pdb
-(Pdb++) p target.items
-['account =', <param: "1' OR '1'='1">, ' AND password=', <param: "1' OR '1'='1">]
-
 (Pdb++) p target
 <sql: 'account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'>
+
+(Pdb++) p target.items
+['account =', <param: "1' OR '1'='1">, ' AND password=', <param: "1' OR '1'='1">]
 
 (Pdb++) p target.values()
 ["1' OR '1'='1", "1' OR '1'='1"]
@@ -333,14 +375,23 @@ None
 'account =%s AND password=%s'
 ```
 
-這時候回傳的 `SQLQuery` 物件已經把 query 跟要帶入的值分開儲存
-回傳回 948 行後，會在 956 行透過 `xjoin` 跟字串 `WHERE` 整合
+可以發現這時候要回傳的 `SQLQuery` 物件已經把查詢時跟要帶入的值分開儲存
+
+#### web/db.py::reparam（back）
+* 位置: [web/db.py#L344](https://github.com/webpy/webpy/blob/0.40/web/db.py#L344)
+
+#### web/db.py::DB::gen_clause (back)
+* 位置: [web/db.py#L948](https://github.com/webpy/webpy/blob/0.40/web/db.py#L948)
+
+在 956 行，剛剛回傳的 `nout` 會透過 `xjoin` 跟字串 `WHERE` 整合成一個新的 `SQLQuery` 物件
 字串跟 `SQLQuery` 相加的行為被定義在 [196 行](https://github.com/webpy/webpy/blob/0.40/web/db.py#L196) 的 `__radd__`
+但因為沒有什麼太意料之外的行為，這裡就不繼續追下去了
 
-再來就可以回到最原本的 [874行](https://github.com/webpy/webpy/blob/0.40/web/db.py#L874) 的 `clauses`
-在 879行會 `clauses` 的三個 `SQLQuery`物件 變成一個 `SQLQuery` 物件
+#### web/db.py::DB::select (back)
+* 位置: [web/db.py#L874](https://github.com/webpy/webpy/blob/0.40/web/db.py#L874)
 
-最後產生的 qout 會是
+取得了回傳的 `clauses` 後，它會在 879 行的 `SQLQuery.join` 整合成一個 `SQLQuery` 物件
+產生 `qout`
 
 ```pdb
 (Pdb++) p qout
@@ -348,22 +399,27 @@ None
 ```
 
 最後就要看 884 行的 `self.query(qout, processed=True)` 是不是真的會以參數化的方式執行這段 SQL
-接下來要看[807 行](https://github.com/webpy/webpy/blob/0.40/web/db.py#L807)中 `query` 函式的實作
+
+#### web/db.py::DB::query
+* 位置: [web/db.py#L807](https://github.com/webpy/webpy/blob/0.40/web/db.py#L807)
+
 執行到 831 行 `self._db_execute(db_cursor, sql_query)` 才會用到傳進來的 `sql_query`
-在 [750行](https://github.com/webpy/webpy/blob/0.40/web/db.py#L750) `_db_execute`
-會先在 756 行的 `_process_query` 產生要執行的 SQL query
-而它會在[775行](https://github.com/webpy/webpy/blob/0.40/web/db.py#L775)將 `query`, `params` 分別取出，他們分別的回傳值會是
+
+#### web/db.py::DB::_db_execute
+* 位置: [web/db.py#L750](https://github.com/webpy/webpy/blob/0.40/web/db.py#L750)
+
+在 756 行的 `_process_query` 產生要執行的 SQL query 跟它的參數，回傳的結果分別是
 
 * query = `'SELECT * FROM USER WHERE account =? AND password=?'`
 * params = `["1' OR '1'='1", "1' OR '1'='1"])`
 
-757 行的`out = cur.execute(query, params)` 就會拿他們做 SQL 查詢，所以就不會遇到 SQL injection 了
+再帶到 757 行的`out = cur.execute(query, params)` 直接對資料庫作查詢，所以就不會遇到 SQL injection 了
 
-### hmm... 原本好像是要追 delete 才對
-顧著重現維基百科的例子，跟找到為什麼，竟然忘記了原本的目的
+#### 原本好像是要追 delete 才對
+顧著重現維基百科的例子，竟然忘記了原本要追的其實是另一段程式碼
 不過我想本質應該還是相同的
 有興趣的話，可以拿以下這段 SQL 來測測看 delete 的 SQL injection 是不是真的能清空整個資料表
-**disclaimer: 請不要拿它用在任何的 production 環境**
+**disclaimer: 請不要拿它用在會影響到其他人的程式上 (e.g., production 環境)**
 
 ```sql
 DELETE FROM USER WHERE account = '' OR ''=''
@@ -374,20 +430,29 @@ DELETE FROM USER WHERE account = '' OR ''=''
 > 你是不是真的把你的兒子取名為 `Rober'); DROP TABLE Students;`
 
 ## 結語
-我完全不是資訊安全的專家，只是抱持著對京都動畫和 Python 的喜愛來追這段程式碼
+結論是「雖然小林的程式碼可能遇到 SQL injection，但也存在著很簡單的解決方案，只要使用者有讀文件，應該就不會遇到」
+我完全不是資訊安全的專家，只是抱持著對京都動畫和 Python 的愛來追這段程式碼
 如果有說錯或可以補充的部分，再麻煩留言讓我知道 🙏
 
 其實小林家的龍女僕，還有其他場景也有出現 Python
-像是這段說小林自從開始寫 Python 後變得開朗了許多呢（誤
+像是這裡說了小林自從開始寫 Python 後變得開朗了許多呢（誤
 
 ![kobayashi becomes hayppier](/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/kobayashi becomes hayppier.png)
 
-所以大家一起來寫 Python 吧
-那寫 Python 的人最好的交流平台是什麼呢？
-當然是 [PyCon TW](https://tw.pycon.org/) 啊！
-來當 PyCon TW 志工，跟大家交流學 Python，變成一個開朗的人吧 💪
+我也是自從寫了 Python 後，每次考試都考 100 分呢（並沒有）
+所以大家一起來寫 Python 吧 🐍
+那寫 Python 的人最好的交流平台是什麼呢 🤔
+當然是 [PyCon TW](https://tw.pycon.org/) 啊 🤩
+來當 PyCon TW 志工，跟大家交流 Python，變成一個開朗的人吧 💪
 
 ## One more thing
-小林家的龍女僕宣佈將於 2021 年開播 🤩
+去年七月一場不幸的縱火案，大大的重創了京都動畫
+PyCon JP 2019 時，我也去了鷲宮神社留下我的祝福
+不會日文的我，就只簡單的寫了 **Pray for Kyoani**
+
+![pray for kyoani](/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/pray for kyoani.jpg)
+
+即便如此，京阿尼還是很快就站起來
+一年過後的現在宣布「小林家的龍女僕將於 2021 年開播 」🎉
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">TVアニメ第2期「小林さんちのメイドラゴンS」2021年放送決定！SuperでSupremeなSecond lifeがStartします！<br>そして、メイドラゴンS(読み:エス)ティザービジュアル公開！ティザーサイトもぜひチェックお願いします！　<a href="https://t.co/pKOgbEe3sL">https://t.co/pKOgbEe3sL</a> <a href="https://twitter.com/hashtag/meidragon?src=hash&amp;ref_src=twsrc%5Etfw">#meidragon</a> <a href="https://t.co/XoyiBPbnvt">pic.twitter.com/XoyiBPbnvt</a></p>&mdash; TVアニメ「小林さんちのメイドラゴンS」公式 (@maidragon_anime) <a href="https://twitter.com/maidragon_anime/status/1292838380187746305?ref_src=twsrc%5Etfw">August 10, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
