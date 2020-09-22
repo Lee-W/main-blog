@@ -1,5 +1,400 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-09-18T17:29:00+08:00</updated><entry><title>COSCUP 2020 / SITCON 2020</title><link href="https://lee-w.github.io/posts/tech/2020/08/coscup-2020-sitcon-2020" rel="alternate"></link><published>2020-08-21T15:21:00+08:00</published><updated>2020-08-21T15:21:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-08-21:/posts/tech/2020/08/coscup-2020-sitcon-2020</id><summary type="html">&lt;p&gt;因為這次 COSCUP 跟 SITCON 只隔了一週，就順手寫在一起了&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-09-22T12:50:00+08:00</updated><entry><title>小林的程式會不會遇到 SQL Injection</title><link href="https://lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection" rel="alternate"></link><published>2020-09-22T12:50:00+08:00</published><updated>2020-09-22T12:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-09-22:/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection</id><summary type="html">&lt;p&gt;其實這篇文章應該一年前就該寫了...&lt;br/&gt;
+今年為了在 PyCon TW 的 Lightning Talk 想個梗，就拿出來講 (&lt;a href="https://speakerdeck.com/leew/xiao-lin-de-cheng-shi-ma-hui-bu-hui-yu-dao-sql-injection"&gt;slide&lt;/a&gt;)&lt;br/&gt;
+沒想到被投影機擺了一道......&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;其實這篇文章應該一年前就該寫了...&lt;br/&gt;
+今年為了在 PyCon TW 的 Lightning Talk 想個梗，就拿出來講 (&lt;a href="https://speakerdeck.com/leew/xiao-lin-de-cheng-shi-ma-hui-bu-hui-yu-dao-sql-injection"&gt;slide&lt;/a&gt;)&lt;br/&gt;
+沒想到被投影機擺了一道......&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="_1"&gt;前言雜談&lt;/h2&gt;
+&lt;p&gt;去年看了京阿尼的作品&lt;a href="https://zh.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E5%AE%B6%E7%9A%84%E9%BE%8D%E5%A5%B3%E5%83%95"&gt;小林家的龍女僕&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第一集就發現主角小林也是寫 Python 的工程師，就開心地分享了這個消息&lt;br/&gt;
+&lt;img alt="del" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/del.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;沒想到馬上就有朋友問我這段程式碼會不會有 SQL injection&lt;br/&gt;
+&lt;img alt="will it encounter sql injection" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/will it encounter sql injection.png"/&gt;&lt;/p&gt;
+&lt;p&gt;單看這一段程式碼其實很難直接下定論&lt;br/&gt;
+畢竟 key 根本就不會被帶入 &lt;code&gt;session_id=$key&lt;/code&gt;，誰知道 db 怎麼實作的&lt;/p&gt;
+&lt;p&gt;當然，早就有人注意到這段程式碼了&lt;br/&gt;
+它出自 &lt;a href="https://github.com/webpy/webpy/blob/webpy-0.39/web/session.py#L313"&gt;webpy/web/session.py&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.zhihu.com/question/51933296/answer/143492909"&gt;如何评价京都动画2017年1月新作 小林家的龙女仆?&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;除了找到程式碼外，它還列出了劇情的其他 Python 程式碼，並討論了京都動畫使用這段程式碼會不會有法律問題&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://qiita.com/ygkn/items/6b3be1afa31e4092826e"&gt;小林さんちのメイドラゴンで出てきたコード（小林さんを探せ！）&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;透過 &lt;code&gt;git blame&lt;/code&gt; 來找出「到底誰是小林！」&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ponkatsu807462913.wordpress.com/tag/sql-injection/"&gt;Ponkatsu - Tag: sql injection&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;直接點出這段程式碼會遇到 SQL injection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但身為工程師還是要自己驗證一下到底會不會有 SQL injection&lt;/p&gt;
+&lt;h2 id="sql-injection"&gt;什麼是 SQL injection&lt;/h2&gt;
+&lt;p&gt;根據 &lt;a href="https://zh.wikipedia.org/wiki/SQL%E6%B3%A8%E5%85%A5"&gt;SQL注入&lt;/a&gt; 維基百科頁面的例子&lt;br/&gt;
+假設有一段產生 SQL 字串的程式碼是這樣寫的&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sql_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"SELECT * FROM users WHERE (name = '"&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;"') and (pw = '"&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s2"&gt;"');"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;只要攻擊者輸入了&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"1' OR '1'='1"&lt;/span&gt;
+&lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"1' OR '1'='1"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;就會產生&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;users&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'1'&lt;/span&gt; &lt;span class="k"&gt;OR&lt;/span&gt; &lt;span class="s1"&gt;'1'&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'1'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pw&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'1'&lt;/span&gt; &lt;span class="k"&gt;OR&lt;/span&gt; &lt;span class="s1"&gt;'1'&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'1'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;因為 1 一定等於 1，這段 SQL 就會產生跟 &lt;code&gt;SELECT * FROM user;&lt;/code&gt; 一樣的效果&lt;br/&gt;
+也就是攻擊者在完全不知道帳號密碼的情況下，就可以取得所有 users 的帳號密碼&lt;/p&gt;
+&lt;h2 id="webpy-sql-injection"&gt;web.py 到底會不會有 SQL injection？&lt;/h2&gt;
+&lt;p&gt;因為小林家的龍女僕是在 2017 年的 1 月到 4 月播出&lt;br/&gt;
+根據 web.py 的 &lt;a href="https://github.com/webpy/webpy/tags"&gt;tags&lt;/a&gt; 頁面，在那之後的第一個發佈是 &lt;code&gt;webpy-0.39&lt;/code&gt;&lt;br/&gt;
+可以推測，這最有可能是第一個包含小林撰寫程式碼的發佈&lt;/p&gt;
+&lt;p&gt;&lt;img alt="web.py release" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/webpy tag.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;我們先從安裝 &lt;code&gt;web.py==0.39&lt;/code&gt; 到虛擬環境中開始&lt;br/&gt;
+（p.s. web 跟 py 中間的 . 是必要的，因為真的有個套件叫 webpy）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;poetry add web.py&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.39
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;很不幸，如果使用的是 Python 3，會遇到以下的錯誤訊息&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Creating virtualenv kobayashi-pwI4Cysh-py3.8 in /Users/weilee/Library/Caches/pypoetry/virtualenvs
+
+Updating dependencies
+Resolving dependencies... (0.1s)
+
+Writing lock file
+
+
+Package operations: 1 install, 0 updates, 0 removals
+
+  - Installing web.py (0.39)
+
+[EnvCommandError]
+Command ['/Users/weilee/Library/Caches/pypoetry/virtualenvs/kobayashi-pwI4Cysh-py3.8/bin/pip', 'install', '--no-deps', 'web.py==0.39'] errored with the following return code 1, and output:
+Collecting web.py==0.39
+  Using cached web.py-0.39.tar.gz (93 kB)
+    ERROR: Command errored out with exit status 1:
+     command: /Users/weilee/Library/Caches/pypoetry/virtualenvs/kobayashi-pwI4Cysh-py3.8/bin/python -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/.../web.py/setup.py'"'"'; __file__='"'"'/.../web.py/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /...
+         cwd: /.../web.py/
+    Complete output (7 lines):
+    Traceback (most recent call last):
+      File "&amp;lt;string&amp;gt;", line 1, in &amp;lt;module&amp;gt;
+      File "/.../web.py/setup.py", line 6, in &amp;lt;module&amp;gt;
+        from web import __version__
+      File "/.../web.py/web/__init__.py", line 14, in &amp;lt;module&amp;gt;
+        import utils, db, net, wsgi, http, webapi, httpserver, debugerror
+    ModuleNotFoundError: No module named 'utils'
+    ----------------------------------------
+ERROR: Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+WARNING: You are using pip version 20.1.1; however, version 20.2.3 is available.
+You should consider upgrading via the '/Users/weilee/Library/Caches/pypoetry/virtualenvs/kobayashi-pwI4Cysh-py3.8/bin/python -m pip install --upgrade pip' command.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;web.py 要到 0.40 才支援 Python 3 (Ref: &lt;a href="https://github.com/webpy/webpy/issues/180"&gt;python3 ImportError: No module named utils #180&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;因為我不太想測試 Python 2，就假設小林的程式碼到 0.40 都沒什麼被改動到好了 😆&lt;/p&gt;
+&lt;h3 id="_2"&gt;初始化資料庫&lt;/h3&gt;
+&lt;p&gt;要實驗到底有沒有辦法取得資料庫的資料，總是要先有一個資料庫&lt;br/&gt;
+這裡做了三件事&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用 &lt;code&gt;sqlite3&lt;/code&gt; 跟 "kobayashi.db" 建立連線&lt;/li&gt;
+&lt;li&gt;建立 &lt;code&gt;USER&lt;/code&gt; 資料表&lt;/li&gt;
+&lt;li&gt;將 "kobayashi", "tohru", "kanna", "elma" 新增到 &lt;code&gt;USER&lt;/code&gt; 資料表中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sqlite3&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;init_db&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="c1"&gt;# connect and create "kobayashi.db"&lt;/span&gt;
+    &lt;span class="n"&gt;conn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sqlite3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"kobayashi.db"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# create USER table&lt;/span&gt;
+    &lt;span class="n"&gt;create_table_sql&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"""&lt;/span&gt;
+&lt;span class="s2"&gt;    CREATE TABLE `USER` (&lt;/span&gt;
+&lt;span class="s2"&gt;        `account`   TEXT NOT NULL UNIQUE,&lt;/span&gt;
+&lt;span class="s2"&gt;        `password`  TEXT NOT NULL,&lt;/span&gt;
+&lt;span class="s2"&gt;        PRIMARY KEY(`account`)&lt;/span&gt;
+&lt;span class="s2"&gt;    );&lt;/span&gt;
+&lt;span class="s2"&gt;    """&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# insert users into USER table&lt;/span&gt;
+    &lt;span class="n"&gt;insert_user_sql&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"""&lt;/span&gt;
+&lt;span class="s2"&gt;    INSERT INTO&lt;/span&gt;
+&lt;span class="s2"&gt;        USER (account, password)&lt;/span&gt;
+&lt;span class="s2"&gt;    VALUES&lt;/span&gt;
+&lt;span class="s2"&gt;        ('kobayashi', '1'),&lt;/span&gt;
+&lt;span class="s2"&gt;        ('tohru', '2'),&lt;/span&gt;
+&lt;span class="s2"&gt;        ('kanna', '3'),&lt;/span&gt;
+&lt;span class="s2"&gt;        ('elma', '3');&lt;/span&gt;
+&lt;span class="s2"&gt;    """&lt;/span&gt;
+
+    &lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;create_table_sql&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;insert_user_sql&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;commit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;conn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;"__main__"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;init_db&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="_3"&gt;實作登入功能&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;login&lt;/code&gt; 會把使用者輸入的 account 跟 password 帶入 &lt;code&gt;where&lt;/code&gt;&lt;br/&gt;
+如果在資料庫找到正確的匹配，就會回傳找到的第一筆 user&lt;br/&gt;
+如果找不到就回傳 &lt;code&gt;None&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;typing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Optional&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Tuple&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;web&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;login&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;account&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Optional&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;utils&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Storage&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+    &lt;span class="n"&gt;result_set&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="s2"&gt;"USER"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;where&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;"account ='&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;account&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;' AND password='&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;'"&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;result_set&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;first&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"login succeeded"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"wrong username or password"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;這裡用三個案例來測試&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;錯誤的帳號密碼 → 不應該取得 user&lt;/li&gt;
+&lt;li&gt;正確的帳號密碼 → 應該取得 user&lt;/li&gt;
+&lt;li&gt;SQL injection → 理想上，也不該取得 user&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;"__main__"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;db&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;database&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dbn&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"sqlite"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"kobayashi.db"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;login&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"kobayashi"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;login&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"kobayashi"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"1"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;login&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"1' OR '1'='1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"1' OR '1'='1"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;但這個世界始終不理想，包含了 SQL injection 的程式成功取得 user&lt;br/&gt;
+之所以只取到一筆 user，是因為 &lt;code&gt;login&lt;/code&gt; 只會回傳第一個物件，但這段 SQL 是能取到整個資料庫的 user 的&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;0.0 (1): SELECT * FROM USER WHERE account ='kobayashi' AND password=''
+wrong username or password
+None
+
+0.0 (2): SELECT * FROM USER WHERE account ='kobayashi' AND password='1'
+login succeeded
+&amp;lt;Storage {'account': 'kobayashi', 'password': '1'}&amp;gt;
+
+0.0 (3): SELECT * FROM USER WHERE account ='1' OR '1'='1' AND password='1' OR '1'='1'
+login succeeded
+&amp;lt;Storage {'account': 'kobayashi', 'password': '1'}&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="_4"&gt;該如何修正？&lt;/h3&gt;
+&lt;p&gt;修正的方式很簡單，只要在呼叫 select 的時候用 &lt;code&gt;vars&lt;/code&gt; 將參數帶進 &lt;code&gt;where&lt;/code&gt; 即可&lt;br/&gt;
+其實 web.py 的文件就有寫了 (Ref: &lt;a href="https://webpy.org/cookbook/query"&gt;db.query&lt;/a&gt;)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;login&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;account&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Optional&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;utils&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Storage&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+    &lt;span class="n"&gt;result_set&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="s2"&gt;"USER"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;where&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;"account=$account AND password=$password"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="nb"&gt;vars&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"account"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;account&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"password"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;result_set&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;first&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"login succeeded"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"wrong username or password"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;這次就算用原本 SQL injetion 的作法，也取不到任何的資料&lt;br/&gt;
+因為沒有 account 是 &lt;code&gt;"1' OR '1'='1"&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;0.0 (3): SELECT * FROM USER WHERE account ="1' OR '1'='1" AND password="1' OR '1'='1"
+wrong username or password
+None
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="_5"&gt;知其然還要知其所以然啊！&lt;/h2&gt;
+&lt;p&gt;除了知道怎麼修正外，我還想知道 web.py 做了什麼&lt;br/&gt;
+下面冗長的紀錄我追 web.py 原始碼的過程&lt;/p&gt;
+&lt;h3 id="pdbpp"&gt;pdbpp&lt;/h3&gt;
+&lt;p&gt;寫這篇文章最大的收穫，大概就是大幅的提升了我對 pdb 的熟悉度&lt;br/&gt;
+剛好聽到廣播 &lt;a href="https://pythonbytes.fm/"&gt;Python Bytes&lt;/a&gt; 推薦的 &lt;a href="https://github.com/pdbpp/pdbpp"&gt;pdbpp&lt;/a&gt; 就順手玩了一下&lt;br/&gt;
+pdbpp 在安裝後會取代原生的 pdb&lt;br/&gt;
+主要有這兩個功能比 pdb 好用&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;syntax highlight&lt;ul&gt;
+&lt;li&gt;不過需要注意的是，如果要能客製化 highlight 風格，需要直接從 master branch 安裝的版本，目前還沒把這個修正釋出到 PyPI 上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;sticky mode（在除錯器的上方一直顯示目前追到的程式碼）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="sticky mode example" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/sticky mode.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;順便記錄一下常用到的 pdbpp 指令&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;n&lt;/code&gt;: 下一行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s&lt;/code&gt;: 進到函式&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p [var]&lt;/code&gt; (e.g., &lt;code&gt;p locals()&lt;/code&gt;): 印出變數 var&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;args&lt;/code&gt;: 印出參數&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ll&lt;/code&gt;: 顯示現在在原始碼的哪裡（原本 pdb 的 longlist）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="webpy"&gt;追 web.py 原始碼&lt;/h3&gt;
+&lt;p&gt;這部分的紀錄方式會是每進到一次函式 (在 pdb 裡面使用 &lt;code&gt;s&lt;/code&gt;) 就會加一個四級標題&lt;br/&gt;
+回到原本的函式，則會在標題後面加一個 back&lt;/p&gt;
+&lt;p&gt;首先當然是從 &lt;code&gt;login&lt;/code&gt; 呼叫到 &lt;code&gt;db.select&lt;/code&gt; 函式開始追回去&lt;/p&gt;
+&lt;h4&gt;web/db.py::DB::select&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L845"&gt;web/db.py#L845&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;跑完 874 行的 list comprehension 後，&lt;code&gt;clauses&lt;/code&gt; 會包含以下四個部分&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;(Pdb++) p clauses&lt;/span&gt;
+&lt;span class="err"&gt;[&amp;lt;sql: 'SELECT *'&amp;gt;, &amp;lt;sql: 'FROM USER'&amp;gt;, &amp;lt;sql: 'WHERE account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'&amp;gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;看起來已經成功將特殊字元跳脫，解決 SQL injection&lt;br/&gt;
+所以接下來要去追產生 &lt;code&gt;clause&lt;/code&gt; 的 &lt;code&gt;gen_clause&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;web/db.py::DB::gen_clause&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L934"&gt;web/db.py#L934&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;gen_clause&lt;/code&gt; 會被呼叫三次，當輸入的參數 sql 是 &lt;code&gt;WHERE&lt;/code&gt; 時，會執行到 948 行的 &lt;code&gt;nout = reparam(val, vars)&lt;/code&gt;&lt;br/&gt;
+此時輸入的各個參數如下&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;sql&lt;/span&gt;
+&lt;span class="s1"&gt;'WHERE'&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;
+&lt;span class="s1"&gt;'account =$account AND password=$password'&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;vars&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'account'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"1' OR '1'='1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'password'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"1' OR '1'='1"&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;web/db.py::reparam&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L344"&gt;web/db.py#L344&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;參數:&lt;ul&gt;
+&lt;li&gt;val = &lt;code&gt;'account =$account AND password=$password'&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;vars = &lt;code&gt;{'account': "1' OR '1'='1", 'password': "1' OR '1'='1"}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一進到 &lt;code&gt;reparm&lt;/code&gt; ，這些值就會繼續被傳到 &lt;code&gt;safteval&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;web/db.py::SafeEval::safeeval&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1699"&gt;web/db.py#L1699&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;帶入參數&lt;ul&gt;
+&lt;li&gt;text = &lt;code&gt;'account =$account AND password=$password'&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;mapping = &lt;code&gt;{'account': "1' OR '1'='1", 'password': "1' OR '1'='1"}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1700 行的 &lt;code&gt;Parser&lt;/code&gt; 會將 text 分解成四個 SQL 的部分，並且將 nodes 連同 mapping 一個一個帶入 &lt;code&gt;eval_node&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;(Pdb++) p list(nodes)&lt;/span&gt;
+&lt;span class="err"&gt;[Node('text', 'account =', None), Node('param', 'account', None), Node('text', ' AND password=', None), Node('param', 'password', None)]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;web/db.py::SafeEval::eval_node&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1703"&gt;web/db.py#L1703&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;self.eval_expr&lt;/code&gt; 的功用是在讓 &lt;code&gt;node[1]&lt;/code&gt; 能抓到 &lt;code&gt;"1' OR '1'='1"&lt;/code&gt;&lt;br/&gt;
+抓到了字串 &lt;code&gt;"1' OR '1'='1"&lt;/code&gt; 後會丟到 &lt;code&gt;sqlquote&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;web/db.py::sqlquote&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L463"&gt;463行&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;參數:&lt;ul&gt;
+&lt;li&gt;a = &lt;code&gt;"1' OR '1'='1"&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;a 會在 475 行被初始化成 &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L93"&gt;SQLParam&lt;/a&gt; 物件 ，然後再產生 &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L142"&gt;SQLQuery&lt;/a&gt; 物件&lt;/p&gt;
+&lt;h4&gt;web/db.py::SafeEval::eval_node (back)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1703"&gt;web/db.py#L1703&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;回到 &lt;code&gt;eval_node&lt;/code&gt; ，就會把剛剛的結果 &lt;code&gt;&amp;lt;sql: '"1\' OR \'1\'=\'1"'&amp;gt;&lt;/code&gt; (&lt;code&gt;SQLQuery&lt;/code&gt; 物件印出的形式) 回傳&lt;/p&gt;
+&lt;h4&gt;web/db.py::SafeEval::safeeval (back)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1699"&gt;web/db.py#L1699&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1701 行的 &lt;code&gt;[self.eval_node(node, mapping) for node in nodes]&lt;/code&gt; 會產生&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'account ='&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;sql&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'"1&lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s1"&gt; OR &lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s1"&gt;1&lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s1"&gt;=&lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s1"&gt;1"'&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;' AND password='&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;sql&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'"1&lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s1"&gt; OR &lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s1"&gt;1&lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s1"&gt;=&lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s1"&gt;1"'&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;這個 list 會接著被帶入 &lt;code&gt;SQLQuery.join&lt;/code&gt; 整合成一整個 SQL 的片段&lt;/p&gt;
+&lt;h4&gt;web/db.py::SQLQuery::join&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L254"&gt;web/db.py#L254&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;277 ~ 285 行的 for loop 執行完會產生一個新的 target (&lt;code&gt;SQLQuery&lt;/code&gt; 物件)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;target&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;sql&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'account ="1\'&lt;/span&gt; &lt;span class="k"&gt;OR&lt;/span&gt; &lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="s1"&gt;'1\'&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="s1"&gt;'1" AND password="1\'&lt;/span&gt; &lt;span class="k"&gt;OR&lt;/span&gt; &lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="s1"&gt;'1\'&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="s1"&gt;'1"'&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;target&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'account ='&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;param&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;"1' OR '1'='1"&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;' AND password='&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;param&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="ss"&gt;"1' OR '1'='1"&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;target&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;values&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;"1' OR '1'='1"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;"1' OR '1'='1"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;target&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="s1"&gt;'account =%s AND password=%s'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;可以發現這時候要回傳的 &lt;code&gt;SQLQuery&lt;/code&gt; 物件已經把查詢時跟要帶入的值分開儲存&lt;/p&gt;
+&lt;h4&gt;web/db.py::reparam（back）&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L344"&gt;web/db.py#L344&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;web/db.py::DB::gen_clause (back)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L948"&gt;web/db.py#L948&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在 956 行，剛剛回傳的 &lt;code&gt;nout&lt;/code&gt; 會透過 &lt;code&gt;xjoin&lt;/code&gt; 跟字串 &lt;code&gt;WHERE&lt;/code&gt; 整合成一個新的 &lt;code&gt;SQLQuery&lt;/code&gt; 物件&lt;br/&gt;
+字串跟 &lt;code&gt;SQLQuery&lt;/code&gt; 相加的行為被定義在 &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L196"&gt;196 行&lt;/a&gt; 的 &lt;code&gt;__radd__&lt;/code&gt;&lt;br/&gt;
+但因為沒有什麼太意料之外的行為，這裡就不繼續追下去了&lt;/p&gt;
+&lt;h4&gt;web/db.py::DB::select (back)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L874"&gt;web/db.py#L874&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;取得了回傳的 &lt;code&gt;clauses&lt;/code&gt; 後，它會在 879 行的 &lt;code&gt;SQLQuery.join&lt;/code&gt; 整合成一個 &lt;code&gt;SQLQuery&lt;/code&gt; 物件&lt;br/&gt;
+產生 &lt;code&gt;qout&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;(Pdb++) p qout&lt;/span&gt;
+&lt;span class="err"&gt;&amp;lt;sql: 'SELECT * FROM USER WHERE account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;最後就要看 884 行的 &lt;code&gt;self.query(qout, processed=True)&lt;/code&gt; 是不是真的會以參數化的方式執行這段 SQL&lt;/p&gt;
+&lt;h4&gt;web/db.py::DB::query&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L807"&gt;web/db.py#L807&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;執行到 831 行 &lt;code&gt;self._db_execute(db_cursor, sql_query)&lt;/code&gt; 才會用到傳進來的 &lt;code&gt;sql_query&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;web/db.py::DB::_db_execute&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;位置: &lt;a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L750"&gt;web/db.py#L750&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在 756 行的 &lt;code&gt;_process_query&lt;/code&gt; 產生要執行的 SQL query 跟它的參數，回傳的結果分別是&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;query = &lt;code&gt;'SELECT * FROM USER WHERE account =? AND password=?'&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;params = &lt;code&gt;["1' OR '1'='1", "1' OR '1'='1"])&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;再帶到 757 行的&lt;code&gt;out = cur.execute(query, params)&lt;/code&gt; 直接對資料庫作查詢，所以就不會遇到 SQL injection 了&lt;/p&gt;
+&lt;h4&gt;原本好像是要追 delete 才對&lt;/h4&gt;
+&lt;p&gt;顧著重現維基百科的例子，竟然忘記了原本要追的其實是另一段程式碼&lt;br/&gt;
+不過我想本質應該還是相同的&lt;br/&gt;
+有興趣的話，可以拿以下這段 SQL 來測測看 delete 的 SQL injection 是不是真的能清空整個資料表&lt;br/&gt;
+&lt;strong&gt;disclaimer: 請不要拿它用在會影響到其他人的程式上 (e.g., production 環境)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;DELETE&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="k"&gt;USER&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;account&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt; &lt;span class="k"&gt;OR&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;''&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="xkcd joke" src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png"/&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你是不是真的把你的兒子取名為 &lt;code&gt;Rober'); DROP TABLE Students;&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="_6"&gt;結語&lt;/h2&gt;
+&lt;p&gt;結論是「雖然小林的程式碼可能遇到 SQL injection，但也存在著很簡單的解決方案，只要使用者有讀文件，應該就不會遇到」&lt;br/&gt;
+我完全不是資訊安全的專家，只是抱持著對京都動畫和 Python 的愛來追這段程式碼&lt;br/&gt;
+如果有說錯或可以補充的部分，再麻煩留言讓我知道 🙏&lt;/p&gt;
+&lt;p&gt;其實小林家的龍女僕，還有其他場景也有出現 Python&lt;br/&gt;
+像是這裡說了小林自從開始寫 Python 後變得開朗了許多呢（誤&lt;/p&gt;
+&lt;p&gt;&lt;img alt="kobayashi becomes hayppier" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/kobayashi becomes hayppier.png"/&gt;&lt;/p&gt;
+&lt;p&gt;我也是自從寫了 Python 後，每次考試都考 100 分呢（並沒有）&lt;br/&gt;
+所以大家一起來寫 Python 吧 🐍&lt;br/&gt;
+那寫 Python 的人最好的交流平台是什麼呢 🤔&lt;br/&gt;
+當然是 &lt;a href="https://tw.pycon.org/"&gt;PyCon TW&lt;/a&gt; 啊 🤩&lt;br/&gt;
+來當 PyCon TW 志工，跟大家交流 Python，變成一個開朗的人吧 💪&lt;/p&gt;
+&lt;h2 id="one-more-thing"&gt;One more thing&lt;/h2&gt;
+&lt;p&gt;去年七月一場不幸的縱火案，大大的重創了京都動畫&lt;br/&gt;
+PyCon JP 2019 時，我也去了鷲宮神社留下我的祝福&lt;br/&gt;
+不會日文的我，就只簡單的寫了 &lt;strong&gt;Pray for Kyoani&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pray for kyoani" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/pray for kyoani.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;即便如此，京阿尼還是很快就站起來&lt;br/&gt;
+一年過後的現在宣布「小林家的龍女僕將於 2021 年開播 」🎉&lt;/p&gt;
+&lt;blockquote class="twitter-tweet"&gt;&lt;p dir="ltr" lang="ja"&gt;TVアニメ第2期「小林さんちのメイドラゴンS」2021年放送決定！SuperでSupremeなSecond lifeがStartします！&lt;br/&gt;そして、メイドラゴンS(読み:エス)ティザービジュアル公開！ティザーサイトもぜひチェックお願いします！　&lt;a href="https://t.co/pKOgbEe3sL"&gt;https://t.co/pKOgbEe3sL&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/meidragon?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#meidragon&lt;/a&gt; &lt;a href="https://t.co/XoyiBPbnvt"&gt;pic.twitter.com/XoyiBPbnvt&lt;/a&gt;&lt;/p&gt;— TVアニメ「小林さんちのメイドラゴンS」公式 (@maidragon_anime) &lt;a href="https://twitter.com/maidragon_anime/status/1292838380187746305?ref_src=twsrc%5Etfw"&gt;August 10, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"&gt;&lt;/script&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Animate"></category></entry><entry><title>COSCUP 2020 / SITCON 2020</title><link href="https://lee-w.github.io/posts/tech/2020/08/coscup-2020-sitcon-2020" rel="alternate"></link><published>2020-08-21T15:21:00+08:00</published><updated>2020-08-21T15:21:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-08-21:/posts/tech/2020/08/coscup-2020-sitcon-2020</id><summary type="html">&lt;p&gt;因為這次 COSCUP 跟 SITCON 只隔了一週，就順手寫在一起了&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;因為這次 COSCUP 跟 SITCON 只隔了一週，就順手寫在一起了&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;&lt;img alt="vip" src="/images/posts-image/2020-coscup-2020-sitcon-2020/vip.jpg"/&gt;&lt;/p&gt;

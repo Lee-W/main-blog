@@ -19,13 +19,13 @@
 <meta name="keywords" content="Python, Animate, Tech, " />
 
 <meta property="og:title" content="小林的程式會不會遇到 SQL Injection "/>
-<meta property="og:url" content="https://lee-w.github.io/drafts/will-kobayashi-s-code-encounter-sql-injection.html" />
-<meta property="og:description" content="其實這篇文章應該一年前就該寫了... 今年為了在 PyCon TW 的 Lightning Talk 想個梗，就拿出來講 (slide) 沒想到被投影機擺了一道...... 前言雜談 去年看了京阿尼的作品小林家的龍女僕 第一集就發現主角小林也是寫 Python 的工程師，就開心地分享了這個消息 沒想到馬上就有朋友問我這段程式碼會不會有 SQL injection 單看這一段程式碼其實很難直接下定論 畢竟 key 根本就不會被帶入 session_id=$key，誰知道 db 怎麼實作的 當然，早就有人注意到這段程式碼了 它出自 webpy/web/session.py 如何评价京都动画2017年1月新作 小林家的龙女仆? 除了找到程式碼外，它還列出了劇情的其他 Python 程式碼，並討論了京都動畫使用這段程式碼會不會有法律問題 小林さんちのメイドラゴンで出てきたコード（小林さんを探せ！） 透過 git blame 來找出 …" />
+<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection" />
+<meta property="og:description" content="其實這篇文章應該一年前就該寫了... 今年為了在 PyCon TW 的 Lightning Talk 想個梗，就拿出來講 (slide) 沒想到被投影機擺了一道......" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
-<meta property="og:article:published_time" content="2020-09-22T11:00:00+08:00" />
+<meta property="og:article:published_time" content="2020-09-22T12:50:00+08:00" />
 <meta name="twitter:title" content="小林的程式會不會遇到 SQL Injection ">
-<meta name="twitter:description" content="其實這篇文章應該一年前就該寫了... 今年為了在 PyCon TW 的 Lightning Talk 想個梗，就拿出來講 (slide) 沒想到被投影機擺了一道...... 前言雜談 去年看了京阿尼的作品小林家的龍女僕 第一集就發現主角小林也是寫 Python 的工程師，就開心地分享了這個消息 沒想到馬上就有朋友問我這段程式碼會不會有 SQL injection 單看這一段程式碼其實很難直接下定論 畢竟 key 根本就不會被帶入 session_id=$key，誰知道 db 怎麼實作的 當然，早就有人注意到這段程式碼了 它出自 webpy/web/session.py 如何评价京都动画2017年1月新作 小林家的龙女仆? 除了找到程式碼外，它還列出了劇情的其他 Python 程式碼，並討論了京都動畫使用這段程式碼會不會有法律問題 小林さんちのメイドラゴンで出てきたコード（小林さんを探せ！） 透過 git blame 來找出 …">
+<meta name="twitter:description" content="其實這篇文章應該一年前就該寫了... 今年為了在 PyCon TW 的 Lightning Talk 想個梗，就拿出來講 (slide) 沒想到被投影機擺了一道......">
 
         <title>小林的程式會不會遇到 SQL Injection  · Laziness makes Great Engineer
 </title>
@@ -77,7 +77,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://lee-w.github.io/drafts/will-kobayashi-s-code-encounter-sql-injection.html">
+            <a href="https://lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection">
                 小林的程式會不會遇到 SQL Injection
             </a>
         </h1>
@@ -101,7 +101,6 @@
 <li><a href="#_5">知其然還要知其所以然啊！</a><ul>
 <li><a href="#pdbpp">pdbpp</a></li>
 <li><a href="#webpy">追 web.py 原始碼</a></li>
-<li><a href="#hmm-delete">hmm... 原本好像是要追 delete 才對</a></li>
 </ul>
 </li>
 <li><a href="#_6">結語</a></li>
@@ -162,10 +161,10 @@
 可以推測，這最有可能是第一個包含小林撰寫程式碼的發佈</p>
 <p><img alt="web.py release" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/webpy tag.jpg"/></p>
 <p>我們先從安裝 <code>web.py==0.39</code> 到虛擬環境中開始<br/>
-（p.s. web 跟 py 中間的<code>.</code> 是必要的，因為真的有個套件叫 webpy......）</p>
+（p.s. web 跟 py 中間的 . 是必要的，因為真的有個套件叫 webpy）</p>
 <div class="highlight"><pre><span></span><code>poetry add web.py<span class="o">==</span><span class="m">0</span>.39
 </code></pre></div>
-<p>很不幸的，如果你使用的是 Python 3，會遇到以下的錯誤訊息</p>
+<p>很不幸，如果使用的是 Python 3，會遇到以下的錯誤訊息</p>
 <div class="highlight"><pre><span></span><code>Creating virtualenv kobayashi-pwI4Cysh-py3.8 in /Users/weilee/Library/Caches/pypoetry/virtualenvs
 
 Updating dependencies
@@ -202,11 +201,11 @@ You should consider upgrading via the '/Users/weilee/Library/Caches/pypoetry/vir
 <p>因為我不太想測試 Python 2，就假設小林的程式碼到 0.40 都沒什麼被改動到好了 😆</p>
 <h3 id="_2">初始化資料庫</h3>
 <p>要實驗到底有沒有辦法取得資料庫的資料，總是要先有一個資料庫<br/>
-這裏主要做了三件事</p>
+這裡做了三件事</p>
 <ol>
 <li>用 <code>sqlite3</code> 跟 "kobayashi.db" 建立連線</li>
 <li>建立 <code>USER</code> 資料表</li>
-<li>將 kobayashi, tohru, kanna, elma 新增到 <code>USER</code> 資料表中</li>
+<li>將 "kobayashi", "tohru", "kanna", "elma" 新增到 <code>USER</code> 資料表中</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlite3</span>
 
@@ -245,8 +244,9 @@ You should consider upgrading via the '/Users/weilee/Library/Caches/pypoetry/vir
     <span class="n">init_db</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="_3">實作登入功能</h3>
-<p>這裡實作的 <code>login</code> 函式會把使用者輸入的 account 跟 password 直接帶入 <code>where</code><br/>
-如果在資料庫找到正確的匹配，就會回傳找到的第一筆 user，否則回傳 <code>None</code></p>
+<p><code>login</code> 會把使用者輸入的 account 跟 password 帶入 <code>where</code><br/>
+如果在資料庫找到正確的匹配，就會回傳找到的第一筆 user<br/>
+如果找不到就回傳 <code>None</code></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
 
 <span class="kn">import</span> <span class="nn">web</span>
@@ -264,11 +264,11 @@ You should consider upgrading via the '/Users/weilee/Library/Caches/pypoetry/vir
         <span class="nb">print</span><span class="p">(</span><span class="s2">"wrong username or password"</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span>
 </code></pre></div>
-<p>接著使用三個案例來做測試</p>
+<p>這裡用三個案例來測試</p>
 <ol>
-<li>錯誤的帳號密碼 -&gt; 不應該取得 user</li>
-<li>正確的帳號密碼 -&gt; 應該取得 user</li>
-<li>SQL injection -&gt; 理想上，也不該取得 user</li>
+<li>錯誤的帳號密碼 → 不應該取得 user</li>
+<li>正確的帳號密碼 → 應該取得 user</li>
+<li>SQL injection → 理想上，也不該取得 user</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">db</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">database</span><span class="p">(</span><span class="n">dbn</span><span class="o">=</span><span class="s2">"sqlite"</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s2">"kobayashi.db"</span><span class="p">)</span>
@@ -277,8 +277,8 @@ You should consider upgrading via the '/Users/weilee/Library/Caches/pypoetry/vir
     <span class="nb">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"kobayashi"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"1' OR '1'='1"</span><span class="p">,</span> <span class="s2">"1' OR '1'='1"</span><span class="p">))</span>
 </code></pre></div>
-<p>但這個世界始終不理想，包含了 SQL injection 的程式還是成功取得 user<br/>
-之所以只取到一筆 user，單純只是因為我只回傳一個物件，但這段 SQL 是能取到整個資料庫的 user 的</p>
+<p>但這個世界始終不理想，包含了 SQL injection 的程式成功取得 user<br/>
+之所以只取到一筆 user，是因為 <code>login</code> 只會回傳第一個物件，但這段 SQL 是能取到整個資料庫的 user 的</p>
 <div class="highlight"><pre><span></span><code>0.0 (1): SELECT * FROM USER WHERE account ='kobayashi' AND password=''
 wrong username or password
 None
@@ -292,7 +292,7 @@ login succeeded
 &lt;Storage {'account': 'kobayashi', 'password': '1'}&gt;
 </code></pre></div>
 <h3 id="_4">該如何修正？</h3>
-<p>修正的方式也很簡單，只要在呼叫 select 的時候用 <code>vars</code> 將參數帶進 <code>where</code> 即可<br/>
+<p>修正的方式很簡單，只要在呼叫 select 的時候用 <code>vars</code> 將參數帶進 <code>where</code> 即可<br/>
 其實 web.py 的文件就有寫了 (Ref: <a href="https://webpy.org/cookbook/query">db.query</a>)</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">web</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Storage</span><span class="p">]:</span>
     <span class="n">result_set</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
@@ -316,32 +316,48 @@ None
 </code></pre></div>
 <h2 id="_5">知其然還要知其所以然啊！</h2>
 <p>除了知道怎麼修正外，我還想知道 web.py 做了什麼<br/>
-接下來就是冗長的紀錄我追 web.py 原始碼的過程</p>
+下面冗長的紀錄我追 web.py 原始碼的過程</p>
 <h3 id="pdbpp">pdbpp</h3>
-<p>為了寫這篇文章，大幅的提升我對 pdb 的熟悉度<br/>
+<p>寫這篇文章最大的收穫，大概就是大幅的提升了我對 pdb 的熟悉度<br/>
 剛好聽到廣播 <a href="https://pythonbytes.fm/">Python Bytes</a> 推薦的 <a href="https://github.com/pdbpp/pdbpp">pdbpp</a> 就順手玩了一下<br/>
-安裝 <code>pdbpp</code>後，它會取代原生的 <code>pdb</code><br/>
-主要有這兩個功能比 <code>pdb</code> 好用</p>
+pdbpp 在安裝後會取代原生的 pdb<br/>
+主要有這兩個功能比 pdb 好用</p>
 <ol>
-<li>syntax highlight (其實 <code>ipdb</code> 也做得到)</li>
+<li>syntax highlight<ul>
+<li>不過需要注意的是，如果要能客製化 highlight 風格，需要直接從 master branch 安裝的版本，目前還沒把這個修正釋出到 PyPI 上</li>
+</ul>
+</li>
 <li>sticky mode（在除錯器的上方一直顯示目前追到的程式碼）</li>
 </ol>
+<p><img alt="sticky mode example" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/sticky mode.jpg"/></p>
 <p>順便記錄一下常用到的 pdbpp 指令</p>
 <ul>
 <li><code>n</code>: 下一行</li>
-<li><code>s</code>: 進到函式內</li>
-<li><code>p [var]</code> (e.g., <code>p locals()</code>): 印出 var</li>
+<li><code>s</code>: 進到函式</li>
+<li><code>p [var]</code> (e.g., <code>p locals()</code>): 印出變數 var</li>
 <li><code>args</code>: 印出參數</li>
 <li><code>ll</code>: 顯示現在在原始碼的哪裡（原本 pdb 的 longlist）</li>
 </ul>
 <h3 id="webpy">追 web.py 原始碼</h3>
-<p>首先，從 <code>login</code> 呼叫的 <code>db.select</code> 函式開始，它在 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L845">web/db.py#L845</a></p>
-<p>跑完 874 行的 list comprehension 後，<code>clauses</code> 看起來已經將 SQL injection 的問題解決</p>
+<p>這部分的紀錄方式會是每進到一次函式 (在 pdb 裡面使用 <code>s</code>) 就會加一個四級標題<br/>
+回到原本的函式，則會在標題後面加一個 back</p>
+<p>首先當然是從 <code>login</code> 呼叫到 <code>db.select</code> 函式開始追回去</p>
+<h4>web/db.py::DB::select</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L845">web/db.py#L845</a></li>
+</ul>
+<p>跑完 874 行的 list comprehension 後，<code>clauses</code> 會包含以下四個部分</p>
 <div class="highlight"><pre><span></span><code><span class="err">(Pdb++) p clauses</span>
 <span class="err">[&lt;sql: 'SELECT *'&gt;, &lt;sql: 'FROM USER'&gt;, &lt;sql: 'WHERE account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'&gt;]</span>
 </code></pre></div>
-<p>所以接著要去追 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L934">934行</a> 的<code>gen_clause</code><br/>
-當輸入的參數 sql 是 <code>WHERE</code> 時，會執行到 948 行的 <code>nout = reparam(val, vars)</code></p>
+<p>看起來已經成功將特殊字元跳脫，解決 SQL injection<br/>
+所以接下來要去追產生 <code>clause</code> 的 <code>gen_clause</code></p>
+<h4>web/db.py::DB::gen_clause</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L934">web/db.py#L934</a></li>
+</ul>
+<p><code>gen_clause</code> 會被呼叫三次，當輸入的參數 sql 是 <code>WHERE</code> 時，會執行到 948 行的 <code>nout = reparam(val, vars)</code><br/>
+此時輸入的各個參數如下</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">sql</span>
 <span class="s1">'WHERE'</span>
 
@@ -351,33 +367,67 @@ None
 <span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">vars</span>
 <span class="p">{</span><span class="s1">'account'</span><span class="p">:</span> <span class="s2">"1' OR '1'='1"</span><span class="p">,</span> <span class="s1">'password'</span><span class="p">:</span> <span class="s2">"1' OR '1'='1"</span><span class="p">}</span>
 </code></pre></div>
-<p>再來看 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L344">344行</a> 的 <code>reparam</code><br/>
-因為只會跑到 <code>safteval</code><br/>
-所以又要跳到 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1699">1699行</a><br/>
-此時帶入的參數會是</p>
+<h4>web/db.py::reparam</h4>
 <ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L344">web/db.py#L344</a></li>
+<li>參數:<ul>
+<li>val = <code>'account =$account AND password=$password'</code></li>
+<li>vars = <code>{'account': "1' OR '1'='1", 'password': "1' OR '1'='1"}</code></li>
+</ul>
+</li>
+</ul>
+<p>一進到 <code>reparm</code> ，這些值就會繼續被傳到 <code>safteval</code></p>
+<h4>web/db.py::SafeEval::safeeval</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1699">web/db.py#L1699</a></li>
+<li>帶入參數<ul>
 <li>text = <code>'account =$account AND password=$password'</code></li>
 <li>mapping = <code>{'account': "1' OR '1'='1", 'password': "1' OR '1'='1"}</code></li>
 </ul>
-<p>1700 行的 <code>Parser</code> 解析出的 node 則是長這樣</p>
+</li>
+</ul>
+<p>1700 行的 <code>Parser</code> 會將 text 分解成四個 SQL 的部分，並且將 nodes 連同 mapping 一個一個帶入 <code>eval_node</code></p>
 <div class="highlight"><pre><span></span><code><span class="err">(Pdb++) p list(nodes)</span>
 <span class="err">[Node('text', 'account =', None), Node('param', 'account', None), Node('text', ' AND password=', None), Node('param', 'password', None)]</span>
 </code></pre></div>
-<p>1701行會執行到 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1703">1703行</a> 的 <code>eval_node</code><br/>
-<code>self.eval_expr</code> 主要的功用只是讓 <code>node[1]</code> 才能抓到 <code>"1' OR '1'='1"</code> ，重點在 <code>sqlquote</code><br/>
-所以就要再去追 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L463">463行</a><br/>
-在 475 行， <code>"1' OR '1'='1"</code> 會被初始成一個 <code>SQLParam</code> ，然後再產生一個 <code>SQLQuery</code> 物件<br/>
-這時 <code>eval_node</code> 就會回傳 <code>&lt;sql: '"1\' OR \'1\'=\'1"'&gt;</code> (<code>SQLQuery</code> 物件)</p>
-<p>回到 <code>safeeval</code><br/>
-透過 <code>[self.eval_node(node, mapping) for node in nodes]</code> 所產生，進到 <code>SQLQuery.join</code> 的值會是 <code>['account =', &lt;sql: '"1\' OR \'1\'=\'1"'&gt;, ' AND password=', &lt;sql: '"1\' OR \'1\'=\'1"'&gt;]</code></p>
-<p>那就繼續回去追 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L254">254行</a> 的 <code>join</code><br/>
-277 ~ 285 行的 for loop 執行完會產生一個新的 target (<code>SQLQuery</code> 物件)<br/>
-裡面的內容如下</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span><span class="p">.</span><span class="n">items</span>
-<span class="p">[</span><span class="s1">'account ='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">param</span><span class="p">:</span> <span class="ss">"1' OR '1'='1"</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">' AND password='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">param</span><span class="p">:</span> <span class="ss">"1' OR '1'='1"</span><span class="o">&gt;</span><span class="p">]</span>
-
-<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span>
+<h4>web/db.py::SafeEval::eval_node</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1703">web/db.py#L1703</a></li>
+</ul>
+<p><code>self.eval_expr</code> 的功用是在讓 <code>node[1]</code> 能抓到 <code>"1' OR '1'='1"</code><br/>
+抓到了字串 <code>"1' OR '1'='1"</code> 後會丟到 <code>sqlquote</code></p>
+<h4>web/db.py::sqlquote</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L463">463行</a></li>
+<li>參數:<ul>
+<li>a = <code>"1' OR '1'='1"</code></li>
+</ul>
+</li>
+</ul>
+<p>a 會在 475 行被初始化成 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L93">SQLParam</a> 物件 ，然後再產生 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L142">SQLQuery</a> 物件</p>
+<h4>web/db.py::SafeEval::eval_node (back)</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1703">web/db.py#L1703</a></li>
+</ul>
+<p>回到 <code>eval_node</code> ，就會把剛剛的結果 <code>&lt;sql: '"1\' OR \'1\'=\'1"'&gt;</code> (<code>SQLQuery</code> 物件印出的形式) 回傳</p>
+<h4>web/db.py::SafeEval::safeeval (back)</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1699">web/db.py#L1699</a></li>
+</ul>
+<p>1701 行的 <code>[self.eval_node(node, mapping) for node in nodes]</code> 會產生</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="s1">'account ='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">sql</span><span class="p">:</span> <span class="s1">'"1</span><span class="se">\'</span><span class="s1"> OR </span><span class="se">\'</span><span class="s1">1</span><span class="se">\'</span><span class="s1">=</span><span class="se">\'</span><span class="s1">1"'</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">' AND password='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">sql</span><span class="p">:</span> <span class="s1">'"1</span><span class="se">\'</span><span class="s1"> OR </span><span class="se">\'</span><span class="s1">1</span><span class="se">\'</span><span class="s1">=</span><span class="se">\'</span><span class="s1">1"'</span><span class="o">&gt;</span><span class="p">]</span>
+</code></pre></div>
+<p>這個 list 會接著被帶入 <code>SQLQuery.join</code> 整合成一整個 SQL 的片段</p>
+<h4>web/db.py::SQLQuery::join</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L254">web/db.py#L254</a></li>
+</ul>
+<p>277 ~ 285 行的 for loop 執行完會產生一個新的 target (<code>SQLQuery</code> 物件)</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span>
 <span class="o">&lt;</span><span class="k">sql</span><span class="p">:</span> <span class="s1">'account ="1\'</span> <span class="k">OR</span> <span class="err">\</span><span class="s1">'1\'</span><span class="o">=</span><span class="err">\</span><span class="s1">'1" AND password="1\'</span> <span class="k">OR</span> <span class="err">\</span><span class="s1">'1\'</span><span class="o">=</span><span class="err">\</span><span class="s1">'1"'</span><span class="o">&gt;</span>
+
+<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span><span class="p">.</span><span class="n">items</span>
+<span class="p">[</span><span class="s1">'account ='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">param</span><span class="p">:</span> <span class="ss">"1' OR '1'='1"</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">' AND password='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">param</span><span class="p">:</span> <span class="ss">"1' OR '1'='1"</span><span class="o">&gt;</span><span class="p">]</span>
 
 <span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span><span class="p">.</span><span class="k">values</span><span class="p">()</span>
 <span class="p">[</span><span class="ss">"1' OR '1'='1"</span><span class="p">,</span> <span class="ss">"1' OR '1'='1"</span><span class="p">]</span>
@@ -385,31 +435,48 @@ None
 <span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span><span class="p">.</span><span class="n">query</span><span class="p">()</span>
 <span class="s1">'account =%s AND password=%s'</span>
 </code></pre></div>
-<p>這時候回傳的 <code>SQLQuery</code> 物件已經把 query 跟要帶入的值分開儲存<br/>
-回傳回 948 行後，會在 956 行透過 <code>xjoin</code> 跟字串 <code>WHERE</code> 整合<br/>
-字串跟 <code>SQLQuery</code> 相加的行為被定義在 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L196">196 行</a> 的 <code>__radd__</code></p>
-<p>再來就可以回到最原本的 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L874">874行</a> 的 <code>clauses</code><br/>
-在 879行會 <code>clauses</code> 的三個 <code>SQLQuery</code>物件 變成一個 <code>SQLQuery</code> 物件</p>
-<p>最後產生的 qout 會是</p>
+<p>可以發現這時候要回傳的 <code>SQLQuery</code> 物件已經把查詢時跟要帶入的值分開儲存</p>
+<h4>web/db.py::reparam（back）</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L344">web/db.py#L344</a></li>
+</ul>
+<h4>web/db.py::DB::gen_clause (back)</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L948">web/db.py#L948</a></li>
+</ul>
+<p>在 956 行，剛剛回傳的 <code>nout</code> 會透過 <code>xjoin</code> 跟字串 <code>WHERE</code> 整合成一個新的 <code>SQLQuery</code> 物件<br/>
+字串跟 <code>SQLQuery</code> 相加的行為被定義在 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L196">196 行</a> 的 <code>__radd__</code><br/>
+但因為沒有什麼太意料之外的行為，這裡就不繼續追下去了</p>
+<h4>web/db.py::DB::select (back)</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L874">web/db.py#L874</a></li>
+</ul>
+<p>取得了回傳的 <code>clauses</code> 後，它會在 879 行的 <code>SQLQuery.join</code> 整合成一個 <code>SQLQuery</code> 物件<br/>
+產生 <code>qout</code></p>
 <div class="highlight"><pre><span></span><code><span class="err">(Pdb++) p qout</span>
 <span class="err">&lt;sql: 'SELECT * FROM USER WHERE account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'&gt;</span>
 </code></pre></div>
-<p>最後就要看 884 行的 <code>self.query(qout, processed=True)</code> 是不是真的會以參數化的方式執行這段 SQL<br/>
-接下來要看<a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L807">807 行</a>中 <code>query</code> 函式的實作<br/>
-執行到 831 行 <code>self._db_execute(db_cursor, sql_query)</code> 才會用到傳進來的 <code>sql_query</code><br/>
-在 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L750">750行</a> <code>_db_execute</code><br/>
-會先在 756 行的 <code>_process_query</code> 產生要執行的 SQL query<br/>
-而它會在<a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L775">775行</a>將 <code>query</code>, <code>params</code> 分別取出，他們分別的回傳值會是</p>
+<p>最後就要看 884 行的 <code>self.query(qout, processed=True)</code> 是不是真的會以參數化的方式執行這段 SQL</p>
+<h4>web/db.py::DB::query</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L807">web/db.py#L807</a></li>
+</ul>
+<p>執行到 831 行 <code>self._db_execute(db_cursor, sql_query)</code> 才會用到傳進來的 <code>sql_query</code></p>
+<h4>web/db.py::DB::_db_execute</h4>
+<ul>
+<li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L750">web/db.py#L750</a></li>
+</ul>
+<p>在 756 行的 <code>_process_query</code> 產生要執行的 SQL query 跟它的參數，回傳的結果分別是</p>
 <ul>
 <li>query = <code>'SELECT * FROM USER WHERE account =? AND password=?'</code></li>
 <li>params = <code>["1' OR '1'='1", "1' OR '1'='1"])</code></li>
 </ul>
-<p>757 行的<code>out = cur.execute(query, params)</code> 就會拿他們做 SQL 查詢，所以就不會遇到 SQL injection 了</p>
-<h3 id="hmm-delete">hmm... 原本好像是要追 delete 才對</h3>
-<p>顧著重現維基百科的例子，跟找到為什麼，竟然忘記了原本的目的<br/>
+<p>再帶到 757 行的<code>out = cur.execute(query, params)</code> 直接對資料庫作查詢，所以就不會遇到 SQL injection 了</p>
+<h4>原本好像是要追 delete 才對</h4>
+<p>顧著重現維基百科的例子，竟然忘記了原本要追的其實是另一段程式碼<br/>
 不過我想本質應該還是相同的<br/>
 有興趣的話，可以拿以下這段 SQL 來測測看 delete 的 SQL injection 是不是真的能清空整個資料表<br/>
-<strong>disclaimer: 請不要拿它用在任何的 production 環境</strong></p>
+<strong>disclaimer: 請不要拿它用在會影響到其他人的程式上 (e.g., production 環境)</strong></p>
 <div class="highlight"><pre><span></span><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">USER</span> <span class="k">WHERE</span> <span class="n">account</span> <span class="o">=</span> <span class="s1">''</span> <span class="k">OR</span> <span class="s1">''</span><span class="o">=</span><span class="s1">''</span>
 </code></pre></div>
 <p><img alt="xkcd joke" src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png"/></p>
@@ -417,17 +484,24 @@ None
 <p>你是不是真的把你的兒子取名為 <code>Rober'); DROP TABLE Students;</code></p>
 </blockquote>
 <h2 id="_6">結語</h2>
-<p>我完全不是資訊安全的專家，只是抱持著對京都動畫和 Python 的喜愛來追這段程式碼<br/>
+<p>結論是「雖然小林的程式碼可能遇到 SQL injection，但也存在著很簡單的解決方案，只要使用者有讀文件，應該就不會遇到」<br/>
+我完全不是資訊安全的專家，只是抱持著對京都動畫和 Python 的愛來追這段程式碼<br/>
 如果有說錯或可以補充的部分，再麻煩留言讓我知道 🙏</p>
 <p>其實小林家的龍女僕，還有其他場景也有出現 Python<br/>
-像是這段說小林自從開始寫 Python 後變得開朗了許多呢（誤</p>
+像是這裡說了小林自從開始寫 Python 後變得開朗了許多呢（誤</p>
 <p><img alt="kobayashi becomes hayppier" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/kobayashi becomes hayppier.png"/></p>
-<p>所以大家一起來寫 Python 吧<br/>
-那寫 Python 的人最好的交流平台是什麼呢？<br/>
-當然是 <a href="https://tw.pycon.org/">PyCon TW</a> 啊！<br/>
-來當 PyCon TW 志工，跟大家交流學 Python，變成一個開朗的人吧 💪</p>
+<p>我也是自從寫了 Python 後，每次考試都考 100 分呢（並沒有）<br/>
+所以大家一起來寫 Python 吧 🐍<br/>
+那寫 Python 的人最好的交流平台是什麼呢 🤔<br/>
+當然是 <a href="https://tw.pycon.org/">PyCon TW</a> 啊 🤩<br/>
+來當 PyCon TW 志工，跟大家交流 Python，變成一個開朗的人吧 💪</p>
 <h2 id="one-more-thing">One more thing</h2>
-<p>小林家的龍女僕宣佈將於 2021 年開播 🤩</p>
+<p>去年七月一場不幸的縱火案，大大的重創了京都動畫<br/>
+PyCon JP 2019 時，我也去了鷲宮神社留下我的祝福<br/>
+不會日文的我，就只簡單的寫了 <strong>Pray for Kyoani</strong></p>
+<p><img alt="pray for kyoani" src="/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/pray for kyoani.jpg"/></p>
+<p>即便如此，京阿尼還是很快就站起來<br/>
+一年過後的現在宣布「小林家的龍女僕將於 2021 年開播 」🎉</p>
 <blockquote class="twitter-tweet"><p dir="ltr" lang="ja">TVアニメ第2期「小林さんちのメイドラゴンS」2021年放送決定！SuperでSupremeなSecond lifeがStartします！<br/>そして、メイドラゴンS(読み:エス)ティザービジュアル公開！ティザーサイトもぜひチェックお願いします！　<a href="https://t.co/pKOgbEe3sL">https://t.co/pKOgbEe3sL</a> <a href="https://twitter.com/hashtag/meidragon?src=hash&amp;ref_src=twsrc%5Etfw">#meidragon</a> <a href="https://t.co/XoyiBPbnvt">pic.twitter.com/XoyiBPbnvt</a></p>— TVアニメ「小林さんちのメイドラゴンS」公式 (@maidragon_anime) <a href="https://twitter.com/maidragon_anime/status/1292838380187746305?ref_src=twsrc%5Etfw">August 10, 2020</a></blockquote>
 <p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
 
@@ -436,19 +510,76 @@ None
 
 
 <div class="applause_button">
-    <applause-button url=https://lee-w.github.io/drafts/will-kobayashi-s-code-encounter-sql-injection.html> </applause-button>
+    <applause-button url=https://lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection> </applause-button>
 </div>
 
  
+                <p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=%E5%B0%8F%E6%9E%97%E7%9A%84%E7%A8%8B%E5%BC%8F%E6%9C%83%E4%B8%8D%E6%9C%83%E9%81%87%E5%88%B0%20SQL%20Injection&url=https%3A//lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection&hashtags=python,animate" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=%E5%B0%8F%E6%9E%97%E7%9A%84%E7%A8%8B%E5%BC%8F%E6%9C%83%E4%B8%8D%E6%9C%83%E9%81%87%E5%88%B0%20SQL%20Injection&amp;body=https%3A//lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
             
             
-            
 
 
 
 
 
 
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count collapsed"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection"
+                   href="https://lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+                        <div id="disqus_thread"></div>
+                        <script>
+    var disqus_shortname = 'lee-w-blog';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection';
+    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
             <hr/>
         </div>
@@ -456,7 +587,7 @@ None
     <h4>Reading Time</h4>
     <p>~5 min read</p>
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2020-09-22T11:00:00+08:00">2020/09/22 - Tue</time>
+            <time itemprop="dateCreated" datetime="2020-09-22T12:50:00+08:00">2020/09/22 - Tue</time>
                 <h4>Read Time</h4>
                  5 min
             <h4>Category</h4>
@@ -464,9 +595,10 @@ None
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://lee-w.github.io/tags.html#animate-ref">Animate
+                    <span class="superscript">1</span>
 </a></li>
                 <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
-                    <span class="superscript">27</span>
+                    <span class="superscript">28</span>
 </a></li>
             </ul>
 <h4>Keep In Touch</h4>
