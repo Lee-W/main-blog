@@ -1,6 +1,6 @@
 Title: Python Table Manners - pre-commit: git commit 前做完檢查
 Date: 2020-02-28 23:10
-Modified: 2020-07-19 16:27
+Modified: 2020-10-04 16:10
 Category: Tech
 Tags: Python, Git, Code Quality
 Slug: python-table-manners-pre-commit
@@ -8,10 +8,10 @@ Authors: Lee-W
 Series: Python Table Manners
 
 前一篇提到了透過 [invoke](http://www.pyinvoke.org/) 簡化繁瑣的指令
-但人類是懶惰的
+但人類除了是懶惰的，還是健忘的
 即使已經更簡便了，沒被督促常常還是會忘了執行
 就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑
-這次來聊聊如何透過 [pre-commit](https://pre-commit.com) 強制做檢查
+這篇來聊聊如何透過 [pre-commit](https://pre-commit.com) 強制做檢查
 
 [TOC]
 
@@ -39,7 +39,7 @@ e.g.,
 ```yaml
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.1.0
+    rev: v3.2.0
     hooks:
       - id: end-of-file-fixer
       - id: trailing-whitespace
@@ -97,16 +97,14 @@ Trim Trailing Whitespace.................................................Passed
 如果沒有通過， git 會阻止你進行 commit
 
 pre-commit 每次都只會針對要 commit 的檔案做檢查
-所以建議第一次加入 pre-commit 時，可以先檢查所有的檔案
+所以建議第一次將 pre-commit 引入專案時，可以先檢查所有的檔案
 
 ```sh
 pipenv run pre-commit run --all-files
 ```
 
 ## 使用自定義的 pre-commit hook
-除了使用現成的 pre-commit hook，也可以寫客製化的檢查
-
-下面的例子就是在 commit 前，要進行 pytest 的檢查
+下面的例子是在 commit 前，要進行 pytest 的檢查
 
 ```yaml
 repos:
@@ -139,14 +137,14 @@ repos:
 * commit-msg
 * manual
 
-這裡需要注意的是當執行 `pipenv run pre-commit commit` 時
+需要注意的是當執行 `pipenv run pre-commit commit` 時
 預設只會寫入 `.git/hooks/pre-commit`
 如果要加入其他階段，則必須要在後面加入參數 `-t [hook-type]`
 
 e.g.,
 
 ```sh
-pipenv install pre-commit install pre-push
+pipenv run pre-commit install -t pre-push
 ```
 
 支援 6 種 hook-type
@@ -160,7 +158,7 @@ pipenv install pre-commit install pre-push
 像是 pytest 這種需要執行比較久的任務
 我就不見得會在 commit 這個 stage 做檢查
 而是會把 `stages` 改成 `push`
-並安裝 pre-push 的 hook (i.e. `pipenv run pre-commit install -t pre-push`)
+並安裝 pre-push 的 hook (i.e., `pipenv run pre-commit install -t pre-push`)
 
 如果不想要每個 hook 都各自做設定，可以在 `.pre-commit-config.yaml` 加上 `default_stages`
 
@@ -171,8 +169,8 @@ default_stages: [push]
 表示如果沒有特定指定 `stages` 的 hook 都只在 `push` 的階段做檢查
 
 ## 為自己的工具加上 pre-commit hook
-如果你有寫檢查工具，加上 pre-commit hook 就能讓人更方便使用你的工具
-在工具加入 `.pre-commit-hooks.yaml` 讓 pre-commit 知道其他人引入你的工具時要怎麼做檢查
+為你寫的工具加上 pre-commit hook 可以讓人更方便使用你的工具
+在工具專案中加入 `.pre-commit-hooks.yaml` 讓 pre-commit 知道其他人引入你的工具時要做什麼處理
 撰寫的方式跟 local 的 repo 的寫法相似
 
 ```yaml

@@ -1,6 +1,6 @@
 Title: Python Table Manners - 管理繁瑣任務
 Date: 2020-02-27 20:04
-Modified: 2020-07-19 16:25
+Modified: 2020-10-04 16:05
 Category: Tech
 Tags: Python, Task
 Slug: python-table-manners-manage-trival-tasks
@@ -15,13 +15,12 @@ Series: Python Table Manners
 
 <!--more-->
 
-所以在這篇，我要來介紹如何用 [invoke](http://www.pyinvoke.org/) 管理這些指令
+所以在這篇要介紹如何用 [invoke](http://www.pyinvoke.org/) 管理這些指令
 
 [TOC]
 
 ## invoke 是什麼
-invoke 是一套任務執行工具 (task execution tool)，主要的功能是統一管理各種指令
-並提供各種指令列上用得到的功能
+invoke 是一套任務執行工具 (task execution tool)，主要用來是統一管理各種指令
 有點像是 Python 的 `Makefile`
 
 ## 安裝 invoke
@@ -52,7 +51,7 @@ checkout 到 [commit 83e4](https://github.com/pycontw/pycontw-postevent-report-g
 ![after-invoke](/images/posts-image/2020-02-22-python-table-manner-series/after-invoke.jpg)
 
 除此之外，引入 invoke 後，也不用每次都去翻文件
-invoke 可以列出所有可用的指令
+`invoke --list` 可以列出所有可用的指令
 
 ```sh
 # 列出可用的 invoke 指令
@@ -68,7 +67,7 @@ Available tasks:
   test       Run testcase
 ```
 
-執行的方式則是在 invoke 後面直接加上任務
+執行的方式則是在 invoke 後面直接加上任務名稱
 
 e.g.,
 
@@ -80,7 +79,7 @@ inv clean
 我們先試著將前面的 `python setup.py develop` 改成 invoke 的任務
 
 預設 invoke 會去找目錄下的 `tasks.py`
-所以我們先在專案最上層創 `tasks.py`
+所以第一步要先在專案最上層建立 `tasks.py`
 接著撰寫一個函式叫 `develop` ，這就會是之後的任務名稱 (i.e., 透過 `inv develop` 執行)
 在函式前加上裝飾器 (decorator) `@task`
 invoke 會傳入一個 context 做為第一個參數 (Read More 👉 [what exactly is this ‘context’ arg anyway?](http://docs.pyinvoke.org/en/stable/getting-started.html#aside-what-exactly-is-this-context-arg-anyway))
@@ -98,7 +97,7 @@ def develop(ctx):
 如同先前所提到的，操作都應該在虛擬環境內被完成
 所以我將 `pipenv run` 的前綴提出來
 這樣就能確保之後的操作一定都會在虛擬環境內執行
-如果之後更換了管理虛擬環境的工具(e.g. `poetry run`)，也可以更輕易的改動 `tasks.py`
+如果之後更換了管理虛擬環境的工具（e.g. `poetry run`），也可以更輕易的改動 `tasks.py`
 
 ```python
 from invoke import task
@@ -134,7 +133,7 @@ def init():
 (Read More 👉 [Constructing namespaces](http://docs.pyinvoke.org/en/stable/concepts/namespaces.html))
 
 不過我不會在這篇文章深入探討要怎麼說
-一般來說，除非任務真的非常多，這並不是必要的
+一般來說，除非任務真的非常多，這是不太必要的
 
 如果有興趣看我怎麼把 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator) 的任務模組化
 可以參考 [commit f105](https://github.com/pycontw/pycontw-postevent-report-generator/commit/f1050eabf44a8b8e662370bd97b2a79ad57723c2)
@@ -190,7 +189,7 @@ inv --print-completion-script=zsh >> ~/.zshrc
 
 ## 為什麼不用 Makefile 就好？
 因為有些 shell script 並不見得那麼好寫
-（也可能只是我不熟啦...）
+（也可能只是我不熟...）
 
 e.g.,
 

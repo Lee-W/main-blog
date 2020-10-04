@@ -1,20 +1,20 @@
 Title: Python Table Manners - 測試 (二)
 Date: 2020-02-25 18:05
-Modified: 2020-07-19 16:03
+Modified: 2020-10-04 15:46
 Category: Tech
 Tags: Python, Test
 Slug: python-table-manners-test-2
 Authors: Lee-W
 Series: Python Table Manners
 
-接續著前一篇提到的 [pytest](https://docs.pytest.org/en/latest/)，繼續看它的其他功能吧
+接續前一篇提到的 [pytest](https://docs.pytest.org/en/6.1.1/)，繼續看它的其他功能吧
 
 <!--more-->
 
 [TOC]
 
 ## fixture
-[fixture](https://docs.pytest.org/en/latest/fixture.html) 幾乎可以說是 pytest 最重要的功能
+[fixture](https://docs.pytest.org/en/6.1.1/fixture.html) 幾乎可以說是 pytest 最重要的功能
 前一篇的例子中只有用到準備資源的部分
 這裡再舉一些例子來說明它的其他應用
 
@@ -57,7 +57,7 @@ fixture `db` 中不使用 `return` 而是使用 `yield`
 1. `fixture` 中使用 `fixture`
 2. 用 `fixture` 準備跟清除資源，但不直接呼叫到資源 (`pytest.mark.usefixtures`)
 
-現在再假設已經實作了 `model`，裡面有 `User` 的定義
+現在假設已經實作了 `model`，裡面有 `User` 的定義
 我們想要驗證新增了一筆 admin 的使用者後，是否能成功查詢到這筆資料
 
 ```python
@@ -104,7 +104,7 @@ def test_admin_user_exists():
 這樣就能在不引入參數的情況下，使用 fixture 設定好的環境
 
 ### scope
-fixture 的 [scope](https://docs.pytest.org/en/latest/fixture.html#scope-sharing-a-fixture-instance-across-tests-in-a-class-module-or-session) 共分為五種 （function, class, module, package, session）
+fixture 的 [scope](https://docs.pytest.org/en/6.1.1/fixture.html#scope-sharing-a-fixture-instance-across-tests-in-a-class-module-or-session) 共分為五種 （function, class, module, package, session）
 表示 fixture 會在哪個階段前準備資源，並在哪個階段後清除
 如果設定成 function，就會在每一個測試函式執行前和後做資源的處理
 
@@ -126,12 +126,12 @@ fixture 的 [scope](https://docs.pytest.org/en/latest/fixture.html#scope-sharing
 ```
 
 ### 常用的內建 fixture
-* [caplog](https://docs.pytest.org/en/latest/reference.html#std:fixture-caplog): 用來抓 log 訊息
-* [capsys](https://docs.pytest.org/en/latest/reference.html#std:fixture-capsys): 用來抓 std out, std err
-* [tmpdir](https://docs.pytest.org/en/latest/reference.html#std:fixture-tmpdir): 主要可以用來測檔案相關的測試
+* [caplog](https://docs.pytest.org/en/6.1.1/reference.html#std:fixture-caplog): 抓 log 訊息
+* [capsys](https://docs.pytest.org/en/6.1.1/reference.html#std:fixture-capsys): 抓 std out, std err
+* [tmpdir](https://docs.pytest.org/en/6.1.1/reference.html#std:fixture-tmpdir): 暫時資料夾，通常用來測檔案相關的測試
 
 ## 參數化 (parameterize)
-在測試資料比較簡單的時候，可以使用 [parameterize](https://docs.pytest.org/en/latest/parametrize.html) 來減少撰寫重複的程式碼
+在測試資料比較簡單的時候，可以使用 [parameterize](https://docs.pytest.org/en/6.1.1/parametrize.html) 來減少撰寫重複的程式碼
 
 * `@pytest.mark.parametrize(args1, arg2)`
     * 第一個參數: 指定測試函式要使用的參數名稱
@@ -155,12 +155,12 @@ def test_add(x, y, expected_sum):
 
 ## marker
 前面已經介紹過 `parameterize` 和 `usefixtures`
-這裡會介紹 [markers](http://doc.pytest.org/en/latest/example/markers.html) 還可以做什麼
+這裡會介紹 [markers](http://doc.pytest.org/en/6.1.1/example/markers.html) 還可以做什麼
 
 ### 內建 marker
-* [skip](http://doc.pytest.org/en/latest/skipping.html#skip): 跳過這個測試案例
-* [skipif](http://doc.pytest.org/en/latest/skipping.html#skipif): 如果符合某個條件，則跳過這個測試案例
-* [xfail](http://doc.pytest.org/en/latest/skipping.html#xfail): 預期會失敗 （其實前一篇想跳過會失敗的案例應該要用 `xfail`，而不是 `skip`）
+* [skip](http://doc.pytest.org/en/6.1.1/skipping.html#skip): 跳過這個測試案例
+* [skipif](http://doc.pytest.org/en/6.1.1/skipping.html#skipif): 如果符合某個條件，則跳過這個測試案例
+* [xfail](http://doc.pytest.org/en/6.1.1/skipping.html#xfail): 預期會失敗 （其實前一篇想跳過會失敗的案例應該要用 `xfail`，而不是 `skip`）
 
 ### 自定義 marker
 `@pytest.mark.[any custom marker]` 的用途是標記測試案例
@@ -181,15 +181,17 @@ def test_super_slow_test():
 pipenv run pytest -m "not slow"
 ```
 
-但上面的做法，如果有案例不小心打成 `@pytest.mark.slwo`，可能不太容易被發現
+上面的做法，如果有測試案例不小心打成 `@pytest.mark.slwo`，會不太容易被發現
 但 pytest 還是會正常執行
-這時候可以在專案加入設定檔 `pytest.ini` (或 `tox.ini` ，但設定方式有一點不同) 定義 marker
+這時候可以在專案加入設定檔 `pyproject.toml` (pytest 6.0.0 之後才支援這種設定檔格式) 定義 marker
 p.s. 不建議使用 `setup.cfg` 做為 pytest 的設定檔 (Read More 👉 [deprecate setup.cfg support #3523](https://github.com/pytest-dev/pytest/issues/3523))
 
-```ini
-[pytest]
-markers =
-    slow
+```toml
+[tool.pytest.ini_options]
+minversion = "6.0"
+markers = [
+    "slow"
+]
 ```
 
 並在執行時加上 `--strict-markers` 參數
@@ -200,14 +202,15 @@ pipenv run pytest --strict-markers -m "not slow"
 
 pytest 就會告訴我們 `slwo` 並不是被定義過的 maker
 
-我們可以把 `--strict-markers` 直接寫入 `pytest.ini`
-最為執行 `pytest` 的預設行為
+更進一步可以把 `--strict-markers` 直接寫入 `pyproject.toml`
 
-```ini
-[pytest]
-addopts = --strict-markers
-markers =
-    slow
+```toml
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--strict-markers"
+markers = [
+    "slow"
+]
 ```
 
 ## 測試例外事件
@@ -303,16 +306,16 @@ pipenv run pytest --cov=report_generator --cov-report=term-missing --cov-report=
 
 Read More 👉 [Configuration reference](https://coverage.readthedocs.io/en/coverage-5.0.3/config.html)
 
-## 其他常用插件
+## 其他常用 plugins
 * [pytest-xdist](https://pypi.org/project/pytest-xdist/)
     * 用平行化加速測試的執行 (`pipenv run pytest -n NUM`)
 * [pytest-mock](https://github.com/pytest-dev/pytest-mock)
     * 使用 mocking 的技巧將部分不好測試的物件替換成假的物件
     * 推薦參考 [Demystifying the Patch Function - PyCon US 2018](https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/) （不過她不是用 pytest）
-* [pytest-regression](https://github.com/ESSS/pytest-regressions)
+* [pytest-regressions](https://github.com/ESSS/pytest-regressions)
     * 將冗長的測試結果寫成檔案，每次測試都去比對跟上次產生的結果是否相同
-* 尋找其他插件
-    * [pytest - Installing and Using plugins¶](https://docs.pytest.org/en/latest/plugins.html)
+* 尋找其他 plugins
+    * [pytest - Installing and Using plugins¶](https://docs.pytest.org/en/6.1.1/plugins.html)
     * [pytest-dev](https://github.com/pytest-dev)
 
 ## 其他測試工具
@@ -320,9 +323,9 @@ Read More 👉 [Configuration reference](https://coverage.readthedocs.io/en/cove
     * 在各種不同版本的 Python 中做測試，幾乎是開源 Python 專案的標準工具
 * [nox](https://nox.thea.codes/en/stable/)
     * 基本上跟 tox 的功能相似，不過組態設定是使用 Python
-    * tox, nox 推薦參考 [Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019](https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/)
+    * tox 跟 nox 推薦參考 [Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019](https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/)
 * [hypothesis](https://github.com/HypothesisWorks/hypothesis)
-    * Property-based testing，跟以往要自己產生測試資料不同， hypothesis 讓我們可以指定資料的定義，由它根據這個定義來產生隨機的資料，更容易包含到極端案例
+    * 採用 Property-based testing，跟以往要自己產生測試資料不同，我們只需要給予資料的定義（e.g., 0 ~ 10000 之間的整數）， hypothsis 會根據定義來產生隨機的資料，也因此更容易包含到極端案例
     * 推薦參考 [Escape from auto-manual testing with Hypothesis!](https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/escape-from-auto-manual-testing-with-yypothesis/) （PyCon US 2019， Zac 投了 talk, sprint, tutorial, poster，很用心在推廣這套工具）
 
 ## Reference

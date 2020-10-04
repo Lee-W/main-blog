@@ -1,6 +1,6 @@
 Title: Python Table Manners - 安全性檢查
 Date: 2020-03-22 13:10
-Modified: 2020-07-19 17:23
+Modified: 2020-10-04 16:13
 Category: Tech
 Tags: Python, Security
 Slug: python-table-manners-security
@@ -21,7 +21,7 @@ Series: Python Table Manners
 不知道大家有沒有在 GitHub 上看過這樣的畫面
 這個訊息告訴我們，專案的相依套件中可能有安全漏洞
 
-透過 [Safety](https://github.com/pyupio/safety)，就能像這樣在本地做相依套件安全漏洞的檢查
+透過 [Safety](https://github.com/pyupio/safety) 就能在本地做相依套件安全漏洞的檢查
 它會到 [safety-db](https://github.com/pyupio/safety-db) 去查找已知的安全性漏洞
 這個資料庫則是從 [CVE](https://cve.mitre.org/) (Common Vulnerabilities and Exposures) 整理出來的
 如果是免費版，一個月會更新一次資料庫
@@ -43,18 +43,18 @@ pipenv run safety check
 
 在 [pycontw-postevent-report-generator commit 128d](https://github.com/pycontw/pycontw-postevent-report-generator/commit/128d271942099b94faca3693d6c146c879e3b414) ，透過 safety 不會找到任何安全漏洞
 
-如果想要測試 safety 的功能可以安裝套件 [insecure-package](https://pypi.org/project/insecure-package/) (**這個套件是真的存在的，而且是不安全的，僅作為測試用途**)
+如果想要測試 Safety 的功能可以安裝套件 [insecure-package](https://pypi.org/project/insecure-package/) (**這個套件是真的存在的，而且是不安全的，僅作為測試用途**)
 
 ```sh
 pipenv install insecure-package --dev
 ```
 
-再試一次就能看到 safety 將 insecure-package 列為不安全的套件
+再試一次就能看到 Safety 將 insecure-package 列為不安全的套件
 
 ![safety-found-insecure](/images/posts-image/2020-02-22-python-table-manner-series/safety-found-insecure.jpg)
 
 另外需要注意的是 `safety check` 是對當前環境做檢查
-務必確定已經有進入專案的虛擬環境，不然 safety 只會檢查到本機使用的套件有沒有漏洞
+務必確定已經有進入專案的虛擬環境，不然 Safety 只會檢查到本機使用的套件有沒有漏洞
 
 如果想要對 `requriements.txt` 做檢查，則可以加上參數 `-r`
 
@@ -63,21 +63,14 @@ pipenv install insecure-package --dev
 safety check -r requirements.txt
 ```
 
-雖然 safety 並不支援對 Pipfile 進行檢查 (Ref: [Add Pipfile support #47](https://github.com/pyupio/safety/issues/47))
-
-但 pipenv 就內建有安全性檢查的指令
+雖然 Safety 並不支援對 Pipfile 進行檢查 (Ref: [Add Pipfile support #47](https://github.com/pyupio/safety/issues/47))，但 pipenv 就內建有安全性檢查的指令
 
 ```sh
 pipenv check
 ```
 
-雖然 safety 跟 pipenv 都是去查找 [CVE](https://cve.mitre.org/)，但有時候結果會有些不同
-
-以下是 `pipenv check` 針對 [pycontw-postevent-report-generator 1.1.0](https://github.com/pycontw/pycontw-postevent-report-generator/tree/1.1.0) 的執行結果
-![pipenv-check-pillow](/images/posts-image/2020-02-22-python-table-manner-series/pipenv-check-pillow.jpg)
-
 ## bandit - 程式碼靜態分析
-確認完相依套件的安全性後，接著可以透過 [bandit](https://github.com/PyCQA/bandit) 來對自己的程式碼做靜態分析找出常見的漏洞
+除了套件安全性的分析外，接著還能透過 [bandit](https://github.com/PyCQA/bandit) 來對自己的程式碼做靜態分析找出常見的漏洞
 
 ### 安裝
 

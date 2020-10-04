@@ -1,6 +1,6 @@
 Title: Python Table Manners - 程式碼風格
 Date: 2020-02-26 18:39
-Modified: 2020-07-19 16:20
+Modified: 2020-10-04 15:57
 Category: Tech
 Tags: Python, Code Quality
 Slug: python-table-manners-coding-style
@@ -8,8 +8,8 @@ Authors: Lee-W
 Series: Python Table Manners
 
 接下來要介紹的是 linters
-它用來檢查程式是否符合特定的程式碼風格的一類工具
-以 Python 來說，則是應該遵守 [PEP 8](https://www.python.org/dev/peps/pep-0008/)
+它們是用來檢查程式是否符合特定程式碼風格的一類工具
+以 Python 來說，則可能是判斷有沒有遵守 [PEP 8](https://www.python.org/dev/peps/pep-0008/)
 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤
 
 <!--more-->
@@ -116,9 +116,8 @@ pipenv run pylint <package> ......
 ### 設定
 原本我建議使用 `pipenv run pylint --generate-rcfile >> .pylintrc` 來產生設定檔
 但現在我更傾向在 pyproject.toml 中只寫入想要客製化的設定
-原先的做法會在設定檔 .pylintrc 中有著大量的預設值，會不好找到哪些是修改過的設定，造成維護上的困難
-不過需要注意的一點是在某些版本的 pylint 這個設定方式會出錯
-所以必須安裝版本 2.5.3 以上的 pylint
+原先的做法會在設定檔 .pylintrc 中有著大量的預設值，不容易找到哪些是修改過的設定，造成維護上的困難
+不過需要注意的是在某些版本的 pylint 這個設定方式會出錯，所以建議安裝版本 2.6.0 以上的 pylint
 
 ```toml
 [tool.pylint]
@@ -137,7 +136,6 @@ pipenv run pylint <package> ......
 其中 disable 的錯誤可以在 [pylint-messages](http://pylint-messages.wikidot.com/all-codes) 找到
 
 ### 局部跳過檢查
-pylint 同樣可以忽略部分的程式碼
 只要在要忽略的程式碼前面一行加上 `# pylint: disable=[error]`
 但需要注意的是，這行以後全部的檢查都會被關閉
 所以要記得在需要開啟檢查的地方再加上 `# pylint: enable=[error]`
@@ -165,7 +163,7 @@ flake8 在大多數狀況已經足夠
 ![because-guido-say-so](/images/posts-image/2020-02-22-python-table-manner-series/because-guido-say-so.png)
 
 ## 型別檢查 - mypy
-[mypy](http://mypy-lang.org/) 是為 Python 做靜態型別檢查的工具
+[mypy](http://mypy-lang.org/) 是 Python 做靜態型別檢查的工具
 Python 是一個動態型別的語言，所以可以隨意地不同型別的值指派給同一個變數
 e.g.,
 
@@ -175,7 +173,7 @@ str_var = "This is a string"
 str_var = 1
 ```
 
-但這樣常常會造成邏輯上的錯誤
+但這麼做有時候會造成邏輯上的錯誤
 例如 `import csv` 時，如果使用了 `csv` 作為其他的變數名稱
 就會將變數的值取代掉原本引入的模組
 
@@ -343,31 +341,30 @@ import models
 # 安裝 isort
 pipenv install isort --dev
 
-# 執行 isort
-pipenv run isort --atomic --apply
+# 執行 isort 修正函式庫排序
+pipenv run isort --atomic .
 ```
 
 * `--atomic`: 只有重新排序後的結果沒有語法錯誤，才會儲存
-* `--apply`: 重新排序函式庫，不每個檔案逐一向使用者做確認
 
 ### 設定
-為了跟前面提到的工具相容（主要應該是 black），以下是我在 `pyproject.toml` 內的設定
+自從 5.0.0 後， isort 直接把常見的設定寫成 [profile](https://pycqa.github.io/isort/docs/configuration/profiles/)
+只要指定 profile 就能直接套用相容的設定
 
 ```toml
 [tool.isort]
-multi_line_output = 3
-include_trailing_comma = true
-force_grid_wrap = 0
-use_parentheses = true
-line_length = 88
+profile = "black"
 ```
+
+不過有一個相關的 bug 到 5.0.5 後才修正 (Ref: [Black profile not compatible with Black (ensure_newline_before_comments not working) #1295](https://github.com/PyCQA/isort/issues/1295))
+所以還是建議安裝最新的版本
 
 ## 其他工具
 * [check-manifest](https://github.com/mgedmin/check-manifest): 檢查有沒有少放入 `MAINIFEST.in` 的檔案
 * [seed-isort-config](https://github.com/asottile/seed-isort-config)
 
 ## Bouns: 設定檔的選用
-從前面的測試到現在有提到多種設定檔的格式
+從前面的測試篇到現在有提到很多設定檔的格式
 通常每個工具都會有自己的設定檔 (e.g., `.coveragerc`, `.flake8`) 或者用 Python 比較通用的格式 (e.g., `pyproject.toml`, `setup.cfg`)
 其中 `pyproject.toml` 是在 [PEP 518](https://www.python.org/dev/peps/pep-0518/) 提出的設定檔格式
 不過還沒有被所有的工具支援
@@ -381,14 +378,11 @@ line_length = 88
     * isort
     * pylint
     * coverage
+    * pytest
     * commitizen (之後才會介紹到)
 * setup.cfg
     * flake8
     * mypy
-
-目前唯一的例外是 `pytest.ini`
-不使用 `setup.cfg` 的原因是 pytest 即將放棄對 `setup.cfg` 的支援，而且容易出錯 （Read More 👉 [deprecate setup.cfg support #3523](https://github.com/pytest-dev/pytest/issues/3523)）
-但是在 pytest 6.0 釋出之後，就可以把 pytest 的設定加入到 `pyproject.toml` 了 🎉 (Read More 👉 [implement support for PEP-518 - the tool.pytest key in pyproject.toml #1556](https://github.com/pytest-dev/pytest/issues/1556))
 
 ## Reference
 * [Automating Code Quality - PyCon US 2018](https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/)

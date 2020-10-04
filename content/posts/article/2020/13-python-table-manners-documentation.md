@@ -1,6 +1,6 @@
 Title: Python Table Manners - 文件
 Date: 2020-04-15 19:13
-Modified: 2020-05-04 11:07
+Modified: 2020-10-04 16:49
 Category: Tech
 Tags: Python, Documentation
 Slug: python-table-manners-documentation
@@ -29,7 +29,7 @@ pipenv install mkdocs --dev
 ```
 
 ## 使用
-這次依然是將 mkdocs 運用到 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator) 為例子
+這次依然是以將 mkdocs 運用到 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator) 為例子
 在 [commit 3fab5b](https://github.com/pycontw/pycontw-postevent-report-generator/commit/3fab5b9e7171d8302b012ad40ec1292d99c297a0) 版之後產生將文件從 `README.md` 移動到 `docs` 並產生 GitHub Page
 
 ### 初始化

@@ -1,6 +1,6 @@
 Title: Python Table Manners - 測試 (一)
 Date: 2020-02-24 23:33
-Modified: 2020-07-19 15:58
+Modified: 2020-10-04 15:33
 Category: Tech
 Tags: Python, Test
 Slug: python-table-manners-test-1
@@ -8,7 +8,7 @@ Authors: Lee-W
 Series: Python Table Manners
 
 設定完環境後，接著開始要開發程式的各項功能
-要驗證程式正確性時，我們就會用到測試
+要驗證程式正確性時，我們就會撰寫測試案例
 
 <!--more-->
 
@@ -16,8 +16,8 @@ Series: Python Table Manners
 
 ## 為什麼要寫自動化測試
 * 如果沒有自動化測試
-    * 必須手動去驗證程式的正確性，非常的麻煩，而且也不能確定每次的測試方式都是相同的  
-     （因為很麻煩懶得測試，就會變成讓客戶去測試，然後就造成更多的麻煩了 😱）
+    * 必須手動去驗證程式的正確性，而且不能確定每次的測試方式都是相同的  
+     （如果因為很麻煩懶得測試，變成讓客戶去測試，就會造成更多的麻煩了 😱）
     * 增加重構 (refactoring）的風險，因為很難驗證程式的功能有沒有在重構的過程中被改動
     * 加入新的功能不知道會不會動到原本沒問題的功能
 
@@ -61,18 +61,18 @@ class WidgetTestCase(unittest.TestCase):
 * 使用 `assertEqual` 來做正確性的驗證
 
 ## pytest
-[pytest](https://docs.pytest.org/en/latest/) 是現在 Python 專案比較建議使用的測試框架，也會是這篇文章的主角
+[pytest](https://docs.pytest.org/en/6.1.1/) 是現在 Python 專案建議使用的測試框架，也會是這篇文章的主角
 
 * 為什麼要用 pytest
     * 更符合 Python 程式碼風格 (Pythonic)
     * pytest 支援舊有的 unittest 風格
     * 扁平化（不用繼承）
     * 只需要使用 `assert`，不需要去記 `assert.+` (e.g., `assertEqual`) 等 API
-    * 更好的[測試探索 (test discovery)](https://docs.pytest.org/en/latest/goodpractices.html#test-discovery)
+    * 更好的[測試探索 (test discovery)](https://docs.pytest.org/en/6.1.1/goodpractices.html#test-discovery)
     * 更多的進階功能 (e.g., fixture, mark, parameterize and etc.)
     * 強大的套件
 
-以下是取自 [pytest - Create your first test](https://docs.pytest.org/en/latest/getting-started.html#create-your-first-test) 的範例
+以下是取自 [pytest - Create your first test](https://docs.pytest.org/en/6.1.1/getting-started.html#create-your-first-test) 的範例
 相比於 unittest 寫法相對簡潔
 
 ```python
@@ -88,8 +88,8 @@ def test_answer():
 ## 從 Unittest 到 Pytest
 前面的比較其實不太公平，unittest 的範例要測的內容本身就比 pytest 的複雜
 
-所以我會用 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator) 為例子
-討論我們如何從 [v1.0](https://github.com/pycontw/pycontw-postevent-report-generator/tree/v1.0) 的 unittest 風格測試，在 [commit 83e4](https://github.com/pycontw/pycontw-postevent-report-generator/commit/83e48c6443303045ed1de2f020297c3110bb1300) 改成 pytest 風格
+所以接下來會用 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator) 為例子
+討論如何從 [v1.0](https://github.com/pycontw/pycontw-postevent-report-generator/tree/v1.0) 的 unittest 風格改成在 [commit 83e4](https://github.com/pycontw/pycontw-postevent-report-generator/commit/83e48c6443303045ed1de2f020297c3110bb1300) 的 pytest 風格
 
 如果想跟著程式碼跑，可以把專案 clone 下來
 （當然能貢獻專案就更棒了 XD）
@@ -212,14 +212,14 @@ class TestSponsor(unittest.TestCase):
 ```
 
 ### Step 1: 使用 fixture 取代 setUp / tearDown
-將 `unittest.TestCase` 移除，改用 pytest 的 [fixture](https://docs.pytest.org/en/latest/fixture.html) 取代 `setUp`
+將 `unittest.TestCase` 移除，改用 pytest 的 [fixture](https://docs.pytest.org/en/6.1.1/fixture.html) 取代 `setUp`
 fixture 跟 `setUp / tearDown` 的概念上相近，都是用來 準備 / 清除 資源
 但 fixture 更加的輕量且更有彈性
 
 在 `test_sponsor_number` 中加入參數 `sponsors`
 pytest 會去找 fixtures 中是否有 `sponsors` 並將之代入
 
-接著也可以將較為冗長的 `assertEqual`，改為 `assert`
+接著將較為冗長的 `assertEqual`，改為 `assert`
 
 ```python
 import pytest
@@ -246,7 +246,7 @@ class TestSponsor:
 ### Step 2: 使用 mark.skip 跳過部分測試
 原本的測試中有些邏輯錯誤
 但我只想先完成風格的轉換，還不打算修正
-因此先使用了 [markers](http://doc.pytest.org/en/latest/example/markers.html)
+因此先使用了 [markers](http://doc.pytest.org/en/6.1.1/example/markers.html)
 在想跳過的測試案例前面加上 `@pytest.mark.skip`
 
 ```python

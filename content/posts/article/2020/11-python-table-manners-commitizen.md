@@ -1,15 +1,15 @@
 Title: Python Table Manners - Commitizen: 規格化 commit message
 Date: 2020-03-01 00:45
-Modified: 2020-07-19 17:17
+Modified: 2020-07-19 16:47
 Category: Tech
 Tags: Python, Git
 Slug: python-table-manners-commitizen
 Authors: Lee-W
 Series: Python Table Manners
 
-接續著前一篇的 pre-commit 繼續談 git 相關的工具
+接續著前一篇的 pre-commit ，繼續談 git 相關的工具
 這篇來聊聊如何透過 [commitizen](https://github.com/commitizen-tools/commitizen) 規範 commit message
-還有我們能拿規範過的 commit message 做什麼
+還有規範過的 commit message 能拿來做什麼
 
 <!--more-->
 
@@ -57,29 +57,36 @@ pipenv install commitizen --dev
 cz init
 ```
 
-一開始會問要將設定寫在哪個檔案內
-ini 格式的設定（i.e., `.cz`, `setup.cfg`, `.cz.cfg`） 在 2.0 之後將不再支援
-因此建議選擇 `pyproject.toml` 或 `.cz.toml`
+一開始會先問想使用哪種設定檔
 
-![cz-init-1](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-1.jpg)
+![cz-init-1](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-1.png)
 
-接著會選擇一套 commit 規範
-預設有三種，這裡先以 `cz_conventional_commits` 為例
+接著要選擇一套 commit 規範，預設有三種
+如果有安裝其他的 commit 規範，它們也會出現在選項中（See more 👉 [Third-Party Commitizen Templates](https://commitizen-tools.github.io/commitizen/third-party-commitizen/)）
 
-![cz-init-2](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-2.jpg)
+![cz-init-2](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-2.png)
 
-再來回詢問最新的 git tag 來確認是否為最新的版本號
+再來會問最新的 git tag 是否為最新的版本號
 如果不是，就會列出 `git tag` 所有的結果
 如果完全沒有用過 git tag，預設會是 `0.0.1`
 
 ![cz-init-3](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-3.jpg)
 
-最後會詢問版本的格式要是如何
+之後會詢問版本的格式要是如何
 常用的格式有 `$version` (e.g., `1.0.0`) 或 `v$version` (e.g., `v1.0.0`)
 
 ![cz-init-4](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-4.jpg)
 
-完成後就會將相對應的內容加入到設定檔
+最後會確認要不要將驗證 commit message 的 pre-commit hook 設定好
+
+![cz-init-5.jpg](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-5.jpg)
+
+完成後就會看到以下畫面
+
+![cz-init-6.jpg](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-6.jpg)
+
+
+相對應的設定也會加入到設定檔 `pyproject.toml` (或 `.cz.toml`)
 
 ```toml
 [tool.commitizen]
@@ -101,21 +108,24 @@ cz commit
 
 ![commitizen-1](/images/posts-image/2020-02-22-python-table-manner-series/commitizen-1.jpg)
 
+
 接著會要求輸入這次改動各項細節
 
 * Scope： 改動範圍
 * Subject： 簡短敘述這次的改動
-* Is this a BREAKING CHANGE？： 這是否是一個重大改動
 * Body： 詳細敘述這次的改動
-* Footer： 參考，通常可以將 Issue 的編號寫在這
+* Is this a BREAKING CHANGE？： 這是否是一個重大改動
+* Footer： 其他參考資訊，通常可以將 Issue 的編號寫在這
 
 ![commitizen-2-w1024](/images/posts-image/2020-02-22-python-table-manner-series/commitizen-2.jpg)
 
-回答完，就會產生 commit message **feat(tasks): add \`inv git.commit\`**
+回答完，就會產生 commit message **feat(blog-post): update python table manners series**
+最下方則是 pre-commit hook 的 commit message 格式檢查通過
 
 ## 強制檢查 commit message
 剛開始引入 commitizen 時，可能會常常忘記要使用它來做 commit
 這時候就能使用到前一篇提到的 [pre-commit](https://pre-commit.com/)
+雖然在 2.0.0 後可以透過 `cz init` 初始設定好，但還是說明如果事後才想設定要怎麼做
 
 我在 [commitizen](https://github.com/commitizen-tools/commitizen) 中有加入 [.pre-commit-hooks.yaml](https://github.com/commitizen-tools/commitizen/blob/master/.pre-commit-hooks.yaml)
 因此只要在專案的 `.pre-commit-config.yaml` 加入以下這段
@@ -143,7 +153,7 @@ git 會執行 `cz check` 來確認輸入的訊息是否符合規範
 因此要設定 commit-msg 階段的 git hook （i.e., `.git/hooks/commit-msg`）
 如果只下 `pipenv run pre-commit install` 是不會成功的
 
-接著就可以開始談，能將這些 commit message 做什麼應用了
+接著可以開始聊勞，這些 commit message 能做什麼應用了
 
 ## 自動提升版本號
 與 commit message 規範可以做客製化不同
@@ -207,8 +217,8 @@ commitizen 提升版本號時，就會一併更新檔案的內容
 透過 `cz bump` 指令雖然可以省下很多步驟
 但更好的做法是將自動升版加入到加入到持續整合（Continuous Integration）
 在 git repo 上將分支 merge 到 master 時，自動提升版本號
-這部分因為會牽涉到各個不同平台的做法，不會敘述太多
-這裡附上 commitizen 文件中 [Github Actions](https://commitizen-tools.github.io/commitizen/tutorials/github_actions/) 和 [Gitlab CI](https://commitizen-tools.github.io/commitizen/tutorials/gitlab_ci/) 的做法
+因為會牽涉到各個不同平台的做法，不會敘述太多
+這裡附上 commitizen 文件中 [Github Actions](https://commitizen-tools.github.io/commitizen/tutorials/github_actions/), [Gitlab CI](https://commitizen-tools.github.io/commitizen/tutorials/gitlab_ci/) 還有 [Jenkins Pipeline](https://commitizen-tools.github.io/commitizen/tutorials/jenkins_pipeline/) 的做法
 
 ## 客製化 commit 規範
 目前 commitizen 提供兩種方式
@@ -217,8 +227,6 @@ commitizen 提升版本號時，就會一併更新檔案的內容
 2. 將 commit 規範寫成 Python 套件發佈 → 適合需要加入複雜的驗證
 
 ### 直接在設定檔設定
-這種做法只支援 toml 格式的設定檔 （i.e., `pyproject.toml`, `.cz.toml`）
-
 首先必須先將 name 指定到 `cz_customize` 這套 commit 規範
 
 ```toml
@@ -227,15 +235,18 @@ name = "cz_customize"
 ```
 
 再來要設定下面的欄位
-其中最重要的只有 `message_template`（支援[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)）
+其中最重要的是 `message_template`（支援[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)）
 以 `"{{change_type}}:{% if show_message %} {{message}}{% endif %}"` 這個例子來說
 需要 `change_type`, `show_message`, `message` 三個變數來產生 commit message
+
+（p.s. 如果想要使用驗證 commit message 的功能，則要更新 `schema_pattern`）
 
 ```toml
 [tool.commitizen.customize]
 message_template = "{{change_type}}:{% if show_message %} {{message}}{% endif %}"
 example = "feature: this feature enable customize through config file"
 schema = "<type>: <body>"
+schema_pattern = "(feature|bug fix):(\\s.*)"
 bump_pattern = "^(break|new|fix|hotfix)"
 bump_map = {"break" = "MAJOR", "new" = "MINOR", "fix" = "PATCH", "hotfix" = "PATCH"}
 info_path = "cz_customize_info.txt"
@@ -245,7 +256,7 @@ This is customized info
 ```
 
 變數要在 `[[tool.commitizen.customize.questions]]` 的區段作定義
-這裡使用到的是套件 [questionary](https://github.com/tmbo/questionary)
+背後所使用的套件是 [questionary](https://github.com/tmbo/questionary)
 
 * `name`： 必須跟前面 `message_template` 定義的一模一樣，而且裡面用到的變數都要有對應的問題能取得值
 * `message`： 顯示給使用者的問題
@@ -285,7 +296,7 @@ cookiecutter gh:Lee-W/commitizen_cz_template
 ```
 
 最主要需要實作的函式有 `questions`, `message`
-實作完成後，必須要在要使用這個 commit 規範的環境安裝這個套件
+實作完成後，必須在要使用這個 commit 規範的環境安裝這個套件
 安裝之後會在 `cz ls` 看到這個新的 commit 規範
 在設定檔中設定 `name` 或在指令列加上參數 `-n name` (e.g., `cz -n cz_test commit`) 就可以開始使用
 
@@ -367,7 +378,7 @@ commitizen 會試著找出文件中最新釋出版本 (e.g., `1.0.5`) 的位置�
 ### 為什麼不用 Java Script 的 commitizen 就好了
 ~~因為我是 Python 的開發者啊！！！~~
 
-起初我也是從 Java Script 的版本開始使用 （畢竟兩個專案 star 的數量差了一百倍）
+起初我也是從 JavaScript 的版本開始使用 （畢竟兩個專案 star 的數量差了一百倍）
 原本我就有寫好 commit message 的習慣
 能有工具幫助我把這件事做得更好，當然就再好不過了
 
@@ -399,9 +410,7 @@ commitizen 會試著找出文件中最新釋出版本 (e.g., `1.0.5`) 的位置�
 程式碼風格上，透過 black 跟 flake8 來規範，讓程式碼閱讀起來輕鬆很多
 在貢獻的過程中，也學到了不少很實用的工具（e.g., pre-commit, cookiecutter）
 
-所以我說**一起來貢獻 [commitizen](https://github.com/commitizen-tools/commitizen) 吧 💪**
-我最近開始比較忙，有一段時間沒辦法積極地送 Pull Request 了 😢
-但還是希望新功能能在 commitizen 上出現 🎉
+所以**一起來貢獻 [commitizen](https://github.com/commitizen-tools/commitizen) 吧 💪**
 
 ## Reference
 * [how to create a good commit message](https://medium.com/@klauskpm/how-to-create-good-commit-messages-67943d30cced)
