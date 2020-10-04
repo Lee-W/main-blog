@@ -20,13 +20,13 @@
 
 <meta property="og:title" content="Python Table Manners - 程式碼風格 "/>
 <meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-coding-style" />
-<meta property="og:description" content="接下來要介紹的是 linters 它用來檢查程式是否符合特定的程式碼風格的一類工具 以 Python 來說，則是應該遵守 PEP 8 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤" />
+<meta property="og:description" content="接下來要介紹的是 linters 它們是用來檢查程式是否符合特定程式碼風格的一類工具 以 Python 來說，則可能是判斷有沒有遵守 PEP 8 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2020-02-26T18:39:00+08:00" />
-<meta property="og:article:modified_time" content="2020-07-19T16:20:00+08:00" />
+<meta property="og:article:modified_time" content="2020-10-04T15:57:00+08:00" />
 <meta name="twitter:title" content="Python Table Manners - 程式碼風格 ">
-<meta name="twitter:description" content="接下來要介紹的是 linters 它用來檢查程式是否符合特定的程式碼風格的一類工具 以 Python 來說，則是應該遵守 PEP 8 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤">
+<meta name="twitter:description" content="接下來要介紹的是 linters 它們是用來檢查程式是否符合特定程式碼風格的一類工具 以 Python 來說，則可能是判斷有沒有遵守 PEP 8 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤">
 
         <title>Python Table Manners - 程式碼風格  · Laziness makes Great Engineer
 </title>
@@ -129,8 +129,8 @@
     <div class="span8 article-content">
             
             <p>接下來要介紹的是 linters<br/>
-它用來檢查程式是否符合特定的程式碼風格的一類工具<br/>
-以 Python 來說，則是應該遵守 <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a><br/>
+它們是用來檢查程式是否符合特定程式碼風格的一類工具<br/>
+以 Python 來說，則可能是判斷有沒有遵守 <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a><br/>
 linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤</p>
 <!--more-->
 
@@ -211,9 +211,8 @@ pipenv run pylint &lt;package&gt; ......
 <h3 id="_5">設定</h3>
 <p>原本我建議使用 <code>pipenv run pylint --generate-rcfile &gt;&gt; .pylintrc</code> 來產生設定檔<br/>
 但現在我更傾向在 pyproject.toml 中只寫入想要客製化的設定<br/>
-原先的做法會在設定檔 .pylintrc 中有著大量的預設值，會不好找到哪些是修改過的設定，造成維護上的困難<br/>
-不過需要注意的一點是在某些版本的 pylint 這個設定方式會出錯<br/>
-所以必須安裝版本 2.5.3 以上的 pylint</p>
+原先的做法會在設定檔 .pylintrc 中有著大量的預設值，不容易找到哪些是修改過的設定，造成維護上的困難<br/>
+不過需要注意的是在某些版本的 pylint 這個設定方式會出錯，所以建議安裝版本 2.6.0 以上的 pylint</p>
 <div class="highlight"><pre><span></span><code><span class="k">[tool.pylint]</span>
     <span class="k">[tool.pylint.messages_control]</span>
     <span class="n">disable</span> <span class="o">=</span> <span class="p">[</span>
@@ -228,8 +227,7 @@ pipenv run pylint &lt;package&gt; ......
 </code></pre></div>
 <p>其中 disable 的錯誤可以在 <a href="http://pylint-messages.wikidot.com/all-codes">pylint-messages</a> 找到</p>
 <h3 id="_6">局部跳過檢查</h3>
-<p>pylint 同樣可以忽略部分的程式碼<br/>
-只要在要忽略的程式碼前面一行加上 <code># pylint: disable=[error]</code><br/>
+<p>只要在要忽略的程式碼前面一行加上 <code># pylint: disable=[error]</code><br/>
 但需要注意的是，這行以後全部的檢查都會被關閉<br/>
 所以要記得在需要開啟檢查的地方再加上 <code># pylint: enable=[error]</code></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># pylint: disable=line-too-long</span>
@@ -248,14 +246,14 @@ pipenv run pylint &lt;package&gt; ......
 而且 Guido 也是這麼說的 XD</p>
 <p><img alt="because-guido-say-so" src="/images/posts-image/2020-02-22-python-table-manner-series/because-guido-say-so.png"/></p>
 <h2 id="-mypy">型別檢查 - mypy</h2>
-<p><a href="http://mypy-lang.org/">mypy</a> 是為 Python 做靜態型別檢查的工具<br/>
+<p><a href="http://mypy-lang.org/">mypy</a> 是 Python 做靜態型別檢查的工具<br/>
 Python 是一個動態型別的語言，所以可以隨意地不同型別的值指派給同一個變數<br/>
 e.g.,</p>
 <div class="highlight"><pre><span></span><code><span class="n">str_var</span> <span class="o">=</span> <span class="s2">"This is a string"</span>
 
 <span class="n">str_var</span> <span class="o">=</span> <span class="mi">1</span>
 </code></pre></div>
-<p>但這樣常常會造成邏輯上的錯誤<br/>
+<p>但這麼做有時候會造成邏輯上的錯誤<br/>
 例如 <code>import csv</code> 時，如果使用了 <code>csv</code> 作為其他的變數名稱<br/>
 就會將變數的值取代掉原本引入的模組</p>
 <p>除此之外，型別標記的程式碼也會增加可讀性<br/>
@@ -385,29 +383,27 @@ e.g.,</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安裝 isort</span>
 pipenv install isort --dev
 
-<span class="c1"># 執行 isort</span>
-pipenv run isort --atomic --apply
+<span class="c1"># 執行 isort 修正函式庫排序</span>
+pipenv run isort --atomic .
 </code></pre></div>
 <ul>
 <li><code>--atomic</code>: 只有重新排序後的結果沒有語法錯誤，才會儲存</li>
-<li><code>--apply</code>: 重新排序函式庫，不每個檔案逐一向使用者做確認</li>
 </ul>
 <h3 id="_12">設定</h3>
-<p>為了跟前面提到的工具相容（主要應該是 black），以下是我在 <code>pyproject.toml</code> 內的設定</p>
+<p>自從 5.0.0 後， isort 直接把常見的設定寫成 <a href="https://pycqa.github.io/isort/docs/configuration/profiles/">profile</a><br/>
+只要指定 profile 就能直接套用相容的設定</p>
 <div class="highlight"><pre><span></span><code><span class="k">[tool.isort]</span>
-<span class="n">multi_line_output</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">include_trailing_comma</span> <span class="o">=</span> <span class="kc">true</span>
-<span class="n">force_grid_wrap</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">use_parentheses</span> <span class="o">=</span> <span class="kc">true</span>
-<span class="n">line_length</span> <span class="o">=</span> <span class="mi">88</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="s">"black"</span>
 </code></pre></div>
+<p>不過有一個相關的 bug 到 5.0.5 後才修正 (Ref: <a href="https://github.com/PyCQA/isort/issues/1295">Black profile not compatible with Black (ensure_newline_before_comments not working) #1295</a>)<br/>
+所以還是建議安裝最新的版本</p>
 <h2 id="_13">其他工具</h2>
 <ul>
 <li><a href="https://github.com/mgedmin/check-manifest">check-manifest</a>: 檢查有沒有少放入 <code>MAINIFEST.in</code> 的檔案</li>
 <li><a href="https://github.com/asottile/seed-isort-config">seed-isort-config</a></li>
 </ul>
 <h2 id="bouns">Bouns: 設定檔的選用</h2>
-<p>從前面的測試到現在有提到多種設定檔的格式<br/>
+<p>從前面的測試篇到現在有提到很多設定檔的格式<br/>
 通常每個工具都會有自己的設定檔 (e.g., <code>.coveragerc</code>, <code>.flake8</code>) 或者用 Python 比較通用的格式 (e.g., <code>pyproject.toml</code>, <code>setup.cfg</code>)<br/>
 其中 <code>pyproject.toml</code> 是在 <a href="https://www.python.org/dev/peps/pep-0518/">PEP 518</a> 提出的設定檔格式<br/>
 不過還沒有被所有的工具支援<br/>
@@ -420,6 +416,7 @@ pipenv run isort --atomic --apply
 <li>isort</li>
 <li>pylint</li>
 <li>coverage</li>
+<li>pytest</li>
 <li>commitizen (之後才會介紹到)</li>
 </ul>
 </li>
@@ -429,9 +426,6 @@ pipenv run isort --atomic --apply
 </ul>
 </li>
 </ul>
-<p>目前唯一的例外是 <code>pytest.ini</code><br/>
-不使用 <code>setup.cfg</code> 的原因是 pytest 即將放棄對 <code>setup.cfg</code> 的支援，而且容易出錯 （Read More 👉 <a href="https://github.com/pytest-dev/pytest/issues/3523">deprecate setup.cfg support #3523</a>）<br/>
-但是在 pytest 6.0 釋出之後，就可以把 pytest 的設定加入到 <code>pyproject.toml</code> 了 🎉 (Read More 👉 <a href="https://github.com/pytest-dev/pytest/issues/1556">implement support for PEP-518 - the tool.pytest key in pyproject.toml #1556</a>)</p>
 <h2 id="reference">Reference</h2>
 <ul>
 <li><a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/">Automating Code Quality - PyCon US 2018</a></li>
@@ -521,7 +515,7 @@ pipenv run isort --atomic --apply
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-02-26T18:39:00+08:00">2020/02/26 - Wed</time>
 <h4>Last Updated</h4>
-<time datetime="2020-07-19T16:20:00+08:00">2020/07/19 - Sun</time>
+<time datetime="2020-10-04T15:57:00+08:00">2020/10/04 - Sun</time>
 
         <h4>Python Table Manners</h4>
     <ul class="multi-parts-list">

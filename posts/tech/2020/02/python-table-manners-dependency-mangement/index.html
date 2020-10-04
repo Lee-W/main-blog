@@ -20,13 +20,13 @@
 
 <meta property="og:title" content="Python Table Manners - 虛擬環境和套件管理 "/>
 <meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-dependency-mangement" />
-<meta property="og:description" content="為了避免不同 Python 專案使用的套件版本不同，導致本機的套件版本打架 開始 Python 專案時，第一步就是先建立一個專屬於專案的虛擬環境 理想上，本機的環境是不太需要安裝套件的 因為每一個專案都會在自己的虛擬環境內執行，並且在裡面安裝各自的套件" />
+<meta property="og:description" content="開始 Python 專案時，第一步都是建立一個專屬於專案的虛擬環境 會需要這麼做是為了避免不同的 Python 專案需要使用到不同版本的套件 假設專案 A 需要 lib==2.3.5 而專案 B 需要 lib==1.0.0 如果 lib 都被安裝在本機中，就會有其中一個專案跑不起來 所以只要兩個專案都有建立虛擬環境，它們就都能在自己的虛擬環境中安裝所需的 lib 版本 理想上，本機的環境是不需要安裝套件的 因為每一個專案都會在個字的虛擬環境內執行，並安裝各自的套件" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2020-02-23T12:24:00+08:00" />
-<meta property="og:article:modified_time" content="2020-07-19T15:45:00+08:00" />
+<meta property="og:article:modified_time" content="2020-10-04T15:22:00+08:00" />
 <meta name="twitter:title" content="Python Table Manners - 虛擬環境和套件管理 ">
-<meta name="twitter:description" content="為了避免不同 Python 專案使用的套件版本不同，導致本機的套件版本打架 開始 Python 專案時，第一步就是先建立一個專屬於專案的虛擬環境 理想上，本機的環境是不太需要安裝套件的 因為每一個專案都會在自己的虛擬環境內執行，並且在裡面安裝各自的套件">
+<meta name="twitter:description" content="開始 Python 專案時，第一步都是建立一個專屬於專案的虛擬環境 會需要這麼做是為了避免不同的 Python 專案需要使用到不同版本的套件 假設專案 A 需要 lib==2.3.5 而專案 B 需要 lib==1.0.0 如果 lib 都被安裝在本機中，就會有其中一個專案跑不起來 所以只要兩個專案都有建立虛擬環境，它們就都能在自己的虛擬環境中安裝所需的 lib 版本 理想上，本機的環境是不需要安裝套件的 因為每一個專案都會在個字的虛擬環境內執行，並安裝各自的套件">
 
         <title>Python Table Manners - 虛擬環境和套件管理  · Laziness makes Great Engineer
 </title>
@@ -108,9 +108,9 @@
 <li><a href="#_7">其他工具</a><ul>
 <li><a href="#pip-tools">pip-tools</a></li>
 <li><a href="#dephell">dephell</a></li>
+<li><a href="#_8">自動偵測套件版本並適當升級的服務</a></li>
 </ul>
 </li>
-<li><a href="#_8">自動將舊版套件升級</a></li>
 <li><a href="#bouns-pipx-python">Bouns: pipx - 在系統安裝 Python 工具</a></li>
 <li><a href="#reference">Reference</a></li>
 </ul>
@@ -119,19 +119,22 @@
     </div>
     <div class="span8 article-content">
             
-            <p>為了避免不同 Python 專案使用的套件版本不同，導致本機的套件版本打架<br/>
-開始 Python 專案時，第一步就是先建立一個專屬於專案的虛擬環境<br/>
-理想上，本機的環境是不太需要安裝套件的<br/>
-因為每一個專案都會在自己的虛擬環境內執行，並且在裡面安裝各自的套件</p>
+            <p>開始 Python 專案時，第一步都是建立一個專屬於專案的虛擬環境<br/>
+會需要這麼做是為了避免不同的 Python 專案需要使用到不同版本的套件<br/>
+假設專案 A 需要 <code>lib==2.3.5</code> 而專案 B 需要 <code>lib==1.0.0</code><br/>
+如果 <code>lib</code> 都被安裝在本機中，就會有其中一個專案跑不起來<br/>
+所以只要兩個專案都有建立虛擬環境，它們就都能在自己的虛擬環境中安裝所需的 <code>lib</code> 版本<br/>
+理想上，本機的環境是不需要安裝套件的<br/>
+因為每一個專案都會在個字的虛擬環境內執行，並安裝各自的套件</p>
 <!--more-->
 
 <h2 id="venv">venv</h2>
-<p>建立虛擬環境，最基本作法就是使用 <a href="https://docs.python.org/3/library/venv.html">venv</a><br/>
-透過以下幾個指令建立一個，並把相關的套件寫入 <code>requirements.txt</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 創建 Python 虛擬環境</span>
+<p>建立虛擬環境，最基本作法是使用 <a href="https://docs.python.org/3/library/venv.html">venv</a><br/>
+透過以下幾個指令建立，並把需要的套件寫入 <code>requirements.txt</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 建立 Python 虛擬環境到 ./venv</span>
 python -m venv ./venv
 
-<span class="c1"># 啟動 Python 虛擬環境 (Unix like)</span>
+<span class="c1"># 啟動 Python 虛擬環境 (for Unix like)</span>
 <span class="nb">source</span> venv/bin/activate
 
 <span class="c1"># 將虛擬環境用到的套件寫入 requirements.txt</span>
@@ -141,13 +144,13 @@ pip freeze &gt;&gt; requirements.txt
 <p>但這個做法會遇到幾個問題</p>
 <ol>
 <li>忘記開啟/關閉虛擬環境</li>
-<li>忘記把新安裝的套件寫入 <code>requirements.txt</code></li>
+<li>忘記把新安裝的套件寫入 requirements.txt</li>
 <li><code>pip freeze</code> 安裝一些不必要的套件</li>
 </ol>
 <p>一開始我會使用 <a href="https://github.com/bndr/pipreqs">pipreqs</a> 來解決 <code>pip freeze</code> 所造成的雜亂<br/>
-但是忘記寫入套件跟忘記開關虛擬環境的問題還是存在<br/>
-常常我在本地測試成功，丟到伺服器就會告訴我又少了套件<br/>
-只好再送一個 Pull Request 修正</p>
+但是忘記更新 requirements.txt 跟開關虛擬環境的問題還是存在<br/>
+常常我在本地測試成功，push 到遠端的時候又告訴我少了套件<br/>
+只好再送一個 Pull Request 修正......</p>
 <h2 id="pipenv">pipenv</h2>
 <p><a href="https://pipenv.readthedocs.io/en/latest/">pipenv</a> 可以用來同時管理虛擬環境跟套件<br/>
 pipenv 不使用 <code>requriements.txt</code>，而是使用自定義的 <code>Pipfile</code> 跟 <code>Pipfile.lock</code> 管理套件<br/>
@@ -173,11 +176,10 @@ pipenv --where
 </code></pre></div>
 <p>初始化虛擬環境後，會產生 <code>Pipfile</code> 跟 <code>Pipfile.lock</code></p>
 <ul>
-<li><code>Pipfile</code> 是一個 <a href="https://github.com/toml-lang/toml">toml</a> 格式的檔案<ul>
-<li><strong>source</strong>: 指定要去找套件的 <a href="https://pypi.org/">PyPI</a> ，比較常見的使用案例是加上自己私有的 PyPI</li>
+<li><code>Pipfile</code> 是 <a href="https://github.com/toml-lang/toml">toml</a> 格式的檔案<ul>
+<li><strong>source</strong>: 指定要去找套件的倉儲，預設是 <a href="https://pypi.org/">PyPI</a> ，也可以再加上私有的 PyPI</li>
 <li><strong>dev-package</strong>: 開發環境所需套件</li>
 <li><strong>packages</strong>: 預設安裝套件（通常是 Production 用）</li>
-<li><strong>requires::python_versions</strong>: 限定在某個版本的 Python</li>
 </ul>
 </li>
 </ul>
@@ -194,7 +196,7 @@ pipenv --where
 <span class="n">python_version</span> <span class="o">=</span> <span class="s">"3.7"</span>
 </code></pre></div>
 <ul>
-<li><code>Pipfile.lock</code> 則是 JSON 格式的檔案<ul>
+<li><code>Pipfile.lock</code> 是 JSON 格式的檔案<ul>
 <li>同樣是記錄安裝的套件，但會同時記錄下套件相依的其他套件（假設安裝了 <code>requests</code> 套件，而 <code>requests</code> 相依於 <code>urllib3</code> ，則 <code>requests</code> 跟 <code>urllibs</code> 都會列在這）</li>
 </ul>
 </li>
@@ -221,7 +223,7 @@ pipenv --where
 <span class="p">}</span>
 </code></pre></div>
 <p>通常沒有什麼特別的理由，可以不用動到 <code>Pipfile</code> 跟 <code>Pipfile.lock</code><br/>
-交給 <code>pipenv</code> 去管理就好</p>
+交給 <code>pipenv</code> 管理就好</p>
 <h3 id="_2">安裝套件</h3>
 <p>pipenv 的另一個好處是，它的 API 基本上跟 <a href="https://pip.pypa.io/en/stable/">pip</a> 是一樣的</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安裝套件</span>
@@ -233,8 +235,8 @@ pipenv uninstall &lt;package&gt;
 <span class="c1"># 更新套件</span>
 pipenv update &lt;package&gt;
 </code></pre></div>
-<p>以安裝 <a href="https://requests.readthedocs.io/en/master/">requests</a> 為例</p>
-<p>Pipfile 會更新在 <strong>packages</strong></p>
+<p>以安裝 <a href="https://requests.readthedocs.io/en/master/">requests</a> 為例<br/>
+會更新在 Pipfile 的 <strong>packages</strong> 區段</p>
 <div class="highlight"><pre><span></span><code><span class="k">[packages]</span>
 <span class="n">requests</span> <span class="o">=</span> <span class="s">"*"</span>
 </code></pre></div>
@@ -267,14 +269,14 @@ pipenv update &lt;package&gt;
 <ul>
 <li><strong>index</strong>: 套件從哪裡裝的</li>
 <li><strong>version</strong>: 安裝的版本</li>
-<li><strong>hashes</strong> 安裝這個套件時產生的雜湊值 (hashing)<br/>
+<li><strong>hashes</strong>: 下載這個套件時產生的雜湊值 (hashing)<br/>
   只要套件內容有改變，就會產生不同的雜湊值<br/>
   可以用於驗證下次安裝時，這個套件的內容是否跟這次相同<br/>
   有些套件雖然改了內容，但沒有更新版本號<br/>
-  雜湊值可以用來避免安裝了不同的內容卻渾然不知</li>
+  雜湊值可以用來避免使用者在沒注意到的情況下安裝了不同的套件</li>
 </ul>
 <p>下面兩個指令就會運用到 <strong>hashes</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 安裝時同時確認 Pipfile.lock ，如果 lock 檔跟實際安裝的有衝突，則會跳出安裝</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安裝時同時確認 Pipfile.lock ，如果 lock 檔跟實際安裝的有衝突，則會取消安裝</span>
 pipenv install --deploy
 
 <span class="c1"># 直接使用 Pipfile.lock 安裝套件</span>
@@ -310,16 +312,16 @@ pipenv run python your_program.py
 除了 pipenv 包含的功能外，它還能用來初始化專案、上傳套件</p>
 <ul>
 <li>pipenv 被抱怨的原因<ul>
-<li>之前有相隔快兩年沒有新的版本釋出</li>
+<li>之前有相隔快兩年沒有新的版本釋出（2020 年倒是更新了幾次）</li>
 <li>lock 太慢</li>
-<li>不會自動跟 setup.py 中的 install_rquires</li>
+<li>不會自動跟 setup.py 中的 <code>install_rquires</code></li>
 </ul>
 </li>
 </ul>
 <p>poetry 使用下來體驗還算不錯<br/>
 而且它採用 pyproject.toml 來做配置設定，這點我就蠻喜歡的</p>
-<p>一般來說我會建議如果要寫 Python 函式庫的話，使用 poetry 是蠻方便的<br/>
-至於 Python 應用，我則覺得用 pipenv 或 poetry 就無所謂了</p>
+<p>我會建議如果要寫 Python 函式庫的話，可以使用 poetry<br/>
+至於 Python 應用，使用 pipenv 還是 poetry 就看個人的喜好了</p>
 <h3 id="_6">基本使用</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 初始化 poetry 專案</span>
 poetry init
@@ -338,11 +340,10 @@ poetry remove &lt;package&gt;
 <p><a href="https://github.com/jazzband/pip-tools">pip-tools</a> 主要的功能是產生 hashes ，並不能用來管理虛擬環境<br/>
 這套工具比較適合習慣使用 pip 跟 virtualenv ，但又想要有 Pipfile.lock 的功能的情況</p>
 <h3 id="dephell">dephell</h3>
-<p><a href="https://github.com/dephell/dephell">dephell</a> 是一個 all-in-one 的工具<br/>
+<p><a href="https://github.com/dephell/dephell">dephell</a> 是個 all-in-one 的工具<br/>
 當初看到覺得很有趣，但還沒有時間好好研究<br/>
 目前使用到對我最有幫助的功能是它能在轉換不同的格式 (e.g., Pipfile → pyproject.toml)</p>
-<h2 id="_8">自動將舊版套件升級</h2>
-<p>以下再多提供兩個可以自動將相依套件升級的服務</p>
+<h3 id="_8">自動偵測套件版本並適當升級的服務</h3>
 <ul>
 <li><a href="https://pyup.io">pyup.io</a></li>
 <li><a href="https://dependabot.com">dependabot</a></li>
@@ -350,10 +351,9 @@ poetry remove &lt;package&gt;
 <h2 id="bouns-pipx-python">Bouns: pipx - 在系統安裝 Python 工具</h2>
 <p>雖然建議 Python 的套件都裝在虛擬環境，但如果平時要使用的工具 (e.g., <a href="http://www.pyinvoke.org/">invoke</a>, <a href="https://pypi.org/project/awscli/">awscli</a>) 都裝在虛擬環境<br/>
 每次使用這些工具都得進入虛擬環境就太麻煩了<br/>
-所以，在這樣的情況下，就可以使用 <a href="https://pipxproject.github.io/pipx/">pipx</a><br/>
-pipx 會為每個工具創建一個專屬的虛擬環境，並且設定好 PATH</p>
+<a href="https://pipxproject.github.io/pipx/">pipx</a> 會為每個工具創建一個專屬的虛擬環境，並且設定好 PATH</p>
 <ul>
-<li>安裝 pipx</li>
+<li>安裝 pipx，並設定 PATH</li>
 </ul>
 <div class="highlight"><pre><span></span><code>python -m pip install --user pipx
 python -m pipx ensurepath
@@ -452,7 +452,7 @@ python -m pipx ensurepath
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-02-23T12:24:00+08:00">2020/02/23 - Sun</time>
 <h4>Last Updated</h4>
-<time datetime="2020-07-19T15:45:00+08:00">2020/07/19 - Sun</time>
+<time datetime="2020-10-04T15:22:00+08:00">2020/10/04 - Sun</time>
 
         <h4>Python Table Manners</h4>
     <ul class="multi-parts-list">

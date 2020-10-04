@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2020-02-27T20:04:00+08:00" />
-<meta property="og:article:modified_time" content="2020-07-19T16:25:00+08:00" />
+<meta property="og:article:modified_time" content="2020-10-04T16:05:00+08:00" />
 <meta name="twitter:title" content="Python Table Manners - 管理繁瑣任務 ">
 <meta name="twitter:description" content="前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具 每一個工具又有各自的參數和設定 這麼多指令怎麼可能記得起來 😱">
 
@@ -112,11 +112,10 @@
 這麼多指令怎麼可能記得起來 😱</p>
 <p><img alt="too-many-commands" src="/images/posts-image/2020-02-22-python-table-manner-series/too-many-commands.jpg"/></p>
 <!--more-->
-<p>所以在這篇，我要來介紹如何用 <a href="http://www.pyinvoke.org/">invoke</a> 管理這些指令</p>
+<p>所以在這篇要介紹如何用 <a href="http://www.pyinvoke.org/">invoke</a> 管理這些指令</p>
 
 <h2 id="invoke">invoke 是什麼</h2>
-<p>invoke 是一套任務執行工具 (task execution tool)，主要的功能是統一管理各種指令<br/>
-並提供各種指令列上用得到的功能<br/>
+<p>invoke 是一套任務執行工具 (task execution tool)，主要用來是統一管理各種指令<br/>
 有點像是 Python 的 <code>Makefile</code></p>
 <h2 id="invoke_1">安裝 invoke</h2>
 <p>不同於 pytest, flake8 等套件，我會同時將 invoke 安裝在系統和虛擬環境中</p>
@@ -137,7 +136,7 @@ checkout 到 <a href="https://github.com/pycontw/pycontw-postevent-report-genera
 <p>到了 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/72ad956fd200867dc292a156c97a99a09ebe0104">commit 72ad</a> (實作已經在 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/bc98eec28037a9bed5063fef0f0f564893fce3ac">commit bc98</a> 完成，只是在 commit 72ad 才更新文件)，已經可以使用較短且較為統一的指令 (以 <code>inv</code> 作為開頭)</p>
 <p><img alt="after-invoke" src="/images/posts-image/2020-02-22-python-table-manner-series/after-invoke.jpg"/></p>
 <p>除此之外，引入 invoke 後，也不用每次都去翻文件<br/>
-invoke 可以列出所有可用的指令</p>
+<code>invoke --list</code> 可以列出所有可用的指令</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 列出可用的 invoke 指令</span>
 <span class="c1"># p.s. invoke 指令可以縮寫為 inv</span>
 $ inv --list
@@ -150,14 +149,14 @@ Available tasks:
   install    Install script in pipenv environment
   <span class="nb">test</span>       Run testcase
 </code></pre></div>
-<p>執行的方式則是在 invoke 後面直接加上任務</p>
+<p>執行的方式則是在 invoke 後面直接加上任務名稱</p>
 <p>e.g.,</p>
 <div class="highlight"><pre><span></span><code>inv clean
 </code></pre></div>
 <h2 id="invoke_3">實作 invoke 任務</h2>
 <p>我們先試著將前面的 <code>python setup.py develop</code> 改成 invoke 的任務</p>
 <p>預設 invoke 會去找目錄下的 <code>tasks.py</code><br/>
-所以我們先在專案最上層創 <code>tasks.py</code><br/>
+所以第一步要先在專案最上層建立 <code>tasks.py</code><br/>
 接著撰寫一個函式叫 <code>develop</code> ，這就會是之後的任務名稱 (i.e., 透過 <code>inv develop</code> 執行)<br/>
 在函式前加上裝飾器 (decorator) <code>@task</code><br/>
 invoke 會傳入一個 context 做為第一個參數 (Read More 👉 <a href="http://docs.pyinvoke.org/en/stable/getting-started.html#aside-what-exactly-is-this-context-arg-anyway">what exactly is this ‘context’ arg anyway?</a>)<br/>
@@ -172,7 +171,7 @@ invoke 會傳入一個 context 做為第一個參數 (Read More 👉 <a href="ht
 <p>如同先前所提到的，操作都應該在虛擬環境內被完成<br/>
 所以我將 <code>pipenv run</code> 的前綴提出來<br/>
 這樣就能確保之後的操作一定都會在虛擬環境內執行<br/>
-如果之後更換了管理虛擬環境的工具(e.g. <code>poetry run</code>)，也可以更輕易的改動 <code>tasks.py</code></p>
+如果之後更換了管理虛擬環境的工具（e.g. <code>poetry run</code>），也可以更輕易的改動 <code>tasks.py</code></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">invoke</span> <span class="kn">import</span> <span class="n">task</span>
 
 <span class="n">PIPENV_PREFIX</span> <span class="o">=</span> <span class="s2">"pipenv run"</span>
@@ -200,7 +199,7 @@ invoke 會傳入一個 context 做為第一個參數 (Read More 👉 <a href="ht
 這時候就可以使用到 <code>namespace</code> 的概念<br/>
 (Read More 👉 <a href="http://docs.pyinvoke.org/en/stable/concepts/namespaces.html">Constructing namespaces</a>)</p>
 <p>不過我不會在這篇文章深入探討要怎麼說<br/>
-一般來說，除非任務真的非常多，這並不是必要的</p>
+一般來說，除非任務真的非常多，這是不太必要的</p>
 <p>如果有興趣看我怎麼把 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 的任務模組化<br/>
 可以參考 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/f1050eabf44a8b8e662370bd97b2a79ad57723c2">commit f105</a></p>
 <p>最後修改後 <code>tasks</code> 套件中有這些模組</p>
@@ -244,7 +243,7 @@ invoke 當然也想到了<br/>
 </code></pre></div>
 <h2 id="makefile">為什麼不用 Makefile 就好？</h2>
 <p>因為有些 shell script 並不見得那麼好寫<br/>
-（也可能只是我不熟啦...）</p>
+（也可能只是我不熟...）</p>
 <p>e.g.,</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">invoke</span> <span class="kn">import</span> <span class="n">task</span>
 
@@ -370,7 +369,7 @@ invoke 當然也想到了<br/>
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-02-27T20:04:00+08:00">2020/02/27 - Thu</time>
 <h4>Last Updated</h4>
-<time datetime="2020-07-19T16:25:00+08:00">2020/07/19 - Sun</time>
+<time datetime="2020-10-04T16:05:00+08:00">2020/10/04 - Sun</time>
 
         <h4>Python Table Manners</h4>
     <ul class="multi-parts-list">

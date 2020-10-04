@@ -20,13 +20,13 @@
 
 <meta property="og:title" content="Python Table Manners - 測試 (一) "/>
 <meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-test-1" />
-<meta property="og:description" content="設定完環境後，接著開始要開發程式的各項功能 要驗證程式正確性時，我們就會用到測試" />
+<meta property="og:description" content="設定完環境後，接著開始要開發程式的各項功能 要驗證程式正確性時，我們就會撰寫測試案例" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2020-02-24T23:33:00+08:00" />
-<meta property="og:article:modified_time" content="2020-07-19T15:58:00+08:00" />
+<meta property="og:article:modified_time" content="2020-10-04T15:33:00+08:00" />
 <meta name="twitter:title" content="Python Table Manners - 測試 (一) ">
-<meta name="twitter:description" content="設定完環境後，接著開始要開發程式的各項功能 要驗證程式正確性時，我們就會用到測試">
+<meta name="twitter:description" content="設定完環境後，接著開始要開發程式的各項功能 要驗證程式正確性時，我們就會撰寫測試案例">
 
         <title>Python Table Manners - 測試 (一)  · Laziness makes Great Engineer
 </title>
@@ -110,14 +110,14 @@
     <div class="span8 article-content">
             
             <p>設定完環境後，接著開始要開發程式的各項功能<br/>
-要驗證程式正確性時，我們就會用到測試</p>
+要驗證程式正確性時，我們就會撰寫測試案例</p>
 <!--more-->
 
 <h2 id="_1">為什麼要寫自動化測試</h2>
 <ul>
 <li>如果沒有自動化測試<ul>
-<li>必須手動去驗證程式的正確性，非常的麻煩，而且也不能確定每次的測試方式都是相同的<br/>
- （因為很麻煩懶得測試，就會變成讓客戶去測試，然後就造成更多的麻煩了 😱）</li>
+<li>必須手動去驗證程式的正確性，而且不能確定每次的測試方式都是相同的<br/>
+ （如果因為很麻煩懶得測試，變成讓客戶去測試，就會造成更多的麻煩了 😱）</li>
 <li>增加重構 (refactoring）的風險，因為很難驗證程式的功能有沒有在重構的過程中被改動</li>
 <li>加入新的功能不知道會不會動到原本沒問題的功能</li>
 </ul>
@@ -155,20 +155,20 @@
 <li>使用 <code>assertEqual</code> 來做正確性的驗證</li>
 </ul>
 <h2 id="pytest">pytest</h2>
-<p><a href="https://docs.pytest.org/en/latest/">pytest</a> 是現在 Python 專案比較建議使用的測試框架，也會是這篇文章的主角</p>
+<p><a href="https://docs.pytest.org/en/6.1.1/">pytest</a> 是現在 Python 專案建議使用的測試框架，也會是這篇文章的主角</p>
 <ul>
 <li>為什麼要用 pytest<ul>
 <li>更符合 Python 程式碼風格 (Pythonic)</li>
 <li>pytest 支援舊有的 unittest 風格</li>
 <li>扁平化（不用繼承）</li>
 <li>只需要使用 <code>assert</code>，不需要去記 <code>assert.+</code> (e.g., <code>assertEqual</code>) 等 API</li>
-<li>更好的<a href="https://docs.pytest.org/en/latest/goodpractices.html#test-discovery">測試探索 (test discovery)</a></li>
+<li>更好的<a href="https://docs.pytest.org/en/6.1.1/goodpractices.html#test-discovery">測試探索 (test discovery)</a></li>
 <li>更多的進階功能 (e.g., fixture, mark, parameterize and etc.)</li>
 <li>強大的套件</li>
 </ul>
 </li>
 </ul>
-<p>以下是取自 <a href="https://docs.pytest.org/en/latest/getting-started.html#create-your-first-test">pytest - Create your first test</a> 的範例<br/>
+<p>以下是取自 <a href="https://docs.pytest.org/en/6.1.1/getting-started.html#create-your-first-test">pytest - Create your first test</a> 的範例<br/>
 相比於 unittest 寫法相對簡潔</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># content of test_sample.py</span>
 <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -180,8 +180,8 @@
 </code></pre></div>
 <h2 id="unittest-pytest">從 Unittest 到 Pytest</h2>
 <p>前面的比較其實不太公平，unittest 的範例要測的內容本身就比 pytest 的複雜</p>
-<p>所以我會用 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 為例子<br/>
-討論我們如何從 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/v1.0">v1.0</a> 的 unittest 風格測試，在 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/83e48c6443303045ed1de2f020297c3110bb1300">commit 83e4</a> 改成 pytest 風格</p>
+<p>所以接下來會用 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 為例子<br/>
+討論如何從 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/v1.0">v1.0</a> 的 unittest 風格改成在 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/83e48c6443303045ed1de2f020297c3110bb1300">commit 83e4</a> 的 pytest 風格</p>
 <p>如果想跟著程式碼跑，可以把專案 clone 下來<br/>
 （當然能貢獻專案就更棒了 XD）</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># clone 專案到本地</span>
@@ -275,12 +275,12 @@ test/test_title.py F                                     [100%]
         <span class="o">.......</span>
 </code></pre></div>
 <h3 id="step-1-fixture-setup-teardown">Step 1: 使用 fixture 取代 setUp / tearDown</h3>
-<p>將 <code>unittest.TestCase</code> 移除，改用 pytest 的 <a href="https://docs.pytest.org/en/latest/fixture.html">fixture</a> 取代 <code>setUp</code><br/>
+<p>將 <code>unittest.TestCase</code> 移除，改用 pytest 的 <a href="https://docs.pytest.org/en/6.1.1/fixture.html">fixture</a> 取代 <code>setUp</code><br/>
 fixture 跟 <code>setUp / tearDown</code> 的概念上相近，都是用來 準備 / 清除 資源<br/>
 但 fixture 更加的輕量且更有彈性</p>
 <p>在 <code>test_sponsor_number</code> 中加入參數 <code>sponsors</code><br/>
 pytest 會去找 fixtures 中是否有 <code>sponsors</code> 並將之代入</p>
-<p>接著也可以將較為冗長的 <code>assertEqual</code>，改為 <code>assert</code></p>
+<p>接著將較為冗長的 <code>assertEqual</code>，改為 <code>assert</code></p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 
 <span class="kn">from</span> <span class="nn">report_generator.partner</span> <span class="kn">import</span> <span class="n">sponsor</span>
@@ -303,7 +303,7 @@ pytest 會去找 fixtures 中是否有 <code>sponsors</code> 並將之代入</p>
 <h3 id="step-2-markskip">Step 2: 使用 mark.skip 跳過部分測試</h3>
 <p>原本的測試中有些邏輯錯誤<br/>
 但我只想先完成風格的轉換，還不打算修正<br/>
-因此先使用了 <a href="http://doc.pytest.org/en/latest/example/markers.html">markers</a><br/>
+因此先使用了 <a href="http://doc.pytest.org/en/6.1.1/example/markers.html">markers</a><br/>
 在想跳過的測試案例前面加上 <code>@pytest.mark.skip</code></p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 
@@ -443,7 +443,7 @@ test/test_title.py .              [100%]
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-02-24T23:33:00+08:00">2020/02/24 - Mon</time>
 <h4>Last Updated</h4>
-<time datetime="2020-07-19T15:58:00+08:00">2020/07/19 - Sun</time>
+<time datetime="2020-10-04T15:33:00+08:00">2020/10/04 - Sun</time>
 
         <h4>Python Table Manners</h4>
     <ul class="multi-parts-list">
