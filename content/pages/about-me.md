@@ -10,13 +10,13 @@ slug: about-me
 [TOC]
 
 ## Skill
-* **Advance**: Python, Docker, Web Backend Development, Git, Linux
-* **Intermediate**: AWS, Project Management, Data Analysis
+* **Advance**: Python, Docker, Git, Linux, Web Backend Development
+* **Intermediate**: AWS, Project Management, Data Engineering, Data Analysis
 
 ## Work Experience
 **[Apr 2017 - Present] Software Engineer, [Slice Technologies, Inc](https://www.slice.com/about)**
 
-* Improved software engineering culture through building best practice templates which reduces project initializing time and automatically checks minor errors before code review
+* Improved software engineering culture through building best practice templates which reduces project initializing time and automatically checks errors before code review
 * Designed and developed the backend of a data labeling system which automates the interaction between crowdsourcing workers and experts to generate high quality labeled data
 * Built data pipelines through [Apache Airflow](https://airflow.apache.org/) for machine learning models
 * Set up the CI/CD pipeline through [Jenkins](https://jenkins.io/) for existing systems
@@ -46,7 +46,7 @@ I was the executor of the program and the leader of the teaching assistant team.
 
 **[July 2015 - July 2016] Substitute Military Service, K-12 Education Administration, Ministry of Education**
 
-* Maintained legacy systems implemented in multiple languages (e.g., `C#`, `VBScript`, `PHP`, etc.)
+* * Maintained legacy systems implemented in multiple languages including `C#`, `VBScript`, `PHP`, and etc.
 * Developed automation programs for generating reports which save 80% of human labor time
 * Delivered a human resource management system using [django](https://www.djangoproject.com)
 
@@ -63,46 +63,37 @@ I was the executor of the program and the leader of the teaching assistant team.
 * Contribute to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
 
 ## Talk and Tutorial
-**[2020/07/24] [Euro Python 2020](https://ep2020.europython.eu/)**
-[Python table manners: a clean style](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020)
+* Python Table Manners
+    * 2020/11/7 [Taichung.py](https://taichung-py.kktix.cc/events/meetup-202011-clleew): [slide](https://speakerdeck.com/leew/python-table-manners-at-taichung-dot-py)
+    * 2020/10/16 [Hualien.py](https://www.meetup.com/Hualien-Py/events/273609065/): [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-hualien-py)
+    * 2020/08/31 [Kaohsiung.py](https://kaohsiungpy.kktix.cc/events/20200831): [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-kaohsiung-dot-py)
+    * **2020/07/24 [Euro Python 2020](https://ep2020.europython.eu/)**
+        * [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020)
+        * [video](https://www.youtube.com/watch?v=m6rF3Kah928)
+    * **2019/11/17 [PyCon CA 2019](https://2019.pycon.ca/): [slide](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019)**
+    * 2019/10/24 [Taipei.py](https://www.meetup.com/Taipei-py/events/265743666/)
+* commitizen-tools: What can we gain from crafting a git message convention?
+    * 2020/06/18 [Taipei.py](https://www.meetup.com/Taipei-py/events/271185591/): [slide](https://speakerdeck.com/leew/commitizen-tools-what-can-we-gain-from-crafting-a-git-message-convention-at-taipey-dot-py)
+    * **2020/04/25 [Remote Python Pizza 2020](https://remote.python.pizza/)**: [slide](https://speakerdeck.com/leew/what-can-we-gain-from-crafting-a-git-message-convention-at-remote-python-pizza-2020)
+* How to get more than PyCon in a PyCon
+    * **2019/09/16 [PyCon JP 2019](https://pycon.jp/2019/) - Peer Reviewed Lightning Talk**: [slide](https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9)
+* X-Village - 用不到兩個月準備兩個月的課程
+    * **2019/03/24 [SITCON 2019](https://sitcon.org/2019)**
+        * [slide](https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng)
+        * [video](https://www.youtube.com/watch?v=kf0KFyb-wcA)
+* Intro to Python Data Science Tools
+    * 2018/03/12 NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence: [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20190312)
+    * 2018/2/27 NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence: [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20180227)
+* CRUD in Flask
+    * 2018/8/16 [X-Village](https://sites.google.com/view/x-village/home?authuser=0) - Web Course: [slide](https://speakerdeck.com/leew/x-village-crud-in-flask-1)
+* 資管講座 (一場工資管營的演講)
+    * 2017/01/22 2018成大工資管營: [slide](https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang)
+* Bot Development
+    * 2016/12/08 NCKU CSIE - Introduction to Knowledge Discovery and Data Engineering: [slide](https://hackmd.io/p/HkW8LjRfl)
+* Keras Demo
+    * 2016/11/03 [深度之夜](https://ncku-ccs.kktix.cc/events/97f7bd96): [slide](https://github.com/Lee-W/Keras-Mnist-Example)
 
-**[2020/06/18] [Taipei.py](https://www.meetup.com/Taipei-py/events/271185591/)**
-[commitizen-tools: What can we gain from crafting a git message convention?](https://speakerdeck.com/leew/commitizen-tools-what-can-we-gain-from-crafting-a-git-message-convention-at-taipey-dot-py)
-
-**[2020/04/25] [Remote Python Pizza 2020](https://remote.python.pizza/)**
-[commitizen-tools: What can we gain from crafting a git message convention?](https://speakerdeck.com/leew/what-can-we-gain-from-crafting-a-git-message-convention-at-remote-python-pizza-2020)
-
-**[2019/11/17] [PyCon CA 2019](https://2019.pycon.ca/)**
-[Python table manners: a clean style](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019)
-
-**[2019/10/24] [Taipei.py](https://www.meetup.com/Taipei-py/events/265743666/)**
-Python table manners: a clean style
-
-**[2019/09/16] [PyCon JP 2019](https://pycon.jp/2019/) - Peer Reviewed Lightning Talk**
-[How to get more than PyCon in a PyCon](https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9)
-
-**[2019/03/24] [SITCON 2019](https://sitcon.org/2019)**
-[X-Village - 用不到兩個月準備兩個月的課程](https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng)
-
-**[2018/03/12] NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence**
-[Intro to Python Data Science Tools](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20190312)
-
-**[2018/8/16] [X-Village](https://sites.google.com/view/x-village/home?authuser=0) - Web Course**
-[CRUD in Flask](https://speakerdeck.com/leew/x-village-crud-in-flask-1)
-
-**[2018/2/27] NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence**
-[Intro to Python Data Science Tools](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20180227)
-
-**[2017/01/22] 2018成大工資管營**
-[資管講座 (一場工資管營的演講)](https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang)
-
-**[2016/12/08] NCKU CSIE - Introduction to Knowledge Discovery and Data Engineering**
-[Bot Development](https://hackmd.io/p/HkW8LjRfl)
-
-**[2016/11/03] [深度之夜](https://ncku-ccs.kktix.cc/events/97f7bd96)**
-[Keras Demo](https://github.com/Lee-W/Keras-Mnist-Example)
-
-For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/x-village-crud-in-flask).
+For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/).
 
 ## Award
 * Honorable Mention, 2013 Railway Application Section Problem Solving Competition
