@@ -9,7 +9,7 @@ Series: Python Table Manners
 
 <!--more-->
 
-[Python Table Manners - A Clean Style](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019) 是我在 [PyCon CA 2019](https://lee-w.github.io/posts/tech/2019/12/pycon-ca-2019/) 給的一個分享
+[Python Table Manners - A Clean Style](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019) 是我在 [PyCon CA 2019]({filename}/posts/article/2019/08-pycon-ca-2019.md) 給的一個分享
 內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流
 希望能讓剛接觸 Python 的朋友們，能在早期就碰到這些好用的工具，少踩一些雷
 
@@ -18,7 +18,7 @@ Series: Python Table Manners
 剛好看到 [連續七天寫作挑戰，解放你的技術創作力](https://www.accupass.com/event/2001190943344186137000)
 就給個理由來督促一下自己
 
-除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 [commitizen](https://github.com/Woile/commitizen) 學到的工具
+除了在 PyCon CA 分享中提到的內容外，還會多整理一些在貢獻 [commitizen](https://github.com/commitizen-tools/commitizen) 學到的工具
 
 目前預計會包含以下的內容
 

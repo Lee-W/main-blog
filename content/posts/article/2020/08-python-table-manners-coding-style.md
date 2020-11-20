@@ -180,7 +180,7 @@ str_var = 1
 除此之外，型別標記的程式碼也會增加可讀性
 因此近幾年越來越多人注意 Python 的型別標記
 
-PyCon US 2017 中 Lisa Guo 和 Hui Ding 的 Keynote Session [Python@Instagram](https://lee-w.github.io/posts/tech/2017/06/Python-at-IG/) 講了 Instagram 是為什麼要和如何將龐大的程式庫加上型別標示
+PyCon US 2017 中 Lisa Guo 和 Hui Ding 的 Keynote Session [Python@Instagram]({filename}/posts/article/2017/14-Python@Instagram.md) 講了 Instagram 是為什麼要和如何將龐大的程式庫加上型別標示
 [Static Typing in Python](https://lee-w.github.io/pycon-note/posts/pycon-us-2020/2020/05/static-typing-in-python/) 則是 PyCon US 2020 年 Dustin 對型別標示和檢查的詳細介紹
 而 Vita Smid 在 EuroPython 2019 的 [Static typing: beyond the basics of def foo(x: int) -str:](https://lee-w.github.io/pycon-note/posts/europython-2019/2020/03/static-typing-beyond-the-basics-of-def-foo-x-int-str/) 則講到了型別檢查更進階一點的應用
 這幾場演講都非常推薦可以觀看！

@@ -9,7 +9,7 @@ Authors: Lee-W
 也許是太久沒看書了，看書的速度下降了很多
 上一次好好看完一本書竟然是九月初的事了＠＠
 
-整體來說，這本書在講的跟[為什麼我們這樣生活，那樣工作 ?](https://lee-w.github.io/posts/book/2015/11/the-power-of-habit/)差不多
+整體來說，這本書在講的跟[為什麼我們這樣生活，那樣工作 ?]({filename}/posts/article/2019/08-pycon-ca-2019.md)差不多
 但文字上淺顯易懂了很多
 
 ![atmoic-habit](/images/books/atmoic-habit.jpg)

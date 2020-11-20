@@ -170,7 +170,7 @@ remote_name: origin
 並執行 `pipenv run mkdocs gh-deploy` 就會自動將文件部署到 GitHub Page 上
 
 如果想更近一步透過 GitHub Action 來達到 push 原始碼，就自動產生 GitHub Page
-可以參考我之前寫的 [透過 GitHub Action 自動發佈 Pelican 部落格文章](https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action/)
+可以參考我之前寫的 [透過 GitHub Action 自動發佈 Pelican 部落格文章]({filename}/posts/article/2020/02-automate-publishing-pelican-post-through-github-action.md)
 雖然裡面使用的例子是 Pelican ，但只要把建置頁面的指令換掉就可以了
 
 ### 其他 mkdocs.yml 常用設定
