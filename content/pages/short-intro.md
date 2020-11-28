@@ -19,6 +19,6 @@ slug: landing-page-about-hidden
 Being a lazy software engineer, I like to automate borning stuff and deliver quality code.
 I love traveling and make new friends. Hope to become a PyCon (or tech conf) Nomad and explore the world.
 
-I share my tech note, book review, and sometimes my thought in this blog.
+I share my tech note, book digest, and sometimes my thought in this blog.
 I have [another blog](https://lee-w.github.io/travlog/) which is more about entertainment.
 Hope you enjoy my blog!
