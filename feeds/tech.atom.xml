@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-10-08T16:12:00+08:00</updated><entry><title>小林的程式會不會遇到 SQL Injection</title><link href="https://lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection" rel="alternate"></link><published>2020-09-22T12:50:00+08:00</published><updated>2020-09-22T12:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-09-22:/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection</id><summary type="html">&lt;p&gt;其實這篇文章應該一年前就該寫了...&lt;br/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-12-22T23:20:00+08:00</updated><entry><title>snowflake-connector-python: 你的 pyarrow 不是你的 pyarrow</title><link href="https://lee-w.github.io/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem" rel="alternate"></link><published>2020-12-22T23:20:00+08:00</published><updated>2020-12-22T23:20:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-12-22:/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem</id><summary type="html">&lt;p&gt;這是個不好好看文件，胡亂嘗試、多繞了一圈才解決問題的經驗&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;這是個不好好看文件，胡亂嘗試、多繞了一圈才解決問題的經驗&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;最近剛好接手了別人弄到一半的專案&lt;br&gt;
+在嘗試把專案跑起來的時候，遇到了這個問題&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Optional dependency: &amp;#39;pyarrow&amp;#39; is not installed, please see the following link for install instructions: https://docs.snowflake.com/en/user-guide/python-connector-pandas.html#installation&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;看起來是 &lt;code&gt;pyarrow&lt;/code&gt; 沒有裝起來，所以可以先嘗試 &lt;code&gt;pip install pyarrow&lt;/code&gt;&lt;br&gt;
+但很不幸的，這麼做並不會解決問題&lt;br&gt;
+&lt;a href="https://github.com/snowflakedb/snowflake-connector-python"&gt;snowflake-connector-python&lt;/a&gt; v2.3.7 需要的 &lt;code&gt;pyarrow&lt;/code&gt; 版本必須是 &amp;gt;=0.17.0, &amp;lt; 0.18.0&lt;br&gt;
+這也不是什麼大問題，只要改成 &lt;code&gt;pip install pyarrow==0.17.0&lt;/code&gt; 就可以解決&lt;/p&gt;
+&lt;p&gt;不過如果每個套件遇到類似的問題都要這樣試，可能會花上不少的時間&lt;br&gt;
+對 pip 稍有概念的人看到 &lt;em&gt;Optional dependency: 'pyarrow' is not installed&lt;/em&gt; 可能會聯想到沒裝 extra requirement&lt;br&gt;
+所以我第一個嘗試其實是 &lt;code&gt;pip install snowflake-connector-python[pyarrow]&lt;/code&gt;&lt;br&gt;
+但安裝完以後，還是跳出了同樣的錯誤訊息&lt;br&gt;
+而且進到虛擬環境中會發現連 &lt;code&gt;pyarrow&lt;/code&gt; 都沒有被安裝&lt;/p&gt;
+&lt;p&gt;這時也只好點進它的文件，看是不是有需要額外設定什麼&lt;br&gt;
+👉 &lt;a href="https://docs.snowflake.com/en/user-guide/python-connector-pandas.html#installation"&gt;Using Pandas DataFrames with the Python Connector&lt;/a&gt;&lt;br&gt;
+點進文件馬上就會看到的指令是 &lt;code&gt;pip install snowflake-connector-python[pandas]&lt;/code&gt;&lt;br&gt;
+因為我要裝 &lt;code&gt;pyarrow&lt;/code&gt; 所以我將後面的 &lt;code&gt;pandas&lt;/code&gt; 改成 &lt;code&gt;pyarrow&lt;/code&gt;&lt;br&gt;
+不過這其實就跟前次嘗試的指令是一樣的，同樣不能解決問題&lt;br&gt;
+就在我百思不得其解時，我隨意測試了跟文件上一模一樣的指令&lt;br&gt;
+(i.e., &lt;code&gt;pip install snowflake-connector-python[pandas]&lt;/code&gt;)&lt;br&gt;
+然後一切的問題就解決了......&lt;/p&gt;
+&lt;p&gt;既然解決了，就要回去思考為什麼能解決&lt;br&gt;
+回去看 &lt;a href="https://github.com/snowflakedb/snowflake-connector-python/tree/v2.3.7/"&gt;snowflake-python-connector @ v2.3.7&lt;/a&gt; 的 setup.py&lt;br&gt;
+在 &lt;a href="https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L44"&gt;44行&lt;/a&gt; 可以找到 &lt;code&gt;'pyarrow&amp;gt;=0.17.0,&amp;lt;0.18.0'&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;pandas_requirements&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+    &lt;span class="c1"&gt;# Must be kept in sync with pyproject.toml&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;pyarrow&amp;gt;=0.17.0,&amp;lt;0.18.0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;pandas&amp;gt;=1.0.0,&amp;lt;1.2.0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;接著可以看到 &lt;code&gt;pandas_requirements&lt;/code&gt; 在 &lt;a href="https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L240"&gt;240行&lt;/a&gt; 被用到&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;...&lt;/span&gt;
+    &lt;span class="n"&gt;extras_require&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s2"&gt;&amp;quot;secure-local-storage&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+            &lt;span class="s1"&gt;&amp;#39;keyring&amp;lt;22.0.0,!=16.1.0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="s2"&gt;&amp;quot;pandas&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pandas_requirements&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;原來 &lt;code&gt;pip install snowflake-connector-python[pandas]&lt;/code&gt; 同時會安裝 &lt;code&gt;pandas_requirements&lt;/code&gt; 中的 pandas 跟 pyarrow&lt;br&gt;
+snowflake-connector-python 並不會單獨裝 pyarrow，這也難怪前面的嘗試會失敗&lt;br&gt;
+但其實這個問題只要都造著文件做就能解決，就是因為自作聰明才繞了一大圈&lt;br&gt;
+所以我說文件還是要好好的看啊！&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="snowflake"></category></entry><entry><title>小林的程式會不會遇到 SQL Injection</title><link href="https://lee-w.github.io/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection" rel="alternate"></link><published>2020-09-22T12:50:00+08:00</published><updated>2020-09-22T12:50:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-09-22:/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection</id><summary type="html">&lt;p&gt;其實這篇文章應該一年前就該寫了...&lt;br/&gt;
 今年為了在 PyCon TW 的 Lightning Talk 想個梗，就拿出來講 (&lt;a href="https://speakerdeck.com/leew/xiao-lin-de-cheng-shi-ma-hui-bu-hui-yu-dao-sql-injection"&gt;slide&lt;/a&gt;)&lt;br/&gt;
 沒想到被投影機擺了一道......&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;其實這篇文章應該一年前就該寫了...&lt;br/&gt;

@@ -16,18 +16,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Python, Conference, PyCon, Tech, " />
+<meta name="keywords" content="Python, snowflake, Tech, " />
 
-<meta property="og:title" content="PyCon TW 2017 - Sprint "/>
-<meta property="og:url" content="https://lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Sprint" />
-<meta property="og:description" content="這天的 Sprint 是由今年的 Keynote Speaker - Russell Keith-Magee 帶來他的開源專案BeeWare 讓大家一起來貢獻 這個專案還蠻有趣的 主要就是要讓 Python 能在各平台上跑 (i.e. web, mobile)" />
+<meta property="og:title" content="snowflake-connector-python: 你的 pyarrow 不是你的 pyarrow "/>
+<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem" />
+<meta property="og:description" content="這是個不好好看文件，胡亂嘗試、多繞了一圈才解決問題的經驗" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
-<meta property="og:article:published_time" content="2017-06-17T16:07:00+08:00" />
-<meta name="twitter:title" content="PyCon TW 2017 - Sprint ">
-<meta name="twitter:description" content="這天的 Sprint 是由今年的 Keynote Speaker - Russell Keith-Magee 帶來他的開源專案BeeWare 讓大家一起來貢獻 這個專案還蠻有趣的 主要就是要讓 Python 能在各平台上跑 (i.e. web, mobile)">
+<meta property="og:article:published_time" content="2020-12-22T23:20:00+08:00" />
+<meta name="twitter:title" content="snowflake-connector-python: 你的 pyarrow 不是你的 pyarrow ">
+<meta name="twitter:description" content="這是個不好好看文件，胡亂嘗試、多繞了一圈才解決問題的經驗">
 
-        <title>PyCon TW 2017 - Sprint  · Laziness makes Great Engineer
+        <title>snowflake-connector-python: 你的 pyarrow 不是你的 pyarrow  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
 <script>
@@ -77,8 +77,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Sprint">
-                PyCon TW 2017 - Sprint
+            <a href="https://lee-w.github.io/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem">
+                snowflake-connector-python: 你的 pyarrow 不是你的 pyarrow
             </a>
         </h1>
     </header>
@@ -87,52 +87,73 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <p>這天的 Sprint 是由今年的 Keynote Speaker - Russell Keith-Magee 帶來他的開源專案<a href="https://pybee.org">BeeWare</a><br>
-讓大家一起來貢獻<br>
-這個專案還蠻有趣的<br>
-主要就是要讓 Python 能在各平台上跑 (i.e. web, mobile)</p>
+            <p>這是個不好好看文件，胡亂嘗試、多繞了一圈才解決問題的經驗</p>
 <!--more-->
 
-<p>而且這個專案對新手還蠻友善的，文件中就有提供<a href="https://pybee.org/contributing/how/first-time/what/">First Time Contributor</a><br>
-第一次貢獻的人建議貢獻的專案是<a href="https://github.com/pybee/voc">voc</a>(Android) 和<a href="https://github.com/pybee/batavia">batavia</a>(JavaScript)<br>
-而且在裡面的 issue 還會標注 first timer only<br>
-<img alt="first-timer-only" src="/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/1-new-comer.png"></p>
-<p>雖然我其實對 Java 跟 JavaScript 都不熟<br>
-但比起來還是對 JavaScript 多了一點愛<br>
-所以我就來貢獻 batavia 了</p>
-<p>雖然其實我的貢獻大多就是文件上少寫跟一些錯誤<br>
-最後還有幫 Python 的 list 轉成 js 加了幾個小 method<br>
-原本想解決 args 跟 kwargs 的 issue，但果然還是對 JS 太不熟了ＱＱ<br>
-不過覺得整體來說是蠻好玩的</p>
-<p>Russell 都會很友善地回答問題<br>
-像我一開始採的雷就是 batavia 還沒支援到 Python3.6，他也很熱心幫我解決<br>
-我問了好幾個專案的小問題，Russell 都會說 "That's can be a pull request"<br>
-只要送了 PR 就可以得到<a href="https://pybee.org/contributing/challenge-coins/">Challenge Coins</a><br>
-拿到這個 challenge coin 其實還蠻開心的 xd</p>
-<p><img alt="Challenge Coin" src="/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/2-challenge-coin.jpg" style="width:30%"></p>
-<p>最後再附上在 twitter 上，這次參與 spinrt 的大合照<br>
-<img alt="all" src="/images/posts-image/2017-06-12-PyCon-TW-2017-Sprint/3-all.jpg" style="width:50%"></p>
-<p>2017/6/22<br>
-折騰了許久，我的<a href="https://github.com/pybee/batavia/pull/569">PR</a> 終於被 merge 回 batavia 了 XD</p>
-<hr>
-<p>這次的 PyCon 2017 大致就到這裡結束了<br>
-這幾篇文章大概先整理了，當時做的筆記<br>
-也許之後有時間，再好好看一次影片跟 Slide，重新整理一下所有的內容</p>
+<p>最近剛好接手了別人弄到一半的專案<br>
+在嘗試把專案跑起來的時候，遇到了這個問題</p>
+<div class="highlight"><pre><span></span><code><span class="err">Optional dependency: &#39;pyarrow&#39; is not installed, please see the following link for install instructions: https://docs.snowflake.com/en/user-guide/python-connector-pandas.html#installation</span>
+</code></pre></div>
+
+
+<p>看起來是 <code>pyarrow</code> 沒有裝起來，所以可以先嘗試 <code>pip install pyarrow</code><br>
+但很不幸的，這麼做並不會解決問題<br>
+<a href="https://github.com/snowflakedb/snowflake-connector-python">snowflake-connector-python</a> v2.3.7 需要的 <code>pyarrow</code> 版本必須是 &gt;=0.17.0, &lt; 0.18.0<br>
+這也不是什麼大問題，只要改成 <code>pip install pyarrow==0.17.0</code> 就可以解決</p>
+<p>不過如果每個套件遇到類似的問題都要這樣試，可能會花上不少的時間<br>
+對 pip 稍有概念的人看到 <em>Optional dependency: 'pyarrow' is not installed</em> 可能會聯想到沒裝 extra requirement<br>
+所以我第一個嘗試其實是 <code>pip install snowflake-connector-python[pyarrow]</code><br>
+但安裝完以後，還是跳出了同樣的錯誤訊息<br>
+而且進到虛擬環境中會發現連 <code>pyarrow</code> 都沒有被安裝</p>
+<p>這時也只好點進它的文件，看是不是有需要額外設定什麼<br>
+👉 <a href="https://docs.snowflake.com/en/user-guide/python-connector-pandas.html#installation">Using Pandas DataFrames with the Python Connector</a><br>
+點進文件馬上就會看到的指令是 <code>pip install snowflake-connector-python[pandas]</code><br>
+因為我要裝 <code>pyarrow</code> 所以我將後面的 <code>pandas</code> 改成 <code>pyarrow</code><br>
+不過這其實就跟前次嘗試的指令是一樣的，同樣不能解決問題<br>
+就在我百思不得其解時，我隨意測試了跟文件上一模一樣的指令<br>
+(i.e., <code>pip install snowflake-connector-python[pandas]</code>)<br>
+然後一切的問題就解決了......</p>
+<p>既然解決了，就要回去思考為什麼能解決<br>
+回去看 <a href="https://github.com/snowflakedb/snowflake-connector-python/tree/v2.3.7/">snowflake-python-connector @ v2.3.7</a> 的 setup.py<br>
+在 <a href="https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L44">44行</a> 可以找到 <code>'pyarrow&gt;=0.17.0,&lt;0.18.0'</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">pandas_requirements</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># Must be kept in sync with pyproject.toml</span>
+    <span class="s1">&#39;pyarrow&gt;=0.17.0,&lt;0.18.0&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pandas&gt;=1.0.0,&lt;1.2.0&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
+
+
+<p>接著可以看到 <code>pandas_requirements</code> 在 <a href="https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L240">240行</a> 被用到</p>
+<div class="highlight"><pre><span></span><code><span class="o">...</span>
+    <span class="n">extras_require</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;secure-local-storage&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">&#39;keyring&lt;22.0.0,!=16.1.0&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;pandas&quot;</span><span class="p">:</span> <span class="n">pandas_requirements</span><span class="p">,</span>
+<span class="o">...</span>
+</code></pre></div>
+
+
+<p>原來 <code>pip install snowflake-connector-python[pandas]</code> 同時會安裝 <code>pandas_requirements</code> 中的 pandas 跟 pyarrow<br>
+snowflake-connector-python 並不會單獨裝 pyarrow，這也難怪前面的嘗試會失敗<br>
+但其實這個問題只要都造著文件做就能解決，就是因為自作聰明才繞了一大圈<br>
+所以我說文件還是要好好的看啊！</p>
 
 
              
 
 
 <div class="applause_button">
-    <applause-button url=https://lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Sprint> </applause-button>
+    <applause-button url=https://lee-w.github.io/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem> </applause-button>
 </div>
 
  
                 <p id="post-share-links">
     Share on:
-      <a href="https://twitter.com/intent/tweet?text=PyCon%20TW%202017%20-%20Sprint&url=https%3A//lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Sprint&hashtags=python,conference,pycon" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Sprint" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=PyCon%20TW%202017%20-%20Sprint&amp;body=https%3A//lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Sprint" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=snowflake-connector-python%3A%20%E4%BD%A0%E7%9A%84%20pyarrow%20%E4%B8%8D%E6%98%AF%E4%BD%A0%E7%9A%84%20pyarrow&url=https%3A//lee-w.github.io/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem&hashtags=python,snowflake" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=snowflake-connector-python%3A%20%E4%BD%A0%E7%9A%84%20pyarrow%20%E4%B8%8D%E6%98%AF%E4%BD%A0%E7%9A%84%20pyarrow&amp;body=https%3A//lee-w.github.io/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -153,8 +174,8 @@
                 <a class="accordion-toggle disqus-comment-count comment-count collapsed"
                    data-toggle="collapse"
                    data-parent="#accordion2"
-                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Sprint"
-                   href="https://lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Sprint#comment_thread"
+                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem"
+                   href="https://lee-w.github.io/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem#comment_thread"
                    id="comment-accordion-toggle">
                     Comments
                 </a>
@@ -172,8 +193,8 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 
-    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Sprint';
-    var disqus_url = 'https://lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Sprint';
+    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem';
+    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -199,36 +220,18 @@
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2017-06-17T16:07:00+08:00">2017/06/17 - Sat</time>
-        <h4>PyCon TW 2017</h4>
-    <ul class="multi-parts-list">
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Day1" title="PyCon TW 2017 - Day 1">Part 1: PyCon TW 2017 - Day 1</a>
-            </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Day2" title="PyCon TW 2017 - Day 2">Part 2: PyCon TW 2017 - Day 2</a>
-            </li>
-            <li >
-            <a href="https://lee-w.github.io/posts/tech/2017/06/PyCon-TW-2017-Day3" title="PyCon TW 2017 - Day 3">Part 3: PyCon TW 2017 - Day 3</a>
-            </li>
-            <li  class="active-part">
-            Part 4: PyCon TW 2017 - Sprint
-            </li>
-    </ul>
+            <time itemprop="dateCreated" datetime="2020-12-22T23:20:00+08:00">2020/12/22 - Tue</time>
                 <h4>Read Time</h4>
                  1 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://lee-w.github.io/tags.html#conference-ref">Conference
-                    <span class="superscript">14</span>
-</a></li>
-                <li><a href="https://lee-w.github.io/tags.html#pycon-ref">PyCon
-                    <span class="superscript">11</span>
-</a></li>
                 <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
                     <span class="superscript">29</span>
+</a></li>
+                <li><a href="https://lee-w.github.io/tags.html#snowflake-ref">snowflake
+                    <span class="superscript">1</span>
 </a></li>
             </ul>
 <h4>Keep In Touch</h4>
