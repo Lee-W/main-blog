@@ -30,7 +30,7 @@ Series: Python Table Manners
 * [Commitizen: 規格化 commit message]({filename}/posts/article/2020/11-python-table-manners-commitizen.md)
 * [安全性檢查]({filename}/posts/article/2020/12-python-table-manners-security.md)
 * [文件]({filename}/posts/article/2020/13-python-table-manners-documentation.md)
-* 持續整合
+* [持續整合/部署]({filename}/posts/article/2020/19-python-table-manners-continous-intergration.md)
 * Cookiecutter: 程式專案模板
 
 當初整理 PyCon CA 2019 投影片的時候，大多是把這些工具應用到 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator)
