@@ -16,18 +16,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Python, GitHub Action, Blog, CI/CD, Tech, " />
+<meta name="keywords" content="Python, CI/CD, Tech, " />
 
-<meta property="og:title" content="透過 GitHub Action 自動發佈 Pelican 部落格文章 "/>
-<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action" />
-<meta property="og:description" content="最近因為在貢獻 commitizen，開始碰到 GitHub Action （ Python 也有自己的 commitizen 了！！！） 記錄一下怎麼應用到發布部落格文章" />
+<meta property="og:title" content="Python Table Manners - 持續整合/部署 "/>
+<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration" />
+<meta property="og:description" content="這篇好像真的拖得很久... 原本預定的發表時間還是 2020-03-04 呢 ...... 總之，剛好年假就趁機補一下" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
-<meta property="og:article:published_time" content="2020-01-16T15:35:00+08:00" />
-<meta name="twitter:title" content="透過 GitHub Action 自動發佈 Pelican 部落格文章 ">
-<meta name="twitter:description" content="最近因為在貢獻 commitizen，開始碰到 GitHub Action （ Python 也有自己的 commitizen 了！！！） 記錄一下怎麼應用到發布部落格文章">
+<meta property="og:article:published_time" content="2020-12-31T17:53:00+08:00" />
+<meta name="twitter:title" content="Python Table Manners - 持續整合/部署 ">
+<meta name="twitter:description" content="這篇好像真的拖得很久... 原本預定的發表時間還是 2020-03-04 呢 ...... 總之，剛好年假就趁機補一下">
 
-        <title>透過 GitHub Action 自動發佈 Pelican 部落格文章  · Laziness makes Great Engineer
+        <title>Python Table Manners - 持續整合/部署  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
 <script>
@@ -77,8 +77,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action">
-                透過 GitHub Action 自動發佈 Pelican 部落格文章
+            <a href="https://lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration">
+                Python Table Manners - 持續整合/部署
             </a>
         </h1>
     </header>
@@ -90,159 +90,167 @@
         <h4>Contents</h4>
         <div class="toc">
 <ul>
-<li><a href="#before-github-action">Before GitHub Action</a></li>
-<li><a href="#working-on-github-action">Working on GitHub Action</a></li>
-<li><a href="#after-github-action">After GitHub Action</a></li>
+<li><a href="#_1">想解決的問題</a></li>
+<li><a href="#rg-cli">如何套用到 rg-cli ?</a></li>
+<li><a href="#github-actions">GitHub Actions 實例</a><ul>
+<li><a href="#python-check">Python Check</a></li>
+<li><a href="#merge-into-master">Merge into master</a></li>
+<li><a href="#python-publish">Python Publish</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
 </ul>
 </div>
         </nav>
     </div>
     <div class="span8 article-content">
             
-            <p>最近因為在貢獻 <a href="https://github.com/Woile/commitizen">commitizen</a>，開始碰到 <a href="https://github.com/features/actions">GitHub Action</a><br/>
-（ Python 也有自己的 commitizen 了！！！）<br/>
-記錄一下怎麼應用到發布部落格文章</p>
+            <p>這篇好像真的拖得很久...<br/>
+原本預定的發表時間還是 2020-03-04 呢 ......<br/>
+總之，剛好年假就趁機補一下</p>
 <!--more-->
+<p>在使用 <a href="https://github.com/actions">GitHub Actions</a> 前，這篇原本要寫 <a href="https://github.com/drone/drone">drone</a> 的使用方式<br/>
+不過既然是放在 GitHub 上的開源專案，好像沒理由不用 GitHub Actions<br/>
+（但其實只是我當時想玩玩沒碰過的新東西）</p>
+<p>同樣會延續之前舉例的專案 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> (以下會簡稱 rg-cli）來講為什麼要用、如何使用 GitHub Actions</p>
 
-<h2 id="before-github-action">Before GitHub Action</h2>
-<p>要發佈一個新文章，我會做兩件事<br/>
-1. 將原始碼推到 GitHub 上<br/>
-2. 透過原始碼產生靜態頁面，並且推到 gh-pages 這個分支上</p>
-<p>只有第二步是必要的，但也沒不把原始碼推上去的理由</p>
-<p><a href="https://github.com/getpelican/pelican">Pelican</a> 初始化部落格時會產生 <code>Makefile</code> 和給 <a href="https://github.com/pyinvoke/invoke">invoke</a> 用的 <code>tasks.py</code><br/>
-裡面會包好如 build, publish 等常見指令<br/>
-預設會透過 <a href="https://github.com/davisp/ghp-import">ghp-import</a> 推到 GitHub Page</p>
-<h2 id="working-on-github-action">Working on GitHub Action</h2>
-<p>將我原本做的事整理成 GitHub Action 該做的事，就會變成這樣<br/>
-1. <strong>Check out</strong>: Check Out 到這個分支<br/>
-2. <strong>Set up Python</strong>: 設定 Python 環境<br/>
-3. <strong>Install dependencies</strong>: 安裝 <a href="https://github.com/getpelican/pelican">Pelican</a> 和相關套件<br/>
-4. <strong>Build and Deploy</strong>: 產生原始碼推上去</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">publish post</span>
-
-<span class="nt">on</span><span class="p">:</span>
-  <span class="nt">push</span><span class="p">:</span>
-    <span class="nt">branches</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">content</span>
-
-<span class="nt">jobs</span><span class="p">:</span>
-  <span class="nt">publish</span><span class="p">:</span>
-    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
-    <span class="nt">steps</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Check out</span>
-        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
-      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
-        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span>
-        <span class="nt">with</span><span class="p">:</span>
-          <span class="nt">python-version</span><span class="p">:</span> <span class="s">'3.7'</span>
-      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
-        <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
-          <span class="no">python -m pip install pipenv</span>
-          <span class="no">pipenv --version</span>
-          <span class="no">pipenv install</span>
-      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build and Deploy</span>
-        <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
-          <span class="no">pipenv run inv github</span>
-</code></pre></div>
-<p>這份設定檔要放在專案目錄的 <code>.github/workflows/</code> 下<br/>
-至於要命名成什麼都可以<br/>
-另外建議使用 yamllint 來檢查 yaml 語法<br/>
-我遇過太多次縮排造成的錯誤了</p>
-<p>這份設定檔大致上算直觀</p>
+<h2 id="_1">想解決的問題</h2>
+<p>先從這樣的工具能解決什麼問題開始聊起</p>
+<p>假設你是某開源專案的維護者，設定好專案程式碼風格檢查跟自動化測試<br/>
+有個貢獻者提交了一個 pull request 給你審核<br/>
+審核完準備要 merge 的時候，才發現他的 pull request 測試跑不過<br/>
+這可能就會浪費你前面大部分審核的時間</p>
+<p>如果能在貢獻者 push 完，自動就做檢查<br/>
+確認已經通過基本的檢查，才讓人工介入（維護者審核）<br/>
+那就能省下你很多時間</p>
+<p><img alt="pass" src="/images/posts-image/2020-02-22-python-table-manner-series/pass.jpg"/></p>
+<p>當這個 pull request 通過所有測試和人工審核，merge 回 master 分支之後<br/>
+接下來就要讓服務上線或是發佈套件，而這些步驟通常都很重複性且繁瑣<br/>
+如果自動化這些步驟就能省下人工成本，並減少人為失誤</p>
+<h2 id="rg-cli">如何套用到 rg-cli ?</h2>
+<p>簡單先將想做的事分為三個步驟<br/>
+前一步通過才可以執行下一步</p>
 <ol>
-<li>name: 這個 workflow 的名稱</li>
-<li>on: 在什麼情況下才要執行這個 workflow</li>
-<li>jobs: 要執行哪些任務，目前我只執行 publish 這件事，下面的 step 則是描述我前面說要做的事</li>
+<li>當貢獻者提交 pull request 後，自動執行風格檢查、跑測試</li>
+<li>當 pull request 被維護者 merge 回 master 分支之後，根據 git commit 更新版本號並產生 git tag ，最後再將 git tag 推回 master 分支<br/>
+  （如果不太知道這段在做什麼，可以參考 <a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-commitizen">Commitizen: 規格化 commit message</a>)</li>
+<li>當 master 分支偵測到新的版本號（git tag）產生後，自動將新的套件上傳到 <a href="https://pypi.org/project/pycontw-report-generator/">PyPI</a></li>
 </ol>
-<p>這麼做之後，我遇到了兩個問題: <strong>submodule</strong> 跟 <strong>ghp-import</strong></p>
-<p>我的部落格把主題跟套件都分出去各自成一個專案<br/>
-所以要建立部落格必須要把每一個 submodule 都一併 clone 下來<br/>
-所幸原本 GitHub Action 就有提供 (Ref: <a href="https://github.com/actions/checkout#Checkout-submodules">Check-out-submodule</a>)<br/>
-加上下面這段就解決了</p>
-<div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Checkout submodules</span>
-        <span class="nt">shell</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bash</span>
-        <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
-          <span class="no">auth_header="$(git config --local --get http.https://github.com/.extraheader)"</span>
-          <span class="no">git submodule sync --recursive</span>
-          <span class="no">git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1</span>
+<h2 id="github-actions">GitHub Actions 實例</h2>
+<p>接下來看 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/3ff174384639c8d6f40c4cd16e59ceba950838e9/.github/workflows">pycontw-postevent-report-generator/.github/workflows/ @ 3ff174</a> 中的三個檔案，分別對應到前面所提的三個步驟</p>
+<ol>
+<li><a href="https://github.com/pycontw/pycontw-postevent-report-generator/blob/3ff174384639c8d6f40c4cd16e59ceba950838e9/.github/workflows/python-check.yaml">python-check.yaml</a></li>
+<li><a href="https://github.com/pycontw/pycontw-postevent-report-generator/blob/3ff174384639c8d6f40c4cd16e59ceba950838e9/.github/workflows/merge-into-master.yaml">merge-into-master.yaml</a></li>
+<li><a href="https://github.com/pycontw/pycontw-postevent-report-generator/blob/3ff174384639c8d6f40c4cd16e59ceba950838e9/.github/workflows/python-publish.yaml">python-publish.yaml</a></li>
+</ol>
+<h3 id="python-check">Python Check</h3>
+<p>每個 GitHub Actions 的 workflow 都需要有一個名稱</p>
+<div class="highlight"><pre><span></span><code><span class="n">name</span><span class="o">:</span> <span class="n">python</span> <span class="n">check</span>
 </code></pre></div>
-<p>ghp-import 的問題則是，我沒有在上面的環境設定我的 git 資訊<br/>
-他沒有權限推到 gh-pages<br/>
-也可以透過把 URL 改成 <code>https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${repo_name}</code> 來解決<br/>
-但我實在不太想再多去設定一些 credential<br/>
-最後找到了 <a href="https://github.com/peaceiris/actions-gh-pages">actions-gh-page</a><br/>
-只要把靜態網頁在 GitHub 上 build 出來，再把結果透過這個 action 推到 gh-pages 即可<br/>
-這樣我就只需要設定 <code>{{ secrets.PERSONAL_ACCESS_TOKEN}}</code> 這個我在其他 GitHub Action 也都用得到的 token</p>
-<div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Deploy</span>
-        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v2</span>
-        <span class="nt">env</span><span class="p">:</span>
-          <span class="nt">PERSONAL_TOKEN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ secrets.PERSONAL_ACCESS_TOKEN }}</span>
-          <span class="nt">PUBLISH_BRANCH</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
-          <span class="nt">PUBLISH_DIR</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./output</span>
+<p>這會顯示在 <strong>Actions</strong> &gt; <strong>Workflows</strong> 中</p>
+<p><img alt="workflow" src="/images/posts-image/2020-02-22-python-table-manner-series/workflow.jpg"/></p>
+<p>接著要指定哪些事件發生時要執行這個 workflow<br/>
+(See more 👉 <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows">Events that trigger workflows</a>)</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span> <span class="nv">pull_request</span><span class="p p-Indicator">]</span>
 </code></pre></div>
-<p><img alt="token" src="/images/posts-image/2020-01-16-automate-publish-pelican-through-github-action/token.png"/></p>
-<p>另外，最近 GitHub 終於提供可以 rerun 的選項了<br/>
-原本失敗的時候還必須要 git reset 來強制 GitHub 重新執行 Action</p>
-<p><img alt="rebuild" src="/images/posts-image/2020-01-16-automate-publish-pelican-through-github-action/rebuild.png"/></p>
-<h2 id="after-github-action">After GitHub Action</h2>
-<p>下面就是我最後的 <code>.github/workflows/publish.yaml</code></p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">publish post</span>
-
-<span class="nt">on</span><span class="p">:</span>
-  <span class="nt">push</span><span class="p">:</span>
-    <span class="nt">branches</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">content</span>
-
-<span class="nt">jobs</span><span class="p">:</span>
-  <span class="nt">publish</span><span class="p">:</span>
+<p>再來則是要在哪執行、執行什麼</p>
+<ul>
+<li><code>jobs</code>： workflow 要執行的 job ，可以有超過一個 job。每個 job 都必須給它一個 job id (e.g., check)<ul>
+<li><code>run-on</code>： 要跑在哪種機器上 （More option 👉<a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on">jobs.<job_id>.runs-on</job_id></a>）</li>
+<li><code>steps</code>:  要執行的 step<ul>
+<li><code>name</code>: step 的名稱</li>
+<li><code>use</code>: step 要使用哪個 action，可以用在 <a href="https://github.com/marketplace?type=actions">GitHub Marketplace · Actions</a> 找看看有沒有別人已經寫好的 action 不用重造輪子</li>
+<li><code>with</code>: 輸入 actions 的參數</li>
+<li><code>run</code>: 要執行的指令（<code>|</code> 是 yaml 的斷行）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">jobs</span><span class="p">:</span>
+  <span class="nt">check</span><span class="p">:</span>
     <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
     <span class="nt">steps</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Check out</span>
         <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
-      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Checkout submodules</span>
-        <span class="nt">shell</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bash</span>
-        <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
-          <span class="no">auth_header="$(git config --local --get http.https://github.com/.extraheader)"</span>
-          <span class="no">git submodule sync --recursive</span>
-          <span class="no">git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1</span>
+
       <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
         <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span>
         <span class="nt">with</span><span class="p">:</span>
-          <span class="nt">python-version</span><span class="p">:</span> <span class="s">'3.7'</span>
+          <span class="nt">python-version</span><span class="p">:</span> <span class="s">"3.7"</span>
+
       <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
         <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
-          <span class="no">python -m pip install pipenv</span>
-          <span class="no">pipenv --version</span>
-          <span class="no">pipenv install</span>
-      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build</span>
-        <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
-          <span class="no">pipenv run inv publish</span>
-      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Deploy</span>
-        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v2</span>
-        <span class="nt">env</span><span class="p">:</span>
-          <span class="nt">PERSONAL_TOKEN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ secrets.PERSONAL_ACCESS_TOKEN }}</span>
-          <span class="nt">PUBLISH_BRANCH</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
-          <span class="nt">PUBLISH_DIR</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./output</span>
+          <span class="no">python -m pip install pipenv invoke</span>
+          <span class="no">inv env.init-dev -w</span>
+<span class="l l-Scalar l-Scalar-Plain">......</span>
 </code></pre></div>
+<p>當這個 workflow 被執行的時候，可以在 GitHub Actions 看到細節</p>
+<p><img alt="step" src="/images/posts-image/2020-02-22-python-table-manner-series/job.jpg"/></p>
+<h3 id="merge-into-master">Merge into master</h3>
+<p>上個 workflow 只要偵測到任何 push 或 pull request 就會執行<br/>
+而這個 workflow 則是在 master 分支有改動時執行<br/>
+這時就可以在 <code>on</code> 的後面針對特定的事件做判斷</p>
+<div class="highlight"><pre><span></span><code><span class="nt">on</span><span class="p">:</span>
+  <span class="nt">push</span><span class="p">:</span>
+    <span class="nt">branches</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">master</span>  <span class="c1"># another branch could be specified here</span>
+</code></pre></div>
+<p>除了 workflow 能偵測事件以外，也能依造不同的事件內容執行不同的 job<br/>
+下面的狀況是只有「開頭不是 "bump:" 的 commit」 才執行 <code>bump-version</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">jobs</span><span class="p">:</span>
+  <span class="nt">bump-version</span><span class="p">:</span>
+    <span class="nt">if</span><span class="p">:</span> <span class="s">"!startsWith(github.event.head_commit.message,</span><span class="nv"> </span><span class="s">'bump:')"</span>
+    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+</code></pre></div>
+<p>因為 commitizen 自動跳版本號的時候，會 push 一個 commit 回 master 分支<br/>
+所以要給 GitHub Actions 適當的權限<br/>
+那就需要設定密碼或 token 來做到<br/>
+因為它們不適合被公開，所以要設定在 secret 裡面<br/>
+設定 secret 的頁面可以從 <strong>Settings</strong> &gt; <strong>Secrets</strong> &gt; <strong>New repository secret</strong> (右上角) 找到</p>
+<p><img alt="secret" src="/images/posts-image/2020-02-22-python-table-manner-series/secret.jpg"/></p>
+<p>在 job 取出 secret 的方式則是如下使用 <code>${{ secrets.secret_id }}</code> 這樣的語法</p>
+<div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Check out</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+        <span class="nt">with</span><span class="p">:</span>
+          <span class="nt">fetch-depth</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+          <span class="nt">token</span><span class="p">:</span> <span class="s">'${{</span><span class="nv"> </span><span class="s">secrets.PERSONAL_ACCESS_TOKEN</span><span class="nv"> </span><span class="s">}}'</span>
+</code></pre></div>
+<h3 id="python-publish">Python Publish</h3>
+<p>跟 GitHub Actions 比較相關的內容，在上面兩個 workflow 都寫得差不多的<br/>
+那這裡就來聊聊跟 PyPI 相關的</p>
+<p>從去年七月起，PyPI 就有支援使用 API token 上傳<br/>
+（See more 👉 <a href="https://pyfound.blogspot.com/2019/07/pypi-now-supports-uploading-via-api.html">PyPI now supports uploading via API token</a>）<br/>
+所以建議使用 API token 而不是個人的 PyPI 帳號密碼<br/>
+產生 PyPI token 的方式可以在上面的文章找到，我就不贅述<br/>
+使用的方式則是把原本帳號的欄位改成 <code>__token__</code> （就是這個字串，不用代換成任何東西)<br/>
+密碼改成 PyPI 給你的 token</p>
+<p>在串 GitHub Actions 時，我踩到一個很有趣（？）的雷<br/>
+假設你的取得的 token 是 <code>pypi-thisisrandomestringrepresentingyourapitoken</code><br/>
+在 workflow 中用 <code>password: ${{ secrets.pypi_password }}</code> 取得 secret<br/>
+那在 secret 就要設定 <code>"pypi-thisisrandomestringrepresentingyourapitoken"</code> 而不是 <code>pypi-thisisrandomestringrepresentingyourapitoken</code><br/>
+不過也許將 workflow 改成 <code>password: "${{ secrets.pypi_password }}"</code> 也能解決<br/>
+總之，要記得加 <code>""</code></p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://docs.github.com/en/free-pro-team@latest/actions">GitHub Actions</a></li>
+<li><a href="https://hynek.me/articles/python-github-actions/">Python in GitHub Actions</a></li>
+</ul>
 
 
              
 
 
 <div class="applause_button">
-    <applause-button url=https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action> </applause-button>
+    <applause-button url=https://lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration> </applause-button>
 </div>
 
  
                 <p id="post-share-links">
     Share on:
-      <a href="https://twitter.com/intent/tweet?text=%E9%80%8F%E9%81%8E%20GitHub%20Action%20%E8%87%AA%E5%8B%95%E7%99%BC%E4%BD%88%20Pelican%20%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0&url=https%3A//lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action&hashtags=python,github-action,blog,cicd" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=%E9%80%8F%E9%81%8E%20GitHub%20Action%20%E8%87%AA%E5%8B%95%E7%99%BC%E4%BD%88%20Pelican%20%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0&amp;body=https%3A//lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20-%20%E6%8C%81%E7%BA%8C%E6%95%B4%E5%90%88/%E9%83%A8%E7%BD%B2&url=https%3A//lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration&hashtags=python,cicd" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Python%20Table%20Manners%20-%20%E6%8C%81%E7%BA%8C%E6%95%B4%E5%90%88/%E9%83%A8%E7%BD%B2&amp;body=https%3A//lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -263,8 +271,8 @@
                 <a class="accordion-toggle disqus-comment-count comment-count collapsed"
                    data-toggle="collapse"
                    data-parent="#accordion2"
-                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action"
-                   href="https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action#comment_thread"
+                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration"
+                   href="https://lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration#comment_thread"
                    id="comment-accordion-toggle">
                     Comments
                 </a>
@@ -282,8 +290,8 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 
-    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action';
-    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/01/automate-publish-pelican-through-github-action';
+    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration';
+    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -309,21 +317,21 @@
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2020-01-16T15:35:00+08:00">2020/01/16 - Thu</time>
+            <time itemprop="dateCreated" datetime="2020-12-31T17:53:00+08:00">2020/12/31 - Thu</time>
+        <h4>Python Table Manner</h4>
+    <ul class="multi-parts-list">
+            <li  class="active-part">
+            Part 1: Python Table Manners - 持續整合/部署
+            </li>
+    </ul>
                 <h4>Read Time</h4>
                  2 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://lee-w.github.io/tags.html#blog-ref">Blog
-                    <span class="superscript">1</span>
-</a></li>
                 <li><a href="https://lee-w.github.io/tags.html#cicd-ref">CI/CD
                     <span class="superscript">2</span>
-</a></li>
-                <li><a href="https://lee-w.github.io/tags.html#github-action-ref">GitHub Action
-                    <span class="superscript">1</span>
 </a></li>
                 <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
                     <span class="superscript">30</span>
