@@ -228,8 +228,9 @@
 <p>在串 GitHub Actions 時，我踩到一個很有趣（？）的雷<br/>
 假設你的取得的 token 是 <code>pypi-thisisrandomestringrepresentingyourapitoken</code><br/>
 在 workflow 中用 <code>password: ${{ secrets.pypi_password }}</code> 取得 secret<br/>
-那在 secret 就要設定 <code>"pypi-thisisrandomestringrepresentingyourapitoken"</code> 而不是 <code>pypi-thisisrandomestringrepresentingyourapitoken</code><br/>
-不過也許將 workflow 改成 <code>password: "${{ secrets.pypi_password }}"</code> 也能解決<br/>
+那在 secret 就要設定 <code>"pypi-thisisrandomestringrepresentingyourapitoken"</code><br/>
+而不是 <code>pypi-thisisrandomestringrepresentingyourapitoken</code><br/>
+不過也許將 workflow 的內容改成 <code>password: "${{ secrets.pypi_password }}"</code> 也能解決<br/>
 總之，要記得加 <code>""</code></p>
 <h2 id="reference">Reference</h2>
 <ul>
