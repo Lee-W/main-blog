@@ -1,5 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2020-12-31T17:53:00+08:00</updated><entry><title>Python Table Manners - 持續整合/部署</title><link href="https://lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration" rel="alternate"></link><published>2020-12-31T17:53:00+08:00</published><updated>2020-12-31T17:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-12-31:/posts/tech/2020/12/python-table-manner-continuous-integration</id><summary type="html">&lt;p&gt;這篇好像真的拖得很久...&lt;br/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2021-01-01T13:30:00+08:00</updated><entry><title>Python Table Manners - Cookiecutter 專案模板</title><link href="https://lee-w.github.io/posts/tech/2021/01/python-table-manners-cookiecutter" rel="alternate"></link><published>2021-01-01T13:30:00+08:00</published><updated>2021-01-01T13:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2021-01-01:/posts/tech/2021/01/python-table-manners-cookiecutter</id><summary type="html">&lt;p&gt;&lt;a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series"&gt;Python Table Manners 系列&lt;/a&gt; 整理了各種開發 Python 專案能用到的工具們&lt;br/&gt;
+如果每次重新開啟新專案都得重複設定的步驟就很浪費時間&lt;br/&gt;
+所以我將它們整理成專案模板 &lt;a href="https://github.com/Lee-W/cookiecutter-python-template"&gt;cookiecutter-python-template&lt;/a&gt;&lt;br/&gt;
+下次創立新專案的時候，只要透過這個模板就能快速產生已經設定好的空白專案&lt;br/&gt;
+這篇文章會跟大家聊聊如何使用這個專案模板和如何建立自己的專案模板&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a href="https://lee-w.github.io/posts/tech/2020/02/python-table-manners-series"&gt;Python Table Manners 系列&lt;/a&gt; 整理了各種開發 Python 專案能用到的工具們&lt;br/&gt;
+如果每次重新開啟新專案都得重複設定的步驟就很浪費時間&lt;br/&gt;
+所以我將它們整理成專案模板 &lt;a href="https://github.com/Lee-W/cookiecutter-python-template"&gt;cookiecutter-python-template&lt;/a&gt;&lt;br/&gt;
+下次創立新專案的時候，只要透過這個模板就能快速產生已經設定好的空白專案&lt;br/&gt;
+這篇文章會跟大家聊聊如何使用這個專案模板和如何建立自己的專案模板&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="cookiecutter"&gt;什麼是 Cookiecutter？&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/cookiecutter/cookiecutter"&gt;Cookiecutter&lt;/a&gt; 是以 Python 撰寫，透過已有的專案模板產生新專案的工具&lt;br/&gt;
+雖然是用 Python 撰寫，但不限於只能使用在 Python 專案&lt;br/&gt;
+甚至也不太需要會寫 Python，就能製作屬於自己的專案模板&lt;br/&gt;
+目前在 Github 上，已經有超過 5,000 個已經製作好的 cookiecutter 模板&lt;/p&gt;
+&lt;p&gt;相較於每次都從前一個專案或空專案複製設定的做法&lt;br/&gt;
+Cookiecutter 能確保我們不會少代換掉舊的設定（e.g., 舊專案名稱）&lt;br/&gt;
+並減少需要代換這些內容的人力&lt;/p&gt;
+&lt;h2 id="cookiecutter_1"&gt;如何使用 Cookiecutter 模板？&lt;/h2&gt;
+&lt;p&gt;以我製作的模板 &lt;a href="https://github.com/Lee-W/cookiecutter-python-template"&gt;cookiecutter-python-template&lt;/a&gt; 為例&lt;/p&gt;
+&lt;p&gt;首先要安裝 cookiecutter ，建議使用 pipx&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipx install cookiecutter
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;再來要指定產生新專案要用的模板&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cookiecutter https://github.com/Lee-W/cookiecutter-python-template
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;接著會進入互動式介面，詢問專案相關的設定&lt;br/&gt;
+每個問題依序會以 &lt;code&gt;值 [預設值]: 使用者輸入&lt;/code&gt; 的形式出現&lt;br/&gt;
+有的&lt;code&gt;值&lt;/code&gt;會因為前面的回答不同，而產生對應的預設值&lt;br/&gt;
+&lt;code&gt;值&lt;/code&gt; (e.g., python_table_manners) 會被帶回專案模板去取代模板中的變數 (e.g., project_slug)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;project_name&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Python&lt;/span&gt; &lt;span class="n"&gt;Project&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="n"&gt;table&lt;/span&gt; &lt;span class="n"&gt;manners&lt;/span&gt;
+&lt;span class="n"&gt;project_slug&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;python_table_manners&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;project_description&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Short&lt;/span&gt; &lt;span class="n"&gt;Descirption&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;Python&lt;/span&gt; &lt;span class="n"&gt;Project&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;example&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;cookiecutter&lt;/span&gt; &lt;span class="n"&gt;template&lt;/span&gt;
+&lt;span class="n"&gt;github_username&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Lee&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;github_url&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nl"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/Lee-W/python_table_manners]:&lt;/span&gt;
+&lt;span class="n"&gt;author_name&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Wei&lt;/span&gt; &lt;span class="n"&gt;Lee&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;author_email&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;weilee&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rx&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="n"&gt;gmail&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;
+&lt;span class="n"&gt;python_version&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;3.7&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;3.9&lt;/span&gt;
+&lt;span class="n"&gt;Select&lt;/span&gt; &lt;span class="nl"&gt;dependency_management_tool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;pipenv&lt;/span&gt;
+&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;poetry&lt;/span&gt;
+&lt;span class="n"&gt;Choose&lt;/span&gt; &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;use_strict_mypy_config&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;
+&lt;span class="n"&gt;Select&lt;/span&gt; &lt;span class="nl"&gt;open_source_license&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;MIT&lt;/span&gt; &lt;span class="n"&gt;license&lt;/span&gt;
+&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;BSD&lt;/span&gt; &lt;span class="n"&gt;license&lt;/span&gt;
+&lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;ISC&lt;/span&gt; &lt;span class="n"&gt;license&lt;/span&gt;
+&lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Apache&lt;/span&gt; &lt;span class="n"&gt;Software&lt;/span&gt; &lt;span class="n"&gt;License&lt;/span&gt; &lt;span class="mf"&gt;2.0&lt;/span&gt;
+&lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;GNU&lt;/span&gt; &lt;span class="n"&gt;General&lt;/span&gt; &lt;span class="n"&gt;Public&lt;/span&gt; &lt;span class="n"&gt;License&lt;/span&gt; &lt;span class="n"&gt;v3&lt;/span&gt;
+&lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Not&lt;/span&gt; &lt;span class="n"&gt;open&lt;/span&gt; &lt;span class="n"&gt;source&lt;/span&gt;
+&lt;span class="n"&gt;Choose&lt;/span&gt; &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;所有問題都回答完之後就會出現新的資料夾 python_table_manners&lt;br/&gt;
+（模板以 project_slug 作為產生的資料夾名稱）&lt;br/&gt;
+可以看到資料夾裡面已經有前幾篇提到會用到的相關檔案&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ tree python_table_manners
+
+.
+├── CHANGELOG.md
+├── LICENSE
+├── docs
+│   ├── README.md
+│   └── contributing.md
+├── mkdocs.yml
+├── pyproject.toml
+├── python_table_manners
+│   ├── __init__.py
+│   └── python_table_manners.py
+├── setup.cfg
+├── tasks
+│   ├── __init__.py
+│   ├── build.py
+│   ├── common.py
+│   ├── doc.py
+│   ├── env.py
+│   ├── git.py
+│   ├── secure.py
+│   ├── style.py
+│   └── test.py
+└── tests
+    ├── __init__.py
+    └── test_python_table_manners.py
+
+&lt;span class="m"&gt;4&lt;/span&gt; directories, &lt;span class="m"&gt;20&lt;/span&gt; files
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="cookiecutter_2"&gt;如何製作 Cookiecutter 模板？&lt;/h2&gt;
+&lt;p&gt;在新的專案內，先開個名稱為 &lt;code&gt;{{ cookiecutter.project_slug }}&lt;/code&gt; 的資料夾&lt;br/&gt;
+所有模板的內容都將放在這裡&lt;br/&gt;
+e.g., &lt;a href="https://github.com/Lee-W/cookiecutter-python-template/tree/0.6.1/%7B%7Bcookiecutter.project_slug%7D%7D"&gt;cookiecutter-python-template/{{ cookiecutter.project_slug }}&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;接著將想問使用者的問題寫進 &lt;code&gt;cookiecutter.json&lt;/code&gt;&lt;br/&gt;
+可以參考 &lt;a href="https://github.com/Lee-W/cookiecutter-python-template/blob/0.6.1/cookiecutter.json"&gt;cookiecutter-python-template/cookiecutter.json&lt;/a&gt;&lt;br/&gt;
+key 就是詢問使用者的問題，value 就是預設值&lt;/p&gt;
+&lt;p&gt;對 &lt;a href="https://jinja.palletsprojects.com/en/2.11.x/"&gt;jinja2&lt;/a&gt; 熟悉的讀者，可能看到 &lt;code&gt;{{ }}&lt;/code&gt; 就發現了&lt;br/&gt;
+cookiecutter 背後是透過 jinja2 來取代這些值&lt;br/&gt;
+模板中所有 &lt;code&gt;{{ cookiecutter.key_from_cookiecutter_json }}&lt;/code&gt; 都會被代換成 cookiecutter.json 裡面的值&lt;br/&gt;
+因為是使用 jinja2 ，當然也能運用它方便的語法&lt;br/&gt;
+並且不限定於模板內才能使用，甚至在 cookiecutter.json 裡面都能使用&lt;/p&gt;
+&lt;p&gt;e.g.,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nt"&gt;"project_name"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"Python Project"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nt"&gt;"project_slug"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="err"&gt;...,&lt;/span&gt;
+    &lt;span class="nt"&gt;"_template_version"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"0.6.1"&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;（from &lt;a href="https://github.com/Lee-W/cookiecutter-python-template/blob/0.6.1/cookiecutter.json"&gt;cookiecutter-python-template/cookiecutter.json @ 0.6.1&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;如果有一些值不想問使用者，可以在 key 的最前面加上 &lt;code&gt;_&lt;/code&gt;&lt;br/&gt;
+(e.g., &lt;code&gt;_template_version&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;當然也能使用 jinja2 的 if/else 語法，針對使用者的回答產生不同的模板內容&lt;br/&gt;
+以下的範例就是使用者選擇不同的 dependency_management_tool 時，env.py 的指令內容會跟著改變&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;init&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;"""Install production dependencies"""&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;cookiecutter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dependency_management_tool&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'pipenv'&lt;/span&gt; &lt;span class="o"&gt;-%&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"pipenv install --deploy"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="o"&gt;%-&lt;/span&gt; &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;cookiecutter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dependency_management_tool&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'poetry'&lt;/span&gt; &lt;span class="o"&gt;-%&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"poetry install --no-dev"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="o"&gt;%-&lt;/span&gt; &lt;span class="n"&gt;endif&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;（from &lt;a href="https://github.com/Lee-W/cookiecutter-python-template/blob/0.6.1/%7B%7Bcookiecutter.project_slug%7D%7D/tasks/env.py#L18"&gt;cookiecutter-python-template/{{cookiecutter.project_slug}}/tasks/env.py @ 0.6.1&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;除了預設基本的 jinja2 語法外， cookiecutter 還提供了常用的 jinja2 extensions&lt;br/&gt;
+這些可以在 &lt;a href="https://cookiecutter.readthedocs.io/en/latest/advanced/hooks.html"&gt;Template Extensions&lt;/a&gt; 找到&lt;/p&gt;
+&lt;p&gt;比較可惜的是 Cookiecutter 並不支援追加問答&lt;br/&gt;
+假設你想在使用者回答 dependency_management_tool 後&lt;br/&gt;
+因為使用者選擇了 poetry，接續問要用哪個 poetry 版本&lt;br/&gt;
+但當使用者選 pipenv 則不問這個問題&lt;br/&gt;
+這樣的設計在 cookiecutter 是做不到的&lt;br/&gt;
+（Read the discussion 👉 &lt;a href="https://github.com/cookiecutter/cookiecutter/issues/913#issuecomment-286571701"&gt;Conditional follow-up questions based on prior answers #913&lt;/a&gt;）&lt;/p&gt;
+&lt;h3 id="hook"&gt;hook&lt;/h3&gt;
+&lt;p&gt;如果有嘗試用我的專案模板產生專案，並且選擇不同的 dependency_management_tool&lt;br/&gt;
+你會發現在選擇 pipenv 的時候會有 Pipfile，但選 poetry 的時候不會有&lt;br/&gt;
+這就是透過 post_gen_project.py 做到的&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/Lee-W/cookiecutter-python-template/tree/0.6.1/hooks"&gt;cookiecutter-python-template/hooks/&lt;/a&gt;中，可以看到以下兩個檔案&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pre_gen_project.py&lt;/code&gt;: 建立專案前要執行的內容&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;post_gen_project.py&lt;/code&gt;: 建立專案後要執行的內容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在 post_gen_project.py 中會做判斷，只要使用者不是選 pipenv ，就會把 Pipfile 刪除&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s2"&gt;"{{ cookiecutter.dependency_management_tool }}"&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s2"&gt;"pipenv"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;remove_pipfile&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;（from &lt;a href="https://github.com/Lee-W/cookiecutter-python-template/blob/0.6.1/hooks/post_gen_project.py#L8"&gt;cookiecutter-python-template/hooks/post_gen_project.py&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;（Read more 👉 &lt;a href="https://cookiecutter.readthedocs.io/en/latest/advanced/hooks.html"&gt;Using Pre/Post-Generate Hooks (0.7.0+)&lt;/a&gt;）&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://realpython.com/python-application-layouts/"&gt;Python Application Layouts: A Reference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/audreyr/cookiecutter-pypackage"&gt;audreyr/cookiecutter-pypackage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/wemake-services/wemake-python-package"&gt;wemake-services/wemake-python-package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sourcery.ai/blog/python-best-practices/"&gt;How to set up a perfect Python project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/better-programming/understanding-best-practice-python-tooling-by-comparing-popular-project-templates-6eba49229106"&gt;Understanding Best Practice Python Tooling by Comparing Popular Project Templates&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category></entry><entry><title>Python Table Manners - 持續整合/部署</title><link href="https://lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration" rel="alternate"></link><published>2020-12-31T17:53:00+08:00</published><updated>2020-12-31T17:53:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2020-12-31:/posts/tech/2020/12/python-table-manner-continuous-integration</id><summary type="html">&lt;p&gt;這篇好像真的拖得很久...&lt;br/&gt;
 原本預定的發表時間還是 2020-03-04 呢 ......&lt;br/&gt;
 總之，剛好年假就趁機補一下&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這篇好像真的拖得很久...&lt;br/&gt;
@@ -2960,7 +3113,7 @@ python -m pipx ensurepath
 &lt;li&gt;&lt;a href="https://lee-w.github.io/posts/tech/2020/03/python-table-manners-security"&gt;安全性檢查&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://lee-w.github.io/posts/tech/2020/04/python-table-manners-documentation"&gt;文件&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://lee-w.github.io/posts/tech/2020/12/python-table-manner-continuous-integration"&gt;持續整合/部署&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Cookiecutter: 程式專案模板&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lee-w.github.io/posts/tech/2021/01/python-table-manners-cookiecutter"&gt;Cookiecutter 程式專案模板&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;當初整理 PyCon CA 2019 投影片的時候，大多是把這些工具應用到 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator"&gt;pycontw-postevent-report-generator&lt;/a&gt;&lt;br&gt;
 這是 PyCon TW 用來自動產生會後分析報表的工具，歡迎一起來貢獻～&lt;br&gt;
