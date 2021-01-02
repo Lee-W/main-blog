@@ -4,7 +4,7 @@ Category: Tech
 Tags: Python, CI/CD
 Slug: python-table-manner-continuous-integration
 Authors: Lee-W
-Series: Python Table Manner
+Series: Python Table Manners
 
 這篇好像真的拖得很久...
 原本預定的發表時間還是 2020-03-04 呢 ......
