@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-
 PATH = "content"
 
 # Blog Conf
@@ -97,3 +96,4 @@ PLUGINS = [
     "series",
 ]
 ANOTHER_READ_MORE_LINK = ""
+READERS = {"html": None}
