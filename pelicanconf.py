@@ -51,7 +51,7 @@ STATIC_PATHS = ["static", "images"]
 THEME = "theme/elegant"
 JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
 PYGMENTS_STYLE = "default"
-APPLAUSE_BUTTON = True
+APPLAUSE_BUTTON = False
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

@@ -21,4 +21,4 @@ DELETE_OUTPUT_DIRECTORY = False
 
 # Following items are often useful when publishing
 DISQUS_SITENAME = "lee-w-blog"
-GOOGLE_ANALYTICS = "UA-96190677-1"
+GOOGLE_ANALYTICS = os.environ.get("GOOGLE_ANALYTICS")
