@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="author" content="Lee-W" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Python, pelican, Tech, " />
+
+<meta property="og:title" content="2020 發文頻率分析 - 如何得到 pelican 文章資訊並用來做圖 "/>
+<meta property="og:url" content="https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot" />
+<meta property="og:description" content="原本只打算發篇文簡單回顧 2020 年我寫了什麼文章 沒想到就慢慢演變成開發 pelican-stat ......" />
+<meta property="og:site_name" content="Laziness makes Great Engineer" />
+<meta property="og:article:author" content="Lee-W" />
+<meta property="og:article:published_time" content="2021-01-29T18:45:00+08:00" />
+<meta name="twitter:title" content="2020 發文頻率分析 - 如何得到 pelican 文章資訊並用來做圖 ">
+<meta name="twitter:description" content="原本只打算發篇文簡單回顧 2020 年我寫了什麼文章 沒想到就慢慢演變成開發 pelican-stat ......">
+
+        <title>2020 發文頻率分析 - 如何得到 pelican 文章資訊並用來做圖  · Laziness makes Great Engineer
+</title>
+        <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://lee-w.github.io/"><span class=site-name>Laziness makes Great Engineer</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://lee-w.github.io
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                                <li ><a href="https://lee-w.github.io/categories.html">Categories</a></li>
+                                <li ><a href="https://lee-w.github.io/tags.html">Tags</a></li>
+                                <li ><a href="https://lee-w.github.io/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="https://lee-w.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot">
+                2020 發文頻率分析 - 如何得到 pelican 文章資訊並用來做圖
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#pelican-stat">什麼是 pelican-stat</a></li>
+<li><a href="#pelican-stat_1">如何使用 pelican-stat</a><ul>
+<li><a href="#_1">安裝</a></li>
+<li><a href="#collect">collect</a></li>
+<li><a href="#plot">plot</a></li>
+</ul>
+</li>
+<li><a href="#pelican-stat_2">設計 pelican-stat</a><ul>
+<li><a href="#collect_1">collect</a></li>
+<li><a href="#plot_1">plot</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            <p>原本只打算發篇文簡單回顧 2020 年我寫了什麼文章<br/>
+沒想到就慢慢演變成開發 <a href="https://github.com/Lee-W/pelican-stat">pelican-stat</a> ......</p>
+<!--more-->
+<p>原本只打算寫一篇的回顧文，就莫名其妙變成了三篇文章的系列文</p>
+<ol>
+<li><a href="https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot">如何得到 pelican 文章資訊並用來做圖</a>： 就是本文，主要會聊開發 <a href="https://github.com/Lee-W/pelican-stat">pelican-stat</a> 的過程</li>
+<li><a href="https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-to-embed-html-in-pelican">如何在 pelican 頁面中嵌入 HTML</a>： 將產生的互動式趨勢圖嵌入 pelican 的文章中，遇到的各種雷</li>
+<li><a href="{filename}/posts/article/2021/5-post-frequency-analysis.rst">2020 過去了，我寫了什麼文章</a>： 2020 主要發了什麼文章，並聊聊當初為什麼會想寫這些文章</li>
+</ol>
+
+<h2 id="pelican-stat">什麼是 pelican-stat</h2>
+<p><a href="https://github.com/getpelican/pelican">pelican</a> 是用來產生靜態網頁的工具，最常見的用途應該是寫部落格<br/>
+你所看到的這個部落格就是透過這套工具產生的</p>
+<p><a href="https://github.com/Lee-W/pelican-stat">pelican-stat</a> 則是我這次開發來蒐集pelican 文章資料並作圖的工具</p>
+<h2 id="pelican-stat_1">如何使用 pelican-stat</h2>
+<h3 id="_1">安裝</h3>
+<p>因為我把 <a href="https://github.com/getpelican/pelican/tree/4.5.4">pelican</a> 的版本定在 4.5.4<br/>
+為了避免跟你的 pelican 版本打架，強烈建議使用 <a href="https://github.com/pipxproject/pipx">pipx</a> 安裝</p>
+<div class="highlight"><pre><span></span><code>pipx install pelican-stat
+</code></pre></div>
+<p>pelican-stat 目前支援 <code>collect</code> 和 <code>plot</code> 兩種指令</p>
+<div class="highlight"><pre><span></span><code>Usage: pelican-stat <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  collect  Collect data from pelican project and <span class="nb">export</span> article metadata
+  plot     Draw trend plot based on the frequency of new posts
+</code></pre></div>
+<h3 id="collect">collect</h3>
+<p>將文章的資訊整理並輸出成 json 檔</p>
+<p>e.g.,</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+    <span class="err">...</span><span class="p">,</span>
+    <span class="p">{</span>
+        <span class="nt">"timestamp"</span><span class="p">:</span> <span class="mf">1560308220.0</span><span class="p">,</span>
+        <span class="nt">"category"</span><span class="p">:</span> <span class="s2">"Travel"</span><span class="p">,</span>
+        <span class="nt">"authors"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">"Lee-W"</span>
+        <span class="p">],</span>
+        <span class="nt">"reader"</span><span class="p">:</span> <span class="s2">"markdown"</span><span class="p">,</span>
+        <span class="nt">"status"</span><span class="p">:</span> <span class="s2">"published"</span><span class="p">,</span>
+        <span class="nt">"tags"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">"Star Wars"</span><span class="p">,</span>
+            <span class="s2">"Galaxy's Edge"</span>
+        <span class="p">],</span>
+        <span class="nt">"timezone"</span><span class="p">:</span> <span class="s2">"Asia/Taipei"</span><span class="p">,</span>
+        <span class="nt">"title"</span><span class="p">:</span> <span class="s2">"Star Wars: Galaxy's Edge - First Peek"</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>第一個參數吃的是 pelican 的設定檔，第二個則是輸出的位置</p>
+<h3 id="plot">plot</h3>
+<p>就如同指令的名稱，它就是拿來做圖用的<br/>
+目前只支援趨勢圖</p>
+<p>使用上比 <code>collect</code> 複雜一點，有 5 個可以設定的參數</p>
+<ul>
+<li><code>--pelican-conf-path [PATH]</code>： pelican 設定檔的路徑</li>
+<li><code>--articles-metadata-path [PATH]</code>： 用 <code>collect</code> 指令所產生的文章資料 json 檔的路徑</li>
+</ul>
+<p>上面兩個一定要有一個有值，不然 pelican-stat 不知道要去哪抓文章資料</p>
+<ul>
+<li><code>--output-path [PATH]</code>： 輸出檔名</li>
+<li><code>--year [YEAR]</code>： 篩選特定年份的文章</li>
+<li><code>--groupby-category</code>： 作圖是否要根據文章類別分群</li>
+</ul>
+<p>最後就能做出像這樣的圖<br/>
+產生的會是可以互動的 HTML 檔案</p>
+<p><img alt="newplot" src="/images/posts-image/2021-2020-post-frequency/newplot.png"/></p>
+<h2 id="pelican-stat_2">設計 pelican-stat</h2>
+<p>在開始寫 pelican-stat 前，我有找到類似的工具 👉 <a href="https://github.com/romainx/panorama">panorama</a><br/>
+不過它是作為 pelican-plug 來使用，而不是獨立的指令列工具<br/>
+所以就只好自己來寫了</p>
+<h3 id="collect_1">collect</h3>
+<p>第一個收集文章資訊的想法是寫 parser 去解析這些文章<br/>
+但是這麼做的話，這個工具可能就很難被其他人使用<br/>
+每個人指定 metadata 、放置文章的方式可能都不同<br/>
+甚至有人根本是用 reStructuredText 寫的<br/>
+（pelican 支援 reStructuredText 跟 markdown）</p>
+<p>不過有個工具一定有辦法抓到這些資訊<br/>
+沒錯💡<br/>
+那就是 pelican 本身！<br/>
+所以第二個想法是觀察 pelican 怎麼去解析這些文章<br/>
+如果能的話，直接呼叫它的函式，不要重造輪子</p>
+<p>從使用 pelican 指令到產生文章，會用這個順序追朔程式碼</p>
+<ol>
+<li><a href="https://github.com/getpelican/pelican/blob/4.5.4/pelican/__main__.py#L9">pelican/__main__.py#L9</a></li>
+<li><a href="https://github.com/getpelican/pelican/blob/4.5.4/pelican/__init__.py#L491">pelican/__init__.py#L491</a></li>
+<li><a href="https://github.com/getpelican/pelican/blob/4.5.4/pelican/__init__.py#L501">pelican/__init__.py#L501</a></li>
+<li><a href="https://github.com/getpelican/pelican/blob/master/pelican/__init__.py#L403-418">pelican/__init__.py#L403-418</a></li>
+</ol>
+<p>這就是為什麼我的 <a href="https://github.com/Lee-W/pelican-stat/blob/0.3.0/pelican_stat/collector.py#L15">_get_pelican_instance</a> 會這樣寫</p>
+<p>而我額外多做了兩個處理</p>
+<div class="highlight"><pre><span></span><code>        <span class="n">settings</span><span class="p">[</span><span class="s2">"PLUGINS"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">settings</span><span class="p">[</span><span class="s2">"MARKDOWN"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+</code></pre></div>
+<p>原因是 MARKDOWN 跟 PLUGINS 都有可能有額外的相依套件<br/>
+尤其是 pelican 自從 <a href="https://docs.getpelican.com/en/4.5.0/plugins.html#how-to-use-plugins">4.5.0</a> 之後開始支援從 pip 安裝的 pelican-plugins<br/>
+但它們對文章的 metadata 大多不會有影響<br/>
+所以將他們從設定中清掉可以避免遇到相依套件沒裝的問題</p>
+<p>接著繼續追程式碼</p>
+<ol>
+<li><a href="https://github.com/getpelican/pelican/blob/4.5.4/pelican/__init__.py#L527">pelican/__init__.py#L527</a></li>
+<li><a href="https://github.com/getpelican/pelican/blob/4.5.4/pelican/__init__.py#L85-L100">pelican/__init__.py#L85-100</a></li>
+</ol>
+<p>我透過 pdb 看到 <code>generators[0]</code> 是 <code>ArticlesGenerator</code><br/>
+看起來透過它就有很大的機會能取得文章資訊<br/>
+它也會對應到我所寫的 <a href="https://github.com/Lee-W/pelican-stat/blob/0.3.0/pelican_stat/collector.py#L29-L43">pelican_stat/collector.py#L29-L43</a><br/>
+這裡也是我會把 pelican-stat 相依的 pelican 釘在 4.5.4 的主因<br/>
+<a href="https://github.com/getpelican/pelican/blob/4.5.4/pelican/__init__.py#L169">_get_generator_classes</a> 在 4.5.2 以前是 <code>get_generator_classes</code><br/>
+雖然可以用 <code>getattr(pelican_instance, "get_generator_classes")</code> 來支援不同的版本<br/>
+但難保 pelican 什麼時候又會改 API<br/>
+而且即使 pelican 的版本不同，對於文章 metadata 的格式應該都不會有改變<br/>
+所以作為一個工具，使用特定版本的 pelican 應該就足夠了</p>
+<p>最後在 <a href="https://github.com/getpelican/pelican/blob/4.5.4/pelican/__init__.py#L111-L113">pelican/__init__.py#L111-L113</a> 執行完 <code>generate_context()</code> 就能從 <code>article_generator.aricles</code> 取得文章</p>
+<p>而每篇文章都是 <a href="https://github.com/getpelican/pelican/blob/4.5.4/pelican/contents.py#L514">pelican.context.Article</a> 的 instance<br/>
+所以只要看裡面有哪些資訊是我要的，在進行輸出就可以了 👉 <a href="https://github.com/Lee-W/pelican-stat/blob/0.3.0/pelican_stat/collector.py#L47">pelican_stat/collector.py#L47</a></p>
+<h3 id="plot_1">plot</h3>
+<p>最初版測試用的 script，先了用我比較熟悉的 <a href="https://docs.bokeh.org/en/latest/index.html">bokeh</a> 寫<br/>
+但上次有朋友安利我 <a href="https://plotly.com/python/">ploty</a> 很好用，就決定來玩玩看<br/>
+使用上覺得兩個函式庫都還蠻直覺的<br/>
+但 ploty 可以不用多做設定就有 hover tool ，還蠻方便的<br/>
+因為這部分的程式碼大多都是看文件就能找到，就不特別聊了</p>
+
+
+             
+ 
+                <p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=2020%20%E7%99%BC%E6%96%87%E9%A0%BB%E7%8E%87%E5%88%86%E6%9E%90%20-%20%E5%A6%82%E4%BD%95%E5%BE%97%E5%88%B0%20pelican%20%E6%96%87%E7%AB%A0%E8%B3%87%E8%A8%8A%E4%B8%A6%E7%94%A8%E4%BE%86%E5%81%9A%E5%9C%96&url=https%3A//lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot&hashtags=python,pelican" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=2020%20%E7%99%BC%E6%96%87%E9%A0%BB%E7%8E%87%E5%88%86%E6%9E%90%20-%20%E5%A6%82%E4%BD%95%E5%BE%97%E5%88%B0%20pelican%20%E6%96%87%E7%AB%A0%E8%B3%87%E8%A8%8A%E4%B8%A6%E7%94%A8%E4%BE%86%E5%81%9A%E5%9C%96&amp;body=https%3A//lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count collapsed"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot"
+                   href="https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+                        <div id="disqus_thread"></div>
+                        <script>
+    var disqus_shortname = 'lee-w-blog';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot';
+    var disqus_url = 'https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <hr/>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2021-01-29T18:45:00+08:00">2021/01/29 - Fri</time>
+        <h4>2020 發文頻率分析</h4>
+    <ul class="multi-parts-list">
+            <li  class="active-part">
+            Part 1: 2020 發文頻率分析 - 如何得到 pelican 文章資訊並用來做圖
+            </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-to-embed-html-in-pelican" title="2020 發文頻率分析 - 如何在 pelican 頁面中嵌入 HTML">Part 2: 2020 發文頻率分析 - 如何在 pelican 頁面中嵌入 HTML</a>
+            </li>
+    </ul>
+                <h4>Read Time</h4>
+                 2 min
+            <h4>Category</h4>
+            <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://lee-w.github.io/tags.html#pelican-ref">pelican
+                    <span class="superscript">2</span>
+</a></li>
+                <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
+                    <span class="superscript">33</span>
+</a></li>
+            </ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+    <a href="https://tw.linkedin.com/in/clleew" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+    </a>
+    <a href="https://github.com/Lee-W" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="https://gitlab.com/Lee-W" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitLab" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#30353e"/><path fill="#e24329" d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133"/><path fill="#fc6d26" d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z"/><path fill="#fca326" d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z"/></svg>
+    </a>
+    <a href="https://twitter.com/clleew" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+    <a href="https://lee-w.github.io/feeds/all.atom.xml" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="RSS" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f80"/><circle cx="145" cy="367" r="35" fill="#fff"/><path fill="none" stroke="#fff" stroke-width="60" d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+    <div>
+        
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+</a>
+<br />
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+    </div>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://lee-w.github.io/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
