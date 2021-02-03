@@ -34,7 +34,7 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot"&gt;如何得到 pelican 文章資訊並用來做圖&lt;/a&gt;： 就是本文，主要會聊開發 &lt;a href="https://github.com/Lee-W/pelican-stat"&gt;pelican-stat&lt;/a&gt; 的過程&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-to-embed-html-in-pelican"&gt;如何在 pelican 頁面中嵌入 HTML&lt;/a&gt;： 將產生的互動式趨勢圖嵌入 pelican 的文章中，遇到的各種雷&lt;/li&gt;
-&lt;li&gt;&lt;a href="{filename}/posts/article/2021/5-post-frequency-analysis.rst"&gt;2020 過去了，我寫了什麼文章&lt;/a&gt;： 2020 主要發了什麼文章，並聊聊當初為什麼會想寫這些文章&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lee-w.github.io/posts/gossiping/2021/02/post-frequency-analysis"&gt;2020 過去了，我寫了什麼文章&lt;/a&gt;： 2020 主要發了什麼文章，並聊聊當初為什麼會想寫這些文章&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id="pelican-stat"&gt;什麼是 pelican-stat&lt;/h2&gt;
