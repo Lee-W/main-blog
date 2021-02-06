@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2020-04-04 13:06
+modified: 2021-02-06 15:00
 slug: about-me
 ---
 
@@ -10,18 +10,18 @@ slug: about-me
 [TOC]
 
 ## Skill
-* **Advance**: Python, Docker, Git, Linux, Web Backend Development
-* **Intermediate**: AWS, Project Management, Data Engineering, Data Analysis
+* **Advance**: Python, Docker, Git, Linux, Data Engineering, Web Backend Development
+* **Intermediate**: AWS, Project Management, Data Analysis
 
 ## Work Experience
-**[Apr 2017 - Present] Software Engineer, [Slice Technologies, Inc](https://www.slice.com/about)**
+**[Apr 2017 - Present] Software Engineer, [Rakuten USA](https://www.rakuten.com/)**
 
-* Improved software engineering culture through building best practice templates which reduces project initializing time and automatically checks errors before code review
-* Designed and developed the backend of a data labeling system which automates the interaction between crowdsourcing workers and experts to generate high quality labeled data
-* Built data pipelines through [Apache Airflow](https://airflow.apache.org/) for machine learning models
+* Improved software engineering culture through building best-practice templates that reduce project initializing time and automatically checks errors before code review
+* Developed backend API for machine learning services
+* Built data pipelines through [Apache Airflow](https://airflow.apache.org/) for data processing and model generation
+* Designed and developed data labeling backend which automates the interaction between crowdsourcing workers and experts to generate high quality labeled data
 * Set up the CI/CD pipeline through [Jenkins](https://jenkins.io/) for existing systems
-* Added test for existing projects to ensure the functionality correctness
-* Cooperate with oversea teams in San Mateo and Ukraine
+* Cooperate with overseas teams in San Mateo and Ukraine
 
 **[Jan 2019 - March 2019] Project Manager, [DLT Lab](https://dlt.csie.ncku.edu.tw)**
 
@@ -37,7 +37,7 @@ slug: about-me
 * Designed exercises for "Data Structure," the first section of "Computer Science Foundations"
 * Lectured "Web Programming, Database/Cloud Computing," the fourth section of "Computer Science Foundations"
 
-*X-Village* is an experimental education program aiming to equip students not major in computer science with the ability of computational thinking and to enhance future cooperation between computer science and other areas.
+*X-Village* is an experimental education program aiming to equip students not major in computer science with computational thinking and to enhance future cooperation between computer science and other areas.
 
 I was the executor of the program and the leader of the teaching assistant team. Besides, I designed a half-day exercise for *Data Structure* and lectured a four-hour web backend course for *Web Programming, Database/Cloud Computing*.
 
@@ -46,7 +46,7 @@ I was the executor of the program and the leader of the teaching assistant team.
 
 **[July 2015 - July 2016] Substitute Military Service, K-12 Education Administration, Ministry of Education**
 
-* * Maintained legacy systems implemented in multiple languages including `C#`, `VBScript`, `PHP`, and etc.
+* * Maintained legacy systems implemented in multiple languages, including `C#`, `VBScript`, `PHP`, etc.
 * Developed automation programs for generating reports which save 80% of human labor time
 * Delivered a human resource management system using [django](https://www.djangoproject.com)
 
@@ -148,6 +148,7 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 * [Line EchoBot](https://github.com/Lee-W/line_echobot)
 
 ### Utility
+* [pelican-stat](https://github.com/Lee-W/pelican-stat)
 * [Flickr Album Downloader](https://github.com/Lee-W/Flickr_Album_Downloader)
 * [PttCraweler](https://github.com/Lee-W/PttCrawler)
 
