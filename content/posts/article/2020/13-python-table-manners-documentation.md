@@ -54,7 +54,6 @@ pipenv run mkdocs serve
 
 ![initial document](/images/posts-image/2020-02-22-python-table-manner-series/initial document.jpg)
 
-
 ### 修改網站名稱
 初始的 `mkdocs.yml` 預設只會有這一行
 
@@ -76,7 +75,6 @@ site_name: PyCon TW post-event report generator (rg-cli)
 我將 **How to contribute** 的內容拆出來放到 `contributing.md`
 將檔案命名成 `contributing.md` 在 GitHub 開 issue 時自動出現這個頁面的連結（See more 👉 [Setting guidelines for repository contributors](https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors)）
 至於要怎麼寫好 `contributing.md` 則可以參考 [Wrangling Web Contributions: How to Build a CONTRIBUTING.md](https://mozillascience.github.io/working-open-workshop/contributing/)
-
 
 ```text
 ├── docs
@@ -132,7 +130,6 @@ theme:
 ```
 
 ![material theme](/images/posts-image/2020-02-22-python-table-manner-series/material theme.jpg)
-
 
 ### 輸出靜態網頁
 為了要能部署到其他服務 (e.g., GitHub Page）上，要先在本地將 Markdown 寫成的文件輸出成網頁
@@ -198,7 +195,7 @@ remote_name: origin
 
 ### 自製測試覆蓋率徽章
 最近發現另一個有趣的小工具 - [coverage-badge](https://github.com/dbrgn/coverage-badge)
-它可以不透過 [codecov](https://codecov.io/) 直接去讀 [pytest-cov](https://github.com/pytest-dev/pytest-cov) 產生的 `.coverage `  產生測試覆蓋率徽章
+它可以不透過 [codecov](https://codecov.io/) 直接去讀 [pytest-cov](https://github.com/pytest-dev/pytest-cov) 產生的 `.coverage`  產生測試覆蓋率徽章
 
 ```sh
 pipenv install coverage-badge --dev

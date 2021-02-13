@@ -131,6 +131,7 @@ e.g.,
     "_template_version": "0.6.1"
 }
 ```
+
 （from [cookiecutter-python-template/cookiecutter.json @ 0.6.1](https://github.com/Lee-W/cookiecutter-python-template/blob/0.6.1/cookiecutter.json)）
 
 如果有一些值不想問使用者，可以在 key 的最前面加上 `_`
@@ -181,7 +182,6 @@ def main():
 ```
 
 （from [cookiecutter-python-template/hooks/post_gen_project.py](https://github.com/Lee-W/cookiecutter-python-template/blob/0.6.1/hooks/post_gen_project.py#L8)）
-
 
 （Read more 👉 [Using Pre/Post-Generate Hooks (0.7.0+)](https://cookiecutter.readthedocs.io/en/latest/advanced/hooks.html)）
 

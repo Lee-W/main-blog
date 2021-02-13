@@ -262,7 +262,6 @@ pdbpp 在安裝後會取代原生的 pdb
 
 ![sticky mode example](/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/sticky mode.jpg)
 
-
 順便記錄一下常用到的 pdbpp 指令
 
 * `n`: 下一行
@@ -281,6 +280,7 @@ pdbpp 在安裝後會取代原生的 pdb
 * 位置: [web/db.py#L845](https://github.com/webpy/webpy/blob/0.40/web/db.py#L845)
 
 跑完 874 行的 list comprehension 後，`clauses` 會包含以下四個部分
+
 ```pdb
 (Pdb++) p clauses
 [<sql: 'SELECT *'>, <sql: 'FROM USER'>, <sql: 'WHERE account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'>]

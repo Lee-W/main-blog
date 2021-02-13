@@ -85,7 +85,6 @@ cz init
 
 ![cz-init-6.jpg](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-6.jpg)
 
-
 相對應的設定也會加入到設定檔 `pyproject.toml` (或 `.cz.toml`)
 
 ```toml
@@ -107,7 +106,6 @@ cz commit
 會先詢問這次的 commit 做了哪一種改動
 
 ![commitizen-1](/images/posts-image/2020-02-22-python-table-manner-series/commitizen-1.jpg)
-
 
 接著會要求輸入這次改動各項細節
 

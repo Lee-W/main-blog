@@ -95,7 +95,6 @@ pipenv run bandit -r <package>
 * Location: 位置（在程式碼的哪一行）
 * More Info: 詳細的原因和可能的解決方案 （也可以從 [Complete Test Plugin Listing](https://bandit.readthedocs.io/en/latest/plugins/#complete-test-plugin-listing) 找到全部的列表）
 
-
 加上參數 `-i` (可信度) 和 `-l` （嚴重性），就可以讓 bandit 只回報特定程度的漏洞
 越多的 i / l 代表程度越高
 以下指令就是讓 bandit 只回報高嚴重性 (`-lll`)、高可信度 (`-iii`)的漏洞

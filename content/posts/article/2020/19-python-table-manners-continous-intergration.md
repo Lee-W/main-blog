@@ -45,7 +45,7 @@ Series: Python Table Manners
 1. 當貢獻者提交 pull request 後，自動執行風格檢查、跑測試
 2. 當 pull request 被維護者 merge 回 master 分支之後，根據 git commit 更新版本號並產生 git tag ，最後再將 git tag 推回 master 分支  
   （如果不太知道這段在做什麼，可以參考 [Commitizen: 規格化 commit message]({filename}/posts/article/2020/11-python-table-manners-commitizen.md))
-4. 當 master 分支偵測到新的版本號（git tag）產生後，自動將新的套件上傳到 [PyPI](https://pypi.org/project/pycontw-report-generator/)
+3. 當 master 分支偵測到新的版本號（git tag）產生後，自動將新的套件上傳到 [PyPI](https://pypi.org/project/pycontw-report-generator/)
 
 ## GitHub Actions 實例
 接下來看 [pycontw-postevent-report-generator/.github/workflows/ @ 3ff174](https://github.com/pycontw/pycontw-postevent-report-generator/tree/3ff174384639c8d6f40c4cd16e59ceba950838e9/.github/workflows) 中的三個檔案，分別對應到前面所提的三個步驟
@@ -53,7 +53,6 @@ Series: Python Table Manners
 1. [python-check.yaml](https://github.com/pycontw/pycontw-postevent-report-generator/blob/3ff174384639c8d6f40c4cd16e59ceba950838e9/.github/workflows/python-check.yaml)
 2. [merge-into-master.yaml](https://github.com/pycontw/pycontw-postevent-report-generator/blob/3ff174384639c8d6f40c4cd16e59ceba950838e9/.github/workflows/merge-into-master.yaml)
 3. [python-publish.yaml](https://github.com/pycontw/pycontw-postevent-report-generator/blob/3ff174384639c8d6f40c4cd16e59ceba950838e9/.github/workflows/python-publish.yaml)
-
 
 ### Python Check
 每個 GitHub Actions 的 workflow 都需要有一個名稱
@@ -106,7 +105,6 @@ jobs:
 當這個 workflow 被執行的時候，可以在 GitHub Actions 看到細節
 
 ![step](/images/posts-image/2020-02-22-python-table-manner-series/job.jpg)
-
 
 ### Merge into master
 上個 workflow 只要偵測到任何 push 或 pull request 就會執行
