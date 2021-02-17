@@ -16,18 +16,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Python, PyCon, Tech, " />
+<meta name="keywords" content="Backend, Tech, " />
 
-<meta property="og:title" content="Remote Python Pizza 🍕 2020 "/>
-<meta property="og:url" content="https://lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020" />
-<meta property="og:description" content="上週六參加了第一場遠端的 Python 研討會 Remote Python Pizza 由於疫情的關係，國外的 PyCon 大多轉往線上或取消 雖然目前還不確定今年台灣的狀況會如何 但先觀摩一下其他社群怎麼做的，對我們也很有幫助" />
+<meta property="og:title" content="Great Expectations "/>
+<meta property="og:url" content="https://lee-w.github.io/drafts/great-expectations.html" />
+<meta property="og:description" content="https://greatexpectations.io/" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
-<meta property="og:article:published_time" content="2020-05-03T16:52:00+08:00" />
-<meta name="twitter:title" content="Remote Python Pizza 🍕 2020 ">
-<meta name="twitter:description" content="上週六參加了第一場遠端的 Python 研討會 Remote Python Pizza 由於疫情的關係，國外的 PyCon 大多轉往線上或取消 雖然目前還不確定今年台灣的狀況會如何 但先觀摩一下其他社群怎麼做的，對我們也很有幫助">
+<meta property="og:article:published_time" content="2021-01-02T12:57:00+08:00" />
+<meta name="twitter:title" content="Great Expectations ">
+<meta name="twitter:description" content="https://greatexpectations.io/">
 
-        <title>Remote Python Pizza 🍕 2020  · Laziness makes Great Engineer
+        <title>Great Expectations  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
 
@@ -69,8 +69,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020">
-                Remote Python Pizza 🍕 2020
+            <a href="https://lee-w.github.io/drafts/great-expectations.html">
+                Great Expectations
             </a>
         </h1>
     </header>
@@ -79,84 +79,12 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <p>上週六參加了第一場遠端的 Python 研討會 <a href="https://remote.python.pizza/">Remote Python Pizza</a><br>
-由於疫情的關係，國外的 PyCon 大多轉往線上或取消<br>
-雖然目前還不確定今年台灣的狀況會如何<br>
-但先觀摩一下其他社群怎麼做的，對我們也很有幫助</p>
-<!--more-->
-
-<p>整體的體驗比我想像的好了不少，我還蠻享受 Remote Python Pizza 的<br>
-雖然只是透過螢幕跟文字，還是能感受到整個社群的交流<br>
-或許這在疫情趨緩後，也可以作為研討會的另一種標準<br>
-雖然少了實體的交流，但不用長途跋涉就可以集結全世界的大大們，其實也很方便<br>
-而針對時差這件事，他們也有在議程表上標上 UTC 跟使用者的當地時間，這在遠端研討會上就變得很必要</p>
-<p>會眾交流主要是透過 <a href="https://discordapp.com/">Discord</a><br>
-不管是要回報 CoC 、對講者提問、工作人員休息室...等，都有專屬的頻道<br>
-盡可能將實體會議的元素都帶進來，其實還蠻有趣的</p>
-<p>演講則是給主辦人先給講者跟主持人 Zoom 的連結<br>
-講者演講前的 30 分鐘，就先加入 Zoom 待命，接著把影片串到 Youtube 上讓會眾觀看</p>
-<p>Remote Python Pizza 的時間非常緊湊<br>
-每一場演講只有十分鐘，演講之間的休息只有兩分鐘<br>
-因為也沒有實際換場的必要，所以這段就很考驗主持人的技術了<br>
-<a href="https://pyjok.es/">pyjokes</a> 對於英語系的會議，應該會很有幫助 XD</p>
-<p>因為時差的關係，開始的時候已經是下午四點<br>
-大概聽到八點就開始覺得有點累了<br>
-不過坐在客廳用電視投影演講是真的還蠻爽的 XD</p>
-<p><img alt="tv" src="/images/posts-image/2020-05-03-remote-python-pizza/tv.jpeg"></p>
-<p>為了響應 Remote Python Pizza ，我當天的晚餐也是吃 Pizza<br>
-而且 Discord 中就有一個 <code>#cafeteria</code> 頻道，讓大家曬自己的 Pizza 照<br>
-其實還蠻 High 的 XD<br>
-我覺得這是線上會議<strong>鼓勵會眾互動非常棒的設計</strong></p>
-<p><img alt="pizza" src="/images/posts-image/2020-05-03-remote-python-pizza/pizza.jpeg"></p>
-<p>第一場 Hynek 的 <em>On the Meaning of Version Numbers</em> 就先介紹了 <a href="https://semver.org/">SemVar</a><br>
-主要說大部分的專案都沒辦法用好 SemVar ，所以 SemVar 可能太難遵守，不見得是一個很好的作法<br>
-可以改成使用 <a href="https://calver.org/">CalVer</a><br>
-在一開始我會提到的 SemVar 就好好的被打臉了一波 XDDD</p>
-<p>第二場講者沒來，所以就跳過直接換我，害我錯愕了一下<br>
-一場演講只要十分鐘，完全是個適合推廣 <a href="https://github.com/commitizen-tools">commitizen-tools</a> 的好機會<br>
-就毅然決然的投稿了 XD</p>
-<p><img alt="my-avatar" src="/images/posts-image/2020-05-03-remote-python-pizza/my-avatar.jpg"></p>
-<p>不過真的沒想到，官網會直接用我 Twitter 的大頭貼＠＠<br>
-不過既然都被用了兵長的頭貼，我就順勢穿著調查兵團的披風來給演講了 XD<br>
-有點久沒講英文，還是覺得稍微有點卡<br>
-倒是我在演講中提到還是 beta 的自動產生變更日誌（changelog）功能<br>
-剛好在今天正式釋出了，快點來試試看吧 🤩</p>
-<div class="highlight"><pre><span></span><code>python -m pip install commitizen
-</code></pre></div>
-
-
-<p>Disconnect3d 給的 <em>sudo python is a trap, use isolate mode</em> 是我印象最深刻的一場<br>
-現場 demo 如果你使用了 <code>sudo python</code>，駭客多輕鬆就可以駭入你的電腦<br>
-所以不要使用 <code>sudo python</code> 啊！<br>
-<img alt="sudo-python-is-a-trap" src="/images/posts-image/2020-05-03-remote-python-pizza/sudo-python-is-a-trap.jpg"></p>
-<p>整體節奏太緊湊，實在沒什麼時間好好做筆記<br>
-之後再找個時間把比較有趣的內容補起來</p>
-<p>每一場演講結束後<br>
-除了在 Zoom 中的主持人會拍手外，大家會在 <code>#question-answer</code> 頻道洗一波 👏 的 emoji<br>
-其實還蠻可愛 XD<br>
-大家也能在這個頻道直接堆剛講完的講者提問<br>
-另外也有 <code>#slide</code> 頻道，讓大家快速找到講者的投影片<br>
-講者也可以在結束後，創一個 <code>#talk-*.</code> (e.g., <code>#talk-commitizen</code>) 的頻道討論演講相關的內容<br>
-以講者的角度來說，我覺得這裡的交流甚至有機會比實體會議更多，是個蠻好的作法</p>
-<p>中間倒是有個小插曲，直播到一半就被 Youtube 封鎖了......<br>
-最後發現原因是直播時不能開 <code>Made for Kids</code>，很容易被封鎖<br>
-而且這還是預設值，要自己記得關掉＠＠<br>
-這倒是可以作為一個警示，線上會議要多準備幾套備用的方案</p>
-<p>大概就是這樣<br>
-因為時差的關係，我大概撐到 12 點就差不多了<br>
-畢竟整個會議有 50 場演講，延續了 12 個小時<br>
-要全部參加完實在太累了<br>
-之後再來補帶吧</p>
+            <p>https://greatexpectations.io/</p>
 
 
              
  
-                <p id="post-share-links">
-    Share on:
-      <a href="https://twitter.com/intent/tweet?text=Remote%20Python%20Pizza%20%F0%9F%8D%95%202020&url=https%3A//lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020&hashtags=python,pycon" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=Remote%20Python%20Pizza%20%F0%9F%8D%95%202020&amp;body=https%3A//lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
-
+            
             
             
 
@@ -165,75 +93,19 @@
 
 
 
-
-<section>
-    <h6 style="display:none;">Comments</h6>
-    <p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
-
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle disqus-comment-count comment-count collapsed"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
-                   data-disqus-identifier="https://lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020"
-                   href="https://lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020#comment_thread"
-                   id="comment-accordion-toggle">
-                    Comments
-                </a>
-            </div>
-            <div id="comment_thread" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div class="comments">
-                        <div id="disqus_thread"></div>
-                        <script>
-    var disqus_shortname = 'lee-w-blog';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-
-    var disqus_identifier = 'https://lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020';
-    var disqus_url = 'https://lee-w.github.io/posts/tech/2020/05/remote-python-pizza-2020';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-
-<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
             <hr/>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2020-05-03T16:52:00+08:00">2020/05/03 - Sun</time>
+            <time itemprop="dateCreated" datetime="2021-01-02T12:57:00+08:00">2021/01/02 - Sat</time>
                 <h4>Read Time</h4>
                  1 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://lee-w.github.io/tags.html#pycon-ref">PyCon
-                    <span class="superscript">11</span>
-</a></li>
-                <li><a href="https://lee-w.github.io/tags.html#python-ref">Python
-                    <span class="superscript">34</span>
+                <li><a href="https://lee-w.github.io/tags.html#backend-ref">Backend
 </a></li>
             </ul>
 <h4>Keep In Touch</h4>
