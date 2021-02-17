@@ -46,7 +46,7 @@ I was the executor of the program and the leader of the teaching assistant team.
 
 **[July 2015 - July 2016] Substitute Military Service, K-12 Education Administration, Ministry of Education**
 
-* * Maintained legacy systems implemented in multiple languages, including `C#`, `VBScript`, `PHP`, etc.
+* Maintained legacy systems implemented in multiple languages, including `C#`, `VBScript`, `PHP`, etc.
 * Developed automation programs for generating reports which save 80% of human labor time
 * Delivered a human resource management system using [django](https://www.djangoproject.com)
 
