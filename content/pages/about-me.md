@@ -14,7 +14,7 @@ slug: about-me
 * **Intermediate**: AWS, Project Management, Data Analysis
 
 ## Work Experience
-**[Apr 2017 - Present] Software Engineer, [Rakuten USA](https://www.rakuten.com/)**
+**[Apr 2017 - Present] Machine Leraning Engineer, [Rakuten USA](https://www.rakuten.com/)**
 
 * Improved software engineering culture through building best-practice templates that reduce project initializing time and automatically checks errors before code review
 * Developed backend API for machine learning services
