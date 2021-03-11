@@ -150,11 +150,7 @@ Commands:
 但上次有朋友安利我 &lt;a href="https://plotly.com/python/"&gt;ploty&lt;/a&gt; 很好用，就決定來玩玩看&lt;br/&gt;
 使用上覺得兩個函式庫都還蠻直覺的&lt;br/&gt;
 但 ploty 可以不用多做設定就有 hover tool ，還蠻方便的&lt;br/&gt;
-因為這部分的程式碼大多都是看文件就能找到，就不特別聊了&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="pelican"></category></entry><entry><title>Python Table Manners 番外 2 - 除錯</title><link href="https://lee-w.github.io/posts/tech/2021/01/python-table-manner-debug" rel="alternate"></link><published>2021-01-02T12:57:00+08:00</published><updated>2021-01-02T12:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2021-01-02:/posts/tech/2021/01/python-table-manner-debug</id><content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/cool-RR/PySnooper"&gt;PySnooper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/gruns/icecream"&gt;icecream&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/pdbpp/pdbpp"&gt;pdbpp&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="editor"></category></entry><entry><title>Python Table Manners 番外 - 編輯器</title><link href="https://lee-w.github.io/posts/tech/2021/01/python-table-manner-editor" rel="alternate"></link><published>2021-01-02T12:57:00+08:00</published><updated>2021-01-02T12:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2021-01-02:/posts/tech/2021/01/python-table-manner-editor</id><summary type="html">&lt;p&gt;在最開始的規劃中，並沒有想要寫編輯器&lt;br&gt;
+因為這部分的程式碼大多都是看文件就能找到，就不特別聊了&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="pelican"></category></entry><entry><title>Python Table Manners 番外 - 編輯器</title><link href="https://lee-w.github.io/posts/tech/2021/01/python-table-manner-editor" rel="alternate"></link><published>2021-01-02T12:57:00+08:00</published><updated>2021-01-02T12:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2021-01-02:/posts/tech/2021/01/python-table-manner-editor</id><summary type="html">&lt;p&gt;在最開始的規劃中，並沒有想要寫編輯器&lt;br&gt;
 不過半年前（可能更久以前...），朋友有建議可以寫這個主題&lt;br&gt;
 上次去 Taichung.py 分享也有人提問&lt;br&gt;
 就稍微整理我在用的編輯器&lt;/p&gt;
