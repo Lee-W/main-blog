@@ -4,6 +4,7 @@ Category: Tech
 Tags: Python, editor
 Slug: python-table-manner-debug
 Authors: Lee-W
+Status: draft
 Series: Python Table Manners
 
 * [PySnooper](https://github.com/cool-RR/PySnooper)
