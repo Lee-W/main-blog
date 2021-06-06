@@ -16,11 +16,11 @@ slug: about-me
 ## Work Experience
 **[Apr 2017 - Present] Machine Leraning Engineer, [Rakuten USA](https://www.rakuten.com/)**
 
-* Improved software engineering culture through building best-practice templates that reduce project initializing time and automatically checks errors before code review
+* Improved software engineering culture through building project templates that reduce project initializing time and automatically checks errors before code review
 * Developed backend API for machine learning services
-* Built data pipelines through [Apache Airflow](https://airflow.apache.org/) for data processing and model generation
+* Built data pipelines through [Apache Airflow](https://airflow.apache.org/) for processing data larger than 10G and generating models
 * Designed and developed data labeling backend which automates the interaction between crowdsourcing workers and experts to generate high quality labeled data
-* Set up the CI/CD pipeline through [Jenkins](https://jenkins.io/) for existing systems
+* Migrate CI/CD pipelines from [Jenkins](https://jenkins.io/) to [GitHub Actions](https://github.com/actions)
 * Cooperate with overseas teams in San Mateo and Ukraine
 
 **[Jan 2019 - March 2019] Project Manager, [DLT Lab](https://dlt.csie.ncku.edu.tw)**
@@ -151,6 +151,7 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 * [pelican-stat](https://github.com/Lee-W/pelican-stat)
 * [Flickr Album Downloader](https://github.com/Lee-W/Flickr_Album_Downloader)
 * [PttCraweler](https://github.com/Lee-W/PttCrawler)
+* [wayback-machine-saver](https://github.com/Lee-W/wayback-machine-saver)
 
 ### NCKU Related
 * [NCKU Grade](https://github.com/Lee-W/NCKU_Grade)
