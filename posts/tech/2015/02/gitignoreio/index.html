@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -30,6 +29,7 @@
         <title>gitignore.io  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -102,11 +102,9 @@
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
 </code></pre></div>
 
-
 <p>或者在 ~/.zshrc 加入下面這段後，執行 <code>source ~/.zshrc</code></p>
 <div class="highlight"><pre><span></span><code><span class="k">function</span> gi<span class="o">()</span> <span class="o">{</span> curl -L -s https://www.gitignore.io/api/<span class="nv">$@</span> <span class="p">;</span><span class="o">}</span>
 </code></pre></div>
-
 
 <p>設定完成後就可以使用 gi 的功能</p>
 <h3 id="_2">使用</h3>
@@ -115,28 +113,23 @@
 <div class="highlight"><pre><span></span><code>gi list
 </code></pre></div>
 
-
 <p>執行完會看到一長串的結果</p>
 <div class="highlight"><pre><span></span><code>actionscript,ada,agda,android...
 </code></pre></div>
 
-
 <p>接著在 gi 後面輸入想產生的 .gitignore 的 types</p>
 <div class="highlight"><pre><span></span><code>gi <span class="s2">&quot;types&quot;</span>
 </code></pre></div>
-
 
 <p>如果有超過一個必須用 <code>,</code> 隔開<br>
 e.g.,</p>
 <div class="highlight"><pre><span></span><code>gi vim,osx
 </code></pre></div>
 
-
 <p>不過這樣還不會產生 .gitignore，只會顯示在螢幕上<br>
 還要再使用 output redirection 才會有 .gitignore</p>
 <div class="highlight"><pre><span></span><code>gi vim,osx &gt;&gt; .gitignore
 </code></pre></div>
-
 
 <h2 id="my-custom-gi">My Custom gi</h2>
 <p>但用起來還是有點小小的不順手<br>
@@ -156,14 +149,12 @@ e.g.,</p>
 sudo cp gi_extension.sh /usr/bin/gi
 </code></pre></div>
 
-
 <p>如果之前有在 shell 的設定檔中，設定過 gitignore.io 提供的 gi<br>
 記得要把它註解掉，不然那個 gi 會蓋過我的 gi</p>
 <p>如果想移除掉</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/Lee-W/gi_extension <span class="o">&amp;&amp;</span> <span class="nb">cd</span> gi_extension
 sudo rm gi_extension.sh /usr/bin/gi
 </code></pre></div>
-
 
 <h2 id="_4">使用</h2>
 <p>第一次使用的時候要先下 <code>gi -u</code><br>
@@ -176,14 +167,12 @@ sudo rm gi_extension.sh /usr/bin/gi
 <div class="highlight"><pre><span></span><code>gi -l
 </code></pre></div>
 
-
 <p><img alt="1_gi_l.png" src="/images/posts-image/2015-02-03-gitignoreio/WjrHpdZ.png"></p>
 <ul>
 <li>以字母的順序輸出</li>
 </ul>
 <div class="highlight"><pre><span></span><code>gi -L
 </code></pre></div>
-
 
 <p><img alt="2_gi_L.png" src="/images/posts-image/2015-02-03-gitignoreio/9j2PdP4.png"></p>
 <h3 id="gitignore">顯示 .gitignore 的內容</h3>
@@ -192,24 +181,20 @@ sudo rm gi_extension.sh /usr/bin/gi
 <span class="c1"># e.g., gi vim osx</span>
 </code></pre></div>
 
-
 <h3 id="gitignore_1">輸出 .gitignore</h3>
 <p>將結果加入目前資料夾下的 .gitignore</p>
 <div class="highlight"><pre><span></span><code>gi -a <span class="s2">&quot;types&quot;</span>
 <span class="c1"># e.g., gi -a vim osx</span>
 </code></pre></div>
 
-
 <p>在目前的資料夾產生一份新的 .gitignore 取代舊有的</p>
 <div class="highlight"><pre><span></span><code>gi -e <span class="s2">&quot;types&quot;</span>
 <span class="c1"># e.g.,e.g.,, gi -e vim osx</span>
 </code></pre></div>
 
-
 <h3 id="_6">更新本地端的支援列表</h3>
 <div class="highlight"><pre><span></span><code>gi -u
 </code></pre></div>
-
 
 <p>其實每次 gi 被執行的時候，都會在 background 更新列表<br>
 但是這次的更新，下次才能被使用<br>
@@ -291,7 +276,7 @@ sudo rm gi_extension.sh /usr/bin/gi
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2015-02-03T05:58:00+08:00">2015/02/03 - Tue</time>
                 <h4>Read Time</h4>
-                 1 min
+                1 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

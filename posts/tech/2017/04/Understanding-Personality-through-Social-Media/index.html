@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -30,6 +29,7 @@
         <title>[Paper] Understanding Personality through Social Media  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -132,7 +132,7 @@ e.g. ENFJ, INTP</p>
 </ul>
 </li>
 </ul>
-<h4>What is the so-called personliaty-related tweets?</h4>
+<h4 id="what-is-the-so-called-personliaty-related-tweets">What is the so-called personliaty-related tweets?</h4>
 <ul>
 <li>English Tweets that contain users' own MBIT code.<br/>
     e.g.<ul>
@@ -143,17 +143,17 @@ e.g. ENFJ, INTP</p>
 <li>Heuristic rules is used (e.g. <code>"I'm"</code>, <code>"I got"</code>, <code>"I have been a"</code>)</li>
 <li>No classification method is used for ensuring the personality code is indeed the user's</li>
 </ul>
-<h4>Distribution</h4>
+<h4 id="distribution">Distribution</h4>
 <p>Personality distribution of this data is skewed.</p>
 <p><img alt="MBTI-bar" src="/images/posts-image/2017-04-05-understanding-personliaty-through-social-media/MBTI-bar.png"/></p>
 <p>However, in the real word, the personality distribution might also be skewed.</p>
 <h3 id="features">Features</h3>
-<h4>1. n-grams</h4>
+<h4 id="1-n-grams">1. n-grams</h4>
 <ul>
 <li>Most frequent 1,000 unigram, bigram, trigram words and phrases</li>
 <li>1,000 dimensions vectors for unigram, bigram trigram for each user</li>
 </ul>
-<h4>2. Twitter Part-of-speech tags</h4>
+<h4 id="2-twitter-part-of-speech-tags">2. Twitter Part-of-speech tags</h4>
 <p>Based on <a href="http://www.cs.cmu.edu/~ark/TweetNLP/gimpel+etal.acl11.pdf">Part-of-Speech Tagging for Twitter: Annotation, Features, and Experiments</a></p>
 <ul>
 <li>25 types with some Twitter-specific tag.<br/>
@@ -165,7 +165,7 @@ e.g. ENFJ, INTP</p>
 </ul>
 </li>
 </ul>
-<h4>3.word vectors</h4>
+<h4 id="3word-vectors">3.word vectors</h4>
 <ul>
 <li>
 <p>Word Vector Settings</p>
@@ -184,9 +184,9 @@ e.g. ENFJ, INTP</p>
 </ul>
 <h3 id="prediction">Prediction</h3>
 <p>Logistic Regression is used (Random Forest and SVM produced similar results)</p>
-<h4>Accuracy Measurement</h4>
+<h4 id="accuracy-measurement">Accuracy Measurement</h4>
 <p>Since the data is skewed, AUC is used.</p>
-<h4>Accuracy</h4>
+<h4 id="accuracy">Accuracy</h4>
 <ul>
 <li>Indivisula Features<ul>
 <li>Word Vector Only → (AUC=0.651)</li>
@@ -200,7 +200,7 @@ e.g. ENFJ, INTP</p>
 </ul>
 </li>
 </ul>
-<h4>Insight</h4>
+<h4 id="insight">Insight</h4>
 <p>Among the results, word vector performs best which might illustrate that predictions based on social media and language would work.</p>
 <p>During the POS conversion process, information is compressed into 25 tags and might lost some important one.<br/>
 This might be the reason why it performs worse.</p>
@@ -281,7 +281,7 @@ This might be the reason why it performs worse.</p>
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2017-04-05T22:30:00+08:00">2017/04/05 - Wed</time>
                 <h4>Read Time</h4>
-                 2 min
+                2 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

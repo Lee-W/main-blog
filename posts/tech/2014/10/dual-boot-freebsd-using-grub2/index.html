@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -30,6 +29,7 @@
         <title>Dual Boot FreeBSD Using GRUB2  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -97,7 +97,6 @@
 <div class="highlight"><pre><span></span><code>vi /etc/grub.d/40_Custom
 </code></pre></div>
 
-
 <p>加入下面這幾行</p>
 <div class="highlight"><pre><span></span><code>menuentry &quot;FreeBSD (/boot/loader)&quot; {
     insmod ufs2
@@ -106,13 +105,11 @@
 }
 </code></pre></div>
 
-
 <p><code>FreeBSD (/boot/loader)</code> 是在開機時顯示的名稱<br>
 <code>(hd0,1,a)</code> 要根據你的 FreeBSD 灌在磁碟的哪一塊決定</p>
 <h3 id="grub_1">更新 grub 設定檔</h3>
 <div class="highlight"><pre><span></span><code>sudo update-grub
 </code></pre></div>
-
 
 <p>這樣就會在開機選單上看到 FreeBSD 了</p>
 <p>其實還有一些其他的設定方法<br>
@@ -121,7 +118,6 @@
 <p>如果希望改變預設的開機順序，就必須要修改下面的檔案 <code>/etc/default/grub</code></p>
 <div class="highlight"><pre><span></span><code>vi /etc/default/grub
 </code></pre></div>
-
 
 <p>會看到下面這串</p>
 <div class="highlight"><pre><span></span><code>GRUB_DEFAULT=0
@@ -132,7 +128,6 @@ GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
 GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
 GRUB_CMDLINE_LINUX=&quot;&quot;
 </code></pre></div>
-
 
 <p>把第 1 行設定為多少 (注意是從 0 開始)，就會預設從那裡開機</p>
 <h2 id="ubuntu-mount-freebsd">在 ubuntu mount FreeBSD</h2>
@@ -215,7 +210,7 @@ GRUB_CMDLINE_LINUX=&quot;&quot;
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2014-10-21T08:56:00+08:00">2014/10/21 - Tue</time>
                 <h4>Read Time</h4>
-                 1 min
+                1 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

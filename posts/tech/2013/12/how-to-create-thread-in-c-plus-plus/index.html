@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -30,6 +29,7 @@
         <title>[C++] 如何 create thread  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -106,7 +106,7 @@ join 是開啟這個 thread 的上層程式必須等待到這個 thread 的工�
 thread 的 constructor 的第一個參數是函數名稱，第二個以後就是原本函數的參數</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="kt">void</span> <span class="nf">fun1</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;This is funtion1&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
@@ -117,13 +117,12 @@ thread 的 constructor 的第一個參數是函數名稱，第二個以後就是
 <span class="p">}</span>
 
 <span class="n">main</span><span class="p">(){</span>
-        <span class="kr">thread</span> <span class="nf">t1</span><span class="p">(</span><span class="n">fun1</span><span class="p">);</span>
-        <span class="kr">thread</span> <span class="nf">t2</span><span class="p">(</span><span class="n">fun2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+        <span class="kr">thread</span> <span class="n">t1</span><span class="p">(</span><span class="n">fun1</span><span class="p">);</span>
+        <span class="kr">thread</span> <span class="n">t2</span><span class="p">(</span><span class="n">fun2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
         <span class="n">t1</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
         <span class="n">t2</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
-
 
 <p>這樣就可以產生兩個 thread，他們會彼此搶 CPU 的資源<br>
 cout 似乎是每一個 &lt;&lt; 會去搶一次，所以如果想要一次印完全部，可能可以考慮使用 printf 或者是 thread 的 lock 功能</p>
@@ -137,7 +136,7 @@ cout 似乎是每一個 &lt;&lt; 會去搶一次，所以如果想要一次印�
 p.s. 如果 fun1 是 static，則不用 this</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -146,7 +145,7 @@ p.s. 如果 fun1 是 static，則不用 this</p>
         <span class="p">}</span>
 
         <span class="kt">void</span> <span class="n">fun2</span><span class="p">()</span> <span class="p">{</span>
-                <span class="kr">thread</span> <span class="nf">t</span><span class="p">(</span><span class="o">&amp;</span><span class="n">example</span><span class="o">::</span><span class="n">fun1</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="kr">thread</span> <span class="n">t</span><span class="p">(</span><span class="o">&amp;</span><span class="n">example</span><span class="o">::</span><span class="n">fun1</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
                 <span class="n">t</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
         <span class="p">}</span>
 <span class="p">};</span>
@@ -158,12 +157,11 @@ p.s. 如果 fun1 是 static，則不用 this</p>
 <span class="p">}</span>
 </code></pre></div>
 
-
 <p>最後是如何呼叫其他 class 的 function，這裡包含兩個例子 (main, class B)<br>
 想法跟上面那種很接近，只是第 2 個參數改成那個物件的實體</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -177,7 +175,7 @@ p.s. 如果 fun1 是 static，則不用 this</p>
         <span class="kt">void</span> <span class="n">fun2</span><span class="p">()</span> <span class="p">{</span>
                 <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;This is function2&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
 
-                <span class="kr">thread</span> <span class="nf">t</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">fun1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+                <span class="kr">thread</span> <span class="n">t</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">fun1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
                 <span class="n">t</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
         <span class="p">}</span>
 <span class="k">private</span><span class="o">:</span>
@@ -190,16 +188,15 @@ p.s. 如果 fun1 是 static，則不用 this</p>
         <span class="n">b</span><span class="p">.</span><span class="n">fun2</span><span class="p">();</span>
 
         <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
-        <span class="kr">thread</span> <span class="nf">t1</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">fun1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+        <span class="kr">thread</span> <span class="n">t1</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">fun1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
         <span class="n">t1</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
 
-
 <h2 id="pthread">基本的 pthread 使用</h2>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;pthread.h&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="k">struct</span> <span class="nc">arg</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">p1</span><span class="p">;</span>
@@ -221,7 +218,6 @@ p.s. 如果 fun1 是 static，則不用 this</p>
         <span class="n">pthread_join</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-
 
 <p>至於 pthread 如何用在 class 的 function 上<br>
 可以將 function 加上 static<br>
@@ -309,7 +305,7 @@ p.s. 如果 fun1 是 static，則不用 this</p>
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2013-12-11T00:56:00+08:00">2013/12/11 - Wed</time>
                 <h4>Read Time</h4>
-                 2 min
+                2 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

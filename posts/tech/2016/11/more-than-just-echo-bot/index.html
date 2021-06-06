@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -30,6 +29,7 @@
         <title>More than Just Echo Bot  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -114,7 +114,6 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
     <span class="o">......</span>
 </code></pre></div>
 
-
 <p>回歸到天氣的問題<br>
 可以試著找出「天氣」是否有出現在使用者的問句中<br>
 再來判斷「今天」, 「明天」這樣敘述時間的詞</p>
@@ -125,7 +124,6 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
     <span class="k">elif</span> <span class="s1">&#39;明天&#39;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">tomorrow_s_weather</span>
 </code></pre></div>
-
 
 <h3 id="pros">Pros</h3>
 <ul>
@@ -157,7 +155,6 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <span class="nt">&lt;/aiml&gt;</span>
 </code></pre></div>
 
-
 <p>只要符合特定的 pattern，就回傳指定的 template<br>
 也能透過 <code>&lt;random&gt;</code> 這樣的 tag，從多種回覆隨機丟一種回傳</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;random&gt;</span>
@@ -166,7 +163,6 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
    ...
 <span class="nt">&lt;/random&gt;</span>
 </code></pre></div>
-
 
 <h3 id="pros_1">Pros</h3>
 <ul>
@@ -208,7 +204,6 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <div class="highlight"><pre><span></span><code>how is the weather in the Taipei
 </code></pre></div>
 
-
 <ul>
 <li>Response</li>
 </ul>
@@ -240,7 +235,6 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <span class="p">}</span>
 </code></pre></div>
 
-
 <h3 id="apiai">API.ai</h3>
 <ul>
 <li>Question</li>
@@ -248,7 +242,6 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <div class="highlight"><pre><span></span><code>Hey Calendar, schedule lunch with
 Mary Johnson at 12 pm tomorrow.
 </code></pre></div>
-
 
 <ul>
 <li>Response</li>
@@ -260,7 +253,6 @@ Mary Johnson at 12 pm tomorrow.
     <span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="s2">&quot;2014-08-06T12:00:00-07:00&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 
 <h2 id="implement-through-powerful-libraries">Implement Through Powerful Libraries</h2>
 <p>不過這些服務，通常會有它的限制<br>
@@ -411,7 +403,7 @@ Mary Johnson at 12 pm tomorrow.
             </li>
     </ul>
                 <h4>Read Time</h4>
-                 2 min
+                2 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

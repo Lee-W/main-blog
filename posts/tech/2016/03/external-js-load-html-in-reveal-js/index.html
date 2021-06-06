@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -30,6 +29,7 @@
         <title>External.js - Load HTML in Reveal.js  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -103,7 +103,6 @@
 <div class="highlight"><pre><span></span><code><span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;plugin/external/external.js&#39;</span><span class="p">,</span> <span class="nx">condition</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span> <span class="s1">&#39;[data-external]&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
 </code></pre></div>
 
-
 <h2 id="method2-submodule">Method2: Submodule</h2>
 <p>不過為了讓他的更新也能被追蹤，我使用了 git submodule</p>
 <ul>
@@ -112,13 +111,11 @@
 <div class="highlight"><pre><span></span><code>git submodule add https://github.com/calevans/external plugin/external
 </code></pre></div>
 
-
 <ul>
 <li>在 <code>index.html</code> 中的 <code>Reveal.initalize</code> 這個 block 加入下面的內容</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;plugin/external/external/external.js&#39;</span><span class="p">,</span> <span class="nx">condition</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span> <span class="s1">&#39;[data-external]&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
 </code></pre></div>
-
 
 <p>( 注意兩種方式加入的內容有些微的不同 )</p>
 <h1 id="usage">Usage</h1>
@@ -127,12 +124,10 @@
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">&quot;module_01/index.html&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
 </code></pre></div>
 
-
 <h2 id="html">外部 html</h2>
 <div class="highlight"><pre><span></span><code><span class="c">&lt;!-- module_01/index.html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> This is external <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
 </code></pre></div>
-
 
 <h2 id="html_1">載入後的 html</h2>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">&quot;module_01/index.html&quot;</span><span class="p">&gt;</span>
@@ -217,7 +212,7 @@
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2016-03-23T01:23:00+08:00">2016/03/23 - Wed</time>
                 <h4>Read Time</h4>
-                 1 min
+                1 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

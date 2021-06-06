@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -30,6 +29,7 @@
         <title>小林的程式會不會遇到 SQL Injection  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -342,17 +342,17 @@ pdbpp 在安裝後會取代原生的 pdb<br/>
 <p>這部分的紀錄方式會是每進到一次函式 (在 pdb 裡面使用 <code>s</code>) 就會加一個四級標題<br/>
 回到原本的函式，則會在標題後面加一個 back</p>
 <p>首先當然是從 <code>login</code> 呼叫到 <code>db.select</code> 函式開始追回去</p>
-<h4>web/db.py::DB::select</h4>
+<h4 id="webdbpydbselect">web/db.py::DB::select</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L845">web/db.py#L845</a></li>
 </ul>
 <p>跑完 874 行的 list comprehension 後，<code>clauses</code> 會包含以下四個部分</p>
-<div class="highlight"><pre><span></span><code><span class="err">(Pdb++) p clauses</span>
-<span class="err">[&lt;sql: 'SELECT *'&gt;, &lt;sql: 'FROM USER'&gt;, &lt;sql: 'WHERE account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'&gt;]</span>
+<div class="highlight"><pre><span></span><code>(Pdb++) p clauses
+[&lt;sql: 'SELECT *'&gt;, &lt;sql: 'FROM USER'&gt;, &lt;sql: 'WHERE account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'&gt;]
 </code></pre></div>
 <p>看起來已經成功將特殊字元跳脫，解決 SQL injection<br/>
 所以接下來要去追產生 <code>clause</code> 的 <code>gen_clause</code></p>
-<h4>web/db.py::DB::gen_clause</h4>
+<h4 id="webdbpydbgen_clause">web/db.py::DB::gen_clause</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L934">web/db.py#L934</a></li>
 </ul>
@@ -367,7 +367,7 @@ pdbpp 在安裝後會取代原生的 pdb<br/>
 <span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">vars</span>
 <span class="p">{</span><span class="s1">'account'</span><span class="p">:</span> <span class="s2">"1' OR '1'='1"</span><span class="p">,</span> <span class="s1">'password'</span><span class="p">:</span> <span class="s2">"1' OR '1'='1"</span><span class="p">}</span>
 </code></pre></div>
-<h4>web/db.py::reparam</h4>
+<h4 id="webdbpyreparam">web/db.py::reparam</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L344">web/db.py#L344</a></li>
 <li>參數:<ul>
@@ -377,7 +377,7 @@ pdbpp 在安裝後會取代原生的 pdb<br/>
 </li>
 </ul>
 <p>一進到 <code>reparm</code> ，這些值就會繼續被傳到 <code>safteval</code></p>
-<h4>web/db.py::SafeEval::safeeval</h4>
+<h4 id="webdbpysafeevalsafeeval">web/db.py::SafeEval::safeeval</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1699">web/db.py#L1699</a></li>
 <li>帶入參數<ul>
@@ -387,16 +387,16 @@ pdbpp 在安裝後會取代原生的 pdb<br/>
 </li>
 </ul>
 <p>1700 行的 <code>Parser</code> 會將 text 分解成四個 SQL 的部分，並且將 nodes 連同 mapping 一個一個帶入 <code>eval_node</code></p>
-<div class="highlight"><pre><span></span><code><span class="err">(Pdb++) p list(nodes)</span>
-<span class="err">[Node('text', 'account =', None), Node('param', 'account', None), Node('text', ' AND password=', None), Node('param', 'password', None)]</span>
+<div class="highlight"><pre><span></span><code>(Pdb++) p list(nodes)
+[Node('text', 'account =', None), Node('param', 'account', None), Node('text', ' AND password=', None), Node('param', 'password', None)]
 </code></pre></div>
-<h4>web/db.py::SafeEval::eval_node</h4>
+<h4 id="webdbpysafeevaleval_node">web/db.py::SafeEval::eval_node</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1703">web/db.py#L1703</a></li>
 </ul>
 <p><code>self.eval_expr</code> 的功用是在讓 <code>node[1]</code> 能抓到 <code>"1' OR '1'='1"</code><br/>
 抓到了字串 <code>"1' OR '1'='1"</code> 後會丟到 <code>sqlquote</code></p>
-<h4>web/db.py::sqlquote</h4>
+<h4 id="webdbpysqlquote">web/db.py::sqlquote</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L463">463行</a></li>
 <li>參數:<ul>
@@ -405,12 +405,12 @@ pdbpp 在安裝後會取代原生的 pdb<br/>
 </li>
 </ul>
 <p>a 會在 475 行被初始化成 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L93">SQLParam</a> 物件 ，然後再產生 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L142">SQLQuery</a> 物件</p>
-<h4>web/db.py::SafeEval::eval_node (back)</h4>
+<h4 id="webdbpysafeevaleval_node-back">web/db.py::SafeEval::eval_node (back)</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1703">web/db.py#L1703</a></li>
 </ul>
 <p>回到 <code>eval_node</code> ，就會把剛剛的結果 <code>&lt;sql: '"1\' OR \'1\'=\'1"'&gt;</code> (<code>SQLQuery</code> 物件印出的形式) 回傳</p>
-<h4>web/db.py::SafeEval::safeeval (back)</h4>
+<h4 id="webdbpysafeevalsafeeval-back">web/db.py::SafeEval::safeeval (back)</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1699">web/db.py#L1699</a></li>
 </ul>
@@ -418,51 +418,51 @@ pdbpp 在安裝後會取代原生的 pdb<br/>
 <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="s1">'account ='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">sql</span><span class="p">:</span> <span class="s1">'"1</span><span class="se">\'</span><span class="s1"> OR </span><span class="se">\'</span><span class="s1">1</span><span class="se">\'</span><span class="s1">=</span><span class="se">\'</span><span class="s1">1"'</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">' AND password='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">sql</span><span class="p">:</span> <span class="s1">'"1</span><span class="se">\'</span><span class="s1"> OR </span><span class="se">\'</span><span class="s1">1</span><span class="se">\'</span><span class="s1">=</span><span class="se">\'</span><span class="s1">1"'</span><span class="o">&gt;</span><span class="p">]</span>
 </code></pre></div>
 <p>這個 list 會接著被帶入 <code>SQLQuery.join</code> 整合成一整個 SQL 的片段</p>
-<h4>web/db.py::SQLQuery::join</h4>
+<h4 id="webdbpysqlqueryjoin">web/db.py::SQLQuery::join</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L254">web/db.py#L254</a></li>
 </ul>
 <p>277 ~ 285 行的 for loop 執行完會產生一個新的 target (<code>SQLQuery</code> 物件)</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span>
-<span class="o">&lt;</span><span class="k">sql</span><span class="p">:</span> <span class="s1">'account ="1\'</span> <span class="k">OR</span> <span class="err">\</span><span class="s1">'1\'</span><span class="o">=</span><span class="err">\</span><span class="s1">'1" AND password="1\'</span> <span class="k">OR</span> <span class="err">\</span><span class="s1">'1\'</span><span class="o">=</span><span class="err">\</span><span class="s1">'1"'</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code>(Pdb++) p target
+&lt;sql: 'account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'&gt;
 
-<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span><span class="p">.</span><span class="n">items</span>
-<span class="p">[</span><span class="s1">'account ='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">param</span><span class="p">:</span> <span class="ss">"1' OR '1'='1"</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">' AND password='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">param</span><span class="p">:</span> <span class="ss">"1' OR '1'='1"</span><span class="o">&gt;</span><span class="p">]</span>
+(Pdb++) p target.items
+['account =', &lt;param: "1' OR '1'='1"&gt;, ' AND password=', &lt;param: "1' OR '1'='1"&gt;]
 
-<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span><span class="p">.</span><span class="k">values</span><span class="p">()</span>
-<span class="p">[</span><span class="ss">"1' OR '1'='1"</span><span class="p">,</span> <span class="ss">"1' OR '1'='1"</span><span class="p">]</span>
+(Pdb++) p target.values()
+["1' OR '1'='1", "1' OR '1'='1"]
 
-<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">target</span><span class="p">.</span><span class="n">query</span><span class="p">()</span>
-<span class="s1">'account =%s AND password=%s'</span>
+(Pdb++) p target.query()
+'account =%s AND password=%s'
 </code></pre></div>
 <p>可以發現這時候要回傳的 <code>SQLQuery</code> 物件已經把查詢時跟要帶入的值分開儲存</p>
-<h4>web/db.py::reparam（back）</h4>
+<h4 id="webdbpyreparamback">web/db.py::reparam（back）</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L344">web/db.py#L344</a></li>
 </ul>
-<h4>web/db.py::DB::gen_clause (back)</h4>
+<h4 id="webdbpydbgen_clause-back">web/db.py::DB::gen_clause (back)</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L948">web/db.py#L948</a></li>
 </ul>
 <p>在 956 行，剛剛回傳的 <code>nout</code> 會透過 <code>xjoin</code> 跟字串 <code>WHERE</code> 整合成一個新的 <code>SQLQuery</code> 物件<br/>
 字串跟 <code>SQLQuery</code> 相加的行為被定義在 <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L196">196 行</a> 的 <code>__radd__</code><br/>
 但因為沒有什麼太意料之外的行為，這裡就不繼續追下去了</p>
-<h4>web/db.py::DB::select (back)</h4>
+<h4 id="webdbpydbselect-back">web/db.py::DB::select (back)</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L874">web/db.py#L874</a></li>
 </ul>
 <p>取得了回傳的 <code>clauses</code> 後，它會在 879 行的 <code>SQLQuery.join</code> 整合成一個 <code>SQLQuery</code> 物件<br/>
 產生 <code>qout</code></p>
-<div class="highlight"><pre><span></span><code><span class="err">(Pdb++) p qout</span>
-<span class="err">&lt;sql: 'SELECT * FROM USER WHERE account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'&gt;</span>
+<div class="highlight"><pre><span></span><code>(Pdb++) p qout
+&lt;sql: 'SELECT * FROM USER WHERE account ="1\' OR \'1\'=\'1" AND password="1\' OR \'1\'=\'1"'&gt;
 </code></pre></div>
 <p>最後就要看 884 行的 <code>self.query(qout, processed=True)</code> 是不是真的會以參數化的方式執行這段 SQL</p>
-<h4>web/db.py::DB::query</h4>
+<h4 id="webdbpydbquery">web/db.py::DB::query</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L807">web/db.py#L807</a></li>
 </ul>
 <p>執行到 831 行 <code>self._db_execute(db_cursor, sql_query)</code> 才會用到傳進來的 <code>sql_query</code></p>
-<h4>web/db.py::DB::_db_execute</h4>
+<h4 id="webdbpydb_db_execute">web/db.py::DB::_db_execute</h4>
 <ul>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L750">web/db.py#L750</a></li>
 </ul>
@@ -472,7 +472,7 @@ pdbpp 在安裝後會取代原生的 pdb<br/>
 <li>params = <code>["1' OR '1'='1", "1' OR '1'='1"])</code></li>
 </ul>
 <p>再帶到 757 行的<code>out = cur.execute(query, params)</code> 直接對資料庫作查詢，所以就不會遇到 SQL injection 了</p>
-<h4>原本好像是要追 delete 才對</h4>
+<h4 id="delete">原本好像是要追 delete 才對</h4>
 <p>顧著重現維基百科的例子，竟然忘記了原本要追的其實是另一段程式碼<br/>
 不過我想本質應該還是相同的<br/>
 有興趣的話，可以拿以下這段 SQL 來測測看 delete 的 SQL injection 是不是真的能清空整個資料表<br/>
@@ -503,7 +503,7 @@ PyCon JP 2019 時，我也去了鷲宮神社留下我的祝福<br/>
 <p>即便如此，京阿尼還是很快就站起來<br/>
 一年過後的現在宣布「小林家的龍女僕將於 2021 年開播 」🎉</p>
 <blockquote class="twitter-tweet"><p dir="ltr" lang="ja">TVアニメ第2期「小林さんちのメイドラゴンS」2021年放送決定！SuperでSupremeなSecond lifeがStartします！<br/>そして、メイドラゴンS(読み:エス)ティザービジュアル公開！ティザーサイトもぜひチェックお願いします！　<a href="https://t.co/pKOgbEe3sL">https://t.co/pKOgbEe3sL</a> <a href="https://twitter.com/hashtag/meidragon?src=hash&amp;ref_src=twsrc%5Etfw">#meidragon</a> <a href="https://t.co/XoyiBPbnvt">pic.twitter.com/XoyiBPbnvt</a></p>— TVアニメ「小林さんちのメイドラゴンS」公式 (@maidragon_anime) <a href="https://twitter.com/maidragon_anime/status/1292838380187746305?ref_src=twsrc%5Etfw">August 10, 2020</a></blockquote>
-<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 
 
              
@@ -583,7 +583,7 @@ PyCon JP 2019 時，我也去了鷲宮神社留下我的祝福<br/>
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-09-22T12:50:00+08:00">2020/09/22 - Tue</time>
                 <h4>Read Time</h4>
-                 5 min
+                5 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

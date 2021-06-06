@@ -3192,7 +3192,7 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;p&gt;此時的奈許均衡有兩個，就是雙方選擇同樣行動的兩個點&lt;/p&gt;
 &lt;p&gt;這時候只要有一方先做了選擇，則另一方就會趨向於&lt;strong&gt;一樣的選擇&lt;/strong&gt;&lt;br/&gt;
 協調賽局的根本就是「和大家一樣」&lt;/p&gt;
-&lt;h4&gt;協調的失敗&lt;/h4&gt;
+&lt;h4 id="_4"&gt;協調的失敗&lt;/h4&gt;
 &lt;p&gt;協調賽局中，有多個奈許均衡點&lt;br/&gt;
 但最後仍有可能落在對大家都不利的均衡點上 (e.g. 以上面的例子來說就是看電影 )&lt;br/&gt;
 而且協調賽局具有「穩定了就很難改變」的性質&lt;br/&gt;
@@ -3204,7 +3204,7 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="ch3-"&gt;Ch3: 知彼知己，百戰不殆 - 三種賽局，搞懂你的對手&lt;/h2&gt;
-&lt;h3 id="_4"&gt;膽小鬼賽局&lt;/h3&gt;
+&lt;h3 id="_5"&gt;膽小鬼賽局&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;假設兩人各開一台車，朝向牆壁全速前進
 看誰能不採煞車前，到離牆最近的地方 → 先踩剎車的人就輸了
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -3256,7 +3256,7 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="_5"&gt;猜銅板賽局&lt;/h3&gt;
+&lt;h3 id="_6"&gt;猜銅板賽局&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;某個城市中，有警察和小偷
 警察的選擇是「巡邏」和「偷懶」
 小偷則是「進入偷竊」和「不進入」
@@ -3289,7 +3289,7 @@ Hope this excerpt would help if you're working remotely or considering it.&lt;/p
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="_6"&gt;霍特琳賽局&lt;/h3&gt;
+&lt;h3 id="_7"&gt;霍特琳賽局&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;某片沙灘上，A, B 兩家冰淇淋店都想開店
 沙灘約 100m，遊客也均勻分散
 那兩家店的老闆會在哪開店呢
@@ -3324,7 +3324,7 @@ B 就會像把店往左移，如此就能吸引到更大範圍的顧客&lt;/p&gt
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="_7"&gt;擴散型賽局&lt;/h3&gt;
+&lt;h3 id="_8"&gt;擴散型賽局&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;假設目前城市中已經有一家 A 工廠，B 工廠在考慮是否進入
 A 工廠的選項是「戰鬥」和「合作」
 B 工廠是「進入」和「不進入」
@@ -3386,7 +3386,7 @@ A 工廠進入市場前的最佳行動是戰鬥，所以一定會表現出強硬
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;解決方案之一 - 創造出必須遵守約定的狀況&lt;/h4&gt;
+&lt;h4 id="-_1"&gt;解決方案之一 - 創造出必須遵守約定的狀況&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;製藥特許權制度&lt;ul&gt;
 &lt;li&gt;製藥需要很大的成本，如果沒給予製藥公司製藥成功有販售的特許權&lt;/li&gt;
@@ -3400,7 +3400,7 @@ A 工廠進入市場前的最佳行動是戰鬥，所以一定會表現出強硬
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="_8"&gt;「重複賽局」和「扣板機策略」&lt;/h3&gt;
+&lt;h3 id="_9"&gt;「重複賽局」和「扣板機策略」&lt;/h3&gt;
 &lt;p&gt;回到最一開始的囚犯賽局&lt;br/&gt;
 如果這個賽局會執行不止一次&lt;br/&gt;
 最終兩人就會選擇都不認罪的最佳利益&lt;/p&gt;
@@ -3415,7 +3415,7 @@ A 工廠進入市場前的最佳行動是戰鬥，所以一定會表現出強硬
 &lt;h2 id="ch5-"&gt;Ch5: 人為什麼無法理性？ - 情感和賽局理論&lt;/h2&gt;
 &lt;p&gt;所有的賽局都是在一個共通條件上成立的 - &lt;strong&gt;玩家只考慮自己的利益，各自做出符合理性的行動&lt;/strong&gt;&lt;br/&gt;
 而這個前提卻是常常不會成立的&lt;/p&gt;
-&lt;h3 id="-_1"&gt;人能預測未來嗎？ - 蜈蚣賽局&lt;/h3&gt;
+&lt;h3 id="-_2"&gt;人能預測未來嗎？ - 蜈蚣賽局&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;爸爸手上有 100 枚硬幣，要分配給 A, B 兩個兒子
 但必須遵循以下兩個規定
 首先，爸爸會在 A 面前放 1 枚
@@ -3428,7 +3428,7 @@ A 可以選擇「停止」或「繼續」
 如此 A 便能獲得比 B 還多的硬幣&lt;br/&gt;
 但是在實際實驗中，卻沒有人做出了這樣的決定&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;人並沒有辦法預測未來&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id="-_2"&gt;拍賣賽局 - 證明人會從理性到瘋狂&lt;/h3&gt;
+&lt;h3 id="-_3"&gt;拍賣賽局 - 證明人會從理性到瘋狂&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;與一般拍賣不同
 競標成功後，未得標的前一位出價者，需要付他喊出的價錢
 而這個東西依然會給得標者
@@ -3443,9 +3443,9 @@ A 可以選擇「停止」或「繼續」
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;「你沒想清楚後果」確實是個問題，但是你還要考慮的是「其他人沒想清楚後果的可能性」&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id="_9"&gt;只用金錢，無法驅動人心&lt;/h3&gt;
+&lt;h3 id="_10"&gt;只用金錢，無法驅動人心&lt;/h3&gt;
 &lt;p&gt;利益並非唯一能影響人心的，往往情感也是&lt;/p&gt;
-&lt;h4&gt;最後通牒賽局&lt;/h4&gt;
+&lt;h4 id="_11"&gt;最後通牒賽局&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;A, B 兩位玩家憑空得到 1000 元
 由 B 決定分配方式，A 有同意或否決權
 A 同意的話則造這個分配方式
@@ -3454,7 +3454,7 @@ A 否決的話就都拿不到錢
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果人是理性的，A 即使只拿到 1 元都應該接受&lt;br/&gt;
 然而實際上這樣的狀況卻幾乎不會發生&lt;/p&gt;
-&lt;h4&gt;獨裁者賽局 (Dicatator game)&lt;/h4&gt;
+&lt;h4 id="dicatator-game"&gt;獨裁者賽局 (Dicatator game)&lt;/h4&gt;
 &lt;p&gt;跟上面同樣的情境&lt;br/&gt;
 只是這次 A 沒有任何決定權，只能接受 B 的分配&lt;br/&gt;
 此時 B 的最佳選擇就是 1000 元全部拿走&lt;br/&gt;
@@ -4800,7 +4800,7 @@ e.g., DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌
 &lt;li&gt;找出簡單又醒目的提示訊號&lt;/li&gt;
 &lt;li&gt;清楚界定獎籌內容&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4&gt;Examples&lt;/h4&gt;
+&lt;h4 id="examples"&gt;Examples&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;白速得牙膏&lt;/p&gt;
@@ -5292,12 +5292,12 @@ e.g., DELL 逐步將個人電腦的技術包給華碩，最後華碩自創品牌
 &lt;li&gt;What makes facebook valuable might not be purely social networking but real identity in social networking.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="qa"&gt;Q&amp;amp;A&lt;/h3&gt;
-&lt;h4&gt;Q: How to tell the different between crazy ideas and new ideas?&lt;/h4&gt;
+&lt;h4 id="q-how-to-tell-the-different-between-crazy-ideas-and-new-ideas"&gt;Q: How to tell the different between crazy ideas and new ideas?&lt;/h4&gt;
 &lt;p&gt;It's hard to answer.&lt;br&gt;
 Is the idea that no one does it or no one does it for good reason? Is it valuable and no others did it?&lt;br&gt;
 Be honor yourself, don't be over-optimistic.&lt;br&gt;
 Get to be the best in the world rather than best in Taipei or Taiwan.&lt;/p&gt;
-&lt;h4&gt;Q: Startup after having some working experience?&lt;/h4&gt;
+&lt;h4 id="q-startup-after-having-some-working-experience"&gt;Q: Startup after having some working experience?&lt;/h4&gt;
 &lt;p&gt;It's true for business or management.&lt;br&gt;
 Startup is something new and by definition, you will not learn from others.&lt;br&gt;
 Thus, you might not be able to learn from working experience.&lt;br&gt;
@@ -5309,37 +5309,37 @@ However, that's rare.&lt;br&gt;
 The fact is that most of these people would be stuck in many different problems and not that willing to take risks.&lt;br&gt;
 There is no particular moment for one to startup.&lt;br&gt;
 If you have a good idea, it's the time.&lt;/p&gt;
-&lt;h4&gt;Q: Why Thiel Fellowship support only drop-out students?&lt;/h4&gt;
+&lt;h4 id="q-why-thiel-fellowship-support-only-drop-out-students"&gt;Q: Why Thiel Fellowship support only drop-out students?&lt;/h4&gt;
 &lt;p&gt;It's stop-out instead drop-out.&lt;br&gt;
 For one who wanna startup, full time working is needed.&lt;/p&gt;
-&lt;h4&gt;Q: Does there exist any character or special of entrepreneurs?&lt;/h4&gt;
+&lt;h4 id="q-does-there-exist-any-character-or-special-of-entrepreneurs"&gt;Q: Does there exist any character or special of entrepreneurs?&lt;/h4&gt;
 &lt;p&gt;Not easily give up, listen to others, and not to easily to be influenced.&lt;br&gt;
 How well a team working together is important to a startup.&lt;br&gt;
 The team members have to get along with each other.&lt;br&gt;
 Thus, those who performs well in college aren't necessarily good entrepreneurs.&lt;/p&gt;
-&lt;h4&gt;Q: How to pick a startup team partner?&lt;/h4&gt;
+&lt;h4 id="q-how-to-pick-a-startup-team-partner"&gt;Q: How to pick a startup team partner?&lt;/h4&gt;
 &lt;p&gt;No formula.&lt;br&gt;
 It works best if you know they enough.&lt;br&gt;
 Complementary skills and alike interests would be good.&lt;/p&gt;
-&lt;h4&gt;Q: Education problems. How about the flip classroom or MOOCS?&lt;/h4&gt;
+&lt;h4 id="q-education-problems-how-about-the-flip-classroom-or-moocs"&gt;Q: Education problems. How about the flip classroom or MOOCS?&lt;/h4&gt;
 &lt;p&gt;It's education bubble.&lt;br&gt;
 Peter cannot give an ultimate way to replace the university system.&lt;br&gt;
 The suggestion is that don't get up the same or similar track.&lt;/p&gt;
 &lt;p&gt;What makes education bubbles is that everyone treats university as church or religion.&lt;br&gt;
 If you don't go into a college, your life would ruin.&lt;br&gt;
 Such thought is the main problem.&lt;/p&gt;
-&lt;h4&gt;Q: How do startups in Taiwan get into the world and get resource?&lt;/h4&gt;
+&lt;h4 id="q-how-do-startups-in-taiwan-get-into-the-world-and-get-resource"&gt;Q: How do startups in Taiwan get into the world and get resource?&lt;/h4&gt;
 &lt;p&gt;The first capital is the most difficult part and it's super difficult.&lt;br&gt;
 This is the core challenge.&lt;br&gt;
 Convincing people that your idea is real and gonna work is really hard.&lt;/p&gt;
 &lt;p&gt;There are some great parts in Silicon Valley but also some bad parts.&lt;br&gt;
 For example, office and hiring people there is expensive.&lt;/p&gt;
-&lt;h4&gt;Q: What the key point to convince peter to invest?&lt;/h4&gt;
+&lt;h4 id="q-what-the-key-point-to-convince-peter-to-invest"&gt;Q: What the key point to convince peter to invest?&lt;/h4&gt;
 &lt;p&gt;......&lt;/p&gt;
-&lt;h4&gt;Q: Does Peter admire any other entrepreneurs?&lt;/h4&gt;
+&lt;h4 id="q-does-peter-admire-any-other-entrepreneurs"&gt;Q: Does Peter admire any other entrepreneurs?&lt;/h4&gt;
 &lt;p&gt;Mark Zuckerberg.&lt;br&gt;
 ......&lt;/p&gt;
-&lt;h4&gt;Q: Does Peter have any setback, failure? How to deal with that?&lt;/h4&gt;
+&lt;h4 id="q-does-peter-have-any-setback-failure-how-to-deal-with-that"&gt;Q: Does Peter have any setback, failure? How to deal with that?&lt;/h4&gt;
 &lt;p&gt;It was the law school story wrote in the book.&lt;br&gt;
 The interesting part is that this failure turns out to be not failure.&lt;br&gt;
 Failure is overrated.&lt;br&gt;
@@ -5454,9 +5454,10 @@ The most important part of failure is not to give up.&lt;/p&gt;</content><catego
   這剩餘的 20 小時裡，也就是每天 3 小時，你應該看書、練習、學習，或者做其他提升職業能力的事&lt;br&gt;
   那 20 小時你不用為僱主工作。相反，你該為自己的職業發展工作&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Book"></category><category term="Software Engineering"></category><category term="Code Quality"></category></entry><entry><title>[Book] 人月神話</title><link href="https://lee-w.github.io/posts/book/2015/01/the-mythical-man-month" rel="alternate"></link><published>2015-01-17T09:30:00+08:00</published><updated>2015-01-17T09:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-17:/posts/book/2015/01/the-mythical-man-month</id><summary type="html">&lt;p&gt;&lt;img alt="人月神話" src="/images/books/yEzGf5d.jpg"&gt;&lt;br&gt;
-</summary><content type="html">&lt;p&gt;&lt;img alt="人月神話" src="/images/books/yEzGf5d.jpg"&gt;&lt;br&gt;
-&lt;!--more--&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Book"></category><category term="Software Engineering"></category><category term="Code Quality"></category></entry><entry><title>[Book] 人月神話</title><link href="https://lee-w.github.io/posts/book/2015/01/the-mythical-man-month" rel="alternate"></link><published>2015-01-17T09:30:00+08:00</published><updated>2015-01-17T09:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2015-01-17:/posts/book/2015/01/the-mythical-man-month</id><summary type="html">&lt;p&gt;&lt;img alt="人月神話" src="/images/books/yEzGf5d.jpg"&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;img alt="人月神話" src="/images/books/yEzGf5d.jpg"&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;因為溝通的時間，人力和工時互換是不成立的，別用人月來衡量工作規模大小&lt;br&gt;

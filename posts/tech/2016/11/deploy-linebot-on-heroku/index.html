@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -30,6 +29,7 @@
         <title>Deploy LineBot on Heroku  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -116,7 +116,6 @@ Heroku 則是用來讓其他人測試功能<br>
 heroku git:remote -a leewbot
 </code></pre></div>
 
-
 <p>接著用 <code>git remote -v</code> 就能看到 <code>heroku</code> 已經被加入 remote 了<br>
 以後只要 <code>git push heroku master</code>，就能部署到 Heroku<br>
 不過我們還必須要多做一些設定才能讓 Bot 順利的部署</p>
@@ -125,7 +124,6 @@ heroku git:remote -a leewbot
 Heroku 是透過這個指令來做設定</p>
 <div class="highlight"><pre><span></span><code>heroku config:set <span class="s2">&quot;env key&quot;</span>:<span class="s2">&quot;env value&quot;</span>
 </code></pre></div>
-
 
 <p>或者也能到 dashboard 的 <code>Settings</code> → <code>Config Variables</code> → <code>Reveal Config Vars</code> 做設定</p>
 <h3 id="python-environments">Python Environments</h3>
@@ -146,7 +144,6 @@ Heroku 是透過這個指令來做設定</p>
 再來創一個 <code>Profile</code>，內容是</p>
 <div class="highlight"><pre><span></span><code>web: gunicorn line_echobot.wsgi --log-file -
 </code></pre></div>
-
 
 <p>如果用其他的部署套件，則需要修改 web 後面的指令</p>
 <p>到了這裡就做好所有的設定了<br>
@@ -257,7 +254,7 @@ Heroku 是透過這個指令來做設定</p>
             </li>
     </ul>
                 <h4>Read Time</h4>
-                 1 min
+                1 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

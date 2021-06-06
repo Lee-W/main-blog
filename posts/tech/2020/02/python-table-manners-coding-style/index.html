@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -31,6 +30,7 @@
         <title>Python Table Manners - 程式碼風格  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -167,20 +167,20 @@ pipenv run flake8
 也可以直接寫入設定檔 <code>setup.cfg</code> (或 <code>.flake8</code>, <code>tox.ini</code>）<br/>
 以下是我所使用的設定</p>
 <div class="highlight"><pre><span></span><code><span class="k">[flake8]</span>
-<span class="na">ignore</span> <span class="o">=</span><span class="s"></span>
-<span class="s">    # F632: use ==/!= to compare str, bytes, and int literals</span>
-<span class="s">    F632,</span>
-<span class="s">    # W503: Line break occurred before a binary operator</span>
-<span class="s">    W503,</span>
-<span class="s">    # E501: Line too long</span>
-<span class="s">    E501,</span>
-<span class="s">    # E203: Whitespace before ':' (for black)</span>
-<span class="s">    E203</span>
-<span class="na">exclude</span> <span class="o">=</span><span class="s"></span>
-<span class="s">    .git,</span>
-<span class="s">    __pycache__,</span>
-<span class="s">    build,</span>
-<span class="s">    dist</span>
+<span class="na">ignore</span> <span class="o">=</span>
+    <span class="c1"># F632: use ==/!= to compare str, bytes, and int literals</span>
+    <span class="na">F632,</span>
+    <span class="c1"># W503: Line break occurred before a binary operator</span>
+    <span class="na">W503,</span>
+    <span class="c1"># E501: Line too long</span>
+    <span class="na">E501,</span>
+    <span class="c1"># E203: Whitespace before ':' (for black)</span>
+    <span class="na">E203</span>
+<span class="na">exclude</span> <span class="o">=</span>
+    <span class="na">.git,</span>
+    <span class="na">__pycache__,</span>
+    <span class="na">build,</span>
+    <span class="na">dist</span>
 
 <span class="na">max-line-length</span> <span class="o">=</span> <span class="s">88</span>
 </code></pre></div>
@@ -554,7 +554,7 @@ pipenv run isort --atomic .
             </li>
     </ul>
                 <h4>Read Time</h4>
-                 4 min
+                4 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

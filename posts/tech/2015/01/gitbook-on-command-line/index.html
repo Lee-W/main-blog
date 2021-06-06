@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -30,6 +29,7 @@
         <title>Gitbook on Command Line  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -102,7 +102,6 @@
 <div class="highlight"><pre><span></span><code>npm install gitbook -g
 </code></pre></div>
 
-
 <h2 id="gitbook_1">開始撰寫 Gitbook</h2>
 <p>一本 Gitbook 一般都會包含 <code>SUMMARY.md</code>, <code>README.md</code>, <code>package.json</code>, <code>book.json</code><br>
 像我的 Learning Python 筆記的檔案架構大概長的是這樣<br>
@@ -114,19 +113,18 @@ book.json 是這本書的額外設定<br>
 <p>最重要的是 SUMMARY.md，它會定義整本 gitbook 的架構<br>
 每個章節下面都還可以給予更多的小節<br>
 下面是我 Learning Python 的 SUMMARY.md</p>
-<div class="highlight"><pre><span></span><code><span class="cp"># Summary</span>
+<div class="highlight"><pre><span></span><code><span class="gh"># Summary</span>
 
-<span class="o">*</span> <span class="p">[</span><span class="n">Introduction</span><span class="p">](</span><span class="n">README</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
-<span class="o">*</span> <span class="p">[</span><span class="n">Getting</span> <span class="n">Started</span><span class="p">](</span><span class="mi">1</span><span class="n">_getting_started</span><span class="o">/</span><span class="n">README</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
-   <span class="o">*</span> <span class="p">[</span><span class="n">A</span> <span class="n">Python</span> <span class="n">Q</span><span class="o">&amp;</span><span class="n">A</span> <span class="n">Session</span><span class="p">](</span><span class="mi">1</span><span class="n">_getting_started</span><span class="o">/</span><span class="n">a_python_q</span><span class="o">&amp;</span><span class="n">a_session</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
-   <span class="o">*</span> <span class="p">[</span><span class="n">How</span> <span class="n">Python</span> <span class="n">Runs</span> <span class="n">Programs</span><span class="p">](</span><span class="mi">1</span><span class="n">_getting_started</span><span class="o">/</span><span class="n">how_python_runs_programs</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
-   <span class="o">*</span> <span class="p">[</span><span class="n">How</span> <span class="n">You</span> <span class="n">Run</span> <span class="n">Programs</span><span class="p">](</span><span class="mi">1</span><span class="n">_getting_started</span><span class="o">/</span><span class="n">how_you_run_programs</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
-<span class="o">*</span> <span class="p">[</span><span class="n">Types</span> <span class="n">and</span> <span class="n">Operations</span><span class="p">](</span><span class="mi">2</span><span class="n">_types_and_operations</span><span class="o">/</span><span class="n">README</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
-   <span class="o">*</span> <span class="p">[</span><span class="n">Introducing</span> <span class="n">Python</span> <span class="n">Object</span> <span class="n">Types</span><span class="p">](</span><span class="mi">2</span><span class="n">_types_and_operations</span><span class="o">/</span><span class="n">introducing_python_object_types</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
-   <span class="o">*</span> <span class="p">[</span><span class="n">Numeric</span> <span class="n">Types</span><span class="p">](</span><span class="mi">2</span><span class="n">_types_and_operations</span><span class="o">/</span><span class="n">numeric_types</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
-   <span class="o">*</span> <span class="p">[</span><span class="n">The</span> <span class="n">Dynamic</span> <span class="n">Typing</span> <span class="n">Interlude</span><span class="p">](</span><span class="mi">2</span><span class="n">_types_and_operations</span><span class="o">/</span><span class="n">the_dynamic_typing_interlude</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
+<span class="k">*</span> [<span class="nt">Introduction</span>](<span class="na">README.md</span>)
+<span class="k">*</span> [<span class="nt">Getting Started</span>](<span class="na">1_getting_started/README.md</span>)
+   <span class="k">*</span> [<span class="nt">A Python Q&amp;A Session</span>](<span class="na">1_getting_started/a_python_q&amp;a_session.md</span>)
+   <span class="k">*</span> [<span class="nt">How Python Runs Programs</span>](<span class="na">1_getting_started/how_python_runs_programs.md</span>)
+   <span class="k">*</span> [<span class="nt">How You Run Programs</span>](<span class="na">1_getting_started/how_you_run_programs.md</span>)
+<span class="k">*</span> [<span class="nt">Types and Operations</span>](<span class="na">2_types_and_operations/README.md</span>)
+   <span class="k">*</span> [<span class="nt">Introducing Python Object Types</span>](<span class="na">2_types_and_operations/introducing_python_object_types.md</span>)
+   <span class="k">*</span> [<span class="nt">Numeric Types</span>](<span class="na">2_types_and_operations/numeric_types.md</span>)
+   <span class="k">*</span> [<span class="nt">The Dynamic Typing Interlude</span>](<span class="na">2_types_and_operations/the_dynamic_typing_interlude.md</span>)
 </code></pre></div>
-
 
 <p>這是預覽的結果<br>
 <img alt="2_learning_python_web" src="/images/posts-image/2015-01-23-gitbook-on-command-line/d3NP0xi.png"></p>
@@ -134,13 +132,11 @@ book.json 是這本書的額外設定<br>
 <div class="highlight"><pre><span></span><code>gitbook init
 </code></pre></div>
 
-
 <p>接著就可以開始編輯裡面的檔案了</p>
 <h2 id="_1">預覽</h2>
 <p>寫完之後當然預覽一下</p>
 <div class="highlight"><pre><span></span><code>gitbook serve
 </code></pre></div>
-
 
 <p>用了這個指令後就會為目前的目錄開一個預覽 HTML 的 port<br>
 只要在瀏覽器上輸入 <code>http://localhost:4000</code><br>
@@ -154,14 +150,12 @@ book.json 是這本書的額外設定<br>
 <div class="highlight"><pre><span></span><code>ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin
 </code></pre></div>
 
-
 <p>以下的四個指令依序可以產生 html, pdf, epub, mobi</p>
 <div class="highlight"><pre><span></span><code>gitbook build ./
 gitbook pdf ./
 gitbook epub ./
 gitbook mobi ./
 </code></pre></div>
-
 
 <p>後面可以多指定一個參數 <code>--output="Directory"</code><br>
 "Directory" 換成你要的位置或檔名<br>
@@ -174,7 +168,6 @@ gitbook mobi ./
 <div class="highlight"><pre><span></span><code>git remote add gitbook <span class="s2">&quot;URL&quot;</span>
 git push -u gitbook
 </code></pre></div>
-
 
 <p>這裡要輸入的帳號、密碼是 gitbook 上的，不是與其連結的帳號的<br>
 如果還沒設定就要再去自己的 profile 內設定</p>
@@ -262,7 +255,7 @@ git push -u gitbook
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2015-01-23T07:34:00+08:00">2015/01/23 - Fri</time>
                 <h4>Read Time</h4>
-                 1 min
+                1 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

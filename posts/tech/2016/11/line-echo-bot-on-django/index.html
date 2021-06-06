@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -30,6 +29,7 @@
         <title>Line Echo Bot on Django  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -102,7 +102,6 @@
 <div class="highlight"><pre><span></span><code>pip3 install line-bot-sdk
 </code></pre></div>
 
-
 <p>另外官方也提供<a href="https://github.com/line/line-bot-sdk-java">java</a>, <a href="https://github.com/line/line-bot-sdk-go">go</a>, <a href="https://github.com/line/line-bot-sdk-php">php</a>, <a href="https://github.com/line/line-bot-sdk-ruby">ruby</a>, <a href="https://github.com/line/line-bot-sdk-perl">perl</a> 的版本</p>
 <h1 id="start-project">Start Project</h1>
 <h2 id="create-project">Create Project</h2>
@@ -113,7 +112,6 @@ django-admin startproject line_echobot
 python3 manage.py startapp echobot
 </code></pre></div>
 
-
 <h2 id="setup-line-secrets">Setup Line Secrets</h2>
 <p>接著設定 Line Bot 的 <code>Channel Secret</code>, <code>Channel Access Token</code><br>
 ( 可以在 Line Bot 的 <code>Line Deverloper</code> 頁面取得 )</p>
@@ -123,7 +121,6 @@ python3 manage.py startapp echobot
 <span class="nb">export</span> <span class="nv">LINE_CHANNEL_ACCESS_TOKEN</span><span class="o">=</span><span class="s1">&#39;Your line channel access token&#39;</span>
 <span class="nb">export</span> <span class="nv">LINE_CHANNEL_SECRET</span><span class="o">=</span><span class="s1">&#39;Your line channel secret&#39;</span>
 </code></pre></div>
-
 
 <p>執行時，讓設定檔先去讀取這些環境變數<br>
 下面的 <code>get_env_variable</code> 函式是用來取得環境變數<br>
@@ -151,7 +148,6 @@ python3 manage.py startapp echobot
 <span class="p">]</span>
 </code></pre></div>
 
-
 <p>不過如果只是單純測試用，這些值也可以直接寫死在 settings.py 中</p>
 <p>另外也不要忘了在 <code>INSTLLED_APPS</code> 加入 echobot</p>
 <p>一般來說，django 產生 project 時<br>
@@ -177,7 +173,6 @@ python3 manage.py startapp echobot
 <span class="o">......</span>
 </code></pre></div>
 
-
 <p>接著在 echobot 內，創一個 <code>urls.py</code><br>
 並將 url 再導到 <code>callback</code>，呼叫 <code>views.py</code> 裡面的 <code>callback</code> 函式 ( 接下來才會實作 )</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># echobot/urls.py</span>
@@ -190,7 +185,6 @@ python3 manage.py startapp echobot
     <span class="n">url</span><span class="p">(</span><span class="s1">&#39;^callback/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">callback</span><span class="p">),</span>
 <span class="p">]</span>
 </code></pre></div>
-
 
 <p>這些都設定完後，要在 Line 那邊設定的 Webhook Url 就是 <code>https://"your domain name"/echobot/callback/</code><br>
 (<code>your domain name</code> 要設定什麼，會在這篇文章的<a href="#https-server">最後</a> 說明)</p>
@@ -207,11 +201,9 @@ python3 manage.py startapp echobot
 <span class="kn">from</span> <span class="nn">linebot.models</span> <span class="kn">import</span> <span class="n">MessageEvent</span><span class="p">,</span> <span class="n">TextMessage</span><span class="p">,</span> <span class="n">TextSendMessage</span>
 </code></pre></div>
 
-
 <p>透過 line_bot_api 傳訊息給 Line，讓 Line 轉傳給使用者</p>
 <div class="highlight"><pre><span></span><code><span class="n">line_bot_api</span> <span class="o">=</span> <span class="n">LineBotApi</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LINE_CHANNEL_ACCESS_TOKEN</span><span class="p">)</span>
 </code></pre></div>
-
 
 <h3 id="callback-function">Callback Function</h3>
 <p>有兩種方法可以處理 Line Server 送過來的訊息<br>
@@ -231,7 +223,6 @@ python3 manage.py startapp echobot
         <span class="k">return</span> <span class="n">HttpResponseBadRequest</span><span class="p">()</span>
 </code></pre></div>
 
-
 <h3 id="validate-signature">Validate Signature</h3>
 <p>處理訊息之前<br>
 先確認這個 request 是不是真的是從 Line Server 傳來的<br>
@@ -245,12 +236,11 @@ python3 manage.py startapp echobot
 <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <h3 id="handle-received-message">Handle Received Message</h3>
 <p>取得 body 跟 signature 後<br>
 Line Bot API 會在處理訊息的同時，確認這個訊息是否來自 Line</p>
 <p>而處理 Line 傳過來給我們的訊息，有兩種不同的做法</p>
-<h4>WebhookParser</h4>
+<h4 id="webhookparser">WebhookParser</h4>
 <p>WebhookParser 會 Parse 這個訊息的所有欄位<br>
 讓我們針對各種不同型別的訊息做個別的處理<br>
 e.g.</p>
@@ -265,7 +255,6 @@ e.g.</p>
 <div class="highlight"><pre><span></span><code><span class="n">parser</span> <span class="o">=</span> <span class="n">WebhookParser</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LINE_CHANNEL_SECRET</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>下面三段 code 則要取代 <code># TODO: Handler when receiver Line Message</code></p>
 <p>parser 會 parse 所有的 event 跟各個 event 中的所有欄位<br>
 如果 request 不是從 Line Server 來的，就會丟出 InvalidSignatureError<br>
@@ -277,7 +266,6 @@ e.g.</p>
 <span class="k">except</span> <span class="n">LineBotApiError</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">HttpResponseBadRequest</span><span class="p">()</span>
 </code></pre></div>
-
 
 <p>再來要判斷收到的事件是什麼事件<br>
 這個 Bot 只需要 echo 純文字訊息<br>
@@ -291,7 +279,6 @@ e.g.</p>
             <span class="p">)</span>
 </code></pre></div>
 
-
 <p>最後的 <code>reply_message</code> 函式，讓我們傳訊息給 Line Server<br>
 第一個參數是要回傳要用的 reply_token，可以從事件中取得 （<code>event.reply_token</code>）<br>
 使用這個 reply_token 做回覆，是不用收費的<br>
@@ -301,14 +288,13 @@ e.g.</p>
 也可以傳一個都是訊息的 list 或 tuple<br>
 不過一次最多只能傳 5 個<br>
 只要超過就會有 LineBotApiError</p>
-<h4>WebhookHandler</h4>
+<h4 id="webhookhandler">WebhookHandler</h4>
 <p>WebhookHandler 是針對每一種不同的訊息型態註冊一個處理器<br>
 只要收到這樣的訊息，就會丟給對應的處理器<br>
 如果確定每一類訊息，在任何情況下都會有相似的處理方式，就很適合這樣的設計</p>
 <p>接下來的三段 code 要取代 <code># TODO: Define Receiver</code></p>
 <div class="highlight"><pre><span></span><code><span class="n">handler</span> <span class="o">=</span> <span class="n">WebhookHandler</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">LINE_CHANNEL_SECRET</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>先為 handler 加入，TextMessage 的處理器<br>
 參數是接收到的 event<br>
@@ -320,7 +306,6 @@ e.g.</p>
         <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
     <span class="p">)</span>
 </code></pre></div>
-
 
 <p>因為沒有要處理其他訊息<br>
 如果收到其他訊息 (e.g. 貼圖 , 照片 ) 或訊息以外的事件<br>
@@ -334,7 +319,6 @@ e.g.</p>
     <span class="p">)</span>
 </code></pre></div>
 
-
 <p>下面的這段 code 是要取代 <code># TODO: Handler when receiver Line Message</code><br>
 handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那個函式處理</p>
 <div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
@@ -345,8 +329,7 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
     <span class="k">return</span> <span class="n">HttpResponseBadRequest</span><span class="p">()</span>
 </code></pre></div>
 
-
-<h4>Full Code</h4>
+<h4 id="full-code">Full Code</h4>
 <p>由於上面的 code 說明比較分散<br>
 這裡附上兩個版本各自的完整版</p>
 <ul>
@@ -392,7 +375,6 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">HttpResponseBadRequest</span><span class="p">()</span>
 </code></pre></div>
-
 
 <ul>
 <li>WebhookHandler</li>
@@ -446,7 +428,6 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
         <span class="k">return</span> <span class="n">HttpResponseBadRequest</span><span class="p">()</span>
 </code></pre></div>
 
-
 <p>到了這裡，echo bot 實作的部分就完成了</p>
 <p><a name='https-server'></a></p>
 <h2 id="https-server-setup-your-domain-name">Https Server (Setup 'your domain name')</h2>
@@ -467,11 +448,9 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
 brew cask install ngrok
 </code></pre></div>
 
-
 <p>先把 django 的 server run 起來</p>
 <div class="highlight"><pre><span></span><code>python3  manage.py runserver
 </code></pre></div>
-
 
 <p>預設 django 的 port 是 8000<br>
 這裡並不需要使用 0.0.0.0:8000，讓外部可以連到這個 django server<br>
@@ -479,7 +458,6 @@ ngrok 會把 request 傳到 local 端相對應的 port</p>
 <p>接著就要用 ngrok 將 request 導到本地端的 port 8000</p>
 <div class="highlight"><pre><span></span><code>ngrok http <span class="m">8000</span>
 </code></pre></div>
-
 
 <p><img alt="1_ngrok_example" src="/images/posts-image/2016-11-24-line-echo-bot-on-django/r525wEI.png"></p>
 <p>再來到 Line Bot 的 <code>Line Developer</code> 頁面設定 Webhook URL<br>
@@ -604,7 +582,7 @@ ngrok 會把 request 傳到 local 端相對應的 port</p>
             </li>
     </ul>
                 <h4>Read Time</h4>
-                 4 min
+                4 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>

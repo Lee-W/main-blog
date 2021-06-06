@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?fc5adb95">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -30,6 +29,7 @@
         <title>snowflake-connector-python: 你的 pyarrow 不是你的 pyarrow  · Laziness makes Great Engineer
 </title>
         <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -92,9 +92,8 @@
 
 <p>最近剛好接手了別人弄到一半的專案<br>
 在嘗試把專案跑起來的時候，遇到了這個問題</p>
-<div class="highlight"><pre><span></span><code><span class="err">Optional dependency: &#39;pyarrow&#39; is not installed, please see the following link for install instructions: https://docs.snowflake.com/en/user-guide/python-connector-pandas.html#installation</span>
+<div class="highlight"><pre><span></span><code><span class="nv">Optional</span> <span class="nv">dependency</span>: <span class="s1">&#39;</span><span class="s">pyarrow</span><span class="s1">&#39;</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">installed</span>, <span class="nv">please</span> <span class="nv">see</span> <span class="nv">the</span> <span class="nv">following</span> <span class="nv">link</span> <span class="k">for</span> <span class="nv">install</span> <span class="nv">instructions</span>: <span class="nv">https</span>:<span class="o">//</span><span class="nv">docs</span>.<span class="nv">snowflake</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">en</span><span class="o">/</span><span class="nv">user</span><span class="o">-</span><span class="nv">guide</span><span class="o">/</span><span class="nv">python</span><span class="o">-</span><span class="nv">connector</span><span class="o">-</span><span class="nv">pandas</span>.<span class="nv">html</span>#<span class="nv">installation</span>
 </code></pre></div>
-
 
 <p>看起來是 <code>pyarrow</code> 沒有裝起來，所以可以先嘗試 <code>pip install pyarrow</code><br>
 但很不幸的，這麼做並不會解決問題<br>
@@ -123,7 +122,6 @@
 <span class="p">]</span>
 </code></pre></div>
 
-
 <p>接著可以看到 <code>pandas_requirements</code> 在 <a href="https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L240">240行</a> 被用到</p>
 <div class="highlight"><pre><span></span><code><span class="o">...</span>
     <span class="n">extras_require</span><span class="o">=</span><span class="p">{</span>
@@ -133,7 +131,6 @@
         <span class="s2">&quot;pandas&quot;</span><span class="p">:</span> <span class="n">pandas_requirements</span><span class="p">,</span>
 <span class="o">...</span>
 </code></pre></div>
-
 
 <p>原來 <code>pip install snowflake-connector-python[pandas]</code> 同時會安裝 <code>pandas_requirements</code> 中的 pandas 跟 pyarrow<br>
 snowflake-connector-python 並不會單獨裝 pyarrow，這也難怪前面的嘗試會失敗<br>
@@ -216,7 +213,7 @@ snowflake-connector-python 並不會單獨裝 pyarrow，這也難怪前面的嘗
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-12-22T23:20:00+08:00">2020/12/22 - Tue</time>
                 <h4>Read Time</h4>
-                 1 min
+                1 min
             <h4>Category</h4>
             <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>
