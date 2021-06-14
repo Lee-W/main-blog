@@ -9,3 +9,7 @@ Status: draft
 https://airflow.apache.org/blog/airflow-two-point-oh-is-here/
 
 * [httpx](https://github.com/encode/httpx)
+
+
+https://github.com/idom-team/idom
+https://www.streamlit.io/
