@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://lee-w.github.io/theme/css/style.min.css?2fcac227">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="author" content="Lee-W" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Data, Version Control, DVC, Tech, " />
+
+<meta property="og:title" content="DVC - pipeline versioning "/>
+<meta property="og:url" content="https://lee-w.github.io/drafts/dvc-pipeline-versioning.html" />
+<meta property="og:description" content="Pipeline versioning After we version the data, let&#39;s work on the pipeline versioning. Let&#39;s split our original main into separate commands so that DVC can execute them separately in a pipeline Our original command is pipenv run python digit_recognizer/digit_recognizer.py def main(): parser = argparse.ArgumentParser() parser.add_argument(&#34;command&#34;, help …" />
+<meta property="og:site_name" content="Laziness makes Great Engineer" />
+<meta property="og:article:author" content="Lee-W" />
+<meta property="og:article:published_time" content="2021-06-15T12:00:00+08:00" />
+<meta name="twitter:title" content="DVC - pipeline versioning ">
+<meta name="twitter:description" content="Pipeline versioning After we version the data, let&#39;s work on the pipeline versioning. Let&#39;s split our original main into separate commands so that DVC can execute them separately in a pipeline Our original command is pipenv run python digit_recognizer/digit_recognizer.py def main(): parser = argparse.ArgumentParser() parser.add_argument(&#34;command&#34;, help …">
+
+        <title>DVC - pipeline versioning  · Laziness makes Great Engineer
+</title>
+        <link href="https://lee-w.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-96190677-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://lee-w.github.io/"><span class=site-name>Laziness makes Great Engineer</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://lee-w.github.io
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://lee-w.github.io/pages/about-me.html">About Me</a></li>
+                                <li ><a href="https://lee-w.github.io/categories.html">Categories</a></li>
+                                <li ><a href="https://lee-w.github.io/tags.html">Tags</a></li>
+                                <li ><a href="https://lee-w.github.io/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="https://lee-w.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://lee-w.github.io/drafts/dvc-pipeline-versioning.html">
+                DVC - pipeline versioning
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <h3 id="pipeline-versioning">Pipeline versioning</h3>
+<p>After we version the data, let's work on the pipeline versioning.<br>
+Let's split our original main into separate commands so that DVC can execute them separately in a pipeline</p>
+<p>Our original command is <code>pipenv run python digit_recognizer/digit_recognizer.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;command&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Supported commands: process-data,train,report&quot;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">command</span> <span class="o">==</span> <span class="s2">&quot;process-data&quot;</span><span class="p">:</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s2">&quot;data/digit_data.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;data/digit_target.csv&quot;</span><span class="p">)</span>
+        <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">process_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">export_processed_data</span><span class="p">((</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="s2">&quot;output/training_data.pkl&quot;</span><span class="p">)</span>
+        <span class="n">export_processed_data</span><span class="p">((</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">),</span> <span class="s2">&quot;output/testing_data.pkl&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">command</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span><span class="p">:</span>
+        <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">load_processed_data</span><span class="p">(</span><span class="s2">&quot;output/training_data.pkl&quot;</span><span class="p">)</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">train_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+        <span class="n">export_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;output/model.pkl&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">command</span> <span class="o">==</span> <span class="s2">&quot;report&quot;</span><span class="p">:</span>
+        <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">load_processed_data</span><span class="p">(</span><span class="s2">&quot;output/testing_data.pkl&quot;</span><span class="p">)</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;output/model.pkl&quot;</span><span class="p">)</span>
+        <span class="n">predicted_y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+        <span class="n">output_test_data_results</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">)</span>
+        <span class="n">output_metrics</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">)</span>
+</code></pre></div>
+
+<p>now we'll need to run the following lines to get the full report</p>
+<div class="highlight"><pre><span></span><code>pipenv run python digit_recognizer/digit_recognizer.py process-data
+pipenv run python digit_recognizer/digit_recognizer.py train
+pipenv run python digit_recognizer/digit_recognizer.py report
+</code></pre></div>
+
+<p>you can check the full code change on commit ......</p>
+<p>add the first stage to the pipeline</p>
+<div class="highlight"><pre><span></span><code>$ pipenv run dvc run --name process-data <span class="se">\</span>
+      -d digit_recognizer/digit_recognizer.py <span class="se">\</span>
+      -d data/digit_data.csv <span class="se">\</span>
+      -d data/digit_target.csv <span class="se">\</span>
+      -o output/training_data.pkl <span class="se">\</span>
+      -o output/testing_data.pkl <span class="se">\</span>
+      <span class="s2">&quot;pipenv run python digit_recognizer/digit_recognizer.py process-data&quot;</span>
+
+Running stage <span class="s1">&#39;process-data&#39;</span>:
+&gt; pipenv run python digit_recognizer/digit_recognizer.py process-data
+Creating <span class="s1">&#39;dvc.yaml&#39;</span>
+Adding stage <span class="s1">&#39;process-data&#39;</span> <span class="k">in</span> <span class="s1">&#39;dvc.yaml&#39;</span>
+Generating lock file <span class="s1">&#39;dvc.lock&#39;</span>
+Updating lock file <span class="s1">&#39;dvc.lock&#39;</span>
+
+To track the changes with git, run:
+
+git add dvc.yaml output/.gitignore dvc.lock
+</code></pre></div>
+
+<p><code>--no-exec</code></p>
+<p>dvc.yaml</p>
+<div class="highlight"><pre><span></span><code><span class="nt">stages</span><span class="p">:</span>
+  <span class="nt">process-data</span><span class="p">:</span>
+  <span class="nt">cmd</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py process-data</span>
+  <span class="nt">deps</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">data/digit_data.csv</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">data/digit_target.csv</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">digit_recognizer/digit_recognizer.py</span>
+  <span class="nt">outs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/testing_data.pkl</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/training_data.pkl</span>
+</code></pre></div>
+
+<p>dvc.lock</p>
+<div class="highlight"><pre><span></span><code><span class="nt">schema</span><span class="p">:</span> <span class="s">&#39;2.0&#39;</span>
+<span class="nt">stages</span><span class="p">:</span>
+  <span class="nt">process-data</span><span class="p">:</span>
+  <span class="nt">cmd</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py process-data</span>
+  <span class="nt">deps</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">data/digit_data.csv</span>
+      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">942481fce846fb9750b7b8023c80a5ef</span>
+      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">490582</span>
+    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">data/digit_target.csv</span>
+      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2a6cfa13365ac9b3af5146133aca6789</span>
+      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3590</span>
+    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">digit_recognizer/digit_recognizer.py</span>
+      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">65ecf27479538a74ade42462b1566db1</span>
+      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3629</span>
+  <span class="nt">outs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">output/testing_data.pkl</span>
+      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">78be1761d227f71b1a8f858fed766982</span>
+      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">529016</span>
+    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">output/training_data.pkl</span>
+      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">f95e8f978a05395ba23479ff60eda076</span>
+      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">528427</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>git add dvc.yaml dvc.lock model/.gitignore
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>pipenv run dvc run --name train <span class="se">\</span>
+      -d digit_recognizer/digit_recognizer.py <span class="se">\</span>
+      -d output/training_data.pkl <span class="se">\</span>
+      -o output/model.pkl <span class="se">\</span>
+      <span class="s2">&quot;pipenv run python digit_recognizer/digit_recognizer.py train&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">......</span>
+  <span class="l l-Scalar l-Scalar-Plain">train</span><span class="p p-Indicator">:</span>
+  <span class="nt">cmd</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py train</span>
+  <span class="nt">deps</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">digit_recognizer/digit_recognizer.py</span>
+      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">65ecf27479538a74ade42462b1566db1</span>
+      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3629</span>
+    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">output/training_data.pkl</span>
+      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">f95e8f978a05395ba23479ff60eda076</span>
+      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">528427</span>
+  <span class="nt">outs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">output/model.pkl</span>
+      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2170343fdeec878b410186d92893739a</span>
+      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">307137</span>
+</code></pre></div>
+
+<p>dvc.yaml</p>
+<div class="highlight"><pre><span></span><code><span class="nn">...</span>
+  <span class="nt">train</span><span class="p">:</span>
+  <span class="nt">cmd</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py train</span>
+  <span class="nt">deps</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">digit_recognizer/digit_recognizer.py</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/training_data.pkl</span>
+  <span class="nt">outs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/model.pkl</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>pipenv run dvc run --name report <span class="se">\</span>
+      -d digit_recognizer/digit_recognizer.py <span class="se">\</span>
+      -d output/testing_data.pkl <span class="se">\</span>
+      -d output/model.pkl <span class="se">\</span>
+      -o output/metrics.json <span class="se">\</span>
+      -o output/test_data_results.csv <span class="se">\</span>
+      <span class="s2">&quot;pipenv run python digit_recognizer/digit_recognizer.py report&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>$ pipenv run dvc dag
+
+    +----------+
+    <span class="p">|</span> data.dvc <span class="p">|</span>
+    +----------+
+          *
+          *
+          *
+  +--------------+
+  <span class="p">|</span> process-data <span class="p">|</span>
+  +--------------+
+     **        **
+   **            *
+  *               **
++-------+           *
+<span class="p">|</span> train <span class="p">|</span>         **
++-------+        *
+     **        **
+       **    **
+         *  *
+     +--------+
+     <span class="p">|</span> report <span class="p">|</span>
+     +--------+
+</code></pre></div>
+
+<h3 id="reproduce">Reproduce</h3>
+<div class="highlight"><pre><span></span><code>$ pipenv run dvc repro
+
+<span class="s1">&#39;data.dvc&#39;</span> didn<span class="s1">&#39;t change, skipping</span>
+<span class="s1">Stage &#39;</span>train<span class="s1">&#39; didn&#39;</span>t change, skipping
+Data and pipelines are up to date.
+</code></pre></div>
+
+<p>change the following line to</p>
+<div class="highlight"><pre><span></span><code><span class="n">clf</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>$ pipenv dvc repro
+
+<span class="s1">&#39;data.dvc&#39;</span> didn<span class="s1">&#39;t change, skipping</span>
+<span class="s1">Running stage &#39;</span>process-data<span class="s1">&#39;:</span>
+<span class="s1">&gt; pipenv run python digit_recognizer/digit_recognizer.py process-data</span>
+<span class="s1">Updating lock file &#39;</span>dvc.lock<span class="s1">&#39;</span>
+
+<span class="s1">Running stage &#39;</span>train<span class="s1">&#39;:</span>
+<span class="s1">&gt; pipenv run python digit_recognizer/digit_recognizer.py train</span>
+<span class="s1">Updating lock file &#39;</span>dvc.lock<span class="s1">&#39;</span>
+
+<span class="s1">Running stage &#39;</span>report<span class="s1">&#39;:</span>
+<span class="s1">&gt; pipenv run python digit_recognizer/digit_recognizer.py report</span>
+<span class="s1">Updating lock file &#39;</span>dvc.lock<span class="err">&#39;</span>
+
+To track the changes with git, run:
+
+git add dvc.lock
+Use <span class="sb">`</span>dvc push<span class="sb">`</span> to send your updates to remote storage.
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>git diff
+</code></pre></div>
+
+<p>The hash of <code>digit_recognizer/digit_recognizer.py</code>, <code>output/model.pkl</code>, <code>output/metrics.json</code>, <code>output/test_data_results.csv</code> has been changed.</p>
+<p>DVC stores the difference</p>
+<h3 id="configure-parameter-through-dvc">configure parameter through DVC</h3>
+<p>this might not be the most useful way to do experiment, if every time we want to change parameter we need to change the source code</p>
+<p>Let's write these into <code>params.yaml</code> (DVC's default) and load it into our code</p>
+<div class="highlight"><pre><span></span><code><span class="nt">process_data</span><span class="p">:</span>
+  <span class="nt">test_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.5</span>
+  <span class="nt">shuffle</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">train</span><span class="p">:</span>
+  <span class="nt">gamma</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.01</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="n">load_params</span><span class="p">(</span><span class="s2">&quot;params.yaml&quot;</span><span class="p">)</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s2">&quot;data/digit_data.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;data/digit_target.csv&quot;</span><span class="p">)</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">process_data</span><span class="p">(</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;process_data&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">train_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">])</span>
+    <span class="n">export_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="o">......</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>pipenv run dvc run -f --name process-data <span class="se">\</span>
+      -d digit_recognizer/digit_recognizer.py <span class="se">\</span>
+      -d data/digit_data.csv <span class="se">\</span>
+      -d data/digit_target.csv <span class="se">\</span>
+      -o output/training_data.pkl <span class="se">\</span>
+      -o output/testing_data.pkl <span class="se">\</span>
+      -p train.test_size,train.shuffle <span class="se">\</span>
+      <span class="s2">&quot;pipenv run python digit_recognizer/digit_recognizer.py process-data&quot;</span>
+
+pipenv run dvc run -f --name train <span class="se">\</span>
+      -d digit_recognizer/digit_recognizer.py <span class="se">\</span>
+      -d output/training_data.pkl <span class="se">\</span>
+      -o output/model.pkl <span class="se">\</span>
+      -p train.gamma <span class="se">\</span>
+      <span class="s2">&quot;pipenv run python digit_recognizer/digit_recognizer.py train&quot;</span>  
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>$ cat dvc.yaml
+
+stages:
+  process-data:
+    ......
+  params:
+    - train.shuffle
+    - train.test_size
+  train:
+    ......
+  params:
+    - train.gamma
+</code></pre></div>
+
+<p>change train.gamma to 0.1</p>
+<div class="highlight"><pre><span></span><code>$ pipenv dvc params diff
+
+Path     Param        Old    New
+params.yaml  train.gamma  <span class="m">0</span>.01   <span class="m">0</span>.1
+</code></pre></div>
+
+<p>run <code>git checkout out params.yaml</code> to restore the original <code>params.yaml</code>, we don't need this change</p>
+<h3 id="metrics">metrics</h3>
+<p>now we'll need to know how well our model performs</p>
+<p>you may notice that we have a <code>metrics.json</code> file. DVC actually have better support on it</p>
+<div class="highlight"><pre><span></span><code>pipenv run dvc run -f --name report <span class="se">\</span>
+      -d digit_recognizer/digit_recognizer.py <span class="se">\</span>
+      -d output/testing_data.pkl <span class="se">\</span>
+      -d output/model.pkl <span class="se">\</span>
+      -o output/test_data_results.csv <span class="se">\</span>
+      -m output/metrics.json <span class="se">\</span>
+      <span class="s2">&quot;pipenv run python digit_recognizer/digit_recognizer.py report&quot;</span>
+</code></pre></div>
+
+<p>instead of using <code>-M</code> like the official tutorial did, I use <code>-m</code> because I want DVC to track it on remote storage instead of saving it it git</p>
+<div class="highlight"><pre><span></span><code><span class="nt">stages</span><span class="p">:</span>
+  <span class="nt">report</span><span class="p">:</span>
+  <span class="nt">outs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/test_data_results.csv</span>
+  <span class="nt">metrics</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">metrics.json</span><span class="p">:</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>$ dvc metrics show
+
+Path             accuracy_score    weighted_f1_score    weighted_precision    weighted_recall
+output/metrics.json  <span class="m">0</span>.69265       <span class="m">0</span>.74567              <span class="m">0</span>.91941               <span class="m">0</span>.69265
+</code></pre></div>
+
+<p>add it into git track <code>git add dvc.lock</code></p>
+<p>Change gamma to 0.1</p>
+<div class="highlight"><pre><span></span><code>$ dvc repro
+$ dvc metrics diff
+
+Path             Metric              Old      New      Change
+output/metrics.json  accuracy_score  <span class="m">0</span>.69265  <span class="m">0</span>.10134  -0.59131
+output/metrics.json  weighted_f1_score   <span class="m">0</span>.74567  <span class="m">0</span>.01865  -0.72702
+output/metrics.json  weighted_precision  <span class="m">0</span>.91941  <span class="m">0</span>.01027  -0.90914
+output/metrics.json  weighted_recall <span class="m">0</span>.69265  <span class="m">0</span>.10134  -0.59131
+</code></pre></div>
+
+<p><code>git checkout .</code></p>
+<p>you can diff with different version like git</p>
+<p>e.g., <code>dvc metrics diff main</code></p>
+<h3 id="plot">plot</h3>
+<p><a href="https://dvc.org/doc/command-reference/plots">plots</a></p>
+<p>DVC supports a few kinds of plots.</p>
+<p>you may notice there an output we did not use <code>output/test_data_results.csv</code></p>
+<p>let's change gamma back to 0.001 and commit first, otherwise the plot will be a bit odd due to the low performance</p>
+<div class="highlight"><pre><span></span><code>dvc repro
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>pipenv run dvc run -f --name report <span class="se">\</span>
+      -d digit_recognizer/digit_recognizer.py <span class="se">\</span>
+      -d output/testing_data.pkl <span class="se">\</span>
+      -d output/model.pkl <span class="se">\</span>
+      -o output/test_data_results.csv <span class="se">\</span>
+      -m output/metrics.json <span class="se">\</span>
+      --plots output/test_data_results.csv <span class="se">\</span>
+      <span class="s2">&quot;pipenv run python digit_recognizer/digit_recognizer.py report&quot;</span>
+</code></pre></div>
+
+<p>dvc.yaml</p>
+<div class="highlight"><pre><span></span><code>  <span class="l l-Scalar l-Scalar-Plain">......</span>
+  <span class="l l-Scalar l-Scalar-Plain">plots</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/test_data_results.csv</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>$ dvc plots show output/test_data_results.csv --template confusion -x  actual -y predicted
+
+file:///.../dvc_example/plots.html
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>dvc plots modify output/test_data_results.csv --template confusion -x  actual -y predicted
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">......</span>
+    <span class="l l-Scalar l-Scalar-Plain">- output/test_data_results.csv</span><span class="p p-Indicator">:</span>
+      <span class="nt">template</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">confusion</span>
+      <span class="nt">x</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actual</span>
+      <span class="nt">y</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">predicted</span>
+</code></pre></div>
+
+<p>open  the file</p>
+<p><img alt="" src="media/16231171746615.jpg"></p>
+<div class="highlight"><pre><span></span><code>$ dvc push
+$ cat dvc.yaml
+
+schema: <span class="s1">&#39;2.0&#39;</span>
+stages:
+  process-data:
+  cmd: pipenv run python digit_recognizer/digit_recognizer.py process-data
+  deps:
+    - path: data/digit_data.csv
+      md5: 942481fce846fb9750b7b8023c80a5ef
+      size: <span class="m">490582</span>
+    - path: data/digit_target.csv
+      md5: 2a6cfa13365ac9b3af5146133aca6789
+      size: <span class="m">3590</span>
+    - path: digit_recognizer/digit_recognizer.py
+      md5: 5ff7ab6bdc55db8d4a73bd371724492c
+      size: <span class="m">3863</span>
+  params:
+    params.yaml:
+      process_data.shuffle: <span class="nb">false</span>
+        process_data.test_size: <span class="m">0</span>.5
+  outs:
+    - path: output/testing_data.pkl
+      md5: 78be1761d227f71b1a8f858fed766982
+      size: <span class="m">529016</span>
+    - path: output/training_data.pkl
+      md5: f95e8f978a05395ba23479ff60eda076
+      size: <span class="m">528427</span>
+  train:
+    cmd: pipenv run python digit_recognizer/digit_recognizer.py train
+    deps:
+    - path: digit_recognizer/digit_recognizer.py
+      md5: 5ff7ab6bdc55db8d4a73bd371724492c
+      size: <span class="m">3863</span>
+    - path: output/training_data.pkl
+      md5: f95e8f978a05395ba23479ff60eda076
+      size: <span class="m">528427</span>
+    params:
+      params.yaml:
+        train.gamma: <span class="m">0</span>.001
+  outs:
+  - path: output/model.pkl
+    md5: 2170343fdeec878b410186d92893739a
+    size: <span class="m">307137</span>
+  report:
+    cmd: pipenv run python digit_recognizer/digit_recognizer.py report
+    deps:
+    - path: digit_recognizer/digit_recognizer.py
+      md5: 5ff7ab6bdc55db8d4a73bd371724492c
+      size: <span class="m">3863</span>
+    - path: output/model.pkl
+      md5: 2170343fdeec878b410186d92893739a
+      size: <span class="m">307137</span>
+    - path: output/testing_data.pkl
+      md5: 78be1761d227f71b1a8f858fed766982
+      size: <span class="m">529016</span>
+  outs:
+    - path: output/metrics.json
+      md5: 2a0d3e4a8f16b5869e93bd2af26b394c
+      size: <span class="m">178</span>
+    - path: output/test_data_results.csv
+      md5: 382ec966ef86becead897a22aa9cb208
+      size: <span class="m">8100</span>
+
+$ tree ../dvc_remote
+
+../dvc_remote
+├── <span class="m">21</span>
+│   └── 70343fdeec878b410186d92893739a
+├── 2a
+│   ├── 0d3e4a8f16b5869e93bd2af26b394c
+│   └── 6cfa13365ac9b3af5146133aca6789
+├── <span class="m">38</span>
+│   └── 2ec966ef86becead897a22aa9cb208
+├── <span class="m">78</span>
+│   └── be1761d227f71b1a8f858fed766982
+├── <span class="m">94</span>
+│   └── 2481fce846fb9750b7b8023c80a5ef
+├── a3
+│   └── 33e114a49194e823ab9a4fa9e33ee9.dir
+└── f9
+└── 5e8f978a05395ba23479ff60eda076
+
+<span class="m">7</span> directories, <span class="m">8</span> files
+</code></pre></div>
+
+<p>TODO: different between <code>dvc push</code>, <code>dvc push --all-commits</code><br>
+https://dvc.org/doc/command-reference/push</p>
+<h3 id="pipeline-templating">pipeline templating</h3>
+<p><a href="https://dvc.org/doc/user-guide/project-structure/pipelines-files#templating">pipeline templating</a></p>
+<h2 id="cml">CML</h2>
+<p>https://cml.dev/</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://dvc.org/">DVC</a></li>
+<li><a href="https://stanford-cs329s.github.io/syllabus.html">CS 329S: Machine Learning Systems Design</a></li>
+</ul>
+
+
+             
+ 
+            
+            
+            
+
+
+
+
+
+
+
+            <hr/>
+        </div>
+        <section id="article-sidebar" class="span2">
+    <h4>Reading Time</h4>
+    <p>~5 min read</p>
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2021-06-15T12:00:00+08:00">2021/06/15 - Tue</time>
+        <h4><built-in method index of str object at 0x7f0e914723f0></h4>
+    <ul class="multi-parts-list">
+    </ul>
+                <h4>Read Time</h4>
+                5 min
+            <h4>Category</h4>
+            <a class="category-link" href="https://lee-w.github.io/categories.html#tech-ref">Tech</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://lee-w.github.io/tags.html#data-ref">Data
+                    <span class="superscript">1</span>
+</a></li>
+                <li><a href="https://lee-w.github.io/tags.html#dvc-ref">DVC
+                    <span class="superscript">1</span>
+</a></li>
+                <li><a href="https://lee-w.github.io/tags.html#version-control-ref">Version Control
+                    <span class="superscript">1</span>
+</a></li>
+            </ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+    <a href="https://tw.linkedin.com/in/clleew" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+    </a>
+    <a href="https://github.com/Lee-W" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="https://gitlab.com/Lee-W" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitLab" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#30353e"/><path fill="#e24329" d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133"/><path fill="#fc6d26" d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z"/><path fill="#fca326" d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z"/></svg>
+    </a>
+    <a href="https://twitter.com/clleew" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+    <a href="https://lee-w.github.io/feeds/all.atom.xml" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="RSS" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f80"/><circle cx="145" cy="367" r="35" fill="#fff"/><path fill="none" stroke="#fff" stroke-width="60" d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+    <div>
+        
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+</a>
+<br />
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+    </div>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://lee-w.github.io/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

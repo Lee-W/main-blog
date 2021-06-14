@@ -1,5 +1,413 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2021-01-29T23:10:00+08:00</updated><entry><title>2020 發文頻率分析 - 如何在 pelican 頁面中嵌入 HTML</title><link href="https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-to-embed-html-in-pelican" rel="alternate"></link><published>2021-01-29T23:10:00+08:00</published><updated>2021-01-29T23:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2021-01-29:/posts/tech/2021/01/post-frequency-analysis-how-to-embed-html-in-pelican</id><summary type="html">&lt;p&gt;因為不想在文章裡面直接寫 HTML（主要是不想自己去調大小、風格什麼的）&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2021-06-14T15:18:00+08:00</updated><entry><title>DVC - Data Versioning</title><link href="https://lee-w.github.io/posts/tech/2021/06/dvc-data-versioning" rel="alternate"></link><published>2021-06-14T15:18:00+08:00</published><updated>2021-06-14T15:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2021-06-14:/posts/tech/2021/06/dvc-data-versioning</id><summary type="html">&lt;!--more--&gt;
+
+&lt;h2 id="about-dvc-data-version-control"&gt;About DVC (Data Version Control)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;What's DVC?&lt;ul&gt;
+&lt;li&gt;version control system for data science and machine learning&lt;/li&gt;
+&lt;li&gt;compatible with git (it's based on git)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;What can DVC do?&lt;ul&gt;
+&lt;li&gt;track&lt;ul&gt;
+&lt;li&gt;data&lt;/li&gt;
+&lt;li&gt;model&lt;/li&gt;
+&lt;li&gt;pipeline&lt;/li&gt;
+&lt;li&gt;metrics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;use storage directly&lt;/li&gt;
+&lt;li&gt;no external services needed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Who are the targeted users of DVC?&lt;ul&gt;
+&lt;li&gt;ML research / engineer&lt;/li&gt;
+&lt;li&gt;DevOps …&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;!--more--&gt;
+
+&lt;h2 id="about-dvc-data-version-control"&gt;About DVC (Data Version Control)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;What's DVC?&lt;ul&gt;
+&lt;li&gt;version control system for data science and machine learning&lt;/li&gt;
+&lt;li&gt;compatible with git (it's based on git)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;What can DVC do?&lt;ul&gt;
+&lt;li&gt;track&lt;ul&gt;
+&lt;li&gt;data&lt;/li&gt;
+&lt;li&gt;model&lt;/li&gt;
+&lt;li&gt;pipeline&lt;/li&gt;
+&lt;li&gt;metrics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;use storage directly&lt;/li&gt;
+&lt;li&gt;no external services needed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Who are the targeted users of DVC?&lt;ul&gt;
+&lt;li&gt;ML research / engineer&lt;/li&gt;
+&lt;li&gt;DevOps &amp;amp; Engineers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Why DVC?&lt;ul&gt;
+&lt;li&gt;It links your data, model, and pipelines with your metrics.&lt;ul&gt;
+&lt;li&gt;reproducibility&lt;/li&gt;
+&lt;li&gt;trackable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Read &lt;a href="https://dvc.org/doc/use-cases/versioning-data-and-model-files"&gt;DVC - Versioning Data and Models&lt;/a&gt; for more use cases&lt;/p&gt;
+&lt;h2 id="how-to-use-dvc"&gt;How to use DVC?&lt;/h2&gt;
+&lt;h3 id="install-dvc-globally"&gt;Install DVC globally&lt;/h3&gt;
+&lt;p&gt;I suggest using &lt;code&gt;pipx&lt;/code&gt; if you're to install DVC globally. However, an even better way is to install it inside the virtual environment within your project.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ pip install pipx
+$ pipx install dvc
+$ dvc --version
+
+&lt;span class="m"&gt;2&lt;/span&gt;.3.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;DVC also provides &lt;a href="https://dvc.org/doc/install/completion"&gt;Shell Completion&lt;/a&gt; and &lt;a href="https://dvc.org/doc/install/plugins"&gt;Syntax Highlighting Plugins&lt;/a&gt; for popular editors.&lt;/p&gt;
+&lt;h3 id="take-a-look-at-the-example-project"&gt;Take a look at the example project&lt;/h3&gt;
+&lt;p&gt;I'll use &lt;a href="https://github.com/Lee-W/dvc_example/"&gt;dvc_example&lt;/a&gt; to demonstrate how I applied DVC to an existing machine learning project. The example is based on &lt;a href="https://scikit-learn.org/0.24/auto_examples/classification/plot_digits_classification.html"&gt;Recognizing hand-written digits&lt;/a&gt; from scikit-learn documentation. All the DVC parts start from &lt;a href="https://github.com/Lee-W/dvc_example/tree/v1-base"&gt;v1-base&lt;/a&gt;. You can &lt;code&gt;git checkout&lt;/code&gt; to the tag to follow along.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ git clone https://github.com/Lee-W/dvc_example/ --branch v1-base
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; dvc_example
+$ tree
+.
+├── LICENSE
+├── Pipfile
+├── Pipfile.lock
+├── digit_recognizer
+│   ├── __init__.py
+│   └── digit_recognizer.py
+├── docs
+│   └── README.md
+├── mkdocs.yml
+├── output
+└── tasks.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To set up the development environment, you'll need &lt;a href="https://pipenv.pypa.io/en/latest/"&gt;pipenv&lt;/a&gt; and &lt;a href="https://www.pyinvoke.org/"&gt;invoke&lt;/a&gt;. If you run into an error when running &lt;code&gt;pipenv install&lt;/code&gt;, you can run &lt;code&gt;export SYSTEM_VERSION_COMPAT=1&lt;/code&gt; before it. It's an open issue (&lt;a href="https://github.com/pypa/pipenv/issues/4564#issuecomment-756625303"&gt;Issue with NumPy, macOS 11 Big Sur, Python 3.9.1 Does pipenv not use the latest pip? #4564&lt;/a&gt;) of pipenv as of now. Or, you can just run the following commands.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# install needed tools&lt;/span&gt;
+pipx install pipenv invoke
+
+&lt;span class="c1"&gt;# set up environments&lt;/span&gt;
+invoke init-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We'll use &lt;a href="https://github.com/Lee-W/dvc_example/blob/v1-base/digit_recognizer/digit_recognizer.py"&gt;digit_recognizer/digit_recognizer.py&lt;/a&gt; for training a model that can recognize handwritten digits.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;load_data&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;X_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_test&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;process_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;train_model&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_train&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_train&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;predicted_y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_test&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;output_results&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;predicted_y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;output_metrics&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;predicted_y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="install-dvc-into-the-virtual-environment"&gt;Install DVC into the virtual environment&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv install dvc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you're to save data to remote storage, you might need to install extra dependencies.&lt;br/&gt;
+(e.g., &lt;code&gt;pipenv install dvc[s3]&lt;/code&gt;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Supported types&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;[s3]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[azure]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[gdrive]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[gs]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[oss]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[ssh]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Or, use &lt;code&gt;pipenv install dvc[all]&lt;/code&gt; to install them all&lt;/p&gt;
+&lt;p&gt;Read &lt;a href="https://dvc.org/doc/command-reference/remote"&gt;dvc remote&lt;/a&gt; for more information&lt;/p&gt;
+&lt;h3 id="initialize-dvc"&gt;Initialize DVC&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# initialize DVC configurations&lt;/span&gt;
+$ pipenv run dvc init
+
+&lt;span class="c1"&gt;# see what's created by DVC&lt;/span&gt;
+$ tree .dvc
+
+.dvc
+├── config
+└── plots
+    ├── confusion.json
+    ├── confusion_normalized.json
+    ├── default.json
+    ├── linear.json
+    ├── scatter.json
+    └── smooth.json
+
+&lt;span class="c1"&gt;# track DVC configuration through git&lt;/span&gt;
+$ git add .dvc
+
+&lt;span class="c1"&gt;# git commit&lt;/span&gt;
+$ pipenv run cz commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="add-dvc-remote"&gt;Add DVC remote&lt;/h3&gt;
+&lt;p&gt;I'll use another local directory &lt;code&gt;../dvc_remote&lt;/code&gt; as our remote storage. You can change it to s3 or other remote storage.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir ../dvc_remote
+dvc remote add --default &lt;span class="nb"&gt;local&lt;/span&gt; ../dvc_remote
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Through &lt;code&gt;--default&lt;/code&gt; flag, we can push/pull from &lt;code&gt;local&lt;/code&gt; remote without specifying remote name.&lt;/p&gt;
+&lt;p&gt;Let see what's changed in &lt;code&gt;.dvc/config&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;$ cat .dvc/config&lt;/span&gt;
+
+&lt;span class="k"&gt;[core]&lt;/span&gt;
+&lt;span class="na"&gt;remote&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;local&lt;/span&gt;
+&lt;span class="k"&gt;['remote "local"']&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;../../dvc_remote&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The url is &lt;code&gt;../../dvc_remote&lt;/code&gt; instead of &lt;code&gt;../dvc_remote&lt;/code&gt; because it's the relative path to &lt;code&gt;.dvc&lt;/code&gt;. As we've not yet push anything to our pseudo remote, &lt;code&gt;../dvc_remote&lt;/code&gt; is still empty.&lt;/p&gt;
+&lt;h3 id="track-data-through-dvc"&gt;Track data through DVC&lt;/h3&gt;
+&lt;p&gt;By this time, the data is loaded through &lt;a href="https://scikit-learn.org/0.24/modules/generated/sklearn.datasets.load_digits.html"&gt;sklearn.datasets.load_digits&lt;/a&gt;. We're going to change it to read from static file in &lt;code&gt;data/&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;load_data&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="c1"&gt;# Load data&lt;/span&gt;
+    &lt;span class="n"&gt;digits&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load_digits&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="o"&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can use the following script to output the digit data into &lt;code&gt;data/&lt;/code&gt;. Note that it's a one-time use script. We won't add it into git.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;
+
+&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"data"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;digits&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datasets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load_digits&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;digits&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"data/digit_data.csv"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;digits&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"data/digit_target.csv"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We'll need to make changes to &lt;code&gt;load_data&lt;/code&gt; and &lt;code&gt;main&lt;/code&gt; functions to read data from these files.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;load_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_path&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X_path&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;input_file&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;csv_reader&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;input_file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;quoting&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;QUOTE_NONNUMERIC&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;csv_reader&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_path&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;input_file&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;csv_reader&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;input_file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;quoting&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;QUOTE_NONNUMERIC&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;row&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;csv_reader&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;
+
+&lt;span class="o"&gt;......&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;load_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"data/digit_data.csv"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"data/digit_target.csv"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="o"&gt;......&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Run &lt;code&gt;pipenv run python digit_recognizer/digit_recognizer.py&lt;/code&gt; to check whether everything works as we expected. If so, add these code changes into git.&lt;/p&gt;
+&lt;p&gt;Next, add &lt;code&gt;data/&lt;/code&gt; to DVC.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ pipenv run dvc add data
+
+&lt;span class="m"&gt;100&lt;/span&gt;% Add&lt;span class="p"&gt;|&lt;/span&gt;████████████████&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;/1 &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;00&lt;/span&gt;:00,  &lt;span class="m"&gt;2&lt;/span&gt;.14file/s&lt;span class="o"&gt;]&lt;/span&gt;
+
+To track the changes with git, run:
+
+git add data.dvc .gitignore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;dvc add&lt;/code&gt; creates a &lt;code&gt;data.dvc&lt;/code&gt; file to track &lt;code&gt;data/&lt;/code&gt; and add it into &lt;code&gt;.gitignore&lt;/code&gt; so that &lt;code&gt;data/&lt;/code&gt; will only be tracked through DVC but not git.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Add DVC files into git track&lt;/span&gt;
+git add .gitignore data.dvc
+
+&lt;span class="c1"&gt;# git commit&lt;/span&gt;
+pipenv run cz commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In &lt;code&gt;data.dvc&lt;/code&gt;, we can see 2 files (&lt;code&gt;digit_data.csv&lt;/code&gt; and &lt;code&gt;digit_target.csv&lt;/code&gt;) are tracked.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ cat data.dvc
+
+outs:
+- md5: b8d81f4964ecb86739c79c833fb491f3.dir
+  size: &lt;span class="m"&gt;494728&lt;/span&gt;
+  nfiles: &lt;span class="m"&gt;2&lt;/span&gt;
+  path: data
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Push these tracked data into DVC remote&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dvc push
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;See what's changed in our repo storage &lt;code&gt;../dvc_remote&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ tree ../dvc_remote
+
+../dvc_remote
+├── &lt;span class="m"&gt;02&lt;/span&gt;
+│   └── b861b6dc8e08da6d66547860f69277
+├── 8c
+│   └── ba569595920d230ade453b150f372b
+└── b8
+    └── d81f4964ecb86739c79c833fb491f3.dir
+
+&lt;span class="m"&gt;3&lt;/span&gt; directories, &lt;span class="m"&gt;3&lt;/span&gt; files
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The md5 value of our tracked data is &lt;code&gt;b8d81f4964ecb86739c79c833fb491f3.dir&lt;/code&gt;. There's also a corresponding file in &lt;code&gt;../dvc_remote/b8/d81f4964ecb86739c79c833fb491f3.dir&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ cat ../dvc_remote/b8/d81f4964ecb86739c79c833fb491f3.dir
+
+&lt;span class="o"&gt;[{&lt;/span&gt;&lt;span class="s2"&gt;"md5"&lt;/span&gt;: &lt;span class="s2"&gt;"02b861b6dc8e08da6d66547860f69277"&lt;/span&gt;, &lt;span class="s2"&gt;"relpath"&lt;/span&gt;: &lt;span class="s2"&gt;"digit_data.csv"&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;, &lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"md5"&lt;/span&gt;: &lt;span class="s2"&gt;"8cba569595920d230ade453b150f372b"&lt;/span&gt;, &lt;span class="s2"&gt;"relpath"&lt;/span&gt;: &lt;span class="s2"&gt;"digit_target.csv"&lt;/span&gt;&lt;span class="o"&gt;}]&lt;/span&gt;%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This file indicates where the actual data sources are stored in &lt;code&gt;../dvc_remote&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;In conclusion, if we want to know how data is stored through DVC, &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;find the md5 value in &lt;code&gt;*.dvc&lt;/code&gt; in our project&lt;/li&gt;
+&lt;li&gt;find the path that matches this md5 value in our remote storage&lt;/li&gt;
+&lt;li&gt;use the md5 value specified in the previous step to find the data sources in our remote storage&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;But most of the time, we don't need to do so. We can leave the tracking work to DVC.&lt;/p&gt;
+&lt;h3 id="fetch-data-from-dvc-remote-storage"&gt;Fetch data from DVC remote storage&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# temporary delete our data locally &lt;/span&gt;
+$ rm -rf data
+
+&lt;span class="c1"&gt;# check whether DVC actually tracks our data&lt;/span&gt;
+$ dvc status
+
+data.dvc:
+changed outs:
+    deleted:            data
+
+&lt;span class="c1"&gt;# bring our data back from remote storage&lt;/span&gt;
+$ dvc checkout data
+
+data
+├── digit_data.csv
+└── digit_target.csv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="add-data-changes-into-dvc"&gt;Add data changes into DVC&lt;/h3&gt;
+&lt;p&gt;To demonstrate how DVC track data changes, let's remove the last 2 rows from &lt;code&gt;data/digit_data.csv&lt;/code&gt; and &lt;code&gt;data/digit_target.csv&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# check what's changed&lt;/span&gt;
+$ dvc status
+
+data.dvc:
+changed outs:
+    modified:           data
+
+&lt;span class="c1"&gt;# Add these changes to DVC and git&lt;/span&gt;
+$ dvc add
+$ git add data.dvc
+&lt;span class="c1"&gt;# git commit&lt;/span&gt;
+$ pipenv run cz commit
+
+&lt;span class="c1"&gt;# Push these changes to our remote storage&lt;/span&gt;
+$ dvc push
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The md5 value has been changed, and the size of our data is smaller than our previous record, 494728.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ cat data.dvc
+
+outs:
+- md5: a333e114a49194e823ab9a4fa9e33ee9.dir
+  size: &lt;span class="m"&gt;494172&lt;/span&gt;
+  nfiles: &lt;span class="m"&gt;2&lt;/span&gt;
+  path: data
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;More files are added to &lt;code&gt;../dvc_remote&lt;/code&gt; due to the data changes. You can follow the steps in the previous section to see what're actually store.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ tree ../dvc_remote
+
+../dvc_remote
+├── &lt;span class="m"&gt;02&lt;/span&gt;
+│   └── b861b6dc8e08da6d66547860f69277
+├── 2a
+│   └── 6cfa13365ac9b3af5146133aca6789
+├── 8c
+│   └── ba569595920d230ade453b150f372b
+├── &lt;span class="m"&gt;94&lt;/span&gt;
+│   └── 2481fce846fb9750b7b8023c80a5ef
+├── a3
+│   └── 33e114a49194e823ab9a4fa9e33ee9.dir
+└── b8
+    └── d81f4964ecb86739c79c833fb491f3.dir
+
+&lt;span class="m"&gt;6&lt;/span&gt; directories, &lt;span class="m"&gt;6&lt;/span&gt; files
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let's &lt;code&gt;git checkout&lt;/code&gt; to the previous git commit to see what happens if we only revert the changes in &lt;code&gt;data.dvc&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# or "git checkout v2-track-data"&lt;/span&gt;
+git checkout HEAD~1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After running &lt;code&gt;wc -l data/digit_data.csv&lt;/code&gt;, we'll still find 1795 rows instead of 1797 rows in the previous stage. That's because we need to run &lt;code&gt;dvc checkout&lt;/code&gt; as well.&lt;/p&gt;
+&lt;p&gt;We might easily forget this step. Thus, DVC implements a git-hook that can trigger &lt;code&gt;dvc checkout&lt;/code&gt; right after &lt;code&gt;git checkout&lt;/code&gt;. You can install these git-hooks through &lt;code&gt;dvc install&lt;/code&gt;. These hooks are added into &lt;code&gt;.git/hooks&lt;/code&gt;. If you want to know the detail of what's added, read &lt;a href="https://dvc.org/doc/command-reference/install"&gt;dvc install&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Test these steps again. There should be an additional line after running &lt;code&gt;git checkout&lt;/code&gt;. This is the output message of &lt;code&gt;dvc checkout&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;M       data/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Push our code to a remote git repository&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git remote add origin &amp;lt;REMOTE GIT REPO&amp;gt;
+git push origin main
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="fetch-code-and-data-changes-from-remote"&gt;Fetch code and data changes from remote&lt;/h3&gt;
+&lt;p&gt;We've already pushed all the code and data changes to remote. Let's see how we could reproduce in another environment.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# check what's in our repo&lt;/span&gt;
+$ dvc list &amp;lt;REMOTE GIT REPO&amp;gt;
+
+.dvcignore
+.github
+.gitignore
+LICENSE
+Pipfile
+Pipfile.lock
+data
+data.dvc
+digit_recognizer
+docs
+mkdocs.yml
+output
+tasks.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Although git does not track &lt;code&gt;data/&lt;/code&gt;, we can still list it through DVC.&lt;/p&gt;
+&lt;p&gt;Because we use relative path &lt;code&gt;../dvc_remote&lt;/code&gt; as DVC remote storage, we need to create the new project in the same layer as &lt;code&gt;dvc_example&lt;/code&gt;. We'll clone the project into &lt;code&gt;../dvc_example_on_another_machine&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Clone repo git repo&lt;/span&gt;
+$ git clone &amp;lt;YOUR REMOTE GIT REPO&amp;gt; ../dvc_example_on_another_machine
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; ../dvc_example_on_another_machine
+$ tree .
+
+.
+├── LICENSE
+├── Pipfile
+├── Pipfile.lock
+├── data.dvc
+├── digit_recognizer
+│   ├── __init__.py
+│   └── digit_recognizer.py
+├── docs
+│   └── README.md
+├── mkdocs.yml
+├── output
+└── tasks.py
+
+&lt;span class="m"&gt;3&lt;/span&gt; directories, &lt;span class="m"&gt;9&lt;/span&gt; files
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As you can see, &lt;code&gt;data/&lt;/code&gt; has not yet been added to the project. We can now pull data from our DVC remote storage.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# pull data from default DVC remote storage&lt;/span&gt;
+$ dvc pull
+
+A   data/
+&lt;span class="m"&gt;1&lt;/span&gt; file added and &lt;span class="m"&gt;2&lt;/span&gt; files fetched
+
+&lt;span class="c1"&gt;# `data` has now been added to the project&lt;/span&gt;
+$ tree .
+
+.
+├── LICENSE
+├── Pipfile
+├── Pipfile.lock
+├── data
+│   ├── digit_data.csv
+│   └── digit_target.csv
+├── data.dvc
+├── digit_recognizer
+│   ├── __init__.py
+│   └── digit_recognizer.py
+├── docs
+│   └── README.md
+├── mkdocs.yml
+├── output
+└── tasks.py
+
+&lt;span class="m"&gt;4&lt;/span&gt; directories, &lt;span class="m"&gt;11&lt;/span&gt; files
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That's all for data versioning in DVC. In the next post, We'll continue on versioning a data pipeline, tracking parameters and metrics. We won't need &lt;code&gt;dvc_example_on_another_machine&lt;/code&gt; for the following steps. Feel free to remove it and change directory back to &lt;code&gt;dvc_example&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://dvc.org/"&gt;DVC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://stanford-cs329s.github.io/syllabus.html"&gt;CS 329S: Machine Learning Systems Design&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Data"></category><category term="Version Control"></category><category term="DVC"></category></entry><entry><title>2020 發文頻率分析 - 如何在 pelican 頁面中嵌入 HTML</title><link href="https://lee-w.github.io/posts/tech/2021/01/post-frequency-analysis-how-to-embed-html-in-pelican" rel="alternate"></link><published>2021-01-29T23:10:00+08:00</published><updated>2021-01-29T23:10:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2021-01-29:/posts/tech/2021/01/post-frequency-analysis-how-to-embed-html-in-pelican</id><summary type="html">&lt;p&gt;因為不想在文章裡面直接寫 HTML（主要是不想自己去調大小、風格什麼的）&lt;br&gt;
 我花了點時間研究要怎麼樣正確且優雅（？）的在 pelican 中嵌入 HTML&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;因為不想在文章裡面直接寫 HTML（主要是不想自己去調大小、風格什麼的）&lt;br&gt;
 我花了點時間研究要怎麼樣正確且優雅（？）的在 pelican 中嵌入 HTML&lt;/p&gt;
