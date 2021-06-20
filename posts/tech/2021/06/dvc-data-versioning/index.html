@@ -148,7 +148,7 @@
 <p>Read <a href="https://dvc.org/doc/use-cases/versioning-data-and-model-files">DVC - Versioning Data and Models</a> for more use cases</p>
 <h2 id="how-to-use-dvc">How to use DVC?</h2>
 <h3 id="install-dvc-globally">Install DVC globally</h3>
-<p>I suggest using <code>pipx</code> if you're to install DVC globally. However, an even better way is to install it inside the virtual environment within your project.</p>
+<p>I suggest using <a href="https://pypa.github.io/pipx/">pipx</a> if you're to install DVC globally. However, an even better way is to install it inside the virtual environment within your project.</p>
 <div class="highlight"><pre><span></span><code>$ pip install pipx
 $ pipx install dvc
 $ dvc --version
@@ -334,8 +334,8 @@ outs:
 
 <span class="o">[{</span><span class="s2">"md5"</span>: <span class="s2">"02b861b6dc8e08da6d66547860f69277"</span>, <span class="s2">"relpath"</span>: <span class="s2">"digit_data.csv"</span><span class="o">}</span>, <span class="o">{</span><span class="s2">"md5"</span>: <span class="s2">"8cba569595920d230ade453b150f372b"</span>, <span class="s2">"relpath"</span>: <span class="s2">"digit_target.csv"</span><span class="o">}]</span>%
 </code></pre></div>
-<p>This file indicates where the actual data sources are stored in <code>../dvc_remote</code>. </p>
-<p>In conclusion, if we want to know how data is stored through DVC, </p>
+<p>This file indicates where the actual data sources are stored in <code>../dvc_remote</code>.</p>
+<p>In conclusion, if we want to know how data is stored through DVC,</p>
 <ol>
 <li>find the md5 value in <code>*.dvc</code> in our project</li>
 <li>find the path that matches this md5 value in our remote storage</li>
@@ -343,7 +343,7 @@ outs:
 </ol>
 <p>But most of the time, we don't need to do so. We can leave the tracking work to DVC.</p>
 <h3 id="fetch-data-from-dvc-remote-storage">Fetch data from DVC remote storage</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># temporary delete our data locally </span>
+<div class="highlight"><pre><span></span><code><span class="c1"># temporary delete our data locally</span>
 $ rm -rf data
 
 <span class="c1"># check whether DVC actually tracks our data</span>
@@ -579,6 +579,9 @@ $ tree .
             <li  class="active-part">
             Part 1: DVC - Data Versioning
             </li>
+            <li >
+            <a href="https://lee-w.github.io/posts/tech/2021/06/dvc-pipeline-versioning" title="DVC - Pipeline Versioning">Part 2: DVC - Pipeline Versioning</a>
+            </li>
     </ul>
                 <h4>Read Time</h4>
                 7 min
@@ -587,13 +590,13 @@ $ tree .
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://lee-w.github.io/tags.html#data-ref">Data
-                    <span class="superscript">1</span>
+                    <span class="superscript">2</span>
 </a></li>
                 <li><a href="https://lee-w.github.io/tags.html#dvc-ref">DVC
-                    <span class="superscript">1</span>
+                    <span class="superscript">2</span>
 </a></li>
                 <li><a href="https://lee-w.github.io/tags.html#version-control-ref">Version Control
-                    <span class="superscript">1</span>
+                    <span class="superscript">2</span>
 </a></li>
             </ul>
 <h4>Keep In Touch</h4>
