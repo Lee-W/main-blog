@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2021-06-20T11:30:00+08:00</updated><entry><title>DVC - Pipeline Versioning</title><link href="https://lee-w.github.io/posts/tech/2021/06/dvc-pipeline-versioning" rel="alternate"></link><published>2021-06-20T11:30:00+08:00</published><updated>2021-06-20T11:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2021-06-20:/posts/tech/2021/06/dvc-pipeline-versioning</id><summary type="html">&lt;p&gt;We've versioned our data in the previous post. This article will demonstrate how we could define a data pipeline and version it through DVC.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://lee-w.github.io/" rel="alternate"></link><link href="https://lee-w.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://lee-w.github.io/</id><updated>2021-06-27T17:58:00+08:00</updated><entry><title>DVC - Pipeline Versioning</title><link href="https://lee-w.github.io/posts/tech/2021/06/dvc-pipeline-versioning" rel="alternate"></link><published>2021-06-20T11:30:00+08:00</published><updated>2021-06-27T17:58:00+08:00</updated><author><name>Lee-W</name></author><id>tag:lee-w.github.io,2021-06-20:/posts/tech/2021/06/dvc-pipeline-versioning</id><summary type="html">&lt;p&gt;We've versioned our data in the previous post. This article will demonstrate how we could define a data pipeline and version it through DVC.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;We've versioned our data in the previous post. This article will demonstrate how we could define a data pipeline and version it through DVC.&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -58,7 +58,7 @@ git add dvc.yaml output/.gitignore dvc.lock
 Next, we add these DVC files into git to track.
 
 &lt;span class="c1"&gt;# add DVC configuration to git and commit&lt;/span&gt;
-$ git add dvc.yaml dvc.lock model/.gitignore
+$ git add dvc.yaml dvc.lock output/.gitignore
 $ pipenv run cz commit
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;See what's composed of this command&lt;/p&gt;
@@ -85,12 +85,12 @@ $ pipenv run cz commit
   &lt;span class="nt"&gt;process-data&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="nt"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;pipenv run python digit_recognizer/digit_recognizer.py process-data&lt;/span&gt;
     &lt;span class="nt"&gt;deps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-      &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;data/digit_data.csv&lt;/span&gt;
-      &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;data/digit_target.csv&lt;/span&gt;
-      &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;digit_recognizer/digit_recognizer.py&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;data/digit_data.csv&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;data/digit_target.csv&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;digit_recognizer/digit_recognizer.py&lt;/span&gt;
     &lt;span class="nt"&gt;outs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-      &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;output/testing_data.pkl&lt;/span&gt;
-      &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;output/training_data.pkl&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;output/testing_data.pkl&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;output/training_data.pkl&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;DVC transforms what we defined in &lt;code&gt;dvc run&lt;/code&gt; to a human-readable format and store it. But if you already know how to define the stage, you can edit &lt;code&gt;dvc.yaml&lt;/code&gt; directly. In addition, there're advanced techniques like &lt;a href="https://dvc.org/doc/user-guide/project-structure/pipelines-files#templating"&gt;Templating&lt;/a&gt; and &lt;a href="https://dvc.org/doc/user-guide/project-structure/pipelines-files#foreach-stages"&gt;foreach stages&lt;/a&gt; that can help us define complicated stages.&lt;/p&gt;
 &lt;h4 id="dvclock-the-hashes-of-dependencies-and-outputs"&gt;&lt;code&gt;dvc.lock&lt;/code&gt;: the hashes of dependencies and outputs&lt;/h4&gt;
@@ -280,12 +280,12 @@ pipenv run cz commit
   process-data:
     ......
     params:
-      - train.shuffle
-      - train.test_size
+    - process_data.shuffle
+    - process_data.test_size
   train:
       ......
     params:
-      - train.gamma
+    - train.gamma
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;params.yaml&lt;/code&gt; is the default parameter file name, but DVC also supports YAML, JSON, TOML, and &lt;a href="https://dvc.org/doc/command-reference/params#examples-python-parameters-file"&gt;Python files&lt;/a&gt;. We only need to add the file name as an additional layer to &lt;code&gt;params&lt;/code&gt; to use it. e.g.,&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="c1"&gt;# this is an example of using different parameter file name&lt;/span&gt;
@@ -293,8 +293,8 @@ pipenv run cz commit
   &lt;span class="nt"&gt;train&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
       &lt;span class="l l-Scalar l-Scalar-Plain"&gt;......&lt;/span&gt;
     &lt;span class="l l-Scalar l-Scalar-Plain"&gt;params&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
-      &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;params.json&lt;/span&gt;
-        &lt;span class="l l-Scalar l-Scalar-Plain"&gt;- train.gamma&lt;/span&gt;
+  &lt;span class="-Error"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;params.json&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;- train.gamma&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Let's change gamma to 0.1. We can check this change through &lt;a href="https://dvc.org/doc/command-reference/params/diff"&gt;dvc params diff&lt;/a&gt;. By providing git reference, we can even see parameters difference between different git commits. (e.g., &lt;code&gt;dvc params diff HEAD~1&lt;/code&gt;)&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ pipenv run dvc params diff
@@ -347,7 +347,7 @@ $ cat dvc.yaml
   report:
     ......
     metrics:
-      - metrics.json:
+    - metrics.json:
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Use &lt;a href="https://dvc.org/doc/command-reference/metrics/show"&gt;dvc metrics show&lt;/a&gt; to see how well our model performs&lt;br/&gt;
 Note that values are not calculated through DVC. DVC only provides a way to display values in file organized as tree hierarchies and compare them throughout different git commits.&lt;/p&gt;
