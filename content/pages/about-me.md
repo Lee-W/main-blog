@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2021-02-06 15:00
+modified: 2021-09-04 18:00
 slug: about-me
 ---
 
@@ -54,8 +54,6 @@ I was the executor of the program and the leader of the teaching assistant team.
 **[Oct 2020 - Present] Chairperson, [PyCon Taiwan](https://tw.pycon.org/) 2021**
 
 **[Dec 2019 - Sep 2020] Program Chair, [PyCon Taiwan](https://tw.pycon.org/) 2020**
-
-* Coordinate the program committee
 
 **[Jul 2019 – Nov 2019] Program Committee Member, [PyCon Taiwan](https://tw.pycon.org/) 2019**
 
@@ -152,9 +150,7 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 * [Flickr Album Downloader](https://github.com/Lee-W/Flickr_Album_Downloader)
 * [PttCraweler](https://github.com/Lee-W/PttCrawler)
 * [wayback-machine-saver](https://github.com/Lee-W/wayback-machine-saver)
-
-### NCKU Related
-* [NCKU Grade](https://github.com/Lee-W/NCKU_Grade)
+* [bahamut_ani_stat](https://github.com/Lee-W/bahamut_ani_stat)
 
 ## Tutorial and Study Note
 
