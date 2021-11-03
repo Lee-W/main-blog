@@ -228,4 +228,4 @@ def clean(cmd):
     * 👉 [invoke.runners.Runner.run](http://docs.pyinvoke.org/en/1.2/api/runners.html#invoke.runners.Runner.run)
 
 ## Reference
-* [Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019](https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/)
+* [Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019](https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/)

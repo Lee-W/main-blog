@@ -41,10 +41,10 @@ Keynote Speaker 的演講廳完全是大家可以邊吃飯邊聽議程的 XD
 但還是蠻有趣的
 
 第一場我去聽 **Understanding autistic children using BioSensors and Python!**
-稍微詳細一點的筆記我都丟在 [note](https://lee-w.github.io/pycon-note/posts/pycon-ca-2019/2019/12/understanding-autistic-children-using-bioSensors-and-python/)
+稍微詳細一點的筆記我都丟在 [note](https://wei-lee.me/pycon-note/posts/pycon-ca-2019/2019/12/understanding-autistic-children-using-bioSensors-and-python/)
 這場主要在講她們如何透過 sensor 來偵測自閉症
 
-再來我去聽 **My Favourite Errors - Tales From The Ops Side** ([note](https://lee-w.github.io/pycon-note/posts/pycon-ca-2019/2019/12/my-favourite-errors/))
+再來我去聽 **My Favourite Errors - Tales From The Ops Side** ([note](https://wei-lee.me/pycon-note/posts/pycon-ca-2019/2019/12/my-favourite-errors/))
 主要是講各種可能遇到的 HTTP 錯誤
 除了前一場本來就是我非常有興趣的議題外，這場是我覺得 PyCon CA 數一數二精彩的議程
 雖然跟 Python 完全沒有直接關係 XD
@@ -74,9 +74,9 @@ Keynote Speaker 的演講廳完全是大家可以邊吃飯邊聽議程的 XD
 這位講者給的答案是 Python 就只是個語言，要看用哪個 implementation 來跑
 ![is-python-compiled-or-interpreted](/images/posts-image/2019-12-23-pycon-ca-2019/15770893777395.jpg)
 
-* **PySpark: avoiding common pitfalls and keeping your sanity** ([note](https://lee-w.github.io/pycon-note/posts/pycon-ca-2019/2019/12/pyspark-avoiding-common-pitfalls-and-keeping-your-sanity/))
+* **PySpark: avoiding common pitfalls and keeping your sanity** ([note](https://wei-lee.me/pycon-note/posts/pycon-ca-2019/2019/12/pyspark-avoiding-common-pitfalls-and-keeping-your-sanity/))
     * PySpark 跟 Python 語法上一些不同需要注意的地方
-* **How to Level Up** ([note](https://lee-w.github.io/pycon-note/posts/pycon-ca-2019/2019/12/how-to-level-up/))
+* **How to Level Up** ([note](https://wei-lee.me/pycon-note/posts/pycon-ca-2019/2019/12/how-to-level-up/))
     * 用什麼心態面對學習，才能讓自己的技術更上一層樓
 
 當天因為體力跟時間的關係，還有不少議程沒聽到

@@ -310,4 +310,4 @@ def test_sponsor_number(sponsors):
 * [Python Testing with pytest](https://pragprog.com/book/bopytest/python-testing-with-pytest)
     * 非常推薦用這本書上手 `pytest`
 * [快快樂樂成為 Coding Ninja (by pytest) - PyCon APAC 2015](https://www.youtube.com/watch?time_continue=201&v=pX1_I_sEi8k)
-* [Pytest: Rapid Simple Testing -  Swiss Python Summit 2016](https://lee-w.github.io/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/)
+* [Pytest: Rapid Simple Testing -  Swiss Python Summit 2016](https://wei-lee.me/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/)

@@ -67,7 +67,7 @@ SOCIAL = (
     ("GitHub", "https://github.com/Lee-W"),
     ("Gitlab", "https://gitlab.com/Lee-W"),
     ("Twitter", "https://twitter.com/clleew"),
-    ("RSS", "https://lee-w.github.io/feeds/all.atom.xml"),
+    ("RSS", "https://wei-lee.me/feeds/all.atom.xml"),
 )
 
 # Markdown extension

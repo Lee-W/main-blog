@@ -16,7 +16,7 @@ Uncle Bob 的書真的每個階段看都會有很不一樣的感覺
 幾年前第一次看這本書的時候
 寫程式大多只是交作業，頂多就跟其他的同學一起交大一點的作業或開發一些小專案
 能不要被雷（或不要雷別人）就很不錯了
-當時記錄下的摘要也就沒什麼內容（[[Book] Clean Coder](http://lee-w.github.io/posts/book/2015/01/clean-coder/)）
+當時記錄下的摘要也就沒什麼內容（[[Book] Clean Coder]({filename}/posts/book/2015/01-clean-coder.md)）
 到了現在。加減算是做過稍微大一點的專案，也帶過一些小專案
 重新看過這本書，就慢慢理解了一點 Uncle Bob 想說的
 

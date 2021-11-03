@@ -42,7 +42,7 @@
 | 總共整理了 39 則書摘
 | 目前最推薦的書還是前期看的 `為什麼我們這樣生活，那樣工作 ? <{filename}/posts/book/2015/08-the-power-of-habit.md>`_ 跟 `少，但是更好 <{filename}/posts/book/2016/05-essentialism.md>`_
 |
-| 2019 後期，我又開了另一個部落格 `Meet people around the world <https://lee-w.github.io/travlog/>`_
+| 2019 後期，我又開了另一個部落格 `Meet people around the world <https://travlog.wei-lee.me/>`_
 | 那段時間遊牧了一些國家，想寫遊記才創的
 | 但到現在跟旅遊相關的文章
 | 恩... 2 篇......

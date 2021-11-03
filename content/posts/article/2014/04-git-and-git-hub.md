@@ -6,7 +6,7 @@ Slug: git-and-git-hub
 Authors: Lee-W
 
 這份筆記已經是舊的版本了
-請參考[新版](https://lee-w.github.io/git-tutorial/#/)
+請參考[新版](https://wei-lee.me/git-tutorial/#/)
 
 <!--more-->
 

@@ -136,6 +136,6 @@ bandit --ini .bandit
 如果不是整個檔案或種類要跳過，則可以在程式碼後面加上 `# nosec`
 
 ## Reference
-* [Python Security Tool - PyCon US 2019](https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/10/python-security-tool/)
-* [Watch out for Safety Bandits! - PyCon AU 2018](https://lee-w.github.io/pycon-note/posts/pycon-au-2018/2019/08/watch-out-for-safety-bandits/)
+* [Python Security Tool - PyCon US 2019](https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/10/python-security-tool/)
+* [Watch out for Safety Bandits! - PyCon AU 2018](https://wei-lee.me/pycon-note/posts/pycon-au-2018/2019/08/watch-out-for-safety-bandits/)
 * [用 Bandit 靜態掃描工具，掃描 Python 專案中的安全性問題](https://myapollo.com.tw/zh-tw/secure-your-python-code-with-bandit/)

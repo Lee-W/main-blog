@@ -294,6 +294,6 @@ pipx install [package]
 ```
 
 ## Reference
-* [這樣的開發環境沒問題嗎？ - PyCon TW 2018](https://lee-w.github.io/pycon-note/posts/pycon-tw-2018/2019/10/is-your-dev-env-alright/)
-* [Pipenv: The Future of Python Dependency Management - PyCon US 2018](https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/11/pipenv-the-future-of-python-dependency-management/)
-* [Python Dependency Management - PyCon DE 2018](https://lee-w.github.io/pycon-note/posts/pycon-de-2018/2019/12/python-dependency-management/)
+* [這樣的開發環境沒問題嗎？ - PyCon TW 2018](https://wei-lee.me/pycon-note/posts/pycon-tw-2018/2019/10/is-your-dev-env-alright/)
+* [Pipenv: The Future of Python Dependency Management - PyCon US 2018](https://wei-lee.me/pycon-note/posts/pycon-us-2018/2019/11/pipenv-the-future-of-python-dependency-management/)
+* [Python Dependency Management - PyCon DE 2018](https://wei-lee.me/pycon-note/posts/pycon-de-2018/2019/12/python-dependency-management/)

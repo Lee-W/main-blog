@@ -163,7 +163,7 @@ Parallel: 一個時間點同時跑
 ### What Steve Jobs Taught Me about Software Development and Life in General
 
 這就是 Carosell 待過 Apple 的 VP
-大致上覺得跟[少，但是更好](http://lee-w.github.io/posts/book/2016/03/essentialism/#essentialism)
+大致上覺得跟[少，但是更好]({filename}/posts/book/05-essentialism.md#essentialism)
 
 Saying, "No!" enables focus, flow, success.
 

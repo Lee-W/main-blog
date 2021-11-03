@@ -21,7 +21,7 @@ Summary: Story
 這本書交錯著蘇老師的成長歷程跟在偏鄉看到的事
 我想大概還是偏鄉的那段故事比較吸引我
 看著不同生長背景的人的故事，讓我更有能力去理解用不同方式去思考的人們
-（ 同場加映：[做工的人](http://lee-w.github.io/posts/book/2017/03/worker/) ）
+（ 同場加映：[做工的人](http://wei-lee.me/posts/book/2017/03/worker/) ）
 
 ---
 

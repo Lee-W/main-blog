@@ -40,11 +40,11 @@ Series: Python Table Manners
 
 ## 參考資料
 有些文章會同時涵括多過我想提的主題，我會把那些參考資料放在這
-如果是我聽過的 PyCon 演講，我會連結到我自己的 [PyCon Note](https://lee-w.github.io/pycon-note/)，裡面會有該場演講的相關資訊和我的筆記
+如果是我聽過的 PyCon 演講，我會連結到我自己的 [PyCon Note](https://wei-lee.me/pycon-note/)，裡面會有該場演講的相關資訊和我的筆記
 
 * [Understanding best-practice Python tooling by comparing popular project templates](https://medium.com/@jonas.r.kemper/understanding-best-practice-python-tooling-by-comparing-popular-project-templates-6eba49229106)
     * 這篇文章整理和比較了 18 個比較有名的 Python 專案模板
 * [How to set up a perfect Python project](https://sourcery.ai/blog/python-best-practices/)
     * 這篇文章整理上面那篇文章很推薦其中一個模板
 * [My Python Development Environment, 2020 Edition](https://jacobian.org/2019/nov/11/python-environment-2020/)
-* [Modern development environments for Pythonistas - PyCon JP 2019](https://lee-w.github.io/pycon-note/posts/pycon-jp-2019/2019/10/modern-development-environments-for-pythonistas/)
+* [Modern development environments for Pythonistas - PyCon JP 2019](https://wei-lee.me/pycon-note/posts/pycon-jp-2019/2019/10/modern-development-environments-for-pythonistas/)

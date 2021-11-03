@@ -203,7 +203,7 @@ pipenv run coverage-badge -o docs/coverage.svg
 ```
 
 ## Reference
-* [Publish a (Perfect) Python Package on PyPI](https://lee-w.github.io/pycon-note/posts/europython-2019/2020/03/publish-a-perfetc-python-package-on-pypi/)
+* [Publish a (Perfect) Python Package on PyPI](https://wei-lee.me/pycon-note/posts/europython-2019/2020/03/publish-a-perfetc-python-package-on-pypi/)
 * [MkDocs](https://www.mkdocs.org/)
 * [mkdocs-material](https://github.com/squidfunk/mkdocs-material)
 * [shield.io](https://shields.io/)

@@ -123,8 +123,8 @@ EuroPython 就連實體會議找不到轉接線都模擬了（誤
 晚上我又另外有事，第一天沒聽到什麼演講
 這兩場是我還有時間做筆記覺得也蠻不錯的演講
 
-* [Clean Architectures in Python](https://lee-w.github.io/pycon-note/posts/europython-2020/2020/07/clean-architectures-in-python/)
-* [Practical Optimisations for Pandas](https://lee-w.github.io/pycon-note/posts/europython-2020/2020/07/practical-optimisations-for-pandas/)
+* [Clean Architectures in Python](https://wei-lee.me/pycon-note/posts/europython-2020/2020/07/clean-architectures-in-python/)
+* [Practical Optimisations for Pandas](https://wei-lee.me/pycon-note/posts/europython-2020/2020/07/practical-optimisations-for-pandas/)
 
 我超佩服 @ongchinhwee
 她每個研討會都能在 twitter 上做超多超快的筆記
@@ -186,7 +186,7 @@ Noah 分享了亞太地區 PyCon 的近況
 #### Making Pandas Fly
 講者 Ian Ozsvald 同時也是 High Performance Python 的作者
 這場主要談如何讓 Pandas 更有效率，大多都是蠻泛用的技巧，算是蠻有收穫的
-筆記我放在 [Making Pandas Fly](https://lee-w.github.io/pycon-note/posts/europython-2020/2020/07/making-pandas-fly/)
+筆記我放在 [Making Pandas Fly](https://wei-lee.me/pycon-note/posts/europython-2020/2020/07/making-pandas-fly/)
 
 如果覺得這場演講對你有幫助，可以寄明信片給 Ian
 Ian 很喜歡收明信片 XD

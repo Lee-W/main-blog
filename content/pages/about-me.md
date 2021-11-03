@@ -161,8 +161,8 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 ### Books
 * [Learning Python 5e Note](https://github.com/Lee-W/Learning_Python)
 * [Python Cookbook](https://github.com/Lee-W/Python_Cookbook)
-* [The Clean Code](http://lee-w.github.io/posts/tech/2018/11/the-clean-code/)
-* [The Clean Coder](http://lee-w.github.io/posts/tech/2018/11/the-clean-coder/)
+* [The Clean Code](http://wei-lee.me/posts/tech/2018/11/the-clean-code/)
+* [The Clean Coder](http://wei-lee.me/posts/tech/2018/11/the-clean-coder/)
 
 ### MOOCs
 * [Machine Learning (Coursera)](https://github.com/Lee-W/Machine-Learning-Coursera)

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "lee-w.github.io"
+name = "wei-lee.me"
 version = "0.1.0"
 description = "Wei Lee's personal blog"
 authors = ["Wei Lee <weilee.rx@gmail.com>"]
