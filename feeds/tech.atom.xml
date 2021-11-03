@@ -1993,8 +1993,8 @@ session manager 則是透過 &lt;code&gt;.*-talkback&lt;/code&gt; 跟講者說�
 晚上我又另外有事，第一天沒聽到什麼演講&lt;br/&gt;
 這兩場是我還有時間做筆記覺得也蠻不錯的演講&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/europython-2020/2020/07/clean-architectures-in-python/"&gt;Clean Architectures in Python&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/europython-2020/2020/07/practical-optimisations-for-pandas/"&gt;Practical Optimisations for Pandas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/europython-2020/2020/07/clean-architectures-in-python/"&gt;Clean Architectures in Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/europython-2020/2020/07/practical-optimisations-for-pandas/"&gt;Practical Optimisations for Pandas&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;我超佩服 @ongchinhwee&lt;br/&gt;
 她每個研討會都能在 twitter 上做超多超快的筆記&lt;br/&gt;
@@ -2044,7 +2044,7 @@ session manager 則是透過 &lt;code&gt;.*-talkback&lt;/code&gt; 跟講者說�
 &lt;h4 id="making-pandas-fly"&gt;Making Pandas Fly&lt;/h4&gt;
 &lt;p&gt;講者 Ian Ozsvald 同時也是 High Performance Python 的作者&lt;br/&gt;
 這場主要談如何讓 Pandas 更有效率，大多都是蠻泛用的技巧，算是蠻有收穫的&lt;br/&gt;
-筆記我放在 &lt;a href="https://lee-w.github.io/pycon-note/posts/europython-2020/2020/07/making-pandas-fly/"&gt;Making Pandas Fly&lt;/a&gt;&lt;/p&gt;
+筆記我放在 &lt;a href="https://wei-lee.me/pycon-note/posts/europython-2020/2020/07/making-pandas-fly/"&gt;Making Pandas Fly&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;如果覺得這場演講對你有幫助，可以寄明信片給 Ian&lt;br/&gt;
 Ian 很喜歡收明信片 XD&lt;/p&gt;
 &lt;h4 id="lightning-talk"&gt;Lightning Talk&lt;/h4&gt;
@@ -2291,7 +2291,7 @@ pipenv run coverage-badge -o docs/coverage.svg
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/europython-2019/2020/03/publish-a-perfetc-python-package-on-pypi/"&gt;Publish a (Perfect) Python Package on PyPI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/europython-2019/2020/03/publish-a-perfetc-python-package-on-pypi/"&gt;Publish a (Perfect) Python Package on PyPI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.mkdocs.org/"&gt;MkDocs&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/squidfunk/mkdocs-material"&gt;mkdocs-material&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://shields.io/"&gt;shield.io&lt;/a&gt;&lt;/li&gt;
@@ -2381,8 +2381,8 @@ tests:
 &lt;p&gt;如果不是整個檔案或種類要跳過，則可以在程式碼後面加上 &lt;code&gt;# nosec&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/10/python-security-tool/"&gt;Python Security Tool - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-au-2018/2019/08/watch-out-for-safety-bandits/"&gt;Watch out for Safety Bandits! - PyCon AU 2018&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/10/python-security-tool/"&gt;Python Security Tool - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-au-2018/2019/08/watch-out-for-safety-bandits/"&gt;Watch out for Safety Bandits! - PyCon AU 2018&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://myapollo.com.tw/zh-tw/secure-your-python-code-with-bandit/"&gt;用 Bandit 靜態掃描工具，掃描 Python 專案中的安全性問題&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Security"></category></entry><entry><title>Python Table Manners - Commitizen: 規格化 commit message</title><link href="https://wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen" rel="alternate"></link><published>2020-03-01T00:45:00+08:00</published><updated>2020-07-19T16:47:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2020-03-01:/posts/tech/2020/03/python-table-manners-commitizen</id><summary type="html">&lt;p&gt;接續著前一篇的 pre-commit ，繼續談 git 相關的工具&lt;br/&gt;
 這篇來聊聊如何透過 &lt;a href="https://github.com/commitizen-tools/commitizen"&gt;commitizen&lt;/a&gt; 規範 commit message&lt;br/&gt;
@@ -3039,7 +3039,7 @@ invoke 當然也想到了&lt;br/&gt;
 &lt;/ul&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/"&gt;Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/"&gt;Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Task"></category></entry><entry><title>Python Table Manners - 程式碼風格</title><link href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-coding-style" rel="alternate"></link><published>2020-02-26T18:39:00+08:00</published><updated>2020-10-04T15:57:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2020-02-26:/posts/tech/2020/02/python-table-manners-coding-style</id><summary type="html">&lt;p&gt;接下來要介紹的是 linters&lt;br/&gt;
 它們是用來檢查程式是否符合特定程式碼風格的一類工具&lt;br/&gt;
 以 Python 來說，則可能是判斷有沒有遵守 &lt;a href="https://www.python.org/dev/peps/pep-0008/"&gt;PEP 8&lt;/a&gt;&lt;br/&gt;
@@ -3153,7 +3153,7 @@ pipenv run pylint &amp;lt;package&amp;gt; ......
 &lt;h2 id="flake8-vs-pylint"&gt;flake8 v.s. pylint&lt;/h2&gt;
 &lt;p&gt;除了相關的檢查外， pylint 會比 flake8 做更嚴格的檢查&lt;br/&gt;
 也可以做更多的設定，但在執行上也會比較慢&lt;/p&gt;
-&lt;p&gt;在 PyCon US 2018 的 &lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/"&gt;Automating Code Quality&lt;/a&gt;，Kyle Knapp 很詳細的比較了這兩個工具&lt;/p&gt;
+&lt;p&gt;在 PyCon US 2018 的 &lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/"&gt;Automating Code Quality&lt;/a&gt;，Kyle Knapp 很詳細的比較了這兩個工具&lt;/p&gt;
 &lt;p&gt;我的使用上會把 flake8 作為強制檢查程式碼風格的一環&lt;br/&gt;
 只要沒有通過 flake8 的檢查，就應該做修正&lt;br/&gt;
 而 pylint 的警告則是只作為參考&lt;/p&gt;
@@ -3175,8 +3175,8 @@ e.g.,&lt;/p&gt;
 &lt;p&gt;除此之外，型別標記的程式碼也會增加可讀性&lt;br/&gt;
 因此近幾年越來越多人注意 Python 的型別標記&lt;/p&gt;
 &lt;p&gt;PyCon US 2017 中 Lisa Guo 和 Hui Ding 的 Keynote Session &lt;a href="https://wei-lee.me/posts/tech/2017/06/Python-at-IG"&gt;Python@Instagram&lt;/a&gt; 講了 Instagram 是為什麼要和如何將龐大的程式庫加上型別標示&lt;br/&gt;
-&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2020/2020/05/static-typing-in-python/"&gt;Static Typing in Python&lt;/a&gt; 則是 PyCon US 2020 年 Dustin 對型別標示和檢查的詳細介紹&lt;br/&gt;
-而 Vita Smid 在 EuroPython 2019 的 &lt;a href="https://lee-w.github.io/pycon-note/posts/europython-2019/2020/03/static-typing-beyond-the-basics-of-def-foo-x-int-str/"&gt;Static typing: beyond the basics of def foo(x: int) -str:&lt;/a&gt; 則講到了型別檢查更進階一點的應用&lt;br/&gt;
+&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2020/2020/05/static-typing-in-python/"&gt;Static Typing in Python&lt;/a&gt; 則是 PyCon US 2020 年 Dustin 對型別標示和檢查的詳細介紹&lt;br/&gt;
+而 Vita Smid 在 EuroPython 2019 的 &lt;a href="https://wei-lee.me/pycon-note/posts/europython-2019/2020/03/static-typing-beyond-the-basics-of-def-foo-x-int-str/"&gt;Static typing: beyond the basics of def foo(x: int) -str:&lt;/a&gt; 則講到了型別檢查更進階一點的應用&lt;br/&gt;
 這幾場演講都非常推薦可以觀看！&lt;/p&gt;
 &lt;h3 id="_7"&gt;使用&lt;/h3&gt;
 &lt;p&gt;以下列的程式碼為例&lt;/p&gt;
@@ -3344,8 +3344,8 @@ pipenv run isort --atomic .
 &lt;/ul&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/"&gt;Automating Code Quality - PyCon US 2018&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/11/life-is-better-painted-black-or-how-to-stop-worrying-and-embrace-auto-formatting/"&gt;Life Is Better Painted Black, or: How to Stop Worrying and Embrace Auto-Formatting - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/"&gt;Automating Code Quality - PyCon US 2018&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/11/life-is-better-painted-black-or-how-to-stop-worrying-and-embrace-auto-formatting/"&gt;Life Is Better Painted Black, or: How to Stop Worrying and Embrace Auto-Formatting - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=wf-BqAjZb8M&amp;amp;feature=youtu.be"&gt;Beyond PEP 8 -- Best practices for beautiful intelligible code - PyCon 2015&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Code Quality"></category></entry><entry><title>Python Table Manners - 測試 (二)</title><link href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-test-2" rel="alternate"></link><published>2020-02-25T18:05:00+08:00</published><updated>2020-10-04T15:46:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2020-02-25:/posts/tech/2020/02/python-table-manners-test-2</id><summary type="html">&lt;p&gt;接續前一篇提到的 &lt;a href="https://docs.pytest.org/en/6.1.1/"&gt;pytest&lt;/a&gt;，繼續看它的其他功能吧&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;接續前一篇提到的 &lt;a href="https://docs.pytest.org/en/6.1.1/"&gt;pytest&lt;/a&gt;，繼續看它的其他功能吧&lt;/p&gt;
@@ -3600,7 +3600,7 @@ pipenv run pytest --cov&lt;span class="o"&gt;=&lt;/span&gt;myproj tests/
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/pytest-dev/pytest-mock"&gt;pytest-mock&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;使用 mocking 的技巧將部分不好測試的物件替換成假的物件&lt;/li&gt;
-&lt;li&gt;推薦參考 &lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/"&gt;Demystifying the Patch Function - PyCon US 2018&lt;/a&gt; （不過她不是用 pytest）&lt;/li&gt;
+&lt;li&gt;推薦參考 &lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/"&gt;Demystifying the Patch Function - PyCon US 2018&lt;/a&gt; （不過她不是用 pytest）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/ESSS/pytest-regressions"&gt;pytest-regressions&lt;/a&gt;&lt;ul&gt;
@@ -3621,12 +3621,12 @@ pipenv run pytest --cov&lt;span class="o"&gt;=&lt;/span&gt;myproj tests/
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://nox.thea.codes/en/stable/"&gt;nox&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;基本上跟 tox 的功能相似，不過組態設定是使用 Python&lt;/li&gt;
-&lt;li&gt;tox 跟 nox 推薦參考 &lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/"&gt;Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;tox 跟 nox 推薦參考 &lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/"&gt;Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/HypothesisWorks/hypothesis"&gt;hypothesis&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;採用 Property-based testing，跟以往要自己產生測試資料不同，我們只需要給予資料的定義（e.g., 0 ~ 10000 之間的整數）， hypothsis 會根據定義來產生隨機的資料，也因此更容易包含到極端案例&lt;/li&gt;
-&lt;li&gt;推薦參考 &lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/escape-from-auto-manual-testing-with-yypothesis/"&gt;Escape from auto-manual testing with Hypothesis!&lt;/a&gt; （PyCon US 2019， Zac 投了 talk, sprint, tutorial, poster，很用心在推廣這套工具）&lt;/li&gt;
+&lt;li&gt;推薦參考 &lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/escape-from-auto-manual-testing-with-yypothesis/"&gt;Escape from auto-manual testing with Hypothesis!&lt;/a&gt; （PyCon US 2019， Zac 投了 talk, sprint, tutorial, poster，很用心在推廣這套工具）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -3634,10 +3634,10 @@ pipenv run pytest --cov&lt;span class="o"&gt;=&lt;/span&gt;myproj tests/
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://pragprog.com/book/bopytest/python-testing-with-pytest"&gt;Python Testing with pytest&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?time_continue=201&amp;amp;v=pX1_I_sEi8k"&gt;快快樂樂成為 Coding Ninja (by pytest) - PyCon APAC 2015&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/"&gt;Pytest: Rapid Simple Testing -  Swiss Python Summit 2016&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/"&gt;Demystifying the Patch Function - PyCon US 2018&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/escape-from-auto-manual-testing-with-yypothesis/"&gt;Escape from auto-manual testing with Hypothesis!&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/"&gt;Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/"&gt;Pytest: Rapid Simple Testing -  Swiss Python Summit 2016&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/"&gt;Demystifying the Patch Function - PyCon US 2018&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/escape-from-auto-manual-testing-with-yypothesis/"&gt;Escape from auto-manual testing with Hypothesis!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/"&gt;Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Test"></category></entry><entry><title>Python Table Manners - 測試 (一)</title><link href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-test-1" rel="alternate"></link><published>2020-02-24T23:33:00+08:00</published><updated>2020-10-04T15:33:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2020-02-24:/posts/tech/2020/02/python-table-manners-test-1</id><summary type="html">&lt;p&gt;設定完環境後，接著開始要開發程式的各項功能&lt;br/&gt;
 要驗證程式正確性時，我們就會撰寫測試案例&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;設定完環境後，接著開始要開發程式的各項功能&lt;br/&gt;
@@ -3889,7 +3889,7 @@ test/test_title.py .              [100%]
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?time_continue=201&amp;amp;v=pX1_I_sEi8k"&gt;快快樂樂成為 Coding Ninja (by pytest) - PyCon APAC 2015&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/"&gt;Pytest: Rapid Simple Testing -  Swiss Python Summit 2016&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/"&gt;Pytest: Rapid Simple Testing -  Swiss Python Summit 2016&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Test"></category></entry><entry><title>Python Table Manners - 虛擬環境和套件管理</title><link href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-dependency-mangement" rel="alternate"></link><published>2020-02-23T12:24:00+08:00</published><updated>2020-10-04T15:22:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2020-02-23:/posts/tech/2020/02/python-table-manners-dependency-mangement</id><summary type="html">&lt;p&gt;開始 Python 專案時，第一步都是建立一個專屬於專案的虛擬環境&lt;br/&gt;
 會需要這麼做是為了避免不同的 Python 專案需要使用到不同版本的套件&lt;br/&gt;
 假設專案 A 需要 &lt;code&gt;lib==2.3.5&lt;/code&gt; 而專案 B 需要 &lt;code&gt;lib==1.0.0&lt;/code&gt;&lt;br/&gt;
@@ -4143,9 +4143,9 @@ python -m pipx ensurepath
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-tw-2018/2019/10/is-your-dev-env-alright/"&gt;這樣的開發環境沒問題嗎？ - PyCon TW 2018&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/11/pipenv-the-future-of-python-dependency-management/"&gt;Pipenv: The Future of Python Dependency Management - PyCon US 2018&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-de-2018/2019/12/python-dependency-management/"&gt;Python Dependency Management - PyCon DE 2018&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-tw-2018/2019/10/is-your-dev-env-alright/"&gt;這樣的開發環境沒問題嗎？ - PyCon TW 2018&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2018/2019/11/pipenv-the-future-of-python-dependency-management/"&gt;Pipenv: The Future of Python Dependency Management - PyCon US 2018&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-de-2018/2019/12/python-dependency-management/"&gt;Python Dependency Management - PyCon DE 2018&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Dependency"></category></entry><entry><title>Python Table Manners 系列</title><link href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-series" rel="alternate"></link><published>2020-02-22T19:32:00+08:00</published><updated>2020-03-18T10:20:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2020-02-22:/posts/tech/2020/02/python-table-manners-series</id><summary type="html">&lt;!--more--&gt;
 
 &lt;p&gt;&lt;a href="https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019"&gt;Python Table Manners - A Clean Style&lt;/a&gt; 是我在 &lt;a href="https://wei-lee.me/posts/tech/2019/12/pycon-ca-2019"&gt;PyCon CA 2019&lt;/a&gt; 給的一個分享&lt;br&gt;
@@ -4192,7 +4192,7 @@ python -m pipx ensurepath
 👉 &lt;a href="https://docs.google.com/forms/d/e/1FAIpQLSe6whkZAEZD10LlPQuSWRYsshySoNR_pux8grGZ0OgmOIkQ3g/viewform"&gt;PyCon Taiwan 志工招募&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_1"&gt;參考資料&lt;/h2&gt;
 &lt;p&gt;有些文章會同時涵括多過我想提的主題，我會把那些參考資料放在這&lt;br&gt;
-如果是我聽過的 PyCon 演講，我會連結到我自己的 &lt;a href="https://lee-w.github.io/pycon-note/"&gt;PyCon Note&lt;/a&gt;，裡面會有該場演講的相關資訊和我的筆記&lt;/p&gt;
+如果是我聽過的 PyCon 演講，我會連結到我自己的 &lt;a href="https://wei-lee.me/pycon-note/"&gt;PyCon Note&lt;/a&gt;，裡面會有該場演講的相關資訊和我的筆記&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@jonas.r.kemper/understanding-best-practice-python-tooling-by-comparing-popular-project-templates-6eba49229106"&gt;Understanding best-practice Python tooling by comparing popular project templates&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;這篇文章整理和比較了 18 個比較有名的 Python 專案模板&lt;/li&gt;
@@ -4203,7 +4203,7 @@ python -m pipx ensurepath
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://jacobian.org/2019/nov/11/python-environment-2020/"&gt;My Python Development Environment, 2020 Edition&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-jp-2019/2019/10/modern-development-environments-for-pythonistas/"&gt;Modern development environments for Pythonistas - PyCon JP 2019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-jp-2019/2019/10/modern-development-environments-for-pythonistas/"&gt;Modern development environments for Pythonistas - PyCon JP 2019&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category></entry><entry><title>pipenv 和 poerty 如何處理在不同作業系統下相依套件不同</title><link href="https://wei-lee.me/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" rel="alternate"></link><published>2020-02-12T11:45:00+08:00</published><updated>2020-02-12T11:45:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2020-02-12:/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent</id><summary type="html">
 &lt;h2 id="_1"&gt;遇到的問題&lt;/h2&gt;
 &lt;p&gt;用 &lt;a href="https://twine.readthedocs.io/en/latest/"&gt;twine&lt;/a&gt; 上傳 Python 套件&lt;br/&gt;
@@ -4581,9 +4581,9 @@ python -m pipx ensurepath
 原本以為是劇場的三明三暗，但好像都會閃超過三次&lt;br&gt;
 但還是蠻有趣的&lt;/p&gt;
 &lt;p&gt;第一場我去聽 &lt;strong&gt;Understanding autistic children using BioSensors and Python!&lt;/strong&gt;&lt;br&gt;
-稍微詳細一點的筆記我都丟在 &lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-ca-2019/2019/12/understanding-autistic-children-using-bioSensors-and-python/"&gt;note&lt;/a&gt;&lt;br&gt;
+稍微詳細一點的筆記我都丟在 &lt;a href="https://wei-lee.me/pycon-note/posts/pycon-ca-2019/2019/12/understanding-autistic-children-using-bioSensors-and-python/"&gt;note&lt;/a&gt;&lt;br&gt;
 這場主要在講她們如何透過 sensor 來偵測自閉症&lt;/p&gt;
-&lt;p&gt;再來我去聽 &lt;strong&gt;My Favourite Errors - Tales From The Ops Side&lt;/strong&gt; (&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-ca-2019/2019/12/my-favourite-errors/"&gt;note&lt;/a&gt;)&lt;br&gt;
+&lt;p&gt;再來我去聽 &lt;strong&gt;My Favourite Errors - Tales From The Ops Side&lt;/strong&gt; (&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-ca-2019/2019/12/my-favourite-errors/"&gt;note&lt;/a&gt;)&lt;br&gt;
 主要是講各種可能遇到的 HTTP 錯誤&lt;br&gt;
 除了前一場本來就是我非常有興趣的議題外，這場是我覺得 PyCon CA 數一數二精彩的議程&lt;br&gt;
 雖然跟 Python 完全沒有直接關係 XD&lt;br&gt;
@@ -4617,11 +4617,11 @@ python -m pipx ensurepath
 這位講者給的答案是 Python 就只是個語言，要看用哪個 implementation 來跑&lt;br&gt;
 &lt;img alt="is-python-compiled-or-interpreted" src="/images/posts-image/2019-12-23-pycon-ca-2019/15770893777395.jpg"&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;PySpark: avoiding common pitfalls and keeping your sanity&lt;/strong&gt; (&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-ca-2019/2019/12/pyspark-avoiding-common-pitfalls-and-keeping-your-sanity/"&gt;note&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PySpark: avoiding common pitfalls and keeping your sanity&lt;/strong&gt; (&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-ca-2019/2019/12/pyspark-avoiding-common-pitfalls-and-keeping-your-sanity/"&gt;note&lt;/a&gt;)&lt;ul&gt;
 &lt;li&gt;PySpark 跟 Python 語法上一些不同需要注意的地方&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;How to Level Up&lt;/strong&gt; (&lt;a href="https://lee-w.github.io/pycon-note/posts/pycon-ca-2019/2019/12/how-to-level-up/"&gt;note&lt;/a&gt;)&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;How to Level Up&lt;/strong&gt; (&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-ca-2019/2019/12/how-to-level-up/"&gt;note&lt;/a&gt;)&lt;ul&gt;
 &lt;li&gt;用什麼心態面對學習，才能讓自己的技術更上一層樓&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -6715,7 +6715,7 @@ Uncle Bob 的書真的每個階段看都會有很不一樣的感覺&lt;br/&gt;
 &lt;p&gt;幾年前第一次看這本書的時候&lt;br/&gt;
 寫程式大多只是交作業，頂多就跟其他的同學一起交大一點的作業或開發一些小專案&lt;br/&gt;
 能不要被雷（或不要雷別人）就很不錯了&lt;br/&gt;
-當時記錄下的摘要也就沒什麼內容（&lt;a href="http://lee-w.github.io/posts/book/2015/01/clean-coder/"&gt;[Book] Clean Coder&lt;/a&gt;）&lt;br/&gt;
+當時記錄下的摘要也就沒什麼內容（&lt;a href="https://wei-lee.me/posts/book/2015/01/Soft"&gt;[Book] Clean Coder&lt;/a&gt;）&lt;br/&gt;
 到了現在。加減算是做過稍微大一點的專案，也帶過一些小專案&lt;br/&gt;
 重新看過這本書，就慢慢理解了一點 Uncle Bob 想說的&lt;/p&gt;
 
@@ -8143,7 +8143,7 @@ Parallel: 一個時間點同時跑&lt;/p&gt;
 覺得很有趣&lt;/p&gt;
 &lt;h3 id="what-steve-jobs-taught-me-about-software-development-and-life-in-general"&gt;What Steve Jobs Taught Me about Software Development and Life in General&lt;/h3&gt;
 &lt;p&gt;這就是 Carosell 待過 Apple 的 VP&lt;br&gt;
-大致上覺得跟&lt;a href="http://lee-w.github.io/posts/book/2016/03/essentialism/#essentialism"&gt;少，但是更好&lt;/a&gt;&lt;/p&gt;
+大致上覺得跟&lt;a href="{filename}/posts/book/05-essentialism.md#essentialism#essentialism"&gt;少，但是更好&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Saying, "No!" enables focus, flow, success.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;How to decide when to say "yes"?&lt;ul&gt;
@@ -9092,7 +9092,7 @@ However, I think this method might still be useful to gain insight in other kind
 &lt;!--more--&gt;
 
 &lt;p&gt;如果對 Chat Bot 的基本運作概念不太熟&lt;br/&gt;
-可以參考&lt;a href="http://lee-w.github.io/posts/bot/2016/11/introduction-to-chatbot/#introduction-to-chatbot"&gt;[Bot] Introduction to Chatbot&lt;/a&gt;&lt;/p&gt;
+可以參考&lt;a href="https://wei-lee.me/posts/tech/2016/11/introduction-to-chatbot#introduction-to-chatbot"&gt;[Bot] Introduction to Chatbot&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="what-is-telegram"&gt;What is Telegram&lt;/h2&gt;
 &lt;p&gt;在台灣，好像還沒有那麼多人用 Telegram&lt;br/&gt;
 簡單來說就跟 Facebook Messenger 或 Line 這類的 IM 差不多&lt;/p&gt;
@@ -9174,7 +9174,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)&lt;br/&gt;
 &lt;p&gt;這裡的 URL 就是設定成你這個 Bot Server 的 URL&lt;br/&gt;
 不過 Telegram 一樣要求必須要是 https&lt;br/&gt;
 最簡單的方式就是使用 ngrok&lt;br/&gt;
-(ngrok 的使用在&lt;a href="http://lee-w.github.io/posts/bot/2016/11/line-echo-bot-on-django/#line-echo-bot-on-django"&gt;[Bot] Line Echo Bot on Django&lt;/a&gt; 最後面有介紹 )&lt;br/&gt;
+(ngrok 的使用在&lt;a href="https://wei-lee.me/posts/tech/2016/11/line-echo-bot-on-django#line-echo-bot-on-django"&gt;[Bot] Line Echo Bot on Django&lt;/a&gt; 最後面有介紹 )&lt;br/&gt;
 平常測試使用 ngrok 就很足夠了&lt;br/&gt;
 之後要 production 的時候，在 deploy 到適當的 server 就好了&lt;/p&gt;
 &lt;h3 id="_set_webhook"&gt;_set_webhook&lt;/h3&gt;
@@ -10462,10 +10462,10 @@ Through Tucker Decomposition, it's possible to combine data from different sourc
 &lt;/li&gt;
 &lt;/ul&gt;</content><category term="Tech"></category><category term="COSCUP"></category><category term="Chat Bot"></category></entry><entry><title>Basic Git Tutorial</title><link href="https://wei-lee.me/posts/tech/2016/09/basic-git-tutorial" rel="alternate"></link><published>2016-09-16T15:41:00+08:00</published><updated>2016-09-16T15:41:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2016-09-16:/posts/tech/2016/09/basic-git-tutorial</id><summary type="html">&lt;p&gt;最近終於下定決定把很久以前的這份&lt;a href="https://wei-lee.me/posts/tech/2014/02/git-and-git-hub"&gt;Git and GitHub&lt;/a&gt; 改版了&lt;br&gt;
 聽說這份在我進實驗室前，就已經被不想教大家 Git 的學長拿去流傳 ...&lt;/p&gt;
-&lt;p&gt;新版： &lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;Git Tutorial&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;新版： &lt;a href="https://wei-lee.me/git-tutorial/#/"&gt;Git Tutorial&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最近終於下定決定把很久以前的這份&lt;a href="https://wei-lee.me/posts/tech/2014/02/git-and-git-hub"&gt;Git and GitHub&lt;/a&gt; 改版了&lt;br&gt;
 聽說這份在我進實驗室前，就已經被不想教大家 Git 的學長拿去流傳 ...&lt;/p&gt;
-&lt;p&gt;新版： &lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;Git Tutorial&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;新版： &lt;a href="https://wei-lee.me/git-tutorial/#/"&gt;Git Tutorial&lt;/a&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;新版主要加了&lt;/p&gt;
@@ -11878,9 +11878,9 @@ sudo fc-cache -v -f
 &lt;p&gt;只要把 &lt;code&gt;開啟快速啟動&lt;/code&gt; 取消掉就可以了&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://askubuntu.com/questions/291864/cannot-mount-ntfs-partition-in-ubuntu-13-04"&gt;Cannot mount NTFS partition in Ubuntu 13.04 [duplicate]&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Linux-Unix"></category><category term="Dual Boot"></category></entry><entry><title>Git and Git Hub</title><link href="https://wei-lee.me/posts/tech/2014/02/git-and-git-hub" rel="alternate"></link><published>2014-02-22T16:18:00+08:00</published><updated>2014-02-22T16:18:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2014-02-22:/posts/tech/2014/02/git-and-git-hub</id><summary type="html">&lt;p&gt;這份筆記已經是舊的版本了&lt;br&gt;
-請參考&lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;新版&lt;/a&gt;&lt;/p&gt;
+請參考&lt;a href="https://wei-lee.me/git-tutorial/#/"&gt;新版&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這份筆記已經是舊的版本了&lt;br&gt;
-請參考&lt;a href="https://lee-w.github.io/git-tutorial/#/"&gt;新版&lt;/a&gt;&lt;/p&gt;
+請參考&lt;a href="https://wei-lee.me/git-tutorial/#/"&gt;新版&lt;/a&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;最近因為專題需要，所以寫了一份簡單的 Git 筆記&lt;br&gt;
