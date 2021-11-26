@@ -51,6 +51,8 @@ I was the executor of the program and the leader of the teaching assistant team.
 * Delivered a human resource management system using [django](https://www.djangoproject.com)
 
 ## Community Involvement
+**[Nov 2021 - Present] Vice-Chairperson, [PyCon Taiwan](https://tw.pycon.org/) 2022**
+
 **[Oct 2020 - Nov 2021] Chairperson, [PyCon Taiwan](https://tw.pycon.org/) 2021**
 
 **[Dec 2019 - Sep 2020] Program Chair, [PyCon Taiwan](https://tw.pycon.org/) 2020**
