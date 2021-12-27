@@ -27,6 +27,7 @@ EuroPython 2020 在 3 月底的時候公佈轉成線上會議
 但我覺得已經算是盡可能把實體會議的一切搬到線上了
 能在這麼短的時間內，完成那麼多規劃真的蠻厲害的
 最棒的一點是，留了很多文件給大家參考 🤩
+
 * [EuroPython 2020 Online Conference Tools](https://docs.google.com/document/d/1OAVtZnxVgmkDGvSV1vEzra7m5Nfjr-81kCrustzxAek/edit#)
 * [EuroPython 2020 Speaker Guide](https://docs.google.com/document/d/1hno9PgvEViHBkmCXP6BkpAsL8-mTpm6Sb8S6A8lwVPs/edit#heading=h.b0yozxqx8i03)
 
