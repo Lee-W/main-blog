@@ -78,6 +78,7 @@ MARKDOWN = {
         "markdown.extensions.nl2br": {},
         "markdown.extensions.toc": {"toc_depth": "1-3"},
         "mdx_del_ins": {},
+        "md_mermaid": {},
     },
     "output_format": "html5",
 }
