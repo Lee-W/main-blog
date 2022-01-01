@@ -98,6 +98,7 @@
 <li><a href="#ch-3">Ch 3 線上廣告產品概覽</a></li>
 <li><a href="#ch-4">Ch 4 合約位廣告</a></li>
 <li><a href="#ch-5">Ch 5 搜尋廣告與競價廣告</a></li>
+<li><a href="#ch-6-">Ch 6 - 程式化交易廣告</a></li>
 </ul>
 </li>
 </ul>
@@ -233,11 +234,11 @@
 </ul>
 </li>
 <li>廣告網絡（AD Network，ADN）<ul>
-<li>按照人群或上下文標籤售賣給需求方，並用競價的方式分配流量</li>
+<li>按人群或上下文標籤賣廣告給需求方，用競價的方式分配流量</li>
 <li>收費方式： CPC</li>
 </ul>
 </li>
-<li>實時競價（Real Time Bidding，RTB）<ul>
+<li>即時競價（Real Time Bidding，RTB）<ul>
 <li>需求方按自己的人群定義來挑選流量</li>
 </ul>
 </li>
@@ -415,7 +416,7 @@
 <li>使用者輸入的查詢（query）透過與關鍵詞匹配，來確定是否可以觸發該條廣告</li>
 </ul>
 </li>
-<li>結算方式：  CPC </li>
+<li>結算方式：  CPC</li>
 <li>曝光區一般分為北、東、南3個部分，其中南區較為少用<ul>
 <li><img alt="ad-loc" src="/images/posts-image/2021-computational-advertising/ad-loc.jpg"/></li>
 </ul>
@@ -467,22 +468,16 @@
 </li>
 </ul>
 </li>
-<li>
-<p>VCG 定價</p>
-<ul>
-<li>
-<p>贏得了某個位置的廣告主，其所付出的成本應該等於他佔據這個位置給其他市場參與者帶來的價值損害</p>
+<li>VCG 定價<ul>
+<li>贏得了某個位置的廣告主，其所付出的成本應該等於他佔據這個位置給其他市場參與者帶來的價值損害</li>
+<li>邏輯過於複雜，比較難以向廣告主解釋清楚，「給其他市場參與者帶來的價值損害」也很難驗證</li>
+</ul>
 </li>
-<li>
-<p>邏輯過於複雜，比較難以向廣告主解釋清楚，「給其他市場參與者帶來的價值損害」也很難驗證</p>
+</ul>
 </li>
 <li>Myerson 最佳拍賣<ul>
 <li>對於期望收益很可能比較高的大玩家，會透過虛擬出價的變換對其進行一定程度的懲罰，以刺激其出更高的價格</li>
 <li>實作上大多平台都會採用部分的概念（e.g., 對出價能力強的買家進行一定程度的價格歧視），但不會公開宣稱</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -515,6 +510,258 @@
 </ul>
 </li>
 </ul>
+<h3 id="ch-6-">Ch 6 - 程式化交易廣告</h3>
+<h4 id="_15">即時競價</h4>
+<ul>
+<li>
+<p>客製化使用者標籤（customized audience segmentation）: 在做人群選擇時，需要利用廣告主自有的資料 ← <strong>即時競價的關鍵產品目標</strong></p>
+</li>
+<li>
+<p>流程</p>
+<ol>
+<li>使用者標識映射（cookie 映射）<ol>
+<li>從<code>廣告主網站</code>向 <code>DSP 伺服器</code> 發起 cookie 映射請求</li>
+<li><code>DSP</code> 與 <code>ADX 伺服器</code>之間通信完成 cookie 映射</li>
+</ol>
+</li>
+<li>廣告請求（ad call）<ol>
+<li>當<code>使用者</code>接觸到<code>媒體網站</code>的廣告位時，前端向 <code>ADX</code> 發起廣告請求</li>
+<li><code>ADX</code> 向各 <code>DSP</code> 傳送 URL（或應用 ID ）和使用者標識，發起詢價請求</li>
+<li><code>媒體網站</code> 從勝出的 <code>DSP</code> 拿到廣告創意並展示</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+User --2.1--&gt;Media
+Media --2.2--&gt; ADX
+ADX &lt;--2.3--&gt; DSP
+Ad -.1.1.-&gt; DSP
+DSP &lt;-.1.2.-&gt; ADX
+
+User[使用者]
+Media[媒體網站]
+Ad[廣告主]
+DSP[DSP 1..n]
+ADX[ADX]
+</div>
+<ul>
+<li><a href="https://www.iab.com/">IAB</a> 制定了 <a href="https://openrtb.github.io/OpenRTB/">OpenRTB</a> 接口標準，已經被一些 ADX 採用</li>
+</ul>
+<h4 id="preferred-dealpd">優選（Preferred Deal，PD）</h4>
+<ul>
+<li>步驟<ol>
+<li><code>使用者</code>訪問<code>媒體頁面</code></li>
+<li><code>媒體頁面</code>通過 JavaScript 程式碼或 SDK 向<code>供給方廣告投放機</code>發起廣告請求</li>
+<li><code>供給方廣告投放機</code>向<code>需求方廣告投放機</code>發起詢問是否需要此次廣告曝光機會</li>
+<li><code>需求方廣告投放機</code>判斷是否需要此次曝光<ol>
+<li>需要，則返回相應的廣告創意</li>
+<li>不需要曝光機會，則通知<code>媒體廣告投放機</code>，由<code>供給方廣告投放機</code>從自有廣告庫中選擇合適的創意返回</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<div class="mermaid">
+flowchart TD
+User --1. 訪問--&gt; Media --2. 廣告請求--&gt; SAD
+SAD --3. 曝光機會詢問--&gt; DAD --&gt; adop
+adop --&gt;|4-1. Yes, 提供廣告| SAD
+adop --&gt;|4-2. No, 由供給方選其他廣告回傳| SAD
+
+User[使用者]
+Media[媒體頁面]
+SAD[供給方廣告投放機]
+DAD[需求方廣告投放機]
+adop{是否需要廣告機會}
+</div>
+<ul>
+<li>計價方式: CPM<ul>
+<li>沒有多方競價，又有選擇流量的便利，因一般比市場 CPM 單價</li>
+<li>決策過程可能存在比較多的投放機往返</li>
+</ul>
+</li>
+</ul>
+<h4 id="_16">私有市場</h4>
+<ul>
+<li>邀請制的交易方式<ul>
+<li>廣告主的品質可以較好地控制（優選的好處）</li>
+<li>被邀請的各需求方間仍需競價，有利於提升媒體的變現能力（競價的好處）</li>
+</ul>
+</li>
+<li>以 DoubleClick ADX、Mopub 等爲代表的主流 ADX 都在大力加強私有市場的產品和服務</li>
+</ul>
+<h4 id="pdb">程式化直投 (PDB)</h4>
+<ul>
+<li>直接購買與即時競價的過度<ul>
+<li>定價、保量或半保量</li>
+<li>需求方可以對採買的庫存做廣告投放決策</li>
+<li>有時可進行一定的流量選擇</li>
+</ul>
+</li>
+<li>特點<ol>
+<li>跨媒體頻率控制</li>
+<li>多個子產品流量分配 → 提高流量使用價值<ul>
+<li>需求方可以根據自有 CRM、DMP 以及策略在子產品之分配流量 → 相當於一個內部的 ADN</li>
+</ul>
+</li>
+<li>一定比例的還量<ul>
+<li>部分媒體向 DSP 提供了一定比例的還量自由（例如可以返還20%的廣告請求）<ul>
+<li>頻率過高或人群不匹配時，DSP 可以決定不投放廣告</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="adx">廣告交易平臺 (ADX)</h4>
+<ul>
+<li>計價方式： CPM</li>
+<li>產品案例： DoubleClick ADX</li>
+</ul>
+<h4 id="dsp">需求方平臺 (DSP)</h4>
+<ul>
+<li>產品核心特徵<ol>
+<li>程式化的流量購買方式（e.g., RTB, 優選）</li>
+<li>供需求方進行客製化使用者劃分</li>
+</ol>
+</li>
+<li>產品策略<ul>
+<li>檢索、排序、定價、<strong>出價</strong><ul>
+<li>出價直接決定 DSP 的流量基本單位成本和利潤</li>
+<li>出價策略（主要看 eCPM 和市價隨時間變化的曲線）<ol>
+<li>通過歷史資料，得到 eCPM 和市價的曲線</li>
+<li>將一天的預算分配到 $eCPM / 市價$ 較大的流量</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>重定向<ul>
+<li>對曾經對廣告主服務感興趣的使用者找出來，再對他們投放</li>
+<li>召回重定向與個性化重定向<ul>
+<li>網站重定向（site retargeting）： 將一段時間內到達過廣告主服務的使用者作爲重定向集合</li>
+<li>個人化重定向（personalized retargeting）： 對重定向流量進行個人化加工<ul>
+<li>對處於不同購買階段（e.g., 瀏覽、搜索、加入購物）的使用者，採用合適的創意推動他儘快完成轉化行爲</li>
+<li>對有過購買記錄的使用者推薦相關的商品以提升二次購買率<ul>
+<li>動態創意</li>
+<li>推薦引擎</li>
+<li>廣告主商品庫存即時接口<ul>
+<li>避免使用者點擊廣告後發現售完</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>搜索重定向： 將搜索過與廣告主直接相關的關鍵詞的使用者群作爲重定向集合</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>新客推薦（look-alike）<ul>
+<li>由廣告主根據自己的第一方資料提供一部分種子使用者，再由第二方資料的廣告平臺分析這些使用者網絡行爲的特徵，並根據這些特徵找到具有相似特徵的拓展人群</li>
+</ul>
+</li>
+</ul>
+<h4 id="ssp">供給方平臺 （SSP）</h4>
+<ul>
+<li>產品策略<ol>
+<li>聚合（mediation）： 集成多個 ADN 的 JavaScript 程式碼或 SDK，動態決定向誰請求廣告</li>
+<li>廣告投放（ad serving）</li>
+<li>市場（marketplace）： 程式化交易產生後，SSP也會以RTB方式向DSP請求廣告，形成了一個市場</li>
+</ol>
+</li>
+</ul>
+<div class="mermaid">
+
+flowchart LR
+TA[受眾標籤] --&gt; AD[SSP 內部廣告]
+TA[受眾標籤] --&gt; ADNs
+
+AD --&gt; DSPs
+ADNs --&gt; DSPs
+
+subgraph adserver [廣告投放]
+AD
+end
+
+subgraph mediation [聚合]
+ADNs[ADN 1..n]
+end
+
+subgraph market [市場]
+DSPs[DSP 1..n]
+end
+</div>
+<ul>
+<li>
+<p>決策過程</p>
+<ol>
+<li>估算出被聚合的 ADN 和內部廣到的 eCPM</li>
+<li>用排序出最好的價格作為底價向 DSP 詢價</li>
+<li>若排序最高的 ADN 拒絕請求，則向後面的排名發出請求 → 可能造成延遲</li>
+</ol>
+</li>
+<li>
+<p>Header Bidding</p>
+<ul>
+<li>Bidder 繞過 ADX 直接向媒體報價，媒體根據出價高低決定中標者，如果沒有，再交由 ADX 進行即時競標<ul>
+<li>Bidder： 所有可以進行報價的服務（e.g., DSP、 ADX、其他廣告參與者）</li>
+</ul>
+</li>
+<li>主要區別<ul>
+<li>繞過 ADX 接可回傳報價的 DSP 而非只能估計eCPM 的 ADN<ul>
+<li>收入最佳化變簡單</li>
+<li>容易獲得更高的 eCPM</li>
+</ul>
+</li>
+<li>缺點<ul>
+<li>廣告延遲<ul>
+<li>實際曝光減少</li>
+<li>影響使用者體驗</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>過程<ol>
+<li><code>使用者</code>訪問<code>媒體頁面</code></li>
+<li><code>媒體</code>將 Header Bidding 的 script hb.js 放在 HTML 的 head 中發給<code>使用者瀏覽器</code></li>
+<li>透過 hb.js，<code>使用者瀏覽器</code>向媒體網站約定好的 <code>Bidder</code> 發起曝光機會的競價請求，<code>Bidder</code>將報價回傳給<code>使用者瀏覽器</code></li>
+<li>透過 hb.js，<code>使用者瀏覽器</code>將 <code>Bidder</code> 報價回傳給<code>媒體網站</code></li>
+<li><code>媒體</code>同時向 <code>ADX</code> 或 <code>SSP</code> 發廣告請求</li>
+<li><code>ADX</code> 或 <code>SSP</code> 發起 RTB 過程並獲得廣告候選</li>
+<li><code>媒體</code>將 Header Bidding 出價結果和RTB出價結果排序，出價最高者贏得本次廣告展示機會，<code>使用者瀏覽器</code>請求勝方廣告</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<div class="mermaid">
+flowchart LR
+user --1--&gt; media
+media --2--&gt; user
+user &lt;--3--&gt; js &lt;--3--&gt; bidder
+user --4--&gt; js --4--&gt; media
+media &lt;--5--&gt; ADX
+ADX &lt;--6--&gt; DSPs
+media --7--&gt; js --7 --&gt; user
+
+bidder[bidder 1..n]
+js[js code]
+user
+media[媒體伺服器]
+ADX
+DSPs[DSP 1..n]
+</div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
              
@@ -535,7 +782,7 @@
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2021-02-13T22:35:00+08:00">2021/02/13 - Sat</time>
                 <h4>Read Time</h4>
-                2 min
+                3 min
             <h4>Category</h4>
             <a class="category-link" href="https://wei-lee.me/categories.html#book-ref">Book</a>
             <h4>Tags</h4>
