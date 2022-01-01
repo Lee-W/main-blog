@@ -16,7 +16,7 @@ cssmin = "^0.2.0"
 ghp-import = "^1.0.0"
 pelican-neighbors = "^1.1.0"
 mdx_del_ins = {"git" = "https://github.com/Lee-W/mdx_del_ins"}
-md_mermaid = {"git" = "git@github.com:Lee-W/md_mermaid.git"}
+md_mermaid = {"git" = "https://github.com/Lee-W/md_mermaid"}
 pelican-render-math = "^1.0.3"
 Jinja2 = "2.11.3"
 
