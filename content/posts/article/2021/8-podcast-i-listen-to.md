@@ -92,7 +92,7 @@ Michael Kennedy 跟 Brian Okken 邀請各路來賓來聊聊最近Python 圈發�
 
 當初是因為志祺七七的廣告注意到這個節目
 不過真的很吸引我聽下去好像是從「做工的人」的作者立青那集開始
-👉 [EP.37 監工男神_上| 茶魚飯厚起點!!工地人生遭遇戰 feat.林立青](https://open.firstory.me/story/ckmlmfpmr9v2s0841e0f27c60) 
+👉 [EP.37 監工男神_上| 茶魚飯厚起點!!工地人生遭遇戰 feat.林立青](https://open.firstory.me/story/ckmlmfpmr9v2s0841e0f27c60)
 
 **是我聽的 podcast 中，最有溫度的**
 從節目中能聽到人生百態
