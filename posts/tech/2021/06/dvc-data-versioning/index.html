@@ -238,12 +238,12 @@ dvc remote add --default <span class="nb">local</span> ../dvc_remote
 </code></pre></div>
 <p>Through <code>--default</code> flag, we can push/pull from <code>local</code> remote without specifying remote name.</p>
 <p>Let see what's changed in <code>.dvc/config</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="na">$ cat .dvc/config</span>
+<div class="highlight"><pre><span></span><code><span class="na">$ cat .dvc/config</span><span class="w"></span>
 
-<span class="k">[core]</span>
-<span class="na">remote</span> <span class="o">=</span> <span class="s">local</span>
-<span class="k">['remote "local"']</span>
-<span class="na">url</span> <span class="o">=</span> <span class="s">../../dvc_remote</span>
+<span class="k">[core]</span><span class="w"></span>
+<span class="na">remote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">local</span><span class="w"></span>
+<span class="k">['remote "local"']</span><span class="w"></span>
+<span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">../../dvc_remote</span><span class="w"></span>
 </code></pre></div>
 <p>The url is <code>../../dvc_remote</code> instead of <code>../dvc_remote</code> because it's the relative path to <code>.dvc</code>. As we've not yet push anything to our pseudo remote, <code>../dvc_remote</code> is still empty.</p>
 <h3 id="track-data-through-dvc">Track data through DVC</h3>

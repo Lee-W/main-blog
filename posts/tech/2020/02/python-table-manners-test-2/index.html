@@ -270,23 +270,23 @@
 但 pytest 還是會正常執行<br/>
 這時候可以在專案加入設定檔 <code>pyproject.toml</code> (pytest 6.0.0 之後才支援這種設定檔格式) 定義 marker<br/>
 p.s. 不建議使用 <code>setup.cfg</code> 做為 pytest 的設定檔 (Read More 👉 <a href="https://github.com/pytest-dev/pytest/issues/3523">deprecate setup.cfg support #3523</a>)</p>
-<div class="highlight"><pre><span></span><code><span class="k">[tool.pytest.ini_options]</span>
-<span class="n">minversion</span> <span class="o">=</span> <span class="s">"6.0"</span>
-<span class="n">markers</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s">"slow"</span>
-<span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.pytest.ini_options]</span><span class="w"></span>
+<span class="n">minversion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"6.0"</span><span class="w"></span>
+<span class="n">markers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s">"slow"</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <p>並在執行時加上 <code>--strict-markers</code> 參數</p>
 <div class="highlight"><pre><span></span><code>pipenv run pytest --strict-markers -m <span class="s2">"not slow"</span>
 </code></pre></div>
 <p>pytest 就會告訴我們 <code>slwo</code> 並不是被定義過的 maker</p>
 <p>更進一步可以把 <code>--strict-markers</code> 直接寫入 <code>pyproject.toml</code></p>
-<div class="highlight"><pre><span></span><code><span class="k">[tool.pytest.ini_options]</span>
-<span class="n">minversion</span> <span class="o">=</span> <span class="s">"6.0"</span>
-<span class="n">addopts</span> <span class="o">=</span> <span class="s">"--strict-markers"</span>
-<span class="n">markers</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s">"slow"</span>
-<span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.pytest.ini_options]</span><span class="w"></span>
+<span class="n">minversion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"6.0"</span><span class="w"></span>
+<span class="n">addopts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"--strict-markers"</span><span class="w"></span>
+<span class="n">markers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s">"slow"</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <h2 id="_2">測試例外事件</h2>
 <p>透過 <code>pytest.raise</code> 確認測試案例是否有符合預期的丟出例外事件</p>
@@ -339,25 +339,25 @@ pipenv run pytest --cov<span class="o">=</span>myproj tests/
 </code></pre></div>
 <p>一些更進階的設定，可以寫入設定檔 <code>pyproject.toml</code> (或 <code>.coveragerc</code>，但語法會不太一樣)<br/>
 以下是我自己使用的 <code>pyproject.toml</code></p>
-<div class="highlight"><pre><span></span><code><span class="k">[tool.coverage]</span>
-    <span class="k">[tool.coverage.report]</span>
-    <span class="n">show_missing</span> <span class="o">=</span> <span class="kc">true</span>
-    <span class="n">exclude_lines</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="c1"># Have to re-enable the standard pragma</span>
-        <span class="s">'pragma: no cover'</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.coverage]</span><span class="w"></span>
+<span class="w">    </span><span class="k">[tool.coverage.report]</span><span class="w"></span>
+<span class="w">    </span><span class="n">show_missing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">    </span><span class="n">exclude_lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># Have to re-enable the standard pragma</span><span class="w"></span>
+<span class="w">        </span><span class="s">'pragma: no cover'</span><span class="p">,</span><span class="w"></span>
 
-        <span class="c1"># Don't complain about missing debug-only code:</span>
-        <span class="s">'def __repr__'</span><span class="p">,</span>
-        <span class="s">'if self\.debug'</span><span class="p">,</span>
+<span class="w">        </span><span class="c1"># Don't complain about missing debug-only code:</span><span class="w"></span>
+<span class="w">        </span><span class="s">'def __repr__'</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">'if self\.debug'</span><span class="p">,</span><span class="w"></span>
 
-        <span class="c1"># Don't complain if tests don't hit defensive assertion code:</span>
-        <span class="s">'raise AssertionError'</span><span class="p">,</span>
-        <span class="s">'raise NotImplementedError'</span><span class="p">,</span>
+<span class="w">        </span><span class="c1"># Don't complain if tests don't hit defensive assertion code:</span><span class="w"></span>
+<span class="w">        </span><span class="s">'raise AssertionError'</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">'raise NotImplementedError'</span><span class="p">,</span><span class="w"></span>
 
-        <span class="c1"># Don't complain if non-runnable code isn't run:</span>
-        <span class="s">'if 0:'</span><span class="p">,</span>
-        <span class="s">'if __name__ == .__main__.:'</span>
-    <span class="p">]</span>
+<span class="w">        </span><span class="c1"># Don't complain if non-runnable code isn't run:</span><span class="w"></span>
+<span class="w">        </span><span class="s">'if 0:'</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">'if __name__ == .__main__.:'</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <p>Read More 👉 <a href="https://coverage.readthedocs.io/en/coverage-5.0.3/config.html">Configuration reference</a></p>
 <h2 id="plugins">其他常用 plugins</h2>

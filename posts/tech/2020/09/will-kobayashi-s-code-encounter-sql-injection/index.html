@@ -151,7 +151,7 @@
 <span class="n">password</span> <span class="o">=</span> <span class="s2">"1' OR '1'='1"</span>
 </code></pre></div>
 <p>就會產生</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'1'</span> <span class="k">OR</span> <span class="s1">'1'</span><span class="o">=</span><span class="s1">'1'</span><span class="p">)</span> <span class="k">and</span> <span class="p">(</span><span class="n">pw</span> <span class="o">=</span> <span class="s1">'1'</span> <span class="k">OR</span> <span class="s1">'1'</span><span class="o">=</span><span class="s1">'1'</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'1'</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">'1'</span><span class="o">=</span><span class="s1">'1'</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">pw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'1'</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">'1'</span><span class="o">=</span><span class="s1">'1'</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>因為 1 一定等於 1，這段 SQL 就會產生跟 <code>SELECT * FROM user;</code> 一樣的效果<br/>
 也就是攻擊者在完全不知道帳號密碼的情況下，就可以取得所有 users 的帳號密碼</p>
@@ -358,14 +358,14 @@ pdbpp 在安裝後會取代原生的 pdb<br/>
 </ul>
 <p><code>gen_clause</code> 會被呼叫三次，當輸入的參數 sql 是 <code>WHERE</code> 時，會執行到 948 行的 <code>nout = reparam(val, vars)</code><br/>
 此時輸入的各個參數如下</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">sql</span>
-<span class="s1">'WHERE'</span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="n">sql</span><span class="w"></span>
+<span class="s1">'WHERE'</span><span class="w"></span>
 
-<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">val</span>
-<span class="s1">'account =$account AND password=$password'</span>
+<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="n">val</span><span class="w"></span>
+<span class="s1">'account =$account AND password=$password'</span><span class="w"></span>
 
-<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span> <span class="n">p</span> <span class="n">vars</span>
-<span class="p">{</span><span class="s1">'account'</span><span class="p">:</span> <span class="s2">"1' OR '1'='1"</span><span class="p">,</span> <span class="s1">'password'</span><span class="p">:</span> <span class="s2">"1' OR '1'='1"</span><span class="p">}</span>
+<span class="p">(</span><span class="n">Pdb</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="n">vars</span><span class="w"></span>
+<span class="p">{</span><span class="s1">'account'</span><span class="p">:</span><span class="w"> </span><span class="s2">"1' OR '1'='1"</span><span class="p">,</span><span class="w"> </span><span class="s1">'password'</span><span class="p">:</span><span class="w"> </span><span class="s2">"1' OR '1'='1"</span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h4 id="webdbpyreparam">web/db.py::reparam</h4>
 <ul>
@@ -477,7 +477,7 @@ pdbpp 在安裝後會取代原生的 pdb<br/>
 不過我想本質應該還是相同的<br/>
 有興趣的話，可以拿以下這段 SQL 來測測看 delete 的 SQL injection 是不是真的能清空整個資料表<br/>
 <strong>disclaimer: 請不要拿它用在會影響到其他人的程式上 (e.g., production 環境)</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">USER</span> <span class="k">WHERE</span> <span class="n">account</span> <span class="o">=</span> <span class="s1">''</span> <span class="k">OR</span> <span class="s1">''</span><span class="o">=</span><span class="s1">''</span>
+<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">''</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">''</span><span class="o">=</span><span class="s1">''</span><span class="w"></span>
 </code></pre></div>
 <p><img alt="xkcd joke" src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png"/></p>
 <blockquote>

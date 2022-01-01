@@ -127,13 +127,13 @@ pipenv install pre-commit --dev
 需要注意的是，專案必須要是一個 git 專案<br/>
 這些 git hook 都會被寫入 <code>.git/hooks/</code></p>
 <p>e.g.,</p>
-<div class="highlight"><pre><span></span><code><span class="nt">repos</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">repo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/pre-commit/pre-commit-hooks</span>
-    <span class="nt">rev</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v3.2.0</span>
-    <span class="nt">hooks</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">end-of-file-fixer</span>
-      <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">trailing-whitespace</span>
-        <span class="nt">args</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">--markdown-linebreak-ext=md</span><span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="nt">repos</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pre-commit/pre-commit-hooks</span><span class="w"></span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v3.2.0</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end-of-file-fixer</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trailing-whitespace</span><span class="w"></span>
+<span class="w">        </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">--markdown-linebreak-ext=md</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <p>以上面的例子來說</p>
 <ul>
@@ -181,16 +181,16 @@ Trim Trailing Whitespace.................................................Passed
 </code></pre></div>
 <h2 id="pre-commit-hook_1">使用自定義的 pre-commit hook</h2>
 <p>下面的例子是在 commit 前，要進行 pytest 的檢查</p>
-<div class="highlight"><pre><span></span><code><span class="nt">repos</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">repo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
-    <span class="nt">hooks</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pytest</span>
-        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pytest</span>
-        <span class="nt">stages</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">commit</span><span class="p p-Indicator">]</span>
-        <span class="nt">language</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">system</span>
-        <span class="nt">entry</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pipenv run pytest</span>
-        <span class="nt">pass_filenames</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-        <span class="nt">types</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">python</span><span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="nt">repos</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pytest</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pytest</span><span class="w"></span>
+<span class="w">        </span><span class="nt">stages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">commit</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">        </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">system</span><span class="w"></span>
+<span class="w">        </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipenv run pytest</span><span class="w"></span>
+<span class="w">        </span><span class="nt">pass_filenames</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">        </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">python</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li><code>repo: local</code>: 直接在本地資料夾執行<ul>
@@ -234,20 +234,20 @@ Trim Trailing Whitespace.................................................Passed
 而是會把 <code>stages</code> 改成 <code>push</code><br/>
 並安裝 pre-push 的 hook (i.e., <code>pipenv run pre-commit install -t pre-push</code>)</p>
 <p>如果不想要每個 hook 都各自做設定，可以在 <code>.pre-commit-config.yaml</code> 加上 <code>default_stages</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">default_stages</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="nt">default_stages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <p>表示如果沒有特定指定 <code>stages</code> 的 hook 都只在 <code>push</code> 的階段做檢查</p>
 <h2 id="pre-commit-hook_2">為自己的工具加上 pre-commit hook</h2>
 <p>為你寫的工具加上 pre-commit hook 可以讓人更方便使用你的工具<br/>
 在工具專案中加入 <code>.pre-commit-hooks.yaml</code> 讓 pre-commit 知道其他人引入你的工具時要做什麼處理<br/>
 撰寫的方式跟 local 的 repo 的寫法相似</p>
-<div class="highlight"><pre><span></span><code><span class="nt">repos</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">repo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
-      <span class="nt">hooks</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
-          <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
-          <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
-          <span class="nt">entry</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">...</span>
+<div class="highlight"><pre><span></span><code><span class="nt">repos</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
+<span class="w">      </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
+<span class="w">          </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
 </code></pre></div>
 <h2 id="bouns-commit">Bouns: 可以只跳警告不擋下 commit 嗎？</h2>
 <p>根據 <a href="https://github.com/pre-commit/pre-commit/issues/923">Can I show warning message without blocking the commit? #923</a> 提到的， pre-commit 認為這不是好的作法<br/>

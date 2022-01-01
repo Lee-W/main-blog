@@ -108,11 +108,11 @@
 <h2 id="_2">問題的根源</h2>
 <p>目前最新版 (3.1.1) 的 twine 相依於套件 <a href="https://github.com/jaraco/keyring">keyring</a> (<a href="https://github.com/pypa/twine/blob/3.1.1/setup.cfg#L44">setup.cfg#L44</a>)<br/>
 而 keyring 在不同的作業系統中，相依的套件是不同的 (<a href="https://github.com/jaraco/keyring/blob/master/setup.cfg#L30">setup.cfg#L30</a>)</p>
-<div class="highlight"><pre><span></span><code><span class="n">install_requires</span> <span class="o">=</span>
-    <span class="n">pywin32-ctypes</span><span class="err">!</span><span class="o">=</span><span class="mf">0.1.0</span><span class="p">,</span><span class="err">!</span><span class="o">=</span><span class="mf">0.1.1</span><span class="p">;</span> <span class="n">sys_platform</span><span class="o">==</span><span class="s">"win32"</span>
-    <span class="n">SecretStorage</span><span class="err">&gt;</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span> <span class="n">sys_platform</span><span class="o">==</span><span class="s">"linux"</span>
-    <span class="n">jeepney</span><span class="err">&gt;</span><span class="o">=</span><span class="mf">0.4.2</span><span class="p">;</span> <span class="n">sys_platform</span><span class="o">==</span><span class="s">"linux"</span>
-    <span class="n">importlib_metadata</span><span class="p">;</span> <span class="n">python_version</span> <span class="err">&lt;</span> <span class="s">"3.8"</span>
+<div class="highlight"><pre><span></span><code><span class="n">install_requires</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="n">pywin32-ctypes</span><span class="err">!</span><span class="o">=</span><span class="mf">0.1.0</span><span class="p">,</span><span class="err">!</span><span class="o">=</span><span class="mf">0.1.1</span><span class="p">;</span><span class="w"> </span><span class="n">sys_platform</span><span class="o">==</span><span class="s">"win32"</span><span class="w"></span>
+<span class="w">    </span><span class="n">SecretStorage</span><span class="err">&gt;</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">sys_platform</span><span class="o">==</span><span class="s">"linux"</span><span class="w"></span>
+<span class="w">    </span><span class="n">jeepney</span><span class="err">&gt;</span><span class="o">=</span><span class="mf">0.4.2</span><span class="p">;</span><span class="w"> </span><span class="n">sys_platform</span><span class="o">==</span><span class="s">"linux"</span><span class="w"></span>
+<span class="w">    </span><span class="n">importlib_metadata</span><span class="p">;</span><span class="w"> </span><span class="n">python_version</span><span class="w"> </span><span class="err">&lt;</span><span class="w"> </span><span class="s">"3.8"</span><span class="w"></span>
 </code></pre></div>
 <p>我缺少的的確就是那幾個 <code>sys_platform=="linux"</code> 的套件</p>
 <h2 id="pipenv">pipenv 怎麼處理</h2>
@@ -147,29 +147,29 @@
 <p>透過 poetry 安裝 twine 後<br/>
 產生的 <strong>poetry.lock</strong> 會把 <code>marker = "sys_platform == \"linux\""</code> 記錄下來<br/>
 實際 <code>poetry shell</code> 進去看，的確也沒多安裝這些套件</p>
-<div class="highlight"><pre><span></span><code><span class="k">[[package]]</span>
-<span class="n">category</span> <span class="o">=</span> <span class="s">"main"</span>
-<span class="n">description</span> <span class="o">=</span> <span class="s">"Store and access your passwords safely."</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s">"keyring"</span>
-<span class="n">optional</span> <span class="o">=</span> <span class="kc">false</span>
-<span class="n">python-versions</span> <span class="o">=</span> <span class="s">"&gt;=3.6"</span>
-<span class="n">version</span> <span class="o">=</span> <span class="s">"21.1.0"</span>
+<div class="highlight"><pre><span></span><code><span class="k">[[package]]</span><span class="w"></span>
+<span class="n">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"main"</span><span class="w"></span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Store and access your passwords safely."</span><span class="w"></span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"keyring"</span><span class="w"></span>
+<span class="n">optional</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="n">python-versions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"&gt;=3.6"</span><span class="w"></span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"21.1.0"</span><span class="w"></span>
 
-<span class="k">[package.dependencies]</span>
-<span class="n">SecretStorage</span> <span class="o">=</span> <span class="s">"&gt;=3"</span>
-<span class="n">jeepney</span> <span class="o">=</span> <span class="s">"&gt;=0.4.2"</span>
-<span class="n">pywin32-ctypes</span> <span class="o">=</span> <span class="s">"&lt;0.1.0 || &gt;0.1.0,&lt;0.1.1 || &gt;0.1.1"</span>
+<span class="k">[package.dependencies]</span><span class="w"></span>
+<span class="n">SecretStorage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"&gt;=3"</span><span class="w"></span>
+<span class="n">jeepney</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"&gt;=0.4.2"</span><span class="w"></span>
+<span class="n">pywin32-ctypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"&lt;0.1.0 || &gt;0.1.0,&lt;0.1.1 || &gt;0.1.1"</span><span class="w"></span>
 
-<span class="p">......</span>
+<span class="p">......</span><span class="w"></span>
 
-<span class="k">[[package]]</span>
-<span class="n">category</span> <span class="o">=</span> <span class="s">"main"</span>
-<span class="n">description</span> <span class="o">=</span> <span class="s">"Python bindings to FreeDesktop.org Secret Service API"</span>
-<span class="n">marker</span> <span class="o">=</span> <span class="s">"sys_platform == \"linux\""</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s">"secretstorage"</span>
-<span class="n">optional</span> <span class="o">=</span> <span class="kc">false</span>
-<span class="n">python-versions</span> <span class="o">=</span> <span class="s">"&gt;=3.5"</span>
-<span class="n">version</span> <span class="o">=</span> <span class="s">"3.1.2"</span>
+<span class="k">[[package]]</span><span class="w"></span>
+<span class="n">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"main"</span><span class="w"></span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Python bindings to FreeDesktop.org Secret Service API"</span><span class="w"></span>
+<span class="n">marker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"sys_platform == \"linux\""</span><span class="w"></span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"secretstorage"</span><span class="w"></span>
+<span class="n">optional</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="n">python-versions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"&gt;=3.5"</span><span class="w"></span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"3.1.2"</span><span class="w"></span>
 </code></pre></div>
 <h2 id="_3">總結</h2>
 <p>poetry 在處理不同平台相依套件不同的狀況，處理得比較好<br/>

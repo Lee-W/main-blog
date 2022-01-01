@@ -146,10 +146,10 @@ Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx<br
 <p><img alt="initial document" src="/images/posts-image/2020-02-22-python-table-manner-series/initial document.jpg"/></p>
 <h3 id="_4">修改網站名稱</h3>
 <p>初始的 <code>mkdocs.yml</code> 預設只會有這一行</p>
-<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">My Docs</span>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My Docs</span><span class="w"></span>
 </code></pre></div>
 <p>指的是文件的頁面名稱，先把它改成專案的名稱</p>
-<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PyCon TW post-event report generator (rg-cli)</span>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PyCon TW post-event report generator (rg-cli)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="_5">增加頁面</h3>
 <p>因為 GitHub 也會讀 <code>docs/READMD.md</code> 作為進入專案時看到的文件<br/>
@@ -163,10 +163,10 @@ Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx<br
 │   └── contributing.md
 </code></pre></div>
 <p>接著在 <code>mkdocs.yml</code> 加入 <code>nav</code> 參數，指定不同頁面對應的檔案</p>
-<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PyCon TW post-event report generator (rg-cli)</span>
-<span class="nt">nav</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Home</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Contributing</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">contributing.md</span>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PyCon TW post-event report generator (rg-cli)</span><span class="w"></span>
+<span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Contributing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">contributing.md</span><span class="w"></span>
 </code></pre></div>
 <p>位置是透過參數 <code>docs_dir</code> 來決定相對路徑<br/>
 如果沒有設定，預設是相對於 <code>docs</code></p>
@@ -186,12 +186,12 @@ Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx<br
 </code></pre></div>
 <p>在 <code>mkdocs.yml</code> 加上 <code>theme</code> 參數<br/>
 需要注意的是這裡的 <code>name</code> 不需要加上前綴的 <code>mkdocs-</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rg-cli</span>
-<span class="nt">nav</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Home</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Contributing</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">contributing.md</span>
-<span class="nt">theme</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="s">'material'</span>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rg-cli</span><span class="w"></span>
+<span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Contributing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">contributing.md</span><span class="w"></span>
+<span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">'material'</span><span class="w"></span>
 </code></pre></div>
 <p><img alt="material theme" src="/images/posts-image/2020-02-22-python-table-manner-series/material theme.jpg"/></p>
 <h3 id="_8">輸出靜態網頁</h3>
@@ -210,9 +210,9 @@ Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx<br
 <p>在開源專案中，將文件部署到 GitHub Page 上是相當常見的<br/>
 mkdocs 也為我們考慮到這點</p>
 <p>只要在 <code>mkdocs.yml</code> 加入專案的 remote 相關設定</p>
-<div class="highlight"><pre><span></span><code><span class="nt">repo_url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/pycontw/pycontw-postevent-report-generator</span>
-<span class="nt">remote_branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gh-pages</span>
-<span class="nt">remote_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">origin</span>
+<div class="highlight"><pre><span></span><code><span class="nt">repo_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pycontw/pycontw-postevent-report-generator</span><span class="w"></span>
+<span class="nt">remote_branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gh-pages</span><span class="w"></span>
+<span class="nt">remote_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">origin</span><span class="w"></span>
 </code></pre></div>
 <p>並執行 <code>pipenv run mkdocs gh-deploy</code> 就會自動將文件部署到 GitHub Page 上</p>
 <p>如果想更近一步透過 GitHub Action 來達到 push 原始碼，就自動產生 GitHub Page<br/>

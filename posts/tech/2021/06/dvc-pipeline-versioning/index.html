@@ -191,40 +191,40 @@ $ pipenv run cz commit
 <p><code>dvc run</code> runs the stage right after adding it. If you don't want DVC to run it, you can add <code>--no-exec</code> flag or <a href="https://dvc.org/doc/command-reference/stage/add">dvc stage add</a> with the same arguments</p>
 <p>After adding a stage, DVC updates <code>dvc.yaml</code>, <code>output/.gitignore</code> and <code>dvc.lock</code></p>
 <h4 id="dvcyaml-the-definition-of-stages"><code>dvc.yaml</code>: the definition of stages</h4>
-<div class="highlight"><pre><span></span><code><span class="nt">stages</span><span class="p">:</span>
-  <span class="nt">process-data</span><span class="p">:</span>
-    <span class="nt">cmd</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py process-data</span>
-    <span class="nt">deps</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">data/digit_data.csv</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">data/digit_target.csv</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">digit_recognizer/digit_recognizer.py</span>
-    <span class="nt">outs</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/testing_data.pkl</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/training_data.pkl</span>
+<div class="highlight"><pre><span></span><code><span class="nt">stages</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">process-data</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py process-data</span><span class="w"></span>
+<span class="w">    </span><span class="nt">deps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/digit_data.csv</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/digit_target.csv</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">digit_recognizer/digit_recognizer.py</span><span class="w"></span>
+<span class="w">    </span><span class="nt">outs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/testing_data.pkl</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/training_data.pkl</span><span class="w"></span>
 </code></pre></div>
 <p>DVC transforms what we defined in <code>dvc run</code> to a human-readable format and store it. But if you already know how to define the stage, you can edit <code>dvc.yaml</code> directly. In addition, there're advanced techniques like <a href="https://dvc.org/doc/user-guide/project-structure/pipelines-files#templating">Templating</a> and <a href="https://dvc.org/doc/user-guide/project-structure/pipelines-files#foreach-stages">foreach stages</a> that can help us define complicated stages.</p>
 <h4 id="dvclock-the-hashes-of-dependencies-and-outputs"><code>dvc.lock</code>: the hashes of dependencies and outputs</h4>
-<div class="highlight"><pre><span></span><code><span class="nt">schema</span><span class="p">:</span> <span class="s">'2.0'</span>
-<span class="nt">stages</span><span class="p">:</span>
-  <span class="nt">process-data</span><span class="p">:</span>
-    <span class="nt">cmd</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py process-data</span>
-    <span class="nt">deps</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">data/digit_data.csv</span>
-      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">942481fce846fb9750b7b8023c80a5ef</span>
-      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">490582</span>
-    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">data/digit_target.csv</span>
-      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2a6cfa13365ac9b3af5146133aca6789</span>
-      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3590</span>
-    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">digit_recognizer/digit_recognizer.py</span>
-      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">65ecf27479538a74ade42462b1566db1</span>
-      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3629</span>
-    <span class="nt">outs</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">output/testing_data.pkl</span>
-      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">78be1761d227f71b1a8f858fed766982</span>
-      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">529016</span>
-    <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">output/training_data.pkl</span>
-      <span class="nt">md5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">f95e8f978a05395ba23479ff60eda076</span>
-      <span class="nt">size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">528427</span>
+<div class="highlight"><pre><span></span><code><span class="nt">schema</span><span class="p">:</span><span class="w"> </span><span class="s">'2.0'</span><span class="w"></span>
+<span class="nt">stages</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">process-data</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py process-data</span><span class="w"></span>
+<span class="w">    </span><span class="nt">deps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/digit_data.csv</span><span class="w"></span>
+<span class="w">      </span><span class="nt">md5</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">942481fce846fb9750b7b8023c80a5ef</span><span class="w"></span>
+<span class="w">      </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">490582</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/digit_target.csv</span><span class="w"></span>
+<span class="w">      </span><span class="nt">md5</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2a6cfa13365ac9b3af5146133aca6789</span><span class="w"></span>
+<span class="w">      </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3590</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">digit_recognizer/digit_recognizer.py</span><span class="w"></span>
+<span class="w">      </span><span class="nt">md5</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">65ecf27479538a74ade42462b1566db1</span><span class="w"></span>
+<span class="w">      </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3629</span><span class="w"></span>
+<span class="w">    </span><span class="nt">outs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/testing_data.pkl</span><span class="w"></span>
+<span class="w">      </span><span class="nt">md5</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">78be1761d227f71b1a8f858fed766982</span><span class="w"></span>
+<span class="w">      </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">529016</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/training_data.pkl</span><span class="w"></span>
+<span class="w">      </span><span class="nt">md5</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f95e8f978a05395ba23479ff60eda076</span><span class="w"></span>
+<span class="w">      </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">528427</span><span class="w"></span>
 </code></pre></div>
 <p>DVC uses these hashes to know whether there's any modification on our stages. Therefore, we only add deterministic files. Randomness might make this lock file meaningless. Take a look at the "Avoiding unexpected behavior" in <a href="https://dvc.org/doc/command-reference/run#description">dvc run - Description</a> could save your time debugging unexpected failure.</p>
 <h4 id="outputgitignore-add-files-that-dvc-should-track-to-gitignore"><code>output/.gitignore</code>: Add files that DVC should track to gitignore</h4>
@@ -251,25 +251,25 @@ git add dvc.yaml dvc.lock model/.gitignore
 pipenv run cz commit
 </code></pre></div>
 <p>Similar to our previous step, DVC updates <code>dvc.yaml</code>, <code>dvc.lock</code> and <code>output/.gitignore</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">$ cat dvc.yaml</span>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">$ cat dvc.yaml</span><span class="w"></span>
 
-<span class="nn">...</span>
-  <span class="nt">train</span><span class="p">:</span>
-    <span class="nt">cmd</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py train</span>
-    <span class="nt">deps</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">digit_recognizer/digit_recognizer.py</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/training_data.pkl</span>
-    <span class="nt">outs</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/model.pkl</span>
-  <span class="nt">report</span><span class="p">:</span>
-    <span class="nt">cmd</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py report</span>
-    <span class="nt">deps</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">digit_recognizer/digit_recognizer.py</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/model.pkl</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/testing_data.pkl</span>
-    <span class="nt">outs</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/metrics.json</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/test_data_results.csv</span>
+<span class="nn">...</span><span class="w"></span>
+<span class="w">  </span><span class="nt">train</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py train</span><span class="w"></span>
+<span class="w">    </span><span class="nt">deps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">digit_recognizer/digit_recognizer.py</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/training_data.pkl</span><span class="w"></span>
+<span class="w">    </span><span class="nt">outs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/model.pkl</span><span class="w"></span>
+<span class="w">  </span><span class="nt">report</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py report</span><span class="w"></span>
+<span class="w">    </span><span class="nt">deps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">digit_recognizer/digit_recognizer.py</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/model.pkl</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/testing_data.pkl</span><span class="w"></span>
+<span class="w">    </span><span class="nt">outs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/metrics.json</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/test_data_results.csv</span><span class="w"></span>
 </code></pre></div>
 <p>We can visualize the pipeline through <a href="https://dvc.org/doc/command-reference/dag">dvc dag</a></p>
 <div class="highlight"><pre><span></span><code>$ pipenv run dvc dag
@@ -348,11 +348,11 @@ Use <span class="sb">`</span>dvc push<span class="sb">`</span> to send your upda
     <span class="o">......</span>
 </code></pre></div>
 <p>This is how <code>params.yaml</code> looks like.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">process_data</span><span class="p">:</span>
-  <span class="nt">test_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.5</span>
-  <span class="nt">shuffle</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="nt">train</span><span class="p">:</span>
-  <span class="nt">gamma</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<div class="highlight"><pre><span></span><code><span class="nt">process_data</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">test_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span><span class="w"></span>
+<span class="w">  </span><span class="nt">shuffle</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="nt">train</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span><span class="w"></span>
 </code></pre></div>
 <p>Full code changes can be found on <a href="https://github.com/Lee-W/dvc_example/tree/v5-parameters-in-separate-file">v5-parameters-in-separate-file</a>.</p>
 <p>To add parameters to a stage, we'll need to run the previous <code>dvc run</code> command again with <code>-f</code> and <code>-p</code> flag.</p>
@@ -398,13 +398,13 @@ pipenv run cz commit
     - train.gamma
 </code></pre></div>
 <p><code>params.yaml</code> is the default parameter file name, but DVC also supports YAML, JSON, TOML, and <a href="https://dvc.org/doc/command-reference/params#examples-python-parameters-file">Python files</a>. We only need to add the file name as an additional layer to <code>params</code> to use it. e.g.,</p>
-<div class="highlight"><pre><span></span><code>  <span class="c1"># this is an example of using different parameter file name</span>
-  <span class="c1"># we don't need to make changes to our code</span>
-  <span class="nt">train</span><span class="p">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">......</span>
-    <span class="l l-Scalar l-Scalar-Plain">params</span><span class="p p-Indicator">:</span>
-  <span class="-Error">  </span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">params.json</span>
-      <span class="l l-Scalar l-Scalar-Plain">- train.gamma</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1"># this is an example of using different parameter file name</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># we don't need to make changes to our code</span><span class="w"></span>
+<span class="w">  </span><span class="nt">train</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">......</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">params</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">  </span><span class="w w-Error">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">params.json</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">- train.gamma</span><span class="w"></span>
 </code></pre></div>
 <p>Let's change gamma to 0.1. We can check this change through <a href="https://dvc.org/doc/command-reference/params/diff">dvc params diff</a>. By providing git reference, we can even see parameters difference between different git commits. (e.g., <code>dvc params diff HEAD~1</code>)</p>
 <div class="highlight"><pre><span></span><code>$ pipenv run dvc params diff

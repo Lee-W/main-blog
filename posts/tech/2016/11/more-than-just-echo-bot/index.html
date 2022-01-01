@@ -207,32 +207,32 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <ul>
 <li>Response</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;how is the weather in the Taipei&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;topScoringIntent&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;intent&quot;</span><span class="p">:</span> <span class="s2">&quot;GetCurrentWeather&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;score&quot;</span><span class="p">:</span> <span class="mf">0.50119406</span><span class="p">,</span>
-        <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;triggered&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;GetCurrentWeather&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span>
-                    <span class="p">}</span>
-                <span class="p">]</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[],</span>
-    <span class="nt">&quot;dialog&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;contextId&quot;</span><span class="p">:</span> <span class="s2">&quot;80cd646a-d85d-4b40-873d-1b47fa49adc8&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Question&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;prompt&quot;</span><span class="p">:</span> <span class="s2">&quot;Where would you like to get the current weather for?&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;parameterName&quot;</span><span class="p">:</span> <span class="s2">&quot;location&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;how is the weather in the Taipei&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;topScoringIntent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;intent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GetCurrentWeather&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.50119406</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;actions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;triggered&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GetCurrentWeather&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                    </span><span class="p">{</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">                    </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="p">]</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;entities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;dialog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;contextId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;80cd646a-d85d-4b40-873d-1b47fa49adc8&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Question&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Where would you like to get the current weather for?&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;parameterName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
 <h3 id="apiai">API.ai</h3>
@@ -246,12 +246,12 @@ Mary Johnson at 12 pm tomorrow.
 <ul>
 <li>Response</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;meeting.create&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Lunch with Mary Johnson&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;invitees&quot;</span><span class="p">:[</span><span class="s2">&quot;Mary Johnson&quot;</span><span class="p">],</span>
-    <span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="s2">&quot;2014-08-06T12:00:00-07:00&quot;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;meeting.create&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Lunch with Mary Johnson&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;invitees&quot;</span><span class="p">:[</span><span class="s2">&quot;Mary Johnson&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="s2">&quot;2014-08-06T12:00:00-07:00&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="implement-through-powerful-libraries">Implement Through Powerful Libraries</h2>

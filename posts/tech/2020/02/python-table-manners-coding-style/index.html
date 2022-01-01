@@ -166,23 +166,23 @@ pipenv run flake8
 <p>除了可以直接在 <code>flake8</code> 指令後面加上參數<br/>
 也可以直接寫入設定檔 <code>setup.cfg</code> (或 <code>.flake8</code>, <code>tox.ini</code>）<br/>
 以下是我所使用的設定</p>
-<div class="highlight"><pre><span></span><code><span class="k">[flake8]</span>
-<span class="na">ignore</span> <span class="o">=</span>
-    <span class="c1"># F632: use ==/!= to compare str, bytes, and int literals</span>
-    <span class="na">F632,</span>
-    <span class="c1"># W503: Line break occurred before a binary operator</span>
-    <span class="na">W503,</span>
-    <span class="c1"># E501: Line too long</span>
-    <span class="na">E501,</span>
-    <span class="c1"># E203: Whitespace before ':' (for black)</span>
-    <span class="na">E203</span>
-<span class="na">exclude</span> <span class="o">=</span>
-    <span class="na">.git,</span>
-    <span class="na">__pycache__,</span>
-    <span class="na">build,</span>
-    <span class="na">dist</span>
+<div class="highlight"><pre><span></span><code><span class="k">[flake8]</span><span class="w"></span>
+<span class="na">ignore</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># F632: use ==/!= to compare str, bytes, and int literals</span><span class="w"></span>
+<span class="w">    </span><span class="na">F632,</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># W503: Line break occurred before a binary operator</span><span class="w"></span>
+<span class="w">    </span><span class="na">W503,</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># E501: Line too long</span><span class="w"></span>
+<span class="w">    </span><span class="na">E501,</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># E203: Whitespace before ':' (for black)</span><span class="w"></span>
+<span class="w">    </span><span class="na">E203</span><span class="w"></span>
+<span class="na">exclude</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="na">.git,</span><span class="w"></span>
+<span class="w">    </span><span class="na">__pycache__,</span><span class="w"></span>
+<span class="w">    </span><span class="na">build,</span><span class="w"></span>
+<span class="w">    </span><span class="na">dist</span><span class="w"></span>
 
-<span class="na">max-line-length</span> <span class="o">=</span> <span class="s">88</span>
+<span class="na">max-line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">88</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li><code>ignore</code>: 指定要忽略的錯誤類型（可以從 <a href="https://www.flake8rules.com/">flake8 rules</a> 找到這些錯誤碼）</li>
@@ -213,17 +213,17 @@ pipenv run pylint &lt;package&gt; ......
 但現在我更傾向在 pyproject.toml 中只寫入想要客製化的設定<br/>
 原先的做法會在設定檔 .pylintrc 中有著大量的預設值，不容易找到哪些是修改過的設定，造成維護上的困難<br/>
 不過需要注意的是在某些版本的 pylint 這個設定方式會出錯，所以建議安裝版本 2.6.0 以上的 pylint</p>
-<div class="highlight"><pre><span></span><code><span class="k">[tool.pylint]</span>
-    <span class="k">[tool.pylint.messages_control]</span>
-    <span class="n">disable</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s">"bad-continuation"</span><span class="p">,</span>
-        <span class="s">"missing-function-docstring"</span><span class="p">,</span>
-        <span class="s">"missing-module-docstring"</span><span class="p">,</span>
-        <span class="s">"invalid-name"</span>
-    <span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.pylint]</span><span class="w"></span>
+<span class="w">    </span><span class="k">[tool.pylint.messages_control]</span><span class="w"></span>
+<span class="w">    </span><span class="n">disable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s">"bad-continuation"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"missing-function-docstring"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"missing-module-docstring"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s">"invalid-name"</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
 
-    <span class="k">[tool.pylint.format]</span>
-    <span class="n">max-line-length</span> <span class="o">=</span> <span class="mi">88</span>
+<span class="w">    </span><span class="k">[tool.pylint.format]</span><span class="w"></span>
+<span class="w">    </span><span class="n">max-line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">88</span><span class="w"></span>
 </code></pre></div>
 <p>其中 disable 的錯誤可以在 <a href="http://pylint-messages.wikidot.com/all-codes">pylint-messages</a> 找到</p>
 <h3 id="_6">局部跳過檢查</h3>
@@ -294,9 +294,9 @@ wrong_type_hint.py:8: error: List item <span class="m">2</span> has incompatible
 只要確保我們撰寫的部分都是正確的</p>
 <h3 id="_8">設定</h3>
 <p>以下是我用來設定 mypy 的 <code>setup.cfg</code></p>
-<div class="highlight"><pre><span></span><code><span class="k">[mypy]</span>
-<span class="na">files</span><span class="o">=</span><span class="s">[your files]</span>
-<span class="na">ignore_missing_imports</span><span class="o">=</span><span class="s">true</span>
+<div class="highlight"><pre><span></span><code><span class="k">[mypy]</span><span class="w"></span>
+<span class="na">files</span><span class="o">=</span><span class="s">[your files]</span><span class="w"></span>
+<span class="na">ignore_missing_imports</span><span class="o">=</span><span class="s">true</span><span class="w"></span>
 </code></pre></div>
 <h2 id="-black">自動排版 - black</h2>
 <p>比起 flake8, pylint 只做風格檢查<br/>
@@ -343,10 +343,10 @@ pipenv run black &lt;package&gt;
 我們還是能先指定哪些檔案是要修正，哪些是不用的<br/>
 以下是我放在 <code>pyproject.toml</code> 的設定<br/>
 （p.s. <code>line-length = 88</code> 是 black 的預設值）</p>
-<div class="highlight"><pre><span></span><code><span class="k">[tool.black]</span>
-<span class="n">line-length</span> <span class="o">=</span> <span class="mi">88</span>
-<span class="n">include</span> <span class="o">=</span> <span class="s">'\.pyi?$'</span>
-<span class="n">exclude</span> <span class="o">=</span> <span class="s">'''</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.black]</span><span class="w"></span>
+<span class="n">line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">88</span><span class="w"></span>
+<span class="n">include</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">'\.pyi?$'</span><span class="w"></span>
+<span class="n">exclude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">'''</span>
 <span class="s">/(</span>
 <span class="s">    \.eggs</span>
 <span class="s">  | \.git</span>
@@ -359,7 +359,7 @@ pipenv run black &lt;package&gt;
 <span class="s">  | build</span>
 <span class="s">  | dist</span>
 <span class="s">)/</span>
-<span class="s">'''</span>
+<span class="s">'''</span><span class="w"></span>
 </code></pre></div>
 <h2 id="-isort">排序函式庫 - isort</h2>
 <p><a href="https://github.com/timothycrosley/isort">isort</a> 是自動排列函式庫引入順序的的工具<br/>
@@ -392,8 +392,8 @@ pipenv run isort --atomic .
 <h3 id="_12">設定</h3>
 <p>自從 5.0.0 後， isort 直接把常見的設定寫成 <a href="https://pycqa.github.io/isort/docs/configuration/profiles/">profile</a><br/>
 只要指定 profile 就能直接套用相容的設定</p>
-<div class="highlight"><pre><span></span><code><span class="k">[tool.isort]</span>
-<span class="n">profile</span> <span class="o">=</span> <span class="s">"black"</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.isort]</span><span class="w"></span>
+<span class="n">profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"black"</span><span class="w"></span>
 </code></pre></div>
 <p>不過有一個相關的 bug 到 5.0.5 後才修正 (Ref: <a href="https://github.com/PyCQA/isort/issues/1295">Black profile not compatible with Black (ensure_newline_before_comments not working) #1295</a>)<br/>
 所以還是建議安裝最新的版本</p>

@@ -130,27 +130,27 @@ Cookiecutter 能確保我們不會少代換掉舊的設定（e.g., 舊專案名�
 每個問題依序會以 <code>值 [預設值]: 使用者輸入</code> 的形式出現<br/>
 有的<code>值</code>會因為前面的回答不同，而產生對應的預設值<br/>
 <code>值</code> (e.g., python_table_manners) 會被帶回專案模板去取代模板中的變數 (e.g., project_slug)</p>
-<div class="highlight"><pre><span></span><code><span class="n">project_name</span> <span class="p">[</span><span class="n">Python</span> <span class="n">Project</span><span class="p">]</span><span class="o">:</span> <span class="n">python</span> <span class="n">table</span> <span class="n">manners</span>
-<span class="n">project_slug</span> <span class="p">[</span><span class="n">python_table_manners</span><span class="p">]</span><span class="o">:</span>
-<span class="n">project_description</span> <span class="p">[</span><span class="n">Short</span> <span class="n">Descirption</span> <span class="k">for</span> <span class="n">Python</span> <span class="n">Project</span><span class="p">]</span><span class="o">:</span> <span class="n">example</span> <span class="k">for</span> <span class="n">cookiecutter</span> <span class="n">template</span>
-<span class="n">github_username</span> <span class="p">[</span><span class="n">Lee</span><span class="o">-</span><span class="n">W</span><span class="p">]</span><span class="o">:</span>
-<span class="n">github_url</span> <span class="p">[</span><span class="nl">http</span><span class="p">:</span><span class="c1">//github.com/Lee-W/python_table_manners]:</span>
-<span class="n">author_name</span> <span class="p">[</span><span class="n">Wei</span> <span class="n">Lee</span><span class="p">]</span><span class="o">:</span>
-<span class="n">author_email</span> <span class="p">[</span><span class="n">weilee</span><span class="p">.</span><span class="n">rx</span><span class="p">@</span><span class="n">gmail</span><span class="p">.</span><span class="n">com</span><span class="p">]</span><span class="o">:</span> <span class="n">test</span><span class="p">@</span><span class="n">test</span><span class="p">.</span><span class="n">com</span>
-<span class="n">python_version</span> <span class="p">[</span><span class="mf">3.7</span><span class="p">]</span><span class="o">:</span> <span class="mf">3.9</span>
-<span class="n">Select</span> <span class="nl">dependency_management_tool</span><span class="p">:</span>
-<span class="mi">1</span> <span class="o">-</span> <span class="n">pipenv</span>
-<span class="mi">2</span> <span class="o">-</span> <span class="n">poetry</span>
-<span class="n">Choose</span> <span class="n">from</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span> <span class="mi">2</span>
-<span class="n">use_strict_mypy_config</span> <span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">:</span> <span class="n">n</span>
-<span class="n">Select</span> <span class="nl">open_source_license</span><span class="p">:</span>
-<span class="mi">1</span> <span class="o">-</span> <span class="n">MIT</span> <span class="n">license</span>
-<span class="mi">2</span> <span class="o">-</span> <span class="n">BSD</span> <span class="n">license</span>
-<span class="mi">3</span> <span class="o">-</span> <span class="n">ISC</span> <span class="n">license</span>
-<span class="mi">4</span> <span class="o">-</span> <span class="n">Apache</span> <span class="n">Software</span> <span class="n">License</span> <span class="mf">2.0</span>
-<span class="mi">5</span> <span class="o">-</span> <span class="n">GNU</span> <span class="n">General</span> <span class="n">Public</span> <span class="n">License</span> <span class="n">v3</span>
-<span class="mi">6</span> <span class="o">-</span> <span class="n">Not</span> <span class="n">open</span> <span class="n">source</span>
-<span class="n">Choose</span> <span class="n">from</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span> <span class="mi">1</span>
+<div class="highlight"><pre><span></span><code><span class="n">project_name</span><span class="w"> </span><span class="p">[</span><span class="n">Python</span><span class="w"> </span><span class="n">Project</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">manners</span><span class="w"></span>
+<span class="n">project_slug</span><span class="w"> </span><span class="p">[</span><span class="n">python_table_manners</span><span class="p">]</span><span class="o">:</span><span class="w"></span>
+<span class="n">project_description</span><span class="w"> </span><span class="p">[</span><span class="n">Short</span><span class="w"> </span><span class="n">Descirption</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="n">Project</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">example</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">cookiecutter</span><span class="w"> </span><span class="n">template</span><span class="w"></span>
+<span class="n">github_username</span><span class="w"> </span><span class="p">[</span><span class="n">Lee</span><span class="o">-</span><span class="n">W</span><span class="p">]</span><span class="o">:</span><span class="w"></span>
+<span class="n">github_url</span><span class="w"> </span><span class="p">[</span><span class="nl">http</span><span class="p">:</span><span class="c1">//github.com/Lee-W/python_table_manners]:</span>
+<span class="n">author_name</span><span class="w"> </span><span class="p">[</span><span class="n">Wei</span><span class="w"> </span><span class="n">Lee</span><span class="p">]</span><span class="o">:</span><span class="w"></span>
+<span class="n">author_email</span><span class="w"> </span><span class="p">[</span><span class="n">weilee</span><span class="p">.</span><span class="n">rx</span><span class="p">@</span><span class="n">gmail</span><span class="p">.</span><span class="n">com</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">test</span><span class="p">@</span><span class="n">test</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
+<span class="n">python_version</span><span class="w"> </span><span class="p">[</span><span class="mf">3.7</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="mf">3.9</span><span class="w"></span>
+<span class="n">Select</span><span class="w"> </span><span class="nl">dependency_management_tool</span><span class="p">:</span><span class="w"></span>
+<span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pipenv</span><span class="w"></span>
+<span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">poetry</span><span class="w"></span>
+<span class="n">Choose</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<span class="n">use_strict_mypy_config</span><span class="w"> </span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
+<span class="n">Select</span><span class="w"> </span><span class="nl">open_source_license</span><span class="p">:</span><span class="w"></span>
+<span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">MIT</span><span class="w"> </span><span class="n">license</span><span class="w"></span>
+<span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">BSD</span><span class="w"> </span><span class="n">license</span><span class="w"></span>
+<span class="mi">3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ISC</span><span class="w"> </span><span class="n">license</span><span class="w"></span>
+<span class="mi">4</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Apache</span><span class="w"> </span><span class="n">Software</span><span class="w"> </span><span class="n">License</span><span class="w"> </span><span class="mf">2.0</span><span class="w"></span>
+<span class="mi">5</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">GNU</span><span class="w"> </span><span class="n">General</span><span class="w"> </span><span class="n">Public</span><span class="w"> </span><span class="n">License</span><span class="w"> </span><span class="n">v3</span><span class="w"></span>
+<span class="mi">6</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Not</span><span class="w"> </span><span class="n">open</span><span class="w"> </span><span class="n">source</span><span class="w"></span>
+<span class="n">Choose</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 </code></pre></div>
 <p>所有問題都回答完之後就會出現新的資料夾 python_table_manners<br/>
 （模板以 project_slug 作為產生的資料夾名稱）<br/>
@@ -198,12 +198,12 @@ cookiecutter 背後是透過 jinja2 來取代這些值<br/>
 因為是使用 jinja2 ，當然也能運用它方便的語法<br/>
 並且不限定於模板內才能使用，甚至在 cookiecutter.json 裡面都能使用</p>
 <p>e.g.,</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">"project_name"</span><span class="p">:</span> <span class="s2">"Python Project"</span><span class="p">,</span>
-    <span class="nt">"project_slug"</span><span class="p">:</span> <span class="s2">"{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"</span><span class="p">,</span>
-    <span class="err">...</span><span class="p">,</span>
-    <span class="nt">"_template_version"</span><span class="p">:</span> <span class="s2">"0.6.1"</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Python Project"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"project_slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="err">...</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"_template_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.6.1"</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>（from <a href="https://github.com/Lee-W/cookiecutter-python-template/blob/0.6.1/cookiecutter.json">cookiecutter-python-template/cookiecutter.json @ 0.6.1</a>）</p>
 <p>如果有一些值不想問使用者，可以在 key 的最前面加上 <code>_</code><br/>

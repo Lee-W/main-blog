@@ -183,17 +183,17 @@ pipenv --where
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">[[source]]</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s">"pypi"</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://pypi.org/simple"</span>
-<span class="n">verify_ssl</span> <span class="o">=</span> <span class="kc">true</span>
+<div class="highlight"><pre><span></span><code><span class="k">[[source]]</span><span class="w"></span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"pypi"</span><span class="w"></span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"https://pypi.org/simple"</span><span class="w"></span>
+<span class="n">verify_ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
 
-<span class="k">[dev-packages]</span>
+<span class="k">[dev-packages]</span><span class="w"></span>
 
-<span class="k">[packages]</span>
+<span class="k">[packages]</span><span class="w"></span>
 
-<span class="k">[requires]</span>
-<span class="n">python_version</span> <span class="o">=</span> <span class="s">"3.7"</span>
+<span class="k">[requires]</span><span class="w"></span>
+<span class="n">python_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"3.7"</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li><code>Pipfile.lock</code> 是 JSON 格式的檔案<ul>
@@ -201,26 +201,26 @@ pipenv --where
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">"_meta"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"hash"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">"sha256"</span><span class="p">:</span> <span class="s2">"..."</span>
-        <span class="p">},</span>
-        <span class="nt">"pipfile-spec"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-        <span class="nt">"requires"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">"python_version"</span><span class="p">:</span> <span class="s2">"3.7"</span>
-        <span class="p">},</span>
-        <span class="nt">"sources"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"pypi"</span><span class="p">,</span>
-                <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"https://pypi.org/simple"</span><span class="p">,</span>
-                <span class="nt">"verify_ssl"</span><span class="p">:</span> <span class="kc">true</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="nt">"default"</span><span class="p">:</span> <span class="p">{},</span>
-    <span class="nt">"develop"</span><span class="p">:</span> <span class="p">{}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"_meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"hash"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"sha256"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"pipfile-spec"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"requires"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"python_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.7"</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pypi"</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pypi.org/simple"</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">"verify_ssl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"develop"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>通常沒有什麼特別的理由，可以不用動到 <code>Pipfile</code> 跟 <code>Pipfile.lock</code><br/>
 交給 <code>pipenv</code> 管理就好</p>
@@ -237,33 +237,33 @@ pipenv update &lt;package&gt;
 </code></pre></div>
 <p>以安裝 <a href="https://requests.readthedocs.io/en/master/">requests</a> 為例<br/>
 會更新在 Pipfile 的 <strong>packages</strong> 區段</p>
-<div class="highlight"><pre><span></span><code><span class="k">[packages]</span>
-<span class="n">requests</span> <span class="o">=</span> <span class="s">"*"</span>
+<div class="highlight"><pre><span></span><code><span class="k">[packages]</span><span class="w"></span>
+<span class="n">requests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"*"</span><span class="w"></span>
 </code></pre></div>
 <p>Pipfile.lock 中除了 <code>requests</code> 外，還會列出 <code>requests</code> 的相依套件 <code>urllib3</code> (Ref: <a href="https://github.com/psf/requests/blob/v2.22.0/setup.py#L47">setup.py#L47</a>)</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="err">......</span>
-    <span class="nt">"default"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="err">......</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">......</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="err">......</span><span class="w"></span>
 
-        <span class="nt">"requests"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">"hashes"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"sha256:11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4"</span><span class="p">,</span>
-                <span class="s2">"sha256:9cf5292fcd0f598c671cfc1e0d7d1a7f13bb8085e9a590f48c010551dc6c4b31"</span>
-            <span class="p">],</span>
-            <span class="nt">"index"</span><span class="p">:</span> <span class="s2">"pypi"</span><span class="p">,</span>
-            <span class="nt">"version"</span><span class="p">:</span> <span class="s2">"==2.22.0"</span>
-        <span class="p">},</span>
-        <span class="nt">"urllib3"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">"hashes"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"sha256:3de946ffbed6e6746608990594d08faac602528ac7015ac28d33cee6a45b7398"</span><span class="p">,</span>
-                <span class="s2">"sha256:9a107b99a5393caf59c7aa3c1249c16e6879447533d0887f4336dde834c7be86"</span>
-            <span class="p">],</span>
-            <span class="nt">"version"</span><span class="p">:</span> <span class="s2">"==1.25.6"</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="err">......</span>
-<span class="p">}</span>
+<span class="w">        </span><span class="nt">"requests"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"hashes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                </span><span class="s2">"sha256:11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4"</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="s2">"sha256:9cf5292fcd0f598c671cfc1e0d7d1a7f13bb8085e9a590f48c010551dc6c4b31"</span><span class="w"></span>
+<span class="w">            </span><span class="p">],</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pypi"</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"==2.22.0"</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"urllib3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"hashes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                </span><span class="s2">"sha256:3de946ffbed6e6746608990594d08faac602528ac7015ac28d33cee6a45b7398"</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="s2">"sha256:9a107b99a5393caf59c7aa3c1249c16e6879447533d0887f4336dde834c7be86"</span><span class="w"></span>
+<span class="w">            </span><span class="p">],</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"==1.25.6"</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="err">......</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>可以注意到每個安裝的套件會有三個欄位 <strong>index</strong>, <strong>version</strong> 和 <strong>hashes</strong></p>
 <ul>
