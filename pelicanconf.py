@@ -95,6 +95,7 @@ PLUGINS = [
     "post_stats",
     "assets",
     "series",
+    "render_math",
 ]
 ANOTHER_READ_MORE_LINK = ""
 READERS = {"html": None}
