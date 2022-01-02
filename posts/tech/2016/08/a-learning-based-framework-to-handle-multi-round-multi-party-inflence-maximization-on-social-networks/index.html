@@ -183,21 +183,21 @@
 </ul>
 <h3 id="41-preliminary-reinforcement-learning">4.1 Preliminary: Reinforcement Learning</h3>
 <ul>
-<li>Learn a policy $\pi(s)$ to determine which action to take state s (environment)</li>
-<li>How to estimated $\pi$?<ul>
+<li>Learn a policy <span class="math">\(\pi(s)\)</span> to determine which action to take state s (environment)</li>
+<li>How to estimated <span class="math">\(\pi\)</span>?<ul>
 <li>Expected Accmulated Reward of a state (V function)<ul>
-<li>$ V^\pi(s) = E_\pi{R_t|S_t=s}=...$</li>
+<li><span class="math">\( V^\pi(s) = E_\pi\{R_t|S_t=s\}=...\)</span></li>
 </ul>
 </li>
 <li>Expected Accmulated Reward of a state-action pair (Q function)<ul>
-<li>$ Q^\pi(s, a) = E_\pi{R_t|S_t=s, a_t=a}=...$</li>
+<li><span class="math">\( Q^\pi(s, a) = E_\pi\{R_t|S_t=s, a_t=a\}=...\)</span></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p>The optimal $\pi$ can be obtained through Q functinon</p>
-<p>$ \pi = \arg \min_{a\in A}Q(s,a)$</p>
+<p>The optimal <span class="math">\(\pi\)</span> can be obtained through Q functinon</p>
+<p><span class="math">\( \pi = \arg \min_{a\in A}Q(s,a)\)</span></p>
 <p>(i.e. For all "a" in A, find the "a" such that min Q(s, a))</p>
 <h3 id="42-strategy-oriented-reinforcement-learning">4.2 Strategy-Oriented Reinforcement-Learning</h3>
 <h4 id="setup">Setup</h4>
@@ -241,7 +241,7 @@
 </ul>
 </li>
 <li><del>record the occupation status of all nodes</del><ul>
-<li>$3^{|V|}$, too many</li>
+<li><span class="math">\(3^{|V|}\)</span>, too many</li>
 <li>overfit</li>
 </ul>
 </li>
@@ -262,7 +262,7 @@
 <li>high</li>
 </ul>
 </li>
-<li>Totally, $3^9$ states</li>
+<li>Totally, <span class="math">\(3^9\)</span> states</li>
 </ul>
 </li>
 </ul>
@@ -286,24 +286,24 @@ These data can be used to learn the value functions</p>
 <ul>
 <li>Phase 1: Training<ul>
 <li>The agent update its Q function from the simulation experiences throughout the training rounds</li>
-<li>Update $\pi$ in the meantime</li>
+<li>Update <span class="math">\(\pi\)</span> in the meantime</li>
 </ul>
 </li>
 <li>Phase 2: Competition<ul>
 <li>The agent would not update Q-table</li>
-<li>Generates $\pi$ according to Q-table</li>
+<li>Generates <span class="math">\(\pi\)</span> according to Q-table</li>
 </ul>
 </li>
 </ul>
 <h2 id="43-storm-with-strategy-known">4.3 STORM with Strategy Known</h2>
 <ul>
-<li>Training the model compete against the strategy to learn $\pi$</li>
+<li>Training the model compete against the strategy to learn <span class="math">\(\pi\)</span></li>
 <li>STORM-Q<ul>
 <li>Update Q-function following the concept of Q-learning<ul>
-<li>Q-Learning: $Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t, a_t))$</li>
+<li>Q-Learning: <span class="math">\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t, a_t))\)</span></li>
 </ul>
 </li>
-<li>$\epsilon$-greedy<ul>
+<li><span class="math">\(\epsilon\)</span>-greedy<ul>
 <li>Determine strategies on the current policy derived from Q-table.</li>
 <li>Explore the new directions to avoid local optimum</li>
 </ul>
@@ -347,8 +347,8 @@ These data can be used to learn the value functions</p>
 <li>Use MINMAX theorem to find the equilibrium</li>
 </ul>
 </li>
-<li>$Q(s, a, o)$: The reward of first party when using strategy $a$ against oppoent's strategy $o$ in state $s$</li>
-<li>$Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma V(s_{t+1})]$</li>
+<li><span class="math">\(Q(s, a, o)\)</span>: The reward of first party when using strategy <span class="math">\(a\)</span> against oppoent's strategy <span class="math">\(o\)</span> in state <span class="math">\(s\)</span></li>
+<li><span class="math">\(Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma V(s_{t+1})]\)</span></li>
 <li>Operations  Research</li>
 </ul>
 </li>
@@ -366,7 +366,7 @@ These data can be used to learn the value functions</p>
 <tbody>
 <tr>
 <td>Max the reward in their own Q-table</td>
-<td>Finds equilibrium with one Q-table and determines both side's $a$ at the same time</td>
+<td>Finds equilibrium with one Q-table and determines both side's <span class="math">\(a\)</span> at the same time</td>
 </tr>
 <tr>
 <td>Pure Strategies</td>
@@ -374,7 +374,7 @@ These data can be used to learn the value functions</p>
 </tr>
 <tr>
 <td>Choose strategy by greedy</td>
-<td>Samples from the mixed strategy $\pi_a$ or $\pi_o$</td>
+<td>Samples from the mixed strategy <span class="math">\(\pi_a\)</span> or <span class="math">\(\pi_o\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -385,6 +385,68 @@ These data can be used to learn the value functions</p>
 </ul>
 </li>
 </ul>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
 
 
              

@@ -4437,14 +4437,14 @@ python -m pipx ensurepath
 &lt;li&gt;In theoretical CS&lt;ul&gt;
 &lt;li&gt;Polynomial time → easy/fast&lt;ul&gt;
 &lt;li&gt;However, that's not always the case&lt;/li&gt;
-&lt;li&gt;e.g., $O(n^{100})$&lt;/li&gt;
-&lt;li&gt;When &lt;code&gt;n&lt;/code&gt; grows, even $O(n^2)$ is not efficient&lt;/li&gt;
+&lt;li&gt;e.g., &lt;span class="math"&gt;\(O(n^{100})\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;When &lt;code&gt;n&lt;/code&gt; grows, even &lt;span class="math"&gt;\(O(n^2)\)&lt;/span&gt; is not efficient&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;We're stuck on many problems even just in $O(n^2)$&lt;/li&gt;
-&lt;li&gt;No $N^{2-\epsilon}$ time algorithms known for&lt;ul&gt;
+&lt;li&gt;We're stuck on many problems even just in &lt;span class="math"&gt;\(O(n^2)\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;No &lt;span class="math"&gt;\(N^{2-\epsilon}\)&lt;/span&gt; time algorithms known for&lt;ul&gt;
 &lt;li&gt;String matching&lt;/li&gt;
 &lt;li&gt;computational geometry&lt;/li&gt;
 &lt;li&gt;graph problem in sparse graphs&lt;/li&gt;
@@ -4552,7 +4552,69 @@ python -m pipx ensurepath
 &lt;/li&gt;
 &lt;li&gt;Visibility Graphs&lt;/li&gt;
 &lt;li&gt;Multiscale Visibility Graphs&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Conference"></category></entry><entry><title>PyCon CA 2019</title><link href="https://wei-lee.me/posts/tech/2019/12/pycon-ca-2019" rel="alternate"></link><published>2019-12-23T17:51:00+08:00</published><updated>2019-12-23T17:51:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2019-12-23:/posts/tech/2019/12/pycon-ca-2019</id><summary type="html">&lt;p&gt;隔了一個多月，終於有時間可以來補 PyCon CA 2019 的心得&lt;br&gt;
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Tech"></category><category term="Conference"></category></entry><entry><title>PyCon CA 2019</title><link href="https://wei-lee.me/posts/tech/2019/12/pycon-ca-2019" rel="alternate"></link><published>2019-12-23T17:51:00+08:00</published><updated>2019-12-23T17:51:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2019-12-23:/posts/tech/2019/12/pycon-ca-2019</id><summary type="html">&lt;p&gt;隔了一個多月，終於有時間可以來補 PyCon CA 2019 的心得&lt;br&gt;
 這是我今年參加的第四場 PyCon&lt;br&gt;
 終於是因為當 Regular Talk 的講者參加&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;隔了一個多月，終於有時間可以來補 PyCon CA 2019 的心得&lt;br&gt;
@@ -8896,7 +8958,7 @@ ln -s ~/.vimrc &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim/init.vi
 &lt;h4 id="word-vectorization"&gt;Word Vectorization&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Layer 1: Input&lt;ul&gt;
-&lt;li&gt;$R ^{D \times S\times W \times E}$&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(R ^{D \times S\times W \times E}\)&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;Use Google's pretrained word2vec&lt;/li&gt;
 &lt;li&gt;In implementation, all the documents contain the same number of sentences.&lt;br/&gt;
   Shorter documents are padded shorter sentences with dummy words.&lt;/li&gt;
@@ -8925,7 +8987,69 @@ ln -s ~/.vimrc &lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim/init.vi
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="training"&gt;Training&lt;/h3&gt;
-&lt;p&gt;Objective Function: Negative Log Likelihood&lt;/p&gt;</content><category term="Tech"></category><category term="Paper"></category><category term="Deep Learning"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category></entry><entry><title>[Paper] Understanding Personality through Social Media</title><link href="https://wei-lee.me/posts/tech/2017/04/Understanding-Personality-through-Social-Media" rel="alternate"></link><published>2017-04-05T22:30:00+08:00</published><updated>2017-04-05T22:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2017-04-05:/posts/tech/2017/04/Understanding-Personality-through-Social-Media</id><summary type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Objective Function: Negative Log Likelihood&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Tech"></category><category term="Paper"></category><category term="Deep Learning"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category></entry><entry><title>[Paper] Understanding Personality through Social Media</title><link href="https://wei-lee.me/posts/tech/2017/04/Understanding-Personality-through-Social-Media" rel="alternate"></link><published>2017-04-05T22:30:00+08:00</published><updated>2017-04-05T22:30:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2017-04-05:/posts/tech/2017/04/Understanding-Personality-through-Social-Media</id><summary type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Main Purpose: To see how linguistic features correlate with each personality trait.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Main Purpose: To see how linguistic features correlate with each personality trait.&lt;/p&gt;
@@ -10702,21 +10826,21 @@ If it's needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h3 id="41-preliminary-reinforcement-learning"&gt;4.1 Preliminary: Reinforcement Learning&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Learn a policy $\pi(s)$ to determine which action to take state s (environment)&lt;/li&gt;
-&lt;li&gt;How to estimated $\pi$?&lt;ul&gt;
+&lt;li&gt;Learn a policy &lt;span class="math"&gt;\(\pi(s)\)&lt;/span&gt; to determine which action to take state s (environment)&lt;/li&gt;
+&lt;li&gt;How to estimated &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;?&lt;ul&gt;
 &lt;li&gt;Expected Accmulated Reward of a state (V function)&lt;ul&gt;
-&lt;li&gt;$ V^\pi(s) = E_\pi{R_t|S_t=s}=...$&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\( V^\pi(s) = E_\pi\{R_t|S_t=s\}=...\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Expected Accmulated Reward of a state-action pair (Q function)&lt;ul&gt;
-&lt;li&gt;$ Q^\pi(s, a) = E_\pi{R_t|S_t=s, a_t=a}=...$&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\( Q^\pi(s, a) = E_\pi\{R_t|S_t=s, a_t=a\}=...\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The optimal $\pi$ can be obtained through Q functinon&lt;/p&gt;
-&lt;p&gt;$ \pi = \arg \min_{a\in A}Q(s,a)$&lt;/p&gt;
+&lt;p&gt;The optimal &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; can be obtained through Q functinon&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\( \pi = \arg \min_{a\in A}Q(s,a)\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;(i.e. For all "a" in A, find the "a" such that min Q(s, a))&lt;/p&gt;
 &lt;h3 id="42-strategy-oriented-reinforcement-learning"&gt;4.2 Strategy-Oriented Reinforcement-Learning&lt;/h3&gt;
 &lt;h4 id="setup"&gt;Setup&lt;/h4&gt;
@@ -10760,7 +10884,7 @@ If it's needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;del&gt;record the occupation status of all nodes&lt;/del&gt;&lt;ul&gt;
-&lt;li&gt;$3^{|V|}$, too many&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(3^{|V|}\)&lt;/span&gt;, too many&lt;/li&gt;
 &lt;li&gt;overfit&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -10781,7 +10905,7 @@ If it's needed, try &lt;code&gt;git-annex&lt;/code&gt;(web-site).&lt;/p&gt;
 &lt;li&gt;high&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Totally, $3^9$ states&lt;/li&gt;
+&lt;li&gt;Totally, &lt;span class="math"&gt;\(3^9\)&lt;/span&gt; states&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -10805,24 +10929,24 @@ These data can be used to learn the value functions&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Phase 1: Training&lt;ul&gt;
 &lt;li&gt;The agent update its Q function from the simulation experiences throughout the training rounds&lt;/li&gt;
-&lt;li&gt;Update $\pi$ in the meantime&lt;/li&gt;
+&lt;li&gt;Update &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; in the meantime&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Phase 2: Competition&lt;ul&gt;
 &lt;li&gt;The agent would not update Q-table&lt;/li&gt;
-&lt;li&gt;Generates $\pi$ according to Q-table&lt;/li&gt;
+&lt;li&gt;Generates &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; according to Q-table&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="43-storm-with-strategy-known"&gt;4.3 STORM with Strategy Known&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Training the model compete against the strategy to learn $\pi$&lt;/li&gt;
+&lt;li&gt;Training the model compete against the strategy to learn &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;STORM-Q&lt;ul&gt;
 &lt;li&gt;Update Q-function following the concept of Q-learning&lt;ul&gt;
-&lt;li&gt;Q-Learning: $Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t, a_t))$&lt;/li&gt;
+&lt;li&gt;Q-Learning: &lt;span class="math"&gt;\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t, a_t))\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;$\epsilon$-greedy&lt;ul&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\epsilon\)&lt;/span&gt;-greedy&lt;ul&gt;
 &lt;li&gt;Determine strategies on the current policy derived from Q-table.&lt;/li&gt;
 &lt;li&gt;Explore the new directions to avoid local optimum&lt;/li&gt;
 &lt;/ul&gt;
@@ -10866,8 +10990,8 @@ These data can be used to learn the value functions&lt;/p&gt;
 &lt;li&gt;Use MINMAX theorem to find the equilibrium&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;$Q(s, a, o)$: The reward of first party when using strategy $a$ against oppoent's strategy $o$ in state $s$&lt;/li&gt;
-&lt;li&gt;$Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma V(s_{t+1})]$&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(Q(s, a, o)\)&lt;/span&gt;: The reward of first party when using strategy &lt;span class="math"&gt;\(a\)&lt;/span&gt; against oppoent's strategy &lt;span class="math"&gt;\(o\)&lt;/span&gt; in state &lt;span class="math"&gt;\(s\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma V(s_{t+1})]\)&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;Operations  Research&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -10885,7 +11009,7 @@ These data can be used to learn the value functions&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Max the reward in their own Q-table&lt;/td&gt;
-&lt;td&gt;Finds equilibrium with one Q-table and determines both side's $a$ at the same time&lt;/td&gt;
+&lt;td&gt;Finds equilibrium with one Q-table and determines both side's &lt;span class="math"&gt;\(a\)&lt;/span&gt; at the same time&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Pure Strategies&lt;/td&gt;
@@ -10893,7 +11017,7 @@ These data can be used to learn the value functions&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Choose strategy by greedy&lt;/td&gt;
-&lt;td&gt;Samples from the mixed strategy $\pi_a$ or $\pi_o$&lt;/td&gt;
+&lt;td&gt;Samples from the mixed strategy &lt;span class="math"&gt;\(\pi_a\)&lt;/span&gt; or &lt;span class="math"&gt;\(\pi_o\)&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -10903,7 +11027,69 @@ These data can be used to learn the value functions&lt;/p&gt;
 &lt;li&gt;Although equilibrium exists in STORM-MM. It does not guarantee to be found due to lack of training data or bad init or such problems.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Paper"></category><category term="Social Network"></category><category term="Machine Learning"></category><category term="Game Theory"></category></entry><entry><title>COSCUP 2016</title><link href="https://wei-lee.me/posts/tech/2016/08/coscup-2016" rel="alternate"></link><published>2016-08-22T15:36:00+08:00</published><updated>2016-08-22T15:36:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2016-08-22:/posts/tech/2016/08/coscup-2016</id><summary type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder 共筆&lt;/a&gt;&lt;/p&gt;
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Tech"></category><category term="Paper"></category><category term="Social Network"></category><category term="Machine Learning"></category><category term="Game Theory"></category></entry><entry><title>COSCUP 2016</title><link href="https://wei-lee.me/posts/tech/2016/08/coscup-2016" rel="alternate"></link><published>2016-08-22T15:36:00+08:00</published><updated>2016-08-22T15:36:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2016-08-22:/posts/tech/2016/08/coscup-2016</id><summary type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder 共筆&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="http://beta.hackfoldr.org/coscup2016/"&gt;hackholder 共筆&lt;/a&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
