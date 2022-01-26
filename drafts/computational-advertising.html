@@ -15,16 +15,16 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Learning, Advertising, Book, " />
+<meta name="keywords" content="Advertising, Book, " />
 
 <meta property="og:title" content="[Book] 計算廣告：互聯網商業變現的市場與技術 "/>
 <meta property="og:url" content="https://wei-lee.me/drafts/computational-advertising.html" />
-<meta property="og:description" content="因為原文就是簡體的，所以整個筆記會有中國用語 我用 opencc-python 簡轉繁 Note 常見名詞 千次曝光付費（Cost per Mille，CPM) 千次曝光期望收入（expected Cost per Mille, eCPM） 點擊付費（Cost per Click，CPC） 千次曝光收益（Revenue per Mille，RPM） 點擊率（Click Through Rate，CTR）: 廣告點擊與廣告展現的比率 轉化率（Conversion Rate，CVR）: 轉化次數與到達次數的比例 轉化： 使用者從 landing page 開始，進一步完成下單等操作 前言 If you can&#39;t measure …" />
+<meta property="og:description" content="因為原文就是簡體的，所以整個筆記會有中國用語 我用 opencc-python 簡轉繁 Note 常見名詞 千次曝光付費（Cost per Mille，CPM) 千次曝光期望收入（expected Cost per Mille, eCPM） 點擊付費（Cost per Click，CPC） 千次曝光收益（Revenue per Mille，RPM） 點擊率（Click Through Rate，CTR）: 廣告點擊與廣告展現的比率 轉化率（Conversion Rate，CVR）: 轉化次數與到達次數的比例 轉化： 使用者從 landing page 開始，進一步完成下單等操作 客戶關係管理（CRM, Customer Relation Management …" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2021-02-13T22:35:00+08:00" />
 <meta name="twitter:title" content="[Book] 計算廣告：互聯網商業變現的市場與技術 ">
-<meta name="twitter:description" content="因為原文就是簡體的，所以整個筆記會有中國用語 我用 opencc-python 簡轉繁 Note 常見名詞 千次曝光付費（Cost per Mille，CPM) 千次曝光期望收入（expected Cost per Mille, eCPM） 點擊付費（Cost per Click，CPC） 千次曝光收益（Revenue per Mille，RPM） 點擊率（Click Through Rate，CTR）: 廣告點擊與廣告展現的比率 轉化率（Conversion Rate，CVR）: 轉化次數與到達次數的比例 轉化： 使用者從 landing page 開始，進一步完成下單等操作 前言 If you can&#39;t measure …">
+<meta name="twitter:description" content="因為原文就是簡體的，所以整個筆記會有中國用語 我用 opencc-python 簡轉繁 Note 常見名詞 千次曝光付費（Cost per Mille，CPM) 千次曝光期望收入（expected Cost per Mille, eCPM） 點擊付費（Cost per Click，CPC） 千次曝光收益（Revenue per Mille，RPM） 點擊率（Click Through Rate，CTR）: 廣告點擊與廣告展現的比率 轉化率（Conversion Rate，CVR）: 轉化次數與到達次數的比例 轉化： 使用者從 landing page 開始，進一步完成下單等操作 客戶關係管理（CRM, Customer Relation Management …">
 
         <title>[Book] 計算廣告：互聯網商業變現的市場與技術  · Laziness makes Great Engineer
 </title>
@@ -123,6 +123,8 @@
 <li>轉化： 使用者從 landing page 開始，進一步完成下單等操作</li>
 </ul>
 </li>
+<li>客戶關係管理（CRM, Customer Relation Management）</li>
+<li>資料管理平台（DMP, Data Management Platform）</li>
 </ul>
 <h3 id="_2">前言</h3>
 <ul>
@@ -579,7 +581,7 @@ adop{是否需要廣告機會}
 </div>
 <ul>
 <li>計價方式: CPM<ul>
-<li>沒有多方競價，又有選擇流量的便利，因一般比市場 CPM 單價</li>
+<li>沒有多方競價，又有選擇流量的便利，因此比一般比市場 CPM 單價更高</li>
 <li>決策過程可能存在比較多的投放機往返</li>
 </ul>
 </li>
@@ -604,7 +606,7 @@ adop{是否需要廣告機會}
 <li>特點<ol>
 <li>跨媒體頻率控制</li>
 <li>多個子產品流量分配 → 提高流量使用價值<ul>
-<li>需求方可以根據自有 CRM、DMP 以及策略在子產品之分配流量 → 相當於一個內部的 ADN</li>
+<li>需求方可以根據自有 CRM (Customer Relation Management)、DMP (Data Management Platform) 以及策略在子產品之分配流量 → 相當於一個內部的 ADN</li>
 </ul>
 </li>
 <li>一定比例的還量<ul>
@@ -634,7 +636,7 @@ adop{是否需要廣告機會}
 <li>出價直接決定 DSP 的流量基本單位成本和利潤</li>
 <li>出價策略（主要看 eCPM 和市價隨時間變化的曲線）<ol>
 <li>通過歷史資料，得到 eCPM 和市價的曲線</li>
-<li>將一天的預算分配到 <span class="math">\(eCPM / 市價\)</span> 較大的流量</li>
+<li>將一天的預算分配到 <span class="math">\(eCPM \over 市價\)</span> 較大的流量</li>
 </ol>
 </li>
 </ul>
@@ -699,23 +701,19 @@ DSPs[DSP 1..n]
 end
 </div>
 <ul>
-<li>
-<p>決策過程</p>
-<ol>
-<li>估算出被聚合的 ADN 和內部廣到的 eCPM</li>
+<li>決策過程<ol>
+<li>估算出被聚合的 ADN 和內部廣告的 eCPM</li>
 <li>用排序出最好的價格作為底價向 DSP 詢價</li>
-<li>若排序最高的 ADN 拒絕請求，則向後面的排名發出請求 → 可能造成延遲</li>
+<li>若排序最高的 ADN 拒絕請求，則向後面的排名發出請求 → 可能造成延遲 ← Header Bidding 就是要解決這個問題</li>
 </ol>
 </li>
-<li>
-<p>Header Bidding</p>
-<ul>
+<li>Header Bidding<ul>
 <li>Bidder 繞過 ADX 直接向媒體報價，媒體根據出價高低決定中標者，如果沒有，再交由 ADX 進行即時競標<ul>
 <li>Bidder： 所有可以進行報價的服務（e.g., DSP、 ADX、其他廣告參與者）</li>
 </ul>
 </li>
 <li>主要區別<ul>
-<li>繞過 ADX 接可回傳報價的 DSP 而非只能估計eCPM 的 ADN<ul>
+<li>繞過 ADX 接可回傳報價的 DSP 而非只能估計 eCPM 的 ADN<ul>
 <li>收入最佳化變簡單</li>
 <li>容易獲得更高的 eCPM</li>
 </ul>
@@ -754,7 +752,7 @@ ADX &lt;--6--&gt; DSPs
 media --7--&gt; js --7 --&gt; user
 
 bidder[bidder 1..n]
-js[js code]
+js[JavaScript code]
 user
 media[媒體伺服器]
 ADX
@@ -844,15 +842,12 @@ DSPs[DSP 1..n]
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2021-02-13T22:35:00+08:00">2021/02/13 - Sat</time>
                 <h4>Read Time</h4>
-                3 min
+                4 min
             <h4>Category</h4>
             <a class="category-link" href="https://wei-lee.me/categories.html#book-ref">Book</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://wei-lee.me/tags.html#advertising-ref">Advertising
-</a></li>
-                <li><a href="https://wei-lee.me/tags.html#learning-ref">Learning
-                    <span class="superscript">2</span>
 </a></li>
             </ul>
 <h4>Keep In Touch</h4>
