@@ -1,7 +1,7 @@
 Title: [Book] 計算廣告：互聯網商業變現的市場與技術
 Date: 2021-02-13 22:35
 Category: Book
-Tags: Learning, Advertising
+Tags: Advertising
 Slug: computational-advertising
 Authors: Lee-W
 Status: draft
@@ -23,6 +23,8 @@ Status: draft
 * 點擊率（Click Through Rate，CTR）: 廣告點擊與廣告展現的比率
 * 轉化率（Conversion Rate，CVR）:  轉化次數與到達次數的比例
     * 轉化： 使用者從 landing page 開始，進一步完成下單等操作
+* 客戶關係管理（CRM, Customer Relation Management）
+* 資料管理平台（DMP, Data Management Platform）
 
 ### 前言
 * If you can't measure it, you can't manage it.
@@ -308,7 +310,7 @@ flowchart TD
 ```
 
 * 計價方式: CPM
-    * 沒有多方競價，又有選擇流量的便利，因一般比市場 CPM 單價
+    * 沒有多方競價，又有選擇流量的便利，因此比一般比市場 CPM 單價更高
     * 決策過程可能存在比較多的投放機往返
 
 #### 私有市場
@@ -325,7 +327,7 @@ flowchart TD
 * 特點
     1. 跨媒體頻率控制
     2. 多個子產品流量分配 → 提高流量使用價值
-        * 需求方可以根據自有 CRM、DMP 以及策略在子產品之分配流量 → 相當於一個內部的 ADN
+        * 需求方可以根據自有 CRM (Customer Relation Management)、DMP (Data Management Platform) 以及策略在子產品之分配流量 → 相當於一個內部的 ADN
     3. 一定比例的還量
         * 部分媒體向 DSP 提供了一定比例的還量自由（例如可以返還20%的廣告請求）
             * 頻率過高或人群不匹配時，DSP 可以決定不投放廣告
@@ -343,7 +345,7 @@ flowchart TD
         * 出價直接決定 DSP 的流量基本單位成本和利潤
         * 出價策略（主要看 eCPM 和市價隨時間變化的曲線）
             1. 通過歷史資料，得到 eCPM 和市價的曲線
-            2. 將一天的預算分配到 $eCPM / 市價$ 較大的流量
+            2. 將一天的預算分配到 $eCPM \over 市價$ 較大的流量
 * 重定向
     * 對曾經對廣告主服務感興趣的使用者找出來，再對他們投放
     * 召回重定向與個性化重定向
@@ -388,15 +390,14 @@ flowchart LR
 ```
 
 * 決策過程
-    1. 估算出被聚合的 ADN 和內部廣到的 eCPM
+    1. 估算出被聚合的 ADN 和內部廣告的 eCPM
     2. 用排序出最好的價格作為底價向 DSP 詢價
-    3. 若排序最高的 ADN 拒絕請求，則向後面的排名發出請求 → 可能造成延遲
-
+    3. 若排序最高的 ADN 拒絕請求，則向後面的排名發出請求 → 可能造成延遲 ← Header Bidding 就是要解決這個問題
 * Header Bidding
     * Bidder 繞過 ADX 直接向媒體報價，媒體根據出價高低決定中標者，如果沒有，再交由 ADX 進行即時競標
         * Bidder： 所有可以進行報價的服務（e.g., DSP、 ADX、其他廣告參與者）
     * 主要區別
-        * 繞過 ADX 接可回傳報價的 DSP 而非只能估計eCPM 的 ADN
+        * 繞過 ADX 接可回傳報價的 DSP 而非只能估計 eCPM 的 ADN
             * 收入最佳化變簡單
             * 容易獲得更高的 eCPM
         * 缺點
@@ -423,7 +424,7 @@ flowchart LR
     media --7--> js --7 --> user
 
     bidder[bidder 1..n]
-    js[js code]
+    js[JavaScript code]
     user
     media[媒體伺服器]
     ADX
