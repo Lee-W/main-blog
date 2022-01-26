@@ -19,11 +19,15 @@ PROJECTS = [
         "description": "Python 3 command-line utility to standardize commit messages and bump version",
     }
 ]
-DISQUS_SITENAME = "lee-w-blog"
-DISQUS_FILTER = False
+
+# comment system
+UTTERANCES_REPO = "Lee-W/Lee-W.github.io"
+UTTERANCES_LABEL = "blog-comment"
 COMMENTS_INTRO = (
     "Do you like this article? What do your tink about it? Leave you comment below"
 )
+
+# license
 SITE_LICENSE = """
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
 <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
