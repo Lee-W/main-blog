@@ -1,9 +1,9 @@
 Title: Python Table Manners - 管理繁瑣任務
 Date: 2020-02-27 20:04
-Modified: 2020-10-04 16:05
+Modified: 2022-02-03 16:12
 Category: Tech
 Tags: Python, Task
-Slug: python-table-manners-manage-trival-tasks
+Slug: python-table-manners-manage-trivial-tasks
 Authors: Lee-W
 Series: Python Table Manners
 
@@ -215,6 +215,8 @@ def clean(cmd):
 
 除此之外，invoke 也可以讓 shell script 的結果，直接跟 Python 互動
 更容易實作出想要的功能
+
+另外，推薦閱讀 [Building a CLI for Firmware Projects using Invoke](https://interrupt.memfault.com/blog/building-a-cli-for-firmware-projects)
 
 ## 其他進階應用
 * 如何在任務加上參數？
