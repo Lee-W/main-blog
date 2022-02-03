@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://wei-lee.me/" rel="alternate"></link><link href="https://wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://wei-lee.me/</id><updated>2021-06-27T17:58:00+08:00</updated><entry><title>DVC - Pipeline Versioning</title><link href="https://wei-lee.me/posts/tech/2021/06/dvc-pipeline-versioning" rel="alternate"></link><published>2021-06-20T11:30:00+08:00</published><updated>2021-06-27T17:58:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2021-06-20:/posts/tech/2021/06/dvc-pipeline-versioning</id><summary type="html">&lt;p&gt;We've versioned our data in the previous post. This article will demonstrate how we could define a data pipeline and version it through DVC.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Laziness makes Great Engineer - Tech</title><link href="https://wei-lee.me/" rel="alternate"></link><link href="https://wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://wei-lee.me/</id><updated>2022-02-03T16:12:00+08:00</updated><entry><title>DVC - Pipeline Versioning</title><link href="https://wei-lee.me/posts/tech/2021/06/dvc-pipeline-versioning" rel="alternate"></link><published>2021-06-20T11:30:00+08:00</published><updated>2021-06-27T17:58:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2021-06-20:/posts/tech/2021/06/dvc-pipeline-versioning</id><summary type="html">&lt;p&gt;We've versioned our data in the previous post. This article will demonstrate how we could define a data pipeline and version it through DVC.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;We've versioned our data in the previous post. This article will demonstrate how we could define a data pipeline and version it through DVC.&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -2860,7 +2860,7 @@ Trim Trailing Whitespace.................................................Passed
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://mropengate.blogspot.com/2019/08/pre-commit-git-hooks_4.html"&gt;提升程式碼品質：使用 Pre-Commit (Git Hooks)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Git"></category><category term="Code Quality"></category></entry><entry><title>Python Table Manners - 管理繁瑣任務</title><link href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-manage-trival-tasks" rel="alternate"></link><published>2020-02-27T20:04:00+08:00</published><updated>2020-10-04T16:05:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2020-02-27:/posts/tech/2020/02/python-table-manners-manage-trival-tasks</id><summary type="html">&lt;p&gt;前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具&lt;br/&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Git"></category><category term="Code Quality"></category></entry><entry><title>Python Table Manners - 管理繁瑣任務</title><link href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-manage-trivial-tasks" rel="alternate"></link><published>2020-02-27T20:04:00+08:00</published><updated>2022-02-03T16:12:00+08:00</updated><author><name>Lee-W</name></author><id>tag:wei-lee.me,2020-02-27:/posts/tech/2020/02/python-table-manners-manage-trivial-tasks</id><summary type="html">&lt;p&gt;前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具&lt;br/&gt;
 每一個工具又有各自的參數和設定&lt;br/&gt;
 這麼多指令怎麼可能記得起來 😱&lt;/p&gt;
 &lt;p&gt;&lt;img alt="too-many-commands" src="/images/posts-image/2020-02-22-python-table-manner-series/too-many-commands.jpg"/&gt;&lt;/p&gt;
@@ -3021,6 +3021,7 @@ invoke 當然也想到了&lt;br/&gt;
 &lt;p&gt;（雖然後來發現上面的一串，可以用 &lt;code&gt;git clean -Xdf&lt;/code&gt; 取代...）&lt;/p&gt;
 &lt;p&gt;除此之外，invoke 也可以讓 shell script 的結果，直接跟 Python 互動&lt;br/&gt;
 更容易實作出想要的功能&lt;/p&gt;
+&lt;p&gt;另外，推薦閱讀 &lt;a href="https://interrupt.memfault.com/blog/building-a-cli-for-firmware-projects"&gt;Building a CLI for Firmware Projects using Invoke&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_3"&gt;其他進階應用&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;如何在任務加上參數？&lt;ul&gt;
@@ -4163,7 +4164,7 @@ python -m pipx ensurepath
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-dependency-mangement"&gt;虛擬環境和套件管理&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-test-1"&gt;測試（ㄧ）&lt;/a&gt; / &lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-test-2"&gt;測試（二）&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-coding-style"&gt;程式碼風格&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-manage-trival-tasks"&gt;管理繁瑣任務&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="{filename}/posts/article/2020/09-python-table-manners-manage-trival-task.md"&gt;管理繁瑣任務&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-pre-commit"&gt;pre-commit: git commit 前做完檢查&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen"&gt;Commitizen: 規格化 commit …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;!--more--&gt;
 
@@ -4180,7 +4181,7 @@ python -m pipx ensurepath
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-dependency-mangement"&gt;虛擬環境和套件管理&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-test-1"&gt;測試（ㄧ）&lt;/a&gt; / &lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-test-2"&gt;測試（二）&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-coding-style"&gt;程式碼風格&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-manage-trival-tasks"&gt;管理繁瑣任務&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="{filename}/posts/article/2020/09-python-table-manners-manage-trival-task.md"&gt;管理繁瑣任務&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-pre-commit"&gt;pre-commit: git commit 前做完檢查&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen"&gt;Commitizen: 規格化 commit message&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/03/python-table-manners-security"&gt;安全性檢查&lt;/a&gt;&lt;/li&gt;
