@@ -25,4 +25,4 @@ EXTRA_PATH_METADATA = {
 }
 
 # Following items are often useful when publishing
-GOOGLE_ANALYTICS = os.environ.get("GOOGLE_ANALYTICS")
+MODERN_GOOGLE_ANALYTICS = os.environ.get("GOOGLE_ANALYTICS")
