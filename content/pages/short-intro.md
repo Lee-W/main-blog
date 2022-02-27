@@ -16,11 +16,6 @@ slug: landing-page-about-hidden
 <i class="fas fa-lg fa-lock"></i> Locker
 <i class="fab fa-lg fa-rebel"></i> Star Wars Fan
 
-Being a lazy software engineer, I like to automate boring stuff and deliver quality code.
-I love traveling and make new friends. Hope to become a PyCon (or tech conf) Nomad and explore the world.
+Being a lazy software engineer, I like to automate boring stuff and deliver quality code. I love traveling and making new friends. Hope to become a PyCon (or tech conf) Nomad and explore the world.
 
-I share my tech note, book digest, and sometimes my thought in this blog. If you're also interested in traveling, cooking and anime, please take a look of [Meet people around the world](https://travlog.wei-lee.me/) where I write about these stuffs.
-
-Being a lazy software engineer, I like to automate boring stuff and deliver quality code.
-I love traveling and making new friends. Hope to become a PyCon (or tech conf) Nomad and explore the world.
-I share my tech note, book digest, and sometimes my thought in this blog. If you're also interested in traveling, cooking, and anime, please take a look at [Meet people around the world](https://travlog.wei-lee.me/), where I write about this stuff.
+I share my tech note, book digest, and sometimes my thought in this blog. If you're also interested in traveling, cooking, and anime, please take a look at [Meet people around the world](https://travlog.wei-lee.me/) where I write about these kinds of stuff.
