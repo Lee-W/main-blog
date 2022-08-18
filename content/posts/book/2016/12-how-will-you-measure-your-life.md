@@ -5,13 +5,13 @@ Tags: Inspiring
 Slug: how-will-you-measure-your-life
 Authors: Lee-W
 
-![你要如何衡量你的人生](http://pic.eslite.com/Upload/Product/201207/m/634778514624800000.jpg)
 最近發現竟然沒有把這本還蠻喜歡的書 po 上來
 就好好的把之前整理的書摘，再重新整理過一遍
 
 <!--more-->
 
 [TOC]
+
 這本書的每一個章節都是先講商業上的案例和處置，之後再將這些套用到生涯中
 
 # Part 1 發現生涯之樂
