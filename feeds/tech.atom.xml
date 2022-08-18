@@ -19,7 +19,7 @@
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# [username]/[repo name]&lt;/span&gt;
 &lt;span class="n"&gt;UTTERANCES_REPO&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"Lee-W/Lee-W.github.io"&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;注意前面不能加上 &lt;code&gt;https://github.com/&lt;/code&gt; &lt;br/&gt;
+&lt;p&gt;注意前面不能加上 &lt;code&gt;https://github.com/&lt;/code&gt;&lt;br/&gt;
 我因為這個愚蠢的錯誤卡了超久......&lt;/p&gt;
 &lt;p&gt;如果想為留言產生的 issue 加上特定的標籤，則可以設定 &lt;code&gt;UTTERANCES_LABEL&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;UTTERANCES_LABEL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"comment"&lt;/span&gt;
@@ -109,7 +109,7 @@ Authors: Lee-W
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;如果沒興趣看的話也可以直接使用我改的 &lt;a href="https://github.com/Lee-W/attila/tree/add-utterances-support"&gt;attila @ add-utterances-support&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;如果沒興趣看的話也可以直接使用我改的 &lt;a href="https://github.com/Lee-W/attila/tree/add-utterances-support"&gt;attila @ add-utterances-support&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_1"&gt;雜談&lt;/h2&gt;
 &lt;p&gt;雖然一直都想從 disqus 移出，但我佛系經營的部落格平常根本就不會有人留言&lt;br/&gt;
 尤其是 &lt;a href="https://travlog.wei-lee.me/"&gt;Meet people around the world&lt;/a&gt; 根本就不是只寫給工程師的文章，要留言還要登入 GitHub&lt;br/&gt;
@@ -4281,7 +4281,7 @@ python -m pipx ensurepath
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-dependency-mangement"&gt;虛擬環境和套件管理&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-test-1"&gt;測試（ㄧ）&lt;/a&gt; / &lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-test-2"&gt;測試（二）&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-coding-style"&gt;程式碼風格&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="{filename}/posts/article/2020/09-python-table-manners-manage-trival-task.md"&gt;管理繁瑣任務&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-manage-trivial-tasks"&gt;管理繁瑣任務&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-pre-commit"&gt;pre-commit: git commit 前做完檢查&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen"&gt;Commitizen: 規格化 commit …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;!--more--&gt;
 
@@ -4298,7 +4298,7 @@ python -m pipx ensurepath
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-dependency-mangement"&gt;虛擬環境和套件管理&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-test-1"&gt;測試（ㄧ）&lt;/a&gt; / &lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-test-2"&gt;測試（二）&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-coding-style"&gt;程式碼風格&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="{filename}/posts/article/2020/09-python-table-manners-manage-trival-task.md"&gt;管理繁瑣任務&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-manage-trivial-tasks"&gt;管理繁瑣任務&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/02/python-table-manners-pre-commit"&gt;pre-commit: git commit 前做完檢查&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen"&gt;Commitizen: 規格化 commit message&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/posts/tech/2020/03/python-table-manners-security"&gt;安全性檢查&lt;/a&gt;&lt;/li&gt;
