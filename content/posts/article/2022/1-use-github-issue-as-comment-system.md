@@ -34,7 +34,7 @@ Authors: Lee-W
 UTTERANCES_REPO = "Lee-W/Lee-W.github.io"
 ```
 
-注意前面不能加上 `https://github.com/` 
+注意前面不能加上 `https://github.com/`
 我因為這個愚蠢的錯誤卡了超久......
 
 如果想為留言產生的 issue 加上特定的標籤，則可以設定 `UTTERANCES_LABEL`
@@ -147,7 +147,7 @@ Authors: Lee-W
     * `templates/partials/_defaults.html`
     * `templates/article.html#L212`
 
-如果沒興趣看的話也可以直接使用我改的 [attila @ add-utterances-support](https://github.com/Lee-W/attila/tree/add-utterances-support) 
+如果沒興趣看的話也可以直接使用我改的 [attila @ add-utterances-support](https://github.com/Lee-W/attila/tree/add-utterances-support)
 
 ## 雜談
 雖然一直都想從 disqus 移出，但我佛系經營的部落格平常根本就不會有人留言
