@@ -25,7 +25,7 @@ Series: Python Table Manners
 * [虛擬環境和套件管理]({filename}/posts/article/2020/05-python-table-manners-dependency-management.md)
 * [測試（ㄧ）]({filename}/posts/article/2020/06-python-table-manners-test-1.md) / [測試（二）]({filename}/posts/article/2020/07-python-table-manners-test-2.md)
 * [程式碼風格]({filename}/posts/article/2020/08-python-table-manners-coding-style.md)
-* [管理繁瑣任務]({filename}/posts/article/2020/09-python-table-manners-manage-trival-task.md)
+* [管理繁瑣任務]({filename}/posts/article/2020/09-python-table-manners-manage-trivial-task.md)
 * [pre-commit: git commit 前做完檢查]({filename}/posts/article/2020/10-python-table-manners-pre-commit.md)
 * [Commitizen: 規格化 commit message]({filename}/posts/article/2020/11-python-table-manners-commitizen.md)
 * [安全性檢查]({filename}/posts/article/2020/12-python-table-manners-security.md)
