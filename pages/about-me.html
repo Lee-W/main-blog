@@ -17,13 +17,13 @@
 
 <meta property="og:title" content="About Me "/>
 <meta property="og:url" content="https://wei-lee.me/pages/about-me.html" />
-<meta property="og:description" content="Resume Skill Advance: Python, Docker, Git, Linux, Data Engineering, Web Backend Development Intermediate: AWS, Project Management, Data Analysis Work Experience [Apr 2017 - Present] Machine Leraning Engineer, Rakuten USA Improved software engineering culture through building project templates that reduce project initializing time and automatically checks errors before code review Developed backend …" />
+<meta property="og:description" content="Skill Programming Language: Python Data Engineering: Snowflake, Redis, MySQL, PostgreSQL, Redshift MLOps: Apache Airflow, DVC, dbt, Great Expectations Backend Development: flask, Django, FastAPI DevOps tools and others: Docker, Kubernetes, Jenkins, GitHub Actions, Git, AWS Services Work Experience [Apr 2017 - Present] Machine Leraning Engineer, Rakuten USA Productionize machine learning projects Implemented …" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2017-02-03T13:06:00+08:00" />
-<meta property="og:article:modified_time" content="2021-09-04T18:00:00+08:00" />
+<meta property="og:article:modified_time" content="2022-08-28T16:22:00+08:00" />
 <meta name="twitter:title" content="About Me ">
-<meta name="twitter:description" content="Resume Skill Advance: Python, Docker, Git, Linux, Data Engineering, Web Backend Development Intermediate: AWS, Project Management, Data Analysis Work Experience [Apr 2017 - Present] Machine Leraning Engineer, Rakuten USA Improved software engineering culture through building project templates that reduce project initializing time and automatically checks errors before code review Developed backend …">
+<meta name="twitter:description" content="Skill Programming Language: Python Data Engineering: Snowflake, Redis, MySQL, PostgreSQL, Redshift MLOps: Apache Airflow, DVC, dbt, Great Expectations Backend Development: flask, Django, FastAPI DevOps tools and others: Docker, Kubernetes, Jenkins, GitHub Actions, Git, AWS Services Work Experience [Apr 2017 - Present] Machine Leraning Engineer, Rakuten USA Productionize machine learning projects Implemented …">
 
         <title>About Me  · Laziness makes Great Engineer
 </title>
@@ -111,22 +111,40 @@
     </div>
     <div class="span8 article-content">
 
-            <p><a href="https://wei-lee.me/static/resume.pdf">Resume</a></p>
-
+            
 <h2 id="skill">Skill</h2>
 <ul>
-<li><strong>Advance</strong>: Python, Docker, Git, Linux, Data Engineering, Web Backend Development</li>
-<li><strong>Intermediate</strong>: AWS, Project Management, Data Analysis</li>
+<li><strong>Programming Language</strong>: Python</li>
+<li><strong>Data Engineering</strong>: Snowflake, Redis, MySQL, PostgreSQL, Redshift</li>
+<li><strong>MLOps</strong>: Apache Airflow, DVC, dbt, Great Expectations</li>
+<li><strong>Backend Development</strong>: flask, Django, FastAPI</li>
+<li><strong>DevOps tools and others</strong>: Docker, Kubernetes, Jenkins, GitHub Actions, Git, AWS Services</li>
 </ul>
 <h2 id="work-experience">Work Experience</h2>
 <p><strong>[Apr 2017 - Present] Machine Leraning Engineer, <a href="https://www.rakuten.com/">Rakuten USA</a></strong></p>
 <ul>
-<li>Improved software engineering culture through building project templates that reduce project initializing time and automatically checks errors before code review</li>
-<li>Developed backend API for machine learning services</li>
-<li>Built data pipelines through <a href="https://airflow.apache.org/">Apache Airflow</a> for processing data larger than 10G and generating models</li>
-<li>Designed and developed data labeling backend which automates the interaction between crowdsourcing workers and experts to generate high quality labeled data</li>
-<li>Migrate CI/CD pipelines from <a href="https://jenkins.io/">Jenkins</a> to <a href="https://github.com/actions">GitHub Actions</a></li>
-<li>Cooperate with overseas teams in San Mateo and Ukraine</li>
+<li>Productionize machine learning projects<ul>
+<li>Implemented an SQS service and gRPC services for grouping emails with similar structures and extracting user-sensitive data to increase the amount of training data without violating customer privacy regulations.</li>
+</ul>
+</li>
+<li>Designed and Implemented a two-stage labeling system that automatically communicates between Amazon Mechanical Turk and in-house experts to generate high-quality labeled data and enhance merchandise taxonomy to increase customer conversion rate.</li>
+<li>Migrated and automated the deployment process of AWS Lambda procedures that process customer lifetime value, reducing the effort of maintenance and deployment.</li>
+<li>Build and maintain data pipelines on <a href="https://airflow.apache.org/">Apache Airflow</a><ul>
+<li>Implemented a pipeline that processes data larger than 10 GB to infer personalized preferences to help increase customer satisfaction.</li>
+<li>Migrated legacy 1.x Airflow server on AWS EC2 to 2.0.2 Airflow on AWS MWAA, saving developers' effort on dealing with legacy dependencies issues, and created a development airflow environment for doing experiments without affecting the production pipeline.</li>
+<li>Refactored data writing mechanism and reduced the data write time and AWS S3 cost.</li>
+<li>Built alerts and dashboards to monitor pipelines metrics to minimize the effort of troubleshooting using DataDog, Prometheus, and Kibana.</li>
+</ul>
+</li>
+<li>Standardize and maintain software engineering practices<ul>
+<li>Created and maintain the project templates, with automatic code quality check, testing, containerization, project versioning, releasing, and deployment, and a standard workflow for existing projects to update tools, which reduced project creation time, the communication overhead during code review and provided an easy way for developers to introduce new standards.</li>
+<li>Implemented a life-cycle configuration management tool and a workflow for creating Amazon Sagemaker notebook instances which saves data scientists' time on handling engineering problems.</li>
+<li>Improved container build time and reduced execution time by 70\% for Jenkins CI/CD pipelines.</li>
+<li>Maintain core package that's used among most existing projects</li>
+</ul>
+</li>
+<li>Optimized SQL in a data pipeline and reduced the execution time from infeasible to within half a day.</li>
+<li>Cooperate with overseas teams in US, Ukraine, and India</li>
 </ul>
 <p><strong>[Jan 2019 - March 2019] Project Manager, <a href="https://dlt.csie.ncku.edu.tw">DLT Lab</a></strong></p>
 <ul>
@@ -138,7 +156,7 @@
 <ul>
 <li>Managed the executive team with 16 members</li>
 <li>Organized two months of full-time courses and a one-semester 3 credit course</li>
-<li>Reviewed the teaching proposal of Python course, "Programming Design Foundation"</li>
+<li>Reviewed the teaching proposal of the Python course, "Programming Design Foundation"</li>
 <li>Designed exercises for "Data Structure," the first section of "Computer Science Foundations"</li>
 <li>Lectured "Web Programming, Database/Cloud Computing," the fourth section of "Computer Science Foundations"</li>
 </ul>
@@ -155,10 +173,20 @@
 <li>Delivered a human resource management system using <a href="https://www.djangoproject.com">django</a></li>
 </ul>
 <h2 id="community-involvement">Community Involvement</h2>
-<p><strong>[Nov 2021 - Present] Vice-Chairperson, <a href="https://tw.pycon.org/">PyCon Taiwan</a> 2022</strong></p>
-<p><strong>[Oct 2020 - Nov 2021] Chairperson, <a href="https://tw.pycon.org/">PyCon Taiwan</a> 2021</strong></p>
-<p><strong>[Dec 2019 - Sep 2020] Program Chair, <a href="https://tw.pycon.org/">PyCon Taiwan</a> 2020</strong></p>
-<p><strong>[Jul 2019 – Nov 2019] Program Committee Member, <a href="https://tw.pycon.org/">PyCon Taiwan</a> 2019</strong></p>
+<p><strong>[Nov 2021 - Present] Vice-Chairperson, <a href="https://tw.pycon.org/2022/">PyCon APAC 2022</a></strong></p>
+<ul>
+<li>Coordinated 3 squads, including planning, sponsorship, and social media</li>
+<li>Hosted the first Ask Me Anything event for promoting Call for Proposals</li>
+</ul>
+<p><strong>[Oct 2020 - Nov 2021] Chairperson, <a href="https://tw.pycon.org/2021/">PyCon Taiwan 2021</a></strong></p>
+<ul>
+<li>Coordinated 9 teams and hosted the first online PyCon TW with 550 participants</li>
+</ul>
+<p><strong>[Dec 2019 - Sep 2020] Program Chair, <a href="https://tw.pycon.org/2020/">PyCon Taiwan 2020</a></strong></p>
+<ul>
+<li>Coordinated around 20 team members and introduced community tracks and a speaker-dispatch program to increase the interaction between local communities.</li>
+</ul>
+<p><strong>[Jul 2019 – Nov 2019] Program Committee Member, <a href="https://tw.pycon.org/2019">PyCon Taiwan 2019</a></strong></p>
 <ul>
 <li>Contact keynote speakers and financial aid applicants</li>
 <li>Contribute to the <a href="https://github.com/pycontw/pycontw-postevent-report-generator">post-event report generator</a></li>
