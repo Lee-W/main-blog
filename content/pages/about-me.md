@@ -1,27 +1,39 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2021-09-04 18:00
+modified: 2022-08-28 16:22
 slug: about-me
 ---
-
-<a href="{static}/static/resume.pdf">Resume</a>
 
 [TOC]
 
 ## Skill
-* **Advance**: Python, Docker, Git, Linux, Data Engineering, Web Backend Development
-* **Intermediate**: AWS, Project Management, Data Analysis
+
+* **Programming Language**: Python
+* **Data Engineering**: Snowflake, Redis, MySQL, PostgreSQL, Redshift
+* **MLOps**: Apache Airflow, DVC, dbt, Great Expectations
+* **Backend Development**: flask, Django, FastAPI
+* **DevOps tools and others**: Docker, Kubernetes, Jenkins, GitHub Actions, Git, AWS Services
 
 ## Work Experience
 **[Apr 2017 - Present] Machine Leraning Engineer, [Rakuten USA](https://www.rakuten.com/)**
 
-* Improved software engineering culture through building project templates that reduce project initializing time and automatically checks errors before code review
-* Developed backend API for machine learning services
-* Built data pipelines through [Apache Airflow](https://airflow.apache.org/) for processing data larger than 10G and generating models
-* Designed and developed data labeling backend which automates the interaction between crowdsourcing workers and experts to generate high quality labeled data
-* Migrate CI/CD pipelines from [Jenkins](https://jenkins.io/) to [GitHub Actions](https://github.com/actions)
-* Cooperate with overseas teams in San Mateo and Ukraine
+* Productionize machine learning projects
+    * Implemented an SQS service and gRPC services for grouping emails with similar structures and extracting user-sensitive data to increase the amount of training data without violating customer privacy regulations.
+  *  Designed and Implemented a two-stage labeling system that automatically communicates between Amazon Mechanical Turk and in-house experts to generate high-quality labeled data and enhance merchandise taxonomy to increase customer conversion rate.
+  * Migrated and automated the deployment process of AWS Lambda procedures that process customer lifetime value, reducing the effort of maintenance and deployment.
+* Build and maintain data pipelines on [Apache Airflow](https://airflow.apache.org/)
+    * Implemented a pipeline that processes data larger than 10 GB to infer personalized preferences to help increase customer satisfaction.
+    * Migrated legacy 1.x Airflow server on AWS EC2 to 2.0.2 Airflow on AWS MWAA, saving developers' effort on dealing with legacy dependencies issues, and created a development airflow environment for doing experiments without affecting the production pipeline.
+    * Refactored data writing mechanism and reduced the data write time and AWS S3 cost.
+    * Built alerts and dashboards to monitor pipelines metrics to minimize the effort of troubleshooting using DataDog, Prometheus, and Kibana.
+* Standardize and maintain software engineering practices
+    * Created and maintain the project templates, with automatic code quality check, testing, containerization, project versioning, releasing, and deployment, and a standard workflow for existing projects to update tools, which reduced project creation time, the communication overhead during code review and provided an easy way for developers to introduce new standards.
+    * Implemented a life-cycle configuration management tool and a workflow for creating Amazon Sagemaker notebook instances which saves data scientists' time on handling engineering problems.
+    * Improved container build time and reduced execution time by 70\% for Jenkins CI/CD pipelines.
+    * Maintain core package that's used among most existing projects
+* Optimized SQL in a data pipeline and reduced the execution time from infeasible to within half a day.
+* Cooperate with overseas teams in US, Ukraine, and India
 
 **[Jan 2019 - March 2019] Project Manager, [DLT Lab](https://dlt.csie.ncku.edu.tw)**
 
@@ -33,7 +45,7 @@ slug: about-me
 
 * Managed the executive team with 16 members
 * Organized two months of full-time courses and a one-semester 3 credit course
-* Reviewed the teaching proposal of Python course, "Programming Design Foundation"
+* Reviewed the teaching proposal of the Python course, "Programming Design Foundation"
 * Designed exercises for "Data Structure," the first section of "Computer Science Foundations"
 * Lectured "Web Programming, Database/Cloud Computing," the fourth section of "Computer Science Foundations"
 
@@ -51,13 +63,20 @@ I was the executor of the program and the leader of the teaching assistant team.
 * Delivered a human resource management system using [django](https://www.djangoproject.com)
 
 ## Community Involvement
-**[Nov 2021 - Present] Vice-Chairperson, [PyCon Taiwan](https://tw.pycon.org/) 2022**
+**[Nov 2021 - Present] Vice-Chairperson, [PyCon APAC 2022](https://tw.pycon.org/2022/)**
 
-**[Oct 2020 - Nov 2021] Chairperson, [PyCon Taiwan](https://tw.pycon.org/) 2021**
+* Coordinated 3 squads, including planning, sponsorship, and social media
+* Hosted the first Ask Me Anything event for promoting Call for Proposals
 
-**[Dec 2019 - Sep 2020] Program Chair, [PyCon Taiwan](https://tw.pycon.org/) 2020**
+**[Oct 2020 - Nov 2021] Chairperson, [PyCon Taiwan 2021](https://tw.pycon.org/2021/)**
 
-**[Jul 2019 – Nov 2019] Program Committee Member, [PyCon Taiwan](https://tw.pycon.org/) 2019**
+* Coordinated 9 teams and hosted the first online PyCon TW with 550 participants
+
+**[Dec 2019 - Sep 2020] Program Chair, [PyCon Taiwan 2020](https://tw.pycon.org/2020/)**
+
+* Coordinated around 20 team members and introduced community tracks and a speaker-dispatch program to increase the interaction between local communities.
+
+**[Jul 2019 – Nov 2019] Program Committee Member, [PyCon Taiwan 2019](https://tw.pycon.org/2019)**
 
 * Contact keynote speakers and financial aid applicants
 * Contribute to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
