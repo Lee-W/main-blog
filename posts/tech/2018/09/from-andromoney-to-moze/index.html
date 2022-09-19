@@ -112,21 +112,21 @@ AndroMoney 的各種功能都很方便，只是介面上就比較普通 xD<br>
 但是啊， MOZE 的介面就是好看 xD</p>
 <p>再來就要說說其他我喜歡 MOZE 的原因</p>
 <h3 id="andromoney">AndroMoney 沒有 (或我不會用) 的功能</h3>
-<h4 id="_2">借款事件</h4>
+<h4>借款事件</h4>
 <p><img alt="3-borrow.png" src="/images/posts-image/2018-09-09-andromoney-to-moze/3-borrow.png"></p>
 <p>MOZE 會幫我記住我借錢給誰，而且會一直提醒我誰跟我借了錢<br>
 以前都還要特地記錄到其他 app</p>
 <p><img alt="4-borrow.png" src="/images/posts-image/2018-09-09-andromoney-to-moze/4-borrow.png"><br>
 而且借出的錢，不會算在我的支出，所以也不會影響到我的預算<br>
 算是蠻方便的功能</p>
-<h4 id="_3">繳費事件</h4>
+<h4>繳費事件</h4>
 <p>提醒我信用卡要繳費的時間<br>
 也會有跟借款事件差不多的提醒</p>
-<h4 id="_4">動態改變每天剩餘的預算</h4>
+<h4>動態改變每天剩餘的預算</h4>
 <p>這是一個我還蠻需要的功能<br>
 我會想知道前幾天花的錢如何影響我這個月剩下的日子的預算<br>
 而不是一個從月初的預算直接除以 30 都不改變的數字</p>
-<h4 id="icon">帳戶 icon</h4>
+<h4>帳戶 icon</h4>
 <p>每個帳戶都能加入自己的 icon<br>
 只要是付費版的 MOZE 就會有各家銀行的 icon<br>
 <img alt="5-icon.jpeg" src="/images/posts-image/2018-09-09-andromoney-to-moze/5-icon.jpeg"><br>
@@ -134,7 +134,7 @@ AndroMoney 的各種功能都很方便，只是介面上就比較普通 xD<br>
 只有其他類別的彩色圖是要購買<br>
 但我是覺得原本的我比較喜歡 xD<br>
 另外，也可以自己製作想要的 icon 匯入 ~</p>
-<h4 id="_5">電子發票載具</h4>
+<h4>電子發票載具</h4>
 <p>以前都沒有什麼要用電子載具的誘因<br>
 就完全忘了這回事<br>
 現在這個可以直接幫我記帳就很吸引我<br>
@@ -144,17 +144,17 @@ AndroMoney 的各種功能都很方便，只是介面上就比較普通 xD<br>
 這對我也是蠻重要的功能</p>
 <p>只是目前好像還不能針對轉帳或借款事件歸帳<br>
 希望這些能透過 MOZE 3.0 會有的分帳功能解決</p>
-<h4 id="moze-30">拆帳 (MOZE 3.0 才有)</h4>
+<h4>拆帳 (MOZE 3.0 才有)</h4>
 <p>雖然目前還沒有，但這個功能我現在很期待<br>
 所以還是想列一下 xD</p>
 <h3 id="moze_1">MOZE 沒有 (或我不會用) 的功能</h3>
-<h4 id="_6">專案不能跨幣別</h4>
+<h4>專案不能跨幣別</h4>
 <p>我之前去歐洲的那些紀錄就因為這樣，必須用標籤來分類 QQ<br>
 不過聽說 MOZE 3.0 會新增就是</p>
-<h4 id="_7">不能將單一紀錄不計算在花費中</h4>
+<h4>不能將單一紀錄不計算在花費中</h4>
 <p>主要是有些特別的花費我不會想要扣在我的預算中<br>
 這樣那個月剩下的天數的預算就都會是 0，好像也不太對 ...</p>
-<h4 id="andromoney_1">【AndroMoney 功能教學目錄】</h4>
+<h4>【AndroMoney 功能教學目錄】</h4>
 <p>這個我真的覺得超棒的<br>
 他把目前能用他現有功能做到的事，全部整理起來<br>
 現在 MOZE 還是比較需要去爬舊文翻，或直接問粉專<br>
@@ -168,8 +168,9 @@ btw MOZE 有說之後會提供 web 版的匯入工具</p>
 <p>當然我也寫了一個小 script<br>
 <strong><a href="https://github.com/Lee-W/AndroMoney_to_MOZE_transformater">AndroMoney_to_MOZE_transformater</a></strong></p>
 <h3 id="script">Script 使用方式</h3>
-<div class="highlight"><pre><span></span><code>python transformater.py --input_file <span class="s2">&quot;Your input filename&quot;</span> extract
-</code></pre></div>
+<div class="highlight"><pre><span></span>python transformater.py --input_file <span class="s2">&quot;Your input filename&quot;</span> extract
+</pre></div>
+
 
 <p>在轉換的過程中，會有一些資料還是要手動輸入的<br>
 其實後來大多時間是花在這 ...</p>
@@ -181,13 +182,14 @@ btw MOZE 有說之後會提供 web 版的匯入工具</p>
 </ul>
 <p>後來發現還有另一個問題是不同幣別的轉帳， AndroMoney 匯出的資料不會有轉入的金額<br>
 所以沒辦法自動化，這點倒是比較麻煩</p>
-<div class="highlight"><pre><span></span><code>python transformater.py transformat --input_file <span class="s2">&quot;Your input filename&quot;</span> --output_file MOZE.csv
-</code></pre></div>
+<div class="highlight"><pre><span></span>python transformater.py transformat --input_file <span class="s2">&quot;Your input filename&quot;</span> --output_file MOZE.csv
+</pre></div>
+
 
 <p>再來就是要把原本 AndroMoney 的紀錄轉成 MOZE 的格式<br>
 只要把這個 <code>MOZE.csv</code> (一定要是這個檔名) 丟到 Dropbox 的 <code>應用程式/MOZE</code><br>
 MOZE 就能找到，並能選擇匯入</p>
-<h3 id="_8">踩到的一些坑</h3>
+<h3 id="_2">踩到的一些坑</h3>
 <p>寫這個 script 的過程中，其實踩到蠻多坑的<br>
 匯入了好幾次才成功</p>
 <p>一來這是我第一次從<a href="https://docs.python.org/3/library/argparse.html">argparse</a> 換到<a href="http://click.pocoo.org">click</a><br>

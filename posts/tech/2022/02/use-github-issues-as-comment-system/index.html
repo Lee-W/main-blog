@@ -116,14 +116,14 @@
 
 <h3 id="elegant-utterances">如何在 elegant 設定 utterances</h3>
 <p>根據 <a href="https://elegant.oncrashreboot.com/enable-utterances-comments">Comments — Enable Utterances</a> ， pelican 這端只要在 <code>pelicanconf.py</code> 加入 <code>UTTERANCES_REPO</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># [username]/[repo name]</span>
+<div class="highlight"><pre><span></span><span class="c1"># [username]/[repo name]</span>
 <span class="n">UTTERANCES_REPO</span> <span class="o">=</span> <span class="s2">"Lee-W/Lee-W.github.io"</span>
-</code></pre></div>
+</pre></div>
 <p>注意前面不能加上 <code>https://github.com/</code><br/>
 我因為這個愚蠢的錯誤卡了超久......</p>
 <p>如果想為留言產生的 issue 加上特定的標籤，則可以設定 <code>UTTERANCES_LABEL</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">UTTERANCES_LABEL</span> <span class="o">=</span> <span class="s2">"comment"</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="n">UTTERANCES_LABEL</span> <span class="o">=</span> <span class="s2">"comment"</span>
+</pre></div>
 <p>使用的標籤本身必須要已經存在<br/>
 如果沒有的話，可以到先到 repo 的 Issues 頁面建立</p>
 <p><img alt="create-label" src="/images/posts-image/2021-use-github-issues-as-comment-system/create-label.png"/></p>
@@ -137,14 +137,14 @@
 <p><img alt="comment-result" src="/images/posts-image/2021-use-github-issues-as-comment-system/comment-result.png"/></p>
 <p>如果覺得用文章的 URL 當 issue 的標題很醜，可以在文章的 metadata 中加入 comment_id<br/>
 e.g.,</p>
-<div class="highlight"><pre><span></span><code>Title: Utterances - 用 GitHub Issues 作為文章留言區
+<div class="highlight"><pre><span></span>Title: Utterances - 用 GitHub Issues 作為文章留言區
 Date: 2022-02-23 10:40
 Category: Tech
 Tags: Pelican, blog
 Slug: use-github-issues-as-comment-system
 comment_id: use-github-issues-as-comment-system
 Authors: Lee-W
-</code></pre></div>
+</pre></div>
 <p>再留言一次就會產生以 <code>comment_id</code> 為標題的 issue</p>
 <p><img alt="comment-with-comment-id" src="/images/posts-image/2021-use-github-issues-as-comment-system/comment-with-comment-id.png"/></p>
 <p>我會建議可以的話為每篇文章加上 <code>commend_id</code><br/>
@@ -154,7 +154,7 @@ Authors: Lee-W
 <p>為了能更容易在 attlia 加入 utterances，我稍微研究了 elgant 是怎麼加的<br/>
 以下的程式碼都是使用 <a href="https://github.com/Pelican-Elegant/elegant/tree/V5.4.0">elegnat @ v5.4.0</a></p>
 <p>在 elegant 中全域搜尋 utterances，會先找到 <a href="https://github.com/Pelican-Elegant/elegant/blob/V5.4.0/templates/_includes/utterances_scripts.html">elegant/templates/_includes/utterances_scripts.html</a></p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">macro</span> <span class="nv">comments_script_utterances</span><span class="o">(</span><span class="nv">repo</span><span class="o">,</span> <span class="nv">id</span><span class="o">,</span> <span class="nv">label</span><span class="o">,</span> <span class="nv">theme</span><span class="o">)</span> <span class="cp">%}</span>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">macro</span> <span class="nv">comments_script_utterances</span><span class="o">(</span><span class="nv">repo</span><span class="o">,</span> <span class="nv">id</span><span class="o">,</span> <span class="nv">label</span><span class="o">,</span> <span class="nv">theme</span><span class="o">)</span> <span class="cp">%}</span>
 <span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">"https://utteranc.es/client.js"</span>
         <span class="na">data-repo=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">repo</span> <span class="cp">}}</span><span class="s">"</span>
         <span class="na">data-issue-term=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">id</span> <span class="cp">}}</span><span class="s">"</span>
@@ -164,28 +164,28 @@ Authors: Lee-W
         <span class="err">async</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/script&gt;</span>
 <span class="cp">{%</span> <span class="k">endmacro</span> <span class="cp">%}</span>
-</code></pre></div>
+</pre></div>
 <p>這段 <a href="https://jinja.palletsprojects.com/">jinja2</a> macro 會產生的 JavaScript 程式碼會跟手動在 <a href="https://utteranc.es/">utterances 🔮</a> 產生的小有不同<br/>
 差別是在 <code>repo</code>, <code>issue-term</code>, <code>label</code>, <code>theme</code> 前面的 <code>data-</code> 前綴<br/>
 不過不太會影響實際的使用<br/>
 詳細可以參考 👉<a href="https://github.com/utterance/utterances/pull/334">Update index.html #334</a></p>
 <p>再來能找到 macro <code>comments_script_utterances</code> 會在 <a href="https://github.com/Pelican-Elegant/elegant/blob/V5.4.0/templates/_includes/comments.html#L55">templates/_includes/comments.html#L55</a> 被用到</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">use_utterances</span> <span class="o">%</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">use_utterances</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">{</span><span class="o">%</span> <span class="kn">from</span> <span class="s1">'_includes/utterances_scripts.html'</span> <span class="kn">import</span> <span class="nn">comments_script_utterances</span> <span class="k">with</span> <span class="n">context</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">{{</span> <span class="n">comments_script_utterances</span><span class="p">(</span><span class="n">UTTERANCES_REPO</span><span class="p">,</span> <span class="n">identifier</span><span class="p">,</span> <span class="n">UTTERANCES_LABEL</span><span class="p">,</span> <span class="n">UTTERANCES_THEME</span><span class="p">)</span> <span class="p">}}</span>
 <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
-</code></pre></div>
+</pre></div>
 <p>其中參數 <code>UTTERANCES_REPO</code>, <code>UTTERANCES_LABEL</code>, <code>UTTERANCES_THEME</code> 都是能透過 <code>pelicanconf.py</code> 被設定的<br/>
 而 <code>identifier</code> 則可以往上在 <a href="https://github.com/Pelican-Elegant/elegant/blob/V5.4.0/templates/_includes/comments.html#L11">templates/_includes/comments.html#L11</a> 找到<br/>
 如果沒有在文章的 metadata 加入 comment_id，則預設值是 <code>SITEURL + '/' + article.url</code><br/>
 （就是一開始比較醜的 issue 標題）</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">set</span> <span class="nv">identifier</span> <span class="o">=</span> <span class="nv">SITEURL</span><span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="nv">article.url</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">set</span> <span class="nv">identifier</span> <span class="o">=</span> <span class="nv">SITEURL</span><span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="nv">article.url</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.comment_id</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">set</span> <span class="nv">identifier</span> <span class="o">=</span> <span class="nv">article.comment_id</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">elif</span> <span class="nv">article.disqus_identifier</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">set</span> <span class="nv">identifier</span> <span class="o">=</span> <span class="nv">article.disqus_identifier</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-</code></pre></div>
+</pre></div>
 <h2 id="utterances">如何為其他主題加入 utterances</h2>
 <p>我將 attila 的改動細節記錄在 <a href="https://github.com/Lee-W/attila/commit/236706851759c07d1ee0dd312eaf703293911c08">commit 236706</a><br/>
 流程大致如下</p>

@@ -93,8 +93,9 @@
 
 <h2 id="vundle">用 vundle 安裝</h2>
 <p>在 vimrc 中加入下面這行</p>
-<div class="highlight"><pre><span></span><code>Bundle <span class="s1">&#39;vimspell&#39;</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span>Bundle <span class="s1">&#39;vimspell&#39;</span>
+</pre></div>
+
 
 <p>接著用 <code>:BundleInstall</code> 安裝</p>
 <h2 id="_1">字典檔</h2>
@@ -104,25 +105,28 @@
 應該會看到下面這樣<br>
 <img alt="1_directory" src="/images/posts-image/2015-02-14-vim-spell-check/gLWMnmW.png"></p>
 <p>接著進入 vim 在 normal mode 輸入</p>
-<div class="highlight"><pre><span></span><code><span class="p">:</span><span class="k">mkspell</span> <span class="k">en</span> en_US
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="p">:</span><span class="k">mkspell</span> <span class="k">en</span> en_US
+</pre></div>
+
 
 <p><code>en</code> 可以自己定義，<code>en\_US</code> 必須是 .aff 和 .dic 的檔名<br>
 檢查一下 vim 資料夾下的 spell 資料夾有沒有新增字典檔，確定有了後就新增完成了</p>
 <h2 id="_2">設定</h2>
 <p>首先要先定義要根據哪個字典檔</p>
-<div class="highlight"><pre><span></span><code><span class="p">:</span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="p">:</span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
+</pre></div>
+
 
 <p>en 就是剛剛所定義的名稱</p>
 <p>接著 <code>:set spell</code> 就可以開啟了<br>
 <code>:set nospell</code> 則是關閉</p>
 <p>如果每次都要設定一次，就太麻煩了<br>
 我在 vimrc 加入了下面這些</p>
-<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
+<div class="highlight"><pre><span></span><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span><span class="k">en</span>
 nmap <span class="p">&lt;</span>F7<span class="p">&gt;</span> :<span class="k">setlocal</span> <span class="k">spell</span><span class="p">!&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 autocmd <span class="nb">BufRead</span> *.txt<span class="p">,</span>*.md<span class="p">,</span>*.tex <span class="k">setlocal</span> <span class="k">spell</span>
-</code></pre></div>
+</pre></div>
+
 
 <p>第二行是每次按 F7 就能開啟或關閉 vimspell，也可以換成自己想要的快捷鍵<br>
 第三行則是每次遇到副檔名是 txt, md, tex 時就自動開啟 vimspell</p>

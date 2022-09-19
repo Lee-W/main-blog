@@ -200,7 +200,7 @@
 <p><span class="math">\( \pi = \arg \min_{a\in A}Q(s,a)\)</span></p>
 <p>(i.e. For all "a" in A, find the "a" such that min Q(s, a))</p>
 <h3 id="42-strategy-oriented-reinforcement-learning">4.2 Strategy-Oriented Reinforcement-Learning</h3>
-<h4 id="setup">Setup</h4>
+<h4>Setup</h4>
 <ul>
 <li>Env<ul>
 <li>Influence propagation process</li>
@@ -266,14 +266,14 @@
 </ul>
 </li>
 </ul>
-<h4 id="data-for-training">Data For Training</h4>
+<h4>Data For Training</h4>
 <ul>
 <li>Propagation model is known (e.g. LT in the experiments)</li>
 <li>Strategies served as actions are predefined</li>
 </ul>
 <p>In training phase, train the agent against a certain strategy and see how it performs on the given network<br/>
 These data can be used to learn the value functions</p>
-<h4 id="training-against-opponents">Training Against Opponents</h4>
+<h4>Training Against Opponents</h4>
 <ul>
 <li>Opponent Strategy<ul>
 <li>Known: Simulate the strategy during training</li>
@@ -282,7 +282,7 @@ These data can be used to learn the value functions</p>
 </ul>
 </li>
 </ul>
-<h4 id="phase">Phase</h4>
+<h4>Phase</h4>
 <ul>
 <li>Phase 1: Training<ul>
 <li>The agent update its Q function from the simulation experiences throughout the training rounds</li>

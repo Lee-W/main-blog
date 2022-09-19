@@ -117,7 +117,7 @@
 <p>We'll continue using <a href="https://github.com/Lee-W/dvc_example/">dvc_example</a>. You can checkout to tag <a href="https://github.com/Lee-W/dvc_example/tree/v3-remove-2-rows">v3-remove-2-rows</a> to follow along.</p>
 <h3 id="split-training-logic-into-different-stages">Split training logic into different stages</h3>
 <p>In the original design, we use <code>pipenv run python digit_recognizer/digit_recognizer.py</code> to run the whole training process. We'll split them into <code>process-data</code>, <code>train</code>, and <code>report</code> stages.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="o">......</span>
 
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">command</span> <span class="o">==</span> <span class="s2">"process-data"</span><span class="p">:</span>
@@ -135,16 +135,16 @@
         <span class="n">predicted_y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
         <span class="n">output_test_data_results</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">)</span>
         <span class="n">output_metrics</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">)</span>
-</code></pre></div>
+</pre></div>
 <p>You can view the complete code change on <a href="https://github.com/Lee-W/dvc_example/compare/v3-remove-2-rows...v4-split-pipeline-logic">v3-remove-2-rows...v4-split-pipeline-logic</a>.</p>
 <p>After these changes, we'll use the following 3 commands to run the pipeline.</p>
-<div class="highlight"><pre><span></span><code>pipenv run python digit_recognizer/digit_recognizer.py process-data
+<div class="highlight"><pre><span></span>pipenv run python digit_recognizer/digit_recognizer.py process-data
 pipenv run python digit_recognizer/digit_recognizer.py train
 pipenv run python digit_recognizer/digit_recognizer.py report
-</code></pre></div>
+</pre></div>
 <h3 id="add-the-first-stage-in-our-pipeline-to-dvc">Add the first stage in our pipeline to DVC</h3>
 <p>We add stages through <a href="https://dvc.org/doc/command-reference/run">dvc run</a> command. Let's add our first stage <code>process-data</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># add process-data stage</span>
+<div class="highlight"><pre><span></span><span class="c1"># add process-data stage</span>
 $ pipenv run dvc run --name process-data <span class="se">\</span>
       -d digit_recognizer/digit_recognizer.py <span class="se">\</span>
       -d data/digit_data.csv <span class="se">\</span>
@@ -170,7 +170,7 @@ Next, we add these DVC files into git to track.
 <span class="c1"># add DVC configuration to git and commit</span>
 $ git add dvc.yaml dvc.lock output/.gitignore
 $ pipenv run cz commit
-</code></pre></div>
+</pre></div>
 <p>See what's composed of this command</p>
 <ul>
 <li><code>--name</code>: the name of this stage<ul>
@@ -190,8 +190,8 @@ $ pipenv run cz commit
 </ul>
 <p><code>dvc run</code> runs the stage right after adding it. If you don't want DVC to run it, you can add <code>--no-exec</code> flag or <a href="https://dvc.org/doc/command-reference/stage/add">dvc stage add</a> with the same arguments</p>
 <p>After adding a stage, DVC updates <code>dvc.yaml</code>, <code>output/.gitignore</code> and <code>dvc.lock</code></p>
-<h4 id="dvcyaml-the-definition-of-stages"><code>dvc.yaml</code>: the definition of stages</h4>
-<div class="highlight"><pre><span></span><code><span class="nt">stages</span><span class="p">:</span><span class="w"></span>
+<h4><code>dvc.yaml</code>: the definition of stages</h4>
+<div class="highlight"><pre><span></span><span class="nt">stages</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">process-data</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py process-data</span><span class="w"></span>
 <span class="w">    </span><span class="nt">deps</span><span class="p">:</span><span class="w"></span>
@@ -201,10 +201,10 @@ $ pipenv run cz commit
 <span class="w">    </span><span class="nt">outs</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/testing_data.pkl</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/training_data.pkl</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>DVC transforms what we defined in <code>dvc run</code> to a human-readable format and store it. But if you already know how to define the stage, you can edit <code>dvc.yaml</code> directly. In addition, there're advanced techniques like <a href="https://dvc.org/doc/user-guide/project-structure/pipelines-files#templating">Templating</a> and <a href="https://dvc.org/doc/user-guide/project-structure/pipelines-files#foreach-stages">foreach stages</a> that can help us define complicated stages.</p>
-<h4 id="dvclock-the-hashes-of-dependencies-and-outputs"><code>dvc.lock</code>: the hashes of dependencies and outputs</h4>
-<div class="highlight"><pre><span></span><code><span class="nt">schema</span><span class="p">:</span><span class="w"> </span><span class="s">'2.0'</span><span class="w"></span>
+<h4><code>dvc.lock</code>: the hashes of dependencies and outputs</h4>
+<div class="highlight"><pre><span></span><span class="nt">schema</span><span class="p">:</span><span class="w"> </span><span class="s">'2.0'</span><span class="w"></span>
 <span class="nt">stages</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">process-data</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipenv run python digit_recognizer/digit_recognizer.py process-data</span><span class="w"></span>
@@ -225,12 +225,12 @@ $ pipenv run cz commit
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/training_data.pkl</span><span class="w"></span>
 <span class="w">      </span><span class="nt">md5</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">f95e8f978a05395ba23479ff60eda076</span><span class="w"></span>
 <span class="w">      </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">528427</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>DVC uses these hashes to know whether there's any modification on our stages. Therefore, we only add deterministic files. Randomness might make this lock file meaningless. Take a look at the "Avoiding unexpected behavior" in <a href="https://dvc.org/doc/command-reference/run#description">dvc run - Description</a> could save your time debugging unexpected failure.</p>
-<h4 id="outputgitignore-add-files-that-dvc-should-track-to-gitignore"><code>output/.gitignore</code>: Add files that DVC should track to gitignore</h4>
+<h4><code>output/.gitignore</code>: Add files that DVC should track to gitignore</h4>
 <h3 id="define-the-whole-pipeline">Define the whole pipeline</h3>
 <p>With similar command, we can add <code>train</code> and <code>report</code> stages to our pipeline.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># add train stage</span>
+<div class="highlight"><pre><span></span><span class="c1"># add train stage</span>
 pipenv run dvc run --name train <span class="se">\</span>
       -d digit_recognizer/digit_recognizer.py <span class="se">\</span>
       -d output/training_data.pkl <span class="se">\</span>
@@ -249,9 +249,9 @@ pipenv run dvc run --name report <span class="se">\</span>
 <span class="c1"># add DVC configuration to git and commit</span>
 git add dvc.yaml dvc.lock model/.gitignore
 pipenv run cz commit
-</code></pre></div>
+</pre></div>
 <p>Similar to our previous step, DVC updates <code>dvc.yaml</code>, <code>dvc.lock</code> and <code>output/.gitignore</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">$ cat dvc.yaml</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">$ cat dvc.yaml</span><span class="w"></span>
 
 <span class="nn">...</span><span class="w"></span>
 <span class="w">  </span><span class="nt">train</span><span class="p">:</span><span class="w"></span>
@@ -270,9 +270,9 @@ pipenv run cz commit
 <span class="w">    </span><span class="nt">outs</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/metrics.json</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output/test_data_results.csv</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>We can visualize the pipeline through <a href="https://dvc.org/doc/command-reference/dag">dvc dag</a></p>
-<div class="highlight"><pre><span></span><code>$ pipenv run dvc dag
+<div class="highlight"><pre><span></span>$ pipenv run dvc dag
 
     +----------+
     <span class="p">|</span> data.dvc <span class="p">|</span>
@@ -295,25 +295,25 @@ pipenv run cz commit
      +--------+
      <span class="p">|</span> report <span class="p">|</span>
      +--------+
-</code></pre></div>
+</pre></div>
 <p>If you pay attention to each parameter passes to <code>dvc run</code>, you might have noticed that <code>train</code> stage depends on the output <code>output/training_data.pkl</code> from <code>process-data</code> stage. This is how DVC decides the order of each stage in our pipeline.</p>
 <h3 id="run-the-pipeline">Run the pipeline</h3>
 <p>Contradict to its naming, <code>dvc run</code> is only used for defining the stage and run it for the first time. <a href="https://dvc.org/doc/command-reference/repro#repro">dvc repro</a> (reproduce) is what we use to run the pipeline,</p>
-<div class="highlight"><pre><span></span><code>$ pipenv run dvc repro
+<div class="highlight"><pre><span></span>$ pipenv run dvc repro
 
 <span class="s1">'data.dvc'</span> didn<span class="s1">'t change, skipping</span>
 <span class="s1">Stage '</span>train<span class="s1">' didn'</span>t change, skipping
 Data and pipelines are up to date.
-</code></pre></div>
+</pre></div>
 <p>Because we've not yet made any changes since we define our pipeline, DVC won't waste time and resources to generate results it has already known. However, you can add a <code>-f</code> flag to force DVC to rerun the pipeline.</p>
 <p>Next, we'll change gamma to 0.01 to see how <code>dvc repro</code> works.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="o">...</span>
     <span class="n">clf</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
     <span class="o">...</span>
-</code></pre></div>
+</pre></div>
 <p>Because our dependency <code>digit_recognizer/digit_recognizer.py</code> has been modified, DVC expects the result might be different. Therefore, we can now run <code>dvc repro</code>.</p>
-<div class="highlight"><pre><span></span><code>$ pipenv run dvc repro
+<div class="highlight"><pre><span></span>$ pipenv run dvc repro
 
 <span class="s1">'data.dvc'</span> didn<span class="s1">'t change, skipping</span>
 <span class="s1">Running stage '</span>process-data<span class="s1">':</span>
@@ -332,11 +332,11 @@ To track the changes with git, run:
 
 git add dvc.lock
 Use <span class="sb">`</span>dvc push<span class="sb">`</span> to send your updates to remote storage.
-</code></pre></div>
+</pre></div>
 <p>By running <code>git diff</code>, you'll find out that the hashes of <code>digit_recognizer/digit_recognizer.py</code>, <code>output/model.pkl</code>, <code>output/metrics.json</code>, <code>output/test_data_results.csv</code> inside <code>dvc.lock</code> has been changed.</p>
 <h3 id="track-parameters">Track parameters</h3>
 <p>In the previous section, even though we change only the parameter related to the <code>train</code> stage, DVC still reruns the whole pipeline. To make DVC runs only the stages affect by the changed parameters, we can refactor our code to load parameters from a separate file <code>params.yaml</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">params</span> <span class="o">=</span> <span class="n">load_params</span><span class="p">(</span><span class="s2">"params.yaml"</span><span class="p">)</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s2">"data/digit_data.csv"</span><span class="p">,</span> <span class="s2">"data/digit_target.csv"</span><span class="p">)</span>
     <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">process_data</span><span class="p">(</span>
@@ -346,14 +346,14 @@ Use <span class="sb">`</span>dvc push<span class="sb">`</span> to send your upda
     <span class="n">model</span> <span class="o">=</span> <span class="n">train_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s2">"train"</span><span class="p">])</span>
     <span class="n">export_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
     <span class="o">......</span>
-</code></pre></div>
+</pre></div>
 <p>This is how <code>params.yaml</code> looks like.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">process_data</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">process_data</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">test_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span><span class="w"></span>
 <span class="w">  </span><span class="nt">shuffle</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="nt">train</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">gamma</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>Full code changes can be found on <a href="https://github.com/Lee-W/dvc_example/tree/v5-parameters-in-separate-file">v5-parameters-in-separate-file</a>.</p>
 <p>To add parameters to a stage, we'll need to run the previous <code>dvc run</code> command again with <code>-f</code> and <code>-p</code> flag.</p>
 <ul>
@@ -363,7 +363,7 @@ Use <span class="sb">`</span>dvc push<span class="sb">`</span> to send your upda
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1"># Add parameters process_data.test_size and process_data.shuffle to process-data stage</span>
+<div class="highlight"><pre><span></span><span class="c1"># Add parameters process_data.test_size and process_data.shuffle to process-data stage</span>
 pipenv run dvc run -f --name process-data <span class="se">\</span>
       -d digit_recognizer/digit_recognizer.py <span class="se">\</span>
       -d data/digit_data.csv <span class="se">\</span>
@@ -384,9 +384,9 @@ pipenv run dvc run -f --name train <span class="se">\</span>
 <span class="c1"># add DVC configuration to git and commit</span>
 git add dvc.yaml dvc.lock model/.gitignore
 pipenv run cz commit
-</code></pre></div>
+</pre></div>
 <p>DVC adds <code>params</code> key to both <code>process-data</code> and <code>train</code> stages in <code>dvc.yaml</code>.</p>
-<div class="highlight"><pre><span></span><code>stages:
+<div class="highlight"><pre><span></span>stages:
   process-data:
     ......
     params:
@@ -396,24 +396,24 @@ pipenv run cz commit
       ......
     params:
     - train.gamma
-</code></pre></div>
+</pre></div>
 <p><code>params.yaml</code> is the default parameter file name, but DVC also supports YAML, JSON, TOML, and <a href="https://dvc.org/doc/command-reference/params#examples-python-parameters-file">Python files</a>. We only need to add the file name as an additional layer to <code>params</code> to use it. e.g.,</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1"># this is an example of using different parameter file name</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># this is an example of using different parameter file name</span><span class="w"></span>
 <span class="w">  </span><span class="c1"># we don't need to make changes to our code</span><span class="w"></span>
 <span class="w">  </span><span class="nt">train</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">......</span><span class="w"></span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">params</span><span class="p p-Indicator">:</span><span class="w"></span>
 <span class="w">  </span><span class="w w-Error">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">params.json</span><span class="w"></span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">- train.gamma</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>Let's change gamma to 0.1. We can check this change through <a href="https://dvc.org/doc/command-reference/params/diff">dvc params diff</a>. By providing git reference, we can even see parameters difference between different git commits. (e.g., <code>dvc params diff HEAD~1</code>)</p>
-<div class="highlight"><pre><span></span><code>$ pipenv run dvc params diff
+<div class="highlight"><pre><span></span>$ pipenv run dvc params diff
 
 Path     Param        Old    New
 params.yaml  train.gamma  <span class="m">0</span>.01   <span class="m">0</span>.1
-</code></pre></div>
+</pre></div>
 <p>If we run <code>dvc repro</code> now, DVC reruns only <code>train</code> and <code>report</code> stages. <code>train</code> stage is affected by <code>train.gamma</code> change. Due to this change, the output file from the <code>train</code> stage has been updated. Thus, DVC reruns <code>report</code> stages as well.</p>
-<div class="highlight"><pre><span></span><code>$ pipenv run dvc repro
+<div class="highlight"><pre><span></span>$ pipenv run dvc repro
 
 <span class="s1">'data.dvc'</span> didn<span class="s1">'t change, skipping</span>
 <span class="s1">Stage '</span>process-data<span class="s1">' didn'</span>t change, skipping
@@ -432,12 +432,12 @@ Use <span class="sb">`</span>dvc push<span class="sb">`</span> to send your upda
 
 <span class="c1"># reset gamma back to 0.01</span>
 $ git checkout dvc.lock params.yaml
-</code></pre></div>
+</pre></div>
 <p>We're not going to store this parameter change. Run <code>git checkout out params.yaml dvc.lock</code> to restore the previous state.</p>
 <h3 id="track-metrics">Track metrics</h3>
 <p>We now know how to track parameters. Next, we'll see how changing these parameters affect the performance of our models. You may have already noticed that we've outputted a <code>output/metrics.json</code> file. Although we could track it as the output file, DVC has better support for metrics files.</p>
 <p>Like adding parameters, we add <code>-m</code> flag for DVC to recognize the output as metrics. Instead of using <code>-M</code> as the official tutorial did, I use <code>-m</code> because I prefer tracking metrics through DVC remote storage instead of saving it to git as part of our source code.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Add output/metrics.json as metrics to report stage</span>
+<div class="highlight"><pre><span></span><span class="c1"># Add output/metrics.json as metrics to report stage</span>
 $ pipenv run dvc run -f --name report <span class="se">\</span>
       -d digit_recognizer/digit_recognizer.py <span class="se">\</span>
       -d output/testing_data.pkl <span class="se">\</span>
@@ -458,16 +458,16 @@ $ cat dvc.yaml
     ......
     metrics:
     - metrics.json:
-</code></pre></div>
+</pre></div>
 <p>Use <a href="https://dvc.org/doc/command-reference/metrics/show">dvc metrics show</a> to see how well our model performs<br/>
 Note that values are not calculated through DVC. DVC only provides a way to display values in file organized as tree hierarchies and compare them throughout different git commits.</p>
-<div class="highlight"><pre><span></span><code>$ pipenv run dvc metrics show
+<div class="highlight"><pre><span></span>$ pipenv run dvc metrics show
 
 Path             accuracy_score    weighted_f1_score    weighted_precision    weighted_recall
 output/metrics.json  <span class="m">0</span>.69265       <span class="m">0</span>.74567              <span class="m">0</span>.91941               <span class="m">0</span>.69265
-</code></pre></div>
+</pre></div>
 <p>Change gamma to 0.1 again and use <a href="https://dvc.org/doc/command-reference/metrics/diff">dvc metrics diff</a> to see if model performance is improved after this change.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># reruns the pipeline with new parameters</span>
+<div class="highlight"><pre><span></span><span class="c1"># reruns the pipeline with new parameters</span>
 $ pipenv run dvc repro
 
 <span class="c1"># check metrics differences between unstaged and HEAD</span>
@@ -481,19 +481,19 @@ output/metrics.json  weighted_recall <span class="m">0</span>.69265  <span class
 
 <span class="c1"># reset gamma back to 0.01</span>
 $ git checkout dvc.lock params.yaml
-</code></pre></div>
+</pre></div>
 <p>We don't need this change either. Reset gamma back to 0.01 through <code>git checkout</code></p>
 <h3 id="plotting">plotting</h3>
 <p>There's only one left output <code>output/test_data_results.csv</code> that has not yet been used. This file stores the ground truth and the predicted result from our model. We're going to use it to see how DVC plots our data. Before plotting, let's change gamma to 0.001 first and run <code>dvc repro</code>. Otherwise, the output plot will look a bit odd due to the low model performance.</p>
-<div class="highlight"><pre><span></span><code>$ cat output/test_data_results.csv
+<div class="highlight"><pre><span></span>$ cat output/test_data_results.csv
 
 actual,predicted
 <span class="m">4</span>.0,4.0
 <span class="m">8</span>.0,8.0
 ......
-</code></pre></div>
+</pre></div>
 <p>Add <code>--plots</code> flag and specify <code>output/test_data_results.csv</code> as the file to plot</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># add output/test_data_results.csv as the file to plot to report stage</span>
+<div class="highlight"><pre><span></span><span class="c1"># add output/test_data_results.csv as the file to plot to report stage</span>
 $ pipenv run dvc run -f --name report <span class="se">\</span>
       -d digit_recognizer/digit_recognizer.py <span class="se">\</span>
       -d output/testing_data.pkl <span class="se">\</span>
@@ -508,14 +508,14 @@ $ cat dvc.yaml
   ......
   plots:
   - output/test_data_results.csv
-</code></pre></div>
+</pre></div>
 <p>DVC generates plots through <a href="https://vega.github.io/vega/">Vega</a>, a declarative grammar that can define interactive graph in JSON format. It supports linear plot, scatter plot, and confusion matrix by default. These templates are stored in <code>.dvc/plots</code>. We can also define our plots. (Read<br/>
 <a href="https://dvc.org/doc/command-reference/plots#custom-templates">dvc plots - Custom templates</a> to find out more)</p>
 <p>In the following example, we'll plot a confusion matrix through <a href="https://dvc.org/doc/command-reference/plots/show">dvc plots show</a>.</p>
-<div class="highlight"><pre><span></span><code>$ pipenv run dvc plots show output/test_data_results.csv --template confusion -x actual -y predicted --out confusion_matrix.html
+<div class="highlight"><pre><span></span>$ pipenv run dvc plots show output/test_data_results.csv --template confusion -x actual -y predicted --out confusion_matrix.html
 
 file:///....../confusion_matrix.html
-</code></pre></div>
+</pre></div>
 <ul>
 <li><code>--template</code>: name of the plot template</li>
 <li><code>-x</code>: field name of the data for the X-axis</li>
@@ -525,15 +525,15 @@ file:///....../confusion_matrix.html
 <p>The following is a screenshot of the generated plot.</p>
 <p><img alt="confusion-matrix" src="/images/posts-image/2021-dvc/confusion-matrix.jpg"/></p>
 <p>As of now, DVC does not track our plot (i.e. <code>confusion-matrix.jpg</code>) but only our data to plot (i.e., <code>output/test_data_results.csv</code>). Let's add <code>plot</code> as the final stage of our pipeline.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Add stage plot</span>
+<div class="highlight"><pre><span></span><span class="c1"># Add stage plot</span>
 pipenv run dvc run -f --name plot <span class="se">\</span>
           -d output/test_data_results.csv <span class="se">\</span>
           -o confusion_matrix.html <span class="se">\</span>
           <span class="s2">"pipenv run dvc plots show output/test_data_results.csv --template confusion -x actual -y predicted --out confusion_matrix.html"</span>
-</code></pre></div>
+</pre></div>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this post, we create a data pipeline that process data, train the model, generate the report and visualize it.</p>
-<div class="highlight"><pre><span></span><code>$ pipenv run dvc dag
+<div class="highlight"><pre><span></span>$ pipenv run dvc dag
 
        +----------+
        <span class="p">|</span> data.dvc <span class="p">|</span>
@@ -562,7 +562,7 @@ pipenv run dvc run -f --name plot <span class="se">\</span>
          +------+
          <span class="p">|</span> plot <span class="p">|</span>
          +------+
-</code></pre></div>
+</pre></div>
 <p>We also see how to use DVC to track each component and provide an easy way to run the pipeline. In the following article, we will discuss how to run experiments with different parameters and compare the results in an even more convenient way.</p>
 <h2 id="one-more-thing-when-should-we-save-files-to-dvc-instead-of-git">One more thing: When should we save files to DVC instead of git?</h2>
 <p>Short answer: It depends.</p>

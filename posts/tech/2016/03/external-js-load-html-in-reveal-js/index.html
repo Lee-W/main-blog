@@ -100,41 +100,46 @@
 <li>把 extneral 裡面的 external 資料夾放到 plugin 裡面</li>
 <li>在 <code>index.html</code> 中的 <code>Reveal.initalize</code> 這個 block 加入下面的內容</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;plugin/external/external.js&#39;</span><span class="p">,</span> <span class="nx">condition</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span> <span class="s1">&#39;[data-external]&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;plugin/external/external.js&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">condition</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="w"> </span><span class="s1">&#39;[data-external]&#39;</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+</pre></div>
+
 
 <h2 id="method2-submodule">Method2: Submodule</h2>
 <p>不過為了讓他的更新也能被追蹤，我使用了 git submodule</p>
 <ul>
 <li>git submodule</li>
 </ul>
-<div class="highlight"><pre><span></span><code>git submodule add https://github.com/calevans/external plugin/external
-</code></pre></div>
+<div class="highlight"><pre><span></span>git submodule add https://github.com/calevans/external plugin/external
+</pre></div>
+
 
 <ul>
 <li>在 <code>index.html</code> 中的 <code>Reveal.initalize</code> 這個 block 加入下面的內容</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="p">{</span> <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;plugin/external/external/external.js&#39;</span><span class="p">,</span> <span class="nx">condition</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span> <span class="s1">&#39;[data-external]&#39;</span> <span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;plugin/external/external/external.js&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">condition</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="w"> </span><span class="s1">&#39;[data-external]&#39;</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+</pre></div>
+
 
 <p>( 注意兩種方式加入的內容有些微的不同 )</p>
 <h1 id="usage">Usage</h1>
 <p>之後就能使用 <code>data-external</code> 這個 tag 來載入外部的 html</p>
 <h2 id="indexhtml">原本的 index.html</h2>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">&quot;module_01/index.html&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">&quot;module_01/index.html&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+
 
 <h2 id="html">外部 html</h2>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- module_01/index.html --&gt;</span>
+<div class="highlight"><pre><span></span><span class="cm">&lt;!-- module_01/index.html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> This is external <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
-</code></pre></div>
+</pre></div>
+
 
 <h2 id="html_1">載入後的 html</h2>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">&quot;module_01/index.html&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">&quot;module_01/index.html&quot;</span><span class="p">&gt;</span>
     <span class="cm">&lt;!-- module_01/index.html --&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> This is external <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
-</code></pre></div>
+</pre></div>
 
 
              

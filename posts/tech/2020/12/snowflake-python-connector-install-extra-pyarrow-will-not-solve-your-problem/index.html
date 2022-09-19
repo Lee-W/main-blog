@@ -92,8 +92,9 @@
 
 <p>最近剛好接手了別人弄到一半的專案<br>
 在嘗試把專案跑起來的時候，遇到了這個問題</p>
-<div class="highlight"><pre><span></span><code><span class="nv">Optional</span> <span class="nv">dependency</span>: <span class="s1">&#39;</span><span class="s">pyarrow</span><span class="s1">&#39;</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">installed</span>, <span class="nv">please</span> <span class="nv">see</span> <span class="nv">the</span> <span class="nv">following</span> <span class="nv">link</span> <span class="k">for</span> <span class="nv">install</span> <span class="nv">instructions</span>: <span class="nv">https</span>:<span class="o">//</span><span class="nv">docs</span>.<span class="nv">snowflake</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">en</span><span class="o">/</span><span class="nv">user</span><span class="o">-</span><span class="nv">guide</span><span class="o">/</span><span class="nv">python</span><span class="o">-</span><span class="nv">connector</span><span class="o">-</span><span class="nv">pandas</span>.<span class="nv">html</span>#<span class="nv">installation</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="nv">Optional</span><span class="w"> </span><span class="nv">dependency</span>:<span class="w"> </span><span class="s1">&#39;pyarrow&#39;</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">installed</span>,<span class="w"> </span><span class="nv">please</span><span class="w"> </span><span class="nv">see</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">following</span><span class="w"> </span><span class="nv">link</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">install</span><span class="w"> </span><span class="nv">instructions</span>:<span class="w"> </span><span class="nv">https</span>:<span class="o">//</span><span class="nv">docs</span>.<span class="nv">snowflake</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">en</span><span class="o">/</span><span class="nv">user</span><span class="o">-</span><span class="nv">guide</span><span class="o">/</span><span class="nv">python</span><span class="o">-</span><span class="nv">connector</span><span class="o">-</span><span class="nv">pandas</span>.<span class="nv">html</span>#<span class="nv">installation</span><span class="w"></span>
+</pre></div>
+
 
 <p>看起來是 <code>pyarrow</code> 沒有裝起來，所以可以先嘗試 <code>pip install pyarrow</code><br>
 但很不幸的，這麼做並不會解決問題<br>
@@ -115,22 +116,24 @@
 <p>既然解決了，就要回去思考為什麼能解決<br>
 回去看 <a href="https://github.com/snowflakedb/snowflake-connector-python/tree/v2.3.7/">snowflake-python-connector @ v2.3.7</a> 的 setup.py<br>
 在 <a href="https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L44">44行</a> 可以找到 <code>'pyarrow&gt;=0.17.0,&lt;0.18.0'</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">pandas_requirements</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight"><pre><span></span><span class="n">pandas_requirements</span> <span class="o">=</span> <span class="p">[</span>
     <span class="c1"># Must be kept in sync with pyproject.toml</span>
     <span class="s1">&#39;pyarrow&gt;=0.17.0,&lt;0.18.0&#39;</span><span class="p">,</span>
     <span class="s1">&#39;pandas&gt;=1.0.0,&lt;1.2.0&#39;</span><span class="p">,</span>
 <span class="p">]</span>
-</code></pre></div>
+</pre></div>
+
 
 <p>接著可以看到 <code>pandas_requirements</code> 在 <a href="https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L240">240行</a> 被用到</p>
-<div class="highlight"><pre><span></span><code><span class="o">...</span>
+<div class="highlight"><pre><span></span><span class="o">...</span>
     <span class="n">extras_require</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;secure-local-storage&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="s1">&#39;keyring&lt;22.0.0,!=16.1.0&#39;</span><span class="p">,</span>
         <span class="p">],</span>
         <span class="s2">&quot;pandas&quot;</span><span class="p">:</span> <span class="n">pandas_requirements</span><span class="p">,</span>
 <span class="o">...</span>
-</code></pre></div>
+</pre></div>
+
 
 <p>原來 <code>pip install snowflake-connector-python[pandas]</code> 同時會安裝 <code>pandas_requirements</code> 中的 pandas 跟 pyarrow<br>
 snowflake-connector-python 並不會單獨裝 pyarrow，這也難怪前面的嘗試會失敗<br>

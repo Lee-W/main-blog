@@ -150,11 +150,12 @@
 </li>
 </ul>
 <p>Raise clear, verbose exception</p>
-<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://api.com/user&#39;</span><span class="p">)</span>
 <span class="k">except</span> <span class="n">RequestError</span><span class="p">:</span>
     <span class="k">raise</span> <span class="n">APIFetchError</span><span class="p">(</span><span class="s1">&#39;Could not get user list&#39;</span><span class="p">)</span>
-</code></pre></div>
+</pre></div>
+
 
 <h3 id="testing">Testing</h3>
 <ul>
@@ -304,7 +305,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="tried-improvements">Tried Improvements</h4>
+<h4>Tried Improvements</h4>
 <ul>
 <li>Tokenizer Improvement<ul>
 <li>Emoji icon pre-processing</li>

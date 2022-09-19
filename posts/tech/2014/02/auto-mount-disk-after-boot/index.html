@@ -92,10 +92,11 @@
 <!--more-->
 
 <p>我們先來看一下 /etc/fstab 內的東西</p>
-<div class="highlight"><pre><span></span><code>sudo cat /etc/fstab
-</code></pre></div>
+<div class="highlight"><pre><span></span>sudo cat /etc/fstab
+</pre></div>
 
-<div class="highlight"><pre><span></span><code># /etc/fstab: static file system information.
+
+<div class="highlight"><pre><span></span># /etc/fstab: static file system information.
 #
 # Use &#39;blkid&#39; to print the universally unique identifier for a
 # device; this may be used with UUID= as a more robust way to name devices
@@ -108,16 +109,18 @@ UUID=c5744283-f105-47e9-8a2e-21f477d895b7 /               ext4    errors=remount
 UUID=72b6a10a-f0b6-43ef-927d-0d74673febe7 none            swap    sw              0       0
 #data
 UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
-</code></pre></div>
+</pre></div>
+
 
 <p># 是註解<br>
 最後六行是比較重要的<br>
 1~2 是 root 的掛載<br>
 3~4 是 swap 的掛載<br>
 5~6 是我自己的 data 的掛載</p>
-<div class="highlight"><pre><span></span><code>#data
+<div class="highlight"><pre><span></span>#data
 UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
-</code></pre></div>
+</pre></div>
+
 
 <p>總共有 6 個欄位</p>
 <ol>
@@ -146,10 +149,11 @@ UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
 <p>基本上 4 5 6 我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到</p>
 <h2 id="_1">測試</h2>
 <p>先看一下是否有掛載成功</p>
-<div class="highlight"><pre><span></span><code>df
-</code></pre></div>
+<div class="highlight"><pre><span></span>df
+</pre></div>
 
-<div class="highlight"><pre><span></span><code>檔案系統         1K-區段      已用      可用 已用 % 掛載點
+
+<div class="highlight"><pre><span></span>檔案系統         1K-區段      已用      可用 已用 % 掛載點
 /dev/sda1      103081248   9259936  88562048   10% /
 none                   4         0         4    0% /sys/fs/cgroup
 udev             3992780         4   3992776    1% /dev
@@ -158,26 +162,31 @@ none                5120         0      5120    0% /run/lock
 none             4006840      1032   4005808    1% /run/shm
 none              102400        44    102356    1% /run/user
 /dev/sda6      459942908 229176172 230766736   50% /media/lee/data
-</code></pre></div>
+</pre></div>
+
 
 <p>像我的最後面就出現了 data</p>
 <p>之後暫時將它卸載 (若 <code>df</code> 之後，分割區沒有出現，那就不用做這步了)</p>
-<div class="highlight"><pre><span></span><code>sudo umount /dev/sda6
-</code></pre></div>
+<div class="highlight"><pre><span></span>sudo umount /dev/sda6
+</pre></div>
+
 
 <p>(/dev/sda6 要取代成你自己的位置 )<br>
 接著再執行一次</p>
-<div class="highlight"><pre><span></span><code>df
-</code></pre></div>
+<div class="highlight"><pre><span></span>df
+</pre></div>
+
 
 <p>剛剛的分割區應該會不見，然後執行<br>
 開機自動掛載分割區</p>
-<div class="highlight"><pre><span></span><code>sudo mount -a
-</code></pre></div>
+<div class="highlight"><pre><span></span>sudo mount -a
+</pre></div>
+
 
 <p>如果沒有錯誤訊息，就在執行一次</p>
-<div class="highlight"><pre><span></span><code>df
-</code></pre></div>
+<div class="highlight"><pre><span></span>df
+</pre></div>
+
 
 <p>如果掛載的分隔驅再裡面就是成功了</p>
 <p>如果有任何異常，就去看一下 /etc/fstab 是不是有哪裡寫錯了</p>

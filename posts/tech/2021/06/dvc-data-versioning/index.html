@@ -149,16 +149,16 @@
 <h2 id="how-to-use-dvc">How to use DVC?</h2>
 <h3 id="install-dvc-globally">Install DVC globally</h3>
 <p>I suggest using <a href="https://pypa.github.io/pipx/">pipx</a> if you're to install DVC globally. However, an even better way is to install it inside the virtual environment within your project.</p>
-<div class="highlight"><pre><span></span><code>$ pip install pipx
+<div class="highlight"><pre><span></span>$ pip install pipx
 $ pipx install dvc
 $ dvc --version
 
 <span class="m">2</span>.3.0
-</code></pre></div>
+</pre></div>
 <p>DVC also provides <a href="https://dvc.org/doc/install/completion">Shell Completion</a> and <a href="https://dvc.org/doc/install/plugins">Syntax Highlighting Plugins</a> for popular editors.</p>
 <h3 id="take-a-look-at-the-example-project">Take a look at the example project</h3>
 <p>I'll use <a href="https://github.com/Lee-W/dvc_example/">dvc_example</a> to demonstrate how I applied DVC to an existing machine learning project. The example is based on <a href="https://scikit-learn.org/0.24/auto_examples/classification/plot_digits_classification.html">Recognizing hand-written digits</a> from scikit-learn documentation. All the DVC parts start from <a href="https://github.com/Lee-W/dvc_example/tree/v1-base">v1-base</a>. You can <code>git checkout</code> to the tag to follow along.</p>
-<div class="highlight"><pre><span></span><code>$ git clone https://github.com/Lee-W/dvc_example/ --branch v1-base
+<div class="highlight"><pre><span></span>$ git clone https://github.com/Lee-W/dvc_example/ --branch v1-base
 $ <span class="nb">cd</span> dvc_example
 $ tree
 .
@@ -173,26 +173,26 @@ $ tree
 ├── mkdocs.yml
 ├── output
 └── tasks.py
-</code></pre></div>
+</pre></div>
 <p>To set up the development environment, you'll need <a href="https://pipenv.pypa.io/en/latest/">pipenv</a> and <a href="https://www.pyinvoke.org/">invoke</a>. If you run into an error when running <code>pipenv install</code>, you can run <code>export SYSTEM_VERSION_COMPAT=1</code> before it. It's an open issue (<a href="https://github.com/pypa/pipenv/issues/4564#issuecomment-756625303">Issue with NumPy, macOS 11 Big Sur, Python 3.9.1 Does pipenv not use the latest pip? #4564</a>) of pipenv as of now. Or, you can just run the following commands.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># install needed tools</span>
+<div class="highlight"><pre><span></span><span class="c1"># install needed tools</span>
 pipx install pipenv invoke
 
 <span class="c1"># set up environments</span>
 invoke init-dev
-</code></pre></div>
+</pre></div>
 <p>We'll use <a href="https://github.com/Lee-W/dvc_example/blob/v1-base/digit_recognizer/digit_recognizer.py">digit_recognizer/digit_recognizer.py</a> for training a model that can recognize handwritten digits.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">()</span>
     <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">process_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">train_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
     <span class="n">predicted_y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
     <span class="n">output_results</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">)</span>
     <span class="n">output_metrics</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">)</span>
-</code></pre></div>
+</pre></div>
 <h3 id="install-dvc-into-the-virtual-environment">Install DVC into the virtual environment</h3>
-<div class="highlight"><pre><span></span><code>pipenv install dvc
-</code></pre></div>
+<div class="highlight"><pre><span></span>pipenv install dvc
+</pre></div>
 <p>If you're to save data to remote storage, you might need to install extra dependencies.<br/>
 (e.g., <code>pipenv install dvc[s3]</code>)</p>
 <ul>
@@ -209,7 +209,7 @@ invoke init-dev
 <p>Or, use <code>pipenv install dvc[all]</code> to install them all</p>
 <p>Read <a href="https://dvc.org/doc/command-reference/remote">dvc remote</a> for more information</p>
 <h3 id="initialize-dvc">Initialize DVC</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># initialize DVC configurations</span>
+<div class="highlight"><pre><span></span><span class="c1"># initialize DVC configurations</span>
 $ pipenv run dvc init
 
 <span class="c1"># see what's created by DVC</span>
@@ -230,31 +230,31 @@ $ git add .dvc
 
 <span class="c1"># git commit</span>
 $ pipenv run cz commit
-</code></pre></div>
+</pre></div>
 <h3 id="add-dvc-remote">Add DVC remote</h3>
 <p>I'll use another local directory <code>../dvc_remote</code> as our remote storage. You can change it to s3 or other remote storage.</p>
-<div class="highlight"><pre><span></span><code>mkdir ../dvc_remote
+<div class="highlight"><pre><span></span>mkdir ../dvc_remote
 dvc remote add --default <span class="nb">local</span> ../dvc_remote
-</code></pre></div>
+</pre></div>
 <p>Through <code>--default</code> flag, we can push/pull from <code>local</code> remote without specifying remote name.</p>
 <p>Let see what's changed in <code>.dvc/config</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="na">$ cat .dvc/config</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="na">$ cat .dvc/config</span><span class="w"></span>
 
 <span class="k">[core]</span><span class="w"></span>
 <span class="na">remote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">local</span><span class="w"></span>
 <span class="k">['remote "local"']</span><span class="w"></span>
 <span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">../../dvc_remote</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>The url is <code>../../dvc_remote</code> instead of <code>../dvc_remote</code> because it's the relative path to <code>.dvc</code>. As we've not yet push anything to our pseudo remote, <code>../dvc_remote</code> is still empty.</p>
 <h3 id="track-data-through-dvc">Track data through DVC</h3>
 <p>By this time, the data is loaded through <a href="https://scikit-learn.org/0.24/modules/generated/sklearn.datasets.load_digits.html">sklearn.datasets.load_digits</a>. We're going to change it to read from static file in <code>data/</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">load_data</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_data</span><span class="p">():</span>
     <span class="c1"># Load data</span>
     <span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
     <span class="o">...</span>
-</code></pre></div>
+</pre></div>
 <p>We can use the following script to output the digit data into <code>data/</code>. Note that it's a one-time use script. We won't add it into git.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
@@ -268,9 +268,9 @@ dvc remote add --default <span class="nb">local</span> ../dvc_remote
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"data/digit_target.csv"</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</code></pre></div>
+</pre></div>
 <p>We'll need to make changes to <code>load_data</code> and <code>main</code> functions to read data from these files.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">X_path</span><span class="p">,</span> <span class="n">y_path</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">X_path</span><span class="p">,</span> <span class="n">y_path</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">X_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
         <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_NONNUMERIC</span><span class="p">)</span>
         <span class="n">X</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">csv_reader</span><span class="p">)</span>
@@ -286,38 +286,38 @@ dvc remote add --default <span class="nb">local</span> ../dvc_remote
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s2">"data/digit_data.csv"</span><span class="p">,</span> <span class="s2">"data/digit_target.csv"</span><span class="p">)</span>
     <span class="o">......</span>
-</code></pre></div>
+</pre></div>
 <p>Run <code>pipenv run python digit_recognizer/digit_recognizer.py</code> to check whether everything works as we expected. If so, add these code changes into git.</p>
 <p>Next, add <code>data/</code> to DVC.</p>
-<div class="highlight"><pre><span></span><code>$ pipenv run dvc add data
+<div class="highlight"><pre><span></span>$ pipenv run dvc add data
 
 <span class="m">100</span>% Add<span class="p">|</span>████████████████<span class="p">|</span><span class="m">1</span>/1 <span class="o">[</span><span class="m">00</span>:00,  <span class="m">2</span>.14file/s<span class="o">]</span>
 
 To track the changes with git, run:
 
 git add data.dvc .gitignore
-</code></pre></div>
+</pre></div>
 <p><code>dvc add</code> creates a <code>data.dvc</code> file to track <code>data/</code> and add it into <code>.gitignore</code> so that <code>data/</code> will only be tracked through DVC but not git.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Add DVC files into git track</span>
+<div class="highlight"><pre><span></span><span class="c1"># Add DVC files into git track</span>
 git add .gitignore data.dvc
 
 <span class="c1"># git commit</span>
 pipenv run cz commit
-</code></pre></div>
+</pre></div>
 <p>In <code>data.dvc</code>, we can see 2 files (<code>digit_data.csv</code> and <code>digit_target.csv</code>) are tracked.</p>
-<div class="highlight"><pre><span></span><code>$ cat data.dvc
+<div class="highlight"><pre><span></span>$ cat data.dvc
 
 outs:
 - md5: b8d81f4964ecb86739c79c833fb491f3.dir
   size: <span class="m">494728</span>
   nfiles: <span class="m">2</span>
   path: data
-</code></pre></div>
+</pre></div>
 <p>Push these tracked data into DVC remote</p>
-<div class="highlight"><pre><span></span><code>dvc push
-</code></pre></div>
+<div class="highlight"><pre><span></span>dvc push
+</pre></div>
 <p>See what's changed in our repo storage <code>../dvc_remote</code></p>
-<div class="highlight"><pre><span></span><code>$ tree ../dvc_remote
+<div class="highlight"><pre><span></span>$ tree ../dvc_remote
 
 ../dvc_remote
 ├── <span class="m">02</span>
@@ -328,12 +328,12 @@ outs:
     └── d81f4964ecb86739c79c833fb491f3.dir
 
 <span class="m">3</span> directories, <span class="m">3</span> files
-</code></pre></div>
+</pre></div>
 <p>The md5 value of our tracked data is <code>b8d81f4964ecb86739c79c833fb491f3.dir</code>. There's also a corresponding file in <code>../dvc_remote/b8/d81f4964ecb86739c79c833fb491f3.dir</code>.</p>
-<div class="highlight"><pre><span></span><code>$ cat ../dvc_remote/b8/d81f4964ecb86739c79c833fb491f3.dir
+<div class="highlight"><pre><span></span>$ cat ../dvc_remote/b8/d81f4964ecb86739c79c833fb491f3.dir
 
 <span class="o">[{</span><span class="s2">"md5"</span>: <span class="s2">"02b861b6dc8e08da6d66547860f69277"</span>, <span class="s2">"relpath"</span>: <span class="s2">"digit_data.csv"</span><span class="o">}</span>, <span class="o">{</span><span class="s2">"md5"</span>: <span class="s2">"8cba569595920d230ade453b150f372b"</span>, <span class="s2">"relpath"</span>: <span class="s2">"digit_target.csv"</span><span class="o">}]</span>%
-</code></pre></div>
+</pre></div>
 <p>This file indicates where the actual data sources are stored in <code>../dvc_remote</code>.</p>
 <p>In conclusion, if we want to know how data is stored through DVC,</p>
 <ol>
@@ -343,7 +343,7 @@ outs:
 </ol>
 <p>But most of the time, we don't need to do so. We can leave the tracking work to DVC.</p>
 <h3 id="fetch-data-from-dvc-remote-storage">Fetch data from DVC remote storage</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># temporary delete our data locally</span>
+<div class="highlight"><pre><span></span><span class="c1"># temporary delete our data locally</span>
 $ rm -rf data
 
 <span class="c1"># check whether DVC actually tracks our data</span>
@@ -359,10 +359,10 @@ $ dvc checkout data
 data
 ├── digit_data.csv
 └── digit_target.csv
-</code></pre></div>
+</pre></div>
 <h3 id="add-data-changes-into-dvc">Add data changes into DVC</h3>
 <p>To demonstrate how DVC track data changes, let's remove the last 2 rows from <code>data/digit_data.csv</code> and <code>data/digit_target.csv</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># check what's changed</span>
+<div class="highlight"><pre><span></span><span class="c1"># check what's changed</span>
 $ dvc status
 
 data.dvc:
@@ -377,18 +377,18 @@ $ pipenv run cz commit
 
 <span class="c1"># Push these changes to our remote storage</span>
 $ dvc push
-</code></pre></div>
+</pre></div>
 <p>The md5 value has been changed, and the size of our data is smaller than our previous record, 494728.</p>
-<div class="highlight"><pre><span></span><code>$ cat data.dvc
+<div class="highlight"><pre><span></span>$ cat data.dvc
 
 outs:
 - md5: a333e114a49194e823ab9a4fa9e33ee9.dir
   size: <span class="m">494172</span>
   nfiles: <span class="m">2</span>
   path: data
-</code></pre></div>
+</pre></div>
 <p>More files are added to <code>../dvc_remote</code> due to the data changes. You can follow the steps in the previous section to see what're actually store.</p>
-<div class="highlight"><pre><span></span><code>$ tree ../dvc_remote
+<div class="highlight"><pre><span></span>$ tree ../dvc_remote
 
 ../dvc_remote
 ├── <span class="m">02</span>
@@ -405,23 +405,23 @@ outs:
     └── d81f4964ecb86739c79c833fb491f3.dir
 
 <span class="m">6</span> directories, <span class="m">6</span> files
-</code></pre></div>
+</pre></div>
 <p>Let's <code>git checkout</code> to the previous git commit to see what happens if we only revert the changes in <code>data.dvc</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># or "git checkout v2-track-data"</span>
+<div class="highlight"><pre><span></span><span class="c1"># or "git checkout v2-track-data"</span>
 git checkout HEAD~1
-</code></pre></div>
+</pre></div>
 <p>After running <code>wc -l data/digit_data.csv</code>, we'll still find 1795 rows instead of 1797 rows in the previous stage. That's because we need to run <code>dvc checkout</code> as well.</p>
 <p>We might easily forget this step. Thus, DVC implements a git-hook that can trigger <code>dvc checkout</code> right after <code>git checkout</code>. You can install these git-hooks through <code>dvc install</code>. These hooks are added into <code>.git/hooks</code>. If you want to know the detail of what's added, read <a href="https://dvc.org/doc/command-reference/install">dvc install</a>.</p>
 <p>Test these steps again. There should be an additional line after running <code>git checkout</code>. This is the output message of <code>dvc checkout</code>.</p>
-<div class="highlight"><pre><span></span><code>M       data/
-</code></pre></div>
+<div class="highlight"><pre><span></span>M       data/
+</pre></div>
 <p>Push our code to a remote git repository</p>
-<div class="highlight"><pre><span></span><code>git remote add origin &lt;REMOTE GIT REPO&gt;
+<div class="highlight"><pre><span></span>git remote add origin &lt;REMOTE GIT REPO&gt;
 git push origin main
-</code></pre></div>
+</pre></div>
 <h3 id="fetch-code-and-data-changes-from-remote">Fetch code and data changes from remote</h3>
 <p>We've already pushed all the code and data changes to remote. Let's see how we could reproduce in another environment.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># check what's in our repo</span>
+<div class="highlight"><pre><span></span><span class="c1"># check what's in our repo</span>
 $ dvc list &lt;REMOTE GIT REPO&gt;
 
 .dvcignore
@@ -437,10 +437,10 @@ docs
 mkdocs.yml
 output
 tasks.py
-</code></pre></div>
+</pre></div>
 <p>Although git does not track <code>data/</code>, we can still list it through DVC.</p>
 <p>Because we use relative path <code>../dvc_remote</code> as DVC remote storage, we need to create the new project in the same layer as <code>dvc_example</code>. We'll clone the project into <code>../dvc_example_on_another_machine</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Clone repo git repo</span>
+<div class="highlight"><pre><span></span><span class="c1"># Clone repo git repo</span>
 $ git clone &lt;YOUR REMOTE GIT REPO&gt; ../dvc_example_on_another_machine
 $ <span class="nb">cd</span> ../dvc_example_on_another_machine
 $ tree .
@@ -460,9 +460,9 @@ $ tree .
 └── tasks.py
 
 <span class="m">3</span> directories, <span class="m">9</span> files
-</code></pre></div>
+</pre></div>
 <p>As you can see, <code>data/</code> has not yet been added to the project. We can now pull data from our DVC remote storage.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># pull data from default DVC remote storage</span>
+<div class="highlight"><pre><span></span><span class="c1"># pull data from default DVC remote storage</span>
 $ dvc pull
 
 A   data/
@@ -489,7 +489,7 @@ $ tree .
 └── tasks.py
 
 <span class="m">4</span> directories, <span class="m">11</span> files
-</code></pre></div>
+</pre></div>
 <p>That's all for data versioning in DVC. In the next post, We'll continue on versioning a data pipeline, tracking parameters and metrics. We won't need <code>dvc_example_on_another_machine</code> for the following steps. Feel free to remove it and change directory back to <code>dvc_example</code>.</p>
 <h2 id="reference">Reference</h2>
 <ul>

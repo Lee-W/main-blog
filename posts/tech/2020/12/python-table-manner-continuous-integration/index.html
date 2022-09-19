@@ -145,14 +145,14 @@
 </ol>
 <h3 id="python-check">Python Check</h3>
 <p>每個 GitHub Actions 的 workflow 都需要有一個名稱</p>
-<div class="highlight"><pre><span></span><code><span class="n">name</span><span class="o">:</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">check</span><span class="w"></span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="n">name</span><span class="o">:</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">check</span><span class="w"></span>
+</pre></div>
 <p>這會顯示在 <strong>Actions</strong> &gt; <strong>Workflows</strong> 中</p>
 <p><img alt="workflow" src="/images/posts-image/2020-02-22-python-table-manner-series/workflow.jpg"/></p>
 <p>接著要指定哪些事件發生時要執行這個 workflow<br/>
 (See more 👉 <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows">Events that trigger workflows</a>)</p>
-<div class="highlight"><pre><span></span><code><span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">]</span><span class="w"></span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">]</span><span class="w"></span>
+</pre></div>
 <p>再來則是要在哪執行、執行什麼</p>
 <ul>
 <li><code>jobs</code>： workflow 要執行的 job ，可以有超過一個 job。每個 job 都必須給它一個 job id (e.g., check)<ul>
@@ -167,7 +167,7 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">check</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
@@ -184,25 +184,25 @@
 <span class="w">          </span><span class="no">python -m pip install pipenv invoke</span><span class="w"></span>
 <span class="w">          </span><span class="no">inv env.init-dev -w</span><span class="w"></span>
 <span class="l l-Scalar l-Scalar-Plain">......</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>當這個 workflow 被執行的時候，可以在 GitHub Actions 看到細節</p>
 <p><img alt="step" src="/images/posts-image/2020-02-22-python-table-manner-series/job.jpg"/></p>
 <h3 id="merge-into-master">Merge into master</h3>
 <p>上個 workflow 只要偵測到任何 push 或 pull request 就會執行<br/>
 而這個 workflow 則是在 master 分支有改動時執行<br/>
 這時就可以在 <code>on</code> 的後面針對特定的事件做判斷</p>
-<div class="highlight"><pre><span></span><code><span class="nt">on</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">on</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w">  </span><span class="c1"># another branch could be specified here</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>除了 workflow 能偵測事件以外，也能依造不同的事件內容執行不同的 job<br/>
 下面的狀況是只有「開頭不是 "bump:" 的 commit」 才執行 <code>bump-version</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">bump-version</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">"!startsWith(github.event.head_commit.message,</span><span class="nv"> </span><span class="s">'bump:')"</span><span class="w"></span>
 <span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>因為 commitizen 自動跳版本號的時候，會 push 一個 commit 回 master 分支<br/>
 所以要給 GitHub Actions 適當的權限<br/>
 那就需要設定密碼或 token 來做到<br/>
@@ -210,12 +210,12 @@
 設定 secret 的頁面可以從 <strong>Settings</strong> &gt; <strong>Secrets</strong> &gt; <strong>New repository secret</strong> (右上角) 找到</p>
 <p><img alt="secret" src="/images/posts-image/2020-02-22-python-table-manner-series/secret.jpg"/></p>
 <p>在 job 取出 secret 的方式則是如下使用 <code>${{ secrets.secret_id }}</code> 這樣的語法</p>
-<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check out</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check out</span><span class="w"></span>
 <span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span><span class="w"></span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
 <span class="w">          </span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="s">'${{</span><span class="nv"> </span><span class="s">secrets.PERSONAL_ACCESS_TOKEN</span><span class="nv"> </span><span class="s">}}'</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <h3 id="python-publish">Python Publish</h3>
 <p>跟 GitHub Actions 比較相關的內容，在上面兩個 workflow 都寫得差不多的<br/>
 那這裡就來聊聊跟 PyPI 相關的</p>

@@ -223,13 +223,13 @@
 </li>
 <li>函式要能<strong>做好某件事</strong>，或<strong>回答某個問題</strong>，而這代表<strong>兩者不該同時發生！！！</strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">set</span><span class="p">(</span><span class="s">"username"</span><span class="p">,</span> <span class="s">"bob"</span><span class="p">))</span> <span class="p">......</span>
+<div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">set</span><span class="p">(</span><span class="s">"username"</span><span class="p">,</span><span class="w"> </span><span class="s">"bob"</span><span class="p">))</span><span class="w"> </span><span class="p">......</span><span class="w"></span>
 
-<span class="c1">// refactored</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">attrExists</span><span class="p">(</span><span class="s">"userName"</span><span class="p">))</span> <span class="p">{</span>
-    <span class="n">setAttr</span><span class="p">(</span><span class="s">"userName"</span><span class="p">,</span> <span class="s">"bob"</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="c1">// refactored</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">attrExists</span><span class="p">(</span><span class="s">"userName"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">setAttr</span><span class="p">(</span><span class="s">"userName"</span><span class="p">,</span><span class="w"> </span><span class="s">"bob"</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
 <h3 id="_1">錯誤處理</h3>
 <ul>
 <li>用例外處理取代錯誤碼回傳<ul>
@@ -237,49 +237,49 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">deletePage</span><span class="p">(</span><span class="n">page</span><span class="p">)</span> <span class="o">==</span> <span class="n">E_OK</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">registry</span><span class="p">.</span><span class="na">deleteReference</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">name</span><span class="p">)</span> <span class="o">==</span> <span class="n">E_OK</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">configKeys</span><span class="p">.</span><span class="na">deleteKey</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">makeKey</span><span class="p">())</span> <span class="o">==</span> <span class="n">E_OK</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"page deleted"</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"configKey not delete"</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"deleteReference from registry failed"</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"delete failed"</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">deletePage</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">E_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">registry</span><span class="p">.</span><span class="na">deleteReference</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">E_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">configKeys</span><span class="p">.</span><span class="na">deleteKey</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">makeKey</span><span class="p">())</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">E_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"page deleted"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"configKey not delete"</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"deleteReference from registry failed"</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"delete failed"</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="c1">// refactored</span>
-<span class="k">try</span> <span class="p">{</span>
-    <span class="n">deletePage</span><span class="p">(</span><span class="n">page</span><span class="p">);</span>
-    <span class="n">registry</span><span class="p">.</span><span class="na">deleteReference</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">name</span><span class="p">);</span>
-    <span class="n">configKeys</span><span class="p">.</span><span class="na">deleteKey</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">makeKey</span><span class="p">());</span>
-<span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
-<span class="p">}</span>
+<span class="c1">// refactored</span><span class="w"></span>
+<span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">deletePage</span><span class="p">(</span><span class="n">page</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">registry</span><span class="p">.</span><span class="na">deleteReference</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">name</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">configKeys</span><span class="p">.</span><span class="na">deleteKey</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">makeKey</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="c1">// even more refactored</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">delete</span><span class="p">(</span><span class="n">Page</span> <span class="n">page</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="n">deletePageAndAllReferences</span><span class="p">(</span><span class="n">page</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">logError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="c1">// even more refactored</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">deletePageAndAllReferences</span><span class="p">(</span><span class="n">page</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">logError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">private</span> <span class="kt">void</span> <span class="nf">deletePageAndAllReferences</span><span class="p">(</span><span class="n">Page</span> <span class="n">page</span><span class="p">)</span>
-            <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
-    <span class="n">deletePage</span><span class="p">(</span><span class="n">page</span><span class="p">);</span>
-    <span class="n">registry</span><span class="p">.</span><span class="na">deleteReference</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">name</span><span class="p">);</span>
-    <span class="n">configKeys</span><span class="p">.</span><span class="na">deleteKey</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">makeKey</span><span class="p">());</span>
-<span class="p">}</span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deletePageAndAllReferences</span><span class="p">(</span><span class="n">Page</span><span class="w"> </span><span class="n">page</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">deletePage</span><span class="p">(</span><span class="n">page</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">registry</span><span class="p">.</span><span class="na">deleteReference</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">name</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">configKeys</span><span class="p">.</span><span class="na">deleteKey</span><span class="p">(</span><span class="n">page</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">makeKey</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">private</span> <span class="kt">void</span> <span class="nf">logError</span><span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">logError</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
 <h3 id="_2">參數</h3>
 <ul>
 <li>函式最好是不使用到參數，可以的話不要超過3個<ul>
@@ -299,18 +299,18 @@
 </li>
 <li>利用建立物件的方式，減少函式參數的數量</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">Circle</span> <span class="nf">makeCircle</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">,</span> <span class="kt">double</span> <span class="n">radius</span><span class="p">);</span>
-<span class="c1">// refactored</span>
-<span class="n">Circle</span> <span class="nf">makeCirecle</span><span class="p">(</span><span class="n">Point</span> <span class="n">center</span><span class="p">,</span> <span class="kt">double</span> <span class="n">radiue</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="n">Circle</span><span class="w"> </span><span class="nf">makeCircle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// refactored</span><span class="w"></span>
+<span class="n">Circle</span><span class="w"> </span><span class="nf">makeCirecle</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="n">center</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radiue</span><span class="p">);</span><span class="w"></span>
+</pre></div>
 <ul>
 <li>避免使用輸出型參數，這十分的讓人困惑</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">appendFooter</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="n">appendFooter</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// refactored</span>
-<span class="n">s</span><span class="p">.</span><span class="na">appendFooter</span><span class="p">();</span>
-</code></pre></div>
+<span class="c1">// refactored</span><span class="w"></span>
+<span class="n">s</span><span class="p">.</span><span class="na">appendFooter</span><span class="p">();</span><span class="w"></span>
+</pre></div>
 <h3 id="_3">如何寫出這樣函式？？？</h3>
 <p>一直修改和重構，直到足夠精簡<br/>
 不用一開始就要寫到最精簡，實際上那也是辦不到的</p>
@@ -328,11 +328,11 @@
 <ul>
 <li>提供資訊的註解</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">//format matched kk:mm:ss EEE, MMM dd, yyyy</span>
-<span class="n">Pattern</span> <span class="n">tiMatcher</span> <span class="o">=</span> <span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span>
-    <span class="s">"\\d*:\\d*:\\d* \\w*, \\w* \\d*, \\d*"</span>
-<span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="c1">//format matched kk:mm:ss EEE, MMM dd, yyyy</span><span class="w"></span>
+<span class="n">Pattern</span><span class="w"> </span><span class="n">tiMatcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="s">"\\d*:\\d*:\\d* \\w*, \\w* \\d*, \\d*"</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+</pre></div>
 <ul>
 <li>對後果的告誡： 警告會出現某種特殊後果的註解</li>
 <li>TODO</li>
@@ -343,11 +343,11 @@
 <li>大部分的註解</li>
 <li>多餘的註解： 沒比程式碼本身透露更多資訊的註解</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nf">Person</span><span class="p">()</span> <span class="p">{</span>
-    <span class="err">#</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="k">this</span> <span class="n">person</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nf">Person</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">person</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
 <ul>
 <li><del>每個函式，每個變數都該有註解來說明</del>。<strong>不，別這麼做</strong></li>
 <li>把暫時無用的程式碼註解掉並留著，是很惱人的 → 版本控制會幫我們記下它</li>
@@ -389,13 +389,13 @@
 </li>
 <li>有時候if, while或簡單的函式，可以被縮減為一行，讓我們違反一般的縮排規則，<strong>不建議這麼做</strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="n">String</span> <span class="nf">render</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span><span class="k">return</span> <span class="s">""</span><span class="p">;}</span>
+<div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">render</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="s">""</span><span class="p">;}</span><span class="w"></span>
 
-<span class="c1">//better</span>
-<span class="kd">public</span> <span class="n">String</span> <span class="nf">render</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s">""</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="c1">//better</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">render</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">""</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
 <h3 id="_7">使用空行、空白</h3>
 <ul>
 <li>每一段程式碼都代表一個完整思緒，而我們用空行來區隔它們<ul>
@@ -408,27 +408,27 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Quadratic</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">root1</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">,</span> <span class="kt">double</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">double</span> <span class="n">determinant</span> <span class="o">=</span> <span class="n">determinant</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
-        <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">determinant</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="p">......</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Quadratic</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">root1</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">determinant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">determinant</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">determinant</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">......</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
 <h2 id="6">第6章：物件及資料結構</h2>
 <ul>
 <li><strong>資料結構容易新增函式，而物件容易增加新類別。</strong> 反之亦然</li>
 <li>模組不該知道它操作的物件的內部操作</li>
 <li>別使用一連串的程式呼叫</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">final</span> <span class="n">String</span> <span class="n">outputDir</span> <span class="o">=</span> <span class="n">ctxt</span><span class="p">.</span><span class="na">getOptions</span><span class="p">().</span><span class="na">getScratchDir</span><span class="p">().</span><span class="na">getAbsolutePaty</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">outputDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctxt</span><span class="p">.</span><span class="na">getOptions</span><span class="p">().</span><span class="na">getScratchDir</span><span class="p">().</span><span class="na">getAbsolutePaty</span><span class="p">();</span><span class="w"></span>
 
-<span class="c1">//refactored</span>
-<span class="n">Option</span> <span class="n">opts</span> <span class="o">=</span> <span class="n">ctxt</span><span class="p">.</span><span class="na">getOptions</span><span class="p">();</span>
-<span class="n">File</span> <span class="n">scratchDir</span> <span class="o">=</span><span class="n">opts</span><span class="p">.</span><span class="na">getScractchDir</span><span class="p">();</span>
-<span class="kd">final</span> <span class="n">String</span> <span class="n">outputDir</span> <span class="o">=</span> <span class="n">scratchDir</span><span class="p">.</span><span class="na">getAbsolutePath</span><span class="p">();</span>
-</code></pre></div>
+<span class="c1">//refactored</span><span class="w"></span>
+<span class="n">Option</span><span class="w"> </span><span class="n">opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctxt</span><span class="p">.</span><span class="na">getOptions</span><span class="p">();</span><span class="w"></span>
+<span class="n">File</span><span class="w"> </span><span class="n">scratchDir</span><span class="w"> </span><span class="o">=</span><span class="n">opts</span><span class="p">.</span><span class="na">getScractchDir</span><span class="p">();</span><span class="w"></span>
+<span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">outputDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scratchDir</span><span class="p">.</span><span class="na">getAbsolutePath</span><span class="p">();</span><span class="w"></span>
+</pre></div>
 <h2 id="7">第7章：錯誤處理</h2>
 <ul>
 <li>例外處理應該要能提供<strong>有用的錯誤訊息</strong>，<ul>
@@ -442,54 +442,54 @@
 <li>Wrapper: 從呼叫者的角度定義例外class -&gt; 減少依賴</li>
 </ul>
 <p>Wrapper Example</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// original</span>
-<span class="n">ACMEPort</span> <span class="n">port</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ACMEPort</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="c1">// original</span><span class="w"></span>
+<span class="n">ACMEPort</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ACMEPort</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span><span class="w"></span>
 
-<span class="k">try</span> <span class="p">{</span>
-    <span class="n">port</span><span class="p">.</span><span class="na">open</span><span class="p">();</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">DeviceResponseException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">reportPortError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-    <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"Device response exception"</span><span class="p">,</span> <span class="s">"e"</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">ATM1212UnlockedException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">reportPortError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-    <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"ATM1212UnlockedException"</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">HMXError</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">reportPortError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-    <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"Device response exception"</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">}</span>
+<span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">port</span><span class="p">.</span><span class="na">open</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">DeviceResponseException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">reportPortError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"Device response exception"</span><span class="p">,</span><span class="w"> </span><span class="s">"e"</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">ATM1212UnlockedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">reportPortError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"ATM1212UnlockedException"</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">HMXError</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">reportPortError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">"Device response exception"</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 
-<span class="c1">// refactored</span>
-<span class="n">LocalPort</span> <span class="n">port</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LocalPort</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
-<span class="k">try</span> <span class="p">{</span>
-    <span class="n">port</span><span class="p">.</span><span class="na">open</span><span class="p">();</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">PortDeviceFailure</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">reportPortError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-    <span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">,</span> <span class="n">e</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="c1">// refactored</span><span class="w"></span>
+<span class="n">LocalPort</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LocalPort</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span><span class="w"></span>
+<span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">port</span><span class="p">.</span><span class="na">open</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">PortDeviceFailure</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">reportPortError</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LocalPort</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">ACMEPort</span> <span class="n">innerPort</span><span class="p">;</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LocalPort</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ACMEPort</span><span class="w"> </span><span class="n">innerPort</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">LocalPort</span><span class="p">(</span><span class="kt">int</span> <span class="n">portNumber</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">innerPort</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ACMEPort</span><span class="p">(</span><span class="n">portNumber</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LocalPort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">portNumber</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">innerPort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ACMEPort</span><span class="p">(</span><span class="n">portNumber</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">open</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">try</span> <span class="p">{</span>
-            <span class="n">innerPort</span><span class="p">.</span><span class="na">open</span><span class="p">();</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">DeviceResponseException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">PortDeviceFailure</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">ATM1212UnlockedException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">PortDeviceFailure</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">GMXError</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">PortDeviceFailure</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">open</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">innerPort</span><span class="p">.</span><span class="na">open</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">DeviceResponseException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PortDeviceFailure</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">ATM1212UnlockedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PortDeviceFailure</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">GMXError</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PortDeviceFailure</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
 <h2 id="8">第8章：邊界</h2>
 <ul>
 <li>學習型測試： 不在產品程式（production）裡實驗新的東西，而是另外寫測試程式，來了解第三方軟體<ul>

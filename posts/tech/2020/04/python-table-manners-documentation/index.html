@@ -125,32 +125,32 @@ Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx<br
 <p><img alt="because-guido-say-so" src="/images/posts-image/2020-02-22-python-table-manner-series/because-guido-say-so.png"/></p>
 
 <h2 id="_1">安裝</h2>
-<div class="highlight"><pre><span></span><code>pipenv install mkdocs --dev
-</code></pre></div>
+<div class="highlight"><pre><span></span>pipenv install mkdocs --dev
+</pre></div>
 <h2 id="_2">使用</h2>
 <p>這次依然是以將 mkdocs 運用到 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 為例子<br/>
 在 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/3fab5b9e7171d8302b012ad40ec1292d99c297a0">commit 3fab5b</a> 版之後產生將文件從 <code>README.md</code> 移動到 <code>docs</code> 並產生 GitHub Page</p>
 <h3 id="_3">初始化</h3>
 <p>首先進到專案資料夾中，初始化 mkdocs 需要的檔案</p>
-<div class="highlight"><pre><span></span><code>pipenv run mkdir new .
-</code></pre></div>
+<div class="highlight"><pre><span></span>pipenv run mkdir new .
+</pre></div>
 <p>執行後，資料夾會多出以下兩個檔案</p>
 <ul>
 <li><code>mkdocs.yml</code>: mkdocs 的設定檔</li>
 <li><code>doc/index.md</code>: 空白的範例文件</li>
 </ul>
 <p>透過這個指令在本機將伺服器跑起來</p>
-<div class="highlight"><pre><span></span><code>pipenv run mkdocs serve
-</code></pre></div>
+<div class="highlight"><pre><span></span>pipenv run mkdocs serve
+</pre></div>
 <p>打開瀏覽器，進入 <code>http://127.0.0.1:8000/</code> 就能看到最初始的頁面</p>
 <p><img alt="initial document" src="/images/posts-image/2020-02-22-python-table-manner-series/initial document.jpg"/></p>
 <h3 id="_4">修改網站名稱</h3>
 <p>初始的 <code>mkdocs.yml</code> 預設只會有這一行</p>
-<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My Docs</span><span class="w"></span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My Docs</span><span class="w"></span>
+</pre></div>
 <p>指的是文件的頁面名稱，先把它改成專案的名稱</p>
-<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PyCon TW post-event report generator (rg-cli)</span><span class="w"></span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PyCon TW post-event report generator (rg-cli)</span><span class="w"></span>
+</pre></div>
 <h3 id="_5">增加頁面</h3>
 <p>因為 GitHub 也會讀 <code>docs/READMD.md</code> 作為進入專案時看到的文件<br/>
 為了減少維護文件的時間，可以將 <code>README.md</code> 移動到 <code>docs</code> ，並取代掉 <code>index.md</code> 做為首頁</p>
@@ -158,16 +158,16 @@ Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx<br
 我將 <strong>How to contribute</strong> 的內容拆出來放到 <code>contributing.md</code><br/>
 將檔案命名成 <code>contributing.md</code> 在 GitHub 開 issue 時自動出現這個頁面的連結（See more 👉 <a href="https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors">Setting guidelines for repository contributors</a>）<br/>
 至於要怎麼寫好 <code>contributing.md</code> 則可以參考 <a href="https://mozillascience.github.io/working-open-workshop/contributing/">Wrangling Web Contributions: How to Build a CONTRIBUTING.md</a></p>
-<div class="highlight"><pre><span></span><code>├── docs
+<div class="highlight"><pre><span></span>├── docs
 │   ├── README.md
 │   └── contributing.md
-</code></pre></div>
+</pre></div>
 <p>接著在 <code>mkdocs.yml</code> 加入 <code>nav</code> 參數，指定不同頁面對應的檔案</p>
-<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PyCon TW post-event report generator (rg-cli)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PyCon TW post-event report generator (rg-cli)</span><span class="w"></span>
 <span class="nt">nav</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Contributing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">contributing.md</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>位置是透過參數 <code>docs_dir</code> 來決定相對路徑<br/>
 如果沒有設定，預設是相對於 <code>docs</code></p>
 <p><img alt="separate page" src="/images/posts-image/2020-02-22-python-table-manner-series/separate page.jpg"/></p>
@@ -175,45 +175,45 @@ Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx<br
 <p>撰寫文件時，為了讓使用者更容易找到其他頁面，會使用到內部連結<br/>
 這時只要在文件中使用跟 <code>mkdocs.yml</code> 一樣的相對路徑即可</p>
 <p>e.g., 在 <code>README.md</code> 連結到 <code>contributing.md</code></p>
-<div class="highlight"><pre><span></span><code>Please see the [<span class="nt">Contributing</span>](<span class="na">contributing.md</span>) for further details.
-</code></pre></div>
+<div class="highlight"><pre><span></span>Please see the [<span class="nt">Contributing</span>](<span class="na">contributing.md</span>) for further details.
+</pre></div>
 <h3 id="_7">更改主題</h3>
 <p>mkdocs 預設有 <code>mkdocs</code>, <code>readthedocs</code> 兩種主題<br/>
 如果想嘗試其他主題則可以在 <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">MkDocs Themes</a> 找到<br/>
 以主題 <a href="https://github.com/squidfunk/mkdocs-material">mkdocs-material</a> 為例</p>
 <p>首先先將主題安裝到開發環境內</p>
-<div class="highlight"><pre><span></span><code>pipenv install mkdocs-material --dev
-</code></pre></div>
+<div class="highlight"><pre><span></span>pipenv install mkdocs-material --dev
+</pre></div>
 <p>在 <code>mkdocs.yml</code> 加上 <code>theme</code> 參數<br/>
 需要注意的是這裡的 <code>name</code> 不需要加上前綴的 <code>mkdocs-</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rg-cli</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rg-cli</span><span class="w"></span>
 <span class="nt">nav</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Contributing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">contributing.md</span><span class="w"></span>
 <span class="nt">theme</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">'material'</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p><img alt="material theme" src="/images/posts-image/2020-02-22-python-table-manner-series/material theme.jpg"/></p>
 <h3 id="_8">輸出靜態網頁</h3>
 <p>為了要能部署到其他服務 (e.g., GitHub Page）上，要先在本地將 Markdown 寫成的文件輸出成網頁</p>
-<div class="highlight"><pre><span></span><code>pipenv run mkdocs build
-</code></pre></div>
+<div class="highlight"><pre><span></span>pipenv run mkdocs build
+</pre></div>
 <p>接著就可以在資料夾 <code>site</code> 找到輸出的網頁<br/>
 因為 <code>site</code> 的內容都會跟著 <code>docs</code> 改變，專案中只需要留有原始的 Markdown 文件就好<br/>
 可以在 <code>.gitignore</code> 加入 <code>site/</code></p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">"site/"</span> &gt;&gt; .gitignore
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">"site/"</span> &gt;&gt; .gitignore
+</pre></div>
 <p>下次輸出時，在指令後面加上 <code>--clean</code> 就可以清空上次的內容，重新輸出</p>
-<div class="highlight"><pre><span></span><code>pipenv run mkdocs build --clean
-</code></pre></div>
+<div class="highlight"><pre><span></span>pipenv run mkdocs build --clean
+</pre></div>
 <h3 id="github-page">部署至 GitHub Page</h3>
 <p>在開源專案中，將文件部署到 GitHub Page 上是相當常見的<br/>
 mkdocs 也為我們考慮到這點</p>
 <p>只要在 <code>mkdocs.yml</code> 加入專案的 remote 相關設定</p>
-<div class="highlight"><pre><span></span><code><span class="nt">repo_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pycontw/pycontw-postevent-report-generator</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">repo_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pycontw/pycontw-postevent-report-generator</span><span class="w"></span>
 <span class="nt">remote_branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gh-pages</span><span class="w"></span>
 <span class="nt">remote_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">origin</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>並執行 <code>pipenv run mkdocs gh-deploy</code> 就會自動將文件部署到 GitHub Page 上</p>
 <p>如果想更近一步透過 GitHub Action 來達到 push 原始碼，就自動產生 GitHub Page<br/>
 可以參考我之前寫的 <a href="https://wei-lee.me/posts/tech/2020/01/automate-publish-pelican-through-github-action">透過 GitHub Action 自動發佈 Pelican 部落格文章</a><br/>
@@ -236,16 +236,16 @@ mkdocs 也為我們考慮到這點</p>
 它們很可能就是用 <a href="https://shields.io/">shields.io</a> 產生的<br/>
 除了常見的徽章外，也可以透過修改 url 製作客製化的徽章</p>
 <p>像是在 markdown 文件加入</p>
-<div class="highlight"><pre><span></span><code>![<span class="nt">shields badge</span>](<span class="na">https://img.shields.io/badge/&lt;LABEL&gt;-&lt;MESSAGE&gt;-&lt;COLOR&gt;</span>)
-</code></pre></div>
+<div class="highlight"><pre><span></span>![<span class="nt">shields badge</span>](<span class="na">https://img.shields.io/badge/&lt;LABEL&gt;-&lt;MESSAGE&gt;-&lt;COLOR&gt;</span>)
+</pre></div>
 <p>就會出現</p>
 <p><img alt="shields badge" src="https://img.shields.io/badge/&lt;LABEL&gt;-&lt;MESSAGE&gt;-&lt;COLOR&gt;"/></p>
 <h3 id="_9">自製測試覆蓋率徽章</h3>
 <p>最近發現另一個有趣的小工具 - <a href="https://github.com/dbrgn/coverage-badge">coverage-badge</a><br/>
 它可以不透過 <a href="https://codecov.io/">codecov</a> 直接去讀 <a href="https://github.com/pytest-dev/pytest-cov">pytest-cov</a> 產生的 <code>.coverage</code>  產生測試覆蓋率徽章</p>
-<div class="highlight"><pre><span></span><code>pipenv install coverage-badge --dev
+<div class="highlight"><pre><span></span>pipenv install coverage-badge --dev
 pipenv run coverage-badge -o docs/coverage.svg
-</code></pre></div>
+</pre></div>
 <h2 id="reference">Reference</h2>
 <ul>
 <li><a href="https://wei-lee.me/pycon-note/posts/europython-2019/2020/03/publish-a-perfetc-python-package-on-pypi/">Publish a (Perfect) Python Package on PyPI</a></li>

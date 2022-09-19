@@ -19,13 +19,13 @@
 
 <meta property="og:title" content="Python Table Manners - pre-commit: git commit 前做完檢查 "/>
 <meta property="og:url" content="https://wei-lee.me/posts/tech/2020/02/python-table-manners-pre-commit" />
-<meta property="og:description" content="前一篇提到了透過 invoke 簡化繁瑣的指令 但人類除了是懶惰的，還是健忘的 即使已經更簡便了，沒被督促常常還是會忘了執行 就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑 這篇來聊聊如何透過 pre-commit 強制做檢查 pre-commit pre-commit 讓我們能方便的加入 Git Hook，並在各種 git 的相關操作前進行檢查 正如它的命名，它可以在進行 git commit 前執行一些操作 不過並不僅限於 commit 前，也可以在其它 git 的階段進行 之所以要這麼做就是為了讓不符合要求的程式碼，從最一開始就不會進入到版本庫 （pre commit）或 git 伺服器 （pre push） 使用 pre-commit 進行檢查 # 安裝 pre-commit pipenv install pre-commit …" />
+<meta property="og:description" content="前一篇提到了透過 invoke 簡化繁瑣的指令 但人類除了是懶惰的，還是健忘的 即使已經更簡便了，沒被督促常常還是會忘了執 …" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
 <meta property="og:article:published_time" content="2020-02-28T23:10:00+08:00" />
 <meta property="og:article:modified_time" content="2020-10-04T16:10:00+08:00" />
 <meta name="twitter:title" content="Python Table Manners - pre-commit: git commit 前做完檢查 ">
-<meta name="twitter:description" content="前一篇提到了透過 invoke 簡化繁瑣的指令 但人類除了是懶惰的，還是健忘的 即使已經更簡便了，沒被督促常常還是會忘了執行 就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑 這篇來聊聊如何透過 pre-commit 強制做檢查 pre-commit pre-commit 讓我們能方便的加入 Git Hook，並在各種 git 的相關操作前進行檢查 正如它的命名，它可以在進行 git commit 前執行一些操作 不過並不僅限於 commit 前，也可以在其它 git 的階段進行 之所以要這麼做就是為了讓不符合要求的程式碼，從最一開始就不會進入到版本庫 （pre commit）或 git 伺服器 （pre push） 使用 pre-commit 進行檢查 # 安裝 pre-commit pipenv install pre-commit …">
+<meta name="twitter:description" content="前一篇提到了透過 invoke 簡化繁瑣的指令 但人類除了是懶惰的，還是健忘的 即使已經更簡便了，沒被督促常常還是會忘了執 …">
 
         <title>Python Table Manners - pre-commit: git commit 前做完檢查  · Laziness makes Great Engineer
 </title>
@@ -119,22 +119,22 @@
 不過並不僅限於 commit 前，也可以在其它 git 的階段進行<br/>
 之所以要這麼做就是為了讓不符合要求的程式碼，從最一開始就不會進入到版本庫 （pre commit）或 git 伺服器 （pre push）</p>
 <h2 id="pre-commit_1">使用 pre-commit 進行檢查</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># 安裝 pre-commit</span>
+<div class="highlight"><pre><span></span><span class="c1"># 安裝 pre-commit</span>
 pipenv install pre-commit --dev
-</code></pre></div>
+</pre></div>
 <h3 id="pre-commit-hook">設定 pre-commit hook</h3>
 <p>先透過設定檔 <code>.pre-commit-config.yaml</code>，告訴 pre-commit 要做哪些檢查<br/>
 需要注意的是，專案必須要是一個 git 專案<br/>
 這些 git hook 都會被寫入 <code>.git/hooks/</code></p>
 <p>e.g.,</p>
-<div class="highlight"><pre><span></span><code><span class="nt">repos</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pre-commit/pre-commit-hooks</span><span class="w"></span>
 <span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v3.2.0</span><span class="w"></span>
 <span class="w">    </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end-of-file-fixer</span><span class="w"></span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trailing-whitespace</span><span class="w"></span>
 <span class="w">        </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">--markdown-linebreak-ext=md</span><span class="p p-Indicator">]</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>以上面的例子來說</p>
 <ul>
 <li><code>repos</code> 告訴 pre-commit 要去哪邊找到這些 hook<ul>
@@ -156,32 +156,32 @@ pipenv install pre-commit --dev
 指到的 master 就會是第一次 pre-commit 抓到時的 master，不是最新版的 master</p>
 <p>寫完設定檔後，接著就是把 pre-commit hook 安裝到 git 專案中</p>
 <h2 id="pre-commit_2">安裝 pre-commit 到專案中</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># 將 pre-commit hook 安裝到 git 專案</span>
+<div class="highlight"><pre><span></span><span class="c1"># 將 pre-commit hook 安裝到 git 專案</span>
 pipenv run pre-commit install
-</code></pre></div>
+</pre></div>
 <p>需要注意的是每次重新 clone 之後，都必須要執行一次<br/>
 雖然可以將 <code>.pre-commit-config.yaml</code> 加入版本控制<br/>
 但 <code>.git/hook/</code> 是不能被加入版本控制的</p>
 <p>執行完會出現以下訊息</p>
-<div class="highlight"><pre><span></span><code>pre-commit installed at .git/hooks/pre-commit
-</code></pre></div>
+<div class="highlight"><pre><span></span>pre-commit installed at .git/hooks/pre-commit
+</pre></div>
 <p>第一次進行 git commit 時，會將 <a href="https://github.com/pre-commit/pre-commit-hooks">pre-commit-hooks</a> clone 到 pre-commit 統一管理的地方<br/>
 之後就會進行 <code>Fix End of Files</code> 跟 <code>Trim Trailing Whitespace</code> 的檢查</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>INFO<span class="o">]</span> Initializing environment <span class="k">for</span> https://github.com/pre-commit/pre-commit-hooks.
+<div class="highlight"><pre><span></span><span class="o">[</span>INFO<span class="o">]</span> Initializing environment <span class="k">for</span> https://github.com/pre-commit/pre-commit-hooks.
 <span class="o">[</span>INFO<span class="o">]</span> Installing environment <span class="k">for</span> https://github.com/pre-commit/pre-commit-hooks.
 <span class="o">[</span>INFO<span class="o">]</span> Once installed this environment will be reused.
 <span class="o">[</span>INFO<span class="o">]</span> This may take a few minutes...
 Fix End of Files.........................................................Passed
 Trim Trailing Whitespace.................................................Passed
-</code></pre></div>
+</pre></div>
 <p>如果沒有通過， git 會阻止你進行 commit</p>
 <p>pre-commit 每次都只會針對要 commit 的檔案做檢查<br/>
 所以建議第一次將 pre-commit 引入專案時，可以先檢查所有的檔案</p>
-<div class="highlight"><pre><span></span><code>pipenv run pre-commit run --all-files
-</code></pre></div>
+<div class="highlight"><pre><span></span>pipenv run pre-commit run --all-files
+</pre></div>
 <h2 id="pre-commit-hook_1">使用自定義的 pre-commit hook</h2>
 <p>下面的例子是在 commit 前，要進行 pytest 的檢查</p>
-<div class="highlight"><pre><span></span><code><span class="nt">repos</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
 <span class="w">    </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pytest</span><span class="w"></span>
@@ -191,7 +191,7 @@ Trim Trailing Whitespace.................................................Passed
 <span class="w">        </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipenv run pytest</span><span class="w"></span>
 <span class="w">        </span><span class="nt">pass_filenames</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">        </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">python</span><span class="p p-Indicator">]</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <ul>
 <li><code>repo: local</code>: 直接在本地資料夾執行<ul>
 <li><code>hooks</code>: 有哪些 hook 要執行<ul>
@@ -219,8 +219,8 @@ Trim Trailing Whitespace.................................................Passed
 預設只會寫入 <code>.git/hooks/pre-commit</code><br/>
 如果要加入其他階段，則必須要在後面加入參數 <code>-t [hook-type]</code></p>
 <p>e.g.,</p>
-<div class="highlight"><pre><span></span><code>pipenv run pre-commit install -t pre-push
-</code></pre></div>
+<div class="highlight"><pre><span></span>pipenv run pre-commit install -t pre-push
+</pre></div>
 <p>支援 6 種 hook-type</p>
 <ul>
 <li>pre-commit</li>
@@ -234,21 +234,21 @@ Trim Trailing Whitespace.................................................Passed
 而是會把 <code>stages</code> 改成 <code>push</code><br/>
 並安裝 pre-push 的 hook (i.e., <code>pipenv run pre-commit install -t pre-push</code>)</p>
 <p>如果不想要每個 hook 都各自做設定，可以在 <code>.pre-commit-config.yaml</code> 加上 <code>default_stages</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">default_stages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">]</span><span class="w"></span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="nt">default_stages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">]</span><span class="w"></span>
+</pre></div>
 <p>表示如果沒有特定指定 <code>stages</code> 的 hook 都只在 <code>push</code> 的階段做檢查</p>
 <h2 id="pre-commit-hook_2">為自己的工具加上 pre-commit hook</h2>
 <p>為你寫的工具加上 pre-commit hook 可以讓人更方便使用你的工具<br/>
 在工具專案中加入 <code>.pre-commit-hooks.yaml</code> 讓 pre-commit 知道其他人引入你的工具時要做什麼處理<br/>
 撰寫的方式跟 local 的 repo 的寫法相似</p>
-<div class="highlight"><pre><span></span><code><span class="nt">repos</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
 <span class="w">      </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
 <span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
 <span class="w">          </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <h2 id="bouns-commit">Bouns: 可以只跳警告不擋下 commit 嗎？</h2>
 <p>根據 <a href="https://github.com/pre-commit/pre-commit/issues/923">Can I show warning message without blocking the commit? #923</a> 提到的， pre-commit 認為這不是好的作法<br/>
 但仍然可以透過對 <code>entry</code> 內指令的操作達到類似的效果</p>

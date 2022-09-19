@@ -121,29 +121,29 @@ Cookiecutter 能確保我們不會少代換掉舊的設定（e.g., 舊專案名�
 <h2 id="cookiecutter_1">如何使用 Cookiecutter 模板？</h2>
 <p>以我製作的模板 <a href="https://github.com/Lee-W/cookiecutter-python-template">cookiecutter-python-template</a> 為例</p>
 <p>首先要安裝 cookiecutter ，建議使用 pipx</p>
-<div class="highlight"><pre><span></span><code>pipx install cookiecutter
-</code></pre></div>
+<div class="highlight"><pre><span></span>pipx install cookiecutter
+</pre></div>
 <p>再來要指定產生新專案要用的模板</p>
-<div class="highlight"><pre><span></span><code>cookiecutter https://github.com/Lee-W/cookiecutter-python-template
-</code></pre></div>
+<div class="highlight"><pre><span></span>cookiecutter https://github.com/Lee-W/cookiecutter-python-template
+</pre></div>
 <p>接著會進入互動式介面，詢問專案相關的設定<br/>
 每個問題依序會以 <code>值 [預設值]: 使用者輸入</code> 的形式出現<br/>
 有的<code>值</code>會因為前面的回答不同，而產生對應的預設值<br/>
 <code>值</code> (e.g., python_table_manners) 會被帶回專案模板去取代模板中的變數 (e.g., project_slug)</p>
-<div class="highlight"><pre><span></span><code><span class="n">project_name</span><span class="w"> </span><span class="p">[</span><span class="n">Python</span><span class="w"> </span><span class="n">Project</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">manners</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="n">project_name</span><span class="w"> </span><span class="p">[</span><span class="n">Python</span><span class="w"> </span><span class="n">Project</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">manners</span><span class="w"></span>
 <span class="n">project_slug</span><span class="w"> </span><span class="p">[</span><span class="n">python_table_manners</span><span class="p">]</span><span class="o">:</span><span class="w"></span>
 <span class="n">project_description</span><span class="w"> </span><span class="p">[</span><span class="n">Short</span><span class="w"> </span><span class="n">Descirption</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="n">Project</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">example</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">cookiecutter</span><span class="w"> </span><span class="n">template</span><span class="w"></span>
 <span class="n">github_username</span><span class="w"> </span><span class="p">[</span><span class="n">Lee</span><span class="o">-</span><span class="n">W</span><span class="p">]</span><span class="o">:</span><span class="w"></span>
-<span class="n">github_url</span><span class="w"> </span><span class="p">[</span><span class="nl">http</span><span class="p">:</span><span class="c1">//github.com/Lee-W/python_table_manners]:</span>
+<span class="n">github_url</span><span class="w"> </span><span class="p">[</span><span class="n">http</span><span class="o">:</span><span class="c1">//github.com/Lee-W/python_table_manners]:</span>
 <span class="n">author_name</span><span class="w"> </span><span class="p">[</span><span class="n">Wei</span><span class="w"> </span><span class="n">Lee</span><span class="p">]</span><span class="o">:</span><span class="w"></span>
 <span class="n">author_email</span><span class="w"> </span><span class="p">[</span><span class="n">weilee</span><span class="p">.</span><span class="n">rx</span><span class="p">@</span><span class="n">gmail</span><span class="p">.</span><span class="n">com</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">test</span><span class="p">@</span><span class="n">test</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
 <span class="n">python_version</span><span class="w"> </span><span class="p">[</span><span class="mf">3.7</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="mf">3.9</span><span class="w"></span>
-<span class="n">Select</span><span class="w"> </span><span class="nl">dependency_management_tool</span><span class="p">:</span><span class="w"></span>
+<span class="n">Select</span><span class="w"> </span><span class="n">dependency_management_tool</span><span class="o">:</span><span class="w"></span>
 <span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pipenv</span><span class="w"></span>
 <span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">poetry</span><span class="w"></span>
 <span class="n">Choose</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
 <span class="n">use_strict_mypy_config</span><span class="w"> </span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
-<span class="n">Select</span><span class="w"> </span><span class="nl">open_source_license</span><span class="p">:</span><span class="w"></span>
+<span class="n">Select</span><span class="w"> </span><span class="n">open_source_license</span><span class="o">:</span><span class="w"></span>
 <span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">MIT</span><span class="w"> </span><span class="n">license</span><span class="w"></span>
 <span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">BSD</span><span class="w"> </span><span class="n">license</span><span class="w"></span>
 <span class="mi">3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ISC</span><span class="w"> </span><span class="n">license</span><span class="w"></span>
@@ -151,11 +151,11 @@ Cookiecutter 能確保我們不會少代換掉舊的設定（e.g., 舊專案名�
 <span class="mi">5</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">GNU</span><span class="w"> </span><span class="n">General</span><span class="w"> </span><span class="n">Public</span><span class="w"> </span><span class="n">License</span><span class="w"> </span><span class="n">v3</span><span class="w"></span>
 <span class="mi">6</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Not</span><span class="w"> </span><span class="n">open</span><span class="w"> </span><span class="n">source</span><span class="w"></span>
 <span class="n">Choose</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>所有問題都回答完之後就會出現新的資料夾 python_table_manners<br/>
 （模板以 project_slug 作為產生的資料夾名稱）<br/>
 可以看到資料夾裡面已經有前幾篇提到會用到的相關檔案</p>
-<div class="highlight"><pre><span></span><code>$ tree python_table_manners
+<div class="highlight"><pre><span></span>$ tree python_table_manners
 
 .
 ├── CHANGELOG.md
@@ -184,7 +184,7 @@ Cookiecutter 能確保我們不會少代換掉舊的設定（e.g., 舊專案名�
     └── test_python_table_manners.py
 
 <span class="m">4</span> directories, <span class="m">20</span> files
-</code></pre></div>
+</pre></div>
 <h2 id="cookiecutter_2">如何製作 Cookiecutter 模板？</h2>
 <p>在新的專案內，先開個名稱為 <code>{{ cookiecutter.project_slug }}</code> 的資料夾<br/>
 所有模板的內容都將放在這裡<br/>
@@ -198,19 +198,19 @@ cookiecutter 背後是透過 jinja2 來取代這些值<br/>
 因為是使用 jinja2 ，當然也能運用它方便的語法<br/>
 並且不限定於模板內才能使用，甚至在 cookiecutter.json 裡面都能使用</p>
 <p>e.g.,</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Python Project"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">"project_slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="err">...</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">"_template_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.6.1"</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</pre></div>
 <p>（from <a href="https://github.com/Lee-W/cookiecutter-python-template/blob/0.6.1/cookiecutter.json">cookiecutter-python-template/cookiecutter.json @ 0.6.1</a>）</p>
 <p>如果有一些值不想問使用者，可以在 key 的最前面加上 <code>_</code><br/>
 (e.g., <code>_template_version</code>)</p>
 <p>當然也能使用 jinja2 的 if/else 語法，針對使用者的回答產生不同的模板內容<br/>
 以下的範例就是使用者選擇不同的 dependency_management_tool 時，env.py 的指令內容會跟著改變</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@task</span>
+<div class="highlight"><pre><span></span><span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">ctx</span><span class="p">):</span>
     <span class="sd">"""Install production dependencies"""</span>
     <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">cookiecutter</span><span class="o">.</span><span class="n">dependency_management_tool</span> <span class="o">==</span> <span class="s1">'pipenv'</span> <span class="o">-%</span><span class="p">}</span>
@@ -218,7 +218,7 @@ cookiecutter 背後是透過 jinja2 來取代這些值<br/>
     <span class="p">{</span><span class="o">%-</span> <span class="k">elif</span> <span class="n">cookiecutter</span><span class="o">.</span><span class="n">dependency_management_tool</span> <span class="o">==</span> <span class="s1">'poetry'</span> <span class="o">-%</span><span class="p">}</span>
     <span class="n">ctx</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">"poetry install --no-dev"</span><span class="p">)</span>
     <span class="p">{</span><span class="o">%-</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
-</code></pre></div>
+</pre></div>
 <p>（from <a href="https://github.com/Lee-W/cookiecutter-python-template/blob/0.6.1/%7B%7Bcookiecutter.project_slug%7D%7D/tasks/env.py#L18">cookiecutter-python-template/{{cookiecutter.project_slug}}/tasks/env.py @ 0.6.1</a>）</p>
 <p>除了預設基本的 jinja2 語法外， cookiecutter 還提供了常用的 jinja2 extensions<br/>
 這些可以在 <a href="https://cookiecutter.readthedocs.io/en/latest/advanced/hooks.html">Template Extensions</a> 找到</p>
@@ -238,10 +238,10 @@ cookiecutter 背後是透過 jinja2 來取代這些值<br/>
 <li><code>post_gen_project.py</code>: 建立專案後要執行的內容</li>
 </ul>
 <p>在 post_gen_project.py 中會做判斷，只要使用者不是選 pipenv ，就會把 Pipfile 刪除</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="k">if</span> <span class="s2">"{{ cookiecutter.dependency_management_tool }}"</span> <span class="o">!=</span> <span class="s2">"pipenv"</span><span class="p">:</span>
         <span class="n">remove_pipfile</span><span class="p">()</span>
-</code></pre></div>
+</pre></div>
 <p>（from <a href="https://github.com/Lee-W/cookiecutter-python-template/blob/0.6.1/hooks/post_gen_project.py#L8">cookiecutter-python-template/hooks/post_gen_project.py</a>）</p>
 <p>（Read more 👉 <a href="https://cookiecutter.readthedocs.io/en/latest/advanced/hooks.html">Using Pre/Post-Generate Hooks (0.7.0+)</a>）</p>
 <h2 id="reference">Reference</h2>
