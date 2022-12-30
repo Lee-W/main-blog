@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<link rel="stylesheet" href="https://wei-lee.me/theme/css/style.min.css?2fcac227">
+<link rel="stylesheet" href="https://blog.wei-lee.me/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -18,7 +18,7 @@
 <meta name="keywords" content="Python, snowflake, Tech, " />
 
 <meta property="og:title" content="snowflake-connector-python: 你的 pyarrow 不是你的 pyarrow "/>
-<meta property="og:url" content="https://wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem" />
+<meta property="og:url" content="https://blog.wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem" />
 <meta property="og:description" content="這是個不好好看文件，胡亂嘗試、多繞了一圈才解決問題的經驗" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
@@ -28,7 +28,7 @@
 
         <title>snowflake-connector-python: 你的 pyarrow 不是你的 pyarrow  · Laziness makes Great Engineer
 </title>
-        <link href="https://wei-lee.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+        <link href="https://blog.wei-lee.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-96190677-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -51,19 +51,19 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="https://wei-lee.me/"><span class=site-name>Laziness makes Great Engineer</span></a>
+                        <a class="brand" href="https://blog.wei-lee.me/"><span class=site-name>Laziness makes Great Engineer</span></a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right top-menu">
                                 <li >
                                     <a href=
-                                       https://wei-lee.me
+                                       https://blog.wei-lee.me
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wei-lee.me/pages/about-me.html">About Me</a></li>
-                                <li ><a href="https://wei-lee.me/categories.html">Categories</a></li>
-                                <li ><a href="https://wei-lee.me/tags.html">Tags</a></li>
-                                <li ><a href="https://wei-lee.me/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wei-lee.me/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
+                                <li ><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
+                                <li ><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
+                                <li ><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="https://blog.wei-lee.me/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem">
+            <a href="https://blog.wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem">
                 snowflake-connector-python: 你的 pyarrow 不是你的 pyarrow
             </a>
         </h1>
@@ -145,9 +145,9 @@ snowflake-connector-python 並不會單獨裝 pyarrow，這也難怪前面的嘗
  
                 <p id="post-share-links">
     Share on:
-      <a href="https://twitter.com/intent/tweet?text=snowflake-connector-python%3A%20%E4%BD%A0%E7%9A%84%20pyarrow%20%E4%B8%8D%E6%98%AF%E4%BD%A0%E7%9A%84%20pyarrow&url=https%3A//wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem&hashtags=python,snowflake" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=snowflake-connector-python%3A%20%E4%BD%A0%E7%9A%84%20pyarrow%20%E4%B8%8D%E6%98%AF%E4%BD%A0%E7%9A%84%20pyarrow&amp;body=https%3A//wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=snowflake-connector-python%3A%20%E4%BD%A0%E7%9A%84%20pyarrow%20%E4%B8%8D%E6%98%AF%E4%BD%A0%E7%9A%84%20pyarrow&url=https%3A//blog.wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem&hashtags=python,snowflake" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=snowflake-connector-python%3A%20%E4%BD%A0%E7%9A%84%20pyarrow%20%E4%B8%8D%E6%98%AF%E4%BD%A0%E7%9A%84%20pyarrow&amp;body=https%3A//blog.wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -168,7 +168,7 @@ snowflake-connector-python 並不會單獨裝 pyarrow，這也難怪前面的嘗
                 <a class="accordion-toggle disqus-comment-count comment-count collapsed"
                    data-toggle="collapse"
                    data-parent="#accordion2"
-                   href="https://wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem#comment_thread"
+                   href="https://blog.wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem#comment_thread"
                    id="comment-accordion-toggle">
                     Comments
                 </a>
@@ -179,7 +179,7 @@ snowflake-connector-python 並不會單獨裝 pyarrow，這也難怪前面的嘗
 
                         <script src="https://utteranc.es/client.js"
         data-repo="Lee-W/Lee-W.github.io"
-        data-issue-term="https://wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem"
+        data-issue-term="https://blog.wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem"
         data-label="comment"
         data-theme=""
         crossorigin="anonymous"
@@ -203,13 +203,13 @@ snowflake-connector-python 並不會單獨裝 pyarrow，這也難怪前面的嘗
                 <h4>Read Time</h4>
                 1 min
             <h4>Category</h4>
-            <a class="category-link" href="https://wei-lee.me/categories.html#tech-ref">Tech</a>
+            <a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wei-lee.me/tags.html#python-ref">Python
+                <li><a href="https://blog.wei-lee.me/tags.html#python-ref">Python
                     <span class="superscript">33</span>
 </a></li>
-                <li><a href="https://wei-lee.me/tags.html#snowflake-ref">snowflake
+                <li><a href="https://blog.wei-lee.me/tags.html#snowflake-ref">snowflake
                     <span class="superscript">1</span>
 </a></li>
             </ul>
@@ -336,7 +336,7 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
     </div>
 </footer>            <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script src="https://wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
         <script>
             function validateForm(query)
             {

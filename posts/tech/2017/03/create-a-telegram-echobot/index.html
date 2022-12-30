@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<link rel="stylesheet" href="https://wei-lee.me/theme/css/style.min.css?2fcac227">
+<link rel="stylesheet" href="https://blog.wei-lee.me/theme/css/style.min.css?2fcac227">
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -18,7 +18,7 @@
 <meta name="keywords" content="Chat Bot, Flask, Tech, " />
 
 <meta property="og:title" content="Create a Telegram EchoBot "/>
-<meta property="og:url" content="https://wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot" />
+<meta property="og:url" content="https://blog.wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot" />
 <meta property="og:description" content="最近當助教要出一個 Telegram Bot 相關的 Project 先來寫一篇簡單的教學，減少之後的問題 XDD" />
 <meta property="og:site_name" content="Laziness makes Great Engineer" />
 <meta property="og:article:author" content="Lee-W" />
@@ -28,7 +28,7 @@
 
         <title>Create a Telegram EchoBot  · Laziness makes Great Engineer
 </title>
-        <link href="https://wei-lee.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
+        <link href="https://blog.wei-lee.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Laziness makes Great Engineer - Full Atom Feed" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-96190677-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -51,19 +51,19 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="https://wei-lee.me/"><span class=site-name>Laziness makes Great Engineer</span></a>
+                        <a class="brand" href="https://blog.wei-lee.me/"><span class=site-name>Laziness makes Great Engineer</span></a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right top-menu">
                                 <li >
                                     <a href=
-                                       https://wei-lee.me
+                                       https://blog.wei-lee.me
                                     >Home</a>
                                 </li>
-                                <li ><a href="https://wei-lee.me/pages/about-me.html">About Me</a></li>
-                                <li ><a href="https://wei-lee.me/categories.html">Categories</a></li>
-                                <li ><a href="https://wei-lee.me/tags.html">Tags</a></li>
-                                <li ><a href="https://wei-lee.me/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://wei-lee.me/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                                <li ><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
+                                <li ><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
+                                <li ><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
+                                <li ><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="https://blog.wei-lee.me/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                             </ul>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot">
+            <a href="https://blog.wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot">
                 Create a Telegram EchoBot
             </a>
         </h1>
@@ -113,7 +113,7 @@
 <!--more-->
 
 <p>如果對 Chat Bot 的基本運作概念不太熟<br/>
-可以參考<a href="https://wei-lee.me/posts/tech/2016/11/introduction-to-chatbot#introduction-to-chatbot">[Bot] Introduction to Chatbot</a></p>
+可以參考<a href="https://blog.wei-lee.me/posts/tech/2016/11/introduction-to-chatbot#introduction-to-chatbot">[Bot] Introduction to Chatbot</a></p>
 <h2 id="what-is-telegram">What is Telegram</h2>
 <p>在台灣，好像還沒有那麼多人用 Telegram<br/>
 簡單來說就跟 Facebook Messenger 或 Line 這類的 IM 差不多</p>
@@ -195,7 +195,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 <p>這裡的 URL 就是設定成你這個 Bot Server 的 URL<br/>
 不過 Telegram 一樣要求必須要是 https<br/>
 最簡單的方式就是使用 ngrok<br/>
-(ngrok 的使用在<a href="https://wei-lee.me/posts/tech/2016/11/line-echo-bot-on-django#line-echo-bot-on-django">[Bot] Line Echo Bot on Django</a> 最後面有介紹 )<br/>
+(ngrok 的使用在<a href="https://blog.wei-lee.me/posts/tech/2016/11/line-echo-bot-on-django#line-echo-bot-on-django">[Bot] Line Echo Bot on Django</a> 最後面有介紹 )<br/>
 平常測試使用 ngrok 就很足夠了<br/>
 之後要 production 的時候，在 deploy 到適當的 server 就好了</p>
 <h3 id="95set95webhook">_set_webhook</h3>
@@ -256,9 +256,9 @@ Flask 把 request 這種幾乎所有 view function 都會用到的參數直接�
  
                 <p id="post-share-links">
     Share on:
-      <a href="https://twitter.com/intent/tweet?text=Create%20a%20Telegram%20EchoBot&url=https%3A//wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot&hashtags=chat-bot,flask" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=Create%20a%20Telegram%20EchoBot&amp;body=https%3A//wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=Create%20a%20Telegram%20EchoBot&url=https%3A//blog.wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot&hashtags=chat-bot,flask" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Create%20a%20Telegram%20EchoBot&amp;body=https%3A//blog.wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -279,7 +279,7 @@ Flask 把 request 這種幾乎所有 view function 都會用到的參數直接�
                 <a class="accordion-toggle disqus-comment-count comment-count collapsed"
                    data-toggle="collapse"
                    data-parent="#accordion2"
-                   href="https://wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot#comment_thread"
+                   href="https://blog.wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot#comment_thread"
                    id="comment-accordion-toggle">
                     Comments
                 </a>
@@ -290,7 +290,7 @@ Flask 把 request 這種幾乎所有 view function 都會用到的參數直接�
 
                         <script src="https://utteranc.es/client.js"
         data-repo="Lee-W/Lee-W.github.io"
-        data-issue-term="https://wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot"
+        data-issue-term="https://blog.wei-lee.me/posts/tech/2017/03/create-a-telegram-echobot"
         data-label="comment"
         data-theme=""
         crossorigin="anonymous"
@@ -314,13 +314,13 @@ Flask 把 request 這種幾乎所有 view function 都會用到的參數直接�
                 <h4>Read Time</h4>
                 2 min
             <h4>Category</h4>
-            <a class="category-link" href="https://wei-lee.me/categories.html#tech-ref">Tech</a>
+            <a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://wei-lee.me/tags.html#chat-bot-ref">Chat Bot
+                <li><a href="https://blog.wei-lee.me/tags.html#chat-bot-ref">Chat Bot
                     <span class="superscript">8</span>
 </a></li>
-                <li><a href="https://wei-lee.me/tags.html#flask-ref">Flask
+                <li><a href="https://blog.wei-lee.me/tags.html#flask-ref">Flask
                     <span class="superscript">1</span>
 </a></li>
             </ul>
@@ -447,7 +447,7 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
     </div>
 </footer>            <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script src="https://wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
         <script>
             function validateForm(query)
             {
