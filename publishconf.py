@@ -12,7 +12,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = "https://wei-lee.me"
+SITEURL = "https://blog.wei-lee.me"
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = "feeds/all.atom.xml"
