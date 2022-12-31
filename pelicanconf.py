@@ -21,7 +21,7 @@ PROJECTS = [
 ]
 
 # comment system
-UTTERANCES_REPO = "Lee-W/Lee-W.github.io"
+UTTERANCES_REPO = "Lee-W/main-blog"
 UTTERANCES_LABEL = "comment"
 COMMENTS_INTRO = (
     "Do you like this article? What do your tink about it? Leave you comment below"
