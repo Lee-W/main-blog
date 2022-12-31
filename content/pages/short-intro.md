@@ -6,16 +6,16 @@ status: hidden
 slug: landing-page-about-hidden
 ---
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js"></script>
+* [🐍 Python Programmer](https://pycon-note.wei-lee.me/)
+* 💻 Remote Worker
+* [📷 Traveler](https://travlog.wei-lee.me/)
+* 📖 Reader
+* 🎵 Ukulele Player
+* 🔒 Locker
+* 📺 Anime Lover
 
-[<i class="fab fa-lg fa-python"></i> Python Programmer](https://wei-lee.me/pycon-note/)
-<i class="fas fa-laptop-code"></i> Remote Worker
-[<i class="fas fa-lg fa-camera"></i> Traveler](https://wei-lee.me/travlog/)
-<i class="fas fa-lg fa-book"></i> Reader
-<i class="fas fa-lg fa-music"></i> Ukulele Player
-<i class="fas fa-lg fa-lock"></i> Locker
-<i class="fab fa-lg fa-rebel"></i> Star Wars Fan
+As a programmer, I like to automate boring stuff and high-quality code. Enjoy participating in open-source communities and contributing to open-source projects (like [commitizen-tools](https://github.com/commitizen-tools)). Love traveling and would like to use PyCon as an excuse to explore the world 😎. Have been to PyCon TW 🇹🇼, PyCon US 🇺🇸, PyCon JP 🇯🇵, PyCon CA 🇨🇦, Remote Python Pizza 🍕 and Euro Python (remotely ) 🇪🇺.
 
-Being a lazy software engineer, I like to automate boring stuff and deliver quality code. I love traveling and making new friends. Hope to become a PyCon (or tech conf) Nomad and explore the world.
+I share my tech note, book digest, and sometimes my thought here.
 
-I share my tech note, book digest, and sometimes my thought in this blog. If you're also interested in traveling, cooking, and anime, please take a look at [Meet people around the world](https://travlog.wei-lee.me/) where I write about these kinds of stuff.
+On the other hand, if you're interested in traveling, cooking, and anime, [Meet people around the world](https://travlog.wei-lee.me/) is where I chat about this stuff.
