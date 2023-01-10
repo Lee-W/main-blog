@@ -3,7 +3,7 @@ Date: 2016-11-18 16:53
 Category: Tech
 Tags: Paper, Social Network, Machine Learning
 Slug: mining-online-social-data-for-detecting-social-network-mental-disorders
-Authors: Lee-W
+Authors: Wei Lee
 
 * [Paper](http://www2016.net/proceedings/proceedings/p275.pdf)
 * [My Slide](https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders)

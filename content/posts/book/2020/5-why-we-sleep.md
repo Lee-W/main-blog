@@ -3,7 +3,7 @@ Date: 2020-10-31 10:54
 Category: Book
 Tags: Health
 Slug: why-we-sleep
-Authors: Lee-W
+Authors: Wei Lee
 
 這本書除了提供關於有用的睡眠建議外，它也是一本相當有趣的書
 探討各種人類跟睡眠有關的行爲、迷思

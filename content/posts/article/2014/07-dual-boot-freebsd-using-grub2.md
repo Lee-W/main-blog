@@ -3,7 +3,7 @@ Date: 2014-10-21 08:56
 Category: Tech
 Tags: Linux-Unix, Dual Boot
 Slug: dual-boot-freebsd-using-grub2
-Authors: Lee-W
+Authors: Wei Lee
 
 其實原本的標題是 `Dual Boot FreeBSD with Ubuntu`
 這篇文章寫的都是用 Ubuntu 測試的

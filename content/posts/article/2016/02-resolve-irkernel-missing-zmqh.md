@@ -3,7 +3,7 @@ Date: 2016-02-20 03:42
 Category: Tech
 Tags: R, Jupyter
 Slug: resolve-irkernel-missing-zmqh
-Authors: Lee-W
+Authors: Wei Lee
 
 <!--more-->
 

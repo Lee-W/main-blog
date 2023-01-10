@@ -3,7 +3,7 @@ Date: 2020-01-03 15:30
 Category: Tech
 Tags: Conference
 Slug: edbt-icdt-2018
-Authors: Lee-W
+Authors: Wei Lee
 
 整理筆記時，翻到兩年前去研討會的筆記
 想說放著也不會增值，就整理出來了

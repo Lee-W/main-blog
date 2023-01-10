@@ -3,7 +3,7 @@ Date: 2020-07-06 10:47
 Category: Book
 Tags: Productivity, Business
 Slug: escape-9-5-live-anywhere-and-join-the-new-rich
-Authors: Lee-W
+Authors: Wei Lee
 
 隔了半年終於又看完一本新書...
 看書速度實在有點慢

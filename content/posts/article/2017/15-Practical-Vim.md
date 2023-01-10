@@ -3,7 +3,7 @@ Date: 2017-06-26 08:50
 Category: Tech
 Tags: Vim, Note
 Slug: Practical-Vim
-Authors: Lee-W
+Authors: Wei Lee
 
 每天一回一回的看，終於把[Practical Vim](https://pragprog.com/book/dnvim/practical-vim)看完了
 不過到了後期，大部分就真的都看不太懂了＝ ＝

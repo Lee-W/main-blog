@@ -3,7 +3,7 @@ Date: 2016-08-26 03:26
 Category: Book
 Tags: Inspiring
 Slug: how-will-you-measure-your-life
-Authors: Lee-W
+Authors: Wei Lee
 
 最近發現竟然沒有把這本還蠻喜歡的書 po 上來
 就好好的把之前整理的書摘，再重新整理過一遍

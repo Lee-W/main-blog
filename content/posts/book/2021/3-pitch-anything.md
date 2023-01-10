@@ -3,7 +3,7 @@ Date: 2021-12-12 09:28
 Category: Book
 Tags: Business
 Slug: pitch-anyting
-Authors: Lee-W
+Authors: Wei Lee
 
 這本書的中文書名真的有夠長，又沒有記憶點...
 反倒是英文 Pitch Anything ，一看就不會忘

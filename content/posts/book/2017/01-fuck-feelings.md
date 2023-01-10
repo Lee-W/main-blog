@@ -3,7 +3,7 @@ date: 2017-02-04 10:16
 Category: Book
 Tags: Emotion
 Slug: fuck-feelings
-Authors: Lee-W
+Authors: Wei Lee
 
 ![F*ck Feelings](/images/books/tLNg7CJ.jpg)
 

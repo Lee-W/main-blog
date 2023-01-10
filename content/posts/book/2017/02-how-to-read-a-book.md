@@ -3,7 +3,7 @@ date: 2017-03-03 20:41
 Category: Book
 Tags: Other
 Slug: how-to-read-a-book
-Authors: Lee-W
+Authors: Wei Lee
 
 ![how-to-read-a-book](/images/books/D1Obrmf.jpg)
 

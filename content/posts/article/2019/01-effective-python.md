@@ -3,7 +3,7 @@ Date: 2019-01-19 16:45
 Category: Tech
 Tags: Python, Note
 Slug: effective-python
-Authors: Lee-W
+Authors: Wei Lee
 
 ![effective python](/images/books/aE00B2o.jpg)
 

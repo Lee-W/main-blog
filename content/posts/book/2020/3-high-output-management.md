@@ -3,7 +3,7 @@ Date: 2020-09-10 12:53
 Category: Book
 Tags: Management
 Slug: high-output-management
-Authors: Lee-W
+Authors: Wei Lee
 
 ![high-output-management](/images/books/high-output-management.jpg)
 

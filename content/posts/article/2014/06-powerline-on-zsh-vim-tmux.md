@@ -3,7 +3,7 @@ Date: 2014-07-30 15:01
 Category: Tech
 Tags: Linux-Unix, Utility
 Slug: powerline-on-zsh-vim-tmux
-Authors: Lee-W
+Authors: Wei Lee
 
 用了 vim 的 powerline 後覺得很酷，就找了很多的 powerline 來玩
 於是這篇文章產生了 XDD

@@ -3,7 +3,7 @@ Date: 2015-01-28 08:52
 Category: Tech
 Tags: Linux-Unix, Dual Boot
 Slug: enable-bcm43228-wifi-on-linux
-Authors: Lee-W
+Authors: Wei Lee
 
 最近本來下定決心要來玩 arch linux
 結果竟然被筆電的網卡搞死了

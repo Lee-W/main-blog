@@ -3,7 +3,7 @@ Date: 2021-11-25 18:10
 Category: Book
 Tags: Learning
 Slug: understand-a-book
-Authors: Lee-W
+Authors: Wei Lee
 
 這本書我大概在三月就看完了
 沒想到拖到現在才有時間好好做筆記

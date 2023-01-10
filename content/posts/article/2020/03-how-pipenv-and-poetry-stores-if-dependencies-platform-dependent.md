@@ -3,7 +3,7 @@ Date: 2020-02-12 11:45
 Category: Tech
 Tags: Python, Dependency
 Slug: how-pipenv-and-poetry-stores-if-dependencies-platform-dependent
-Authors: Lee-W
+Authors: Wei Lee
 
 [TOC]
 

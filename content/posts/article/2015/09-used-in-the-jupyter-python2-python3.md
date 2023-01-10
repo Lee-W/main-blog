@@ -3,7 +3,7 @@ Date: 2015-11-02 15:12
 Category: Tech
 Tags: Python, Jupyter
 Slug: used-in-the-jupyter-python2-python3
-Authors: Lee-W
+Authors: Wei Lee
 
 先安裝 Python2 和 Python3 的 ipython notebook
 

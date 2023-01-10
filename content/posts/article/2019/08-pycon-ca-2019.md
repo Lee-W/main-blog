@@ -3,7 +3,7 @@ Date: 2019-12-23 17:51
 Category: Tech
 Tags: Python, PyCon, Conference
 Slug: pycon-ca-2019
-Authors: Lee-W
+Authors: Wei Lee
 
 隔了一個多月，終於有時間可以來補 PyCon CA 2019 的心得
 這是我今年參加的第四場 PyCon

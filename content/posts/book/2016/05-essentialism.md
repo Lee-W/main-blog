@@ -3,7 +3,7 @@ Date: 2016-03-11 14:29
 Category: Book
 Tags: Productivity
 Slug: essentialism
-Authors: Lee-W
+Authors: Wei Lee
 
 ![Essentialism](/images/books/zJS927h.jpg)
 

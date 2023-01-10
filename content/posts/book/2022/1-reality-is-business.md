@@ -4,7 +4,7 @@ Date: 2022-02-03 16:10
 Category: Book
 Tags: News, Society
 Slug: reality-is-business
-Authors: Lee-W
+Authors: Wei Lee
 
 一言以蔽之，這是關於假新聞，關於真相如何在這個時代被製造的書
 

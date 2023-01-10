@@ -3,7 +3,7 @@ Date: 2021-1-1 13:30
 Category: Tech
 Tags: Python
 Slug: python-table-manners-cookiecutter
-Authors: Lee-W
+Authors: Wei Lee
 Series: Python Table Manners
 
 [Python Table Manners 系列]({filename}/posts/article/2020/04-python-table-manners-series.md) 整理了各種開發 Python 專案能用到的工具們

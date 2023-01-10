@@ -3,7 +3,7 @@ Date: 2015-02-16 08:57
 Category: Book
 Tags: Startup
 Slug: zero-to-one
-Authors: Lee-W
+Authors: Wei Lee
 
 ![Zero to One](/images/books/O3Uaatb.jpg)
 

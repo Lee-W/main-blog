@@ -3,7 +3,7 @@ Date: 2016-04-05 14:02
 Category: Book
 Tags: Other
 Slug: fooled-by-randomness
-Authors: Lee-W
+Authors: Wei Lee
 
 ![fooled by randomness](http://pic.eslite.com/Upload/Product/201405/m/635359124106127500.jpg)
 

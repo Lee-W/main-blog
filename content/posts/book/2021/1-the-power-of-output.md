@@ -3,7 +3,7 @@ Date: 2021-02-13 22:35
 Category: Book
 Tags: Learning
 Slug: the-power-of-output
-Authors: Lee-W
+Authors: Wei Lee
 
 這也是去年參加 MOPCON 聽大大推薦的書之一
 主要講如何透過輸出（e.g., 分享、寫文章）來學習

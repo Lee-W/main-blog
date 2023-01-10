@@ -3,7 +3,7 @@ Date: 2016-11-21 08:18
 Category: Tech
 Tags: Chat Bot
 Slug: introduction-to-chatbot
-Authors: Lee-W
+Authors: Wei Lee
 Series: Line Bot Tutorial
 
 有人說聊天機器人 Chat Bot 將要取代 APP

@@ -4,7 +4,7 @@ Modified: 2021-12-27 20:08
 Category: Book
 Tags: Productivity
 Slug: the-power-of-habit
-Authors: Lee-W
+Authors: Wei Lee
 
 ![The Power of Habit](/images/books/Mo2J3YW.jpg)
 

@@ -3,7 +3,7 @@ Date: 2018-09-09 16:00
 Category: Tech
 Tags: Develop, Utility
 Slug: from-andromoney-to-moze
-Authors: Lee-W
+Authors: Wei Lee
 
 最近不小心被 [MOZE](https://www.mozeapp.com) 的介面燒到
 一個衝動就從 [AndroMoney](https://web.andromoney.com) 轉到 MOZE

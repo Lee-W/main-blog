@@ -3,7 +3,7 @@ Date: 2016-10-04 15:00
 Category: Book
 Tags: Team
 Slug: the-silo-effect
-Authors: Lee-W
+Authors: Wei Lee
 
 ![The silo effect](/images/books/MTSd8sY.jpg)
 

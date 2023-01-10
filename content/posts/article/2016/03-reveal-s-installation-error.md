@@ -3,7 +3,7 @@ Date: 2016-02-20 03:57
 Category: Tech
 Tags: JavaScript, reveal.js
 Slug: reveal-s-installation-error
-Authors: Lee-W
+Authors: Wei Lee
 
 當我安裝步驟執行到
 

@@ -3,7 +3,7 @@ Date: 2016-06-06 08:32
 Category: Book
 Tags: Inspiring
 Slug: the-last-lecture
-Authors: Lee-W
+Authors: Wei Lee
 
 <!--more-->
 

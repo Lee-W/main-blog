@@ -3,7 +3,7 @@ Date: 2014-02-01 16:58
 Category: Tech
 Tags: Linux-Unix, Utility
 Slug: autojump
-Authors: Lee-W
+Authors: Wei Lee
 
 快速跳轉資料夾的工具
 

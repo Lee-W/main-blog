@@ -3,7 +3,7 @@ Date: 2016-10-15 11:04
 Category: Book
 Tags: Game Theory
 Slug: how-to-think-like-a-game-theorist
-Authors: Lee-W
+Authors: Wei Lee
 
 ![How to think like a game theorist](http://pic.eslite.com/Upload/Product/201402/m/635279634797871250.jpg)
 

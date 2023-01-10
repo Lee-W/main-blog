@@ -3,7 +3,7 @@ Date: 2020-09-22 12:50
 Category: Tech
 Tags: Python, Animate
 Slug: will-kobayashi-s-code-encounter-sql-injection
-Authors: Lee-W
+Authors: Wei Lee
 
 其實這篇文章應該一年前就該寫了...
 今年為了在 PyCon TW 的 Lightning Talk 想個梗，就拿出來講 ([slide](https://speakerdeck.com/leew/xiao-lin-de-cheng-shi-ma-hui-bu-hui-yu-dao-sql-injection))

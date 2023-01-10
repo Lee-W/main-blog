@@ -3,7 +3,7 @@ Date: 2019-08-13 10:55
 Category: Book
 Tags: Remote Job
 Slug: the-ultimate-guide-to-remote-work
-Authors: Lee-W
+Authors: Wei Lee
 
 This is an excerpt of Zapier's book [The Ultimate Guide to Remote Work](https://zapier.com/learn/remote-work/).
 I had a good time chatting with Zapier in PyCon US and then found this book on their website.

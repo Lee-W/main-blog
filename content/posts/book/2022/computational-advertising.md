@@ -3,7 +3,7 @@ Date: 2021-02-13 22:35
 Category: Book
 Tags: Advertising
 Slug: computational-advertising
-Authors: Lee-W
+Authors: Wei Lee
 Status: draft
 
 因為原文就是簡體的，所以整個筆記會有中國用語

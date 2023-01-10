@@ -3,7 +3,7 @@ Date: 2020-01-02 21:30
 Category: Book
 Tags: Productivity
 Slug: atmoic-habit
-Authors: Lee-W
+Authors: Wei Lee
 
 終於把之前很多人在討論的這本書看完了
 也許是太久沒看書了，看書的速度下降了很多

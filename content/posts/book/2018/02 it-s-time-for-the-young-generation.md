@@ -3,7 +3,7 @@ Date: 2018-11-07 14:00
 Category: Book
 Tags: Story
 Slug: it-s-time-for-the-young-generation
-Authors: Lee-W
+Authors: Wei Lee
 
 ![Imgur](/images/books/0he265Q.jpg)
 

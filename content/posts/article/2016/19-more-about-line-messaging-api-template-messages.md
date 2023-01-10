@@ -3,7 +3,7 @@ Date: 2016-11-27 06:08
 Category: Tech
 Tags: Chat Bot
 Slug: more-about-line-messaging-api-template-messages
-Authors: Lee-W
+Authors: Wei Lee
 Series: Line Bot Tutorial
 
 除了傳送文字外，Line Bot 還可以傳

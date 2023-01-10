@@ -3,7 +3,7 @@ Date: 2015-10-06 12:04
 Category: Book
 Tags: Innovation
 Slug: innovation-is-an-attitude
-Authors: Lee-W
+Authors: Wei Lee
 
 ![innovation-is-an-attitude](http://pic.eslite.com/Upload/Product/201506/m/635689172041107500.jpg)
 

@@ -4,7 +4,7 @@ Modified: 2020-10-04 16:13
 Category: Tech
 Tags: Python, Security
 Slug: python-table-manners-security
-Authors: Lee-W
+Authors: Wei Lee
 Series: Python Table Manners
 
 果然在沒有寫作松的督促下，馬上就拖稿了 XD

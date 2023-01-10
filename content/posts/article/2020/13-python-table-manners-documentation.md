@@ -4,7 +4,7 @@ Modified: 2020-10-04 16:49
 Category: Tech
 Tags: Python, Documentation
 Slug: python-table-manners-documentation
-Authors: Lee-W
+Authors: Wei Lee
 Series: Python Table Manners
 
 Python 開源專案中，[Sphinx](https://www.sphinx-doc.org/en/master/) 是很常見的文件產生工具

@@ -3,7 +3,7 @@ Date: 2017-02-28 21:56
 Category: Tech
 Tags: Open Source
 Slug: git-ignoreio-and-open-source-experience
-Authors: Lee-W
+Authors: Wei Lee
 
 雖然已經隔了一年多
 當初 git ignore-io 這個小功能，也是花了一兩個月

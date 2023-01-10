@@ -3,7 +3,7 @@ Date: 2016-06-27 02:55
 Category: Book
 Tags: Productivity
 Slug: willpower
-Authors: Lee-W
+Authors: Wei Lee
 
 ![willpower](http://pic.eslite.com/Upload/Product/201307/m/635093011219915000.jpg)
 

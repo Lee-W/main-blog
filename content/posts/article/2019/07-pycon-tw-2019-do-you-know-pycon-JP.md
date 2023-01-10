@@ -3,7 +3,7 @@ Date: 2019-10-28 12:35
 Category: Tech
 Tags: Conference, PyCon
 Slug: pycon-tw-2019-do-you-know-pycon-jp
-Authors: Lee-W
+Authors: Wei Lee
 
 [TOC]
 

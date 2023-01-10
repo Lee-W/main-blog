@@ -4,7 +4,7 @@ Modified: 2020-10-04 16:10
 Category: Tech
 Tags: Python, Git, Code Quality
 Slug: python-table-manners-pre-commit
-Authors: Lee-W
+Authors: Wei Lee
 Series: Python Table Manners
 
 前一篇提到了透過 [invoke](http://www.pyinvoke.org/) 簡化繁瑣的指令

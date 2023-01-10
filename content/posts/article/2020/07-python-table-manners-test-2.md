@@ -4,7 +4,7 @@ Modified: 2020-10-04 15:46
 Category: Tech
 Tags: Python, Test
 Slug: python-table-manners-test-2
-Authors: Lee-W
+Authors: Wei Lee
 Series: Python Table Manners
 
 接續前一篇提到的 [pytest](https://docs.pytest.org/en/6.1.1/)，繼續看它的其他功能吧

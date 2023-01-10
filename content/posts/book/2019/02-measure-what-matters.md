@@ -3,7 +3,7 @@ Date: 2019-06-16 17:18
 Category: Book
 Tags: Productivity
 Slug: measure-what-matters
-Authors: Lee-W
+Authors: Wei Lee
 
 ![measure-what-matters](/images/books/measure-what-matters.jpg){: style="height:255px;"}
 

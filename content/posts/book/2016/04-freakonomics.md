@@ -3,7 +3,7 @@ Date: 2016-02-09 11:52
 Category: Book
 Tags: Economics
 Slug: freakonomics
-Authors: Lee-W
+Authors: Wei Lee
 
 <!--more-->
 

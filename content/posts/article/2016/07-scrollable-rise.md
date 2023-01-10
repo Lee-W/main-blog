@@ -3,7 +3,7 @@ Date: 2016-08-15 03:22
 Category: Tech
 Tags: Python, Jupyter, reveal.js
 Slug: scrollable-rise
-Authors: Lee-W
+Authors: Wei Lee
 
 RISE 是一套結合[jupyter-notebook](http://jupyter.org) 和[reveal.js](http://lab.hakim.se/reveal-js/#/) 的專案
 讓我們能在 jupyter notebook 直接開啟如同 reveal.js 的 slide

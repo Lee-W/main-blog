@@ -3,7 +3,7 @@ Date: 2013-12-11 00:56
 Category: Tech
 Tags: C++, Thread
 Slug: how-to-create-thread-in-c-plus-plus
-Authors: Lee-W
+Authors: Wei Lee
 
 之前因為作業需要使用到 multi-thread，就留下了這篇紀錄
 這篇會稍微介紹 C++11 的 `thread` 函式庫，還有一點點和 `pthread`

@@ -3,7 +3,7 @@ Date: 2020-05-03 16:52
 Category: Tech
 Tags: Python, PyCon
 Slug: remote-python-pizza-2020
-Authors: Lee-W
+Authors: Wei Lee
 
 上週六參加了第一場遠端的 Python 研討會 [Remote Python Pizza](https://remote.python.pizza/)
 由於疫情的關係，國外的 PyCon 大多轉往線上或取消

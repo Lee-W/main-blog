@@ -3,7 +3,7 @@ Date: 2020-11-20 23:15
 Category: Book
 Tags: Productivity
 Slug: deep-work
-Authors: Lee-W
+Authors: Wei Lee
 
 最近覺得自己的工作效率開始下降了
 剛好在 MOPCON 聽到大大推薦這本書，就下訂了

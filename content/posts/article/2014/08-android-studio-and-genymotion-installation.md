@@ -3,7 +3,7 @@ Date: 2014-12-29 09:26
 Category: Tech
 Tags: Android
 Slug: android-studio-and-genymotion-installation
-Authors: Lee-W
+Authors: Wei Lee
 
 Android Studio 最近 Google 在推行的 Android IDE，前身是 IntelliJ IDEA
 

@@ -4,7 +4,7 @@ Modified: 2020-10-08 16:12
 Category: Tech
 Tags: Note, Software Engineering
 Slug: clean-code
-Authors: Lee-W
+Authors: Wei Lee
 
 既然都把 The Clean Coder 做完了
 就順便把原本在 GitBook 的 The Clean Code 一起搬過來好了

@@ -3,7 +3,7 @@ Date: 2014-02-09 07:02
 Category: Tech
 Tags: Linux-Unix, Utility
 Slug: guake-terminal
-Authors: Lee-W
+Authors: Wei Lee
 
 隱藏在背景的 terminal
 並且可以隨時呼叫 (預設是 F12)

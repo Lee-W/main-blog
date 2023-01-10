@@ -3,7 +3,7 @@ Date: 2020-09-17 11:30
 Category: Book
 Tags: Career Path
 Slug: apprenticeship-patterns
-Authors: Lee-W
+Authors: Wei Lee
 
 ![apprenticeship-patterns](/images/books/apprenticeships-pattern.jpg)
 

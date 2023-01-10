@@ -3,7 +3,7 @@ Date: 2015-02-03 05:58
 Category: Tech
 Tags: Git, Deprecated, Utility
 Slug: gitignoreio
-Authors: Lee-W
+Authors: Wei Lee
 
 每次開一個 git 專案，要為它找適當的 .gitignore，都要上網找模板蠻麻煩的
 能不能有個簡單的方法，我開什麼專案就產生怎樣的 .gitignore

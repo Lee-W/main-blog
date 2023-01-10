@@ -3,7 +3,7 @@ Date: 2021-06-14 15:18
 Category: Tech
 Tags: Data, Version Control, DVC
 Slug: dvc-data-versioning
-Authors: Lee-W
+Authors: Wei Lee
 Series: Data Version Control Tutorial
 
 <!--more-->

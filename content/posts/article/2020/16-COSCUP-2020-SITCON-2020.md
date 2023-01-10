@@ -3,7 +3,7 @@ Date: 2020-08-21 15:21
 Category: Tech
 Tags: COSCUP, SITCON
 Slug: coscup-2020-sitcon-2020
-Authors: Lee-W
+Authors: Wei Lee
 
 因為這次 COSCUP 跟 SITCON 只隔了一週，就順手寫在一起了
 

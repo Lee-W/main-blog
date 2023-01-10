@@ -4,7 +4,7 @@ Modified: 2020-10-04 15:57
 Category: Tech
 Tags: Python, Code Quality
 Slug: python-table-manners-coding-style
-Authors: Lee-W
+Authors: Wei Lee
 Series: Python Table Manners
 
 接下來要介紹的是 linters

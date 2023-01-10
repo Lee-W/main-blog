@@ -3,7 +3,7 @@ Date: 2020-08-06 15:15
 Category: Tech
 Tags: Python, PyCon
 Slug: europython-2020
-Authors: Lee-W
+Authors: Wei Lee
 
 好不容易投稿上了 EuroPython
 原本打算順便去愛爾蘭的 Skellig Michael

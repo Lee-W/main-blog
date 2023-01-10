@@ -3,7 +3,7 @@ Date: 2023-01-01 17:34
 Category: Book
 Tags: Design
 Slug: the-design-of-everyday-things
-Authors: Lee-W
+Authors: Wei Lee
 
 大四修了創意設計，就曾經看過這本書
 當時就覺得這本書真的很有趣

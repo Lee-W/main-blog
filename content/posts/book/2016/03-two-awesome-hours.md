@@ -3,7 +3,7 @@ Date: 2016-01-10 02:31
 Category: Book
 Tags: Productivity
 Slug: two-awesome-hours
-Authors: Lee-W
+Authors: Wei Lee
 
 ![Two Awesome Hours](/images/books/KQpJ2Gh.jpg)
 

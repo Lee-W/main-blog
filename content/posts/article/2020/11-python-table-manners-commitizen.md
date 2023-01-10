@@ -4,7 +4,7 @@ Modified: 2020-07-19 16:47
 Category: Tech
 Tags: Python, Git
 Slug: python-table-manners-commitizen
-Authors: Lee-W
+Authors: Wei Lee
 Series: Python Table Manners
 
 接續著前一篇的 pre-commit ，繼續談 git 相關的工具

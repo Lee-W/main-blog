@@ -3,7 +3,7 @@ Date: 2019-01-07 22:50
 Category: Book
 Tags: Note-Taking
 Slug: think-through-note-taking
-Authors: Lee-W
+Authors: Wei Lee
 
 去年剛看完這本書的時候，實在覺得跟想像的很不一樣
 直到現在終於有空好好的再翻過一遍，做一些紀錄了

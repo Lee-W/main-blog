@@ -3,7 +3,7 @@ date: 2016-01-01 11:39
 Category: Book
 Tags: Design
 Slug: the-art-of-innovation
-Authors: Lee-W
+Authors: Wei Lee
 
 ![the-art-of-innovation](http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/018/29/0010182963.jpg&v=3c3d169c&w=348&h=348)
 

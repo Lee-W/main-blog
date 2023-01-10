@@ -3,7 +3,7 @@ Date: 2016-03-15 02:13
 Category: Tech
 Tags: Inspiring, Vim
 Slug: article-man-theory
-Authors: Lee-W
+Authors: Wei Lee
 
 這篇文實在太有趣了，還是該留下來做個紀錄 XD
 

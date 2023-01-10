@@ -3,7 +3,7 @@ Date: 2016-08-27 00:50
 Category: Book
 Tags: Productivity
 Slug: meeting-with-youself
-Authors: Lee-W
+Authors: Wei Lee
 
 ![一個人的會議時間](/images/books/ZZTHLlJ.jpg)
 

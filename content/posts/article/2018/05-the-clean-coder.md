@@ -3,7 +3,7 @@ Date: 2018-11-16 15:03
 Category: Tech
 Tags: Note, Software Engineering
 Slug: the-clean-coder
-Authors: Lee-W
+Authors: Wei Lee
 
 過了幾年又重新看過這本書才慢慢能感受到裡面說的
 Uncle Bob 的書真的每個階段看都會有很不一樣的感覺

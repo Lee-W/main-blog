@@ -3,7 +3,7 @@ Date: 2018-10-24 11:55
 Category: Book
 Tags: Education
 Slug: be-someone-to-the-children
-Authors: Lee-W
+Authors: Wei Lee
 Summary: Story
 
 跟蘇老師合作了半年下來

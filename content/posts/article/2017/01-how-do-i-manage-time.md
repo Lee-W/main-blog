@@ -3,7 +3,7 @@ Date: 2017-02-03 00:53
 Category: Gossiping
 Tags: Productivity
 Slug: how-do-i-manage-my-time
-Authors: Lee-W
+Authors: Wei Lee
 
 過年整理了好多以前的書摘
 好像該來發一點自己的東西了

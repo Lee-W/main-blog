@@ -3,7 +3,7 @@ Date: 2015-11-29 12:16
 Category: Book
 Tags: Design
 Slug: burn-your-portfolio-stuff-they-don-t-teach-you-in-design-school-but-should
-Authors: Lee-W
+Authors: Wei Lee
 
 
 * 隨時趕在對方需要以前，讓他們大吃一驚

@@ -3,7 +3,7 @@ date: 2017-03-05 11:40
 Category: Book
 Tags: Emotion
 Slug: take-a-rest
-Authors: Lee-W
+Authors: Wei Lee
 
 ![此人進廠維修中](/images/books/M5ZXQkh.jpg)
 

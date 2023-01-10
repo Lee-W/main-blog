@@ -3,7 +3,7 @@ Date: 2014-02-22 16:18
 Category: Tech
 Tags: Git, Tutorial, Deprecated
 Slug: git-and-git-hub
-Authors: Lee-W
+Authors: Wei Lee
 
 這份筆記已經是舊的版本了
 請參考[新版](https://wei-lee.me/git-tutorial/#/)

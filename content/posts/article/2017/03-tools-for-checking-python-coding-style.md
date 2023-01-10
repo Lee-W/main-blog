@@ -3,7 +3,7 @@ Date: 2017-03-15 19:13
 Category: Tech
 Tags: Python, Code Quality, Vim
 Slug: tools-for-checking-python-coding-style
-Authors: Lee-W
+Authors: Wei Lee
 
 [Pylint](https://www.pylint.org)
 

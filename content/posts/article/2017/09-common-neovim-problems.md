@@ -3,7 +3,7 @@ Date: 2017-05-14 13:13
 Category: Tech
 Tags: Vim, Neovim
 Slug: common-neovim-problems
-Authors: Lee-W
+Authors: Wei Lee
 
 <!--more-->
 

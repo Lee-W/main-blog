@@ -3,7 +3,7 @@ Date: 2015-01-17 09:30
 Category: Book
 Tags: Software Engineering, Team
 Slug: the-mythical-man-month
-Authors: Lee-W
+Authors: Wei Lee
 
 ![人月神話](/images/books/yEzGf5d.jpg)
 <!--more-->

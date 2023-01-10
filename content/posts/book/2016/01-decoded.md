@@ -3,7 +3,7 @@ Date: 2016-01-01 03:16
 Category: Book
 Tags: Sales
 Slug: decoded
-Authors: Lee-W
+Authors: Wei Lee
 
 ![decode](http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/061/88/0010618819.jpg&v=529dcf77&w=348&h=348)
 

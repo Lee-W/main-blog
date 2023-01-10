@@ -3,7 +3,7 @@ Date: 2021-01-29 18:45
 Category: Tech
 Tags: Python, pelican
 Slug: post-frequency-analysis-how-i-get-pelican-article-data-and-plot
-Authors: Lee-W
+Authors: Wei Lee
 Series: 2020 發文頻率分析
 
 原本只打算發篇文簡單回顧 2020 年我寫了什麼文章

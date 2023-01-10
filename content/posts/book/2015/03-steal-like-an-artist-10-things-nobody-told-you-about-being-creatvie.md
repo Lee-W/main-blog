@@ -3,7 +3,7 @@ Date: 2015-01-31 08:43
 Category: Book
 Tags: Design
 Slug: steal-like-an-artist-10-things-nobody-told-you-about-being-creatvie
-Authors: Lee-W
+Authors: Wei Lee
 
 [TOC]
 

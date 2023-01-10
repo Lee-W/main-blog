@@ -3,7 +3,7 @@ Date: 2016-05-04 12:00
 Category: Book
 Tags: Algorithm
 Slug: automate-this-how-algorithms-came-to-rule-our-world
-Authors: Lee-W
+Authors: Wei Lee
 
 ![automate-this-how-algorithms-came-to-rule-our-world](http://pic.eslite.com/Upload/Product/201407/m/635416147773839348.jpg)
 

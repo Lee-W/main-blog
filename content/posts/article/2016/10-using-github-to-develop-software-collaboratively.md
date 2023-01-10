@@ -3,7 +3,7 @@ Date: 2016-09-15 01:26
 Category: Tech
 Tags: Git, GitHub
 Slug: using-github-to-develop-software-collaboratively
-Authors: Lee-W
+Authors: Wei Lee
 
 這是兩年前 GitHub 來成大教育課程的筆記
 最近在整理 git 的筆記才翻出來

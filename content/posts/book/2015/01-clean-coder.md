@@ -3,7 +3,7 @@ Date: 2015-01-17 09:35
 Category: Book
 Tags: Software Engineering, Code Quality
 Slug: Soft
-Authors: Lee-W
+Authors: Wei Lee
 
 ![Clean Coder](/images/books/5a0LzcS.jpg)
 

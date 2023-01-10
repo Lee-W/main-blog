@@ -3,7 +3,7 @@ Date: 2015-10-18 11:45
 Category: Book
 Tags: Thinking
 Slug: thinking-technique
-Authors: Lee-W
+Authors: Wei Lee
 
 ![thinking-technique](http://pic.eslite.com/Upload/Product/201506/m/635696947482798750.jpg)
 

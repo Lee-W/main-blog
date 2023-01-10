@@ -3,7 +3,7 @@ Date: 2020-12-22 23:20
 Category: Tech
 Tags: Python, snowflake
 Slug: snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem
-Authors: Lee-W
+Authors: Wei Lee
 
 這是個不好好看文件，胡亂嘗試、多繞了一圈才解決問題的經驗
 
