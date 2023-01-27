@@ -2,6 +2,7 @@
 ###########################################################
 
 :date: 2021-02-03 18:19
+:modified: 2023-01-27 11:27
 :tags: Writing
 :category: Gossiping
 :slug: post-frequency-analysis
@@ -85,5 +86,5 @@
 | 真的是太少了@@
 | 今年也要多花點時間看書
 |
-| 總之，既然都開發了 [pelican-stat](https://github.com/Lee-W/pelican-stat)
+| 總之，既然都開發了 `pelican-stat <https://github.com/Lee-W/pelican-stat>`_
 | 我應該之後年初都會寫一篇這樣的文章吧 😆
