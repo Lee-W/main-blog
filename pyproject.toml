@@ -48,6 +48,7 @@ message = "What type of commit is it?"
 type = "input"
 name = "message"
 message = "Message body: \n"
+
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"

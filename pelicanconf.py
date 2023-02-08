@@ -99,8 +99,8 @@ PLUGINS = [
     "assets",
     "series",
     "render_math",
-    "search",
+    # "search",
 ]
 ANOTHER_READ_MORE_LINK = ""
 READERS = {"html": None}
-SEARCH_HTML_SELECTOR = "article"
+# SEARCH_HTML_SELECTOR = "article"
