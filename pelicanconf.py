@@ -5,7 +5,7 @@ PATH = "content"
 
 # Blog Conf
 AUTHOR = "Lee-W"
-SITENAME = "Laziness makes Great Engineer"
+SITENAME = "Those aren't written down are meant to be forgotten"
 SITEURL = "http://localhost:8000"
 SITETITLE = AUTHOR
 SITELOGO = None
@@ -93,13 +93,14 @@ PLUGINS = [
     "another_read_more_link",
     "share_post",
     "i18n_subsites",
-    "tipue_search",
     "tag_cloud",
     "extract_toc",
     "post_stats",
     "assets",
     "series",
     "render_math",
+    "search",
 ]
 ANOTHER_READ_MORE_LINK = ""
 READERS = {"html": None}
+SEARCH_HTML_SELECTOR = "article"
