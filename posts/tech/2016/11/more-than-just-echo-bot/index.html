@@ -1,35 +1,30 @@
 <!DOCTYPE html>
+
 <html lang="zh-tw">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<link rel="stylesheet" href="https://blog.wei-lee.me/theme/css/style.min.css?2fcac227">
-
-        <link rel="dns-prefetch" href="//fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-
-        <meta name="author" content="Wei Lee" />
-
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary">
-
-<meta name="keywords" content="Chat Bot, NLP, Machine Learning, Tech, " />
-
-<meta property="og:title" content="More than Just Echo Bot "/>
-<meta property="og:url" content="https://blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot" />
-<meta property="og:description" content="知道怎麼實作一個會 Echo 的 Bot 後 再來就要思考，開發一個 Bot 我們要提供什麼功能 (e.g., 天氣查詢, 訂票, 推薦旅遊景點) 不過這裡要討論的不是 Bot 的功能 Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別 接下來來談如何從使用者說的話來判斷，使用者要使用的功能" />
-<meta property="og:site_name" content="Those aren&#39;t written down are meant to be forgotten" />
-<meta property="og:article:author" content="Wei Lee" />
-<meta property="og:article:published_time" content="2016-11-29T01:57:00+08:00" />
-<meta name="twitter:title" content="More than Just Echo Bot ">
-<meta name="twitter:description" content="知道怎麼實作一個會 Echo 的 Bot 後 再來就要思考，開發一個 Bot 我們要提供什麼功能 (e.g., 天氣查詢, 訂票, 推薦旅遊景點) 不過這裡要討論的不是 Bot 的功能 Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別 接下來來談如何從使用者說的話來判斷，使用者要使用的功能">
-
-        <title>More than Just Echo Bot  · Those aren&#39;t written down are meant to be forgotten
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" rel="stylesheet"/>
+<link href="https://blog.wei-lee.me/theme/css/style.min.css?2fcac227" rel="stylesheet"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<meta content="Wei Lee" name="author">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="Chat Bot, NLP, Machine Learning, Tech, " name="keywords">
+<meta content="More than Just Echo Bot " property="og:title">
+<meta content="https://blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot" property="og:url"/>
+<meta content="知道怎麼實作一個會 Echo 的 Bot 後 再來就要思考，開發一個 Bot 我們要提供什麼功能 (e.g., 天氣查詢, 訂票, 推薦旅遊景點) 不過這 …" property="og:description"/>
+<meta content="Those aren't written down are meant to be forgotten" property="og:site_name"/>
+<meta content="Wei Lee" property="og:article:author"/>
+<meta content="2016-11-29T01:57:00+08:00" property="og:article:published_time"/>
+<meta content="More than Just Echo Bot " name="twitter:title"/>
+<meta content="知道怎麼實作一個會 Echo 的 Bot 後 再來就要思考，開發一個 Bot 我們要提供什麼功能 (e.g., 天氣查詢, 訂票, 推薦旅遊景點) 不過這 …" name="twitter:description"/>
+<title>More than Just Echo Bot  · Those aren't written down are meant to be forgotten
 </title>
-        <link href="https://blog.wei-lee.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Those aren&#39;t written down are meant to be forgotten - Full Atom Feed" />
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten - Full Atom Feed" type="application/atom+xml">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -37,96 +32,84 @@
 
   gtag('config', 'G-3J7XQ46QH5');
 </script>
-
-
-
-    </head>
-    <body>
-        <div id="content">
-            <div class="navbar navbar-static-top">
-                <div class="navbar-inner">
-                    <div class="container-fluid">
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </a>
-                        <a class="brand" href="https://blog.wei-lee.me/"><span class=site-name>Those aren't written down are meant to be forgotten</span></a>
-                        <div class="nav-collapse collapse">
-                            <ul class="nav pull-right top-menu">
-                                <li >
-                                    <a href=
-                                       https://blog.wei-lee.me
-                                    >Home</a>
-                                </li>
-                                <li ><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
-                                <li ><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
-                                <li ><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
-                                <li ><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://blog.wei-lee.me/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row-fluid">
-                    <div class="span1"></div>
-                    <div class="span10">
-<article itemscope>
+</link></meta></meta></meta></meta><link href="https://blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2016", "item": "https://blog.wei-lee.me/posts/tech/2016"}, {"@type": "ListItem", "position": 5, "name": "11", "item": "https://blog.wei-lee.me/posts/tech/2016/11"}, {"@type": "ListItem", "position": 6, "name": "More than just echo bot", "item": "https://blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "More than Just Echo Bot", "about": "Tech", "datePublished": "2016-11-29 01:57"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://blog.wei-lee.me/"><span class="site-name">Those aren't written down are meant to be forgotten</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li>
+<a href="https://blog.wei-lee.me">Home</a>
+</li>
+<li><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
+<li><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
+<li><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
+<li><form action="https://blog.wei-lee.me/search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
 <div class="row-fluid">
-    <header class="page-header span10 offset2">
-        <h1>
-            <a href="https://blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot">
+<div class="span1"></div>
+<div class="span10">
+<article itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1>
+<a href="https://blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot">
                 More than Just Echo Bot
             </a>
-        </h1>
-    </header>
+</h1>
+</header>
 </div>
-
 <div class="row-fluid">
-        <div class="span8 offset2 article-content">
-            
-            <p>知道怎麼實作一個會 Echo 的 Bot 後<br>
-再來就要思考，開發一個 Bot 我們要提供什麼功能<br>
+<div class="span8 offset2 article-content">
+<p>知道怎麼實作一個會 Echo 的 Bot 後<br/>
+再來就要思考，開發一個 Bot 我們要提供什麼功能<br/>
 (e.g., 天氣查詢, 訂票, 推薦旅遊景點)</p>
-<p>不過這裡要討論的不是 Bot 的功能<br>
+<p>不過這裡要討論的不是 Bot 的功能<br/>
 Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</p>
 <p>接下來來談如何從使用者說的話來判斷，使用者要使用的功能</p>
 <!--more-->
-
-<p>如果使用者問：「今天天氣如何？」「天氣今天好嗎？」<br>
-要如何知道，他都是要詢問今天的天氣狀況<br>
+<p>如果使用者問：「今天天氣如何？」「天氣今天好嗎？」<br/>
+要如何知道，他都是要詢問今天的天氣狀況<br/>
 也就是使用者的「意圖」</p>
 <h2 id="based-on-keyword">Based on Keyword</h2>
 <p>上一篇文章，輸入關鍵字就能回傳 template message 的 bot 也是用這樣的方式實作的</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;button&#39;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">'button'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
     <span class="c1"># Send ButtonTemplate</span>
     <span class="o">......</span>
-<span class="k">elif</span> <span class="s1">&#39;confirm&#39;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+<span class="k">elif</span> <span class="s1">'confirm'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
     <span class="c1"># Send ConfirmTemplate</span>
     <span class="o">......</span>
-<span class="k">elif</span> <span class="s1">&#39;carousel&#39;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+<span class="k">elif</span> <span class="s1">'carousel'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
     <span class="c1"># Send CarouselTemplate</span>
     <span class="o">......</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="c1"># Echo TextMessage</span>
     <span class="o">......</span>
 </pre></div>
-
-
-<p>回歸到天氣的問題<br>
-可以試著找出「天氣」是否有出現在使用者的問句中<br>
+<p>回歸到天氣的問題<br/>
+可以試著找出「天氣」是否有出現在使用者的問句中<br/>
 再來判斷「今天」, 「明天」這樣敘述時間的詞</p>
 <p>e.g.</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;天氣&#39;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-    <span class="k">if</span> <span class="s1">&#39;今天&#39;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">'天氣'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s1">'今天'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">today_s_weather</span>
-    <span class="k">elif</span> <span class="s1">&#39;明天&#39;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="s1">'明天'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">tomorrow_s_weather</span>
 </pre></div>
-
-
 <h3 id="pros">Pros</h3>
 <ul>
 <li>不需要其他的背景知識，容易實作</li>
@@ -142,10 +125,10 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <li>一堆 if else 造成程式冗長，不易擴充和維護</li>
 </ul>
 <h2 id="aiml">AIML</h2>
-<p>Artificial Intelligence Modelling Language<br>
+<p>Artificial Intelligence Modelling Language<br/>
 它是一款基於 XML 的 markup language</p>
 <p>這是最基本的 AIML</p>
-<div class="highlight"><pre><span></span><span class="nt">&lt;aiml</span> <span class="na">version=</span><span class="s">&quot;1.0.1&quot;</span> <span class="na">encoding=</span><span class="s">&quot;UTF-8&quot;</span><span class="err">?</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><span class="nt">&lt;aiml</span> <span class="na">version=</span><span class="s">"1.0.1"</span> <span class="na">encoding=</span><span class="s">"UTF-8"</span><span class="err">?</span><span class="nt">&gt;</span>
    <span class="nt">&lt;category&gt;</span>
       <span class="nt">&lt;pattern&gt;</span> HELLO ALICE <span class="nt">&lt;/pattern&gt;</span>
 
@@ -156,9 +139,7 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
    <span class="nt">&lt;/category&gt;</span>
 <span class="nt">&lt;/aiml&gt;</span>
 </pre></div>
-
-
-<p>只要符合特定的 pattern，就回傳指定的 template<br>
+<p>只要符合特定的 pattern，就回傳指定的 template<br/>
 也能透過 <code>&lt;random&gt;</code> 這樣的 tag，從多種回覆隨機丟一種回傳</p>
 <div class="highlight"><pre><span></span><span class="nt">&lt;random&gt;</span>
    <span class="nt">&lt;li&gt;</span> response1 <span class="nt">&lt;/li&gt;</span>
@@ -166,8 +147,6 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
    ...
 <span class="nt">&lt;/random&gt;</span>
 </pre></div>
-
-
 <h3 id="pros_1">Pros</h3>
 <ul>
 <li>比起只用 if else 更結構化，較易維護和擴充</li>
@@ -185,7 +164,7 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <li><a href="https://www.luis.ai">LUIS</a> (Microsoft)</li>
 <li><a href="https://api.ai">API.ai</a> (Google)</li>
 </ul>
-<p>這些服務能透過標記和訓練<br>
+<p>這些服務能透過標記和訓練<br/>
 解析出這句話的每一個片段，所具有的意義</p>
 <ul>
 <li>e.g. 「今天西雅圖天氣如何」<ul>
@@ -196,8 +175,8 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 </li>
 </ul>
 <h3 id="witai">Wit.ai</h3>
-<p>Wit.ai 跟 LUIS, API.ai 比較不同的地方是<br>
-從 Wit.ai 得到的是，我們設定的回覆<br>
+<p>Wit.ai 跟 LUIS, API.ai 比較不同的地方是<br/>
+從 Wit.ai 得到的是，我們設定的回覆<br/>
 而不是一句話解析後的結果</p>
 <h3 id="luis">LUIS</h3>
 <p>從<a href="https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis">這裡</a> 可以測試兩個訓練過的範例機器人，看看從 LUIS 可以得到什麼</p>
@@ -207,40 +186,36 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 </ul>
 <div class="highlight"><pre><span></span>how is the weather in the Taipei
 </pre></div>
-
-
 <ul>
 <li>Response</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;how is the weather in the Taipei&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;topScoringIntent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;intent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GetCurrentWeather&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.50119406</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;actions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"how is the weather in the Taipei"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"topScoringIntent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"intent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetCurrentWeather"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.50119406</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">            </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;triggered&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GetCurrentWeather&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                </span><span class="nt">"triggered"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetCurrentWeather"</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">                    </span><span class="p">{</span><span class="w"></span>
-<span class="w">                        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">                        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"location"</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
 <span class="w">                    </span><span class="p">}</span><span class="w"></span>
 <span class="w">                </span><span class="p">]</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
 <span class="w">        </span><span class="p">]</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;entities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;dialog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;contextId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;80cd646a-d85d-4b40-873d-1b47fa49adc8&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Question&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Where would you like to get the current weather for?&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;parameterName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"entities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"dialog"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"contextId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"80cd646a-d85d-4b40-873d-1b47fa49adc8"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Question"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"prompt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where would you like to get the current weather for?"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"parameterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"location"</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
-
-
 <h3 id="apiai">API.ai</h3>
 <ul>
 <li>Question</li>
@@ -248,22 +223,18 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <div class="highlight"><pre><span></span>Hey Calendar, schedule lunch with
 Mary Johnson at 12 pm tomorrow.
 </pre></div>
-
-
 <ul>
 <li>Response</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;meeting.create&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Lunch with Mary Johnson&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;invitees&quot;</span><span class="p">:[</span><span class="s2">&quot;Mary Johnson&quot;</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="s2">&quot;2014-08-06T12:00:00-07:00&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"action"</span><span class="p">:</span><span class="s2">"meeting.create"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"Lunch with Mary Johnson"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"invitees"</span><span class="p">:[</span><span class="s2">"Mary Johnson"</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"time"</span><span class="p">:</span><span class="s2">"2014-08-06T12:00:00-07:00"</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
-
-
 <h2 id="implement-through-powerful-libraries">Implement Through Powerful Libraries</h2>
-<p>不過這些服務，通常會有它的限制<br>
+<p>不過這些服務，通常會有它的限制<br/>
 這時候就能用上 Python 強大的函式庫們，來實作自己的版本</p>
 <ul>
 <li><a href="http://www.nltk.org">NLTK</a><ul>
@@ -281,10 +252,10 @@ Mary Johnson at 12 pm tomorrow.
 </li>
 </ul>
 <p>我在<a href="https://gist.github.com/Lee-W/72f3a59b015cd67b3a939bf8a12680ac">NLP Libs Sample</a> 寫了這些函式庫的基本使用範例</p>
-<p>另外，也可以看<a href="https://github.com/warmheartli/ChatBotCourse">自己动手做聊天机器人教程</a><br>
+<p>另外，也可以看<a href="https://github.com/warmheartli/ChatBotCourse">自己动手做聊天机器人教程</a><br/>
 它是一系列聊天機器人教學，談這些做法背後的理論和實作</p>
 <h2 id="beyond-nlp">Beyond NLP</h2>
-<p>不過就算做了這些分詞、判斷意圖<br>
+<p>不過就算做了這些分詞、判斷意圖<br/>
 也不能保證使用者就會買單</p>
 <p>有人稱 Chat Bot 為下一代的 UX Design</p>
 <ul>
@@ -296,8 +267,8 @@ Mary Johnson at 12 pm tomorrow.
 <li>如何讓機器人的判斷足夠 robust，不會每次回答都是不明白</li>
 <li>如何讓使用者在最少的操作下，得到想得到的服務</li>
 </ul>
-<p>更進一步是<br>
-如何設計一個有個性、有溫度的機器人<br>
+<p>更進一步是<br/>
+如何設計一個有個性、有溫度的機器人<br/>
 這裡就可以再去研究 NLP 的情感分析</p>
 <h3 id="read-more">Read More</h3>
 <ul>
@@ -313,236 +284,169 @@ Mary Johnson at 12 pm tomorrow.
 <li><a href="https://github.com/warmheartli/ChatBotCourse">自己动手做聊天机器人教程</a></li>
 <li><a href="https://www.oreilly.com/ideas/an-overview-of-the-bot-landscape?imm_mid=0eb199&amp;cmp=em-data-na-na-newsltr_20161130">An overview of the bot landscape</a></li>
 </ul>
-
-
-             
- 
-                <p id="post-share-links">
+<p id="post-share-links">
     Share on:
-      <a href="https://twitter.com/intent/tweet?text=More%20than%20Just%20Echo%20Bot&url=https%3A//blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot&hashtags=chat-bot,nlp,machine-learning" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=More%20than%20Just%20Echo%20Bot&amp;body=https%3A//blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
-
-            
-            
-
-
-
-
-
-
-
+      <a href="https://twitter.com/intent/tweet?text=More%20than%20Just%20Echo%20Bot&amp;url=https%3A//blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot&amp;hashtags=chat-bot,nlp,machine-learning" rel="nofollow noopener noreferrer" target="_blank" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot" rel="nofollow noopener noreferrer" target="_blank" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=More%20than%20Just%20Echo%20Bot&amp;body=https%3A//blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot" rel="nofollow noopener noreferrer" target="_blank" title="Share via Email">Email</a>
 <section>
-    <h6 style="display:none;">Comments</h6>
-    <p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
-
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle disqus-comment-count comment-count collapsed"
-                   data-toggle="collapse"
-                   data-parent="#accordion2"
-                   href="https://blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot#comment_thread"
-                   id="comment-accordion-toggle">
+<h6 style="display:none;">Comments</h6>
+<p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle disqus-comment-count comment-count collapsed" data-parent="#accordion2" data-toggle="collapse" href="https://blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot#comment_thread" id="comment-accordion-toggle">
                     Comments
                 </a>
-            </div>
-            <div id="comment_thread" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div class="comments">
-
-                        <script src="https://utteranc.es/client.js"
-        data-repo="Lee-W/main-blog"
-        data-issue-term="https://blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot"
-        data-label="comment"
-        data-theme=""
-        crossorigin="anonymous"
-        async>
+</div>
+<div class="accordion-body collapse" id="comment_thread">
+<div class="accordion-inner">
+<div class="comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2016/11/more-than-just-echo-bot" data-label="comment" data-repo="Lee-W/main-blog" data-theme="" src="https://utteranc.es/client.js">
 </script>
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-            <hr/>
-        </div>
-        <section id="article-sidebar" class="span2">
-            <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2016-11-29T01:57:00+08:00">2016/11/29 - Tue</time>
-        <h4>Line Bot Tutorial</h4>
-    <ul class="multi-parts-list">
-            <li >
-            <a href="https://blog.wei-lee.me/posts/tech/2016/11/introduction-to-chatbot" title="Introduction to Chatbot">Part 1: Introduction to Chatbot</a>
-            </li>
-            <li >
-            <a href="https://blog.wei-lee.me/posts/tech/2016/11/apply-line-messaging-api" title="Apply Line Messaging API">Part 2: Apply Line Messaging API</a>
-            </li>
-            <li >
-            <a href="https://blog.wei-lee.me/posts/tech/2016/11/line-echo-bot-on-django" title="Line Echo Bot on Django">Part 3: Line Echo Bot on Django</a>
-            </li>
-            <li >
-            <a href="https://blog.wei-lee.me/posts/tech/2016/11/deploy-linebot-on-heroku" title="Deploy LineBot on Heroku">Part 4: Deploy LineBot on Heroku</a>
-            </li>
-            <li >
-            <a href="https://blog.wei-lee.me/posts/tech/2016/11/more-about-line-messaging-api-template-messages" title="More About Line Messaging API - Template Messages">Part 5: More About Line Messaging API - Template Messages</a>
-            </li>
-            <li  class="active-part">
+<hr/>
+</p></div>
+<section class="span2" id="article-sidebar">
+<h4>Published</h4>
+<time datetime="2016-11-29T01:57:00+08:00" itemprop="dateCreated">2016/11/29 - Tue</time>
+<h4>Line Bot Tutorial</h4>
+<ul class="multi-parts-list">
+<li>
+<a href="https://blog.wei-lee.me/posts/tech/2016/11/introduction-to-chatbot" title="Introduction to Chatbot">Part 1: Introduction to Chatbot</a>
+</li>
+<li>
+<a href="https://blog.wei-lee.me/posts/tech/2016/11/apply-line-messaging-api" title="Apply Line Messaging API">Part 2: Apply Line Messaging API</a>
+</li>
+<li>
+<a href="https://blog.wei-lee.me/posts/tech/2016/11/line-echo-bot-on-django" title="Line Echo Bot on Django">Part 3: Line Echo Bot on Django</a>
+</li>
+<li>
+<a href="https://blog.wei-lee.me/posts/tech/2016/11/deploy-linebot-on-heroku" title="Deploy LineBot on Heroku">Part 4: Deploy LineBot on Heroku</a>
+</li>
+<li>
+<a href="https://blog.wei-lee.me/posts/tech/2016/11/more-about-line-messaging-api-template-messages" title="More About Line Messaging API - Template Messages">Part 5: More About Line Messaging API - Template Messages</a>
+</li>
+<li class="active-part">
             Part 6: More than Just Echo Bot
             </li>
-    </ul>
-                <h4>Read Time</h4>
+</ul>
+<h4>Read Time</h4>
                 2 min
             <h4>Category</h4>
-            <a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
-            <h4>Tags</h4>
-            <ul class="list-of-tags tags-in-article">
-                <li><a href="https://blog.wei-lee.me/tags.html#chat-bot-ref">Chat Bot
+<a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="https://blog.wei-lee.me/tags.html#chat-bot-ref">Chat Bot
                     <span class="superscript">8</span>
 </a></li>
-                <li><a href="https://blog.wei-lee.me/tags.html#machine-learning-ref">Machine Learning
+<li><a href="https://blog.wei-lee.me/tags.html#machine-learning-ref">Machine Learning
                     <span class="superscript">5</span>
 </a></li>
-                <li><a href="https://blog.wei-lee.me/tags.html#nlp-ref">NLP
+<li><a href="https://blog.wei-lee.me/tags.html#nlp-ref">NLP
                     <span class="superscript">4</span>
 </a></li>
-            </ul>
+</ul>
 <h4>Keep In Touch</h4>
 <div id="sidebar-social-link">
-    <a href="https://tw.linkedin.com/in/clleew" title="" target="_blank" rel="nofollow noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
-    </a>
-    <a href="https://github.com/Lee-W" title="" target="_blank" rel="nofollow noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
-    </a>
-    <a href="https://gitlab.com/Lee-W" title="" target="_blank" rel="nofollow noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitLab" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#30353e"/><path fill="#e24329" d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133"/><path fill="#fc6d26" d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z"/><path fill="#fca326" d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z"/></svg>
-    </a>
-    <a href="https://twitter.com/clleew" title="" target="_blank" rel="nofollow noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
-    </a>
-    <a href="https://wei-lee.me/feeds/all.atom.xml" title="" target="_blank" rel="nofollow noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-label="RSS" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#f80"/><circle cx="145" cy="367" r="35" fill="#fff"/><path fill="none" stroke="#fff" stroke-width="60" d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276"/></svg>
-    </a>
+<a href="https://tw.linkedin.com/in/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="LinkedIn" fill="#fff" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#0077b5" height="512" rx="15%" width="512"></rect><circle cx="142" cy="138" r="37"></circle><path d="M244 194v198M142 194v198" stroke="#fff" stroke-width="66"></path><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path></svg>
+</a>
+<a href="https://github.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+<a href="https://gitlab.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitLab" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#30353e" height="512" rx="15%" width="512"></rect><path d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133" fill="#e24329"></path><path d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z" fill="#fc6d26"></path><path d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z" fill="#fca326"></path></svg>
+</a>
+<a href="https://twitter.com/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://wei-lee.me/feeds/all.atom.xml" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="RSS" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#f80" height="512" rx="15%" width="512"></rect><circle cx="145" cy="367" fill="#fff" r="35"></circle><path d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276" fill="none" stroke="#fff" stroke-width="60"></path></svg>
+</a>
 </div>
-            
-
-
-
-
-
-            
-
-
-
-
-
-        </section>
+</section>
 </div>
 </article>
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    <!-- Background of PhotoSwipe.
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
          It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-        <!-- Container that holds slides.
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
             PhotoSwipe keeps only 3 of them in the DOM to save memory.
             Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>                    </div>
-                    <div class="span1"></div>
-                </div>
-            </div>
-        </div>
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="span1"></div>
+</div>
+</div>
+</div>
 <footer>
-    <div>
-        
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+<div>
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0"/>
 </a>
-<br />
-This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<br>
+This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International License</a>.
 
-    </div>
-
-
-
-
-    <div id="fpowered">
-        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
-        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
-    </div>
-</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
-        <script>
+    </br></div>
+<div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican Home Page">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Theme Elegant Home Page">Elegant</a>
+</div>
+</footer> <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script>
             function validateForm(query)
             {
                 return (query.length > 0);
             }
         </script>
-
-    <script>
+<script>
     (function () {
         if (window.location.hash.match(/^#comment-\d+$/)) {
             $('#comment_thread').collapse('show');
@@ -565,8 +469,7 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
         })
     })
 </script>
-
-    </body>
-    <!-- Theme: Elegant built for Pelican
+</body>
+<!-- Theme: Elegant built for Pelican
         License : MIT -->
 </html>
