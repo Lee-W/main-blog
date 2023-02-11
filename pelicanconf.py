@@ -99,8 +99,15 @@ PLUGINS = [
     "assets",
     "series",
     "render_math",
+    "pelican.plugins.seo",
     # "search",
 ]
 ANOTHER_READ_MORE_LINK = ""
 READERS = {"html": None}
 # SEARCH_HTML_SELECTOR = "article"
+
+# pelican-seo settings
+SEO_REPORT = True  # SEO report is enabled by default
+SEO_ENHANCER = True  # SEO enhancer is disabled by default
+SEO_ENHANCER_OPEN_GRAPH = True  # Subfeature of SEO enhancer
+SEO_ENHANCER_TWITTER_CARDS = True  # Subfeature of SEO enhancer

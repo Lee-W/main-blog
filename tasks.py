@@ -20,7 +20,7 @@ CONFIG = {
 }
 
 
-PELICAN_CMD = "poetry run pelican"
+PELICAN_CMD = "poetry run pelican content"
 
 
 @task

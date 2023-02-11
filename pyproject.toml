@@ -18,6 +18,7 @@ Markdown = "<3.2"
 mdx_del_ins = {"git" = "https://github.com/Lee-W/mdx_del_ins"}
 md_mermaid = {"git" = "https://github.com/Lee-W/md_mermaid"}
 pelican-render-math = "^1.0.3"
+pelican-seo = "^1.2.2"
 
 [tool.poetry.dev-dependencies]
 black = "^22.8.0"
