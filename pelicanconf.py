@@ -16,7 +16,10 @@ PROJECTS = [
     {
         "name": "Commitizen",
         "url": "https://github.com/commitizen-tools/commitizen",
-        "description": "Python 3 command-line utility to standardize commit messages and bump version",
+        "description": (
+            "Python 3 command-line utility to standardize commit "
+            "messages and bump version"
+        ),
     }
 ]
 
@@ -30,10 +33,17 @@ COMMENTS_INTRO = (
 # license
 SITE_LICENSE = """
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    <img
+        alt="Creative Commons License"
+        style="border-width:0"
+        src="https://i.creativecommons.org/l/by/4.0/88x31.png"
+    />
 </a>
 <br />
-This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+This work is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+    Creative Commons Attribution 4.0 International License
+</a>.
 """
 
 # Locale
@@ -91,14 +101,13 @@ MARKDOWN = {
 PLUGIN_PATHS = ["pelican-plugins"]
 PLUGINS = [
     "another_read_more_link",
-    "share_post",
     "i18n_subsites",
-    "tag_cloud",
     "extract_toc",
     "post_stats",
-    "assets",
-    "series",
-    "render_math",
+    "pelican.plugins.webassets",
+    "pelican.plugins.tag_cloud",
+    "pelican.plugins.render_math",
+    "pelican.plugins.share_post",
     "pelican.plugins.seo",
     # "search",
 ]
