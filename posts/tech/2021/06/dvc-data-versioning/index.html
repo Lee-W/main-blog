@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" rel="stylesheet"/>
+<link href="https://blog.wei-lee.me/theme/css/elegant.prod.9e9d5ce754.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<meta content="Wei Lee" name="author">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="Data, Version Control, DVC, Tech, " name="keywords">
+<meta content="DVC - Data Versioning " property="og:title">
+<meta content="https://blog.wei-lee.me/posts/tech/2021/06/dvc-data-versioning" property="og:url"/>
+<meta content="About DVC (Data Version Control) What's DVC? version control system for data science and machine learning compatible with git (it's based on git) What can DVC do? track data model pipeline metrics use storage directly no external services needed Who are the targeted users of DVC? ML research / engineer DevOps …" property="og:description"/>
+<meta content="Those aren't written down are meant to be forgotten" property="og:site_name"/>
+<meta content="Wei Lee" property="og:article:author"/>
+<meta content="2021-06-14T15:18:00+08:00" property="og:article:published_time"/>
+<meta content="DVC - Data Versioning " name="twitter:title"/>
+<meta content="About DVC (Data Version Control) What's DVC? version control system for data science and machine learning compatible with git (it's based on git) What can DVC do? track data model pipeline metrics use storage directly no external services needed Who are the targeted users of DVC? ML research / engineer DevOps …" name="twitter:description"/>
+<title>DVC - Data Versioning  · Those aren't written down are meant to be forgotten
+</title>
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten - Full Atom Feed" type="application/atom+xml">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3J7XQ46QH5');
+</script>
+</link></meta></meta></meta></meta><link href="https://blog.wei-lee.me/posts/tech/2021/06/dvc-data-versioning" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2021", "item": "https://blog.wei-lee.me/posts/tech/2021"}, {"@type": "ListItem", "position": 5, "name": "06", "item": "https://blog.wei-lee.me/posts/tech/2021/06"}, {"@type": "ListItem", "position": 6, "name": "Dvc data versioning", "item": "https://blog.wei-lee.me/posts/tech/2021/06/dvc-data-versioning"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2021/06/dvc-data-versioning/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "DVC - Data Versioning", "about": "Tech", "datePublished": "2021-06-14 15:18"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://blog.wei-lee.me/"><span class="site-name">Those aren't written down are meant to be forgotten</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li>
+<a href="https://blog.wei-lee.me">Home</a>
+</li>
+<li><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
+<li><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
+<li><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
+<li><form action="https://blog.wei-lee.me/search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1>
+<a href="https://blog.wei-lee.me/posts/tech/2021/06/dvc-data-versioning">
+                DVC - Data Versioning
+            </a>
+</h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div class="toc">
+<ul>
+<li><a href="#about-dvc-data-version-control">About DVC (Data Version Control)</a></li>
+<li><a href="#how-to-use-dvc">How to use DVC?</a><ul>
+<li><a href="#install-dvc-globally">Install DVC globally</a></li>
+<li><a href="#take-a-look-at-the-example-project">Take a look at the example project</a></li>
+<li><a href="#install-dvc-into-the-virtual-environment">Install DVC into the virtual environment</a></li>
+<li><a href="#initialize-dvc">Initialize DVC</a></li>
+<li><a href="#add-dvc-remote">Add DVC remote</a></li>
+<li><a href="#track-data-through-dvc">Track data through DVC</a></li>
+<li><a href="#fetch-data-from-dvc-remote-storage">Fetch data from DVC remote storage</a></li>
+<li><a href="#add-data-changes-into-dvc">Add data changes into DVC</a></li>
+<li><a href="#fetch-code-and-data-changes-from-remote">Fetch code and data changes from remote</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="span8 article-content">
+<!--more-->
+<h2 id="about-dvc-data-version-control">About DVC (Data Version Control)</h2>
+<ul>
+<li>What's DVC?<ul>
+<li>version control system for data science and machine learning</li>
+<li>compatible with git (it's based on git)</li>
+</ul>
+</li>
+<li>What can DVC do?<ul>
+<li>track<ul>
+<li>data</li>
+<li>model</li>
+<li>pipeline</li>
+<li>metrics</li>
+</ul>
+</li>
+<li>use storage directly</li>
+<li>no external services needed</li>
+</ul>
+</li>
+<li>Who are the targeted users of DVC?<ul>
+<li>ML research / engineer</li>
+<li>DevOps &amp; Engineers</li>
+</ul>
+</li>
+<li>Why DVC?<ul>
+<li>It links your data, model, and pipelines with your metrics.<ul>
+<li>reproducibility</li>
+<li>trackable</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Read <a href="https://dvc.org/doc/use-cases/versioning-data-and-model-files">DVC - Versioning Data and Models</a> for more use cases</p>
+<h2 id="how-to-use-dvc">How to use DVC?</h2>
+<h3 id="install-dvc-globally">Install DVC globally</h3>
+<p>I suggest using <a href="https://pypa.github.io/pipx/">pipx</a> if you're to install DVC globally. However, an even better way is to install it inside the virtual environment within your project.</p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pipx
+$<span class="w"> </span>pipx<span class="w"> </span>install<span class="w"> </span>dvc
+$<span class="w"> </span>dvc<span class="w"> </span>--version
+
+<span class="m">2</span>.3.0
+</pre></div>
+<p>DVC also provides <a href="https://dvc.org/doc/install/completion">Shell Completion</a> and <a href="https://dvc.org/doc/install/plugins">Syntax Highlighting Plugins</a> for popular editors.</p>
+<h3 id="take-a-look-at-the-example-project">Take a look at the example project</h3>
+<p>I'll use <a href="https://github.com/Lee-W/dvc_example/">dvc_example</a> to demonstrate how I applied DVC to an existing machine learning project. The example is based on <a href="https://scikit-learn.org/0.24/auto_examples/classification/plot_digits_classification.html">Recognizing hand-written digits</a> from scikit-learn documentation. All the DVC parts start from <a href="https://github.com/Lee-W/dvc_example/tree/v1-base">v1-base</a>. You can <code>git checkout</code> to the tag to follow along.</p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Lee-W/dvc_example/<span class="w"> </span>--branch<span class="w"> </span>v1-base
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>dvc_example
+$<span class="w"> </span>tree
+.
+├──<span class="w"> </span>LICENSE
+├──<span class="w"> </span>Pipfile
+├──<span class="w"> </span>Pipfile.lock
+├──<span class="w"> </span>digit_recognizer
+│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+│<span class="w">   </span>└──<span class="w"> </span>digit_recognizer.py
+├──<span class="w"> </span>docs
+│<span class="w">   </span>└──<span class="w"> </span>README.md
+├──<span class="w"> </span>mkdocs.yml
+├──<span class="w"> </span>output
+└──<span class="w"> </span>tasks.py
+</pre></div>
+<p>To set up the development environment, you'll need <a href="https://pipenv.pypa.io/en/latest/">pipenv</a> and <a href="https://www.pyinvoke.org/">invoke</a>. If you run into an error when running <code>pipenv install</code>, you can run <code>export SYSTEM_VERSION_COMPAT=1</code> before it. It's an open issue (<a href="https://github.com/pypa/pipenv/issues/4564#issuecomment-756625303">Issue with NumPy, macOS 11 Big Sur, Python 3.9.1 Does pipenv not use the latest pip? #4564</a>) of pipenv as of now. Or, you can just run the following commands.</p>
+<div class="highlight"><pre><span></span><span class="c1"># install needed tools</span>
+pipx<span class="w"> </span>install<span class="w"> </span>pipenv<span class="w"> </span>invoke
+
+<span class="c1"># set up environments</span>
+invoke<span class="w"> </span>init-dev
+</pre></div>
+<p>We'll use <a href="https://github.com/Lee-W/dvc_example/blob/v1-base/digit_recognizer/digit_recognizer.py">digit_recognizer/digit_recognizer.py</a> for training a model that can recognize handwritten digits.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">()</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">process_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">train_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">predicted_y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">output_results</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">)</span>
+    <span class="n">output_metrics</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">)</span>
+</pre></div>
+<h3 id="install-dvc-into-the-virtual-environment">Install DVC into the virtual environment</h3>
+<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>install<span class="w"> </span>dvc
+</pre></div>
+<p>If you're to save data to remote storage, you might need to install extra dependencies.<br/>
+(e.g., <code>pipenv install dvc[s3]</code>)</p>
+<ul>
+<li>Supported types<ul>
+<li><code>[s3]</code></li>
+<li><code>[azure]</code></li>
+<li><code>[gdrive]</code></li>
+<li><code>[gs]</code></li>
+<li><code>[oss]</code></li>
+<li><code>[ssh]</code></li>
+</ul>
+</li>
+</ul>
+<p>Or, use <code>pipenv install dvc[all]</code> to install them all</p>
+<p>Read <a href="https://dvc.org/doc/command-reference/remote">dvc remote</a> for more information</p>
+<h3 id="initialize-dvc">Initialize DVC</h3>
+<div class="highlight"><pre><span></span><span class="c1"># initialize DVC configurations</span>
+$<span class="w"> </span>pipenv<span class="w"> </span>run<span class="w"> </span>dvc<span class="w"> </span>init
+
+<span class="c1"># see what's created by DVC</span>
+$<span class="w"> </span>tree<span class="w"> </span>.dvc
+
+.dvc
+├──<span class="w"> </span>config
+└──<span class="w"> </span>plots
+<span class="w">    </span>├──<span class="w"> </span>confusion.json
+<span class="w">    </span>├──<span class="w"> </span>confusion_normalized.json
+<span class="w">    </span>├──<span class="w"> </span>default.json
+<span class="w">    </span>├──<span class="w"> </span>linear.json
+<span class="w">    </span>├──<span class="w"> </span>scatter.json
+<span class="w">    </span>└──<span class="w"> </span>smooth.json
+
+<span class="c1"># track DVC configuration through git</span>
+$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.dvc
+
+<span class="c1"># git commit</span>
+$<span class="w"> </span>pipenv<span class="w"> </span>run<span class="w"> </span>cz<span class="w"> </span>commit
+</pre></div>
+<h3 id="add-dvc-remote">Add DVC remote</h3>
+<p>I'll use another local directory <code>../dvc_remote</code> as our remote storage. You can change it to s3 or other remote storage.</p>
+<div class="highlight"><pre><span></span>mkdir<span class="w"> </span>../dvc_remote
+dvc<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>--default<span class="w"> </span><span class="nb">local</span><span class="w"> </span>../dvc_remote
+</pre></div>
+<p>Through <code>--default</code> flag, we can push/pull from <code>local</code> remote without specifying remote name.</p>
+<p>Let see what's changed in <code>.dvc/config</code>.</p>
+<div class="highlight"><pre><span></span><span class="na">$ cat .dvc/config</span>
+
+<span class="k">[core]</span>
+<span class="na">remote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">local</span>
+<span class="k">['remote "local"']</span>
+<span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">../../dvc_remote</span>
+</pre></div>
+<p>The url is <code>../../dvc_remote</code> instead of <code>../dvc_remote</code> because it's the relative path to <code>.dvc</code>. As we've not yet push anything to our pseudo remote, <code>../dvc_remote</code> is still empty.</p>
+<h3 id="track-data-through-dvc">Track data through DVC</h3>
+<p>By this time, the data is loaded through <a href="https://scikit-learn.org/0.24/modules/generated/sklearn.datasets.load_digits.html">sklearn.datasets.load_digits</a>. We're going to change it to read from static file in <code>data/</code>.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_data</span><span class="p">():</span>
+    <span class="c1"># Load data</span>
+    <span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
+    <span class="o">...</span>
+</pre></div>
+<p>We can use the following script to output the digit data into <code>data/</code>. Note that it's a one-time use script. We won't add it into git.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">"data"</span><span class="p">)</span>
+
+<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"data/digit_data.csv"</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"data/digit_target.csv"</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+<p>We'll need to make changes to <code>load_data</code> and <code>main</code> functions to read data from these files.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">X_path</span><span class="p">,</span> <span class="n">y_path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">X_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
+        <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_NONNUMERIC</span><span class="p">)</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">csv_reader</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">y_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
+        <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_NONNUMERIC</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv_reader</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
+
+<span class="o">......</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s2">"data/digit_data.csv"</span><span class="p">,</span> <span class="s2">"data/digit_target.csv"</span><span class="p">)</span>
+    <span class="o">......</span>
+</pre></div>
+<p>Run <code>pipenv run python digit_recognizer/digit_recognizer.py</code> to check whether everything works as we expected. If so, add these code changes into git.</p>
+<p>Next, add <code>data/</code> to DVC.</p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>pipenv<span class="w"> </span>run<span class="w"> </span>dvc<span class="w"> </span>add<span class="w"> </span>data
+
+<span class="m">100</span>%<span class="w"> </span>Add<span class="p">|</span>████████████████<span class="p">|</span><span class="m">1</span>/1<span class="w"> </span><span class="o">[</span><span class="m">00</span>:00,<span class="w">  </span><span class="m">2</span>.14file/s<span class="o">]</span>
+
+To<span class="w"> </span>track<span class="w"> </span>the<span class="w"> </span>changes<span class="w"> </span>with<span class="w"> </span>git,<span class="w"> </span>run:
+
+git<span class="w"> </span>add<span class="w"> </span>data.dvc<span class="w"> </span>.gitignore
+</pre></div>
+<p><code>dvc add</code> creates a <code>data.dvc</code> file to track <code>data/</code> and add it into <code>.gitignore</code> so that <code>data/</code> will only be tracked through DVC but not git.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Add DVC files into git track</span>
+git<span class="w"> </span>add<span class="w"> </span>.gitignore<span class="w"> </span>data.dvc
+
+<span class="c1"># git commit</span>
+pipenv<span class="w"> </span>run<span class="w"> </span>cz<span class="w"> </span>commit
+</pre></div>
+<p>In <code>data.dvc</code>, we can see 2 files (<code>digit_data.csv</code> and <code>digit_target.csv</code>) are tracked.</p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>data.dvc
+
+outs:
+-<span class="w"> </span>md5:<span class="w"> </span>b8d81f4964ecb86739c79c833fb491f3.dir
+<span class="w">  </span>size:<span class="w"> </span><span class="m">494728</span>
+<span class="w">  </span>nfiles:<span class="w"> </span><span class="m">2</span>
+<span class="w">  </span>path:<span class="w"> </span>data
+</pre></div>
+<p>Push these tracked data into DVC remote</p>
+<div class="highlight"><pre><span></span>dvc<span class="w"> </span>push
+</pre></div>
+<p>See what's changed in our repo storage <code>../dvc_remote</code></p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>tree<span class="w"> </span>../dvc_remote
+
+../dvc_remote
+├──<span class="w"> </span><span class="m">02</span>
+│<span class="w">   </span>└──<span class="w"> </span>b861b6dc8e08da6d66547860f69277
+├──<span class="w"> </span>8c
+│<span class="w">   </span>└──<span class="w"> </span>ba569595920d230ade453b150f372b
+└──<span class="w"> </span>b8
+<span class="w">    </span>└──<span class="w"> </span>d81f4964ecb86739c79c833fb491f3.dir
+
+<span class="m">3</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">3</span><span class="w"> </span>files
+</pre></div>
+<p>The md5 value of our tracked data is <code>b8d81f4964ecb86739c79c833fb491f3.dir</code>. There's also a corresponding file in <code>../dvc_remote/b8/d81f4964ecb86739c79c833fb491f3.dir</code>.</p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>../dvc_remote/b8/d81f4964ecb86739c79c833fb491f3.dir
+
+<span class="o">[{</span><span class="s2">"md5"</span>:<span class="w"> </span><span class="s2">"02b861b6dc8e08da6d66547860f69277"</span>,<span class="w"> </span><span class="s2">"relpath"</span>:<span class="w"> </span><span class="s2">"digit_data.csv"</span><span class="o">}</span>,<span class="w"> </span><span class="o">{</span><span class="s2">"md5"</span>:<span class="w"> </span><span class="s2">"8cba569595920d230ade453b150f372b"</span>,<span class="w"> </span><span class="s2">"relpath"</span>:<span class="w"> </span><span class="s2">"digit_target.csv"</span><span class="o">}]</span>%
+</pre></div>
+<p>This file indicates where the actual data sources are stored in <code>../dvc_remote</code>.</p>
+<p>In conclusion, if we want to know how data is stored through DVC,</p>
+<ol>
+<li>find the md5 value in <code>*.dvc</code> in our project</li>
+<li>find the path that matches this md5 value in our remote storage</li>
+<li>use the md5 value specified in the previous step to find the data sources in our remote storage</li>
+</ol>
+<p>But most of the time, we don't need to do so. We can leave the tracking work to DVC.</p>
+<h3 id="fetch-data-from-dvc-remote-storage">Fetch data from DVC remote storage</h3>
+<div class="highlight"><pre><span></span><span class="c1"># temporary delete our data locally</span>
+$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>data
+
+<span class="c1"># check whether DVC actually tracks our data</span>
+$<span class="w"> </span>dvc<span class="w"> </span>status
+
+data.dvc:
+changed<span class="w"> </span>outs:
+<span class="w">    </span>deleted:<span class="w">            </span>data
+
+<span class="c1"># bring our data back from remote storage</span>
+$<span class="w"> </span>dvc<span class="w"> </span>checkout<span class="w"> </span>data
+
+data
+├──<span class="w"> </span>digit_data.csv
+└──<span class="w"> </span>digit_target.csv
+</pre></div>
+<h3 id="add-data-changes-into-dvc">Add data changes into DVC</h3>
+<p>To demonstrate how DVC track data changes, let's remove the last 2 rows from <code>data/digit_data.csv</code> and <code>data/digit_target.csv</code>.</p>
+<div class="highlight"><pre><span></span><span class="c1"># check what's changed</span>
+$<span class="w"> </span>dvc<span class="w"> </span>status
+
+data.dvc:
+changed<span class="w"> </span>outs:
+<span class="w">    </span>modified:<span class="w">           </span>data
+
+<span class="c1"># Add these changes to DVC and git</span>
+$<span class="w"> </span>dvc<span class="w"> </span>add
+$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>data.dvc
+<span class="c1"># git commit</span>
+$<span class="w"> </span>pipenv<span class="w"> </span>run<span class="w"> </span>cz<span class="w"> </span>commit
+
+<span class="c1"># Push these changes to our remote storage</span>
+$<span class="w"> </span>dvc<span class="w"> </span>push
+</pre></div>
+<p>The md5 value has been changed, and the size of our data is smaller than our previous record, 494728.</p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>data.dvc
+
+outs:
+-<span class="w"> </span>md5:<span class="w"> </span>a333e114a49194e823ab9a4fa9e33ee9.dir
+<span class="w">  </span>size:<span class="w"> </span><span class="m">494172</span>
+<span class="w">  </span>nfiles:<span class="w"> </span><span class="m">2</span>
+<span class="w">  </span>path:<span class="w"> </span>data
+</pre></div>
+<p>More files are added to <code>../dvc_remote</code> due to the data changes. You can follow the steps in the previous section to see what're actually store.</p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>tree<span class="w"> </span>../dvc_remote
+
+../dvc_remote
+├──<span class="w"> </span><span class="m">02</span>
+│<span class="w">   </span>└──<span class="w"> </span>b861b6dc8e08da6d66547860f69277
+├──<span class="w"> </span>2a
+│<span class="w">   </span>└──<span class="w"> </span>6cfa13365ac9b3af5146133aca6789
+├──<span class="w"> </span>8c
+│<span class="w">   </span>└──<span class="w"> </span>ba569595920d230ade453b150f372b
+├──<span class="w"> </span><span class="m">94</span>
+│<span class="w">   </span>└──<span class="w"> </span>2481fce846fb9750b7b8023c80a5ef
+├──<span class="w"> </span>a3
+│<span class="w">   </span>└──<span class="w"> </span>33e114a49194e823ab9a4fa9e33ee9.dir
+└──<span class="w"> </span>b8
+<span class="w">    </span>└──<span class="w"> </span>d81f4964ecb86739c79c833fb491f3.dir
+
+<span class="m">6</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">6</span><span class="w"> </span>files
+</pre></div>
+<p>Let's <code>git checkout</code> to the previous git commit to see what happens if we only revert the changes in <code>data.dvc</code>.</p>
+<div class="highlight"><pre><span></span><span class="c1"># or "git checkout v2-track-data"</span>
+git<span class="w"> </span>checkout<span class="w"> </span>HEAD~1
+</pre></div>
+<p>After running <code>wc -l data/digit_data.csv</code>, we'll still find 1795 rows instead of 1797 rows in the previous stage. That's because we need to run <code>dvc checkout</code> as well.</p>
+<p>We might easily forget this step. Thus, DVC implements a git-hook that can trigger <code>dvc checkout</code> right after <code>git checkout</code>. You can install these git-hooks through <code>dvc install</code>. These hooks are added into <code>.git/hooks</code>. If you want to know the detail of what's added, read <a href="https://dvc.org/doc/command-reference/install">dvc install</a>.</p>
+<p>Test these steps again. There should be an additional line after running <code>git checkout</code>. This is the output message of <code>dvc checkout</code>.</p>
+<div class="highlight"><pre><span></span>M       data/
+</pre></div>
+<p>Push our code to a remote git repository</p>
+<div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;REMOTE<span class="w"> </span>GIT<span class="w"> </span>REPO&gt;
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+<h3 id="fetch-code-and-data-changes-from-remote">Fetch code and data changes from remote</h3>
+<p>We've already pushed all the code and data changes to remote. Let's see how we could reproduce in another environment.</p>
+<div class="highlight"><pre><span></span><span class="c1"># check what's in our repo</span>
+$<span class="w"> </span>dvc<span class="w"> </span>list<span class="w"> </span>&lt;REMOTE<span class="w"> </span>GIT<span class="w"> </span>REPO&gt;
+
+.dvcignore
+.github
+.gitignore
+LICENSE
+Pipfile
+Pipfile.lock
+data
+data.dvc
+digit_recognizer
+docs
+mkdocs.yml
+output
+tasks.py
+</pre></div>
+<p>Although git does not track <code>data/</code>, we can still list it through DVC.</p>
+<p>Because we use relative path <code>../dvc_remote</code> as DVC remote storage, we need to create the new project in the same layer as <code>dvc_example</code>. We'll clone the project into <code>../dvc_example_on_another_machine</code>.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Clone repo git repo</span>
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>&lt;YOUR<span class="w"> </span>REMOTE<span class="w"> </span>GIT<span class="w"> </span>REPO&gt;<span class="w"> </span>../dvc_example_on_another_machine
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../dvc_example_on_another_machine
+$<span class="w"> </span>tree<span class="w"> </span>.
+
+.
+├──<span class="w"> </span>LICENSE
+├──<span class="w"> </span>Pipfile
+├──<span class="w"> </span>Pipfile.lock
+├──<span class="w"> </span>data.dvc
+├──<span class="w"> </span>digit_recognizer
+│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+│<span class="w">   </span>└──<span class="w"> </span>digit_recognizer.py
+├──<span class="w"> </span>docs
+│<span class="w">   </span>└──<span class="w"> </span>README.md
+├──<span class="w"> </span>mkdocs.yml
+├──<span class="w"> </span>output
+└──<span class="w"> </span>tasks.py
+
+<span class="m">3</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">9</span><span class="w"> </span>files
+</pre></div>
+<p>As you can see, <code>data/</code> has not yet been added to the project. We can now pull data from our DVC remote storage.</p>
+<div class="highlight"><pre><span></span><span class="c1"># pull data from default DVC remote storage</span>
+$<span class="w"> </span>dvc<span class="w"> </span>pull
+
+A<span class="w">   </span>data/
+<span class="m">1</span><span class="w"> </span>file<span class="w"> </span>added<span class="w"> </span>and<span class="w"> </span><span class="m">2</span><span class="w"> </span>files<span class="w"> </span>fetched
+
+<span class="c1"># `data` has now been added to the project</span>
+$<span class="w"> </span>tree<span class="w"> </span>.
+
+.
+├──<span class="w"> </span>LICENSE
+├──<span class="w"> </span>Pipfile
+├──<span class="w"> </span>Pipfile.lock
+├──<span class="w"> </span>data
+│<span class="w">   </span>├──<span class="w"> </span>digit_data.csv
+│<span class="w">   </span>└──<span class="w"> </span>digit_target.csv
+├──<span class="w"> </span>data.dvc
+├──<span class="w"> </span>digit_recognizer
+│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+│<span class="w">   </span>└──<span class="w"> </span>digit_recognizer.py
+├──<span class="w"> </span>docs
+│<span class="w">   </span>└──<span class="w"> </span>README.md
+├──<span class="w"> </span>mkdocs.yml
+├──<span class="w"> </span>output
+└──<span class="w"> </span>tasks.py
+
+<span class="m">4</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">11</span><span class="w"> </span>files
+</pre></div>
+<p>That's all for data versioning in DVC. In the next post, We'll continue on versioning a data pipeline, tracking parameters and metrics. We won't need <code>dvc_example_on_another_machine</code> for the following steps. Feel free to remove it and change directory back to <code>dvc_example</code>.</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://dvc.org/">DVC</a></li>
+<li><a href="https://stanford-cs329s.github.io/syllabus.html">CS 329S: Machine Learning Systems Design</a></li>
+</ul>
+<p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=DVC%20-%20Data%20Versioning&amp;url=https%3A//blog.wei-lee.me/posts/tech/2021/06/dvc-data-versioning&amp;hashtags=data,version-control,dvc" rel="nofollow noopener noreferrer" target="_blank" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2021/06/dvc-data-versioning" rel="nofollow noopener noreferrer" target="_blank" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=DVC%20-%20Data%20Versioning&amp;body=https%3A//blog.wei-lee.me/posts/tech/2021/06/dvc-data-versioning" rel="nofollow noopener noreferrer" target="_blank" title="Share via Email">Email</a>
+<section>
+<h6 style="display:none;">Comments</h6>
+<p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle disqus-comment-count comment-count collapsed" data-parent="#accordion2" data-toggle="collapse" href="https://blog.wei-lee.me/posts/tech/2021/06/dvc-data-versioning#comment_thread" id="comment-accordion-toggle">
+                    Comments
+                </a>
+</div>
+<div class="accordion-body collapse" id="comment_thread">
+<div class="accordion-inner">
+<div class="comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2021/06/dvc-data-versioning" data-label="comment" data-repo="Lee-W/main-blog" data-theme="" src="https://utteranc.es/client.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr/>
+</p></div>
+<section class="span2" id="article-sidebar">
+<h4>Reading Time</h4>
+<p>~7 min read</p>
+<h4>Published</h4>
+<time datetime="2021-06-14T15:18:00+08:00" itemprop="dateCreated">2021/06/14 - Mon</time>
+<h4><built-in 0x7fcd86f7baa0="" at="" index="" method="" object="" of="" str=""></built-in></h4>
+<ul class="multi-parts-list">
+</ul>
+<h4>Read Time</h4>
+                7 min
+            <h4>Category</h4>
+<a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="https://blog.wei-lee.me/tags.html#data-ref">Data
+                    <span class="superscript">2</span>
+</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html#dvc-ref">DVC
+                    <span class="superscript">2</span>
+</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html#version-control-ref">Version Control
+                    <span class="superscript">2</span>
+</a></li>
+</ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+<a href="https://tw.linkedin.com/in/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="LinkedIn" fill="#fff" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#0077b5" height="512" rx="15%" width="512"></rect><circle cx="142" cy="138" r="37"></circle><path d="M244 194v198M142 194v198" stroke="#fff" stroke-width="66"></path><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path></svg>
+</a>
+<a href="https://github.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+<a href="https://gitlab.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitLab" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#30353e" height="512" rx="15%" width="512"></rect><path d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133" fill="#e24329"></path><path d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z" fill="#fc6d26"></path><path d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z" fill="#fca326"></path></svg>
+</a>
+<a href="https://twitter.com/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://wei-lee.me/feeds/all.atom.xml" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="RSS" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#f80" height="512" rx="15%" width="512"></rect><circle cx="145" cy="367" fill="#fff" r="35"></circle><path d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276" fill="none" stroke="#fff" stroke-width="60"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="span1"></div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0"/>
+</a>
+<br/>
+This work is licensed under a
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+    Creative Commons Attribution 4.0 International License
+</a>.
+
+    </div>
+<div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican Home Page">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Theme Elegant Home Page">Elegant</a>
+</div>
+</footer> <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+</body>
+<!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

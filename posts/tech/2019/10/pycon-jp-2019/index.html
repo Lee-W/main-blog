@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" rel="stylesheet"/>
+<link href="https://blog.wei-lee.me/theme/css/elegant.prod.9e9d5ce754.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<meta content="Wei Lee" name="author">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="Conference, PyCon, Python, Tech, " name="keywords">
+<meta content="PyCon JP 2019 " property="og:title">
+<meta content="https://blog.wei-lee.me/posts/tech/2019/10/pycon-jp-2019" property="og:url"/>
+<meta content="當初在 PyCon US 看到 PyCon JP 上去介紹他們自己 不知道哪根筋不對，就覺得不然就來投稿一下吧 雖然後來投稿並沒有上，但突然 …" property="og:description"/>
+<meta content="Those aren't written down are meant to be forgotten" property="og:site_name"/>
+<meta content="Wei Lee" property="og:article:author"/>
+<meta content="2019-10-12T22:30:00+08:00" property="og:article:published_time"/>
+<meta content="PyCon JP 2019 " name="twitter:title"/>
+<meta content="當初在 PyCon US 看到 PyCon JP 上去介紹他們自己 不知道哪根筋不對，就覺得不然就來投稿一下吧 雖然後來投稿並沒有上，但突然 …" name="twitter:description"/>
+<title>PyCon JP 2019  · Those aren't written down are meant to be forgotten
+</title>
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten - Full Atom Feed" type="application/atom+xml">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3J7XQ46QH5');
+</script>
+</link></meta></meta></meta></meta><link href="https://blog.wei-lee.me/posts/tech/2019/10/pycon-jp-2019" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2019", "item": "https://blog.wei-lee.me/posts/tech/2019"}, {"@type": "ListItem", "position": 5, "name": "10", "item": "https://blog.wei-lee.me/posts/tech/2019/10"}, {"@type": "ListItem", "position": 6, "name": "Pycon jp 2019", "item": "https://blog.wei-lee.me/posts/tech/2019/10/pycon-jp-2019"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2019/10/pycon-jp-2019/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "PyCon JP 2019", "about": "Tech", "datePublished": "2019-10-12 22:30"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://blog.wei-lee.me/"><span class="site-name">Those aren't written down are meant to be forgotten</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li>
+<a href="https://blog.wei-lee.me">Home</a>
+</li>
+<li><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
+<li><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
+<li><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
+<li><form action="https://blog.wei-lee.me/search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1>
+<a href="https://blog.wei-lee.me/posts/tech/2019/10/pycon-jp-2019">
+                PyCon JP 2019
+            </a>
+</h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div class="toc">
+<ul>
+<li><a href="#development-sprint">Development Sprint</a></li>
+<li><a href="#welcome-party">Welcome Party</a></li>
+<li><a href="#pycon-jp-day-1">PyCon JP - Day 1</a><ul>
+<li><a href="#peer-reviewed-lightning-talk">Peer Reviewed Lightning Talk</a></li>
+</ul>
+</li>
+<li><a href="#pycon-jp-day-2">PyCon JP - Day 2</a></li>
+<li><a href="#speaker-tour">Speaker Tour</a></li>
+<li><a href="#final-words">Final Words</a></li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="span8 article-content">
+<p>當初在 PyCon US 看到 PyCon JP 上去介紹他們自己<br/>
+不知道哪根筋不對，就覺得不然就來投稿一下吧<br/>
+雖然後來投稿並沒有上，但突然發現 PyCon TW 想揪團一起去</p>
+<p><img alt="visiting-group-post" src="/images/posts-image/2019-10-12-pycon-jp-2019/visiting-group-post.png"/></p>
+<p>想說這次不去，說不定就不會再有這樣的揪團了<br/>
+就衝動的報名下去了 XD</p>
+<h2 id="development-sprint">Development Sprint</h2>
+<p>sprint 的報名有分 Leader 跟 Attendee<br/>
+現場到的人大概 100 人<br/>
+雖然不用錢，但就是要統計一下人數<br/>
+而且他們還有不斷寄信提醒「如果無法出席，請釋出位置給想參加的人」<br/>
+感覺人好像蠻多的<br/>
+雖然他們的 sprint 辦在假日，這樣比好像不太公平<br/>
+但感覺上比之前在台灣參加的 sprint 熱絡了不少</p>
+<p>一開始會公佈有哪些專案可以參與<br/>
+到結束前，大家各自分組討論和開發<br/>
+最後來個 demo，分享大家一天的成果</p>
+<p>總共十來個專案中，只有三個是英文的<br/>
+有兩個就是台灣人 Host 的<br/>
+所以就來試試看剩下的 <a href="https://github.com/dimaqq/awaitwhat">awaitwhat</a> XD</p>
+<p>awaitwhat 的目標是想挖到 async 更深的 traceback，讓 async 的除錯更方便<br/>
+但我實在還沒有對 async 太熟<br/>
+最後就是花了點時間對專案做了一些 refactor<br/>
+雖然看起來改動很大，但其實貢獻真的很還好（笑</p>
+<p><img alt="sprint-demo" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700839086070.jpg"/></p>
+<p>晚餐倒是很有趣，他們好像想把餐點排成一隻蛇 xD</p>
+<p><img alt="sprint-dinner-snake" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700839118735.jpg"/></p>
+<h2 id="welcome-party">Welcome Party</h2>
+<p>只有上台 5 分鐘的 Lightning Talk 講者也能來參加講者晚宴（笑</p>
+<p>場地沒有座位，只有圓桌<br/>
+這樣的安排應該是方便大家隨意移動，就能促進更多人的交流<br/>
+認真想想這樣的設計還蠻不錯的</p>
+<p>然後每一個圓桌上都有啤酒 XD</p>
+<p><img alt="welcome-beer" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700839787175.jpg"/></p>
+<h2 id="pycon-jp-day-1">PyCon JP - Day 1</h2>
+<p>如果想看每場 talk 的細節的話，筆記都整理 PyCon TW Visiting Group 的<a href="https://hackmd.io/pYYzA4hLROGFKbXR0QMTMA?view">共筆</a>上了<br/>
+我就不聊每一場的細節了</p>
+<p>一開始有點不習慣他們的場地<br/>
+Keynote 演講的空間後面馬上就是海報，在更後面就是贊助商<br/>
+有時候聲音就會蠻發散的<br/>
+不過後來聽前輩們說好像大部分的場地都是這樣<br/>
+中研院真的是場地太好<br/>
+倒是 Keynote 會有英日互轉的即時口譯，覺得還挺不錯的</p>
+<p>海報的部分則是要感謝 Ohmura-san 幫 PyCon TW 做了精美海報 🙏<br/>
+<img alt="poster" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700840034582.jpg"/></p>
+<p>整天下來我最喜歡的 talk 是 Takanori-san 的 <a href="https://www.youtube.com/watch?v=rbNI2LzwaqE">Automate the Boring Stuff with Slackbot</a><br/>
+雖然只是被一些有趣的點打到了（笑<br/>
+今年他總共參加了 8 場 PyCon<br/>
+而且大多都是講者，就算不是講者也有帶海報過去<br/>
+雖然 Noah 好像今年參加了 11 場？<br/>
+後來跟一些外國講者聊到 Noah，他們說不管到哪場 PyCon 都會遇到他 XD</p>
+<p><img alt="pycon-tour" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700840070533.jpg"/></p>
+<p><img alt="programmer-is-lazy" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700840091662.jpg"/></p>
+<p>因為明年是 Python 2 的 End of Life<br/>
+<img alt="python 2 rip" src="/images/posts-image/2019-10-12-pycon-jp-2019/python 2 rip.png" style="height:150px;width:150px"/><br/>
+<small>Designed by <a href="https://twitter.com/lisroach">Lisa Roach</a></small></p>
+<p>有好幾場 Talk 都跟 Python 2 to 3 相關，像是 <a href="https://www.youtube.com/watch?v=8a_TEjCl8NQ">"It’s 2019 and I’m still using Python 2. Should I be worried?"</a> 跟 Kir 大大的 <a href="https://www.youtube.com/watch?v=BS-HyV3V7GI">"SupportingPython3 in Large Scale Project"</a></p>
+<p>對於議程安排覺得還蠻不錯的一點是「同一個時段至少會有一場英文的 talk」<br/>
+外國來的會眾不會在任何一個時段因為聽不懂日文就完全沒有能聽的 talk<br/>
+後來跟他們聊到，這好像也是他們近期在努力的目標之一</p>
+<h3 id="peer-reviewed-lightning-talk">Peer Reviewed Lightning Talk</h3>
+<p>最後想提到我的 Lightning Talk</p>
+<p><img alt="lightning" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700840162587.jpg"/></p>
+<p><a href="https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9">slide</a> 跟 <a href="https://www.youtube.com/watch?v=7U2D5tcMZb4&amp;t=1110s">video</a> 都已經釋出了</p>
+<p>PyCon JP 的 Lightning Talk 還蠻特別的<br/>
+分為 <strong>Peer Reviewed</strong> 跟 <strong>Same Day</strong><br/>
+<strong>Peer Reviewed</strong> 必須先投稿，也需要經過審稿<br/>
+(PyCon TW Visiting Group 包下了所有英文的 Peer Reviewed Lightning Talk XD)<br/>
+<strong>Same Day</strong> 則是當天投稿，當場抽籤決定誰是講者</p>
+<p>我的 Lightning Talk 主要是要介紹 PyCon TW<br/>
+我用「與人交流」作為 "How to get more than PyCon in a PyCon" 的核心<br/>
+每一個點再帶到 PyCon TW 在做的一些努力之類的<br/>
+但其實到了日本才發現，這邊的會眾超積極在跟人交流的啊 XDDD<br/>
+果然只是我以前都待在舒適圈太開心，都只跟原本的朋友聊聊天</p>
+<p>有一個小插曲是<br/>
+大家湧入主會場的時候，網路就開始不穩定了......<br/>
+因為我到當天都還有再改 slide，還沒來得及抓最新的離線版本，讓我著實抖了一下<br/>
+Peter 說得對 "Never live Demo. Never Internet......"<br/>
+還好在我上台前，網路有稍微恢復，才沒有出包</p>
+<p>雖然只有 5 分鐘，但第一次上台給全英文的 talk 還是挺緊張的<br/>
+<img alt="down-stair" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700840143063.jpg"/></p>
+<p>原本 PyCon JP 的 party 結束後<br/>
+Takanori-san 很熱情的帶我們去續攤<br/>
+<img alt="beer" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700840215951.jpg"/></p>
+<h2 id="pycon-jp-day-2">PyCon JP - Day 2</h2>
+<p>這天的 Keynote <a href="https://www.youtube.com/watch?v=0bTPOsVvG7g">Pythonで切り開く新しい農業</a> 主要是在講他透過 Python 來分辨小黃瓜的故事<br/>
+我很喜歡他對 AI 的註解</p>
+<blockquote>
+<p>現在越來越少人要當農夫了<br/>
+如果不做些什麼，農業的知識就會流失<br/>
+而 AI 正好可以作為一種知識儲存和傳遞的工具</p>
+</blockquote>
+<p>Dustin 的 <a href="https://www.youtube.com/watch?v=d3cj4f63u-A">Modern development environments for Pythonistas</a> 也讓我印象蠻深刻的<br/>
+主要是因為跟我要去 PyCon CA 講的內容相關<br/>
+再加上，結束後我們一群 PyCon TW 圍著他問問題 XD<br/>
+btw Dustin 在 PyCon TW / US / ... 給的 talks "PEP 572"，真的非常精彩<br/>
+錯過的話，非常推薦可以補帶</p>
+<p>當然還有 KK 大的 <a href="https://www.youtube.com/watch?v=NLLhYKscuMk">When AI meets 3000-year-old Chinese Palmistry</a><br/>
+其實我這次來比較少聽 AI 相關的 talk，但分析手相實在太有趣了</p>
+<p>最後我有嘗試去聽一場日文的 talk<br/>
+憑著我 50 音都背不齊的日文程度，果然還是太挑戰了 XD<br/>
+當我以為我至少能看投影片的時候，他的投影片也是日文的<br/>
+後來發現好像是台灣才是比較特例<br/>
+即使是用中文給的 talk ，還是習慣用英文做投影片</p>
+<p>最後閉幕的時候聽到 Python 這個商標在日本被<a href="http://www.gigamall.ne.jp/ark/ai/python.html">ARK</a>註冊走<br/>
+PSF 要著手處理這件事了</p>
+<p><img alt="drone" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700840284965.jpg"/><br/>
+<small>最後大合照的無人機</small></p>
+<p><img alt="coffee" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700840254045.jpg"/><br/>
+<small>某人把還沒打開的奶精加入咖啡</small></p>
+<p><img alt="after-party" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700840345989.jpg"/><br/>
+<small>離開日本前， Visiting Group 小聚</small></p>
+<h2 id="speaker-tour">Speaker Tour</h2>
+<p>會議結束後的一天，PyCon JP 還有帶講者們到淺草寺等有名的景點走走<br/>
+可惜那天下著大雨 QQ</p>
+<p><img alt="speaker-tour" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700840364273.jpg"/></p>
+<h2 id="final-words">Final Words</h2>
+<p>整體來說，我覺得 PyCon JP 辦得比我想像的來得更好<br/>
+能跟著 PyCon TW 來，也讓我覺得跟人交流有比較容易一些<br/>
+如果下次還有揪團，我應該也還會再來</p>
+<p>恩對，大概就是這樣<br/>
+<img alt="me-with-badge" src="/images/posts-image/2019-10-12-pycon-jp-2019/15700840325586.jpg" style="width:80%"/></p>
+<p>在找一些東西的時候，發現同行的前輩 Kir 也發了一篇 PyCon JP 的文<br/>
+<a href="https://medium.com/@Kir.Chou/my-journey-of-pycon-jp-tw-2019-220555e8e3b1">My journey of PyCon JP/TW 2019</a></p>
+<p>另外，這是發在 PyCon TW Blog 的參訪報告 - <a href="https://pycontw.blogspot.com/2019/10/visiting-group-in-pycon-jp-2019.html">Visiting Group in PyCon JP 2019</a><br/>
+整理了我們整團的所見所聞</p>
+<p>如果喜歡這篇文章的話，你雖然沒辦法拍手 50 下<br/>
+但可以在下面按一個 response，或留個 comment 跟我聊聊天<br/>
+如果能在順手填一下 2020 年的 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6whkZAEZD10LlPQuSWRYsshySoNR_pux8grGZ0OgmOIkQ3g/viewform?fbclid=IwAR2mPycJxD2HCVm_mIX4v7ChEGwNEgo5-HP_QGA4503dD9E2kCP3M5OihT8">PyCon Taiwan 志工招募</a> 就能給我更大的支持了 😄</p>
+<p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=PyCon%20JP%202019&amp;url=https%3A//blog.wei-lee.me/posts/tech/2019/10/pycon-jp-2019&amp;hashtags=conference,pycon,python" rel="nofollow noopener noreferrer" target="_blank" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2019/10/pycon-jp-2019" rel="nofollow noopener noreferrer" target="_blank" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=PyCon%20JP%202019&amp;body=https%3A//blog.wei-lee.me/posts/tech/2019/10/pycon-jp-2019" rel="nofollow noopener noreferrer" target="_blank" title="Share via Email">Email</a>
+<section>
+<h6 style="display:none;">Comments</h6>
+<p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle disqus-comment-count comment-count collapsed" data-parent="#accordion2" data-toggle="collapse" href="https://blog.wei-lee.me/posts/tech/2019/10/pycon-jp-2019#comment_thread" id="comment-accordion-toggle">
+                    Comments
+                </a>
+</div>
+<div class="accordion-body collapse" id="comment_thread">
+<div class="accordion-inner">
+<div class="comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2019/10/pycon-jp-2019" data-label="comment" data-repo="Lee-W/main-blog" data-theme="" src="https://utteranc.es/client.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr/>
+</p></div>
+<section class="span2" id="article-sidebar">
+<h4>Published</h4>
+<time datetime="2019-10-12T22:30:00+08:00" itemprop="dateCreated">2019/10/12 - Sat</time>
+<h4>Read Time</h4>
+                2 min
+            <h4>Category</h4>
+<a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="https://blog.wei-lee.me/tags.html#conference-ref">Conference
+                    <span class="superscript">14</span>
+</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html#pycon-ref">PyCon
+                    <span class="superscript">11</span>
+</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html#python-ref">Python
+                    <span class="superscript">33</span>
+</a></li>
+</ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+<a href="https://tw.linkedin.com/in/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="LinkedIn" fill="#fff" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#0077b5" height="512" rx="15%" width="512"></rect><circle cx="142" cy="138" r="37"></circle><path d="M244 194v198M142 194v198" stroke="#fff" stroke-width="66"></path><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path></svg>
+</a>
+<a href="https://github.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+<a href="https://gitlab.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitLab" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#30353e" height="512" rx="15%" width="512"></rect><path d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133" fill="#e24329"></path><path d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z" fill="#fc6d26"></path><path d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z" fill="#fca326"></path></svg>
+</a>
+<a href="https://twitter.com/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://wei-lee.me/feeds/all.atom.xml" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="RSS" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#f80" height="512" rx="15%" width="512"></rect><circle cx="145" cy="367" fill="#fff" r="35"></circle><path d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276" fill="none" stroke="#fff" stroke-width="60"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="span1"></div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0"/>
+</a>
+<br/>
+This work is licensed under a
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+    Creative Commons Attribution 4.0 International License
+</a>.
+
+    </div>
+<div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican Home Page">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Theme Elegant Home Page">Elegant</a>
+</div>
+</footer> <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+</body>
+<!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

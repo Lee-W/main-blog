@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" rel="stylesheet"/>
+<link href="https://blog.wei-lee.me/theme/css/elegant.prod.9e9d5ce754.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<meta content="Wei Lee" name="author">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="Develop, Utility, Tech, " name="keywords">
+<meta content="從 Andromoney 到 MOZE " property="og:title">
+<meta content="https://blog.wei-lee.me/posts/tech/2018/09/from-andromoney-to-moze" property="og:url"/>
+<meta content="最近不小心被 MOZE 的介面燒到 一個衝動就從 AndroMoney 轉到 MOZE 這篇算是來記錄從 AndroMoney 把資料轉換到 MOZE 的過程" property="og:description"/>
+<meta content="Those aren't written down are meant to be forgotten" property="og:site_name"/>
+<meta content="Wei Lee" property="og:article:author"/>
+<meta content="2018-09-09T16:00:00+08:00" property="og:article:published_time"/>
+<meta content="從 Andromoney 到 MOZE " name="twitter:title"/>
+<meta content="最近不小心被 MOZE 的介面燒到 一個衝動就從 AndroMoney 轉到 MOZE 這篇算是來記錄從 AndroMoney 把資料轉換到 MOZE 的過程" name="twitter:description"/>
+<title>從 Andromoney 到 MOZE  · Those aren't written down are meant to be forgotten
+</title>
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten - Full Atom Feed" type="application/atom+xml">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3J7XQ46QH5');
+</script>
+</link></meta></meta></meta></meta><link href="https://blog.wei-lee.me/posts/tech/2018/09/from-andromoney-to-moze" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2018", "item": "https://blog.wei-lee.me/posts/tech/2018"}, {"@type": "ListItem", "position": 5, "name": "09", "item": "https://blog.wei-lee.me/posts/tech/2018/09"}, {"@type": "ListItem", "position": 6, "name": "From andromoney to moze", "item": "https://blog.wei-lee.me/posts/tech/2018/09/from-andromoney-to-moze"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2018/09/from-andromoney-to-moze/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "從 Andromoney 到 MOZE", "about": "Tech", "datePublished": "2018-09-09 16:00"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://blog.wei-lee.me/"><span class="site-name">Those aren't written down are meant to be forgotten</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li>
+<a href="https://blog.wei-lee.me">Home</a>
+</li>
+<li><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
+<li><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
+<li><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
+<li><form action="https://blog.wei-lee.me/search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1>
+<a href="https://blog.wei-lee.me/posts/tech/2018/09/from-andromoney-to-moze">
+                從 Andromoney 到 MOZE
+            </a>
+</h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span8 offset2 article-content">
+<p>最近不小心被 <a href="https://www.mozeapp.com">MOZE</a> 的介面燒到<br/>
+一個衝動就從 <a href="https://web.andromoney.com">AndroMoney</a> 轉到 MOZE<br/>
+這篇算是來記錄從 AndroMoney 把資料轉換到 MOZE 的過程</p>
+<!--more-->
+<h2 id="_1">一些無關本文的前言</h2>
+<p>雖然 X-Village 暫時告一個段落，好像應該來寫個什麼<br/>
+但真的要寫起來還要再花一點時間</p>
+<p>上次 Blog 發文都已經是一年前的事了<br/>
+但點閱率竟然有一點在上升（雖然還是很低 QAQ）<br/>
+還有一些人看了我在 Logdown 的 LineBot 文跑來找我討論<br/>
+覺得蠻開心的 xD<br/>
+但這邊還是一直都沒辦法被找到 QQ<br/>
+以後考慮同步發到 Medium 好了</p>
+<p>不過好像該進入本文了 xD</p>
+<h2 id="moze">為什麼換到 MOZE</h2>
+<p>當初在 Android 上使用 AndroMoney 就只是因為他免費，而且還算是好用<br/>
+剛好換到 iOS 的時候，這款 app 也在 App Store 有上架<br/>
+懶得轉換資料的情況下就繼續買了<br/>
+用下來覺得 AndroMoney 好像還是在 Android 上比較好用<br/>
+AndroMoney 的各種功能都很方便，只是介面上就比較普通 xD<br/>
+而且 AndroMoney 各個平台都有，就算哪天想換 Android 的手機也不怕轉換問題<br/>
+但是啊， MOZE 的介面就是好看 xD</p>
+<p>再來就要說說其他我喜歡 MOZE 的原因</p>
+<h3 id="andromoney">AndroMoney 沒有 (或我不會用) 的功能</h3>
+<h4>借款事件</h4>
+<p><img alt="3-borrow.png" src="/images/posts-image/2018-09-09-andromoney-to-moze/3-borrow.png"/></p>
+<p>MOZE 會幫我記住我借錢給誰，而且會一直提醒我誰跟我借了錢<br/>
+以前都還要特地記錄到其他 app</p>
+<p><img alt="4-borrow.png" src="/images/posts-image/2018-09-09-andromoney-to-moze/4-borrow.png"/><br/>
+而且借出的錢，不會算在我的支出，所以也不會影響到我的預算<br/>
+算是蠻方便的功能</p>
+<h4>繳費事件</h4>
+<p>提醒我信用卡要繳費的時間<br/>
+也會有跟借款事件差不多的提醒</p>
+<h4>動態改變每天剩餘的預算</h4>
+<p>這是一個我還蠻需要的功能<br/>
+我會想知道前幾天花的錢如何影響我這個月剩下的日子的預算<br/>
+而不是一個從月初的預算直接除以 30 都不改變的數字</p>
+<h4>帳戶 icon</h4>
+<p>每個帳戶都能加入自己的 icon<br/>
+只要是付費版的 MOZE 就會有各家銀行的 icon<br/>
+<img alt="5-icon.jpeg" src="/images/posts-image/2018-09-09-andromoney-to-moze/5-icon.jpeg"/><br/>
+雖然他說是付費圖示，但其實這幾個是免費的<br/>
+只有其他類別的彩色圖是要購買<br/>
+但我是覺得原本的我比較喜歡 xD<br/>
+另外，也可以自己製作想要的 icon 匯入 ~</p>
+<h4>電子發票載具</h4>
+<p>以前都沒有什麼要用電子載具的誘因<br/>
+就完全忘了這回事<br/>
+現在這個可以直接幫我記帳就很吸引我<br/>
+而且他也有支援 wideget ，給店家掃過後，馬上就能用 Apple Pay</p>
+<p>另外，我原本以為從雲端載下消費紀錄，一定會要再創一個紀錄<br/>
+但其實這是可以連結到某一筆過去的紀錄<br/>
+這對我也是蠻重要的功能</p>
+<p>只是目前好像還不能針對轉帳或借款事件歸帳<br/>
+希望這些能透過 MOZE 3.0 會有的分帳功能解決</p>
+<h4>拆帳 (MOZE 3.0 才有)</h4>
+<p>雖然目前還沒有，但這個功能我現在很期待<br/>
+所以還是想列一下 xD</p>
+<h3 id="moze_1">MOZE 沒有 (或我不會用) 的功能</h3>
+<h4>專案不能跨幣別</h4>
+<p>我之前去歐洲的那些紀錄就因為這樣，必須用標籤來分類 QQ<br/>
+不過聽說 MOZE 3.0 會新增就是</p>
+<h4>不能將單一紀錄不計算在花費中</h4>
+<p>主要是有些特別的花費我不會想要扣在我的預算中<br/>
+這樣那個月剩下的天數的預算就都會是 0，好像也不太對 ...</p>
+<h4>【AndroMoney 功能教學目錄】</h4>
+<p>這個我真的覺得超棒的<br/>
+他把目前能用他現有功能做到的事，全部整理起來<br/>
+現在 MOZE 還是比較需要去爬舊文翻，或直接問粉專<br/>
+但不得不說 MOZE 回復速度真的超快</p>
+<h2 id="andromoney-to-moze-transformater">AndroMoney to MOZE transformater</h2>
+<p>身為一個攻城獅，當然還是要寫自動化的程式來幫我轉換資料格式<br/>
+手動要處理 5、6000 筆帳務紀錄有點太累了<br/>
+btw MOZE 有說之後會提供 web 版的匯入工具</p>
+<p>在 MOZE 首頁 FAQ 可以找到要如何匯入資料 (<a href="https://docs.google.com/spreadsheets/d/1OeVuhID8l_vhmjHbDKReAXcLkIi0NvDUDIAwD9I8AYQ/edit?usp=sharing">MOZE 格式</a>)<br/>
+基本上就是照著他的格式就能轉換大部分的資料</p>
+<p>當然我也寫了一個小 script<br/>
+<strong><a href="https://github.com/Lee-W/AndroMoney_to_MOZE_transformater">AndroMoney_to_MOZE_transformater</a></strong></p>
+<h3 id="script">Script 使用方式</h3>
+<div class="highlight"><pre><span></span>python<span class="w"> </span>transformater.py<span class="w"> </span>--input_file<span class="w"> </span><span class="s2">"Your input filename"</span><span class="w"> </span>extract
+</pre></div>
+<p>在轉換的過程中，會有一些資料還是要手動輸入的<br/>
+其實後來大多時間是花在這 ...</p>
+<p>會抓出的資料有</p>
+<ul>
+<li>帳戶（以及其起始金額）</li>
+<li>專案</li>
+<li>主類別、次類別</li>
+</ul>
+<p>後來發現還有另一個問題是不同幣別的轉帳， AndroMoney 匯出的資料不會有轉入的金額<br/>
+所以沒辦法自動化，這點倒是比較麻煩</p>
+<div class="highlight"><pre><span></span>python<span class="w"> </span>transformater.py<span class="w"> </span>transformat<span class="w"> </span>--input_file<span class="w"> </span><span class="s2">"Your input filename"</span><span class="w"> </span>--output_file<span class="w"> </span>MOZE.csv
+</pre></div>
+<p>再來就是要把原本 AndroMoney 的紀錄轉成 MOZE 的格式<br/>
+只要把這個 <code>MOZE.csv</code> (一定要是這個檔名) 丟到 Dropbox 的 <code>應用程式/MOZE</code><br/>
+MOZE 就能找到，並能選擇匯入</p>
+<h3 id="_2">踩到的一些坑</h3>
+<p>寫這個 script 的過程中，其實踩到蠻多坑的<br/>
+匯入了好幾次才成功</p>
+<p>一來這是我第一次從<a href="https://docs.python.org/3/library/argparse.html">argparse</a> 換到<a href="http://click.pocoo.org">click</a><br/>
+原本想說 argparse 已經算是蠻好用的了<br/>
+click 真的又更直覺了一點，難怪這麼多人推薦</p>
+<p>第一個遇到的問題就是轉帳的「相關行數」<br/>
+一開始不知道這個行數是從多少開始<br/>
+以寫程式來說，我就直接去抓那個 row 的 index<br/>
+所以抓到的 index 是 0-based<br/>
+後來想到可以試試看 1-based，還是無法匯入成功<br/>
+最後才發現還要把標頭也考慮進去<br/>
+第一個 row 其實 index 是 2</p>
+<p>第二個問題是轉帳的類別<br/>
+文件其實只說不用「子類別」，沒說「主類別」要怎麼處理 xD<br/>
+我試了各種可能的類別後<br/>
+自己去匯出了一筆轉帳紀錄，才解決<br/>
+原來轉帳的主類別分別會是「轉入」跟「轉出」<br/>
+<img alt="1-doc.png" src="/images/posts-image/2018-09-09-andromoney-to-moze/1-doc.png"/></p>
+<p>後來弄完後有再去看一下文件，才發現下面其實有寫 ......<br/>
+<img alt="2-doc.png" src="/images/posts-image/2018-09-09-andromoney-to-moze/2-doc.png"/></p>
+<p>這些問題我都跟作者反應了，他都超快就回了<br/>
+他是說之後會透過 web 版的工具匯入</p>
+<h2 id="future-improvement">Future Improvement</h2>
+<p>其實我還是蠻喜歡 AndroMoney 的<br/>
+所以也許會找個時間寫怎麼把 MOZE 轉回 AndroMoney 的功能會寫個 MOZE to AndroMoney<br/>
+避免我哪天又想回到 Android 了 xD</p>
+<p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=%E5%BE%9E%20Andromoney%20%E5%88%B0%20MOZE&amp;url=https%3A//blog.wei-lee.me/posts/tech/2018/09/from-andromoney-to-moze&amp;hashtags=develop,utility" rel="nofollow noopener noreferrer" target="_blank" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2018/09/from-andromoney-to-moze" rel="nofollow noopener noreferrer" target="_blank" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=%E5%BE%9E%20Andromoney%20%E5%88%B0%20MOZE&amp;body=https%3A//blog.wei-lee.me/posts/tech/2018/09/from-andromoney-to-moze" rel="nofollow noopener noreferrer" target="_blank" title="Share via Email">Email</a>
+<section>
+<h6 style="display:none;">Comments</h6>
+<p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle disqus-comment-count comment-count collapsed" data-parent="#accordion2" data-toggle="collapse" href="https://blog.wei-lee.me/posts/tech/2018/09/from-andromoney-to-moze#comment_thread" id="comment-accordion-toggle">
+                    Comments
+                </a>
+</div>
+<div class="accordion-body collapse" id="comment_thread">
+<div class="accordion-inner">
+<div class="comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2018/09/from-andromoney-to-moze" data-label="comment" data-repo="Lee-W/main-blog" data-theme="" src="https://utteranc.es/client.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr/>
+</p></div>
+<section class="span2" id="article-sidebar">
+<h4>Published</h4>
+<time datetime="2018-09-09T16:00:00+08:00" itemprop="dateCreated">2018/09/09 - Sun</time>
+<h4>Read Time</h4>
+                2 min
+            <h4>Category</h4>
+<a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="https://blog.wei-lee.me/tags.html#develop-ref">Develop
+                    <span class="superscript">2</span>
+</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html#utility-ref">Utility
+                    <span class="superscript">5</span>
+</a></li>
+</ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+<a href="https://tw.linkedin.com/in/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="LinkedIn" fill="#fff" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#0077b5" height="512" rx="15%" width="512"></rect><circle cx="142" cy="138" r="37"></circle><path d="M244 194v198M142 194v198" stroke="#fff" stroke-width="66"></path><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path></svg>
+</a>
+<a href="https://github.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+<a href="https://gitlab.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitLab" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#30353e" height="512" rx="15%" width="512"></rect><path d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133" fill="#e24329"></path><path d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z" fill="#fc6d26"></path><path d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z" fill="#fca326"></path></svg>
+</a>
+<a href="https://twitter.com/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://wei-lee.me/feeds/all.atom.xml" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="RSS" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#f80" height="512" rx="15%" width="512"></rect><circle cx="145" cy="367" fill="#fff" r="35"></circle><path d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276" fill="none" stroke="#fff" stroke-width="60"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="span1"></div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0">
+</img></a>
+<br>
+This work is licensed under a
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+    Creative Commons Attribution 4.0 International License
+</a>.
+
+    </br></div>
+<div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican Home Page">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Theme Elegant Home Page">Elegant</a>
+</div>
+</footer> <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+</body>
+<!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

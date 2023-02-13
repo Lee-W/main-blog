@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" rel="stylesheet"/>
+<link href="https://blog.wei-lee.me/theme/css/elegant.prod.9e9d5ce754.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<meta content="Wei Lee" name="author">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="Conference, COSCUP, Tech, " name="keywords">
+<meta content="COSCUP 2019 " property="og:title">
+<meta content="https://blog.wei-lee.me/posts/tech/2019/09/coscup-2019" property="og:url"/>
+<meta content="事隔了兩年又再次參加了 COSCUP 上一次好像是還在中研院的時候 現在會議都會有共筆，就不太需要再另外做筆記 所以大概就是聊聊這次去比較喜歡的幾場 talk COSCUP 2019 共筆" property="og:description"/>
+<meta content="Those aren't written down are meant to be forgotten" property="og:site_name"/>
+<meta content="Wei Lee" property="og:article:author"/>
+<meta content="2019-09-02T14:10:00+08:00" property="og:article:published_time"/>
+<meta content="COSCUP 2019 " name="twitter:title"/>
+<meta content="事隔了兩年又再次參加了 COSCUP 上一次好像是還在中研院的時候 現在會議都會有共筆，就不太需要再另外做筆記 所以大概就是聊聊這次去比較喜歡的幾場 talk COSCUP 2019 共筆" name="twitter:description"/>
+<title>COSCUP 2019  · Those aren't written down are meant to be forgotten
+</title>
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten - Full Atom Feed" type="application/atom+xml">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3J7XQ46QH5');
+</script>
+</link></meta></meta></meta></meta><link href="https://blog.wei-lee.me/posts/tech/2019/09/coscup-2019" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2019", "item": "https://blog.wei-lee.me/posts/tech/2019"}, {"@type": "ListItem", "position": 5, "name": "09", "item": "https://blog.wei-lee.me/posts/tech/2019/09"}, {"@type": "ListItem", "position": 6, "name": "Coscup 2019", "item": "https://blog.wei-lee.me/posts/tech/2019/09/coscup-2019"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2019/09/coscup-2019/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "COSCUP 2019", "about": "Tech", "datePublished": "2019-09-02 14:10"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://blog.wei-lee.me/"><span class="site-name">Those aren't written down are meant to be forgotten</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li>
+<a href="https://blog.wei-lee.me">Home</a>
+</li>
+<li><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
+<li><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
+<li><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
+<li><form action="https://blog.wei-lee.me/search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1>
+<a href="https://blog.wei-lee.me/posts/tech/2019/09/coscup-2019">
+                COSCUP 2019
+            </a>
+</h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div class="toc">
+<ul>
+<li><a href="#day-1">Day 1</a><ul>
+<li><a href="#infra-devops">Infra / DevOps 的養成之路與開源工具</a><ul>
+<li><a href="#-infra">開源與職涯 - Infra 的養成之路與開源工具</a></li>
+<li><a href="#_1">系統工程師的大怪升級之旅</a></li>
+<li><a href="#q-a">Q &amp; A</a></li>
+</ul>
+</li>
+<li><a href="#learn-to-test-and-then-test-to-learn">Learn to test and then test to learn</a></li>
+<li><a href="#_2">海外頭路：憂喜甘苦談</a><ul>
+<li><a href="#_3">荷蘭</a></li>
+<li><a href="#_4">日本</a></li>
+<li><a href="#q-a_1">Q &amp; A</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#day-2">Day 2</a><ul>
+<li><a href="#_5">源碼在哪裡</a></li>
+<li><a href="#do-you-select-postgresql-or-mysql">Do you Select PostgreSQL or mysql</a><ul>
+<li><a href="#difference-between-mysql-and-postgresql">Difference between MySQL and PostgreSQL</a></li>
+<li><a href="#advantage-of-mysql">Advantage of MySQL</a></li>
+<li><a href="#advantage-of-postgresql">Advantage of PostgreSQL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="span8 article-content">
+<p>事隔了兩年又再次參加了 COSCUP<br/>
+上一次好像是還在中研院的時候</p>
+<p>現在會議都會有共筆，就不太需要再另外做筆記<br/>
+所以大概就是聊聊這次去比較喜歡的幾場 talk</p>
+<p><a href="https://hackmd.io/@coscup/2019/https%3A%2F%2Fhackmd.io%2F%40coscup%2FHJAlwq67H">COSCUP 2019 共筆</a></p>
+<!--more-->
+<p>好像前幾年就開始有把每一個軌的主題分得很清楚<br/>
+也有可能是我以前去的時候沒發現 XD<br/>
+這次參加最多場的應該是 <code>開源與職涯</code> 這一軌<br/>
+尤其想聽 <code>海外頭路：憂喜甘苦談</code><br/>
+我明明已經提早過去了，沒想到隊伍從前 10 分鐘就排得很長了......<br/>
+是大家都想離開台灣了嗎 XD</p>
+<p>聽到最有趣的是 talk 是 <code>如何在两年内从初学者成长为流行开源项目维护者和技术书作者？</code><br/>
+（<a href="https://hackmd.io/1kfASFqeR1iCEq2Uqf9S_A">共筆</a>附上）<br/>
+講者分享如何在兩年內成為了 flask 的維護者，還寫了一本技術書<br/>
+<del>最重要的訣竅就是<strong>不要工作</strong></del><br/>
+比起提供建議，我覺得這更像是是一個 call to action<br/>
+用他的故事來告訴我們，要做到這些事並不見得那麼困難<br/>
+有時候就是需要多一點衝動而已<br/>
+不知道有沒有錄影，這場真的蠻值得再看一次的 XD</p>
+<p>第一天最後是 Rust 核心成員 Steve Klabnik （<a href="https://hackmd.io/3Euz7maGRLSATDR_X3P7lA">共筆</a>）帶來的 talk<br/>
+原本還想說再講 Rust ，會不會聽不懂<br/>
+不過後來講的內容跟開源專案的組織管理比較有關<br/>
+其實還挺有趣的</p>
+<p>第二天一早就被告台科大停電，臨時更換地點<br/>
+不過還算是蠻順利的，除了換個場地，沒有網路了以外，倒是沒遇到什麼大問題<br/>
+這天我大概都在會場亂晃，除了下面有筆記的兩場 talk 外，好像就都沒什麼印象了 XD</p>
+<p>下面就放了一些我當天有做的筆記<br/>
+有一些是從共筆補充過來<br/>
+也有一些時覺得不知道怎麼整理上共筆，就留在這了</p>
+<hr/>
+<h1 id="day-1">Day 1</h1>
+<h2 id="infra-devops">Infra / DevOps 的養成之路與開源工具</h2>
+<ul>
+<li><a href="https://hackmd.io/Yhf8ByscR2-oIifd9c2IBQ">共筆</a></li>
+<li><a href="https://docs.google.com/presentation/d/1wF1gA_Q-cZ33nXf1YhqGIWuLy_iMcC_1XllEHEkMgAc/edit#slide=id.i0">slide - 開源與職涯 - Infra 的養成之路與開源工具</a></li>
+<li><a href="https://speakerdeck.com/chusiang/my-devops-tour-0-dot-1">slide - 系統工程師的大怪升級之旅</a><ul>
+<li>Ref:<a href="https://zh.wikipedia.org/wiki/奮鬥吧！系統工程師">奮鬥吧！系統工程師</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="-infra">開源與職涯 - Infra 的養成之路與開源工具</h3>
+<ul>
+<li>CV 要夠詳細<ul>
+<li>只有打 Linux 五個字沒有人看得懂 → 細說你會什麼</li>
+</ul>
+</li>
+<li>社群<ul>
+<li>選擇你最舒服的方式參與</li>
+<li><a href="https://docs.google.com/presentation/d/1wF1gA_Q-cZ33nXf1YhqGIWuLy_iMcC_1XllEHEkMgAc/edit#slide=id.g487e56660f_0_14">開源社群 List</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="_1">系統工程師的大怪升級之旅</h3>
+<ul>
+<li>DevOps 三步工作法<ol>
+<li>由左自右的流動</li>
+<li>從右自左的回饋</li>
+<li>文化</li>
+</ol>
+</li>
+<li>推薦讀物<ul>
+<li>自我成長: <a href="https://www.tenlong.com.tw/products/9789862762561">學徒模式</a></li>
+<li>DevOps: <a href="https://www.amazon.com/Nature-Software-Development-Simple-Valuable-ebook-dp-B00VDHRFWU/dp/B00VDHRFWU/ref=mt_kindle?_encoding=UTF8&amp;me=&amp;qid=">The Nature of Software Development</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="q-a">Q &amp; A</h3>
+<ul>
+<li>Q1: 撰寫 DevOps 部落格時如何避開機密、公司智財權等？<ul>
+<li>自己複製出環境、資料等，自己把找到的技術在自己的環境複製一次，執行成功之後才記錄下來</li>
+</ul>
+</li>
+</ul>
+<h2 id="learn-to-test-and-then-test-to-learn">Learn to test and then test to learn</h2>
+<ul>
+<li>Material<ul>
+<li><a href="https://docs.google.com/presentation/d/185lhxQoS07G1g9Qw7ngT4Z2lQaB7p3HIPky5ERkIWFc/edit">slide</a></li>
+</ul>
+</li>
+<li>Pitfalls of End-to-end Testing<ul>
+<li>High learning curve</li>
+<li>Hard to build and maintain</li>
+<li>Not easy to identify defects</li>
+<li>Slow feedback</li>
+<li>Not realistic enough</li>
+</ul>
+</li>
+<li>Test to learn<ul>
+<li>透過寫測試，紀錄學習歷程，下次回來看就知道怎麼用了</li>
+</ul>
+</li>
+<li>Wrap Up<ul>
+<li>Unit Testing is the foundation and hard to learn</li>
+<li>Mock and wrapper help you isolate your system boundaries</li>
+<li>To make your code unit-testable, you'll learn to write better code.</li>
+<li>Test to learn</li>
+</ul>
+</li>
+</ul>
+<h2 id="_2">海外頭路：憂喜甘苦談</h2>
+<ul>
+<li><a href="https://hackmd.io/@coscup/rJkQ17l4H">共筆</a></li>
+</ul>
+<h3 id="_3">荷蘭</h3>
+<ul>
+<li>Why Not The Netherlands<ul>
+<li>荷蘭文難學</li>
+<li>食物難吃</li>
+<li>外食很貴</li>
+<li>房租很高</li>
+<li>稅很重 (up to 51.75%)</li>
+</ul>
+</li>
+<li>Why The Netherlands<ul>
+<li>英文可存活</li>
+<li>簽證好辦</li>
+<li>薪水</li>
+<li>多元文化</li>
+<li>氣候宜人 (冬天頂多 0 度)</li>
+<li>房貸比房租便宜</li>
+<li>30% Ruling （高技術外國人的稅務優惠）</li>
+</ul>
+</li>
+<li>
+<p>Bonus</p>
+<ul>
+<li>在歐洲正中間，方便旅遊</li>
+<li>大麻？（其實是非法，但政府明確表明不抓 xD）紅燈區？</li>
+</ul>
+</li>
+<li>
+<p>荷蘭對 Work from Home 的政策算蠻鬆的</p>
+</li>
+</ul>
+<h3 id="_4">日本</h3>
+<ul>
+<li>Mercari Backend Engineer<ul>
+<li>What is Mercari？<ul>
+<li>主要做二手拍賣</li>
+</ul>
+</li>
+<li>主要使用 Go Lang, php</li>
+<li>How many leave do you have?<ul>
+<li>10 days leave + 3 days summer leave + 10 days sick leave</li>
+</ul>
+</li>
+<li>Are you usually late for work?<ul>
+<li>彈性工時 (12:00 ~ 16:00 一定要在公司)</li>
+</ul>
+</li>
+<li>How many foreigner in you project?<ul>
+<li>Engineer: 50% foreigners</li>
+</ul>
+</li>
+<li>Do you have lots of nomikai（應酬）?<ul>
+<li>一季一次</li>
+<li>一次約 ￥4,000</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="q-a_1">Q &amp; A</h3>
+<h4>Q: 日本階級制度很重？</h4>
+<p>是，但因為是外國人，所以可以裝作不知道</p>
+<h4>Q: 怎麼找到海外工作的？</h4>
+<p>LinkedIn, location 換到當地後，就會有收不完的邀約了</p>
+<h4>Q: 不會日文可以去日本工作嗎</h4>
+<p>只會講英文的話，建議去 Line, Rakuten, Mercari ，小公司至少要有 N2 比較順利</p>
+<h4>Q: 日本薪水大概是多少</h4>
+<p>New Grade 年收 400 萬日幣， Senior 則要怎麼談</p>
+<h4>Q: 荷蘭 engineer 職缺多嗎？</h4>
+<p>很多，目前最大是 Uber ，另外有很多新創<br/>
+因為英國脫歐，最近荷蘭職缺比較多</p>
+<h4>Q: 荷蘭的永久居留證？</h4>
+<p>雖然荷蘭不能雙重國籍，但因為不承認台灣是個國家，所以申請上會特別容易，不會被刁難</p>
+<h4>Q: 台灣人到歐洲最大的障礙是什麼</h4>
+<p>自己煮飯，其他都還好</p>
+<h4>Q: 會遇到歧視嗎？</h4>
+<ul>
+<li>日本 - Lilith Peng<ul>
+<li>女性歧視有點大</li>
+<li>排外的社會 → 沒有解法，各憑本事</li>
+</ul>
+</li>
+<li>荷蘭 - 呂行<ul>
+<li>除非到鄉下才會有歧視，但大城市還好</li>
+</ul>
+</li>
+</ul>
+<h4>Q: 除了薪資以外，為什麼想出國</h4>
+<p>體驗不同文化、生活方式</p>
+<h4>Q: 為什麼 荷蘭/日本，而不是北美</h4>
+<ul>
+<li>荷蘭 - 呂行<ul>
+<li>因為北美簽證不好拿，不習慣美國的生活方式</li>
+</ul>
+</li>
+<li>日本 - Lilith Peng<ul>
+<li>日本有高度人才證</li>
+<li>會日文，英文不好 XD</li>
+<li>日本離台灣近</li>
+<li>稅率比歐洲好</li>
+<li>房租便宜</li>
+</ul>
+</li>
+</ul>
+<h4>Q: 日本/荷蘭 的面試文化？</h4>
+<ul>
+<li>荷蘭<ul>
+<li>會有白板題</li>
+<li>一關問架構</li>
+<li>一關問經歷</li>
+</ul>
+</li>
+<li>日文<ul>
+<li>履歷表用 Excel 寫，會加分</li>
+<li>履歷是一致的格式</li>
+<li>面試分兩種<ul>
+<li>外商派</li>
+<li>日本傳統派<ul>
+<li>西裝外套、打領帶、皮鞋、公事包......</li>
+<li>90度鞠躬</li>
+<li>他們就是看感覺錄取 ← 他們認為人才是可以被培養的 XD</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4>Q: 會不會有天花板</h4>
+<ul>
+<li>日本工程師大概 1,500 萬就是天花板，除非轉管理職</li>
+<li>荷蘭不算特別明顯</li>
+</ul>
+<hr/>
+<h1 id="day-2">Day 2</h1>
+<h2 id="_5">源碼在哪裡</h2>
+<ul>
+<li>grep 可以對二進位檔直接做文字搜尋</li>
+<li>Technical / Development History<ul>
+<li>Firsthand<ul>
+<li><strong>Mailing lists</strong>, IRC, HipChat, Slack, Issue trackers, Forums, Journals / Papers</li>
+</ul>
+</li>
+<li>Summary<ul>
+<li>Wiki, Tech News, Tech Document, White Papers, Blogs, Books, Review papers</li>
+</ul>
+</li>
+<li>Management<ul>
+<li>Source Hosts<ul>
+<li>Github / Bitbucket and etc., SourceForge, Launchpad</li>
+</ul>
+</li>
+<li>Local Deployment<ul>
+<li>FHS, Language-specific path</li>
+</ul>
+</li>
+<li>Distributed Deployment<ul>
+<li>Auxiliary services (e.g., Open Stack, web)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Version<ul>
+<li><code>Major.Minor.Patch</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="do-you-select-postgresql-or-mysql">Do you Select PostgreSQL or mysql</h2>
+<ul>
+<li><a href="https://speakerdeck.com/soudai/do-you-select-postgresql-or-mysql">slide</a></li>
+</ul>
+<h3 id="difference-between-mysql-and-postgresql">Difference between MySQL and PostgreSQL</h3>
+<ul>
+<li>Server architecture<ul>
+<li>MySQL → multi-thread</li>
+<li>PostgresSQL → multi-process</li>
+</ul>
+</li>
+<li>Licence<ul>
+<li>MySQL → GPL v2 or Commercial License</li>
+<li>PostgresSQL → PostgresSQL License</li>
+</ul>
+</li>
+<li>The Development Style<ul>
+<li>MySQL → Oracle</li>
+<li>PostgresSQL → Community</li>
+</ul>
+</li>
+</ul>
+<h3 id="advantage-of-mysql">Advantage of MySQL</h3>
+<ul>
+<li>Extensibility</li>
+<li>Good at fetching by <strong>primary key</strong> and <strong>primary key</strong> update</li>
+<li>Flexible replication<ul>
+<li>Multi source replication</li>
+<li>Group Replication → Multi Master</li>
+</ul>
+</li>
+<li>Document Store<ul>
+<li>JSON type → schema-less table</li>
+</ul>
+</li>
+</ul>
+<h3 id="advantage-of-postgresql">Advantage of PostgreSQL</h3>
+<ul>
+<li>Parallel Query<ul>
+<li>but not to increase number of workers beyond number of CPU core</li>
+</ul>
+</li>
+<li>Materialized View</li>
+<li>Foreign Data Wrapper → an external table handle for your own table (other DBMS)<ul>
+<li>support WHERE, JOIN, GROUP BY, DELETE &amp; UPDATE</li>
+<li>Any data store is acceptable</li>
+</ul>
+</li>
+<li>GIN INDEX &amp; Function INDEX + JSON</li>
+</ul>
+<p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=COSCUP%202019&amp;url=https%3A//blog.wei-lee.me/posts/tech/2019/09/coscup-2019&amp;hashtags=conference,coscup" rel="nofollow noopener noreferrer" target="_blank" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2019/09/coscup-2019" rel="nofollow noopener noreferrer" target="_blank" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=COSCUP%202019&amp;body=https%3A//blog.wei-lee.me/posts/tech/2019/09/coscup-2019" rel="nofollow noopener noreferrer" target="_blank" title="Share via Email">Email</a>
+<section>
+<h6 style="display:none;">Comments</h6>
+<p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle disqus-comment-count comment-count collapsed" data-parent="#accordion2" data-toggle="collapse" href="https://blog.wei-lee.me/posts/tech/2019/09/coscup-2019#comment_thread" id="comment-accordion-toggle">
+                    Comments
+                </a>
+</div>
+<div class="accordion-body collapse" id="comment_thread">
+<div class="accordion-inner">
+<div class="comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2019/09/coscup-2019" data-label="comment" data-repo="Lee-W/main-blog" data-theme="" src="https://utteranc.es/client.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr/>
+</p></div>
+<section class="span2" id="article-sidebar">
+<h4>Published</h4>
+<time datetime="2019-09-02T14:10:00+08:00" itemprop="dateCreated">2019/09/02 - Mon</time>
+<h4>Read Time</h4>
+                3 min
+            <h4>Category</h4>
+<a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="https://blog.wei-lee.me/tags.html#conference-ref">Conference
+                    <span class="superscript">14</span>
+</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html#coscup-ref">COSCUP
+                    <span class="superscript">4</span>
+</a></li>
+</ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+<a href="https://tw.linkedin.com/in/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="LinkedIn" fill="#fff" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#0077b5" height="512" rx="15%" width="512"></rect><circle cx="142" cy="138" r="37"></circle><path d="M244 194v198M142 194v198" stroke="#fff" stroke-width="66"></path><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path></svg>
+</a>
+<a href="https://github.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+<a href="https://gitlab.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitLab" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#30353e" height="512" rx="15%" width="512"></rect><path d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133" fill="#e24329"></path><path d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z" fill="#fc6d26"></path><path d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z" fill="#fca326"></path></svg>
+</a>
+<a href="https://twitter.com/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://wei-lee.me/feeds/all.atom.xml" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="RSS" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#f80" height="512" rx="15%" width="512"></rect><circle cx="145" cy="367" fill="#fff" r="35"></circle><path d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276" fill="none" stroke="#fff" stroke-width="60"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="span1"></div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0"/>
+</a>
+<br/>
+This work is licensed under a
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+    Creative Commons Attribution 4.0 International License
+</a>.
+
+    </div>
+<div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican Home Page">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Theme Elegant Home Page">Elegant</a>
+</div>
+</footer> <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+</body>
+<!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

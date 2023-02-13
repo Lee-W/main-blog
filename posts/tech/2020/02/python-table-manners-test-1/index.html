@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" rel="stylesheet"/>
+<link href="https://blog.wei-lee.me/theme/css/elegant.prod.9e9d5ce754.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<meta content="Wei Lee" name="author">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="Python, Test, Tech, " name="keywords">
+<meta content="Python Table Manners - 測試 (一) " property="og:title">
+<meta content="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-1" property="og:url"/>
+<meta content="設定完環境後，接著開始要開發程式的各項功能 要驗證程式正確性時，我們就會撰寫測試案例" property="og:description"/>
+<meta content="Those aren't written down are meant to be forgotten" property="og:site_name"/>
+<meta content="Wei Lee" property="og:article:author"/>
+<meta content="2020-02-24T23:33:00+08:00" property="og:article:published_time"/>
+<meta content="2020-10-04T15:33:00+08:00" property="og:article:modified_time"/>
+<meta content="Python Table Manners - 測試 (一) " name="twitter:title"/>
+<meta content="設定完環境後，接著開始要開發程式的各項功能 要驗證程式正確性時，我們就會撰寫測試案例" name="twitter:description"/>
+<title>Python Table Manners - 測試 (一)  · Those aren't written down are meant to be forgotten
+</title>
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten - Full Atom Feed" type="application/atom+xml">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3J7XQ46QH5');
+</script>
+</link></meta></meta></meta></meta><link href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-1" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2020", "item": "https://blog.wei-lee.me/posts/tech/2020"}, {"@type": "ListItem", "position": 5, "name": "02", "item": "https://blog.wei-lee.me/posts/tech/2020/02"}, {"@type": "ListItem", "position": 6, "name": "Python table manners test 1", "item": "https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-1"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-1/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "Python Table Manners - 測試 (一)", "about": "Tech", "datePublished": "2020-02-24 23:33"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://blog.wei-lee.me/"><span class="site-name">Those aren't written down are meant to be forgotten</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li>
+<a href="https://blog.wei-lee.me">Home</a>
+</li>
+<li><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
+<li><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
+<li><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
+<li><form action="https://blog.wei-lee.me/search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1>
+<a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-1">
+                Python Table Manners - 測試 (一)
+            </a>
+</h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div class="toc">
+<ul>
+<li><a href="#_1">為什麼要寫自動化測試</a></li>
+<li><a href="#unittest">unittest</a></li>
+<li><a href="#pytest">pytest</a></li>
+<li><a href="#unittest-pytest">從 Unittest 到 Pytest</a><ul>
+<li><a href="#test-discovery">測試探索 (test discovery)</a></li>
+<li><a href="#step-0">Step 0: 追朔程式碼</a></li>
+<li><a href="#step-1-fixture-setup-teardown">Step 1: 使用 fixture 取代 setUp / tearDown</a></li>
+<li><a href="#step-2-markskip">Step 2: 使用 mark.skip 跳過部分測試</a></li>
+<li><a href="#step-3-class">Step 3: 扁平化 - 移除不必要的 class</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="span8 article-content">
+<p>設定完環境後，接著開始要開發程式的各項功能<br/>
+要驗證程式正確性時，我們就會撰寫測試案例</p>
+<!--more-->
+<h2 id="_1">為什麼要寫自動化測試</h2>
+<ul>
+<li>如果沒有自動化測試<ul>
+<li>必須手動去驗證程式的正確性，而且不能確定每次的測試方式都是相同的<br/>
+ （如果因為很麻煩懶得測試，變成讓客戶去測試，就會造成更多的麻煩了 😱）</li>
+<li>增加重構 (refactoring）的風險，因為很難驗證程式的功能有沒有在重構的過程中被改動</li>
+<li>加入新的功能不知道會不會動到原本沒問題的功能</li>
+</ul>
+</li>
+</ul>
+<p>最後就會像是這樣</p>
+<p><img alt="new-feature-without-test" src="/images/posts-image/2020-02-22-python-table-manner-series/new-feature.jpg"/></p>
+<p><strong>總之，要寫測試！</strong></p>
+<h2 id="unittest">unittest</h2>
+<p><a href="https://docs.python.org/3/library/unittest.html">unittest</a> 是 Python 標準函式庫的測試框架<br/>
+起源於 jUnit 的做法，所以在函式的命名上和設計上比較不符合 Python 風格<br/>
+雖然它不會是今天的主角，我也不太建議使用它<br/>
+不過我們還是可以稍微看一下它的用法</p>
+<p>以下取自 <a href="https://docs.python.org/3/library/unittest.html">unittest</a> 文件中的其中一個範例</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
+
+
+<span class="k">class</span> <span class="nc">WidgetTestCase</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s1">'The widget'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_default_widget_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span>
+                         <span class="s1">'incorrect default size'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_widget_resize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">),</span>
+                         <span class="s1">'wrong size after resize'</span><span class="p">)</span>
+</pre></div>
+<p>可以看到幾個特點</p>
+<ul>
+<li>測試案例必須要繼承 <code>unittest.TestCase</code></li>
+<li>使用 <code>setUp</code> 函式來初始化 <code>widget</code> （如果有需要清除資源則會使用 <code>tearDown</code>）</li>
+<li>使用 <code>assertEqual</code> 來做正確性的驗證</li>
+</ul>
+<h2 id="pytest">pytest</h2>
+<p><a href="https://docs.pytest.org/en/6.1.1/">pytest</a> 是現在 Python 專案建議使用的測試框架，也會是這篇文章的主角</p>
+<ul>
+<li>為什麼要用 pytest<ul>
+<li>更符合 Python 程式碼風格 (Pythonic)</li>
+<li>pytest 支援舊有的 unittest 風格</li>
+<li>扁平化（不用繼承）</li>
+<li>只需要使用 <code>assert</code>，不需要去記 <code>assert.+</code> (e.g., <code>assertEqual</code>) 等 API</li>
+<li>更好的<a href="https://docs.pytest.org/en/6.1.1/goodpractices.html#test-discovery">測試探索 (test discovery)</a></li>
+<li>更多的進階功能 (e.g., fixture, mark, parameterize and etc.)</li>
+<li>強大的套件</li>
+</ul>
+</li>
+</ul>
+<p>以下是取自 <a href="https://docs.pytest.org/en/6.1.1/getting-started.html#create-your-first-test">pytest - Create your first test</a> 的範例<br/>
+相比於 unittest 寫法相對簡潔</p>
+<div class="highlight"><pre><span></span><span class="c1"># content of test_sample.py</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+
+<span class="k">def</span> <span class="nf">test_answer</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div>
+<h2 id="unittest-pytest">從 Unittest 到 Pytest</h2>
+<p>前面的比較其實不太公平，unittest 的範例要測的內容本身就比 pytest 的複雜</p>
+<p>所以接下來會用 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 為例子<br/>
+討論如何從 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/v1.0">v1.0</a> 的 unittest 風格改成在 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/83e48c6443303045ed1de2f020297c3110bb1300">commit 83e4</a> 的 pytest 風格</p>
+<p>如果想跟著程式碼跑，可以把專案 clone 下來<br/>
+（當然能貢獻專案就更棒了 XD）</p>
+<div class="highlight"><pre><span></span><span class="c1"># clone 專案到本地</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pycontw/pycontw-postevent-report-generator
+
+<span class="nb">cd</span><span class="w"> </span>pycontw-postevent-report-generator
+
+<span class="c1"># 切換到 commit 83e4 的前一個 commit (因為commit 83e4 已經完成修正)</span>
+git<span class="w"> </span>checkout<span class="w"> </span>83e4~1
+
+<span class="c1"># 設定環境</span>
+pipenv<span class="w"> </span>install<span class="w"> </span>--dev
+</pre></div>
+<h3 id="test-discovery">測試探索 (test discovery)</h3>
+<p>原本在 <code>REAMDE.md</code> 中要跑測試的指令相當的冗長<br/>
+而且還必須要切換到 test 資料夾 (i.e., <code>cd test</code>)</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nb">test</span>
+python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>./<span class="w"> </span>-p<span class="w"> </span><span class="s1">'test_*.py'</span>
+</pre></div>
+<p>不過這其實是一開始的設計有誤<br/>
+以下是 test 資料夾的內容</p>
+<div class="highlight"><pre><span></span>└── test
+    …
+    ├── test_sponsor.py
+    └── test_title.py
+</pre></div>
+<p>test (或 tests) 本身也必須是一個套件<br/>
+所以必須先在 test 內加入 <code>__init__.py</code><br/>
+（這是我在寫程式初期想開始寫測試遇到一個很大的坎 😢）</p>
+<div class="highlight"><pre><span></span>└── test
+    ├── __init__.py
+    ...
+    ├── test_sponsor.py
+    └── test_title.py
+</pre></div>
+<p>做了改變後，就能改用更簡潔的指令跑測試了</p>
+<div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</pre></div>
+<p>因為 pytest 也支援 unittest 風格<br/>
+所以也可以直接使用 <code>pytest</code> 指令跑測試</p>
+<div class="highlight"><pre><span></span>pytest
+</pre></div>
+<p>不過在前一篇有提到使用虛擬環境的概念了<br/>
+所以應該要確保每個專案的指令，都只在虛擬環境中跑<br/>
+（因為前一篇建議使用 pipenv，之後的範例都會用 pipenv）</p>
+<div class="highlight"><pre><span></span><span class="c1"># 將 pytest 安裝到開發環境</span>
+pipenv<span class="w"> </span>install<span class="w"> </span>pytest<span class="w"> </span>--dev
+
+<span class="c1"># 執行 pytest</span>
+pipenv<span class="w"> </span>run<span class="w"> </span>pytest
+</pre></div>
+<p>這時候的測試其實會有許多錯誤<br/>
+但執行後應該要能看到類似的畫面</p>
+<div class="highlight"><pre><span></span>===================== test session starts ======================
+platform darwin -- Python 3.7.3, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
+rootdir: /....../pycontw-postevent-report-generator
+plugins: mock-2.0.0, cov-2.8.1
+collected 9 items
+
+test/test_sponsor.py FFFFFFFF                            [ 88%]
+test/test_title.py F                                     [100%]
+
+=========================== FAILURES ===========================
+......
+</pre></div>
+<p><code>F</code> 表示測試沒有通過，如果出現 <code>.</code> 則表示成功</p>
+<h3 id="step-0">Step 0: 追朔程式碼</h3>
+<p>以 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/blob/v1.0/test/test_sponsor.py#L6">test/test_sponsor.py::TestSponsor::test_sponsor_number</a> 為例<br/>
+（在套件以及模組的層級後， pytest 會使用 <code>::</code> 來區別不同的層級，試試 <code>pipenv run pytest -v</code> 指令）</p>
+<p>原本 unittest 風格的程式碼中，做了三件事</p>
+<ol>
+<li>使用了 <code>setUp</code> 做 <code>self.sponsors</code> 的初始化</li>
+<li>在 <code>test_sonpsor_number</code> 取用 <code>setUp</code> 中初始過的 <code>self.sponsors</code></li>
+<li>使用 <code>self.assertEqual</code> 來看 <code>self.sponsors</code> 的長度是否等於 1</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">from</span> <span class="nn">atta.partner</span> <span class="kn">import</span> <span class="n">sponsor</span>
+
+
+<span class="k">class</span> <span class="nc">TestSponsor</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sponsors</span> <span class="o">=</span> <span class="n">sponsor</span><span class="o">.</span><span class="n">get_all_sponsors</span><span class="p">(</span><span class="s1">'./data/packages.yaml'</span><span class="p">,</span>
+                                            <span class="s1">'./data/sponsors.yaml'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sponsors</span> <span class="o">=</span> <span class="n">sponsors</span>
+
+        <span class="o">......</span>
+
+    <span class="k">def</span> <span class="nf">test_sponsor_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sponsors</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="o">.......</span>
+</pre></div>
+<h3 id="step-1-fixture-setup-teardown">Step 1: 使用 fixture 取代 setUp / tearDown</h3>
+<p>將 <code>unittest.TestCase</code> 移除，改用 pytest 的 <a href="https://docs.pytest.org/en/6.1.1/fixture.html">fixture</a> 取代 <code>setUp</code><br/>
+fixture 跟 <code>setUp / tearDown</code> 的概念上相近，都是用來 準備 / 清除 資源<br/>
+但 fixture 更加的輕量且更有彈性</p>
+<p>在 <code>test_sponsor_number</code> 中加入參數 <code>sponsors</code><br/>
+pytest 會去找 fixtures 中是否有 <code>sponsors</code> 並將之代入</p>
+<p>接著將較為冗長的 <code>assertEqual</code>，改為 <code>assert</code></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="kn">from</span> <span class="nn">report_generator.partner</span> <span class="kn">import</span> <span class="n">sponsor</span>
+
+
+<span class="k">class</span> <span class="nc">TestSponsor</span><span class="p">:</span>
+    <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">"class"</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">sponsors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">sponsor</span><span class="o">.</span><span class="n">get_all_sponsors</span><span class="p">(</span><span class="s2">"test/data/packages.yaml"</span><span class="p">,</span>
+                                        <span class="err">“</span><span class="n">test</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">sponsors</span><span class="o">.</span><span class="n">yaml</span><span class="s2">")</span>
+
+        <span class="o">......</span>
+
+    <span class="k">def</span> <span class="nf">test_sponsor_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sponsors</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">sponsors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+
+        <span class="o">......</span>
+</pre></div>
+<p>(p.s. 在這裡 <code>atta</code> 已經重新命名為 <code>report_generator</code>)</p>
+<h3 id="step-2-markskip">Step 2: 使用 mark.skip 跳過部分測試</h3>
+<p>原本的測試中有些邏輯錯誤<br/>
+但我只想先完成風格的轉換，還不打算修正<br/>
+因此先使用了 <a href="http://doc.pytest.org/en/6.1.1/example/markers.html">markers</a><br/>
+在想跳過的測試案例前面加上 <code>@pytest.mark.skip</code></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="kn">from</span> <span class="nn">report_generator.partner</span> <span class="kn">import</span> <span class="n">sponsor</span>
+
+
+<span class="k">class</span> <span class="nc">TestSponsor</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="s2">"No bronze sponsor in test case"</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_sponsor_promotion_web_click_rank_bronze</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">sponsor</span><span class="o">.</span><span class="n">NA_CONTENT_MESSAGE</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bronze_sponsor</span><span class="o">.</span><span class="n">web_click_rank</span><span class="p">,</span> <span class="n">answer</span><span class="p">)</span>
+</pre></div>
+<p>執行 <code>pipenv run pytest</code> 後，就會發現有部分的測試案例變成了 <code>s</code></p>
+<div class="highlight"><pre><span></span>========== test session starts ==========
+platform darwin -- Python 3.7.3, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
+rootdir: /....../pycontw-postevent-report-generator
+plugins: mock-2.0.0, cov-2.8.1
+collected 9 items
+
+test/test_sponsor.py ....ssss     [ 88%]
+test/test_title.py .              [100%]
+</pre></div>
+<h3 id="step-3-class">Step 3: 扁平化 - 移除不必要的 class</h3>
+<p>從上面的範例可以看到， <code>self</code> 其實並不必要<br/>
+這些測試案例不需要是一個類別<br/>
+因此可以更近一步，把 <code>TestSponsor</code> 類別移除</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="kn">from</span> <span class="nn">report_generator.partner</span> <span class="kn">import</span> <span class="n">sponsor</span>
+
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">"function"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">sponsors</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">sponsor</span><span class="o">.</span><span class="n">get_all_sponsors</span><span class="p">(</span><span class="s2">"test/data/packages.yaml"</span><span class="p">,</span>
+                                    <span class="s2">"test/data/sponsors.yaml"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">test_sponsor_number</span><span class="p">(</span><span class="n">sponsors</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">sponsors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+<p>不過這並不代表用類別就是錯的<br/>
+一般我會在模組內測試案例比較多的時候，使用類別來將相似的測試案例歸在同一類</p>
+<hr/>
+<p>因為篇幅的關係，我決定把測試分成兩篇文章<br/>
+<del>絕對不是因為我寫不完了</del><br/>
+盡請期待明天更深入的 pytest 應用 😄</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://pragprog.com/book/bopytest/python-testing-with-pytest">Python Testing with pytest</a><ul>
+<li>非常推薦用這本書上手 <code>pytest</code></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?time_continue=201&amp;v=pX1_I_sEi8k">快快樂樂成為 Coding Ninja (by pytest) - PyCon APAC 2015</a></li>
+<li><a href="https://wei-lee.me/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/">Pytest: Rapid Simple Testing -  Swiss Python Summit 2016</a></li>
+</ul>
+<p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=Python%20Table%20Manners%20-%20%E6%B8%AC%E8%A9%A6%20%28%E4%B8%80%29&amp;url=https%3A//blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-1&amp;hashtags=python,test" rel="nofollow noopener noreferrer" target="_blank" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-1" rel="nofollow noopener noreferrer" target="_blank" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Python%20Table%20Manners%20-%20%E6%B8%AC%E8%A9%A6%20%28%E4%B8%80%29&amp;body=https%3A//blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-1" rel="nofollow noopener noreferrer" target="_blank" title="Share via Email">Email</a>
+<section>
+<h6 style="display:none;">Comments</h6>
+<p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle disqus-comment-count comment-count collapsed" data-parent="#accordion2" data-toggle="collapse" href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-1#comment_thread" id="comment-accordion-toggle">
+                    Comments
+                </a>
+</div>
+<div class="accordion-body collapse" id="comment_thread">
+<div class="accordion-inner">
+<div class="comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-1" data-label="comment" data-repo="Lee-W/main-blog" data-theme="" src="https://utteranc.es/client.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr/>
+</p></div>
+<section class="span2" id="article-sidebar">
+<h4>Published</h4>
+<time datetime="2020-02-24T23:33:00+08:00" itemprop="dateCreated">2020/02/24 - Mon</time>
+<h4>Last Updated</h4>
+<time datetime="2020-10-04T15:33:00+08:00">2020/10/04 - Sun</time>
+<h4><built-in 0x7fcd86eedb60="" at="" index="" method="" object="" of="" str=""></built-in></h4>
+<ul class="multi-parts-list">
+</ul>
+<h4>Read Time</h4>
+                3 min
+            <h4>Category</h4>
+<a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="https://blog.wei-lee.me/tags.html#python-ref">Python
+                    <span class="superscript">33</span>
+</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html#test-ref">Test
+                    <span class="superscript">2</span>
+</a></li>
+</ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+<a href="https://tw.linkedin.com/in/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="LinkedIn" fill="#fff" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#0077b5" height="512" rx="15%" width="512"></rect><circle cx="142" cy="138" r="37"></circle><path d="M244 194v198M142 194v198" stroke="#fff" stroke-width="66"></path><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path></svg>
+</a>
+<a href="https://github.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+<a href="https://gitlab.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitLab" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#30353e" height="512" rx="15%" width="512"></rect><path d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133" fill="#e24329"></path><path d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z" fill="#fc6d26"></path><path d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z" fill="#fca326"></path></svg>
+</a>
+<a href="https://twitter.com/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://wei-lee.me/feeds/all.atom.xml" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="RSS" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#f80" height="512" rx="15%" width="512"></rect><circle cx="145" cy="367" fill="#fff" r="35"></circle><path d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276" fill="none" stroke="#fff" stroke-width="60"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="span1"></div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0"/>
+</a>
+<br/>
+This work is licensed under a
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+    Creative Commons Attribution 4.0 International License
+</a>.
+
+    </div>
+<div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican Home Page">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Theme Elegant Home Page">Elegant</a>
+</div>
+</footer> <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+</body>
+<!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

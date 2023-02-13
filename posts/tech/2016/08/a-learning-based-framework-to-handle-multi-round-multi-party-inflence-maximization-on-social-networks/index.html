@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" rel="stylesheet"/>
+<link href="https://blog.wei-lee.me/theme/css/elegant.prod.9e9d5ce754.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<meta content="Wei Lee" name="author">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="Paper, Social Network, Machine Learning, Game Theory, Tech, " name="keywords">
+<meta content="[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks " property="og:title">
+<meta content="https://blog.wei-lee.me/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" property="og:url"/>
+<meta content="Paper" property="og:description"/>
+<meta content="Those aren't written down are meant to be forgotten" property="og:site_name"/>
+<meta content="Wei Lee" property="og:article:author"/>
+<meta content="2016-08-22T16:53:00+08:00" property="og:article:published_time"/>
+<meta content="[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks " name="twitter:title"/>
+<meta content="Paper" name="twitter:description"/>
+<title>[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks  · Those aren't written down are meant to be forgotten
+</title>
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten - Full Atom Feed" type="application/atom+xml">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3J7XQ46QH5');
+</script>
+</link></meta></meta></meta></meta><link href="https://blog.wei-lee.me/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2016", "item": "https://blog.wei-lee.me/posts/tech/2016"}, {"@type": "ListItem", "position": 5, "name": "08", "item": "https://blog.wei-lee.me/posts/tech/2016/08"}, {"@type": "ListItem", "position": 6, "name": "A learning based framework to handle multi round multi party inflence maximization on social networks", "item": "https://blog.wei-lee.me/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "[Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks", "about": "Tech", "datePublished": "2016-08-22 16:53"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://blog.wei-lee.me/"><span class="site-name">Those aren't written down are meant to be forgotten</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li>
+<a href="https://blog.wei-lee.me">Home</a>
+</li>
+<li><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
+<li><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
+<li><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
+<li><form action="https://blog.wei-lee.me/search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"> <input class="search-query" id="tipue_search_input" name="q" placeholder="Search" type="text"/></form></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1>
+<a href="https://blog.wei-lee.me/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks">
+                [Paper] A Learning-based Framework to Handle Multi-round Multi-party Influence Maximization on Social Networks
+            </a>
+</h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div class="toc">
+<ul>
+<li><a href="#1-introduction">1. Introduction</a><ul>
+<li><a href="#difference-with-others">Difference with Others</a></li>
+</ul>
+</li>
+<li><a href="#2-problem-statement">2. Problem Statement</a><ul>
+<li><a href="#def-1-competitive-linear-threshold-clt">Def 1: Competitive Linear Threshold (CLT)</a></li>
+<li><a href="#def-2-multi-round-competitive-influence-maximization-mrcim">Def 2: Multi-Round Competitive Influence Maximization (MRCIM)</a></li>
+</ul>
+</li>
+<li><a href="#4-methodology">4. Methodology</a><ul>
+<li><a href="#41-preliminary-reinforcement-learning">4.1 Preliminary: Reinforcement Learning</a></li>
+<li><a href="#42-strategy-oriented-reinforcement-learning">4.2 Strategy-Oriented Reinforcement-Learning</a></li>
+</ul>
+</li>
+<li><a href="#43-storm-with-strategy-known">4.3 STORM with Strategy Known</a></li>
+<li><a href="#44-storm-with-strategy-unknown">4.4 STORM with Strategy Unknown</a><ul>
+<li><a href="#unknown-but-available-to-train">Unknown but available to train</a></li>
+<li><a href="#unknown">Unknown</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="span8 article-content">
+<p><a href="http://dl.acm.org/citation.cfm?id=2783392">Paper</a></p>
+<!--more-->
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li>
+<p>Problem Description</p>
+<ul>
+<li>A company intends to select a small set of customers to distribute praises of their trial products to a larger group</li>
+</ul>
+</li>
+<li>
+<p>Influence maximization</p>
+<ul>
+<li>Goal: Identify a small subset of seed nodes that have the best chance to influence the most number of nodes</li>
+<li>Competitive Influence Maximization (CIM)</li>
+</ul>
+</li>
+<li>
+<p>Assumption</p>
+<ul>
+<li>Influence is exclusive (Once a node is influenced by one party, it will not be influenced again)</li>
+<li>Each round all parties choose one node and then the influence propagates before the next round starts</li>
+</ul>
+</li>
+<li>
+<p>STORM (STrategy-Oriented Reinforcement-Learning based influence Maximization) performs</p>
+<ul>
+<li>Data Generation<ul>
+<li>the data, which is the experience generated through simulation by applying the current model, will become the feedbacks to refine the model for better performance</li>
+</ul>
+</li>
+<li>Model Learning</li>
+</ul>
+</li>
+</ul>
+<h3 id="difference-with-others">Difference with Others</h3>
+<ol>
+<li>Known strategy → Both know and unknown<ul>
+<li>Known or Unknown but available to compete → Train a model to learn strategy</li>
+<li>Unknown → Game-theoretical solution to seek the Nash equilibrium</li>
+</ul>
+</li>
+<li>Single-roung → Multi-round</li>
+<li>Model driven → learning-based, data-drivern</li>
+<li>Not considering different network topology → General to adapt both opponent's strategy and environment setting (e.g. underlying network topology)</li>
+</ol>
+<h2 id="2-problem-statement">2. Problem Statement</h2>
+<h3 id="def-1-competitive-linear-threshold-clt">Def 1: Competitive Linear Threshold (CLT)</h3>
+<ul>
+<li>CLT model is a multi-party diffusion model</li>
+<li>The party who has the highest influence occupied the node</li>
+</ul>
+<h3 id="def-2-multi-round-competitive-influence-maximization-mrcim">Def 2: Multi-Round Competitive Influence Maximization (MRCIM)</h3>
+<ul>
+<li>Max its overall relative influence</li>
+</ul>
+<h2 id="4-methodology">4. Methodology</h2>
+<ul>
+<li>NP-hardness of MRCIM → looks for approxmiate solution</li>
+<li>Max the inflence for each round does not guarantee overall max<ul>
+<li>Due to the fact that each round are not independent</li>
+</ul>
+</li>
+</ul>
+<h3 id="41-preliminary-reinforcement-learning">4.1 Preliminary: Reinforcement Learning</h3>
+<ul>
+<li>Learn a policy <span class="math">\(\pi(s)\)</span> to determine which action to take state s (environment)</li>
+<li>How to estimated <span class="math">\(\pi\)</span>?<ul>
+<li>Expected Accmulated Reward of a state (V function)<ul>
+<li><span class="math">\( V^\pi(s) = E_\pi\{R_t|S_t=s\}=...\)</span></li>
+</ul>
+</li>
+<li>Expected Accmulated Reward of a state-action pair (Q function)<ul>
+<li><span class="math">\( Q^\pi(s, a) = E_\pi\{R_t|S_t=s, a_t=a\}=...\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The optimal <span class="math">\(\pi\)</span> can be obtained through Q functinon</p>
+<p><span class="math">\( \pi = \arg \min_{a\in A}Q(s,a)\)</span></p>
+<p>(i.e. For all "a" in A, find the "a" such that min Q(s, a))</p>
+<h3 id="42-strategy-oriented-reinforcement-learning">4.2 Strategy-Oriented Reinforcement-Learning</h3>
+<h4>Setup</h4>
+<ul>
+<li>Env<ul>
+<li>Influence propagation process</li>
+</ul>
+</li>
+<li>Reward<ul>
+<li>Delay Reward: The difference of activated nodes between parties at the last round<ul>
+<li>After the last round, rewards are propagated to the previous states through Q-function updating</li>
+<li>Slow but more accurate</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Action<ul>
+<li><del>Choosing certain node to activate</del><ul>
+<li>too many</li>
+<li>overfit</li>
+</ul>
+</li>
+<li>Single Party IM strategies<ul>
+<li>Namely, which strategy to choose given the current state</li>
+<li>The size can be reduced to strategies chosen</li>
+<li>Chosen Strategies<ul>
+<li>sub-greedy</li>
+<li>degree-first</li>
+<li>block</li>
+<li>max-weight</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>State<ul>
+<li>Represents<ul>
+<li>network</li>
+<li>environment status</li>
+</ul>
+</li>
+<li><del>record the occupation status of all nodes</del><ul>
+<li><span class="math">\(3^{|V|}\)</span>, too many</li>
+<li>overfit</li>
+</ul>
+</li>
+<li>Features Designed<ul>
+<li>Number of free nodes</li>
+<li>Sum of degrees of all nodes</li>
+<li>Sum of weight of the edges for which bot h vertices are free</li>
+<li>Max degree among all free nodes</li>
+<li>Max sum of free out-edge weight of a node among nodes which are the first player's neighbors</li>
+<li>Second player's</li>
+<li>Max activated nodes of a node for the first player alter two rounds of influence propagation</li>
+<li>Second player's</li>
+</ul>
+</li>
+<li>The feautres are quantize into<ul>
+<li>low</li>
+<li>medium</li>
+<li>high</li>
+</ul>
+</li>
+<li>Totally, <span class="math">\(3^9\)</span> states</li>
+</ul>
+</li>
+</ul>
+<h4>Data For Training</h4>
+<ul>
+<li>Propagation model is known (e.g. LT in the experiments)</li>
+<li>Strategies served as actions are predefined</li>
+</ul>
+<p>In training phase, train the agent against a certain strategy and see how it performs on the given network<br/>
+These data can be used to learn the value functions</p>
+<h4>Training Against Opponents</h4>
+<ul>
+<li>Opponent Strategy<ul>
+<li>Known: Simulate the strategy during training</li>
+<li>Unknown but available during training: Same as above</li>
+<li>Unknown: More General Model in 4.4</li>
+</ul>
+</li>
+</ul>
+<h4>Phase</h4>
+<ul>
+<li>Phase 1: Training<ul>
+<li>The agent update its Q function from the simulation experiences throughout the training rounds</li>
+<li>Update <span class="math">\(\pi\)</span> in the meantime</li>
+</ul>
+</li>
+<li>Phase 2: Competition<ul>
+<li>The agent would not update Q-table</li>
+<li>Generates <span class="math">\(\pi\)</span> according to Q-table</li>
+</ul>
+</li>
+</ul>
+<h2 id="43-storm-with-strategy-known">4.3 STORM with Strategy Known</h2>
+<ul>
+<li>Training the model compete against the strategy to learn <span class="math">\(\pi\)</span></li>
+<li>STORM-Q<ul>
+<li>Update Q-function following the concept of Q-learning<ul>
+<li>Q-Learning: <span class="math">\(Q(S_t, a_t) = Q(S_t, a_t) + \alpha * (r_{t+1} + \gamma * max_{a}Q(S_{t+1}, a) -Q(S_t, a_t))\)</span></li>
+</ul>
+</li>
+<li><span class="math">\(\epsilon\)</span>-greedy<ul>
+<li>Determine strategies on the current policy derived from Q-table.</li>
+<li>Explore the new directions to avoid local optimum</li>
+</ul>
+</li>
+<li>Pure Strategy<ul>
+<li>The most likely strategy is chosen</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>$ Algorithm $</p>
+<h2 id="44-storm-with-strategy-unknown">4.4 STORM with Strategy Unknown</h2>
+<h3 id="unknown-but-available-to-train">Unknown but available to train</h3>
+<ul>
+<li>The differece between the known case is that experience cannot be obtained through simulation</li>
+<li>Train against unknown opponent's strategy during competition<ul>
+<li>It's feasible because STORM-Q only needs to know the seed-selection outcoms of the opponent to update the Q-table, not exact strategy it takes</li>
+</ul>
+</li>
+</ul>
+<h3 id="unknown">Unknown</h3>
+<ul>
+<li>Goal: Create a general model to compete a variety of rational strategies</li>
+<li>Assumption: The oppoent is rational (Wants to max influence and knows its oppoent wants so)</li>
+<li>STORM-QQ<ul>
+<li>Two STROM-Q compete and update Q-tabale at the same time</li>
+<li>Using current Q-table during training phase</li>
+<li>Pure Strategy<ul>
+<li>Does Not guarantee that equilibrium exists in MRCIM</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>STORM-MM</p>
+<ul>
+<li>Mix Strategy (Samples an action from the distribution of actions in each state)</li>
+<li>In two-player zero-sum game<ul>
+<li>Nash equilibrium is graranteed to exist with miexed strategies</li>
+<li>Use MINMAX theorem to find the equilibrium</li>
+</ul>
+</li>
+<li><span class="math">\(Q(s, a, o)\)</span>: The reward of first party when using strategy <span class="math">\(a\)</span> against oppoent's strategy <span class="math">\(o\)</span> in state <span class="math">\(s\)</span></li>
+<li><span class="math">\(Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma V(s_{t+1})]\)</span></li>
+<li>Operations  Research</li>
+</ul>
+</li>
+<li>
+<p>The differece between STROM-QQ and STORM-MM</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>STROM-QQ</th>
+<th>STROM-MM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max the reward in their own Q-table</td>
+<td>Finds equilibrium with one Q-table and determines both side's <span class="math">\(a\)</span> at the same time</td>
+</tr>
+<tr>
+<td>Pure Strategies</td>
+<td>Mixed Strategies</td>
+</tr>
+<tr>
+<td>Choose strategy by greedy</td>
+<td>Samples from the mixed strategy <span class="math">\(\pi_a\)</span> or <span class="math">\(\pi_o\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Ideally, they should have similar result in two-party MRCIM. In practice, the result might not due to<ul>
+<li>STORM-QQ does not guarantee equilibrium</li>
+<li>Although equilibrium exists in STORM-MM. It does not guarantee to be found due to lack of training data or bad init or such problems.</li>
+</ul>
+</li>
+</ul>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+<p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=%5BPaper%5D%20A%20Learning-based%20Framework%20to%20Handle%20Multi-round%20Multi-party%20Influence%20Maximization%20on%20Social%20Networks&amp;url=https%3A//blog.wei-lee.me/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks&amp;hashtags=paper,social-network,machine-learning,game-theory" rel="nofollow noopener noreferrer" target="_blank" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" rel="nofollow noopener noreferrer" target="_blank" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=%5BPaper%5D%20A%20Learning-based%20Framework%20to%20Handle%20Multi-round%20Multi-party%20Influence%20Maximization%20on%20Social%20Networks&amp;body=https%3A//blog.wei-lee.me/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" rel="nofollow noopener noreferrer" target="_blank" title="Share via Email">Email</a>
+<section>
+<h6 style="display:none;">Comments</h6>
+<p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle disqus-comment-count comment-count collapsed" data-parent="#accordion2" data-toggle="collapse" href="https://blog.wei-lee.me/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks#comment_thread" id="comment-accordion-toggle">
+                    Comments
+                </a>
+</div>
+<div class="accordion-body collapse" id="comment_thread">
+<div class="accordion-inner">
+<div class="comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2016/08/a-learning-based-framework-to-handle-multi-round-multi-party-inflence-maximization-on-social-networks" data-label="comment" data-repo="Lee-W/main-blog" data-theme="" src="https://utteranc.es/client.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr/>
+</p></div>
+<section class="span2" id="article-sidebar">
+<h4>Published</h4>
+<time datetime="2016-08-22T16:53:00+08:00" itemprop="dateCreated">2016/08/22 - Mon</time>
+<h4>Read Time</h4>
+                4 min
+            <h4>Category</h4>
+<a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="https://blog.wei-lee.me/tags.html#game-theory-ref">Game Theory
+                    <span class="superscript">2</span>
+</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html#machine-learning-ref">Machine Learning
+                    <span class="superscript">5</span>
+</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html#paper-ref">Paper
+                    <span class="superscript">5</span>
+</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html#social-network-ref">Social Network
+                    <span class="superscript">2</span>
+</a></li>
+</ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+<a href="https://tw.linkedin.com/in/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="LinkedIn" fill="#fff" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#0077b5" height="512" rx="15%" width="512"></rect><circle cx="142" cy="138" r="37"></circle><path d="M244 194v198M142 194v198" stroke="#fff" stroke-width="66"></path><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path></svg>
+</a>
+<a href="https://github.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+<a href="https://gitlab.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitLab" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#30353e" height="512" rx="15%" width="512"></rect><path d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133" fill="#e24329"></path><path d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z" fill="#fc6d26"></path><path d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z" fill="#fca326"></path></svg>
+</a>
+<a href="https://twitter.com/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://wei-lee.me/feeds/all.atom.xml" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="RSS" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#f80" height="512" rx="15%" width="512"></rect><circle cx="145" cy="367" fill="#fff" r="35"></circle><path d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276" fill="none" stroke="#fff" stroke-width="60"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="span1"></div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0"/>
+</a>
+<br/>
+This work is licensed under a
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+    Creative Commons Attribution 4.0 International License
+</a>.
+
+    </div>
+<div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican Home Page">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Theme Elegant Home Page">Elegant</a>
+</div>
+</footer> <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+</body>
+<!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
