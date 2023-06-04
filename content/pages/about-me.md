@@ -17,7 +17,8 @@ slug: about-me
 
 ## Work Experience
 **[Feb 2023 - Present] Software Engineer, [astronomer](https://www.astronomer.io/)**
-* apache-airflow
+
+* [apache-airflow](https://github.com/apache/airflow/)
     * Fixed a circular import error prior to releasing new airflow providers ([#31379](https://github.com/apache/airflow/pull/31379))
     * Fixed an Amazon provider bug due to new airflow providers release ([#31482](https://github.com/apache/airflow/pull/31482))
     * Integrated the AsyncSensors logic into their Sensor counterpart and lessen the maintenance burden ([#30014](https://github.com/apache/airflow/pull/30014), [#30227](https://github.com/apache/airflow/pull/30227),[#30231](https://github.com/apache/airflow/pull/30231),[#30235](https://github.com/apache/airflow/pull/30235), [#30250](https://github.com/apache/airflow/pull/30250))
