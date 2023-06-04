@@ -16,10 +16,19 @@ slug: about-me
 * **DevOps tools and others**: Docker, Kubernetes, Jenkins, GitHub Actions, Git, AWS Services
 
 ## Work Experience
-**[Apr 2017 - Present] Machine Leraning Engineer, [Rakuten USA](https://www.rakuten.com/)**
+**[Feb 2023 - Present] Software Engineer, [astronomer](https://www.astronomer.io/)**
+* apache-airflow
+    * Fixed a circular import error prior to releasing new airflow providers ([#31379](https://github.com/apache/airflow/pull/31379))
+    * Fixed an Amazon provider bug due to new airflow providers release ([#31482](https://github.com/apache/airflow/pull/31482))
+    * Integrated the AsyncSensors logic into their Sensor counterpart and lessen the maintenance burden ([#30014](https://github.com/apache/airflow/pull/30014), [#30227](https://github.com/apache/airflow/pull/30227),[#30231](https://github.com/apache/airflow/pull/30231),[#30235](https://github.com/apache/airflow/pull/30235), [#30250](https://github.com/apache/airflow/pull/30250))
+* [astronomer-providers](https://github.com/astronomer/astronomer-providers)
+    * Reduced async operator overhead by adding checks before sending the task to triggerer ([issue 1102](https://github.com/astronomer/astronomer-providers/issues/1102))
+    * Automated the deployment of integration tests and testing against the release of the airflow provider ([#987](https://github.com/astronomer/astronomer-providers/pull/987), [#1107](https://github.com/astronomer/astronomer-providers/pull/1107), [#1139](https://github.com/astronomer/astronomer-providers/pull/1139), [#1110](https://github.com/astronomer/astronomer-providers/pull/1110))
+
+**[Apr 2017 - Feb 2023] Machine Leraning Engineer, [Rakuten USA](https://www.rakuten.com/)**
 
 * Productionize machine learning projects
-    * Implemented an SQS service and gRPC services for grouping emails with similar structures and extracting user-sensitive data to increase the amount of training data without violating customer privacy regulations.
+    * Implemented SQS and gRPC services for grouping emails with similar structures and extracting user-sensitive data to increase the amount of training data without violating customer privacy regulations.
   *  Designed and Implemented a two-stage labeling system that automatically communicates between Amazon Mechanical Turk and in-house experts to generate high-quality labeled data and enhance merchandise taxonomy to increase customer conversion rate.
   * Migrated and automated the deployment process of AWS Lambda procedures that process customer lifetime value, reducing the effort of maintenance and deployment.
 * Build and maintain data pipelines on [Apache Airflow](https://airflow.apache.org/)
@@ -139,6 +148,7 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 * [commitizen-tools](https://github.com/Woile/commitizen): Maintainer
     * [commitizen](https://github.com/commitizen-tools/commitizen)
     * [commitizen_cz_template](https://github.com/commitizen-tools/commitizen_cz_template)
+* [apache/airflow](https://github.com/apache/airflow)
 * [git-extras](https://github.com/tj/git-extras)
 * [pycontw](https://github.com/pycontw)
     * [mail_handler](https://github.com/pycontw/mail_handler): Author
