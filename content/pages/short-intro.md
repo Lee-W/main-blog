@@ -1,7 +1,7 @@
 ---
 title: Short Intro
 date: 2017-02-14 12:30
-modified: 2021-09-04 18:30
+modified: 2023-06-05 09:11
 status: hidden
 slug: landing-page-about-hidden
 ---
@@ -14,8 +14,6 @@ slug: landing-page-about-hidden
 * 🔒 Locker
 * 📺 Anime Lover
 
-As a programmer, I like to automate boring stuff and high-quality code. Enjoy participating in open-source communities and contributing to open-source projects (like [commitizen-tools](https://github.com/commitizen-tools)). Love traveling and would like to use PyCon as an excuse to explore the world 😎. Have been to PyCon TW 🇹🇼, PyCon US 🇺🇸, PyCon JP 🇯🇵, PyCon CA 🇨🇦, Remote Python Pizza 🍕 and Euro Python (remotely ) 🇪🇺.
+I enjoy automating tedious tasks and creating high-quality code. Enjoy participating in open-source communities and contributing to open-source projects such as [commitizen-tools](https://github.com/commitizen-tools) is something I love. Traveling is also a passion of mine, and I often use PyCon as an opportunity to explore new places. I have attended PyCon conferences in Taiwan 🇹🇼, the United States 🇺🇸, Japan 🇯🇵, Canada 🇨🇦, Remote Python Pizza 🍕, and Euro Python (remotely) 🇪🇺.
 
-I share my tech note, book digest, and sometimes my thought here.
-
-On the other hand, if you're interested in traveling, cooking, and anime, [Meet people around the world](https://travlog.wei-lee.me/) is where I chat about this stuff.
+I share my technical notes, book digests, and occasional thoughts here. If you're interested in topics such as cooking, anime, and travel, I chat about those things on [Those things no one cares about](https://travlog.wei-lee.me/).
