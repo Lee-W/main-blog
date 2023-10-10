@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+
 PATH = "content"
 
 # Blog Conf
@@ -109,11 +110,10 @@ PLUGINS = [
     "pelican.plugins.render_math",
     "pelican.plugins.share_post",
     "pelican.plugins.seo",
-    # "search",
 ]
 ANOTHER_READ_MORE_LINK = ""
 READERS = {"html": None}
-# SEARCH_HTML_SELECTOR = "article"
+PAGEFIND_ENABLED = True
 
 # pelican-seo settings
 SEO_REPORT = True  # SEO report is enabled by default

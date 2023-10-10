@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 
 import os
+import subprocess
 import sys
 
 # This file is only used if you use `make publish` or
@@ -23,6 +24,6 @@ DELETE_OUTPUT_DIRECTORY = False
 EXTRA_PATH_METADATA = {
     "extra/CNAME": {"path": "CNAME"},
 }
-
+PAGEFIND_ENABLED = True
 # Following items are often useful when publishing
 MODERN_GOOGLE_ANALYTICS = os.environ.get("GOOGLE_ANALYTICS")
