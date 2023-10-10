@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="https://blog.wei-lee.me/theme/css/custom.css" media="screen">
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 
         <meta name="author" content="Lee-W" />
 
@@ -57,7 +58,8 @@
                                 <li ><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
                                 <li ><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
                                 <li ><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://blog.wei-lee.me/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+
+                                <li><div id="search"></div></li>
                             </ul>
                         </div>
                     </div>
@@ -264,6 +266,16 @@ This work is licensed under a
             {
                 return (query.length > 0);
             }
+        </script>
+
+        <script src="/pagefind/pagefind-ui.js"></script>
+        <script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+                new PagefindUI({
+                    element: "#search",
+                    showImages: false,
+                });
+            });
         </script>
     </body>
     <!-- Theme: Elegant built for Pelican
