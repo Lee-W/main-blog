@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" rel="stylesheet"/>
+<link href="https://blog.wei-lee.me/theme/css/elegant.prod.9e9d5ce754.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<meta content="Wei Lee" name="author">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="blog, Tech, " name="keywords">
+<meta content="Pagefind UI 我的超人  - 你也許不會發現，但這裡多了搜尋功能 " property="og:title">
+<meta content="https://blog.wei-lee.me/posts/tech/2023/11/pagefind-ui" property="og:url"/>
+<meta content="當我說搜尋功能，我指的是真的可以用的搜尋功能" property="og:description"/>
+<meta content="Those aren't written down are meant to be forgotten" property="og:site_name"/>
+<meta content="Wei Lee" property="og:article:author"/>
+<meta content="2023-11-01T23:10:00+08:00" property="og:article:published_time"/>
+<meta content="Pagefind UI 我的超人  - 你也許不會發現，但這裡多了搜尋功能 " name="twitter:title"/>
+<meta content="當我說搜尋功能，我指的是真的可以用的搜尋功能" name="twitter:description"/>
+<title>Pagefind UI 我的超人  - 你也許不會發現，但這裡多了搜尋功能  · Those aren't written down are meant to be forgotten
+</title>
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten - Full Atom Feed" type="application/atom+xml">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3J7XQ46QH5');
+</script>
+</link></meta></meta></meta></meta><link href="https://blog.wei-lee.me/posts/tech/2023/11/pagefind-ui" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2023", "item": "https://blog.wei-lee.me/posts/tech/2023"}, {"@type": "ListItem", "position": 5, "name": "11", "item": "https://blog.wei-lee.me/posts/tech/2023/11"}, {"@type": "ListItem", "position": 6, "name": "Pagefind ui", "item": "https://blog.wei-lee.me/posts/tech/2023/11/pagefind-ui"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2023/11/pagefind-ui/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "Pagefind UI 我的超人", "about": "Tech", "datePublished": "2023-11-01 23:10"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://blog.wei-lee.me/"><span class="site-name">Those aren't written down are meant to be forgotten</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li>
+<a href="https://blog.wei-lee.me">Home</a>
+</li>
+<li><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
+<li><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
+<li><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
+<li><div id="search"></div></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article data-pagefind-body="" itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1>
+<a href="https://blog.wei-lee.me/posts/tech/2023/11/pagefind-ui">
+                Pagefind UI 我的超人
+                <small class="subtitle">
+                    你也許不會發現，但這裡多了搜尋功能
+                </small>
+</a>
+</h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div class="toc">
+<ul>
+<li><a href="#pagefind-ui">什麼是 Pagefind UI 呢</a></li>
+<li><a href="#pagefind-ui-pelican">如何將 Pagefind UI 整合進 Pelican？</a></li>
+<li><a href="#search-index-github-actions">將產生 search index 整合進 GitHub Actions</a></li>
+<li><a href="#_1">看起來如何呢？</a></li>
+<li><a href="#_2">那些你不需要知道的背後故事</a></li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="span8 article-content">
+<p>當我說搜尋功能，我指的是真的可以用的搜尋功能</p>
+<!--more-->
+<p>會這麼說是因為之前的真的是不能用的 🥲</p>
+<h3 id="pagefind-ui">什麼是 <a href="https://pagefind.app/">Pagefind UI</a> 呢</h3>
+<p>根據官網的介紹</p>
+<blockquote>
+<p>Pagefind is a fully static search library that aims to perform well on large sites, while using as little of your users’ bandwidth as possible, and without hosting any infrastructure.</p>
+</blockquote>
+<ul>
+<li>Pagefind 是<ul>
+<li><strong>靜態搜尋的函式庫</strong></li>
+<li>即使在很大的網站也有不錯的表現</li>
+<li>盡可能的減少使用者的頻寬</li>
+<li><strong>不用架任何的 infra</strong></li>
+</ul>
+</li>
+</ul>
+<p>再往下滑一點還有很多酷功能，但我大多還沒用到 😆<br/>
+其中比較重要的是多語言支援，尤其是中文</p>
+<p>而設定上很簡單，也是我喜歡 Pagefind UI 的一點</p>
+<p>我的 blog 都是使用 <a href="https://getpelican.com/">Pelican</a> 產生，並 host 在 Github Pages 上<br/>
+下一段會分享如何將 Pagefind UI 整合進 Pelican<br/>
+關於 Pelican 的細節不會贅述太多</p>
+<h2 id="pagefind-ui-pelican">如何將 Pagefind UI 整合進 Pelican？</h2>
+<p>首先可以在 pelican 的設定檔（i.e., <code>pelicanconf.py</code>）加入 <code>PAGEFIND_ENABLED</code> 變數<br/>
+用它來決定是否使用 Pagefind UI</p>
+<p>再來要去修改主題<br/>
+以我使用的主題 <a href="https://github.com/Lee-W/elegant">elegant</a> 為例<br/>
+需要將載入 <a href="https://github.com/Lee-W/elegant/blob/blog-pagefindui-example/templates/base.html#L18-L20">css</a> 和 <a href="https://github.com/Lee-W/elegant/blob/blog-pagefindui-example/templates/base.html#L128-L138">js</a> 的部分加入 <a href="https://github.com/Lee-W/elegant/blob/blog-pagefindui-example/templates/base.html">templates/base.html</a></p>
+<div class="highlight"><pre><span></span><span class="cm">&lt;!--templates/base.html--&gt;</span>
+
+  {% if PAGEFIND_ENABLED|default(False) %}
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"/pagefind/pagefind-ui.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span><span class="p">&gt;</span>
+  {% endif %}
+</pre></div>
+<div class="highlight"><pre><span></span><span class="cm">&lt;!--templates/base.html--&gt;</span>
+
+  {% if PAGEFIND_ENABLED|default(True) %}
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"/pagefind/pagefind-ui.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'DOMContentLoaded'</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="ow">new</span><span class="w"> </span><span class="nx">PagefindUI</span><span class="p">({</span>
+<span class="w">              </span><span class="nx">element</span><span class="o">:</span><span class="w"> </span><span class="s2">"#search"</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">showImages</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="p">});</span>
+<span class="w">      </span><span class="p">});</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  {% endif %}
+</pre></div>
+<p>理想上應該要把這幾段拆成各自的 template，然後在 <code>templates/base.html</code> include 他們<br/>
+但我有點懶，之後想 refactor 再說</p>
+<p>搜尋區塊的改動則會根據主題的設計跟你希望如何呈現搜尋有關<br/>
+在 elegant 中是把搜尋欄放在 <a href="https://github.com/Lee-W/elegant/blob/blog-pagefindui-example/templates/base.html#L90-L92">base.html</a> 的一個項目<br/>
+所在這我用 <code>li</code> 包住 <code>&lt;div id="search"&gt;&lt;/div&gt;</code></p>
+<div class="highlight"><pre><span></span><span class="cm">&lt;!--templates/base.html--&gt;</span>
+
+{% if PAGEFIND_ENABLED %}
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"search"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+{% else %}
+</pre></div>
+<p>而在我<a href="https://travlog.wei-lee.me/">另一個 blog </a>則把它設定成獨立的頁面<br/>
+如果沒意外的話，就大功告成了<br/>
+（另一個 blog 因為 css 的調整確實有多花了點時間，但功能上是這樣就完成了）</p>
+<p>沒錯！ 就是這麼簡單</p>
+<p><img alt="" src="/images/posts-image/2023-pagefindui/easy.jpg"/></p>
+<p>如果這時候直接把 Pelican 的 local server 跑起來，你就會發現<br/>
+什麼都搜尋不到 🔍<br/>
+因為沒有產生 search index 給 Pagefind UI 去找</p>
+<p>而 search index 可以透過以下指令產生</p>
+<div class="highlight"><pre><span></span>npx<span class="w"> </span>-y<span class="w"> </span>pagefind<span class="w"> </span>--site<span class="w"> </span>output
+</pre></div>
+<p><code>--site</code> 後面吃的參數是 Pelican 的輸出資料夾<br/>
+預設通常是 <code>output</code></p>
+<h2 id="search-index-github-actions">將產生 search index 整合進 GitHub Actions</h2>
+<p>我的 blog 在寫完文章後，只要推上 main 分支<br/>
+GitHub Actions 就會自動幫我產出最新的 blog ，並且部署到 GitHub Pages 上</p>
+<p>為了讓 Pagefind UI 有 search index 可以找<br/>
+必須在產出 blog 跟部屬的步驟中間，加入以下的步驟讓 GitHub Actions 也幫我產生 search index</p>
+<div class="highlight"><pre><span></span><span class="w">      </span><span class="c1"># steps that build the blog</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub Action for npx</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mikeal/npx@1.0.0</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build search index</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">npx -y pagefind --site output</span>
+
+<span class="w">      </span><span class="c1"># steps that deploy the blog</span>
+</pre></div>
+<h2 id="_1">看起來如何呢？</h2>
+<p>這個 blog</p>
+<p><img alt="" src="/images/posts-image/2023-pagefindui/this-blog.jpg"/></p>
+<p><a href="https://travlog.wei-lee.me/">另一個 blog </a></p>
+<p><img alt="" src="/images/posts-image/2023-pagefindui/another-blog.jpg"/></p>
+<h2 id="_2">那些你不需要知道的背後故事</h2>
+<p>以下聽故事</p>
+<p>當初使用 <a href="https://github.com/Pelican-Elegant/elegant">elegant</a> 主題，其中一個原因就是它自帶搜尋功能（<a href="https://elegant.oncrashreboot.com/add-search">Add Search to Your Site</a>）<br/>
+結果它背後用的 <a href="https://github.com/pelican-plugins/tipue-search">tipue-search</a> 壞掉了，搜尋功能就跟著死掉了</p>
+<p>之前有想換到 <a href="https://github.com/pelican-plugins/search">pelican-search</a><br/>
+搞了好久才弄起來，但他對中文斷詞的支援很差，基本上可以當作不存在<br/>
+👉 <a href="https://github.com/jameslittle230/stork/issues/191#">Search in Chinese seems to be not working#191</a><br/>
+後來還跑去玩 <a href="https://lunrjs.com/">luar.js</a>，也是中文支援不行<br/>
+之前原本還想寫一篇 "pelican-search does not work for Madarain."<br/>
+但一直躺在草稿夾，就躺到死掉惹<br/>
+不過也算是這篇的養分，是否也能算是某種轉生呢 🤔</p>
+<p>最近心血來潮就想再回來看 <a href="https://github.com/pelican-plugins/search">pelican-search</a><br/>
+然後就找到 <a href="https://github.com/pelican-plugins/search/issues/35"> Consider alternatives to Stork #35 </a> ...<br/>
+pelican-search 背後的 Strok 將不再維護 🥲</p>
+<p>只好回去翻翻看 <a href="https://github.com/getpelican/pelican-themes">pelican-themes</a> 中，比較有在更新的主題有沒有支援搜尋的<br/>
+還真的讓我找到 <a href="https://github.com/hrw/pelican-haerwu-theme/tree/ea01213468a775dcd14e6aa5800f654af5670bc5">pelican-haerwu-theme</a></p>
+<p><img alt="" src="/images/posts-image/2023-pagefindui/pelican-theme.jpg"/></p>
+<p><img alt="" src="/images/posts-image/2023-pagefindui/search.jpg"/></p>
+<p>去追一下原始碼就找到 Pagefind UI<br/>
+恩，整個故事大概就是這樣</p>
+<p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=Pagefind%20UI%20%E6%88%91%E7%9A%84%E8%B6%85%E4%BA%BA%20%E4%BD%A0%E4%B9%9F%E8%A8%B1%E4%B8%8D%E6%9C%83%E7%99%BC%E7%8F%BE%EF%BC%8C%E4%BD%86%E9%80%99%E8%A3%A1%E5%A4%9A%E4%BA%86%E6%90%9C%E5%B0%8B%E5%8A%9F%E8%83%BD&amp;url=https%3A//blog.wei-lee.me/posts/tech/2023/11/pagefind-ui&amp;hashtags=blog" rel="nofollow noopener noreferrer" target="_blank" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2023/11/pagefind-ui" rel="nofollow noopener noreferrer" target="_blank" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Pagefind%20UI%20%E6%88%91%E7%9A%84%E8%B6%85%E4%BA%BA%20%E4%BD%A0%E4%B9%9F%E8%A8%B1%E4%B8%8D%E6%9C%83%E7%99%BC%E7%8F%BE%EF%BC%8C%E4%BD%86%E9%80%99%E8%A3%A1%E5%A4%9A%E4%BA%86%E6%90%9C%E5%B0%8B%E5%8A%9F%E8%83%BD&amp;body=https%3A//blog.wei-lee.me/posts/tech/2023/11/pagefind-ui" rel="nofollow noopener noreferrer" target="_blank" title="Share via Email">Email</a>
+<section>
+<h6 style="display:none;">Comments</h6>
+<p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle disqus-comment-count comment-count collapsed" data-parent="#accordion2" data-toggle="collapse" href="https://blog.wei-lee.me/posts/tech/2023/11/pagefind-ui#comment_thread" id="comment-accordion-toggle">
+                    Comments
+                </a>
+</div>
+<div class="accordion-body collapse" id="comment_thread">
+<div class="accordion-inner">
+<div class="comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2023/11/pagefind-ui" data-label="comment" data-repo="Lee-W/main-blog" data-theme="" src="https://utteranc.es/client.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr/>
+</p></div>
+<section class="span2" id="article-sidebar">
+<h4>Published</h4>
+<time datetime="2023-11-01T23:10:00+08:00" itemprop="dateCreated">2023/11/01 - Wed</time>
+<h4>Read Time</h4>
+                2 min
+            <h4>Category</h4>
+<a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="https://blog.wei-lee.me/tags.html#blog-ref">blog
+                    <span class="superscript">3</span>
+</a></li>
+</ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+<a href="https://tw.linkedin.com/in/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="LinkedIn" fill="#fff" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#0077b5" height="512" rx="15%" width="512"></rect><circle cx="142" cy="138" r="37"></circle><path d="M244 194v198M142 194v198" stroke="#fff" stroke-width="66"></path><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path></svg>
+</a>
+<a href="https://github.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+<a href="https://gitlab.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitLab" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#30353e" height="512" rx="15%" width="512"></rect><path d="M84 215l43-133c2-7 12-7 14 0l115 353L371 82c2-7 12-7 14 0l43 133" fill="#e24329"></path><path d="M256 435L84 215h100.4zm71.7-220H428L256 435l71.6-220z" fill="#fc6d26"></path><path d="M84 215l-22 67c-2 6 0 13 6 16l188 137zm344 0l22 67c2 6 0 13-6 16L256 435z" fill="#fca326"></path></svg>
+</a>
+<a href="https://twitter.com/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://wei-lee.me/feeds/all.atom.xml" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="RSS" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#f80" height="512" rx="15%" width="512"></rect><circle cx="145" cy="367" fill="#fff" r="35"></circle><path d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276" fill="none" stroke="#fff" stroke-width="60"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="span1"></div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0"/>
+</a>
+<br/>
+This work is licensed under a
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+    Creative Commons Attribution 4.0 International License
+</a>.
+
+    </div>
+<div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican Home Page">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Theme Elegant Home Page">Elegant</a>
+</div>
+</footer> <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+                new PagefindUI({
+                    element: "#search",
+                    showImages: false,
+                });
+            });
+        </script>
+</body>
+<!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

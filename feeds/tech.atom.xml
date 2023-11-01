@@ -1,5 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2023-08-13T11:45:00+08:00</updated><entry><title>Atomic Commits: An Easy &amp; Proven Way to Manage &amp; Automate Release Process</title><link href="https://blog.wei-lee.me/posts/tech/2023/08/atomic-commits-coscup-2023" rel="alternate"></link><published>2023-08-13T11:45:00+08:00</published><updated>2023-08-13T11:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2023-08-13:/posts/tech/2023/08/atomic-commits-coscup-2023</id><summary type="html">&lt;p&gt;隨著 &lt;a href="https://github.com/commitizen-tools/commitizen"&gt;commitizen&lt;/a&gt; v3 的發佈和今年辦在日本的 PyCon APAC&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2023-11-01T23:10:00+08:00</updated><entry><title>Pagefind UI 我的超人</title><link href="https://blog.wei-lee.me/posts/tech/2023/11/pagefind-ui" rel="alternate"></link><published>2023-11-01T23:10:00+08:00</published><updated>2023-11-01T23:10:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2023-11-01:/posts/tech/2023/11/pagefind-ui</id><summary type="html">&lt;p&gt;當我說搜尋功能，我指的是真的可以用的搜尋功能&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;當我說搜尋功能，我指的是真的可以用的搜尋功能&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;會這麼說是因為之前的真的是不能用的 🥲&lt;/p&gt;
+
+&lt;h3 id="pagefind-ui"&gt;什麼是 &lt;a href="https://pagefind.app/"&gt;Pagefind UI&lt;/a&gt; 呢&lt;/h3&gt;
+&lt;p&gt;根據官網的介紹&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Pagefind is a fully static search library that aims to perform well on large sites, while using as little of your users’ bandwidth as possible, and without hosting any infrastructure.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Pagefind 是&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;靜態搜尋的函式庫&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;即使在很大的網站也有不錯的表現&lt;/li&gt;
+&lt;li&gt;盡可能的減少使用者的頻寬&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不用架任何的 infra&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;再往下滑一點還有很多酷功能，但我大多還沒用到 😆&lt;br/&gt;
+其中比較重要的是多語言支援，尤其是中文&lt;/p&gt;
+&lt;p&gt;而設定上很簡單，也是我喜歡 Pagefind UI 的一點&lt;/p&gt;
+&lt;p&gt;我的 blog 都是使用 &lt;a href="https://getpelican.com/"&gt;Pelican&lt;/a&gt; 產生，並 host 在 Github Pages 上&lt;br/&gt;
+下一段會分享如何將 Pagefind UI 整合進 Pelican&lt;br/&gt;
+關於 Pelican 的細節不會贅述太多&lt;/p&gt;
+&lt;h2 id="pagefind-ui-pelican"&gt;如何將 Pagefind UI 整合進 Pelican？&lt;/h2&gt;
+&lt;p&gt;首先可以在 pelican 的設定檔（i.e., &lt;code&gt;pelicanconf.py&lt;/code&gt;）加入 &lt;code&gt;PAGEFIND_ENABLED&lt;/code&gt; 變數&lt;br/&gt;
+用它來決定是否使用 Pagefind UI&lt;/p&gt;
+&lt;p&gt;再來要去修改主題&lt;br/&gt;
+以我使用的主題 &lt;a href="https://github.com/Lee-W/elegant"&gt;elegant&lt;/a&gt; 為例&lt;br/&gt;
+需要將載入 &lt;a href="https://github.com/Lee-W/elegant/blob/blog-pagefindui-example/templates/base.html#L18-L20"&gt;css&lt;/a&gt; 和 &lt;a href="https://github.com/Lee-W/elegant/blob/blog-pagefindui-example/templates/base.html#L128-L138"&gt;js&lt;/a&gt; 的部分加入 &lt;a href="https://github.com/Lee-W/elegant/blob/blog-pagefindui-example/templates/base.html"&gt;templates/base.html&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cm"&gt;&amp;lt;!--templates/base.html--&amp;gt;&lt;/span&gt;
+
+  {% if PAGEFIND_ENABLED|default(False) %}
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/pagefind/pagefind-ui.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  {% endif %}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cm"&gt;&amp;lt;!--templates/base.html--&amp;gt;&lt;/span&gt;
+
+  {% if PAGEFIND_ENABLED|default(True) %}
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/pagefind/pagefind-ui.js"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addEventListener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'DOMContentLoaded'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;event&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;PagefindUI&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="nx"&gt;element&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"#search"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="nx"&gt;showImages&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  {% endif %}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;理想上應該要把這幾段拆成各自的 template，然後在 &lt;code&gt;templates/base.html&lt;/code&gt; include 他們&lt;br/&gt;
+但我有點懶，之後想 refactor 再說&lt;/p&gt;
+&lt;p&gt;搜尋區塊的改動則會根據主題的設計跟你希望如何呈現搜尋有關&lt;br/&gt;
+在 elegant 中是把搜尋欄放在 &lt;a href="https://github.com/Lee-W/elegant/blob/blog-pagefindui-example/templates/base.html#L90-L92"&gt;base.html&lt;/a&gt; 的一個項目&lt;br/&gt;
+所在這我用 &lt;code&gt;li&lt;/code&gt; 包住 &lt;code&gt;&amp;lt;div id="search"&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cm"&gt;&amp;lt;!--templates/base.html--&amp;gt;&lt;/span&gt;
+
+{% if PAGEFIND_ENABLED %}
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"search"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+{% else %}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;而在我&lt;a href="https://travlog.wei-lee.me/"&gt;另一個 blog &lt;/a&gt;則把它設定成獨立的頁面&lt;br/&gt;
+如果沒意外的話，就大功告成了&lt;br/&gt;
+（另一個 blog 因為 css 的調整確實有多花了點時間，但功能上是這樣就完成了）&lt;/p&gt;
+&lt;p&gt;沒錯！ 就是這麼簡單&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/images/posts-image/2023-pagefindui/easy.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;如果這時候直接把 Pelican 的 local server 跑起來，你就會發現&lt;br/&gt;
+什麼都搜尋不到 🔍&lt;br/&gt;
+因為沒有產生 search index 給 Pagefind UI 去找&lt;/p&gt;
+&lt;p&gt;而 search index 可以透過以下指令產生&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npx&lt;span class="w"&gt; &lt;/span&gt;-y&lt;span class="w"&gt; &lt;/span&gt;pagefind&lt;span class="w"&gt; &lt;/span&gt;--site&lt;span class="w"&gt; &lt;/span&gt;output
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;--site&lt;/code&gt; 後面吃的參數是 Pelican 的輸出資料夾&lt;br/&gt;
+預設通常是 &lt;code&gt;output&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="search-index-github-actions"&gt;將產生 search index 整合進 GitHub Actions&lt;/h2&gt;
+&lt;p&gt;我的 blog 在寫完文章後，只要推上 main 分支&lt;br/&gt;
+GitHub Actions 就會自動幫我產出最新的 blog ，並且部署到 GitHub Pages 上&lt;/p&gt;
+&lt;p&gt;為了讓 Pagefind UI 有 search index 可以找&lt;br/&gt;
+必須在產出 blog 跟部屬的步驟中間，加入以下的步驟讓 GitHub Actions 也幫我產生 search index&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;# steps that build the blog&lt;/span&gt;
+
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;GitHub Action for npx&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;mikeal/npx@1.0.0&lt;/span&gt;
+
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Build search index&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;|&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="no"&gt;npx -y pagefind --site output&lt;/span&gt;
+
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;# steps that deploy the blog&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="_1"&gt;看起來如何呢？&lt;/h2&gt;
+&lt;p&gt;這個 blog&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/images/posts-image/2023-pagefindui/this-blog.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://travlog.wei-lee.me/"&gt;另一個 blog &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/images/posts-image/2023-pagefindui/another-blog.jpg"/&gt;&lt;/p&gt;
+&lt;h2 id="_2"&gt;那些你不需要知道的背後故事&lt;/h2&gt;
+&lt;p&gt;以下聽故事&lt;/p&gt;
+&lt;p&gt;當初使用 &lt;a href="https://github.com/Pelican-Elegant/elegant"&gt;elegant&lt;/a&gt; 主題，其中一個原因就是它自帶搜尋功能（&lt;a href="https://elegant.oncrashreboot.com/add-search"&gt;Add Search to Your Site&lt;/a&gt;）&lt;br/&gt;
+結果它背後用的 &lt;a href="https://github.com/pelican-plugins/tipue-search"&gt;tipue-search&lt;/a&gt; 壞掉了，搜尋功能就跟著死掉了&lt;/p&gt;
+&lt;p&gt;之前有想換到 &lt;a href="https://github.com/pelican-plugins/search"&gt;pelican-search&lt;/a&gt;&lt;br/&gt;
+搞了好久才弄起來，但他對中文斷詞的支援很差，基本上可以當作不存在&lt;br/&gt;
+👉 &lt;a href="https://github.com/jameslittle230/stork/issues/191#"&gt;Search in Chinese seems to be not working#191&lt;/a&gt;&lt;br/&gt;
+後來還跑去玩 &lt;a href="https://lunrjs.com/"&gt;luar.js&lt;/a&gt;，也是中文支援不行&lt;br/&gt;
+之前原本還想寫一篇 "pelican-search does not work for Madarain."&lt;br/&gt;
+但一直躺在草稿夾，就躺到死掉惹&lt;br/&gt;
+不過也算是這篇的養分，是否也能算是某種轉生呢 🤔&lt;/p&gt;
+&lt;p&gt;最近心血來潮就想再回來看 &lt;a href="https://github.com/pelican-plugins/search"&gt;pelican-search&lt;/a&gt;&lt;br/&gt;
+然後就找到 &lt;a href="https://github.com/pelican-plugins/search/issues/35"&gt; Consider alternatives to Stork #35 &lt;/a&gt; ...&lt;br/&gt;
+pelican-search 背後的 Strok 將不再維護 🥲&lt;/p&gt;
+&lt;p&gt;只好回去翻翻看 &lt;a href="https://github.com/getpelican/pelican-themes"&gt;pelican-themes&lt;/a&gt; 中，比較有在更新的主題有沒有支援搜尋的&lt;br/&gt;
+還真的讓我找到 &lt;a href="https://github.com/hrw/pelican-haerwu-theme/tree/ea01213468a775dcd14e6aa5800f654af5670bc5"&gt;pelican-haerwu-theme&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/images/posts-image/2023-pagefindui/pelican-theme.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/images/posts-image/2023-pagefindui/search.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;去追一下原始碼就找到 Pagefind UI&lt;br/&gt;
+恩，整個故事大概就是這樣&lt;/p&gt;</content><category term="Tech"></category><category term="blog"></category></entry><entry><title>Atomic Commits: An Easy &amp; Proven Way to Manage &amp; Automate Release Process</title><link href="https://blog.wei-lee.me/posts/tech/2023/08/atomic-commits-coscup-2023" rel="alternate"></link><published>2023-08-13T11:45:00+08:00</published><updated>2023-08-13T11:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2023-08-13:/posts/tech/2023/08/atomic-commits-coscup-2023</id><summary type="html">&lt;p&gt;隨著 &lt;a href="https://github.com/commitizen-tools/commitizen"&gt;commitizen&lt;/a&gt; v3 的發佈和今年辦在日本的 PyCon APAC&lt;br&gt;
 我一時被沖昏了頭&lt;br&gt;
 想說反正都要參加 PyCon APAC 了&lt;br&gt;
 就來投個稿，如果上了還可以上去講&lt;/p&gt;
