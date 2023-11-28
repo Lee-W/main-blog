@@ -160,9 +160,9 @@ pipenv<span class="w"> </span>install<span class="w"> </span>commitizen<span cla
 <p><img alt="cz-init-6.jpg" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-6.jpg"/></p>
 <p>相對應的設定也會加入到設定檔 <code>pyproject.toml</code> (或 <code>.cz.toml</code>)</p>
 <div class="highlight"><pre><span></span><span class="k">[tool.commitizen]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"cz_conventional_commits"</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"1.0.2"</span>
-<span class="n">tag_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"$version"</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"cz_conventional_commits"</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"1.0.2"</span>
+<span class="n">tag_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"$version"</span>
 </pre></div>
 <h2 id="commitizen_2">使用 Commitizen</h2>
 <div class="highlight"><pre><span></span><span class="c1"># 使用 commitizen 做 commit</span>
@@ -264,7 +264,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <h3 id="_2">直接在設定檔設定</h3>
 <p>首先必須先將 name 指定到 <code>cz_customize</code> 這套 commit 規範</p>
 <div class="highlight"><pre><span></span><span class="k">[tool.commitizen]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"cz_customize"</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"cz_customize"</span>
 </pre></div>
 <p>再來要設定下面的欄位<br/>
 其中最重要的是 <code>message_template</code>（支援<a href="https://jinja.palletsprojects.com/en/2.11.x/">Jinja</a>）<br/>
@@ -272,16 +272,16 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 需要 <code>change_type</code>, <code>show_message</code>, <code>message</code> 三個變數來產生 commit message</p>
 <p>（p.s. 如果想要使用驗證 commit message 的功能，則要更新 <code>schema_pattern</code>）</p>
 <div class="highlight"><pre><span></span><span class="k">[tool.commitizen.customize]</span>
-<span class="n">message_template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"{{change_type}}:{% if show_message %} {{message}}{% endif %}"</span>
-<span class="n">example</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"feature: this feature enable customize through config file"</span>
-<span class="n">schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"&lt;type&gt;: &lt;body&gt;"</span>
-<span class="n">schema_pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"(feature|bug fix):(\\s.*)"</span>
-<span class="n">bump_pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"^(break|new|fix|hotfix)"</span>
-<span class="n">bump_map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"break"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"MAJOR"</span><span class="p">,</span><span class="w"> </span><span class="s">"new"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"MINOR"</span><span class="p">,</span><span class="w"> </span><span class="s">"fix"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"PATCH"</span><span class="p">,</span><span class="w"> </span><span class="s">"hotfix"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"PATCH"</span><span class="p">}</span>
-<span class="n">info_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"cz_customize_info.txt"</span>
-<span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"""</span>
-<span class="s">This is customized info</span>
-<span class="s">"""</span>
+<span class="n">message_template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"{{change_type}}:{% if show_message %} {{message}}{% endif %}"</span>
+<span class="n">example</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"feature: this feature enable customize through config file"</span>
+<span class="n">schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&lt;type&gt;: &lt;body&gt;"</span>
+<span class="n">schema_pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"(feature|bug fix):(</span><span class="se">\\</span><span class="s2">s.*)"</span>
+<span class="n">bump_pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"^(break|new|fix|hotfix)"</span>
+<span class="n">bump_map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">"break"</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"MAJOR"</span><span class="p">,</span><span class="w"> </span><span class="s2">"new"</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"MINOR"</span><span class="p">,</span><span class="w"> </span><span class="s2">"fix"</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"PATCH"</span><span class="p">,</span><span class="w"> </span><span class="s2">"hotfix"</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"PATCH"</span><span class="p">}</span>
+<span class="n">info_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"cz_customize_info.txt"</span>
+<span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"""</span>
+<span class="s2">This is customized info</span>
+<span class="s2">"""</span>
 </pre></div>
 <p>變數要在 <code>[[tool.commitizen.customize.questions]]</code> 的區段作定義<br/>
 背後所使用的套件是 <a href="https://github.com/tmbo/questionary">questionary</a></p>
@@ -292,20 +292,20 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <li>其他欄位 (e.g., <code>choice</code>) 則是靠 <code>type</code> 來決定是否需要</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="k">[[tool.commitizen.customize.questions]]</span>
-<span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"list"</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"change_type"</span>
-<span class="n">choices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"feature"</span><span class="p">,</span><span class="w"> </span><span class="s">"bug fix"</span><span class="p">]</span>
-<span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Select the type of change you are committing"</span>
+<span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"list"</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"change_type"</span>
+<span class="n">choices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"feature"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bug fix"</span><span class="p">]</span>
+<span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Select the type of change you are committing"</span>
 
 <span class="k">[[tool.commitizen.customize.questions]]</span>
-<span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"input"</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"message"</span>
-<span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Body."</span>
+<span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"input"</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"message"</span>
+<span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Body."</span>
 
 <span class="k">[[tool.commitizen.customize.questions]]</span>
-<span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"confirm"</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"show_message"</span>
-<span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Do you want to add body message in commit?"</span>
+<span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"confirm"</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"show_message"</span>
+<span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Do you want to add body message in commit?"</span>
 </pre></div>
 <p>設定完之後，再使用 <code>cz commit</code> 就可以看到客製化過後的問題了<br/>
 <img alt="customize" src="/images/posts-image/2020-02-22-python-table-manner-series/customize.jpg"/></p>
@@ -449,7 +449,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <time datetime="2020-03-01T00:45:00+08:00" itemprop="dateCreated">2020/03/01 - Sun</time>
 <h4>Last Updated</h4>
 <time datetime="2020-07-19T16:47:00+08:00">2020/07/19 - Sun</time>
-<h4><built-in 0x7f25fa918df0="" at="" index="" method="" object="" of="" str=""></built-in></h4>
+<h4><built-in 0x7fc08dd03eb0="" at="" index="" method="" object="" of="" str=""></built-in></h4>
 <ul class="multi-parts-list">
 </ul>
 <h4>Read Time</h4>
