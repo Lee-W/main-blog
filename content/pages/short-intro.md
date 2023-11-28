@@ -1,7 +1,7 @@
 ---
 title: Short Intro
 date: 2017-02-14 12:30
-modified: 2023-06-05 09:11
+modified: 2023-11-28 23:30
 status: hidden
 slug: landing-page-about-hidden
 ---
@@ -9,6 +9,7 @@ slug: landing-page-about-hidden
 * [🐍 Python Programmer](https://pycon-note.wei-lee.me/)
 * 💻 Remote Worker
 * [📷 Traveler](https://travlog.wei-lee.me/)
+* ⛺ Member of [台湾野クル▲](https://twitter.com/Taiwannokuru)
 * 📖 Reader
 * 🎵 Ukulele Player
 * 🔒 Locker
