@@ -80,9 +80,8 @@ SOCIAL_PROFILE_LABEL = "Keep In Touch"
 SOCIAL = (
     ("Linkedin", "https://tw.linkedin.com/in/clleew"),
     ("GitHub", "https://github.com/Lee-W"),
-    ("Gitlab", "https://gitlab.com/Lee-W"),
     ("Twitter", "https://twitter.com/clleew"),
-    ("RSS", "https://wei-lee.me/feeds/all.atom.xml"),
+    ("RSS", "https://blog.wei-lee.me/feeds/all.atom.xml"),
 )
 
 # Markdown extension
