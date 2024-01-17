@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2023-11-28T23:30:00+08:00</updated><entry><title>TIL: 字串也是 JSON</title><link href="https://blog.wei-lee.me/posts/tech/2023/11/til-string-is-a-kind-of-json" rel="alternate"></link><published>2023-11-28T23:30:00+08:00</published><updated>2023-11-28T23:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2023-11-28:/posts/tech/2023/11/til-string-is-a-kind-of-json</id><summary type="html">&lt;p&gt;之前在 review &lt;a href="https://github.com/apache/airflow/pull/33224"&gt;airflow PR&lt;/a&gt; 的時候問了一個蠢問題&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-01-17T22:56:00+08:00</updated><entry><title>遇到 Error: fatal: could not read Username for 'https://github.com': terminal prompts disabled 怎麼辦 😱</title><link href="https://blog.wei-lee.me/posts/tech/2024/01/how-to-deal-with-could-not-read-username-for-github" rel="alternate"></link><published>2024-01-17T22:56:00+08:00</published><updated>2024-01-17T22:56:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-01-17:/posts/tech/2024/01/how-to-deal-with-could-not-read-username-for-github</id><summary type="html">&lt;p&gt;相信有在用 GitHub Actions 的大家應該都有用過 &lt;a href="https://github.com/actions/checkout"&gt;actions/checkout&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最近工作時某個 CI/CD pipeline 卻噴了這個錯誤&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Error: fatal: could not read Username for &amp;#39;https://github.com&amp;#39;: terminal prompts disabled
+&lt;/pre&gt;&lt;/div&gt;
+
+
+</summary><content type="html">&lt;p&gt;相信有在用 GitHub Actions 的大家應該都有用過 &lt;a href="https://github.com/actions/checkout"&gt;actions/checkout&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最近工作時某個 CI/CD pipeline 卻噴了這個錯誤&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Error: fatal: could not read Username for &amp;#39;https://github.com&amp;#39;: terminal prompts disabled
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;!--more--&gt;
+
+&lt;h2 id="root-cause"&gt;Root Cause&lt;/h2&gt;
+&lt;p&gt;這可能是因為 PAT (&lt;a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens"&gt;Personal Access Token&lt;/a&gt;) 已經過期了&lt;br&gt;
+（我也是想了一下才看懂 PAT 是什麼縮寫...）&lt;/p&gt;
+&lt;h2 id="solution"&gt;Solution&lt;/h2&gt;
+&lt;p&gt;先到 GitHub 個人頁面的 &lt;code&gt;Settings&lt;/code&gt; &amp;gt; &lt;code&gt;Developer Settings&lt;/code&gt; &amp;gt; &lt;code&gt;Personal Access Tokens&lt;/code&gt;&lt;br&gt;
+找出&lt;a href="https://github.com/actions/checkout"&gt;actions/checkout&lt;/a&gt;用的那個過期的 token，並且更新它&lt;/p&gt;
+&lt;p&gt;接著回到專案頁面的 &lt;code&gt;Settings&lt;/code&gt; &amp;gt; &lt;code&gt;Secrets and variables&lt;/code&gt; &amp;gt; &lt;code&gt;Actions&lt;/code&gt; 找到對應的 secret，並取代成更新過的 token &lt;/p&gt;
+&lt;h2 id="_1"&gt;雜記&lt;/h2&gt;
+&lt;p&gt;遙想當初開始寫部落格，其實也就只是把筆記存起來，讓未來的自己好找&lt;br&gt;
+現在部落格的搜尋，好像又可以開始寫這種短短的小文章了&lt;br&gt;
+回歸初心（？？？）&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/actions/checkout/issues/664"&gt; Error: fatal: could not read Username for 'https://github.com': terminal prompts disabled #664 &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="GitHub Actions"></category><category term="CI/CD"></category><category term="GitHub"></category></entry><entry><title>TIL: 字串也是 JSON</title><link href="https://blog.wei-lee.me/posts/tech/2023/11/til-string-is-a-kind-of-json" rel="alternate"></link><published>2023-11-28T23:30:00+08:00</published><updated>2023-11-28T23:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2023-11-28:/posts/tech/2023/11/til-string-is-a-kind-of-json</id><summary type="html">&lt;p&gt;之前在 review &lt;a href="https://github.com/apache/airflow/pull/33224"&gt;airflow PR&lt;/a&gt; 的時候問了一個蠢問題&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;May I know why is '"hello"' an valid json content?&lt;/p&gt;
 &lt;/blockquote&gt;
