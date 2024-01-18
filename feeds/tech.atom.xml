@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-01-17T22:56:00+08:00</updated><entry><title>遇到 Error: fatal: could not read Username for 'https://github.com': terminal prompts disabled 怎麼辦 😱</title><link href="https://blog.wei-lee.me/posts/tech/2024/01/how-to-deal-with-could-not-read-username-for-github" rel="alternate"></link><published>2024-01-17T22:56:00+08:00</published><updated>2024-01-17T22:56:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-01-17:/posts/tech/2024/01/how-to-deal-with-could-not-read-username-for-github</id><summary type="html">&lt;p&gt;相信有在用 GitHub Actions 的大家應該都有用過 &lt;a href="https://github.com/actions/checkout"&gt;actions/checkout&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;最近工作時某個 CI/CD pipeline 卻噴了這個錯誤&lt;/p&gt;
+&lt;p&gt;最近某個平常跑得好好的 CI/CD pipeline 卻噴了這個錯誤&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Error: fatal: could not read Username for &amp;#39;https://github.com&amp;#39;: terminal prompts disabled
 &lt;/pre&gt;&lt;/div&gt;
 
 
 </summary><content type="html">&lt;p&gt;相信有在用 GitHub Actions 的大家應該都有用過 &lt;a href="https://github.com/actions/checkout"&gt;actions/checkout&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;最近工作時某個 CI/CD pipeline 卻噴了這個錯誤&lt;/p&gt;
+&lt;p&gt;最近某個平常跑得好好的 CI/CD pipeline 卻噴了這個錯誤&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Error: fatal: could not read Username for &amp;#39;https://github.com&amp;#39;: terminal prompts disabled
 &lt;/pre&gt;&lt;/div&gt;
 
