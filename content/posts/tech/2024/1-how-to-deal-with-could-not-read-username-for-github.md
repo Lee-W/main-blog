@@ -7,7 +7,7 @@ Authors: Wei Lee
 
 相信有在用 GitHub Actions 的大家應該都有用過 [actions/checkout](https://github.com/actions/checkout)
 
-最近工作時某個 CI/CD pipeline 卻噴了這個錯誤
+最近某個平常跑得好好的 CI/CD pipeline 卻噴了這個錯誤
 
 ```text
 Error: fatal: could not read Username for 'https://github.com': terminal prompts disabled
