@@ -96,7 +96,7 @@ MONZ SPACE 幾乎在築地市場旁邊
 
 ![](/images/posts-image/2024-2023-tokyo-coworking-space/17057693476533.jpg)
 
-### (tefu) lounge Shimokitazawa (下北澤)
+## (tefu) lounge Shimokitazawa (下北澤)
 * [Google Map](https://maps.app.goo.gl/TPmJ6GYqZNuj7xQr6)
 * 營業時間： 09:00 ~ 23:30
 * 價位： ￥3,000
