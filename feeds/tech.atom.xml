@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-01-22T22:58:00+08:00</updated><entry><title>2023 東京 Coworking Spaces</title><link href="https://blog.wei-lee.me/posts/tech/2024/01/2023-tokyo-coworking-space" rel="alternate"></link><published>2024-01-22T22:58:00+08:00</published><updated>2024-01-22T22:58:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-01-22:/posts/tech/2024/01/2023-tokyo-coworking-space</id><summary type="html">&lt;p&gt;因緣際會下 2023 稍微去了幾次東京&lt;br/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-02-20T23:59:00+08:00</updated><entry><title>Intro to Airflow - From Zero to Hero</title><link href="https://blog.wei-lee.me/posts/tech/2024/02/intro-to-airflow-from-zero-to-hero" rel="alternate"></link><published>2024-02-20T23:59:00+08:00</published><updated>2024-02-20T23:59:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-02-20:/posts/tech/2024/02/intro-to-airflow-from-zero-to-hero</id><summary type="html">&lt;p&gt;上週六感謝&lt;a href="https://www.facebook.com/profile.php?id=100090487996922"&gt;源來適你&lt;/a&gt;邀請我到社群線上分享 Airflow&lt;br&gt;
+好久沒有準備超過 10 分鐘的分享了 😱&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;上週六感謝&lt;a href="https://www.facebook.com/profile.php?id=100090487996922"&gt;源來適你&lt;/a&gt;邀請我到社群線上分享 Airflow&lt;br&gt;
+好久沒有準備超過 10 分鐘的分享了 😱&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;上次上台還是帶著無敵星星在 PyCon APAC 2023 &lt;a href="https://speakerdeck.com/leew/does-kobayashi-san-write-code-vulnerable-to-sql-injection"&gt;閃電講&lt;/a&gt; 的時候了&lt;br&gt;
+當時台下笑得還蠻開心的&lt;br&gt;
+這次不知道是因為線上，還是只是我太沒梗了嗚嗚嗚&lt;br&gt;
+內容已經不夠充實了，娛樂效果還不足 🥲&lt;/p&gt;
+&lt;p&gt;&lt;img alt="star" src="/images/posts-image/2024-intro-to-airflow-from-zero-to-hero/star.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;這次的分享主要介紹了 Airflow 的 component&lt;br&gt;
+透過 WebUI 觸發 DAG 後， worker, scheduler, metadata database 是怎麼互動？&lt;br&gt;
+deferrable operator 是如何在 worker 跟 triggerer 運作的&lt;br&gt;
+上次去勇哥的誰來午餐的時候，剛好有跟 TP 討論到就學了一課&lt;/p&gt;
+&lt;p&gt;記錄了最近用 &lt;a href="https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/datasets.html"&gt;Dataset&lt;/a&gt; 遇到的小雷&lt;br&gt;
+Dataset 目前還沒有辦法自動偵測 data 是否改變&lt;br&gt;
+只能作為其他 DAG 的 outlet&lt;br&gt;
+如果那個 DAG 被執行了，才去通知相依於 Dataset 的 DAG&lt;br&gt;
+雖然雷的可能是我沒有好好 read the **** documentation&lt;/p&gt;
+&lt;p&gt;去年聖誕節有被 Flyte 嘴了一下 Airflow 的 operator 語法不直覺&lt;br&gt;
+這次輪到我用 &lt;a href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/taskflow.html#taskflow"&gt;Taskflow&lt;/a&gt; 反駁一下&lt;br&gt;
+其實 Airflow 也是有跟 Python function 接近的語法啊！&lt;/p&gt;
+&lt;p&gt;除了介紹其他 astronomer 的開源專案外&lt;br&gt;
+還是得例行的工商 &lt;a href="https://github.com/commitizen-tools/commitizen"&gt;commitizen-tools&lt;/a&gt; 跟 &lt;a href="https://tw.pycon.org/"&gt;PyCon Taiwan&lt;/a&gt;&lt;br&gt;
+還有讚揚了 PyCon Taiwan 的 Airflow 最初導師 - 博安老師&lt;/p&gt;
+&lt;iframe class="speakerdeck-iframe" style="border: 0px; background: rgba(0, 0, 0, 0.1) padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 420;" frameborder="0" src="https://speakerdeck.com/player/37a8ccf607f245dc8430ad414e74ad81" title="Intro to Airflow - From Zero to Hero" allowfullscreen="true" data-ratio="1.3333333333333333"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;倒是 Q &amp;amp; A 還蠻熱烈、蠻有趣的&lt;br&gt;
+討論了不少職涯、公司的商業模式、技術問題&lt;br&gt;
+雖然我離公司很商業的部分有點距離，很多問題都只能窩不知道&lt;/p&gt;
+&lt;p&gt;&lt;img alt="i-don't-know" src="/images/posts-image/2024-intro-to-airflow-from-zero-to-hero/i-don't-know.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;簡單記錄一下這次的分享&lt;br&gt;
+不過最重要還是要宣傳&lt;strong&gt;暫定 3/16 Sat 10:00 a.m. 拍抗女神在源來適你的分享&lt;/strong&gt;&lt;br&gt;
+請鎖定&lt;a href="https://www.facebook.com/profile.php?id=100090487996922"&gt;源來適你&lt;/a&gt;的 FB 粉專公告！&lt;br&gt;
+看到這的你各位，通通給我去捧場參加啊&lt;/p&gt;</content><category term="Tech"></category><category term="源來適你"></category><category term="Airflow"></category><category term="Talks"></category></entry><entry><title>2023 東京 Coworking Spaces</title><link href="https://blog.wei-lee.me/posts/tech/2024/01/2023-tokyo-coworking-space" rel="alternate"></link><published>2024-01-22T22:58:00+08:00</published><updated>2024-01-22T22:58:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-01-22:/posts/tech/2024/01/2023-tokyo-coworking-space</id><summary type="html">&lt;p&gt;因緣際會下 2023 稍微去了幾次東京&lt;br/&gt;
 因為想待在日本久一點，但又沒有那麼多假&lt;br/&gt;
 只好在當地找 coworking space 來工作&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;因緣際會下 2023 稍微去了幾次東京&lt;br/&gt;
