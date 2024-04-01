@@ -36,12 +36,12 @@ slug: about-me
     * Implemented a pipeline that processes data larger than 10 GB to infer personalized preferences to help increase customer satisfaction.
     * Migrated legacy 1.x Airflow server on AWS EC2 to 2.0.2 Airflow on AWS MWAA, saving developers' effort on dealing with legacy dependencies issues, and created a development airflow environment for doing experiments without affecting the production pipeline.
     * Refactored data writing mechanism and reduced the data write time and AWS S3 cost.
-    * Built alerts and dashboards to monitor pipelines metrics to minimize the effort of troubleshooting using DataDog, Prometheus, and Kibana.
+    * Built alerts and dashboards to monitor pipeline metrics, minimizing the effort of troubleshooting using DataDog, Prometheus, and Kibana.
 * Standardize and maintain software engineering practices
-    * Created and maintain the project templates, with automatic code quality check, testing, containerization, project versioning, releasing, and deployment, and a standard workflow for existing projects to update tools, which reduced project creation time, the communication overhead during code review and provided an easy way for developers to introduce new standards.
-    * Implemented a life-cycle configuration management tool and a workflow for creating Amazon Sagemaker notebook instances which saves data scientists' time on handling engineering problems.
+    * Created and maintained the project templates, with automatic code quality check, testing, containerization, project versioning, releasing, and deployment, and a standard workflow for existing projects to update tools, which reduced project creation time, the communication overhead during code review and provided an easy way for developers to introduce new standards.
+    * Implemented a life-cycle configuration management tool and a workflow for creating Amazon Sagemaker notebook instances, which saves data scientists' time in handling engineering problems.
     * Improved container build time and reduced execution time by 70\% for Jenkins CI/CD pipelines.
-    * Maintain core package that's used among most existing projects
+    * Maintain the core package that's used among most existing projects
 * Optimized SQL in a data pipeline and reduced the execution time from infeasible to within half a day.
 * Cooperate with overseas teams in US, Ukraine, and India
 
@@ -61,7 +61,7 @@ slug: about-me
 
 *X-Village* is an experimental education program aiming to equip students not major in computer science with computational thinking and to enhance future cooperation between computer science and other areas.
 
-I was the executor of the program and the leader of the teaching assistant team. Besides, I designed a half-day exercise for *Data Structure* and lectured a four-hour web backend course for *Web Programming, Database/Cloud Computing*.
+I was the program executor and the leader of the teaching assistant team. I also designed a half-day exercise for *Data Structure* and lectured a four-hour web backend course for *Web Programming, Database/Cloud Computing*.
 
 * [Website](https://sites.google.com/view/x-village/home?authuser=0)
 * [Facebook Fan Page](https://www.facebook.com/X-Village-423736361424301/)
@@ -69,14 +69,18 @@ I was the executor of the program and the leader of the teaching assistant team.
 **[July 2015 - July 2016] Substitute Military Service, K-12 Education Administration, Ministry of Education**
 
 * Maintained legacy systems implemented in multiple languages, including `C#`, `VBScript`, `PHP`, etc.
-* Developed automation programs for generating reports which save 80% of human labor time
+* Developed automation programs for generating reports, which save 80% of human labor time
 * Delivered a human resource management system using [django](https://www.djangoproject.com)
 
 ## Community Involvement
-**[Nov 2021 - Present] Vice-Chairperson, [PyCon APAC 2022](https://tw.pycon.org/2022/)**
+**[Nov 2023 - Current] Volunteer** [PyCon Taiwan](https://tw.pycon.org/)
 
-* Coordinated 3 squads, including planning, sponsorship, and social media
-* Hosted the first Ask Me Anything event for promoting Call for Proposals
+**[Nov 2022 - Sep 2023] Marketing Team Lead, [PyCon Taiwan 2023](https://tw.pycon.org/2023/)**
+
+**[Nov 2021 - Sep 2022] Vice-Chairperson, [PyCon APAC 2022](https://tw.pycon.org/2022/)**
+
+* Coordinated three squads, including planning, sponsorship, and social media
+* Hosted the first Ask Me Anything event to promote Call for Proposals
 
 **[Oct 2020 - Nov 2021] Chairperson, [PyCon Taiwan 2021](https://tw.pycon.org/2021/)**
 
@@ -92,6 +96,10 @@ I was the executor of the program and the leader of the teaching assistant team.
 * Contribute to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
 
 ## Talk and Tutorial
+*  Intro to Airflow - From Zero to Hero 
+    *  2024/02/17 [源來適你](https://www.facebook.com/opensource4you): [slide](https://speakerdeck.com/leew/intro-to-airflow-from-zero-to-hero)
+* Atomic Commits: An Easy & Proven Way to Manage & Automate Release Process
+    * **2023/07/29** [COSCUP 2023](https://coscup.org/2023/zh-TW/session/TUGLJP): [slide](https://speakerdeck.com/leew/atomic-commits-an-easy-and-proven-way-to-manage-and-automate-release-process)
 * Python Table Manners
     * 2020/11/7 [Taichung.py](https://taichung-py.kktix.cc/events/meetup-202011-clleew): [slide](https://speakerdeck.com/leew/python-table-manners-at-taichung-dot-py)
     * 2020/10/16 [Hualien.py](https://www.meetup.com/Hualien-Py/events/273609065/): [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-hualien-py)
@@ -142,47 +150,6 @@ GPA: 4.16/4.3
 **Double Major: Computer Science and Information Engineering**
 National Cheng Kung University, Tainan
 GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
-
-## Additional Experience
-
-### Open Source Contributions
-* [commitizen-tools](https://github.com/Woile/commitizen): Maintainer
-    * [commitizen](https://github.com/commitizen-tools/commitizen)
-    * [commitizen_cz_template](https://github.com/commitizen-tools/commitizen_cz_template)
-* [apache/airflow](https://github.com/apache/airflow)
-* [git-extras](https://github.com/tj/git-extras)
-* [pycontw](https://github.com/pycontw)
-    * [mail_handler](https://github.com/pycontw/mail_handler): Author
-    * [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator): Maintainer
-* [beeeware](https://beeware.org)
-    * [batavia](https://github.com/beeware/batavia)
-    * [toga](https://github.com/beeware/toga)
-    * [podium](https://github.com/beeware/podium)
-* [flask](https://github.com/pallets/flask)
-* [open-edx](https://github.com/edx)
-    * [edx-platform](https://github.com/edx/edx-platform)
-    * [edx-documentation](https://github.com/edx/edx-documentation)
-* [wtforms-json](https://github.com/kvesteri/wtforms-json)
-* [pipreqs](https://github.com/bndr/pipreqs)
-* [pip-check](https://github.com/bartTC/pip-check)
-* [pelican-clean-blog](https://github.com/gilsondev/pelican-clean-blog)
-* [templater](https://github.com/Lee-W/templater)
-    * Update [templater](https://github.com/Lee-W/templater) to Python3 and release [templater3](https://pypi.org/project/templater3/)
-
-### Web Service
-* [SITW 二手網](http://sitw-trade.herokuapp.com) (Backend Development)
-
-### Chat Bot
-* [Dengue Line Bot Server](https://github.com/NCKU-CCS/line_bot_server)
-* [Telegram EchoBot](https://github.com/Lee-W/telegram_echobot)
-* [Line EchoBot](https://github.com/Lee-W/line_echobot)
-
-### Utility
-* [pelican-stat](https://github.com/Lee-W/pelican-stat)
-* [Flickr Album Downloader](https://github.com/Lee-W/Flickr_Album_Downloader)
-* [PttCraweler](https://github.com/Lee-W/PttCrawler)
-* [wayback-machine-saver](https://github.com/Lee-W/wayback-machine-saver)
-* [bahamut_ani_stat](https://github.com/Lee-W/bahamut_ani_stat)
 
 ## Tutorial and Study Note
 

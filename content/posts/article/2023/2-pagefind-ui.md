@@ -89,7 +89,7 @@ Authors: Wei Lee
 
 沒錯！ 就是這麼簡單
 
-![](/images/posts-image/2023-pagefindui/easy.jpg)
+![easy](/images/posts-image/2023-pagefindui/easy.jpg)
 
 如果這時候直接把 Pelican 的 local server 跑起來，你就會發現
 什麼都搜尋不到 🔍
@@ -127,11 +127,11 @@ GitHub Actions 就會自動幫我產出最新的 blog ，並且部署到 GitHub 
 ## 看起來如何呢？
 這個 blog
 
-![](/images/posts-image/2023-pagefindui/this-blog.jpg)
+![this-blog](/images/posts-image/2023-pagefindui/this-blog.jpg)
 
 [另一個 blog ](https://travlog.wei-lee.me/)
 
-![](/images/posts-image/2023-pagefindui/another-blog.jpg)
+![another-blog](/images/posts-image/2023-pagefindui/another-blog.jpg)
 
 ## 那些你不需要知道的背後故事
 以下聽故事
@@ -154,9 +154,9 @@ pelican-search 背後的 Strok 將不再維護 🥲
 只好回去翻翻看 [pelican-themes](https://github.com/getpelican/pelican-themes) 中，比較有在更新的主題有沒有支援搜尋的
 還真的讓我找到 [pelican-haerwu-theme](https://github.com/hrw/pelican-haerwu-theme/tree/ea01213468a775dcd14e6aa5800f654af5670bc5)
 
-![](/images/posts-image/2023-pagefindui/pelican-theme.jpg)
+![pelican-theme](/images/posts-image/2023-pagefindui/pelican-theme.jpg)
 
-![](/images/posts-image/2023-pagefindui/search.jpg)
+![search](/images/posts-image/2023-pagefindui/search.jpg)
 
 去追一下原始碼就找到 Pagefind UI
 恩，整個故事大概就是這樣
