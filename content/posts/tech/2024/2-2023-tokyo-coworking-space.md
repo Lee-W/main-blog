@@ -42,7 +42,7 @@ Authors: Wei Lee
 價位是 2023 年去到最划算的
 是我最推薦的 coworking space
 
-![](/images/posts-image/2024-2023-tokyo-coworking-space/17057695327403.jpg)
+![Ōta fab](/images/posts-image/2024-2023-tokyo-coworking-space/17057695327403.jpg)
 
 ## MONZ SPACE (築地)
 * [Google Map](https://maps.app.goo.gl/EQXw9BE7aGpAnQ4R8) 
@@ -59,7 +59,7 @@ MONZ SPACE 幾乎在築地市場旁邊
 有提供一些簡單的飲料
 最大的缺點就是單日方案的結束時間是 18:00，稍微早了一點
 
-![](/images/posts-image/2024-2023-tokyo-coworking-space/17057694174279.jpg)
+![MONZ SPACE](/images/posts-image/2024-2023-tokyo-coworking-space/17057694174279.jpg)
 
 ## BasisPoint 上野店 (上野)
 * [Google Map](https://maps.app.goo.gl/4GD8SdLPpnKhAxrV8)
@@ -73,7 +73,7 @@ MONZ SPACE 幾乎在築地市場旁邊
 旁邊是阿美橫町，吃飯很方便
 不過上野店收了，可以找其他 BasisPoint 試試看
 
-![](/images/posts-image/2024-2023-tokyo-coworking-space/17057693821324.jpg)
+![BasisPoint](/images/posts-image/2024-2023-tokyo-coworking-space/17057693821324.jpg)
 
 ## 猫カフェ モカラウンジ 池袋東口店 (池袋)
 * [Google Map](https://catmocha.jp/shop/ikebukuro2/)
@@ -94,7 +94,7 @@ MONZ SPACE 幾乎在築地市場旁邊
 飲料的選擇很多樣，Drink bar 費有值得
 （雖然也沒有不付的選擇就是了）
 
-![](/images/posts-image/2024-2023-tokyo-coworking-space/17057693476533.jpg)
+![猫カフェ モカラウンジ 池袋東口店](/images/posts-image/2024-2023-tokyo-coworking-space/17057693476533.jpg)
 
 ## (tefu) lounge Shimokitazawa (下北澤)
 * [Google Map](https://maps.app.goo.gl/TPmJ6GYqZNuj7xQr6)
@@ -109,7 +109,7 @@ MONZ SPACE 幾乎在築地市場旁邊
 不過下北澤本身就很多吃的，倒也不見得要在這吃
 想邊工作邊聖地巡禮孤獨搖滾的話，這間很適合
 
-![](/images/posts-image/2024-2023-tokyo-coworking-space/17057694674070.jpg)
+![tefu](/images/posts-image/2024-2023-tokyo-coworking-space/17057694674070.jpg)
 
 ## Yokohamawakusupesu (橫濱)
 * [Google Map](https://maps.app.goo.gl/UaJSkWmLqfDZAwrA7)
@@ -133,7 +133,7 @@ MONZ SPACE 幾乎在築地市場旁邊
 飲料是有幾種選擇的咖啡機，我覺得蠻夠的
 位置在涉谷這點可能是他最大的優點
 
-![](/images/posts-image/2024-2023-tokyo-coworking-space/17057695142234.jpg)    
+![.andwork shibuya](/images/posts-image/2024-2023-tokyo-coworking-space/17057695142234.jpg)    
 
 ## .andwork kawasaki (川崎)
 * [Google Map](https://maps.app.goo.gl/JHFqummPCTrKf4oC7)
