@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" rel="stylesheet"/>
+<link href="https://blog.wei-lee.me/theme/css/elegant.prod.9e9d5ce754.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<meta content="Wei Lee" name="author">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="tool, Tech, " name="keywords">
+<meta content="將終端機畫面紀錄成 gif " property="og:title">
+<meta content="https://blog.wei-lee.me/posts/tech/2024/04/record-terminal-actions-and-export-as-gif" property="og:url"/>
+<meta content="想說 commitizen README 的 demo 動畫也好久沒更新了 可以來研究一下怎麼產出新的動畫更新上去" property="og:description"/>
+<meta content="Those aren't written down are meant to be forgotten" property="og:site_name"/>
+<meta content="Wei Lee" property="og:article:author"/>
+<meta content="2024-04-07T22:42:00+08:00" property="og:article:published_time"/>
+<meta content="將終端機畫面紀錄成 gif " name="twitter:title"/>
+<meta content="想說 commitizen README 的 demo 動畫也好久沒更新了 可以來研究一下怎麼產出新的動畫更新上去" name="twitter:description"/>
+<title>將終端機畫面紀錄成 gif  · Those aren't written down are meant to be forgotten
+</title>
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten - Full Atom Feed" type="application/atom+xml">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3J7XQ46QH5');
+</script>
+</link></meta></meta></meta></meta><link href="https://blog.wei-lee.me/posts/tech/2024/04/record-terminal-actions-and-export-as-gif" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2024", "item": "https://blog.wei-lee.me/posts/tech/2024"}, {"@type": "ListItem", "position": 5, "name": "04", "item": "https://blog.wei-lee.me/posts/tech/2024/04"}, {"@type": "ListItem", "position": 6, "name": "Record terminal actions and export as gif", "item": "https://blog.wei-lee.me/posts/tech/2024/04/record-terminal-actions-and-export-as-gif"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2024/04/record-terminal-actions-and-export-as-gif/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "將終端機畫面紀錄成 gif", "about": "Tech", "datePublished": "2024-04-07 22:42"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://blog.wei-lee.me/"><span class="site-name">Those aren't written down are meant to be forgotten</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li>
+<a href="https://blog.wei-lee.me">Home</a>
+</li>
+<li><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
+<li><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
+<li><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
+<li><div id="search"></div></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article data-pagefind-body="" itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1>
+<a href="https://blog.wei-lee.me/posts/tech/2024/04/record-terminal-actions-and-export-as-gif">
+                將終端機畫面紀錄成 gif
+            </a>
+</h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span8 offset2 article-content">
+<p>想說 <a href="https://github.com/commitizen-tools/commitizen">commitizen</a> README 的 demo 動畫也好久沒更新了<br/>
+可以來研究一下怎麼產出新的動畫更新上去</p>
+<p><img alt="commitizen-demo" src="/images/posts-image/2024-record-terminal-actions-and-export-as-gif/commitizen-demo.jpg"/></p>
+<!--more-->
+<p>之前做簡報的時候就有用過一次<br/>
+本文是當時的草稿，躺到現在才下定決心要整理完<br/>
+記錄一下為了發<a href="https://github.com/commitizen-tools/commitizen/pull/1055/files">這個 PR</a>所用到的工具 <a href="https://github.com/asciinema/asciinema">asciinema</a> 跟 <a href="https://github.com/asciinema/agg">agg</a></p>
+<h2 id="asciinema">asciinema</h2>
+<p>asciinema 是負責進行終端機紀錄的工具，會存成 <code>.cast</code> 的格式<br/>
+可以存在 local 或上傳到 <a href="https://asciinema.org/">asciinema.org</a></p>
+<p>使用 <code>asciinema rec</code> 開始紀錄<br/>
+要結束錄影時可以按 <code>&lt;ctrl-d&gt;</code> 或輸入 <code>exit</code><br/>
+結束錄影時會詢問要不要存擋，要存在哪</p>
+<div class="highlight"><pre><span></span>$<span class="w"> </span>asciinema<span class="w"> </span>rec<span class="w"> </span>&lt;output<span class="w"> </span>path<span class="w"> </span><span class="o">(</span>with<span class="w"> </span>extension<span class="w"> </span>.cast<span class="o">)</span>&gt;
+
+asciinema:<span class="w"> </span>recording<span class="w"> </span>asciicast<span class="w"> </span>&lt;output<span class="w"> </span>path&gt;
+asciinema:<span class="w"> </span>press<span class="w"> </span>&lt;ctrl-d&gt;<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="s2">"exit"</span><span class="w"> </span>when<span class="w"> </span>you<span class="err">'</span>re<span class="w"> </span><span class="k">done</span>
+
+
+asciinema:<span class="w"> </span>recording<span class="w"> </span>finished
+<span class="o">(</span>s<span class="o">)</span>ave<span class="w"> </span>locally,<span class="w"> </span><span class="o">(</span>u<span class="o">)</span>pload<span class="w"> </span>to<span class="w"> </span>asciinema.org,<span class="w"> </span><span class="o">(</span>d<span class="o">)</span>iscard
+<span class="o">[</span>s,u,d<span class="o">]</span>?
+</pre></div>
+<p>透過 <code>asciinema play</code> 可以在終端機重新播放剛剛的紀錄</p>
+<div class="highlight"><pre><span></span>asciinema<span class="w"> </span>play<span class="w"> </span>&lt;.cast<span class="w"> </span>file<span class="w"> </span>path&gt;
+</pre></div>
+<p>想要一次看完所有內容可以使用</p>
+<div class="highlight"><pre><span></span>asciinema<span class="w"> </span>cat<span class="w"> </span>&lt;.cast<span class="w"> </span>file<span class="w"> </span>path&gt;
+</pre></div>
+<h2 id="agg">agg</h2>
+<p>agg 則是 asciinema 組織中的專案，負責產生 gif<br/>
+（全名是  asciinema gif generator ）<br/>
+有不少可以客製化的參數<br/>
+我比較常用的是 <code>--font-family</code>, <code>--speed</code>, <code>--no-loop</code><br/>
+分別可以設定字體、播放速度跟是否要讓 gif 重播</p>
+<div class="highlight"><pre><span></span>agg<span class="w"> </span>--font-family<span class="w"> </span><span class="s2">"ComicShannsMono Nerd Font"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--speed<span class="w"> </span><span class="m">2</span>.5<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>&lt;input<span class="w"> </span>cast<span class="w"> </span>path&gt;<span class="w"> </span>&lt;output<span class="w"> </span>gif<span class="w"> </span>path&gt;
+</pre></div>
+<h2 id="lets-put-everything-together">Let's put everything together</h2>
+<p>既然是分享 asciinema 的文章<br/>
+當然是得把文章用到的指令們直接做成 gif demo 吧！</p>
+<p><img alt="asciinema" src="/images/posts-image/2024-record-terminal-actions-and-export-as-gif/asciinema.gif"/></p>
+<p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=%E5%B0%87%E7%B5%82%E7%AB%AF%E6%A9%9F%E7%95%AB%E9%9D%A2%E7%B4%80%E9%8C%84%E6%88%90%20gif&amp;url=https%3A//blog.wei-lee.me/posts/tech/2024/04/record-terminal-actions-and-export-as-gif&amp;hashtags=tool" rel="nofollow noopener noreferrer" target="_blank" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2024/04/record-terminal-actions-and-export-as-gif" rel="nofollow noopener noreferrer" target="_blank" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=%E5%B0%87%E7%B5%82%E7%AB%AF%E6%A9%9F%E7%95%AB%E9%9D%A2%E7%B4%80%E9%8C%84%E6%88%90%20gif&amp;body=https%3A//blog.wei-lee.me/posts/tech/2024/04/record-terminal-actions-and-export-as-gif" rel="nofollow noopener noreferrer" target="_blank" title="Share via Email">Email</a>
+<section>
+<h6 style="display:none;">Comments</h6>
+<p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle disqus-comment-count comment-count collapsed" data-parent="#accordion2" data-toggle="collapse" href="https://blog.wei-lee.me/posts/tech/2024/04/record-terminal-actions-and-export-as-gif#comment_thread" id="comment-accordion-toggle">
+                    Comments
+                </a>
+</div>
+<div class="accordion-body collapse" id="comment_thread">
+<div class="accordion-inner">
+<div class="comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2024/04/record-terminal-actions-and-export-as-gif" data-label="comment" data-repo="Lee-W/main-blog" data-theme="" src="https://utteranc.es/client.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr/>
+</p></div>
+<section class="span2" id="article-sidebar">
+<h4>Published</h4>
+<time datetime="2024-04-07T22:42:00+08:00" itemprop="dateCreated">2024/04/07 - Sun</time>
+<h4>Read Time</h4>
+                1 min
+            <h4>Category</h4>
+<a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="https://blog.wei-lee.me/tags.html#tool-ref">tool
+                    <span class="superscript">1</span>
+</a></li>
+</ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+<a href="https://tw.linkedin.com/in/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="LinkedIn" fill="#fff" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#0077b5" height="512" rx="15%" width="512"></rect><circle cx="142" cy="138" r="37"></circle><path d="M244 194v198M142 194v198" stroke="#fff" stroke-width="66"></path><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path></svg>
+</a>
+<a href="https://github.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+<a href="https://twitter.com/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="RSS" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#f80" height="512" rx="15%" width="512"></rect><circle cx="145" cy="367" fill="#fff" r="35"></circle><path d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276" fill="none" stroke="#fff" stroke-width="60"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="span1"></div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0">
+</img></a>
+<br>
+This work is licensed under a
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+    Creative Commons Attribution 4.0 International License
+</a>.
+
+    </br></div>
+<div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican Home Page">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Theme Elegant Home Page">Elegant</a>
+</div>
+</footer> <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+                new PagefindUI({
+                    element: "#search",
+                    showImages: false,
+                });
+            });
+        </script>
+</body>
+<!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
