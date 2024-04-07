@@ -15,13 +15,18 @@ LANDING_PAGE_TITLE = "Hi, I'm Wei Lee"
 PROJECTS_TITLE = "Projects"
 PROJECTS = [
     {
+        "name": "apache-airflow",
+        "url": "https://github.com/apache/airflow/",
+        "description": "A platform to programmatically author, schedule, and monitor workflows",
+    },
+    {
         "name": "Commitizen",
         "url": "https://github.com/commitizen-tools/commitizen",
         "description": (
             "Python 3 command-line utility to standardize commit "
             "messages and bump version"
         ),
-    }
+    },
 ]
 
 # comment system
