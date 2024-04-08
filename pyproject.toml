@@ -6,13 +6,13 @@ authors = ["Wei Lee <weilee.rx@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-bs4 = "^0.0.1"
+beautifulsoup4 = "^4.12.3"
 cssmin = "^0.2.0"
 ghp-import = "^1.0.0"
 markdown = "<3.2"
 markdown-del-ins = "*"
 md_mermaid = {"git" = "https://github.com/Lee-W/md_mermaid"}
-pelican = {extras = ["markdown"], version = "^4.8.0"}
+pelican = {extras = ["markdown"], version = "^4.9.1"}
 pelican-neighbors = "^1.1.0"
 pelican-render-math = "^1.0.3"
 pelican-seo = "^1.2.2"
@@ -25,12 +25,12 @@ webassets = "^2.0"
 
 
 [tool.poetry.group.dev.dependencies]
-black = "^22.8.0"
-invoke = "^1.4.1"
+black = "^24.3.0"
+invoke = "^2.0.0"
 livereload = "^2.6.3"
-mypy = "^0.971"
+mypy = "^1.9.0"
 pre-commit-hooks = "^3.2.0"
-ruff = "^0.0.292"
+ruff = "^0.3.5"
 
 
 [tool.ruff]
