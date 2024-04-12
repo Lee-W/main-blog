@@ -3,7 +3,6 @@
 from __future__ import unicode_literals
 
 import os
-import subprocess
 import sys
 
 # This file is only used if you use `make publish` or

@@ -178,9 +178,8 @@ def style(c):
     python_targets = "pelicanconf.py publishconf.py tasks.py"
     c.run(
         f"""
-        poetry run ruff {python_targets} && \
+        poetry run ruff check {python_targets} && \
         poetry run black --check {python_targets} && \
-        poetry run isort --check-only {python_targets} && \
         poetry run cz check --rev-range origin/main..
         """
     )
@@ -193,7 +192,7 @@ def format(c):
     c.run(
         f"""
         poetry run black {python_targets} && \
-        poetry run isort {python_targets}
+        poetry run ruff check {python_targets} --fix
         """
     )
 
