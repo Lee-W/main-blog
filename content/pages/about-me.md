@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2024-04-07 22:50
+modified: 2024-05-13 09:20
 slug: about-me
 ---
 
@@ -20,9 +20,7 @@ This is Wei Lee. I'm a
 
 I enjoy automating tedious tasks and creating high-quality code. Enjoy participating in open-source communities and contributing to open-source projects. Traveling is also a passion of mine, and I often use PyCon as an opportunity to explore new places. I have attended PyCon conferences in Taiwan 🇹🇼, the United States 🇺🇸, Japan 🇯🇵, Canada 🇨🇦, Remote Python Pizza 🍕, and Euro Python (remotely) 🇪🇺.
 
-I enjoy automating tedious tasks and creating high-quality code. Enjoy participating in open-source communities and contributing to open-source projects. Traveling is also a passion of mine, and I often use PyCon as an opportunity to explore new places. I have attended PyCon conferences in Taiwan 🇹🇼, the United States 🇺🇸, Japan 🇯🇵, Canada 🇨🇦, Remote Python Pizza 🍕, and Euro Python (remotely) 🇪🇺.
-
-I share my technical notes, book digests, and occasional thoughts here. If you're interested in topics such as cooking, anime, and travel, I chat about those things on [Those things no one cares about](https://travlog.wei-lee.me/).
+I share my technical notes, book digests, and occasional thoughts here. If you're interested in cooking, anime, and travel, I chat about those things on [Those things no one cares about](https://travlog.wei-lee.me/).
 
 ---
 
@@ -136,21 +134,23 @@ I was the program executor and the leader of the teaching assistant team. I also
 * Contribute to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
 
 ## Talk and Tutorial
-*  Intro to Airflow - From Zero to Hero 
-    *  2024/02/17 [源來適你](https://www.facebook.com/opensource4you): [slide](https://speakerdeck.com/leew/intro-to-airflow-from-zero-to-hero)
+* Starts Airflow task execution directly from the triggerer
+    * *2024/05/08* Airflow Town Hall: [slide](https://speakerdeck.com/leew/starts-airflow-task-execution-directly-from-the-triggerer)
+* Intro to Airflow - From Zero to Hero 
+    * *2024/02/17* [源來適你](https://www.facebook.com/opensource4you): [slide](https://speakerdeck.com/leew/intro-to-airflow-from-zero-to-hero)
 * Atomic Commits: An Easy & Proven Way to Manage & Automate Release Process
     * **2023/07/29** [COSCUP 2023](https://coscup.org/2023/zh-TW/session/TUGLJP): [slide](https://speakerdeck.com/leew/atomic-commits-an-easy-and-proven-way-to-manage-and-automate-release-process)
 * Python Table Manners
-    * 2020/11/7 [Taichung.py](https://taichung-py.kktix.cc/events/meetup-202011-clleew): [slide](https://speakerdeck.com/leew/python-table-manners-at-taichung-dot-py)
-    * 2020/10/16 [Hualien.py](https://www.meetup.com/Hualien-Py/events/273609065/): [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-hualien-py)
-    * 2020/08/31 [Kaohsiung.py](https://kaohsiungpy.kktix.cc/events/20200831): [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-kaohsiung-dot-py)
+    * *2020/11/07* [Taichung.py](https://taichung-py.kktix.cc/events/meetup-202011-clleew): [slide](https://speakerdeck.com/leew/python-table-manners-at-taichung-dot-py)
+    * *2020/10/16* [Hualien.py](https://www.meetup.com/Hualien-Py/events/273609065/): [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-hualien-py)
+    * *2020/08/31* [Kaohsiung.py](https://kaohsiungpy.kktix.cc/events/20200831): [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-kaohsiung-dot-py)
     * **2020/07/24 [Euro Python 2020](https://ep2020.europython.eu/)**
         * [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020)
         * [video](https://www.youtube.com/watch?v=m6rF3Kah928)
     * **2019/11/17 [PyCon CA 2019](https://2019.pycon.ca/): [slide](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019)**
-    * 2019/10/24 [Taipei.py](https://www.meetup.com/Taipei-py/events/265743666/)
+    * *2019/10/24* [Taipei.py](https://www.meetup.com/Taipei-py/events/265743666/)
 * commitizen-tools: What can we gain from crafting a git message convention?
-    * 2020/06/18 [Taipei.py](https://www.meetup.com/Taipei-py/events/271185591/): [slide](https://speakerdeck.com/leew/commitizen-tools-what-can-we-gain-from-crafting-a-git-message-convention-at-taipey-dot-py)
+    * *2020/06/18* [Taipei.py](https://www.meetup.com/Taipei-py/events/271185591/): [slide](https://speakerdeck.com/leew/commitizen-tools-what-can-we-gain-from-crafting-a-git-message-convention-at-taipey-dot-py)
     * **2020/04/25 [Remote Python Pizza 2020](https://remote.python.pizza/)**: [slide](https://speakerdeck.com/leew/what-can-we-gain-from-crafting-a-git-message-convention-at-remote-python-pizza-2020)
 * How to get more than PyCon in a PyCon
     * **2019/09/16 [PyCon JP 2019](https://pycon.jp/2019/) - Peer Reviewed Lightning Talk**: [slide](https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9)
@@ -159,16 +159,16 @@ I was the program executor and the leader of the teaching assistant team. I also
         * [slide](https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng)
         * [video](https://www.youtube.com/watch?v=kf0KFyb-wcA)
 * Intro to Python Data Science Tools
-    * 2018/03/12 NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence: [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20190312)
-    * 2018/2/27 NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence: [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20180227)
+    * *2018/03/12* NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence: [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20190312)
+    * *2018/02/27* NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence: [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20180227)
 * CRUD in Flask
-    * 2018/8/16 [X-Village](https://sites.google.com/view/x-village/home?authuser=0) - Web Course: [slide](https://speakerdeck.com/leew/x-village-crud-in-flask-1)
+    * *2018/08/16* [X-Village](https://sites.google.com/view/x-village/home?authuser=0) - Web Course: [slide](https://speakerdeck.com/leew/x-village-crud-in-flask-1)
 * 資管講座 (一場工資管營的演講)
-    * 2017/01/22 2018成大工資管營: [slide](https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang)
+    * *2017/01/22* 2018成大工資管營: [slide](https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang)
 * Bot Development
-    * 2016/12/08 NCKU CSIE - Introduction to Knowledge Discovery and Data Engineering: [slide](https://hackmd.io/p/HkW8LjRfl)
+    * *2016/12/08* NCKU CSIE - Introduction to Knowledge Discovery and Data Engineering: [slide](https://hackmd.io/p/HkW8LjRfl)
 * Keras Demo
-    * 2016/11/03 [深度之夜](https://ncku-ccs.kktix.cc/events/97f7bd96): [slide](https://github.com/Lee-W/Keras-Mnist-Example)
+    * *2016/11/03* [深度之夜](https://ncku-ccs.kktix.cc/events/97f7bd96): [slide](https://github.com/Lee-W/Keras-Mnist-Example)
 
 For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/).
 
