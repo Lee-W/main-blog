@@ -1,5 +1,6 @@
 Title: [Book] 創作的基因：書籍、電影、音樂,賦予遊戲製作人小島秀夫無限創意的文化記憶
 Date: 2024-05-13 09:52
+Modified: 2024-05-13 12:13
 Category: Book
 Tags: Game, Creative
 Slug: creative-gene
@@ -30,11 +31,11 @@ Authors: Wei Lee
 
 > 現今MEME常見的使用語境，是網路迷因（internet meme），但原始意義如本文後述，是可由模仿而傳遞、轉移給他人的文化記憶。本書文中之MEME，均採此原意。
 
-我想說這些 MEME 聽起來一點都不像迷因啊 😆
+我想說這些 MEME 讀起來一點都不像迷因啊 😆
 
-在讀書時，我時常會把重點畫下來
-看完再用把畫線的部分從閱讀器輸出
-（以前紙本都要自己手打，現在這樣好方便🙌）
+讀書時，我時常會把重點畫下來
+看完再把畫線的部分從閱讀器輸出
+（以前紙本都要自己手打，現在有閱讀器好方便 🙌）
 這次也畫了一些我喜歡的片段
 但重新閱讀這些片段後，我決定把它們留在書上就好
 讓看完這篇文決定要去看書的人們，自己好好感受
@@ -47,4 +48,4 @@ Authors: Wei Lee
 我寫的心得詞不達意，可能不是很有力的推薦
 因此想推薦強者我朋友寫的心得 [ [閱讀] 小島秀夫《創作的基因》 ](https://lankudot.airfishlab.com/blog/2023-10-the-gifted-gene-and-my-lovable-memes/)
 還有興趣了解更多的小島製作人的話，現在 Disney+ 上有 [小島秀夫：連結世界](https://www.disneyplus.com/en-tw/movies/hideo-kojima-connecting-worlds/5J9EpUmPgTfG)
-如果還沒訂閱 Disney+ ，或許可以先聽聽看 [EP171：可以先看，再來討論《小島秀夫:連結世界》《失控教室》《沙丘2》](https://neildrinkmilk.firstory.io/episodes/clt9hqqvz17kp01zzc5je5edw)
+也可以聽聽 [EP171：可以先看，再來討論《小島秀夫:連結世界》《失控教室》《沙丘2》](https://neildrinkmilk.firstory.io/episodes/clt9hqqvz17kp01zzc5je5edw) 的推薦
