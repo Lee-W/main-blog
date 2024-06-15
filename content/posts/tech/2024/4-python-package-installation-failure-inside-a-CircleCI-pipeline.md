@@ -62,5 +62,3 @@ stty cols 80
 ## Reference
 * [ Why the compilation fails inside a CircleCI pipeline ? #1803 ](https://github.com/Nuitka/Nuitka/issues/1803)
 * [ Notes on setting tty/console/terminal width #5407 ](https://github.com/travis-ci/travis-ci/issues/5407)
-
-

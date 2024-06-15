@@ -24,7 +24,7 @@ Error: fatal: could not read Username for 'https://github.com': terminal prompts
 先到 GitHub 個人頁面的 `Settings` > `Developer Settings` > `Personal Access Tokens`
 找出[actions/checkout](https://github.com/actions/checkout)用的那個過期的 token，並且更新它
 
-接著回到專案頁面的 `Settings` > `Secrets and variables` > `Actions` 找到對應的 secret，並取代成更新過的 token 
+接著回到專案頁面的 `Settings` > `Secrets and variables` > `Actions` 找到對應的 secret，並取代成更新過的 token
 
 ## 雜記
 遙想當初開始寫部落格，其實也就只是把筆記存起來，讓未來的自己好找

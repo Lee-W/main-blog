@@ -45,7 +45,7 @@ Authors: Wei Lee
 ![Ōta fab](/images/posts-image/2024-2023-tokyo-coworking-space/17057695327403.jpg)
 
 ## MONZ SPACE (築地)
-* [Google Map](https://maps.app.goo.gl/EQXw9BE7aGpAnQ4R8) 
+* [Google Map](https://maps.app.goo.gl/EQXw9BE7aGpAnQ4R8)
 * 營業時間： 09:00 ~ 18:00
 * 價位： ￥2,000
 
@@ -133,7 +133,7 @@ MONZ SPACE 幾乎在築地市場旁邊
 飲料是有幾種選擇的咖啡機，我覺得蠻夠的
 位置在涉谷這點可能是他最大的優點
 
-![.andwork shibuya](/images/posts-image/2024-2023-tokyo-coworking-space/17057695142234.jpg)    
+![.andwork shibuya](/images/posts-image/2024-2023-tokyo-coworking-space/17057695142234.jpg)  
 
 ## .andwork kawasaki (川崎)
 * [Google Map](https://maps.app.goo.gl/JHFqummPCTrKf4oC7)

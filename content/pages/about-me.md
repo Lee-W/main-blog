@@ -136,7 +136,7 @@ I was the program executor and the leader of the teaching assistant team. I also
 ## Talk and Tutorial
 * Starts Airflow task execution directly from the triggerer
     * *2024/05/08* Airflow Town Hall: [slide](https://speakerdeck.com/leew/starts-airflow-task-execution-directly-from-the-triggerer)
-* Intro to Airflow - From Zero to Hero 
+* Intro to Airflow - From Zero to Hero
     * *2024/02/17* [源來適你](https://www.facebook.com/opensource4you): [slide](https://speakerdeck.com/leew/intro-to-airflow-from-zero-to-hero)
 * Atomic Commits: An Easy & Proven Way to Manage & Automate Release Process
     * **2023/07/29** [COSCUP 2023](https://coscup.org/2023/zh-TW/session/TUGLJP): [slide](https://speakerdeck.com/leew/atomic-commits-an-easy-and-proven-way-to-manage-and-automate-release-process)

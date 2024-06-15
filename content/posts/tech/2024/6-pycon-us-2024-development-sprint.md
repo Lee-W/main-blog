@@ -37,7 +37,7 @@ Nonetheless, this sprint was quite intensive and productive for commitizen-tools
         1. [ feat: draft of the --empty parameter #723 ](https://github.com/commitizen-tools/commitizen/pull/723)
         2. [ fix: add description for subcommands #1120 ](https://github.com/commitizen-tools/commitizen/pull/1120)
     * Opened
-        1. [ Turn on isort for ruff #1128 ](https://github.com/commitizen-tools/commitizen/pull/1128)        
+        1. [ Turn on isort for ruff #1128 ](https://github.com/commitizen-tools/commitizen/pull/1128)  
 * [issues](https://github.com/commitizen-tools/commitizen/issues)
     * Triaged
         1. [ Add option for "cz.toml" config file #1111 ](https://github.com/commitizen-tools/commitizen/issues/1111)
@@ -77,6 +77,6 @@ During the sprint, I shared commitizen-tools with Takanoryさん. Later, he intr
 
 After the sprint, a couple of APAC folks went to this church restaurant. It was quite a pleasant dinner. Always love to hangout with Pythonistas 😄
 
-![church-1](/images/posts-image/2024-pycon-us-2024-development-sprint/church-1.jpeg) 
+![church-1](/images/posts-image/2024-pycon-us-2024-development-sprint/church-1.jpeg)
 ![church-2](/images/posts-image/2024-pycon-us-2024-development-sprint/church-2.jpeg)
 ![church-3](/images/posts-image/2024-pycon-us-2024-development-sprint/church-3.jpeg)
