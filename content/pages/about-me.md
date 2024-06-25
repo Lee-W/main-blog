@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2024-05-13 09:20
+modified: 2024-06-25 23:25
 slug: about-me
 ---
 
@@ -134,6 +134,8 @@ I was the program executor and the leader of the teaching assistant team. I also
 * Contribute to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
 
 ## Talk and Tutorial
+* What If...? Running Airflow Tasks without the workers
+    * **2024/09** [Airflow summit 2024](https://airflowsummit.org/sessions/2024/what-if-running-airflow-tasks-without-the-workers/)
 * Starts Airflow task execution directly from the triggerer
     * *2024/05/08* Airflow Town Hall: [slide](https://speakerdeck.com/leew/starts-airflow-task-execution-directly-from-the-triggerer)
 * Intro to Airflow - From Zero to Hero
