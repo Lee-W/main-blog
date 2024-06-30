@@ -21,20 +21,20 @@ jobs:
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: "3.12"
 
       - name: Install dependencies
         run: |
-          python -m pip install poetry
-          poetry --version
-          poetry install
+          python -m pip install pipenv
+          pipenv --version
+          pipenv install
 
       - name: Build
         run: |
           export GOOGLE_ANALYTICS=${{ secrets.GOOGLE_ANALYTICS }}
-          poetry run inv build-publish
+          pipenv run inv build-publish
 
       - name: GitHub Action for npx
         uses: mikeal/npx@1.0.0

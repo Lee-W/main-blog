@@ -1,0 +1,37 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+pelican = {extras = ["markdown"], version = "*"}
+pelican-seo = "*"
+pelican-render-math = "*"
+pelican-share-post = "*"
+pelican-webassets = "*"
+pelican-neighbors = "*"
+pelican-series = "*"
+pelican-tag-cloud = "*"
+markdown-del-ins = "*"
+md-mermaid = {git = "git+https://github.com/Lee-W/md_mermaid"}
+Markdown = "<3.2"
+
+beautifulsoup4 = "*"
+cssmin = "*"
+typogrify = "*"
+webassets = "*"
+python-gettext = "*"
+ghp-import = "*"
+
+invoke = "*"
+
+[dev-packages]
+commitizen = "*"
+livereload = "*"
+ruff = "*"
+pre-commit-hooks = "*"
+invoke = "*"
+pip-audit = "*"
+
+[requires]
+python_version = "3.12"

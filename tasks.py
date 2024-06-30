@@ -178,9 +178,9 @@ def style(c):
     python_targets = "pelicanconf.py publishconf.py tasks.py"
     c.run(
         f"""
-        poetry run ruff check {python_targets} && \
-        poetry run black --check {python_targets} && \
-        poetry run cz check --rev-range origin/main..
+        pipenv run ruff check {python_targets} && \
+        pipenv run black --check {python_targets} && \
+        pipenv run cz check --rev-range origin/main..
         """
     )
 
@@ -191,8 +191,8 @@ def format(c):
     python_targets = "pelicanconf.py publishconf.py tasks.py"
     c.run(
         f"""
-        poetry run black {python_targets} && \
-        poetry run ruff check {python_targets} --fix
+        pipenv run black {python_targets} && \
+        pipenv run ruff check {python_targets} --fix
         """
     )
 
@@ -202,8 +202,8 @@ def format(c):
 #     """Run pip-autid on dependencies"""
 #     c.run(
 #         """
-#         poetry export --output=requirements.txt --without-hashes && \
-#         poetry run pip-audit -r requirements.txt && \
+#         pipenv export --output=requirements.txt --without-hashes && \
+#         pipenv run pip-audit -r requirements.txt && \
 #         rm -rf requirements.txt
 #         """
 #     )
