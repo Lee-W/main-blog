@@ -1,0 +1,45 @@
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+ignore = ["E501", "D1", "D415"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["commitizen", "tests"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+
+[tool.commitizen]
+name = "cz_customize"
+
+[tool.commitizen.customize]
+message_template = "{{change_type}}: {{message}}"
+example = "post: this is my first post"
+schema = "<type>: <body>"
+schema_pattern = "^((new post|post update|new draft|draft update|post metadata|typo|config|theme|dependency|static page)): .*"
+bump_map = { "break" = "MAJOR", "new" = "MINOR", "fix" = "PATCH", "hotfix" = "PATCH" }
+info = "This is commit convention for my blog post"
+
+[[tool.commitizen.customize.questions]]
+type = "list"
+name = "change_type"
+choices = [
+    "new post",
+    "post update",
+    "new draft",
+    "draft update",
+    "post metadata",
+    "typo",
+    "config",
+    "theme",
+    "dependency",
+    "static page",
+]
+message = "What type of commit is it?"
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "message"
+message = "Message body: \n"
