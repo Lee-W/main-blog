@@ -1,35 +1,23 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-
 PATH = "content"
 
 # Blog Conf
-AUTHOR = "Lee-W"
+AUTHOR = "Wei lee"
 SITENAME = "Those aren't written down are meant to be forgotten"
+SITETITLE = SITENAME
 SITEURL = "http://localhost:8000"
-SITETITLE = AUTHOR
 SITELOGO = None
 BROWSER_COLOR = "#333333"
-LANDING_PAGE_TITLE = "Hi, I'm Wei Lee"
-PROJECTS_TITLE = "Projects"
-PROJECTS = [
-    {
-        "name": "apache-airflow",
-        "url": "https://github.com/apache/airflow/",
-        "description": "A platform to programmatically author, schedule, and monitor workflows",
-    },
-    {
-        "name": "Commitizen",
-        "url": "https://github.com/commitizen-tools/commitizen",
-        "description": (
-            "Python 3 command-line utility to standardize commit "
-            "messages and bump version"
-        ),
-    },
-]
+DEFAULT_DATE_FORMAT = "%Y/%m/%d - %a"
 
-# comment system
+# Locale
+TIMEZONE = "Asia/Taipei"
+DEFAULT_LANG = "zh-tw"
+OG_LOCALE = "zh-tw"
+
+# utterance (comment system)
 UTTERANCES_REPO = "Lee-W/main-blog"
 UTTERANCES_LABEL = "comment"
 COMMENTS_INTRO = (
@@ -52,11 +40,6 @@ This work is licensed under a
 </a>.
 """
 
-# Locale
-TIMEZONE = "Asia/Taipei"
-DEFAULT_LANG = "zh-tw"
-DEFAULT_DATE_FORMAT = "%Y/%m/%d - %a"
-
 # Page Setting
 MAIN_MENU = True
 DIRECT_TEMPLATES = ("index", "categories", "tags", "archives", "search")
@@ -72,6 +55,23 @@ THEME = "theme/elegant"
 JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
 PYGMENTS_STYLE = "default"
 APPLAUSE_BUTTON = False
+LANDING_PAGE_TITLE = "Hi, I'm Wei Lee"
+PROJECTS_TITLE = "Projects"
+PROJECTS = [
+    {
+        "name": "apache-airflow",
+        "url": "https://github.com/apache/airflow/",
+        "description": "A platform to programmatically author, schedule, and monitor workflows",
+    },
+    {
+        "name": "Commitizen",
+        "url": "https://github.com/commitizen-tools/commitizen",
+        "description": (
+            "Python 3 command-line utility to standardize commit "
+            "messages and bump version"
+        ),
+    },
+]
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -114,6 +114,7 @@ PLUGINS = [
     "pelican.plugins.render_math",
     "pelican.plugins.share_post",
     "pelican.plugins.seo",
+    "series",
 ]
 ANOTHER_READ_MORE_LINK = ""
 READERS = {"html": None}
