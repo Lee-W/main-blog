@@ -37,7 +37,7 @@ jobs:
           pipenv run inv build-publish
 
       - name: GitHub Action for npx
-        uses: mikeal/npx@1.0.0
+        uses: mikeal/npx@v2.0.0
 
       - name: Build search index
         run: |
