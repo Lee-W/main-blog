@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
-        uses: actions/checkout@main
+        uses: actions/checkout@4
         with:
           fetch-depth: 0
           ref: '${{ github.event.inputs.git_rev }}'

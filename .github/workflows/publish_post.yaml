@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Checkout submodules
         shell: bash
@@ -37,14 +37,14 @@ jobs:
           pipenv run inv build-publish
 
       - name: GitHub Action for npx
-        uses: mikeal/npx@1.0.0
+        uses: mikeal/npx@2.0.0
 
       - name: Build search index
         run: |
           npx -y pagefind --site output
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
