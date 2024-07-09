@@ -9,8 +9,7 @@ updates:
     labels:
       - dependencies
     commit-message:
-      prefix: "config:"
-      include: "scope"
+      prefix: "config: "
   -
     # Maintain python dependencies
     package-ecosystem: pip
@@ -20,5 +19,4 @@ updates:
     labels:
       - dependencies
     commit-message:
-      prefix: "config:"
-      include: "scope"
+      prefix: "config: "
