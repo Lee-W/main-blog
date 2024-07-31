@@ -1,7 +1,8 @@
 Title: Starts Airflow task execution directly from the triggerer
 Date: 2024-06-02 18:20
+Modified: 2024-07-30 23:55
 Category: Tech
-Tags: Airflow, Triggerer
+Tags: Airflow, Airflow 2.10, Triggerer
 Slug: starts-execution-directly-from-triggerer-without-going-to-worker
 Authors: Wei Lee
 
