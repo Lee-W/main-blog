@@ -1,5 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-07-13T12:20:00+08:00</updated><entry><title>Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」的草稿</title><link href="https://blog.wei-lee.me/posts/tech/2024/07/Introducing-Python-ch19-draft" rel="alternate"></link><published>2024-07-13T12:20:00+08:00</published><updated>2024-07-13T12:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-07-13:/posts/tech/2024/07/Introducing-Python-ch19-draft</id><summary type="html">&lt;p&gt;最近半年 Gobby 為了學 Python 籌備了 Python 的讀書會&lt;br/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-07-31T23:55:00+08:00</updated><entry><title>Achieve 200 contributions in Apache Airflow</title><link href="https://blog.wei-lee.me/posts/tech/2024/07/achieve-200-contributions-in-apache-airflow" rel="alternate"></link><published>2024-07-31T23:55:00+08:00</published><updated>2024-07-31T23:55:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-07-31:/posts/tech/2024/07/achieve-200-contributions-in-apache-airflow</id><summary type="html">&lt;p&gt;This is more like a personal reflection, and I really doubt it would benefit anyone. But it's my blog anyway. I can write whatever I want, lol.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;This is more like a personal reflection, and I really doubt it would benefit anyone. But it's my blog anyway. I can write whatever I want, lol.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;There are actually 202 now, but I have the screenshot when it achieved 200, so I'll just keep 200 in the title.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="2024-07-30-05-15-PM-200-PRs" src="/images/posts-image/achieve-200-contributions-in-apache-airflow/2024-07-30-05-15-PM-200-PRs.png"/&gt;&lt;/p&gt;
+&lt;p&gt;The merged pull request is at 166 (+2). I am unsure about the remaining 34 contributions, perhaps due to the suggestions I provided for the PRs I reviewed. There are 2 PRs in question.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/41097"&gt;Add dataset alias unique constraint and remove wrong dataset alias removing logic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/41091"&gt;set "has_outlet_datasets" to true if "dataset alias" exists&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;200 PRs seems like a good opportunity for me to reflect on what I have done on the Airflow project since I joined Astronomer. There might be typos in the PR title, but I'll keep it as it is. I try to group related things into subgroups, and there might be things that cannot be easily categorized. I'm just putting it in the "misc" section.&lt;/p&gt;
+&lt;p&gt;The count of PRs might appear to be higher than the value I added (and it actually is). This is due to my development habits. Whenever possible, I prefer to keep the commits small and clean. It's easier to revert if I did something dumb and wrong. However, I must admit I probably created too many PRs for the Azure managed identity feature. Ideally, the feature PRs should include documentation updates as well. But yep, I was eager to land the feature first, then. It also suggested having separate PRs for each airflow provider even if it's basically the same feature.&lt;/p&gt;
+
+&lt;h2 id="after-joining-astronomer"&gt;After joining Astronomer&lt;/h2&gt;
+&lt;h3 id="add-datasetalias-for-creating-datasets-or-dataset-events-in-runtime"&gt;Add "DatasetAlias" for creating datasets or dataset events in runtime&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/41043"&gt;Check dataset_alias in inlets when use it to retrieve inlet_evnets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/41041"&gt;Add string representation to dataset alias&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/41037"&gt;add example dag for dataset_alias&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40984"&gt;add test case test_dag_deps_datasets_with_duplicate_dataset&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40868"&gt;Extend dataset dependencies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40830"&gt;Extend get datasets endpoint to include dataset aliases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40809"&gt;Retrieve inlet dataset events through dataset aliases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40723"&gt;Link dataset event to dataset alias&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40693"&gt;Scheduling based on dataset aliases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40478"&gt;Add DatasetAlias to support dynamic Dataset Event Emission and Dataset Creation&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="start-task-execution-directly-from-the-trigger"&gt;Start task execution directly from the trigger&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/41062"&gt;fix: add argument include_xcom in method rsolve an optional value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/41021"&gt;Add start execution from trigger support for existing core sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40993"&gt;Enhance start_trigger_args serialization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40935"&gt;State the limitation of the newly added start execution from trigger feature&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40376"&gt;add next_kwargs to StartTriggerArgs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/39912"&gt;Add start execution from triggerer support to dynamic task mapping&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/39585"&gt;Prevent start trigger initialization in scheduler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38674"&gt;Starts execution directly from triggerer without going to worker&lt;/a&gt; (PR of the month)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="add-rest-api-endpoint-to-manipulate-queued-dataset-events"&gt;Add REST API endpoint to manipulate queued dataset events&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/41022"&gt;add section "Manipulating queued dataset events through REST API"&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/37176"&gt;add "queuedEvent" endpoint to get/delete DatasetDagRunQueue&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="upgrade-apache-airflow-providers-weaviate-to-200-for-weaviate-client-440-support"&gt;Upgrade apache-airflow-providers-weaviate to 2.0.0 for weaviate-client &amp;gt;= 4.4.0 support&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40534"&gt;extract collection_name from system tests and make them unique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40517"&gt;fix weaviate system tests&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40194"&gt;Upgrade to weaviate-client to v4&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="improve-trigger-stability-by-adding-return-after-yield"&gt;Improve trigger stability by adding "return" after "yield"&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38396"&gt;add "return" statement to "yield" within a while loop in amazon triggers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38395"&gt;add "return" statement to "yield" within a while loop in dbt triggers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38394"&gt;add "return" statement to "yield" within a while loop in google triggers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38393"&gt;add "return" statement to "yield" within a while loop in azure triggers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38392"&gt;add "return" statement to "yield" within a while loop in http triggers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38391"&gt;add "return" statement to "yield" within a while loop in sftp triggers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38390"&gt;add "return" statement to "yield" within a while loop in airbyte triggers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38389"&gt;add "return" statement to "yield" within a while loop in core triggers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38332"&gt;retrieve dataset event created through RESTful API when creating dag run&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="contribute-astronomer-providers-functionality-to-apache-airflow-providers"&gt;Contribute astronomer-providers functionality to apache-airflow providers&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38619"&gt;add repair_run support to DatabricksRunNowOperator in deferrable mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38397"&gt;remove redundant else block in DatabricksExecutionTrigger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/37474"&gt;add reuse_existing_run for allowing DbtCloudRunJobOperator to reuse existing run&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/37306"&gt;fix how GKEPodAsyncHook.service_file_as_context is used&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/37081"&gt;add service_file support to GKEPodAsyncHook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36946"&gt;reword GoogleBaseHookAsync as GoogleBaseAsyncHook in docstring&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36940"&gt;add WasbPrefixSensorTrigger params breaking change to azure provider changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36894"&gt;style(providers/google): improve BigQueryInsertJobOperator type hinting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36892"&gt;Check cluster state before defer Dataproc operators to trigger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36806"&gt;Fix WasbPrefixSensor arg inconsistency between sync and async mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36749"&gt;avoid retrying after KubernetesPodOperator has been marked as failed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36685"&gt;check sagemaker training job status before deferring SageMakerTrainingOperator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36680"&gt;check transform job status before deferring SageMakerTransformOperator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36658"&gt;check ProcessingJobStatus status before deferring SageMakerProcessingOperator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36586"&gt;add deferrable mode to RedshiftDataOperator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36578"&gt;add use_regex argument for allowing S3KeySensor to check s3 keys with regular expression&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36550"&gt;add deferrable mode to RedshiftClusterSensor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36523"&gt;check job_status before BatchOperator execute in deferrable mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36417"&gt;remove event['message'] call in EmrContainerOperator.execute_complete|as the key message no longer exists&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36416"&gt;Check redshift cluster state before deferring to triggerer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36363"&gt;handle tzinfo in S3Hook.is_keys_unchanged_async&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36330"&gt;add type annotations to Amazon provider "execute_coplete" methods&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/36202"&gt;iterate through blobs before checking prefixes&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="add-azure-managed-identities-support-to-apache-airflow-providers-microsoft-azure"&gt;Add Azure managed identities support to apache-airflow-providers-microsoft-azure&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35432"&gt;setting use_async=True for get_async_default_azure_credential&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35394"&gt;add managed identity support to AsyncDefaultAzureCredential&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35367"&gt;Refactor azure managed identity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35330"&gt;add managed identity support to fileshare hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35329"&gt;add managed identity support to synapse hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35328"&gt;add managed identity support to azure datalake hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35327"&gt;add managed identity support to azure batch hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35326"&gt;add managed identity support to wasb hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35325"&gt;add managed identity support to adx hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35324"&gt;add managed identity support to asb hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35323"&gt;add managed identity support to azure cosmos hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35322"&gt;add managed identity support to azure data factory hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35321"&gt; add managed identity support to azure container volume hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35320"&gt; add managed identity support to azure container registry hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35319"&gt;add managed identity support to azure container instance hook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35318"&gt; Reuse get_default_azure_credential method from Azure utils for Azure key valut&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35052"&gt; make DefaultAzureCredential configurable in AzureKeyVaultBackend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/35051"&gt;Make DefaultAzureCredential in AzureBaseHook configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34104"&gt;docs(providers/microsoft): improve documentation for AzureContainerVolumeHook DefaultAzureCredential support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34103"&gt;docs(providers/microsoft): improve documentation for WasbHook DefaultAzureCredential support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34102"&gt;docs(providers/microsoft): improve documentation for AzureCosmosDBHook DefaultAzureCredential support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34101"&gt;docs(providers/microsoft): improve documentation for AzureFileShareHook DefaultAzureCredential support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34098"&gt;docs(providers/microsoft): improve documentation for AzureBatchHook DefaultAzureCredential support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34097"&gt;docs(providers/microsoft): improve documentation for AzureBaseHook DefaultAzureCredential support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34096"&gt;docs(providers/microsoft): improve documentation for Azure Service Bus hooks DefaultAzureCredential support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34095"&gt;docs(providers/microsoft): improve documentation for AzureDataExplorerHook DefaultAzureCredential support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34094"&gt;docs(providers/microsoft): improve documentation for AzureDataLakeStorageV2Hook DefaultAzureCredential support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34074"&gt; docs(providers/microsoft): improve documentation for AzureDataLakeHook DefaultAzureCredential support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34073"&gt;docs(providers/microsoft): improve documentation for AzureContainerRegistryHook DefaultAzureCredential support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34070"&gt;feat(providers/microsoft): add AzureContainerInstancesOperator.volume as a template field&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34002"&gt;test(providers/microsfot): add system test for AzureContainerVolumeHook and AzureContainerRegistryHook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33992"&gt;docs(providers): replace markdown style link with rst style link for amazon and apache-beam&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33991"&gt;test(providers/microsoft): add test cases  to AzureContainerInstanceHook &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33825"&gt;Add DefaultAzureCredential support to AzureContainerRegistryHook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33822"&gt;feat(providers/microsoft): add DefaultAzureCredential support to AzureContainerVolumeHook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33716"&gt;Add AzureBatchOperator example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33687"&gt;test(providers/microsoft): add test case for AzureIdentityCredentialAdapter.signed_session&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33653"&gt;fix(providers/azure): remove json.dumps when querying AzureCosmosDBHook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33493"&gt;feat(providers/azure): allow passing fully_qualified_namespace and credential to initialize Azure Service Bus Client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33469"&gt; feat(providers/microsoft): add DefaultAzureCredential support to AzureBatchHook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33467"&gt;feat(providers/microsoft): add DefaultAzureCredential support to AzureContainerInstanceHook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33436"&gt;feat(providers/microsoft): add DefaultAzureCredential support to cosmos&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33433"&gt;feat(providers/microsoft): add DefaultAzureCredential to data_lake&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="make-all-existing-sensors-respect-the-soft_fail-argument-in-basesensoroperator"&gt;Make all existing sensors respect the "soft_fail" argument in BaseSensorOperator&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34501"&gt;respect soft_fail argument when exception is raised for google sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34494"&gt;respect soft_fail argument when exception is raised for microsoft-azure sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34476"&gt;respect soft_fail argument when exception is raised for flink sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34475"&gt;respect soft_fail argument when exception is raised for jenkins sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34474"&gt;respect soft_fail argument when exception is raised for celery sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34473"&gt;Fix inaccurate test case names in providers &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34472"&gt;respect soft_fail argument when exception is raised for datadog sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34391"&gt;respect soft_fail argument when exception is raised for http sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34199"&gt;respect soft_fail argument when exception is raised for sql sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34169"&gt;respect soft_fail argument when exception is raised for sftp sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34167"&gt;respect soft_fail argument when exception is raised for spark-kubernetes sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34165"&gt;respect soft_fail argument when exception is raised for google-marketing-platform sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34164"&gt;respect soft_fail argument when exception is raised for dbt sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34163"&gt;respect soft_fail argument when exception is raised for tableau sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34161"&gt;respect soft_fail argument when exception is raised for ftp sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34157"&gt;respect soft_fail argument when exception is raised for alibaba sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34156"&gt;respect soft_fail argument when exception is raised for airbyte sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34134"&gt;respect soft_fail argument when exception is raised for amazon sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33405"&gt;respect "soft_fail" argument when running BatchSensor in deferrable mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33403"&gt;Respect "soft_fail" for core async sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33401"&gt;Respect "soft_fail" argument when "poke" is called&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33196"&gt;respect soft_fail argument when ExternalTaskSensor runs in deferrable mode&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="add-defult_deferrable-configuration-for-easily-turning-on-the-deferrable-mode-of-operators"&gt;Add defult_deferrable configuration for easily turning on the deferrable mode of operators&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/32514"&gt;build(pre-commit): add list of supported deferrable operators to doc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/32370"&gt;build(pre-commit): check deferrable default value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/31712"&gt;Add default_deferrable config&lt;/a&gt; (PR of the month)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="security-improvement"&gt;Security improvement&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40522"&gt;Disable rendering for doc_md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/39012"&gt; check whether AUTH_ROLE_PUBLIC is set in check_authentication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38924"&gt;check whether AUTH_ROLE_PUBLIC is set in check_authentication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/32261"&gt;fix(api_connexion): handle the cases that webserver.expose_config is set to "non-sensitive-only" instead of boolean value&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="misc-core"&gt;Misc (core)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40060"&gt;catch sentry flush if exception happens in _execute_in_fork finally block&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40058"&gt;add PID and return code to _execute_in_fork logging&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/39313"&gt;add missing conn_id to string representation of ObjectStoragePath&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/37542"&gt;Enable "airflow tasks test" to run deferrable operator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34598"&gt;remove "to backfill" from --task-regex argument help message&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33926"&gt;fix(sensors): move trigger initialization from __init___ to execute&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/32693"&gt;Ship zombie info&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/31999"&gt;Catch the exception that triggerer initialization failed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/31757"&gt;feat(jobs/triggerer_job_runner): add triggerer canceled log&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/31379"&gt;fixing circular import error in providers caused by airflow version check&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="misc-provider"&gt;Misc (provider)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40080"&gt;add default gcp_conn_id to GoogleBaseAsyncHook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/39874"&gt;remove unexpected argument pod in read_namespaced_pod_log call&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/39271"&gt;fix wrong payload set when reuse_existing_run set to True in DbtCloudRunJobOperator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/39214"&gt;migrate to dbt v3 api for project endpoints&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/39112"&gt;Replace pod_manager.read_pod_logs with client.read_namespaced_pod_log in KubernetesPodOperator._write_logs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34706"&gt;allow providing credentials through keyword argument in AzureKeyVaultBackend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33407"&gt;Fix outdated test name and description in BatchSensor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33189"&gt;add deprecation warning to DATAPROC_JOB_LOG_LINK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33148"&gt;Alias &lt;code&gt;DATAPROC_JOB_LOG_LINK&lt;/code&gt; to &lt;code&gt;DATAPROC_JOB_LINK&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/32806"&gt;Remove execute function of &lt;code&gt;DatabricksRunNowDeferrableOperator&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/32689"&gt;Add missing execute_complete method for &lt;code&gt;DatabricksRunNowOperator&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/32323"&gt;refresh connection if an exception is caught in "AzureDataFactory"&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/32238"&gt;feat(providers/azure): cancel pipeline if unexpected exception caught&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/31482"&gt;fix(providers/amazon): handle missing LogUri in emr describe_cluster API response&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/30250"&gt;merge AzureDataFactoryPipelineRunStatusAsyncSensor to AzureDataFactoryPipelineRunStatusSensor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/30235"&gt;merge BigQueryTableExistenceAsyncSensor into BigQueryTableExistenceSensor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/30231"&gt;Merge BigQueryTableExistencePartitionAsyncSensor into BigQueryTableExistencePartitionSensor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/30227"&gt;Merge DbtCloudJobRunAsyncSensor logic to DbtCloudJobRunSensor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/30014"&gt;Merge GCSObjectExistenceAsyncSensor logic to GCSObjectExistenceSensor&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="misc-doc-only"&gt;Misc (doc only)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/39004"&gt;Add in Trove classifiers Python 3.12 support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/38740"&gt;add Wei Lee to committer list&lt;/a&gt; (This is my 133rd PR)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/37808"&gt;Erd generating doc improvement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/34708"&gt;fix rst code block format&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33990"&gt;docs(core-airflow): replace markdown style link with rst style link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33989"&gt;docs(CONTRIBUTING): replace markdown style link with rst style link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/33770"&gt;docs: fix partial doc reference error due to missing space&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/32422"&gt;docs(deferring): add type annotation to code examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/32140"&gt;add a note that we'll need to restart triggerer to reflect any trigger change&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="before-joining-astronomer"&gt;Before Joining Astronomer&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/26411"&gt;update contributing documentations&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Tech"></category><category term="Airflow"></category></entry><entry><title>Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」的草稿</title><link href="https://blog.wei-lee.me/posts/tech/2024/07/Introducing-Python-ch19-draft" rel="alternate"></link><published>2024-07-13T12:20:00+08:00</published><updated>2024-07-13T12:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-07-13:/posts/tech/2024/07/Introducing-Python-ch19-draft</id><summary type="html">&lt;p&gt;最近半年 Gobby 為了學 Python 籌備了 Python 的讀書會&lt;br/&gt;
 找了各路的人來導讀這本&lt;a href="https://www.tenlong.com.tw/products/9789865024864"&gt; 精通 Python｜運用簡單的套件進行現代運算&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最近半年 Gobby 為了學 Python 籌備了 Python 的讀書會&lt;br/&gt;
 找了各路的人來導讀這本&lt;a href="https://www.tenlong.com.tw/products/9789865024864"&gt; 精通 Python｜運用簡單的套件進行現代運算&lt;/a&gt;&lt;/p&gt;
@@ -11,7 +232,7 @@
 &lt;p&gt;回到「精通 Python」這本書&lt;br/&gt;
 雖然只看了一章，但有稍微找一下大家對這本書的想法&lt;br/&gt;
 &lt;a href="https://blog.kyomind.tw/introducing-python/"&gt;《精通 Python 第二版》心得：給入門者的 Python 學習藍圖 &lt;/a&gt;寫的跟我的想法還蠻接近的&lt;br/&gt;
-尤其是重新定義了 "Introducing Python" 為「精通 Python」 &lt;br/&gt;
+尤其是重新定義了 "Introducing Python" 為「精通 Python」&lt;br/&gt;
 實在&lt;strong&gt;精闢&lt;/strong&gt;到一個不行&lt;br/&gt;
 恩，肯定沒錯，一定是如此&lt;br/&gt;
 不可能不是如此&lt;/p&gt;
@@ -309,7 +530,7 @@ Star 數不算太多，就沒特別試了&lt;br&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Display hidden items in a separate bar (e.g. for MacBooks with the notch)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;但這件事看起來有在他們的 roadmap 中，可以期待&lt;/p&gt;</content><category term="Tech"></category><category term="Mac"></category></entry><entry><title>Starts Airflow task execution directly from the triggerer</title><link href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker" rel="alternate"></link><published>2024-06-02T18:20:00+08:00</published><updated>2024-06-02T18:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-06-02:/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker</id><summary type="html">&lt;p&gt;A few weeks ago, I submitted &lt;a href="https://github.com/apache/airflow/pull/38674"&gt;#38674&lt;/a&gt; to &lt;a href="https://github.com/apache/airflow"&gt;airflow&lt;/a&gt; to Airflow, which was later selected as the PR of the month. (Thanks, Kaxil, for the nomination!)&lt;/p&gt;
+&lt;p&gt;但這件事看起來有在他們的 roadmap 中，可以期待&lt;/p&gt;</content><category term="Tech"></category><category term="Mac"></category></entry><entry><title>Starts Airflow task execution directly from the triggerer</title><link href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker" rel="alternate"></link><published>2024-06-02T18:20:00+08:00</published><updated>2024-07-30T23:55:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-06-02:/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker</id><summary type="html">&lt;p&gt;A few weeks ago, I submitted &lt;a href="https://github.com/apache/airflow/pull/38674"&gt;#38674&lt;/a&gt; to &lt;a href="https://github.com/apache/airflow"&gt;airflow&lt;/a&gt; to Airflow, which was later selected as the PR of the month. (Thanks, Kaxil, for the nomination!)&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;A few weeks ago, I submitted &lt;a href="https://github.com/apache/airflow/pull/38674"&gt;#38674&lt;/a&gt; to &lt;a href="https://github.com/apache/airflow"&gt;airflow&lt;/a&gt; to Airflow, which was later selected as the PR of the month. (Thanks, Kaxil, for the nomination!)&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;Thus, I was invited to present this feature at the  &lt;a href="https://astronomer.zoom.us/meeting/register/tZYqcOqhpjkqHdWPk_L11pHpUVLRHB4uYBSv#/registration"&gt;Airflow Monthly Town-Hall&lt;/a&gt;. Here is the &lt;a href="https://speakerdeck.com/leew/starts-airflow-task-execution-directly-from-the-triggerer"&gt;slide&lt;/a&gt; I used.&lt;/p&gt;
@@ -411,7 +632,7 @@ Triggerer --) Scheduler: Change the TaskInstanceState to SUCCESS
 &lt;h2 id="limitation"&gt;Limitation&lt;/h2&gt;
 &lt;p&gt;Dynamic Task Mapping / MappedOperator is not fully supported at this time due to the way this type of operator is initialized on the worker. However, a draft PR &lt;a href="https://github.com/apache/airflow/pull/39912"&gt;#39912&lt;/a&gt; has been created to address this.&lt;/p&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;mermaid.initialize({startOnLoad:true});&lt;/script&gt;</content><category term="Tech"></category><category term="Airflow"></category><category term="Triggerer"></category></entry><entry><title>PyCon US 2024 Development Sprint</title><link href="https://blog.wei-lee.me/posts/tech/2024/05/pycon-us-2024-development-sprint" rel="alternate"></link><published>2024-05-21T10:15:00+08:00</published><updated>2024-05-21T10:15:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-05-21:/posts/tech/2024/05/pycon-us-2024-development-sprint</id><summary type="html">&lt;p&gt;The last time I came to &lt;a href="https://blog.wei-lee.me/posts/tech/2019/06/how-was-pycon-us-2019"&gt;PyCon US&lt;/a&gt;. I had quite a good time during the development sprint and had a few of my PRs merged. (even though the one to CPython was later closed 🥲) So yep, I think this might be a good idea to host a &lt;a href="https://us.pycon.org/2024/events/dev-sprints/"&gt;development sprint&lt;/a&gt; for &lt;a href="https://commitizen-tools.github.io/commitizen/"&gt;commitizen-tools&lt;/a&gt;. 👀&lt;/p&gt;
+&lt;script&gt;mermaid.initialize({startOnLoad:true});&lt;/script&gt;</content><category term="Tech"></category><category term="Airflow"></category><category term="Airflow 2.10"></category><category term="Triggerer"></category></entry><entry><title>PyCon US 2024 Development Sprint</title><link href="https://blog.wei-lee.me/posts/tech/2024/05/pycon-us-2024-development-sprint" rel="alternate"></link><published>2024-05-21T10:15:00+08:00</published><updated>2024-05-21T10:15:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-05-21:/posts/tech/2024/05/pycon-us-2024-development-sprint</id><summary type="html">&lt;p&gt;The last time I came to &lt;a href="https://blog.wei-lee.me/posts/tech/2019/06/how-was-pycon-us-2019"&gt;PyCon US&lt;/a&gt;. I had quite a good time during the development sprint and had a few of my PRs merged. (even though the one to CPython was later closed 🥲) So yep, I think this might be a good idea to host a &lt;a href="https://us.pycon.org/2024/events/dev-sprints/"&gt;development sprint&lt;/a&gt; for &lt;a href="https://commitizen-tools.github.io/commitizen/"&gt;commitizen-tools&lt;/a&gt;. 👀&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;The last time I came to &lt;a href="https://blog.wei-lee.me/posts/tech/2019/06/how-was-pycon-us-2019"&gt;PyCon US&lt;/a&gt;. I had quite a good time during the development sprint and had a few of my PRs merged. (even though the one to CPython was later closed 🥲) So yep, I think this might be a good idea to host a &lt;a href="https://us.pycon.org/2024/events/dev-sprints/"&gt;development sprint&lt;/a&gt; for &lt;a href="https://commitizen-tools.github.io/commitizen/"&gt;commitizen-tools&lt;/a&gt;. 👀&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -13318,110 +13539,4 @@ chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;i
 
 
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://github.com/joelthelion/autojump/blob/master/README.md"&gt;autojump readme&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Linux-Unix"></category><category term="Utility"></category></entry><entry><title>Linux 開機自動掛載分割區</title><link href="https://blog.wei-lee.me/posts/tech/2014/02/auto-mount-disk-after-boot" rel="alternate"></link><published>2014-02-01T16:44:00+08:00</published><updated>2014-02-01T16:44:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2014-02-01:/posts/tech/2014/02/auto-mount-disk-after-boot</id><summary type="html">&lt;p&gt;分割區的掛載資訊，存在 /etc/fstab 中，所以需要自動掛載分割區時可以針對此檔案做修改&lt;br&gt;
-需要注意的是，如果設定不好，可能會沒辦法開機的！！！&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;分割區的掛載資訊，存在 /etc/fstab 中，所以需要自動掛載分割區時可以針對此檔案做修改&lt;br&gt;
-需要注意的是，如果設定不好，可能會沒辦法開機的！！！&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;p&gt;我們先來看一下 /etc/fstab 內的東西&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;cat&lt;span class="w"&gt; &lt;/span&gt;/etc/fstab
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# /etc/fstab: static file system information.
-#
-# Use &amp;#39;blkid&amp;#39; to print the universally unique identifier for a
-# device; this may be used with UUID= as a more robust way to name devices
-# that works even if disks are added and removed. See fstab(5).
-#
-# &amp;lt;file system&amp;gt; &amp;lt;mount point&amp;gt;   &amp;lt;type&amp;gt;  &amp;lt;options&amp;gt;       &amp;lt;dump&amp;gt;  &amp;lt;pass&amp;gt;
-# / was on /dev/sda1 during installation
-UUID=c5744283-f105-47e9-8a2e-21f477d895b7 /               ext4    errors=remount-ro 0       1
-# swap was on /dev/sda5 during installation
-UUID=72b6a10a-f0b6-43ef-927d-0d74673febe7 none            swap    sw              0       0
-#data
-UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;# 是註解&lt;br&gt;
-最後六行是比較重要的&lt;br&gt;
-1~2 是 root 的掛載&lt;br&gt;
-3~4 是 swap 的掛載&lt;br&gt;
-5~6 是我自己的 data 的掛載&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#data
-UUID=571F168F3D98D759 /media/lee/data ntfs auto,rw 0 2
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;總共有 6 個欄位&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;掛載硬碟的標籤&lt;ul&gt;
-&lt;li&gt;掛載硬碟的標籤我用的是 UUID 的標籤，可以用下面的指令查詢&lt;br&gt;
-&lt;code&gt;ls -l /dev/disk/by-uuid/&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;也可以直接使用 /dev/sda1 這樣的格式，只是如果硬碟的代號改變，就要再去手動改變比較麻煩&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;掛載位置&lt;ul&gt;
-&lt;li&gt;掛載的位置要是一個已經存在的位置，建議是一個空的資料夾&lt;/li&gt;
-&lt;li&gt;如果不是空的，裏面的東西應該都會被清空&lt;/li&gt;
-&lt;li&gt;另外，一個掛載點只能掛載一個 disk&lt;/li&gt;
-&lt;li&gt;另外，注意在 Linux 中大小寫是不同的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;分隔區格式&lt;ul&gt;
-&lt;li&gt;而一般的檔案朝的分割驅格式都是都是 ntfs，不過也可以用指令來查詢&lt;br&gt;
-&lt;code&gt;df&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;選項&lt;/li&gt;
-&lt;li&gt;是否被 dump 備份指令作用&lt;/li&gt;
-&lt;li&gt;是否以 fsck 檢驗磁區&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;基本上 4 5 6 我也沒去研究，如果有興趣的話可以在我最後面附上的參考資料中找到&lt;/p&gt;
-&lt;h2 id="_1"&gt;測試&lt;/h2&gt;
-&lt;p&gt;先看一下是否有掛載成功&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;檔案系統         1K-區段      已用      可用 已用 % 掛載點
-/dev/sda1      103081248   9259936  88562048   10% /
-none                   4         0         4    0% /sys/fs/cgroup
-udev             3992780         4   3992776    1% /dev
-tmpfs             801368      1168    800200    1% /run
-none                5120         0      5120    0% /run/lock
-none             4006840      1032   4005808    1% /run/shm
-none              102400        44    102356    1% /run/user
-/dev/sda6      459942908 229176172 230766736   50% /media/lee/data
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;像我的最後面就出現了 data&lt;/p&gt;
-&lt;p&gt;之後暫時將它卸載 (若 &lt;code&gt;df&lt;/code&gt; 之後，分割區沒有出現，那就不用做這步了)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;umount&lt;span class="w"&gt; &lt;/span&gt;/dev/sda6
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;(/dev/sda6 要取代成你自己的位置 )&lt;br&gt;
-接著再執行一次&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;剛剛的分割區應該會不見，然後執行&lt;br&gt;
-開機自動掛載分割區&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;mount&lt;span class="w"&gt; &lt;/span&gt;-a
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;如果沒有錯誤訊息，就在執行一次&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;如果掛載的分隔驅再裡面就是成功了&lt;/p&gt;
-&lt;p&gt;如果有任何異常，就去看一下 /etc/fstab 是不是有哪裡寫錯了&lt;/p&gt;
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href="http://255121.blogspot.tw/2010/05/linux.html"&gt;巴特的微花盆： 筆記： Linux 中設定開機時自動掛載分割區&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Linux-Unix"></category><category term="Dual Boot"></category></entry></feed>
+&lt;p&gt;&lt;a href="https://github.com/joelthelion/autojump/blob/master/README.md"&gt;autojump readme&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Linux-Unix"></category><category term="Utility"></category></entry></feed>
