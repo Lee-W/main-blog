@@ -18,7 +18,7 @@ Authors: Wei Lee
 回到「精通 Python」這本書
 雖然只看了一章，但有稍微找一下大家對這本書的想法
 [《精通 Python 第二版》心得：給入門者的 Python 學習藍圖 ](https://blog.kyomind.tw/introducing-python/)寫的跟我的想法還蠻接近的
-尤其是重新定義了 "Introducing Python" 為「精通 Python」 
+尤其是重新定義了 "Introducing Python" 為「精通 Python」
 實在**精闢**到一個不行
 恩，肯定沒錯，一定是如此
 不可能不是如此

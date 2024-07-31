@@ -1,8 +1,8 @@
-Title: Achieve 200 contributions in Apache Airflow 
+Title: Achieve 200 contributions in Apache Airflow
 Date: 2024-07-31 23:55
 Category: Tech
 Tags: Airflow
-Slug: achieve-200-contributions-in-apache-airflow 
+Slug: achieve-200-contributions-in-apache-airflow
 Authors: Wei Lee
 
 This is more like a personal reflection, and I really doubt it would benefit anyone. But it's my blog anyway. I can write whatever I want, lol.
