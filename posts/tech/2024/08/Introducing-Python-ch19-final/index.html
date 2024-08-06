@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" rel="stylesheet"/>
+<link href="https://blog.wei-lee.me/theme/css/elegant.prod.9e9d5ce754.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<meta content="Wei Lee" name="author">
+<meta content="article" property="og:type">
+<meta content="summary" name="twitter:card"/>
+<meta content="Python, Study Session, Tech, " name="keywords">
+<meta content="Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」決定版 " property="og:title">
+<meta content="https://blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final" property="og:url"/>
+<meta content="繼上次的 草稿後該來個決定版了" property="og:description"/>
+<meta content="Those aren't written down are meant to be forgotten" property="og:site_name"/>
+<meta content="Wei Lee" property="og:article:author"/>
+<meta content="2024-08-06T19:58:00+08:00" property="og:article:published_time"/>
+<meta content="Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」決定版 " name="twitter:title"/>
+<meta content="繼上次的 草稿後該來個決定版了" name="twitter:description"/>
+<title>Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」決定版  · Those aren't written down are meant to be forgotten
+</title>
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten - Full Atom Feed" type="application/atom+xml">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3J7XQ46QH5');
+</script>
+</link></meta></meta></meta></meta><link href="https://blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2024", "item": "https://blog.wei-lee.me/posts/tech/2024"}, {"@type": "ListItem", "position": 5, "name": "08", "item": "https://blog.wei-lee.me/posts/tech/2024/08"}, {"@type": "ListItem", "position": 6, "name": "Introducing python ch19 final", "item": "https://blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」決定版", "about": "Tech", "datePublished": "2024-08-06 19:58"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://blog.wei-lee.me/"><span class="site-name">Those aren't written down are meant to be forgotten</span></a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right top-menu">
+<li>
+<a href="https://blog.wei-lee.me">Home</a>
+</li>
+<li><a href="https://blog.wei-lee.me/pages/about-me.html">About Me</a></li>
+<li><a href="https://blog.wei-lee.me/categories.html">Categories</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html">Tags</a></li>
+<li><a href="https://blog.wei-lee.me/archives.html">Archives</a></li>
+<li><div id="search"></div></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article data-pagefind-body="" itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1>
+<a href="https://blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final">
+                Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」決定版
+            </a>
+</h1>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Contents</h4>
+<div class="toc">
+<ul>
+<li><a href="#where-to-find-python-code">Where to find Python code</a></li>
+<li><a href="#install-package">Install package</a></li>
+<li><a href="#ide-plus-interactive-shell-and-editor">IDE (plus interactive shell and editor)</a></li>
+<li><a href="#documentation-and-naming">Documentation and naming</a></li>
+<li><a href="#type-hinting">Type Hinting</a></li>
+<li><a href="#testing-and-linting">Testing (and linting?)</a></li>
+<li><a href="#debugging">Debugging</a></li>
+<li><a href="#logging">Logging</a></li>
+<li><a href="#optimization-sounds-more-like-profiling">Optimization (sounds more like profiling)</a></li>
+<li><a href="#algorithm-and-data-structure">Algorithm and Data Structure</a></li>
+<li><a href="#python-distributions">Python Distributions</a></li>
+<li><a href="#source-control">Source Control</a></li>
+<li><a href="#distributing-python-program">Distributing Python Program</a></li>
+<li><a href="#learn-more">Learn more</a></li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="span8 article-content">
+<p>繼上次的 <a href="https://blog.wei-lee.me/posts/tech/2024/07/Introducing-Python-ch19-draft">草稿</a>後該來個決定版了</p>
+<!--more-->
+<p>這次的內容非常的多，讀書會的一個小時是一定吸收不完的<br/>
+但先聽過，知道 Python 有這些東西可以用，也許以後會有幫助</p>
+<p>我會頻繁參照四年前寫的 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-series">Python Table Manners 系列</a><br/>
+提到的工具稍微有些過期，過期的部分會在這篇文章提到新的工具<br/>
+但概念本身是互通的是互通的</p>
+<h2 id="where-to-find-python-code">Where to find Python code</h2>
+<ul>
+<li><a href="https://pypi.org/">PyPI</a><ul>
+<li>Python Package Index<ul>
+<li>讀作 Py-P-I</li>
+</ul>
+</li>
+<li><code>pip install &lt;package&gt;</code> 預設會到 PyPI 找套件安裝</li>
+<li>遠古以前曾經叫做 "cheese shop"<ul>
+<li>來自 Monty Python</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://github.com/trending/python">GitHub Trend</a><ul>
+<li>GitHub 是目前主流的 Git 倉儲，在這裡可以找到最近流行的 Python 專案</li>
+</ul>
+</li>
+<li><a href="https://code.activestate.com/recipes/langs/python/">Popular Python recipes</a><ul>
+<li>這就真的是第一次看到的新地方了</li>
+</ul>
+</li>
+</ul>
+<h2 id="install-package">Install package</h2>
+<ul>
+<li><a href="https://pypi.org/project/pip/">pip</a><ul>
+<li>e.g., <code>pip install pip</code></li>
+</ul>
+</li>
+<li><a href="https://pipenv.pypa.io/en/latest/">pipenv</a><ul>
+<li>pip + <a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a></li>
+</ul>
+</li>
+<li>system package management (<em>Don't. Just Don't. Please</em>)<ul>
+<li>mac: <a href="https://brew.sh/">brew</a>, <a href="https://www.macports.org/">ports</a></li>
+<li>Linux: apt-get, yum, dpkg, zypper</li>
+<li>Windows: Windows Installer</li>
+</ul>
+</li>
+<li><a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html">conda</a></li>
+<li>直接從原始碼建置</li>
+<li><em><a href="https://python-poetry.org/">poetry</a></em><ul>
+<li>包含打包並發布函式庫的功能</li>
+</ul>
+</li>
+<li><em><a href="https://github.com/astral-sh/uv">uv</a></em><ul>
+<li>以 <a href="https://www.rust-lang.org/">Rust</a> 撰寫的套件管理工具</li>
+<li><code>pip</code> 或 <a href="https://github.com/jazzband/pip-tools">pip-tools</a></li>
+<li>被大型專案如 <a href="https://airflow.apache.org/">Airflow</a> 部分採用</li>
+</ul>
+</li>
+<li><em><a href="https://github.com/pypa/pipx">pipx</a> (just notice Josix wrote a <a href="https://josix.tw/post/pipx-deep-dive/">blog post</a> for it)</em><ul>
+<li>主要用於安裝 Python 實作的指令列工具，而不是函示庫</li>
+</ul>
+</li>
+</ul>
+<p>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-dependency-mangement">Python Table Manners - 虛擬環境和套件管理</a></p>
+<h2 id="ide-plus-interactive-shell-and-editor">IDE (<em>plus interactive shell and editor</em>)</h2>
+<ul>
+<li>IDLE</li>
+</ul>
+<p>Python 自帶的編輯器，在終端機輸入 <code>IDLE</code> 就能開啟</p>
+<p><img alt="IDLE.jpg" src="/images/posts-image/2024-Introducing-Python-ch19-final/IDLE.jpg"/></p>
+<ul>
+<li><a href="https://www.jetbrains.com/pycharm/">PyCharm</a></li>
+<li><a href="https://ipython.org/">IPython</a></li>
+<li><a href="https://jupyter.org/">Jupyter Notebook</a></li>
+<li><a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">Jupyter Lab</a></li>
+<li><em><a href="https://www.vim.org/">Vim</a> / <a href="https://neovim.io/">NeoVim</a></em></li>
+<li><em><a href="https://code.visualstudio.com/">VsCode</a></em></li>
+</ul>
+<p>👉 <a href="https://blog.wei-lee.me/posts/tech/2021/01/python-table-manner-editor">Python Table Manners 番外 - 編輯器</a></p>
+<h2 id="documentation-and-naming">Documentation and naming</h2>
+<ul>
+<li><a href="https://peps.python.org/pep-0008/">PEP8</a><ul>
+<li>Python 的程式碼風格指南</li>
+<li>建議演講： <a href="https://www.youtube.com/watch?v=wf-BqAjZb8M"> Raymond Hettinger - Beyond PEP 8 -- Best practices for beautiful intelligible code - PyCon 2015 </a></li>
+</ul>
+</li>
+<li><em>建議讀物： <a href="https://blog.wei-lee.me/posts/tech/2018/11/clean-code">Clean Code</a></em><ul>
+<li>雖然這本主要是用 Java 為範例，但概念本身對寫好程式是很有幫助的</li>
+</ul>
+</li>
+</ul>
+<p>這章的標題「名稱與文件」，但內容主要在講註解跟命名<br/>
+蠻微妙的翻譯<br/>
+如果對於如果做文件有興趣，可以參考 <a href="https://blog.wei-lee.me/posts/tech/2020/04/python-table-manners-documentation">Python Table Manners - 文件</a></p>
+<h2 id="type-hinting">Type Hinting</h2>
+<ul>
+<li><em><a href="https://github.com/python/mypy">mypy</a></em></li>
+</ul>
+<p>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-coding-style#-mypy">Python Table Manners - 程式碼風格 # 型別檢查 - mypy</a></p>
+<p>除此之外，自從 Python 3.9，型別如 list, dict, set 都可以直接被使用<br/>
+不用再從 typing 函式庫匯入 (i.e., <code>from typing import List, Dict, Set</code>)</p>
+<div class="highlight"><pre><span></span><span class="n">example_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+<p>如果你用的是 Python 3.8 ，你</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+</pre></div>
+<h2 id="testing-and-linting">Testing (and linting?)</h2>
+<ul>
+<li>print<ul>
+<li>請不要在 production 使用 print</li>
+<li>一般來說也不建議使用 print 除錯（應該使用下面會提到的 logging）</li>
+</ul>
+</li>
+<li><a href="https://github.com/pylint-dev/pylint">pylint</a>, <a href="https://github.com/PyCQA/pyflakes">pyflakes</a>, <a href="https://flake8.pycqa.org/en/latest/">flake8</a>, <a href="https://pypi.org/project/pep8/">pep8</a>, <em><a href="https://github.com/psf/black">black</a></em><ul>
+<li>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-coding-style">Python Table Manners - 程式碼風格</a></li>
+<li><em>不過在 4202 年的現在，我推薦使用 <a href="https://github.com/astral-sh/ruff">ruff</a> 取代以上所有工具</em></li>
+</ul>
+</li>
+<li>testing<ul>
+<li>why testing<ul>
+<li>avoid regression<ul>
+<li>what is a regression<ul>
+<li>break something that used to work fine</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-1">Python Table Manners - 測試 (一)</a></li>
+<li>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-2">Python Table Manners - 測試 (二)</a></li>
+<li>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-pre-commit">Python Table Manners - pre-commit: git commit 前做完檢查</a></li>
+</ul>
+</li>
+<li>stdlib<ul>
+<li><a href="https://docs.python.org/3/library/unittest.html">unittest</a></li>
+<li><a href="https://docs.python.org/3/library/doctest.html">doctest</a></li>
+</ul>
+</li>
+<li><a href="https://pypi.org/project/nose/">nose</a></li>
+<li><a href="https://tox.wiki/">tox</a> - <em>run tests in different Python versions</em></li>
+<li><a href="https://docs.pytest.org/">py.test</a> - <em>for most cases, I would suggest just use py.test</em></li>
+<li><a href="https://github.com/CleanCut/green">green</a></li>
+<li><em><a href="https://github.com/CleanCut/green">hypothesis</a></em></li>
+</ul>
+</li>
+<li>Continuous Integration (CI)<ul>
+<li><a href="https://buildbot.net/">buildbot</a></li>
+<li><a href="https://www.jenkins.io/">jenkins</a></li>
+<li><a href="https://www.travis-ci.com/">travis-ci</a></li>
+<li><a href="https://circleci.com/">circleci</a></li>
+<li><em><a href="https://github.com/features/actions">GitHub Actions</a></em><ul>
+<li>👉 <a href="19-python-table-manners-continous-intergration.md">Python Table Manners - 持續整合/部署</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="debugging">Debugging</h2>
+<ul>
+<li>print<ul>
+<li><code>vars()</code>: 列出變數的 <code>__dict__</code></li>
+<li><code>locals()</code>： 列出局部變數</li>
+<li><code>globals()</code>: 列出全域變數</li>
+</ul>
+</li>
+<li>decorator</li>
+<li><a href="https://docs.python.org/3/library/pdb.html">pdb</a><ul>
+<li><code>pdb -i</code></li>
+<li><code>pdb -m</code></li>
+<li>commands<ul>
+<li><code>c</code>ontinue</li>
+<li><code>s</code>kip</li>
+<li><code>n</code>ext</li>
+<li><code>l</code>ist</li>
+<li><code>p</code>rint</li>
+<li><code>b</code>reak</li>
+</ul>
+</li>
+<li><code>breakpoint()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="logging">Logging</h2>
+<ul>
+<li>message</li>
+<li>level</li>
+<li>logger</li>
+<li>handler</li>
+<li>formatter</li>
+<li>filter</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"example.log"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"This message should go to the log file"</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"So should this"</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">"And this, too"</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">"And non-ASCII stuff, too, like Øresund and Malmö"</span><span class="p">)</span>
+</pre></div>
+<h2 id="optimization-sounds-more-like-profiling">Optimization (sounds more like profiling)</h2>
+<ul>
+<li>"Python 通常很快"<ul>
+<li><em>我不確定，即使身為一個 Python 忠貞的使用者，我認為很多人會認為這句話不成立 lol</em></li>
+</ul>
+</li>
+<li><a href="https://docs.python.org/3/library/time.html">time</a>, <a href="https://docs.python.org/3/library/timeit.html">timeit</a> → use them as a decorator, context manager</li>
+</ul>
+<h2 id="algorithm-and-data-structure">Algorithm and Data Structure</h2>
+<ul>
+<li>list comprehension 通常比較快</li>
+<li><em>這章也是很微妙，我不能說跟演算法、資料結構無關，但...就這？</em></li>
+</ul>
+<h2 id="python-distributions">Python Distributions</h2>
+<ul>
+<li><a href="https://github.com/python/cpython">CPython</a><ul>
+<li>如果沒有特別安裝其他版的發佈，這就是大部分人所使用的 Python</li>
+<li>C extension<ul>
+<li><a href="https://numpy.org/">NumPy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://cython.org/">Cython</a></li>
+<li><a href="https://www.pypy.org/">PyPy</a></li>
+<li><a href="https://numba.pydata.org/">Numba</a></li>
+</ul>
+<h2 id="source-control">Source Control</h2>
+<ul>
+<li><a href="https://www.mercurial-scm.org/">Mercurial</a></li>
+<li><a href="https://git-scm.com/">Git</a><ul>
+<li><code>init</code></li>
+<li><code>add</code></li>
+<li><code>status</code></li>
+<li><code>commit</code> <em><a href="https://github.com/commitizen-tools/commitizen">commitizen</a> rocks</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="distributing-python-program">Distributing Python Program</h2>
+<ul>
+<li><em>nothing insightful in this section</em></li>
+<li><em>upload to PyPI</em></li>
+</ul>
+<h2 id="learn-more">Learn more</h2>
+<ul>
+<li>books<ul>
+<li><em>Learning Python</em></li>
+</ul>
+</li>
+<li>Websites<ul>
+<li><a href="https://realpython.com/">Real Python</a></li>
+</ul>
+</li>
+<li>Community<ul>
+<li>PyLadies</li>
+<li>PyCons</li>
+<li>local meetups</li>
+</ul>
+</li>
+<li>Jobs<ul>
+<li><em>you'll find your way out</em></li>
+</ul>
+</li>
+</ul>
+<p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=Gobby%27s%20Python%20%E8%AE%80%E6%9B%B8%E6%9C%83%20-%20%E3%80%8C%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0%20%E6%88%90%E7%82%BA%20Python%20%E9%90%B5%E7%B2%89%E3%80%8D%E6%B1%BA%E5%AE%9A%E7%89%88&amp;url=https%3A//blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final&amp;hashtags=python,study-session" rel="nofollow noopener noreferrer" target="_blank" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final" rel="nofollow noopener noreferrer" target="_blank" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Gobby%27s%20Python%20%E8%AE%80%E6%9B%B8%E6%9C%83%20-%20%E3%80%8C%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0%20%E6%88%90%E7%82%BA%20Python%20%E9%90%B5%E7%B2%89%E3%80%8D%E6%B1%BA%E5%AE%9A%E7%89%88&amp;body=https%3A//blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final" rel="nofollow noopener noreferrer" target="_blank" title="Share via Email">Email</a>
+<section>
+<h6 style="display:none;">Comments</h6>
+<p id="comment-message">Do you like this article? What do your tink about it? Leave you comment below </p>
+<div class="accordion" id="accordion2">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle disqus-comment-count comment-count collapsed" data-parent="#accordion2" data-toggle="collapse" href="https://blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final#comment_thread" id="comment-accordion-toggle">
+                    Comments
+                </a>
+</div>
+<div class="accordion-body collapse" id="comment_thread">
+<div class="accordion-inner">
+<div class="comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final" data-label="comment" data-repo="Lee-W/main-blog" data-theme="" src="https://utteranc.es/client.js">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr/>
+</p></div>
+<section class="span2" id="article-sidebar">
+<h4>Published</h4>
+<time datetime="2024-08-06T19:58:00+08:00" itemprop="dateCreated">2024/08/06 - Tue</time>
+<h4>Read Time</h4>
+                2 min
+            <h4>Category</h4>
+<a class="category-link" href="https://blog.wei-lee.me/categories.html#tech-ref">Tech</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="https://blog.wei-lee.me/tags.html#python-ref">Python
+                    <span class="superscript">37</span>
+</a></li>
+<li><a href="https://blog.wei-lee.me/tags.html#study-session-ref">Study Session
+                    <span class="superscript">2</span>
+</a></li>
+</ul>
+<h4>Keep In Touch</h4>
+<div id="sidebar-social-link">
+<a href="https://tw.linkedin.com/in/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="LinkedIn" fill="#fff" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#0077b5" height="512" rx="15%" width="512"></rect><circle cx="142" cy="138" r="37"></circle><path d="M244 194v198M142 194v198" stroke="#fff" stroke-width="66"></path><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path></svg>
+</a>
+<a href="https://github.com/Lee-W" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+<a href="https://twitter.com/clleew" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="RSS" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#f80" height="512" rx="15%" width="512"></rect><circle cx="145" cy="367" fill="#fff" r="35"></circle><path d="M109 241c89 0 162 73 162 162M109 127c152 0 276 124 276 276" fill="none" stroke="#fff" stroke-width="60"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="span1"></div>
+</div>
+</div>
+</div>
+<footer>
+<div>
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0"/>
+</a>
+<br/>
+This work is licensed under a
+<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+    Creative Commons Attribution 4.0 International License
+</a>.
+
+    </div>
+<div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican Home Page">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Theme Elegant Home Page">Elegant</a>
+</div>
+</footer> <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="https://blog.wei-lee.me/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+                new PagefindUI({
+                    element: "#search",
+                    showImages: false,
+                });
+            });
+        </script>
+</body>
+<!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
