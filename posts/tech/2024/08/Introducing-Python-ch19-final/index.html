@@ -17,12 +17,13 @@
 <meta content="Python, Study Session, Tech, " name="keywords">
 <meta content="Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」決定版 " property="og:title">
 <meta content="https://blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final" property="og:url"/>
-<meta content="繼上次的 草稿後該來個決定版了" property="og:description"/>
+<meta content="繼上次的草稿後該來個決定版了" property="og:description"/>
 <meta content="Those aren't written down are meant to be forgotten" property="og:site_name"/>
 <meta content="Wei Lee" property="og:article:author"/>
 <meta content="2024-08-06T19:58:00+08:00" property="og:article:published_time"/>
+<meta content="2024-08-06T23:35:00+08:00" property="og:article:modified_time"/>
 <meta content="Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」決定版 " name="twitter:title"/>
-<meta content="繼上次的 草稿後該來個決定版了" name="twitter:description"/>
+<meta content="繼上次的草稿後該來個決定版了" name="twitter:description"/>
 <title>Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」決定版  · Those aren't written down are meant to be forgotten
 </title>
 <link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten - Full Atom Feed" type="application/atom+xml">
@@ -100,13 +101,13 @@
 </nav>
 </div>
 <div class="span8 article-content">
-<p>繼上次的 <a href="https://blog.wei-lee.me/posts/tech/2024/07/Introducing-Python-ch19-draft">草稿</a>後該來個決定版了</p>
+<p>繼上次的<a href="https://blog.wei-lee.me/posts/tech/2024/07/Introducing-Python-ch19-draft">草稿</a>後該來個決定版了</p>
 <!--more-->
 <p>這次的內容非常的多，讀書會的一個小時是一定吸收不完的<br/>
 但先聽過，知道 Python 有這些東西可以用，也許以後會有幫助</p>
 <p>我會頻繁參照四年前寫的 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-series">Python Table Manners 系列</a><br/>
-提到的工具稍微有些過期，過期的部分會在這篇文章提到新的工具<br/>
-但概念本身是互通的是互通的</p>
+提到的工具稍微有些過期，這篇文章會補充新的工具<br/>
+但概念本身是互通的</p>
 <h2 id="where-to-find-python-code">Where to find Python code</h2>
 <ul>
 <li><a href="https://pypi.org/">PyPI</a><ul>
@@ -122,11 +123,11 @@
 </ul>
 </li>
 <li><a href="https://github.com/trending/python">GitHub Trend</a><ul>
-<li>GitHub 是目前主流的 Git 倉儲，在這裡可以找到最近流行的 Python 專案</li>
+<li>GitHub 是目前主流的 Git 倉儲，在這可以找到最近流行的 Python 專案</li>
 </ul>
 </li>
 <li><a href="https://code.activestate.com/recipes/langs/python/">Popular Python recipes</a><ul>
-<li>這就真的是第一次看到的新地方了</li>
+<li>這就真的是第一次看到了</li>
 </ul>
 </li>
 </ul>
@@ -163,7 +164,7 @@
 </ul>
 </li>
 </ul>
-<p>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-dependency-mangement">Python Table Manners - 虛擬環境和套件管理</a></p>
+<p>pipenv, poetry 跟 pipx 更多的介紹可以參考 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-dependency-mangement">Python Table Manners - 虛擬環境和套件管理</a></p>
 <h2 id="ide-plus-interactive-shell-and-editor">IDE (<em>plus interactive shell and editor</em>)</h2>
 <ul>
 <li>IDLE</li>
@@ -172,45 +173,54 @@
 <p><img alt="IDLE.jpg" src="/images/posts-image/2024-Introducing-Python-ch19-final/IDLE.jpg"/></p>
 <ul>
 <li><a href="https://www.jetbrains.com/pycharm/">PyCharm</a></li>
-<li><a href="https://ipython.org/">IPython</a></li>
+<li><a href="https://ipython.org/">IPython</a><ul>
+<li>這應該是互動式 shell，不算是 IDE 🤔</li>
+</ul>
+</li>
 <li><a href="https://jupyter.org/">Jupyter Notebook</a></li>
 <li><a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">Jupyter Lab</a></li>
-<li><em><a href="https://www.vim.org/">Vim</a> / <a href="https://neovim.io/">NeoVim</a></em></li>
+<li><em><a href="https://www.vim.org/">Vim</a> / <a href="https://neovim.io/">NeoVim</a></em><ul>
+<li>編輯器的神</li>
+</ul>
+</li>
 <li><em><a href="https://code.visualstudio.com/">VsCode</a></em></li>
 </ul>
+<p>大致上學習曲線如下（PyCharm可以參考 IntelliJ）</p>
+<p><img alt="learning-curve" src="/images/posts-image/2024-Introducing-Python-ch19-final/learning-curve.jpg"/></p>
 <p>👉 <a href="https://blog.wei-lee.me/posts/tech/2021/01/python-table-manner-editor">Python Table Manners 番外 - 編輯器</a></p>
 <h2 id="documentation-and-naming">Documentation and naming</h2>
 <ul>
 <li><a href="https://peps.python.org/pep-0008/">PEP8</a><ul>
 <li>Python 的程式碼風格指南</li>
-<li>建議演講： <a href="https://www.youtube.com/watch?v=wf-BqAjZb8M"> Raymond Hettinger - Beyond PEP 8 -- Best practices for beautiful intelligible code - PyCon 2015 </a></li>
+<li>建議演講： <a href="https://www.youtube.com/watch?v=wf-BqAjZb8M"> Raymond Hettinger - Beyond PEP 8</a></li>
 </ul>
 </li>
 <li><em>建議讀物： <a href="https://blog.wei-lee.me/posts/tech/2018/11/clean-code">Clean Code</a></em><ul>
-<li>雖然這本主要是用 Java 為範例，但概念本身對寫好程式是很有幫助的</li>
+<li>雖然這本主要是用 Java 為範例，但概念本身對寫好程式很有幫助</li>
 </ul>
 </li>
 </ul>
 <p>這章的標題「名稱與文件」，但內容主要在講註解跟命名<br/>
-蠻微妙的翻譯<br/>
-如果對於如果做文件有興趣，可以參考 <a href="https://blog.wei-lee.me/posts/tech/2020/04/python-table-manners-documentation">Python Table Manners - 文件</a></p>
+很微妙的翻譯<br/>
+但如果對真的寫文件有興趣，可以參考 <a href="https://blog.wei-lee.me/posts/tech/2020/04/python-table-manners-documentation">Python Table Manners - 文件</a></p>
 <h2 id="type-hinting">Type Hinting</h2>
 <ul>
 <li><em><a href="https://github.com/python/mypy">mypy</a></em></li>
 </ul>
 <p>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-coding-style#-mypy">Python Table Manners - 程式碼風格 # 型別檢查 - mypy</a></p>
-<p>除此之外，自從 Python 3.9，型別如 list, dict, set 都可以直接被使用<br/>
+<p>除此之外，自從 Python 3.9，型別如 <code>list, dict, set</code> 都可以直接被使用<br/>
 不用再從 typing 函式庫匯入 (i.e., <code>from typing import List, Dict, Set</code>)</p>
 <div class="highlight"><pre><span></span><span class="n">example_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
-<p>如果你用的是 Python 3.8 ，你</p>
+<p>如果你用的是 Python 3.8 ，你可以在檔案最上方</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 </pre></div>
+<p>如果你用的是 3.8 以前的版本，那你應該升級你的 Python<br/>
+（3.7 在 2023 就已經不支援了）</p>
 <h2 id="testing-and-linting">Testing (and linting?)</h2>
 <ul>
 <li>print<ul>
-<li>請不要在 production 使用 print</li>
-<li>一般來說也不建議使用 print 除錯（應該使用下面會提到的 logging）</li>
+<li><strong>不要在 production 使用 print</strong></li>
 </ul>
 </li>
 <li><a href="https://github.com/pylint-dev/pylint">pylint</a>, <a href="https://github.com/PyCQA/pyflakes">pyflakes</a>, <a href="https://flake8.pycqa.org/en/latest/">flake8</a>, <a href="https://pypi.org/project/pep8/">pep8</a>, <em><a href="https://github.com/psf/black">black</a></em><ul>
@@ -219,14 +229,8 @@
 </ul>
 </li>
 <li>testing<ul>
-<li>why testing<ul>
-<li>avoid regression<ul>
-<li>what is a regression<ul>
-<li>break something that used to work fine</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>為什麼要測試<ul>
+<li>避免既有的程式，因為新的改動壞掉</li>
 <li>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-1">Python Table Manners - 測試 (一)</a></li>
 <li>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-test-2">Python Table Manners - 測試 (二)</a></li>
 <li>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-pre-commit">Python Table Manners - pre-commit: git commit 前做完檢查</a></li>
@@ -238,10 +242,22 @@
 </ul>
 </li>
 <li><a href="https://pypi.org/project/nose/">nose</a></li>
-<li><a href="https://tox.wiki/">tox</a> - <em>run tests in different Python versions</em></li>
-<li><a href="https://docs.pytest.org/">py.test</a> - <em>for most cases, I would suggest just use py.test</em></li>
+<li><a href="https://tox.wiki/">tox</a><ul>
+<li>本身不是測試框架</li>
+<li>主要用來做任務管理</li>
+<li>特點是可以在多個 Python 版本執行任務（包含測試）</li>
+</ul>
+</li>
+<li><a href="https://docs.pytest.org/">py.test</a><ul>
+<li>目前最主流的 Python 測試框架，一般會建議使用它</li>
+</ul>
+</li>
 <li><a href="https://github.com/CleanCut/green">green</a></li>
-<li><em><a href="https://github.com/CleanCut/green">hypothesis</a></em></li>
+<li><em><a href="https://hypothesis.readthedocs.io/en/latest/">hypothesis</a></em><ul>
+<li>Property-based testing</li>
+<li>相當有趣的概念，但我其實也沒用到很熟</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Continuous Integration (CI)<ul>
@@ -250,7 +266,7 @@
 <li><a href="https://www.travis-ci.com/">travis-ci</a></li>
 <li><a href="https://circleci.com/">circleci</a></li>
 <li><em><a href="https://github.com/features/actions">GitHub Actions</a></em><ul>
-<li>👉 <a href="19-python-table-manners-continous-intergration.md">Python Table Manners - 持續整合/部署</a></li>
+<li>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/12/python-table-manner-continuous-integration">Python Table Manners - 持續整合/部署</a></li>
 </ul>
 </li>
 </ul>
@@ -265,30 +281,60 @@
 </ul>
 </li>
 <li>decorator</li>
-<li><a href="https://docs.python.org/3/library/pdb.html">pdb</a><ul>
-<li><code>pdb -i</code></li>
-<li><code>pdb -m</code></li>
-<li>commands<ul>
+</ul>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+
+<span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"before function starts"</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"after function ends"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@debug</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="k">pass</span>
+</pre></div>
+<ul>
+<li><a href="https://docs.python.org/3/library/pdb.html">pdb</a> <ul>
+<li>常用 pdb 指令<ul>
 <li><code>c</code>ontinue</li>
 <li><code>s</code>kip</li>
 <li><code>n</code>ext</li>
 <li><code>l</code>ist</li>
 <li><code>p</code>rint</li>
-<li><code>b</code>reak</li>
 </ul>
 </li>
-<li><code>breakpoint()</code></li>
+<li>中斷點<ul>
+<li>在 Python 檔案中加入 <code>breakpoint()</code>，可以在執行時停在那行，並進入 pdb 互動式介面</li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># how to use pdb in terminal</span>
+
+<span class="c1">## run pdb on file</span>
+pdb<span class="w"> </span>&lt;file<span class="w"> </span>name&gt;
+
+<span class="c1">## run pdb on module</span>
+pdb<span class="w"> </span>-m<span class="w"> </span>&lt;module<span class="w"> </span>name&gt;
+</pre></div>
 <h2 id="logging">Logging</h2>
 <ul>
-<li>message</li>
-<li>level</li>
+<li><a href="https://docs.python.org/3/howto/logging.html">logging</a><ul>
+<li>message: 日誌訊息</li>
+<li>level: 日誌等級</li>
 <li>logger</li>
-<li>handler</li>
-<li>formatter</li>
-<li>filter</li>
+<li>handler: 對日誌做額外的處理（e.g., 輸出成檔案）</li>
+<li>formatter: 日誌格式</li>
+<li>filter: 過濾特定日誌</li>
+</ul>
+</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -305,7 +351,10 @@
 <li><em>我不確定，即使身為一個 Python 忠貞的使用者，我認為很多人會認為這句話不成立 lol</em></li>
 </ul>
 </li>
-<li><a href="https://docs.python.org/3/library/time.html">time</a>, <a href="https://docs.python.org/3/library/timeit.html">timeit</a> → use them as a decorator, context manager</li>
+<li><a href="https://docs.python.org/3/library/time.html">time</a>, <a href="https://docs.python.org/3/library/timeit.html">timeit</a><ul>
+<li>參考 Debugging decorator 的寫法，可以將它們實作成 decorator 或 context manager，計算函式執行時間，找出瓶頸</li>
+</ul>
+</li>
 </ul>
 <h2 id="algorithm-and-data-structure">Algorithm and Data Structure</h2>
 <ul>
@@ -315,7 +364,7 @@
 <h2 id="python-distributions">Python Distributions</h2>
 <ul>
 <li><a href="https://github.com/python/cpython">CPython</a><ul>
-<li>如果沒有特別安裝其他版的發佈，這就是大部分人所使用的 Python</li>
+<li>如果沒有特別安裝其他的發佈，這就是大部分人所使用的 Python</li>
 <li>C extension<ul>
 <li><a href="https://numpy.org/">NumPy</a></li>
 </ul>
@@ -333,19 +382,23 @@
 <li><code>init</code></li>
 <li><code>add</code></li>
 <li><code>status</code></li>
-<li><code>commit</code> <em><a href="https://github.com/commitizen-tools/commitizen">commitizen</a> rocks</em></li>
+<li><code>commit</code><ul>
+<li><em><a href="https://github.com/commitizen-tools/commitizen">commitizen</a> 可以幫助你寫更好的提交訊息 (commit message)！</em></li>
+</ul>
+</li>
+<li>👉 <a href="https://blog.wei-lee.me/posts/tech/2016/09/basic-git-tutorial">Basic Git Tutorial</a> (雖然已經是 8 年前的文章了，但基礎概念應該是沒變太多吧...)</li>
 </ul>
 </li>
 </ul>
 <h2 id="distributing-python-program">Distributing Python Program</h2>
 <ul>
-<li><em>nothing insightful in this section</em></li>
-<li><em>upload to PyPI</em></li>
+<li><em>這章其實沒講什麼...</em></li>
+<li><em>可以研究看看怎麼將套件上傳到 PyPI</em></li>
 </ul>
 <h2 id="learn-more">Learn more</h2>
 <ul>
 <li>books<ul>
-<li><em>Learning Python</em></li>
+<li><a href="https://nbviewer.org/github/Lee-W/Learning_Python/tree/master/">Learning Python</a></li>
 </ul>
 </li>
 <li>Websites<ul>
