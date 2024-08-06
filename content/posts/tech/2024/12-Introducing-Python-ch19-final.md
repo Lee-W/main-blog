@@ -154,7 +154,6 @@ from __future__ import annotations
 * formatter
 * filter
 
-
 ```python
 import logging
 
@@ -190,7 +189,9 @@ logger.error("And non-ASCII stuff, too, like Øresund and Malmö")
     * `init`
     * `add`
     * `status`
-    * `commit` *[commitizen](https://github.com/commitizen-tools/commitizen) rocks*
+    * `commit`
+        * *[commitizen](https://github.com/commitizen-tools/commitizen) 可以幫助你寫更好的提交訊息 (commit message)！*
+    * 👉 [Basic Git Tutorial]({filename}/posts/article/2016/11-basic-git-tutorial.md) (雖然已經是 8 年前的文章了，但基礎概念應該是沒變太多吧...)
 
 ## Distributing Python Program
 * *nothing insightful in this section*
