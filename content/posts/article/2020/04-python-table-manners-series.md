@@ -31,7 +31,7 @@ Series: Python Table Manners
 * [安全性檢查]({filename}/posts/article/2020/12-python-table-manners-security.md)
 * [文件]({filename}/posts/article/2020/13-python-table-manners-documentation.md)
 * [持續整合/部署]({filename}/posts/article/2020/19-python-table-manners-continous-intergration.md)
-* [Cookiecutter 程式專案模板]({filename}/posts/article/2021/1-pytnon-table-manners-project-template.md)
+* [Cookiecutter 程式專案模板]({filename}/posts/tech/2021/1-pytnon-table-manners-project-template.md)
 
 當初整理 PyCon CA 2019 投影片的時候，大多是把這些工具應用到 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator)
 這是 PyCon TW 用來自動產生會後分析報表的工具，歡迎一起來貢獻～
