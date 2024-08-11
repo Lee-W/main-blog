@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-08-06T23:35:00+08:00</updated><entry><title>Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」決定版</title><link href="https://blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final" rel="alternate"></link><published>2024-08-06T19:58:00+08:00</published><updated>2024-08-06T23:35:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-08-06:/posts/tech/2024/08/Introducing-Python-ch19-final</id><summary type="html">&lt;p&gt;繼上次的&lt;a href="https://blog.wei-lee.me/posts/tech/2024/07/Introducing-Python-ch19-draft"&gt;草稿&lt;/a&gt;後該來個決定版了&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-08-09T12:50:00+08:00</updated><entry><title>Introducing StartTriggerArgs for enabling starting task execution from trigger</title><link href="https://blog.wei-lee.me/posts/tech/2024/08/introducing-start-trigger-args-for-enabling-starting-task-execution-from-trigger" rel="alternate"></link><published>2024-08-09T12:50:00+08:00</published><updated>2024-08-09T12:50:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-08-09:/posts/tech/2024/08/introducing-start-trigger-args-for-enabling-starting-task-execution-from-trigger</id><summary type="html">&lt;p&gt;As mentioned in  &lt;a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker"&gt;Starts Airflow task execution directly from the triggerer&lt;/a&gt;, the syntax of this feature will change after &lt;a href="https://github.com/apache/airflow/pull/39585"&gt;#39585&lt;/a&gt; merged.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;As mentioned in  &lt;a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker"&gt;Starts Airflow task execution directly from the triggerer&lt;/a&gt;, the syntax of this feature will change after &lt;a href="https://github.com/apache/airflow/pull/39585"&gt;#39585&lt;/a&gt; merged.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;This is needed mainly because we don't want to run any user code in the scheduler, which might happen &lt;a href="https://github.com/apache/airflow/pull/38674/files#"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This article will cover the following 4 PRs&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/39585"&gt;Prevent start trigger initialization in scheduler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/41021"&gt;Add start execution from trigger support for existing core sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40376"&gt;add next_kwargs to StartTriggerArgs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/40993"&gt;Enhance start_trigger_args serialization&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;PR 2 is a minor fix to PR 1. PR 3 is something wrongly implemented in &lt;a href="https://github.com/apache/airflow/pull/38674"&gt;#38674&lt;/a&gt;. I did not know this part of airflow well enough 🤦‍♂️ PR 4 is adding this feature to core sensors.&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Airflow"></category><category term="Airflow 2.10"></category></entry><entry><title>Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」決定版</title><link href="https://blog.wei-lee.me/posts/tech/2024/08/Introducing-Python-ch19-final" rel="alternate"></link><published>2024-08-06T19:58:00+08:00</published><updated>2024-08-06T23:35:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-08-06:/posts/tech/2024/08/Introducing-Python-ch19-final</id><summary type="html">&lt;p&gt;繼上次的&lt;a href="https://blog.wei-lee.me/posts/tech/2024/07/Introducing-Python-ch19-draft"&gt;草稿&lt;/a&gt;後該來個決定版了&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;繼上次的&lt;a href="https://blog.wei-lee.me/posts/tech/2024/07/Introducing-Python-ch19-draft"&gt;草稿&lt;/a&gt;後該來個決定版了&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -13780,24 +13792,4 @@ sudo&lt;span class="w"&gt; &lt;/span&gt;fc-cache&lt;span class="w"&gt; &lt;/span
 因為我也只是剛開始使用 Git 沒多久，內容不會太深入&lt;/p&gt;
 &lt;iframe src="http://www.slideshare.net/slideshow/embed_code/31515684" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt;
 
-&lt;p&gt;&lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/ssuser5e1963/git-and-git-hub-31515684" title="Git and git hub" target="_blank"&gt;Git and git hub&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/ssuser5e1963" target="_blank"&gt; 唯 李 &lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Git"></category><category term="Tutorial"></category><category term="Deprecated"></category></entry><entry><title>Guake terminal</title><link href="https://blog.wei-lee.me/posts/tech/2014/02/guake-terminal" rel="alternate"></link><published>2014-02-09T07:02:00+08:00</published><updated>2014-02-09T07:02:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2014-02-09:/posts/tech/2014/02/guake-terminal</id><summary type="html">&lt;p&gt;隱藏在背景的 terminal&lt;br&gt;
-並且可以隨時呼叫 (預設是 F12)&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;隱藏在背景的 terminal&lt;br&gt;
-並且可以隨時呼叫 (預設是 F12)&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;img alt="1_guake" src="/images/posts-image/2014-02-09-guake-terminal/0L95Qtg.png"&gt;&lt;/p&gt;
-&lt;h2 id="guake-terminal"&gt;安裝 Guake Terminal&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;guake
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2 id="_1"&gt;設定&lt;/h2&gt;
-&lt;h3 id="_2"&gt;滑鼠一移開就自動隱藏&lt;/h3&gt;
-&lt;p&gt;從「偏好設定 （Preferences)」勾選「Hide on lost focus」&lt;br&gt;
-&lt;img alt="2_hide on focus" src="/images/posts-image/2014-02-09-guake-terminal/Ibp8MX0.png"&gt;&lt;/p&gt;
-&lt;h2 id="guake-terminal_1"&gt;開機就啟動 Guake Terminal&lt;/h2&gt;
-&lt;p&gt;在「初始應用程式 （Startup Applications) 」把 guake terminal 加上去&lt;br&gt;
-&lt;img alt="3_guake start up" src="/images/posts-image/2014-02-09-guake-terminal/sYQ6Klw.png"&gt;&lt;/p&gt;
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href="http://www.arthurtoday.com/2012/08/ubuntu-install-guake-terminal.html#.UvcpWx9KiXo"&gt;Ubuntu 安裝 Guake Terminal&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Linux-Unix"></category><category term="Utility"></category></entry></feed>
+&lt;p&gt;&lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/ssuser5e1963/git-and-git-hub-31515684" title="Git and git hub" target="_blank"&gt;Git and git hub&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/ssuser5e1963" target="_blank"&gt; 唯 李 &lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Git"></category><category term="Tutorial"></category><category term="Deprecated"></category></entry></feed>
