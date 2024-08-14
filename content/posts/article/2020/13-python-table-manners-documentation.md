@@ -78,8 +78,8 @@ site_name: PyCon TW post-event report generator (rg-cli)
 
 ```text
 ├── docs
-│   ├── README.md
-│   └── contributing.md
+│   ├── README.md
+│   └── contributing.md
 ```
 
 接著在 `mkdocs.yml` 加入 `nav` 參數，指定不同頁面對應的檔案

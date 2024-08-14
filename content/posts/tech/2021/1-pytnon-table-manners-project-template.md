@@ -81,24 +81,24 @@ $ tree python_table_manners
 ├── CHANGELOG.md
 ├── LICENSE
 ├── docs
-│   ├── README.md
-│   └── contributing.md
+│   ├── README.md
+│   └── contributing.md
 ├── mkdocs.yml
 ├── pyproject.toml
 ├── python_table_manners
-│   ├── __init__.py
-│   └── python_table_manners.py
+│   ├── __init__.py
+│   └── python_table_manners.py
 ├── setup.cfg
 ├── tasks
-│   ├── __init__.py
-│   ├── build.py
-│   ├── common.py
-│   ├── doc.py
-│   ├── env.py
-│   ├── git.py
-│   ├── secure.py
-│   ├── style.py
-│   └── test.py
+│   ├── __init__.py
+│   ├── build.py
+│   ├── common.py
+│   ├── doc.py
+│   ├── env.py
+│   ├── git.py
+│   ├── secure.py
+│   ├── style.py
+│   └── test.py
 └── tests
     ├── __init__.py
     └── test_python_table_manners.py

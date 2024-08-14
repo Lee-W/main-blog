@@ -142,12 +142,12 @@ def init():
 
 ```text
 ├── tasks
-│   ├── __init__.py
-│   ├── build.py
-│   ├── common.py
-│   ├── env.py
-│   ├── style.py
-│   └── test.py
+│   ├── __init__.py
+│   ├── build.py
+│   ├── common.py
+│   ├── env.py
+│   ├── style.py
+│   └── test.py
 ```
 
 和各個模組下的指令

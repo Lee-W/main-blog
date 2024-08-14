@@ -6,11 +6,11 @@ Slug: enhancing-airflow-task-execution-with-start-trigger-args
 Authors: Wei Lee
 Series: What If...? Running Airflow Tasks without the workers
 
-As mentioned in  [Starts Airflow task execution directly from the triggerer]({filename}/posts/tech/2024/7-airflow-start-execution-directly-from-trigger-instead-of-going-into-wroker.md), the syntax of this feature will change after [#39585](https://github.com/apache/airflow/pull/39585) merged.
+As mentioned in [Starts Airflow task execution directly from the triggerer]({filename}/posts/tech/2024/7-airflow-start-execution-directly-from-trigger-instead-of-going-into-worker.md), the syntax of this feature will change after [#39585](https://github.com/apache/airflow/pull/39585) merged.
 
 <!--more-->
 
-This is needed mainly because we don't want to run any user code in the scheduler, which might happen [here](https://github.com/apache/airflow/pull/38674/files#).
+This is needed mainly because we don't want to run any user code in the scheduler, which might happen [here](https://github.com/apache/airflow/pull/38674/files#).
 
 This article will cover the following 3 PRs
 
@@ -103,7 +103,7 @@ Then, let's go to [airflow/models/taskinstance.py](https://github.com/apache/air
         raise AirflowException("exception and ti.task.start_trigger_args cannot both be None")
 ```
 
-We handle standard task deferral in the first `if` condition. This happens when a task runs the `defer` method and raises a `TaskDeferred` exception. For a more detailed version, you can refer to [this link]({filename}/posts/tech/2024/7-airflow-start-execution-directly-from-trigger-instead-of-going-into-wroker.md#how-did-the-deferrable-operator-work-before-this-change). Therefore, we need to set `exception=None` in the previous code block, as we are not handling it in the standard way.
+We handle standard task deferral in the first `if` condition. This happens when a task runs the `defer` method and raises a `TaskDeferred` exception. For a more detailed version, you can refer to [this link]({filename}/posts/tech/2024/7-airflow-start-execution-directly-from-trigger-instead-of-going-into-worker.md#how-did-the-deferrable-operator-work-before-this-change). Therefore, we need to set `exception=None` in the previous code block, as we are not handling it in the standard way.
 
 The `elif` statement checks whether this operator has a `start_trigger_args` attribute, which indicates that this operator supports the "starting execution from the trigger" feature. Airflow will then load the value from `start_trigger_args` and assign it to the variables that will later be used in the rest of the deferral process, similar to the standard task deferral.
 

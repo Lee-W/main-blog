@@ -60,10 +60,10 @@ $ tree
 ├── Pipfile
 ├── Pipfile.lock
 ├── digit_recognizer
-│   ├── __init__.py
-│   └── digit_recognizer.py
+│   ├── __init__.py
+│   └── digit_recognizer.py
 ├── docs
-│   └── README.md
+│   └── README.md
 ├── mkdocs.yml
 ├── output
 └── tasks.py
@@ -261,9 +261,9 @@ $ tree ../dvc_remote
 
 ../dvc_remote
 ├── 02
-│   └── b861b6dc8e08da6d66547860f69277
+│   └── b861b6dc8e08da6d66547860f69277
 ├── 8c
-│   └── ba569595920d230ade453b150f372b
+│   └── ba569595920d230ade453b150f372b
 └── b8
     └── d81f4964ecb86739c79c833fb491f3.dir
 
@@ -349,15 +349,15 @@ $ tree ../dvc_remote
 
 ../dvc_remote
 ├── 02
-│   └── b861b6dc8e08da6d66547860f69277
+│   └── b861b6dc8e08da6d66547860f69277
 ├── 2a
-│   └── 6cfa13365ac9b3af5146133aca6789
+│   └── 6cfa13365ac9b3af5146133aca6789
 ├── 8c
-│   └── ba569595920d230ade453b150f372b
+│   └── ba569595920d230ade453b150f372b
 ├── 94
-│   └── 2481fce846fb9750b7b8023c80a5ef
+│   └── 2481fce846fb9750b7b8023c80a5ef
 ├── a3
-│   └── 33e114a49194e823ab9a4fa9e33ee9.dir
+│   └── 33e114a49194e823ab9a4fa9e33ee9.dir
 └── b8
     └── d81f4964ecb86739c79c833fb491f3.dir
 
@@ -426,10 +426,10 @@ $ tree .
 ├── Pipfile.lock
 ├── data.dvc
 ├── digit_recognizer
-│   ├── __init__.py
-│   └── digit_recognizer.py
+│   ├── __init__.py
+│   └── digit_recognizer.py
 ├── docs
-│   └── README.md
+│   └── README.md
 ├── mkdocs.yml
 ├── output
 └── tasks.py
@@ -454,14 +454,14 @@ $ tree .
 ├── Pipfile
 ├── Pipfile.lock
 ├── data
-│   ├── digit_data.csv
-│   └── digit_target.csv
+│   ├── digit_data.csv
+│   └── digit_target.csv
 ├── data.dvc
 ├── digit_recognizer
-│   ├── __init__.py
-│   └── digit_recognizer.py
+│   ├── __init__.py
+│   └── digit_recognizer.py
 ├── docs
-│   └── README.md
+│   └── README.md
 ├── mkdocs.yml
 ├── output
 └── tasks.py
