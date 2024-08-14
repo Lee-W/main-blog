@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-08-12T22:54:00+08:00</updated><entry><title>Enhancing Airflow Task Execution with StartTriggerArgs</title><link href="https://blog.wei-lee.me/posts/tech/2024/08/enhancing-airflow-task-execution-with-start-trigger-args" rel="alternate"></link><published>2024-08-12T22:54:00+08:00</published><updated>2024-08-12T22:54:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-08-12:/posts/tech/2024/08/enhancing-airflow-task-execution-with-start-trigger-args</id><summary type="html">&lt;p&gt;As mentioned in  &lt;a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker"&gt;Starts Airflow task execution directly from the triggerer&lt;/a&gt;, the syntax of this feature will change after &lt;a href="https://github.com/apache/airflow/pull/39585"&gt;#39585&lt;/a&gt; merged.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;As mentioned in  &lt;a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker"&gt;Starts Airflow task execution directly from the triggerer&lt;/a&gt;, the syntax of this feature will change after &lt;a href="https://github.com/apache/airflow/pull/39585"&gt;#39585&lt;/a&gt; merged.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-08-12T22:54:00+08:00</updated><entry><title>Enhancing Airflow Task Execution with StartTriggerArgs</title><link href="https://blog.wei-lee.me/posts/tech/2024/08/enhancing-airflow-task-execution-with-start-trigger-args" rel="alternate"></link><published>2024-08-12T22:54:00+08:00</published><updated>2024-08-12T22:54:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-08-12:/posts/tech/2024/08/enhancing-airflow-task-execution-with-start-trigger-args</id><summary type="html">&lt;p&gt;As mentioned in &lt;a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker"&gt;Starts Airflow task execution directly from the triggerer&lt;/a&gt;, the syntax of this feature will change after &lt;a href="https://github.com/apache/airflow/pull/39585"&gt;#39585&lt;/a&gt; merged.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;As mentioned in &lt;a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker"&gt;Starts Airflow task execution directly from the triggerer&lt;/a&gt;, the syntax of this feature will change after &lt;a href="https://github.com/apache/airflow/pull/39585"&gt;#39585&lt;/a&gt; merged.&lt;/p&gt;
 &lt;!--more--&gt;
-&lt;p&gt;This is needed mainly because we don't want to run any user code in the scheduler, which might happen &lt;a href="https://github.com/apache/airflow/pull/38674/files#"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is needed mainly because we don't want to run any user code in the scheduler, which might happen &lt;a href="https://github.com/apache/airflow/pull/38674/files#"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This article will cover the following 3 PRs&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/39585"&gt;Prevent start trigger initialization in scheduler&lt;/a&gt;&lt;/li&gt;
@@ -2273,10 +2273,10 @@ $&lt;span class="w"&gt; &lt;/span&gt;tree
 ├──&lt;span class="w"&gt; &lt;/span&gt;Pipfile
 ├──&lt;span class="w"&gt; &lt;/span&gt;Pipfile.lock
 ├──&lt;span class="w"&gt; &lt;/span&gt;digit_recognizer
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;__init__.py
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;digit_recognizer.py
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;__init__.py
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;digit_recognizer.py
 ├──&lt;span class="w"&gt; &lt;/span&gt;docs
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;README.md
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;README.md
 ├──&lt;span class="w"&gt; &lt;/span&gt;mkdocs.yml
 ├──&lt;span class="w"&gt; &lt;/span&gt;output
 └──&lt;span class="w"&gt; &lt;/span&gt;tasks.py
@@ -2428,9 +2428,9 @@ outs:
 
 ../dvc_remote
 ├──&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;02&lt;/span&gt;
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;b861b6dc8e08da6d66547860f69277
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;b861b6dc8e08da6d66547860f69277
 ├──&lt;span class="w"&gt; &lt;/span&gt;8c
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;ba569595920d230ade453b150f372b
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;ba569595920d230ade453b150f372b
 └──&lt;span class="w"&gt; &lt;/span&gt;b8
 &lt;span class="w"&gt;    &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;d81f4964ecb86739c79c833fb491f3.dir
 
@@ -2499,15 +2499,15 @@ outs:
 
 ../dvc_remote
 ├──&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;02&lt;/span&gt;
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;b861b6dc8e08da6d66547860f69277
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;b861b6dc8e08da6d66547860f69277
 ├──&lt;span class="w"&gt; &lt;/span&gt;2a
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;6cfa13365ac9b3af5146133aca6789
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;6cfa13365ac9b3af5146133aca6789
 ├──&lt;span class="w"&gt; &lt;/span&gt;8c
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;ba569595920d230ade453b150f372b
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;ba569595920d230ade453b150f372b
 ├──&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;94&lt;/span&gt;
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;2481fce846fb9750b7b8023c80a5ef
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;2481fce846fb9750b7b8023c80a5ef
 ├──&lt;span class="w"&gt; &lt;/span&gt;a3
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;33e114a49194e823ab9a4fa9e33ee9.dir
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;33e114a49194e823ab9a4fa9e33ee9.dir
 └──&lt;span class="w"&gt; &lt;/span&gt;b8
 &lt;span class="w"&gt;    &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;d81f4964ecb86739c79c833fb491f3.dir
 
@@ -2558,10 +2558,10 @@ $&lt;span class="w"&gt; &lt;/span&gt;tree&lt;span class="w"&gt; &lt;/span&gt;.
 ├──&lt;span class="w"&gt; &lt;/span&gt;Pipfile.lock
 ├──&lt;span class="w"&gt; &lt;/span&gt;data.dvc
 ├──&lt;span class="w"&gt; &lt;/span&gt;digit_recognizer
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;__init__.py
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;digit_recognizer.py
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;__init__.py
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;digit_recognizer.py
 ├──&lt;span class="w"&gt; &lt;/span&gt;docs
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;README.md
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;README.md
 ├──&lt;span class="w"&gt; &lt;/span&gt;mkdocs.yml
 ├──&lt;span class="w"&gt; &lt;/span&gt;output
 └──&lt;span class="w"&gt; &lt;/span&gt;tasks.py
@@ -2583,14 +2583,14 @@ $&lt;span class="w"&gt; &lt;/span&gt;tree&lt;span class="w"&gt; &lt;/span&gt;.
 ├──&lt;span class="w"&gt; &lt;/span&gt;Pipfile
 ├──&lt;span class="w"&gt; &lt;/span&gt;Pipfile.lock
 ├──&lt;span class="w"&gt; &lt;/span&gt;data
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;digit_data.csv
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;digit_target.csv
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;digit_data.csv
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;digit_target.csv
 ├──&lt;span class="w"&gt; &lt;/span&gt;data.dvc
 ├──&lt;span class="w"&gt; &lt;/span&gt;digit_recognizer
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;__init__.py
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;digit_recognizer.py
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;__init__.py
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;digit_recognizer.py
 ├──&lt;span class="w"&gt; &lt;/span&gt;docs
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;README.md
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;README.md
 ├──&lt;span class="w"&gt; &lt;/span&gt;mkdocs.yml
 ├──&lt;span class="w"&gt; &lt;/span&gt;output
 └──&lt;span class="w"&gt; &lt;/span&gt;tasks.py
@@ -2872,24 +2872,24 @@ Cookiecutter 能確保我們不會少代換掉舊的設定（e.g., 舊專案名�
 ├──&lt;span class="w"&gt; &lt;/span&gt;CHANGELOG.md
 ├──&lt;span class="w"&gt; &lt;/span&gt;LICENSE
 ├──&lt;span class="w"&gt; &lt;/span&gt;docs
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;README.md
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;contributing.md
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;README.md
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;contributing.md
 ├──&lt;span class="w"&gt; &lt;/span&gt;mkdocs.yml
 ├──&lt;span class="w"&gt; &lt;/span&gt;pyproject.toml
 ├──&lt;span class="w"&gt; &lt;/span&gt;python_table_manners
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;__init__.py
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;python_table_manners.py
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;__init__.py
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;python_table_manners.py
 ├──&lt;span class="w"&gt; &lt;/span&gt;setup.cfg
 ├──&lt;span class="w"&gt; &lt;/span&gt;tasks
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;__init__.py
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;build.py
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;common.py
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;doc.py
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;env.py
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;git.py
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;secure.py
-│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;style.py
-│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;test.py
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;__init__.py
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;build.py
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;common.py
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;doc.py
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;env.py
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;git.py
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;secure.py
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;style.py
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;test.py
 └──&lt;span class="w"&gt; &lt;/span&gt;tests
 &lt;span class="w"&gt;    &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;__init__.py
 &lt;span class="w"&gt;    &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;test_python_table_manners.py
@@ -3943,8 +3943,8 @@ Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx&lt
 將檔案命名成 &lt;code&gt;contributing.md&lt;/code&gt; 在 GitHub 開 issue 時自動出現這個頁面的連結（See more 👉 &lt;a href="https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors"&gt;Setting guidelines for repository contributors&lt;/a&gt;）&lt;br/&gt;
 至於要怎麼寫好 &lt;code&gt;contributing.md&lt;/code&gt; 則可以參考 &lt;a href="https://mozillascience.github.io/working-open-workshop/contributing/"&gt;Wrangling Web Contributions: How to Build a CONTRIBUTING.md&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;├── docs
-│   ├── README.md
-│   └── contributing.md
+│   ├── README.md
+│   └── contributing.md
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;接著在 &lt;code&gt;mkdocs.yml&lt;/code&gt; 加入 &lt;code&gt;nav&lt;/code&gt; 參數，指定不同頁面對應的檔案&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;site_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;PyCon TW post-event report generator (rg-cli)&lt;/span&gt;
@@ -4689,12 +4689,12 @@ invoke 會傳入一個 context 做為第一個參數 (Read More 👉 &lt;a href=
 可以參考 &lt;a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/f1050eabf44a8b8e662370bd97b2a79ad57723c2"&gt;commit f105&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;最後修改後 &lt;code&gt;tasks&lt;/code&gt; 套件中有這些模組&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;├── tasks
-│   ├── __init__.py
-│   ├── build.py
-│   ├── common.py
-│   ├── env.py
-│   ├── style.py
-│   └── test.py
+│   ├── __init__.py
+│   ├── build.py
+│   ├── common.py
+│   ├── env.py
+│   ├── style.py
+│   └── test.py
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;和各個模組下的指令&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;inv&lt;span class="w"&gt; &lt;/span&gt;--list

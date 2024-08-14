@@ -88,9 +88,9 @@
 </nav>
 </div>
 <div class="span8 article-content">
-<p>As mentioned in  <a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker">Starts Airflow task execution directly from the triggerer</a>, the syntax of this feature will change after <a href="https://github.com/apache/airflow/pull/39585">#39585</a> merged.</p>
+<p>As mentioned in <a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker">Starts Airflow task execution directly from the triggerer</a>, the syntax of this feature will change after <a href="https://github.com/apache/airflow/pull/39585">#39585</a> merged.</p>
 <!--more-->
-<p>This is needed mainly because we don't want to run any user code in the scheduler, which might happen <a href="https://github.com/apache/airflow/pull/38674/files#">here</a>.</p>
+<p>This is needed mainly because we don't want to run any user code in the scheduler, which might happen <a href="https://github.com/apache/airflow/pull/38674/files#">here</a>.</p>
 <p>This article will cover the following 3 PRs</p>
 <ol>
 <li><a href="https://github.com/apache/airflow/pull/39585">Prevent start trigger initialization in scheduler</a></li>
