@@ -20,7 +20,7 @@
 <meta content="Those aren't written down are meant to be forgotten" property="og:site_name"/>
 <meta content="Wei lee" property="og:article:author"/>
 <meta content="2017-02-03T13:06:00+08:00" property="og:article:published_time"/>
-<meta content="2024-07-21T00:23:00+08:00" property="og:article:modified_time"/>
+<meta content="2024-08-18T19:45:00+08:00" property="og:article:modified_time"/>
 <meta content="About Me " name="twitter:title"/>
 <meta content="This is Wei Lee. I'm a 🐍 Pythonista 🐍 PyCon Taiwan organizer commitizen-tools maintainer Apache Airflow committer 📷 Traveler ⛺ Member of 台湾野クル▲ 📺 Anime Lover 📖 Reader 🎵 Ukulele Player 🔒 Locker I enjoy automating tedious tasks and creating high-quality code. Enjoy participating in open-source communities and contributing to open-source projects. Traveling is …" name="twitter:description"/>
 <title>About Me  · Those aren't written down are meant to be forgotten
@@ -87,8 +87,8 @@
 <li><a href="#education">Education</a></li>
 <li><a href="#tutorial-and-study-note">Tutorial and Study Note</a><ul>
 <li><a href="#slide">Slide</a></li>
-<li><a href="#books">Books</a></li>
-<li><a href="#moocs">MOOCs</a></li>
+<li><a href="#books-notes">Books Notes</a></li>
+<li><a href="#moocs-note">MOOCs Note</a></li>
 </ul>
 </li>
 </ul>
@@ -139,16 +139,20 @@ You can find me through
 <p><strong>[Feb 2023 - Present] Software Engineer, <a href="https://www.astronomer.io/">astronomer</a></strong></p>
 <ul>
 <li><a href="https://github.com/apache/airflow/">apache-airflow</a><ul>
-<li>Fixed a circular import error prior to releasing new airflow providers (<a href="https://github.com/apache/airflow/pull/31379">#31379</a>)</li>
-<li>Fixed an Amazon provider bug due to new airflow providers release (<a href="https://github.com/apache/airflow/pull/31482">#31482</a>)</li>
-<li>Integrated the AsyncSensors logic into their Sensor counterpart and lessen the maintenance burden (<a href="https://github.com/apache/airflow/pull/30014">#30014</a>, <a href="https://github.com/apache/airflow/pull/30227">#30227</a>,<a href="https://github.com/apache/airflow/pull/30231">#30231</a>,<a href="https://github.com/apache/airflow/pull/30235">#30235</a>, <a href="https://github.com/apache/airflow/pull/30250">#30250</a>)</li>
+<li>Add "DatasetAlias" for creating datasets or dataset events in runtime</li>
+<li>Allow Airflow tasks to execute directly from the trigger</li>
+<li>Add REST API endpoint to manipulate queued dataset events</li>
+<li>Upgrade apache-airflow-providers-weaviate to 2.0.0 for weaviate-client &gt;= 4.4.0 support</li>
+<li>Add Azure managed identities support to apache-airflow-providers-microsoft-azure</li>
+<li>Add defult_deferrable configuration for easily turning on the deferrable mode of operators</li>
 </ul>
 </li>
 <li><a href="https://github.com/astronomer/astronomer-providers">astronomer-providers</a><ul>
-<li>Reduced async operator overhead by adding checks before sending the task to triggerer (<a href="https://github.com/astronomer/astronomer-providers/issues/1102">issue 1102</a>)</li>
+<li>Contribute existing operators/sensors back to <a href="https://github.com/apache/airflow/">apache-airflow</a> and deprecate this project to reduce maintenance effor</li>
 <li>Automated the deployment of integration tests and testing against the release of the airflow provider (<a href="https://github.com/astronomer/astronomer-providers/pull/987">#987</a>, <a href="https://github.com/astronomer/astronomer-providers/pull/1107">#1107</a>, <a href="https://github.com/astronomer/astronomer-providers/pull/1139">#1139</a>, <a href="https://github.com/astronomer/astronomer-providers/pull/1110">#1110</a>)</li>
 </ul>
 </li>
+<li><a href="https://github.com/astronomer/ask-astro">ask-astro</a></li>
 </ul>
 <p><strong>[Apr 2017 - Feb 2023] Machine Leraning Engineer, <a href="https://www.rakuten.com/">Rakuten USA</a></strong></p>
 <ul>
@@ -247,14 +251,14 @@ You can find me through
 </ul>
 </li>
 <li>Atomic Commits: An Easy &amp; Proven Way to Manage &amp; Automate Release Process<ul>
-<li><strong>2023/07/29</strong> <a href="https://coscup.org/2023/zh-TW/session/TUGLJP">COSCUP 2023</a> → <a href="https://speakerdeck.com/leew/atomic-commits-an-easy-and-proven-way-to-manage-and-automate-release-process">slide</a>, <a href="https://www.youtube.com/watch?v=IxzN9ClXhs8">recording</a></li>
+<li><strong>2023/07/29</strong> <a href="https://coscup.org/2023/zh-TW/session/TUGLJP">COSCUP 2023</a> → <a href="https://speakerdeck.com/leew/atomic-commits-an-easy-and-proven-way-to-manage-and-automate-release-process">slide</a>, <a href="https://www.youtube.com/watch?v=IxzN9ClXhs8">🎬recording</a></li>
 </ul>
 </li>
 <li>Python Table Manners<ul>
 <li><em>2020/11/07</em> <a href="https://taichung-py.kktix.cc/events/meetup-202011-clleew">Taichung.py</a> → <a href="https://speakerdeck.com/leew/python-table-manners-at-taichung-dot-py">slide</a></li>
 <li><em>2020/10/16</em> <a href="https://www.meetup.com/Hualien-Py/events/273609065/">Hualien.py</a> → <a href="https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-hualien-py">slide</a></li>
 <li><em>2020/08/31</em> <a href="https://kaohsiungpy.kktix.cc/events/20200831">Kaohsiung.py</a> → <a href="https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-kaohsiung-dot-py">slide</a></li>
-<li><strong>2020/07/24 <a href="https://ep2020.europython.eu/">Euro Python 2020</a></strong> → <a href="https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020">slide</a>, <a href="https://www.youtube.com/watch?v=m6rF3Kah928">recording</a></li>
+<li><strong>2020/07/24 <a href="https://ep2020.europython.eu/">Euro Python 2020</a></strong> → <a href="https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020">slide</a>, <a href="https://www.youtube.com/watch?v=m6rF3Kah928">🎬recording</a></li>
 <li><strong>2019/11/17 <a href="https://2019.pycon.ca/">PyCon CA 2019</a></strong> → <a href="https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019">slide</a></li>
 <li><em>2019/10/24</em> <a href="https://www.meetup.com/Taipei-py/events/265743666/">Taipei.py</a></li>
 </ul>
@@ -269,7 +273,7 @@ You can find me through
 </ul>
 </li>
 <li>X-Village - 用不到兩個月準備兩個月的課程<ul>
-<li><strong>2019/03/24 <a href="https://sitcon.org/2019">SITCON 2019</a></strong> → <a href="https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng">slide</a>, <a href="https://www.youtube.com/watch?v=kf0KFyb-wcA">recording</a></li>
+<li><strong>2019/03/24 <a href="https://sitcon.org/2019">SITCON 2019</a></strong> → <a href="https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng">slide</a>, <a href="https://www.youtube.com/watch?v=kf0KFyb-wcA">🎬recording</a></li>
 </ul>
 </li>
 <li>Intro to Python Data Science Tools<ul>
@@ -298,6 +302,7 @@ You can find me through
 <h2 id="podcast">Podcast</h2>
 <ul>
 <li><a href="https://pycast.firstory.io/">PyCast</a><ul>
+<li><a href="https://open.firstory.me/story/clz1c1b2c03m701vggil3837p">S4EP6｜ Python Taiwan 年會搞了 13 年，到底在 『稿』什麼？ feat. Andy Lee, Wei Lee, TengLin Yu</a></li>
 <li><a href="https://pycast.firstory.io/episodes/cl8pof56x05p901ws56y185jl">S2EP4 | Emergence: 佛系經營社群的二三事，原來你我都是這片雪花的一部分 - Taihsiang &amp; Wei</a></li>
 <li><a href="https://pycast.firstory.io/episodes/ckovh74d9nw2t0818urqtusva">EP2 | 職場邊緣人教你如何讓 WFH 變得更有趣</a></li>
 </ul>
@@ -326,18 +331,18 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)</p>
 <h3 id="slide">Slide</h3>
 <ul>
 <li><a href="https://github.com/Lee-W/git-tutorial">Git Tutorial</a><ul>
-<li>Sample: <a href="https://github.com/Lee-W/Git-Tutorial-Sample">Git-Tutorial-Sample</a></li>
+<li>example: <a href="https://github.com/Lee-W/Git-Tutorial-Sample">Git-Tutorial-Sample</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="books">Books</h3>
+<h3 id="books-notes">Books Notes</h3>
 <ul>
 <li><a href="https://github.com/Lee-W/Learning_Python">Learning Python 5e Note</a></li>
 <li><a href="https://github.com/Lee-W/Python_Cookbook">Python Cookbook</a></li>
 <li><a href="http://wei-lee.me/posts/tech/2018/11/the-clean-code/">The Clean Code</a></li>
 <li><a href="http://wei-lee.me/posts/tech/2018/11/the-clean-coder/">The Clean Coder</a></li>
 </ul>
-<h3 id="moocs">MOOCs</h3>
+<h3 id="moocs-note">MOOCs Note</h3>
 <ul>
 <li><a href="https://github.com/Lee-W/Machine-Learning-Coursera">Machine Learning (Coursera)</a></li>
 <li><a href="https://github.com/Lee-W/Intro_to_Machine_Learning_Udacity">Intro to Machine Learning</a></li>
