@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2024-07-21 00:23
+modified: 2024-08-18 19:45
 slug: about-me
 ---
 
@@ -57,12 +57,16 @@ I use ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the
 **[Feb 2023 - Present] Software Engineer, [astronomer](https://www.astronomer.io/)**
 
 * [apache-airflow](https://github.com/apache/airflow/)
-    * Fixed a circular import error prior to releasing new airflow providers ([#31379](https://github.com/apache/airflow/pull/31379))
-    * Fixed an Amazon provider bug due to new airflow providers release ([#31482](https://github.com/apache/airflow/pull/31482))
-    * Integrated the AsyncSensors logic into their Sensor counterpart and lessen the maintenance burden ([#30014](https://github.com/apache/airflow/pull/30014), [#30227](https://github.com/apache/airflow/pull/30227),[#30231](https://github.com/apache/airflow/pull/30231),[#30235](https://github.com/apache/airflow/pull/30235), [#30250](https://github.com/apache/airflow/pull/30250))
+    * Add "DatasetAlias" for creating datasets or dataset events in runtime
+    * Allow Airflow tasks to execute directly from the trigger
+    * Add REST API endpoint to manipulate queued dataset events
+    * Upgrade apache-airflow-providers-weaviate to 2.0.0 for weaviate-client >= 4.4.0 support
+    * Add Azure managed identities support to apache-airflow-providers-microsoft-azure
+    * Add defult_deferrable configuration for easily turning on the deferrable mode of operators
 * [astronomer-providers](https://github.com/astronomer/astronomer-providers)
-    * Reduced async operator overhead by adding checks before sending the task to triggerer ([issue 1102](https://github.com/astronomer/astronomer-providers/issues/1102))
+    * Contribute existing operators/sensors back to [apache-airflow](https://github.com/apache/airflow/) and deprecate this project to reduce maintenance effor
     * Automated the deployment of integration tests and testing against the release of the airflow provider ([#987](https://github.com/astronomer/astronomer-providers/pull/987), [#1107](https://github.com/astronomer/astronomer-providers/pull/1107), [#1139](https://github.com/astronomer/astronomer-providers/pull/1139), [#1110](https://github.com/astronomer/astronomer-providers/pull/1110))
+* [ask-astro](https://github.com/astronomer/ask-astro)
 
 **[Apr 2017 - Feb 2023] Machine Leraning Engineer, [Rakuten USA](https://www.rakuten.com/)**
 
@@ -147,12 +151,12 @@ I was the program executor and the leader of the teaching assistant team. I also
 * Intro to Airflow - From Zero to Hero
     * *2024/02/17* [源來適你](https://www.facebook.com/opensource4you) → [slide](https://speakerdeck.com/leew/intro-to-airflow-from-zero-to-hero)
 * Atomic Commits: An Easy & Proven Way to Manage & Automate Release Process
-    * **2023/07/29** [COSCUP 2023](https://coscup.org/2023/zh-TW/session/TUGLJP) → [slide](https://speakerdeck.com/leew/atomic-commits-an-easy-and-proven-way-to-manage-and-automate-release-process), [recording](https://www.youtube.com/watch?v=IxzN9ClXhs8)
+    * **2023/07/29** [COSCUP 2023](https://coscup.org/2023/zh-TW/session/TUGLJP) → [slide](https://speakerdeck.com/leew/atomic-commits-an-easy-and-proven-way-to-manage-and-automate-release-process), [🎬recording](https://www.youtube.com/watch?v=IxzN9ClXhs8)
 * Python Table Manners
     * *2020/11/07* [Taichung.py](https://taichung-py.kktix.cc/events/meetup-202011-clleew) → [slide](https://speakerdeck.com/leew/python-table-manners-at-taichung-dot-py)
     * *2020/10/16* [Hualien.py](https://www.meetup.com/Hualien-Py/events/273609065/) → [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-hualien-py)
     * *2020/08/31* [Kaohsiung.py](https://kaohsiungpy.kktix.cc/events/20200831) → [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-kaohsiung-dot-py)
-    * **2020/07/24 [Euro Python 2020](https://ep2020.europython.eu/)** → [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020), [recording](https://www.youtube.com/watch?v=m6rF3Kah928)
+    * **2020/07/24 [Euro Python 2020](https://ep2020.europython.eu/)** → [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020), [🎬recording](https://www.youtube.com/watch?v=m6rF3Kah928)
     * **2019/11/17 [PyCon CA 2019](https://2019.pycon.ca/)** → [slide](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019)
     * *2019/10/24* [Taipei.py](https://www.meetup.com/Taipei-py/events/265743666/)
 * commitizen-tools: What can we gain from crafting a git message convention?
@@ -161,7 +165,7 @@ I was the program executor and the leader of the teaching assistant team. I also
 * How to get more than PyCon in a PyCon
     * **2019/09/16 [PyCon JP 2019](https://pycon.jp/2019/) - Peer Reviewed Lightning Talk** → [slide](https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9)
 * X-Village - 用不到兩個月準備兩個月的課程
-    * **2019/03/24 [SITCON 2019](https://sitcon.org/2019)** → [slide](https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng), [recording](https://www.youtube.com/watch?v=kf0KFyb-wcA)
+    * **2019/03/24 [SITCON 2019](https://sitcon.org/2019)** → [slide](https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng), [🎬recording](https://www.youtube.com/watch?v=kf0KFyb-wcA)
 * Intro to Python Data Science Tools
     * *2018/03/12* NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence → [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20190312)
     * *2018/02/27* NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence → [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20180227)
@@ -178,6 +182,7 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/).
 
 ## Podcast
 * [PyCast](https://pycast.firstory.io/)
+    * [S4EP6｜ Python Taiwan 年會搞了 13 年，到底在 『稿』什麼？ feat. Andy Lee, Wei Lee, TengLin Yu](https://open.firstory.me/story/clz1c1b2c03m701vggil3837p)
     * [S2EP4 | Emergence: 佛系經營社群的二三事，原來你我都是這片雪花的一部分 - Taihsiang & Wei](https://pycast.firstory.io/episodes/cl8pof56x05p901ws56y185jl)
     * [EP2 | 職場邊緣人教你如何讓 WFH 變得更有趣](https://pycast.firstory.io/episodes/ckovh74d9nw2t0818urqtusva)
 
@@ -204,15 +209,15 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 
 ### Slide
 * [Git Tutorial](https://github.com/Lee-W/git-tutorial)
-    * Sample: [Git-Tutorial-Sample](https://github.com/Lee-W/Git-Tutorial-Sample)
+    * example: [Git-Tutorial-Sample](https://github.com/Lee-W/Git-Tutorial-Sample)
 
-### Books
+### Books Notes
 * [Learning Python 5e Note](https://github.com/Lee-W/Learning_Python)
 * [Python Cookbook](https://github.com/Lee-W/Python_Cookbook)
 * [The Clean Code](http://wei-lee.me/posts/tech/2018/11/the-clean-code/)
 * [The Clean Coder](http://wei-lee.me/posts/tech/2018/11/the-clean-coder/)
 
-### MOOCs
+### MOOCs Note
 * [Machine Learning (Coursera)](https://github.com/Lee-W/Machine-Learning-Coursera)
 * [Intro to Machine Learning](https://github.com/Lee-W/Intro_to_Machine_Learning_Udacity)
 * [Intro to Data Science Udacity](https://github.com/Lee-W/Intro_to_Data_Science_Udacity)
