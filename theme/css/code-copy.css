@@ -3,20 +3,23 @@
   overflow: visible;
 
   & button.codecopy-btn {
-    font-size: rfs(0.9rem);
+    font-size: 1.5rem;
     box-shadow: none;
     min-height: initial;
 
     position: absolute;
     z-index: 1;
-
     right: 0;
     top: 0;
+
     background-color: #fe8019;
-    padding: rfs(0.2rem);
+    padding: 0.7rem;
+
     border: none;
-    border-top-right-radius: var(--borderRadius);
-    border-bottom-left-radius: var(--borderRadius);
+    border-radius: 4px;
+    width: fit-content;
+    height: fit-content;
+  }
 
     &:hover,
     &:focus {
