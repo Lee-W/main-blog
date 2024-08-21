@@ -118,6 +118,7 @@ SHOW_CATEGORIES_ON_MENU = True
 
 # Content Setting
 DEFAULT_CATEGORY = "Article"
+ARTICLE_EXCLUDES = ["static"]
 
 # Theme Setting
 PYGMENTS_STYLE = "monokai"
