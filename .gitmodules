@@ -4,3 +4,6 @@
 [submodule "theme/elegant"]
 	path = theme/elegant
 	url = https://github.com/Lee-W/elegant
+[submodule "theme/attila"]
+	path = theme/attila
+	url = https://github.com/Lee-W/attila
