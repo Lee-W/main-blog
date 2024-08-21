@@ -5,7 +5,7 @@ Tags: Python, Pelican, Blog
 Slug: thanks-elegant-you-were-the-best
 Authors: Wei Lee
 
-[elegant](https://github.com/Pelican-Elegant/elegant) 曾是 [pelican](https://getpelican.com/0 最棒的主題
+[elegant](https://github.com/Pelican-Elegant/elegant) 曾是 [pelican](https://getpelican.com/) 最棒的主題
 但離上一版 [v5.4.0](https://github.com/Pelican-Elegant/elegant/tree/V5.4.0) 的釋出已經是三年前的事了
 我想也差不多是時候了
 
