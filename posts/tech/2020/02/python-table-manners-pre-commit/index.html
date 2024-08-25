@@ -196,22 +196,22 @@
 不過並不僅限於 commit 前，也可以在其它 git 的階段進行<br/>
 之所以要這麼做就是為了讓不符合要求的程式碼，從最一開始就不會進入到版本庫 （pre commit）或 git 伺服器 （pre push）</p>
 <h2 id="pre-commit_1">使用 pre-commit 進行檢查</h2>
-<div class="highlight"><pre><span></span><span class="c1"># 安裝 pre-commit</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安裝 pre-commit</span>
 pipenv<span class="w"> </span>install<span class="w"> </span>pre-commit<span class="w"> </span>--dev
-</pre></div>
+</code></pre></div>
 <h3 id="pre-commit-hook">設定 pre-commit hook</h3>
 <p>先透過設定檔 <code>.pre-commit-config.yaml</code>，告訴 pre-commit 要做哪些檢查<br/>
 需要注意的是，專案必須要是一個 git 專案<br/>
 這些 git hook 都會被寫入 <code>.git/hooks/</code></p>
 <p>e.g.,</p>
-<div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="nt">repos</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pre-commit/pre-commit-hooks</span>
 <span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v3.2.0</span>
 <span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end-of-file-fixer</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trailing-whitespace</span>
 <span class="w">        </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">--markdown-linebreak-ext=md</span><span class="p p-Indicator">]</span>
-</pre></div>
+</code></pre></div>
 <p>以上面的例子來說</p>
 <ul>
 <li><code>repos</code> 告訴 pre-commit 要去哪邊找到這些 hook<ul>
@@ -233,32 +233,32 @@ pipenv<span class="w"> </span>install<span class="w"> </span>pre-commit<span cla
 指到的 master 就會是第一次 pre-commit 抓到時的 master，不是最新版的 master</p>
 <p>寫完設定檔後，接著就是把 pre-commit hook 安裝到 git 專案中</p>
 <h2 id="pre-commit_2">安裝 pre-commit 到專案中</h2>
-<div class="highlight"><pre><span></span><span class="c1"># 將 pre-commit hook 安裝到 git 專案</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 將 pre-commit hook 安裝到 git 專案</span>
 pipenv<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>install
-</pre></div>
+</code></pre></div>
 <p>需要注意的是每次重新 clone 之後，都必須要執行一次<br/>
 雖然可以將 <code>.pre-commit-config.yaml</code> 加入版本控制<br/>
 但 <code>.git/hook/</code> 是不能被加入版本控制的</p>
 <p>執行完會出現以下訊息</p>
-<div class="highlight"><pre><span></span>pre-commit<span class="w"> </span>installed<span class="w"> </span>at<span class="w"> </span>.git/hooks/pre-commit
-</pre></div>
+<div class="highlight"><pre><span></span><code>pre-commit<span class="w"> </span>installed<span class="w"> </span>at<span class="w"> </span>.git/hooks/pre-commit
+</code></pre></div>
 <p>第一次進行 git commit 時，會將 <a href="https://github.com/pre-commit/pre-commit-hooks">pre-commit-hooks</a> clone 到 pre-commit 統一管理的地方<br/>
 之後就會進行 <code>Fix End of Files</code> 跟 <code>Trim Trailing Whitespace</code> 的檢查</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span>Initializing<span class="w"> </span>environment<span class="w"> </span><span class="k">for</span><span class="w"> </span>https://github.com/pre-commit/pre-commit-hooks.
+<div class="highlight"><pre><span></span><code><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span>Initializing<span class="w"> </span>environment<span class="w"> </span><span class="k">for</span><span class="w"> </span>https://github.com/pre-commit/pre-commit-hooks.
 <span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span>Installing<span class="w"> </span>environment<span class="w"> </span><span class="k">for</span><span class="w"> </span>https://github.com/pre-commit/pre-commit-hooks.
 <span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span>Once<span class="w"> </span>installed<span class="w"> </span>this<span class="w"> </span>environment<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>reused.
 <span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span>This<span class="w"> </span>may<span class="w"> </span>take<span class="w"> </span>a<span class="w"> </span>few<span class="w"> </span>minutes...
 Fix<span class="w"> </span>End<span class="w"> </span>of<span class="w"> </span>Files.........................................................Passed
 Trim<span class="w"> </span>Trailing<span class="w"> </span>Whitespace.................................................Passed
-</pre></div>
+</code></pre></div>
 <p>如果沒有通過， git 會阻止你進行 commit</p>
 <p>pre-commit 每次都只會針對要 commit 的檔案做檢查<br/>
 所以建議第一次將 pre-commit 引入專案時，可以先檢查所有的檔案</p>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
+</code></pre></div>
 <h2 id="pre-commit-hook_1">使用自定義的 pre-commit hook</h2>
 <p>下面的例子是在 commit 前，要進行 pytest 的檢查</p>
-<div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="nt">repos</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
 <span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pytest</span>
@@ -268,7 +268,7 @@ Trim<span class="w"> </span>Trailing<span class="w"> </span>Whitespace..........
 <span class="w">        </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipenv run pytest</span>
 <span class="w">        </span><span class="nt">pass_filenames</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">        </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">python</span><span class="p p-Indicator">]</span>
-</pre></div>
+</code></pre></div>
 <ul>
 <li><code>repo: local</code>: 直接在本地資料夾執行<ul>
 <li><code>hooks</code>: 有哪些 hook 要執行<ul>
@@ -296,8 +296,8 @@ Trim<span class="w"> </span>Trailing<span class="w"> </span>Whitespace..........
 預設只會寫入 <code>.git/hooks/pre-commit</code><br/>
 如果要加入其他階段，則必須要在後面加入參數 <code>-t [hook-type]</code></p>
 <p>e.g.,</p>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>install<span class="w"> </span>-t<span class="w"> </span>pre-push
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>install<span class="w"> </span>-t<span class="w"> </span>pre-push
+</code></pre></div>
 <p>支援 6 種 hook-type</p>
 <ul>
 <li>pre-commit</li>
@@ -311,21 +311,21 @@ Trim<span class="w"> </span>Trailing<span class="w"> </span>Whitespace..........
 而是會把 <code>stages</code> 改成 <code>push</code><br/>
 並安裝 pre-push 的 hook (i.e., <code>pipenv run pre-commit install -t pre-push</code>)</p>
 <p>如果不想要每個 hook 都各自做設定，可以在 <code>.pre-commit-config.yaml</code> 加上 <code>default_stages</code></p>
-<div class="highlight"><pre><span></span><span class="nt">default_stages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">]</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">default_stages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">]</span>
+</code></pre></div>
 <p>表示如果沒有特定指定 <code>stages</code> 的 hook 都只在 <code>push</code> 的階段做檢查</p>
 <h2 id="pre-commit-hook_2">為自己的工具加上 pre-commit hook</h2>
 <p>為你寫的工具加上 pre-commit hook 可以讓人更方便使用你的工具<br/>
 在工具專案中加入 <code>.pre-commit-hooks.yaml</code> 讓 pre-commit 知道其他人引入你的工具時要做什麼處理<br/>
 撰寫的方式跟 local 的 repo 的寫法相似</p>
-<div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="nt">repos</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
 <span class="w">      </span><span class="nt">hooks</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 <span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 <span class="w">          </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</pre></div>
+</code></pre></div>
 <h2 id="bouns-commit">Bouns: 可以只跳警告不擋下 commit 嗎？</h2>
 <p>根據 <a href="https://github.com/pre-commit/pre-commit/issues/923">Can I show warning message without blocking the commit? #923</a> 提到的， pre-commit 認為這不是好的作法<br/>
 但仍然可以透過對 <code>entry</code> 內指令的操作達到類似的效果</p>

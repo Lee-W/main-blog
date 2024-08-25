@@ -191,35 +191,35 @@
 <p>The current flow looks like this.</p>
 <div class="mermaid">
 sequenceDiagram
-autonumber
-Scheduler -&gt;&gt; Worker: change the TaskInstanceState to QUEUED
-Worker -&gt;&gt; Worker: run "execute" method
-Worker -&gt;&gt; Triggerer: raise "TaskDeferred" exception and change TaskInstanceState to DEFERRED
-Triggerer -) Triggerer: run "run" method and yield "TriggerEvent"
-Triggerer --) Scheduler: Change the TaskInstanceState to SCHEDULED
-Scheduler -&gt;&gt; Worker 2: Change the TaskInstanceState to QUEUED
-Worker 2 -&gt;&gt; Worker 2: run "next_method"
-Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
+    autonumber
+    Scheduler -&gt;&gt; Worker: change the TaskInstanceState to QUEUED
+    Worker -&gt;&gt; Worker: run "execute" method
+    Worker -&gt;&gt; Triggerer: raise "TaskDeferred" exception and change TaskInstanceState to DEFERRED
+    Triggerer -) Triggerer: run "run" method and yield "TriggerEvent"
+    Triggerer --) Scheduler: Change the TaskInstanceState to SCHEDULED
+    Scheduler -&gt;&gt; Worker 2: Change the TaskInstanceState to QUEUED
+    Worker 2 -&gt;&gt; Worker 2: run "next_method"
+    Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
 </div>
 <h2 id="why-do-we-want-it">Why do we want it?</h2>
 <p>If you take a look at <a href="https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/providers/amazon/aws/sensors/s3.py#L346-L367">S3KeysUnchangedSensor</a>, the only thing that the <a href="https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/providers/amazon/aws/sensors/s3.py#L346-L367">execute method</a> do is pretty much just deferring. Thus, we don’t really to execute it from a worker and than defer it to triggerer. We can just start the execution from triggerer and change the flow to the following.</p>
 <div class="mermaid">
 sequenceDiagram
-autonumber
-Scheduler -&gt;&gt; Triggerer: raise "TaskDeferred" and change TaskInstanceState to DEFERRED
-Triggerer -) Triggerer: run "run" method and yield "TriggerEvent"
-Triggerer --) Scheduler: Change the TaskInstanceState to SCHEDULED
-Scheduler -&gt;&gt; Worker 2: Change the TaskInstanceState to QUEUED
-Worker 2 -&gt;&gt; Worker 2: run "next_method"
-Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
+    autonumber
+    Scheduler -&gt;&gt; Triggerer: raise "TaskDeferred" and change TaskInstanceState to DEFERRED
+    Triggerer -) Triggerer: run "run" method and yield "TriggerEvent"
+    Triggerer --) Scheduler: Change the TaskInstanceState to SCHEDULED
+    Scheduler -&gt;&gt; Worker 2: Change the TaskInstanceState to QUEUED
+    Worker 2 -&gt;&gt; Worker 2: run "next_method"
+    Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
 </div>
 <p>And, in some cases, we don’t even need to run “next_method” in the triggerer, so we probably could support skip “next_method” as well in the future.</p>
 <div class="mermaid">
 sequenceDiagram
-autonumber
-Scheduler -&gt;&gt; Triggerer: raise "TaskDeferred" and change TaskInstanceState to DEFERRED
-Triggerer -) Triggerer: run "run" and yield "TriggerEvent"
-Triggerer --) Scheduler: Change the TaskInstanceState to SUCCESS
+    autonumber
+    Scheduler -&gt;&gt; Triggerer: raise "TaskDeferred" and change TaskInstanceState to DEFERRED
+    Triggerer -) Triggerer: run "run" and yield "TriggerEvent"
+    Triggerer --) Scheduler: Change the TaskInstanceState to SUCCESS
 </div>
 <h2 id="how-does-it-affect-dag-authors">How does it affect DAG authors?</h2>
 <p>Well, not much at this moment. Ideally, everything should be the same but more efficient, and it might also open new opportunities for other use cases.</p>
@@ -227,7 +227,7 @@ Triggerer --) Scheduler: Change the TaskInstanceState to SUCCESS
 <p>A new way to way to implement operators in an async manner</p>
 <h2 id="lets-see-how-it-looks-like">Let's see how it looks like</h2>
 <p>Before this feature was added, to defer <code>WaitOneHourSensor</code>, we need to run call the <code>defer</code> method in <code>execute</code>.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
 
 <span class="kn">from</span> <span class="nn">airflow.sensors.base</span> <span class="kn">import</span> <span class="n">BaseSensorOperator</span>
@@ -242,9 +242,9 @@ Triggerer --) Scheduler: Change the TaskInstanceState to SUCCESS
     <span class="k">def</span> <span class="nf">execute_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># We have no more work to do here. Mark as complete.</span>
         <span class="k">return</span>
-</pre></div>
+</code></pre></div>
 <p>Now, we can add <code>start_trigger</code> and <code>next_method</code> attributes and the scheduler will know we want to execute this task directly from the triggerer.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
 
 <span class="kn">from</span> <span class="nn">airflow.sensors.base</span> <span class="kn">import</span> <span class="n">BaseSensorOperator</span>
@@ -261,10 +261,10 @@ Triggerer --) Scheduler: Change the TaskInstanceState to SUCCESS
     <span class="k">def</span> <span class="nf">execute_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># We have no more work to do here. Mark as complete.</span>
         <span class="k">return</span>
-</pre></div>
+</code></pre></div>
 <h2 id="how-does-it-work-under-the-hook">How does it work under the hook</h2>
 <p>Let's take a look at <a href="https://github.com/apache/airflow/blob/3d97474a49a00bb6fcd67cf20d470a1fc2861f4f/airflow/models/dagrun.py#L1541-L1553">airflow/models/dagrun.py</a></p>
-<div class="highlight"><pre><span></span>            <span class="k">elif</span> <span class="p">(</span>
+<div class="highlight"><pre><span></span><code>            <span class="k">elif</span> <span class="p">(</span>
                 <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
                 <span class="ow">and</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">next_method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
                 <span class="ow">and</span> <span class="ow">not</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">on_execute_callback</span>
@@ -277,12 +277,14 @@ Triggerer --) Scheduler: Change the TaskInstanceState to SUCCESS
                     <span class="n">exception</span><span class="o">=</span><span class="n">TaskDeferred</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger</span><span class="p">,</span> <span class="n">method_name</span><span class="o">=</span><span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">next_method</span><span class="p">),</span>
                     <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
                 <span class="p">)</span>
-</pre></div>
+</code></pre></div>
 <p>It checks whether a task has both <code>start_trigger</code> and <code>next_method</code> set. If so, we'll defer this task by calling <code>defer_task</code> instead of adding it to <code>schedulable_ti_ids.</code> (The <code>on_execute_callback</code>, <code>on_success_callback</code>, and <code>outlets</code> checks are actually wrong and are addressed in <a href="https://github.com/apache/airflow/pull/39585">#39585</a>).</p>
 <h2 id="limitation">Limitation</h2>
 <p>Dynamic Task Mapping / MappedOperator is not fully supported at this time due to the way this type of operator is initialized on the worker. However, a draft PR <a href="https://github.com/apache/airflow/pull/39912">#39912</a> has been created to address this.</p>
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+</script>
 </section>
 <section class="post-footer">
 <div class="post-share">
@@ -315,6 +317,9 @@ Triggerer --) Scheduler: Change the TaskInstanceState to SUCCESS
 </li>
 <li>
 <a href="https://blog.wei-lee.me/posts/tech/2024/08/serialize-start-trigger-args">Serialize StartTriggerArgs - That's not how Airflow serialization works!</a>
+</li>
+<li>
+<a href="https://blog.wei-lee.me/posts/tech/2024/08/dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger">Dynamic task mapping on operators that can start execution from trigger - This is not the feature you're looking for</a>
 </li>
 </ol>
 </div>

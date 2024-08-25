@@ -188,7 +188,7 @@
 </div>
 <h2 id="what-does-it-look-like-now">What does it look like now?</h2>
 <p>The following code snippet shows how to define an operator that can start task execution directly from the trigger. I have kept the code simple and removed unnecessary details.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">airflow.sensors.date_time</span> <span class="kn">import</span> <span class="n">DateTimeSensorAsync</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">airflow.sensors.date_time</span> <span class="kn">import</span> <span class="n">DateTimeSensorAsync</span>
 <span class="kn">from</span> <span class="nn">airflow.triggers.base</span> <span class="kn">import</span> <span class="n">StartTriggerArgs</span>
 
 
@@ -212,7 +212,7 @@
 
     <span class="k">def</span> <span class="nf">execute_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span>
-</pre></div>
+</code></pre></div>
 <p>To enable an operator or a sensor with this feature, we must define the attributes <code>start_trigger_args</code> and <code>start_from_trigger</code>. We use <code>start_from_trigger</code> to determine whether we want to enable this feature and <code>start_trigger_args</code> to decide which trigger we want to use and how to use it. <code>start_trigger_args</code> should be an instance of <code>airflow.triggers.base.StartTriggerArgs</code> and it should contain the following arguments.</p>
 <ul>
 <li><code>trigger_cls</code><ul>
@@ -244,14 +244,14 @@
 <p>If the attributes <code>start_trigger_args</code> and <code>start_from_trigger</code> are defined as class attributes, we could set <code>trigger_kwargs</code> as a temporary value and update the values in the <code>__init__</code> method. However, implementing a DAG with dynamic task mapping on an operator supporting this feature works differently, which will be detailed in the next article.</p>
 <h2 id="whats-changed-under-the-hook">What's changed under the hook</h2>
 <p>Let's start from <a href="https://github.com/apache/airflow/blob/9901a065fcd93307d8e1d69e34621966d7313511/airflow/models/dagrun.py#L1541-L1545">airflow/models/dagrun.py</a>. Airflow verifies if the <code>start_from_trigger</code> attribute is set to <code>True</code> and the <code>start_from_trigger</code> attribute is set. If both conditions are met, the <code>defer_task</code> method will be called with <code>exception=None</code>.</p>
-<div class="highlight"><pre><span></span>            <span class="k">elif</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_from_trigger</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code>            <span class="k">elif</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_from_trigger</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">ti</span><span class="o">.</span><span class="n">start_date</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
                 <span class="k">if</span> <span class="n">ti</span><span class="o">.</span><span class="n">state</span> <span class="o">!=</span> <span class="n">TaskInstanceState</span><span class="o">.</span><span class="n">UP_FOR_RESCHEDULE</span><span class="p">:</span>
                     <span class="n">ti</span><span class="o">.</span><span class="n">try_number</span> <span class="o">+=</span> <span class="mi">1</span>
                 <span class="n">ti</span><span class="o">.</span><span class="n">defer_task</span><span class="p">(</span><span class="n">exception</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 <p>Then, let's go to <a href="https://github.com/apache/airflow/blob/9901a065fcd93307d8e1d69e34621966d7313511/airflow/models/taskinstance.py#L1607-L1621">airflow/models/taskinstance.py</a>.</p>
-<div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">exception</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code>    <span class="k">if</span> <span class="n">exception</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">trigger_row</span> <span class="o">=</span> <span class="n">Trigger</span><span class="o">.</span><span class="n">from_object</span><span class="p">(</span><span class="n">exception</span><span class="o">.</span><span class="n">trigger</span><span class="p">)</span>
         <span class="n">next_method</span> <span class="o">=</span> <span class="n">exception</span><span class="o">.</span><span class="n">method_name</span>
         <span class="n">next_kwargs</span> <span class="o">=</span> <span class="n">exception</span><span class="o">.</span><span class="n">kwargs</span>
@@ -266,7 +266,7 @@
         <span class="n">timeout</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="o">.</span><span class="n">timeout</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">AirflowException</span><span class="p">(</span><span class="s2">"exception and ti.task.start_trigger_args cannot both be None"</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 <p>We handle standard task deferral in the first <code>if</code> condition. This happens when a task runs the <code>defer</code> method and raises a <code>TaskDeferred</code> exception. For a more detailed version, you can refer to <a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker#how-did-the-deferrable-operator-work-before-this-change">this link</a>. Therefore, we need to set <code>exception=None</code> in the previous code block, as we are not handling it in the standard way.</p>
 <p>The <code>elif</code> statement checks whether this operator has a <code>start_trigger_args</code> attribute, which indicates that this operator supports the "starting execution from the trigger" feature. Airflow will then load the value from <code>start_trigger_args</code> and assign it to the variables that will later be used in the rest of the deferral process, similar to the standard task deferral.</p>
 <p>The next article in this series will cover how to utilize this feature with dynamic task mapping (well.. partially). The implementation details will change somewhat, but the core idea remains unchanged.</p>
@@ -302,6 +302,9 @@
 </li>
 <li>
 <a href="https://blog.wei-lee.me/posts/tech/2024/08/serialize-start-trigger-args">Serialize StartTriggerArgs - That's not how Airflow serialization works!</a>
+</li>
+<li>
+<a href="https://blog.wei-lee.me/posts/tech/2024/08/dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger">Dynamic task mapping on operators that can start execution from trigger - This is not the feature you're looking for</a>
 </li>
 </ol>
 </div>

@@ -201,10 +201,10 @@
 <h3 id="_1">安裝</h3>
 <p>因為我把 <a href="https://github.com/getpelican/pelican/tree/4.5.4">pelican</a> 的版本定在 4.5.4<br/>
 為了避免跟你的 pelican 版本打架，強烈建議使用 <a href="https://github.com/pipxproject/pipx">pipx</a> 安裝</p>
-<div class="highlight"><pre><span></span>pipx<span class="w"> </span>install<span class="w"> </span>pelican-stat
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipx<span class="w"> </span>install<span class="w"> </span>pelican-stat
+</code></pre></div>
 <p>pelican-stat 目前支援 <code>collect</code> 和 <code>plot</code> 兩種指令</p>
-<div class="highlight"><pre><span></span>Usage:<span class="w"> </span>pelican-stat<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+<div class="highlight"><pre><span></span><code>Usage:<span class="w"> </span>pelican-stat<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
 
 Options:
 <span class="w">  </span>--help<span class="w">  </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.
@@ -212,11 +212,11 @@ Options:
 Commands:
 <span class="w">  </span>collect<span class="w">  </span>Collect<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span>pelican<span class="w"> </span>project<span class="w"> </span>and<span class="w"> </span><span class="nb">export</span><span class="w"> </span>article<span class="w"> </span>metadata
 <span class="w">  </span>plot<span class="w">     </span>Draw<span class="w"> </span>trend<span class="w"> </span>plot<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>frequency<span class="w"> </span>of<span class="w"> </span>new<span class="w"> </span>posts
-</pre></div>
+</code></pre></div>
 <h3 id="collect">collect</h3>
 <p>將文章的資訊整理並輸出成 json 檔</p>
 <p>e.g.,</p>
-<div class="highlight"><pre><span></span><span class="p">[</span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">    </span><span class="err">...</span><span class="p">,</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mf">1560308220.0</span><span class="p">,</span>
@@ -234,7 +234,7 @@ Commands:
 <span class="w">        </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Star Wars: Galaxy's Edge - First Peek"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">]</span>
-</pre></div>
+</code></pre></div>
 <p>第一個參數吃的是 pelican 的設定檔，第二個則是輸出的位置</p>
 <h3 id="plot">plot</h3>
 <p>就如同指令的名稱，它就是拿來做圖用的<br/>
@@ -277,9 +277,9 @@ Commands:
 </ol>
 <p>這就是為什麼我的 <a href="https://github.com/Lee-W/pelican-stat/blob/0.3.0/pelican_stat/collector.py#L15">_get_pelican_instance</a> 會這樣寫</p>
 <p>而我額外多做了兩個處理</p>
-<div class="highlight"><pre><span></span>        <span class="n">settings</span><span class="p">[</span><span class="s2">"PLUGINS"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight"><pre><span></span><code>        <span class="n">settings</span><span class="p">[</span><span class="s2">"PLUGINS"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">settings</span><span class="p">[</span><span class="s2">"MARKDOWN"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-</pre></div>
+</code></pre></div>
 <p>原因是 MARKDOWN 跟 PLUGINS 都有可能有額外的相依套件<br/>
 尤其是 pelican 自從 <a href="https://docs.getpelican.com/en/4.5.0/plugins.html#how-to-use-plugins">4.5.0</a> 之後開始支援從 pip 安裝的 pelican-plugins<br/>
 但它們對文章的 metadata 大多不會有影響<br/>

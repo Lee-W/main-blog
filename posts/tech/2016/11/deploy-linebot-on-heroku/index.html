@@ -196,17 +196,17 @@ Heroku 則是用來讓其他人測試功能<br/>
 <h3 id="add-remote">Add Remote</h3>
 <p>在部署之前要先安裝<a href="https://devcenter.heroku.com/articles/heroku-command-line">Heroku CLI</a></p>
 <p>再來我們要到原本 line-echobot，將 heroku 加入這個專案的 remote</p>
-<div class="highlight"><pre><span></span>heroku<span class="w"> </span>login
+<div class="highlight"><pre><span></span><code>heroku<span class="w"> </span>login
 heroku<span class="w"> </span>git:remote<span class="w"> </span>-a<span class="w"> </span>leewbot
-</pre></div>
+</code></pre></div>
 <p>接著用 <code>git remote -v</code> 就能看到 <code>heroku</code> 已經被加入 remote 了<br/>
 以後只要 <code>git push heroku master</code>，就能部署到 Heroku<br/>
 不過我們還必須要多做一些設定才能讓 Bot 順利的部署</p>
 <h3 id="environment-variables">Environment Variables</h3>
 <p>首先是我們原先設定的環境變數<br/>
 Heroku 是透過這個指令來做設定</p>
-<div class="highlight"><pre><span></span>heroku<span class="w"> </span>config:set<span class="w"> </span><span class="s2">"env key"</span>:<span class="s2">"env value"</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>heroku<span class="w"> </span>config:set<span class="w"> </span><span class="s2">"env key"</span>:<span class="s2">"env value"</span>
+</code></pre></div>
 <p>或者也能到 dashboard 的 <code>Settings</code> → <code>Config Variables</code> → <code>Reveal Config Vars</code> 做設定</p>
 <h3 id="python-environments">Python Environments</h3>
 <p>因為 Heroku 支援多種不同的語言<br/>
@@ -215,8 +215,8 @@ Heroku 是透過這個指令來做設定</p>
 並且安裝 <code>requirements.txt</code> 內的函式庫<br/>
 名稱如果打錯，可能會讓 Heroku 不知道這是 Python 專案，導致部署失敗</p>
 <p>另外可以透過 <code>runtime.txt</code> 來指定 Python 的版本<br/>
-目前支援這兩種版本
-* <code>python-2.7.12</code>
+目前支援這兩種版本<br/>
+* <code>python-2.7.12</code><br/>
 * <code>python-3.5.2</code></p>
 <h3 id="deploy-settings-procfile">Deploy Settings - Procfile</h3>
 <p>再來必須要讓 Heroku 知道我們執行專案的指令是什麼<br/>
@@ -224,8 +224,8 @@ Heroku 是透過這個指令來做設定</p>
 <p>這裡使用的部署套件是 gunicorn<br/>
 先在 <code>requirements.txt</code> 加入 <code>gunicorn==19.0.0</code><br/>
 再來創一個 <code>Profile</code>，內容是</p>
-<div class="highlight"><pre><span></span>web: gunicorn line_echobot.wsgi --log-file -
-</pre></div>
+<div class="highlight"><pre><span></span><code>web: gunicorn line_echobot.wsgi --log-file -
+</code></pre></div>
 <p>如果用其他的部署套件，則需要修改 web 後面的指令</p>
 <p>到了這裡就做好所有的設定了<br/>
 最後只要 <code>git push heroku master</code> 就會部署到 Heroku 上</p>

@@ -177,7 +177,7 @@
 <p>I'll focus on PR <a href="https://github.com/apache/airflow/pull/40993"> Enhance start_trigger_args serialization #40993 </a>, which fixed an issue in <a href="https://github.com/apache/airflow/pull/39585"> Prevent start trigger initialization in scheduler #39585 </a>.</p>
 <h2 id="whats-the-issue">What's the issue?</h2>
 <p>Following the same example as the <a href="https://blog.wei-lee.me/posts/tech/2024/08/enhancing-airflow-task-execution-with-start-trigger-args">previous article</a></p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">airflow.sensors.date_time</span> <span class="kn">import</span> <span class="n">DateTimeSensorAsync</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">airflow.sensors.date_time</span> <span class="kn">import</span> <span class="n">DateTimeSensorAsync</span>
 <span class="kn">from</span> <span class="nn">airflow.triggers.base</span> <span class="kn">import</span> <span class="n">StartTriggerArgs</span>
 
 
@@ -201,15 +201,15 @@
 
     <span class="k">def</span> <span class="nf">execute_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span>
-</pre></div>
+</code></pre></div>
 <p>This works fine now, but if you check out commit <a href="https://github.com/apache/airflow/commit/84dcfe7e">fa92727~</a> (one commit before this fix), you'll encounter error message like the following</p>
-<div class="highlight"><pre><span></span>TypeError: Object of type datetime is not JSON serializable
-</pre></div>
+<div class="highlight"><pre><span></span><code>TypeError: Object of type datetime is not JSON serializable
+</code></pre></div>
 <p>Surely Airflow can do better.</p>
 <p><img alt="surely airflow can do better" src="/images/posts-image/2024-serialize-start-trigger-args/dooku.jpg"/></p>
 <h2 id="why-is-this-happening">Why is this happening?</h2>
 <p>In <a href="https://github.com/apache/airflow/pull/39585/files#diff-e4ec4e631219bf44939d416cf381ce188ae09163ff721103fd2de9d27805d477R27-R42"> Prevent start trigger initialization in scheduler #39585 </a>, I implemented the <code>StartTriggerArgs.serialize</code> method this way</p>
-<div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">StartTriggerArgs</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""Arguments required for start task execution from triggerer."""</span>
 
@@ -225,7 +225,7 @@
             <span class="s2">"next_method"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">next_method</span><span class="p">,</span>
             <span class="s2">"timeout"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span>
         <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 <p>and wish Airflow would magically handle everything for me.</p>
 <p>But,  ...<br/>
 <img alt="That's not how airflow serialization works" src="/images/posts-image/2024-serialize-start-trigger-args/han.jpg"/></p>
@@ -234,26 +234,26 @@
 <p>Let's bring back the diagram in the <a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker">first article</a>.</p>
 <div class="mermaid">
 sequenceDiagram
-autonumber
-Scheduler -&gt;&gt; Worker: change the TaskInstanceState to QUEUED
-Worker -&gt;&gt; Worker: run "execute" method
-Worker -&gt;&gt; Triggerer: raise "TaskDeferred" exception and change TaskInstanceState to DEFERRED
-Triggerer -) Triggerer: run "run" method and yield "TriggerEvent"
-Triggerer --) Scheduler: Change the TaskInstanceState to SCHEDULED
-Scheduler -&gt;&gt; Worker 2: Change the TaskInstanceState to QUEUED
-Worker 2 -&gt;&gt; Worker 2: run "next_method"
-Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
+    autonumber
+    Scheduler -&gt;&gt; Worker: change the TaskInstanceState to QUEUED
+    Worker -&gt;&gt; Worker: run "execute" method
+    Worker -&gt;&gt; Triggerer: raise "TaskDeferred" exception and change TaskInstanceState to DEFERRED
+    Triggerer -) Triggerer: run "run" method and yield "TriggerEvent"
+    Triggerer --) Scheduler: Change the TaskInstanceState to SCHEDULED
+    Scheduler -&gt;&gt; Worker 2: Change the TaskInstanceState to QUEUED
+    Worker 2 -&gt;&gt; Worker 2: run "next_method"
+    Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
 </div>
 <p>In step 3, we raise a TaskDeferred exception. It will be caught in <a href="https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/taskinstance.py#L283-L297">airflow/models/taskinstance.py::_run_raw_task</a>, which calls <a href="https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/taskinstance.py#L1611">_defer_task</a> after <code>defer_task</code> and writes a trigger row into the <a href="https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/trigger.py#L62">trigger</a> table in the database <a href="https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/taskinstance.py#L1643-L1644">here</a>. That's why it needs to be serialized.</p>
-<div class="highlight"><pre><span></span>    <span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">trigger_row</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>    <span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">trigger_row</span><span class="p">)</span>
     <span class="n">session</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 <h2 id="how-do-we-get-it-resolved">How do we get it resolved?</h2>
 <p>Returning to the PR <a href="https://github.com/apache/airflow/pull/40993"> Enhance start_trigger_args serialization #40993 </a>.</p>
 <p>We are aware of the locations for <a href="https://github.com/apache/airflow/pull/40993/files#diff-807ca0a4fd53aeb41166621c9842b0f89b7931fc64e9a60befa36c776db45efaR1126-R1128">serializing StartTriggerArgs</a> and <a href="https://github.com/apache/airflow/pull/40993/files#diff-807ca0a4fd53aeb41166621c9842b0f89b7931fc64e9a60befa36c776db45efaR1315-R1318">deserializing StartTriggerArgs</a>. The current implementation is incorrect, so our objective is to <a href="https://github.com/apache/airflow/pull/40993/files#diff-807ca0a4fd53aeb41166621c9842b0f89b7931fc64e9a60befa36c776db45efaR353-R386">rewrite the serialize/deserialize method</a>.</p>
 <p>Within the arguments of StartTriggerArgs, <code>trigger_cls</code> and <code>next_method</code> are either strings or None, so there isn't much to do with them. However, we'll need to make some additional adjustments for <code>trigger_kwargs</code> and <code>next_kwargs</code>, which are dictionaries, and for <code>timeout</code>, which is a timedelta.</p>
 <p>Since logic for different data types is already implemented in <a href="https://github.com/astronomer/airflow/blob/5036115047aaaa36c07a37108ac87152afd61d8f/airflow/serialization/serialized_objects.py">airflow/serialization/serialized_objects.py</a>, we should leverage them. In <a href="https://github.com/astronomer/airflow/blob/5036115047aaaa36c07a37108ac87152afd61d8f/airflow/serialization/serialized_objects.py#L628-L635">BaseSerialization.serialize</a>, there's already logic that handles dictionaries so what we need to do is extracting <code>trigger_kwargs</code> and <code>next_kwargs</code> and pass them into this method. As for <code>timeout</code>, we already know it's timedetla and can be <a href="https://github.com/astronomer/airflow/blob/5036115047aaaa36c07a37108ac87152afd61d8f/airflow/serialization/serialized_objects.py#L663">handled quite easily</a>, there's no need to call the <code>BaseSerialization.serialize</code> method again.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encode_start_trigger_args</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">StartTriggerArgs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">encode_start_trigger_args</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">StartTriggerArgs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Encode a StartTriggerArgs.</span>
 <span class="sd">    :meta private:</span>
@@ -269,9 +269,9 @@ Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
         <span class="s2">"next_kwargs"</span><span class="p">:</span> <span class="n">serialize_kwargs</span><span class="p">(</span><span class="s2">"next_kwargs"</span><span class="p">),</span>
         <span class="s2">"timeout"</span><span class="p">:</span> <span class="n">var</span><span class="o">.</span><span class="n">timeout</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">timeout</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 <p>For deserialization, we're following a similar approach, but in reverse.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decode_start_trigger_args</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">StartTriggerArgs</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">decode_start_trigger_args</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">StartTriggerArgs</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Decode a StartTriggerArgs.</span>
 <span class="sd">    :meta private:</span>
@@ -285,9 +285,11 @@ Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
         <span class="n">next_kwargs</span><span class="o">=</span><span class="n">deserialize_kwargs</span><span class="p">(</span><span class="s2">"next_kwargs"</span><span class="p">),</span>
         <span class="n">timeout</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">var</span><span class="p">[</span><span class="s2">"timeout"</span><span class="p">])</span> <span class="k">if</span> <span class="n">var</span><span class="p">[</span><span class="s2">"timeout"</span><span class="p">]</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span>
-</pre></div>
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+</code></pre></div>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+</script>
 </section>
 <section class="post-footer">
 <div class="post-share">
@@ -320,6 +322,9 @@ Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
 </li>
 <li class="active">
 <a href="https://blog.wei-lee.me/posts/tech/2024/08/serialize-start-trigger-args">Serialize StartTriggerArgs - That's not how Airflow serialization works!</a>
+</li>
+<li>
+<a href="https://blog.wei-lee.me/posts/tech/2024/08/dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger">Dynamic task mapping on operators that can start execution from trigger - This is not the feature you're looking for</a>
 </li>
 </ol>
 </div>

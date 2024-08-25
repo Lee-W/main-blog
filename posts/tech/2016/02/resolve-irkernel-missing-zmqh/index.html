@@ -172,27 +172,27 @@
 <h2 id="irkernel">安裝 IRKernel</h2>
 <p>進入 R 的命令列，輸入下面的指令<br/>
 就能安裝 IRKernel，以後就能在 jupyter 中使用 R</p>
-<div class="highlight"><pre><span></span>install.packages(c('rzmq','repr','IRkernel','IRdisplay'),
+<div class="highlight"><pre><span></span><code>install.packages(c('rzmq','repr','IRkernel','IRdisplay'),
                  repos = c('http://irkernel.github.io/', getOption('repos')))
 IRkernel::installspec()
-</pre></div>
+</code></pre></div>
 <h2 id="_1">錯誤訊息</h2>
-<div class="highlight"><pre><span></span>interface.cpp:22:10: fatal error: 'zmq.h' file not found
+<div class="highlight"><pre><span></span><code>interface.cpp:22:10: fatal error: 'zmq.h' file not found
 #include &lt;zmq.h&gt;
          ^
 1 error generated.
 make: *** [interface.o] Error 1
 ERROR: compilation failed for package 'rzmq'
-</pre></div>
+</code></pre></div>
 <h2 id="_2">解決</h2>
 <p>這時候就要將缺少的套件補齊</p>
-<div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>czmq<span class="w"> </span>zmq
-</pre></div>
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>czmq<span class="w"> </span>zmq
+</code></pre></div>
 <p>再執行一次最上面的安裝指令</p>
 <p>接著在指令列執行輸入下面的指令</p>
-<div class="highlight"><pre><span></span>jupyter<span class="w"> </span>qtconsole<span class="w"> </span>--kernel<span class="o">=</span>ir
+<div class="highlight"><pre><span></span><code>jupyter<span class="w"> </span>qtconsole<span class="w"> </span>--kernel<span class="o">=</span>ir
 jupyter<span class="w"> </span>console<span class="w"> </span>--kernel<span class="o">=</span>ir
-</pre></div>
+</code></pre></div>
 <p>安裝成功後就可以看到<br/>
 <img alt="R_in_jupyter" src="/images/posts-image/2016-02-20-resolve-irkernel-missing-zmqh/pWf6j0q.png"/></p>
 <h2 id="reference">Reference</h2>

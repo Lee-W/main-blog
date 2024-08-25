@@ -182,7 +182,7 @@ join 是開啟這個 thread 的上層程式必須等待到這個 thread 的工�
 <h3 id="main-thread">在 main 裡面直接開啟 thread</h3>
 <p>直接宣告 thread 型態的變數<br/>
 thread 的 constructor 的第一個參數是函數名稱，第二個以後就是原本函數的參數</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;thread&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -200,7 +200,7 @@ thread 的 constructor 的第一個參數是函數名稱，第二個以後就是
 <span class="w">        </span><span class="n">t1</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
 <span class="w">        </span><span class="n">t2</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 <p>這樣就可以產生兩個 thread，他們會彼此搶 CPU 的資源<br/>
 cout 似乎是每一個 &lt;&lt; 會去搶一次，所以如果想要一次印完全部，可能可以考慮使用 printf 或者是 thread 的 lock 功能</p>
 <h3 id="class-thread">在 class 內開啟 thread</h3>
@@ -211,7 +211,7 @@ cout 似乎是每一個 &lt;&lt; 會去搶一次，所以如果想要一次印�
 第 2 個用 this<br/>
 第 3 個以後才是原本 function 的參數<br/>
 p.s. 如果 fun1 是 static，則不用 this</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;thread&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -232,10 +232,10 @@ p.s. 如果 fun1 是 static，則不用 this</p>
 <span class="w">        </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 <span class="w">        </span><span class="n">a</span><span class="p">.</span><span class="n">fun2</span><span class="p">();</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 <p>最後是如何呼叫其他 class 的 function，這裡包含兩個例子 (main, class B)<br/>
 想法跟上面那種很接近，只是第 2 個參數改成那個物件的實體</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;thread&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -267,9 +267,9 @@ p.s. 如果 fun1 是 static，則不用 this</p>
 <span class="w">        </span><span class="kr">thread</span><span class="w"> </span><span class="n">t1</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="o">::</span><span class="n">fun1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
 <span class="w">        </span><span class="n">t1</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 <h2 id="pthread">基本的 pthread 使用</h2>
-<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -292,7 +292,7 @@ p.s. 如果 fun1 是 static，則不用 this</p>
 <span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">t1</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span><span class="n">fun1</span><span class="p">,</span><span class="n">argumentForFun1</span><span class="p">);</span>
 <span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 <p>至於 pthread 如何用在 class 的 function 上<br/>
 可以將 function 加上 static<br/>
 同樣第 3 個參數也要改成 &amp;A::fun1</p>

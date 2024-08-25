@@ -183,23 +183,23 @@
 <h2 id="_2">問題的根源</h2>
 <p>目前最新版 (3.1.1) 的 twine 相依於套件 <a href="https://github.com/jaraco/keyring">keyring</a> (<a href="https://github.com/pypa/twine/blob/3.1.1/setup.cfg#L44">setup.cfg#L44</a>)<br/>
 而 keyring 在不同的作業系統中，相依的套件是不同的 (<a href="https://github.com/jaraco/keyring/blob/master/setup.cfg#L30">setup.cfg#L30</a>)</p>
-<div class="highlight"><pre><span></span><span class="n">install_requires</span><span class="w"> </span><span class="o">=</span>
+<div class="highlight"><pre><span></span><code><span class="n">install_requires</span><span class="w"> </span><span class="o">=</span>
 <span class="w">    </span><span class="err">pywin</span><span class="mi">32</span><span class="n">-ctypes</span><span class="err">!</span><span class="o">=</span><span class="mf">0.1</span><span class="p">.</span><span class="n">0</span><span class="err">,!</span><span class="o">=</span><span class="mf">0.1</span><span class="p">.</span><span class="n">1</span><span class="err">;</span><span class="w"> </span><span class="n">sys_platform</span><span class="o">=</span><span class="err">=</span><span class="s2">"win32"</span>
 <span class="w">    </span><span class="n">SecretStorage</span><span class="err">&gt;</span><span class="o">=</span><span class="mi">3</span><span class="err">;</span><span class="w"> </span><span class="n">sys_platform</span><span class="o">=</span><span class="err">=</span><span class="s2">"linux"</span>
 <span class="w">    </span><span class="n">jeepney</span><span class="err">&gt;</span><span class="o">=</span><span class="mf">0.4</span><span class="p">.</span><span class="n">2</span><span class="err">;</span><span class="w"> </span><span class="n">sys_platform</span><span class="o">=</span><span class="err">=</span><span class="s2">"linux"</span>
 <span class="w">    </span><span class="n">importlib_metadata</span><span class="err">;</span><span class="w"> </span><span class="n">python_version</span><span class="w"> </span><span class="err">&lt;</span><span class="w"> </span><span class="s2">"3.8"</span>
-</pre></div>
+</code></pre></div>
 <p>我缺少的的確就是那幾個 <code>sys_platform=="linux"</code> 的套件</p>
 <h2 id="pipenv">pipenv 怎麼處理</h2>
 <p>基本上 <code>pipenv</code> 不算有解決這個問題， <code>pipenv</code> 只會將目前系統的所需套件寫進 <strong>Pipfile.lock</strong></p>
 <p>以 twine 為例，在 macOS 透過 <code>pipenv</code> 安裝 ，跑 <code>pipenv graph</code>指令<br/>
 就會發現 keyring 只會直接相依於 importlib-metadata</p>
-<div class="highlight"><pre><span></span>  - keyring [required: &gt;=15.1, installed: 21.1.0]
+<div class="highlight"><pre><span></span><code>  - keyring [required: &gt;=15.1, installed: 21.1.0]
     - importlib-metadata [required: Any, installed: 1.5.0]
       - zipp [required: &gt;=0.5, installed: 2.2.0]
-</pre></div>
+</code></pre></div>
 <p>但換到 Ubuntu 上跑，就會多了 SecretStorage 跟 jeepney</p>
-<div class="highlight"><pre><span></span>  - keyring [required: &gt;=15.1, installed: 21.1.0]
+<div class="highlight"><pre><span></span><code>  - keyring [required: &gt;=15.1, installed: 21.1.0]
     - importlib-metadata [required: Any, installed: 1.5.0]
       - zipp [required: &gt;=0.5, installed: 2.2.0]
     - jeepney [required: &gt;=0.4.2, installed: 0.4.2]
@@ -209,7 +209,7 @@
           - pycparser [required: Any, installed: 2.19]
         - six [required: &gt;=1.4.1, installed: 1.14.0]
       - jeepney [required: &gt;=0.4.2, installed: 0.4.2]
-</pre></div>
+</code></pre></div>
 <p>這個問題也有其他人提過 (<a href="https://github.com/pypa/pipenv/issues/3902">Cross-platform Pipenv.lock? #3902</a>)</p>
 <p><code>pipenv</code> 貢獻者給的建議是使用 <code>pipenv install --keep-outdated</code><br/>
 但這個指令的說明是 <strong>Keep out-dated dependencies from being updated in Pipfile.lock.</strong><br/>
@@ -222,7 +222,7 @@
 <p>透過 poetry 安裝 twine 後<br/>
 產生的 <strong>poetry.lock</strong> 會把 <code>marker = "sys_platform == \"linux\""</code> 記錄下來<br/>
 實際 <code>poetry shell</code> 進去看，的確也沒多安裝這些套件</p>
-<div class="highlight"><pre><span></span><span class="k">[[package]]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[[package]]</span>
 <span class="n">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"main"</span>
 <span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Store and access your passwords safely."</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"keyring"</span>
@@ -245,7 +245,7 @@
 <span class="n">optional</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
 <span class="n">python-versions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&gt;=3.5"</span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"3.1.2"</span>
-</pre></div>
+</code></pre></div>
 <h2 id="_3">總結</h2>
 <p>poetry 在處理不同平台相依套件不同的狀況，處理得比較好<br/>
 它會把所有需要的資訊記錄下來，在不同的平台進行不同的安裝</p>

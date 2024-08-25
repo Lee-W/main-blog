@@ -175,11 +175,11 @@
 <h2 id="git-ignore-io">git ignore-io</h2>
 <p>這個工具主要是從<a href="https://www.gitignore.io">gitignoore.io</a> 上下載 .gitignore 的範本<br/>
 e.g.,</p>
-<div class="highlight"><pre><span></span>git<span class="w"> </span>ignore-io<span class="w"> </span>-a<span class="w"> </span>vim<span class="w"> </span>osx<span class="w"> </span>python
-</pre></div>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>ignore-io<span class="w"> </span>-a<span class="w"> </span>vim<span class="w"> </span>osx<span class="w"> </span>python
+</code></pre></div>
 <p>像這就是 vim 常見的暫存檔們<br/>
 一般來說應該被忽略掉，不用被 commit</p>
-<div class="highlight"><pre><span></span># Created by https://www.gitignore.io/api/vim
+<div class="highlight"><pre><span></span><code># Created by https://www.gitignore.io/api/vim
 
 ### Vim ###
 # swap
@@ -196,12 +196,12 @@ Session.vim
 tags
 
 # End of https://www.gitignore.io/api/vim
-</pre></div>
+</code></pre></div>
 <hr/>
 <p>當初可是連文件都要寫好，才會被作者接受<br/>
 所以我這裡就直接沿用我當初寫的文件了 xD</p>
 <p>Without option, <code>git ignore-io &lt;type&gt;</code> shows the sample gitignore of specified types on screen.</p>
-<div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>ignore-io<span class="w"> </span>vim
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>ignore-io<span class="w"> </span>vim
 
 <span class="w">    </span><span class="c1"># Created by https://www.gitignore.io/api/vim</span>
 
@@ -212,14 +212,14 @@ tags
 <span class="w">    </span>Session.vim
 <span class="w">    </span>.netrwhist
 <span class="w">    </span>*~
-</pre></div>
+</code></pre></div>
 <p>To export it to <code>.gitignore</code> file you can use the following options:  </p>
 <ul>
 <li><code>-a</code> or <code>--append</code> to append the result to <code>.gitignore</code></li>
 <li><code>-r</code> or <code>--replace</code> to export <code>.gitignore</code> with the result</li>
 </ul>
-<div class="highlight"><pre><span></span>git<span class="w"> </span>ignore-io<span class="w"> </span>vim<span class="w"> </span>python
-</pre></div>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>ignore-io<span class="w"> </span>vim<span class="w"> </span>python
+</code></pre></div>
 <p>For efficiency, <code>git ignore-io</code> store all available types at <code>~/.gi_list</code>.<br/>
 To list all the available types:</p>
 <ul>
@@ -229,13 +229,13 @@ To list all the available types:</p>
 <ul>
 <li><code>-s &lt;word&gt;</code> or <code>--search &lt;word&gt;</code></li>
 </ul>
-<div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>ignore-io<span class="w"> </span>-s<span class="w"> </span>ja
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>ignore-io<span class="w"> </span>-s<span class="w"> </span>ja
 
 <span class="w">    </span>django
 <span class="w">    </span>jabref
 <span class="w">    </span>java
 <span class="w">    </span>ninja
-</pre></div>
+</code></pre></div>
 <hr/>
 <h2 id="_1">為什麼要貢獻開源專案？</h2>
 <p>貢獻開源專案最主要的原因<br/>

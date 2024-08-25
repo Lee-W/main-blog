@@ -178,10 +178,10 @@
 <p>得到了<a href="https://github.com/apache/airflow/pull/33224#discussion_r1292201137">Jarek 的回覆</a>才知道字串本身就是合法的 JSON，不需要是 object<br/>
 可以從 <a href="https://www.json.org/json-en.html">Introducing JSON</a> 找到 "any value on it's own (string) is perfectly valid json"</p>
 <p>用 Python 做了點小實驗，確實也不會遇到 <code>JSONDecodeError</code></p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">json</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="s1">'""'</span><span class="p">)</span>
 <span class="s1">''</span>
-</pre></div>
+</code></pre></div>
 </section>
 <section class="post-footer">
 <div class="post-share">

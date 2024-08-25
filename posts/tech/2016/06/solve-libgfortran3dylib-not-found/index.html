@@ -170,18 +170,18 @@
 <section class="post-content">
 <p>最近在 mac 上更新了 gcc 6 後，不管是開 Octave 還是 R<br/>
 都會出現以下的錯誤訊息</p>
-<div class="highlight"><pre><span></span>dyld:<span class="w"> </span>Library<span class="w"> </span>not<span class="w"> </span>loaded:<span class="w"> </span>/usr/local/lib/gcc/5/libgfortran.3.dylib
+<div class="highlight"><pre><span></span><code>dyld:<span class="w"> </span>Library<span class="w"> </span>not<span class="w"> </span>loaded:<span class="w"> </span>/usr/local/lib/gcc/5/libgfortran.3.dylib
 <span class="w">  </span>Referenced<span class="w"> </span>from:<span class="w"> </span>/usr/local/Cellar/r/3.3.0/R.framework/Versions/3.2/Resources/lib/libR.dylib
 <span class="w">  </span>Reason:<span class="w"> </span>image<span class="w"> </span>not<span class="w"> </span>found
 Trace/BPT<span class="w"> </span>trap:<span class="w"> </span><span class="m">5</span>
-</pre></div>
+</code></pre></div>
 <!--more-->
 <p>這是因為原本的 lib 會去找 /usr/local/lib/gcc/5/ 下的 lib<br/>
 但是更新過後已經被變成 /usr/local/lib/gcc/6/ 了<br/>
 所以只要從 <code>/usr/local/lib/gcc/5/</code> 建立 soft link 到 <code>/usr/local/lib/gcc/6/</code> 即可<br/>
 ( 版本號則要根據自身 gcc 的版本來做修改 )</p>
-<div class="highlight"><pre><span></span>ln<span class="w"> </span>-s<span class="w"> </span>/usr/local/lib/gcc/5/<span class="w"> </span>/usr/local/lib/gcc/6/
-</pre></div>
+<div class="highlight"><pre><span></span><code>ln<span class="w"> </span>-s<span class="w"> </span>/usr/local/lib/gcc/5/<span class="w"> </span>/usr/local/lib/gcc/6/
+</code></pre></div>
 <h2 id="reference">Reference</h2>
 <ul>
 <li><a href="https://github.com/Homebrew/legacy-homebrew/issues/39929">R and julia won't start after upgrade (perhaps gcc 5.1, Xcode 6.3.2, or Command Line Tools 6.3)</a></li>

@@ -197,7 +197,7 @@
 2. <strong>Set up Python</strong>: 設定 Python 環境<br/>
 3. <strong>Install dependencies</strong>: 安裝 <a href="https://github.com/getpelican/pelican">Pelican</a> 和相關套件<br/>
 4. <strong>Build and Deploy</strong>: 產生原始碼推上去</p>
-<div class="highlight"><pre><span></span><span class="nn">---</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
 
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">publish post</span>
 
@@ -224,7 +224,7 @@
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and Deploy</span>
 <span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">          </span><span class="no">pipenv run inv github</span>
-</pre></div>
+</code></pre></div>
 <p>這份設定檔要放在專案目錄的 <code>.github/workflows/</code> 下<br/>
 至於要命名成什麼都可以<br/>
 另外建議使用 yamllint 來檢查 yaml 語法<br/>
@@ -240,13 +240,13 @@
 所以要建立部落格必須要把每一個 submodule 都一併 clone 下來<br/>
 所幸原本 GitHub Action 就有提供 (Ref: <a href="https://github.com/actions/checkout#Checkout-submodules">Check-out-submodule</a>)<br/>
 加上下面這段就解決了</p>
-<div class="highlight"><pre><span></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout submodules</span>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout submodules</span>
 <span class="w">        </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bash</span>
 <span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">          </span><span class="no">auth_header="$(git config --local --get http.https://github.com/.extraheader)"</span>
 <span class="w">          </span><span class="no">git submodule sync --recursive</span>
 <span class="w">          </span><span class="no">git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1</span>
-</pre></div>
+</code></pre></div>
 <p>ghp-import 的問題則是，我沒有在上面的環境設定我的 git 資訊<br/>
 他沒有權限推到 gh-pages<br/>
 也可以透過把 URL 改成 <code>https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${repo_name}</code> 來解決<br/>
@@ -254,20 +254,20 @@
 最後找到了 <a href="https://github.com/peaceiris/actions-gh-pages">actions-gh-page</a><br/>
 只要把靜態網頁在 GitHub 上 build 出來，再把結果透過這個 action 推到 gh-pages 即可<br/>
 這樣我就只需要設定 <code>{{ secrets.PERSONAL_ACCESS_TOKEN}}</code> 這個我在其他 GitHub Action 也都用得到的 token</p>
-<div class="highlight"><pre><span></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy</span>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy</span>
 <span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v2</span>
 <span class="w">        </span><span class="nt">env</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">PERSONAL_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.PERSONAL_ACCESS_TOKEN }}</span>
 <span class="w">          </span><span class="nt">PUBLISH_BRANCH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
 <span class="w">          </span><span class="nt">PUBLISH_DIR</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./output</span>
-</pre></div>
+</code></pre></div>
 <p><img alt="token" src="/images/posts-image/2020-01-16-automate-publish-pelican-through-github-action/token.png"/></p>
 <p>另外，最近 GitHub 終於提供可以 rerun 的選項了<br/>
 原本失敗的時候還必須要 git reset 來強制 GitHub 重新執行 Action</p>
 <p><img alt="rebuild" src="/images/posts-image/2020-01-16-automate-publish-pelican-through-github-action/rebuild.png"/></p>
 <h2 id="after-github-action">After GitHub Action</h2>
 <p>下面就是我最後的 <code>.github/workflows/publish.yaml</code></p>
-<div class="highlight"><pre><span></span><span class="nn">---</span>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
 
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">publish post</span>
 
@@ -306,7 +306,7 @@
 <span class="w">          </span><span class="nt">PERSONAL_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.PERSONAL_ACCESS_TOKEN }}</span>
 <span class="w">          </span><span class="nt">PUBLISH_BRANCH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
 <span class="w">          </span><span class="nt">PUBLISH_DIR</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./output</span>
-</pre></div>
+</code></pre></div>
 </section>
 <section class="post-footer">
 <div class="post-share">

@@ -201,11 +201,10 @@
 <h2 id="irkernel">安裝 IRKernel</h2>
 <p>進入 R 的命令列，輸入下面的指令<br>
 就能安裝 IRKernel，以後就能在 jupyter 中使用 R</p>
-<div class="highlight"><pre><span></span>install.packages(c(&#39;rzmq&#39;,&#39;repr&#39;,&#39;IRkernel&#39;,&#39;IRdisplay&#39;),
+<div class="highlight"><pre><span></span><code>install.packages(c(&#39;rzmq&#39;,&#39;repr&#39;,&#39;IRkernel&#39;,&#39;IRdisplay&#39;),
                  repos = c(&#39;http://irkernel.github.io/&#39;, getOption(&#39;repos&#39;)))
 IRkernel::installspec()
-</pre></div>
-
+</code></pre></div>
 
 <h2 id="_1">錯 …</h2>
                 </p>
@@ -237,16 +236,14 @@ IRkernel::installspec()
                 </span>
                 <p class="post-excerpt">
                         <p>先安裝 Python2 和 Python3 的 ipython notebook</p>
-<div class="highlight"><pre><span></span>pip2<span class="w"> </span>install<span class="w"> </span>ipython<span class="w"> </span>notebook
+<div class="highlight"><pre><span></span><code>pip2<span class="w"> </span>install<span class="w"> </span>ipython<span class="w"> </span>notebook
 pip3<span class="w"> </span>install<span class="w"> </span>ipython<span class="w"> </span>notebook
-</pre></div>
-
+</code></pre></div>
 
 <p>分別用各自的 ipython 執行下面的指令</p>
-<div class="highlight"><pre><span></span>ipython2<span class="w"> </span>kernelspec<span class="w"> </span>install-self
+<div class="highlight"><pre><span></span><code>ipython2<span class="w"> </span>kernelspec<span class="w"> </span>install-self
 ipython3<span class="w"> </span>kernelspec<span class="w"> </span>install-self
-</pre></div>
-
+</code></pre></div>
 
 
                 </p>

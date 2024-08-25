@@ -171,21 +171,21 @@
 <!--more-->
 <p>不過當我把它們放到 pelican 的專案目錄下後<br/>
 就會因為這些 HTML 沒有 title 造成錯誤</p>
-<div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="o">:</span><span class="w"> </span><span class="n">Skipping</span><span class="w"> </span><span class="o">.../</span><span class="n">content</span><span class="sr">/static/post-static/2021-post-frequency/</span><span class="n">all</span><span class="o">.</span><span class="na">html</span><span class="o">:</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">information</span><span class="w"> </span><span class="n">about</span><span class="w"> </span><span class="s1">'title'</span>
+<div class="highlight"><pre><span></span><code><span class="n">ERROR</span><span class="o">:</span><span class="w"> </span><span class="n">Skipping</span><span class="w"> </span><span class="o">.../</span><span class="n">content</span><span class="sr">/static/post-static/2021-post-frequency/</span><span class="n">all</span><span class="o">.</span><span class="na">html</span><span class="o">:</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">information</span><span class="w"> </span><span class="n">about</span><span class="w"> </span><span class="s1">'title'</span>
 <span class="n">WARNING</span><span class="o">:</span><span class="w"> </span><span class="n">Meta</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">.../</span><span class="n">content</span><span class="sr">/static/post-static/2021-post-frequency/</span><span class="mi">2020</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">category</span><span class="o">.</span><span class="na">html</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="s1">'name'</span><span class="w"> </span><span class="n">attribute</span><span class="o">,</span><span class="w"> </span><span class="n">skipping</span><span class="o">.</span><span class="w"> </span><span class="n">Attributes</span><span class="o">:</span><span class="w"> </span><span class="n">charset</span><span class="o">=</span><span class="s2">"utf-8"</span>
-</pre></div>
+</code></pre></div>
 <p>看起來是 pelican 把它們也當作文章</p>
 <p><a href="https://github.com/getpelican/pelican/issues/1157">ERROR: Skipping extra/XXXXX.html: could not find information about 'title'</a> 中也有人遇到同樣的問題<br/>
 只要在 <code>pelicanconf.py</code> 加上設定，讓 pelican 不要去讀 HTML</p>
-<div class="highlight"><pre><span></span><span class="n">READERS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"html"</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">READERS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"html"</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+</code></pre></div>
 <p>pelican 的文件 <a href="https://docs.getpelican.com/en/4.5.4/content.html#including-other-files">including-other-files</a> 有提到 reStructuredText 有原生支援<br/>
 如果是 markdown 就得安裝 <a href="https://github.com/neurobin/mdx_include">mdx_include</a><br/>
 沒想到這個套件用下去我的建置時間從幾秒鐘飆升到幾分鐘...</p>
 <p>最後我只好妥協用 reStructuredText 來寫下一篇文章</p>
-<div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">raw</span><span class="p">::</span> html
+<div class="highlight"><pre><span></span><code><span class="p">..</span> <span class="ow">raw</span><span class="p">::</span> html
     <span class="nc">:file:</span> ../../../static/post-static/2021-post-frequency/all.html
-</pre></div>
+</code></pre></div>
 </section>
 <section class="post-footer">
 <div class="post-share">

@@ -173,19 +173,19 @@
 <p>e.g.,<br/>
 有個資料夾是 /a/b/c/d/e/f/g/h<br/>
 原本要輸入</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/a/b/c/d/e/f/g/h
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/a/b/c/d/e/f/g/h
+</code></pre></div>
 <p>可是現在有了 autojump，而且你也去過這個 h 資料夾，你就可以</p>
-<div class="highlight"><pre><span></span>j<span class="w"> </span>h
-</pre></div>
+<div class="highlight"><pre><span></span><code>j<span class="w"> </span>h
+</code></pre></div>
 <p>很方便吧！！！</p>
 <h2 id="_1">安裝</h2>
-<div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/tmp
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/tmp
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/joelthelion/autojump
 <span class="nb">cd</span><span class="w"> </span>autojump
 chmod<span class="w"> </span>+x<span class="w"> </span>install.py
 ./install.py
-</pre></div>
+</code></pre></div>
 <p>然後把下面這行加入 shell 的設定檔 (e.g. ~/.bashrc  ,  ~/.zshrc)</p>
 <blockquote>
 <p>[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] &amp;&amp; . ~/.autojump/etc/profile.d/autojump.sh</p>
@@ -195,19 +195,19 @@ chmod<span class="w"> </span>+x<span class="w"> </span>install.py
 <ul>
 <li>最基本的功能當然就是跳轉囉</li>
 </ul>
-<div class="highlight"><pre><span></span>j<span class="w"> </span>word
-</pre></div>
+<div class="highlight"><pre><span></span><code>j<span class="w"> </span>word
+</code></pre></div>
 <p>如果有重複的名稱 (e.g. worda, wordb)，就在打一次同樣的指令，就會跳到下一個</p>
 <ul>
 <li>list 現在 autojump 可以跳到的資料夾</li>
 </ul>
-<div class="highlight"><pre><span></span>j<span class="w"> </span>-s
-</pre></div>
+<div class="highlight"><pre><span></span><code>j<span class="w"> </span>-s
+</code></pre></div>
 <ul>
 <li>刪除已經背改變路徑或刪除的紀錄</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="w"> </span>j<span class="w"> </span>--purge
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>j<span class="w"> </span>--purge
+</code></pre></div>
 <h2 id="reference">Reference</h2>
 <p><a href="https://github.com/joelthelion/autojump/blob/master/README.md">autojump readme</a></p>
 </section>

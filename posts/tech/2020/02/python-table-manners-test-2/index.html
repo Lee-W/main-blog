@@ -201,7 +201,7 @@
 <h3 id="_1">準備 / 清除資源</h3>
 <p>假設我們已經有了虛構的 <code>db</code> 函式庫，它可以處理各種資料庫相關的功能</p>
 <p>現在寫一個測試案例來驗證 <code>is_connected</code> 函式是否能正確的判斷資料庫有連線</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 
 <span class="kn">from</span> <span class="nn">db</span> <span class="kn">import</span> <span class="n">DB</span>
 
@@ -221,7 +221,7 @@
 
 <span class="k">def</span> <span class="nf">test_db_is_connected</span><span class="p">(</span><span class="n">db</span><span class="p">):</span>
     <span class="k">assert</span> <span class="n">db</span><span class="o">.</span><span class="n">is_connected</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">True</span>
-</pre></div>
+</code></pre></div>
 <p>fixture <code>db</code> 中不使用 <code>return</code> 而是使用 <code>yield</code><br/>
 連線資料庫後，就先將 <code>_db</code> instance 回傳<br/>
 在 <code>test_db_is_connected</code> 引入 fixture <code>db</code> 時，資料庫會處於連線的狀態<br/>
@@ -234,7 +234,7 @@
 </ol>
 <p>現在假設已經實作了 <code>model</code>，裡面有 <code>User</code> 的定義<br/>
 我們想要驗證新增了一筆 admin 的使用者後，是否能成功查詢到這筆資料</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 
 <span class="kn">from</span> <span class="nn">db</span> <span class="kn">import</span> <span class="n">DB</span>
 <span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">User</span>
@@ -267,7 +267,7 @@
     <span class="c1"># 從資料庫中找出第一筆 name 是 admin 的 user</span>
     <span class="n">admin_user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"admin"</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
     <span class="k">assert</span> <span class="n">admin_user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-</pre></div>
+</code></pre></div>
 <p>新增資料前，必須先跟資料庫建立連線<br/>
 因此準備資料的 fixture <code>insert_admin_user</code> 會使用到 <code>db</code> fixture</p>
 <p>而測試函式 <code>test_admin_user_exists</code> ，需要已經有 admin 使用者的資料庫，來測試 <code>User.query.filter(name="admin").first()</code> 是否能成功取得資料<br/>
@@ -281,7 +281,7 @@
 <p><a href="https://docs.pytest.org/en/2.7.3/plugins.html?#conftest-py-local-per-directory-plugins">conftest.py</a> 是 pytest 中的一個特殊檔案<br/>
 如果是整個套件（同一個資料夾）都會用到的 fixture 就能放在這， pytest 執行時會自動載入</p>
 <p>以下面的結構為例， <code>test_sponsor.py</code> 就會自動載入上層的 <code>conftest.py</code> 中的 fixture</p>
-<div class="highlight"><pre><span></span>└── tests
+<div class="highlight"><pre><span></span><code>└── tests
     ├── __init__.py
     ├── conftest.py
     ├── test_sponsor.py
@@ -289,7 +289,7 @@
         ├── __init__.py
         ├── conftest.py
         └── test_title.py
-</pre></div>
+</code></pre></div>
 <h3 id="fixture_1">常用的內建 fixture</h3>
 <ul>
 <li><a href="https://docs.pytest.org/en/6.1.1/reference.html#std:fixture-caplog">caplog</a>: 抓 log 訊息</li>
@@ -305,7 +305,7 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
@@ -318,7 +318,7 @@
 <span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">expected_sum</span><span class="p">):</span>
     <span class="k">assert</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="n">expected_sum</span>
-</pre></div>
+</code></pre></div>
 <h2 id="marker">marker</h2>
 <p>前面已經介紹過 <code>parameterize</code> 和 <code>usefixtures</code><br/>
 這裡會介紹 <a href="http://doc.pytest.org/en/6.1.1/example/markers.html">markers</a> 還可以做什麼</p>
@@ -331,48 +331,48 @@
 <h3 id="marker_2">自定義 marker</h3>
 <p><code>@pytest.mark.[any custom marker]</code> 的用途是標記測試案例<br/>
 像是如果有些測試會特別慢，就可以透過標記 <code>@pytest.mark.slow</code></p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">slow</span>
 <span class="k">def</span> <span class="nf">test_super_slow_test</span><span class="p">():</span>
     <span class="n">sleep</span><span class="p">(</span><span class="mi">99999999999999</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 <p>執行時加上參數 <code>-m</code> 就能跳過（或只執行）這些案例</p>
-<div class="highlight"><pre><span></span>pipenv run pytest -m "not slow"
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv run pytest -m "not slow"
+</code></pre></div>
 <p>上面的做法，如果有測試案例不小心打成 <code>@pytest.mark.slwo</code>，會不太容易被發現<br/>
 但 pytest 還是會正常執行<br/>
 這時候可以在專案加入設定檔 <code>pyproject.toml</code> (pytest 6.0.0 之後才支援這種設定檔格式) 定義 marker<br/>
 p.s. 不建議使用 <code>setup.cfg</code> 做為 pytest 的設定檔 (Read More 👉 <a href="https://github.com/pytest-dev/pytest/issues/3523">deprecate setup.cfg support #3523</a>)</p>
-<div class="highlight"><pre><span></span><span class="k">[tool.pytest.ini_options]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.pytest.ini_options]</span>
 <span class="n">minversion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"6.0"</span>
 <span class="n">markers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s2">"slow"</span>
 <span class="p">]</span>
-</pre></div>
+</code></pre></div>
 <p>並在執行時加上 <code>--strict-markers</code> 參數</p>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--strict-markers<span class="w"> </span>-m<span class="w"> </span><span class="s2">"not slow"</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--strict-markers<span class="w"> </span>-m<span class="w"> </span><span class="s2">"not slow"</span>
+</code></pre></div>
 <p>pytest 就會告訴我們 <code>slwo</code> 並不是被定義過的 maker</p>
 <p>更進一步可以把 <code>--strict-markers</code> 直接寫入 <code>pyproject.toml</code></p>
-<div class="highlight"><pre><span></span><span class="k">[tool.pytest.ini_options]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.pytest.ini_options]</span>
 <span class="n">minversion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"6.0"</span>
 <span class="n">addopts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"--strict-markers"</span>
 <span class="n">markers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s2">"slow"</span>
 <span class="p">]</span>
-</pre></div>
+</code></pre></div>
 <h2 id="_2">測試例外事件</h2>
 <p>透過 <code>pytest.raise</code> 確認測試案例是否有符合預期的丟出例外事件</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 
 
 <span class="k">def</span> <span class="nf">test_index_error</span><span class="p">():</span>
     <span class="n">some_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">IndexError</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">some_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
+</code></pre></div>
 <h2 id="pytest">pytest 常用命令列參數</h2>
 <ul>
 <li><code>-v</code> (<code>-vv</code>, <code>-vvv</code>): 顯示更多資訊 （越多 v 就會顯示越多資訊）</li>
@@ -388,13 +388,13 @@ p.s. 不建議使用 <code>setup.cfg</code> 做為 pytest 的設定檔 (Read Mor
 </ul>
 <h2 id="pytest-cov">pytest-cov 測試覆蓋率</h2>
 <p><a href="https://github.com/pytest-dev/pytest-cov">pytest-cov</a> 可以用來產生測試覆蓋率的報告，讓我們知道程式碼還有哪些沒被測試到</p>
-<div class="highlight"><pre><span></span><span class="c1"># 安裝 pytest-cov</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安裝 pytest-cov</span>
 pipenv<span class="w"> </span>install<span class="w"> </span>pytest-cov<span class="w"> </span>--dev
-</pre></div>
+</code></pre></div>
 <p>e.g.,</p>
-<div class="highlight"><pre><span></span><span class="c1"># 計算 myproj 的覆蓋率</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 計算 myproj 的覆蓋率</span>
 pipenv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--cov<span class="o">=</span>myproj<span class="w"> </span>tests/
-</pre></div>
+</code></pre></div>
 <p>比較重要的參數有</p>
 <ul>
 <li><code>--cov=[SOURCE]</code>: 測試包含的程式碼範圍</li>
@@ -404,17 +404,17 @@ pipenv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> 
 <p>其中 <code>--cov</code>, <code>--cov-report</code> 都可以加入多個參數</p>
 <p>回到 <a href="https://github.com/pycontw/pycontw-postevent-report-generator">pycontw-postevent-report-generator</a> 的例子<br/>
 先 checkout 回 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/1.0.2">1.0.2</a>，來測試 1.0.2 上的測試覆蓋率</p>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--cov<span class="o">=</span>report_generator<span class="w"> </span>--cov-report<span class="o">=</span>term-missing<span class="w"> </span>test/
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--cov<span class="o">=</span>report_generator<span class="w"> </span>--cov-report<span class="o">=</span>term-missing<span class="w"> </span>test/
+</code></pre></div>
 <p>從下面的結果可以看到哪些檔案的哪些部分沒有被測試到</p>
 <p><img alt="test-coverage" src="/images/posts-image/2020-02-22-python-table-manner-series/test-coverage.jpg"/></p>
 <p>如果想看精美的網頁版報告，可以試試看以下的指令<br/>
 報告會產生在專案資料夾下的 <code>htmlcov</code></p>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--cov<span class="o">=</span>report_generator<span class="w"> </span>--cov-report<span class="o">=</span>term-missing<span class="w"> </span>--cov-report<span class="o">=</span>html
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--cov<span class="o">=</span>report_generator<span class="w"> </span>--cov-report<span class="o">=</span>term-missing<span class="w"> </span>--cov-report<span class="o">=</span>html
+</code></pre></div>
 <p>一些更進階的設定，可以寫入設定檔 <code>pyproject.toml</code> (或 <code>.coveragerc</code>，但語法會不太一樣)<br/>
 以下是我自己使用的 <code>pyproject.toml</code></p>
-<div class="highlight"><pre><span></span><span class="k">[tool.coverage]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.coverage]</span>
 <span class="w">    </span><span class="k">[tool.coverage.report]</span>
 <span class="w">    </span><span class="n">show_missing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">    </span><span class="n">exclude_lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
@@ -433,7 +433,7 @@ pipenv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> 
 <span class="w">        </span><span class="s1">'if 0:'</span><span class="p">,</span>
 <span class="w">        </span><span class="s1">'if __name__ == .__main__.:'</span>
 <span class="w">    </span><span class="p">]</span>
-</pre></div>
+</code></pre></div>
 <p>Read More 👉 <a href="https://coverage.readthedocs.io/en/coverage-5.0.3/config.html">Configuration reference</a></p>
 <h2 id="plugins">其他常用 plugins</h2>
 <ul>

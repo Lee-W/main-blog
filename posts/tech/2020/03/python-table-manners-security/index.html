@@ -198,35 +198,35 @@
 如果是免費版，一個月會更新一次資料庫<br/>
 付費版則可以達到即時更新</p>
 <h3 id="_1">安裝</h3>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>install<span class="w"> </span>safety<span class="w"> </span>--dev
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>install<span class="w"> </span>safety<span class="w"> </span>--dev
+</code></pre></div>
 <h3 id="_2">執行</h3>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>run<span class="w"> </span>safety<span class="w"> </span>check
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>run<span class="w"> </span>safety<span class="w"> </span>check
+</code></pre></div>
 <p><img alt="safety-not-found" src="/images/posts-image/2020-02-22-python-table-manner-series/safety-not-found.jpg"/></p>
 <p>在 <a href="https://github.com/pycontw/pycontw-postevent-report-generator/commit/128d271942099b94faca3693d6c146c879e3b414">pycontw-postevent-report-generator commit 128d</a> ，透過 safety 不會找到任何安全漏洞</p>
 <p>如果想要測試 Safety 的功能可以安裝套件 <a href="https://pypi.org/project/insecure-package/">insecure-package</a> (<strong>這個套件是真的存在的，而且是不安全的，僅作為測試用途</strong>)</p>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>install<span class="w"> </span>insecure-package<span class="w"> </span>--dev
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>install<span class="w"> </span>insecure-package<span class="w"> </span>--dev
+</code></pre></div>
 <p>再試一次就能看到 Safety 將 insecure-package 列為不安全的套件</p>
 <p><img alt="safety-found-insecure" src="/images/posts-image/2020-02-22-python-table-manner-series/safety-found-insecure.jpg"/></p>
 <p>另外需要注意的是 <code>safety check</code> 是對當前環境做檢查<br/>
 務必確定已經有進入專案的虛擬環境，不然 Safety 只會檢查到本機使用的套件有沒有漏洞</p>
 <p>如果想要對 <code>requriements.txt</code> 做檢查，則可以加上參數 <code>-r</code></p>
-<div class="highlight"><pre><span></span><span class="c1"># 因為這個 case 不是針對 pipenv ，所以前面沒有加上 pipenv run</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 因為這個 case 不是針對 pipenv ，所以前面沒有加上 pipenv run</span>
 safety<span class="w"> </span>check<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</pre></div>
+</code></pre></div>
 <p>雖然 Safety 並不支援對 Pipfile 進行檢查 (Ref: <a href="https://github.com/pyupio/safety/issues/47">Add Pipfile support #47</a>)，但 pipenv 就內建有安全性檢查的指令</p>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>check
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>check
+</code></pre></div>
 <h2 id="bandit-">bandit - 程式碼靜態分析</h2>
 <p>除了套件安全性的分析外，接著還能透過 <a href="https://github.com/PyCQA/bandit">bandit</a> 來對自己的程式碼做靜態分析找出常見的漏洞</p>
 <h3 id="_3">安裝</h3>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>install<span class="w"> </span>bandit<span class="w"> </span>--dev
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>install<span class="w"> </span>bandit<span class="w"> </span>--dev
+</code></pre></div>
 <h3 id="_4">使用</h3>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>run<span class="w"> </span>bandit<span class="w"> </span>-r<span class="w"> </span>&lt;package&gt;
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>run<span class="w"> </span>bandit<span class="w"> </span>-r<span class="w"> </span>&lt;package&gt;
+</code></pre></div>
 <p><img alt="bandit-result" src="/images/posts-image/2020-02-22-python-table-manner-series/bandit-result.jpg"/></p>
 <p>執行後就會看到一個列表，整理出專案中可能有的安全性漏洞<br/>
 每一個項目中會有以下五個欄位</p>
@@ -240,8 +240,8 @@ safety<span class="w"> </span>check<span class="w"> </span>-r<span class="w"> </
 <p>加上參數 <code>-i</code> (可信度) 和 <code>-l</code> （嚴重性），就可以讓 bandit 只回報特定程度的漏洞<br/>
 越多的 i / l 代表程度越高<br/>
 以下指令就是讓 bandit 只回報高嚴重性 (<code>-lll</code>)、高可信度 (<code>-iii</code>)的漏洞</p>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>run<span class="w"> </span>bandit<span class="w"> </span>-iii<span class="w"> </span>-lll<span class="w"> </span>-r<span class="w"> </span>&lt;package&gt;
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>run<span class="w"> </span>bandit<span class="w"> </span>-iii<span class="w"> </span>-lll<span class="w"> </span>-r<span class="w"> </span>&lt;package&gt;
+</code></pre></div>
 <h3 id="_5">局部跳過檢查</h3>
 <p>有時候 bandit 給的警告不會在所有狀況都適用<br/>
 以 <a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html#module-bandit.plugins.asserts">B101: assert_used</a> 為例<br/>
@@ -252,7 +252,7 @@ safety<span class="w"> </span>check<span class="w"> </span>-r<span class="w"> </
 而 <code>assert</code> 也是在測試中很常使用到的語法</p>
 <p>這時候就可以在專案的最上層加入設定檔 <code>.bandit</code><br/>
 而它的格式會長這樣</p>
-<div class="highlight"><pre><span></span>[bandit]
+<div class="highlight"><pre><span></span><code>[bandit]
 # 要執行 bandit 檢查的檔案或資料夾（逗號分隔）
 targets:
 # 跳過 bandit 檢查的檔案或資料夾（逗號分隔）
@@ -261,10 +261,10 @@ exclude:
 skips:
 # 要執行的檢查種類 （逗號分隔）
 tests:
-</pre></div>
+</code></pre></div>
 <p>執行 bandit 時要加上 <code>--ini .bandit</code> 讓 bandit 知道要找這份設定檔</p>
-<div class="highlight"><pre><span></span>bandit<span class="w"> </span>--ini<span class="w"> </span>.bandit
-</pre></div>
+<div class="highlight"><pre><span></span><code>bandit<span class="w"> </span>--ini<span class="w"> </span>.bandit
+</code></pre></div>
 <p>如果不是整個檔案或種類要跳過，則可以在程式碼後面加上 <code># nosec</code></p>
 <h2 id="reference">Reference</h2>
 <ul>

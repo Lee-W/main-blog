@@ -206,13 +206,13 @@
 <p>再來要去修改主題<br/>
 以我使用的主題 <a href="https://github.com/Lee-W/elegant">elegant</a> 為例<br/>
 需要將載入 <a href="https://github.com/Lee-W/elegant/blob/blog-pagefindui-example/templates/base.html#L18-L20">css</a> 和 <a href="https://github.com/Lee-W/elegant/blob/blog-pagefindui-example/templates/base.html#L128-L138">js</a> 的部分加入 <a href="https://github.com/Lee-W/elegant/blob/blog-pagefindui-example/templates/base.html">templates/base.html</a></p>
-<div class="highlight"><pre><span></span><span class="cm">&lt;!--templates/base.html--&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--templates/base.html--&gt;</span>
 
   {% if PAGEFIND_ENABLED|default(False) %}
   <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"/pagefind/pagefind-ui.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span><span class="p">&gt;</span>
   {% endif %}
-</pre></div>
-<div class="highlight"><pre><span></span><span class="cm">&lt;!--templates/base.html--&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--templates/base.html--&gt;</span>
 
   {% if PAGEFIND_ENABLED|default(True) %}
   <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"/pagefind/pagefind-ui.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -225,18 +225,18 @@
 <span class="w">      </span><span class="p">});</span>
 <span class="w">  </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   {% endif %}
-</pre></div>
+</code></pre></div>
 <p>理想上應該要把這幾段拆成各自的 template，然後在 <code>templates/base.html</code> include 他們<br/>
 但我有點懶，之後想 refactor 再說</p>
 <p>搜尋區塊的改動則會根據主題的設計跟你希望如何呈現搜尋有關<br/>
 在 elegant 中是把搜尋欄放在 <a href="https://github.com/Lee-W/elegant/blob/blog-pagefindui-example/templates/base.html#L90-L92">base.html</a> 的一個項目<br/>
 所在這我用 <code>li</code> 包住 <code>&lt;div id="search"&gt;&lt;/div&gt;</code></p>
-<div class="highlight"><pre><span></span><span class="cm">&lt;!--templates/base.html--&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--templates/base.html--&gt;</span>
 
 {% if PAGEFIND_ENABLED %}
 <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"search"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 {% else %}
-</pre></div>
+</code></pre></div>
 <p>而在我<a href="https://travlog.wei-lee.me/">另一個 blog </a>則把它設定成獨立的頁面<br/>
 如果沒意外的話，就大功告成了<br/>
 （另一個 blog 因為 css 的調整確實有多花了點時間，但功能上是這樣就完成了）</p>
@@ -246,8 +246,8 @@
 什麼都搜尋不到 🔍<br/>
 因為沒有產生 search index 給 Pagefind UI 去找</p>
 <p>而 search index 可以透過以下指令產生</p>
-<div class="highlight"><pre><span></span>npx<span class="w"> </span>-y<span class="w"> </span>pagefind<span class="w"> </span>--site<span class="w"> </span>output
-</pre></div>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>-y<span class="w"> </span>pagefind<span class="w"> </span>--site<span class="w"> </span>output
+</code></pre></div>
 <p><code>--site</code> 後面吃的參數是 Pelican 的輸出資料夾<br/>
 預設通常是 <code>output</code></p>
 <h2 id="search-index-github-actions">將產生 search index 整合進 GitHub Actions</h2>
@@ -255,7 +255,7 @@
 GitHub Actions 就會自動幫我產出最新的 blog ，並且部署到 GitHub Pages 上</p>
 <p>為了讓 Pagefind UI 有 search index 可以找<br/>
 必須在產出 blog 跟部屬的步驟中間，加入以下的步驟讓 GitHub Actions 也幫我產生 search index</p>
-<div class="highlight"><pre><span></span><span class="w">      </span><span class="c1"># steps that build the blog</span>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="c1"># steps that build the blog</span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub Action for npx</span>
 <span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mikeal/npx@1.0.0</span>
@@ -265,7 +265,7 @@ GitHub Actions 就會自動幫我產出最新的 blog ，並且部署到 GitHub 
 <span class="w">          </span><span class="no">npx -y pagefind --site output</span>
 
 <span class="w">      </span><span class="c1"># steps that deploy the blog</span>
-</pre></div>
+</code></pre></div>
 <h2 id="_1">看起來如何呢？</h2>
 <p>這個 blog</p>
 <p><img alt="this-blog" src="/images/posts-image/2023-pagefindui/this-blog.jpg"/></p>

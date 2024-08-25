@@ -214,26 +214,26 @@ linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤<
 幾乎是所有 Python 開源專案的標準配備</p>
 <h3 id="_1">使用</h3>
 <p>以下面這段程式碼為例</p>
-<div class="highlight"><pre><span></span><span class="c1"># bad_code.py</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># bad_code.py</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span> <span class="o">=</span>  <span class="s2">"My Operating system"</span>
-</pre></div>
+</code></pre></div>
 <p>這段程式碼出現了兩個問題</p>
 <ul>
 <li>把模組 <code>os</code> 指派成一個字串，會導致無法使用 <code>os</code> 模組內的函式（因為 <code>os</code> 已經變成一個字串）</li>
 <li><code>os</code> 的 <code>=</code> 後面加上兩個空白是不必要的，不符合 PEP 8 的規範</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="c1"># 安裝 flake8</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安裝 flake8</span>
 pipenv<span class="w"> </span>install<span class="w"> </span>flake8<span class="w"> </span>--dev
 
 <span class="c1"># 執行 flake8</span>
 pipenv<span class="w"> </span>run<span class="w"> </span>flake8
-</pre></div>
+</code></pre></div>
 <p>flake8 預設對當前目錄下所有 Python 的檔案做檢查</p>
 <p>執行後，<code>flake8</code> 會將這些錯誤找出來</p>
-<div class="highlight"><pre><span></span>./bad_code.py:4:1: F811 redefinition of unused 'os' from line 1
+<div class="highlight"><pre><span></span><code>./bad_code.py:4:1: F811 redefinition of unused 'os' from line 1
 ./bad_code.py:4:5: E222 multiple spaces after operator
-</pre></div>
+</code></pre></div>
 <p>透過錯誤碼（e.g., <code>F811</code>）可以在 <a href="https://www.flake8rules.com/">flake8 rules</a> 找到為什麼這是個錯誤和怎麼修正比較好</p>
 <h3 id="_2">設定</h3>
 <p>某些狀況下，我們會不完全依照 flake8 的風格<br/>
@@ -241,7 +241,7 @@ pipenv<span class="w"> </span>run<span class="w"> </span>flake8
 <p>除了可以直接在 <code>flake8</code> 指令後面加上參數<br/>
 也可以直接寫入設定檔 <code>setup.cfg</code> (或 <code>.flake8</code>, <code>tox.ini</code>）<br/>
 以下是我所使用的設定</p>
-<div class="highlight"><pre><span></span><span class="k">[flake8]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[flake8]</span>
 <span class="na">ignore</span><span class="w"> </span><span class="o">=</span>
 <span class="w">    </span><span class="c1"># F632: use ==/!= to compare str, bytes, and int literals</span>
 <span class="w">    </span><span class="na">F632,</span>
@@ -258,7 +258,7 @@ pipenv<span class="w"> </span>run<span class="w"> </span>flake8
 <span class="w">    </span><span class="na">dist</span>
 
 <span class="na">max-line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">88</span>
-</pre></div>
+</code></pre></div>
 <ul>
 <li><code>ignore</code>: 指定要忽略的錯誤類型（可以從 <a href="https://www.flake8rules.com/">flake8 rules</a> 找到這些錯誤碼）</li>
 <li><code>exclude</code>: 不用被檢查的檔案</li>
@@ -270,25 +270,25 @@ pipenv<span class="w"> </span>run<span class="w"> </span>flake8
 但這份檔案的其他地方還是希望能被檢查<br/>
 這時候可以在那行程式碼加上 <code># noqa: [error]</code></p>
 <p>e.g.,</p>
-<div class="highlight"><pre><span></span><span class="n">example</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="s1">'example'</span>  <span class="c1"># noqa: E731</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">example</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="s1">'example'</span>  <span class="c1"># noqa: E731</span>
+</code></pre></div>
 <h2 id="-pylint">風格檢查 - pylint</h2>
 <p><a href="https://www.pylint.org/">pylint</a> 同樣是相當常見的 Python linter<br/>
 一般來說，比 <code>flake8</code> 檢查的更加嚴格</p>
 <h3 id="_4">使用</h3>
 <p>與 flake8 不同， <code>pylint</code> 指令需要指定模組或套件名稱才能進行檢查</p>
-<div class="highlight"><pre><span></span><span class="c1"># 安裝 pylint</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安裝 pylint</span>
 pipenv<span class="w"> </span>install<span class="w"> </span>pylint<span class="w"> </span>--dev
 
 <span class="c1"># 執行 pylint</span>
 pipenv<span class="w"> </span>run<span class="w"> </span>pylint<span class="w"> </span>&lt;package&gt;<span class="w"> </span>......
-</pre></div>
+</code></pre></div>
 <h3 id="_5">設定</h3>
 <p>原本我建議使用 <code>pipenv run pylint --generate-rcfile &gt;&gt; .pylintrc</code> 來產生設定檔<br/>
 但現在我更傾向在 pyproject.toml 中只寫入想要客製化的設定<br/>
 原先的做法會在設定檔 .pylintrc 中有著大量的預設值，不容易找到哪些是修改過的設定，造成維護上的困難<br/>
 不過需要注意的是在某些版本的 pylint 這個設定方式會出錯，所以建議安裝版本 2.6.0 以上的 pylint</p>
-<div class="highlight"><pre><span></span><span class="k">[tool.pylint]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.pylint]</span>
 <span class="w">    </span><span class="k">[tool.pylint.messages_control]</span>
 <span class="w">    </span><span class="n">disable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="s2">"bad-continuation"</span><span class="p">,</span>
@@ -299,16 +299,16 @@ pipenv<span class="w"> </span>run<span class="w"> </span>pylint<span class="w"> 
 
 <span class="w">    </span><span class="k">[tool.pylint.format]</span>
 <span class="w">    </span><span class="n">max-line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">88</span>
-</pre></div>
+</code></pre></div>
 <p>其中 disable 的錯誤可以在 <a href="http://pylint-messages.wikidot.com/all-codes">pylint-messages</a> 找到</p>
 <h3 id="_6">局部跳過檢查</h3>
 <p>只要在要忽略的程式碼前面一行加上 <code># pylint: disable=[error]</code><br/>
 但需要注意的是，這行以後全部的檢查都會被關閉<br/>
 所以要記得在需要開啟檢查的地方再加上 <code># pylint: enable=[error]</code></p>
-<div class="highlight"><pre><span></span><span class="c1"># pylint: disable=line-too-long</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># pylint: disable=line-too-long</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Imagine this is a really long line!"</span><span class="p">)</span>
 <span class="c1"># pylint: enable=line-too-long</span>
-</pre></div>
+</code></pre></div>
 <h2 id="flake8-vs-pylint">flake8 v.s. pylint</h2>
 <p>除了相關的檢查外， pylint 會比 flake8 做更嚴格的檢查<br/>
 也可以做更多的設定，但在執行上也會比較慢</p>
@@ -324,10 +324,10 @@ pipenv<span class="w"> </span>run<span class="w"> </span>pylint<span class="w"> 
 <p><a href="http://mypy-lang.org/">mypy</a> 是 Python 做靜態型別檢查的工具<br/>
 Python 是一個動態型別的語言，所以可以隨意地不同型別的值指派給同一個變數<br/>
 e.g.,</p>
-<div class="highlight"><pre><span></span><span class="n">str_var</span> <span class="o">=</span> <span class="s2">"This is a string"</span>
+<div class="highlight"><pre><span></span><code><span class="n">str_var</span> <span class="o">=</span> <span class="s2">"This is a string"</span>
 
 <span class="n">str_var</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
+</code></pre></div>
 <p>但這麼做有時候會造成邏輯上的錯誤<br/>
 例如 <code>import csv</code> 時，如果使用了 <code>csv</code> 作為其他的變數名稱<br/>
 就會將變數的值取代掉原本引入的模組</p>
@@ -339,7 +339,7 @@ e.g.,</p>
 這幾場演講都非常推薦可以觀看！</p>
 <h3 id="_7">使用</h3>
 <p>以下列的程式碼為例</p>
-<div class="highlight"><pre><span></span><span class="c1"># wrong_type_hint.py</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># wrong_type_hint.py</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 
 
@@ -348,31 +348,31 @@ e.g.,</p>
 
 
 <span class="n">func</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-</pre></div>
+</code></pre></div>
 <p><code>func</code> 的參數 <code>val</code> 標記為 <code>List[str]</code><br/>
 但在呼叫的時候卻傳入整數陣列</p>
-<div class="highlight"><pre><span></span><span class="c1"># 安裝 mypy</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安裝 mypy</span>
 pipenv<span class="w"> </span>install<span class="w"> </span>--dev
 
 <span class="c1"># 執行 mypy</span>
 pipenv<span class="w"> </span>run<span class="w"> </span>mypy<span class="w"> </span><span class="o">[</span>files<span class="o">]</span><span class="w"> </span>--ignore-missing-imports
-</pre></div>
+</code></pre></div>
 <p>執行 <code>mypy</code> 後，它就會告訴跳出型別錯誤的警告</p>
-<div class="highlight"><pre><span></span>wrong_type_hint.py:8:<span class="w"> </span>error:<span class="w"> </span>List<span class="w"> </span>item<span class="w"> </span><span class="m">0</span><span class="w"> </span>has<span class="w"> </span>incompatible<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="s2">"int"</span><span class="p">;</span><span class="w"> </span>expected<span class="w"> </span><span class="s2">"str"</span>
+<div class="highlight"><pre><span></span><code>wrong_type_hint.py:8:<span class="w"> </span>error:<span class="w"> </span>List<span class="w"> </span>item<span class="w"> </span><span class="m">0</span><span class="w"> </span>has<span class="w"> </span>incompatible<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="s2">"int"</span><span class="p">;</span><span class="w"> </span>expected<span class="w"> </span><span class="s2">"str"</span>
 
 wrong_type_hint.py:8:<span class="w"> </span>error:<span class="w"> </span>List<span class="w"> </span>item<span class="w"> </span><span class="m">1</span><span class="w"> </span>has<span class="w"> </span>incompatible<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="s2">"int"</span><span class="p">;</span><span class="w"> </span>expected<span class="w"> </span><span class="s2">"str"</span>
 
 wrong_type_hint.py:8:<span class="w"> </span>error:<span class="w"> </span>List<span class="w"> </span>item<span class="w"> </span><span class="m">2</span><span class="w"> </span>has<span class="w"> </span>incompatible<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="s2">"int"</span><span class="p">;</span><span class="w"> </span>expected<span class="w"> </span><span class="s2">"str"</span>
-</pre></div>
+</code></pre></div>
 <p>mypy 預設會去找所有引入的函式庫是否也有做好型別標記<br/>
 所以一般使用上都會加上參數 <code>--ignore-missing-imports</code><br/>
 只要確保我們撰寫的部分都是正確的</p>
 <h3 id="_8">設定</h3>
 <p>以下是我用來設定 mypy 的 <code>setup.cfg</code></p>
-<div class="highlight"><pre><span></span><span class="k">[mypy]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[mypy]</span>
 <span class="na">files</span><span class="o">=</span><span class="s">[your files]</span>
 <span class="na">ignore_missing_imports</span><span class="o">=</span><span class="s">true</span>
-</pre></div>
+</code></pre></div>
 <h2 id="-black">自動排版 - black</h2>
 <p>比起 flake8, pylint 只做風格檢查<br/>
 <a href="https://github.com/psf/black">black</a> 會更進一步的直接修正不符合風格的程式碼<br/>
@@ -396,12 +396,12 @@ black 每次執行的結果都會是相同的，而且大致上修正結果我�
 <h3 id="_9">使用</h3>
 <p>因為 black 還是 beta 版<br/>
 透過 pipenv 安裝時還要加上 <code>--pre</code> 參數</p>
-<div class="highlight"><pre><span></span><span class="c1"># 安裝 black</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安裝 black</span>
 pipenv<span class="w"> </span>install<span class="w"> </span>black<span class="w"> </span>--dev<span class="w"> </span>--pre
 
 <span class="c1"># 執行 black 修正程式碼風格</span>
 pipenv<span class="w"> </span>run<span class="w"> </span>black<span class="w"> </span>&lt;package&gt;
-</pre></div>
+</code></pre></div>
 <p>因為 black 是直接重新排版程式碼<br/>
 我節錄了部分我在 pycontw-postevent-report-generator <a href="https://github.com/pycontw/pycontw-postevent-report-generator/tree/e64a1202c2af08fe9ca5a44b1e52fdafeac2098d">commit e64a</a> 修正風格的結果<br/>
 上面紅色的部分是原本的程式碼，下面綠色是修正過的結果<br/>
@@ -411,14 +411,14 @@ pipenv<span class="w"> </span>run<span class="w"> </span>black<span class="w"> <
 <p><img alt="black-fix-3" src="/images/posts-image/2020-02-22-python-table-manner-series/black-fix-3.jpg"/></p>
 <p>如果只想要檢查程式碼是否符合 black 的風格<br/>
 而不要直接做修正，可以在指令後面加入 <code>--check</code> 參數</p>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>run<span class="w"> </span>black<span class="w"> </span>&lt;package&gt;<span class="w"> </span>--check
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>run<span class="w"> </span>black<span class="w"> </span>&lt;package&gt;<span class="w"> </span>--check
+</code></pre></div>
 <h3 id="_10">設定</h3>
 <p>雖然說 black 不能對風格做太多的設定<br/>
 我們還是能先指定哪些檔案是要修正，哪些是不用的<br/>
 以下是我放在 <code>pyproject.toml</code> 的設定<br/>
 （p.s. <code>line-length = 88</code> 是 black 的預設值）</p>
-<div class="highlight"><pre><span></span><span class="k">[tool.black]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.black]</span>
 <span class="n">line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">88</span>
 <span class="n">include</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'\.pyi?$'</span>
 <span class="n">exclude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'''</span>
@@ -435,7 +435,7 @@ pipenv<span class="w"> </span>run<span class="w"> </span>black<span class="w"> <
 <span class="s1">  | dist</span>
 <span class="s1">)/</span>
 <span class="s1">'''</span>
-</pre></div>
+</code></pre></div>
 <h2 id="-isort">排序函式庫 - isort</h2>
 <p><a href="https://github.com/timothycrosley/isort">isort</a> 是自動排列函式庫引入順序的的工具<br/>
 PEP 8 建議將引入的函式庫分為三類做排序</p>
@@ -446,30 +446,30 @@ PEP 8 建議將引入的函式庫分為三類做排序</p>
 </ol>
 <p>並在每一個種類間空一行<br/>
 e.g.,</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="kn">import</span> <span class="nn">flask</span>
 
 <span class="kn">import</span> <span class="nn">models</span>
-</pre></div>
+</code></pre></div>
 <p>使用 isort 的原因跟 black 差不多<br/>
 就是讓程式來決定比較枝微末節的事，專注在開發本身上面</p>
 <h3 id="_11">執行</h3>
-<div class="highlight"><pre><span></span><span class="c1"># 安裝 isort</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安裝 isort</span>
 pipenv<span class="w"> </span>install<span class="w"> </span>isort<span class="w"> </span>--dev
 
 <span class="c1"># 執行 isort 修正函式庫排序</span>
 pipenv<span class="w"> </span>run<span class="w"> </span>isort<span class="w"> </span>--atomic<span class="w"> </span>.
-</pre></div>
+</code></pre></div>
 <ul>
 <li><code>--atomic</code>: 只有重新排序後的結果沒有語法錯誤，才會儲存</li>
 </ul>
 <h3 id="_12">設定</h3>
 <p>自從 5.0.0 後， isort 直接把常見的設定寫成 <a href="https://pycqa.github.io/isort/docs/configuration/profiles/">profile</a><br/>
 只要指定 profile 就能直接套用相容的設定</p>
-<div class="highlight"><pre><span></span><span class="k">[tool.isort]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.isort]</span>
 <span class="n">profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"black"</span>
-</pre></div>
+</code></pre></div>
 <p>不過有一個相關的 bug 到 5.0.5 後才修正 (Ref: <a href="https://github.com/PyCQA/isort/issues/1295">Black profile not compatible with Black (ensure_newline_before_comments not working) #1295</a>)<br/>
 所以還是建議安裝最新的版本</p>
 <h2 id="_13">其他工具</h2>

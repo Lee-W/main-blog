@@ -296,11 +296,11 @@
 <p>👉 <a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-coding-style#-mypy">Python Table Manners - 程式碼風格 # 型別檢查 - mypy</a></p>
 <p>除此之外，自從 Python 3.9，型別如 <code>list, dict, set</code> 都可以直接被使用<br/>
 不用再從 typing 函式庫匯入 (i.e., <code>from typing import List, Dict, Set</code>)</p>
-<div class="highlight"><pre><span></span><span class="n">example_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">example_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
 <p>如果你用的是 Python 3.8 ，你可以在檔案最上方</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+</code></pre></div>
 <p>如果你用的是 3.8 以前的版本，那你應該升級你的 Python<br/>
 （3.7 在 2023 就已經不支援了）</p>
 <h2 id="testing-and-linting">Testing (and linting?)</h2>
@@ -368,7 +368,7 @@
 </li>
 <li>decorator</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">functools</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 
 
@@ -384,7 +384,7 @@
 <span class="nd">@debug</span>
 <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
     <span class="k">pass</span>
-</pre></div>
+</code></pre></div>
 <ul>
 <li><a href="https://docs.python.org/3/library/pdb.html">pdb</a> <ul>
 <li>常用 pdb 指令<ul>
@@ -402,14 +402,14 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><span class="c1"># how to use pdb in terminal</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># how to use pdb in terminal</span>
 
 <span class="c1">## run pdb on file</span>
 pdb<span class="w"> </span>&lt;file<span class="w"> </span>name&gt;
 
 <span class="c1">## run pdb on module</span>
 pdb<span class="w"> </span>-m<span class="w"> </span>&lt;module<span class="w"> </span>name&gt;
-</pre></div>
+</code></pre></div>
 <h2 id="logging">Logging</h2>
 <ul>
 <li><a href="https://docs.python.org/3/howto/logging.html">logging</a><ul>
@@ -422,7 +422,7 @@ pdb<span class="w"> </span>-m<span class="w"> </span>&lt;module<span class="w"> 
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">logging</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"example.log"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
@@ -430,7 +430,7 @@ pdb<span class="w"> </span>-m<span class="w"> </span>&lt;module<span class="w"> 
 <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"So should this"</span><span class="p">)</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">"And this, too"</span><span class="p">)</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">"And non-ASCII stuff, too, like Øresund and Malmö"</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 <h2 id="optimization-sounds-more-like-profiling">Optimization (sounds more like profiling)</h2>
 <ul>
 <li>"Python 通常很快"<ul>

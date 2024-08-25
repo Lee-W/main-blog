@@ -212,15 +212,15 @@ Among them, there is one Taiwanese.</p>
 <li>Collaboration</li>
 </ol>
 <h2 id="tutorial">Tutorial</h2>
-<div class="highlight"><pre><span></span>git<span class="w"> </span>init<span class="w"> </span><span class="s2">"path"</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>init<span class="w"> </span><span class="s2">"path"</span>
+</code></pre></div>
 <p><code>.git</code> is just a folder with normal file<br/>
 There is no daemon or background progress<br/>
 Everything is operated in file<br/>
 Never <code>rm -rf .git</code> XD</p>
-<div class="highlight"><pre><span></span>git<span class="w"> </span>stauts
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>stauts
 touch<span class="w"> </span>README.mdd
-</pre></div>
+</code></pre></div>
 <p>There are three main stages</p>
 <ol>
 <li>working</li>
@@ -257,14 +257,14 @@ touch<span class="w"> </span>README.mdd
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>README.md
-</pre></div>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>README.md
+</code></pre></div>
 <p>When we're ready<br/>
 <code>git commit -m "add a blank commit"</code></p>
 <p>After README.md is modified</p>
-<div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>README.md
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>README.md
 git<span class="w"> </span>status
-</pre></div>
+</code></pre></div>
 <p>Now this file is in staging area</p>
 <p>So, how to go back to history?<br/>
 <code>git reset README.md</code></p>
@@ -288,7 +288,7 @@ Everything comes back</p>
 <p>In git, branch is not copy. It's like bookmark<br/>
 Actually <code>git branch -d "name"</code> just delete the pointer but not the entry.</p>
 <p>HEAD: the pointer points to current entry</p>
-<h4>detach error</h4>
+<h4 id="detach-error">detach error</h4>
 <p>If you go back to a entry not in certain branch, a detach error might occur.<br/>
 For example, checkout to a commit that is parent of more than one branch and then append a new commit to it.<br/>
 In such case, this new appended commit might not be able to be referenced.<br/>
@@ -297,7 +297,7 @@ In such case, this new appended commit might not be able to be referenced.<br/>
 <p><code>git log --decorate</code>: Show also branch info</p>
 <p><code>git log --all</code>: Show all branch</p>
 <p><code>git log --graph</code>: Show graph</p>
-<h4>The difference between log and show</h4>
+<h4 id="the-difference-between-log-and-show">The difference between log and show</h4>
 <p><code>git log</code>: Only the first line<br/>
 <code>git show</code>: All the message, not only the first line</p>
 <h2 id="github">GitHub</h2>

@@ -179,7 +179,7 @@
 <p>使用 <code>asciinema rec</code> 開始紀錄<br/>
 要結束錄影時可以按 <code>&lt;ctrl-d&gt;</code> 或輸入 <code>exit</code><br/>
 結束錄影時會詢問要不要存擋，要存在哪</p>
-<div class="highlight"><pre><span></span>$<span class="w"> </span>asciinema<span class="w"> </span>rec<span class="w"> </span>&lt;output<span class="w"> </span>path<span class="w"> </span><span class="o">(</span>with<span class="w"> </span>extension<span class="w"> </span>.cast<span class="o">)</span>&gt;
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>asciinema<span class="w"> </span>rec<span class="w"> </span>&lt;output<span class="w"> </span>path<span class="w"> </span><span class="o">(</span>with<span class="w"> </span>extension<span class="w"> </span>.cast<span class="o">)</span>&gt;
 
 asciinema:<span class="w"> </span>recording<span class="w"> </span>asciicast<span class="w"> </span>&lt;output<span class="w"> </span>path&gt;
 asciinema:<span class="w"> </span>press<span class="w"> </span>&lt;ctrl-d&gt;<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="s2">"exit"</span><span class="w"> </span>when<span class="w"> </span>you<span class="err">'</span>re<span class="w"> </span><span class="k">done</span>
@@ -188,23 +188,23 @@ asciinema:<span class="w"> </span>press<span class="w"> </span>&lt;ctrl-d&gt;<sp
 asciinema:<span class="w"> </span>recording<span class="w"> </span>finished
 <span class="o">(</span>s<span class="o">)</span>ave<span class="w"> </span>locally,<span class="w"> </span><span class="o">(</span>u<span class="o">)</span>pload<span class="w"> </span>to<span class="w"> </span>asciinema.org,<span class="w"> </span><span class="o">(</span>d<span class="o">)</span>iscard
 <span class="o">[</span>s,u,d<span class="o">]</span>?
-</pre></div>
+</code></pre></div>
 <p>透過 <code>asciinema play</code> 可以在終端機重新播放剛剛的紀錄</p>
-<div class="highlight"><pre><span></span>asciinema<span class="w"> </span>play<span class="w"> </span>&lt;.cast<span class="w"> </span>file<span class="w"> </span>path&gt;
-</pre></div>
+<div class="highlight"><pre><span></span><code>asciinema<span class="w"> </span>play<span class="w"> </span>&lt;.cast<span class="w"> </span>file<span class="w"> </span>path&gt;
+</code></pre></div>
 <p>想要一次看完所有內容可以使用</p>
-<div class="highlight"><pre><span></span>asciinema<span class="w"> </span>cat<span class="w"> </span>&lt;.cast<span class="w"> </span>file<span class="w"> </span>path&gt;
-</pre></div>
+<div class="highlight"><pre><span></span><code>asciinema<span class="w"> </span>cat<span class="w"> </span>&lt;.cast<span class="w"> </span>file<span class="w"> </span>path&gt;
+</code></pre></div>
 <h2 id="agg">agg</h2>
 <p>agg 則是 asciinema 組織中的專案，負責產生 gif<br/>
 （全名是  asciinema gif generator ）<br/>
 有不少可以客製化的參數<br/>
 我比較常用的是 <code>--font-family</code>, <code>--speed</code>, <code>--no-loop</code><br/>
 分別可以設定字體、播放速度跟是否要讓 gif 重播</p>
-<div class="highlight"><pre><span></span>agg<span class="w"> </span>--font-family<span class="w"> </span><span class="s2">"ComicShannsMono Nerd Font"</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>agg<span class="w"> </span>--font-family<span class="w"> </span><span class="s2">"ComicShannsMono Nerd Font"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--speed<span class="w"> </span><span class="m">2</span>.5<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>&lt;input<span class="w"> </span>cast<span class="w"> </span>path&gt;<span class="w"> </span>&lt;output<span class="w"> </span>gif<span class="w"> </span>path&gt;
-</pre></div>
+</code></pre></div>
 <h2 id="lets-put-everything-together">Let's put everything together</h2>
 <p>既然是分享 asciinema 的文章<br/>
 當然是得把文章用到的指令們直接做成 gif demo 吧！</p>

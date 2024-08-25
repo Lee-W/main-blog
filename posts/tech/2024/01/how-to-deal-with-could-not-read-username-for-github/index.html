@@ -172,8 +172,8 @@
 <section class="post-content">
 <p>相信有在用 GitHub Actions 的大家應該都有用過 <a href="https://github.com/actions/checkout">actions/checkout</a></p>
 <p>最近某個平常跑得好好的 CI/CD pipeline 卻噴了這個錯誤</p>
-<div class="highlight"><pre><span></span>Error: fatal: could not read Username for 'https://github.com': terminal prompts disabled
-</pre></div>
+<div class="highlight"><pre><span></span><code>Error: fatal: could not read Username for 'https://github.com': terminal prompts disabled
+</code></pre></div>
 <!--more-->
 <h2 id="root-cause">Root Cause</h2>
 <p>這可能是因為 PAT (<a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">Personal Access Token</a>) 已經過期了<br/>

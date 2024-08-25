@@ -123,7 +123,7 @@
           <span class="archive-info">
             <span class="archive-type">Tag</span>
             <span class="archive-count">
-            40 Posts
+            41 Posts
             </span>
           </span>
           <h2 class="archive-title">Python</h2>
@@ -142,12 +142,46 @@
   <div class="inner">
     <div class="box pagination-box">
       <a title="Newer Posts" class="pagination-next" href="https://blog.wei-lee.me/tag/python3.html"><i class="icon icon-arrow-left"></i> <span class="pagination-label">Newer Posts</span></a>
-      <span class="pagination-info">Page 4 of 4</span>
+      <span class="pagination-info">Page 4 of 5</span>
+      <a title="Older Posts" class="pagination-prev" href="https://blog.wei-lee.me/tag/python5.html"><span class="pagination-label">Older Posts</span> <i class="icon icon-arrow-right"></i></a>
     </div>
   </div>
 </nav>
     </div>
 
+
+
+    <article class="post">
+        <div class="inner">
+            <div class="box post-box">
+                <h2 class="post-title">
+                    <a href="https://blog.wei-lee.me/posts/tech/2019/06/how-was-pycon-us-2019" rel="bookmark" title="Permalink to How was PyCon US 2019 ">
+                        How was PyCon US 2019
+                    </a>
+                </h2>
+                <span class="post-meta">
+                    By 
+                        <a class="post-meta-tag" href="https://blog.wei-lee.me/author/wei-lee.html">Wei Lee</a>
+                     in 
+                    <a class="post-meta-tag" href="https://blog.wei-lee.me/category/tech.html">Tech</a>
+                      on <time datetime="2019/06/22 - Sat">2019/06/22 - Sat</time>
+                </span>
+                <p class="post-excerpt">
+                        <p>既然自稱 Python 的信徒<br>
+總是要來世界最大的 PyCon 朝聖一下 XD</p>
+<p><img alt="IMG_3010" src="/images/posts-image/2019-06-22-how-was-pycon-us-2019/IMG_3010.jpg"></p>
+<p>（我還因為寫了 GitHub ，被以為是 GitHub 的員工 XD）</p>
+
+                </p>
+
+                <div class="post-excerpt">
+
+                    <aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/python.html">Python</a><a href="https://blog.wei-lee.me/tag/pycon.html">PyCon</a><a href="https://blog.wei-lee.me/tag/conference.html">Conference</a>                    </aside>
+                </div>
+            </div>
+        </div>
+    </article>
 
 
     <article class="post">
@@ -375,15 +409,13 @@
                 <p class="post-excerpt">
                         <p><a href="https://www.pylint.org">Pylint</a></p>
 <h2 id="setup">Setup</h2>
-<div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pylint
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pylint
+</code></pre></div>
 
 <h2 id="usage">Usage</h2>
 <h3 id="generate-a-code-quality-report">Generate a code quality report</h3>
-<div class="highlight"><pre><span></span>pylint<span class="w"> </span>your_code.py
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>pylint<span class="w"> </span>your_code.py
+</code></pre></div>
 
 
                 </p>
@@ -446,16 +478,14 @@
                 </span>
                 <p class="post-excerpt">
                         <p>先安裝 Python2 和 Python3 的 ipython notebook</p>
-<div class="highlight"><pre><span></span>pip2<span class="w"> </span>install<span class="w"> </span>ipython<span class="w"> </span>notebook
+<div class="highlight"><pre><span></span><code>pip2<span class="w"> </span>install<span class="w"> </span>ipython<span class="w"> </span>notebook
 pip3<span class="w"> </span>install<span class="w"> </span>ipython<span class="w"> </span>notebook
-</pre></div>
-
+</code></pre></div>
 
 <p>分別用各自的 ipython 執行下面的指令</p>
-<div class="highlight"><pre><span></span>ipython2<span class="w"> </span>kernelspec<span class="w"> </span>install-self
+<div class="highlight"><pre><span></span><code>ipython2<span class="w"> </span>kernelspec<span class="w"> </span>install-self
 ipython3<span class="w"> </span>kernelspec<span class="w"> </span>install-self
-</pre></div>
-
+</code></pre></div>
 
 
                 </p>
@@ -469,50 +499,12 @@ ipython3<span class="w"> </span>kernelspec<span class="w"> </span>install-self
         </div>
     </article>
 
-
-    <article class="post">
-        <div class="inner">
-            <div class="box post-box">
-                <h2 class="post-title">
-                    <a href="https://blog.wei-lee.me/posts/tech/2015/05/solve-django-admin-cant-find-the-djangocore-on-mac" rel="bookmark" title="Permalink to 解決 django-admin 在 mac 找不到 django.core ">
-                        解決 django-admin 在 mac 找不到 django.core
-                    </a>
-                </h2>
-                <span class="post-meta">
-                    By 
-                        <a class="post-meta-tag" href="https://blog.wei-lee.me/author/wei-lee.html">Wei Lee</a>
-                     in 
-                    <a class="post-meta-tag" href="https://blog.wei-lee.me/category/tech.html">Tech</a>
-                      on <time datetime="2015/05/10 - Sun">2015/05/10 - Sun</time>
-                </span>
-                <p class="post-excerpt">
-                        <h2 id="_1">問題</h2>
-<p>在 mac 上，用 pip3 安裝完 django 1.8.1 後<br>
-執行 <code>django-admin</code> 出現了以下的錯誤訊息</p>
-<div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;/usr/local/bin/django-admin&quot;, line 2, in &lt;module&gt;
-    from django.core import management
-ImportError: No module named django.core
-</pre></div>
-
-
-
-                </p>
-
-                <div class="post-excerpt">
-
-                    <aside class="post-tags">
-<a href="https://blog.wei-lee.me/tag/python.html">Python</a><a href="https://blog.wei-lee.me/tag/django.html">Django</a><a href="https://blog.wei-lee.me/tag/mac.html">mac</a>                    </aside>
-                </div>
-            </div>
-        </div>
-    </article>
-
 <nav class="pagination" aria-label="Pagination" role="pagination">
   <div class="inner">
     <div class="box pagination-box">
       <a title="Newer Posts" class="pagination-next" href="https://blog.wei-lee.me/tag/python3.html"><i class="icon icon-arrow-left"></i> <span class="pagination-label">Newer Posts</span></a>
-      <span class="pagination-info">Page 4 of 4</span>
+      <span class="pagination-info">Page 4 of 5</span>
+      <a title="Older Posts" class="pagination-prev" href="https://blog.wei-lee.me/tag/python5.html"><span class="pagination-label">Older Posts</span> <i class="icon icon-arrow-right"></i></a>
     </div>
   </div>
 </nav>

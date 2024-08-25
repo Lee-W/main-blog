@@ -219,15 +219,15 @@ e.g., 提升版本號, 產生更新日誌</p>
 <h2 id="commitizen_1">安裝與設定 Commitizen</h2>
 <p>跟 invoke 一樣，我會把 commitizen 同時安裝在系統和虛擬環境<br/>
 安裝在虛擬環境主要是為了能在 CI/CD 伺服器上自動升版</p>
-<div class="highlight"><pre><span></span><span class="c1"># 安裝 commitizen 到系統</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安裝 commitizen 到系統</span>
 pipx<span class="w"> </span>install<span class="w"> </span>commitizen
 
 <span class="c1"># 安裝 commitizen 到虛擬環境中</span>
 pipenv<span class="w"> </span>install<span class="w"> </span>commitizen<span class="w"> </span>--dev
-</pre></div>
+</code></pre></div>
 <p>在專案中第一次使用 commitizen 可以使用初始化指令來完成基本的設定</p>
-<div class="highlight"><pre><span></span>cz<span class="w"> </span>init
-</pre></div>
+<div class="highlight"><pre><span></span><code>cz<span class="w"> </span>init
+</code></pre></div>
 <p>一開始會先問想使用哪種設定檔</p>
 <p><img alt="cz-init-1" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-1.png"/></p>
 <p>接著要選擇一套 commit 規範，預設有三種<br/>
@@ -245,16 +245,16 @@ pipenv<span class="w"> </span>install<span class="w"> </span>commitizen<span cla
 <p>完成後就會看到以下畫面</p>
 <p><img alt="cz-init-6.jpg" src="/images/posts-image/2020-02-22-python-table-manner-series/cz-init-6.jpg"/></p>
 <p>相對應的設定也會加入到設定檔 <code>pyproject.toml</code> (或 <code>.cz.toml</code>)</p>
-<div class="highlight"><pre><span></span><span class="k">[tool.commitizen]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.commitizen]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"cz_conventional_commits"</span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"1.0.2"</span>
 <span class="n">tag_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"$version"</span>
-</pre></div>
+</code></pre></div>
 <h2 id="commitizen_2">使用 Commitizen</h2>
-<div class="highlight"><pre><span></span><span class="c1"># 使用 commitizen 做 commit</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 使用 commitizen 做 commit</span>
 <span class="c1"># (也可以用簡短版的 cz c)</span>
 cz<span class="w"> </span>commit
-</pre></div>
+</code></pre></div>
 <p>以 <code>cz_conventional_commits</code> 這套規則為例<br/>
 會先詢問這次的 commit 做了哪一種改動</p>
 <p><img alt="commitizen-1" src="/images/posts-image/2020-02-22-python-table-manner-series/commitizen-1.jpg"/></p>
@@ -275,16 +275,16 @@ cz<span class="w"> </span>commit
 雖然在 2.0.0 後可以透過 <code>cz init</code> 初始設定好，但還是說明如果事後才想設定要怎麼做</p>
 <p>我在 <a href="https://github.com/commitizen-tools/commitizen">commitizen</a> 中有加入 <a href="https://github.com/commitizen-tools/commitizen/blob/master/.pre-commit-hooks.yaml">.pre-commit-hooks.yaml</a><br/>
 因此只要在專案的 <code>.pre-commit-config.yaml</code> 加入以下這段</p>
-<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repos</span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repos</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">- repo</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/commitizen-tools/commitizen</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">rev</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1.23.1</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">hooks</span><span class="p p-Indicator">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">commitizen</span>
 <span class="w">        </span><span class="nt">stages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">commit-msg</span><span class="p p-Indicator">]</span>
-</pre></div>
+</code></pre></div>
 <p>並透過 pre-commit 設定 commit-msg 階段的 git hook</p>
-<div class="highlight"><pre><span></span>pipenv<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>install<span class="w"> </span>-t<span class="w"> </span>commit-msg
-</pre></div>
+<div class="highlight"><pre><span></span><code>pipenv<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>install<span class="w"> </span>-t<span class="w"> </span>commit-msg
+</code></pre></div>
 <p>在 commit 執行完，要進訊息寫入前<br/>
 git 會執行 <code>cz check</code> 來確認輸入的訊息是否符合規範<br/>
 如果不符合規範就會拒絕這次的 commit</p>
@@ -314,20 +314,20 @@ e.g., 要 merge 回 master 的改動中出現 BREAKING CHANGE，不管其他有�
 <p>目前只有 <code>cz_conventional_commits</code> 有預設的版本對應<br/>
 如果為 <code>cz_jira</code>, <code>cz_customize</code> 或自己客製化規則加上提升版本的功能，可以參考commitizen 文件中 <a href="https://commitizen-tools.github.io/commitizen/customization/">customization</a> ，並加上 <code>bump_pattern</code>（比對 commit 是哪個種類） 和 <code>bump_map</code> （哪個種類的 commit 要提升哪個版本號）</p>
 <p>稍微解釋了一下提升版本的規則，接下來要來講該如何使用了</p>
-<div class="highlight"><pre><span></span>cz<span class="w"> </span>bump
-</pre></div>
+<div class="highlight"><pre><span></span><code>cz<span class="w"> </span>bump
+</code></pre></div>
 <p>第一次提升版本的時候，會先確認目前在設定檔 (e.g., <code>pyproject.toml</code>）中的版本是否已經有相對應的 git tag</p>
 <p>如果沒有則會確認這是否是第一次為這個專案加上 git tag</p>
-<div class="highlight"><pre><span></span>Tag v0.0.1 could not be found.
+<div class="highlight"><pre><span></span><code>Tag v0.0.1 could not be found.
 Possible causes:
 - version in configuration is not the current version
 - tag_format is missing, check them using 'git tag --list'
 
 ? Is this the first tag created?  (Y/n)
-</pre></div>
+</code></pre></div>
 <p>如果想跳過這個確認可以在後面加上參數 <code>--yes</code></p>
-<div class="highlight"><pre><span></span>cz<span class="w"> </span>bump<span class="w"> </span>--yes
-</pre></div>
+<div class="highlight"><pre><span></span><code>cz<span class="w"> </span>bump<span class="w"> </span>--yes
+</code></pre></div>
 <p>接著 commitizen 就會新增一個相對應的 git tag 和更新設定檔中的版本號<br/>
 因為要將設定檔中的改動儲存， commitizen 這時會再新增一個 commit<br/>
 (e.g., <code>bump: version 0.0.1 → 0.0.2</code>)</p>
@@ -349,15 +349,15 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 </ol>
 <h3 id="_2">直接在設定檔設定</h3>
 <p>首先必須先將 name 指定到 <code>cz_customize</code> 這套 commit 規範</p>
-<div class="highlight"><pre><span></span><span class="k">[tool.commitizen]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.commitizen]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"cz_customize"</span>
-</pre></div>
+</code></pre></div>
 <p>再來要設定下面的欄位<br/>
 其中最重要的是 <code>message_template</code>（支援<a href="https://jinja.palletsprojects.com/en/2.11.x/">Jinja</a>）<br/>
 以 <code>"{{change_type}}:{% if show_message %} {{message}}{% endif %}"</code> 這個例子來說<br/>
 需要 <code>change_type</code>, <code>show_message</code>, <code>message</code> 三個變數來產生 commit message</p>
 <p>（p.s. 如果想要使用驗證 commit message 的功能，則要更新 <code>schema_pattern</code>）</p>
-<div class="highlight"><pre><span></span><span class="k">[tool.commitizen.customize]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.commitizen.customize]</span>
 <span class="n">message_template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"{{change_type}}:{% if show_message %} {{message}}{% endif %}"</span>
 <span class="n">example</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"feature: this feature enable customize through config file"</span>
 <span class="n">schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&lt;type&gt;: &lt;body&gt;"</span>
@@ -368,7 +368,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"""</span>
 <span class="s2">This is customized info</span>
 <span class="s2">"""</span>
-</pre></div>
+</code></pre></div>
 <p>變數要在 <code>[[tool.commitizen.customize.questions]]</code> 的區段作定義<br/>
 背後所使用的套件是 <a href="https://github.com/tmbo/questionary">questionary</a></p>
 <ul>
@@ -377,7 +377,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <li><code>type</code>： <a href="https://github.com/tmbo/questionary">questionary</a> 中的問題型態</li>
 <li>其他欄位 (e.g., <code>choice</code>) 則是靠 <code>type</code> 來決定是否需要</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="k">[[tool.commitizen.customize.questions]]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[[tool.commitizen.customize.questions]]</span>
 <span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"list"</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"change_type"</span>
 <span class="n">choices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"feature"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bug fix"</span><span class="p">]</span>
@@ -392,7 +392,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"confirm"</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"show_message"</span>
 <span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Do you want to add body message in commit?"</span>
-</pre></div>
+</code></pre></div>
 <p>設定完之後，再使用 <code>cz commit</code> 就可以看到客製化過後的問題了<br/>
 <img alt="customize" src="/images/posts-image/2020-02-22-python-table-manner-series/customize.jpg"/></p>
 <h3 id="commit-python">將客製化的 commit 規範寫成 Python 套件發佈</h3>
@@ -400,8 +400,8 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 （Read More 👉 <a href="https://commitizen-tools.github.io/commitizen/customization/">Customization</a>）</p>
 <p>我已經先將套件的架構驟寫成一個 <a href="https://cookiecutter.readthedocs.io/en/1.7.0/">cookiecutter</a> 範本<br/>
 透過以下指令，可以進入 cookiecutter 的互動式介面，並初始化專案</p>
-<div class="highlight"><pre><span></span>cookiecutter<span class="w"> </span>gh:Lee-W/commitizen_cz_template
-</pre></div>
+<div class="highlight"><pre><span></span><code>cookiecutter<span class="w"> </span>gh:Lee-W/commitizen_cz_template
+</code></pre></div>
 <p>最主要需要實作的函式有 <code>questions</code>, <code>message</code><br/>
 實作完成後，必須在要使用這個 commit 規範的環境安裝這個套件<br/>
 安裝之後會在 <code>cz ls</code> 看到這個新的 commit 規範<br/>
@@ -409,8 +409,8 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <h2 id="changelog">自動產生更新日誌（Changelog）</h2>
 <p>commitizen 可以透過過往的 commit message 產生 <a href="https://keepachangelog.com/en/1.1.0/">keep a changelog</a> 格式的更新日誌</p>
 <p>透過以下指令，就能從最舊到最新的 commit message 產生更新日誌（預設是 <code>CHANGELOG.md</code>）</p>
-<div class="highlight"><pre><span></span>cz<span class="w"> </span>changelog
-</pre></div>
+<div class="highlight"><pre><span></span><code>cz<span class="w"> </span>changelog
+</code></pre></div>
 <p>如果已經有現成的 <code>CHANGELOG.md</code>， 則可以使用 <code>cz changelog --incremental</code> 指令</p>
 <p>commitizen 會試著找出文件中最新釋出版本 (e.g., <code>1.0.5</code>) 的位置，將最新釋出版本以後的 commit 加入到更新日誌的最頂端</p>
 <p>例如目前有一個專案，最新的版本是 1.0.5，之後有 2 個 commit</p>
@@ -419,12 +419,12 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <li>ci: update jenkins file</li>
 </ul>
 <p>原本的更新日誌</p>
-<div class="highlight"><pre><span></span><span class="gu">## 1.0.5</span>
+<div class="highlight"><pre><span></span><code><span class="gu">## 1.0.5</span>
 <span class="gu">### Feat</span>
 <span class="k">-</span><span class="w"> </span>old features
-</pre></div>
+</code></pre></div>
 <p>則 commitizen 在釋出 1.1.0 時，就會產生如下的更新日誌</p>
-<div class="highlight"><pre><span></span><span class="gu">## 1.1.0 (2020-07-19)</span>
+<div class="highlight"><pre><span></span><code><span class="gu">## 1.1.0 (2020-07-19)</span>
 
 <span class="gu">### Feat</span>
 
@@ -433,7 +433,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <span class="gu">## 1.0.5</span>
 <span class="gu">### Feat</span>
 <span class="k">-</span><span class="w"> </span>some old features
-</pre></div>
+</code></pre></div>
 <p>因為產生更新日誌，通常適合在升版後執行<br/>
 在 <code>cz bump</code> 加上 <code>--changelog</code> 參數就可以提升版本的同時，產生更新日誌</p>
 <h2 id="commitizen_3">其他 commitizen 指令和常用參數</h2>

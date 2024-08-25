@@ -167,12 +167,11 @@
                 <p class="post-excerpt">
                         <p>最近在 mac 上更新了 gcc 6 後，不管是開 Octave 還是 R<br>
 都會出現以下的錯誤訊息</p>
-<div class="highlight"><pre><span></span>dyld:<span class="w"> </span>Library<span class="w"> </span>not<span class="w"> </span>loaded:<span class="w"> </span>/usr/local/lib/gcc/5/libgfortran.3.dylib
+<div class="highlight"><pre><span></span><code>dyld:<span class="w"> </span>Library<span class="w"> </span>not<span class="w"> </span>loaded:<span class="w"> </span>/usr/local/lib/gcc/5/libgfortran.3.dylib
 <span class="w">  </span>Referenced<span class="w"> </span>from:<span class="w"> </span>/usr/local/Cellar/r/3.3.0/R.framework/Versions/3.2/Resources/lib/libR.dylib
 <span class="w">  </span>Reason:<span class="w"> </span>image<span class="w"> </span>not<span class="w"> </span>found
 Trace/BPT<span class="w"> </span>trap:<span class="w"> </span><span class="m">5</span>
-</pre></div>
-
+</code></pre></div>
 
 
                 </p>
@@ -208,11 +207,10 @@ Trace/BPT<span class="w"> </span>trap:<span class="w"> </span><span class="m">5<
 <h2 id="irkernel">安裝 IRKernel</h2>
 <p>進入 R 的命令列，輸入下面的指令<br>
 就能安裝 IRKernel，以後就能在 jupyter 中使用 R</p>
-<div class="highlight"><pre><span></span>install.packages(c(&#39;rzmq&#39;,&#39;repr&#39;,&#39;IRkernel&#39;,&#39;IRdisplay&#39;),
+<div class="highlight"><pre><span></span><code>install.packages(c(&#39;rzmq&#39;,&#39;repr&#39;,&#39;IRkernel&#39;,&#39;IRdisplay&#39;),
                  repos = c(&#39;http://irkernel.github.io/&#39;, getOption(&#39;repos&#39;)))
 IRkernel::installspec()
-</pre></div>
-
+</code></pre></div>
 
 <h2 id="_1">錯 …</h2>
                 </p>

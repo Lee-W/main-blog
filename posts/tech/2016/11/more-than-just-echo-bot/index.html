@@ -182,7 +182,7 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 也就是使用者的「意圖」</p>
 <h2 id="based-on-keyword">Based on Keyword</h2>
 <p>上一篇文章，輸入關鍵字就能回傳 template message 的 bot 也是用這樣的方式實作的</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">'button'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="s1">'button'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
     <span class="c1"># Send ButtonTemplate</span>
     <span class="o">......</span>
 <span class="k">elif</span> <span class="s1">'confirm'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
@@ -194,17 +194,17 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <span class="k">else</span><span class="p">:</span>
     <span class="c1"># Echo TextMessage</span>
     <span class="o">......</span>
-</pre></div>
+</code></pre></div>
 <p>回歸到天氣的問題<br/>
 可以試著找出「天氣」是否有出現在使用者的問句中<br/>
 再來判斷「今天」, 「明天」這樣敘述時間的詞</p>
 <p>e.g.</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">'天氣'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="s1">'天氣'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
     <span class="k">if</span> <span class="s1">'今天'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">today_s_weather</span>
     <span class="k">elif</span> <span class="s1">'明天'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">tomorrow_s_weather</span>
-</pre></div>
+</code></pre></div>
 <h3 id="pros">Pros</h3>
 <ul>
 <li>不需要其他的背景知識，容易實作</li>
@@ -223,7 +223,7 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <p>Artificial Intelligence Modelling Language<br/>
 它是一款基於 XML 的 markup language</p>
 <p>這是最基本的 AIML</p>
-<div class="highlight"><pre><span></span><span class="nt">&lt;aiml</span><span class="w"> </span><span class="na">version=</span><span class="s">"1.0.1"</span><span class="w"> </span><span class="na">encoding=</span><span class="s">"UTF-8"</span><span class="err">?</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;aiml</span><span class="w"> </span><span class="na">version=</span><span class="s">"1.0.1"</span><span class="w"> </span><span class="na">encoding=</span><span class="s">"UTF-8"</span><span class="err">?</span><span class="nt">&gt;</span>
 <span class="w">   </span><span class="nt">&lt;category&gt;</span>
 <span class="w">      </span><span class="nt">&lt;pattern&gt;</span><span class="w"> </span>HELLO<span class="w"> </span>ALICE<span class="w"> </span><span class="nt">&lt;/pattern&gt;</span>
 
@@ -233,15 +233,15 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 
 <span class="w">   </span><span class="nt">&lt;/category&gt;</span>
 <span class="nt">&lt;/aiml&gt;</span>
-</pre></div>
+</code></pre></div>
 <p>只要符合特定的 pattern，就回傳指定的 template<br/>
 也能透過 <code>&lt;random&gt;</code> 這樣的 tag，從多種回覆隨機丟一種回傳</p>
-<div class="highlight"><pre><span></span><span class="nt">&lt;random&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;random&gt;</span>
 <span class="w">   </span><span class="nt">&lt;li&gt;</span><span class="w"> </span>response1<span class="w"> </span><span class="nt">&lt;/li&gt;</span>
 <span class="w">   </span><span class="nt">&lt;li&gt;</span><span class="w"> </span>response2<span class="w"> </span><span class="nt">&lt;/li&gt;</span>
 <span class="w">   </span>...
 <span class="nt">&lt;/random&gt;</span>
-</pre></div>
+</code></pre></div>
 <h3 id="pros_1">Pros</h3>
 <ul>
 <li>比起只用 if else 更結構化，較易維護和擴充</li>
@@ -279,12 +279,12 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <ul>
 <li>Question</li>
 </ul>
-<div class="highlight"><pre><span></span>how is the weather in the Taipei
-</pre></div>
+<div class="highlight"><pre><span></span><code>how is the weather in the Taipei
+</code></pre></div>
 <ul>
 <li>Response</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"how is the weather in the Taipei"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"topScoringIntent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">"intent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetCurrentWeather"</span><span class="p">,</span>
@@ -310,24 +310,24 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 <span class="w">        </span><span class="nt">"parameterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"location"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 <h3 id="apiai">API.ai</h3>
 <ul>
 <li>Question</li>
 </ul>
-<div class="highlight"><pre><span></span>Hey Calendar, schedule lunch with
+<div class="highlight"><pre><span></span><code>Hey Calendar, schedule lunch with
 Mary Johnson at 12 pm tomorrow.
-</pre></div>
+</code></pre></div>
 <ul>
 <li>Response</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"action"</span><span class="p">:</span><span class="s2">"meeting.create"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"Lunch with Mary Johnson"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"invitees"</span><span class="p">:[</span><span class="s2">"Mary Johnson"</span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"time"</span><span class="p">:</span><span class="s2">"2014-08-06T12:00:00-07:00"</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 <h2 id="implement-through-powerful-libraries">Implement Through Powerful Libraries</h2>
 <p>不過這些服務，通常會有它的限制<br/>
 這時候就能用上 Python 強大的函式庫們，來實作自己的版本</p>
