@@ -129,7 +129,7 @@ AUTHOR_META = {
 }
 
 # Markdown extension
-MARKDOWN["extension_configs"]["md_mermaid"] = {}
+MARKDOWN["extension_configs"]["markdown_mermaidjs"] = {}
 
 # Plugin-setting
 EXTRA_PLUGINS = [

@@ -12,9 +12,9 @@ pelican-webassets = "*"
 pelican-neighbors = "*"
 pelican-series = "*"
 pelican-tag-cloud = "*"
+
 markdown-del-ins = "*"
-md-mermaid = {git = "git+https://github.com/Lee-W/md_mermaid"}
-Markdown = "<3.2"
+markdown-mermaidjs = "*"
 
 beautifulsoup4 = "*"
 cssmin = "*"
