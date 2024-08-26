@@ -30,7 +30,15 @@ MAIN_MENU = True
 DEFAULT_PAGINATION = 10
 SHOW_PAGES_ON_MENU = False
 SHOW_TAGS_IN_ARTICLE_SUMMARY = True
-DIRECT_TEMPLATES = ("index", "categories", "authors", "archives", "tags")
+DIRECT_TEMPLATES = (
+    "index",
+    "categories",
+    "authors",
+    "archives",
+    "tags",
+    "series_list",
+    "search",
+)
 
 # Content Setting
 ARTICLE_URL = "posts/{category}/{date:%Y}/{date:%m}/{slug}"
@@ -109,10 +117,11 @@ UTTERANCES_REPO = "Lee-W/main-blog"
 
 # Page Setting
 MENUITEMS = (
-    ("Home", "/"),
+    ("🏠 Home", "/"),
     ("About Me", "/pages/about-me.html"),
     ("🗄️ Archives", "/archives.html"),
-    ("🔍 Search", "/pages/search.html"),
+    ("📚 Series", "/series_list.html"),
+    ("🔍 Search", "/search.html"),
 )
 SHOW_CATEGORIES_ON_MENU = True
 
