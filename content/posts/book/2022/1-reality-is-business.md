@@ -14,7 +14,7 @@ Authors: Wei Lee
 <!--more-->
 
 在閱讀本書前，聽到朋友分享部分內容，就覺得有些似曾相識
-後來發現作者劉致昕是 [TEDx Tainan 2016]({filename}/posts/article/2016/15-tedx-tainan-2016.md) 的講者，當時剛好分享了同樣的內容
+後來發現作者劉致昕是 [TEDx Tainan 2016]({filename}/posts/article/2016/01-tedx-tainan-2016.md) 的講者，當時剛好分享了同樣的內容
 
 本書由六段他對不同國家的假新聞現象的觀察所組成
 從離比較遠的國家說起，最後收於台灣

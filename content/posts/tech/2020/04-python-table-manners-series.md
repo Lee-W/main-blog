@@ -9,7 +9,7 @@ Series: Python Table Manners
 
 <!--more-->
 
-[Python Table Manners - A Clean Style](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019) 是我在 [PyCon CA 2019]({filename}/posts/article/2019/08-pycon-ca-2019.md) 給的一個分享
+[Python Table Manners - A Clean Style](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019) 是我在 [PyCon CA 2019]({filename}/posts/tech/2019/07-pycon-ca-2019.md) 給的一個分享
 內容是介紹在開發 Python 專案時能用的工具們，並且把它們串成一個工作流
 希望能讓剛接觸 Python 的朋友們，能在早期就碰到這些好用的工具，少踩一些雷
 
@@ -22,15 +22,15 @@ Series: Python Table Manners
 
 目前預計會包含以下的內容
 
-* [虛擬環境和套件管理]({filename}/posts/article/2020/05-python-table-manners-dependency-management.md)
-* [測試（ㄧ）]({filename}/posts/article/2020/06-python-table-manners-test-1.md) / [測試（二）]({filename}/posts/article/2020/07-python-table-manners-test-2.md)
-* [程式碼風格]({filename}/posts/article/2020/08-python-table-manners-coding-style.md)
-* [管理繁瑣任務]({filename}/posts/article/2020/09-python-table-manners-manage-trivial-task.md)
-* [pre-commit: git commit 前做完檢查]({filename}/posts/article/2020/10-python-table-manners-pre-commit.md)
-* [Commitizen: 規格化 commit message]({filename}/posts/article/2020/11-python-table-manners-commitizen.md)
-* [安全性檢查]({filename}/posts/article/2020/12-python-table-manners-security.md)
-* [文件]({filename}/posts/article/2020/13-python-table-manners-documentation.md)
-* [持續整合/部署]({filename}/posts/article/2020/19-python-table-manners-continous-intergration.md)
+* [虛擬環境和套件管理]({filename}/posts/tech/2020/05-python-table-manners-dependency-management.md)
+* [測試（ㄧ）]({filename}/posts/tech/2020/06-python-table-manners-test-1.md) / [測試（二）]({filename}/posts/tech/2020/07-python-table-manners-test-2.md)
+* [程式碼風格]({filename}/posts/tech/2020/08-python-table-manners-coding-style.md)
+* [管理繁瑣任務]({filename}/posts/tech/2020/09-python-table-manners-manage-trivial-task.md)
+* [pre-commit: git commit 前做完檢查]({filename}/posts/tech/2020/10-python-table-manners-pre-commit.md)
+* [Commitizen: 規格化 commit message]({filename}/posts/tech/2020/11-python-table-manners-commitizen.md)
+* [安全性檢查]({filename}/posts/tech/2020/12-python-table-manners-security.md)
+* [文件]({filename}/posts/tech/2020/13-python-table-manners-documentation.md)
+* [持續整合/部署]({filename}/posts/tech/2020/19-python-table-manners-continous-intergration.md)
 * [Cookiecutter 程式專案模板]({filename}/posts/tech/2021/1-pytnon-table-manners-project-template.md)
 
 當初整理 PyCon CA 2019 投影片的時候，大多是把這些工具應用到 [pycontw-postevent-report-generator](https://github.com/pycontw/pycontw-postevent-report-generator)

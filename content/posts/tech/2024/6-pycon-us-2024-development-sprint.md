@@ -5,7 +5,7 @@ Tags: PyCon, Python, Development Sprint, commitizen-tools
 Slug: pycon-us-2024-development-sprint
 Authors: Wei Lee
 
-The last time I came to [PyCon US]({filename}/posts/article/2019/03-how-was-pycon-us-2019.md). I had quite a good time during the development sprint and had a few of my PRs merged. (even though the one to CPython was later closed 🥲) So yep, I think this might be a good idea to host a [development sprint](https://us.pycon.org/2024/events/dev-sprints/) for [commitizen-tools](https://commitizen-tools.github.io/commitizen/). 👀
+The last time I came to [PyCon US]({filename}/posts/tech/2019/03-how-was-pycon-us-2019.md). I had quite a good time during the development sprint and had a few of my PRs merged. (even though the one to CPython was later closed 🥲) So yep, I think this might be a good idea to host a [development sprint](https://us.pycon.org/2024/events/dev-sprints/) for [commitizen-tools](https://commitizen-tools.github.io/commitizen/). 👀
 
 <!--more-->
 

@@ -44,7 +44,7 @@ Series: Python Table Manners
 
 1. 當貢獻者提交 pull request 後，自動執行風格檢查、跑測試
 2. 當 pull request 被維護者 merge 回 master 分支之後，根據 git commit 更新版本號並產生 git tag ，最後再將 git tag 推回 master 分支  
-  （如果不太知道這段在做什麼，可以參考 [Commitizen: 規格化 commit message]({filename}/posts/article/2020/11-python-table-manners-commitizen.md))
+  （如果不太知道這段在做什麼，可以參考 [Commitizen: 規格化 commit message]({filename}/posts/tech/2020/11-python-table-manners-commitizen.md))
 3. 當 master 分支偵測到新的版本號（git tag）產生後，自動將新的套件上傳到 [PyPI](https://pypi.org/project/pycontw-report-generator/)
 
 ## GitHub Actions 實例

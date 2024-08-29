@@ -12,7 +12,7 @@ Authors: Wei Lee
 模式之間彼此可能有一些關聯，但並非順序性的
 所以這本書並沒有必要照著順序閱讀
 
-讀起來的感覺跟 [The Clean Coder]({filename}/posts/article/2018/05-the-clean-coder.md) 有點像
+讀起來的感覺跟 [The Clean Coder]({filename}/posts/tech/2018/04-the-clean-coder.md) 有點像
 在職涯的不同階段閱讀都可能有很不同的感受
 
 <!--more-->

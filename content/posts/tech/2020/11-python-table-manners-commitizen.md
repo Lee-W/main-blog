@@ -371,7 +371,7 @@ commitizen 會試著找出文件中最新釋出版本 (e.g., `1.0.5`) 的位置�
 
 貢獻的過程中也發現了很多還能再增加的新功能，於是就在 PyCon CA 2019 帶了這個專案去 Develop Sprint
 第一次當 Sprint Leader 還蠻好玩的，也蠻有成就感的
-（Read More 👉 [PyCon CA 2019]({filename}/posts/article/2019/08-pycon-ca-2019.md)）
+（Read More 👉 [PyCon CA 2019]({filename}/posts/tech/2019/07-pycon-ca-2019.md)）
 
 ### 為什麼不用 Java Script 的 commitizen 就好了
 ~~因為我是 Python 的開發者啊！！！~~

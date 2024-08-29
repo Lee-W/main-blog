@@ -21,7 +21,7 @@
     :file: ../../../static/post-static/2021-post-frequency/all.html
 
 | 我從 2013 年底開始寫文章
-| 第一篇文章是 `[C++] 如何 create thread <{filename}/posts/article/2013/01-how-to-create-thread-in-c-plus-plus.md>`_
+| 第一篇文章是 `[C++] 如何 create thread <{filename}/posts/tech/2013/01-how-to-create-thread-in-c-plus-plus.md>`_
 | 應該是整理別人寫好的文章，變成自己看得懂的內容
 | 畢竟當初寫部落格的初衷，只是寫給自己的筆記
 | 反正都寫了，不如就分享出來吧
@@ -31,7 +31,7 @@
 | 其中 2017 ~ 2018 整年連一篇文章都沒有
 |
 | 有一半的文章是在 2018 八月以後才寫的
-| 那之後的第一篇文章是 `從 Andromoney 到 MOZE <{filename}/posts/article/2018/01-andromoney-to-moze.md>`_
+| 那之後的第一篇文章是 `從 Andromoney 到 MOZE <{filename}/posts/tech/2018/01-andromoney-to-moze.md>`_
 | 還不小心釣到 MOZE 的作者（笑
 
 .. raw:: html
@@ -65,12 +65,12 @@
 |
 | 年末時，我沈迷於重現「衛宮家今日的餐桌風景」的料理（最近好像更沈迷了）
 | 剛好又遇到聖誕節年假，才會導致後面的文章數飆升
-| 二月多的飆升則是因為寫了 `Python Table Manners 系列 <{filename}/posts/article/2020/04-python-table-manners-series.md>`_
+| 二月多的飆升則是因為寫了 `Python Table Manners 系列 <{filename}/posts/tech/2020/04-python-table-manners-series.md>`_
 
 .. raw:: html
     :file: ../../../static/post-static/2021-post-frequency/2020-by-category.html
 
-| 還好有 `Python Table Manners 系列 <{filename}/posts/article/2020/04-python-table-manners-series.md>`_
+| 還好有 `Python Table Manners 系列 <{filename}/posts/tech/2020/04-python-table-manners-series.md>`_
 | 即使後期我都在寫其他文章，技術相關文章還是多一點
 | 這系列的文章，我到現在還是常常回來翻，有新的東西也都有更新上去
 | 今年希望能寫更多的技術文章

@@ -15,7 +15,7 @@ Authors: Wei Lee
 這次的內容非常的多，讀書會的一個小時是一定吸收不完的
 但先聽過，知道 Python 有這些東西可以用，也許以後會有幫助
 
-我會頻繁參照四年前寫的 [Python Table Manners 系列]({filename}/posts/article/2020/04-python-table-manners-series.md)
+我會頻繁參照四年前寫的 [Python Table Manners 系列]({filename}/posts/tech/2020/04-python-table-manners-series.md)
 提到的工具稍微有些過期，這篇文章會補充新的工具
 但概念本身是互通的
 
@@ -51,7 +51,7 @@ Authors: Wei Lee
 * *[pipx](https://github.com/pypa/pipx) (just notice Josix wrote a [blog post](https://josix.tw/post/pipx-deep-dive/) for it)*
     * 主要用於安裝 Python 實作的指令列工具，而不是函示庫
 
-pipenv, poetry 跟 pipx 更多的介紹可以參考 [Python Table Manners - 虛擬環境和套件管理]({filename}/posts/article/2020/05-python-table-manners-dependency-management.md)
+pipenv, poetry 跟 pipx 更多的介紹可以參考 [Python Table Manners - 虛擬環境和套件管理]({filename}/posts/tech/2020/05-python-table-manners-dependency-management.md)
 
 ## IDE (*plus interactive shell and editor*)
 * IDLE
@@ -80,17 +80,17 @@ Python 自帶的編輯器，在終端機輸入 `IDLE` 就能開啟
 * [PEP8](https://peps.python.org/pep-0008/)
     * Python 的程式碼風格指南
     * 建議演講： [ Raymond Hettinger - Beyond PEP 8](https://www.youtube.com/watch?v=wf-BqAjZb8M)
-* *建議讀物： [Clean Code]({filename}/posts/article/2018/06-the-clean-code.md)*
+* *建議讀物： [Clean Code]({filename}/posts/tech/2018/05-the-clean-code.md)*
     * 雖然這本主要是用 Java 為範例，但概念本身對寫好程式很有幫助
 
 這章的標題「名稱與文件」，但內容主要在講註解跟命名
 很微妙的翻譯
-但如果對真的寫文件有興趣，可以參考 [Python Table Manners - 文件]({filename}/posts/article/2020/13-python-table-manners-documentation.md)
+但如果對真的寫文件有興趣，可以參考 [Python Table Manners - 文件]({filename}/posts/tech/2020/13-python-table-manners-documentation.md)
 
 ## Type Hinting
 * *[mypy](https://github.com/python/mypy)*
 
-👉 [Python Table Manners - 程式碼風格 # 型別檢查 - mypy]({filename}/posts/article/2020/08-python-table-manners-coding-style.md#-mypy)
+👉 [Python Table Manners - 程式碼風格 # 型別檢查 - mypy]({filename}/posts/tech/2020/08-python-table-manners-coding-style.md#-mypy)
 
 除此之外，自從 Python 3.9，型別如 `list, dict, set` 都可以直接被使用
 不用再從 typing 函式庫匯入 (i.e., `from typing import List, Dict, Set`)
@@ -112,14 +112,14 @@ from __future__ import annotations
 * print
     * **不要在 production 使用 print**
 * [pylint](https://github.com/pylint-dev/pylint), [pyflakes](https://github.com/PyCQA/pyflakes), [flake8](https://flake8.pycqa.org/en/latest/), [pep8](https://pypi.org/project/pep8/), *[black](https://github.com/psf/black)*
-    * 👉 [Python Table Manners - 程式碼風格]({filename}/posts/article/2020/08-python-table-manners-coding-style.md)
+    * 👉 [Python Table Manners - 程式碼風格]({filename}/posts/tech/2020/08-python-table-manners-coding-style.md)
     * *不過在 4202 年的現在，我推薦使用 [ruff](https://github.com/astral-sh/ruff) 取代以上所有工具*
 * testing
     * 為什麼要測試
         * 避免既有的程式，因為新的改動壞掉
-        * 👉 [Python Table Manners - 測試 (一)]({filename}/posts/article/2020/06-python-table-manners-test-1.md)
-        * 👉 [Python Table Manners - 測試 (二)]({filename}/posts/article/2020/07-python-table-manners-test-2.md)
-        * 👉 [Python Table Manners - pre-commit: git commit 前做完檢查]({filename}/posts/article/2020/10-python-table-manners-pre-commit.md)
+        * 👉 [Python Table Manners - 測試 (一)]({filename}/posts/tech/2020/06-python-table-manners-test-1.md)
+        * 👉 [Python Table Manners - 測試 (二)]({filename}/posts/tech/2020/07-python-table-manners-test-2.md)
+        * 👉 [Python Table Manners - pre-commit: git commit 前做完檢查]({filename}/posts/tech/2020/10-python-table-manners-pre-commit.md)
     * stdlib
         * [unittest](https://docs.python.org/3/library/unittest.html)
         * [doctest](https://docs.python.org/3/library/doctest.html)
@@ -140,7 +140,7 @@ from __future__ import annotations
     * [travis-ci](https://www.travis-ci.com/)
     * [circleci](https://circleci.com/)
     * *[GitHub Actions](https://github.com/features/actions)*
-        * 👉 [Python Table Manners - 持續整合/部署]({filename}/posts/article/2020/19-python-table-manners-continous-intergration.md)
+        * 👉 [Python Table Manners - 持續整合/部署]({filename}/posts/tech/2020/19-python-table-manners-continous-intergration.md)
 
 ## Debugging
 * print
@@ -235,7 +235,7 @@ logger.error("And non-ASCII stuff, too, like Øresund and Malmö")
     * `status`
     * `commit`
         * *[commitizen](https://github.com/commitizen-tools/commitizen) 可以幫助你寫更好的提交訊息 (commit message)！*
-    * 👉 [Basic Git Tutorial]({filename}/posts/article/2016/11-basic-git-tutorial.md) (雖然已經是 8 年前的文章了，但基礎概念應該是沒變太多吧...)
+    * 👉 [Basic Git Tutorial]({filename}/posts/tech/2016/11-basic-git-tutorial.md) (雖然已經是 8 年前的文章了，但基礎概念應該是沒變太多吧...)
 
 ## Distributing Python Program
 * *這章其實沒講什麼...*

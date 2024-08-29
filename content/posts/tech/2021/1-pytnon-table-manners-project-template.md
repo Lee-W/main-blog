@@ -6,7 +6,7 @@ Slug: python-table-manners-cookiecutter
 Authors: Wei Lee
 Series: Python Table Manners
 
-[Python Table Manners 系列]({filename}/posts/article/2020/04-python-table-manners-series.md) 整理了各種開發 Python 專案能用到的工具們
+[Python Table Manners 系列]({filename}/posts/tech/2020/04-python-table-manners-series.md) 整理了各種開發 Python 專案能用到的工具們
 如果每次重新開啟新專案都得重複設定的步驟就很浪費時間
 所以我將它們整理成專案模板 [cookiecutter-python-template](https://github.com/Lee-W/cookiecutter-python-template)
 下次創立新專案的時候，只要透過這個模板就能快速產生已經設定好的空白專案

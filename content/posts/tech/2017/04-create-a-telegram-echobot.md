@@ -13,7 +13,7 @@ Authors: Wei Lee
 [TOC]
 
 如果對 Chat Bot 的基本運作概念不太熟
-可以參考[[Bot] Introduction to Chatbot]({filename}/posts/article/2016/14-introduction-to-chatbot.md#introduction-to-chatbot)
+可以參考[[Bot] Introduction to Chatbot]({filename}/posts/tech/2016/14-introduction-to-chatbot.md#introduction-to-chatbot)
 
 ## What is Telegram
 
@@ -126,7 +126,7 @@ statue = bot.set_webhook('https://Your URL/hook')
 這裡的 URL 就是設定成你這個 Bot Server 的 URL
 不過 Telegram 一樣要求必須要是 https
 最簡單的方式就是使用 ngrok
-(ngrok 的使用在[[Bot] Line Echo Bot on Django]({filename}/posts/article/2016/17-line-echo-bot-on-django.md#line-echo-bot-on-django) 最後面有介紹 )
+(ngrok 的使用在[[Bot] Line Echo Bot on Django]({filename}/posts/tech/2016/16-line-echo-bot-on-django.md#line-echo-bot-on-django) 最後面有介紹 )
 平常測試使用 ngrok 就很足夠了
 之後要 production 的時候，在 deploy 到適當的 server 就好了
 

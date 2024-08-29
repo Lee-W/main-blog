@@ -66,7 +66,7 @@ Authors: Wei Lee
 
 ## Documentation and naming
 * [PEP8](https://peps.python.org/pep-0008/)
-* *As a programmer, I would suggest reading [Clean Code]({filename}/posts/article/2018/06-the-clean-code.md)*
+* *As a programmer, I would suggest reading [Clean Code]({filename}/posts/tech/2018/05-the-clean-code.md)*
 
 ## Type Hinting
 * *[mypy](https://github.com/python/mypy)*
