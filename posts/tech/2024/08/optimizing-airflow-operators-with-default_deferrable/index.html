@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>Optimizing Airflow Operators  - Converting to Async with default_deferrable Config</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="In the article series What If...? Running Airflow Tasks without the workers, I introduced one of the new features of Airflow 2.10.0...." name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Python" name="tags"/>
+<meta content="Airflow" name="tags"/>
+<meta content="Airflow 2.7" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="Optimizing Airflow Operators  - Converting to Async with default_deferrable Config" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="In the article series What If...? Running Airflow Tasks without the workers, I introduced one of the new features of Airflow 2.10.0...." prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
+<meta content="https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable" prefix="og: http://ogp.me/ns#" property="og:url">
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2024-08-29 22:00:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Airflow" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Airflow 2.7" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me//images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="Optimizing Airflow Operators  - Converting to Async with default_deferrable Config" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me//images/cover.jpeg" name="twitter:image:src"/>
+<meta content="In the article series What If...? Running Airflow Tasks without the workers, I introduced one of the new features of Airflow 2.10.0...." name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Optimizing Airflow Operators - Converting to Async with default_deferrable Config",
+  "headline": "Optimizing Airflow Operators - Converting to Async with default_deferrable Config",
+  "datePublished": "2024-08-29 22:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "https://blog.wei-lee.me//images/cover.jpeg",
+  "url": "https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable",
+  "description": "In the article series What If...? Running Airflow Tasks without the workers, I introduced one of the new features of Airflow 2.10.0...."
+}
+</script>
+</meta></meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2024", "item": "https://blog.wei-lee.me/posts/tech/2024"}, {"@type": "ListItem", "position": 5, "name": "08", "item": "https://blog.wei-lee.me/posts/tech/2024/08"}, {"@type": "ListItem", "position": 6, "name": "Optimizing airflow operators with default_deferrable", "item": "https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "Optimizing Airflow Operators", "about": "Tech", "datePublished": "2024-08-29 22:00"}</script></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
+<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
+<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            Optimizing Airflow Operators
+            <br/>
+<small class="post-subtitle-white">Converting to Async with default_deferrable Config</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2024/08/29 - Thu">2024/08/29 - Thu</time>
+          • 2 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me//images/cover.jpeg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>In the article series <a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker">What If...? Running Airflow Tasks without the workers</a>, I introduced one of the new features of Airflow 2.10.0. It's time to introduce a feature in Airflow 2.7.0 (no, it's not).</p>
+<!--more-->
+<p>Even though Grammarly suggested such a fancy post title, this article will only discuss the simple pull request <a href="https://github.com/apache/airflow/pull/31712"> Add default_deferrable config #31712 </a>. This was the first major thing I did since joining Astronomer.io and the first pull request that got voted PR of the month. Even though it turned out to be relatively easy, we tried some hacky things with <a href="https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/cluster-policies.html">Cluster Policty</a> before it looks like this. But I think that a topic for another day.</p>
+<h2 id="so-what-is-this-default_deferrable-config">So, what is this default_deferrable config?</h2>
+<p>It's a <a href="https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#default-deferrable">configuration</a> that you can specify in the <code>airflow.cfg</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># airflow.cfg</span>
+<span class="na">default_deferrable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+</code></pre></div>
+<p>or through the environment variable</p>
+<div class="highlight"><pre><span></span><code><span class="nv">AIRFLOW__OPERATORS__DEFAULT_DEFERRABLE</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<p>By enabling this configuration, all the current operators that support deferrable mode (see the complete list <a href="https://airflow.apache.org/docs/apache-airflow-providers/core-extensions/deferrable-operator-ref.html">here</a>) will now operate in deferrable mode. The primary advantage of deferrable operators is that part of the logic is run asynchronously by the Airflow triggerer. For more details, please refer to <a href="https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/deferring.html">Deferrable Operators &amp; Triggers</a>.</p>
+<h2 id="how-was-it-done">How was it done?</h2>
+<p><strong>Step 1</strong>: Add this configuration to <a href="https://github.com/apache/airflow/pull/31712/files#diff-0a480a8b563e200f749424d7e761555e543588ff39a0b11cce7e34d522f38e0eR1308-R1314">airflow/config_templates/config.yml</a></p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">default_deferrable</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">The default value of attribute "deferrable" in operators and sensors.</span>
+<span class="w">      </span><span class="nt">version_added</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">boolean</span>
+<span class="w">      </span><span class="nt">example</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span>
+<span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s">"false"</span>
+</code></pre></div>
+<p><strong>Step 2</strong>: Change the default value of the argument <code>deferrable</code> in every operator/sensor to <code>conf.getboolean("operators", "default_deferrable", fallback=False)</code>; this is how Airflow retrieves the value from <code>airflow.cfg</code> or environment variables.</p>
+<div class="highlight"><pre><span></span><code>        <span class="n">deferrable</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">conf</span><span class="o">.</span><span class="n">getboolean</span><span class="p">(</span><span class="s2">"operators"</span><span class="p">,</span> <span class="s2">"default_deferrable"</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+</code></pre></div>
+<p><strong>Step 3</strong>: Kindly ask every contributor to add this default value to every operator/sensor and reviewer to check</p>
+<p><strong>Step 4</strong>: Pray that everyone will follow 🙏...... at least that is what we did at that moment</p>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=Optimizing Airflow Operators  - Converting to Async with default_deferrable Config&amp;url=https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable&amp;title=Optimizing Airflow Operators" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=Optimizing Airflow Operators&amp;body=https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/python.html">Python</a><a href="https://blog.wei-lee.me/tag/airflow.html">Airflow</a><a href="https://blog.wei-lee.me/tag/airflow-27.html">Airflow 2.7</a> </aside>
+<div class="clear"></div>
+<div class="series">
+<p>This post is part 1 of the "Unleash the Chaos: Developing a Linter for Un-Pythonic Code!" series:</p>
+<ol class="parts">
+<li class="active">
+<a href="https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable">Optimizing Airflow Operators - Converting to Async with default_deferrable Config</a>
+</li>
+</ol>
+</div>
+</section>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>

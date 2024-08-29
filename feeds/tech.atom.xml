@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-08-25T23:30:00+08:00</updated><entry><title>Dynamic task mapping on operators that can start execution from trigger</title><link href="https://blog.wei-lee.me/posts/tech/2024/08/dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger" rel="alternate"></link><published>2024-08-25T23:30:00+08:00</published><updated>2024-08-25T23:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-08-25:/posts/tech/2024/08/dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger</id><summary type="html">&lt;p&gt;As mentioned in &lt;a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker"&gt;the first article of this series&lt;/a&gt;, dynamic task mapping was not supported before &lt;a href="https://github.com/apache/airflow/pull/39912"&gt;this PR&lt;/a&gt;. However, it's now supported.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-08-29T22:00:00+08:00</updated><entry><title>Optimizing Airflow Operators</title><link href="https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable" rel="alternate"></link><published>2024-08-29T22:00:00+08:00</published><updated>2024-08-29T22:00:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-08-29:/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable</id><summary type="html">&lt;p&gt;In the article series &lt;a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker"&gt;What If...? Running Airflow Tasks without the workers&lt;/a&gt;, I introduced one of the new features of Airflow 2.10.0. It's time to introduce a feature in Airflow 2.7.0 (no, it's not).&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;In the article series &lt;a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker"&gt;What If...? Running Airflow Tasks without the workers&lt;/a&gt;, I introduced one of the new features of Airflow 2.10.0. It's time to introduce a feature in Airflow 2.7.0 (no, it's not).&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;Even though Grammarly suggested such a fancy post title, this article will only discuss the simple pull request &lt;a href="https://github.com/apache/airflow/pull/31712"&gt; Add default_deferrable config #31712 &lt;/a&gt;. This was the first major thing I did since joining Astronomer.io and the first pull request that got voted PR of the month. Even though it turned out to be relatively easy, we tried some hacky things with &lt;a href="https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/cluster-policies.html"&gt;Cluster Policty&lt;/a&gt; before it looks like this. But I think that a topic for another day.&lt;/p&gt;
+&lt;h2 id="so-what-is-this-default_deferrable-config"&gt;So, what is this default_deferrable config?&lt;/h2&gt;
+&lt;p&gt;It's a &lt;a href="https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#default-deferrable"&gt;configuration&lt;/a&gt; that you can specify in the &lt;code&gt;airflow.cfg&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# airflow.cfg&lt;/span&gt;
+&lt;span class="na"&gt;default_deferrable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;or through the environment variable&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;AIRFLOW__OPERATORS__DEFAULT_DEFERRABLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;By enabling this configuration, all the current operators that support deferrable mode (see the complete list &lt;a href="https://airflow.apache.org/docs/apache-airflow-providers/core-extensions/deferrable-operator-ref.html"&gt;here&lt;/a&gt;) will now operate in deferrable mode. The primary advantage of deferrable operators is that part of the logic is run asynchronously by the Airflow triggerer. For more details, please refer to &lt;a href="https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/deferring.html"&gt;Deferrable Operators &amp;amp; Triggers&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="how-was-it-done"&gt;How was it done?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt;: Add this configuration to &lt;a href="https://github.com/apache/airflow/pull/31712/files#diff-0a480a8b563e200f749424d7e761555e543588ff39a0b11cce7e34d522f38e0eR1308-R1314"&gt;airflow/config_templates/config.yml&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;default_deferrable&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;|&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="no"&gt;The default value of attribute &amp;quot;deferrable&amp;quot; in operators and sensors.&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;version_added&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;~&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;boolean&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;example&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;~&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;default&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;false&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt;: Change the default value of the argument &lt;code&gt;deferrable&lt;/code&gt; in every operator/sensor to &lt;code&gt;conf.getboolean("operators", "default_deferrable", fallback=False)&lt;/code&gt;; this is how Airflow retrieves the value from &lt;code&gt;airflow.cfg&lt;/code&gt; or environment variables.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;        &lt;span class="n"&gt;deferrable&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getboolean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;operators&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;default_deferrable&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fallback&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 3&lt;/strong&gt;: Kindly ask every contributor to add this default value to every operator/sensor and reviewer to check&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 4&lt;/strong&gt;: Pray that everyone will follow 🙏...... at least that is what we did at that moment&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Airflow"></category><category term="Airflow 2.7"></category></entry><entry><title>Dynamic task mapping on operators that can start execution from trigger</title><link href="https://blog.wei-lee.me/posts/tech/2024/08/dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger" rel="alternate"></link><published>2024-08-25T23:30:00+08:00</published><updated>2024-08-25T23:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-08-25:/posts/tech/2024/08/dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger</id><summary type="html">&lt;p&gt;As mentioned in &lt;a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker"&gt;the first article of this series&lt;/a&gt;, dynamic task mapping was not supported before &lt;a href="https://github.com/apache/airflow/pull/39912"&gt;this PR&lt;/a&gt;. However, it's now supported.&lt;/p&gt;
 &lt;p&gt;Well... partially&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;As mentioned in &lt;a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker"&gt;the first article of this series&lt;/a&gt;, dynamic task mapping was not supported before &lt;a href="https://github.com/apache/airflow/pull/39912"&gt;this PR&lt;/a&gt;. However, it's now supported.&lt;/p&gt;
 &lt;p&gt;Well... partially&lt;/p&gt;
@@ -15117,52 +15149,4 @@ Android Studio 屬於 IntelliJ IDEA，所以我們就照著他上面的指示設
 &lt;ul&gt;
 &lt;li&gt;IdeaVim: 如果你是重度 Vim 狂熱者，這絕對是你不能不裝的 plugin!!!&lt;/li&gt;
 &lt;li&gt;MarkDown: 這個 Plugin 提供直接在 Android Studio 中，Preview Markdown 的功能&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Android"></category></entry><entry><title>Dual Boot FreeBSD Using GRUB2</title><link href="https://blog.wei-lee.me/posts/tech/2014/10/dual-boot-freebsd-using-grub2" rel="alternate"></link><published>2014-10-21T08:56:00+08:00</published><updated>2014-10-21T08:56:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2014-10-21:/posts/tech/2014/10/dual-boot-freebsd-using-grub2</id><summary type="html">&lt;p&gt;其實原本的標題是 &lt;code&gt;Dual Boot FreeBSD with Ubuntu&lt;/code&gt;&lt;br&gt;
-這篇文章寫的都是用 Ubuntu 測試的&lt;br&gt;
-不過我想只要是 grub2 應該都差不多吧 XD&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;其實原本的標題是 &lt;code&gt;Dual Boot FreeBSD with Ubuntu&lt;/code&gt;&lt;br&gt;
-這篇文章寫的都是用 Ubuntu 測試的&lt;br&gt;
-不過我想只要是 grub2 應該都差不多吧 XD&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;h2 id="freebsd-grub"&gt;加入 FreeBSD 到 grub 開機選單&lt;/h2&gt;
-&lt;h3 id="grub"&gt;更改 grub 的設定檔&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;vi&lt;span class="w"&gt; &lt;/span&gt;/etc/grub.d/40_Custom
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;加入下面這幾行&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;menuentry &amp;quot;FreeBSD (/boot/loader)&amp;quot; {
-    insmod ufs2
-    set root=(hd0,1,a)
-    kfreebsd /boot/loader
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code&gt;FreeBSD (/boot/loader)&lt;/code&gt; 是在開機時顯示的名稱&lt;br&gt;
-&lt;code&gt;(hd0,1,a)&lt;/code&gt; 要根據你的 FreeBSD 灌在磁碟的哪一塊決定&lt;/p&gt;
-&lt;h3 id="grub_1"&gt;更新 grub 設定檔&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;update-grub
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;這樣就會在開機選單上看到 FreeBSD 了&lt;/p&gt;
-&lt;p&gt;其實還有一些其他的設定方法&lt;br&gt;
-可以參考&lt;a href="http://unix.stackexchange.com/questions/16886/set-up-grub2-to-boot-freebsd-using-either-ubuntu-tools-or-liveusb-to-find-what-p"&gt;Set up Grub2 to boot Freebsd&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="grub_2"&gt;換 grub 開機順序&lt;/h2&gt;
-&lt;p&gt;如果希望改變預設的開機順序，就必須要修改下面的檔案 &lt;code&gt;/etc/default/grub&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;vi&lt;span class="w"&gt; &lt;/span&gt;/etc/default/grub
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;會看到下面這串&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;GRUB_DEFAULT=0
-#GRUB_HIDDEN_TIMEOUT=0
-GRUB_HIDDEN_TIMEOUT_QUIET=true
-GRUB_TIMEOUT=10
-GRUB_DISTRIBUTOR=`lsb_release -i -s 2&amp;gt; /dev/null || echo Debian`
-GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot;quiet splash&amp;quot;
-GRUB_CMDLINE_LINUX=&amp;quot;&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;把第 1 行設定為多少 (注意是從 0 開始)，就會預設從那裡開機&lt;/p&gt;
-&lt;h2 id="ubuntu-mount-freebsd"&gt;在 ubuntu mount FreeBSD&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;mount&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;ufs&lt;span class="w"&gt; &lt;/span&gt;-r&lt;span class="w"&gt; &lt;/span&gt;-o&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ufstype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ufs2&lt;span class="w"&gt; &lt;/span&gt;/dev/sda4&lt;span class="w"&gt; &lt;/span&gt;~/freebsd
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Tech"></category><category term="Linux-Unix"></category><category term="Dual Boot"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Android"></category></entry></feed>
