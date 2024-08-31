@@ -83,7 +83,7 @@ Authors: Wei Lee
 {% else %}
 ```
 
-而在我[另一個 blog ](https://travlog.wei-lee.me/)則把它設定成獨立的頁面
+而在我[另一個 blog](https://travlog.wei-lee.me/)則把它設定成獨立的頁面
 如果沒意外的話，就大功告成了
 （另一個 blog 因為 css 的調整確實有多花了點時間，但功能上是這樣就完成了）
 
@@ -129,7 +129,7 @@ GitHub Actions 就會自動幫我產出最新的 blog ，並且部署到 GitHub 
 
 ![this-blog](/images/posts-image/2023-pagefindui/this-blog.jpg)
 
-[另一個 blog ](https://travlog.wei-lee.me/)
+[另一個 blog](https://travlog.wei-lee.me/)
 
 ![another-blog](/images/posts-image/2023-pagefindui/another-blog.jpg)
 
@@ -148,7 +148,7 @@ GitHub Actions 就會自動幫我產出最新的 blog ，並且部署到 GitHub 
 不過也算是這篇的養分，是否也能算是某種轉生呢 🤔
 
 最近心血來潮就想再回來看 [pelican-search](https://github.com/pelican-plugins/search)
-然後就找到 [ Consider alternatives to Stork #35 ](https://github.com/pelican-plugins/search/issues/35) ...
+然後就找到 [Consider alternatives to Stork #35](https://github.com/pelican-plugins/search/issues/35) ...
 pelican-search 背後的 Strok 將不再維護 🥲
 
 只好回去翻翻看 [pelican-themes](https://github.com/getpelican/pelican-themes) 中，比較有在更新的主題有沒有支援搜尋的

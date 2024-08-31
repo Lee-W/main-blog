@@ -322,7 +322,7 @@ pipenv run dvc run -f --name train \
       -d output/training_data.pkl \
       -o output/model.pkl \
       -p train.gamma \
-      "pipenv run python digit_recognizer/digit_recognizer.py train"  
+      "pipenv run python digit_recognizer/digit_recognizer.py train"
 
 # add DVC configuration to git and commit
 git add dvc.yaml dvc.lock model/.gitignore
@@ -382,7 +382,7 @@ Updating lock file 'dvc.lock'
 
 To track the changes with git, run:
 
-	git add dvc.lock
+ git add dvc.lock
 Use `dvc push` to send your updates to remote storage.
 
 # reset gamma back to 0.01

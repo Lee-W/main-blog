@@ -5,7 +5,7 @@ Tags: Animate
 Slug: the-Essential-Guide-to-Japanese-Animated-Cinema
 Authors: Wei Lee
 
-[日本經典動畫指南 ](https://www.kobo.com/ww/en/ebook/8vNj782lnTi4VtRNKbGIdg)精心挑選了 30 部經典的日本動畫電影
+[日本經典動畫指南](https://www.kobo.com/ww/en/ebook/8vNj782lnTi4VtRNKbGIdg)精心挑選了 30 部經典的日本動畫電影
 從 1958 年的白蛇傳到 2021 年的龍與雀斑公主都有
 
 <!--more-->

@@ -46,6 +46,6 @@ Authors: Wei Lee
 我想這次我是中獎了
 
 我寫的心得詞不達意，可能不是很有力的推薦
-因此想推薦強者我朋友寫的心得 [ [閱讀] 小島秀夫《創作的基因》 ](https://lankudot.airfishlab.com/blog/2023-10-the-gifted-gene-and-my-lovable-memes/)
+因此想推薦強者我朋友寫的心得 [[閱讀] 小島秀夫《創作的基因》](https://lankudot.airfishlab.com/blog/2023-10-the-gifted-gene-and-my-lovable-memes/)
 還有興趣了解更多的小島製作人的話，現在 Disney+ 上有 [小島秀夫：連結世界](https://www.disneyplus.com/en-tw/movies/hideo-kojima-connecting-worlds/5J9EpUmPgTfG)
 也可以聽聽 [EP171：可以先看，再來討論《小島秀夫:連結世界》《失控教室》《沙丘2》](https://neildrinkmilk.firstory.io/episodes/clt9hqqvz17kp01zzc5je5edw) 的推薦

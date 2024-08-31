@@ -32,4 +32,4 @@ Error: fatal: could not read Username for 'https://github.com': terminal prompts
 回歸初心（？？？）
 
 ## Reference
-* [ Error: fatal: could not read Username for 'https://github.com': terminal prompts disabled #664 ](https://github.com/actions/checkout/issues/664)
+* [Error: fatal: could not read Username for 'https://github.com': terminal prompts disabled #664](https://github.com/actions/checkout/issues/664)

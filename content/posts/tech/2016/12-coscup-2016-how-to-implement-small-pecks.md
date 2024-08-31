@@ -33,7 +33,7 @@ Authors: Wei Lee
 * 小啄的後台文本管理使用 google sheet，python 有個套件叫 gspread，讓你存取 google sheet 跟吃飯喝水一樣簡單！
 
 * 小啄的後台文本管理使用 google sheet，python 有個套件叫 gspread，讓你存取 google sheet 跟吃飯喝水一樣簡單！
-	真的超簡單的，連麻瓜劇本管理員都會用！（麻瓜忍不住一定要再說一次）
+ 真的超簡單的，連麻瓜劇本管理員都會用！（麻瓜忍不住一定要再說一次）
 
 * 小啄使用的佈署環境是 Flask + Gunicorn + Nginx 的組合，藉此達成系統輕量化與多執行緒的接收訊息。
 

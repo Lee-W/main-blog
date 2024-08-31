@@ -17,10 +17,10 @@ Authors: Wei Lee
 
 ```toml
 install_requires =
-	pywin32-ctypes!=0.1.0,!=0.1.1; sys_platform=="win32"
-	SecretStorage>=3; sys_platform=="linux"
-	jeepney>=0.4.2; sys_platform=="linux"
-	importlib_metadata; python_version < "3.8"
+    pywin32-ctypes!=0.1.0,!=0.1.1; sys_platform=="win32"
+    SecretStorage>=3; sys_platform=="linux"
+    jeepney>=0.4.2; sys_platform=="linux"
+    importlib_metadata; python_version < "3.8"
 ```
 
 我缺少的的確就是那幾個 `sys_platform=="linux"` 的套件

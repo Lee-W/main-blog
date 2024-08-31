@@ -11,7 +11,7 @@ Authors: Wei Lee
 
 <!--more-->
 
-上週 Reddit 上的一篇文章 [ Bartender 5 not safe anymore ? Warning from MacUpdater ](https://www.reddit.com/r/macapps/comments/1d7zjv8/comment/l73h9gv/)
+上週 Reddit 上的一篇文章 [Bartender 5 not safe anymore ? Warning from MacUpdater](https://www.reddit.com/r/macapps/comments/1d7zjv8/comment/l73h9gv/)
 Bartender 默默的就易主了
 默默的要了權限（好啦，沒那麼默默）
 默默的裝了[Amplitude](https://amplitude.com/)
@@ -87,6 +87,6 @@ BTT 使用者的福音
 用起來蠻直覺的跟 Dozer 很像，但有支援最新的 macOS 14
 不過遇到劉海還是沒辦法
 
->  Display hidden items in a separate bar (e.g. for MacBooks with the notch)
+> Display hidden items in a separate bar (e.g. for MacBooks with the notch)
 
 但這件事看起來有在他們的 roadmap 中，可以期待

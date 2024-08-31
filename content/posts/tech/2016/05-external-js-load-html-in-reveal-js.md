@@ -64,7 +64,7 @@ git submodule add https://github.com/calevans/external plugin/external
 
 ```html
 <section data-external="module_01/index.html">
-	<!-- module_01/index.html -->
-	<h1> This is external <h1>
+    <!-- module_01/index.html -->
+    <h1> This is external <h1>
 </section>
 ```

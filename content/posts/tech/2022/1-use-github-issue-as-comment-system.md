@@ -157,4 +157,4 @@ Authors: Wei Lee
 不過往另一個方向想，反正也沒什麼人留言，我搬來 GitHub Issues 的成本根本超低 🤔
 
 ## Reference
-[ 在 Hexo 的 Next 樣板中引入 utterances 的留言區 | GitHub Issue ](https://nijialin.com/2021/05/15/hexo-utterances-comment/)
+[在 Hexo 的 Next 樣板中引入 utterances 的留言區 | GitHub Issue](https://nijialin.com/2021/05/15/hexo-utterances-comment/)

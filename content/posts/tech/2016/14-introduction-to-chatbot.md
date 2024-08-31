@@ -54,8 +54,7 @@ e.g. Line Chat Bot 架構
 
 * 市面上 App 太多了，要開發使用者黏著度高的 App 很困難
 * 每一個 App 都有自己的介面，對使用者都是一次學習成本
-    * 不如把服務嵌入現在使用者常用的 App
-	  (e.g. Facebook Messenger, Line)
+    * 不如把服務嵌入現在使用者常用的 App (e.g. Facebook Messenger, Line)
 * 文字是人類相對直覺的溝通方式
 
 ## Why not Chat Bot?

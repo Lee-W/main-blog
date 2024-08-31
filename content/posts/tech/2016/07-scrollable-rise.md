@@ -22,12 +22,12 @@ RISE 是一套結合[jupyter-notebook](http://jupyter.org) 和[reveal.js](http:/
 
 ```json
 {
-	"kernelspec": {
-  	...
-  },
-  "livereveal": {
-   "scroll": true
-  }
+    "kernelspec": {
+        ...
+    },
+    "livereveal": {
+        "scroll": true
+    }
 }
 ```
 

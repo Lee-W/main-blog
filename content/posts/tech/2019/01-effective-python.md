@@ -415,9 +415,10 @@ with log_level(logging.DEBUG, 'mylog') as logger:
 ### 作法57: 考慮使用 pdb 來進行互動式除錯
 
 * 在程式碼加入以下這行，就能讓程式執行到這一步時停下，開啟互動式的 python shell
-    ```python
-    import pdf; pdf.set_trace()
-    ```
+
+```python
+import pdf; pdf.set_trace()
+```
 
 * 檢視執行中的程式
     * `bt`: 印出目前 call stack 的 traceback

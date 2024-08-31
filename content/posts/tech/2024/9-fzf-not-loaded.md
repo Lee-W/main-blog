@@ -33,7 +33,7 @@ Failed to run `config` for telescope-fzf-native.nvim
 忘記那時候用什麼工具管，但我最近是使用 [Lazyvim](https://www.lazyvim.org/)，很好用
 順手分享一下我的 [nvim-config](https://github.com/Lee-W/nvim-config)
 
-後來找到了 [ AstroVim: This extension doesn't exist or is not installed: fzf #58 ](https://github.com/AstroNvim/AstroNvim/issues/58#issuecomment-1504303757) 的 comment
+後來找到了 [AstroVim: This extension doesn't exist or is not installed: fzf #58](https://github.com/AstroNvim/AstroNvim/issues/58#issuecomment-1504303757) 的 comment
 原來只用套件管理工具重裝可能是沒用的
 後來透過下面的指令，手動重新 build 一次就好了
 

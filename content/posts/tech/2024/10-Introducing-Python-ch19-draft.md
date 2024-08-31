@@ -6,7 +6,7 @@ Slug: Introducing-Python-ch19-draft
 Authors: Wei Lee
 
 最近半年 Gobby 為了學 Python 籌備了 Python 的讀書會
-找了各路的人來導讀這本[ 精通 Python｜運用簡單的套件進行現代運算](https://www.tenlong.com.tw/products/9789865024864)
+找了各路的人來導讀這本[精通 Python｜運用簡單的套件進行現代運算](https://www.tenlong.com.tw/products/9789865024864)
 
 <!--more-->
 
@@ -17,7 +17,7 @@ Authors: Wei Lee
 
 回到「精通 Python」這本書
 雖然只看了一章，但有稍微找一下大家對這本書的想法
-[《精通 Python 第二版》心得：給入門者的 Python 學習藍圖 ](https://blog.kyomind.tw/introducing-python/)寫的跟我的想法還蠻接近的
+[《精通 Python 第二版》心得：給入門者的 Python 學習藍圖](https://blog.kyomind.tw/introducing-python/)寫的跟我的想法還蠻接近的
 尤其是重新定義了 "Introducing Python" 為「精通 Python」
 實在**精闢**到一個不行
 恩，肯定沒錯，一定是如此

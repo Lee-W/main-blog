@@ -34,7 +34,7 @@ npm install gitbook -g
 README.md 是這本書的簡介
 package.json 是額外使用的 package 的定義和設定
 book.json 是這本書的額外設定
-這裡不會多做介紹，可以參考[Reference](#Reference) 的網站，裡面有很詳細的介紹
+這裡不會多做介紹，可以參考[Reference](#reference) 的網站，裡面有很詳細的介紹
 
 最重要的是 SUMMARY.md，它會定義整本 gitbook 的架構
 每個章節下面都還可以給予更多的小節

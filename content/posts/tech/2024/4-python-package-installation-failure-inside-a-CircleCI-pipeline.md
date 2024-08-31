@@ -5,7 +5,7 @@ Tags: CircleCI, CI/CD, Python
 Slug: python-package-installation-failure-inside-a-CircleCI-pipeline
 Authors: Wei Lee
 
-就像上次的[ github actions 上遇到的]({filename}/posts/tech/2024/1-how-to-deal-with-could-not-read-username-for-github.md)
+就像上次的[github actions 上遇到的]({filename}/posts/tech/2024/1-how-to-deal-with-could-not-read-username-for-github.md)
 原本跑得好好的 CI pipeline 又又又死掉了
 
 <!--more-->
@@ -60,5 +60,5 @@ stty cols 80
 ```
 
 ## Reference
-* [ Why the compilation fails inside a CircleCI pipeline ? #1803 ](https://github.com/Nuitka/Nuitka/issues/1803)
-* [ Notes on setting tty/console/terminal width #5407 ](https://github.com/travis-ci/travis-ci/issues/5407)
+* [Why the compilation fails inside a CircleCI pipeline ? #1803](https://github.com/Nuitka/Nuitka/issues/1803)
+* [Notes on setting tty/console/terminal width #5407](https://github.com/travis-ci/travis-ci/issues/5407)

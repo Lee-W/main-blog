@@ -426,7 +426,7 @@ flowchart LR
             * 關注顧客
                 * 誰會購買？
                 * 為什麼購買？
-         * 設計研究（產品購買後要容易使用）
+        * 設計研究（產品購買後要容易使用）
             * 傾向於質化（qualitative）
             * 深入研究使用者
 * 衍生想法（idea generation / ideation）

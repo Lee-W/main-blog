@@ -113,22 +113,22 @@ try {
 
 // even more refactored
 public void delete(Page page) {
-	try {
-		deletePageAndAllReferences(page);
-	} catch(Exception e) {
-		logError(e);
-	}
+    try {
+        deletePageAndAllReferences(page);
+    } catch(Exception e) {
+        logError(e);
+    }
 }
 
 private void deletePageAndAllReferences(Page page)
             throws Exception {
-	deletePage(page);
-	registry.deleteReference(page.name);
-	configKeys.deleteKey(page.name.makeKey());
+    deletePage(page);
+    registry.deleteReference(page.name);
+    configKeys.deleteKey(page.name.makeKey());
 }
 
 private void logError(Exception e) {
-	logger.log(e.getMessage());
+    logger.log(e.getMessage());
 }
 ```
 
@@ -275,48 +275,48 @@ Wrapper Example
 ACMEPort port = new ACMEPort(12);
 
 try {
-	port.open();
+ port.open();
 } catch (DeviceResponseException e) {
-	reportPortError(e);
-	logger.log("Device response exception", "e");
+ reportPortError(e);
+ logger.log("Device response exception", "e");
 } catch (ATM1212UnlockedException e) {
-	reportPortError(e);
-	logger.log("ATM1212UnlockedException");
+ reportPortError(e);
+ logger.log("ATM1212UnlockedException");
 } catch (HMXError e) {
-	reportPortError(e);
-	logger.log("Device response exception");
+ reportPortError(e);
+ logger.log("Device response exception");
 } finally {
-	...
+ ...
 }
 
 
 // refactored
 LocalPort port = new LocalPort(12);
 try {
-	port.open();
+ port.open();
 } catch (PortDeviceFailure e) {
-	reportPortError(e);
-	logger.log(e.getMessage, e);
+ reportPortError(e);
+ logger.log(e.getMessage, e);
 }
 
 public class LocalPort {
-	private ACMEPort innerPort;
+ private ACMEPort innerPort;
 
-	public LocalPort(int portNumber) {
-		innerPort = new ACMEPort(portNumber);
-	}
+ public LocalPort(int portNumber) {
+  innerPort = new ACMEPort(portNumber);
+ }
 
-	public void open() {
-		try {
-			innerPort.open();
-		} catch (DeviceResponseException e) {
-			throw new PortDeviceFailure(e);
-		} catch (ATM1212UnlockedException e) {
-			throw new PortDeviceFailure(e);
-		} catch (GMXError e) {
-			throw new PortDeviceFailure(e);
-		}
-	}
+ public void open() {
+  try {
+   innerPort.open();
+  } catch (DeviceResponseException e) {
+   throw new PortDeviceFailure(e);
+  } catch (ATM1212UnlockedException e) {
+   throw new PortDeviceFailure(e);
+  } catch (GMXError e) {
+   throw new PortDeviceFailure(e);
+  }
+ }
 }
 ```
 

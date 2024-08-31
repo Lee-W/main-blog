@@ -12,7 +12,7 @@ This article discusses the implementation details of `StartTriggerArgs`, which m
 
 <!--more-->
 
-I'll focus on PR [ Enhance start_trigger_args serialization #40993 ](https://github.com/apache/airflow/pull/40993), which fixed an issue in [ Prevent start trigger initialization in scheduler #39585 ](https://github.com/apache/airflow/pull/39585).
+I'll focus on PR [Enhance start_trigger_args serialization #40993](https://github.com/apache/airflow/pull/40993), which fixed an issue in [Prevent start trigger initialization in scheduler #39585](https://github.com/apache/airflow/pull/39585).
 
 ## What's the issue?
 
@@ -58,7 +58,7 @@ Surely Airflow can do better.
 
 ## Why is this happening?
 
-In [ Prevent start trigger initialization in scheduler #39585 ](https://github.com/apache/airflow/pull/39585/files#diff-e4ec4e631219bf44939d416cf381ce188ae09163ff721103fd2de9d27805d477R27-R42), I implemented the `StartTriggerArgs.serialize` method this way
+In [Prevent start trigger initialization in scheduler #39585](https://github.com/apache/airflow/pull/39585/files#diff-e4ec4e631219bf44939d416cf381ce188ae09163ff721103fd2de9d27805d477R27-R42), I implemented the `StartTriggerArgs.serialize` method this way
 
 ```python
 @dataclass
@@ -112,7 +112,7 @@ In step 3, we raise a TaskDeferred exception. It will be caught in [airflow/mode
 ```
 
 ## How do we get it resolved?
-Returning to the PR [ Enhance start_trigger_args serialization #40993 ](https://github.com/apache/airflow/pull/40993).
+Returning to the PR [Enhance start_trigger_args serialization #40993](https://github.com/apache/airflow/pull/40993).
 
 We are aware of the locations for [serializing StartTriggerArgs](https://github.com/apache/airflow/pull/40993/files#diff-807ca0a4fd53aeb41166621c9842b0f89b7931fc64e9a60befa36c776db45efaR1126-R1128) and [deserializing StartTriggerArgs](https://github.com/apache/airflow/pull/40993/files#diff-807ca0a4fd53aeb41166621c9842b0f89b7931fc64e9a60befa36c776db45efaR1315-R1318). The current implementation is incorrect, so our objective is to [rewrite the serialize/deserialize method](https://github.com/apache/airflow/pull/40993/files#diff-807ca0a4fd53aeb41166621c9842b0f89b7931fc64e9a60befa36c776db45efaR353-R386
 ).

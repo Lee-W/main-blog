@@ -134,8 +134,8 @@ def init_db():
     # create USER table
     create_table_sql = """
     CREATE TABLE `USER` (
-        `account`	TEXT NOT NULL UNIQUE,
-        `password`	TEXT NOT NULL,
+        `account`   TEXT NOT NULL UNIQUE,
+        `password`  TEXT NOT NULL,
         PRIMARY KEY(`account`)
     );
     """

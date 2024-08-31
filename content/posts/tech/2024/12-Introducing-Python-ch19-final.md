@@ -79,7 +79,7 @@ Python 自帶的編輯器，在終端機輸入 `IDLE` 就能開啟
 ## Documentation and naming
 * [PEP8](https://peps.python.org/pep-0008/)
     * Python 的程式碼風格指南
-    * 建議演講： [ Raymond Hettinger - Beyond PEP 8](https://www.youtube.com/watch?v=wf-BqAjZb8M)
+    * 建議演講： [Raymond Hettinger - Beyond PEP 8](https://www.youtube.com/watch?v=wf-BqAjZb8M)
 * *建議讀物： [Clean Code]({filename}/posts/tech/2018/05-the-clean-code.md)*
     * 雖然這本主要是用 Java 為範例，但概念本身對寫好程式很有幫助
 

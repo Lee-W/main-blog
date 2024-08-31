@@ -102,8 +102,9 @@ Android Studio 會自動幫你把 SDK 的路徑設定到原本的位置
 * **Coogle Play services**
 * **Google Repository**
 * **Google USB Driver**
-* **Intel X86 Emulator Accelerator(HAXM installer)**  
-	最後的這個 HAXM 是為了讓模擬器加速用的，從 SDK manager 下載完之後，還有另外的安裝步驟
+* **Intel X86 Emulator Accelerator(HAXM installer)**
+    * 最後的這個 HAXM 是為了讓模擬器加速用的，從 SDK manager 下載完之後，還有另外的安裝步驟
+
 ![9_SDK4](/images/posts-image/2014-11-23-android-studio-and-genymotion-installation/UM8w30n.png)
 
 **安裝到這裡 Android Studio 已經可以使用了**，不過還可以再做一些設定讓手機模擬器跑得更快
