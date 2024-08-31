@@ -5,7 +5,7 @@ Tags: Productivity
 Slug: meeting-with-youself
 Authors: Wei Lee
 
-![一個人的會議時間](/images/books/ZZTHLlJ.jpg)
+![一個人的會議時間](/images/books/self-meeting-time.jpg)
 
 這本書其實是我幾年前買的
 最近開始覺得好想應該檢視一下自己每天的生活到底過得如何

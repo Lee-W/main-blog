@@ -13,7 +13,7 @@ Authors: Wei Lee
 
 [TOC]
 
-![Steve Jobs](/images/books/7zs4aDC.jpg)
+![Steve Jobs](/images/books/jobs.jpg)
 
 ---
 

@@ -5,7 +5,7 @@ Tags: Productivity
 Slug: essentialism
 Authors: Wei Lee
 
-![Essentialism](/images/books/zJS927h.jpg)
+![Essentialism](/images/books/essentialism.jpg)
 
 ```text
 Weniger aber besser

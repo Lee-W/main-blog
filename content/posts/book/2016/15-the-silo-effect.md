@@ -5,7 +5,7 @@ Tags: Team
 Slug: the-silo-effect
 Authors: Wei Lee
 
-![The silo effect](/images/books/MTSd8sY.jpg)
+![The silo effect](/images/books/the-slio-effect.jpg)
 
 <!--more-->
 

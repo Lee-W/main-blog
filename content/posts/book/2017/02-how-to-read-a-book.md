@@ -5,7 +5,7 @@ Tags: Other
 Slug: how-to-read-a-book
 Authors: Wei Lee
 
-![how-to-read-a-book](/images/books/D1Obrmf.jpg)
+![how-to-read-a-book](/images/books/how-to-read-a-book.jpg)
 
 <!--more-->
 

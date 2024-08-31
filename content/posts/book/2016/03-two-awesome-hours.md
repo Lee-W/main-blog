@@ -5,7 +5,7 @@ Tags: Productivity
 Slug: two-awesome-hours
 Authors: Wei Lee
 
-![Two Awesome Hours](/images/books/KQpJ2Gh.jpg)
+![Two Awesome Hours](/images/books/two-awesome-hours.jpg)
 
 <!--more-->
 

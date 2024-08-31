@@ -9,7 +9,7 @@ Authors: Wei Lee
 Uncle Bob 的書真的每個階段看都會有很不一樣的感覺
 很值得買回來收 xD
 
-![Clean Coder](/images/books/5a0LzcS.jpg)
+![Clean Coder](/images/books/clean-coder.jpg)
 
 <!--more-->
 
