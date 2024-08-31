@@ -56,7 +56,7 @@ pipenv install insecure-package --dev
 另外需要注意的是 `safety check` 是對當前環境做檢查
 務必確定已經有進入專案的虛擬環境，不然 Safety 只會檢查到本機使用的套件有沒有漏洞
 
-如果想要對 `requriements.txt` 做檢查，則可以加上參數 `-r`
+如果想要對 `requirements.txt` 做檢查，則可以加上參數 `-r`
 
 ```sh
 # 因為這個 case 不是針對 pipenv ，所以前面沒有加上 pipenv run

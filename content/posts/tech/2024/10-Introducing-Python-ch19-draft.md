@@ -79,7 +79,7 @@ Authors: Wei Lee
 * testing
     * why testing
         * avoid regression
-            * what is a regresion
+            * what is a regression
                 * break something that used to work fine
     * stdlib
         * [unittest](https://docs.python.org/3/library/unittest.html)

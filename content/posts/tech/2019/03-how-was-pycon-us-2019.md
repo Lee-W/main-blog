@@ -41,7 +41,7 @@ PyCon 總共跨了 9 天
 我參加了兩場 Tutorial
 
 * [Getting started with Kubernetes and container orchestration](https://www.youtube.com/watch?v=J08MrW2NC1Y&list=PLPbTDk1hBo3xof51R8pk3kP1BVBuMYP9c&index=18&t=0s)
-    * Kubernetes 的使用介紹的蠻清楚的，我覺得對入門 Kubernete 很有幫助
+    * Kubernetes 的使用介紹的蠻清楚的，我覺得對入門 Kubernetes 很有幫助
 * [Building Evolutionary API with GraphQL and Python](https://www.youtube.com/watch?v=DWgD5iloSHs&list=PLPbTDk1hBo3xof51R8pk3kP1BVBuMYP9c&index=15&t=0s)
     * 主要是在講 GraphQL 的概念，我覺得偏簡單，原本希望可以多聽到一些設計上的想法
 

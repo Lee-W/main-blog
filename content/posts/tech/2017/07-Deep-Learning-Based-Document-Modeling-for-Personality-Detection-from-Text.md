@@ -17,7 +17,7 @@ Authors: Wei Lee
 
 ## Practical Application of Personality Detection
 
-* Product and Service Recommandation (People with similar personalities might have similar favors)
+* Product and Service Recommendation (People with similar personalities might have similar favors)
 * Mental Health Diagnosis
 * Forensics: Reduce the circle of suspects
 * Human Resource: One's suitablitlty for certain jobs
@@ -54,7 +54,7 @@ Sentences without personliaty clues are dropped
 * word2vec
 * Variable number of fixed-length word feature vectors → Variable number of sentences → Document
 
-### 5. Classfication
+### 5. Classification
 
 Deep CNN (Conolutional Nerual Network)
 

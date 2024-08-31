@@ -49,7 +49,7 @@ cookiecutter https://github.com/Lee-W/cookiecutter-python-template
 ```txt
 project_name [Python Project]: python table manners
 project_slug [python_table_manners]:
-project_description [Short Descirption for Python Project]: example for cookiecutter template
+project_description [Short Description for Python Project]: example for cookiecutter template
 github_username [Lee-W]:
 github_url [http://github.com/Lee-W/python_table_manners]:
 author_name [Wei Lee]:

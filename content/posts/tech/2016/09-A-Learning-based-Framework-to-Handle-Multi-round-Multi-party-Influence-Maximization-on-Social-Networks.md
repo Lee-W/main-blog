@@ -108,7 +108,7 @@ $ \pi = \arg \min_{a\in A}Q(s,a)$
         * Second player's
         * Max activated nodes of a node for the first player alter two rounds of influence propagation
         * Second player's
-    * The feautres are quantize into
+    * The features are quantize into
         * low
         * medium
         * high
@@ -156,7 +156,7 @@ $ Algorithm $
 
 ### Unknown but available to train
 
-* The differece between the known case is that experience cannot be obtained through simulation
+* The difference between the known case is that experience cannot be obtained through simulation
 * Train against unknown opponent's strategy during competition
     * It's feasible because STORM-Q only needs to know the seed-selection outcoms of the opponent to update the Q-table, not exact strategy it takes
 
@@ -178,7 +178,7 @@ $ Algorithm $
     * $Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma V(s_{t+1})]$
     * Operations  Research
 
-* The differece between STROM-QQ and STORM-MM
+* The difference between STROM-QQ and STORM-MM
 
 |STROM-QQ|STROM-MM|
 |--|--|

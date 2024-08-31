@@ -9,3 +9,12 @@ repos:
     rev: v0.13.0
     hooks:
     - id: markdownlint-cli2
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.3.0
+    hooks:
+      - id: codespell
+        name: Run codespell to check for common misspellings in files
+        language: python
+        files: "content/posts/|content/pages/"
+        types: [text]
+        args: ["--write-changes", "--ignore-words", "spelling_wordlist.txt"]

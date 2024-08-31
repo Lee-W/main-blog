@@ -360,10 +360,10 @@ profile = "black"
 所以還是建議安裝最新的版本
 
 ## 其他工具
-* [check-manifest](https://github.com/mgedmin/check-manifest): 檢查有沒有少放入 `MAINIFEST.in` 的檔案
+* [check-manifest](https://github.com/mgedmin/check-manifest): 檢查有沒有少放入 `MANIFEST.in` 的檔案
 * [seed-isort-config](https://github.com/asottile/seed-isort-config)
 
-## Bouns: 設定檔的選用
+## Bonus: 設定檔的選用
 從前面的測試篇到現在有提到很多設定檔的格式
 通常每個工具都會有自己的設定檔 (e.g., `.coveragerc`, `.flake8`) 或者用 Python 比較通用的格式 (e.g., `pyproject.toml`, `setup.cfg`)
 其中 `pyproject.toml` 是在 [PEP 518](https://www.python.org/dev/peps/pep-0518/) 提出的設定檔格式

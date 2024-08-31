@@ -19,7 +19,7 @@ reavel.js 提供了 `data-markdown="example.md"` 這個 tag 可以載入外部�
 
 1. 到 [external](https://github.com/calevans/external) 下載
 2. 把 extneral 裡面的 external 資料夾放到 plugin 裡面
-3. 在 `index.html` 中的 `Reveal.initalize` 這個 block 加入下面的內容
+3. 在 `index.html` 中的 `Reveal.initialize` 這個 block 加入下面的內容
 
 ```javascript
 { src: 'plugin/external/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },
@@ -35,7 +35,7 @@ reavel.js 提供了 `data-markdown="example.md"` 這個 tag 可以載入外部�
 git submodule add https://github.com/calevans/external plugin/external
 ```
 
-* 在 `index.html` 中的 `Reveal.initalize` 這個 block 加入下面的內容
+* 在 `index.html` 中的 `Reveal.initialize` 這個 block 加入下面的內容
 
 ```javascript
 { src: 'plugin/external/external/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } },

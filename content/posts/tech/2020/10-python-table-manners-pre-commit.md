@@ -183,7 +183,7 @@ repos:
           entry: ...
 ```
 
-## Bouns: 可以只跳警告不擋下 commit 嗎？
+## Bonus: 可以只跳警告不擋下 commit 嗎？
 根據 [Can I show warning message without blocking the commit? #923](https://github.com/pre-commit/pre-commit/issues/923) 提到的， pre-commit 認為這不是好的作法
 但仍然可以透過對 `entry` 內指令的操作達到類似的效果
 

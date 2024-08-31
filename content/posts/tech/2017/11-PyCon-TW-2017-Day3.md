@@ -86,7 +86,7 @@ Russell 開場就講了一串中文，引來如雷的掌聲 xD
 
 這好像是我第一次在 R0 舉手提問
 最後因為時間關係沒被叫到 QQ
-不過我還是跑到前面去問 Russell，如何在 Backward Compatibility 和 New Fatures 中取捨
+不過我還是跑到前面去問 Russell，如何在 Backward Compatibility 和 New Features 中取捨
 Russell 的回答是如果專案已經持續很長的一段時間，並且有一定的使用者
 Backward Compatibility 就是一件很重要的事
 因為我們並不會希望以前的使用者不能在使用

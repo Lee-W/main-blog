@@ -73,7 +73,7 @@ The great thing is that I finally managed to triage **all** issues with the `iss
 
 Among all the PRs I worked on yesterday,  [fix: add description for subcommands #1120](https://github.com/commitizen-tools/commitizen/pull/1120) was quite interesting. I didn't know that `argparse` changed the prompt of optional arguments from `Optional Arguments` to `options` since Python 3.10.
 
-During the sprint, I shared commitizen-tools with Takanoryさん. Later, he introduced me to [towncrier](https://github.com/twisted/towncrier), a similar tool that I plan to explore further. We also had a great chat about Star Wars. 🌟 I was excited to share that I went to [Rise of the Resistence](https://travlog.wei-lee.me/posts/travel/2019/12/rise-of-the-resistance/) on the very first day it opened. 🚀
+During the sprint, I shared commitizen-tools with Takanoryさん. Later, he introduced me to [towncrier](https://github.com/twisted/towncrier), a similar tool that I plan to explore further. We also had a great chat about Star Wars. 🌟 I was excited to share that I went to [Rise of the Resistance](https://travlog.wei-lee.me/posts/travel/2019/12/rise-of-the-resistance/) on the very first day it opened. 🚀
 
 After the sprint, a couple of APAC folks went to this church restaurant. It was quite a pleasant dinner. Always love to hangout with Pythonistas 😄
 

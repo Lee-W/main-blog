@@ -108,7 +108,7 @@ pipenv install --dev
 ```
 
 ### 測試探索 (test discovery)
-原本在 `REAMDE.md` 中要跑測試的指令相當的冗長
+原本在 `README.md` 中要跑測試的指令相當的冗長
 而且還必須要切換到 test 資料夾 (i.e., `cd test`)
 
 ```sh

@@ -40,7 +40,7 @@ Everything is operated in file
 Never `rm -rf .git` XD
 
 ```shell
-git stauts
+git status
 touch README.mdd
 ```
 

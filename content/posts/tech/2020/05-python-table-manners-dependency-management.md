@@ -49,7 +49,7 @@ p.s. 基本上這個系列文會以 Unix 系統（macOS, Linux）為主
 
 ## pipenv
 [pipenv](https://pipenv.readthedocs.io/en/latest/) 可以用來同時管理虛擬環境跟套件
-pipenv 不使用 `requriements.txt`，而是使用自定義的 `Pipfile` 跟 `Pipfile.lock` 管理套件
+pipenv 不使用 `requirements.txt`，而是使用自定義的 `Pipfile` 跟 `Pipfile.lock` 管理套件
 它的好處是能透過單一指令將套件安裝到虛擬環境中，並且更新到 `Pipfile` 以及 `Pipfile.lock`
 
 ### 安裝 pipenv
@@ -182,10 +182,10 @@ Pipfile.lock 中除了 `requests` 外，還會列出 `requests` 的相依套件 
 
 * **index**: 套件從哪裡裝的
 * **version**: 安裝的版本
-* **hashes**: 下載這個套件時產生的雜湊值 (hashing)  
-  只要套件內容有改變，就會產生不同的雜湊值  
+* **hashes**: 下載這個套件時產生的雜湊值 (hashing)
+  只要套件內容有改變，就會產生不同的雜湊值
   可以用於驗證下次安裝時，這個套件的內容是否跟這次相同
-  有些套件雖然改了內容，但沒有更新版本號  
+  有些套件雖然改了內容，但沒有更新版本號
   雜湊值可以用來避免使用者在沒注意到的情況下安裝了不同的套件
 
 下面兩個指令就會運用到 **hashes**
@@ -200,7 +200,7 @@ pipenv install --ignore-pipfile
 
 ### 安裝開發環境套件
 有些套件（e.g., 測試工具）不需要在 Production 的環境上安裝
-以往會將不同的套件用不同的 `requirements.txt` 來管理 (e.g.,  `requirments/dev.txt`, `requirements/prod.txt`)
+以往會將不同的套件用不同的 `requirements.txt` 來管理 (e.g.,  `requirements/dev.txt`, `requirements/prod.txt`)
 pipenv 則是將開發環境才需要的套件寫在 Pipfile 的 **dev-packages** 內
 只要在安裝時後面加上選項 `--dev`
 
@@ -275,7 +275,7 @@ poetry remove <package>
 * [pyup.io](https://pyup.io)
 * [dependabot](https://dependabot.com)
 
-## Bouns: pipx - 在系統安裝 Python 工具
+## Bonus: pipx - 在系統安裝 Python 工具
 雖然建議 Python 的套件都裝在虛擬環境，但如果平時要使用的工具 (e.g., [invoke](http://www.pyinvoke.org/), [awscli](https://pypi.org/project/awscli/)) 都裝在虛擬環境
 每次使用這些工具都得進入虛擬環境就太麻煩了
 [pipx](https://pipxproject.github.io/pipx/) 會為每個工具創建一個專屬的虛擬環境，並且設定好 PATH

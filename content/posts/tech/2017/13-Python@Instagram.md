@@ -29,20 +29,20 @@ Google 一下「PyCon」、「Instagram」有很多很清楚地整理
 
 ## But Python is still slow, right?
 
-At instagram, our bottlenecck is development velocity, not pure code execution
+At Instagram, our bottleneck is development velocity, not pure code execution
 
 The conclusion is that you can get to a few hundred million users with Python before worrying about the performance of framework and language
 
 ## Python Efficiency Strategy
 
 1. Build extensive tools to profile and understand performance bottleneck
-2. Moving stable, citical compenents to C/C++
+2. Moving stable, critical components to C/C++
 3. Cythonization
 4. Async? New Python runtime?
 
 ## Road to Python3
 
-這一段講到 Instragram 如何從 Python2 轉到 Python3 的過程
+這一段講到 Instagram 如何從 Python2 轉到 Python3 的過程
 我覺得很精彩，所以大家就自己去看吧 XD
 
 我只紀錄一個我覺得特別有趣的東西

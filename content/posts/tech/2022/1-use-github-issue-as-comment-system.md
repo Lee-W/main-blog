@@ -85,7 +85,7 @@ Authors: Wei Lee
 
 ## elegant 是怎麼做到的？
 
-為了能更容易在 attlia 加入 utterances，我稍微研究了 elgant 是怎麼加的
+為了能更容易在 attlia 加入 utterances，我稍微研究了 elegant 是怎麼加的
 以下的程式碼都是使用 [elegnat @ v5.4.0](https://github.com/Pelican-Elegant/elegant/tree/V5.4.0)
 
 在 elegant 中全域搜尋 utterances，會先找到 [elegant/templates/_includes/utterances_scripts.html](https://github.com/Pelican-Elegant/elegant/blob/V5.4.0/templates/_includes/utterances_scripts.html)

@@ -44,7 +44,7 @@ python3 manage.py startapp echobot
 ## Setup Line Secrets
 
 接著設定 Line Bot 的 `Channel Secret`, `Channel Access Token`
-( 可以在 Line Bot 的 `Line Deverloper` 頁面取得 )
+( 可以在 Line Bot 的 `Line Developer` 頁面取得 )
 
 不過這些值不該被 git 記錄，所以不該被寫死在 `settings.py` 中
 建議將這些值寫入環境變數
@@ -474,7 +474,7 @@ ngrok http 8000
 
 如果你發現除了 echo 訊息外，還有其他的訊息
 可能就是沒有把 Atuo Reply Message 關掉
-這時候就可以去 Line Bot 的 `LINE@ Manger`
+這時候就可以去 Line Bot 的 `LINE@ Manager`
 `Settings` → `Bot Settings` 把它關掉
 或者到 `Messages` → `Auto Reply Message` 做修改訊息內容
 

@@ -15,7 +15,7 @@ Authors: Wei Lee
 
 e.g. `g++ -o t thread.cpp -std=c++11 -pthread`
 `-std=c++11` :  是指定 c++ 的版本
-`-pthread` ( 或 `-lpthread`)：使用 thread 的 liberary
+`-pthread` ( 或 `-lpthread`)：使用 thread 的 library
 
 下面有寫到 join 的部份
 join 是開啟這個 thread 的上層程式必須等待到這個 thread 的工作結束了，才可以繼續下面的工作
