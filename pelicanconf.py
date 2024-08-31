@@ -29,6 +29,7 @@ COMMENTS_INTRO = (
 MAIN_MENU = True
 DEFAULT_PAGINATION = 10
 SHOW_PAGES_ON_MENU = False
+SHOW_CATEGORIES_ON_MENU = False
 SHOW_TAGS_IN_ARTICLE_SUMMARY = True
 DIRECT_TEMPLATES = (
     "index",
@@ -119,14 +120,16 @@ UTTERANCES_REPO = "Lee-W/main-blog"
 MENUITEMS = (
     ("🏠 Home", "/"),
     ("About Me", "/pages/about-me.html"),
+    ("👨‍💻 Tech", "/category/tech.html"),
+    ("📚 Book Digest", "/category/book.html"),
+    ("💬 Gossiping", "/category/gossiping.html"),
     ("🗄️ Archives", "/archives.html"),
     ("📚 Series", "/series_list.html"),
     ("🔍 Search", "/search.html"),
 )
-SHOW_CATEGORIES_ON_MENU = True
 
 # Content Setting
-DEFAULT_CATEGORY = "Article"
+DEFAULT_CATEGORY = "Gossiping"
 ARTICLE_EXCLUDES = ["static"]
 
 # Theme Setting
