@@ -43,22 +43,25 @@ Optional dependency: 'pyarrow' is not installed, please see the following link f
 ```python
 pandas_requirements = [
     # Must be kept in sync with pyproject.toml
-    'pyarrow>=0.17.0,<0.18.0',
-    'pandas>=1.0.0,<1.2.0',
+    "pyarrow>=0.17.0,<0.18.0",
+    "pandas>=1.0.0,<1.2.0",
 ]
 ```
 
 接著可以看到 `pandas_requirements` 在 [240行](https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L240) 被用到
 
+<!-- blacken-docs:off -->
 ```python
-...
+    ...
     extras_require={
         "secure-local-storage": [
             'keyring<22.0.0,!=16.1.0',
         ],
         "pandas": pandas_requirements,
-...
+    ...
+
 ```
+<!-- blacken-docs:on -->
 
 原來 `pip install snowflake-connector-python[pandas]` 同時會安裝 `pandas_requirements` 中的 pandas 跟 pyarrow
 snowflake-connector-python 並不會單獨裝 pyarrow，這也難怪前面的嘗試會失敗

@@ -53,9 +53,9 @@ The conclusion is that you can get to a few hundred million users with Python be
 可能就會像下面這樣
 
 ```python
-value = 'abc'
+value = "abc"
 if isinstance(value, six.text_type):
-    value = value.encode(encode='utf-8')
+    value = value.encode(encode="utf-8")
 mymac = hamc.new(value)
 ```
 

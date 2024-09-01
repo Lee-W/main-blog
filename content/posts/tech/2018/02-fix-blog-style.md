@@ -83,11 +83,13 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 平常我都是透過 `pelican -r -o output -s pelicanconf.py`這個指令來產生文章
 所以第一步就是要從 [setup.py](https://github.com/getpelican/pelican/blob/master/setup.py#L15) 找出 pelican 這個指令是哪裡來的
 
+<!-- blacken-docs:off -->
 ```python
-        ...
-        'pelican = pelican:main',
-        ...
+    ...
+    "pelican = pelican:main",
+    ...
 ```
+<!-- blacken-docs:on -->
 
 #### pelican/__init__.py
 
@@ -97,17 +99,21 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 接下來最像是產生文章的程式碼就是[147行](https://github.com/getpelican/pelican/blob/master/pelican/__init__.py#L147) 的 `run`
 
 ```python
-        for p in generators:
-            if hasattr(p, 'generate_context'):
-                p.generate_context()
+for p in generators:
+    if hasattr(p, "generate_context"):
+        p.generate_context()
 ```
 
 下一步就是要從 `generators` 找出 `generate_context` 這個函式
 
 ```python
-from pelican.generators import (ArticlesGenerator, PagesGenerator,
-                                SourceFileGenerator, StaticGenerator,
-                                TemplatePagesGenerator)
+from pelican.generators import (
+    ArticlesGenerator,
+    PagesGenerator,
+    SourceFileGenerator,
+    StaticGenerator,
+    TemplatePagesGenerator,
+)
 ```
 
 #### pelican/generators.py
@@ -116,14 +122,19 @@ from pelican.generators import (ArticlesGenerator, PagesGenerator,
 這個 class 也找到了 `generate_context`
 
 ```python
-                try:
-                    article_or_draft = self.readers.read_file(
-                        base_path=self.path, path=f, content_class=Article,
-                        context=self.context,
-                        preread_signal=signals.article_generator_preread,
-                        preread_sender=self,
-                        context_signal=signals.article_generator_context,
-                        context_sender=self)
+try:
+    article_or_draft = self.readers.read_file(
+        base_path=self.path,
+        path=f,
+        content_class=Article,
+        context=self.context,
+        preread_signal=signals.article_generator_preread,
+        preread_sender=self,
+        context_signal=signals.article_generator_context,
+        context_sender=self,
+    )
+except Exception as e:
+    ...
 ```
 
 這裡找到的是文章被產生的地方
@@ -138,17 +149,17 @@ from pelican.generators import (ArticlesGenerator, PagesGenerator,
 所以順利的話只要從這繼續 trace 下去就能找出問題
 
 ```python
-        content, reader_metadata = self.get_cached_data(path, (None, None))
-        if content is None:
-            content, reader_metadata = reader.read(path)
-            self.cache_data(path, (content, reader_metadata))
+content, reader_metadata = self.get_cached_data(path, (None, None))
+if content is None:
+    content, reader_metadata = reader.read(path)
+    self.cache_data(path, (content, reader_metadata))
 ```
 
 最後發現問題是出在 [555行](https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L555)
 
 ```python
-            if content:
-                content = typogrify_wrapper(content)
+if content:
+    content = typogrify_wrapper(content)
 ```
 
 只要不對 `content` 做 `typogrify_wrapper`就不會產生多餘的空白
@@ -160,7 +171,7 @@ from pelican.generators import (ArticlesGenerator, PagesGenerator,
 typogrify 是 `pelicanconf.py` (pelican 的設定檔) 中的一個設定
 
 ```python
-TYPOGRIFY=False
+TYPOGRIFY = False
 ```
 
 只要關掉 typogrify 就不會再產生出多餘的空白

@@ -77,17 +77,17 @@ from flask import Flask, request
 
 
 app = Flask(__name__)
-bot = telegram.Bot(token='Your API Token')
+bot = telegram.Bot(token="Your API Token")
 
 
 def _set_webhook():
-    status = bot.set_webhook('https://Your URL/hook')
+    status = bot.set_webhook("https://Your URL/hook")
     if not status:
-        print('Webhook setup failed')
+        print("Webhook setup failed")
         sys.exit(1)
 
 
-@app.route('/hook', methods=['POST'])
+@app.route("/hook", methods=["POST"])
 def webhook_handler():
     if request.method == "POST":
         update = telegram.Update.de_json(request.get_json(force=True), bot)
@@ -95,7 +95,7 @@ def webhook_handler():
         text = update.message.text
 
         update.message.reply_text(text)
-    return 'ok'
+    return "ok"
 
 
 if __name__ == "__main__":
@@ -110,7 +110,7 @@ if __name__ == "__main__":
 #### 1. API Token
 
 ```python
-bot = telegram.Bot(token='Your API Token')
+bot = telegram.Bot(token="Your API Token")
 ```
 
 Your API Token 要改成剛剛取得的 API Token
@@ -120,7 +120,7 @@ Your API Token 要改成剛剛取得的 API Token
 _set_webhook 中的 Your URL
 
 ```python
-statue = bot.set_webhook('https://Your URL/hook')
+statue = bot.set_webhook("https://Your URL/hook")
 ```
 
 這裡的 URL 就是設定成你這個 Bot Server 的 URL
@@ -143,9 +143,9 @@ Telegram 有兩種接收訊息的方式
 
 ```python
 def _set_webhook():
-    status = bot.set_webhook('https://Your URL/hook')
+    status = bot.set_webhook("https://Your URL/hook")
     if not status:
-        print('Webhook setup failed')
+        print("Webhook setup failed")
         sys.exit(1)
 ```
 
@@ -162,7 +162,7 @@ if __name__ == "__main__":
 這裡就是 bot 收到訊息要怎麼處理
 
 ```python
-@app.route('/hook', methods=['POST'])
+@app.route("/hook", methods=["POST"])
 def webhook_handler():
     if request.method == "POST":
         update = telegram.Update.de_json(request.get_json(force=True), bot)
@@ -170,7 +170,7 @@ def webhook_handler():
         text = update.message.text
 
         update.message.reply_text(text)
-    return 'ok'
+    return "ok"
 ```
 
 `app.route` 這個 decorator 是 Flask 的語法

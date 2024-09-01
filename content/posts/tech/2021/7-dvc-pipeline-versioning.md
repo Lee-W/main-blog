@@ -21,7 +21,7 @@ In the original design, we use `pipenv run python digit_recognizer/digit_recogni
 
 ```python
 def main():
-    ......
+    ...
 
     if args.command == "process-data":
         X, y = load_data("data/digit_data.csv", "data/digit_target.csv")
@@ -278,13 +278,11 @@ In the previous section, even though we change only the parameter related to the
 def main():
     params = load_params("params.yaml")
     X, y = load_data("data/digit_data.csv", "data/digit_target.csv")
-    X_train, X_test, y_train, y_test = process_data(
-        X, y, params["process_data"]
-    )
+    X_train, X_test, y_train, y_test = process_data(X, y, params["process_data"])
 
     model = train_model(X_train, y_train, params["train"])
     export_model(model)
-    ......
+    ...
 ```
 
 This is how `params.yaml` looks like.

@@ -32,7 +32,7 @@ from db import DB
 @pytest.fixture(scope="function")
 def db():
     # 初始化 DB 的 instance
-    _db  = DB()
+    _db = DB()
     # 連接到資料庫
     _db.connect()
 
@@ -69,7 +69,7 @@ from model import User
 
 @pytest.fixture(scope="function")
 def db():
-    _db  = DB()
+    _db = DB()
     _db.connect()
 
     yield
@@ -77,7 +77,7 @@ def db():
     _db.close()
 
 
-＠pytest.fixtures(scope="function")
+@pytest.fixtures(scope="function")
 def insert_admin_user(db):
     # 初始化 user
     user = User(name="admin")
@@ -302,7 +302,7 @@ pipenv run pytest --cov=report_generator --cov-report=term-missing --cov-report=
         'if 0:',
         'if __name__ == .__main__.:'
     ]
-```  
+```
 
 Read More 👉 [Configuration reference](https://coverage.readthedocs.io/en/coverage-5.0.3/config.html)
 

@@ -18,3 +18,10 @@ repos:
         files: "content/posts/|content/pages/"
         types: [text]
         args: ["--write-changes", "--ignore-words", "spelling_wordlist.txt"]
+  - repo: https://github.com/adamchainz/blacken-docs
+    rev: "1.18.0"  # replace with latest tag on GitHub
+    hooks:
+      - id: blacken-docs
+        args: ["--line-length", "110"]
+        additional_dependencies:
+        - black==24.8.0

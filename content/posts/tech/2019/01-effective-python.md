@@ -54,10 +54,10 @@ Authors: Wei Lee
 * 與其在運算式中使用 `or` 或 `and` ，不如使用 `if/else` 讓程式碼更易讀
 
 ```python
-my_values = {'red': ['5'], green: [''] }
+my_values = {"red": ["5"], green: [""]}
 
 # or, and
-red = int(my_values.get('red', [''])[0] or 0)
+red = int(my_values.get("red", [""])[0] or 0)
 
 # if/else
 red = int(red[0]) if red[0] else 0
@@ -68,16 +68,18 @@ if red[0]:
 else:
     red = 0
 
+
 # helper function
 def get_first_int(values, key, default=0):
-    found = values.get(key, [''])
+    found = values.get(key, [""])
     if found[0]:
         found = int(found[0])
     else:
         found = default
     return found
 
-red = get_first_int(my_values, 'red')
+
+red = get_first_int(my_values, "red")
 ```
 
 ### 作法05: 知道如何切割序列
@@ -105,10 +107,10 @@ assert b is a
 a = [1, 2, 3, 4, 5]
 
 # list comprehension
-squares = [x ** 2 for x in a]
+squares = [x**2 for x in a]
 
 # map
-squares = map(lambda x: x ** 2, a)
+squares = map(lambda x: x**2, a)
 ```
 
 ### 作法09: 考慮使用 generator 取代大型 list comprehension
@@ -119,7 +121,7 @@ squares = map(lambda x: x ** 2, a)
 
 ```python
 a = [1, 2, 3, 4]
-b = ['a', 'b', 'c', 'd']
+b = ["a", "b", "c", "d"]
 
 # without zip
 for i, x in enumerate(a):
@@ -163,8 +165,10 @@ else:
 ```python
 from datetime import datetime
 
+
 def func(default=datetime.now()):
     print(default)
+
 
 # The two results would be the same but should be different
 func()
@@ -175,6 +179,7 @@ func()
 
 ```python
 from datetime import datetime
+
 
 def func(default=None):
     """Demonstration
@@ -194,6 +199,7 @@ def func(default=None):
 def flow_rate(weight_diff, time_diff, period):
     return (weight_diff / time_diff) * period
 
+
 # with default argument
 def flow_rate(weight_diff, time_diff, period=1):
     return (weight_diff / time_diff) * period
@@ -207,9 +213,7 @@ def flow_rate(weight_diff, time_diff, period=1):
 
 ```python
 # * indicates the end of positional arguments
-def safe_division(number, divisor, *,
-                  ignore_overflow=False):
-    ...
+def safe_division(number, divisor, *, ignore_overflow=False): ...
 ```
 
 ## 第三章： 類別與繼承
@@ -271,9 +275,9 @@ counter.count += offset
 等效於以下的程式碼
 
 ```python
-value = getattr(counter, 'count')
+value = getattr(counter, "count")
 result = value + offset
-setattr(counter, 'count', result)
+setattr(counter, "count", result)
 ```
 
 這時候必須在 `increment` 加上 `Lock` 避免 data race
@@ -295,18 +299,20 @@ from queue import Queue
 
 queue = Queue()
 
+
 def consumer():
-    print('consumer waiting')
+    print("consumer waiting")
     queue.get()
-    print('consumer done')
+    print("consumer done")
+
 
 thread = Thread(target=consumer)
 thread.start()
 
-print('Producer putting')
+print("Producer putting")
 queue.put(object())
 thread.join()
-print('Producer done')
+print("Producer done")
 ```
 
 ### 作法41: 考慮使用 concurrent.futures 來達成真正的平行處理
@@ -341,9 +347,9 @@ def log_level(level, name):
         logger.setLevel(old)
 
 
-with log_level(logging.DEBUG, 'mylog') as logger:
-    logger.debug('This is my message!')
-    logging.debut('This will not print')
+with log_level(logging.DEBUG, "mylog") as logger:
+    logger.debug("This is my message!")
+    logging.debut("This will not print")
 ```
 
 * `yield` 前是 contextmanager 的 `__enter__` 會執行的部分，之後則是 `__exit__`
@@ -417,7 +423,9 @@ with log_level(logging.DEBUG, 'mylog') as logger:
 * 在程式碼加入以下這行，就能讓程式執行到這一步時停下，開啟互動式的 python shell
 
 ```python
-import pdf; pdf.set_trace()
+import pdf
+
+pdf.set_trace()
 ```
 
 * 檢視執行中的程式
@@ -447,7 +455,7 @@ profiler.runcall(test)
 
 stats = Stats(profiler)
 stats.strip_dirs()
-stats.sort_stats('cumulative')
+stats.sort_stats("cumulative")
 stats.print_stats()
 ```
 
@@ -458,6 +466,7 @@ stats.print_stats()
 
 ```python
 import tracemalloc
+
 tracemalloc.start(10)
 
 time1 = tracemalloc.take_snapshot()
@@ -466,7 +475,7 @@ time1 = tracemalloc.take_snapshot()
 
 time2 = tracemallo.take_snapshot()
 
-stats = time2.compare_to(time1, 'lineno')
+stats = time2.compare_to(time1, "lineno")
 for stat in stats:
     print(stat)
 ```

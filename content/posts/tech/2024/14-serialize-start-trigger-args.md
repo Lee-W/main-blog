@@ -107,8 +107,8 @@ sequenceDiagram
 In step 3, we raise a TaskDeferred exception. It will be caught in [airflow/models/taskinstance.py::_run_raw_task](https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/taskinstance.py#L283-L297), which calls [_defer_task](https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/taskinstance.py#L1611) after `defer_task` and writes a trigger row into the [trigger](https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/trigger.py#L62) table in the database [here](https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/taskinstance.py#L1643-L1644). That's why it needs to be serialized.
 
 ```python
-    session.add(trigger_row)
-    session.flush()
+session.add(trigger_row)
+session.flush()
 ```
 
 ## How do we get it resolved?
@@ -127,8 +127,8 @@ def encode_start_trigger_args(var: StartTriggerArgs) -> dict[str, Any]:
     Encode a StartTriggerArgs.
     :meta private:
     """
-    serialize_kwargs = (
-        lambda key: BaseSerialization.serialize(getattr(var, key)) if getattr(var, key) is not None else None
+    serialize_kwargs = lambda key: (
+        BaseSerialization.serialize(getattr(var, key)) if getattr(var, key) is not None else None
     )
     return {
         "__type": "START_TRIGGER_ARGS",

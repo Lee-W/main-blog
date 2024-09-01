@@ -140,6 +140,8 @@ e.g.,
 當然也能使用 jinja2 的 if/else 語法，針對使用者的回答產生不同的模板內容
 以下的範例就是使用者選擇不同的 dependency_management_tool 時，env.py 的指令內容會跟著改變
 
+<!-- blacken-docs:off -->
+
 ```python
 @task
 def init(ctx):
@@ -152,6 +154,7 @@ def init(ctx):
 ```
 
 （from [cookiecutter-python-template/{{cookiecutter.project_slug}}/tasks/env.py @ 0.6.1](https://github.com/Lee-W/cookiecutter-python-template/blob/0.6.1/%7B%7Bcookiecutter.project_slug%7D%7D/tasks/env.py#L18)）
+<!-- blacken-docs:on -->
 
 除了預設基本的 jinja2 語法外， cookiecutter 還提供了常用的 jinja2 extensions
 這些可以在 [Template Extensions](https://cookiecutter.readthedocs.io/en/latest/advanced/hooks.html) 找到

@@ -16,7 +16,7 @@ Series: Python Table Manners
 
 ## 為什麼要寫自動化測試
 * 如果沒有自動化測試
-    * 必須手動去驗證程式的正確性，而且不能確定每次的測試方式都是相同的  
+    * 必須手動去驗證程式的正確性，而且不能確定每次的測試方式都是相同的
      （如果因為很麻煩懶得測試，變成讓客戶去測試，就會造成更多的麻煩了 😱）
     * 增加重構 (refactoring）的風險，因為很難驗證程式的功能有沒有在重構的過程中被改動
     * 加入新的功能不知道會不會動到原本沒問題的功能
@@ -41,17 +41,14 @@ import unittest
 
 class WidgetTestCase(unittest.TestCase):
     def setUp(self):
-        self.widget = Widget('The widget')
+        self.widget = Widget("The widget")
 
     def test_default_widget_size(self):
-        self.assertEqual(self.widget.size(), (50,50),
-                         'incorrect default size')
+        self.assertEqual(self.widget.size(), (50, 50), "incorrect default size")
 
     def test_widget_resize(self):
-        self.widget.resize(100,150)
-        self.assertEqual(self.widget.size(), (100,150),
-                         'wrong size after resize')
-
+        self.widget.resize(100, 150)
+        self.assertEqual(self.widget.size(), (100, 150), "wrong size after resize")
 ```
 
 可以看到幾個特點
@@ -140,7 +137,7 @@ test (或 tests) 本身也必須是一個套件
 
 做了改變後，就能改用更簡潔的指令跑測試了
 
-```python
+```sh
 python -m unittest
 ```
 
@@ -199,16 +196,15 @@ from atta.partner import sponsor
 
 class TestSponsor(unittest.TestCase):
     def setUp(self):
-        sponsors = sponsor.get_all_sponsors('./data/packages.yaml',
-                                            './data/sponsors.yaml')
+        sponsors = sponsor.get_all_sponsors("./data/packages.yaml", "./data/sponsors.yaml")
         self.sponsors = sponsors
 
-        ......
+        ...
 
     def test_sponsor_number(self):
         self.assertEqual(len(self.sponsors), 1)
 
-        .......
+        ...
 ```
 
 ### Step 1: 使用 fixture 取代 setUp / tearDown
@@ -230,15 +226,14 @@ from report_generator.partner import sponsor
 class TestSponsor:
     @pytest.fixture(scope="class")
     def sponsors(self):
-        return sponsor.get_all_sponsors("test/data/packages.yaml",
-                                        “test/data/sponsors.yaml")
+        return sponsor.get_all_sponsors("test/data/packages.yaml", "test/data/sponsors.yaml")
 
-        ......
+        ...
 
     def test_sponsor_number(self, sponsors):
         assert len(sponsors) == 1
 
-        ......
+        ...
 ```
 
 (p.s. 在這裡 `atta` 已經重新命名為 `report_generator`)
@@ -257,6 +252,7 @@ from report_generator.partner import sponsor
 
 class TestSponsor:
     ...
+
     @pytest.mark.skip("No bronze sponsor in test case")
     def test_sponsor_promotion_web_click_rank_bronze(self):
         answer = sponsor.NA_CONTENT_MESSAGE
@@ -289,8 +285,7 @@ from report_generator.partner import sponsor
 
 @pytest.fixture(scope="function")
 def sponsors():
-    return sponsor.get_all_sponsors("test/data/packages.yaml",
-                                    "test/data/sponsors.yaml")
+    return sponsor.get_all_sponsors("test/data/packages.yaml", "test/data/sponsors.yaml")
 
 
 def test_sponsor_number(sponsors):

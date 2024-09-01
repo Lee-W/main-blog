@@ -20,10 +20,10 @@ In short, it's a way to define multiple tasks at runtime. For example,
 
 ```python
 with DAG(dag_id="dynamic_task_mapping", start_date=datetime(2022, 3, 4)) as dag:
+
     @task
     def sum(x: int, y: int, z: int):
         return x + y + z
-
 
     sum_values = sum.partial(y=10).expand(x=[1, 2], y=[300, 400])
 ```
@@ -47,10 +47,10 @@ The previous example can be modified to utilize `expand_kwargs`, and it will loo
 
 ```python
 with DAG(dag_id="dynamic_task_mapping", start_date=datetime(2022, 3, 4)) as dag:
+
     @task
     def sum(x: int, y: int, z: int):
         return x + y + z
-
 
     sum_values = sum.partial(y=10).expand_kwargs(
         [
@@ -59,6 +59,7 @@ with DAG(dag_id="dynamic_task_mapping", start_date=datetime(2022, 3, 4)) as dag:
             {"x": 2, "y": 300},
             {"x": 2, "y": 400},
         ]
+    )
 ```
 
 For more details, please check [Dynamic Task Mapping](https://airflow.apache.org/docs/apache-airflow/2.10.0/authoring-and-scheduling/dynamic-task-mapping.html)
@@ -126,6 +127,7 @@ There's not much we can do unless we rewrite the entire dynamic task mapping fea
 
 Let's go back to [where we decide whether to defer or not](https://github.com/apache/airflow/pull/39912/files#diff-649fbbf224bab54417f03338c27d0fdb3c3336e53a522a13dfd9806c99f63137R1580-R1594). We implemented a new `expand_start_from_trigger` method and try to provide a way for the mapped operator to get `start_from_trigger.` For non-mapped operators, this method only returns `self.start_from_trigger`.
 
+<!-- blacken-docs:off -->
 ```python
             # check "start_trigger_args" to see whether the operator supports start execution from triggerer
             # if so, we'll then check "start_from_trigger" to see whether this feature is turned on and defer
@@ -143,33 +145,34 @@ Let's go back to [where we decide whether to defer or not](https://github.com/ap
                 else:
                     schedulable_ti_ids.append((ti.task_id, ti.map_index))
 ```
+<!-- blacken-docs:on -->
 
 For the mapped operator, it checks whether the argument `start_from_trigger` is passed through `partial`, `expand`, and `expand_kwargs` (the methods you need to use dynamic task mapping as mentioned in the "What is dynamic task mapping anyway?" section). If so, we'll use this value to decide whether to defer the task.
 
 ```python
-    def expand_start_from_trigger(self, *, context: Context, session: Session) -> bool:
-        """
-        Get the start_from_trigger value of the current abstract operator.
-        MappedOperator uses this to unmap start_from_trigger to decide whether to start the task
-        execution directly from triggerer.
-        :meta private:
-        """
-        # start_from_trigger only makes sense when start_trigger_args exists.
-        if not self.start_trigger_args:
-            return False
+def expand_start_from_trigger(self, *, context: Context, session: Session) -> bool:
+    """
+    Get the start_from_trigger value of the current abstract operator.
+    MappedOperator uses this to unmap start_from_trigger to decide whether to start the task
+    execution directly from triggerer.
+    :meta private:
+    """
+    # start_from_trigger only makes sense when start_trigger_args exists.
+    if not self.start_trigger_args:
+        return False
 
-        mapped_kwargs, _ = self._expand_mapped_kwargs(context, session, include_xcom=False)
-        if self._disallow_kwargs_override:
-            prevent_duplicates(
-                self.partial_kwargs,
-                mapped_kwargs,
-                fail_reason="unmappable or already specified",
-            )
-
-        # Ordering is significant; mapped kwargs should override partial ones.
-        return mapped_kwargs.get(
-            "start_from_trigger", self.partial_kwargs.get("start_from_trigger", self.start_from_trigger)
+    mapped_kwargs, _ = self._expand_mapped_kwargs(context, session, include_xcom=False)
+    if self._disallow_kwargs_override:
+        prevent_duplicates(
+            self.partial_kwargs,
+            mapped_kwargs,
+            fail_reason="unmappable or already specified",
         )
+
+    # Ordering is significant; mapped kwargs should override partial ones.
+    return mapped_kwargs.get(
+        "start_from_trigger", self.partial_kwargs.get("start_from_trigger", self.start_from_trigger)
+    )
 ```
 
 Note that the argument name must be the same to take effect. If you're doing something like
@@ -231,14 +234,8 @@ class WaitHoursSensor(BaseSensorOperator):
 When defining the task, you need to pass `start_from_trigger` or `trigger_kwargs` to the `partial`, `expand`, or `expand_kwargs` method. The name needs to be precisely the same.
 
 ```python
-wait_hours_task = WaitHoursSensor.partial(
-    task_id="wait_for_n_hours",
-    start_from_trigger=True
-).expand(
-    trigger_kwargs=[
-        {"hours": 1},
-        {"hours": 2}
-    ]
+wait_hours_task = WaitHoursSensor.partial(task_id="wait_for_n_hours", start_from_trigger=True).expand(
+    trigger_kwargs=[{"hours": 1}, {"hours": 2}]
 )
 ```
 

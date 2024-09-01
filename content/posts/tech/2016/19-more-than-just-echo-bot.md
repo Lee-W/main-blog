@@ -26,18 +26,18 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別
 上一篇文章，輸入關鍵字就能回傳 template message 的 bot 也是用這樣的方式實作的
 
 ```python
-if 'button' in text:
+if "button" in text:
     # Send ButtonTemplate
-    ......
-elif 'confirm' in text:
+    ...
+elif "confirm" in text:
     # Send ConfirmTemplate
-    ......
-elif 'carousel' in text:
+    ...
+elif "carousel" in text:
     # Send CarouselTemplate
-    ......
+    ...
 else:
     # Echo TextMessage
-    ......
+    ...
 ```
 
 回歸到天氣的問題
@@ -47,10 +47,10 @@ else:
 e.g.
 
 ```python
-if '天氣' in text:
-    if '今天' in text:
+if "天氣" in text:
+    if "今天" in text:
         return today_s_weather
-    elif '明天' in text:
+    elif "明天" in text:
         return tomorrow_s_weather
 ```
 

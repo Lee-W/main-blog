@@ -75,6 +75,7 @@ If the attributes `start_trigger_args` and `start_from_trigger` are defined as c
 ## What's changed under the hook
 Let's start from [airflow/models/dagrun.py](https://github.com/apache/airflow/blob/9901a065fcd93307d8e1d69e34621966d7313511/airflow/models/dagrun.py#L1541-L1545). Airflow verifies if the `start_from_trigger` attribute is set to `True` and the `start_from_trigger` attribute is set. If both conditions are met, the `defer_task` method will be called with `exception=None`.
 
+<!-- blacken-docs:off -->
 ```python
             elif ti.task.start_from_trigger is True and ti.task.start_trigger_args is not None:
                 ti.start_date = timezone.utcnow()
@@ -82,25 +83,26 @@ Let's start from [airflow/models/dagrun.py](https://github.com/apache/airflow/bl
                     ti.try_number += 1
                 ti.defer_task(exception=None, session=session)
 ```
+<!-- blacken-docs:on -->
 
 Then, let's go to [airflow/models/taskinstance.py](https://github.com/apache/airflow/blob/9901a065fcd93307d8e1d69e34621966d7313511/airflow/models/taskinstance.py#L1607-L1621).
 
 ```python
-    if exception is not None:
-        trigger_row = Trigger.from_object(exception.trigger)
-        next_method = exception.method_name
-        next_kwargs = exception.kwargs
-        timeout = exception.timeout
-    elif ti.task is not None and ti.task.start_trigger_args is not None:
-        trigger_row = Trigger(
-            classpath=ti.task.start_trigger_args.trigger_cls,
-            kwargs=ti.task.start_trigger_args.trigger_kwargs or {},
-        )
-        next_kwargs = ti.task.start_trigger_args.next_kwargs
-        next_method = ti.task.start_trigger_args.next_method
-        timeout = ti.task.start_trigger_args.timeout
-    else:
-        raise AirflowException("exception and ti.task.start_trigger_args cannot both be None")
+if exception is not None:
+    trigger_row = Trigger.from_object(exception.trigger)
+    next_method = exception.method_name
+    next_kwargs = exception.kwargs
+    timeout = exception.timeout
+elif ti.task is not None and ti.task.start_trigger_args is not None:
+    trigger_row = Trigger(
+        classpath=ti.task.start_trigger_args.trigger_cls,
+        kwargs=ti.task.start_trigger_args.trigger_kwargs or {},
+    )
+    next_kwargs = ti.task.start_trigger_args.next_kwargs
+    next_method = ti.task.start_trigger_args.next_method
+    timeout = ti.task.start_trigger_args.timeout
+else:
+    raise AirflowException("exception and ti.task.start_trigger_args cannot both be None")
 ```
 
 We handle standard task deferral in the first `if` condition. This happens when a task runs the `defer` method and raises a `TaskDeferred` exception. For a more detailed version, you can refer to [this link]({filename}/posts/tech/2024/7-airflow-start-execution-directly-from-trigger-instead-of-going-into-worker.md#how-did-the-deferrable-operator-work-before-this-change). Therefore, we need to set `exception=None` in the previous code block, as we are not handling it in the standard way.

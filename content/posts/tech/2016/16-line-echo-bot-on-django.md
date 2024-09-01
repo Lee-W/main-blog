@@ -62,25 +62,24 @@ export LINE_CHANNEL_SECRET='Your line channel secret'
 ```python
 # line_echobot/settings.py
 
-......
+...
+
 
 def get_env_variable(var_name):
     try:
         return os.environ[var_name]
     except KeyError:
-        error_msg = 'Set the {} environment variable'.format(var_name)
+        error_msg = "Set the {} environment variable".format(var_name)
         raise ImproperlyConfigured(error_msg)
 
-SECRET_KEY = get_env_variable('SECRET_KEY')
-LINE_CHANNEL_ACCESS_TOKEN = get_env_variable('LINE_CHANNEL_ACCESS_TOKEN')
-LINE_CHANNEL_SECRET = get_env_variable('LINE_CHANNEL_SECRET')
 
-......
+SECRET_KEY = get_env_variable("SECRET_KEY")
+LINE_CHANNEL_ACCESS_TOKEN = get_env_variable("LINE_CHANNEL_ACCESS_TOKEN")
+LINE_CHANNEL_SECRET = get_env_variable("LINE_CHANNEL_SECRET")
 
-INSTALLED_APPS = [
-    ......,
-    'echobot'
-]
+...
+
+INSTALLED_APPS = [..., "echobot"]
 ```
 
 不過如果只是單純測試用，這些值也可以直接寫死在 settings.py 中
@@ -103,16 +102,16 @@ INSTALLED_APPS = [
 
 ```python
 # line_echobot/urls.py
-......
+...
 
 import echobot
 
 urlpatterns = [
-    ......,
-    url(r'^echobot/', include('echobot.urls')),
+    ...,
+    url(r"^echobot/", include("echobot.urls")),
 ]
 
-......
+...
 ```
 
 接著在 echobot 內，創一個 `urls.py`
@@ -126,7 +125,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url('^callback/', views.callback),
+    url("^callback/", views.callback),
 ]
 ```
 
@@ -165,11 +164,12 @@ line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 ```python
 # TODO: Define Receiver
 
+
 @csrf_exempt
 def callback(request):
-    if request.method == 'POST':
-        signature = request.META['HTTP_X_LINE_SIGNATURE']
-        body = request.body.decode('utf-8')
+    if request.method == "POST":
+        signature = request.META["HTTP_X_LINE_SIGNATURE"]
+        body = request.body.decode("utf-8")
 
         # TODO: Handler when receiver Line Message
 
@@ -190,8 +190,8 @@ def callback(request):
 也就是上面的
 
 ```python
-signature = request.META['HTTP_X_LINE_SIGNATURE']
-body = request.body.decode('utf-8')
+signature = request.META["HTTP_X_LINE_SIGNATURE"]
+body = request.body.decode("utf-8")
 ```
 
 ### Handle Received Message
@@ -243,10 +243,7 @@ except LineBotApiError:
 for event in events:
     if isinstance(event, MessageEvent):
         if isinstance(event.message, TextMessage):
-            line_bot_api.reply_message(
-                event.reply_token,
-                TextSendMessage(text=event.message.text)
-            )
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text=event.message.text))
 ```
 
 最後的 `reply_message` 函式，讓我們傳訊息給 Line Server
@@ -279,10 +276,7 @@ handler = WebhookHandler(settings.LINE_CHANNEL_SECRET)
 ```python
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text)
-    )
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=event.message.text))
 ```
 
 因為沒有要處理其他訊息
@@ -294,8 +288,7 @@ def handle_text_message(event):
 def default(event):
     print(event)
     line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text='Currently Not Support None Text Message')
+        event.reply_token, TextSendMessage(text="Currently Not Support None Text Message")
     )
 ```
 
@@ -336,9 +329,9 @@ parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
 
 @csrf_exempt
 def callback(request):
-    if request.method == 'POST':
-        signature = request.META['HTTP_X_LINE_SIGNATURE']
-        body = request.body.decode('utf-8')
+    if request.method == "POST":
+        signature = request.META["HTTP_X_LINE_SIGNATURE"]
+        body = request.body.decode("utf-8")
 
         try:
             events = parser.parse(body, signature)
@@ -350,10 +343,7 @@ def callback(request):
         for event in events:
             if isinstance(event, MessageEvent):
                 if isinstance(event.message, TextMessage):
-                    line_bot_api.reply_message(
-                        event.reply_token,
-                        TextSendMessage(text=event.message.text)
-                    )
+                    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=event.message.text))
 
         return HttpResponse()
     else:
@@ -380,26 +370,22 @@ handler = WebhookHandler(settings.LINE_CHANNEL_SECRET)
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text)
-    )
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=event.message.text))
 
 
 @handler.default()
 def default(event):
     print(event)
     line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text='Currently Not Support None Text Message')
+        event.reply_token, TextSendMessage(text="Currently Not Support None Text Message")
     )
 
 
 @csrf_exempt
 def callback(request):
-    if request.method == 'POST':
-        signature = request.META['HTTP_X_LINE_SIGNATURE']
-        body = request.body.decode('utf-8')
+    if request.method == "POST":
+        signature = request.META["HTTP_X_LINE_SIGNATURE"]
+        body = request.body.decode("utf-8")
 
         try:
             handler.handle(body, signature)

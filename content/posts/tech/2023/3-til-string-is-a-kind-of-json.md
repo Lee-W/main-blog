@@ -19,8 +19,10 @@ Authors: Wei Lee
 
 用 Python 做了點小實驗，確實也不會遇到 `JSONDecodeError`
 
+<!-- blacken-docs:off -->
 ```python
 >>> import json
 >>> json.loads('""')
 ''
 ```
+<!-- blacken-docs:on -->

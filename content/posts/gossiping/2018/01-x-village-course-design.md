@@ -107,6 +107,7 @@ e.g.,
 
 ### Exercise4 用 Python 做排序 (ex4.py)
 
+<!-- blacken-docs:off -->
 ```python
 some_list = [
     65, 81, 65, 19, 6, 28, 86, 40, 72, 27,
@@ -121,6 +122,7 @@ some_list = [
     18, 9, 64, 51, 76, 76, 96, 5, 18
 ]
 ```
+<!-- blacken-docs:on -->
 
 寫過 Python 的人，一定馬上就會想到用 `sort` 或 `sorted`
 但我故意把練習時間拉長到 20 分鐘
@@ -180,7 +182,7 @@ json_str = '{"' + course_name + '": "' + course_id + '"}'
 這題的解答也是差不多一行而已
 
 ```python
-data = sorted(ptt_data, key=lambda x: x['some_key'])
+data = sorted(ptt_data, key=lambda x: x["some_key"])
 ```
 
 但我認為這對新手來說，已經會是相對挑戰的練習了

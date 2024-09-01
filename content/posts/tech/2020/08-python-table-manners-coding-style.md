@@ -23,11 +23,14 @@ linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤
 ### 使用
 以下面這段程式碼為例
 
+<!-- blacken-docs:off -->
 ```python
 # bad_code.py
 import os
+
 os =  "My Operating system"
 ```
+<!-- blacken-docs:on -->
 
 這段程式碼出現了兩個問題
 
@@ -95,7 +98,7 @@ Read More 👉 [Configuring Flake8](https://flake8.pycqa.org/en/latest/user/conf
 e.g.,
 
 ```python
-example = lambda: 'example'  # noqa: E731
+example = lambda: "example"  # noqa: E731
 ```
 
 ## 風格檢查 - pylint

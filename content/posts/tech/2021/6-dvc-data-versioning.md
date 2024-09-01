@@ -205,11 +205,13 @@ def load_data(X_path, y_path):
 
     return X, y
 
-......
+
+...
+
 
 def main():
     X, y = load_data("data/digit_data.csv", "data/digit_target.csv")
-    ......
+    ...
 ```
 
 Run `pipenv run python digit_recognizer/digit_recognizer.py` to check whether everything works as we expected. If so, add these code changes into git.

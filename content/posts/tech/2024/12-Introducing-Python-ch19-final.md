@@ -161,7 +161,9 @@ def debug(func):
         result = func(*args, **kwargs)
         print("after function ends")
         return result
+
     return wrapper
+
 
 @debug
 def func():

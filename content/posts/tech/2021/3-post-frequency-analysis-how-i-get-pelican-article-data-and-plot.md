@@ -126,8 +126,8 @@ e.g.,
 而我額外多做了兩個處理
 
 ```python
-        settings["PLUGINS"] = []
-        settings["MARKDOWN"] = {}
+settings["PLUGINS"] = []
+settings["MARKDOWN"] = {}
 ```
 
 原因是 MARKDOWN 跟 PLUGINS 都有可能有額外的相依套件

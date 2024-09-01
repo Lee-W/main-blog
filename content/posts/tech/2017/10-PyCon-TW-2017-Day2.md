@@ -61,9 +61,9 @@ Raise clear, verbose exception
 
 ```python
 try:
-    requests.get('http://api.com/user')
+    requests.get("http://api.com/user")
 except RequestError:
-    raise APIFetchError('Could not get user list')
+    raise APIFetchError("Could not get user list")
 ```
 
 ### Testing

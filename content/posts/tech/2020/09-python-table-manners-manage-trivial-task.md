@@ -89,6 +89,7 @@ invoke 會傳入一個 context 做為第一個參數 (Read More 👉 [what exact
 ```python
 from invoke import task
 
+
 @task
 def develop(ctx):
     ctx.run("python setup.py develop")
@@ -104,6 +105,7 @@ from invoke import task
 
 PIPENV_PREFIX = "pipenv run"
 
+
 @task
 def develop(ctx):
     ctx.run(f"{PIPENV_PREFIX} python setup.py develop")
@@ -118,9 +120,11 @@ e.g., 在初始環境 (`init`) 前，常會先清除不必要的檔案 (`clean`)
 ```python
 from invoke import task
 
+
 @task
 def clean():
     print("clean up")
+
 
 @task(pre=[clean])
 def init():
@@ -199,13 +203,14 @@ from invoke import task
 
 PIPENV_PREFIX = "pipenv run"
 
+
 @task
 def clean(cmd):
     """Remove all the tmp files in .gitignore"""
     files_to_remove = []
-    with open('.gitignore') as input_file:
+    with open(".gitignore") as input_file:
         for line in input_file.readlines():
-            if not line.startswith('#'):
+            if not line.startswith("#"):
                 files_to_remove.append(line.strip())
 
     cmd.run(f"rm -rf {' '.join(files_to_remove)}")

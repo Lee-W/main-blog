@@ -42,7 +42,7 @@ Authors: Wei Lee
 假設有一段產生 SQL 字串的程式碼是這樣寫的
 
 ```python
-sql_str = "SELECT * FROM users WHERE (name = '" + username + "') and (pw = '"+ password +"');"
+sql_str = "SELECT * FROM users WHERE (name = '" + username + "') and (pw = '" + password + "');"
 ```
 
 只要攻擊者輸入了
@@ -173,9 +173,7 @@ import web
 
 
 def login(account: str, password: str) -> Optional[web.utils.Storage]:
-    result_set = db.select(
-        "USER", where=f"account ='{account}' AND password='{password}'"
-    )
+    result_set = db.select("USER", where=f"account ='{account}' AND password='{password}'")
     user = result_set.first()
     if user:
         print("login succeeded")
@@ -350,9 +348,12 @@ a 會在 475 行被初始化成 [SQLParam](https://github.com/webpy/webpy/blob/0
 
 1701 行的 `[self.eval_node(node, mapping) for node in nodes]` 會產生
 
+<!-- blacken-docs:off -->
 ```python
+>>> self.eval_node(node, mapping) for node in nodes
 ['account =', <sql: '"1\' OR \'1\'=\'1"'>, ' AND password=', <sql: '"1\' OR \'1\'=\'1"'>]
 ```
+<!-- blacken-docs:on -->
 
 這個 list 會接著被帶入 `SQLQuery.join` 整合成一整個 SQL 的片段
 
