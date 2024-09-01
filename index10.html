@@ -112,13 +112,13 @@
 
     <li class="nav-🏠 Home active" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
     <li class="nav-About Me " role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+    <li class="nav-👨‍💻 Tech " role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+    <li class="nav-📚 Book Digest " role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+    <li class="nav-💬 Gossiping " role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
     <li class="nav-🗄️ Archives " role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
     <li class="nav-📚 Series " role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
     <li class="nav-🔍 Search " role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
 
-      <li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-      <li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-      <li role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
     <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i class="icon icon-linkedin" aria-hidden="true"></i>
@@ -176,6 +176,50 @@
 </nav>
     </div>
 
+
+
+    <article class="post">
+        <div class="inner">
+            <div class="box post-box">
+                <h2 class="post-title">
+                    <a href="https://blog.wei-lee.me/posts/tech/2017/05/common-neovim-problems" rel="bookmark" title="Permalink to Common Neovim Problems ">
+                        Common Neovim Problems
+                    </a>
+                </h2>
+                <span class="post-meta">
+                    By 
+                        <a class="post-meta-tag" href="https://blog.wei-lee.me/author/wei-lee.html">Wei Lee</a>
+                     in 
+                    <a class="post-meta-tag" href="https://blog.wei-lee.me/category/tech.html">Tech</a>
+                      on <time datetime="2017/05/14 - Sun">2017/05/14 - Sun</time>
+                </span>
+                <p class="post-excerpt">
+                        <!--more-->
+
+<h2 id="load-vimrc-from-neovim">Load ~/.vimrc from neovim</h2>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="p">:=</span><span class="nv">$HOME</span><span class="p">/.config</span><span class="si">}</span>
+ln<span class="w"> </span>-s<span class="w"> </span>~/.vim<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/nvim
+ln<span class="w"> </span>-s<span class="w"> </span>~/.vimrc<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/nvim/init.vim
+</code></pre></div>
+
+<h2 id="no-python-interpreter-found">No python interpreter found.</h2>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>neovim
+</code></pre></div>
+
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/neovim/neovim/issues/3536">.nvimrc doesn't seem to be loaded up or working and it cannot create backups on editing existing files</a></li>
+<li><a href="https://github.com/neovim/neovim/issues/1755">No python interpreter …</a></li></ul>
+                </p>
+
+                <div class="post-excerpt">
+
+                    <aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/vim.html">Vim</a><a href="https://blog.wei-lee.me/tag/neovim.html">Neovim</a>                    </aside>
+                </div>
+            </div>
+        </div>
+    </article>
 
 
     <article class="post">
@@ -329,7 +373,7 @@
                       on <time datetime="2017/03/24 - Fri">2017/03/24 - Fri</time>
                 </span>
                 <p class="post-excerpt">
-                        <p><img alt="做工的人" src="/images/books/SlWTvkO.jpg"></p>
+                        <p><img alt="做工的人" src="/images/books/workers.jpg"></p>
 <p>「做工的人」由一個個藍領階級的故事所組成<br>
 說的是那些壓迫、歧視和無奈<br>
 看這本書是會讓人感到很難過的</p>
@@ -433,7 +477,7 @@
                       on <time datetime="2017/03/05 - Sun">2017/03/05 - Sun</time>
                 </span>
                 <p class="post-excerpt">
-                        <p><img alt="此人進廠維修中" src="/images/books/M5ZXQkh.jpg"></p>
+                        <p><img alt="此人進廠維修中" src="/images/books/this-guy-is-in-maintainence.jpg"></p>
 <p>這本書不談情緒管理，而是如何與情緒共處</p>
 <p>我總覺得這些有關情緒的書，要做筆記實在是一件很困難的事<br>
 不過這裡就稍微紀錄比較能紀錄的部分吧</p>
@@ -466,7 +510,7 @@
                       on <time datetime="2017/03/03 - Fri">2017/03/03 - Fri</time>
                 </span>
                 <p class="post-excerpt">
-                        <p><img alt="how-to-read-a-book" src="/images/books/D1Obrmf.jpg"></p>
+                        <p><img alt="how-to-read-a-book" src="/images/books/how-to-read-a-book.jpg"></p>
 
                 </p>
 
@@ -474,38 +518,6 @@
 
                     <aside class="post-tags">
 <a href="https://blog.wei-lee.me/tag/other.html">Other</a>                    </aside>
-                </div>
-            </div>
-        </div>
-    </article>
-
-
-    <article class="post">
-        <div class="inner">
-            <div class="box post-box">
-                <h2 class="post-title">
-                    <a href="https://blog.wei-lee.me/posts/tech/2017/02/git-ignoreio-and-open-source-experience" rel="bookmark" title="Permalink to git ignore-io 與 開源貢獻經驗 ">
-                        git ignore-io 與 開源貢獻經驗
-                    </a>
-                </h2>
-                <span class="post-meta">
-                    By 
-                        <a class="post-meta-tag" href="https://blog.wei-lee.me/author/wei-lee.html">Wei Lee</a>
-                     in 
-                    <a class="post-meta-tag" href="https://blog.wei-lee.me/category/tech.html">Tech</a>
-                      on <time datetime="2017/02/28 - Tue">2017/02/28 - Tue</time>
-                </span>
-                <p class="post-excerpt">
-                        <p>雖然已經隔了一年多<br>
-當初 git ignore-io 這個小功能，也是花了一兩個月<br>
-好不容易才<a href="https://github.com/tj/git-extras">git extras</a> merge 回去的</p>
-
-                </p>
-
-                <div class="post-excerpt">
-
-                    <aside class="post-tags">
-<a href="https://blog.wei-lee.me/tag/open-source.html">Open Source</a>                    </aside>
                 </div>
             </div>
         </div>

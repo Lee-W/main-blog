@@ -99,12 +99,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -265,6 +265,7 @@ sequenceDiagram
 </code></pre></div>
 <h2 id="how-does-it-work-under-the-hook">How does it work under the hook</h2>
 <p>Let's take a look at <a href="https://github.com/apache/airflow/blob/3d97474a49a00bb6fcd67cf20d470a1fc2861f4f/airflow/models/dagrun.py#L1541-L1553">airflow/models/dagrun.py</a></p>
+<!-- blacken-docs:off -->
 <div class="highlight"><pre><span></span><code>            <span class="k">elif</span> <span class="p">(</span>
                 <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
                 <span class="ow">and</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">next_method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -279,6 +280,7 @@ sequenceDiagram
                     <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
                 <span class="p">)</span>
 </code></pre></div>
+<!-- blacken-docs:on -->
 <p>It checks whether a task has both <code>start_trigger</code> and <code>next_method</code> set. If so, we'll defer this task by calling <code>defer_task</code> instead of adding it to <code>schedulable_ti_ids.</code> (The <code>on_execute_callback</code>, <code>on_success_callback</code>, and <code>outlets</code> checks are actually wrong and are addressed in <a href="https://github.com/apache/airflow/pull/39585">#39585</a>).</p>
 <h2 id="limitation">Limitation</h2>
 <p>Dynamic Task Mapping / MappedOperator is not fully supported at this time due to the way this type of operator is initialized on the worker. However, a draft PR <a href="https://github.com/apache/airflow/pull/39912">#39912</a> has been created to address this.</p>

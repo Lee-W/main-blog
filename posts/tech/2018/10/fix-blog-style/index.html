@@ -95,12 +95,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -222,35 +222,46 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 <h4 id="setuppy">setup.py</h4>
 <p>平常我都是透過 <code>pelican -r -o output -s pelicanconf.py</code>這個指令來產生文章<br/>
 所以第一步就是要從 <a href="https://github.com/getpelican/pelican/blob/master/setup.py#L15">setup.py</a> 找出 pelican 這個指令是哪裡來的</p>
-<div class="highlight"><pre><span></span><code>        <span class="o">...</span>
-        <span class="s1">'pelican = pelican:main'</span><span class="p">,</span>
-        <span class="o">...</span>
+<!-- blacken-docs:off -->
+<div class="highlight"><pre><span></span><code>    <span class="o">...</span>
+    <span class="s2">"pelican = pelican:main"</span><span class="p">,</span>
+    <span class="o">...</span>
 </code></pre></div>
+<!-- blacken-docs:on -->
 <h4 id="pelicaninitpy">pelican/<strong>init</strong>.py</h4>
 <p>既然在 <a href="https://github.com/getpelican/pelican/tree/3.7.1/pelican">pelican</a> 這個 package 中沒有 <code>main.py</code><br/>
 那 Python 還能找到 <code>main</code> 就只剩下 <code>__init__.py</code><br/>
 扣除掉一些 parse 指令參數的程式碼<br/>
 接下來最像是產生文章的程式碼就是<a href="https://github.com/getpelican/pelican/blob/master/pelican/__init__.py#L147">147行</a> 的 <code>run</code></p>
-<div class="highlight"><pre><span></span><code>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">generators</span><span class="p">:</span>
-            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s1">'generate_context'</span><span class="p">):</span>
-                <span class="n">p</span><span class="o">.</span><span class="n">generate_context</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">generators</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">"generate_context"</span><span class="p">):</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">generate_context</span><span class="p">()</span>
 </code></pre></div>
 <p>下一步就是要從 <code>generators</code> 找出 <code>generate_context</code> 這個函式</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pelican.generators</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ArticlesGenerator</span><span class="p">,</span> <span class="n">PagesGenerator</span><span class="p">,</span>
-                                <span class="n">SourceFileGenerator</span><span class="p">,</span> <span class="n">StaticGenerator</span><span class="p">,</span>
-                                <span class="n">TemplatePagesGenerator</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pelican.generators</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ArticlesGenerator</span><span class="p">,</span>
+    <span class="n">PagesGenerator</span><span class="p">,</span>
+    <span class="n">SourceFileGenerator</span><span class="p">,</span>
+    <span class="n">StaticGenerator</span><span class="p">,</span>
+    <span class="n">TemplatePagesGenerator</span><span class="p">,</span>
+<span class="p">)</span>
 </code></pre></div>
 <h4 id="pelicangeneratorspy">pelican/generators.py</h4>
 <p><code>generators</code>中看起來最有關的就是 <code>ArticlesGenerator</code><br/>
 這個 class 也找到了 <code>generate_context</code></p>
-<div class="highlight"><pre><span></span><code>                <span class="k">try</span><span class="p">:</span>
-                    <span class="n">article_or_draft</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readers</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
-                        <span class="n">base_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">content_class</span><span class="o">=</span><span class="n">Article</span><span class="p">,</span>
-                        <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">,</span>
-                        <span class="n">preread_signal</span><span class="o">=</span><span class="n">signals</span><span class="o">.</span><span class="n">article_generator_preread</span><span class="p">,</span>
-                        <span class="n">preread_sender</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-                        <span class="n">context_signal</span><span class="o">=</span><span class="n">signals</span><span class="o">.</span><span class="n">article_generator_context</span><span class="p">,</span>
-                        <span class="n">context_sender</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">article_or_draft</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readers</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+        <span class="n">base_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
+        <span class="n">path</span><span class="o">=</span><span class="n">f</span><span class="p">,</span>
+        <span class="n">content_class</span><span class="o">=</span><span class="n">Article</span><span class="p">,</span>
+        <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">,</span>
+        <span class="n">preread_signal</span><span class="o">=</span><span class="n">signals</span><span class="o">.</span><span class="n">article_generator_preread</span><span class="p">,</span>
+        <span class="n">preread_sender</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+        <span class="n">context_signal</span><span class="o">=</span><span class="n">signals</span><span class="o">.</span><span class="n">article_generator_context</span><span class="p">,</span>
+        <span class="n">context_sender</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="o">...</span>
 </code></pre></div>
 <p>這裡找到的是文章被產生的地方<br/>
 只要能在找到文章中的內容是在哪產生，應該就能解決我的問題<br/>
@@ -260,20 +271,20 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 接著 trace 這個 class 到<a href="https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L526">526行</a>就真的是文章內容第一次被產生的地方<br/>
 到目前為止，文章的內容還是沒有多餘的空白<br/>
 所以順利的話只要從這繼續 trace 下去就能找出問題</p>
-<div class="highlight"><pre><span></span><code>        <span class="n">content</span><span class="p">,</span> <span class="n">reader_metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cached_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-        <span class="k">if</span> <span class="n">content</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">content</span><span class="p">,</span> <span class="n">reader_metadata</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">cache_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">reader_metadata</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="n">content</span><span class="p">,</span> <span class="n">reader_metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cached_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">content</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">content</span><span class="p">,</span> <span class="n">reader_metadata</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cache_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">reader_metadata</span><span class="p">))</span>
 </code></pre></div>
 <p>最後發現問題是出在 <a href="https://github.com/getpelican/pelican/blob/3.7.1/pelican/readers.py#L555">555行</a></p>
-<div class="highlight"><pre><span></span><code>            <span class="k">if</span> <span class="n">content</span><span class="p">:</span>
-                <span class="n">content</span> <span class="o">=</span> <span class="n">typogrify_wrapper</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">content</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">typogrify_wrapper</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
 </code></pre></div>
 <p>只要不對 <code>content</code> 做 <code>typogrify_wrapper</code>就不會產生多餘的空白</p>
 <p><a id="transport"></a></p>
 <h4 id="typogrify">typogrify</h4>
 <p>typogrify 是 <code>pelicanconf.py</code> (pelican 的設定檔) 中的一個設定</p>
-<div class="highlight"><pre><span></span><code><span class="n">TYPOGRIFY</span><span class="o">=</span><span class="kc">False</span>
+<div class="highlight"><pre><span></span><code><span class="n">TYPOGRIFY</span> <span class="o">=</span> <span class="kc">False</span>
 </code></pre></div>
 <p>只要關掉 typogrify 就不會再產生出多餘的空白</p>
 <p><a href="https://github.com/mintchaos/typogrify">typogrify</a> 看來是某種加強 HTML 的工具<br/>

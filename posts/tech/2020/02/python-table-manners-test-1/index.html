@@ -97,12 +97,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -213,16 +213,14 @@
 
 <span class="k">class</span> <span class="nc">WidgetTestCase</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s1">'The widget'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s2">"The widget"</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">test_default_widget_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span>
-                         <span class="s1">'incorrect default size'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="s2">"incorrect default size"</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">test_widget_resize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">),</span>
-                         <span class="s1">'wrong size after resize'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="s2">"wrong size after resize"</span><span class="p">)</span>
 </code></pre></div>
 <p>可以看到幾個特點</p>
 <ul>
@@ -272,7 +270,7 @@ git<span class="w"> </span>checkout<span class="w"> </span>83e4~1
 pipenv<span class="w"> </span>install<span class="w"> </span>--dev
 </code></pre></div>
 <h3 id="test-discovery">測試探索 (test discovery)</h3>
-<p>原本在 <code>REAMDE.md</code> 中要跑測試的指令相當的冗長<br/>
+<p>原本在 <code>README.md</code> 中要跑測試的指令相當的冗長<br/>
 而且還必須要切換到 test 資料夾 (i.e., <code>cd test</code>)</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="nb">test</span>
 python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>./<span class="w"> </span>-p<span class="w"> </span><span class="s1">'test_*.py'</span>
@@ -294,7 +292,7 @@ python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w">
     └── test_title.py
 </code></pre></div>
 <p>做了改變後，就能改用更簡潔的指令跑測試了</p>
-<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>unittest
 </code></pre></div>
 <p>因為 pytest 也支援 unittest 風格<br/>
 所以也可以直接使用 <code>pytest</code> 指令跑測試</p>
@@ -339,16 +337,15 @@ test/test_title.py F                                     [100%]
 
 <span class="k">class</span> <span class="nc">TestSponsor</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">sponsors</span> <span class="o">=</span> <span class="n">sponsor</span><span class="o">.</span><span class="n">get_all_sponsors</span><span class="p">(</span><span class="s1">'./data/packages.yaml'</span><span class="p">,</span>
-                                            <span class="s1">'./data/sponsors.yaml'</span><span class="p">)</span>
+        <span class="n">sponsors</span> <span class="o">=</span> <span class="n">sponsor</span><span class="o">.</span><span class="n">get_all_sponsors</span><span class="p">(</span><span class="s2">"./data/packages.yaml"</span><span class="p">,</span> <span class="s2">"./data/sponsors.yaml"</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sponsors</span> <span class="o">=</span> <span class="n">sponsors</span>
 
-        <span class="o">......</span>
+        <span class="o">...</span>
 
     <span class="k">def</span> <span class="nf">test_sponsor_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sponsors</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
 
-        <span class="o">.......</span>
+        <span class="o">...</span>
 </code></pre></div>
 <h3 id="step-1-fixture-setup-teardown">Step 1: 使用 fixture 取代 setUp / tearDown</h3>
 <p>將 <code>unittest.TestCase</code> 移除，改用 pytest 的 <a href="https://docs.pytest.org/en/6.1.1/fixture.html">fixture</a> 取代 <code>setUp</code><br/>
@@ -365,15 +362,14 @@ pytest 會去找 fixtures 中是否有 <code>sponsors</code> 並將之代入</p>
 <span class="k">class</span> <span class="nc">TestSponsor</span><span class="p">:</span>
     <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">"class"</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">sponsors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">sponsor</span><span class="o">.</span><span class="n">get_all_sponsors</span><span class="p">(</span><span class="s2">"test/data/packages.yaml"</span><span class="p">,</span>
-                                        <span class="err">“</span><span class="n">test</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">sponsors</span><span class="o">.</span><span class="n">yaml</span><span class="s2">")</span>
+        <span class="k">return</span> <span class="n">sponsor</span><span class="o">.</span><span class="n">get_all_sponsors</span><span class="p">(</span><span class="s2">"test/data/packages.yaml"</span><span class="p">,</span> <span class="s2">"test/data/sponsors.yaml"</span><span class="p">)</span>
 
-        <span class="o">......</span>
+        <span class="o">...</span>
 
     <span class="k">def</span> <span class="nf">test_sponsor_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sponsors</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">sponsors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
 
-        <span class="o">......</span>
+        <span class="o">...</span>
 </code></pre></div>
 <p>(p.s. 在這裡 <code>atta</code> 已經重新命名為 <code>report_generator</code>)</p>
 <h3 id="step-2-markskip">Step 2: 使用 mark.skip 跳過部分測試</h3>
@@ -388,6 +384,7 @@ pytest 會去找 fixtures 中是否有 <code>sponsors</code> 並將之代入</p>
 
 <span class="k">class</span> <span class="nc">TestSponsor</span><span class="p">:</span>
     <span class="o">...</span>
+
     <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="s2">"No bronze sponsor in test case"</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">test_sponsor_promotion_web_click_rank_bronze</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">answer</span> <span class="o">=</span> <span class="n">sponsor</span><span class="o">.</span><span class="n">NA_CONTENT_MESSAGE</span>
@@ -414,8 +411,7 @@ test/test_title.py .              [100%]
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">"function"</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">sponsors</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">sponsor</span><span class="o">.</span><span class="n">get_all_sponsors</span><span class="p">(</span><span class="s2">"test/data/packages.yaml"</span><span class="p">,</span>
-                                    <span class="s2">"test/data/sponsors.yaml"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sponsor</span><span class="o">.</span><span class="n">get_all_sponsors</span><span class="p">(</span><span class="s2">"test/data/packages.yaml"</span><span class="p">,</span> <span class="s2">"test/data/sponsors.yaml"</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">test_sponsor_number</span><span class="p">(</span><span class="n">sponsors</span><span class="p">):</span>

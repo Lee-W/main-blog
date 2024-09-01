@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>Building a Customized Linter  - Checking the Default Value of default_deferrable through AST</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="In the previous article, I mentioned that we can only kindly ask users to add the default value of deferrable correctly. But... the fact..." name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Python" name="tags"/>
+<meta content="Airflow" name="tags"/>
+<meta content="Airflow 2.7" name="tags"/>
+<meta content="AST" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="Building a Customized Linter  - Checking the Default Value of default_deferrable through AST" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="In the previous article, I mentioned that we can only kindly ask users to add the default value of deferrable correctly. But... the fact..." prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
+<meta content="https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast" prefix="og: http://ogp.me/ns#" property="og:url">
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type">
+<meta content="2024-09-01 19:15:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Airflow" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Airflow 2.7" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="AST" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me//images/posts-image/2024-check_default_value_of_default_deferrable_through_ast/surely-you-can-do-better.jpg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="Building a Customized Linter  - Checking the Default Value of default_deferrable through AST" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me//images/posts-image/2024-check_default_value_of_default_deferrable_through_ast/surely-you-can-do-better.jpg" name="twitter:image:src"/>
+<meta content="In the previous article, I mentioned that we can only kindly ask users to add the default value of deferrable correctly. But... the fact..." name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Building a Customized Linter - Checking the Default Value of default_deferrable through AST",
+  "headline": "Building a Customized Linter - Checking the Default Value of default_deferrable through AST",
+  "datePublished": "2024-09-01 19:15:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "https://blog.wei-lee.me//images/posts-image/2024-check_default_value_of_default_deferrable_through_ast/surely-you-can-do-better.jpg",
+  "url": "https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast",
+  "description": "In the previous article, I mentioned that we can only kindly ask users to add the default value of deferrable correctly. But... the fact..."
+}
+</script>
+</meta></meta></meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2024", "item": "https://blog.wei-lee.me/posts/tech/2024"}, {"@type": "ListItem", "position": 5, "name": "09", "item": "https://blog.wei-lee.me/posts/tech/2024/09"}, {"@type": "ListItem", "position": 6, "name": "Check_default_value_of_default_deferrable_through_ast", "item": "https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "Building a Customized Linter", "about": "Tech", "datePublished": "2024-09-01 19:15"}</script></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            Building a Customized Linter
+            <br/>
+<small class="post-subtitle-white">Checking the Default Value of default_deferrable through AST</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2024/09/01 - Sun">2024/09/01 - Sun</time>
+          • 4 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me//images/posts-image/2024-check_default_value_of_default_deferrable_through_ast/surely-you-can-do-better.jpg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>In the previous article, I mentioned that we can only kindly ask users to add the default value of deferrable correctly. But... the fact is we can do better.</p>
+<!--more-->
+<p><img alt="surely-you-can-do-better" src="/images/posts-image/2024-check_default_value_of_default_deferrable_through_ast/surely-you-can-do-better.jpg"/></p>
+<div class="toc">
+<ul>
+<li><a href="#what-can-we-do">What can we do?</a></li>
+<li><a href="#lets-formalize-our-goal">Let's formalize our goal</a></li>
+<li><a href="#lets-build-the-linter-with-ast">Let's build the linter with ast</a><ul>
+<li><a href="#search-for-candidate-modules">Search for candidate modules</a></li>
+<li><a href="#parse-the-modules-into-an-abstract-syntax-tree">Parse the modules into an abstract syntax tree</a></li>
+<li><a href="#find-the-__init__-methods-in-the-operators">Find the __init__ methods in the operators</a></li>
+<li><a href="#filter-out-the-arguments-and-their-default-values">Filter out the arguments and their default values</a></li>
+<li><a href="#validate-the-default-value">Validate the default value</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</div>
+<h2 id="what-can-we-do">What can we do?</h2>
+<p>There may not be an existing linter that we can configure to check this default value, so we'll need to create our own customized linter. The good news is that we already have some in Airflow. It shouldn't be too difficult for me to add one. The pull request that included this change was <a href="https://github.com/apache/airflow/pull/32370/">build(pre-commit): check deferrable default value #32370</a>. I added <code>scripts/ci/pre_commit/pre_commit_check_deferrable_default.py</code> so that if anyone is pushing an operator with the wrong <code>deferrable</code> default value, it will be blocked by this pre-commit hook. (Looks like this file has later be renamed as <a href="https://github.com/apache/airflow/blob/725a9b6cabcf8b6814de883db361eca6f58fd16b/scripts/ci/pre_commit/check_deferrable_default.py">scripts/ci/pre_commit/check_deferrable_default.py</a> 👀)</p>
+<h2 id="lets-formalize-our-goal">Let's formalize our goal</h2>
+<p>If the argument <code>deferrable</code> is present in the <code>__init__</code> method of any of the operators, its default value should be set as <code>conf.getboolean("operators", "default_deferrable", fallback=False)</code>.</p>
+<p>For instance, having an operator without a <code>deferrable</code> argument is okay.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">airflow.models.baseoperator</span> <span class="kn">import</span> <span class="n">BaseOperator</span>
+
+
+<span class="k">class</span> <span class="nc">ExampleOperator</span><span class="p">(</span><span class="n">BaseOperator</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</code></pre></div>
+<p>However, if an operator includes a <code>deferrable</code> argument without a default value or with a default value other than <code>conf.getboolean("operators", "default_deferrable", fallback=False)</code>, we need to raise a warning.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">airflow.models.baseoperator</span> <span class="kn">import</span> <span class="n">BaseOperator</span>
+
+
+<span class="k">class</span> <span class="nc">ExampleOperator</span><span class="p">(</span><span class="n">BaseOperator</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">deferrable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="lets-build-the-linter-with-ast">Let's build the linter with ast</h2>
+<p><a href="https://docs.python.org/3/library/ast.html">ast</a> is a built-in Python module that can parse Python code into an abstract syntax tree. I won't go into depth here; that's a post for another day. We'll only discuss <code>ast.parse</code> and <code>ast.iter_child_nodes</code> here. Airflow already uses <code>ast</code> for this kind of checking in various places.</p>
+<h3 id="search-for-candidate-modules">Search for candidate modules</h3>
+<p>We already know that all the operators (including sensors), whether they are in the core or in the providers, will be put under <code>operators</code> or <code>sensors</code> directories. So we first iterate all the modules we need to check <a href="https://github.com/apache/airflow/blob/725a9b6cabcf8b6814de883db361eca6f58fd16b/scripts/ci/pre_commit/check_deferrable_default.py#L88-L93">here</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">modules</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span>
+    <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">ROOT_DIR</span><span class="si">}</span><span class="s2">/airflow/**/sensors/**.py"</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">ROOT_DIR</span><span class="si">}</span><span class="s2">/airflow/**/operators/**.py"</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">errors</span> <span class="o">=</span> <span class="p">[</span><span class="n">error</span> <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">modules</span> <span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">iter_check_deferrable_default_errors</span><span class="p">(</span><span class="n">module</span><span class="p">)]</span>
+</code></pre></div>
+<h3 id="parse-the-modules-into-an-abstract-syntax-tree">Parse the modules into an abstract syntax tree</h3>
+<p>Then, we pass the module names to <code>iter_check_deferrable_default_errors</code> <a href="https://github.com/apache/airflow/blob/725a9b6cabcf8b6814de883db361eca6f58fd16b/scripts/ci/pre_commit/check_deferrable_default.py#L65-L84">function</a>. It parses the module into abstract syntax tree through <code>ast.parse</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">iter_check_deferrable_default_errors</span><span class="p">(</span><span class="n">module_filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="n">ast_obj</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">module_filename</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>Before delving further into the function, let's consider the functionality of <code>ast.parse</code> in the simple case we used earlier (the string in the <code>ast.parse</code> function). Additionally, we utilize <code>ast.dump</code> to create a visual representation of the ast, making it easier to read.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ast</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="n">ast</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span>
+        <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span>
+            <span class="s2">"from airflow.models.baseoperator import BaseOperator</span><span class="se">\n\n\n</span><span class="s2">class ExampleOperator(BaseOperator):</span><span class="se">\n</span><span class="s2">    def __init__(self, *, deferrable=False, **kwargs) -&gt; None:</span><span class="se">\n</span><span class="s2">        super().__init__(**kwargs)</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="p">),</span>
+        <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Even for a simple case like this, the generated AST is already quite large.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Module</span><span class="p">(</span>
+    <span class="n">body</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">ImportFrom</span><span class="p">(</span>
+            <span class="n">module</span><span class="o">=</span><span class="s2">"airflow.models.baseoperator"</span><span class="p">,</span>
+            <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="n">alias</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"BaseOperator"</span><span class="p">)],</span>
+            <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">ClassDef</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">"ExampleOperator"</span><span class="p">,</span>
+            <span class="n">bases</span><span class="o">=</span><span class="p">[</span><span class="n">Name</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"BaseOperator"</span><span class="p">,</span> <span class="n">ctx</span><span class="o">=</span><span class="n">Load</span><span class="p">())],</span>
+            <span class="n">keywords</span><span class="o">=</span><span class="p">[],</span>
+            <span class="n">body</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">FunctionDef</span><span class="p">(</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s2">"__init__"</span><span class="p">,</span>
+                    <span class="n">args</span><span class="o">=</span><span class="n">arguments</span><span class="p">(</span>
+                        <span class="n">posonlyargs</span><span class="o">=</span><span class="p">[],</span>
+                        <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">arg</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="s2">"self"</span><span class="p">)],</span>
+                        <span class="n">kwonlyargs</span><span class="o">=</span><span class="p">[</span><span class="n">arg</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="s2">"deferrable"</span><span class="p">)],</span>
+                        <span class="n">kw_defaults</span><span class="o">=</span><span class="p">[</span><span class="n">Constant</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">False</span><span class="p">)],</span>
+                        <span class="n">kwarg</span><span class="o">=</span><span class="n">arg</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="s2">"kwargs"</span><span class="p">),</span>
+                        <span class="n">defaults</span><span class="o">=</span><span class="p">[],</span>
+                    <span class="p">),</span>
+                    <span class="n">body</span><span class="o">=</span><span class="p">[</span>
+                        <span class="n">Expr</span><span class="p">(</span>
+                            <span class="n">value</span><span class="o">=</span><span class="n">Call</span><span class="p">(</span>
+                                <span class="n">func</span><span class="o">=</span><span class="n">Attribute</span><span class="p">(</span>
+                                    <span class="n">value</span><span class="o">=</span><span class="n">Call</span><span class="p">(</span>
+                                        <span class="n">func</span><span class="o">=</span><span class="n">Name</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"super"</span><span class="p">,</span> <span class="n">ctx</span><span class="o">=</span><span class="n">Load</span><span class="p">()),</span>
+                                        <span class="n">args</span><span class="o">=</span><span class="p">[],</span>
+                                        <span class="n">keywords</span><span class="o">=</span><span class="p">[],</span>
+                                    <span class="p">),</span>
+                                    <span class="n">attr</span><span class="o">=</span><span class="s2">"__init__"</span><span class="p">,</span>
+                                    <span class="n">ctx</span><span class="o">=</span><span class="n">Load</span><span class="p">(),</span>
+                                <span class="p">),</span>
+                                <span class="n">args</span><span class="o">=</span><span class="p">[],</span>
+                                <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="n">keyword</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">Name</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"kwargs"</span><span class="p">,</span> <span class="n">ctx</span><span class="o">=</span><span class="n">Load</span><span class="p">()))],</span>
+                            <span class="p">)</span>
+                        <span class="p">)</span>
+                    <span class="p">],</span>
+                    <span class="n">decorator_list</span><span class="o">=</span><span class="p">[],</span>
+                    <span class="n">returns</span><span class="o">=</span><span class="n">Constant</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+                    <span class="n">type_params</span><span class="o">=</span><span class="p">[],</span>
+                <span class="p">)</span>
+            <span class="p">],</span>
+            <span class="n">decorator_list</span><span class="o">=</span><span class="p">[],</span>
+            <span class="n">type_params</span><span class="o">=</span><span class="p">[],</span>
+        <span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">type_ignores</span><span class="o">=</span><span class="p">[],</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="find-the-__init__-methods-in-the-operators">Find the <code>__init__</code> methods in the operators</h3>
+<p>After reading this AST, we can already guess how to obtain the arguments to check. First, we use <code>ast.iter_child_nodes</code> to list all the top-level child nodes and filter out the ones with class definitions (i.e., <code>isinstance(node, ast.ClassDef)</code>). Then, we filter out those functions with the name <code>__init__</code> (i.e., <code>if isinstance(node, ast.FunctionDef) and node.name == "__init__"</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">iter_check_deferrable_default_errors</span><span class="p">(</span><span class="n">module_filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="o">...</span>
+    <span class="n">cls_nodes</span> <span class="o">=</span> <span class="p">(</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">ast</span><span class="o">.</span><span class="n">iter_child_nodes</span><span class="p">(</span><span class="n">ast_obj</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">ClassDef</span><span class="p">))</span>
+    <span class="n">init_method_nodes</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">node</span>
+        <span class="k">for</span> <span class="n">cls_node</span> <span class="ow">in</span> <span class="n">cls_nodes</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">ast</span><span class="o">.</span><span class="n">iter_child_nodes</span><span class="p">(</span><span class="n">cls_node</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">FunctionDef</span><span class="p">)</span> <span class="ow">and</span> <span class="n">node</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">"__init__"</span>
+    <span class="p">)</span>
+    <span class="o">...</span>
+</code></pre></div>
+<h3 id="filter-out-the-arguments-and-their-default-values">Filter out the arguments and their default values</h3>
+<p>After finding the init methods, we loop through these nodes and search for their arguments. As arguments <strong>with</strong> defaults always comes after those <strong>without</strong><br/>
+ones, we reverse the order <a href="https://github.com/apache/airflow/blob/725a9b6cabcf8b6814de883db361eca6f58fd16b/scripts/ci/pre_commit/check_deferrable_default.py#L75-L84">here</a> and zip the arguments and defaults together.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">iter_check_deferrable_default_errors</span><span class="p">(</span><span class="n">module_filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="o">...</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">init_method_nodes</span><span class="p">:</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">args</span>
+        <span class="n">arguments</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">([</span><span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">kwonlyargs</span><span class="p">])</span>
+        <span class="n">defaults</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">([</span><span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">defaults</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">kw_defaults</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">argument</span><span class="p">,</span> <span class="n">default</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">defaults</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">argument</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">default</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">argument</span><span class="o">.</span><span class="n">arg</span> <span class="o">!=</span> <span class="s2">"deferrable"</span> <span class="ow">or</span> <span class="n">_is_valid_deferrable_default</span><span class="p">(</span><span class="n">default</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="k">yield</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">module_filename</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">default</span><span class="o">.</span><span class="n">lineno</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div>
+<h3 id="validate-the-default-value">Validate the default value</h3>
+<p>This is the final part of the script. We now check if the default value is an <code>ast.Call</code> (i.e., <code>conf.getboolean(...)</code>). The identifier (id) should be <code>conf</code> and the attribute (attr) should be <code>getboolean</code>. If this check passes, we will proceed to examine the argument of this call (i.g., <code>"operators", "default_deferrable", fallback=False</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_is_valid_deferrable_default</span><span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">AST</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Check whether default is 'conf.getboolean("operators", "default_deferrable", fallback=False)'"""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Call</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># Not a function call.</span>
+
+    <span class="c1"># Check the function callee is exactly 'conf.getboolean'.</span>
+    <span class="n">call_to_conf_getboolean</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="nb">isinstance</span><span class="p">(</span><span class="n">default</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Attribute</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">default</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">default</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="s2">"conf"</span>
+        <span class="ow">and</span> <span class="n">default</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="n">attr</span> <span class="o">==</span> <span class="s2">"getboolean"</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">call_to_conf_getboolean</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># Check arguments.</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">default</span><span class="o">.</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+        <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">default</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ast</span><span class="o">.</span><span class="n">Constant</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">default</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">"operators"</span>
+        <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">default</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ast</span><span class="o">.</span><span class="n">Constant</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">default</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">"default_deferrable"</span>
+        <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">default</span><span class="o">.</span><span class="n">keywords</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+        <span class="ow">and</span> <span class="n">default</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">arg</span> <span class="o">==</span> <span class="s2">"fallback"</span>
+        <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">default</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Constant</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">default</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">False</span>
+    <span class="p">)</span>
+</code></pre></div>
+<h2 id="conclusion">Conclusion</h2>
+<p>After introducing this check, many deferrable operators were added, and none came without <code>deferrable = conf.getboolean("operators", "default_deferrable", fallback=False)</code>. This is expected to continue.</p>
+<p><img alt="actally-no" src="/images/posts-image/2024-check_default_value_of_default_deferrable_through_ast/actually-no.jpg"/></p>
+<p>While writing this post and examining the AST, I realized that there are still some edge cases I missed, so I improved it by <a href="https://github.com/apache/airflow/pull/41924">ci: improve check_deferrable_default script to cover positional variables #41924</a>. Before checking that PR, you can try reread the script to see whether you can find where the missing piece is.</p>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=Building a Customized Linter  - Checking the Default Value of default_deferrable through AST&amp;url=https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast&amp;title=Building a Customized Linter" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=Building a Customized Linter&amp;body=https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/python.html">Python</a><a href="https://blog.wei-lee.me/tag/airflow.html">Airflow</a><a href="https://blog.wei-lee.me/tag/airflow-27.html">Airflow 2.7</a><a href="https://blog.wei-lee.me/tag/ast.html">AST</a> </aside>
+<div class="clear"></div>
+<div class="series">
+<p>This post is part 2 of the "Unleash the Chaos: Developing a Linter for Un-Pythonic Code!" series:</p>
+<ol class="parts">
+<li>
+<a href="https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable">Optimizing Airflow Operators - Converting to Async with default_deferrable Config</a>
+</li>
+<li class="active">
+<a href="https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast">Building a Customized Linter - Checking the Default Value of default_deferrable through AST</a>
+</li>
+</ol>
+</div>
+</section>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>

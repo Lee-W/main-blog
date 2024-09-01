@@ -99,12 +99,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -179,10 +179,10 @@
 <h2 id="what-is-dynamic-task-mapping-anyway">What is dynamic task mapping anyway?</h2>
 <p>In short, it's a way to define multiple tasks at runtime. For example,</p>
 <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">DAG</span><span class="p">(</span><span class="n">dag_id</span><span class="o">=</span><span class="s2">"dynamic_task_mapping"</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="k">as</span> <span class="n">dag</span><span class="p">:</span>
+
     <span class="nd">@task</span>
     <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
-
 
     <span class="n">sum_values</span> <span class="o">=</span> <span class="nb">sum</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">])</span>
 </code></pre></div>
@@ -200,10 +200,10 @@
 </ul>
 <p>The previous example can be modified to utilize <code>expand_kwargs</code>, and it will look like this</p>
 <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">DAG</span><span class="p">(</span><span class="n">dag_id</span><span class="o">=</span><span class="s2">"dynamic_task_mapping"</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="k">as</span> <span class="n">dag</span><span class="p">:</span>
+
     <span class="nd">@task</span>
     <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
-
 
     <span class="n">sum_values</span> <span class="o">=</span> <span class="nb">sum</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">expand_kwargs</span><span class="p">(</span>
         <span class="p">[</span>
@@ -212,6 +212,7 @@
             <span class="p">{</span><span class="s2">"x"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">:</span> <span class="mi">300</span><span class="p">},</span>
             <span class="p">{</span><span class="s2">"x"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">:</span> <span class="mi">400</span><span class="p">},</span>
         <span class="p">]</span>
+    <span class="p">)</span>
 </code></pre></div>
 <p>For more details, please check <a href="https://airflow.apache.org/docs/apache-airflow/2.10.0/authoring-and-scheduling/dynamic-task-mapping.html">Dynamic Task Mapping</a></p>
 <h2 id="why-cant-it-be-supported-directly">Why can't it be supported directly?</h2>
@@ -267,6 +268,7 @@ flowchart TD
 <h2 id="what-can-we-do">What can we do?</h2>
 <p>There's not much we can do unless we rewrite the entire dynamic task mapping feature in Airflow. The following is pretty much the only workaround available at the moment.</p>
 <p>Let's go back to <a href="https://github.com/apache/airflow/pull/39912/files#diff-649fbbf224bab54417f03338c27d0fdb3c3336e53a522a13dfd9806c99f63137R1580-R1594">where we decide whether to defer or not</a>. We implemented a new <code>expand_start_from_trigger</code> method and try to provide a way for the mapped operator to get <code>start_from_trigger.</code> For non-mapped operators, this method only returns <code>self.start_from_trigger</code>.</p>
+<!-- blacken-docs:off -->
 <div class="highlight"><pre><span></span><code>            <span class="c1"># check "start_trigger_args" to see whether the operator supports start execution from triggerer</span>
             <span class="c1"># if so, we'll then check "start_from_trigger" to see whether this feature is turned on and defer</span>
             <span class="c1"># this task.</span>
@@ -283,30 +285,31 @@ flowchart TD
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">schedulable_ti_ids</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">ti</span><span class="o">.</span><span class="n">task_id</span><span class="p">,</span> <span class="n">ti</span><span class="o">.</span><span class="n">map_index</span><span class="p">))</span>
 </code></pre></div>
+<!-- blacken-docs:on -->
 <p>For the mapped operator, it checks whether the argument <code>start_from_trigger</code> is passed through <code>partial</code>, <code>expand</code>, and <code>expand_kwargs</code> (the methods you need to use dynamic task mapping as mentioned in the "What is dynamic task mapping anyway?" section). If so, we'll use this value to decide whether to defer the task.</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">expand_start_from_trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">"""</span>
-<span class="sd">        Get the start_from_trigger value of the current abstract operator.</span>
-<span class="sd">        MappedOperator uses this to unmap start_from_trigger to decide whether to start the task</span>
-<span class="sd">        execution directly from triggerer.</span>
-<span class="sd">        :meta private:</span>
-<span class="sd">        """</span>
-        <span class="c1"># start_from_trigger only makes sense when start_trigger_args exists.</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">expand_start_from_trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Get the start_from_trigger value of the current abstract operator.</span>
+<span class="sd">    MappedOperator uses this to unmap start_from_trigger to decide whether to start the task</span>
+<span class="sd">    execution directly from triggerer.</span>
+<span class="sd">    :meta private:</span>
+<span class="sd">    """</span>
+    <span class="c1"># start_from_trigger only makes sense when start_trigger_args exists.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
 
-        <span class="n">mapped_kwargs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expand_mapped_kwargs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">include_xcom</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_disallow_kwargs_override</span><span class="p">:</span>
-            <span class="n">prevent_duplicates</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">partial_kwargs</span><span class="p">,</span>
-                <span class="n">mapped_kwargs</span><span class="p">,</span>
-                <span class="n">fail_reason</span><span class="o">=</span><span class="s2">"unmappable or already specified"</span><span class="p">,</span>
-            <span class="p">)</span>
-
-        <span class="c1"># Ordering is significant; mapped kwargs should override partial ones.</span>
-        <span class="k">return</span> <span class="n">mapped_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="s2">"start_from_trigger"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">partial_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"start_from_trigger"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_from_trigger</span><span class="p">)</span>
+    <span class="n">mapped_kwargs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expand_mapped_kwargs</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">include_xcom</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_disallow_kwargs_override</span><span class="p">:</span>
+        <span class="n">prevent_duplicates</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">partial_kwargs</span><span class="p">,</span>
+            <span class="n">mapped_kwargs</span><span class="p">,</span>
+            <span class="n">fail_reason</span><span class="o">=</span><span class="s2">"unmappable or already specified"</span><span class="p">,</span>
         <span class="p">)</span>
+
+    <span class="c1"># Ordering is significant; mapped kwargs should override partial ones.</span>
+    <span class="k">return</span> <span class="n">mapped_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="s2">"start_from_trigger"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">partial_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"start_from_trigger"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_from_trigger</span><span class="p">)</span>
+    <span class="p">)</span>
 </code></pre></div>
 <p>Note that the argument name must be the same to take effect. If you're doing something like</p>
 <div class="highlight"><pre><span></span><code>def __init__(self, sft: bool):
@@ -350,14 +353,8 @@ flowchart TD
         <span class="k">return</span>
 </code></pre></div>
 <p>When defining the task, you need to pass <code>start_from_trigger</code> or <code>trigger_kwargs</code> to the <code>partial</code>, <code>expand</code>, or <code>expand_kwargs</code> method. The name needs to be precisely the same.</p>
-<div class="highlight"><pre><span></span><code><span class="n">wait_hours_task</span> <span class="o">=</span> <span class="n">WaitHoursSensor</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
-    <span class="n">task_id</span><span class="o">=</span><span class="s2">"wait_for_n_hours"</span><span class="p">,</span>
-    <span class="n">start_from_trigger</span><span class="o">=</span><span class="kc">True</span>
-<span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span>
-    <span class="n">trigger_kwargs</span><span class="o">=</span><span class="p">[</span>
-        <span class="p">{</span><span class="s2">"hours"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="p">{</span><span class="s2">"hours"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-    <span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="n">wait_hours_task</span> <span class="o">=</span> <span class="n">WaitHoursSensor</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="s2">"wait_for_n_hours"</span><span class="p">,</span> <span class="n">start_from_trigger</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span>
+    <span class="n">trigger_kwargs</span><span class="o">=</span><span class="p">[{</span><span class="s2">"hours"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s2">"hours"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}]</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>The entire <code>__init__</code> method will be disregarded before the task starts. The scheduler uses the values provided in these methods and saves them as a trigger row in the metadata database for the triggerer to pick up. Once the task is finished in the triggerer, it goes back to the scheduler and then gets assigned to a worker to execute the next method. <em>The <code>__init__</code> method will be run before the next method is executed.</em></p>

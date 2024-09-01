@@ -99,12 +99,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -196,7 +196,7 @@
 <h3 id="split-training-logic-into-different-stages">Split training logic into different stages</h3>
 <p>In the original design, we use <code>pipenv run python digit_recognizer/digit_recognizer.py</code> to run the whole training process. We'll split them into <code>process-data</code>, <code>train</code>, and <code>report</code> stages.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="o">......</span>
+    <span class="o">...</span>
 
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">command</span> <span class="o">==</span> <span class="s2">"process-data"</span><span class="p">:</span>
         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s2">"data/digit_data.csv"</span><span class="p">,</span> <span class="s2">"data/digit_target.csv"</span><span class="p">)</span>
@@ -417,13 +417,11 @@ Use<span class="w"> </span><span class="sb">`</span>dvc<span class="w"> </span>p
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">params</span> <span class="o">=</span> <span class="n">load_params</span><span class="p">(</span><span class="s2">"params.yaml"</span><span class="p">)</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s2">"data/digit_data.csv"</span><span class="p">,</span> <span class="s2">"data/digit_target.csv"</span><span class="p">)</span>
-    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">process_data</span><span class="p">(</span>
-        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s2">"process_data"</span><span class="p">]</span>
-    <span class="p">)</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">process_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s2">"process_data"</span><span class="p">])</span>
 
     <span class="n">model</span> <span class="o">=</span> <span class="n">train_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="s2">"train"</span><span class="p">])</span>
     <span class="n">export_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-    <span class="o">......</span>
+    <span class="o">...</span>
 </code></pre></div>
 <p>This is how <code>params.yaml</code> looks like.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">process_data</span><span class="p">:</span>
@@ -457,7 +455,7 @@ pipenv<span class="w"> </span>run<span class="w"> </span>dvc<span class="w"> </s
 <span class="w">      </span>-d<span class="w"> </span>output/training_data.pkl<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>-o<span class="w"> </span>output/model.pkl<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>-p<span class="w"> </span>train.gamma<span class="w"> </span><span class="se">\</span>
-<span class="w">      </span><span class="s2">"pipenv run python digit_recognizer/digit_recognizer.py train"</span><span class="w">  </span>
+<span class="w">      </span><span class="s2">"pipenv run python digit_recognizer/digit_recognizer.py train"</span>
 
 <span class="c1"># add DVC configuration to git and commit</span>
 git<span class="w"> </span>add<span class="w"> </span>dvc.yaml<span class="w"> </span>dvc.lock<span class="w"> </span>model/.gitignore
@@ -505,7 +503,7 @@ Updating<span class="w"> </span>lock<span class="w"> </span>file<span class="w">
 
 To<span class="w"> </span>track<span class="w"> </span>the<span class="w"> </span>changes<span class="w"> </span>with<span class="w"> </span>git,<span class="w"> </span>run:
 
-<span class="w">    </span>git<span class="w"> </span>add<span class="w"> </span>dvc.lock
+<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>dvc.lock
 Use<span class="w"> </span><span class="sb">`</span>dvc<span class="w"> </span>push<span class="sb">`</span><span class="w"> </span>to<span class="w"> </span>send<span class="w"> </span>your<span class="w"> </span>updates<span class="w"> </span>to<span class="w"> </span>remote<span class="w"> </span>storage.
 
 <span class="c1"># reset gamma back to 0.01</span>

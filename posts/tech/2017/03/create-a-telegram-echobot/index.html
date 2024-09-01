@@ -97,12 +97,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -233,17 +233,17 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">'Your API Token'</span><span class="p">)</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s2">"Your API Token"</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_set_webhook</span><span class="p">():</span>
-    <span class="n">status</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">'https://Your URL/hook'</span><span class="p">)</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s2">"https://Your URL/hook"</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">status</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">'Webhook setup failed'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Webhook setup failed"</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 
-<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/hook'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'POST'</span><span class="p">])</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/hook"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">"POST"</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">webhook_handler</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"POST"</span><span class="p">:</span>
         <span class="n">update</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Update</span><span class="o">.</span><span class="n">de_json</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">bot</span><span class="p">)</span>
@@ -251,7 +251,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
         <span class="n">text</span> <span class="o">=</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span>
 
         <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-    <span class="k">return</span> <span class="s1">'ok'</span>
+    <span class="k">return</span> <span class="s2">"ok"</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
@@ -261,12 +261,12 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 <h3 id="setup">Setup</h3>
 <p>其中有兩個地方，必須要改成自己的設定</p>
 <h4 id="1-api-token">1. API Token</h4>
-<div class="highlight"><pre><span></span><code><span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">'Your API Token'</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s2">"Your API Token"</span><span class="p">)</span>
 </code></pre></div>
 <p>Your API Token 要改成剛剛取得的 API Token</p>
 <h4 id="2-webhook-url">2. Webhook URL</h4>
 <p>_set_webhook 中的 Your URL</p>
-<div class="highlight"><pre><span></span><code><span class="n">statue</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">'https://Your URL/hook'</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">statue</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s2">"https://Your URL/hook"</span><span class="p">)</span>
 </code></pre></div>
 <p>這裡的 URL 就是設定成你這個 Bot Server 的 URL<br/>
 不過 Telegram 一樣要求必須要是 https<br/>
@@ -283,9 +283,9 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 而 <code>set_webhook</code> 前面要有個 _的原因是我不希望它被其他的 code 使用<br/>
 但 Python 本身並不支援 Private 的概念，而是慣例上在前面加一個底線</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_set_webhook</span><span class="p">():</span>
-    <span class="n">status</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s1">'https://Your URL/hook'</span><span class="p">)</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">bot</span><span class="o">.</span><span class="n">set_webhook</span><span class="p">(</span><span class="s2">"https://Your URL/hook"</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">status</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">'Webhook setup failed'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Webhook setup failed"</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <p>在最後 run Flask app 前，要先把 webhook URL 設定好</p>
@@ -295,7 +295,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
 </code></pre></div>
 <h3 id="wehook_handler">wehook_handler</h3>
 <p>這裡就是 bot 收到訊息要怎麼處理</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/hook'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'POST'</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/hook"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">"POST"</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">webhook_handler</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"POST"</span><span class="p">:</span>
         <span class="n">update</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">Update</span><span class="o">.</span><span class="n">de_json</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">bot</span><span class="p">)</span>
@@ -303,7 +303,7 @@ Telegram API 的命名是 CamelCase (e.g. sendMessage)<br/>
         <span class="n">text</span> <span class="o">=</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span>
 
         <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-    <span class="k">return</span> <span class="s1">'ok'</span>
+    <span class="k">return</span> <span class="s2">"ok"</span>
 </code></pre></div>
 <p><code>app.route</code> 這個 decorator 是 Flask 的語法<br/>
 表示 <code>https:/Your URL/hook</code> 會導到這個 function，而它只能接受 POST<br/>

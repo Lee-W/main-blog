@@ -95,12 +95,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -206,7 +206,7 @@ Cookiecutter 能確保我們不會少代換掉舊的設定（e.g., 舊專案名�
 <code>值</code> (e.g., python_table_manners) 會被帶回專案模板去取代模板中的變數 (e.g., project_slug)</p>
 <div class="highlight"><pre><span></span><code><span class="n">project_name</span><span class="w"> </span><span class="p">[</span><span class="n">Python</span><span class="w"> </span><span class="n">Project</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">manners</span>
 <span class="n">project_slug</span><span class="w"> </span><span class="p">[</span><span class="n">python_table_manners</span><span class="p">]</span><span class="o">:</span>
-<span class="n">project_description</span><span class="w"> </span><span class="p">[</span><span class="n">Short</span><span class="w"> </span><span class="n">Descirption</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="n">Project</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">example</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">cookiecutter</span><span class="w"> </span><span class="n">template</span>
+<span class="n">project_description</span><span class="w"> </span><span class="p">[</span><span class="n">Short</span><span class="w"> </span><span class="n">Description</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="n">Project</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="n">example</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">cookiecutter</span><span class="w"> </span><span class="n">template</span>
 <span class="n">github_username</span><span class="w"> </span><span class="p">[</span><span class="n">Lee</span><span class="o">-</span><span class="n">W</span><span class="p">]</span><span class="o">:</span>
 <span class="n">github_url</span><span class="w"> </span><span class="p">[</span><span class="n">http</span><span class="o">:</span><span class="c1">//github.com/Lee-W/python_table_manners]:</span>
 <span class="n">author_name</span><span class="w"> </span><span class="p">[</span><span class="n">Wei</span><span class="w"> </span><span class="n">Lee</span><span class="p">]</span><span class="o">:</span>
@@ -284,6 +284,7 @@ cookiecutter 背後是透過 jinja2 來取代這些值<br/>
 (e.g., <code>_template_version</code>)</p>
 <p>當然也能使用 jinja2 的 if/else 語法，針對使用者的回答產生不同的模板內容<br/>
 以下的範例就是使用者選擇不同的 dependency_management_tool 時，env.py 的指令內容會跟著改變</p>
+<!-- blacken-docs:off -->
 <div class="highlight"><pre><span></span><code><span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">ctx</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Install production dependencies"""</span>
@@ -294,6 +295,7 @@ cookiecutter 背後是透過 jinja2 來取代這些值<br/>
     <span class="p">{</span><span class="o">%-</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
 </code></pre></div>
 <p>（from <a href="https://github.com/Lee-W/cookiecutter-python-template/blob/0.6.1/%7B%7Bcookiecutter.project_slug%7D%7D/tasks/env.py#L18">cookiecutter-python-template/{{cookiecutter.project_slug}}/tasks/env.py @ 0.6.1</a>）</p>
+<!-- blacken-docs:on -->
 <p>除了預設基本的 jinja2 語法外， cookiecutter 還提供了常用的 jinja2 extensions<br/>
 這些可以在 <a href="https://cookiecutter.readthedocs.io/en/latest/advanced/hooks.html">Template Extensions</a> 找到</p>
 <p>比較可惜的是 Cookiecutter 並不支援追加問答<br/>

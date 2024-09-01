@@ -95,12 +95,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping active" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li class="nav-gossiping active" role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -282,6 +282,7 @@
 就是帶了一些影片，讓大家 Recap 一下白天老師教的內容<br/>
 我主要把時間都花在 Exercise 的設計上</p>
 <h3 id="exercise4-python-ex4py">Exercise4 用 Python 做排序 (ex4.py)</h3>
+<!-- blacken-docs:off -->
 <div class="highlight"><pre><span></span><code><span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span>
     <span class="mi">65</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span>
     <span class="mi">76</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span>
@@ -295,6 +296,7 @@
     <span class="mi">18</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">18</span>
 <span class="p">]</span>
 </code></pre></div>
+<!-- blacken-docs:on -->
 <p>寫過 Python 的人，一定馬上就會想到用 <code>sort</code> 或 <code>sorted</code><br/>
 但我故意把練習時間拉長到 20 分鐘<br/>
 中間一直會有學員、助教問我「真的可以這樣寫嗎？」<br/>
@@ -339,7 +341,7 @@ e.g.,</p>
 總覺得要寫一個稍微有用的程式是非常非常遙遠的事<br/>
 所以大二下的 C++ ，對我來我說是寫程式很大的里程碑</p>
 <p>這題的解答也是差不多一行而已</p>
-<div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ptt_data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">'some_key'</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ptt_data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">"some_key"</span><span class="p">])</span>
 </code></pre></div>
 <p>但我認為這對新手來說，已經會是相對挑戰的練習了<br/>
 至少以初學的我來說，我可能就要花不少時間去 survey 、去思考</p>
@@ -349,15 +351,15 @@ e.g.,</p>
 這個問題本身有很多種不同的解法<br/>
 我自己的解法是使用 <code>filter</code> 過濾掉空值<br/>
 但我也遇到學員們有很多不一樣的想法，我覺得挺好的</p>
-<h3 id="bouns">Bouns</h3>
+<h3 id="bonus">Bonus</h3>
 <ul>
 <li>Bonus 3 實作各種 sort 作法</li>
-<li>Bouns 4 分析各種 sort 適合的情境</li>
+<li>Bonus 4 分析各種 sort 適合的情境</li>
 </ul>
 <p>因為課程的速度放慢，有些學過的就會覺得比較無聊<br/>
-這兩個 Bouns 就是設計給這樣的人<br/>
+這兩個 Bonus 就是設計給這樣的人<br/>
 至少在這的兩個小時不要是浪費時間</p>
-<p>Bouns 4 我也沒有正確解答<br/>
+<p>Bonus 4 我也沒有正確解答<br/>
 我蠻好奇會不會有人能給我一點想法的<br/>
 不過這麼機車的題目最後看來是沒人寫 xD</p>
 <h3 id="_3">「資料結構」練習後記</h3>
@@ -399,7 +401,7 @@ e.g.,</p>
 <p>統整一下，我整個課程設計想帶給學員的思考</p>
 <ol>
 <li>如何思考一個後端架構 ? → 其他人的記帳程式</li>
-<li>溝通在寫程式是很重要的 → <code>README.md</code>, <code>requriements.txt</code></li>
+<li>溝通在寫程式是很重要的 → <code>README.md</code>, <code>requirements.txt</code></li>
 <li>如何除錯？ → 滿是錯誤的 view, postman 的使用</li>
 <li>為什麼測試是重要的？ → 整個網站雛形都出來了，還有埋錯</li>
 </ol>

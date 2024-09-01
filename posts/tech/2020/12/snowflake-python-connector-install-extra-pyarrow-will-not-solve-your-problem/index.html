@@ -97,12 +97,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -197,19 +197,21 @@
 在 <a href="https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L44">44行</a> 可以找到 <code>'pyarrow&gt;=0.17.0,&lt;0.18.0'</code></p>
 <div class="highlight"><pre><span></span><code><span class="n">pandas_requirements</span> <span class="o">=</span> <span class="p">[</span>
     <span class="c1"># Must be kept in sync with pyproject.toml</span>
-    <span class="s1">'pyarrow&gt;=0.17.0,&lt;0.18.0'</span><span class="p">,</span>
-    <span class="s1">'pandas&gt;=1.0.0,&lt;1.2.0'</span><span class="p">,</span>
+    <span class="s2">"pyarrow&gt;=0.17.0,&lt;0.18.0"</span><span class="p">,</span>
+    <span class="s2">"pandas&gt;=1.0.0,&lt;1.2.0"</span><span class="p">,</span>
 <span class="p">]</span>
 </code></pre></div>
 <p>接著可以看到 <code>pandas_requirements</code> 在 <a href="https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L240">240行</a> 被用到</p>
-<div class="highlight"><pre><span></span><code><span class="o">...</span>
+<!-- blacken-docs:off -->
+<div class="highlight"><pre><span></span><code>    <span class="o">...</span>
     <span class="n">extras_require</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">"secure-local-storage"</span><span class="p">:</span> <span class="p">[</span>
             <span class="s1">'keyring&lt;22.0.0,!=16.1.0'</span><span class="p">,</span>
         <span class="p">],</span>
         <span class="s2">"pandas"</span><span class="p">:</span> <span class="n">pandas_requirements</span><span class="p">,</span>
-<span class="o">...</span>
+    <span class="o">...</span>
 </code></pre></div>
+<!-- blacken-docs:on -->
 <p>原來 <code>pip install snowflake-connector-python[pandas]</code> 同時會安裝 <code>pandas_requirements</code> 中的 pandas 跟 pyarrow<br/>
 snowflake-connector-python 並不會單獨裝 pyarrow，這也難怪前面的嘗試會失敗<br/>
 但其實這個問題只要都造著文件做就能解決，就是因為自作聰明才繞了一大圈<br/>

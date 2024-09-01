@@ -97,12 +97,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -220,7 +220,7 @@
 <h2 id="sql-injection">什麼是 SQL injection</h2>
 <p>根據 <a href="https://zh.wikipedia.org/wiki/SQL%E6%B3%A8%E5%85%A5">SQL注入</a> 維基百科頁面的例子<br/>
 假設有一段產生 SQL 字串的程式碼是這樣寫的</p>
-<div class="highlight"><pre><span></span><code><span class="n">sql_str</span> <span class="o">=</span> <span class="s2">"SELECT * FROM users WHERE (name = '"</span> <span class="o">+</span> <span class="n">username</span> <span class="o">+</span> <span class="s2">"') and (pw = '"</span><span class="o">+</span> <span class="n">password</span> <span class="o">+</span><span class="s2">"');"</span>
+<div class="highlight"><pre><span></span><code><span class="n">sql_str</span> <span class="o">=</span> <span class="s2">"SELECT * FROM users WHERE (name = '"</span> <span class="o">+</span> <span class="n">username</span> <span class="o">+</span> <span class="s2">"') and (pw = '"</span> <span class="o">+</span> <span class="n">password</span> <span class="o">+</span> <span class="s2">"');"</span>
 </code></pre></div>
 <p>只要攻擊者輸入了</p>
 <div class="highlight"><pre><span></span><code><span class="n">username</span> <span class="o">=</span> <span class="s2">"1' OR '1'='1"</span>
@@ -329,9 +329,7 @@ You should consider upgrading via the '/Users/weilee/Library/Caches/pypoetry/vir
 
 
 <span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">web</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Storage</span><span class="p">]:</span>
-    <span class="n">result_set</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
-        <span class="s2">"USER"</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="sa">f</span><span class="s2">"account ='</span><span class="si">{</span><span class="n">account</span><span class="si">}</span><span class="s2">' AND password='</span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">'"</span>
-    <span class="p">)</span>
+    <span class="n">result_set</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">"USER"</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="sa">f</span><span class="s2">"account ='</span><span class="si">{</span><span class="n">account</span><span class="si">}</span><span class="s2">' AND password='</span><span class="si">{</span><span class="n">password</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
     <span class="n">user</span> <span class="o">=</span> <span class="n">result_set</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">user</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"login succeeded"</span><span class="p">)</span>
@@ -491,8 +489,11 @@ pdbpp 在安裝後會取代原生的 pdb<br/>
 <li>位置: <a href="https://github.com/webpy/webpy/blob/0.40/web/db.py#L1699">web/db.py#L1699</a></li>
 </ul>
 <p>1701 行的 <code>[self.eval_node(node, mapping) for node in nodes]</code> 會產生</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="s1">'account ='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">sql</span><span class="p">:</span> <span class="s1">'"1</span><span class="se">\'</span><span class="s1"> OR </span><span class="se">\'</span><span class="s1">1</span><span class="se">\'</span><span class="s1">=</span><span class="se">\'</span><span class="s1">1"'</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">' AND password='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">sql</span><span class="p">:</span> <span class="s1">'"1</span><span class="se">\'</span><span class="s1"> OR </span><span class="se">\'</span><span class="s1">1</span><span class="se">\'</span><span class="s1">=</span><span class="se">\'</span><span class="s1">1"'</span><span class="o">&gt;</span><span class="p">]</span>
+<!-- blacken-docs:off -->
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">mapping</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span>
+<span class="p">[</span><span class="s1">'account ='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">sql</span><span class="p">:</span> <span class="s1">'"1</span><span class="se">\'</span><span class="s1"> OR </span><span class="se">\'</span><span class="s1">1</span><span class="se">\'</span><span class="s1">=</span><span class="se">\'</span><span class="s1">1"'</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">' AND password='</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">sql</span><span class="p">:</span> <span class="s1">'"1</span><span class="se">\'</span><span class="s1"> OR </span><span class="se">\'</span><span class="s1">1</span><span class="se">\'</span><span class="s1">=</span><span class="se">\'</span><span class="s1">1"'</span><span class="o">&gt;</span><span class="p">]</span>
 </code></pre></div>
+<!-- blacken-docs:on -->
 <p>這個 list 會接著被帶入 <code>SQLQuery.join</code> 整合成一整個 SQL 的片段</p>
 <h4 id="webdbpysqlqueryjoin">web/db.py::SQLQuery::join</h4>
 <ul>

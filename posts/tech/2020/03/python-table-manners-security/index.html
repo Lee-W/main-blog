@@ -97,12 +97,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -213,7 +213,7 @@
 <p><img alt="safety-found-insecure" src="/images/posts-image/2020-02-22-python-table-manner-series/safety-found-insecure.jpg"/></p>
 <p>另外需要注意的是 <code>safety check</code> 是對當前環境做檢查<br/>
 務必確定已經有進入專案的虛擬環境，不然 Safety 只會檢查到本機使用的套件有沒有漏洞</p>
-<p>如果想要對 <code>requriements.txt</code> 做檢查，則可以加上參數 <code>-r</code></p>
+<p>如果想要對 <code>requirements.txt</code> 做檢查，則可以加上參數 <code>-r</code></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 因為這個 case 不是針對 pipenv ，所以前面沒有加上 pipenv run</span>
 safety<span class="w"> </span>check<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </code></pre></div>

@@ -97,12 +97,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -193,7 +193,7 @@ python3<span class="w"> </span>manage.py<span class="w"> </span>startapp<span cl
 </code></pre></div>
 <h2 id="setup-line-secrets">Setup Line Secrets</h2>
 <p>接著設定 Line Bot 的 <code>Channel Secret</code>, <code>Channel Access Token</code><br/>
-( 可以在 Line Bot 的 <code>Line Deverloper</code> 頁面取得 )</p>
+( 可以在 Line Bot 的 <code>Line Developer</code> 頁面取得 )</p>
 <p>不過這些值不該被 git 記錄，所以不該被寫死在 <code>settings.py</code> 中<br/>
 建議將這些值寫入環境變數</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SECRET_KEY</span><span class="o">=</span><span class="s1">'Your django secret key'</span>
@@ -205,25 +205,24 @@ python3<span class="w"> </span>manage.py<span class="w"> </span>startapp<span cl
 只要有少設定，就會丟出 ImproperlyConfigured 的例外事件中斷執行</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># line_echobot/settings.py</span>
 
-<span class="o">......</span>
+<span class="o">...</span>
+
 
 <span class="k">def</span> <span class="nf">get_env_variable</span><span class="p">(</span><span class="n">var_name</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-        <span class="n">error_msg</span> <span class="o">=</span> <span class="s1">'Set the </span><span class="si">{}</span><span class="s1"> environment variable'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">var_name</span><span class="p">)</span>
+        <span class="n">error_msg</span> <span class="o">=</span> <span class="s2">"Set the </span><span class="si">{}</span><span class="s2"> environment variable"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">var_name</span><span class="p">)</span>
         <span class="k">raise</span> <span class="n">ImproperlyConfigured</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
 
-<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">get_env_variable</span><span class="p">(</span><span class="s1">'SECRET_KEY'</span><span class="p">)</span>
-<span class="n">LINE_CHANNEL_ACCESS_TOKEN</span> <span class="o">=</span> <span class="n">get_env_variable</span><span class="p">(</span><span class="s1">'LINE_CHANNEL_ACCESS_TOKEN'</span><span class="p">)</span>
-<span class="n">LINE_CHANNEL_SECRET</span> <span class="o">=</span> <span class="n">get_env_variable</span><span class="p">(</span><span class="s1">'LINE_CHANNEL_SECRET'</span><span class="p">)</span>
 
-<span class="o">......</span>
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">get_env_variable</span><span class="p">(</span><span class="s2">"SECRET_KEY"</span><span class="p">)</span>
+<span class="n">LINE_CHANNEL_ACCESS_TOKEN</span> <span class="o">=</span> <span class="n">get_env_variable</span><span class="p">(</span><span class="s2">"LINE_CHANNEL_ACCESS_TOKEN"</span><span class="p">)</span>
+<span class="n">LINE_CHANNEL_SECRET</span> <span class="o">=</span> <span class="n">get_env_variable</span><span class="p">(</span><span class="s2">"LINE_CHANNEL_SECRET"</span><span class="p">)</span>
 
-<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="o">......</span><span class="p">,</span>
-    <span class="s1">'echobot'</span>
-<span class="p">]</span>
+<span class="o">...</span>
+
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="s2">"echobot"</span><span class="p">]</span>
 </code></pre></div>
 <p>不過如果只是單純測試用，這些值也可以直接寫死在 settings.py 中</p>
 <p>另外也不要忘了在 <code>INSTLLED_APPS</code> 加入 echobot</p>
@@ -238,16 +237,16 @@ python3<span class="w"> </span>manage.py<span class="w"> </span>startapp<span cl
 <p>先在 project 的 <code>urls.py</code> 設定<br/>
 讓 project 可以找到 echobot 這個 app 的 <code>urls.py</code></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># line_echobot/urls.py</span>
-<span class="o">......</span>
+<span class="o">...</span>
 
 <span class="kn">import</span> <span class="nn">echobot</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="o">......</span><span class="p">,</span>
-    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">'^echobot/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">'echobot.urls'</span><span class="p">)),</span>
+    <span class="o">...</span><span class="p">,</span>
+    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">"^echobot/"</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">"echobot.urls"</span><span class="p">)),</span>
 <span class="p">]</span>
 
-<span class="o">......</span>
+<span class="o">...</span>
 </code></pre></div>
 <p>接著在 echobot 內，創一個 <code>urls.py</code><br/>
 並將 url 再導到 <code>callback</code>，呼叫 <code>views.py</code> 裡面的 <code>callback</code> 函式 ( 接下來才會實作 )</p>
@@ -258,7 +257,7 @@ python3<span class="w"> </span>manage.py<span class="w"> </span>startapp<span cl
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">url</span><span class="p">(</span><span class="s1">'^callback/'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">callback</span><span class="p">),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s2">"^callback/"</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">callback</span><span class="p">),</span>
 <span class="p">]</span>
 </code></pre></div>
 <p>這些都設定完後，要在 Line 那邊設定的 Webhook Url 就是 <code>https://"your domain name"/echobot/callback/</code><br/>
@@ -283,11 +282,12 @@ python3<span class="w"> </span>manage.py<span class="w"> </span>startapp<span cl
 這裡先用 Todo 記著，待會再來補上</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># TODO: Define Receiver</span>
 
+
 <span class="nd">@csrf_exempt</span>
 <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">'POST'</span><span class="p">:</span>
-        <span class="n">signature</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s1">'HTTP_X_LINE_SIGNATURE'</span><span class="p">]</span>
-        <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"POST"</span><span class="p">:</span>
+        <span class="n">signature</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s2">"HTTP_X_LINE_SIGNATURE"</span><span class="p">]</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span>
 
         <span class="c1"># TODO: Handler when receiver Line Message</span>
 
@@ -304,8 +304,8 @@ python3<span class="w"> </span>manage.py<span class="w"> </span>startapp<span cl
 <li>request header 中的 X-Line-Signature</li>
 </ul>
 <p>也就是上面的</p>
-<div class="highlight"><pre><span></span><code><span class="n">signature</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s1">'HTTP_X_LINE_SIGNATURE'</span><span class="p">]</span>
-<span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">signature</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s2">"HTTP_X_LINE_SIGNATURE"</span><span class="p">]</span>
+<span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="handle-received-message">Handle Received Message</h3>
 <p>取得 body 跟 signature 後<br/>
@@ -342,10 +342,7 @@ e.g.</p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">events</span><span class="p">:</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MessageEvent</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="p">,</span> <span class="n">TextMessage</span><span class="p">):</span>
-            <span class="n">line_bot_api</span><span class="o">.</span><span class="n">reply_message</span><span class="p">(</span>
-                <span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span>
-                <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-            <span class="p">)</span>
+            <span class="n">line_bot_api</span><span class="o">.</span><span class="n">reply_message</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span> <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
 </code></pre></div>
 <p>最後的 <code>reply_message</code> 函式，讓我們傳訊息給 Line Server<br/>
 第一個參數是要回傳要用的 reply_token，可以從事件中取得 （<code>event.reply_token</code>）<br/>
@@ -368,10 +365,7 @@ e.g.</p>
 這裡做的也是讀取到原本 event 中的文字，並回傳回去</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@handler</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MessageEvent</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">TextMessage</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">handle_text_message</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-    <span class="n">line_bot_api</span><span class="o">.</span><span class="n">reply_message</span><span class="p">(</span>
-        <span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span>
-        <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-    <span class="p">)</span>
+    <span class="n">line_bot_api</span><span class="o">.</span><span class="n">reply_message</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span> <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
 </code></pre></div>
 <p>因為沒有要處理其他訊息<br/>
 如果收到其他訊息 (e.g. 貼圖 , 照片 ) 或訊息以外的事件<br/>
@@ -380,8 +374,7 @@ e.g.</p>
 <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
     <span class="n">line_bot_api</span><span class="o">.</span><span class="n">reply_message</span><span class="p">(</span>
-        <span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span>
-        <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">'Currently Not Support None Text Message'</span><span class="p">)</span>
+        <span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span> <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"Currently Not Support None Text Message"</span><span class="p">)</span>
     <span class="p">)</span>
 </code></pre></div>
 <p>下面的這段 code 是要取代 <code># TODO: Handler when receiver Line Message</code><br/>
@@ -416,9 +409,9 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
 
 <span class="nd">@csrf_exempt</span>
 <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">'POST'</span><span class="p">:</span>
-        <span class="n">signature</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s1">'HTTP_X_LINE_SIGNATURE'</span><span class="p">]</span>
-        <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"POST"</span><span class="p">:</span>
+        <span class="n">signature</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s2">"HTTP_X_LINE_SIGNATURE"</span><span class="p">]</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="n">events</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">signature</span><span class="p">)</span>
@@ -430,10 +423,7 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
         <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">events</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MessageEvent</span><span class="p">):</span>
                 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="p">,</span> <span class="n">TextMessage</span><span class="p">):</span>
-                    <span class="n">line_bot_api</span><span class="o">.</span><span class="n">reply_message</span><span class="p">(</span>
-                        <span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span>
-                        <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-                    <span class="p">)</span>
+                    <span class="n">line_bot_api</span><span class="o">.</span><span class="n">reply_message</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span> <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
@@ -459,26 +449,22 @@ handler 判斷完這個訊息，應該被哪個處理器處理，就會傳給那
 
 <span class="nd">@handler</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MessageEvent</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">TextMessage</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">handle_text_message</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-    <span class="n">line_bot_api</span><span class="o">.</span><span class="n">reply_message</span><span class="p">(</span>
-        <span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span>
-        <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-    <span class="p">)</span>
+    <span class="n">line_bot_api</span><span class="o">.</span><span class="n">reply_message</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span> <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
 
 
 <span class="nd">@handler</span><span class="o">.</span><span class="n">default</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
     <span class="n">line_bot_api</span><span class="o">.</span><span class="n">reply_message</span><span class="p">(</span>
-        <span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span>
-        <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">'Currently Not Support None Text Message'</span><span class="p">)</span>
+        <span class="n">event</span><span class="o">.</span><span class="n">reply_token</span><span class="p">,</span> <span class="n">TextSendMessage</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"Currently Not Support None Text Message"</span><span class="p">)</span>
     <span class="p">)</span>
 
 
 <span class="nd">@csrf_exempt</span>
 <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">'POST'</span><span class="p">:</span>
-        <span class="n">signature</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s1">'HTTP_X_LINE_SIGNATURE'</span><span class="p">]</span>
-        <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">"POST"</span><span class="p">:</span>
+        <span class="n">signature</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s2">"HTTP_X_LINE_SIGNATURE"</span><span class="p">]</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="n">handler</span><span class="o">.</span><span class="n">handle</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">signature</span><span class="p">)</span>
@@ -533,7 +519,7 @@ ngrok 會把 request 傳到 local 端相對應的 port</p>
 <img alt="3_message_sample" src="/images/posts-image/2016-11-24-line-echo-bot-on-django/boxeHoG.png"/></p>
 <p>如果你發現除了 echo 訊息外，還有其他的訊息<br/>
 可能就是沒有把 Atuo Reply Message 關掉<br/>
-這時候就可以去 Line Bot 的 <code>LINE@ Manger</code><br/>
+這時候就可以去 Line Bot 的 <code>LINE@ Manager</code><br/>
 <code>Settings</code> → <code>Bot Settings</code> 把它關掉<br/>
 或者到 <code>Messages</code> → <code>Auto Reply Message</code> 做修改訊息內容</p>
 <h2 id="reference">Reference</h2>

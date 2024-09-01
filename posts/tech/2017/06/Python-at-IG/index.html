@@ -97,12 +97,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -197,26 +197,26 @@ Google 一下「PyCon」、「Instagram」有很多很清楚地整理<br/>
 </li>
 </ul>
 <h2 id="but-python-is-still-slow-right">But Python is still slow, right?</h2>
-<p>At instagram, our bottlenecck is development velocity, not pure code execution</p>
+<p>At Instagram, our bottleneck is development velocity, not pure code execution</p>
 <p>The conclusion is that you can get to a few hundred million users with Python before worrying about the performance of framework and language</p>
 <h2 id="python-efficiency-strategy">Python Efficiency Strategy</h2>
 <ol>
 <li>Build extensive tools to profile and understand performance bottleneck</li>
-<li>Moving stable, citical compenents to C/C++</li>
+<li>Moving stable, critical components to C/C++</li>
 <li>Cythonization</li>
 <li>Async? New Python runtime?</li>
 </ol>
 <h2 id="road-to-python3">Road to Python3</h2>
-<p>這一段講到 Instragram 如何從 Python2 轉到 Python3 的過程<br/>
+<p>這一段講到 Instagram 如何從 Python2 轉到 Python3 的過程<br/>
 我覺得很精彩，所以大家就自己去看吧 XD</p>
 <p>我只紀錄一個我覺得特別有趣的東西<br/>
 如同大家所知道的 Python2 跟 Python3 一個很大的不同點，就是對於 byte 跟 str 的處理<br/>
 這就會導致我們必須先確認他的型態是否符合預期<br/>
 如果不符合就要在做 encode 或 decode</p>
 <p>可能就會像下面這樣</p>
-<div class="highlight"><pre><span></span><code><span class="n">value</span> <span class="o">=</span> <span class="s1">'abc'</span>
+<div class="highlight"><pre><span></span><code><span class="n">value</span> <span class="o">=</span> <span class="s2">"abc"</span>
 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">text_type</span><span class="p">):</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encode</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encode</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
 <span class="n">mymac</span> <span class="o">=</span> <span class="n">hamc</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </code></pre></div>
 <p>Instagram 處理這種問題的功能實作成 <code>ensure_binary</code>, <code>ensure_str</code>, <code>ensure_text</code> 這類的 helper function</p>

@@ -97,12 +97,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -200,7 +200,7 @@
 <li><a href="#_8">自動偵測套件版本並適當升級的服務</a></li>
 </ul>
 </li>
-<li><a href="#bouns-pipx-python">Bouns: pipx - 在系統安裝 Python 工具</a></li>
+<li><a href="#bonus-pipx-python">Bonus: pipx - 在系統安裝 Python 工具</a></li>
 <li><a href="#reference">Reference</a></li>
 </ul>
 </div>
@@ -229,7 +229,7 @@ pip<span class="w"> </span>freeze<span class="w"> </span>&gt;&gt;<span class="w"
 只好再送一個 Pull Request 修正......</p>
 <h2 id="pipenv">pipenv</h2>
 <p><a href="https://pipenv.readthedocs.io/en/latest/">pipenv</a> 可以用來同時管理虛擬環境跟套件<br/>
-pipenv 不使用 <code>requriements.txt</code>，而是使用自定義的 <code>Pipfile</code> 跟 <code>Pipfile.lock</code> 管理套件<br/>
+pipenv 不使用 <code>requirements.txt</code>，而是使用自定義的 <code>Pipfile</code> 跟 <code>Pipfile.lock</code> 管理套件<br/>
 它的好處是能透過單一指令將套件安裝到虛擬環境中，並且更新到 <code>Pipfile</code> 以及 <code>Pipfile.lock</code></p>
 <h3 id="pipenv_1">安裝 pipenv</h3>
 <p>根據不同的系統，可以在 <a href="https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv">Installing Pipenv</a> 找到安裝 pipenv 的方式</p>
@@ -360,7 +360,7 @@ pipenv<span class="w"> </span>install<span class="w"> </span>--ignore-pipfile
 </code></pre></div>
 <h3 id="_3">安裝開發環境套件</h3>
 <p>有些套件（e.g., 測試工具）不需要在 Production 的環境上安裝<br/>
-以往會將不同的套件用不同的 <code>requirements.txt</code> 來管理 (e.g.,  <code>requirments/dev.txt</code>, <code>requirements/prod.txt</code>)<br/>
+以往會將不同的套件用不同的 <code>requirements.txt</code> 來管理 (e.g.,  <code>requirements/dev.txt</code>, <code>requirements/prod.txt</code>)<br/>
 pipenv 則是將開發環境才需要的套件寫在 Pipfile 的 <strong>dev-packages</strong> 內<br/>
 只要在安裝時後面加上選項 <code>--dev</code></p>
 <p>e.g.,</p>
@@ -424,7 +424,7 @@ poetry<span class="w"> </span>remove<span class="w"> </span>&lt;package&gt;
 <li><a href="https://pyup.io">pyup.io</a></li>
 <li><a href="https://dependabot.com">dependabot</a></li>
 </ul>
-<h2 id="bouns-pipx-python">Bouns: pipx - 在系統安裝 Python 工具</h2>
+<h2 id="bonus-pipx-python">Bonus: pipx - 在系統安裝 Python 工具</h2>
 <p>雖然建議 Python 的套件都裝在虛擬環境，但如果平時要使用的工具 (e.g., <a href="http://www.pyinvoke.org/">invoke</a>, <a href="https://pypi.org/project/awscli/">awscli</a>) 都裝在虛擬環境<br/>
 每次使用這些工具都得進入虛擬環境就太麻煩了<br/>
 <a href="https://pipxproject.github.io/pipx/">pipx</a> 會為每個工具創建一個專屬的虛擬環境，並且設定好 PATH</p>

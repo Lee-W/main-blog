@@ -99,12 +99,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -245,28 +245,30 @@
 <p>If the attributes <code>start_trigger_args</code> and <code>start_from_trigger</code> are defined as class attributes, we could set <code>trigger_kwargs</code> as a temporary value and update the values in the <code>__init__</code> method. However, implementing a DAG with dynamic task mapping on an operator supporting this feature works differently, which will be detailed in the next article.</p>
 <h2 id="whats-changed-under-the-hook">What's changed under the hook</h2>
 <p>Let's start from <a href="https://github.com/apache/airflow/blob/9901a065fcd93307d8e1d69e34621966d7313511/airflow/models/dagrun.py#L1541-L1545">airflow/models/dagrun.py</a>. Airflow verifies if the <code>start_from_trigger</code> attribute is set to <code>True</code> and the <code>start_from_trigger</code> attribute is set. If both conditions are met, the <code>defer_task</code> method will be called with <code>exception=None</code>.</p>
+<!-- blacken-docs:off -->
 <div class="highlight"><pre><span></span><code>            <span class="k">elif</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_from_trigger</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">ti</span><span class="o">.</span><span class="n">start_date</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
                 <span class="k">if</span> <span class="n">ti</span><span class="o">.</span><span class="n">state</span> <span class="o">!=</span> <span class="n">TaskInstanceState</span><span class="o">.</span><span class="n">UP_FOR_RESCHEDULE</span><span class="p">:</span>
                     <span class="n">ti</span><span class="o">.</span><span class="n">try_number</span> <span class="o">+=</span> <span class="mi">1</span>
                 <span class="n">ti</span><span class="o">.</span><span class="n">defer_task</span><span class="p">(</span><span class="n">exception</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">)</span>
 </code></pre></div>
+<!-- blacken-docs:on -->
 <p>Then, let's go to <a href="https://github.com/apache/airflow/blob/9901a065fcd93307d8e1d69e34621966d7313511/airflow/models/taskinstance.py#L1607-L1621">airflow/models/taskinstance.py</a>.</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">if</span> <span class="n">exception</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">trigger_row</span> <span class="o">=</span> <span class="n">Trigger</span><span class="o">.</span><span class="n">from_object</span><span class="p">(</span><span class="n">exception</span><span class="o">.</span><span class="n">trigger</span><span class="p">)</span>
-        <span class="n">next_method</span> <span class="o">=</span> <span class="n">exception</span><span class="o">.</span><span class="n">method_name</span>
-        <span class="n">next_kwargs</span> <span class="o">=</span> <span class="n">exception</span><span class="o">.</span><span class="n">kwargs</span>
-        <span class="n">timeout</span> <span class="o">=</span> <span class="n">exception</span><span class="o">.</span><span class="n">timeout</span>
-    <span class="k">elif</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">trigger_row</span> <span class="o">=</span> <span class="n">Trigger</span><span class="p">(</span>
-            <span class="n">classpath</span><span class="o">=</span><span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="o">.</span><span class="n">trigger_cls</span><span class="p">,</span>
-            <span class="n">kwargs</span><span class="o">=</span><span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="o">.</span><span class="n">trigger_kwargs</span> <span class="ow">or</span> <span class="p">{},</span>
-        <span class="p">)</span>
-        <span class="n">next_kwargs</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="o">.</span><span class="n">next_kwargs</span>
-        <span class="n">next_method</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="o">.</span><span class="n">next_method</span>
-        <span class="n">timeout</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="o">.</span><span class="n">timeout</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">AirflowException</span><span class="p">(</span><span class="s2">"exception and ti.task.start_trigger_args cannot both be None"</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">exception</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">trigger_row</span> <span class="o">=</span> <span class="n">Trigger</span><span class="o">.</span><span class="n">from_object</span><span class="p">(</span><span class="n">exception</span><span class="o">.</span><span class="n">trigger</span><span class="p">)</span>
+    <span class="n">next_method</span> <span class="o">=</span> <span class="n">exception</span><span class="o">.</span><span class="n">method_name</span>
+    <span class="n">next_kwargs</span> <span class="o">=</span> <span class="n">exception</span><span class="o">.</span><span class="n">kwargs</span>
+    <span class="n">timeout</span> <span class="o">=</span> <span class="n">exception</span><span class="o">.</span><span class="n">timeout</span>
+<span class="k">elif</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">trigger_row</span> <span class="o">=</span> <span class="n">Trigger</span><span class="p">(</span>
+        <span class="n">classpath</span><span class="o">=</span><span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="o">.</span><span class="n">trigger_cls</span><span class="p">,</span>
+        <span class="n">kwargs</span><span class="o">=</span><span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="o">.</span><span class="n">trigger_kwargs</span> <span class="ow">or</span> <span class="p">{},</span>
+    <span class="p">)</span>
+    <span class="n">next_kwargs</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="o">.</span><span class="n">next_kwargs</span>
+    <span class="n">next_method</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="o">.</span><span class="n">next_method</span>
+    <span class="n">timeout</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">start_trigger_args</span><span class="o">.</span><span class="n">timeout</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">AirflowException</span><span class="p">(</span><span class="s2">"exception and ti.task.start_trigger_args cannot both be None"</span><span class="p">)</span>
 </code></pre></div>
 <p>We handle standard task deferral in the first <code>if</code> condition. This happens when a task runs the <code>defer</code> method and raises a <code>TaskDeferred</code> exception. For a more detailed version, you can refer to <a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker#how-did-the-deferrable-operator-work-before-this-change">this link</a>. Therefore, we need to set <code>exception=None</code> in the previous code block, as we are not handling it in the standard way.</p>
 <p>The <code>elif</code> statement checks whether this operator has a <code>start_trigger_args</code> attribute, which indicates that this operator supports the "starting execution from the trigger" feature. Airflow will then load the value from <code>start_trigger_args</code> and assign it to the variables that will later be used in the rest of the deferral process, similar to the standard task deferral.</p>

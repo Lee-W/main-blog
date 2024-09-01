@@ -97,12 +97,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -278,8 +278,8 @@ Commands:
 </ol>
 <p>這就是為什麼我的 <a href="https://github.com/Lee-W/pelican-stat/blob/0.3.0/pelican_stat/collector.py#L15">_get_pelican_instance</a> 會這樣寫</p>
 <p>而我額外多做了兩個處理</p>
-<div class="highlight"><pre><span></span><code>        <span class="n">settings</span><span class="p">[</span><span class="s2">"PLUGINS"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">settings</span><span class="p">[</span><span class="s2">"MARKDOWN"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="highlight"><pre><span></span><code><span class="n">settings</span><span class="p">[</span><span class="s2">"PLUGINS"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">settings</span><span class="p">[</span><span class="s2">"MARKDOWN"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
 </code></pre></div>
 <p>原因是 MARKDOWN 跟 PLUGINS 都有可能有額外的相依套件<br/>
 尤其是 pelican 自從 <a href="https://docs.getpelican.com/en/4.5.0/plugins.html#how-to-use-plugins">4.5.0</a> 之後開始支援從 pip 安裝的 pelican-plugins<br/>

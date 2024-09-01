@@ -97,12 +97,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -169,7 +169,7 @@
 <article class="post">
 <div class="inner">
 <section class="post-content">
-<p><img alt="effective python" src="/images/books/aE00B2o.jpg"/></p>
+<p><img alt="effective python" src="/images/books/effective-python.jpg"/></p>
 <p>第二次看過終於有辦法把原本看不懂的部分都看懂了<br/>
 那些看不懂的大多是很抽象化的技巧<br/>
 但是啊，看懂了這些語法<br/>
@@ -278,10 +278,10 @@
 <li>將複雜的運算式移到輔助函式 (helper function) 內，特別是在你需要重複用到同樣的邏輯的時候</li>
 <li>與其在運算式中使用 <code>or</code> 或 <code>and</code> ，不如使用 <code>if/else</code> 讓程式碼更易讀</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">my_values</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'red'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'5'</span><span class="p">],</span> <span class="n">green</span><span class="p">:</span> <span class="p">[</span><span class="s1">''</span><span class="p">]</span> <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="n">my_values</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"red"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"5"</span><span class="p">],</span> <span class="n">green</span><span class="p">:</span> <span class="p">[</span><span class="s2">""</span><span class="p">]}</span>
 
 <span class="c1"># or, and</span>
-<span class="n">red</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'red'</span><span class="p">,</span> <span class="p">[</span><span class="s1">''</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">red</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"red"</span><span class="p">,</span> <span class="p">[</span><span class="s2">""</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># if/else</span>
 <span class="n">red</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">red</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">red</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="mi">0</span>
@@ -292,16 +292,18 @@
 <span class="k">else</span><span class="p">:</span>
     <span class="n">red</span> <span class="o">=</span> <span class="mi">0</span>
 
+
 <span class="c1"># helper function</span>
 <span class="k">def</span> <span class="nf">get_first_int</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-    <span class="n">found</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">[</span><span class="s1">''</span><span class="p">])</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">[</span><span class="s2">""</span><span class="p">])</span>
     <span class="k">if</span> <span class="n">found</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
         <span class="n">found</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">found</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">found</span> <span class="o">=</span> <span class="n">default</span>
     <span class="k">return</span> <span class="n">found</span>
 
-<span class="n">red</span> <span class="o">=</span> <span class="n">get_first_int</span><span class="p">(</span><span class="n">my_values</span><span class="p">,</span> <span class="s1">'red'</span><span class="p">)</span>
+
+<span class="n">red</span> <span class="o">=</span> <span class="n">get_first_int</span><span class="p">(</span><span class="n">my_values</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="05">作法05: 知道如何切割序列</h3>
 <ul>
@@ -327,10 +329,10 @@
 <div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
 <span class="c1"># list comprehension</span>
-<span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+<span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
 
 <span class="c1"># map</span>
-<span class="n">squares</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">squares</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="09-generator-list-comprehension">作法09: 考慮使用 generator 取代大型 list comprehension</h3>
 <ul>
@@ -338,7 +340,7 @@
 </ul>
 <h3 id="11-zip-iterables">作法11: 使用 zip 來平行處理 iterables</h3>
 <div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">]</span>
 
 <span class="c1"># without zip</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
@@ -381,8 +383,10 @@
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
+
 <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">default</span><span class="p">)</span>
+
 
 <span class="c1"># The two results would be the same but should be different</span>
 <span class="n">func</span><span class="p">()</span>
@@ -390,6 +394,7 @@
 </code></pre></div>
 <p><strong>Fix</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
 
 <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Demonstration</span>
@@ -406,6 +411,7 @@
 <span class="k">def</span> <span class="nf">flow_rate</span><span class="p">(</span><span class="n">weight_diff</span><span class="p">,</span> <span class="n">time_diff</span><span class="p">,</span> <span class="n">period</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">weight_diff</span> <span class="o">/</span> <span class="n">time_diff</span><span class="p">)</span> <span class="o">*</span> <span class="n">period</span>
 
+
 <span class="c1"># with default argument</span>
 <span class="k">def</span> <span class="nf">flow_rate</span><span class="p">(</span><span class="n">weight_diff</span><span class="p">,</span> <span class="n">time_diff</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">weight_diff</span> <span class="o">/</span> <span class="n">time_diff</span><span class="p">)</span> <span class="o">*</span> <span class="n">period</span>
@@ -416,9 +422,7 @@
 <li>使用 keyword-only arguments 來強制要求呼叫者提供 keyword argument 以避免混淆，特別是在接收多個 Boolean flag 的函式中</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># * indicates the end of positional arguments</span>
-<span class="k">def</span> <span class="nf">safe_division</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">divisor</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span>
-                  <span class="n">ignore_overflow</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="o">...</span>
+<span class="k">def</span> <span class="nf">safe_division</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">divisor</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">ignore_overflow</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span> <span class="o">...</span>
 </code></pre></div>
 <h2 id="_2">第三章： 類別與繼承</h2>
 <h3 id="22-class-dictionary-tuple">作法22: 優先選用輔助 class 而非使用 dictionary 或 tuple 來管理紀錄</h3>
@@ -472,9 +476,9 @@
 </code></pre></div>
 <p>實際上執行了三個 operation<br/>
 等效於以下的程式碼</p>
-<div class="highlight"><pre><span></span><code><span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="s2">"count"</span><span class="p">)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="n">offset</span>
-<span class="nb">setattr</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="nb">setattr</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="s2">"count"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </code></pre></div>
 <p>這時候必須在 <code>increment</code> 加上 <code>Lock</code> 避免 data race</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">LockingCounter</span><span class="p">:</span>
@@ -490,18 +494,20 @@
 
 <span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
 
+
 <span class="k">def</span> <span class="nf">consumer</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'consumer waiting'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"consumer waiting"</span><span class="p">)</span>
     <span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'consumer done'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"consumer done"</span><span class="p">)</span>
+
 
 <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">consumer</span><span class="p">)</span>
 <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Producer putting'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Producer putting"</span><span class="p">)</span>
 <span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="nb">object</span><span class="p">())</span>
 <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Producer done'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Producer done"</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="41-concurrentfutures">作法41: 考慮使用 concurrent.futures 來達成真正的平行處理</h3>
 <ul>
@@ -540,9 +546,9 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">old</span><span class="p">)</span>
 
 
-<span class="k">with</span> <span class="n">log_level</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="s1">'mylog'</span><span class="p">)</span> <span class="k">as</span> <span class="n">logger</span><span class="p">:</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">'This is my message!'</span><span class="p">)</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">debut</span><span class="p">(</span><span class="s1">'This will not print'</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">log_level</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="s2">"mylog"</span><span class="p">)</span> <span class="k">as</span> <span class="n">logger</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"This is my message!"</span><span class="p">)</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">debut</span><span class="p">(</span><span class="s2">"This will not print"</span><span class="p">)</span>
 </code></pre></div>
 <ul>
 <li><code>yield</code> 前是 contextmanager 的 <code>__enter__</code> 會執行的部分，之後則是 <code>__exit__</code></li>
@@ -641,14 +647,14 @@
 <h2 id="_7">第八章： 推出產品</h2>
 <h3 id="57-pdb">作法57: 考慮使用 pdb 來進行互動式除錯</h3>
 <ul>
-<li>
-<p>在程式碼加入以下這行，就能讓程式執行到這一步時停下，開啟互動式的 python shell<br/>
-<code>python
-    import pdf; pdf.set_trace()</code></p>
-</li>
-<li>
-<p>檢視執行中的程式</p>
+<li>在程式碼加入以下這行，就能讓程式執行到這一步時停下，開啟互動式的 python shell</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pdf</span>
+
+<span class="n">pdf</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+</code></pre></div>
 <ul>
+<li>檢視執行中的程式<ul>
 <li><code>bt</code>: 印出目前 call stack 的 traceback</li>
 <li><code>up</code>: 上移 call stack</li>
 <li><code>down</code>: 下移 call stack</li>
@@ -680,7 +686,7 @@
 
 <span class="n">stats</span> <span class="o">=</span> <span class="n">Stats</span><span class="p">(</span><span class="n">profiler</span><span class="p">)</span>
 <span class="n">stats</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="s1">'cumulative'</span><span class="p">)</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="s2">"cumulative"</span><span class="p">)</span>
 <span class="n">stats</span><span class="o">.</span><span class="n">print_stats</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="59-tracemalloc">作法59: 使用 tracemalloc 來了解記憶體用量或是否有洩漏</h3>
@@ -689,6 +695,7 @@
 <li>Python 3.4 以後可以使用 tracemalloc</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tracemalloc</span>
+
 <span class="n">tracemalloc</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
 <span class="n">time1</span> <span class="o">=</span> <span class="n">tracemalloc</span><span class="o">.</span><span class="n">take_snapshot</span><span class="p">()</span>
@@ -697,7 +704,7 @@
 
 <span class="n">time2</span> <span class="o">=</span> <span class="n">tracemallo</span><span class="o">.</span><span class="n">take_snapshot</span><span class="p">()</span>
 
-<span class="n">stats</span> <span class="o">=</span> <span class="n">time2</span><span class="o">.</span><span class="n">compare_to</span><span class="p">(</span><span class="n">time1</span><span class="p">,</span> <span class="s1">'lineno'</span><span class="p">)</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">time2</span><span class="o">.</span><span class="n">compare_to</span><span class="p">(</span><span class="n">time1</span><span class="p">,</span> <span class="s2">"lineno"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">stat</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">stat</span><span class="p">)</span>
 </code></pre></div>

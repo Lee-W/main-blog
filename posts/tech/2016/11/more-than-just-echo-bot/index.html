@@ -99,12 +99,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -183,27 +183,27 @@ Bot 的功能實作，跟一般網站或 App 的實作並沒有太大的差別</
 也就是使用者的「意圖」</p>
 <h2 id="based-on-keyword">Based on Keyword</h2>
 <p>上一篇文章，輸入關鍵字就能回傳 template message 的 bot 也是用這樣的方式實作的</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="s1">'button'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="s2">"button"</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
     <span class="c1"># Send ButtonTemplate</span>
-    <span class="o">......</span>
-<span class="k">elif</span> <span class="s1">'confirm'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">elif</span> <span class="s2">"confirm"</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
     <span class="c1"># Send ConfirmTemplate</span>
-    <span class="o">......</span>
-<span class="k">elif</span> <span class="s1">'carousel'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">elif</span> <span class="s2">"carousel"</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
     <span class="c1"># Send CarouselTemplate</span>
-    <span class="o">......</span>
+    <span class="o">...</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="c1"># Echo TextMessage</span>
-    <span class="o">......</span>
+    <span class="o">...</span>
 </code></pre></div>
 <p>回歸到天氣的問題<br/>
 可以試著找出「天氣」是否有出現在使用者的問句中<br/>
 再來判斷「今天」, 「明天」這樣敘述時間的詞</p>
 <p>e.g.</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="s1">'天氣'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-    <span class="k">if</span> <span class="s1">'今天'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="s2">"天氣"</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s2">"今天"</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">today_s_weather</span>
-    <span class="k">elif</span> <span class="s1">'明天'</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="s2">"明天"</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">tomorrow_s_weather</span>
 </code></pre></div>
 <h3 id="pros">Pros</h3>

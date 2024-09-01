@@ -99,12 +99,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -175,7 +175,7 @@
 <section class="post-content">
 <p>In the article series <a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker">What If...? Running Airflow Tasks without the workers</a>, I introduced one of the new features of Airflow 2.10.0. It's time to introduce a feature in Airflow 2.7.0 (no, it's not).</p>
 <!--more-->
-<p>Even though Grammarly suggested such a fancy post title, this article will only discuss the simple pull request <a href="https://github.com/apache/airflow/pull/31712"> Add default_deferrable config #31712 </a>. This was the first major thing I did since joining Astronomer.io and the first pull request that got voted PR of the month. Even though it turned out to be relatively easy, we tried some hacky things with <a href="https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/cluster-policies.html">Cluster Policty</a> before it looks like this. But I think that a topic for another day.</p>
+<p>Even though Grammarly suggested such a fancy post title, this article will only discuss the simple pull request <a href="https://github.com/apache/airflow/pull/31712">Add default_deferrable config #31712</a>. This was the first major thing I did since joining Astronomer.io and the first pull request that got voted PR of the month. Even though it turned out to be relatively easy, we tried some hacky things with <a href="https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/cluster-policies.html">Cluster Policty</a> before it looks like this. But I think that a topic for another day.</p>
 <h2 id="so-what-is-this-default_deferrable-config">So, what is this default_deferrable config?</h2>
 <p>It's a <a href="https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#default-deferrable">configuration</a> that you can specify in the <code>airflow.cfg</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># airflow.cfg</span>
@@ -196,8 +196,10 @@
 <span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s">"false"</span>
 </code></pre></div>
 <p><strong>Step 2</strong>: Change the default value of the argument <code>deferrable</code> in every operator/sensor to <code>conf.getboolean("operators", "default_deferrable", fallback=False)</code>; this is how Airflow retrieves the value from <code>airflow.cfg</code> or environment variables.</p>
+<!-- blacken-docs:off -->
 <div class="highlight"><pre><span></span><code>        <span class="n">deferrable</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">conf</span><span class="o">.</span><span class="n">getboolean</span><span class="p">(</span><span class="s2">"operators"</span><span class="p">,</span> <span class="s2">"default_deferrable"</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
 </code></pre></div>
+<!-- blacken-docs:on -->
 <p><strong>Step 3</strong>: Kindly ask every contributor to add this default value to every operator/sensor and reviewer to check</p>
 <p><strong>Step 4</strong>: Pray that everyone will follow 🙏...... at least that is what we did at that moment</p>
 </section>
@@ -226,6 +228,9 @@
 <ol class="parts">
 <li class="active">
 <a href="https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable">Optimizing Airflow Operators - Converting to Async with default_deferrable Config</a>
+</li>
+<li>
+<a href="https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast">Building a Customized Linter - Checking the Default Value of default_deferrable through AST</a>
 </li>
 </ol>
 </div>

@@ -97,12 +97,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -206,7 +206,7 @@ linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤<
 </ul>
 </li>
 <li><a href="#_13">其他工具</a></li>
-<li><a href="#bouns">Bouns: 設定檔的選用</a></li>
+<li><a href="#bonus">Bonus: 設定檔的選用</a></li>
 <li><a href="#reference">Reference</a></li>
 </ul>
 </div>
@@ -215,10 +215,13 @@ linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤<
 幾乎是所有 Python 開源專案的標準配備</p>
 <h3 id="_1">使用</h3>
 <p>以下面這段程式碼為例</p>
+<!-- blacken-docs:off -->
 <div class="highlight"><pre><span></span><code><span class="c1"># bad_code.py</span>
 <span class="kn">import</span> <span class="nn">os</span>
+
 <span class="n">os</span> <span class="o">=</span>  <span class="s2">"My Operating system"</span>
 </code></pre></div>
+<!-- blacken-docs:on -->
 <p>這段程式碼出現了兩個問題</p>
 <ul>
 <li>把模組 <code>os</code> 指派成一個字串，會導致無法使用 <code>os</code> 模組內的函式（因為 <code>os</code> 已經變成一個字串）</li>
@@ -271,7 +274,7 @@ pipenv<span class="w"> </span>run<span class="w"> </span>flake8
 但這份檔案的其他地方還是希望能被檢查<br/>
 這時候可以在那行程式碼加上 <code># noqa: [error]</code></p>
 <p>e.g.,</p>
-<div class="highlight"><pre><span></span><code><span class="n">example</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="s1">'example'</span>  <span class="c1"># noqa: E731</span>
+<div class="highlight"><pre><span></span><code><span class="n">example</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="s2">"example"</span>  <span class="c1"># noqa: E731</span>
 </code></pre></div>
 <h2 id="-pylint">風格檢查 - pylint</h2>
 <p><a href="https://www.pylint.org/">pylint</a> 同樣是相當常見的 Python linter<br/>
@@ -475,10 +478,10 @@ pipenv<span class="w"> </span>run<span class="w"> </span>isort<span class="w"> <
 所以還是建議安裝最新的版本</p>
 <h2 id="_13">其他工具</h2>
 <ul>
-<li><a href="https://github.com/mgedmin/check-manifest">check-manifest</a>: 檢查有沒有少放入 <code>MAINIFEST.in</code> 的檔案</li>
+<li><a href="https://github.com/mgedmin/check-manifest">check-manifest</a>: 檢查有沒有少放入 <code>MANIFEST.in</code> 的檔案</li>
 <li><a href="https://github.com/asottile/seed-isort-config">seed-isort-config</a></li>
 </ul>
-<h2 id="bouns">Bouns: 設定檔的選用</h2>
+<h2 id="bonus">Bonus: 設定檔的選用</h2>
 <p>從前面的測試篇到現在有提到很多設定檔的格式<br/>
 通常每個工具都會有自己的設定檔 (e.g., <code>.coveragerc</code>, <code>.flake8</code>) 或者用 Python 比較通用的格式 (e.g., <code>pyproject.toml</code>, <code>setup.cfg</code>)<br/>
 其中 <code>pyproject.toml</code> 是在 <a href="https://www.python.org/dev/peps/pep-0518/">PEP 518</a> 提出的設定檔格式<br/>

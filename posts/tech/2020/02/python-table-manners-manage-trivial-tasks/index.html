@@ -97,12 +97,12 @@
 <ul>
 <li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
 <li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
 <li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
 <li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
 <li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/book.html"><span>Book</span></a></li>
-<li role="presentation"><a href="https://blog.wei-lee.me/category/gossiping.html"><span>Gossiping</span></a></li>
-<li class="nav-tech active" role="presentation"><a href="https://blog.wei-lee.me/category/tech.html"><span>Tech</span></a></li>
 </ul>
 <ul class="nav-meta">
 <li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
@@ -240,6 +240,7 @@ invoke 會傳入一個 context 做為第一個參數 (Read More 👉 <a href="ht
 最後就可以用這個 context （參數 <code>ctx</code>） 執行指令</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">invoke</span> <span class="kn">import</span> <span class="n">task</span>
 
+
 <span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">develop</span><span class="p">(</span><span class="n">ctx</span><span class="p">):</span>
     <span class="n">ctx</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">"python setup.py develop"</span><span class="p">)</span>
@@ -252,6 +253,7 @@ invoke 會傳入一個 context 做為第一個參數 (Read More 👉 <a href="ht
 
 <span class="n">PIPENV_PREFIX</span> <span class="o">=</span> <span class="s2">"pipenv run"</span>
 
+
 <span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">develop</span><span class="p">(</span><span class="n">ctx</span><span class="p">):</span>
     <span class="n">ctx</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PIPENV_PREFIX</span><span class="si">}</span><span class="s2"> python setup.py develop"</span><span class="p">)</span>
@@ -262,9 +264,11 @@ invoke 會傳入一個 context 做為第一個參數 (Read More 👉 <a href="ht
 <p>e.g., 在初始環境 (<code>init</code>) 前，常會先清除不必要的檔案 (<code>clean</code>)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">invoke</span> <span class="kn">import</span> <span class="n">task</span>
 
+
 <span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">clean</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"clean up"</span><span class="p">)</span>
+
 
 <span class="nd">@task</span><span class="p">(</span><span class="n">pre</span><span class="o">=</span><span class="p">[</span><span class="n">clean</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
@@ -326,13 +330,14 @@ invoke 當然也想到了<br/>
 
 <span class="n">PIPENV_PREFIX</span> <span class="o">=</span> <span class="s2">"pipenv run"</span>
 
+
 <span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Remove all the tmp files in .gitignore"""</span>
     <span class="n">files_to_remove</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'.gitignore'</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">".gitignore"</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">input_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'#'</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"#"</span><span class="p">):</span>
                 <span class="n">files_to_remove</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
     <span class="n">cmd</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="sa">f</span><span class="s2">"rm -rf </span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">files_to_remove</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
