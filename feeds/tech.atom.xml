@@ -1,5 +1,318 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-09-01T19:15:00+08:00</updated><entry><title>Building a Customized Linter</title><link href="https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast" rel="alternate"></link><published>2024-09-01T19:15:00+08:00</published><updated>2024-09-01T19:15:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-09-01:/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast</id><summary type="html">&lt;p&gt;In the previous article, I mentioned that we can only kindly ask users to add the default value of deferrable correctly. But... the fact is we can do better.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-09-02T21:35:00+08:00</updated><entry><title>Dive deeper into AST</title><link href="https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more" rel="alternate"></link><published>2024-09-02T21:35:00+08:00</published><updated>2024-09-02T21:35:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-09-02:/posts/tech/2024/09/dig-into-ast-a-bit-more</id><summary type="html">&lt;p&gt;The purpose of this post was to delve into the &lt;a href="https://docs.python.org/3/library/ast.html"&gt;ast&lt;/a&gt;&lt;br&gt;
+But...&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;The purpose of this post was to delve into the &lt;a href="https://docs.python.org/3/library/ast.html"&gt;ast&lt;/a&gt;&lt;br&gt;
+But...&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;The documentation appears to be clear, and the naming is straightforward enough. 🤔 So, I'll only add a few examples and make some notes that might make sense to me and help me pick up ast much faster next time. Also, it's worth noting that parsed ast might change from version to version. The Python version used here is 3.12.5.&lt;/p&gt;
+&lt;p&gt;For those unfamiliar with Abstract Syntax Trees (AST), it is a way to represent your code in a tree structure. Experiment with the following code snippet using different Python code to gain a better understanding of what AST is.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;ast&lt;/span&gt;
+
+&lt;span class="n"&gt;module_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;the path to you code&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;ast_tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;module_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dump&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ast_tree&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;indent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unparse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ast_tree&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#helpers"&gt;Helpers&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#lets-refactor-the-default_deferrable-linter"&gt;Let's refactor the default_deferrable linter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#node-classes"&gt;Node Classes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="helpers"&gt;Helpers&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;functions&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ast.parse&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;parse code as the ast node&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ast.unparse&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;unparse the ast node as code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ast.dump&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;return a formatted dump of the ast tree&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ast.walk&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;walk through the ast tree (iterator)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ast.iter_child_nodes&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ast.iter_fields&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ast.fix_missing_locations&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;recalculate the location information (commonly used after adding a new ast node)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ast.literal_eval&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ast.get_docstring&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ast.get_source_segment&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ast.increment_lineno&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ast.copy_location&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;classes&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ast.NodeVisitor&lt;/code&gt;: base class for visiting an ast tree&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;visit&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ast.NodeTransformer&lt;/code&gt;: base class for modifying an ast tree&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;visit_{Node Class}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the &lt;a href="{filename}/posts/tech/2024/18-check_default_value_of_default_deferrable_through_ast"&gt;previous article&lt;/a&gt;, I improved the linter with &lt;a href="https://github.com/apache/airflow/pull/41924"&gt;CI: improved check_deferrable_default script to cover positional variables #41924&lt;/a&gt;. But after digging into the &lt;a href="https://docs.python.org/3/library/ast.html"&gt;ast&lt;/a&gt; module, I found out things don't need to be that complicated.&lt;/p&gt;
+&lt;h3 id="lets-refactor-the-default_deferrable-linter"&gt;Let's refactor the default_deferrable linter&lt;/h3&gt;
+&lt;p&gt;To validate the default value, I can unparse the &lt;code&gt;default&lt;/code&gt; ast to a string and compare it with the expected value &lt;code&gt;conf.getboolean('operators', 'default_deferrable', fallback=False)&lt;/code&gt;. (the string representation of an ast node use &lt;code&gt;'&lt;/code&gt; instead of &lt;code&gt;"&lt;/code&gt; to quote a string)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_is_valid_deferrable_default&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;ast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AST&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Check whether default is &amp;#39;conf.getboolean(&amp;quot;operators&amp;quot;, &amp;quot;default_deferrable&amp;quot;, fallback=False)&amp;#39;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unparse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;conf.getboolean(&amp;#39;operators&amp;#39;, &amp;#39;default_deferrable&amp;#39;, fallback=False)&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To replace the functionality of finding the &lt;code&gt;__init__&lt;/code&gt; method in classes, I use an &lt;code&gt;ast.NodeVisitor&lt;/code&gt; with &lt;code&gt;visit_FunctionDef&lt;/code&gt; instead. The logic after finding &lt;code&gt;__init__&lt;/code&gt; remains mostly the same. The only difference is that we are now collecting the line numbers that contain an error instead of yielding it.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;DefaultDeferrableVisitor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NodeVisitor&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;error_linenos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;visit_FunctionDef&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;ast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FunctionDef&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;ast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FunctionDef&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__init__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;args&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;
+            &lt;span class="n"&gt;arguments&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;reversed&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;posonlyargs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;kwonlyargs&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+            &lt;span class="n"&gt;defaults&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;reversed&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;defaults&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;kw_defaults&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+            &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;itertools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;zip_longest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arguments&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;defaults&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+                &lt;span class="c1"&gt;# argument is not deferrable&lt;/span&gt;
+                &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arg&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;deferrable&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                    &lt;span class="k"&gt;continue&lt;/span&gt;
+
+                &lt;span class="c1"&gt;# argument is deferrable, but comes with no default value&lt;/span&gt;
+                &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;error_linenos&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;argument&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lineno&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                    &lt;span class="k"&gt;continue&lt;/span&gt;
+
+                &lt;span class="c1"&gt;# argument is deferrable, but the default value is not valid&lt;/span&gt;
+                &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;_is_valid_deferrable_default&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+                    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;error_linenos&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lineno&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We then use the newly implemented &lt;code&gt;DefaultDeferrableVisitor&lt;/code&gt; to traverse the module AST tree and check the default value. Now, the &lt;code&gt;iter_check_deferrable_default_errors&lt;/code&gt; is much cleaner. 🎉&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;iter_check_deferrable_default_errors&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;module_filename&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Iterator&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+    &lt;span class="n"&gt;ast_tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;module_filename&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+    &lt;span class="n"&gt;visitor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;DefaultDeferrableVisitor&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;visitor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;visit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ast_tree&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;yield from&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;module_filename&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;:&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;lineno&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;lineno&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;visitor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;error_linenos&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="node-classes"&gt;Node Classes&lt;/h2&gt;
+&lt;p&gt;This section lists all the nodes available in an AST tree in Python 3.12. It's pretty much the same as the documentation, but I've reorganized it in a way that I can easily understand.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Root nodes&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Module&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;when &lt;code&gt;ast.parse(..., mode="exec")&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Expression&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;when &lt;code&gt;ast.parse(..., mode="eval")&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Interactive&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;When &lt;code&gt;ast.parse(..., mode="single")&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FunctionType&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;When &lt;code&gt;ast.parse(..., mode="func_type")&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;for expressions such as &lt;code&gt;# type: (int, int) -&amp;gt; int&lt;/code&gt; back to the time PEP 484 wasn't there&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Expressions&lt;ul&gt;
+&lt;li&gt;Literals&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Constant&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FormattedValue&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;List&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Tuple&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Set&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Dict&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Variables&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Name&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ctx=&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Load&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Store&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Del&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Starred&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;e.g., &lt;code&gt;*var&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Expr&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;Operators (&lt;code&gt;op=&lt;/code&gt;)&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;UnaryOp&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;UAdd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;USub&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Not&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Invert&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BinOp&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Add&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Sub&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Mult&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Div&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FloorDiv&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Mod&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Lshift&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;RShift&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BitOr&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BitXor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BitAnd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MatMult&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BoolOp&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;And&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;OR&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Compare&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Eq&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NotEq&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Lt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LtE&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Gt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GtE&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Is&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IsNot&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;In&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NotIn&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Call&lt;/code&gt; (&lt;code&gt;keywords=keyword(..)&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IfExp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Attribute&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NamedExpr&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Subscript&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Slice&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Comprehensions (&lt;code&gt;generators=[comprehension(...)]&lt;/code&gt;)&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ListComp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SetComp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GeneratorExp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DictComp&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Statements&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Assign&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;type_comment=&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AnnAssign&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;annotated assignment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AugAssign&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;augmented assignment&lt;/li&gt;
+&lt;li&gt;e.g., &lt;code&gt;x += 1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Raise&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Assert&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Delete&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Pass&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TypeAlias&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Import&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ImportFrom&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;alias&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Control Flow&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;If&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;For&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;While&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Break&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Continue&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Try&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TryStart&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;e.g., &lt;code&gt;except*&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ExceptHandler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;With&lt;/code&gt; (&lt;code&gt;items=[withitem(...)]&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Pattern matching&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Match&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cases=match_case(pattern=...), ...)&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MatchValue&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MatchSingleton&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MatchSequence&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MatchStar&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MatchMapping&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MatchClass&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MatchAs&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MatchOr&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Type parameters&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;TypeVar&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ParamSpec&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TypeVarTuple&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Function and class definitions&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;FunctionDef&lt;/code&gt;, &lt;code&gt;Lambda&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;args=arguments(...)&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;args&lt;/code&gt;, &lt;code&gt;posonlyargs&lt;/code&gt;, &lt;code&gt;kwonlyargs&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;...=[arg(...), ...]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;defaults&lt;/code&gt;, &lt;code&gt;kw_defaults&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vararg&lt;/code&gt;, &lt;code&gt;kwarg&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;i.e. &lt;code&gt;*args, **kwargs&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Return&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Yield&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;YieldFrom&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Global&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Nonlocal&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ClassDef&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AsyncFunctionDef&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Await&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AsyncFor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AsyncWith&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Airflow"></category><category term="AST"></category></entry><entry><title>Building a Customized Linter</title><link href="https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast" rel="alternate"></link><published>2024-09-01T19:15:00+08:00</published><updated>2024-09-01T19:15:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-09-01:/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast</id><summary type="html">&lt;p&gt;In the previous article, I mentioned that we can only kindly ask users to add the default value of deferrable correctly. But... the fact is we can do better.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;In the previous article, I mentioned that we can only kindly ask users to add the default value of deferrable correctly. But... the fact is we can do better.&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -15146,97 +15459,4 @@ sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://wiki.beyondlogic.org/index.php?title=Ubuntu14.04_Acer_Aspire_V5_571_Broadcom_BCM43228_WiFi"&gt;Ubuntu14.04 Acer Aspire V5 571 Broadcom BCM43228 WiFi - BeyondLogic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Linux-Unix"></category><category term="Dual Boot"></category></entry><entry><title>Gitbook on Command Line</title><link href="https://blog.wei-lee.me/posts/tech/2015/01/gitbook-on-command-line" rel="alternate"></link><published>2015-01-23T07:34:00+08:00</published><updated>2015-01-23T07:34:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2015-01-23:/posts/tech/2015/01/gitbook-on-command-line</id><summary type="html">&lt;p&gt;最近比較認真在寫 Gitbook，順便記錄一下該怎麼用&lt;br&gt;
-簡單來說 Gitbook 就是可以使用 Markdown 來寫書的平台，可以轉成各種電子書的格式&lt;br&gt;
-目前已經支援的有 html, pdf, ePUB, MOBI&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;最近比較認真在寫 Gitbook，順便記錄一下該怎麼用&lt;br&gt;
-簡單來說 Gitbook 就是可以使用 Markdown 來寫書的平台，可以轉成各種電子書的格式&lt;br&gt;
-目前已經支援的有 html, pdf, ePUB, MOBI&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;p&gt;之前寫了一本 Clean Code 的筆記&lt;br&gt;
-最近又開始寫一本 FreeBSD 和網管相關的 Gitbook&lt;br&gt;
-如果有興趣可以到&lt;a href="https://www.gitbook.com/@lee-w"&gt;我的 Gitbook&lt;/a&gt; 上看看 XD&lt;/p&gt;
-&lt;p&gt;目前 Gitbook 主要支援網站上的 Editor，不過我比較習慣在本地端進行編輯&lt;br&gt;
-雖然有 Gitbook 編輯器，但有時候用起來還是會出點問題&lt;br&gt;
-所以最後還是決定來學如何用 command line + sublime 寫 Gitbook&lt;/p&gt;
-&lt;h2 id="gitbook"&gt;安裝 Gitbook&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;npm&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;gitbook&lt;span class="w"&gt; &lt;/span&gt;-g
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="gitbook_1"&gt;開始撰寫 Gitbook&lt;/h2&gt;
-&lt;p&gt;一本 Gitbook 一般都會包含 &lt;code&gt;SUMMARY.md&lt;/code&gt;, &lt;code&gt;README.md&lt;/code&gt;, &lt;code&gt;package.json&lt;/code&gt;, &lt;code&gt;book.json&lt;/code&gt;&lt;br&gt;
-像我的 Learning Python 筆記的檔案架構大概長的是這樣&lt;br&gt;
-&lt;img alt="1_learning_python_project_structure" src="/images/posts-image/2015-01-23-gitbook-on-command-line/6RDgdVZ.png"&gt;&lt;/p&gt;
-&lt;p&gt;README.md 是這本書的簡介&lt;br&gt;
-package.json 是額外使用的 package 的定義和設定&lt;br&gt;
-book.json 是這本書的額外設定&lt;br&gt;
-這裡不會多做介紹，可以參考&lt;a href="#reference"&gt;Reference&lt;/a&gt; 的網站，裡面有很詳細的介紹&lt;/p&gt;
-&lt;p&gt;最重要的是 SUMMARY.md，它會定義整本 gitbook 的架構&lt;br&gt;
-每個章節下面都還可以給予更多的小節&lt;br&gt;
-下面是我 Learning Python 的 SUMMARY.md&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;# Summary&lt;/span&gt;
-
-&lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="nt"&gt;Introduction&lt;/span&gt;](&lt;span class="na"&gt;README.md&lt;/span&gt;)
-&lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="nt"&gt;Getting Started&lt;/span&gt;](&lt;span class="na"&gt;1_getting_started/README.md&lt;/span&gt;)
-&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="nt"&gt;A Python Q&amp;amp;A Session&lt;/span&gt;](&lt;span class="na"&gt;1_getting_started/a_python_q&amp;amp;a_session.md&lt;/span&gt;)
-&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="nt"&gt;How Python Runs Programs&lt;/span&gt;](&lt;span class="na"&gt;1_getting_started/how_python_runs_programs.md&lt;/span&gt;)
-&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="nt"&gt;How You Run Programs&lt;/span&gt;](&lt;span class="na"&gt;1_getting_started/how_you_run_programs.md&lt;/span&gt;)
-&lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="nt"&gt;Types and Operations&lt;/span&gt;](&lt;span class="na"&gt;2_types_and_operations/README.md&lt;/span&gt;)
-&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="nt"&gt;Introducing Python Object Types&lt;/span&gt;](&lt;span class="na"&gt;2_types_and_operations/introducing_python_object_types.md&lt;/span&gt;)
-&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="nt"&gt;Numeric Types&lt;/span&gt;](&lt;span class="na"&gt;2_types_and_operations/numeric_types.md&lt;/span&gt;)
-&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[&lt;span class="nt"&gt;The Dynamic Typing Interlude&lt;/span&gt;](&lt;span class="na"&gt;2_types_and_operations/the_dynamic_typing_interlude.md&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;這是預覽的結果&lt;br&gt;
-&lt;img alt="2_learning_python_web" src="/images/posts-image/2015-01-23-gitbook-on-command-line/d3NP0xi.png"&gt;&lt;/p&gt;
-&lt;p&gt;下了這個指令後就會根據 SUMMARY.md 的定義，自動產生相對應資料夾和檔案&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gitbook&lt;span class="w"&gt; &lt;/span&gt;init
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;接著就可以開始編輯裡面的檔案了&lt;/p&gt;
-&lt;h2 id="_1"&gt;預覽&lt;/h2&gt;
-&lt;p&gt;寫完之後當然預覽一下&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gitbook&lt;span class="w"&gt; &lt;/span&gt;serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;用了這個指令後就會為目前的目錄開一個預覽 HTML 的 port&lt;br&gt;
-只要在瀏覽器上輸入 &lt;code&gt;http://localhost:4000&lt;/code&gt;&lt;br&gt;
-就可以預覽剛剛寫的 Gitbook&lt;br&gt;
-只要有更新後存擋，重新整理就能看到更新後的結果&lt;/p&gt;
-&lt;h2 id="_2"&gt;輸出&lt;/h2&gt;
-&lt;p&gt;在 export 前，需要為 pdf, epub, mobi 三種格式多安裝程式才能使用&lt;br&gt;
-先到的官網下載 &lt;a href="http://calibre-ebook.com/download"&gt;Calibre&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;以 mac 為例&lt;br&gt;
-需要下面這個指令，為 ebook-covert 建立一個捷徑，讓 gitbook 可以找到這個功能&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;/Applications/calibre.app/Contents/MacOS/ebook-convert&lt;span class="w"&gt; &lt;/span&gt;/usr/local/bin
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;以下的四個指令依序可以產生 html, pdf, epub, mobi&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gitbook&lt;span class="w"&gt; &lt;/span&gt;build&lt;span class="w"&gt; &lt;/span&gt;./
-gitbook&lt;span class="w"&gt; &lt;/span&gt;pdf&lt;span class="w"&gt; &lt;/span&gt;./
-gitbook&lt;span class="w"&gt; &lt;/span&gt;epub&lt;span class="w"&gt; &lt;/span&gt;./
-gitbook&lt;span class="w"&gt; &lt;/span&gt;mobi&lt;span class="w"&gt; &lt;/span&gt;./
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;後面可以多指定一個參數 &lt;code&gt;--output="Directory"&lt;/code&gt;&lt;br&gt;
-"Directory" 換成你要的位置或檔名&lt;br&gt;
-如果不指定，預設 html 會 export 到 _book 裡面，其他檔案則會以 book 命名&lt;/p&gt;
-&lt;h2 id="publish-gitbookcom"&gt;Publish 到 Gitbook.com 上&lt;/h2&gt;
-&lt;p&gt;先到&lt;a href="https://www.gitbook.com"&gt;Gitbook 官網&lt;/a&gt; 上註冊帳號&lt;br&gt;
-接著 create a new book，到 setting 頁面往下拉，就會看到一個 URL&lt;/p&gt;
-&lt;p&gt;接下來的操作就跟 git 基本上是一樣的，init, add, commit ... 等&lt;br&gt;
-只有在 remote 的設定有點不同&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;remote&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;gitbook&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;URL&amp;quot;&lt;/span&gt;
-git&lt;span class="w"&gt; &lt;/span&gt;push&lt;span class="w"&gt; &lt;/span&gt;-u&lt;span class="w"&gt; &lt;/span&gt;gitbook
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;這裡要輸入的帳號、密碼是 gitbook 上的，不是與其連結的帳號的&lt;br&gt;
-如果還沒設定就要再去自己的 profile 內設定&lt;/p&gt;
-&lt;p&gt;&lt;a name="reference"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/GitbookIO/gitbook"&gt;Gitbook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://help.gitbook.io/index.html"&gt;GitBook Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.codedata.com.tw/social-coding/gitbook-self-publishing/"&gt;深入淺出 GitBook 寫作與自助出版，電子書也能多人協作&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Git Book"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Linux-Unix"></category><category term="Dual Boot"></category></entry></feed>

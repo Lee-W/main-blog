@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>Dive deeper into AST  - but not too deeply</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="The purpose of this post was to delve into the ast But..." name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Python" name="tags"/>
+<meta content="Airflow" name="tags"/>
+<meta content="AST" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="Dive deeper into AST  - but not too deeply" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="The purpose of this post was to delve into the ast But..." prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
+<meta content="https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more" prefix="og: http://ogp.me/ns#" property="og:url">
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2024-09-02 21:35:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Airflow" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="AST" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me//images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="Dive deeper into AST  - but not too deeply" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me//images/cover.jpeg" name="twitter:image:src"/>
+<meta content="The purpose of this post was to delve into the ast But..." name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Dive deeper into AST - but not too deeply",
+  "headline": "Dive deeper into AST - but not too deeply",
+  "datePublished": "2024-09-02 21:35:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "https://blog.wei-lee.me//images/cover.jpeg",
+  "url": "https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more",
+  "description": "The purpose of this post was to delve into the ast But..."
+}
+</script>
+</meta></meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2024", "item": "https://blog.wei-lee.me/posts/tech/2024"}, {"@type": "ListItem", "position": 5, "name": "09", "item": "https://blog.wei-lee.me/posts/tech/2024/09"}, {"@type": "ListItem", "position": 6, "name": "Dig into ast a bit more", "item": "https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "Dive deeper into AST", "about": "Tech", "datePublished": "2024-09-02 21:35"}</script></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            Dive deeper into AST
+            <br/>
+<small class="post-subtitle-white">but not too deeply</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2024/09/02 - Mon">2024/09/02 - Mon</time>
+          • 3 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me//images/cover.jpeg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>The purpose of this post was to delve into the <a href="https://docs.python.org/3/library/ast.html">ast</a><br/>
+But...</p>
+<!--more-->
+<p>The documentation appears to be clear, and the naming is straightforward enough. 🤔 So, I'll only add a few examples and make some notes that might make sense to me and help me pick up ast much faster next time. Also, it's worth noting that parsed ast might change from version to version. The Python version used here is 3.12.5.</p>
+<p>For those unfamiliar with Abstract Syntax Trees (AST), it is a way to represent your code in a tree structure. Experiment with the following code snippet using different Python code to gain a better understanding of what AST is.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ast</span>
+
+<span class="n">module_name</span> <span class="o">=</span> <span class="s2">"the path to you code"</span>
+<span class="n">ast_tree</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">ast_tree</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">unparse</span><span class="p">(</span><span class="n">ast_tree</span><span class="p">))</span>
+</code></pre></div>
+<hr/>
+<div class="toc">
+<ul>
+<li><a href="#helpers">Helpers</a><ul>
+<li><a href="#lets-refactor-the-default_deferrable-linter">Let's refactor the default_deferrable linter</a></li>
+</ul>
+</li>
+<li><a href="#node-classes">Node Classes</a></li>
+</ul>
+</div>
+<h2 id="helpers">Helpers</h2>
+<ul>
+<li>functions<ul>
+<li><code>ast.parse</code><ul>
+<li>parse code as the ast node</li>
+</ul>
+</li>
+<li><code>ast.unparse</code><ul>
+<li>unparse the ast node as code</li>
+</ul>
+</li>
+<li><code>ast.dump</code><ul>
+<li>return a formatted dump of the ast tree</li>
+</ul>
+</li>
+<li><code>ast.walk</code><ul>
+<li>walk through the ast tree (iterator)</li>
+</ul>
+</li>
+<li><code>ast.iter_child_nodes</code></li>
+<li><code>ast.iter_fields</code></li>
+<li><code>ast.fix_missing_locations</code><ul>
+<li>recalculate the location information (commonly used after adding a new ast node)</li>
+</ul>
+</li>
+<li><code>ast.literal_eval</code></li>
+<li><code>ast.get_docstring</code></li>
+<li><code>ast.get_source_segment</code></li>
+<li><code>ast.increment_lineno</code></li>
+<li><code>ast.copy_location</code></li>
+</ul>
+</li>
+<li>classes<ul>
+<li><code>ast.NodeVisitor</code>: base class for visiting an ast tree<ul>
+<li><code>visit</code></li>
+</ul>
+</li>
+<li><code>ast.NodeTransformer</code>: base class for modifying an ast tree<ul>
+<li><code>visit_{Node Class}</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>In the <a href="{filename}/posts/tech/2024/18-check_default_value_of_default_deferrable_through_ast">previous article</a>, I improved the linter with <a href="https://github.com/apache/airflow/pull/41924">CI: improved check_deferrable_default script to cover positional variables #41924</a>. But after digging into the <a href="https://docs.python.org/3/library/ast.html">ast</a> module, I found out things don't need to be that complicated.</p>
+<h3 id="lets-refactor-the-default_deferrable-linter">Let's refactor the default_deferrable linter</h3>
+<p>To validate the default value, I can unparse the <code>default</code> ast to a string and compare it with the expected value <code>conf.getboolean('operators', 'default_deferrable', fallback=False)</code>. (the string representation of an ast node use <code>'</code> instead of <code>"</code> to quote a string)</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">_is_valid_deferrable_default</span><span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">AST</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Check whether default is 'conf.getboolean("operators", "default_deferrable", fallback=False)'"""</span>
+    <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">unparse</span><span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"conf.getboolean('operators', 'default_deferrable', fallback=False)"</span>
+</code></pre></div>
+<p>To replace the functionality of finding the <code>__init__</code> method in classes, I use an <code>ast.NodeVisitor</code> with <code>visit_FunctionDef</code> instead. The logic after finding <code>__init__</code> remains mostly the same. The only difference is that we are now collecting the line numbers that contain an error instead of yielding it.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">DefaultDeferrableVisitor</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">NodeVisitor</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">error_linenos</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">visit_FunctionDef</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">FunctionDef</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">FunctionDef</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">"__init__"</span><span class="p">:</span>
+            <span class="n">args</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">args</span>
+            <span class="n">arguments</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">([</span><span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">posonlyargs</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">kwonlyargs</span><span class="p">])</span>
+            <span class="n">defaults</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">([</span><span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">defaults</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">kw_defaults</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">argument</span><span class="p">,</span> <span class="n">default</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">zip_longest</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">defaults</span><span class="p">):</span>
+                <span class="c1"># argument is not deferrable</span>
+                <span class="k">if</span> <span class="n">argument</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">argument</span><span class="o">.</span><span class="n">arg</span> <span class="o">!=</span> <span class="s2">"deferrable"</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="c1"># argument is deferrable, but comes with no default value</span>
+                <span class="k">if</span> <span class="n">default</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">error_linenos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">argument</span><span class="o">.</span><span class="n">lineno</span><span class="p">)</span>
+                    <span class="k">continue</span>
+
+                <span class="c1"># argument is deferrable, but the default value is not valid</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">_is_valid_deferrable_default</span><span class="p">(</span><span class="n">default</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">error_linenos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">default</span><span class="o">.</span><span class="n">lineno</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">node</span>
+</code></pre></div>
+<p>We then use the newly implemented <code>DefaultDeferrableVisitor</code> to traverse the module AST tree and check the default value. Now, the <code>iter_check_deferrable_default_errors</code> is much cleaner. 🎉</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">iter_check_deferrable_default_errors</span><span class="p">(</span><span class="n">module_filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="n">ast_tree</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">module_filename</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">visitor</span> <span class="o">=</span> <span class="n">DefaultDeferrableVisitor</span><span class="p">()</span>
+    <span class="n">visitor</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">ast_tree</span><span class="p">)</span>
+    <span class="k">yield from</span> <span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">module_filename</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">lineno</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">lineno</span> <span class="ow">in</span> <span class="n">visitor</span><span class="o">.</span><span class="n">error_linenos</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="node-classes">Node Classes</h2>
+<p>This section lists all the nodes available in an AST tree in Python 3.12. It's pretty much the same as the documentation, but I've reorganized it in a way that I can easily understand.</p>
+<ul>
+<li>Root nodes<ul>
+<li><code>Module</code><ul>
+<li>when <code>ast.parse(..., mode="exec")</code></li>
+</ul>
+</li>
+<li><code>Expression</code><ul>
+<li>when <code>ast.parse(..., mode="eval")</code></li>
+</ul>
+</li>
+<li><code>Interactive</code><ul>
+<li>When <code>ast.parse(..., mode="single")</code></li>
+</ul>
+</li>
+<li><code>FunctionType</code><ul>
+<li>When <code>ast.parse(..., mode="func_type")</code></li>
+<li>for expressions such as <code># type: (int, int) -&gt; int</code> back to the time PEP 484 wasn't there</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Expressions<ul>
+<li>Literals<ul>
+<li><code>Constant</code></li>
+<li><code>FormattedValue</code></li>
+<li><code>List</code></li>
+<li><code>Tuple</code></li>
+<li><code>Set</code></li>
+<li><code>Dict</code></li>
+</ul>
+</li>
+<li>Variables<ul>
+<li><code>Name</code><ul>
+<li><code>ctx=</code><ul>
+<li><code>Load</code></li>
+<li><code>Store</code></li>
+<li><code>Del</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Starred</code><ul>
+<li>e.g., <code>*var</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Expr</code><ul>
+<li>Operators (<code>op=</code>)<ul>
+<li><code>UnaryOp</code><ul>
+<li><code>UAdd</code></li>
+<li><code>USub</code></li>
+<li><code>Not</code></li>
+<li><code>Invert</code></li>
+</ul>
+</li>
+<li><code>BinOp</code><ul>
+<li><code>Add</code></li>
+<li><code>Sub</code></li>
+<li><code>Mult</code></li>
+<li><code>Div</code></li>
+<li><code>FloorDiv</code></li>
+<li><code>Mod</code></li>
+<li><code>Lshift</code></li>
+<li><code>RShift</code></li>
+<li><code>BitOr</code></li>
+<li><code>BitXor</code></li>
+<li><code>BitAnd</code></li>
+<li><code>MatMult</code></li>
+</ul>
+</li>
+<li><code>BoolOp</code><ul>
+<li><code>And</code></li>
+<li><code>OR</code></li>
+</ul>
+</li>
+<li><code>Compare</code><ul>
+<li><code>Eq</code></li>
+<li><code>NotEq</code></li>
+<li><code>Lt</code></li>
+<li><code>LtE</code></li>
+<li><code>Gt</code></li>
+<li><code>GtE</code></li>
+<li><code>Is</code></li>
+<li><code>IsNot</code></li>
+<li><code>In</code></li>
+<li><code>NotIn</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Call</code> (<code>keywords=keyword(..)</code>)</li>
+<li><code>IfExp</code></li>
+<li><code>Attribute</code></li>
+<li><code>NamedExpr</code></li>
+</ul>
+</li>
+<li><code>Subscript</code></li>
+<li><code>Slice</code></li>
+<li>Comprehensions (<code>generators=[comprehension(...)]</code>)<ul>
+<li><code>ListComp</code></li>
+<li><code>SetComp</code></li>
+<li><code>GeneratorExp</code></li>
+<li><code>DictComp</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Statements<ul>
+<li><code>Assign</code><ul>
+<li><code>type_comment=</code></li>
+</ul>
+</li>
+<li><code>AnnAssign</code><ul>
+<li>annotated assignment</li>
+</ul>
+</li>
+<li><code>AugAssign</code><ul>
+<li>augmented assignment</li>
+<li>e.g., <code>x += 1</code></li>
+</ul>
+</li>
+<li><code>Raise</code></li>
+<li><code>Assert</code></li>
+<li><code>Delete</code></li>
+<li><code>Pass</code></li>
+<li><code>TypeAlias</code></li>
+<li><code>Import</code></li>
+<li><code>ImportFrom</code></li>
+<li><code>alias</code></li>
+<li>Control Flow<ul>
+<li><code>If</code></li>
+<li><code>For</code></li>
+<li><code>While</code></li>
+<li><code>Break</code></li>
+<li><code>Continue</code></li>
+<li><code>Try</code></li>
+<li><code>TryStart</code><ul>
+<li>e.g., <code>except*</code></li>
+</ul>
+</li>
+<li><code>ExceptHandler</code></li>
+<li><code>With</code> (<code>items=[withitem(...)]</code>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Pattern matching<ul>
+<li><code>Match</code><ul>
+<li><code>cases=match_case(pattern=...), ...)</code><ul>
+<li><code>MatchValue</code></li>
+<li><code>MatchSingleton</code></li>
+<li><code>MatchSequence</code></li>
+<li><code>MatchStar</code></li>
+<li><code>MatchMapping</code></li>
+<li><code>MatchClass</code></li>
+<li><code>MatchAs</code></li>
+<li><code>MatchOr</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Type parameters<ul>
+<li><code>TypeVar</code></li>
+<li><code>ParamSpec</code></li>
+<li><code>TypeVarTuple</code></li>
+</ul>
+</li>
+<li>Function and class definitions<ul>
+<li><code>FunctionDef</code>, <code>Lambda</code><ul>
+<li><code>args=arguments(...)</code><ul>
+<li><code>args</code>, <code>posonlyargs</code>, <code>kwonlyargs</code><ul>
+<li><code>...=[arg(...), ...]</code></li>
+</ul>
+</li>
+<li><code>defaults</code>, <code>kw_defaults</code></li>
+<li><code>vararg</code>, <code>kwarg</code><ul>
+<li>i.e. <code>*args, **kwargs</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Return</code></li>
+<li><code>Yield</code></li>
+<li><code>YieldFrom</code></li>
+<li><code>Global</code></li>
+<li><code>Nonlocal</code></li>
+<li><code>ClassDef</code></li>
+<li><code>AsyncFunctionDef</code></li>
+<li><code>Await</code></li>
+<li><code>AsyncFor</code></li>
+<li><code>AsyncWith</code></li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=Dive deeper into AST  - but not too deeply&amp;url=https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more&amp;title=Dive deeper into AST" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=Dive deeper into AST&amp;body=https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/python.html">Python</a><a href="https://blog.wei-lee.me/tag/airflow.html">Airflow</a><a href="https://blog.wei-lee.me/tag/ast.html">AST</a> </aside>
+<div class="clear"></div>
+<div class="series">
+<p>This post is part 3 of the "Unleash the Chaos: Developing a Linter for Un-Pythonic Code!" series:</p>
+<ol class="parts">
+<li>
+<a href="https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable">Optimizing Airflow Operators - Converting to Async with default_deferrable Config</a>
+</li>
+<li>
+<a href="https://blog.wei-lee.me/posts/tech/2024/09/check_default_value_of_default_deferrable_through_ast">Building a Customized Linter - Checking the Default Value of default_deferrable through AST</a>
+</li>
+<li class="active">
+<a href="https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more">Dive deeper into AST - but not too deeply</a>
+</li>
+</ol>
+</div>
+</section>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>
