@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2024-08-18 19:45
+modified: 2024-09-11 17:26
 slug: about-me
 ---
 
@@ -24,22 +24,22 @@ I share my technical notes, book digests, and occasional thoughts here. If you'r
 
 ---
 
-<p align="left">
 You can find me through
-  <a href="https://in.linkedin.com/in/clleew" target="blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin"/>
-  </a>
-  <a href="https://twitter.com/clleew" target="blank">
-    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="twitter"/>
-  </a>
-  <a href="https://github.com/Lee-W/" target="blank">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github"/>
-  </a>
-</p>
+
+* [![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://in.linkedin.com/in/clleew)
+* [![twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/clleew)
+* [![github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Lee-W/)
 
 ---
 
-I use ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white) ![Sublime Text](https://img.shields.io/badge/sublime_text-%23575757.svg?style=for-the-badge&logo=sublime-text&logoColor=important) ![macOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0) ![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white) ![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white) ![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white)
+I use
+
+* ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
+* ![Sublime Text](https://img.shields.io/badge/sublime_text-%23575757.svg?style=for-the-badge&logo=sublime-text&logoColor=important)
+* ![macOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)
+* ![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)
+* ![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)
+* ![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white)
 
 ---
 
@@ -142,41 +142,43 @@ I was the program executor and the leader of the teaching assistant team. I also
 * Contribute to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
 
 ## Talk and Tutorial
+* Unlocking Python's Core Magic
+    * **2024/09/28** 🇯🇵 [PyCon JP 2024](https://2024.pycon.jp/en/talk/AQKFHX)
 * Unleash the Chaos: Developing a Linter for Un-Pythonic Code!
-    * **2024/09** [PyCon TW 2024](https://tw.pycon.org/2024/conference/talk/311)
+    * **2024/09/21** 🇹🇼 [PyCon TW 2024](https://tw.pycon.org/2024/conference/talk/311)
 * What If...? Running Airflow Tasks without the workers
-    * **2024/09** [Airflow summit 2024](https://airflowsummit.org/sessions/2024/what-if-running-airflow-tasks-without-the-workers/)
+    * **2024/09/11** 🇺🇸 [Airflow summit 2024](https://airflowsummit.org/sessions/2024/what-if-running-airflow-tasks-without-the-workers/) → [slide](https://docs.google.com/presentation/d/1XGd7bQg6cGLNbHFiZjX__SmI4FLw6D_iASY9eRSO4mo/edit?usp=sharing)
 * Starts Airflow task execution directly from the triggerer
-    * *2024/05/08* Airflow Town Hall → [slide](https://speakerdeck.com/leew/starts-airflow-task-execution-directly-from-the-triggerer)
+    * *2024/05/08* 💻 Airflow Town Hall → [slide](https://speakerdeck.com/leew/starts-airflow-task-execution-directly-from-the-triggerer)
 * Intro to Airflow - From Zero to Hero
-    * *2024/02/17* [源來適你](https://www.facebook.com/opensource4you) → [slide](https://speakerdeck.com/leew/intro-to-airflow-from-zero-to-hero)
+    * *2024/02/17* 💻 [源來適你](https://www.facebook.com/opensource4you) → [slide](https://speakerdeck.com/leew/intro-to-airflow-from-zero-to-hero)
 * Atomic Commits: An Easy & Proven Way to Manage & Automate Release Process
-    * **2023/07/29** [COSCUP 2023](https://coscup.org/2023/zh-TW/session/TUGLJP) → [slide](https://speakerdeck.com/leew/atomic-commits-an-easy-and-proven-way-to-manage-and-automate-release-process), [🎬recording](https://www.youtube.com/watch?v=IxzN9ClXhs8)
+    * **2023/07/29** 🇹🇼 [COSCUP 2023](https://coscup.org/2023/zh-TW/session/TUGLJP) → [slide](https://speakerdeck.com/leew/atomic-commits-an-easy-and-proven-way-to-manage-and-automate-release-process), [🎬recording](https://www.youtube.com/watch?v=IxzN9ClXhs8)
 * Python Table Manners
-    * *2020/11/07* [Taichung.py](https://taichung-py.kktix.cc/events/meetup-202011-clleew) → [slide](https://speakerdeck.com/leew/python-table-manners-at-taichung-dot-py)
-    * *2020/10/16* [Hualien.py](https://www.meetup.com/Hualien-Py/events/273609065/) → [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-hualien-py)
-    * *2020/08/31* [Kaohsiung.py](https://kaohsiungpy.kktix.cc/events/20200831) → [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-kaohsiung-dot-py)
-    * **2020/07/24 [Euro Python 2020](https://ep2020.europython.eu/)** → [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020), [🎬recording](https://www.youtube.com/watch?v=m6rF3Kah928)
-    * **2019/11/17 [PyCon CA 2019](https://2019.pycon.ca/)** → [slide](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019)
+    * *2020/11/07* 🇹🇼 [Taichung.py](https://taichung-py.kktix.cc/events/meetup-202011-clleew) → [slide](https://speakerdeck.com/leew/python-table-manners-at-taichung-dot-py)
+    * *2020/10/16* 🇹🇼 [Hualien.py](https://www.meetup.com/Hualien-Py/events/273609065/) → [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-hualien-py)
+    * *2020/08/31* 🇹🇼 [Kaohsiung.py](https://kaohsiungpy.kktix.cc/events/20200831) → [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-kaohsiung-dot-py)
+    * **2020/07/24 💻 [Euro Python 2020](https://ep2020.europython.eu/)** → [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020), [🎬recording](https://www.youtube.com/watch?v=m6rF3Kah928)
+    * **2019/11/17 🇨🇦 [PyCon CA 2019](https://2019.pycon.ca/)** → [slide](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019)
     * *2019/10/24* [Taipei.py](https://www.meetup.com/Taipei-py/events/265743666/)
 * commitizen-tools: What can we gain from crafting a git message convention?
-    * *2020/06/18* [Taipei.py](https://www.meetup.com/Taipei-py/events/271185591/) → [slide](https://speakerdeck.com/leew/commitizen-tools-what-can-we-gain-from-crafting-a-git-message-convention-at-taipey-dot-py)
-    * **2020/04/25 [Remote Python Pizza 2020](https://remote.python.pizza/)** → [slide](https://speakerdeck.com/leew/what-can-we-gain-from-crafting-a-git-message-convention-at-remote-python-pizza-2020)
+    * *2020/06/18* 🇹🇼 [Taipei.py](https://www.meetup.com/Taipei-py/events/271185591/) → [slide](https://speakerdeck.com/leew/commitizen-tools-what-can-we-gain-from-crafting-a-git-message-convention-at-taipey-dot-py)
+    * **2020/04/25 💻 [Remote Python Pizza 2020](https://remote.python.pizza/)** → [slide](https://speakerdeck.com/leew/what-can-we-gain-from-crafting-a-git-message-convention-at-remote-python-pizza-2020)
 * How to get more than PyCon in a PyCon
-    * **2019/09/16 [PyCon JP 2019](https://pycon.jp/2019/) - Peer Reviewed Lightning Talk** → [slide](https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9)
+    * **2019/09/16 🇯🇵 [PyCon JP 2019](https://pycon.jp/2019/) - Peer Reviewed Lightning Talk** → [slide](https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9)
 * X-Village - 用不到兩個月準備兩個月的課程
-    * **2019/03/24 [SITCON 2019](https://sitcon.org/2019)** → [slide](https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng), [🎬recording](https://www.youtube.com/watch?v=kf0KFyb-wcA)
+    * **2019/03/24 🇹🇼 [SITCON 2019](https://sitcon.org/2019)** → [slide](https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng), [🎬recording](https://www.youtube.com/watch?v=kf0KFyb-wcA)
 * Intro to Python Data Science Tools
-    * *2018/03/12* NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence → [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20190312)
-    * *2018/02/27* NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence → [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20180227)
+    * *2018/03/12* 🇹🇼 NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence → [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20190312)
+    * *2018/02/27* 🇹🇼 NCKU CSIE - Competitions in Data Sciences and Artificial Intelligence → [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20180227)
 * CRUD in Flask
-    * *2018/08/16* [X-Village](https://sites.google.com/view/x-village/home?authuser=0) - Web Course → [slide](https://speakerdeck.com/leew/x-village-crud-in-flask-1)
+    * *2018/08/16* 🇹🇼 [X-Village](https://sites.google.com/view/x-village/home?authuser=0) - Web Course → [slide](https://speakerdeck.com/leew/x-village-crud-in-flask-1)
 * 資管講座 (一場工資管營的演講)
     * *2017/01/22* 2018成大工資管營 → [slide](https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang)
 * Bot Development
-    * *2016/12/08* NCKU CSIE - Introduction to Knowledge Discovery and Data Engineering → [slide](https://hackmd.io/p/HkW8LjRfl)
+    * *2016/12/08* 🇹🇼 NCKU CSIE - Introduction to Knowledge Discovery and Data Engineering → [slide](https://hackmd.io/p/HkW8LjRfl)
 * Keras Demo
-    * *2016/11/03* [深度之夜](https://ncku-ccs.kktix.cc/events/97f7bd96) → [slide](https://github.com/Lee-W/Keras-Mnist-Example)
+    * *2016/11/03* 🇹🇼 [深度之夜](https://ncku-ccs.kktix.cc/events/97f7bd96) → [slide](https://github.com/Lee-W/Keras-Mnist-Example)
 
 For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/).
 
