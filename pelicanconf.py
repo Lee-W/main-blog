@@ -123,6 +123,7 @@ MENUITEMS = (
     ("👨‍💻 Tech", "/category/tech.html"),
     ("📚 Book Digest", "/category/book.html"),
     ("💬 Gossiping", "/category/gossiping.html"),
+    ("🏷️ Tags", "/tags.html"),
     ("🗄️ Archives", "/archives.html"),
     ("📚 Series", "/series_list.html"),
     ("🔍 Search", "/search.html"),
