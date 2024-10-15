@@ -27,14 +27,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install pipenv
-          pipenv --version
-          pipenv install --dev
+          python -m pip install uv
+          uv --version
+          uv sync --no-dev
 
       - name: Build
         run: |
           export GOOGLE_ANALYTICS=${{ secrets.GOOGLE_ANALYTICS }}
-          pipenv run inv build-publish
+          uv run inv build-publish
 
       - name: GitHub Action for npx
         uses: mikeal/npx@v2.0.0
