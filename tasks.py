@@ -178,8 +178,8 @@ def style(c):
     python_targets = "pelicanconf.py publishconf.py tasks.py"
     c.run(
         f"""
-        pipenv run ruff check {python_targets} && \
-        pipenv run cz check --rev-range origin/main..
+        uv run ruff check {python_targets} && \
+        uv run cz check --rev-range origin/main..
         """
     )
 
@@ -190,7 +190,7 @@ def format(c):
     python_targets = "pelicanconf.py publishconf.py tasks.py"
     c.run(
         f"""
-        pipenv run ruff check {python_targets} --fix
+        uv run ruff check {python_targets} --fix
         """
     )
 
@@ -200,8 +200,8 @@ def format(c):
 #     """Run pip-autid on dependencies"""
 #     c.run(
 #         """
-#         pipenv export --output=requirements.txt --without-hashes && \
-#         pipenv run pip-audit -r requirements.txt && \
+#         uv export --output=requirements.txt --without-hashes && \
+#         uv run pip-audit -r requirements.txt && \
 #         rm -rf requirements.txt
 #         """
 #     )
