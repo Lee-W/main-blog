@@ -1,5 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-09-02T21:35:00+08:00</updated><entry><title>Dive deeper into AST</title><link href="https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more" rel="alternate"></link><published>2024-09-02T21:35:00+08:00</published><updated>2024-09-02T21:35:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-09-02:/posts/tech/2024/09/dig-into-ast-a-bit-more</id><summary type="html">&lt;p&gt;The purpose of this post was to delve into the &lt;a href="https://docs.python.org/3/library/ast.html"&gt;ast&lt;/a&gt;&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-10-21T18:50:00+08:00</updated><entry><title>淺嚐 uv</title><link href="https://blog.wei-lee.me/posts/tech/2024/10/dabble-uv" rel="alternate"></link><published>2024-10-21T18:50:00+08:00</published><updated>2024-10-21T18:50:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-10-21:/posts/tech/2024/10/dabble-uv</id><summary type="html">&lt;p&gt;隨著快速又強大的 linter &lt;a href="https://github.com/astral-sh/ruff"&gt;ruff&lt;/a&gt; 被大量採用&lt;br&gt;
+志在取代 pip （？）的 &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt; 也隨之問世&lt;br&gt;
+大專案如 &lt;a href="https://airflow.apache.org/"&gt;Apache Airflow®&lt;/a&gt; 也採用了這個工具&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;隨著快速又強大的 linter &lt;a href="https://github.com/astral-sh/ruff"&gt;ruff&lt;/a&gt; 被大量採用&lt;br&gt;
+志在取代 pip （？）的 &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt; 也隨之問世&lt;br&gt;
+大專案如 &lt;a href="https://airflow.apache.org/"&gt;Apache Airflow®&lt;/a&gt; 也採用了這個工具&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;剛釋出的時候並不如現在有強大的功能&lt;br&gt;
+先支援了 pip 跟 pip-compile 的基本功能&lt;br&gt;
+並不符合我希望能取代 &lt;a href="https://pipenv.pypa.io/en/latest/"&gt;pipenv&lt;/a&gt; 或 &lt;a href="https://python-poetry.org/"&gt;poetry&lt;/a&gt; 的需求&lt;br&gt;
+大概一兩個月前又有一個很大的更新，似乎是可以取代 &lt;a href="https://python-poetry.org/"&gt;poetry&lt;/a&gt; 了&lt;br&gt;
+但我還是想單純的用它來管 app 啊&lt;/p&gt;
+&lt;p&gt;然而前段時間刷推特看到 PyCon JP 朋友寫了 &lt;a href="https://gihyo.jp/article/2024/09/monthly-python-2409"&gt;さらなる進化を遂げた「uv」の新機能&lt;/a&gt;&lt;br&gt;
+裡面有提到&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uv&lt;span class="w"&gt; &lt;/span&gt;init&lt;span class="w"&gt; &lt;/span&gt;--app
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;我才發現，原來 &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt; 已經可以拿來管理 app 的相依套件了嗎！&lt;br&gt;
+那我還不趕快來試試&lt;br&gt;
+順便來試試前幾天在&lt;a href="https://pythonbytes.fm/episodes/show/405/oh-really"&gt;Python Bytes Episode 405&lt;/a&gt; 聽到的 &lt;a href="https://github.com/astral-sh/setup-uv"&gt;setup-uv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;於是就發了&lt;a href="https://github.com/Lee-W/main-blog/pull/38"&gt;Replace pipenv with uv #38&lt;/a&gt; 跟 &lt;a href="https://github.com/Lee-W/travlog/pull/11"&gt;dependency: replace pipenv with uv #11&lt;/a&gt;兩個更新部落格套件管理工具的 PRs&lt;/p&gt;
+&lt;p&gt;目標有兩個&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把 &lt;a href="https://pipenv.pypa.io/en/latest/"&gt;pipenv&lt;/a&gt; 換成 &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;把 setup-python 換成 &lt;a href="https://github.com/astral-sh/setup-uv"&gt;setup-uv&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;意外的還蠻順利的，幾乎沒有遇到什麼困難&lt;br&gt;
+首先要先把相依套件從 &lt;code&gt;Pipfile&lt;/code&gt; 跟 &lt;code&gt;Pipfile.lock&lt;/code&gt; 移到 &lt;code&gt;pyproject.toml&lt;/code&gt; 跟 &lt;code&gt;uv.lock&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;但因為專案中已經有 &lt;code&gt;pyproject.toml&lt;/code&gt;，我先把原本檔案名改掉&lt;br&gt;
+透過以下指令產生 &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt; 管理 app 相依套件用的欄位到 &lt;code&gt;pyproject.toml&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uv&lt;span class="w"&gt; &lt;/span&gt;init&lt;span class="w"&gt; &lt;/span&gt;--app
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;再手動進行合併&lt;br&gt;
+也可以看 &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt; 如何初始化在 &lt;code&gt;pyproject.toml&lt;/code&gt; 的 section&lt;br&gt;
+但是我懶，交給 &lt;code&gt;uv init&lt;/code&gt; 處理就好&lt;/p&gt;
+&lt;p&gt;再來要把 Pipfile 中的套件加入 &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uv&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;dep1&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;dep2&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;要加入開發用套件，則是要加上 &lt;code&gt;--dev&lt;/code&gt; 的 flag&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uv&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;dev-dep-1&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;dev-dep-2&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="w"&gt; &lt;/span&gt;--dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;建立虛擬環境的部分，我則是使用 &lt;code&gt;uv sync&lt;/code&gt; 來取代&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;pipenv&lt;/th&gt;
+&lt;th&gt;uv&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;prod&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;pipenv install&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;uv sync --no-dev&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dev&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;pipenv install --dev&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;uv sync&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;最後就剩下匯出 requirements.txt 給 &lt;code&gt;pip-audit&lt;/code&gt; 來檢查的指令需要改成&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uv&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;compile&lt;span class="w"&gt; &lt;/span&gt;pyproject.toml&lt;span class="w"&gt; &lt;/span&gt;-o&lt;span class="w"&gt; &lt;/span&gt;requirements.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;剩下都是只要把 &lt;a href="https://pipenv.pypa.io/en/latest/"&gt;pipenv&lt;/a&gt; 改成 &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt;&lt;br&gt;
+setup-python 改成 &lt;a href="https://github.com/astral-sh/setup-uv"&gt;setup-uv&lt;/a&gt; 也是相當的直覺&lt;/p&gt;
+&lt;p&gt;雖然原本相依套件本來就不多不會安裝太久&lt;br&gt;
+但現在 &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt; 實在快到「你真的有裝嗎，不要騙我沒讀書耶」的程度 😆&lt;/p&gt;
+&lt;!--references--&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Blog"></category></entry><entry><title>Dive deeper into AST</title><link href="https://blog.wei-lee.me/posts/tech/2024/09/dig-into-ast-a-bit-more" rel="alternate"></link><published>2024-09-02T21:35:00+08:00</published><updated>2024-09-02T21:35:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-09-02:/posts/tech/2024/09/dig-into-ast-a-bit-more</id><summary type="html">&lt;p&gt;The purpose of this post was to delve into the &lt;a href="https://docs.python.org/3/library/ast.html"&gt;ast&lt;/a&gt;&lt;br&gt;
 But...&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;The purpose of this post was to delve into the &lt;a href="https://docs.python.org/3/library/ast.html"&gt;ast&lt;/a&gt;&lt;br&gt;
 But...&lt;/p&gt;
@@ -15434,29 +15509,4 @@ sudo&lt;span class="w"&gt; &lt;/span&gt;rm&lt;span class="w"&gt; &lt;/span&gt;gi
 
 &lt;p&gt;其實每次 gi 被執行的時候，都會在 background 更新列表&lt;br&gt;
 但是這次的更新，下次才能被使用&lt;br&gt;
-所以如果想要強制更新就可以用上這個指令&lt;/p&gt;</content><category term="Tech"></category><category term="Git"></category><category term="Deprecated"></category><category term="Utility"></category></entry><entry><title>驅動 BCM43228 網卡在 Linux 的無線功能</title><link href="https://blog.wei-lee.me/posts/tech/2015/01/enable-bcm43228-wifi-on-linux" rel="alternate"></link><published>2015-01-28T08:52:00+08:00</published><updated>2015-01-28T08:52:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2015-01-28:/posts/tech/2015/01/enable-bcm43228-wifi-on-linux</id><summary type="html">&lt;p&gt;最近本來下定決心要來玩 arch linux&lt;br&gt;
-結果竟然被筆電的網卡搞死了&lt;br&gt;
-抓了官網的驅動竟然不能 build...&lt;/p&gt;
-&lt;p&gt;沒想到改成灌 Linux mint 17，依然有問題＝＝&lt;br&gt;
-最後找到一個解決的辦法&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;最近本來下定決心要來玩 arch linux&lt;br&gt;
-結果竟然被筆電的網卡搞死了&lt;br&gt;
-抓了官網的驅動竟然不能 build...&lt;/p&gt;
-&lt;p&gt;沒想到改成灌 Linux mint 17，依然有問題＝＝&lt;br&gt;
-最後找到一個解決的辦法&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;p&gt;先確定你的網卡是不是 BC43228&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lspci&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;Network
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;如果是的話就能開始進行安裝了&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;linux-headers-generic
-sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;--reinstall&lt;span class="w"&gt; &lt;/span&gt;bcmwl-kernel-source
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;如果成功的話，Wifi 應該馬上就能用了&lt;/p&gt;
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://wiki.beyondlogic.org/index.php?title=Ubuntu14.04_Acer_Aspire_V5_571_Broadcom_BCM43228_WiFi"&gt;Ubuntu14.04 Acer Aspire V5 571 Broadcom BCM43228 WiFi - BeyondLogic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Linux-Unix"></category><category term="Dual Boot"></category></entry></feed>
+所以如果想要強制更新就可以用上這個指令&lt;/p&gt;</content><category term="Tech"></category><category term="Git"></category><category term="Deprecated"></category><category term="Utility"></category></entry></feed>
