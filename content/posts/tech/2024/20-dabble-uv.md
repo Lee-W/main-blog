@@ -1,11 +1,10 @@
 Title: 淺嚐 uv
 Subtitle: 先從部落格開始
-Date: 2024-10-21 08:00
+Date: 2024-10-21 18:50
 Category: Tech
 Tags: Python, Blog
 Slug: dabble-uv
 Authors: Wei Lee
-Status: draft
 
 隨著快速又強大的 linter [ruff][ruff] 被大量採用
 志在取代 pip （？）的 [uv][uv] 也隨之問世
