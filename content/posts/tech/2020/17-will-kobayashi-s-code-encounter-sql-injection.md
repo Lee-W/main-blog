@@ -1,7 +1,7 @@
 Title: 小林的程式會不會遇到 SQL Injection
 Date: 2020-09-22 12:50
 Category: Tech
-Tags: Python, Animate
+Tags: Python, Anime
 Slug: will-kobayashi-s-code-encounter-sql-injection
 Authors: Wei Lee
 

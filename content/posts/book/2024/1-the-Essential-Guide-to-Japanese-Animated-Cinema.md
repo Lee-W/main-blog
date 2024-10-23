@@ -1,7 +1,7 @@
 Title: [Book] 日本經典動畫指南
 Date: 2024-01-14 10:20
 Category: Book
-Tags: Animate
+Tags: Anime
 Slug: the-Essential-Guide-to-Japanese-Animated-Cinema
 Authors: Wei Lee
 
