@@ -1,11 +1,12 @@
 Title: 用立牌拍照的哲學思辨
 Subtitle: ブログのひとりごと
 Date: 2024-10-23 08:10
+Modified: 2024-10-23 23:50
 Category: Gossiping
 Tags: Anime
 Slug: use-acrylic-standees-to-take-photos
 Authors: Wei Lee
-Cover: /images/posts-image/2024-use-acrylic-standees-to-take-photos/S67LaTr.jpeg
+Cover: /images/posts-image/2024-use-acrylic-standees-to-take-photos/IMG_1743.jpeg
 
 PyCon APAC 2023 的時候， KK 就對我使用立牌拍照的行為
 提出了這個疑問
@@ -25,6 +26,8 @@ PyCon APAC 2023 的時候， KK 就對我使用立牌拍照的行為
 是我靈魂的延伸
 只要他們到達了這個地方，出現在照片中
 就是我來到這裡，代我記錄所見所聞
+
+![IMG_1743](/images/posts-image/2024-use-acrylic-standees-to-take-photos/IMG_1743.jpeg)
 
 對於一個喜歡獨旅且並沒有想太常讓自己出現在相片的人來說
 這實在是跨時代的發明
