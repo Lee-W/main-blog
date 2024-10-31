@@ -195,13 +195,13 @@ def format(c):
     )
 
 
-# @task
-# def security_check(c):
-#     """Run pip-autid on dependencies"""
-#     c.run(
-#         """
-#         uv export --output=requirements.txt --without-hashes && \
-#         uv run pip-audit -r requirements.txt && \
-#         rm -rf requirements.txt
-#         """
-#     )
+@task
+def security_check(c):
+    """Run pip-autid on dependencies"""
+    c.run(
+        """
+        uv pip compile pyproject.toml -o requirements.txt && \
+        uv run pip-audit -r requirements.txt && \
+        rm -rf requirements.txt
+        """
+    )
