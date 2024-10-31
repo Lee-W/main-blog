@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2024-09-11 17:26
+modified: 2024-10-31 22:26
 slug: about-me
 ---
 
@@ -48,25 +48,31 @@ I use
 ## Skill
 
 * **Programming Language**: Python
-* **Data Engineering**: Snowflake, Redis, MySQL, PostgreSQL, Redshift
+* **Data Engineering**: Snowflake, Redis, SQLite, PostgreSQL, MySQL, Redshift
 * **MLOps**: Apache Airflow, DVC, dbt, Great Expectations
-* **Backend Development**: flask, Django, FastAPI
-* **DevOps tools and others**: Docker, Kubernetes, Jenkins, GitHub Actions, Git, AWS Services
+* **Backend Development**: FastAPI, flask, Django,
+* **DevOps tools and others**: GitHub Actions, Docker, Kubernetes, Jenkins,  Git, AWS Services
 
 ## Work Experience
-**[Feb 2023 - Present] Software Engineer, [astronomer](https://www.astronomer.io/)**
+**[Aug 2024 - Current] Software Engineer, [Astronomer](https://www.astronomer.io/)**
 
 * [apache-airflow](https://github.com/apache/airflow/)
     * Add "DatasetAlias" for creating datasets or dataset events in runtime
+    * Implement half of [AIP-74](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-74+Introducing+Data+Assets)
+
+**[Feb 2023 - July 2024] Software Engineer, [Astronomer](https://www.astronomer.io/)**
+
+* [apache-airflow](https://github.com/apache/airflow/)
     * Allow Airflow tasks to execute directly from the trigger
     * Add REST API endpoint to manipulate queued dataset events
     * Upgrade apache-airflow-providers-weaviate to 2.0.0 for weaviate-client >= 4.4.0 support
     * Add Azure managed identities support to apache-airflow-providers-microsoft-azure
     * Add defult_deferrable configuration for easily turning on the deferrable mode of operators
 * [astronomer-providers](https://github.com/astronomer/astronomer-providers)
-    * Contribute existing operators/sensors back to [apache-airflow](https://github.com/apache/airflow/) and deprecate this project to reduce maintenance effor
+    * Contribute existing operators/sensors back to [apache-airflow](https://github.com/apache/airflow/) and deprecate this project to reduce maintenance efforts
     * Automated the deployment of integration tests and testing against the release of the airflow provider ([#987](https://github.com/astronomer/astronomer-providers/pull/987), [#1107](https://github.com/astronomer/astronomer-providers/pull/1107), [#1139](https://github.com/astronomer/astronomer-providers/pull/1139), [#1110](https://github.com/astronomer/astronomer-providers/pull/1110))
 * [ask-astro](https://github.com/astronomer/ask-astro)
+    * Setup local dev tools and fix various existing bugs
 
 **[Apr 2017 - Feb 2023] Machine Learning Engineer, [Rakuten USA](https://www.rakuten.com/)**
 
