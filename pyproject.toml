@@ -19,6 +19,7 @@ dependencies = [
     "pelican-tag-cloud>=1.0.1",
     "pelican-webassets>=2.0.0",
     "pelican[markdown]>=4.10.1",
+    "pillow>=11.0.0",
     "python-gettext>=5.0",
     "typogrify>=2.0.7",
     "webassets>=2.0",
