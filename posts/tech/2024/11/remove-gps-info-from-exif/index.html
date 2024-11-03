@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>移除照片 Exif 中的 GPSInfo  - 氣息遮斷 A+</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="最近聽了 Podcast What's on Django TV tonight? 跟 Pre-commit Hooks for Python Devs 發現了 exif-stripper 這個酷東西" name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Python" name="tags"/>
+<meta content="Blog" name="tags"/>
+<meta content="Pre-commit" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="移除照片 Exif 中的 GPSInfo  - 氣息遮斷 A+" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="最近聽了 Podcast What's on Django TV tonight? 跟 Pre-commit Hooks for Python Devs 發現了 exif-stripper 這個酷東西" prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
+<meta content="https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif" prefix="og: http://ogp.me/ns#" property="og:url">
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2024-11-03 10:40:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Blog" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Pre-commit" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me//images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="移除照片 Exif 中的 GPSInfo  - 氣息遮斷 A+" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me//images/cover.jpeg" name="twitter:image:src"/>
+<meta content="最近聽了 Podcast What's on Django TV tonight? 跟 Pre-commit Hooks for Python Devs 發現了 exif-stripper 這個酷東西" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "移除照片 Exif 中的 GPSInfo - 氣息遮斷 A+",
+  "headline": "移除照片 Exif 中的 GPSInfo - 氣息遮斷 A+",
+  "datePublished": "2024-11-03 10:40:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "https://blog.wei-lee.me//images/cover.jpeg",
+  "url": "https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif",
+  "description": "最近聽了 Podcast What's on Django TV tonight? 跟 Pre-commit Hooks for Python Devs 發現了 exif-stripper 這個酷東西"
+}
+</script>
+</meta></meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2024", "item": "https://blog.wei-lee.me/posts/tech/2024"}, {"@type": "ListItem", "position": 5, "name": "11", "item": "https://blog.wei-lee.me/posts/tech/2024/11"}, {"@type": "ListItem", "position": 6, "name": "Remove gps info from exif", "item": "https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "移除照片 Exif 中的 GPSInfo", "about": "Tech", "datePublished": "2024-11-03 10:40"}</script></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🏷️ Tags" role="presentation"><a href="/tags.html"><span>🏷️ Tags</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            移除照片 Exif 中的 GPSInfo
+            <br/>
+<small class="post-subtitle-white">氣息遮斷 A+</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2024/11/03 - Sun">2024/11/03 - Sun</time>
+          • 2 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me//images/cover.jpeg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>最近聽了 Podcast <a href="https://pythonbytes.fm/episodes/show/406/whats-on-django-tv-tonight">What's on Django TV tonight?</a> 跟 <a href="https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs">Pre-commit Hooks for Python Devs</a><br/>
+發現了 <a href="https://github.com/stefmolin/exif-stripper">exif-stripper</a> 這個酷東西</p>
+<!--more-->
+<p>而且開發者竟然是今年有來 PyCon TW 的 Stefanie ⁉️<br/>
+在 PyCon JP 的會後會也有稍微跟她聊到一下天</p>
+<p>另外還要感謝 Stefanie 在 <a href="https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs">節目中</a> 有提到邊緣專案 <a href="https://github.com/commitizen-tools/commitizen">commitizen</a><br/>
+她應該沒想到 PyCon TW 的 Development Sprint 坐她後面的就是 <a href="https://github.com/commitizen-tools/commitizen">commitizen</a> 的維護者吧 😆<br/>
+雖然那次我是帶 <a href="https://github.com/apache/airflow/">airflow</a> 就是了</p>
+<h2 id="_1">進入正題</h2>
+<p>Exif 是什麼？<br/>
+簡單來說它是照片中儲存 metadata 的格式<br/>
+除了照片本身外，照片的檔案通常很多的 metadata<br/>
+裡面可能會記錄在什麼時候拍的，用什麼裝置拍的<br/>
+最重要的是拍攝的地點在哪 （也就是標題提到的 GPSInfo）<br/>
+洩漏 GPS 資訊到網路上就有可能讓有心人士抓到你的行蹤<br/>
+Stefanie 也寫了 <a href="https://stefaniemolin.com/articles/devx/pre-commit/exif-stripper/">Mind Your Image Metadata</a> 解釋為什麼這件事很重要</p>
+<p>我對這件事一直都稍微有些注意<br/>
+在匯出照片放上部落格的時候，都會確定我沒有選到 <code>Location Information</code></p>
+<p><img alt="export-location" src="/images/posts-image/2024-remove-gps-info-from-exif/export-location.jpg"/></p>
+<p>我一直有在想應該要寫個工具自動確認並清除<br/>
+如果有 pre-commit hook 就更好了<br/>
+但我就爛，一直懶惰遲遲沒有動手<br/>
+直到找到 <a href="https://github.com/stefmolin/exif-stripper">exif-stripper</a></p>
+<p>不過 <a href="https://github.com/stefmolin/exif-stripper">exif-stripper</a> 會把整個 <a href="https://github.com/stefmolin/exif-stripper/blob/d387c8b3be7b6df4d9ff6da005a1081caadf1476/src/exif_stripper/__init__.py#L32">Exif 都清掉</a><br/>
+我覺得其他東西留著也還好<br/>
+再加上當初在我的部落格引入 <a href="https://github.com/stefmolin/exif-stripper">exif-stripper</a> 的時候<br/>
+可能哪裡設定錯了，圖片會一直被 pre-commit hook 修改，導致 pre-commit 的檢查永遠不會過<br/>
+為了寫這篇文章，後來追了<a href="https://github.com/stefmolin/exif-stripper/blob/d387c8b3be7b6df4d9ff6da005a1081caadf1476/src/exif_stripper/__init__.py#L31">原始碼</a>，看起來是不該發生啊 🤔<br/>
+真的不知道當初怎麼了</p>
+<p>不過我已經寫完自己的版本了，所以就想說算了</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># /// script</span>
+<span class="c1"># requires-python = "&gt;=3.13"</span>
+<span class="c1"># dependencies = [</span>
+<span class="c1">#     "pillow&gt;=11.0.0",</span>
+<span class="c1"># ]</span>
+<span class="c1"># ///</span>
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Sequence</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">PIL.Image</span> <span class="kn">import</span> <span class="n">UnidentifiedImageError</span><span class="p">,</span> <span class="nb">open</span> <span class="k">as</span> <span class="n">pil_open</span>
+<span class="kn">from</span> <span class="nn">PIL.ExifTags</span> <span class="kn">import</span> <span class="n">Base</span> <span class="k">as</span> <span class="n">ExifBase</span>
+
+
+<span class="k">def</span> <span class="nf">get_exif_tag_ids_by_names</span><span class="p">(</span><span class="n">names</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">{</span><span class="nb">getattr</span><span class="p">(</span><span class="n">ExifBase</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">}</span>
+
+
+<span class="n">filenames</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"content/images/**"</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">)]</span>
+<span class="n">exif_tags_to_remove</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"GPSInfo"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">pil_open</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">as</span> <span class="n">im</span><span class="p">:</span>
+            <span class="n">tag_ids</span> <span class="o">=</span> <span class="n">get_exif_tag_ids_by_names</span><span class="p">(</span><span class="n">exif_tags_to_remove</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">tag_id</span> <span class="ow">in</span> <span class="n">tag_ids</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">im</span><span class="o">.</span><span class="n">getexif</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tag_id</span><span class="p">)</span> <span class="ow">and</span> <span class="n">im</span><span class="o">.</span><span class="n">_exif</span><span class="p">:</span>
+                    <span class="n">im</span><span class="o">.</span><span class="n">_exif</span><span class="p">[</span><span class="n">tag_id</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">FileNotFoundError</span><span class="p">,</span> <span class="n">UnidentifiedImageError</span><span class="p">):</span>
+        <span class="k">continue</span>
+</code></pre></div>
+<p>這個簡短的 script 有遵守 <a href="https://peps.python.org/pep-0723/">PEP 723</a> 寫好相依套件<br/>
+所以可以用 <a href="https://docs.astral.sh/uv/guides/scripts/#declaring-script-dependencies">uv</a> 直接跑<br/>
+跟 <a href="https://github.com/stefmolin/exif-stripper">exif-stripper</a> 最大的不同是我只有指定要清除掉 GPSInfo<br/>
+雖然目前要清除的 Exif tag 跟檔案路徑是寫死的<br/>
+但邏輯本身應該是蠻彈性的<br/>
+之後有時間可以把它貢獻回 <a href="https://github.com/stefmolin/exif-stripper">exif-stripper</a><br/>
+目前我只有先把它加到我自己的部落格而已 <a href="https://github.com/Lee-W/main-blog/pull/39">Add task to remove gps from exif #39</a></p>
+<p>為了想要只刪除 GPSInfo 我回去追了 <a href="https://github.com/python-pillow/Pillow">Pillow</a> 原始碼<br/>
+發現 class <a href="https://github.com/python-pillow/Pillow/blob/5771f0ec37b9d503749050b6c38f67addbd5a19d/src/PIL/Image.py#L3865-L3871">Exif</a> 本身繼承了 <a href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableMapping">MutableMapping</a><br/>
+運作起來會有點像是 <code>dict</code><br/>
+所以它的 <code>clear</code> 並非 <a href="https://github.com/python-pillow/Pillow">Pillow</a> 實作要去刪除哪些 Exif 的 tag<br/>
+而是繼承了 MutableMapping 的 <a href="https://github.com/python/cpython/blob/2f7793196a8feac9d5ce96ae0a8df0723ef1b044/Lib/_collections_abc.py#L971">clear</a> 把所有資料刪掉</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">"D.clear() -&gt; None.  Remove all items from D."</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="k">pass</span>
+</code></pre></div>
+<p>呼叫到的 <code>popitem</code> 則是透過 <a href="https://github.com/python-pillow/Pillow">Pillow</a> 實作的 <a href="https://github.com/python-pillow/Pillow/blob/5771f0ec37b9d503749050b6c38f67addbd5a19d/src/PIL/Image.py#L4194"><code>__iter__</code></a> 跟 <a href="https://github.com/python-pillow/Pillow/blob/5771f0ec37b9d503749050b6c38f67addbd5a19d/src/PIL/Image.py#L4174"><code>__getitem__</code></a> 決定要移除的資料</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">popitem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""D.popitem() -&gt; (k, v), remove and return some (key, value) pair</span>
+<span class="sd">    as a 2-tuple; but raise KeyError if D is empty.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span> <span class="kn">from</span> <span class="kc">None</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">del</span> <span class="bp">self</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span>
+</code></pre></div>
+<p>為什麼追著追著就追回 CPython<br/>
+窩也不知道</p>
+<h2 id="_2">氣息遮斷是什麼？</h2>
+<p>氣息遮斷是 Fate 裡面 Assassin 職階大多具有且等級較高的能力<br/>
+顧名思義就是一種消除氣息讓自己好進行暗殺的能力<br/>
+當然邊緣人如我也是自帶這種消除存在感的能力<br/>
+但我沒有要參加聖杯戰爭，所以也沒什麼用</p>
+<p><img alt="Assassin" src="/images/posts-image/2024-remove-gps-info-from-exif/Assassin.jpeg"/></p>
+<p>不過透過這篇文章學到如何把照片中的 GPS 資訊刪除<br/>
+避免太常被奇怪的人麥當勞歡樂送，就能得到氣息遮斷 B 的證書哦（並沒有</p>
+<!--references-->
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=移除照片 Exif 中的 GPSInfo  - 氣息遮斷 A+&amp;url=https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif&amp;title=移除照片 Exif 中的 GPSInfo" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=移除照片 Exif 中的 GPSInfo&amp;body=https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/python.html">Python</a><a href="https://blog.wei-lee.me/tag/blog.html">Blog</a><a href="https://blog.wei-lee.me/tag/pre-commit.html">Pre-commit</a> </aside>
+<div class="clear"></div>
+</section>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>

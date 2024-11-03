@@ -1,5 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-10-21T18:50:00+08:00</updated><entry><title>淺嚐 uv</title><link href="https://blog.wei-lee.me/posts/tech/2024/10/dabble-uv" rel="alternate"></link><published>2024-10-21T18:50:00+08:00</published><updated>2024-10-21T18:50:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-10-21:/posts/tech/2024/10/dabble-uv</id><summary type="html">&lt;p&gt;隨著快速又強大的 linter &lt;a href="https://github.com/astral-sh/ruff"&gt;ruff&lt;/a&gt; 被大量採用&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-11-03T10:40:00+08:00</updated><entry><title>移除照片 Exif 中的 GPSInfo</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif" rel="alternate"></link><published>2024-11-03T10:40:00+08:00</published><updated>2024-11-03T10:40:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-03:/posts/tech/2024/11/remove-gps-info-from-exif</id><summary type="html">&lt;p&gt;最近聽了 Podcast &lt;a href="https://pythonbytes.fm/episodes/show/406/whats-on-django-tv-tonight"&gt;What's on Django TV tonight?&lt;/a&gt; 跟 &lt;a href="https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs"&gt;Pre-commit Hooks for Python Devs&lt;/a&gt;&lt;br&gt;
+發現了 &lt;a href="https://github.com/stefmolin/exif-stripper"&gt;exif-stripper&lt;/a&gt; 這個酷東西&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;最近聽了 Podcast &lt;a href="https://pythonbytes.fm/episodes/show/406/whats-on-django-tv-tonight"&gt;What's on Django TV tonight?&lt;/a&gt; 跟 &lt;a href="https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs"&gt;Pre-commit Hooks for Python Devs&lt;/a&gt;&lt;br&gt;
+發現了 &lt;a href="https://github.com/stefmolin/exif-stripper"&gt;exif-stripper&lt;/a&gt; 這個酷東西&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;而且開發者竟然是今年有來 PyCon TW 的 Stefanie ⁉️&lt;br&gt;
+在 PyCon JP 的會後會也有稍微跟她聊到一下天&lt;/p&gt;
+&lt;p&gt;另外還要感謝 Stefanie 在 &lt;a href="https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs"&gt;節目中&lt;/a&gt; 有提到邊緣專案 &lt;a href="https://github.com/commitizen-tools/commitizen"&gt;commitizen&lt;/a&gt;&lt;br&gt;
+她應該沒想到 PyCon TW 的 Development Sprint 坐她後面的就是 &lt;a href="https://github.com/commitizen-tools/commitizen"&gt;commitizen&lt;/a&gt; 的維護者吧 😆&lt;br&gt;
+雖然那次我是帶 &lt;a href="https://github.com/apache/airflow/"&gt;airflow&lt;/a&gt; 就是了&lt;/p&gt;
+&lt;h2 id="_1"&gt;進入正題&lt;/h2&gt;
+&lt;p&gt;Exif 是什麼？&lt;br&gt;
+簡單來說它是照片中儲存 metadata 的格式&lt;br&gt;
+除了照片本身外，照片的檔案通常很多的 metadata&lt;br&gt;
+裡面可能會記錄在什麼時候拍的，用什麼裝置拍的&lt;br&gt;
+最重要的是拍攝的地點在哪 （也就是標題提到的 GPSInfo）&lt;br&gt;
+洩漏 GPS 資訊到網路上就有可能讓有心人士抓到你的行蹤&lt;br&gt;
+Stefanie 也寫了 &lt;a href="https://stefaniemolin.com/articles/devx/pre-commit/exif-stripper/"&gt;Mind Your Image Metadata&lt;/a&gt; 解釋為什麼這件事很重要&lt;/p&gt;
+&lt;p&gt;我對這件事一直都稍微有些注意&lt;br&gt;
+在匯出照片放上部落格的時候，都會確定我沒有選到 &lt;code&gt;Location Information&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="export-location" src="/images/posts-image/2024-remove-gps-info-from-exif/export-location.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;我一直有在想應該要寫個工具自動確認並清除&lt;br&gt;
+如果有 pre-commit hook 就更好了&lt;br&gt;
+但我就爛，一直懶惰遲遲沒有動手&lt;br&gt;
+直到找到 &lt;a href="https://github.com/stefmolin/exif-stripper"&gt;exif-stripper&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;不過 &lt;a href="https://github.com/stefmolin/exif-stripper"&gt;exif-stripper&lt;/a&gt; 會把整個 &lt;a href="https://github.com/stefmolin/exif-stripper/blob/d387c8b3be7b6df4d9ff6da005a1081caadf1476/src/exif_stripper/__init__.py#L32"&gt;Exif 都清掉&lt;/a&gt;&lt;br&gt;
+我覺得其他東西留著也還好&lt;br&gt;
+再加上當初在我的部落格引入 &lt;a href="https://github.com/stefmolin/exif-stripper"&gt;exif-stripper&lt;/a&gt; 的時候&lt;br&gt;
+可能哪裡設定錯了，圖片會一直被 pre-commit hook 修改，導致 pre-commit 的檢查永遠不會過&lt;br&gt;
+為了寫這篇文章，後來追了&lt;a href="https://github.com/stefmolin/exif-stripper/blob/d387c8b3be7b6df4d9ff6da005a1081caadf1476/src/exif_stripper/__init__.py#L31"&gt;原始碼&lt;/a&gt;，看起來是不該發生啊 🤔&lt;br&gt;
+真的不知道當初怎麼了&lt;/p&gt;
+&lt;p&gt;不過我已經寫完自己的版本了，所以就想說算了&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# /// script&lt;/span&gt;
+&lt;span class="c1"&gt;# requires-python = &amp;quot;&amp;gt;=3.13&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;# dependencies = [&lt;/span&gt;
+&lt;span class="c1"&gt;#     &amp;quot;pillow&amp;gt;=11.0.0&amp;quot;,&lt;/span&gt;
+&lt;span class="c1"&gt;# ]&lt;/span&gt;
+&lt;span class="c1"&gt;# ///&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;collections.abc&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Sequence&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;glob&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;PIL.Image&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;UnidentifiedImageError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;pil_open&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;PIL.ExifTags&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Base&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;ExifBase&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_exif_tag_ids_by_names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Sequence&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nb"&gt;getattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ExifBase&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+
+
+&lt;span class="n"&gt;filenames&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;content/images/**&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;recursive&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isfile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;span class="n"&gt;exif_tags_to_remove&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;GPSInfo&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;filenames&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;pil_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;im&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;tag_ids&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_exif_tag_ids_by_names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;exif_tags_to_remove&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;tag_id&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tag_ids&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;im&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getexif&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tag_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;im&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_exif&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                    &lt;span class="n"&gt;im&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_exif&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;tag_id&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+    &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ne"&gt;FileNotFoundError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;UnidentifiedImageError&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;這個簡短的 script 有遵守 &lt;a href="https://peps.python.org/pep-0723/"&gt;PEP 723&lt;/a&gt; 寫好相依套件&lt;br&gt;
+所以可以用 &lt;a href="https://docs.astral.sh/uv/guides/scripts/#declaring-script-dependencies"&gt;uv&lt;/a&gt; 直接跑&lt;br&gt;
+跟 &lt;a href="https://github.com/stefmolin/exif-stripper"&gt;exif-stripper&lt;/a&gt; 最大的不同是我只有指定要清除掉 GPSInfo&lt;br&gt;
+雖然目前要清除的 Exif tag 跟檔案路徑是寫死的&lt;br&gt;
+但邏輯本身應該是蠻彈性的&lt;br&gt;
+之後有時間可以把它貢獻回 &lt;a href="https://github.com/stefmolin/exif-stripper"&gt;exif-stripper&lt;/a&gt;&lt;br&gt;
+目前我只有先把它加到我自己的部落格而已 &lt;a href="https://github.com/Lee-W/main-blog/pull/39"&gt;Add task to remove gps from exif #39&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;為了想要只刪除 GPSInfo 我回去追了 &lt;a href="https://github.com/python-pillow/Pillow"&gt;Pillow&lt;/a&gt; 原始碼&lt;br&gt;
+發現 class &lt;a href="https://github.com/python-pillow/Pillow/blob/5771f0ec37b9d503749050b6c38f67addbd5a19d/src/PIL/Image.py#L3865-L3871"&gt;Exif&lt;/a&gt; 本身繼承了 &lt;a href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableMapping"&gt;MutableMapping&lt;/a&gt;&lt;br&gt;
+運作起來會有點像是 &lt;code&gt;dict&lt;/code&gt;&lt;br&gt;
+所以它的 &lt;code&gt;clear&lt;/code&gt; 並非 &lt;a href="https://github.com/python-pillow/Pillow"&gt;Pillow&lt;/a&gt; 實作要去刪除哪些 Exif 的 tag&lt;br&gt;
+而是繼承了 MutableMapping 的 &lt;a href="https://github.com/python/cpython/blob/2f7793196a8feac9d5ce96ae0a8df0723ef1b044/Lib/_collections_abc.py#L971"&gt;clear&lt;/a&gt; 把所有資料刪掉&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;clear&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;D.clear() -&amp;gt; None.  Remove all items from D.&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;popitem&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;KeyError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;呼叫到的 &lt;code&gt;popitem&lt;/code&gt; 則是透過 &lt;a href="https://github.com/python-pillow/Pillow"&gt;Pillow&lt;/a&gt; 實作的 &lt;a href="https://github.com/python-pillow/Pillow/blob/5771f0ec37b9d503749050b6c38f67addbd5a19d/src/PIL/Image.py#L4194"&gt;&lt;code&gt;__iter__&lt;/code&gt;&lt;/a&gt; 跟 &lt;a href="https://github.com/python-pillow/Pillow/blob/5771f0ec37b9d503749050b6c38f67addbd5a19d/src/PIL/Image.py#L4174"&gt;&lt;code&gt;__getitem__&lt;/code&gt;&lt;/a&gt; 決定要移除的資料&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;popitem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;D.popitem() -&amp;gt; (k, v), remove and return some (key, value) pair&lt;/span&gt;
+&lt;span class="sd"&gt;    as a 2-tuple; but raise KeyError if D is empty.&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;StopIteration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;KeyError&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+    &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;del&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;為什麼追著追著就追回 CPython&lt;br&gt;
+窩也不知道&lt;/p&gt;
+&lt;h2 id="_2"&gt;氣息遮斷是什麼？&lt;/h2&gt;
+&lt;p&gt;氣息遮斷是 Fate 裡面 Assassin 職階大多具有且等級較高的能力&lt;br&gt;
+顧名思義就是一種消除氣息讓自己好進行暗殺的能力&lt;br&gt;
+當然邊緣人如我也是自帶這種消除存在感的能力&lt;br&gt;
+但我沒有要參加聖杯戰爭，所以也沒什麼用&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Assassin" src="/images/posts-image/2024-remove-gps-info-from-exif/Assassin.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;不過透過這篇文章學到如何把照片中的 GPS 資訊刪除&lt;br&gt;
+避免太常被奇怪的人麥當勞歡樂送，就能得到氣息遮斷 B 的證書哦（並沒有&lt;/p&gt;
+&lt;!--references--&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Blog"></category><category term="Pre-commit"></category></entry><entry><title>淺嚐 uv</title><link href="https://blog.wei-lee.me/posts/tech/2024/10/dabble-uv" rel="alternate"></link><published>2024-10-21T18:50:00+08:00</published><updated>2024-10-21T18:50:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-10-21:/posts/tech/2024/10/dabble-uv</id><summary type="html">&lt;p&gt;隨著快速又強大的 linter &lt;a href="https://github.com/astral-sh/ruff"&gt;ruff&lt;/a&gt; 被大量採用&lt;br&gt;
 志在取代 pip （？）的 &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt; 也隨之問世&lt;br&gt;
 大專案如 &lt;a href="https://airflow.apache.org/"&gt;Apache Airflow®&lt;/a&gt; 也採用了這個工具&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;隨著快速又強大的 linter &lt;a href="https://github.com/astral-sh/ruff"&gt;ruff&lt;/a&gt; 被大量採用&lt;br&gt;
@@ -15395,118 +15504,4 @@ autocmd &lt;span class="nb"&gt;BufRead&lt;/span&gt; *.txt&lt;span class="p"&gt;,
 &lt;li&gt;&lt;a href="http://ithelp.ithome.com.tw/question/10055602"&gt;[Reply] 如何在 vim 裡用拼字檢查 - iT 邦幫忙 ::IT 知識分享社群&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://henry.precheur.org/vim/create_spell_file_for_vim"&gt;Create a spell file for VIM&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://stackoverflow.com/questions/7286207/automatically-enabling-spell-checking-in-vimrc"&gt;vim - Automatically enabling spell checking in vimrc - Stack Overflow&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Vim"></category></entry><entry><title>gitignore.io</title><link href="https://blog.wei-lee.me/posts/tech/2015/02/gitignoreio" rel="alternate"></link><published>2015-02-03T05:58:00+08:00</published><updated>2015-02-03T05:58:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2015-02-03:/posts/tech/2015/02/gitignoreio</id><summary type="html">&lt;p&gt;每次開一個 git 專案，要為它找適當的 .gitignore，都要上網找模板蠻麻煩的&lt;br&gt;
-能不能有個簡單的方法，我開什麼專案就產生怎樣的 .gitignore&lt;br&gt;
-然後我就發現了&lt;a href="https://www.gitignore.io"&gt;gitignore.io&lt;/a&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;每次開一個 git 專案，要為它找適當的 .gitignore，都要上網找模板蠻麻煩的&lt;br&gt;
-能不能有個簡單的方法，我開什麼專案就產生怎樣的 .gitignore&lt;br&gt;
-然後我就發現了&lt;a href="https://www.gitignore.io"&gt;gitignore.io&lt;/a&gt;&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;p&gt;簡單來說 gitignore.io 提供各式各樣的 gitignore，而且可以自動合併成一個 file&lt;br&gt;
-最棒的是它有提供 api 讓我們在 command line 上使用&lt;/p&gt;
-&lt;h2 id="gitignoreio-on-command"&gt;gitignore.io on command&lt;/h2&gt;
-&lt;p&gt;這是 gitignore.io 的官方文件&lt;br&gt;
-&lt;a href="https://www.gitignore.io/docs"&gt;doc&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id="_1"&gt;設定&lt;/h3&gt;
-&lt;p&gt;以 mac 的 zsh 的使用者為例，只要在執行下面這段&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;或者在 ~/.zshrc 加入下面這段後，執行 &lt;code&gt;source ~/.zshrc&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;gi&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-L&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;https://www.gitignore.io/api/&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;設定完成後就可以使用 gi 的功能&lt;/p&gt;
-&lt;h3 id="_2"&gt;使用&lt;/h3&gt;
-&lt;p&gt;基本上只有兩種用法&lt;br&gt;
-首先當然要先看 gi 支援哪些 .gitignore&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gi&lt;span class="w"&gt; &lt;/span&gt;list
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;執行完會看到一長串的結果&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;actionscript,ada,agda,android...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;接著在 gi 後面輸入想產生的 .gitignore 的 types&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gi&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;types&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;如果有超過一個必須用 &lt;code&gt;,&lt;/code&gt; 隔開&lt;br&gt;
-e.g.,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gi&lt;span class="w"&gt; &lt;/span&gt;vim,osx
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;不過這樣還不會產生 .gitignore，只會顯示在螢幕上&lt;br&gt;
-還要再使用 output redirection 才會有 .gitignore&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gi&lt;span class="w"&gt; &lt;/span&gt;vim,osx&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;.gitignore
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="my-custom-gi"&gt;My Custom gi&lt;/h2&gt;
-&lt;p&gt;但用起來還是有點小小的不順手&lt;br&gt;
-尤其每次要看 list 都要重新連上網抓一次，挺浪費時間&lt;br&gt;
-所以就自己寫了一個新的 gi&lt;br&gt;
-我把它放在我的 GitHub 上&lt;br&gt;
-&lt;a href="https://github.com/Lee-W/gi_extension"&gt;gi_extension&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;那我的 Custom gi 到底多支援了什麼呢？&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;線下查看 gitignore.io 支援的類型，用更適合閱讀當方式印出&lt;/li&gt;
-&lt;li&gt;將 output redirection 寫成一個 option&lt;/li&gt;
-&lt;li&gt;支援以空格作為類型的分隔 ( 逗號依然支援 )&lt;br&gt;
-   e.g., &lt;code&gt;vim,osx&lt;/code&gt; → &lt;code&gt;vim osx&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id="_3"&gt;安裝&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/Lee-W/gi_extension&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;gi_extension
-sudo&lt;span class="w"&gt; &lt;/span&gt;cp&lt;span class="w"&gt; &lt;/span&gt;gi_extension.sh&lt;span class="w"&gt; &lt;/span&gt;/usr/bin/gi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;如果之前有在 shell 的設定檔中，設定過 gitignore.io 提供的 gi&lt;br&gt;
-記得要把它註解掉，不然那個 gi 會蓋過我的 gi&lt;/p&gt;
-&lt;p&gt;如果想移除掉&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/Lee-W/gi_extension&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;gi_extension
-sudo&lt;span class="w"&gt; &lt;/span&gt;rm&lt;span class="w"&gt; &lt;/span&gt;gi_extension.sh&lt;span class="w"&gt; &lt;/span&gt;/usr/bin/gi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="_4"&gt;使用&lt;/h2&gt;
-&lt;p&gt;第一次使用的時候要先下 &lt;code&gt;gi -u&lt;/code&gt;&lt;br&gt;
-將原本 &lt;code&gt;gi list&lt;/code&gt; 的 output，儲存到 &lt;code&gt;~/.gi_list&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id="_5"&gt;顯示支援類型&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;以表格的方式輸出支援的類型&lt;br&gt;
-   目前設定一個 row 容納 5 個 column，每個 column 長度為 25  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gi&lt;span class="w"&gt; &lt;/span&gt;-l
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img alt="1_gi_l.png" src="/images/posts-image/2015-02-03-gitignoreio/WjrHpdZ.png"&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;以字母的順序輸出&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gi&lt;span class="w"&gt; &lt;/span&gt;-L
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img alt="2_gi_L.png" src="/images/posts-image/2015-02-03-gitignoreio/9j2PdP4.png"&gt;&lt;/p&gt;
-&lt;h3 id="gitignore"&gt;顯示 .gitignore 的內容&lt;/h3&gt;
-&lt;p&gt;跟原本的 gi 一樣，只是多支援了以空白作為分隔&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gi&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;types&amp;quot;&lt;/span&gt;
-&lt;span class="c1"&gt;# e.g., gi vim osx&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id="gitignore_1"&gt;輸出 .gitignore&lt;/h3&gt;
-&lt;p&gt;將結果加入目前資料夾下的 .gitignore&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gi&lt;span class="w"&gt; &lt;/span&gt;-a&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;types&amp;quot;&lt;/span&gt;
-&lt;span class="c1"&gt;# e.g., gi -a vim osx&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;在目前的資料夾產生一份新的 .gitignore 取代舊有的&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gi&lt;span class="w"&gt; &lt;/span&gt;-e&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;types&amp;quot;&lt;/span&gt;
-&lt;span class="c1"&gt;# e.g.,e.g.,, gi -e vim osx&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id="_6"&gt;更新本地端的支援列表&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gi&lt;span class="w"&gt; &lt;/span&gt;-u
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;其實每次 gi 被執行的時候，都會在 background 更新列表&lt;br&gt;
-但是這次的更新，下次才能被使用&lt;br&gt;
-所以如果想要強制更新就可以用上這個指令&lt;/p&gt;</content><category term="Tech"></category><category term="Git"></category><category term="Deprecated"></category><category term="Utility"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Vim"></category></entry></feed>
