@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2024-10-31 22:26
+modified: 2024-11-06 23:16
 slug: about-me
 ---
 
@@ -149,9 +149,9 @@ I was the program executor and the leader of the teaching assistant team. I also
 
 ## Talk and Tutorial
 * Unlocking Python's Core Magic
-    * **2024/09/28** 🇯🇵 [PyCon JP 2024](https://2024.pycon.jp/en/talk/AQKFHX)
+    * **2024/09/28** 🇯🇵 [PyCon JP 2024](https://2024.pycon.jp/en/talk/AQKFHX) → [slide](https://speakerdeck.com/leew/unlocking-pythons-core-magic)
 * Unleash the Chaos: Developing a Linter for Un-Pythonic Code!
-    * **2024/09/21** 🇹🇼 [PyCon TW 2024](https://tw.pycon.org/2024/conference/talk/311)
+    * **2024/09/21** 🇹🇼 [PyCon TW 2024](https://tw.pycon.org/2024/conference/talk/311) → [slide](https://speakerdeck.com/leew/unleash-the-chaos-developing-a-linter-for-un-pythonic-code)
 * What If...? Running Airflow Tasks without the workers
     * **2024/09/11** 🇺🇸 [Airflow summit 2024](https://airflowsummit.org/sessions/2024/what-if-running-airflow-tasks-without-the-workers/) → [slide](https://docs.google.com/presentation/d/1XGd7bQg6cGLNbHFiZjX__SmI4FLw6D_iASY9eRSO4mo/edit?usp=sharing)
 * Starts Airflow task execution directly from the triggerer
