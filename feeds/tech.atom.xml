@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-11-06T19:15:00+08:00</updated><entry><title>AIP-72 - Task Execution Interface aka Task SDK</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/aip-72" rel="alternate"></link><published>2024-11-06T19:15:00+08:00</published><updated>2024-11-06T19:15:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-06:/posts/tech/2024/11/aip-72</id><summary type="html">&lt;p&gt;&lt;del&gt;以後 Flyte 不能再以這點嘴 Airflow 了 😆&lt;/del&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-11-13T23:00:00+08:00</updated><entry><title>Python Table Manners</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/python-table-manners-series-2024-2025-edition" rel="alternate"></link><published>2024-11-13T23:00:00+08:00</published><updated>2024-11-13T23:00:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-13:/posts/tech/2024/11/python-table-manners-series-2024-2025-edition</id><summary type="html">&lt;p&gt;雖然也是有動畫作品 2017 宣布劇場版製作確定&lt;br&gt;
+到了 2024 年就確定不製作了 🤔&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;雖然也是有動畫作品 2017 宣布劇場版製作確定&lt;br&gt;
+到了 2024 年就確定不製作了 🤔&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;之前就有想重新整理一下&lt;br&gt;
+畢竟很多在 2020 年 &lt;a href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-series"&gt;Python Table Manners 系列&lt;/a&gt; 寫的工具&lt;br&gt;
+有些我也沒在用了，不然就是用的方式不同了&lt;/p&gt;
+&lt;p&gt;最近有朋友不知道去哪翻到我的舊文&lt;br&gt;
+發了一篇推薦&lt;br&gt;
+稍微給了我一點想要重新整理的動力&lt;/p&gt;
+&lt;p&gt;&lt;img alt="share" src="/images/posts-image/2024-python-table-manners/share.png"&gt;&lt;/p&gt;
+&lt;p&gt;另外就是發現 cookicutter 在我沒注意的期間也加了不少酷酷的功能&lt;br&gt;
+看到新功能就想玩一下&lt;/p&gt;
+&lt;p&gt;整個系列還是會圍繞在我的 Python 專案模板 &lt;a href="https://github.com/Lee-W/cookiecutter-python-template/"&gt;cookiecutter-python-template&lt;/a&gt; 用到的工具&lt;br&gt;
+最大的改動可能是 &lt;a href="https://docs.astral.sh/uv/"&gt;uv&lt;/a&gt; 跟 &lt;a href="https://docs.astral.sh/ruff/"&gt;ruff&lt;/a&gt; 吧&lt;br&gt;
+其它大概就是從 Airflow &lt;del&gt;抄&lt;/del&gt; 學來的一些 best practices&lt;/p&gt;
+&lt;p&gt;目前已經有兩個完成的 PRs&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/cookiecutter-python-template/pull/229"&gt;Replace project root poetry with uv #229&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/cookiecutter-python-template/pull/230"&gt;Add markdownlint and spell check #230&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;還開了一個 GitHub project &lt;a href="https://github.com/users/Lee-W/projects/1/views/1?layout=board"&gt;cookiecutter-python-template v2&lt;/a&gt; 跟幾個初期的 issues&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/cookiecutter-python-template/issues/233"&gt;Investigate cookiecutter nested configuration #233&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/cookiecutter-python-template/issues/231"&gt;Add Dependency Group Support #231&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/cookiecutter-python-template/issues/232"&gt;Add uv support for managing dependency and virtual env #232&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/cookiecutter-python-template/issues/234"&gt;Enhance prompt through Human readable prompts #234&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;希望我不會做著做著就確定不製作了&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category></entry><entry><title>AIP-72 - Task Execution Interface aka Task SDK</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/aip-72" rel="alternate"></link><published>2024-11-06T19:15:00+08:00</published><updated>2024-11-06T19:15:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-06:/posts/tech/2024/11/aip-72</id><summary type="html">&lt;p&gt;&lt;del&gt;以後 Flyte 不能再以這點嘴 Airflow 了 😆&lt;/del&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;del&gt;以後 Flyte 不能再以這點嘴 Airflow 了 😆&lt;/del&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#_1"&gt;前言&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_2"&gt;一言以蔽之&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#aip-72-task-execution-interface-aka-task-sdk"&gt;AIP-72 Task Execution Interface aka Task SDK&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#definitions"&gt;Definitions&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#motivation"&gt;Motivation&lt;/a&gt;&lt;/li&gt;
@@ -40,6 +71,7 @@
 &lt;p&gt;最近要開始做 &lt;a href="https://github.com/apache/airflow/issues/43619"&gt;Move Asset user-facing components to task_sdk #43619&lt;/a&gt;&lt;br&gt;
 把 &lt;a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-74+Introducing+Data+Assets"&gt;AIP-74&lt;/a&gt; 所改名的 Asset 的相關東西移動到 &lt;a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-72+Task+Execution+Interface+aka+Task+SDK"&gt;AIP-72&lt;/a&gt; 所提出的 TaskSDK&lt;br&gt;
 所以這系列的文章就從 &lt;a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-72+Task+Execution+Interface+aka+Task+SDK"&gt;AIP-72&lt;/a&gt; 開始了&lt;/p&gt;
+&lt;h2 id="_2"&gt;一言以蔽之&lt;/h2&gt;
 &lt;h2 id="aip-72-task-execution-interface-aka-task-sdk"&gt;AIP-72 Task Execution Interface aka Task SDK&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-72+Task+Execution+Interface+aka+Task+SDK"&gt;Link to AIP-72&lt;/a&gt;&lt;/li&gt;
@@ -15648,45 +15680,4 @@ ImportError: No module named django.core
 &lt;p&gt;找到 &lt;code&gt;/usr/local/lib/python3.4/site-packages/django/bin/django-admin.py&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;把第一行的 &lt;code&gt;#!/usr/bin/env python&lt;/code&gt; 改成 Python 的路徑&lt;br&gt;
 以我為例，我改成 &lt;code&gt;#!/usr/local/bin/python3.4&lt;/code&gt;&lt;br&gt;
-之後就可以執行了&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Django"></category><category term="mac"></category></entry><entry><title>rename - 批次更改檔名</title><link href="https://blog.wei-lee.me/posts/tech/2015/02/rename" rel="alternate"></link><published>2015-02-22T15:06:00+08:00</published><updated>2015-02-22T15:06:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2015-02-22:/posts/tech/2015/02/rename</id><summary type="html">&lt;p&gt;只是要改變一兩個檔案的檔名，只要 &lt;code&gt;mv&lt;/code&gt; 就很夠用了&lt;br&gt;
-但如果要一次改很多相似的檔名就用到 &lt;code&gt;rename&lt;/code&gt; 指令就會更有效率&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;只是要改變一兩個檔案的檔名，只要 &lt;code&gt;mv&lt;/code&gt; 就很夠用了&lt;br&gt;
-但如果要一次改很多相似的檔名就用到 &lt;code&gt;rename&lt;/code&gt; 指令就會更有效率&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;h2 id="_1"&gt;安裝&lt;/h2&gt;
-&lt;h3 id="ubuntu-linux-mint"&gt;Ubuntu, Linux Mint&lt;/h3&gt;
-&lt;p&gt;預設就已經安裝好了&lt;/p&gt;
-&lt;h3 id="mac"&gt;Mac&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;rename
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h1 id="_2"&gt;使用&lt;/h1&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rename&lt;span class="w"&gt; &lt;/span&gt;s/pattern1/pattern2/&lt;span class="w"&gt; &lt;/span&gt;files
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;把 files 中的檔案符合 pattern1 替代成 pattern2&lt;br&gt;
-files 要使用萬用字元，pattern 則是使用 regular expression&lt;/p&gt;
-&lt;p&gt;在改檔名之前，會想先看會改成什麼樣子&lt;br&gt;
-這時候就要加上參數 &lt;code&gt;-n&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;需要特別注意要跳脫的字元&lt;/em&gt;&lt;/strong&gt;&lt;br&gt;
-可以參考下面這篇文章整理需要跳脫的保留字&lt;br&gt;
-&lt;a href="http://awei791129.pixnet.net/blog/post/53319618-%5Bregular-expression%5D-使用正規表達時需要-escape-的"&gt;[Regular Expression] 使用正規表達時需要 escape 的保留字&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="_3"&gt;保留原本檔名的片段&lt;/h2&gt;
-&lt;p&gt;而在批量更改檔名時，常常會需要保留 pattern1 的某些片段&lt;br&gt;
-這就需要用到 regular expression 的 group&lt;/p&gt;
-&lt;p&gt;例如，我們希望把檔名從 01~05 這五個檔案改成 01A~05A&lt;br&gt;
-我們如果只用 &lt;code&gt;rename -n s/\[0-\9]{2}/\[0-9\]{2}A/ *&lt;/code&gt; 就會錯誤&lt;br&gt;
-必須要改成像下面這樣&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rename&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;s/&lt;span class="se"&gt;\(\[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;-&lt;span class="se"&gt;\9&lt;/span&gt;&lt;span class="o"&gt;]{&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="se"&gt;\)&lt;/span&gt;/&lt;span class="se"&gt;\$&lt;/span&gt;1A/&lt;span class="w"&gt; &lt;/span&gt;*
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;扣除跳脫用的 &lt;code&gt;\&lt;/code&gt;&lt;br&gt;
-這個例子在 &lt;code&gt;[0-9]{2}&lt;/code&gt; 外面加上 &lt;code&gt;()&lt;/code&gt;，將他們視為群組&lt;br&gt;
-在 pattern2 用 &lt;code&gt;$1&lt;/code&gt;，代替第一個 group&lt;/p&gt;
-&lt;p&gt;&lt;img alt="1_mac_rename" src="/images/posts-image/2015-02-22-rename/h1NV6ro.png"&gt;&lt;/p&gt;
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://mix.bruceli.net/2011/01/ubuntu-linuxrename.html"&gt;ubuntu linux 用 rename 指令批次改檔名&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://unix.stackexchange.com/questions/20718/substitute-text-with-sed-and-keep-part-of-the-original-text"&gt;regular expression - Substitute text with sed and keep part of the original text - Unix &amp;amp; Linux Stack Exchange&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Linux-Unix"></category><category term="Shell Script"></category></entry></feed>
+之後就可以執行了&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Django"></category><category term="mac"></category></entry></feed>
