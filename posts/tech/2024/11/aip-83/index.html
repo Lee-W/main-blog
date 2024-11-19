@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta charset="utf-8" content="text/html" http-equiv="Content-Type">
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
-<title>AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint </title>
+<title>AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint  - DAG 即將走入歷史</title>
 <meta content="True" name="HandheldFriendly"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="origin" name="referrer"/>
@@ -56,13 +56,13 @@
 <meta content="Digest" name="tags"/>
 <!-- Open Graph -->
 <meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
-<meta content="AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint " prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint  - DAG 即將走入歷史" prefix="og: http://ogp.me/ns#" property="og:title">
 <meta content="最近要 review 幾個 AIP-83 的 pull requests 重新回來整理一下筆記 避免 review 的時候搞不清楚狀況" prefix="og: http://ogp.me/ns#" property="og:description">
 <meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
 <meta content="https://blog.wei-lee.me/posts/tech/2024/11/aip-83" prefix="og: http://ogp.me/ns#" property="og:url">
 <meta content="article" prefix="og: http://ogp.me/ns#" property="og:type">
 <meta content="2024-11-19 19:30:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time">
-<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="2024-11-19 21:20:00+08:00" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
 <meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
 <meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
 <meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
@@ -74,7 +74,7 @@
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@clleew" name="twitter:site"/>
-<meta content="AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint " name="twitter:title"/>
+<meta content="AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint  - DAG 即將走入歷史" name="twitter:title"/>
 <meta content="https://blog.wei-lee.me/posts/tech/2024/11/aip-83" name="twitter:url"/>
 <meta content="https://blog.wei-lee.me//images/cover.jpeg" name="twitter:image:src"/>
 <meta content="最近要 review 幾個 AIP-83 的 pull requests 重新回來整理一下筆記 避免 review 的時候搞不清楚狀況" name="twitter:description"/>
@@ -82,10 +82,10 @@
 {
   "@context": "http://schema.org",
   "@type": "Article",
-  "name": "AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint",
-  "headline": "AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint",
+  "name": "AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint - DAG 即將走入歷史",
+  "headline": "AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint - DAG 即將走入歷史",
   "datePublished": "2024-11-19 19:30:00+08:00",
-  "dateModified": "",
+  "dateModified": "2024-11-19 21:20:00+08:00",
   "author": {
     "@type": "Person",
     "name": "Wei Lee",
@@ -151,7 +151,9 @@
 </span>
 <h1 class="post-title">
             AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint
-        </h1>
+            <br/>
+<small class="post-subtitle-white">DAG 即將走入歷史</small>
+</h1>
 <div class="post-meta">
 <div class="post-meta-avatars">
 <figure class="post-meta-avatar avatar">
@@ -164,6 +166,7 @@
             Wei Lee
           </h4>
 <time datetime="2024/11/19 - Tue">2024/11/19 - Tue</time>
+          • <time datetime="2024/11/19 - Tue"> Updated on 2024/11/19 - Tue</time>
           • 1 min read
         </div>
 <div class="post-cover cover">
@@ -182,6 +185,11 @@
 <!--more-->
 <p>雖然這篇文發出來的時候， AIP-83 應該已經快完成了<br/>
 但整理筆記到發文是需要時間的!</p>
+<p>TP 寫的 AIP-83 其實蠻精練的<br/>
+我用 Kindle 劃線註記的時候，都快把整篇畫起來了<br/>
+也因此第一次達到劃線上限<br/>
+（鄉野傳說說是一篇文章的 10 分之 1）<br/>
+第一次知道 Kindle 有這種限制，雖然蠻合理的</p>
 <div class="toc">
 <ul>
 <li><a href="#tldr">TLDR</a></li>
@@ -243,7 +251,7 @@ flowchart LR
 </li>
 </ul>
 <h2 id="_1">雜談</h2>
-<p>整理這次的筆記時，我有注意避免用到大寫的 DAG (Dag is fine though)<br/>
+<p>整理這次的筆記時，我有盡量避免用到大寫的 DAG (Dag is fine though)<br/>
 自從<a href="https://lists.apache.org/thread/lktrzqkzrpvc1cyctxz7zxfmc0fwtq2j">Airflow should deprecate the term "DAG" for end users</a>的討論<br/>
 Airflow 社群決定把讓 Airflow dag 跟 directed acyclic graph 脫鉤<br/>
 dag 自此之後就是一個 Airflow 的自創名詞<br/>
@@ -251,12 +259,7 @@ Airflow 3.0 也透過 <a href="https://github.com/apache/airflow/pull/43325">Ren
 <p>dag ✅<br/>
 Dag ✅<br/>
 DAG ❌</p>
-<p>啊，還有另一件事<br/>
-TP 寫的 AIP-83 其實蠻精練的<br/>
-我用 Kindle 劃線註記的時候，都快把整篇畫起來了<br/>
-也因此第一次達到劃線上限<br/>
-（鄉野傳說說是一篇文章的 10 分之 1）<br/>
-第一次知道 Kindle 有這種限制，雖然蠻合理的</p>
+<p>恩，副標題「DAG 即將走入歷史」跟 AIP-83 本身完全無關</p>
 <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true });
@@ -265,7 +268,7 @@ TP 寫的 AIP-83 其實蠻精練的<br/>
 <section class="post-footer">
 <div class="post-share">
 <span class="post-info-label">Share</span>
-<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint &amp;url=https://blog.wei-lee.me/posts/tech/2024/11/aip-83" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint  - DAG 即將走入歷史&amp;url=https://blog.wei-lee.me/posts/tech/2024/11/aip-83" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
 <i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
 </a>
 <a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2024/11/aip-83" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
@@ -289,7 +292,7 @@ TP 寫的 AIP-83 其實蠻精練的<br/>
 <a href="https://blog.wei-lee.me/posts/tech/2024/11/aip-72">AIP-72 - Task Execution Interface aka Task SDK - Airflow 的 task 要支援 Python 以外的語言了！</a>
 </li>
 <li class="active">
-<a href="https://blog.wei-lee.me/posts/tech/2024/11/aip-83">AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint</a>
+<a href="https://blog.wei-lee.me/posts/tech/2024/11/aip-83">AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint - DAG 即將走入歷史</a>
 </li>
 </ol>
 </div>

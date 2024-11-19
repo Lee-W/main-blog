@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-11-19T19:30:00+08:00</updated><entry><title>AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/aip-83" rel="alternate"></link><published>2024-11-19T19:30:00+08:00</published><updated>2024-11-19T19:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-19:/posts/tech/2024/11/aip-83</id><summary type="html">&lt;p&gt;最近要 review 幾個 AIP-83 的 pull requests&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-11-19T21:20:00+08:00</updated><entry><title>AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/aip-83" rel="alternate"></link><published>2024-11-19T19:30:00+08:00</published><updated>2024-11-19T21:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-19:/posts/tech/2024/11/aip-83</id><summary type="html">&lt;p&gt;最近要 review 幾個 AIP-83 的 pull requests&lt;br&gt;
 重新回來整理一下筆記&lt;br&gt;
 避免 review 的時候搞不清楚狀況&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最近要 review 幾個 AIP-83 的 pull requests&lt;br&gt;
@@ -9,6 +9,11 @@
 
 &lt;p&gt;雖然這篇文發出來的時候， AIP-83 應該已經快完成了&lt;br&gt;
 但整理筆記到發文是需要時間的!&lt;/p&gt;
+&lt;p&gt;TP 寫的 AIP-83 其實蠻精練的&lt;br&gt;
+我用 Kindle 劃線註記的時候，都快把整篇畫起來了&lt;br&gt;
+也因此第一次達到劃線上限&lt;br&gt;
+（鄉野傳說說是一篇文章的 10 分之 1）&lt;br&gt;
+第一次知道 Kindle 有這種限制，雖然蠻合理的&lt;/p&gt;
 &lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#tldr"&gt;TLDR&lt;/a&gt;&lt;/li&gt;
@@ -71,7 +76,7 @@ flowchart LR
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="_1"&gt;雜談&lt;/h2&gt;
-&lt;p&gt;整理這次的筆記時，我有注意避免用到大寫的 DAG (Dag is fine though)&lt;br&gt;
+&lt;p&gt;整理這次的筆記時，我有盡量避免用到大寫的 DAG (Dag is fine though)&lt;br&gt;
 自從&lt;a href="https://lists.apache.org/thread/lktrzqkzrpvc1cyctxz7zxfmc0fwtq2j"&gt;Airflow should deprecate the term "DAG" for end users&lt;/a&gt;的討論&lt;br&gt;
 Airflow 社群決定把讓 Airflow dag 跟 directed acyclic graph 脫鉤&lt;br&gt;
 dag 自此之後就是一個 Airflow 的自創名詞&lt;br&gt;
@@ -79,12 +84,7 @@ Airflow 3.0 也透過 &lt;a href="https://github.com/apache/airflow/pull/43325"&
 &lt;p&gt;dag ✅&lt;br&gt;
 Dag ✅&lt;br&gt;
 DAG ❌&lt;/p&gt;
-&lt;p&gt;啊，還有另一件事&lt;br&gt;
-TP 寫的 AIP-83 其實蠻精練的&lt;br&gt;
-我用 Kindle 劃線註記的時候，都快把整篇畫起來了&lt;br&gt;
-也因此第一次達到劃線上限&lt;br&gt;
-（鄉野傳說說是一篇文章的 10 分之 1）&lt;br&gt;
-第一次知道 Kindle 有這種限制，雖然蠻合理的&lt;/p&gt;
+&lt;p&gt;恩，副標題「DAG 即將走入歷史」跟 AIP-83 本身完全無關&lt;/p&gt;
 &lt;script type="module"&gt;
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true });
