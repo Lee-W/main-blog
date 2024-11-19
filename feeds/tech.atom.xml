@@ -1,5 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-11-13T23:00:00+08:00</updated><entry><title>Python Table Manners</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/python-table-manners-series-2024-2025-edition" rel="alternate"></link><published>2024-11-13T23:00:00+08:00</published><updated>2024-11-13T23:00:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-13:/posts/tech/2024/11/python-table-manners-series-2024-2025-edition</id><summary type="html">&lt;p&gt;雖然也是有動畫作品 2017 宣布劇場版製作確定&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-11-19T19:30:00+08:00</updated><entry><title>AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/aip-83" rel="alternate"></link><published>2024-11-19T19:30:00+08:00</published><updated>2024-11-19T19:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-19:/posts/tech/2024/11/aip-83</id><summary type="html">&lt;p&gt;最近要 review 幾個 AIP-83 的 pull requests&lt;br&gt;
+重新回來整理一下筆記&lt;br&gt;
+避免 review 的時候搞不清楚狀況&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;最近要 review 幾個 AIP-83 的 pull requests&lt;br&gt;
+重新回來整理一下筆記&lt;br&gt;
+避免 review 的時候搞不清楚狀況&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;雖然這篇文發出來的時候， AIP-83 應該已經快完成了&lt;br&gt;
+但整理筆記到發文是需要時間的!&lt;/p&gt;
+&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#tldr"&gt;TLDR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#note"&gt;Note&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#motivation"&gt;Motivation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#rationale"&gt;Rationale&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#proposal"&gt;Proposal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#compatibility-and-migration"&gt;Compatibility and Migration&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_1"&gt;雜談&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="tldr"&gt;TLDR&lt;/h2&gt;
+&lt;p&gt;自從有了 &lt;code&gt;DagRun.run_id&lt;/code&gt;，不需要 &lt;code&gt;exeuciton_date&lt;/code&gt; 來分辨 dag run 了&lt;br&gt;
+可以移除 &lt;code&gt;exeuciton_date&lt;/code&gt; 的 unique constraint&lt;br&gt;
+而且這個名字常常很誤導人，所以可以把它改名成 &lt;code&gt;logical date&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="note"&gt;Note&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-83+Rename+execution_date+-%3E+logical_date+and+remove+unique+constraint"&gt;Link to AIP-83&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="motivation"&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Before the &lt;code&gt;DagRun&lt;/code&gt; concept was introduced, Airflow used &lt;code&gt;execution_date&lt;/code&gt; to distinguish dag runs, which is no longer needed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="rationale"&gt;Rationale&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;How task instances look up dag runs now&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="mermaid"&gt;
+flowchart LR
+    task-instance --run_id--&gt; DagRun
+&lt;/div&gt;
+
+&lt;h3 id="proposal"&gt;Proposal&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;database migration&lt;ul&gt;
+&lt;li&gt;rename &lt;code&gt;execution_date&lt;/code&gt; as &lt;code&gt;logical_date&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;remove the unique constraint&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;executiion_date&lt;/code&gt; needs to be removed in&lt;ul&gt;
+&lt;li&gt;arguments in Python functions&lt;/li&gt;
+&lt;li&gt;REST API&lt;/li&gt;
+&lt;li&gt;task execution context&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;logical date&lt;/code&gt; can be shown in UI for humans to distinguish dag runs (not  technically unique)&lt;/li&gt;
+&lt;li&gt;Generation of &lt;code&gt;run_id&lt;/code&gt; should no longer rely on &lt;code&gt;logical_date&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="compatibility-and-migration"&gt;Compatibility and Migration&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;what might break&lt;ul&gt;
+&lt;li&gt;log templates&lt;ul&gt;
+&lt;li&gt;configurations &lt;code&gt;task_log_prefix_template&lt;/code&gt; and &lt;code&gt;log_filename_template&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;custom configured template that still uses &lt;code&gt;execution_date&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="_1"&gt;雜談&lt;/h2&gt;
+&lt;p&gt;整理這次的筆記時，我有注意避免用到大寫的 DAG (Dag is fine though)&lt;br&gt;
+自從&lt;a href="https://lists.apache.org/thread/lktrzqkzrpvc1cyctxz7zxfmc0fwtq2j"&gt;Airflow should deprecate the term "DAG" for end users&lt;/a&gt;的討論&lt;br&gt;
+Airflow 社群決定把讓 Airflow dag 跟 directed acyclic graph 脫鉤&lt;br&gt;
+dag 自此之後就是一個 Airflow 的自創名詞&lt;br&gt;
+Airflow 3.0 也透過 &lt;a href="https://github.com/apache/airflow/pull/43325"&gt;Rename DAG to Dag in new UI #43325&lt;/a&gt; 把這件事從 UI 上改掉了&lt;/p&gt;
+&lt;p&gt;dag ✅&lt;br&gt;
+Dag ✅&lt;br&gt;
+DAG ❌&lt;/p&gt;
+&lt;p&gt;啊，還有另一件事&lt;br&gt;
+TP 寫的 AIP-83 其實蠻精練的&lt;br&gt;
+我用 Kindle 劃線註記的時候，都快把整篇畫起來了&lt;br&gt;
+也因此第一次達到劃線上限&lt;br&gt;
+（鄉野傳說說是一篇文章的 10 分之 1）&lt;br&gt;
+第一次知道 Kindle 有這種限制，雖然蠻合理的&lt;/p&gt;
+&lt;script type="module"&gt;
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+&lt;/script&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Airflow"></category><category term="Airflow 3.0"></category><category term="Airflow Improvement Proposal"></category><category term="Digest"></category></entry><entry><title>Python Table Manners</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/python-table-manners-series-2024-2025-edition" rel="alternate"></link><published>2024-11-13T23:00:00+08:00</published><updated>2024-11-13T23:00:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-13:/posts/tech/2024/11/python-table-manners-series-2024-2025-edition</id><summary type="html">&lt;p&gt;雖然也是有動畫作品 2017 宣布劇場版製作確定&lt;br&gt;
 到了 2024 年就確定不製作了 🤔&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;雖然也是有動畫作品 2017 宣布劇場版製作確定&lt;br&gt;
 到了 2024 年就確定不製作了 🤔&lt;/p&gt;
@@ -36,8 +125,7 @@
 &lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#_1"&gt;前言&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_2"&gt;一言以蔽之&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#aip-72-task-execution-interface-aka-task-sdk"&gt;AIP-72 Task Execution Interface aka Task SDK&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#note"&gt;Note&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#definitions"&gt;Definitions&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#motivation"&gt;Motivation&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#changes-to-make"&gt;Changes to make&lt;/a&gt;&lt;/li&gt;
@@ -71,8 +159,7 @@
 &lt;p&gt;最近要開始做 &lt;a href="https://github.com/apache/airflow/issues/43619"&gt;Move Asset user-facing components to task_sdk #43619&lt;/a&gt;&lt;br&gt;
 把 &lt;a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-74+Introducing+Data+Assets"&gt;AIP-74&lt;/a&gt; 所改名的 Asset 的相關東西移動到 &lt;a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-72+Task+Execution+Interface+aka+Task+SDK"&gt;AIP-72&lt;/a&gt; 所提出的 TaskSDK&lt;br&gt;
 所以這系列的文章就從 &lt;a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-72+Task+Execution+Interface+aka+Task+SDK"&gt;AIP-72&lt;/a&gt; 開始了&lt;/p&gt;
-&lt;h2 id="_2"&gt;一言以蔽之&lt;/h2&gt;
-&lt;h2 id="aip-72-task-execution-interface-aka-task-sdk"&gt;AIP-72 Task Execution Interface aka Task SDK&lt;/h2&gt;
+&lt;h2 id="note"&gt;Note&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-72+Task+Execution+Interface+aka+Task+SDK"&gt;Link to AIP-72&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -280,7 +367,7 @@
 &lt;li&gt;similar to 2 but in Go&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Airflow"></category><category term="Airflow 3.0"></category><category term="Airflow Improvement Proposal"></category></entry><entry><title>移除照片 Exif 中的 GPSInfo</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif" rel="alternate"></link><published>2024-11-03T10:40:00+08:00</published><updated>2024-11-03T10:40:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-03:/posts/tech/2024/11/remove-gps-info-from-exif</id><summary type="html">&lt;p&gt;最近聽了 Podcast &lt;a href="https://pythonbytes.fm/episodes/show/406/whats-on-django-tv-tonight"&gt;What's on Django TV tonight?&lt;/a&gt; 跟 &lt;a href="https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs"&gt;Pre-commit Hooks for Python Devs&lt;/a&gt;&lt;br&gt;
+&lt;/ol&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Airflow"></category><category term="Airflow 3.0"></category><category term="Airflow Improvement Proposal"></category><category term="Digest"></category></entry><entry><title>移除照片 Exif 中的 GPSInfo</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/remove-gps-info-from-exif" rel="alternate"></link><published>2024-11-03T10:40:00+08:00</published><updated>2024-11-03T10:40:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-03:/posts/tech/2024/11/remove-gps-info-from-exif</id><summary type="html">&lt;p&gt;最近聽了 Podcast &lt;a href="https://pythonbytes.fm/episodes/show/406/whats-on-django-tv-tonight"&gt;What's on Django TV tonight?&lt;/a&gt; 跟 &lt;a href="https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs"&gt;Pre-commit Hooks for Python Devs&lt;/a&gt;&lt;br&gt;
 發現了 &lt;a href="https://github.com/stefmolin/exif-stripper"&gt;exif-stripper&lt;/a&gt; 這個酷東西&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最近聽了 Podcast &lt;a href="https://pythonbytes.fm/episodes/show/406/whats-on-django-tv-tonight"&gt;What's on Django TV tonight?&lt;/a&gt; 跟 &lt;a href="https://talkpython.fm/episodes/show/482/pre-commit-hooks-for-python-devs"&gt;Pre-commit Hooks for Python Devs&lt;/a&gt;&lt;br&gt;
 發現了 &lt;a href="https://github.com/stefmolin/exif-stripper"&gt;exif-stripper&lt;/a&gt; 這個酷東西&lt;/p&gt;
@@ -15656,28 +15743,4 @@ ipython3&lt;span class="w"&gt; &lt;/span&gt;kernelspec&lt;span class="w"&gt; &lt
 Python2 上面是另一個也被 jupyter notebook 支援的語言 julia&lt;br&gt;
 最近才剛開始碰，有機會再來分享 julia 的心得&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/30492623/using-both-python-2-x-and-python-3-x-in-ipython-notebook"&gt;Using both Python 2.x and Python 3.x in IPython Notebook&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Jupyter"></category></entry><entry><title>解決 django-admin 在 mac 找不到 django.core</title><link href="https://blog.wei-lee.me/posts/tech/2015/05/solve-django-admin-cant-find-the-djangocore-on-mac" rel="alternate"></link><published>2015-05-10T23:42:00+08:00</published><updated>2015-05-10T23:42:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2015-05-10:/posts/tech/2015/05/solve-django-admin-cant-find-the-djangocore-on-mac</id><summary type="html">&lt;h2 id="_1"&gt;問題&lt;/h2&gt;
-&lt;p&gt;在 mac 上，用 pip3 安裝完 django 1.8.1 後&lt;br&gt;
-執行 &lt;code&gt;django-admin&lt;/code&gt; 出現了以下的錯誤訊息&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Traceback (most recent call last):
-  File &amp;quot;/usr/local/bin/django-admin&amp;quot;, line 2, in &amp;lt;module&amp;gt;
-    from django.core import management
-ImportError: No module named django.core
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</summary><content type="html">&lt;h2 id="_1"&gt;問題&lt;/h2&gt;
-&lt;p&gt;在 mac 上，用 pip3 安裝完 django 1.8.1 後&lt;br&gt;
-執行 &lt;code&gt;django-admin&lt;/code&gt; 出現了以下的錯誤訊息&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Traceback (most recent call last):
-  File &amp;quot;/usr/local/bin/django-admin&amp;quot;, line 2, in &amp;lt;module&amp;gt;
-    from django.core import management
-ImportError: No module named django.core
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id="_2"&gt;解決&lt;/h2&gt;
-&lt;p&gt;找到 &lt;code&gt;/usr/local/lib/python3.4/site-packages/django/bin/django-admin.py&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;把第一行的 &lt;code&gt;#!/usr/bin/env python&lt;/code&gt; 改成 Python 的路徑&lt;br&gt;
-以我為例，我改成 &lt;code&gt;#!/usr/local/bin/python3.4&lt;/code&gt;&lt;br&gt;
-之後就可以執行了&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Django"></category><category term="mac"></category></entry></feed>
+&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/30492623/using-both-python-2-x-and-python-3-x-in-ipython-notebook"&gt;Using both Python 2.x and Python 3.x in IPython Notebook&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Jupyter"></category></entry></feed>
