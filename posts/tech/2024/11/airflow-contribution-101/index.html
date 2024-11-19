@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>貢獻 Airflow 101  - 姑且算是個 mentor(?)...吧？</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="至少在源來適你的名單上是有我的名字 雖然 #airflow-技術討論 這個頻道偏死寂 但我就是佛系投入、佛系經營" name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Python" name="tags"/>
+<meta content="Airflow" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="貢獻 Airflow 101  - 姑且算是個 mentor(?)...吧？" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="至少在源來適你的名單上是有我的名字 雖然 #airflow-技術討論 這個頻道偏死寂 但我就是佛系投入、佛系經營" prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
+<meta content="https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101" prefix="og: http://ogp.me/ns#" property="og:url"/>
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2024-11-19 22:45:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Airflow" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me//images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="貢獻 Airflow 101  - 姑且算是個 mentor(?)...吧？" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me//images/cover.jpeg" name="twitter:image:src"/>
+<meta content="至少在源來適你的名單上是有我的名字 雖然 #airflow-技術討論 這個頻道偏死寂 但我就是佛系投入、佛系經營" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "貢獻 Airflow 101 - 姑且算是個 mentor(?)...吧？",
+  "headline": "貢獻 Airflow 101 - 姑且算是個 mentor(?)...吧？",
+  "datePublished": "2024-11-19 22:45:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "https://blog.wei-lee.me//images/cover.jpeg",
+  "url": "https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101",
+  "description": "至少在源來適你的名單上是有我的名字 雖然 #airflow-技術討論 這個頻道偏死寂 但我就是佛系投入、佛系經營"
+}
+</script>
+</meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2024", "item": "https://blog.wei-lee.me/posts/tech/2024"}, {"@type": "ListItem", "position": 5, "name": "11", "item": "https://blog.wei-lee.me/posts/tech/2024/11"}, {"@type": "ListItem", "position": 6, "name": "Airflow contribution 101", "item": "https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "貢獻 Airflow 101", "about": "Tech", "datePublished": "2024-11-19 22:45"}</script></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🏷️ Tags" role="presentation"><a href="/tags.html"><span>🏷️ Tags</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            貢獻 Airflow 101
+            <br/>
+<small class="post-subtitle-white">姑且算是個 mentor(?)...吧？</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2024/11/19 - Tue">2024/11/19 - Tue</time>
+          • 2 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me//images/cover.jpeg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>至少在<a href="https://github.com/opensource4you/readme/blob/24bc45fb88e6ebc38deb5e20533f3eef2752ba96/README.md?plain=1#L51-L55">源來適你的名單</a>上是有我的名字<br/>
+雖然 <code>#airflow-技術討論</code> 這個頻道偏死寂<br/>
+但我就是佛系投入、佛系經營</p>
+<!--more-->
+<h2 id="_1">先進入正題，再來聊天</h2>
+<p>想一起開發 Airflow 的第一步就是把 <a href="https://github.com/apache/airflow/tree/main/dev/breeze/doc">breeze</a> 跑起來<br/>
+breeze 是 Airflow 專屬的開發工具<br/>
+用來協助設定本地開發環境跟 CI 環境的設置<br/>
+文件積極的被維護，應該還算完整<br/>
+整份文件跟著走完，會對 Airflow 的環境設定有基本的概念<br/>
+中間有遇到什麼問題或覺得哪裡寫得不清楚的話<br/>
+可以透過 <a href="https://airflow.apache.org/community/">Community</a> 加入 Airflow 的 slack，到 <code>#airflow-breeze</code> 或 <code>#new-contributor</code> 頻道發問<br/>
+當然直接開 issue 或 pull request 也沒問題<br/>
+說不定修正這個問題就是你的第一個貢獻 😉</p>
+<p>環境設定好之後，可以先找有 <a href="https://github.com/apache/airflow/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22">good first issue</a> label 的 issues 解解看<br/>
+除此之外，也可以找有 <a href="https://github.com/apache/airflow/issues?q=is%3Aopen+is%3Aissue+label%3Aarea%3Aproviders+">area:providers</a> label 的 issues<br/>
+因為不會直接碰到 Airflow 的核心，所以有機會比較簡單<br/>
+從這裡開始了解 Airflow ，也會慢慢了接觸到核心<br/>
+issue 解完就開 pull requests<br/>
+開發的流程大致就是如此</p>
+<h3 id="_2">除了開發以外</h3>
+<h4 id="1-review-pull-requests-pr">1. 幫忙 review <a href="https://github.com/apache/airflow/pulls">pull requests</a> (PR)</h4>
+<p>很多人以為要是 committer 或是 maintainer 才能 review PRs，但其實所有人都可以<br/>
+即便還不懂 Airflow 的運作，也可以單就 Python 的開發給建議<br/>
+review 的過程也會更加熟悉 Airflow</p>
+<h4 id="2-needs-triage-label-issues">2. 幫忙看有 <a href="https://github.com/apache/airflow/issues?q=is%3Aissue+is%3Aopen+label%3Aneeds-triage">needs-triage</a> label 的 issues</h4>
+<p>這些 issues 通常是還需要驗證或討論的<br/>
+最簡單可以做的就是幫忙驗證使用者回報的 issue 是不是能重現的，提供的資訊是否足夠<br/>
+當 committers 看到時，就能很快地進行分類</p>
+<p>如果做得夠多，之後就有機會被加入 triage team 成為 <a href="https://github.com/apache/airflow/blob/24811f729f0e20dfff1be9afa8bf4a60b44fe628/.asf.yaml#L121">collaborators</a><br/>
+有興趣成為 Airflow 的 committer 的話，這會是很好的第一步<br/>
+成為 collaborator 後，就會有權限更改 issue 的 label<br/>
+可以幫忙尚未分類的 issue 做正確的分類</p>
+<h4 id="3-airflow-slack">3. 加入 Airflow 的 Slack 討論或回答問題</h4>
+<p><a href="https://airflow.apache.org/community/">Community</a> 👈 由此加入</p>
+<p>以下是幾個我常用的頻道</p>
+<ul>
+<li><code>#new-contributors</code><ul>
+<li>新貢獻者發問的地方</li>
+</ul>
+</li>
+<li><code>#airflow-breeze</code><ul>
+<li>跟 breeze 有關的任何問題都可以來這問</li>
+</ul>
+</li>
+<li><code>#user-troubleshooting</code><ul>
+<li>使用者遇到問題會來這邊發問</li>
+</ul>
+</li>
+<li><code>#contributors</code><ul>
+<li>貢獻者們的討論頻道</li>
+</ul>
+</li>
+<li><code>#blogposts</code><ul>
+<li>如果寫了 Airflow 相關的文章，可以來這裡分享</li>
+</ul>
+</li>
+<li><code>#airflow-3-dev</code><ul>
+<li>最近在進行 airflow-3 的開發</li>
+</ul>
+</li>
+<li><code>#users-taiwan</code><ul>
+<li>雖然最近有點死寂，但還是想說一下，這裡是有台灣使用者的頻道啦 🥲</li>
+</ul>
+</li>
+<li><code>#townhall</code>:<ul>
+<li>每月一次的線上聚會</li>
+<li>自從日光不節約後，變成台灣時間 00:00 開會</li>
+<li>真的太太太太太晚了，老了沒辦法熬夜，不參加，抱歉</li>
+</ul>
+</li>
+<li><code>#random</code><ul>
+<li>什麼有的沒的都有可能丟到這</li>
+</ul>
+</li>
+<li><code>#airflow-astronomer</code><ul>
+<li>算是同場加映，畢竟之前有加入開發 <a href="https://github.com/astronomer/ask-astro">ask-astro</a></li>
+<li>裡面有個 Ask Astro 的機器人是專門回答 airflow 跟 <a href="https://www.astronomer.io/">Astronomer</a> 相關問題</li>
+</ul>
+</li>
+</ul>
+<p>其他的頻道如果你需要用到，大概也已經是你在社群夠久的時候了我想？ 🤔</p>
+<h4 id="4-airflow-dev-list">4. 加入 Airflow dev list 的討論</h4>
+<p><a href="https://airflow.apache.org/community/">Community</a> 👈 由此加入</p>
+<p>裡面的話題通常適合至少開發 Airflow 一小段時間的人加入<br/>
+不過先加入看看大家都在聊什麼也蠻好的<br/>
+之後會比較容易加入討論</p>
+<h4 id="5-release-candidates">5. 幫忙測試 Release candidates</h4>
+<p>Airflow 的 Release 都會開 GitHub issue 來紀錄，會以 "Status of testing" 開頭<br/>
+同時在 Dev list 發起投票，讓大家驗證功能，並決定是否 release<br/>
+像 <a href="https://github.com/apache/airflow/issues/44041">Status of testing Providers that were prepared on November 14, 2024 #44041</a> 就是上一波的 provider 的 release candidates 測試<br/>
+如果恰好有貢獻到這次要 release 的內容，就會直接在 issue 中被 tag<br/>
+這時候可以去 PyPI (e.g., <code>apache-airflow==2.10.3rc1</code>) 上安裝 release candidate 測試<br/>
+並且回去 GitHub issues 和 Dev list 回報測試結果</p>
+<h2 id="_3">源來適你</h2>
+<p><a href="https://www.facebook.com/opensource4you">源來適你 / opensource4you</a>是我大學修分散式系統的助教帥哥嘉平創的社群<br/>
+<del>因為裡面很多人在戰 Airflow，我就加進去潛水了</del><br/>
+另外，我研究所學長，傳說中三個月成為 commmiter<br/>
+人稱開源渣男的辣個男人<br/>
+最近正積極貢獻 Kafka ，好像已經連續贏得兩週的開源積分戰了<br/>
+太強，完全看不到車尾燈的強悍</p>
+<p>之前不知道哪根筋不對，說了 Airflow 也可以佛系來帶一下<br/>
+所以就多出 <code>#airflow-技術討論</code> 的頻道<br/>
+不過這佛系是真佛系，佛系帶專案的三大原則就是</p>
+<ol>
+<li>不要找我開會</li>
+<li>絕對不要找我開會</li>
+<li><strong>再說一次，絕對不要找我開會</strong></li>
+</ol>
+<p>Kafka 還能每週開周會，真的是有夠拼的<br/>
+我無法<br/>
+真的無法<br/>
+真的是不要開會<br/>
+但有問題丟上來頻道，我都很樂意在我心力足夠的情況下跟大家討論<br/>
+避免 direct message 我，因爲大家可能有同樣的問題<br/>
+一直回同樣的問題，會煩</p>
+<p>最近姑且是佛系經營下，渡到有緣人<br/>
+上個月還被提名 PR of the month，雖然沒入選<br/>
+之前還有另一個朋有也有被提名<br/>
+雖然也是沒入選，但有被找去 Airflwo 每月的 Townhall 分享<br/>
+為了支持有小小晚睡一下去聽他講<br/>
+不然當初他的 PR 好像吃是我 review 的好像不需要再聽一次 😆<br/>
+整體來說這件事是還蠻令人開心的</p>
+<p>這篇文章之後就會直接放在源來適你的 <code>#airflow-技術討論</code><br/>
+讓大家知道可以怎麼開始貢獻 Airflow 跟可以預期從我這得到什麼幫助<br/>
+（恩，對，可能太多幫助）</p>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=貢獻 Airflow 101  - 姑且算是個 mentor(?)...吧？&amp;url=https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101&amp;title=貢獻 Airflow 101" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=貢獻 Airflow 101&amp;body=https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/python.html">Python</a><a href="https://blog.wei-lee.me/tag/airflow.html">Airflow</a> </aside>
+<div class="clear"></div>
+</section>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>

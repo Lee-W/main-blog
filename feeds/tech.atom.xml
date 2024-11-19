@@ -1,5 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-11-19T21:20:00+08:00</updated><entry><title>AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/aip-83" rel="alternate"></link><published>2024-11-19T19:30:00+08:00</published><updated>2024-11-19T21:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-19:/posts/tech/2024/11/aip-83</id><summary type="html">&lt;p&gt;最近要 review 幾個 AIP-83 的 pull requests&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-11-19T22:45:00+08:00</updated><entry><title>貢獻 Airflow 101</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101" rel="alternate"></link><published>2024-11-19T22:45:00+08:00</published><updated>2024-11-19T22:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-19:/posts/tech/2024/11/airflow-contribution-101</id><summary type="html">&lt;p&gt;至少在&lt;a href="https://github.com/opensource4you/readme/blob/24bc45fb88e6ebc38deb5e20533f3eef2752ba96/README.md?plain=1#L51-L55"&gt;源來適你的名單&lt;/a&gt;上是有我的名字&lt;br&gt;
+雖然 &lt;code&gt;#airflow-技術討論&lt;/code&gt; 這個頻道偏死寂&lt;br&gt;
+但我就是佛系投入、佛系經營&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;至少在&lt;a href="https://github.com/opensource4you/readme/blob/24bc45fb88e6ebc38deb5e20533f3eef2752ba96/README.md?plain=1#L51-L55"&gt;源來適你的名單&lt;/a&gt;上是有我的名字&lt;br&gt;
+雖然 &lt;code&gt;#airflow-技術討論&lt;/code&gt; 這個頻道偏死寂&lt;br&gt;
+但我就是佛系投入、佛系經營&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="_1"&gt;先進入正題，再來聊天&lt;/h2&gt;
+&lt;p&gt;想一起開發 Airflow 的第一步就是把 &lt;a href="https://github.com/apache/airflow/tree/main/dev/breeze/doc"&gt;breeze&lt;/a&gt; 跑起來&lt;br&gt;
+breeze 是 Airflow 專屬的開發工具&lt;br&gt;
+用來協助設定本地開發環境跟 CI 環境的設置&lt;br&gt;
+文件積極的被維護，應該還算完整&lt;br&gt;
+整份文件跟著走完，會對 Airflow 的環境設定有基本的概念&lt;br&gt;
+中間有遇到什麼問題或覺得哪裡寫得不清楚的話&lt;br&gt;
+可以透過 &lt;a href="https://airflow.apache.org/community/"&gt;Community&lt;/a&gt; 加入 Airflow 的 slack，到 &lt;code&gt;#airflow-breeze&lt;/code&gt; 或 &lt;code&gt;#new-contributor&lt;/code&gt; 頻道發問&lt;br&gt;
+當然直接開 issue 或 pull request 也沒問題&lt;br&gt;
+說不定修正這個問題就是你的第一個貢獻 😉&lt;/p&gt;
+&lt;p&gt;環境設定好之後，可以先找有 &lt;a href="https://github.com/apache/airflow/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22"&gt;good first issue&lt;/a&gt; label 的 issues 解解看&lt;br&gt;
+除此之外，也可以找有 &lt;a href="https://github.com/apache/airflow/issues?q=is%3Aopen+is%3Aissue+label%3Aarea%3Aproviders+"&gt;area:providers&lt;/a&gt; label 的 issues&lt;br&gt;
+因為不會直接碰到 Airflow 的核心，所以有機會比較簡單&lt;br&gt;
+從這裡開始了解 Airflow ，也會慢慢了接觸到核心&lt;br&gt;
+issue 解完就開 pull requests&lt;br&gt;
+開發的流程大致就是如此&lt;/p&gt;
+&lt;h3 id="_2"&gt;除了開發以外&lt;/h3&gt;
+&lt;h4 id="1-review-pull-requests-pr"&gt;1. 幫忙 review &lt;a href="https://github.com/apache/airflow/pulls"&gt;pull requests&lt;/a&gt; (PR)&lt;/h4&gt;
+&lt;p&gt;很多人以為要是 committer 或是 maintainer 才能 review PRs，但其實所有人都可以&lt;br&gt;
+即便還不懂 Airflow 的運作，也可以單就 Python 的開發給建議&lt;br&gt;
+review 的過程也會更加熟悉 Airflow&lt;/p&gt;
+&lt;h4 id="2-needs-triage-label-issues"&gt;2. 幫忙看有 &lt;a href="https://github.com/apache/airflow/issues?q=is%3Aissue+is%3Aopen+label%3Aneeds-triage"&gt;needs-triage&lt;/a&gt; label 的 issues&lt;/h4&gt;
+&lt;p&gt;這些 issues 通常是還需要驗證或討論的&lt;br&gt;
+最簡單可以做的就是幫忙驗證使用者回報的 issue 是不是能重現的，提供的資訊是否足夠&lt;br&gt;
+當 committers 看到時，就能很快地進行分類&lt;/p&gt;
+&lt;p&gt;如果做得夠多，之後就有機會被加入 triage team 成為 &lt;a href="https://github.com/apache/airflow/blob/24811f729f0e20dfff1be9afa8bf4a60b44fe628/.asf.yaml#L121"&gt;collaborators&lt;/a&gt;&lt;br&gt;
+有興趣成為 Airflow 的 committer 的話，這會是很好的第一步&lt;br&gt;
+成為 collaborator 後，就會有權限更改 issue 的 label&lt;br&gt;
+可以幫忙尚未分類的 issue 做正確的分類&lt;/p&gt;
+&lt;h4 id="3-airflow-slack"&gt;3. 加入 Airflow 的 Slack 討論或回答問題&lt;/h4&gt;
+&lt;p&gt;&lt;a href="https://airflow.apache.org/community/"&gt;Community&lt;/a&gt; 👈 由此加入&lt;/p&gt;
+&lt;p&gt;以下是幾個我常用的頻道&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#new-contributors&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;新貢獻者發問的地方&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#airflow-breeze&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;跟 breeze 有關的任何問題都可以來這問&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#user-troubleshooting&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;使用者遇到問題會來這邊發問&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#contributors&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;貢獻者們的討論頻道&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#blogposts&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;如果寫了 Airflow 相關的文章，可以來這裡分享&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#airflow-3-dev&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;最近在進行 airflow-3 的開發&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#users-taiwan&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;雖然最近有點死寂，但還是想說一下，這裡是有台灣使用者的頻道啦 🥲&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#townhall&lt;/code&gt;:&lt;ul&gt;
+&lt;li&gt;每月一次的線上聚會&lt;/li&gt;
+&lt;li&gt;自從日光不節約後，變成台灣時間 00:00 開會&lt;/li&gt;
+&lt;li&gt;真的太太太太太晚了，老了沒辦法熬夜，不參加，抱歉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#random&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;什麼有的沒的都有可能丟到這&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#airflow-astronomer&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;算是同場加映，畢竟之前有加入開發 &lt;a href="https://github.com/astronomer/ask-astro"&gt;ask-astro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;裡面有個 Ask Astro 的機器人是專門回答 airflow 跟 &lt;a href="https://www.astronomer.io/"&gt;Astronomer&lt;/a&gt; 相關問題&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其他的頻道如果你需要用到，大概也已經是你在社群夠久的時候了我想？ 🤔&lt;/p&gt;
+&lt;h4 id="4-airflow-dev-list"&gt;4. 加入 Airflow dev list 的討論&lt;/h4&gt;
+&lt;p&gt;&lt;a href="https://airflow.apache.org/community/"&gt;Community&lt;/a&gt; 👈 由此加入&lt;/p&gt;
+&lt;p&gt;裡面的話題通常適合至少開發 Airflow 一小段時間的人加入&lt;br&gt;
+不過先加入看看大家都在聊什麼也蠻好的&lt;br&gt;
+之後會比較容易加入討論&lt;/p&gt;
+&lt;h4 id="5-release-candidates"&gt;5. 幫忙測試 Release candidates&lt;/h4&gt;
+&lt;p&gt;Airflow 的 Release 都會開 GitHub issue 來紀錄，會以 "Status of testing" 開頭&lt;br&gt;
+同時在 Dev list 發起投票，讓大家驗證功能，並決定是否 release&lt;br&gt;
+像 &lt;a href="https://github.com/apache/airflow/issues/44041"&gt;Status of testing Providers that were prepared on November 14, 2024 #44041&lt;/a&gt; 就是上一波的 provider 的 release candidates 測試&lt;br&gt;
+如果恰好有貢獻到這次要 release 的內容，就會直接在 issue 中被 tag&lt;br&gt;
+這時候可以去 PyPI (e.g., &lt;code&gt;apache-airflow==2.10.3rc1&lt;/code&gt;) 上安裝 release candidate 測試&lt;br&gt;
+並且回去 GitHub issues 和 Dev list 回報測試結果&lt;/p&gt;
+&lt;h2 id="_3"&gt;源來適你&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.facebook.com/opensource4you"&gt;源來適你 / opensource4you&lt;/a&gt;是我大學修分散式系統的助教帥哥嘉平創的社群&lt;br&gt;
+&lt;del&gt;因為裡面很多人在戰 Airflow，我就加進去潛水了&lt;/del&gt;&lt;br&gt;
+另外，我研究所學長，傳說中三個月成為 commmiter&lt;br&gt;
+人稱開源渣男的辣個男人&lt;br&gt;
+最近正積極貢獻 Kafka ，好像已經連續贏得兩週的開源積分戰了&lt;br&gt;
+太強，完全看不到車尾燈的強悍&lt;/p&gt;
+&lt;p&gt;之前不知道哪根筋不對，說了 Airflow 也可以佛系來帶一下&lt;br&gt;
+所以就多出 &lt;code&gt;#airflow-技術討論&lt;/code&gt; 的頻道&lt;br&gt;
+不過這佛系是真佛系，佛系帶專案的三大原則就是&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不要找我開會&lt;/li&gt;
+&lt;li&gt;絕對不要找我開會&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;再說一次，絕對不要找我開會&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Kafka 還能每週開周會，真的是有夠拼的&lt;br&gt;
+我無法&lt;br&gt;
+真的無法&lt;br&gt;
+真的是不要開會&lt;br&gt;
+但有問題丟上來頻道，我都很樂意在我心力足夠的情況下跟大家討論&lt;br&gt;
+避免 direct message 我，因爲大家可能有同樣的問題&lt;br&gt;
+一直回同樣的問題，會煩&lt;/p&gt;
+&lt;p&gt;最近姑且是佛系經營下，渡到有緣人&lt;br&gt;
+上個月還被提名 PR of the month，雖然沒入選&lt;br&gt;
+之前還有另一個朋有也有被提名&lt;br&gt;
+雖然也是沒入選，但有被找去 Airflwo 每月的 Townhall 分享&lt;br&gt;
+為了支持有小小晚睡一下去聽他講&lt;br&gt;
+不然當初他的 PR 好像吃是我 review 的好像不需要再聽一次 😆&lt;br&gt;
+整體來說這件事是還蠻令人開心的&lt;/p&gt;
+&lt;p&gt;這篇文章之後就會直接放在源來適你的 &lt;code&gt;#airflow-技術討論&lt;/code&gt;&lt;br&gt;
+讓大家知道可以怎麼開始貢獻 Airflow 跟可以預期從我這得到什麼幫助&lt;br&gt;
+（恩，對，可能太多幫助）&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Airflow"></category></entry><entry><title>AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/aip-83" rel="alternate"></link><published>2024-11-19T19:30:00+08:00</published><updated>2024-11-19T21:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-19:/posts/tech/2024/11/aip-83</id><summary type="html">&lt;p&gt;最近要 review 幾個 AIP-83 的 pull requests&lt;br&gt;
 重新回來整理一下筆記&lt;br&gt;
 避免 review 的時候搞不清楚狀況&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最近要 review 幾個 AIP-83 的 pull requests&lt;br&gt;
@@ -15716,31 +15845,4 @@ jupyter&lt;span class="w"&gt; &lt;/span&gt;console&lt;span class="w"&gt; &lt;/sp
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://stackoverflow.com/questions/24966404/brew-install-gcc-too-time-consuming"&gt;brew install gcc too time consuming&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://superuser.com/questions/788256/brew-install-gcc-mac-os-10-9-mavericks"&gt;brew install gcc /Mac OS 10.9 Mavericks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="C++"></category><category term="mac"></category><category term="Deprecated"></category></entry><entry><title>在 jupyter 中同時使用 Python2 Python3</title><link href="https://blog.wei-lee.me/posts/tech/2015/11/used-in-the-jupyter-python2-python3" rel="alternate"></link><published>2015-11-02T15:12:00+08:00</published><updated>2015-11-02T15:12:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2015-11-02:/posts/tech/2015/11/used-in-the-jupyter-python2-python3</id><summary type="html">&lt;p&gt;先安裝 Python2 和 Python3 的 ipython notebook&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip2&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;ipython&lt;span class="w"&gt; &lt;/span&gt;notebook
-pip3&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;ipython&lt;span class="w"&gt; &lt;/span&gt;notebook
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;分別用各自的 ipython 執行下面的指令&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ipython2&lt;span class="w"&gt; &lt;/span&gt;kernelspec&lt;span class="w"&gt; &lt;/span&gt;install-self
-ipython3&lt;span class="w"&gt; &lt;/span&gt;kernelspec&lt;span class="w"&gt; &lt;/span&gt;install-self
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</summary><content type="html">&lt;p&gt;先安裝 Python2 和 Python3 的 ipython notebook&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip2&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;ipython&lt;span class="w"&gt; &lt;/span&gt;notebook
-pip3&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;ipython&lt;span class="w"&gt; &lt;/span&gt;notebook
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;分別用各自的 ipython 執行下面的指令&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ipython2&lt;span class="w"&gt; &lt;/span&gt;kernelspec&lt;span class="w"&gt; &lt;/span&gt;install-self
-ipython3&lt;span class="w"&gt; &lt;/span&gt;kernelspec&lt;span class="w"&gt; &lt;/span&gt;install-self
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;就能在 ipython notebook 裡面同時使用兩種版本的 Python 了&lt;br&gt;
-&lt;img alt="1_jupyter" src="/images/posts-image/2015-11-02-used-in-the-jupyter-python2-python3/IxopQfG.png"&gt;&lt;br&gt;
-Python2 上面是另一個也被 jupyter notebook 支援的語言 julia&lt;br&gt;
-最近才剛開始碰，有機會再來分享 julia 的心得&lt;/p&gt;
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/30492623/using-both-python-2-x-and-python-3-x-in-ipython-notebook"&gt;Using both Python 2.x and Python 3.x in IPython Notebook&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Jupyter"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"></category><category term="C++"></category><category term="mac"></category><category term="Deprecated"></category></entry></feed>
