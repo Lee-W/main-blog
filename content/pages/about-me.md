@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2024-11-06 23:16
+modified: 2024-11-19 22:43
 slug: about-me
 ---
 
@@ -11,6 +11,7 @@ This is Wei Lee. I'm a
 * 🐍 [PyCon Taiwan](https://tw.pycon.org/) organizer
 * [commitizen-tools](https://github.com/commitizen-tools) maintainer
 * [Apache Airflow](https://github.com/apache/airflow/) committer
+* [opensource4you](https://github.com/opensource4you/) Airflow mentor(?)
 * [📷 Traveler](https://travlog.wei-lee.me/)
 * ⛺ Member of [台湾野クル▲](https://twitter.com/Taiwannokuru)
 * 📺 Anime Lover
