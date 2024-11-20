@@ -2,7 +2,7 @@ Title: 貢獻 Airflow 101
 Subtitle: 姑且算是個 mentor(?)...吧？
 Date: 2024-11-19 22:45
 Category: Tech
-Tags: Python, Airflow
+Tags: Python, Airflow, 源來適你
 Slug: airflow-contribution-101
 Authors: Wei Lee
 
@@ -101,7 +101,7 @@ Airflow 的 Release 都會開 GitHub issue 來紀錄，會以 "Status of testing
 ## 源來適你
 [源來適你 / opensource4you]是我大學修分散式系統的助教帥哥嘉平創的社群
 ~~因為裡面很多人在戰 Airflow，我就加進去潛水了~~
-另外，我研究所學長，傳說中三個月成為 commmiter
+另外，我研究所學長，傳說中三個月成為 committer
 人稱開源渣男的辣個男人
 最近正積極貢獻 Kafka ，好像已經連續贏得兩週的開源積分戰了
 太強，完全看不到車尾燈的強悍
