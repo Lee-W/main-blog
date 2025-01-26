@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2024-11-19 22:43
+modified: 2025-01-26 18:37
 slug: about-me
 ---
 
@@ -10,7 +10,7 @@ This is Wei Lee. I'm a
 * 🐍 [Pythonista](https://pycon-note.wei-lee.me/)
 * 🐍 [PyCon Taiwan](https://tw.pycon.org/) organizer
 * [commitizen-tools](https://github.com/commitizen-tools) maintainer
-* [Apache Airflow](https://github.com/apache/airflow/) committer
+* [Apache Airflow] committer
 * [opensource4you](https://github.com/opensource4you/) Airflow mentor(?)
 * [📷 Traveler](https://travlog.wei-lee.me/)
 * ⛺ Member of [台湾野クル▲](https://twitter.com/Taiwannokuru)
@@ -21,7 +21,7 @@ This is Wei Lee. I'm a
 
 I enjoy automating tedious tasks and creating high-quality code. Enjoy participating in open-source communities and contributing to open-source projects. Traveling is also a passion of mine, and I often use PyCon as an opportunity to explore new places. I have attended PyCon conferences in Taiwan 🇹🇼, the United States 🇺🇸, Japan 🇯🇵, Canada 🇨🇦, Remote Python Pizza 🍕, and Euro Python (remotely) 🇪🇺.
 
-I share my technical notes, book digests, and occasional thoughts here. If you're interested in cooking, anime, and travel, I chat about those things on [Those things no one cares about](https://travlog.wei-lee.me/).
+I share my technical notes, book digests, and occasional thoughts here. If you're interested in cooking, anime, and traveling, I chat about those things on [Those things no one cares about](https://travlog.wei-lee.me/).
 
 ---
 
@@ -55,22 +55,26 @@ I use
 * **DevOps tools and others**: GitHub Actions, Docker, Kubernetes, Jenkins,  Git, AWS Services
 
 ## Work Experience
-**[Aug 2024 - Current] Software Engineer, [Astronomer](https://www.astronomer.io/)**
+**[Aug 2024 - Current] Senior Software Engineer, [Astronomer]**
 
-* [apache-airflow](https://github.com/apache/airflow/)
+* [apache-airflow]
     * Add "DatasetAlias" for creating datasets or dataset events in runtime
-    * Implement half of [AIP-74](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-74+Introducing+Data+Assets)
+    * Implement half of [AIP-74](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-74+Introducing+Data+Assets) and part of [AIP-75](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-75+New+Asset-Centric+Syntax)
+* [ruff](https://github.com/astral-sh/ruff)
+    * Implement most of the [AIR3XX](https://docs.astral.sh/ruff/rules/#airflow-air) rules to facilitate the migration from Airflow 2 to Airflow 3
 
-**[Feb 2023 - July 2024] Software Engineer, [Astronomer](https://www.astronomer.io/)**
+[apache-airflow]: https://github.com/apache/airflow/
 
-* [apache-airflow](https://github.com/apache/airflow/)
+**[Feb 2023 - July 2024] Software Engineer, [Astronomer]**
+
+* [apache-airflow]
     * Allow Airflow tasks to execute directly from the trigger
     * Add REST API endpoint to manipulate queued dataset events
     * Upgrade apache-airflow-providers-weaviate to 2.0.0 for weaviate-client >= 4.4.0 support
     * Add Azure managed identities support to apache-airflow-providers-microsoft-azure
     * Add defult_deferrable configuration for easily turning on the deferrable mode of operators
 * [astronomer-providers](https://github.com/astronomer/astronomer-providers)
-    * Contribute existing operators/sensors back to [apache-airflow](https://github.com/apache/airflow/) and deprecate this project to reduce maintenance efforts
+    * Contribute existing operators/sensors back to [apache-airflow] and deprecate this project to reduce maintenance efforts
     * Automated the deployment of integration tests and testing against the release of the airflow provider ([#987](https://github.com/astronomer/astronomer-providers/pull/987), [#1107](https://github.com/astronomer/astronomer-providers/pull/1107), [#1139](https://github.com/astronomer/astronomer-providers/pull/1139), [#1110](https://github.com/astronomer/astronomer-providers/pull/1110))
 * [ask-astro](https://github.com/astronomer/ask-astro)
     * Setup local dev tools and fix various existing bugs
@@ -81,7 +85,7 @@ I use
     * Implemented SQS and gRPC services for grouping emails with similar structures and extracting user-sensitive data to increase the amount of training data without violating customer privacy regulations.
     *  Designed and Implemented a two-stage labeling system that automatically communicates between Amazon Mechanical Turk and in-house experts to generate high-quality labeled data and enhance merchandise taxonomy to increase customer conversion rate.
     * Migrated and automated the deployment process of AWS Lambda procedures that process customer lifetime value, reducing the effort of maintenance and deployment.
-* Build and maintain data pipelines on [Apache Airflow](https://airflow.apache.org/)
+* Build and maintain data pipelines on [Apache Airflow]
     * Implemented a pipeline that processes data larger than 10 GB to infer personalized preferences to help increase customer satisfaction.
     * Migrated legacy 1.x Airflow server on AWS EC2 to 2.0.2 Airflow on AWS MWAA, saving developers' effort on dealing with legacy dependencies issues, and created a development airflow environment for doing experiments without affecting the production pipeline.
     * Refactored data writing mechanism and reduced the data write time and AWS S3 cost.
@@ -121,8 +125,10 @@ I was the program executor and the leader of the teaching assistant team. I also
 * Developed automation programs for generating reports, which save 80% of human labor time
 * Delivered a human resource management system using [django](https://www.djangoproject.com)
 
+[Astronomer]: https://www.astronomer.io/
+
 ## Community Involvement
-**[Nov 2023 - Current] Volunteer [PyCon Taiwan](https://tw.pycon.org/)**
+**[Nov 2023 - Current] Volunteer, [PyCon Taiwan](https://tw.pycon.org/)**
 
 * Maintain [pycontw-blog](https://github.com/pycontw/pycontw-blog)
 
@@ -149,12 +155,13 @@ I was the program executor and the leader of the teaching assistant team. I also
 * Contribute to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
 
 ## Talk and Tutorial
-* Unlocking Python's Core Magic
-    * **2024/09/28** 🇯🇵 [PyCon JP 2024](https://2024.pycon.jp/en/talk/AQKFHX) → [slide](https://speakerdeck.com/leew/unlocking-pythons-core-magic)
 * Unleash the Chaos: Developing a Linter for Un-Pythonic Code!
-    * **2024/09/21** 🇹🇼 [PyCon TW 2024](https://tw.pycon.org/2024/conference/talk/311) → [slide](https://speakerdeck.com/leew/unleash-the-chaos-developing-a-linter-for-un-pythonic-code)
+    * **2025/03** 🇵🇭 [PyCon APAC 2025](https://pycon-apac.python.ph/)
+    * **2024/09/21** 🇹🇼 [PyCon TW 2024](https://tw.pycon.org/2024/conference/talk/311) → [slide](https://speakerdeck.com/leew/unleash-the-chaos-developing-a-linter-for-un-pythonic-code), [🎬recording](https://www.youtube.com/watch?v=2jUd0o8VuE0)
+* Unlocking Python's Core Magic
+    * **2024/09/28** 🇯🇵 [PyCon JP 2024](https://2024.pycon.jp/en/talk/AQKFHX) → [slide](https://speakerdeck.com/leew/unlocking-pythons-core-magic), [🎬recording](https://www.youtube.com/watch?v=9jbHA6tE9MM)
 * What If...? Running Airflow Tasks without the workers
-    * **2024/09/11** 🇺🇸 [Airflow summit 2024](https://airflowsummit.org/sessions/2024/what-if-running-airflow-tasks-without-the-workers/) → [slide](https://docs.google.com/presentation/d/1XGd7bQg6cGLNbHFiZjX__SmI4FLw6D_iASY9eRSO4mo/edit?usp=sharing)
+    * **2024/09/11** 🇺🇸 [Airflow summit 2024](https://airflowsummit.org/sessions/2024/what-if-running-airflow-tasks-without-the-workers/) → [slide](https://docs.google.com/presentation/d/1XGd7bQg6cGLNbHFiZjX__SmI4FLw6D_iASY9eRSO4mo/edit?usp=sharing), [🎬recording](https://www.youtube.com/watch?v=WkljjYtqu8Q)
 * Starts Airflow task execution directly from the triggerer
     * *2024/05/08* 💻 Airflow Town Hall → [slide](https://speakerdeck.com/leew/starts-airflow-task-execution-directly-from-the-triggerer)
 * Intro to Airflow - From Zero to Hero
@@ -167,7 +174,7 @@ I was the program executor and the leader of the teaching assistant team. I also
     * *2020/08/31* 🇹🇼 [Kaohsiung.py](https://kaohsiungpy.kktix.cc/events/20200831) → [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-kaohsiung-dot-py)
     * **2020/07/24 💻 [Euro Python 2020](https://ep2020.europython.eu/)** → [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020), [🎬recording](https://www.youtube.com/watch?v=m6rF3Kah928)
     * **2019/11/17 🇨🇦 [PyCon CA 2019](https://2019.pycon.ca/)** → [slide](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019)
-    * *2019/10/24* [Taipei.py](https://www.meetup.com/Taipei-py/events/265743666/)
+    * *2019/10/24* 🇹🇼 [Taipei.py](https://www.meetup.com/Taipei-py/events/265743666/)
 * commitizen-tools: What can we gain from crafting a git message convention?
     * *2020/06/18* 🇹🇼 [Taipei.py](https://www.meetup.com/Taipei-py/events/271185591/) → [slide](https://speakerdeck.com/leew/commitizen-tools-what-can-we-gain-from-crafting-a-git-message-convention-at-taipey-dot-py)
     * **2020/04/25 💻 [Remote Python Pizza 2020](https://remote.python.pizza/)** → [slide](https://speakerdeck.com/leew/what-can-we-gain-from-crafting-a-git-message-convention-at-remote-python-pizza-2020)
@@ -231,3 +238,6 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 * [Intro to Machine Learning](https://github.com/Lee-W/Intro_to_Machine_Learning_Udacity)
 * [Intro to Data Science Udacity](https://github.com/Lee-W/Intro_to_Data_Science_Udacity)
 * [Assignments for Udacity Deep Learning class with TensorFlow](https://github.com/Lee-W/Deep-Learning-Udacity)
+
+
+[Apache Airflow]: https://airflow.apache.org/
