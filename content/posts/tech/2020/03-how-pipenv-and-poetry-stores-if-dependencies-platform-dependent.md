@@ -5,11 +5,12 @@ Tags: Python, Dependency
 Slug: how-pipenv-and-poetry-stores-if-dependencies-platform-dependent
 Authors: Wei Lee
 
-[TOC]
-
-## 遇到的問題
 用 [twine](https://twine.readthedocs.io/en/latest/) 上傳 Python 套件
 在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 `jeepney` 套件
+
+<!--more-->
+
+[TOC]
 
 ## 問題的根源
 目前最新版 (3.1.1) 的 twine 相依於套件 [keyring](https://github.com/jaraco/keyring) ([setup.cfg#L44](https://github.com/pypa/twine/blob/3.1.1/setup.cfg#L44))
