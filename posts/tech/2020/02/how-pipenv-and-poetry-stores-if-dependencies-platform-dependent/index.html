@@ -47,14 +47,14 @@
         break;
     }
   </script>
-<meta content="遇到的問題 問題的根源 pipenv 怎麼處理 Poetry 怎麼處理 總結 遇到的問題 用 twine 上傳 Python 套件 在 mac 的本地端測試有成功，但丟上 CI 跑 …" name="description"/>
+<meta content="用 twine 上傳 Python 套件 在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 jeepney 套件" name="description"/>
 <meta content="Wei Lee" name="author"/>
 <meta content="Python" name="tags"/>
 <meta content="Dependency" name="tags"/>
 <!-- Open Graph -->
 <meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
 <meta content="pipenv 和 poerty 如何處理在不同作業系統下相依套件不同 " prefix="og: http://ogp.me/ns#" property="og:title">
-<meta content="遇到的問題 問題的根源 pipenv 怎麼處理 Poetry 怎麼處理 總結 遇到的問題 用 twine 上傳 Python 套件 在 mac 的本地端測試有成功，但丟上 CI 跑 …" prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="用 twine 上傳 Python 套件 在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 jeepney 套件" prefix="og: http://ogp.me/ns#" property="og:description">
 <meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
 <meta content="https://blog.wei-lee.me/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" prefix="og: http://ogp.me/ns#" property="og:url"/>
 <meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
@@ -71,7 +71,7 @@
 <meta content="pipenv 和 poerty 如何處理在不同作業系統下相依套件不同 " name="twitter:title"/>
 <meta content="https://blog.wei-lee.me/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" name="twitter:url"/>
 <meta content="https://blog.wei-lee.me//images/cover.jpeg" name="twitter:image:src"/>
-<meta content="遇到的問題 問題的根源 pipenv 怎麼處理 Poetry 怎麼處理 總結 遇到的問題 用 twine 上傳 Python 套件 在 mac 的本地端測試有成功，但丟上 CI 跑 …" name="twitter:description"/>
+<meta content="用 twine 上傳 Python 套件 在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 jeepney 套件" name="twitter:description"/>
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
@@ -87,7 +87,7 @@
   },
   "image": "https://blog.wei-lee.me//images/cover.jpeg",
   "url": "https://blog.wei-lee.me/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent",
-  "description": "遇到的問題 問題的根源 pipenv 怎麼處理 Poetry 怎麼處理 總結 遇到的問題 用 twine 上傳 Python 套件 在 mac 的本地端測試有成功，但丟上 CI 跑 …"
+  "description": "用 twine 上傳 Python 套件 在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 jeepney 套件"
 }
 </script>
 </meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2020", "item": "https://blog.wei-lee.me/posts/tech/2020"}, {"@type": "ListItem", "position": 5, "name": "02", "item": "https://blog.wei-lee.me/posts/tech/2020/02"}, {"@type": "ListItem", "position": 6, "name": "How pipenv and poetry stores if dependencies platform dependent", "item": "https://blog.wei-lee.me/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "pipenv 和 poerty 如何處理在不同作業系統下相依套件不同", "about": "Tech", "datePublished": "2020-02-12 11:45"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" property="og:url"/><meta content="article" property="og:type"/><meta content="pipenv 和 poerty 如何處理在不同作業系統下相依套件不同" property="og:title"/><meta content="C" property="og:locale"/></head>
@@ -170,19 +170,18 @@
 <article class="post">
 <div class="inner">
 <section class="post-content">
-<div class="toc">
-<ul>
-<li><a href="#_1">遇到的問題</a></li>
-<li><a href="#_2">問題的根源</a></li>
-<li><a href="#pipenv">pipenv 怎麼處理</a></li>
-<li><a href="#poetry">Poetry 怎麼處理</a></li>
-<li><a href="#_3">總結</a></li>
-</ul>
-</div>
-<h2 id="_1">遇到的問題</h2>
 <p>用 <a href="https://twine.readthedocs.io/en/latest/">twine</a> 上傳 Python 套件<br/>
 在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 <code>jeepney</code> 套件</p>
-<h2 id="_2">問題的根源</h2>
+<!--more-->
+<div class="toc">
+<ul>
+<li><a href="#_1">問題的根源</a></li>
+<li><a href="#pipenv">pipenv 怎麼處理</a></li>
+<li><a href="#poetry">Poetry 怎麼處理</a></li>
+<li><a href="#_2">總結</a></li>
+</ul>
+</div>
+<h2 id="_1">問題的根源</h2>
 <p>目前最新版 (3.1.1) 的 twine 相依於套件 <a href="https://github.com/jaraco/keyring">keyring</a> (<a href="https://github.com/pypa/twine/blob/3.1.1/setup.cfg#L44">setup.cfg#L44</a>)<br/>
 而 keyring 在不同的作業系統中，相依的套件是不同的 (<a href="https://github.com/jaraco/keyring/blob/master/setup.cfg#L30">setup.cfg#L30</a>)</p>
 <div class="highlight"><pre><span></span><code><span class="n">install_requires</span><span class="w"> </span><span class="o">=</span>
@@ -248,7 +247,7 @@
 <span class="n">python-versions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&gt;=3.5"</span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"3.1.2"</span>
 </code></pre></div>
-<h2 id="_3">總結</h2>
+<h2 id="_2">總結</h2>
 <p>poetry 在處理不同平台相依套件不同的狀況，處理得比較好<br/>
 它會把所有需要的資訊記錄下來，在不同的平台進行不同的安裝</p>
 <p>如果要用 pipenv 則可以使用 <code>pipenv install --keep-outdated</code><br/>

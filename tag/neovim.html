@@ -166,11 +166,13 @@
                     <a class="post-meta-tag" href="https://blog.wei-lee.me/category/tech.html">Tech</a>
                       on <time datetime="2024/06/25 - Tue">2024/06/25 - Tue</time>
                 </span>
-                <p class="post-excerpt">
-                        <p>簡單記錄一下之前使用 Neovim 遇到的套件問題<br>
+                <section class="post-content">
+                    <p class="post-excerpt">
+                            <p>簡單記錄一下之前使用 Neovim 遇到的套件問題<br>
 不是什麼有深度的技術文章</p>
 
-                </p>
+                    </p>
+                </section>
 
                 <div class="post-excerpt">
 
@@ -197,24 +199,12 @@
                     <a class="post-meta-tag" href="https://blog.wei-lee.me/category/tech.html">Tech</a>
                       on <time datetime="2017/05/14 - Sun">2017/05/14 - Sun</time>
                 </span>
-                <p class="post-excerpt">
-                        <!--more-->
+                <section class="post-content">
+                    <p class="post-excerpt">
+                            <p>隨手記錄一下，轉換成 Neovim 遇到的問題</p>
 
-<h2 id="load-vimrc-from-neovim">Load ~/.vimrc from neovim</h2>
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="p">:=</span><span class="nv">$HOME</span><span class="p">/.config</span><span class="si">}</span>
-ln<span class="w"> </span>-s<span class="w"> </span>~/.vim<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/nvim
-ln<span class="w"> </span>-s<span class="w"> </span>~/.vimrc<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/nvim/init.vim
-</code></pre></div>
-
-<h2 id="no-python-interpreter-found">No python interpreter found.</h2>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>neovim
-</code></pre></div>
-
-<h2 id="reference">Reference</h2>
-<ul>
-<li><a href="https://github.com/neovim/neovim/issues/3536">.nvimrc doesn't seem to be loaded up or working and it cannot create backups on editing existing files</a></li>
-<li><a href="https://github.com/neovim/neovim/issues/1755">No python interpreter …</a></li></ul>
-                </p>
+                    </p>
+                </section>
 
                 <div class="post-excerpt">
 

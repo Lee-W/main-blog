@@ -166,8 +166,9 @@
                     <a class="post-meta-tag" href="https://blog.wei-lee.me/category/tech.html">Tech</a>
                       on <time datetime="2020/02/23 - Sun">2020/02/23 - Sun</time>
                 </span>
-                <p class="post-excerpt">
-                        <p>開始 Python 專案時，第一步都是建立一個專屬於專案的虛擬環境<br>
+                <section class="post-content">
+                    <p class="post-excerpt">
+                            <p>開始 Python 專案時，第一步都是建立一個專屬於專案的虛擬環境<br>
 會需要這麼做是為了避免不同的 Python 專案需要使用到不同版本的套件<br>
 假設專案 A 需要 <code>lib==2.3.5</code> 而專案 B 需要 <code>lib==1.0.0</code><br>
 如果 <code>lib</code> 都被安裝在本機中，就會有其中一個專案跑不起來<br>
@@ -175,7 +176,8 @@
 理想上，本機的環境是不需要安裝套件的<br>
 因為每一個專案都會在個字的虛擬環境內執行，並安裝各自的套件</p>
 
-                </p>
+                    </p>
+                </section>
 
                 <div class="post-excerpt">
 
@@ -202,20 +204,13 @@
                     <a class="post-meta-tag" href="https://blog.wei-lee.me/category/tech.html">Tech</a>
                       on <time datetime="2020/02/12 - Wed">2020/02/12 - Wed</time>
                 </span>
-                <p class="post-excerpt">
-                        <div class="toc">
-<ul>
-<li><a href="#_1">遇到的問題</a></li>
-<li><a href="#_2">問題的根源</a></li>
-<li><a href="#pipenv">pipenv 怎麼處理</a></li>
-<li><a href="#poetry">Poetry 怎麼處理</a></li>
-<li><a href="#_3">總結</a></li>
-</ul>
-</div>
-<h2 id="_1">遇到的問題</h2>
-<p>用 <a href="https://twine.readthedocs.io/en/latest/">twine</a> 上傳 Python 套件<br>
-在 mac 的本地端測試有成功，但丟上 CI 跑 …</p>
-                </p>
+                <section class="post-content">
+                    <p class="post-excerpt">
+                            <p>用 <a href="https://twine.readthedocs.io/en/latest/">twine</a> 上傳 Python 套件<br>
+在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 <code>jeepney</code> 套件</p>
+
+                    </p>
+                </section>
 
                 <div class="post-excerpt">
 

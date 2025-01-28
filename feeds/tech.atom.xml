@@ -4532,7 +4532,7 @@ $&lt;span class="w"&gt; &lt;/span&gt;tree&lt;span class="w"&gt; &lt;/span&gt;.
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://blog.wei-lee.me/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot"&gt;如何得到 pelican 文章資訊並用來做圖&lt;/a&gt;： 就是本文，主要會聊開發 &lt;a href="https://github.com/Lee-W/pelican-stat"&gt;pelican-stat&lt;/a&gt; 的過程&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.wei-lee.me/posts/tech/2021/01/post-frequency-analysis-how-to-embed-html-in-pelican"&gt;如何在 pelican 頁面中嵌入 HTML&lt;/a&gt;： 將產生的互動式趨勢圖嵌入 pelican 的文章中，遇到的各種雷&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://blog.wei-lee.me/posts/gossiping/2021/02/post-frequency-analysis"&gt;2020 過去了，我寫了什麼文章&lt;/a&gt;： 2020 主要發了什麼文章，並聊聊當初為什麼會想寫這些文章&lt;/li&gt;
+&lt;li&gt;&lt;a href="{filename}/posts/tech/2021/5-post-frequency-analysis.rst"&gt;2020 過去了，我寫了什麼文章&lt;/a&gt;： 2020 主要發了什麼文章，並聊聊當初為什麼會想寫這些文章&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="toc"&gt;
 &lt;ul&gt;
@@ -8271,30 +8271,21 @@ python&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://jacobian.org/2019/nov/11/python-environment-2020/"&gt;My Python Development Environment, 2020 Edition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-jp-2019/2019/10/modern-development-environments-for-pythonistas/"&gt;Modern development environments for Pythonistas - PyCon JP 2019&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category></entry><entry><title>pipenv 和 poerty 如何處理在不同作業系統下相依套件不同</title><link href="https://blog.wei-lee.me/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" rel="alternate"></link><published>2020-02-12T11:45:00+08:00</published><updated>2020-02-12T11:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2020-02-12:/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent</id><summary type="html">&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#_1"&gt;遇到的問題&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_2"&gt;問題的根源&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#pipenv"&gt;pipenv 怎麼處理&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#poetry"&gt;Poetry 怎麼處理&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_3"&gt;總結&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id="_1"&gt;遇到的問題&lt;/h2&gt;
-&lt;p&gt;用 &lt;a href="https://twine.readthedocs.io/en/latest/"&gt;twine&lt;/a&gt; 上傳 Python 套件&lt;br&gt;
-在 mac 的本地端測試有成功，但丟上 CI 跑 …&lt;/p&gt;</summary><content type="html">&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#_1"&gt;遇到的問題&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_2"&gt;問題的根源&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#pipenv"&gt;pipenv 怎麼處理&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#poetry"&gt;Poetry 怎麼處理&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_3"&gt;總結&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id="_1"&gt;遇到的問題&lt;/h2&gt;
-&lt;p&gt;用 &lt;a href="https://twine.readthedocs.io/en/latest/"&gt;twine&lt;/a&gt; 上傳 Python 套件&lt;br&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category></entry><entry><title>pipenv 和 poerty 如何處理在不同作業系統下相依套件不同</title><link href="https://blog.wei-lee.me/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" rel="alternate"></link><published>2020-02-12T11:45:00+08:00</published><updated>2020-02-12T11:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2020-02-12:/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent</id><summary type="html">&lt;p&gt;用 &lt;a href="https://twine.readthedocs.io/en/latest/"&gt;twine&lt;/a&gt; 上傳 Python 套件&lt;br&gt;
 在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 &lt;code&gt;jeepney&lt;/code&gt; 套件&lt;/p&gt;
-&lt;h2 id="_2"&gt;問題的根源&lt;/h2&gt;
+</summary><content type="html">&lt;p&gt;用 &lt;a href="https://twine.readthedocs.io/en/latest/"&gt;twine&lt;/a&gt; 上傳 Python 套件&lt;br&gt;
+在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 &lt;code&gt;jeepney&lt;/code&gt; 套件&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#_1"&gt;問題的根源&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#pipenv"&gt;pipenv 怎麼處理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#poetry"&gt;Poetry 怎麼處理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_2"&gt;總結&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="_1"&gt;問題的根源&lt;/h2&gt;
 &lt;p&gt;目前最新版 (3.1.1) 的 twine 相依於套件 &lt;a href="https://github.com/jaraco/keyring"&gt;keyring&lt;/a&gt; (&lt;a href="https://github.com/pypa/twine/blob/3.1.1/setup.cfg#L44"&gt;setup.cfg#L44&lt;/a&gt;)&lt;br&gt;
 而 keyring 在不同的作業系統中，相依的套件是不同的 (&lt;a href="https://github.com/jaraco/keyring/blob/master/setup.cfg#L30"&gt;setup.cfg#L30&lt;/a&gt;)&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;install_requires&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
@@ -8364,7 +8355,7 @@ python&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;3.1.2&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2 id="_3"&gt;總結&lt;/h2&gt;
+&lt;h2 id="_2"&gt;總結&lt;/h2&gt;
 &lt;p&gt;poetry 在處理不同平台相依套件不同的狀況，處理得比較好&lt;br&gt;
 它會把所有需要的資訊記錄下來，在不同的平台進行不同的安裝&lt;/p&gt;
 &lt;p&gt;如果要用 pipenv 則可以使用 &lt;code&gt;pipenv install --keep-outdated&lt;/code&gt;&lt;br&gt;
@@ -13272,22 +13263,9 @@ Parallel: 一個時間點同時跑&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Log is also natural language.&lt;br&gt;
 The sequence of words and expression is important sequential data.&lt;/p&gt;
-&lt;p&gt;這場我真的就有點聽不太懂了＠＠&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Conference"></category><category term="PyCon"></category></entry><entry><title>Common Neovim Problems</title><link href="https://blog.wei-lee.me/posts/tech/2017/05/common-neovim-problems" rel="alternate"></link><published>2017-05-14T13:13:00+08:00</published><updated>2017-05-14T13:13:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2017-05-14:/posts/tech/2017/05/common-neovim-problems</id><summary type="html">&lt;!--more--&gt;
-
-&lt;h2 id="load-vimrc-from-neovim"&gt;Load ~/.vimrc from neovim&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;XDG_CONFIG_HOME&lt;/span&gt;&lt;span class="p"&gt;:=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="p"&gt;/.config&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
-ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;~/.vim&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim
-ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;~/.vimrc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim/init.vim
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="no-python-interpreter-found"&gt;No python interpreter found.&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;neovim
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/3536"&gt;.nvimrc doesn't seem to be loaded up or working and it cannot create backups on editing existing files&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/1755"&gt;No python interpreter …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;!--more--&gt;
+&lt;p&gt;這場我真的就有點聽不太懂了＠＠&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Conference"></category><category term="PyCon"></category></entry><entry><title>Common Neovim Problems</title><link href="https://blog.wei-lee.me/posts/tech/2017/05/common-neovim-problems" rel="alternate"></link><published>2017-05-14T13:13:00+08:00</published><updated>2017-05-14T13:13:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2017-05-14:/posts/tech/2017/05/common-neovim-problems</id><summary type="html">&lt;p&gt;隨手記錄一下，轉換成 Neovim 遇到的問題&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;隨手記錄一下，轉換成 Neovim 遇到的問題&lt;/p&gt;
+&lt;!--more--&gt;
 
 &lt;h2 id="load-vimrc-from-neovim"&gt;Load ~/.vimrc from neovim&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;XDG_CONFIG_HOME&lt;/span&gt;&lt;span class="p"&gt;:=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="p"&gt;/.config&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
