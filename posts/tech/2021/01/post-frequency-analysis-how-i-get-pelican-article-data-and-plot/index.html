@@ -64,13 +64,13 @@
 <meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
 <meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
 <meta content="pelican" prefix="og: http://ogp.me/ns#" property="article:tag"/>
-<meta content="https://blog.wei-lee.me//images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@clleew" name="twitter:site"/>
 <meta content="2020 發文頻率分析 - 如何得到 pelican 文章資訊並用來做圖 " name="twitter:title"/>
 <meta content="https://blog.wei-lee.me/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot" name="twitter:url"/>
-<meta content="https://blog.wei-lee.me//images/cover.jpeg" name="twitter:image:src"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" name="twitter:image:src"/>
 <meta content="原本只打算發篇文簡單回顧 2020 年我寫了什麼文章 沒想到就慢慢演變成開發 pelican-stat ......" name="twitter:description"/>
 <script type="application/ld+json">
 {
@@ -161,7 +161,7 @@
           • 2 min read
         </div>
 <div class="post-cover cover">
-<img alt="Category Tech" src="https://blog.wei-lee.me//images/cover.jpeg"/>
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/cover.jpeg"/>
 </div>
 </div>
 </header>
@@ -177,7 +177,7 @@
 <ol>
 <li><a href="https://blog.wei-lee.me/posts/tech/2021/01/post-frequency-analysis-how-i-get-pelican-article-data-and-plot">如何得到 pelican 文章資訊並用來做圖</a>： 就是本文，主要會聊開發 <a href="https://github.com/Lee-W/pelican-stat">pelican-stat</a> 的過程</li>
 <li><a href="https://blog.wei-lee.me/posts/tech/2021/01/post-frequency-analysis-how-to-embed-html-in-pelican">如何在 pelican 頁面中嵌入 HTML</a>： 將產生的互動式趨勢圖嵌入 pelican 的文章中，遇到的各種雷</li>
-<li><a href="{filename}/posts/tech/2021/5-post-frequency-analysis.rst">2020 過去了，我寫了什麼文章</a>： 2020 主要發了什麼文章，並聊聊當初為什麼會想寫這些文章</li>
+<li><a href="https://blog.wei-lee.me/posts/gossiping/2021/02/post-frequency-analysis">2020 過去了，我寫了什麼文章</a>： 2020 主要發了什麼文章，並聊聊當初為什麼會想寫這些文章</li>
 </ol>
 <div class="toc">
 <ul>
@@ -373,7 +373,8 @@ Commands:
 </nav>
 </div>
 </section>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 <!-- TODO: minify -->
 <script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
 <script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
@@ -397,6 +398,7 @@ Commands:
       });
   </script>
 <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
 <script>
   $(document).ready(function () {
     var viewport = $(window);
@@ -404,6 +406,42 @@ Commands:
     // Responsive videos with fitVids
     post.fitVids();
 
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
     // Reading progress bar on window top
     function readingProgress() {
       var postBottom = post.offset().top + post.height();

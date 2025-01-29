@@ -64,13 +64,13 @@
 <meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
 <meta content="PyCon TW" prefix="og: http://ogp.me/ns#" property="article:tag"/>
 <meta content="COSCUP" prefix="og: http://ogp.me/ns#" property="article:tag"/>
-<meta content="https://blog.wei-lee.me//images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@clleew" name="twitter:site"/>
 <meta content="Atomic Commits: An Easy &amp; Proven Way to Manage &amp; Automate Release Process  - COSCUP 2023" name="twitter:title"/>
 <meta content="https://blog.wei-lee.me/posts/tech/2023/08/atomic-commits-coscup-2023" name="twitter:url"/>
-<meta content="https://blog.wei-lee.me//images/cover.jpeg" name="twitter:image:src"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" name="twitter:image:src"/>
 <meta content="隨著 commitizen v3 的發佈和今年辦在日本的 PyCon APAC 我一時被沖昏了頭 想說反正都要參加 PyCon APAC 了 就來投個稿，如果上了還可以上去講" name="twitter:description"/>
 <script type="application/ld+json">
 {
@@ -163,7 +163,7 @@
           • 1 min read
         </div>
 <div class="post-cover cover">
-<img alt="Category Tech" src="https://blog.wei-lee.me//images/cover.jpeg"/>
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/cover.jpeg"/>
 </div>
 </div>
 </header>
@@ -271,7 +271,8 @@ day 2 因為太晚到，剩下的時間都在顧 PyCon TW 的攤位<br/>
 </nav>
 </div>
 </section>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 <!-- TODO: minify -->
 <script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
 <script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
@@ -295,6 +296,7 @@ day 2 因為太晚到，剩下的時間都在顧 PyCon TW 的攤位<br/>
       });
   </script>
 <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
 <script>
   $(document).ready(function () {
     var viewport = $(window);
@@ -302,6 +304,42 @@ day 2 因為太晚到，剩下的時間都在顧 PyCon TW 的攤位<br/>
     // Responsive videos with fitVids
     post.fitVids();
 
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
     // Reading progress bar on window top
     function readingProgress() {
       var postBottom = post.offset().top + post.height();

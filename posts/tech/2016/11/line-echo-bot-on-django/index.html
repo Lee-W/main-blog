@@ -64,13 +64,13 @@
 <meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
 <meta content="Django" prefix="og: http://ogp.me/ns#" property="article:tag"/>
 <meta content="Chat Bot" prefix="og: http://ogp.me/ns#" property="article:tag"/>
-<meta content="https://blog.wei-lee.me//images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@clleew" name="twitter:site"/>
 <meta content="Line Echo Bot on Django " name="twitter:title"/>
 <meta content="https://blog.wei-lee.me/posts/tech/2016/11/line-echo-bot-on-django" name="twitter:url"/>
-<meta content="https://blog.wei-lee.me//images/cover.jpeg" name="twitter:image:src"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" name="twitter:image:src"/>
 <meta content="單純要寫一個只會 Echo 的 Line Chat Bot 用 flask 只要 85 行的 code 就能解決 官方已經有提供相當清楚的範例flask-echo 了 這篇文章則是提供了 django 的做法 想直接看 code 也可以參考line_echobot" name="twitter:description"/>
 <script type="application/ld+json">
 {
@@ -161,7 +161,7 @@
           • 4 min read
         </div>
 <div class="post-cover cover">
-<img alt="Category Tech" src="https://blog.wei-lee.me//images/cover.jpeg"/>
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/cover.jpeg"/>
 </div>
 </div>
 </header>
@@ -603,7 +603,8 @@ ngrok 會把 request 傳到 local 端相對應的 port</p>
 </nav>
 </div>
 </section>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 <!-- TODO: minify -->
 <script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
 <script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
@@ -627,6 +628,7 @@ ngrok 會把 request 傳到 local 端相對應的 port</p>
       });
   </script>
 <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
 <script>
   $(document).ready(function () {
     var viewport = $(window);
@@ -634,6 +636,42 @@ ngrok 會把 request 傳到 local 端相對應的 port</p>
     // Responsive videos with fitVids
     post.fitVids();
 
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
     // Reading progress bar on window top
     function readingProgress() {
       var postBottom = post.offset().top + post.height();

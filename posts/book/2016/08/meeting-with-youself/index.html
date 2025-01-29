@@ -62,13 +62,13 @@
 <meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
 <meta content="Book" prefix="og: http://ogp.me/ns#" property="article:section">
 <meta content="Productivity" prefix="og: http://ogp.me/ns#" property="article:tag"/>
-<meta content="https://blog.wei-lee.me//images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@clleew" name="twitter:site"/>
 <meta content="[Book] 一個人的會議時間 " name="twitter:title"/>
 <meta content="https://blog.wei-lee.me/posts/book/2016/08/meeting-with-youself" name="twitter:url"/>
-<meta content="https://blog.wei-lee.me//images/cover.jpeg" name="twitter:image:src"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" name="twitter:image:src"/>
 <meta content="這本書其實是我幾年前買的 最近開始覺得好想應該檢視一下自己每天的生活到底過得如何 突然才想起還有這樣的一本書 學會跟自己開會，才懂得怎麼經營「自己」這家公司" name="twitter:description"/>
 <script type="application/ld+json">
 {
@@ -159,7 +159,7 @@
           • 1 min read
         </div>
 <div class="post-cover cover">
-<img alt="Category Book" src="https://blog.wei-lee.me//images/cover.jpeg"/>
+<img alt="Category Book" src="https://blog.wei-lee.me/images/cover.jpeg"/>
 </div>
 </div>
 </header>
@@ -333,7 +333,8 @@
 </nav>
 </div>
 </section>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 <!-- TODO: minify -->
 <script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
 <script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
@@ -357,6 +358,7 @@
       });
   </script>
 <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
 <script>
   $(document).ready(function () {
     var viewport = $(window);
@@ -364,6 +366,42 @@
     // Responsive videos with fitVids
     post.fitVids();
 
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
     // Reading progress bar on window top
     function readingProgress() {
       var postBottom = post.offset().top + post.height();
