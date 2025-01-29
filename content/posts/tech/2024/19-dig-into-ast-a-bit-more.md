@@ -54,7 +54,7 @@ print(ast.unparse(ast_tree))
     * `ast.NodeTransformer`: base class for modifying an ast tree
         * `visit_{Node Class}`
 
-In the [previous article]({filename}/posts/tech/2024/18-check_default_value_of_default_deferrable_through_ast), I improved the linter with [CI: improved check_deferrable_default script to cover positional variables #41924](https://github.com/apache/airflow/pull/41924). But after digging into the [ast](https://docs.python.org/3/library/ast.html) module, I found out things don't need to be that complicated.
+In the [previous article]({filename}/posts/tech/2024/18-check_default_value_of_default_deferrable_through_ast.md), I improved the linter with [CI: improved check_deferrable_default script to cover positional variables #41924](https://github.com/apache/airflow/pull/41924). But after digging into the [ast](https://docs.python.org/3/library/ast.html) module, I found out things don't need to be that complicated.
 
 ### Let's refactor the default_deferrable linter
 
