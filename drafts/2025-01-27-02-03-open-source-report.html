@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>2025/01/27 - 02/03 開源貢獻週報 </title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/drafts/2025-01-27-02-03-open-source-report.html" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="今年想做個新的嘗試 每週記錄工作以外，我在開源專案的貢獻 能看到自己量化的前進，就會有多一點動力繼續下去 原子 …" name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Open Source" name="tags"/>
+<meta content="開源貢獻週報" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="2025/01/27 - 02/03 開源貢獻週報 " prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="今年想做個新的嘗試 每週記錄工作以外，我在開源專案的貢獻 能看到自己量化的前進，就會有多一點動力繼續下去 原子 …" prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
+<meta content="https://blog.wei-lee.me/drafts/2025-01-27-02-03-open-source-report.html" prefix="og: http://ogp.me/ns#" property="og:url"/>
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2025-02-02 21:00:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Open Source" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="開源貢獻週報" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me/images/meme/mygo-vanity.jpg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="2025/01/27 - 02/03 開源貢獻週報 " name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/drafts/2025-01-27-02-03-open-source-report.html" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me/images/meme/mygo-vanity.jpg" name="twitter:image:src"/>
+<meta content="今年想做個新的嘗試 每週記錄工作以外，我在開源專案的貢獻 能看到自己量化的前進，就會有多一點動力繼續下去 原子 …" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "2025/01/27 - 02/03 開源貢獻週報",
+  "headline": "2025/01/27 - 02/03 開源貢獻週報",
+  "datePublished": "2025-02-02 21:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "",
+  "url": "https://blog.wei-lee.me/drafts/2025-01-27-02-03-open-source-report.html",
+  "description": "今年想做個新的嘗試 每週記錄工作以外，我在開源專案的貢獻 能看到自己量化的前進，就會有多一點動力繼續下去 原子 …"
+}
+</script>
+</meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/drafts/2025-01-27-02-03-open-source-report.html" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Drafts", "item": "https://blog.wei-lee.me/drafts"}, {"@type": "ListItem", "position": 3, "name": "2025 01 27 02 03 open source report", "item": "https://blog.wei-lee.me/drafts/2025-01-27-02-03-open-source-report.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "2025/01/27 - 02/03 開源貢獻週報", "about": "Tech", "datePublished": "2025-02-02 21:00"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/drafts/2025-01-27-02-03-open-source-report.html" property="og:url"/><meta content="article" property="og:type"/><meta content="2025/01/27 - 02/03 開源貢獻週報" property="og:title"/><meta content="C" property="og:locale"/></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🏷️ Tags" role="presentation"><a href="/tags.html"><span>🏷️ Tags</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            2025/01/27 - 02/03 開源貢獻週報
+        </h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2025/02/02 - Sun">2025/02/02 - Sun</time>
+          • 2 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/meme/mygo-vanity.jpg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>今年想做個新的嘗試<br/>
+每週記錄工作以外，我在開源專案的貢獻<br/>
+能看到自己量化的前進，就會有多一點動力繼續下去</p>
+<!--more-->
+<p><a href="{filename}/posts/book/2020/1-atomic-habit.md/#16#16">原子習慣</a>將這樣的概念稱為習慣追蹤器<br/>
+這本書真的很棒推薦給大家<br/>
+如果看過了，再推薦一本更棒，但難啃一點的<a href="https://blog.wei-lee.me/posts/book/2015/11/the-power-of-habit">為什麼我們這樣生活，那樣工作?</a></p>
+<p>如果只是要記錄，寫在筆記就好了，幹嘛還要發一篇文章呢？<br/>
+這也是源自<a href="{filename}/posts/book/2020/1-atomic-habit.md/#17#17">原子習慣</a>的概念 - 問責夥伴<br/>
+不過追根究底可能就跟聖愛音一樣</p>
+<p><img alt="mygo-vanity" src="/images/meme/mygo-vanity.jpg"/></p>
+<div class="toc">
+<ul>
+<li><a href="#commitizen">commitizen</a></li>
+<li><a href="#pycontw-blog">pycontw-blog</a></li>
+<li><a href="#markdown-mermaidjs">markdown-mermaidjs</a></li>
+<li><a href="#pelican-stat">pelican-stat</a></li>
+</ul>
+</div>
+<h2 id="commitizen">commitizen</h2>
+<p>commitizen 是我認真進入開源很重要的開始，是我很有感情的專案<br/>
+每次都想要好好整理它，無奈時間實在有限<br/>
+這週花了點時間看了堆積已久的 PR ，把所有<a href="https://github.com/commitizen-tools/commitizen/pulls?q=is%3Apr+is%3Aopen+label%3A%22pr-status%3A+wait-for-review%22">pr-status: wait-for-review</a>都看完了<br/>
+現在還有這個 label 的應該都是我改過的 PR ，要等其他 maintainer 看</p>
+<ol>
+<li><a href="https://github.com/commitizen-tools/commitizen/pull/1328">Feature/multi language commitizen #1328</a></li>
+<li><a href="https://github.com/commitizen-tools/commitizen/pull/996">fix(commands/bump): prevent using incremental changelog when it is set to false in config #996</a></li>
+<li><a href="https://github.com/commitizen-tools/commitizen/pull/1236">feat: add custom validation #1236</a></li>
+<li><a href="https://github.com/commitizen-tools/commitizen/pull/1207">feat(commit): implement questions 'filter' support with handlers #1207</a></li>
+<li><a href="https://github.com/commitizen-tools/commitizen/pull/1297">feat(tags): adds legacy_tag_formats and ignored_tag_formats settings #1297</a></li>
+</ol>
+<p>有些遠古 PR ，因為拖太久沒看，貢獻者可能已經不會回來了<br/>
+所以我也撿了一些起來修</p>
+<ol>
+<li><a href="https://github.com/commitizen-tools/commitizen/pull/723">feat: add --allow-no-commit option #723</a> 修到可以 review</li>
+<li><a href="https://github.com/commitizen-tools/commitizen/pull/250">feat(commands/commit): apply prepare-commit-msg hook #250</a> 修到一半發現 <a href="https://github.com/commitizen-tools/commitizen/pull/731">feat(commit): add --write-message-to-file option #731</a> 早就做完了...，順手把這個 PR 跟原始 issue <a href="https://github.com/commitizen-tools/commitizen/issues/249">cz commit with prepare-commit-msg hook #249</a>都關了</li>
+<li><a href="https://github.com/commitizen-tools/commitizen/pull/1350">fixes yaml example #1350</a> 修完就 merge 了</li>
+</ol>
+<p>至於剩下的 17 隻 <a href="https://github.com/commitizen-tools/commitizen/pulls?q=is%3Apr+is%3Aopen+label%3A%22pr-status%3A+wait-for-modification%22">pr-status: wait-for-modification</a> PRs<br/>
+恩...就看緣分了</p>
+<p>除此之外，我也開了幾隻 PRs</p>
+<ol>
+<li><a href="https://github.com/commitizen-tools/commitizen/pull/1345">Improve hooks type annotation and fix missing link #1345</a>: wait for review 🕑</li>
+<li><a href="https://github.com/commitizen-tools/commitizen/pull/1346">Upgrade to poetry 2.0 #1346</a>: merged 🙌</li>
+</ol>
+<p>最近在玩 <a href="https://docs.astral.sh/uv/">uv</a> 才發現 <a href="https://github.com/commitizen-tools/commitizen">commitizen</a> 不會更新到 uv.lock，用 <code>version_file</code> 也解不了<br/>
+開了 issue <a href="https://github.com/commitizen-tools/commitizen/issues/1349">Add uv provider #1349</a> 跟 draft PR <a href="https://github.com/commitizen-tools/commitizen/pull/1351">feat(providers): add uv_provider #1351</a><br/>
+不要問為什麼沒有人解決這個問題，我就是沒有人</p>
+<p>下週會盡力分類一些 <a href="https://github.com/commitizen-tools/commitizen/issues">issues</a><br/>
+去年 PyCon US 分類了一半，真的超花時間.....<br/>
+貢獻者絕贊招募中</p>
+<h2 id="pycontw-blog">pycontw-blog</h2>
+<p>如果你還不知道， <a href="https://tw.pycon.org/">PyCon Taiwan</a> 是有自己的<a href="https://conf.python.tw/">部落格</a>的</p>
+<p>Issue <a href="https://github.com/pycontw/pycontw-blog/issues/112">Add general python distribution setup steps #112</a> 開了很久，但一直沒時間好好處理<br/>
+最近聽說 <a href="https://docs.astral.sh/uv/">uv</a> 在 Windows 上的支援也不錯<br/>
+就果斷透過<a href="https://github.com/pycontw/pycontw-blog/pull/200">Replace pipenv with uv #200</a>把套件管理從 pipenv 改到 <a href="https://docs.astral.sh/uv/">uv</a> 上<br/>
+原本以為更新文件要花很多時間<br/>
+但 Yo 哥真的寫得太好了，我稍微改一下就結束了<br/>
+大哥除了上個月飛、這個月也飛，當空中飛人很厲害以外，程式也是了得</p>
+<p>沒想到當我在做這件事的時候，社群的夥伴也想到了類似的事<br/>
+<del>這是巧合嗎，我不這麼認為，一定是三角初華的陰謀</del><br/>
+還好我們想做的事不同面向的<br/>
+也花了點時間看了她的 PR <a href="https://github.com/pycontw/pycontw-blog/pull/202">dependency: Update README to include prerequisites and modify the sequence of instructions #202</a></p>
+<h2 id="markdown-mermaidjs">markdown-mermaidjs</h2>
+<p>這是源自於 <a href="https://github.com/oruelle/md_mermaid">oruelle/md_mermaid</a> 的專案<br/>
+因為原作者沒在維護，我的部落格又需要<br/>
+就 fork 出 <a href="https://github.com/Lee-W/markdown-mermaidjs">Lee-W/markdown-mermaidjs</a> 來用</p>
+<p>最近熱心人士 Owyn 開了 PR <a href="https://github.com/Lee-W/markdown-mermaidjs/pull/5">Feature/add icon packs #5</a> 加新功能<br/>
+他幾乎已經做完，就差最後一步<br/>
+我順手修完就 merge 了<br/>
+感謝 Owyn 🙏</p>
+<p>除此之外，我把專案的結構用<a href="https://github.com/Lee-W/markdown-mermaidjs/pull/6">Update project structure with the latest template #6</a>根據最新版的<a href="https://github.com/Lee-W/cookiecutter-python-template/">cookiecutter-python-template</a>更新了<br/>
+順便找出不少模板的 bug，之後找時間來修</p>
+<p>另外還有許久以前 ysard 開的 issue <a href="https://github.com/oruelle/md_mermaid/issues/16">Conflict with html minification tools #16</a><br/>
+終於有時間認真看，意外的蠻簡單的<br/>
+就發了 PR  <a href="https://github.com/Lee-W/markdown-mermaidjs/pull/7">generate &lt; pre class="mermaid"&gt;&lt; /pre&gt; instead of &lt; div class="mermaid"&gt;&lt; /div&gt; #7</a> 把它給修了</p>
+<p>因為這些改動，這一週就發了兩版</p>
+<ol>
+<li><a href="https://pypi.org/project/markdown-mermaidjs/1.1.0">1.1.0</a></li>
+<li><a href="https://pypi.org/project/markdown-mermaidjs/2.0.0">2.0.0</a></li>
+</ol>
+<h2 id="pelican-stat">pelican-stat</h2>
+<p>這是在 <a href="https://blog.wei-lee.me/posts/gossiping/2025/01/2021-2024-yearly-review">2021 ~ 2024 年度回顧 - 持續紀錄的秘訣是寫廢文</a> 提到的工具<br/>
+除了更新專案結構，大多都是細碎的小 PRs 而已<br/>
+原本以為更新 6.0.0 就不會有奇怪的特殊字元<br/>
+結果只是換了別的特殊字元...<br/>
+然後我的 RSS feed 就會壞掉<br/>
+最後放棄手工休掉了</p>
+<ol>
+<li><a href="https://github.com/Lee-W/pelican-stat/pull/4">Upgrade project with the latest project template #4</a></li>
+<li><a href="https://github.com/Lee-W/pelican-stat/pull/8">docs(CHANGELOG): fix typo #8</a></li>
+<li><a href="https://github.com/Lee-W/pelican-stat/pull/9">ci(github-actions): fix publish page action #9</a></li>
+<li><a href="https://github.com/Lee-W/pelican-stat/pull/10">suggest users to use uv to install this tool #10</a></li>
+<li><a href="https://github.com/Lee-W/pelican-stat/pull/11">Fix doc typo #11</a></li>
+<li><a href="https://github.com/Lee-W/pelican-stat/pull/12">fix(dep): upgrade plotly to 6.0.0 #12</a></li>
+<li><a href="https://github.com/Lee-W/pelican-stat/pull/13">ci(github-actions): fix missing pre-commit install #13</a></li>
+</ol>
+<p>一樣發了兩版</p>
+<ol>
+<li><a href="https://pypi.org/project/pelican-stat/0.3.1/">0.3.1</a></li>
+<li><a href="https://pypi.org/project/pelican-stat/0.3.2/">0.3.2</a></li>
+</ol>
+<p>比較有趣的應該是有玩到 <a href="https://docs.pypi.org/trusted-publishers/">Trusted Publisher</a></p>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=2025/01/27 - 02/03 開源貢獻週報 &amp;url=https://blog.wei-lee.me/drafts/2025-01-27-02-03-open-source-report.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/drafts/2025-01-27-02-03-open-source-report.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/drafts/2025-01-27-02-03-open-source-report.html&amp;title=2025/01/27 - 02/03 開源貢獻週報" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=2025/01/27 - 02/03 開源貢獻週報&amp;body=https://blog.wei-lee.me/drafts/2025-01-27-02-03-open-source-report.html" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/open-source.html">Open Source</a><a href="https://blog.wei-lee.me/tag/kai-yuan-gong-xian-zhou-bao.html">開源貢獻週報</a> </aside>
+<div class="clear"></div>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>
