@@ -13,12 +13,12 @@ Cover: /images/meme/mygo-vanity.jpg
 
 <!--more-->
 
-[原子習慣]({filename}/posts/book/2020/1-atomic-habit.md/#16)將這樣的概念稱為習慣追蹤器
+[原子習慣]({filename}/posts/book/2020/1-atomic-habit.md#16)將這樣的概念稱為習慣追蹤器
 這本書真的很棒推薦給大家
 如果看過了，再推薦一本更棒，但難啃一點的[為什麼我們這樣生活，那樣工作?]({filename}/posts/book/2015/08-the-power-of-habit.md)
 
 如果只是要記錄，寫在筆記就好了，幹嘛還要發一篇文章呢？
-這也是源自[原子習慣]({filename}/posts/book/2020/1-atomic-habit.md/#17)的概念 - 問責夥伴
+這也是源自[原子習慣]({filename}/posts/book/2020/1-atomic-habit.md#17)的概念 - 問責夥伴
 不過追根究底可能就跟聖愛音一樣
 
 ![mygo-vanity](/images/meme/mygo-vanity.jpg)
