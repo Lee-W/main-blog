@@ -1,5 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2024-11-26T22:20:00+08:00</updated><entry><title>PEP 2026 - Calendar versioning for Python</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/pep-2026" rel="alternate"></link><published>2024-11-26T22:20:00+08:00</published><updated>2024-11-26T22:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-26:/posts/tech/2024/11/pep-2026</id><summary type="html">&lt;p&gt;2024 年 release Python 3.13&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-02-02T21:00:00+08:00</updated><entry><title>2025/01/27 - 02/03 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/2025-01-27-02-03-open-source-report" rel="alternate"></link><published>2025-02-02T21:00:00+08:00</published><updated>2025-02-02T21:00:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-02:/posts/tech/2025/02/2025-01-27-02-03-open-source-report</id><summary type="html">&lt;p&gt;今年想做個新的嘗試&lt;br&gt;
+每週記錄工作以外，我在開源專案的貢獻&lt;br&gt;
+能看到自己量化的前進，就會有多一點動力繼續下去&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;今年想做個新的嘗試&lt;br&gt;
+每週記錄工作以外，我在開源專案的貢獻&lt;br&gt;
+能看到自己量化的前進，就會有多一點動力繼續下去&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;a href="{filename}/posts/book/2020/1-atomic-habit.md/#16#16"&gt;原子習慣&lt;/a&gt;將這樣的概念稱為習慣追蹤器&lt;br&gt;
+這本書真的很棒推薦給大家&lt;br&gt;
+如果看過了，再推薦一本更棒，但難啃一點的&lt;a href="https://blog.wei-lee.me/posts/book/2015/11/the-power-of-habit"&gt;為什麼我們這樣生活，那樣工作?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果只是要記錄，寫在筆記就好了，幹嘛還要發一篇文章呢？&lt;br&gt;
+這也是源自&lt;a href="{filename}/posts/book/2020/1-atomic-habit.md/#17#17"&gt;原子習慣&lt;/a&gt;的概念 - 問責夥伴&lt;br&gt;
+不過追根究底可能就跟聖愛音一樣&lt;/p&gt;
+&lt;p&gt;&lt;img alt="mygo-vanity" src="/images/meme/mygo-vanity.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;這週因為過年所以特別多&lt;br&gt;
+下週以後就不知道了&lt;br&gt;
+希望這個週報不要只有一回......&lt;/p&gt;
+&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#commitizen"&gt;commitizen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#pycontw-blog"&gt;pycontw-blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#markdown-mermaidjs"&gt;markdown-mermaidjs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#pelican-stat"&gt;pelican-stat&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#pycon-etl"&gt;pycon-etl&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="commitizen"&gt;commitizen&lt;/h2&gt;
+&lt;p&gt;commitizen 是我認真進入開源很重要的開始，是我很有感情的專案&lt;br&gt;
+每次都想要好好整理它，無奈時間實在有限&lt;br&gt;
+這週花了點時間看了堆積已久的 PR ，把所有&lt;a href="https://github.com/commitizen-tools/commitizen/pulls?q=is%3Apr+is%3Aopen+label%3A%22pr-status%3A+wait-for-review%22"&gt;pr-status: wait-for-review&lt;/a&gt;都看完了&lt;br&gt;
+現在還有這個 label 的應該都是我改過的 PR ，要等其他 maintainer 看&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1328"&gt;Feature/multi language commitizen #1328&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/996"&gt;fix(commands/bump): prevent using incremental changelog when it is set to false in config #996&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1236"&gt;feat: add custom validation #1236&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1207"&gt;feat(commit): implement questions 'filter' support with handlers #1207&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1297"&gt;feat(tags): adds legacy_tag_formats and ignored_tag_formats settings #1297&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;有些遠古 PR ，因為拖太久沒看，貢獻者可能已經不會回來了&lt;br&gt;
+所以我也撿了一些起來修&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/723"&gt;feat: add --allow-no-commit option #723&lt;/a&gt; 修到可以 review&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/250"&gt;feat(commands/commit): apply prepare-commit-msg hook #250&lt;/a&gt; 修到一半發現 &lt;a href="https://github.com/commitizen-tools/commitizen/pull/731"&gt;feat(commit): add --write-message-to-file option #731&lt;/a&gt; 早就做完了...，順手把這個 PR 跟原始 issue &lt;a href="https://github.com/commitizen-tools/commitizen/issues/249"&gt;cz commit with prepare-commit-msg hook #249&lt;/a&gt;都關了&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1350"&gt;fixes yaml example #1350&lt;/a&gt; 修完就 merge 了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;至於剩下的 17 隻 &lt;a href="https://github.com/commitizen-tools/commitizen/pulls?q=is%3Apr+is%3Aopen+label%3A%22pr-status%3A+wait-for-modification%22"&gt;pr-status: wait-for-modification&lt;/a&gt; PRs&lt;br&gt;
+恩...就看緣分了&lt;/p&gt;
+&lt;p&gt;除此之外，我也開了幾隻 PRs&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1345"&gt;Improve hooks type annotation and fix missing link #1345&lt;/a&gt;: wait for review 🕑&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1346"&gt;Upgrade to poetry 2.0 #1346&lt;/a&gt;: merged 🙌&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最近在玩 &lt;a href="https://docs.astral.sh/uv/"&gt;uv&lt;/a&gt; 才發現 &lt;a href="https://github.com/commitizen-tools/commitizen"&gt;commitizen&lt;/a&gt; 不會更新到 uv.lock，用 &lt;code&gt;version_file&lt;/code&gt; 也解不了&lt;br&gt;
+開了 issue &lt;a href="https://github.com/commitizen-tools/commitizen/issues/1349"&gt;Add uv provider #1349&lt;/a&gt; 跟 draft PR &lt;a href="https://github.com/commitizen-tools/commitizen/pull/1351"&gt;feat(providers): add uv_provider #1351&lt;/a&gt;&lt;br&gt;
+不要問為什麼沒有人解決這個問題，我就是沒有人&lt;/p&gt;
+&lt;p&gt;下週會盡力分類一些 &lt;a href="https://github.com/commitizen-tools/commitizen/issues"&gt;issues&lt;/a&gt;&lt;br&gt;
+去年 PyCon US 分類了一半，真的超花時間.....&lt;br&gt;
+貢獻者絕贊招募中&lt;/p&gt;
+&lt;h2 id="pycontw-blog"&gt;pycontw-blog&lt;/h2&gt;
+&lt;p&gt;如果你還不知道， &lt;a href="https://tw.pycon.org/"&gt;PyCon Taiwan&lt;/a&gt; 是有自己的&lt;a href="https://conf.python.tw/"&gt;部落格&lt;/a&gt;的&lt;/p&gt;
+&lt;p&gt;Issue &lt;a href="https://github.com/pycontw/pycontw-blog/issues/112"&gt;Add general python distribution setup steps #112&lt;/a&gt; 開了很久，但一直沒時間好好處理&lt;br&gt;
+最近聽說 &lt;a href="https://docs.astral.sh/uv/"&gt;uv&lt;/a&gt; 在 Windows 上的支援也不錯&lt;br&gt;
+就果斷透過&lt;a href="https://github.com/pycontw/pycontw-blog/pull/200"&gt;Replace pipenv with uv #200&lt;/a&gt;把套件管理從 pipenv 改到 &lt;a href="https://docs.astral.sh/uv/"&gt;uv&lt;/a&gt; 上&lt;br&gt;
+原本以為更新文件要花很多時間&lt;br&gt;
+但 Yo 哥真的寫得太好了，我稍微改一下就結束了&lt;br&gt;
+大哥除了上個月飛、這個月也飛，當空中飛人很厲害以外，程式也是了得&lt;/p&gt;
+&lt;p&gt;沒想到當我在做這件事的時候，社群的夥伴也想到了類似的事&lt;br&gt;
+&lt;del&gt;這是巧合嗎，我不這麼認為，一定是三角初華的陰謀&lt;/del&gt;&lt;br&gt;
+還好我們想做的事不同面向的&lt;br&gt;
+也花了點時間看了她的 PR &lt;a href="https://github.com/pycontw/pycontw-blog/pull/202"&gt;dependency: Update README to include prerequisites and modify the sequence of instructions #202&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="markdown-mermaidjs"&gt;markdown-mermaidjs&lt;/h2&gt;
+&lt;p&gt;這是源自於 &lt;a href="https://github.com/oruelle/md_mermaid"&gt;oruelle/md_mermaid&lt;/a&gt; 的專案&lt;br&gt;
+因為原作者沒在維護，我的部落格又需要&lt;br&gt;
+就 fork 出 &lt;a href="https://github.com/Lee-W/markdown-mermaidjs"&gt;Lee-W/markdown-mermaidjs&lt;/a&gt; 來用&lt;/p&gt;
+&lt;p&gt;最近熱心人士 Owyn 開了 PR &lt;a href="https://github.com/Lee-W/markdown-mermaidjs/pull/5"&gt;Feature/add icon packs #5&lt;/a&gt; 加新功能&lt;br&gt;
+他幾乎已經做完，就差最後一步&lt;br&gt;
+我順手修完就 merge 了&lt;br&gt;
+感謝 Owyn 🙏&lt;/p&gt;
+&lt;p&gt;除此之外，我把專案的結構用&lt;a href="https://github.com/Lee-W/markdown-mermaidjs/pull/6"&gt;Update project structure with the latest template #6&lt;/a&gt;根據最新版的&lt;a href="https://github.com/Lee-W/cookiecutter-python-template/"&gt;cookiecutter-python-template&lt;/a&gt;更新了&lt;br&gt;
+順便找出不少模板的 bug，之後找時間來修&lt;/p&gt;
+&lt;p&gt;另外還有許久以前 ysard 開的 issue &lt;a href="https://github.com/oruelle/md_mermaid/issues/16"&gt;Conflict with html minification tools #16&lt;/a&gt;&lt;br&gt;
+終於有時間認真看，意外的蠻簡單的&lt;br&gt;
+就發了 PR  &lt;a href="https://github.com/Lee-W/markdown-mermaidjs/pull/7"&gt;generate &amp;lt; pre class="mermaid"&amp;gt;&amp;lt; /pre&amp;gt; instead of &amp;lt; div class="mermaid"&amp;gt;&amp;lt; /div&amp;gt; #7&lt;/a&gt; 把它給修了&lt;/p&gt;
+&lt;p&gt;因為這些改動，這一週就發了兩版&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://pypi.org/project/markdown-mermaidjs/1.1.0"&gt;1.1.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pypi.org/project/markdown-mermaidjs/2.0.0"&gt;2.0.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="pelican-stat"&gt;pelican-stat&lt;/h2&gt;
+&lt;p&gt;這是在 &lt;a href="https://blog.wei-lee.me/posts/gossiping/2025/01/2021-2024-yearly-review"&gt;2021 ~ 2024 年度回顧 - 持續紀錄的秘訣是寫廢文&lt;/a&gt; 提到的工具&lt;br&gt;
+除了更新專案結構，大多都是細碎的小 PRs 而已&lt;br&gt;
+原本以為更新 6.0.0 就不會有奇怪的特殊字元&lt;br&gt;
+結果只是換了別的特殊字元...&lt;br&gt;
+然後我的 RSS feed 就會壞掉&lt;br&gt;
+最後放棄手工休掉了&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/pelican-stat/pull/4"&gt;Upgrade project with the latest project template #4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/pelican-stat/pull/8"&gt;docs(CHANGELOG): fix typo #8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/pelican-stat/pull/9"&gt;ci(github-actions): fix publish page action #9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/pelican-stat/pull/10"&gt;suggest users to use uv to install this tool #10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/pelican-stat/pull/11"&gt;Fix doc typo #11&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/pelican-stat/pull/12"&gt;fix(dep): upgrade plotly to 6.0.0 #12&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Lee-W/pelican-stat/pull/13"&gt;ci(github-actions): fix missing pre-commit install #13&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;一樣發了兩版&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://pypi.org/project/pelican-stat/0.3.1/"&gt;0.3.1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pypi.org/project/pelican-stat/0.3.2/"&gt;0.3.2&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;比較有趣的應該是有玩到 &lt;a href="https://docs.pypi.org/trusted-publishers/"&gt;Trusted Publisher&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="pycon-etl"&gt;pycon-etl&lt;/h3&gt;
+&lt;p&gt;因為最近 Airflow 3.0 要釋出，我希望能慢慢幫 PyCon TW 的 Airflow 也升級一下&lt;br&gt;
+看完文件發了 &lt;a href="https://github.com/pycontw/pycon-etl/pull/153"&gt;docs(README): fix typos #153&lt;/a&gt;&lt;br&gt;
+但是 &lt;a href="https://github.com/pycontw/pycon-etl/"&gt;pycon-etl&lt;/a&gt; 還在 Python 3.8&lt;br&gt;
+EOL 已經過了...&lt;br&gt;
+所以 workflow 不支援&lt;br&gt;
+看來要升版 Airflow 前， Python 要先升了...&lt;/p&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>PEP 2026 - Calendar versioning for Python</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/pep-2026" rel="alternate"></link><published>2024-11-26T22:20:00+08:00</published><updated>2024-11-26T22:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-26:/posts/tech/2024/11/pep-2026</id><summary type="html">&lt;p&gt;2024 年 release Python 3.13&lt;br&gt;
 2025 年 release Python 3.14&lt;br&gt;
 那 2026 年肯定是 release Python 3...&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2024 年 release Python 3.13&lt;br&gt;
@@ -15873,50 +15992,4 @@ Trace/BPT&lt;span class="w"&gt; &lt;/span&gt;trap:&lt;span class="w"&gt; &lt;/sp
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/hakimel/reveal.js/"&gt;Reveal.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="JavaScript"></category><category term="reveal.js"></category></entry><entry><title>解決安裝 IRKernel 缺少 zmq.h</title><link href="https://blog.wei-lee.me/posts/tech/2016/02/resolve-irkernel-missing-zmqh" rel="alternate"></link><published>2016-02-20T03:42:00+08:00</published><updated>2016-02-20T03:42:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2016-02-20:/posts/tech/2016/02/resolve-irkernel-missing-zmqh</id><summary type="html">&lt;!--more--&gt;
-
-&lt;h2 id="irkernel"&gt;安裝 IRKernel&lt;/h2&gt;
-&lt;p&gt;進入 R 的命令列，輸入下面的指令&lt;br&gt;
-就能安裝 IRKernel，以後就能在 jupyter 中使用 R&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;install.packages(c(&amp;#39;rzmq&amp;#39;,&amp;#39;repr&amp;#39;,&amp;#39;IRkernel&amp;#39;,&amp;#39;IRdisplay&amp;#39;),
-                 repos = c(&amp;#39;http://irkernel.github.io/&amp;#39;, getOption(&amp;#39;repos&amp;#39;)))
-IRkernel::installspec()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="_1"&gt;錯 …&lt;/h2&gt;</summary><content type="html">&lt;!--more--&gt;
-
-&lt;h2 id="irkernel"&gt;安裝 IRKernel&lt;/h2&gt;
-&lt;p&gt;進入 R 的命令列，輸入下面的指令&lt;br&gt;
-就能安裝 IRKernel，以後就能在 jupyter 中使用 R&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;install.packages(c(&amp;#39;rzmq&amp;#39;,&amp;#39;repr&amp;#39;,&amp;#39;IRkernel&amp;#39;,&amp;#39;IRdisplay&amp;#39;),
-                 repos = c(&amp;#39;http://irkernel.github.io/&amp;#39;, getOption(&amp;#39;repos&amp;#39;)))
-IRkernel::installspec()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="_1"&gt;錯誤訊息&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;interface.cpp:22:10: fatal error: &amp;#39;zmq.h&amp;#39; file not found
-#include &amp;lt;zmq.h&amp;gt;
-         ^
-1 error generated.
-make: *** [interface.o] Error 1
-ERROR: compilation failed for package &amp;#39;rzmq&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="_2"&gt;解決&lt;/h2&gt;
-&lt;p&gt;這時候就要將缺少的套件補齊&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;czmq&lt;span class="w"&gt; &lt;/span&gt;zmq
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;再執行一次最上面的安裝指令&lt;/p&gt;
-&lt;p&gt;接著在指令列執行輸入下面的指令&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;jupyter&lt;span class="w"&gt; &lt;/span&gt;qtconsole&lt;span class="w"&gt; &lt;/span&gt;--kernel&lt;span class="o"&gt;=&lt;/span&gt;ir
-jupyter&lt;span class="w"&gt; &lt;/span&gt;console&lt;span class="w"&gt; &lt;/span&gt;--kernel&lt;span class="o"&gt;=&lt;/span&gt;ir
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;安裝成功後就可以看到&lt;br&gt;
-&lt;img alt="R_in_jupyter" src="/images/posts-image/2016-02-20-resolve-irkernel-missing-zmqh/pWf6j0q.png"&gt;&lt;/p&gt;
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/IRkernel/IRkernel/issues/50"&gt;Failed to install rzmq #50&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/IRkernel/IRkernel"&gt;IRkernel&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="R"></category><category term="Jupyter"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"></category><category term="JavaScript"></category><category term="reveal.js"></category></entry></feed>
