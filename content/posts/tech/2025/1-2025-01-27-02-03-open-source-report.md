@@ -1,11 +1,11 @@
 Title: 2025/01/27 - 02/03 開源貢獻週報
+Subtitle: 我愛慕虛榮啦
 Date: 2025-02-02 21:00
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-01-27-02-03-open-source-report
 Authors: Wei Lee
 Cover: /images/meme/mygo-vanity.jpg
-Status: Draft
 
 今年想做個新的嘗試
 每週記錄工作以外，我在開源專案的貢獻
@@ -23,6 +23,9 @@ Status: Draft
 
 ![mygo-vanity](/images/meme/mygo-vanity.jpg)
 
+這週因為過年所以特別多
+下週以後就不知道了
+希望這個週報不要只有一回......
 
 [TOC]
 
@@ -127,3 +130,11 @@ Issue [Add general python distribution setup steps #112](https://github.com/pyco
 2. [0.3.2](https://pypi.org/project/pelican-stat/0.3.2/)
 
 比較有趣的應該是有玩到 [Trusted Publisher](https://docs.pypi.org/trusted-publishers/)
+
+### pycon-etl
+因為最近 Airflow 3.0 要釋出，我希望能慢慢幫 PyCon TW 的 Airflow 也升級一下
+看完文件發了 [docs(README): fix typos #153](https://github.com/pycontw/pycon-etl/pull/153)
+但是 [pycon-etl](https://github.com/pycontw/pycon-etl/) 還在 Python 3.8
+EOL 已經過了...
+所以 workflow 不支援
+看來要升版 Airflow 前， Python 要先升了...
