@@ -1,5 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-02-02T21:00:00+08:00</updated><entry><title>2025/01/27 - 02/03 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/2025-01-27-02-03-open-source-report" rel="alternate"></link><published>2025-02-02T21:00:00+08:00</published><updated>2025-02-02T21:00:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-02:/posts/tech/2025/02/2025-01-27-02-03-open-source-report</id><summary type="html">&lt;p&gt;今年想做個新的嘗試&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-02-09T11:20:00+08:00</updated><entry><title>Play with the latest Airflow 3.0.0 alpha 1!</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/airflow-3-0-0-a2" rel="alternate"></link><published>2025-02-09T11:20:00+08:00</published><updated>2025-02-09T11:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-09:/posts/tech/2025/02/airflow-3-0-0-a2</id><summary type="html">&lt;p&gt;As announcements in the Airflow dev mailing list, &lt;del&gt;&lt;a href="https://lists.apache.org/thread/7hdy8w8d9xq2z29hx0l02r3gsshdzwok"&gt;📢 Apache Airflow 3.0.0apha1 is available for testing! 🎉&lt;/a&gt;&lt;/del&gt; &lt;a href="https://lists.apache.org/thread/lh3ywqn084s3clr3ldr2wzgx7q696lsg"&gt;📢 Apache Airflow 3.0.0apha2 is available for testing! 🎉&lt;/a&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;As announcements in the Airflow dev mailing list, &lt;del&gt;&lt;a href="https://lists.apache.org/thread/7hdy8w8d9xq2z29hx0l02r3gsshdzwok"&gt;📢 Apache Airflow 3.0.0apha1 is available for testing! 🎉&lt;/a&gt;&lt;/del&gt; &lt;a href="https://lists.apache.org/thread/lh3ywqn084s3clr3ldr2wzgx7q696lsg"&gt;📢 Apache Airflow 3.0.0apha2 is available for testing! 🎉&lt;/a&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;Here are some of the remarkable features listed in the mail&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dag versioning &amp;amp; Bundles (AIP-63)&lt;ul&gt;
+&lt;li&gt;Some projects highlight concerns about Airflow's lack of dag versioning. We now have it, haha!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Modern Web Application (AIP-38)&lt;/li&gt;
+&lt;li&gt;Task Execution Interface (AIP-72)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Assets &amp;amp; Asset-Centric Syntax (AIP-73)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;External Event-Driven Scheduling (AIP-82)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This post won’t demonstrate any of these features but will serve as a quick guide for setting up the testing environment.&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;The reason I highlighted Asset is definitely not because I contributed a considerable amount to this feature.&lt;/del&gt;&lt;br&gt;
+&lt;del&gt;DEFINITELY NOT!&lt;/del&gt;&lt;/p&gt;
+&lt;h2 id="install-airflow-300-alpha1-for-testing"&gt;Install Airflow 3.0.0 alpha1 for testing&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.astral.sh/uv/"&gt;uv&lt;/a&gt; is likely the simplest way for you to test. As it has yet to be uploaded to &lt;a href="https://pypi.org/"&gt;PyPI&lt;/a&gt;, we could use the command provided in the mail. I set the Python version to 3.12 since 3.13 (my default python setup) is not yet supported by Airflow&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uv&lt;span class="w"&gt; &lt;/span&gt;venv&lt;span class="w"&gt; &lt;/span&gt;--python&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.12
+
+uv&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;--find-links&lt;span class="w"&gt; &lt;/span&gt;https://dist.apache.org/repos/dist/dev/airflow/3.0.0a2/&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;apache-airflow&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.0.0a2&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;apache-airflow-task-sdk&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.0.0a2&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;apache-airflow-providers-standard&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.1.0a2&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;apache-airflow-providers-fab&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.0.0a2&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;apache-airflow-providers-celery&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.11.0a2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As for the minimum Python version that Airflow 3 will support, there's an ongoing discussion &lt;a href="https://lists.apache.org/thread/yln0jw0qkq928kpqnozty8gvlh1p8w0s"&gt;Airflow 3 min python version to 3.10 early?&lt;/a&gt; so I guess it will be 3.10 (?)&lt;/p&gt;
+&lt;h2 id="quick-setup"&gt;Quick setup&lt;/h2&gt;
+&lt;p&gt;I will only use the easiest &lt;code&gt;airflow standalone&lt;/code&gt; command for testing. It's probably not something you want to try out in production. But Airflow 3.0.0 alpha2 is not for production either; we're good.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;AIRFLOW_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+
+uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;airflow&lt;span class="w"&gt; &lt;/span&gt;db&lt;span class="w"&gt; &lt;/span&gt;migrate
+uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;airflow&lt;span class="w"&gt; &lt;/span&gt;standalone
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If everything works fine, you should to able to find  &lt;code&gt;airflow.db&lt;/code&gt;, &lt;code&gt;airflow.cfg&lt;/code&gt;, &lt;code&gt;standalone_admin_password.txt&lt;/code&gt;, and other files.&lt;/p&gt;
+&lt;p&gt;Now go to your browser and open &lt;code&gt;http://localhost:8080&lt;/code&gt;.&lt;br&gt;
+Use &lt;code&gt;admin&lt;/code&gt; as the username and the content of the file &lt;code&gt;standalone_admin_password.txt&lt;/code&gt; as the password to log in.&lt;/p&gt;
+&lt;p&gt;Then, you'll see the familiar Airflow 2 homepage.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="airflow-2-ui" src="/images/posts-image/2025-airflow-alpha-2/airflow-2-ui.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Let's click the "Check it out now" link and we'll find&lt;/p&gt;
+&lt;p&gt;&lt;img alt="page-not-found" src="/images/posts-image/2025-airflow-alpha-2/page-not-found.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="nani" src="/images/meme/jotaro-nani.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;If you look at the URL, it goes to &lt;code&gt;http://localhost:29091/webapp&lt;/code&gt;. Out of curiosity, I changed it to &lt;code&gt;http://localhost:9091/webapp&lt;/code&gt;, and the new UI is here.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="airflow-3-ui" src="/images/posts-image/2025-airflow-alpha-2/airflow-3-ui.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/apache/airflow/blob/main/dev/breeze/doc/README.rst"&gt;Breeze&lt;/a&gt; (Airflow's local development tool) uses port &lt;code&gt;28080&lt;/code&gt; as the homepage. So... the counterpart of &lt;code&gt;29091&lt;/code&gt; would probably be &lt;code&gt;9091&lt;/code&gt;, and it turns out that I'm right.&lt;/p&gt;
+&lt;p&gt;It's now tracked by issue &lt;a href="https://github.com/apache/airflow/issues/46514"&gt;"Check it out" link to New UI does not work #46514&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In the new UI, you can find a &lt;code&gt;Legacy UI&lt;/code&gt; button on the left-hand side.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="legacy-ui" src="/images/posts-image/2025-airflow-alpha-2/legacy-ui.png"&gt;&lt;/p&gt;
+&lt;p&gt;After you click it, you'll find out it does not work either, and that's why I created the issue &lt;a href="https://github.com/apache/airflow/issues/46516"&gt;"Legacy UI" button in New UI does not work #46516&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now you're ready to test all the new features. Please create an issue if you encounter any bugs.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;But... if you want to test Airflow 3 with an existing &lt;code&gt;airflow.cfg&lt;/code&gt; or some legacy dags, you come to the right place!&lt;/p&gt;
+&lt;h2 id="tools-that-help-you-migrate-to-airflow-3"&gt;Tools that help you migrate to Airflow 3&lt;/h2&gt;
+&lt;h3 id="airflowcfg-airflow-config-lint"&gt;airflow.cfg - "airflow config lint"&lt;/h3&gt;
+&lt;p&gt;We introduce a &lt;code&gt;lint&lt;/code&gt; sub-command to &lt;code&gt;airflow config&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;airflow&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;lint
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This command tells you what configuration has been removed or moved somewhere else. It also detected environment variables and whatever will be loaded into Airflow. Check &lt;a href="https://airflow.apache.org/docs/apache-airflow/stable/howto/set-config.html"&gt;Setting Configuration Options&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;If you follow the examples above, it comes with a default &lt;code&gt;airflow.cfg&lt;/code&gt;. After running the command above, you'll see&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;Found&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;issues&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;your&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;airflow&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cfg&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Removed&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;deprecated&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`cookie_samesite`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;configuration&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;parameter&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`webserver`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;section&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`dag_dir_list_interval`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;configuration&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;parameter&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;moved&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`scheduler`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;section&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`dag_processor`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;section&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`refresh_interval`&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+
+&lt;span class="n"&gt;Please&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;update&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;your&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;configuration&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;file&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;accordingly&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Even Airflow has not migrated to Airflow 3 yet.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ironic" src="/images/meme/star-wars-ironic.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Issue &lt;a href="https://github.com/apache/airflow/issues/46517"&gt;Legacy configuration not removed or updated #46517&lt;/a&gt; was also created.  &lt;/p&gt;
+&lt;h3 id="dags-ruff-095"&gt;Dags - ruff &amp;gt;= 0.95&lt;/h3&gt;
+&lt;p&gt;Yep, this is the &lt;a href="https://docs.astral.sh/ruff/"&gt;ruff&lt;/a&gt; you know (or probably should know). Recently, we added more &lt;a href="https://docs.astral.sh/ruff/rules/#airflow-air"&gt;Airflow rules (with code AIR)&lt;/a&gt; to ruff. The ones that start with &lt;code&gt;3&lt;/code&gt; (i.e., AIR301, AIR302, AIR302) are those that help you migrate to Airflow 3.0.&lt;/p&gt;
+&lt;p&gt;Given the following legacy dag&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;airflow&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;dag&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;airflow.datasets&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Dataset&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;airflow.sensors.filesystem&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;FileSensor&lt;/span&gt;
+
+
+&lt;span class="nd"&gt;@dag&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;air_301_dag&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+
+
+&lt;span class="nd"&gt;@dag&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;schedule_interval&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;0 * * * *&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;air_302_dag&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+
+
+&lt;span class="nd"&gt;@dag&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;schedule&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Dataset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;test&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;air_303_dag&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;FileSensor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;wait_for_file&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/tmp/temporary_file_for_testing&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You can run the following comment&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uv&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ruff&amp;gt;=0.9.5&amp;quot;&lt;/span&gt;
+uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;ruff&lt;span class="w"&gt; &lt;/span&gt;check&lt;span class="w"&gt; &lt;/span&gt;dags/&lt;span class="w"&gt; &lt;/span&gt;--preview&lt;span class="w"&gt; &lt;/span&gt;--select&lt;span class="w"&gt; &lt;/span&gt;AIR301,AIR302,AIR303
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and get the following error message&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;dags&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;legacy_dag&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;AIR301&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;DAG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;should&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;have&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;an&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;explicit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`schedule`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;argument&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@dag&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;^^^^^&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;AIR301&lt;/span&gt;
+&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;air_301_dag&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;pass&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+
+&lt;span class="n"&gt;dags&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;legacy_dag&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;AIR302&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;[&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="err"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`schedule_interval`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;removed&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Airflow&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;3.0&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@dag&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;schedule_interval&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;0 * * * *&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;^^^^^^^^^^^^^^^^^&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;AIR302&lt;/span&gt;
+&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;air_302_dag&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;pass&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;help&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;Use&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`schedule`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;instead&lt;/span&gt;
+
+&lt;span class="n"&gt;dags&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;legacy_dag&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;AIR302&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`airflow.datasets.Dataset`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;removed&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Airflow&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;3.0&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@dag&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;schedule&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Dataset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;test&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="o"&gt;^^^^^^^&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;AIR302&lt;/span&gt;
+&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;air_303_dag&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;FileSensor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;wait_for_file&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/tmp/temporary_file_for_testing&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;help&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;Use&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`airflow.sdk.definitions.asset.Asset`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;instead&lt;/span&gt;
+
+&lt;span class="n"&gt;dags&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;legacy_dag&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;AIR303&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`airflow.sensors.filesystem.FileSensor`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;moved&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;into&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`standard`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;provider&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Airflow&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;3.0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@dag&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;schedule&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Dataset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;test&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;air_303_dag&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="n"&gt;FileSensor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;wait_for_file&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/tmp/temporary_file_for_testing&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="o"&gt;^^^^^^^^^^&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;AIR303&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;help&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;Install&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`apache-airflow-provider-standard&amp;gt;=0.0.2`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;use&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`airflow.providers.standard.sensors.filesystem.FileSensor`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;instead&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+
+&lt;span class="k"&gt;Found&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;errors&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="err"&gt;[&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="err"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;fixable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;with&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n n-Quoted"&gt;`--fix`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;option&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you find anything missing regarding migration tooling, please comment on  &lt;a href="https://github.com/apache/airflow/issues/41641"&gt;Airflow 2 to 3 auto migration rules #41641&lt;/a&gt;. This is the root issue where we try to track everything related to migration rules.&lt;/p&gt;
+&lt;h2 id="why-does-the-title-look-so-weird"&gt;Why does the title look so weird&lt;/h2&gt;
+&lt;p&gt;Well... this post was supposed to be published on Thursday. It was still alpha1. Then, alpha2 was released around the Airflow 3.0 dev call. It's midnight where I am, so... I can't really attend. Sleep is important. Staying up is bad.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="avemujica-bad-for-helth" src="/images/meme/avemujica-bad-for-helth.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;If you're curious about why sleep is important, I recommend reading &lt;a href="{filename}/posts/book/2020/15-why-we-sleep.md"&gt;[Book] 為什麼要睡覺&lt;/a&gt; (Why We Sleep), one of my favorite books. I probably should re-read it as well...&lt;/p&gt;
+&lt;p&gt;But the truth is, this is just another excuse of mine; I simply couldn't finish the post this quickly. 😆 Just like my &lt;a href="https://peps.python.org/pep-0735/"&gt;PEP 735&lt;/a&gt; digest. The PEP was still in draft status when I wrote it. Now that the PEP is final, my digest still hasn't been published yet. 🥲&lt;/p&gt;</content><category term="Tech"></category><category term="Airflow"></category><category term="Airflow 3.0"></category></entry><entry><title>2025/01/27 - 02/03 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/2025-01-27-02-03-open-source-report" rel="alternate"></link><published>2025-02-02T21:00:00+08:00</published><updated>2025-02-02T21:00:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-02:/posts/tech/2025/02/2025-01-27-02-03-open-source-report</id><summary type="html">&lt;p&gt;今年想做個新的嘗試&lt;br&gt;
 每週記錄工作以外，我在開源專案的貢獻&lt;br&gt;
 能看到自己量化的前進，就會有多一點動力繼續下去&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;今年想做個新的嘗試&lt;br&gt;
@@ -15970,26 +16120,4 @@ Trace/BPT&lt;span class="w"&gt; &lt;/span&gt;trap:&lt;span class="w"&gt; &lt;/sp
 --Re: 男子漢理論,pangfeng (P老師)@pangfeng, ptt2.cc
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;From &lt;a href="http://cpmarkchang.logdown.com/pages/about-me"&gt;MARK CHANG'S BLOG - About Me&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Inspiring"></category><category term="Vim"></category></entry><entry><title>Reveal.js 安裝錯誤</title><link href="https://blog.wei-lee.me/posts/tech/2016/02/reveal-s-installation-error" rel="alternate"></link><published>2016-02-20T03:57:00+08:00</published><updated>2016-02-20T03:57:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2016-02-20:/posts/tech/2016/02/reveal-s-installation-error</id><summary type="html">&lt;p&gt;當我安裝步驟執行到&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;npm&lt;span class="w"&gt; &lt;/span&gt;install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;會跳出很多錯誤訊息&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;當我安裝步驟執行到&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;npm&lt;span class="w"&gt; &lt;/span&gt;install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;會跳出很多錯誤訊息&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;p&gt;這才發現 Reveal.js 要用 python &amp;gt;= 2.5 and &amp;lt; 3.0.0&lt;br&gt;
-而我預設的 python 是 python3.5&lt;br&gt;
-所以只要像下面的指令把 python 指到 python2 就可以了&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;npm&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;--python&lt;span class="o"&gt;=&lt;/span&gt;python2.7
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code&gt;--python=&lt;/code&gt; 後面是 python2 的執行擋，需要根據自己的設定做調整&lt;/p&gt;
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/hakimel/reveal.js/"&gt;Reveal.js&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="JavaScript"></category><category term="reveal.js"></category></entry></feed>
+&lt;p&gt;From &lt;a href="http://cpmarkchang.logdown.com/pages/about-me"&gt;MARK CHANG'S BLOG - About Me&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Inspiring"></category><category term="Vim"></category></entry></feed>
