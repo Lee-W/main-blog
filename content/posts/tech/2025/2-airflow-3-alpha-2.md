@@ -206,7 +206,7 @@ Well... this post was supposed to be published on Thursday. It was still alpha1.
 
 ![avemujica-bad-for-helth](/images/meme/avemujica-bad-for-helth.jpg)
 
-If you're curious about why sleep is important, I recommend reading [[Book] 為什麼要睡覺]({filename}/posts/book/2020/15-why-we-sleep.md) (Why We Sleep), one of my favorite books. I probably should re-read it as well...
+If you're curious about why sleep is important, I recommend reading [[Book] 為什麼要睡覺]({filename}/posts/book/2020/5-why-we-sleep.md) (Why We Sleep), one of my favorite books. I probably should re-read it as well...
 
 But the truth is, this is just another excuse of mine; I simply couldn't finish the post this quickly. 😆 Just like my [PEP 735] digest. The PEP was still in draft status when I wrote it. Now that the PEP is final, my digest still hasn't been published yet. 🥲
 
