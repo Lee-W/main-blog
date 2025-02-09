@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-02-09T11:20:00+08:00</updated><entry><title>Play with the latest Airflow 3.0.0 alpha 1!</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/airflow-3-0-0-a2" rel="alternate"></link><published>2025-02-09T11:20:00+08:00</published><updated>2025-02-09T11:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-09:/posts/tech/2025/02/airflow-3-0-0-a2</id><summary type="html">&lt;p&gt;As announcements in the Airflow dev mailing list, &lt;del&gt;&lt;a href="https://lists.apache.org/thread/7hdy8w8d9xq2z29hx0l02r3gsshdzwok"&gt;📢 Apache Airflow 3.0.0apha1 is available for testing! 🎉&lt;/a&gt;&lt;/del&gt; &lt;a href="https://lists.apache.org/thread/lh3ywqn084s3clr3ldr2wzgx7q696lsg"&gt;📢 Apache Airflow 3.0.0apha2 is available for testing! 🎉&lt;/a&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-02-09T23:59:00+08:00</updated><entry><title>2025/02/04 - 02/09 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/2025-02-04-02-09-open-source-report" rel="alternate"></link><published>2025-02-09T23:59:00+08:00</published><updated>2025-02-09T23:59:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-09:/posts/tech/2025/02/2025-02-04-02-09-open-source-report</id><summary type="html">&lt;p&gt;最後一刻趕上了，還好沒有第二周就放棄...&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;最後一刻趕上了，還好沒有第二周就放棄...&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="commitizen"&gt;commitizen&lt;/h2&gt;
+&lt;p&gt;看了這幾隻 PR&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1297"&gt;feat(tags): adds legacy_tag_formats and ignored_tag_formats settings #1297&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;改動蠻棒的，但有點大，大概會有幾輪來回&lt;/li&gt;
+&lt;li&gt;Axel rocks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;✅ &lt;a href="https://github.com/commitizen-tools/commitizen/pull/1353"&gt;chore: add debugging to bump #1353&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;✅ &lt;a href="https://github.com/commitizen-tools/commitizen/pull/1354"&gt;Proposal: Dev &amp;amp; CI workflow improvement #1354&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;這個 PR 我很愛！&lt;/li&gt;
+&lt;li&gt;之後來偷學一下 &lt;a href="https://github.com/nat-n/poethepoet"&gt;poethepoet&lt;/a&gt; 怎麼用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我上週開的 PR &lt;a href="https://github.com/commitizen-tools/commitizen/pull/1345"&gt;Improve hooks type annotation and fix missing link #1345&lt;/a&gt; merge 了&lt;/p&gt;
+&lt;p&gt;這週開了 issue &lt;a href="https://github.com/commitizen-tools/commitizen/issues/1355"&gt;ease the setup of &lt;code&gt;prepare-commit-msg&lt;/code&gt; hook&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="pycon-etl"&gt;pycon-etl&lt;/h2&gt;
+&lt;p&gt;開了 issue &lt;a href="https://github.com/pycontw/pycon-etl/issues/154"&gt;Upgrade to Airflow 2+ (or even 3) #154&lt;/a&gt;&lt;br&gt;
+整理了我想怎麼樣把 Airflow 升上去&lt;br&gt;
+下週就可以慢慢發 PR 了（或下下週...，希望不是下下下週...）&lt;/p&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>Play with the latest Airflow 3.0.0 alpha 1!</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/airflow-3-0-0-a2" rel="alternate"></link><published>2025-02-09T11:20:00+08:00</published><updated>2025-02-09T11:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-09:/posts/tech/2025/02/airflow-3-0-0-a2</id><summary type="html">&lt;p&gt;As announcements in the Airflow dev mailing list, &lt;del&gt;&lt;a href="https://lists.apache.org/thread/7hdy8w8d9xq2z29hx0l02r3gsshdzwok"&gt;📢 Apache Airflow 3.0.0apha1 is available for testing! 🎉&lt;/a&gt;&lt;/del&gt; &lt;a href="https://lists.apache.org/thread/lh3ywqn084s3clr3ldr2wzgx7q696lsg"&gt;📢 Apache Airflow 3.0.0apha2 is available for testing! 🎉&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;As announcements in the Airflow dev mailing list, &lt;del&gt;&lt;a href="https://lists.apache.org/thread/7hdy8w8d9xq2z29hx0l02r3gsshdzwok"&gt;📢 Apache Airflow 3.0.0apha1 is available for testing! 🎉&lt;/a&gt;&lt;/del&gt; &lt;a href="https://lists.apache.org/thread/lh3ywqn084s3clr3ldr2wzgx7q696lsg"&gt;📢 Apache Airflow 3.0.0apha2 is available for testing! 🎉&lt;/a&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -148,7 +172,7 @@ uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;ruf
 &lt;h2 id="why-does-the-title-look-so-weird"&gt;Why does the title look so weird&lt;/h2&gt;
 &lt;p&gt;Well... this post was supposed to be published on Thursday. It was still alpha1. Then, alpha2 was released around the Airflow 3.0 dev call. It's midnight where I am, so... I can't really attend. Sleep is important. Staying up is bad.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="avemujica-bad-for-helth" src="/images/meme/avemujica-bad-for-helth.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;If you're curious about why sleep is important, I recommend reading &lt;a href="{filename}/posts/book/2020/15-why-we-sleep.md"&gt;[Book] 為什麼要睡覺&lt;/a&gt; (Why We Sleep), one of my favorite books. I probably should re-read it as well...&lt;/p&gt;
+&lt;p&gt;If you're curious about why sleep is important, I recommend reading &lt;a href="https://blog.wei-lee.me/posts/book/2020/10/why-we-sleep"&gt;[Book] 為什麼要睡覺&lt;/a&gt; (Why We Sleep), one of my favorite books. I probably should re-read it as well...&lt;/p&gt;
 &lt;p&gt;But the truth is, this is just another excuse of mine; I simply couldn't finish the post this quickly. 😆 Just like my &lt;a href="https://peps.python.org/pep-0735/"&gt;PEP 735&lt;/a&gt; digest. The PEP was still in draft status when I wrote it. Now that the PEP is final, my digest still hasn't been published yet. 🥲&lt;/p&gt;</content><category term="Tech"></category><category term="Airflow"></category><category term="Airflow 3.0"></category></entry><entry><title>2025/01/27 - 02/03 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/2025-01-27-02-03-open-source-report" rel="alternate"></link><published>2025-02-02T21:00:00+08:00</published><updated>2025-02-02T21:00:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-02:/posts/tech/2025/02/2025-01-27-02-03-open-source-report</id><summary type="html">&lt;p&gt;今年想做個新的嘗試&lt;br&gt;
 每週記錄工作以外，我在開源專案的貢獻&lt;br&gt;
 能看到自己量化的前進，就會有多一點動力繼續下去&lt;/p&gt;
@@ -16091,33 +16115,4 @@ Trace/BPT&lt;span class="w"&gt; &lt;/span&gt;trap:&lt;span class="w"&gt; &lt;/sp
     &lt;span class="cm"&gt;&amp;lt;!-- module_01/index.html --&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; This is external &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Tech"></category><category term="JavaScript"></category><category term="reveal.js"></category></entry><entry><title>男子漢理論</title><link href="https://blog.wei-lee.me/posts/tech/2016/03/article-man-theory" rel="alternate"></link><published>2016-03-15T02:13:00+08:00</published><updated>2016-03-15T02:13:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2016-03-15:/posts/tech/2016/03/article-man-theory</id><summary type="html">&lt;p&gt;這篇文實在太有趣了，還是該留下來做個紀錄 XD&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;這篇文實在太有趣了，還是該留下來做個紀錄 XD&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;h1 id="_1"&gt;男子漢理論&lt;/h1&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;真正的男子漢 programmer 是不會用那些亂七八糟，花枝招展的，所謂整合開發環境。
-真正的男子漢 programmer 就是直接用 emacs, 或是 vi 這些男子漢編輯器直接寫程式。
-如果你不知道這是甚麼東東，簡單來說，就是男子漢用的”記事本”。
-當然在花枝招展，看來很娘的 Wxxxxws下要找到這些男子漢編輯器有一定難度，
-但這絕對難不倒一個真正的男子漢 programmer。
-
-另外真正的男子漢也不會用那些亂七八糟，花枝招展的所謂應用程式寫網頁。
-真正的男子漢就是直接用 emacs, 或是 vi 這些男子漢編輯器直接寫 HTML，
-因為那些亂七八糟，花枝招展的所謂應用程式寫出來的網頁
-加了一大堆亂七八糟的 tag 根本沒有人看得懂。
-
-真正的男子漢也不會用那些亂七八糟，花枝招展的所謂應用程式寫論文。
-真正的男子漢就是直接用 emacs, 或是 vi 這些男子漢編輯器直接寫 latex。
-因為那些亂七八糟，花枝招展的所謂應用程式寫出來的論文，字型醜的要命，
-圖還會亂跑，換一台電腦就換一個樣子，一點也不像男子漢做出來的東西。
-
-最後你可以看出真正的男子漢 programmer 不管做什麼事，
-都只用男子漢編輯器就能搞定，這就是成為男子漢 programmer 的重點。
-當然最好還是用 ed 這種神物，只是現存看過 ed 的 programmer
-可能比看過”真理”的煉金術士還少，在此就不苛求了。
-
---Re: 男子漢理論,pangfeng (P老師)@pangfeng, ptt2.cc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;From &lt;a href="http://cpmarkchang.logdown.com/pages/about-me"&gt;MARK CHANG'S BLOG - About Me&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Inspiring"></category><category term="Vim"></category></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Tech"></category><category term="JavaScript"></category><category term="reveal.js"></category></entry></feed>
