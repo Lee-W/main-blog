@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-02-09T23:59:00+08:00</updated><entry><title>2025/02/04 - 02/09 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/2025-02-04-02-09-open-source-report" rel="alternate"></link><published>2025-02-09T23:59:00+08:00</published><updated>2025-02-09T23:59:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-09:/posts/tech/2025/02/2025-02-04-02-09-open-source-report</id><summary type="html">&lt;p&gt;最後一刻趕上了，還好沒有第二周就放棄...&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-02-12T23:35:00+08:00</updated><entry><title>重設 Badger 2040</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/how-to-reset-bader-2024" rel="alternate"></link><published>2025-02-12T23:35:00+08:00</published><updated>2025-02-12T23:35:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-12:/posts/tech/2025/02/how-to-reset-bader-2024</id><summary type="html">&lt;p&gt;前年去 PyCon APAC 抽到酷酷的 Badger 2040&lt;br&gt;
+可以當時鐘、當電子書（但應該是沒人會這樣用啦...）&lt;br&gt;
+最重要的是可以客製化寫入自己的識別證！&lt;br&gt;
+但它重設起來有點麻煩...&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;前年去 PyCon APAC 抽到酷酷的 Badger 2040&lt;br&gt;
+可以當時鐘、當電子書（但應該是沒人會這樣用啦...）&lt;br&gt;
+最重要的是可以客製化寫入自己的識別證！&lt;br&gt;
+但它重設起來有點麻煩...&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;去年出差的時候，有遇到手上也有一片的同事&lt;br&gt;
+它也是說每次要重寫就會斷線...&lt;/p&gt;
+&lt;p&gt;但是啊，只要帶著它出去參加研討會&lt;br&gt;
+就會有人來問「這是什麼」就能開起話提&lt;br&gt;
+實在是 I 人在必須社交的 SSR 禮裝&lt;/p&gt;
+&lt;p&gt;上週 FF 為了避免大家把我認成鏈鋸人的マキマ&lt;br&gt;
+我還特別把小林的資訊寫進去&lt;br&gt;
+恩...但我後來沒有拿出來...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="badger 2040" src="/images/posts-image/2025-badger-2040/badger-2040.jpeg"&gt;&lt;/p&gt;
+&lt;h2 id="_1"&gt;如何重設&lt;/h2&gt;
+&lt;p&gt;進入正題，其實一切都寫在 &lt;a href="https://github.com/pimoroni/badger2040"&gt;badger2040&lt;/a&gt; 這個 repo 的 README 中了&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;到 &lt;a href="https://github.com/pimoroni/badger2040"&gt;badger2040&lt;/a&gt; 下載最新的韌體更新 (e.g., &lt;code&gt;pimoroni-badger2040-v0.0.5-micropython-with-badger-os.uf2&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;透過 USB 將 Badger 2040 的板子連接到電腦&lt;/li&gt;
+&lt;li&gt;長按 Badger 2040 背後的 &lt;code&gt;BOOT/USR&lt;/code&gt; 鍵，並按下 &lt;code&gt;RESET&lt;/code&gt; 鍵，這時電腦應該會連接到板子&lt;/li&gt;
+&lt;li&gt;以 macOS 為例，把最新的韌體拉近連接到的裝置，它會重設整台裝置&lt;/li&gt;
+&lt;li&gt;接下來就可以跟著 &lt;a href="https://developer.auth0.com/resources/labs/events/badger-2040-w#troubleshooting"&gt;Badger 2040 W&lt;/a&gt; 的教學步驟，把識別證的內容寫進去了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="gotchas"&gt;Gotchas&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;不要妄想寫過一次，Badger 2040 能再連得到，直接整台重設吧&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;應該不支援 ASCII 以外的字元，至少之前測試中文跟日文都無效&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/auth0-developer-hub/digital-badges-bundle"&gt;digital-badges-bundle&lt;/a&gt; 的 &lt;a href="https://github.com/auth0-developer-hub/digital-badges-bundle/tree/main/badger2040wifi/upload_these"&gt;upload_these&lt;/a&gt; 指的是上傳這個資料夾的東西，不是上傳這個資料夾&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/auth0-developer-hub/digital-badges-bundle/blob/main/badger2040wifi/upload_these/badges/badge.txt"&gt;badges/badge.txt&lt;/a&gt; 只能 7 行，就算只是多了 EOF ， badge 2040 還是會直接 error&lt;ul&gt;
+&lt;li&gt;雖然 vim 好，vim 棒，但這次不要用 vim 補上 EOF&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Hardware"></category></entry><entry><title>2025/02/04 - 02/09 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/2025-02-04-02-09-open-source-report" rel="alternate"></link><published>2025-02-09T23:59:00+08:00</published><updated>2025-02-09T23:59:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-09:/posts/tech/2025/02/2025-02-04-02-09-open-source-report</id><summary type="html">&lt;p&gt;最後一刻趕上了，還好沒有第二周就放棄...&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最後一刻趕上了，還好沒有第二周就放棄...&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -16065,54 +16102,4 @@ Trace/BPT&lt;span class="w"&gt; &lt;/span&gt;trap:&lt;span class="w"&gt; &lt;/sp
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/Homebrew/legacy-homebrew/issues/39929"&gt;R and julia won't start after upgrade (perhaps gcc 5.1, Xcode 6.3.2, or Command Line Tools 6.3)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="R"></category><category term="mac"></category></entry><entry><title>External.js - Load HTML in Reveal.js</title><link href="https://blog.wei-lee.me/posts/tech/2016/03/external-js-load-html-in-reveal-js" rel="alternate"></link><published>2016-03-23T01:23:00+08:00</published><updated>2016-03-23T01:23:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2016-03-23:/posts/tech/2016/03/external-js-load-html-in-reveal-js</id><summary type="html">&lt;p&gt;reavel.js 提供了 &lt;code&gt;data-markdown="example.md"&lt;/code&gt; 這個 tag 可以載入外部的 markdown&lt;br&gt;
-卻沒提供可以載入 html 的 tag&lt;br&gt;
-於是就有人寫了這個&lt;a href="https://github.com/calevans/external"&gt;External.js&lt;/a&gt;&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;reavel.js 提供了 &lt;code&gt;data-markdown="example.md"&lt;/code&gt; 這個 tag 可以載入外部的 markdown&lt;br&gt;
-卻沒提供可以載入 html 的 tag&lt;br&gt;
-於是就有人寫了這個&lt;a href="https://github.com/calevans/external"&gt;External.js&lt;/a&gt;&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;p&gt;有了 External.js，就可以不用把所有的內容都寫在 &lt;code&gt;index.html&lt;/code&gt; 裡面&lt;/p&gt;
-&lt;h1 id="install"&gt;Install&lt;/h1&gt;
-&lt;h2 id="method1-download"&gt;Method1: Download&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;到 &lt;a href="https://github.com/calevans/external"&gt;external&lt;/a&gt; 下載&lt;/li&gt;
-&lt;li&gt;把 extneral 裡面的 external 資料夾放到 plugin 裡面&lt;/li&gt;
-&lt;li&gt;在 &lt;code&gt;index.html&lt;/code&gt; 中的 &lt;code&gt;Reveal.initialize&lt;/code&gt; 這個 block 加入下面的內容&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;src&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;plugin/external/external.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!!&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;[data-external]&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="method2-submodule"&gt;Method2: Submodule&lt;/h2&gt;
-&lt;p&gt;不過為了讓他的更新也能被追蹤，我使用了 git submodule&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;git submodule&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;submodule&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;https://github.com/calevans/external&lt;span class="w"&gt; &lt;/span&gt;plugin/external
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;li&gt;在 &lt;code&gt;index.html&lt;/code&gt; 中的 &lt;code&gt;Reveal.initialize&lt;/code&gt; 這個 block 加入下面的內容&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;src&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;plugin/external/external/external.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;condition&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!!&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;[data-external]&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;( 注意兩種方式加入的內容有些微的不同 )&lt;/p&gt;
-&lt;h1 id="usage"&gt;Usage&lt;/h1&gt;
-&lt;p&gt;之後就能使用 &lt;code&gt;data-external&lt;/code&gt; 這個 tag 來載入外部的 html&lt;/p&gt;
-&lt;h2 id="indexhtml"&gt;原本的 index.html&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;data-external&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;module_01/index.html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="html"&gt;外部 html&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cm"&gt;&amp;lt;!-- module_01/index.html --&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; This is external &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="html_1"&gt;載入後的 html&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="na"&gt;data-external&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;module_01/index.html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="cm"&gt;&amp;lt;!-- module_01/index.html --&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; This is external &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;section&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Tech"></category><category term="JavaScript"></category><category term="reveal.js"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"></category><category term="R"></category><category term="mac"></category></entry></feed>
