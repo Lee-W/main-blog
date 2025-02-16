@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-02-12T23:35:00+08:00</updated><entry><title>重設 Badger 2040</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/how-to-reset-bader-2024" rel="alternate"></link><published>2025-02-12T23:35:00+08:00</published><updated>2025-02-12T23:35:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-12:/posts/tech/2025/02/how-to-reset-bader-2024</id><summary type="html">&lt;p&gt;前年去 PyCon APAC 抽到酷酷的 Badger 2040&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-02-16T22:35:00+08:00</updated><entry><title>2025/02/10 - 02/16 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/2025-02-10-02-16-open-source-report" rel="alternate"></link><published>2025-02-16T22:35:00+08:00</published><updated>2025-02-16T22:35:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-16:/posts/tech/2025/02/2025-02-10-02-16-open-source-report</id><summary type="html">&lt;p&gt;我也要！&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;我也要！&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="commitizen"&gt;commitizen&lt;/h2&gt;
+&lt;p&gt;上週看 PR 的時候，發現更新過後的 CI 沒檢查到 commit 的格式&lt;br&gt;
+身為 commit 警察的 commitizen 怎麼能容許有不合乎規範的 commit message&lt;br&gt;
+所以我就開了 &lt;a href="https://github.com/commitizen-tools/commitizen/pull/1357"&gt;ci(github-actions): add check-commit task #1357&lt;/a&gt; 把它加回去&lt;/p&gt;
+&lt;h2 id="pycon-etl"&gt;pycon-etl&lt;/h2&gt;
+&lt;p&gt;原本應該拿來準備 PyCon APAC 2025 的投影片，最後都拿來處裡這個 PR 了...&lt;br&gt;
+&lt;a href="https://github.com/pycontw/pycon-etl/pull/155"&gt;Use uv as python, dependencies, virtual environment management tools #155&lt;/a&gt;&lt;br&gt;
+還以為只要換成 uv 就可以過著幸福快樂的日子&lt;br&gt;
+但要裝一些舊套件還是蠻頭痛的&lt;br&gt;
+不過快是真的有快，方便也是真的方便&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;這週的開源貢獻應該就是發了這兩個 PR&lt;/p&gt;
+&lt;p&gt;雖然只是小小、少少的貢獻&lt;/p&gt;
+&lt;p&gt;&lt;img alt="mygo-accumulate" src="/images/meme/mygo-accumulate.jpg"&gt;&lt;br&gt;
+&lt;img alt="mygo-accumulate-2" src="/images/meme/mygo-accumulate-2.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;今年 iThome 鐵人賽頒獎典禮，其中一組的得獎者也引用了這段話&lt;br&gt;
+我的心中已經給他的致詞滿分了&lt;/p&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>重設 Badger 2040</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/how-to-reset-bader-2024" rel="alternate"></link><published>2025-02-12T23:35:00+08:00</published><updated>2025-02-12T23:35:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-12:/posts/tech/2025/02/how-to-reset-bader-2024</id><summary type="html">&lt;p&gt;前年去 PyCon APAC 抽到酷酷的 Badger 2040&lt;br&gt;
 可以當時鐘、當電子書（但應該是沒人會這樣用啦...）&lt;br&gt;
 最重要的是可以客製化寫入自己的識別證！&lt;br&gt;
 但它重設起來有點麻煩...&lt;/p&gt;
@@ -16074,32 +16094,4 @@ After several and long discussions with a lot of people, we have arrived to the 
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/damianavila/RISE/issues/185"&gt;scrolling vertically #185&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Jupyter"></category><category term="reveal.js"></category></entry><entry><title>解決更新 gcc 找不到 libgfortran.3.dylib (Octave,R)</title><link href="https://blog.wei-lee.me/posts/tech/2016/06/solve-libgfortran3dylib-not-found" rel="alternate"></link><published>2016-06-11T03:13:00+08:00</published><updated>2016-06-11T03:13:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2016-06-11:/posts/tech/2016/06/solve-libgfortran3dylib-not-found</id><summary type="html">&lt;p&gt;最近在 mac 上更新了 gcc 6 後，不管是開 Octave 還是 R&lt;br&gt;
-都會出現以下的錯誤訊息&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dyld:&lt;span class="w"&gt; &lt;/span&gt;Library&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;loaded:&lt;span class="w"&gt; &lt;/span&gt;/usr/local/lib/gcc/5/libgfortran.3.dylib
-&lt;span class="w"&gt;  &lt;/span&gt;Referenced&lt;span class="w"&gt; &lt;/span&gt;from:&lt;span class="w"&gt; &lt;/span&gt;/usr/local/Cellar/r/3.3.0/R.framework/Versions/3.2/Resources/lib/libR.dylib
-&lt;span class="w"&gt;  &lt;/span&gt;Reason:&lt;span class="w"&gt; &lt;/span&gt;image&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;found
-Trace/BPT&lt;span class="w"&gt; &lt;/span&gt;trap:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</summary><content type="html">&lt;p&gt;最近在 mac 上更新了 gcc 6 後，不管是開 Octave 還是 R&lt;br&gt;
-都會出現以下的錯誤訊息&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dyld:&lt;span class="w"&gt; &lt;/span&gt;Library&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;loaded:&lt;span class="w"&gt; &lt;/span&gt;/usr/local/lib/gcc/5/libgfortran.3.dylib
-&lt;span class="w"&gt;  &lt;/span&gt;Referenced&lt;span class="w"&gt; &lt;/span&gt;from:&lt;span class="w"&gt; &lt;/span&gt;/usr/local/Cellar/r/3.3.0/R.framework/Versions/3.2/Resources/lib/libR.dylib
-&lt;span class="w"&gt;  &lt;/span&gt;Reason:&lt;span class="w"&gt; &lt;/span&gt;image&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;found
-Trace/BPT&lt;span class="w"&gt; &lt;/span&gt;trap:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;這是因為原本的 lib 會去找 /usr/local/lib/gcc/5/ 下的 lib&lt;br&gt;
-但是更新過後已經被變成 /usr/local/lib/gcc/6/ 了&lt;br&gt;
-所以只要從 &lt;code&gt;/usr/local/lib/gcc/5/&lt;/code&gt; 建立 soft link 到 &lt;code&gt;/usr/local/lib/gcc/6/&lt;/code&gt; 即可&lt;br&gt;
-( 版本號則要根據自身 gcc 的版本來做修改 )&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;/usr/local/lib/gcc/5/&lt;span class="w"&gt; &lt;/span&gt;/usr/local/lib/gcc/6/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/Homebrew/legacy-homebrew/issues/39929"&gt;R and julia won't start after upgrade (perhaps gcc 5.1, Xcode 6.3.2, or Command Line Tools 6.3)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="R"></category><category term="mac"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Jupyter"></category><category term="reveal.js"></category></entry></feed>
