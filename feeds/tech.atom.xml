@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-02-16T22:35:00+08:00</updated><entry><title>2025/02/10 - 02/16 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/2025-02-10-02-16-open-source-report" rel="alternate"></link><published>2025-02-16T22:35:00+08:00</published><updated>2025-02-16T22:35:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-16:/posts/tech/2025/02/2025-02-10-02-16-open-source-report</id><summary type="html">&lt;p&gt;我也要！&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-02-18T22:40:00+08:00</updated><entry><title>2025/02/10 - 02/16 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/2025-02-10-02-16-open-source-report" rel="alternate"></link><published>2025-02-16T22:35:00+08:00</published><updated>2025-02-16T22:35:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-16:/posts/tech/2025/02/2025-02-10-02-16-open-source-report</id><summary type="html">&lt;p&gt;我也要！&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;我也要！&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -349,7 +349,7 @@ uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;ruf
 但是 &lt;a href="https://github.com/pycontw/pycon-etl/"&gt;pycon-etl&lt;/a&gt; 還在 Python 3.8&lt;br&gt;
 EOL 已經過了...&lt;br&gt;
 所以 workflow 不支援&lt;br&gt;
-看來要升版 Airflow 前， Python 要先升了...&lt;/p&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>PEP 2026 - Calendar versioning for Python</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/pep-2026" rel="alternate"></link><published>2024-11-26T22:20:00+08:00</published><updated>2024-11-26T22:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-26:/posts/tech/2024/11/pep-2026</id><summary type="html">&lt;p&gt;2024 年 release Python 3.13&lt;br&gt;
+看來要升版 Airflow 前， Python 要先升了...&lt;/p&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>PEP 2026 - Calendar versioning for Python</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/pep-2026" rel="alternate"></link><published>2024-11-26T22:20:00+08:00</published><updated>2025-02-18T22:40:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-26:/posts/tech/2024/11/pep-2026</id><summary type="html">&lt;p&gt;2024 年 release Python 3.13&lt;br&gt;
 2025 年 release Python 3.14&lt;br&gt;
 那 2026 年肯定是 release Python 3...&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2024 年 release Python 3.13&lt;br&gt;
@@ -359,8 +359,12 @@ EOL 已經過了...&lt;br&gt;
 
 &lt;p&gt;&lt;img alt="king crimson" src="/images/posts-image/2024-pep-2026/king-crimson.png"&gt;&lt;/p&gt;
 &lt;p&gt;在被消除的時間中，我將改變 Python 的 versioning scheme！&lt;/p&gt;
-&lt;p&gt;&lt;img alt="king crimson - time continue " src="/images/posts-image/2024-pep-2026/king-crimson-time-continue.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="king crimson - time continue" src="/images/posts-image/2024-pep-2026/king-crimson-time-continue.png"&gt;&lt;/p&gt;
 &lt;p&gt;2026 年 release 的是 Python 3.26!&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Feb 18, 2025 更新， PEP 2026 被拒絕了 🥲&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="jojo-requiem" src="/images/meme/jojo-requiem.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;看來是永遠無法達到 Calendar Versioning 的真實 😱&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;不過撰寫這篇摘要的時候，&lt;strong&gt;這個 PEP 還是草稿階段，尚未通過&lt;/strong&gt;&lt;br&gt;
 所以這件事會不會發生還不知道&lt;/p&gt;
