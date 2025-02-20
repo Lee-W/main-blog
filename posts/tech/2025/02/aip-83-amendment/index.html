@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>AIP-83 修正案  - 把 execution date 都移掉，我們就能自由了嗎</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="海（？）的對面是 backfill 跟 data completeness" name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Airflow" name="tags"/>
+<meta content="Airflow 3.0" name="tags"/>
+<meta content="Airflow Improvement Proposal" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="AIP-83 修正案  - 把 execution date 都移掉，我們就能自由了嗎" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="海（？）的對面是 backfill 跟 data completeness" prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
+<meta content="https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" prefix="og: http://ogp.me/ns#" property="og:url">
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2025-02-20 22:50:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Airflow" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Airflow 3.0" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Airflow Improvement Proposal" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me/images/meme/aot-freedom.png" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="AIP-83 修正案  - 把 execution date 都移掉，我們就能自由了嗎" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me/images/meme/aot-freedom.png" name="twitter:image:src"/>
+<meta content="海（？）的對面是 backfill 跟 data completeness" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "AIP-83 修正案 - 把 execution date 都移掉，我們就能自由了嗎",
+  "headline": "AIP-83 修正案 - 把 execution date 都移掉，我們就能自由了嗎",
+  "datePublished": "2025-02-20 22:50:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "",
+  "url": "https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment",
+  "description": "海（？）的對面是 backfill 跟 data completeness"
+}
+</script>
+</meta></meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2025", "item": "https://blog.wei-lee.me/posts/tech/2025"}, {"@type": "ListItem", "position": 5, "name": "02", "item": "https://blog.wei-lee.me/posts/tech/2025/02"}, {"@type": "ListItem", "position": 6, "name": "Aip 83 amendment", "item": "https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "AIP-83 修正案", "about": "Tech", "datePublished": "2025-02-20 22:50"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" property="og:url"/><meta content="article" property="og:type"/><meta content="AIP-83 修正案" property="og:title"/><meta content="C" property="og:locale"/></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🏷️ Tags" role="presentation"><a href="/tags.html"><span>🏷️ Tags</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            AIP-83 修正案
+            <br/>
+<small class="post-subtitle-white">把 execution date 都移掉，我們就能自由了嗎</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2025/02/20 - Thu">2025/02/20 - Thu</time>
+          • 2 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/meme/aot-freedom.png"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>海（？）的對面是 backfill 跟 data completeness</p>
+<!--more-->
+<p><img alt="freedom" src="/images/meme/aot-freedom.png"/></p>
+<p>這次是之前的談到的 <a href="https://blog.wei-lee.me/posts/tech/2024/11/aip-83">AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint</a> 的修正案</p>
+<p>主要包含以下兩份文件</p>
+<ol>
+<li><a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-83+amendment+to+support+classic+Airflow+authoring+style">AIP-83 amendment to support classic Airflow authoring style</a> : 修正案本身，包含了問題跟修正的方向</li>
+<li><a href="https://cwiki.apache.org/confluence/display/AIRFLOW/Option+2+clarification+doc+WIP">Option 2 clarification doc WIP</a> : 針對共識修正方案的細節補充</li>
+</ol>
+<p>以下是我看完它們做的一些筆記<br/>
+之前就因為雖然看過，但忘了記了細節，問了蠢問題...<br/>
+腦袋不好，不做筆記還是不行呢</p>
+<hr/>
+<h2 id="aip-83">AIP-83 修正案</h2>
+<h3 id="_1">前言</h3>
+<p>AIP-83 中， <code>exeuction_date</code> 已經被重新命名為 <code>logical_date</code><br/>
+所以文件中不會再出現 <code>exeuction_date</code></p>
+<blockquote>
+<p>當初認真要學 Airflow 的概念時， execution_date 確實是困惑中最困惑的</p>
+</blockquote>
+<p>最初設計 <code>logical_date</code> 的其中一個用途是去找 dag run<br/>
+但現在有 <code>run_id</code> 了，所以不再需要了<br/>
+而另外一個用途是將 dag runs 切隔成不同的區間（partition）</p>
+<p>e.g.,</p>
+<div class="mermaid">
+gantt
+    dateFormat YYYY-MM-DD
+    tickInterval 1day
+    section Data Interval
+        Interval 1 :done, 2025-02-19, 1d
+        Interval 2 :done, 2025-02-20, 1d
+        Interval 3 :done, 2025-02-21, 1d
+</div>
+<p>第一個 dag run 的 <code>logical_date</code> 就會是 <code>2025/02/19</code><br/>
+表示的是 <code>2025/02/19</code> ~ <code>2025/02/20</code> 這個區間<br/>
+以此延伸概念</p>
+<ul>
+<li>backfill: 去跑某個區間</li>
+<li>catchup: 確保每個區間都有跑過了</li>
+</ul>
+<p>這大致上是 data completeness 的概念<br/>
+至於這個概念是不是常被大家所使用，不知道，可能很少<br/>
+Daniel (修正案提案者之一) 說自己以前是 Data Engineer 的時候，也沒用過<br/>
+大多用到的是 incremental 或 full refresh</p>
+<blockquote>
+<p>我還在樂天當 ML Engineer 的時候，也是只有用 incremental 跟 full refresh</p>
+</blockquote>
+<p>但 data completeness 本身沒有錯，也許也真的有人在用<br/>
+所以不能就這樣讓它壞掉</p>
+<p><img alt="gbc-not-wrong" src="/images/meme/gbc-not-wrong.png"/></p>
+<p><del>目標，武道館</del></p>
+<p><strong>目標： 讓 data completeness 的概念不要壞掉，但不用是 Airflow 的預設行為</strong></p>
+<h3 id="_2">誒不是？怎麼突然就要壞掉了 🤯</h3>
+<ol>
+<li>AIP-83 以前可以透過 unique <code>logical_date</code> 找到 dag_run，現在不行了<ul>
+<li>可能有很多個具有相同 <code>logical_date</code> 的 dag runs<ul>
+<li>不知道哪個區間還沒有完成<ul>
+<li>那不知道要怎麼做 backfil 跟 catchup</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>backfill 的範圍有 10 個 dag runs 都是同樣的日期怎麼辦？<ul>
+<li>全部重跑嗎？</li>
+<li>跑最新的嗎？<ul>
+<li>哪個是最新的？<ul>
+<li>看 <code>start_date</code>?</li>
+<li>看 <code>end_date</code>?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>depends on past</code> 如果有 3 個同 <code>logicate_date</code> 的 dag run，哪個才是過去？命運石之門該選擇誰？</li>
+<li>如果要從前一個 dag run 取 xcom， "前一個 dag run" 是什麼呢？</li>
+<li>grid view 當初就是為了 data completeness 的概念設計，如今禮樂崩壞，又該如何顯示呢？</li>
+</ol>
+<h3 id="data-intervals">躺著也中槍的 data intervals</h3>
+<p>如果 dag 不是為了 <code>logical_date</code> 而跑，那 data interval 就沒意義了<br/>
+這也是順著 data completeness 而生的產物</p>
+<p>如果是手動或 dataset/asset 觸發 的 dag runs， 它們的 data interval 應該是什麼呢？<br/>
+為它們賦予 data interval 有總有種為賦新詞強說愁的感覺</p>
+<h3 id="_3">該付出什麼才能讓一天平安的過去</h3>
+<p>以下是修正案中的 5 個提案</p>
+<ol>
+<li>讓 <code>logical_date</code> uniqueness 回來， just like the good old days</li>
+<li>讓 <code>logical_date</code> uniqueness 回來，但可以是 null</li>
+<li>讓使用者在 dag 裡面定義 partition</li>
+<li>雙手一攤，什麼都不做</li>
+<li>讓 backfill 跟 depends on past 的行為 configurable</li>
+</ol>
+<p>最後大家的選擇是選項 2</p>
+<p><img alt="aot-choice" src="/images/meme/aot-choice.png"/></p>
+<h2 id="option-2">Option 2 執行細節</h2>
+<h3 id="_4">沒爭議的決定</h3>
+<ul>
+<li><code>logical_date</code><ul>
+<li>uniqueness 復活！</li>
+<li>可以是 null</li>
+<li>沒有 <code>logical_date</code> 的 dag runs 不會有 timetables</li>
+</ul>
+</li>
+</ul>
+<h3 id="_5">爭議與他們的結論</h3>
+<ol>
+<li>手動觸發 dag runs 中的 <code>logical_date</code><ol>
+<li>UI<ul>
+<li>舊 UI: 維持原樣（話說回來，舊 UI 也要移除了 → <a href="https://lists.apache.org/thread/orww9dcx2bc5jjd1xlzj8nk89xorxqsf">[DISCUSS] Time to say goodbye to the old UI?</a></li>
+<li>新 UI: 預設為 None，但可以透過 date picker 選日期</li>
+</ul>
+</li>
+<li>REST API<ul>
+<li>舊 API: API 會被移除</li>
+<li>新 API: <code>logical_date</code> 將是必填，但可以是 null</li>
+</ul>
+</li>
+<li><code>TriggerDagRunOperator</code><ul>
+<li>預設為 None，但使用者可以提供</li>
+</ul>
+</li>
+<li>CLI (<code>airflow dags trigger</code>)<ul>
+<li>預設為 None，但使用者可以提供</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Data asset 觸發 dag runs 中的 <code>logical_date</code><ol>
+<li>不會有 <code>logical_dates</code> 跟 data interval</li>
+<li>如果是 schedule + asset 觸發的 dag 呢？<ul>
+<li>data asset 觸發 的 dag runs 比照 2-1</li>
+</ul>
+</li>
+<li>在 template 跟 context 將無法取得 <code>logical_date</code>，而且要丟出例外</li>
+</ol>
+</li>
+<li>UI 上 dag runs 該怎麼排序<ol>
+<li>新增 <code>run_after</code> 欄位， 表示 dag run 最早可以被執行的時間</li>
+<li>並用預設用 <code>run_after</code> 作為排序</li>
+</ol>
+</li>
+<li>Data interval<ol>
+<li>Asset 觸發 dag runs 不會有 <code>logical_date</code>, <code>data_interval_start</code>,  <code>data_interval_end</code> (其實跟 2-1 重複了)</li>
+<li>手動觸發 dag runs<ol>
+<li>dag 本身如果是<ol>
+<li>schedule-driven: 而且 logical_date 有被提供，就給 data interval</li>
+<li>asset-driven: 沒有 data interval</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>如果 dag run 沒有 <code>logical_date</code> ，那 template 跟 context 該怎麼辦？<ul>
+<li>嘗試去要 <code>logical_date</code> 要丟出例外 (跟 2-3 一樣)</li>
+</ul>
+</li>
+<li>沒有 <code>logical_date</code> 的 dag run 的 <code>run_id</code> 該怎麼產生<ul>
+<li>後綴改成 <em>run_after + 隨機字串</em></li>
+</ul>
+</li>
+<li>如果 API 過濾一個 <code>logical_date</code> 範圍的 dag runs 怎麼辦<ul>
+<li>xcom_pull<ul>
+<li>設定 <code>include_prior_dates=True</code> 是沒用的</li>
+</ul>
+</li>
+<li>clear<ul>
+<li>過濾 <code>logical_date</code> 範圍的參數將被無視</li>
+</ul>
+</li>
+<li>如果 <code>logical_date</code> 有被提供，沒有 <code>logical_date</code> 的 dag runs 全部會被無視</li>
+<li>原本過濾 <code>logical_date</code> 都行為都不會改變，沒有 <code>logical_date</code> 的 dag runs 則是自動被跳過</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h2 id="_6">結語</h2>
+<p>重新再做過一次筆記，又讓我對整個概念更熟悉了不少<br/>
+當初 <code>execution_date</code> 這個命名還是太令人困惑了<br/>
+<code>logical_date</code> 又有點抽象，有點玄<br/>
+體感上，好像比較接近 partition ID？</p>
+<p>雖然一開始就做好我看得懂筆記了（畢竟工作上要用）<br/>
+但要稍微順過後發出來，還是意外花了點時間<br/>
+這次我克制自己少用萬用 MyGO!!!!! 梗，以維持我對其他梗圖的熟悉度（？？？？？）</p>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+</script>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=AIP-83 修正案  - 把 execution date 都移掉，我們就能自由了嗎&amp;url=https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment&amp;title=AIP-83 修正案" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=AIP-83 修正案&amp;body=https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/airflow.html">Airflow</a><a href="https://blog.wei-lee.me/tag/airflow-30.html">Airflow 3.0</a><a href="https://blog.wei-lee.me/tag/airflow-improvement-proposal.html">Airflow Improvement Proposal</a> </aside>
+<div class="clear"></div>
+</section>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>
