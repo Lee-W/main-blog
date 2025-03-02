@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2025-01-26 18:37
+modified: 2025-03-02 10:55
 slug: about-me
 ---
 
@@ -156,7 +156,7 @@ I was the program executor and the leader of the teaching assistant team. I also
 
 ## Talk and Tutorial
 * Unleash the Chaos: Developing a Linter for Un-Pythonic Code!
-    * **2025/03** 🇵🇭 [PyCon APAC 2025](https://pycon-apac.python.ph/)
+    * **2025/03/03** 🇵🇭 [PyCon APAC 2025](https://pycon-apac.python.ph/) → [slide](https://speakerdeck.com/leew/unleash-the-chaos-developing-a-linter-for-un-pythonic-code-806b2bae-e161-4762-b0d5-d9fb8efdd24a)
     * **2024/09/21** 🇹🇼 [PyCon TW 2024](https://tw.pycon.org/2024/conference/talk/311) → [slide](https://speakerdeck.com/leew/unleash-the-chaos-developing-a-linter-for-un-pythonic-code), [🎬recording](https://www.youtube.com/watch?v=2jUd0o8VuE0)
 * Unlocking Python's Core Magic
     * **2024/09/28** 🇯🇵 [PyCon JP 2024](https://2024.pycon.jp/en/talk/AQKFHX) → [slide](https://speakerdeck.com/leew/unlocking-pythons-core-magic), [🎬recording](https://www.youtube.com/watch?v=9jbHA6tE9MM)
