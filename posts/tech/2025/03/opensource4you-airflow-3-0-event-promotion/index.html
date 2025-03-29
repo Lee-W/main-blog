@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>黃金流沙饅頭營 Airflow 3.0 宣傳影片 幕後花絮  - 拋頭露面實在不是 I 人如我做的來的</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="這實在是嘔心瀝血之作啊 除了腳本反覆雕琢，錄影更是錄了 127 次才成功 這實在是太挑戰 I 人我了" name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Airflow" name="tags"/>
+<meta content="Airflow 3.0" name="tags"/>
+<meta content="源來適你" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="黃金流沙饅頭營 Airflow 3.0 宣傳影片 幕後花絮  - 拋頭露面實在不是 I 人如我做的來的" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="這實在是嘔心瀝血之作啊 除了腳本反覆雕琢，錄影更是錄了 127 次才成功 這實在是太挑戰 I 人我了" prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
+<meta content="https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion" prefix="og: http://ogp.me/ns#" property="og:url">
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2025-03-29 11:50:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Airflow" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Airflow 3.0" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="源來適你" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="黃金流沙饅頭營 Airflow 3.0 宣傳影片 幕後花絮  - 拋頭露面實在不是 I 人如我做的來的" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" name="twitter:image:src"/>
+<meta content="這實在是嘔心瀝血之作啊 除了腳本反覆雕琢，錄影更是錄了 127 次才成功 這實在是太挑戰 I 人我了" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "黃金流沙饅頭營 Airflow 3.0 宣傳影片 幕後花絮 - 拋頭露面實在不是 I 人如我做的來的",
+  "headline": "黃金流沙饅頭營 Airflow 3.0 宣傳影片 幕後花絮 - 拋頭露面實在不是 I 人如我做的來的",
+  "datePublished": "2025-03-29 11:50:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "https://blog.wei-lee.me//images/cover.jpeg",
+  "url": "https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion",
+  "description": "這實在是嘔心瀝血之作啊 除了腳本反覆雕琢，錄影更是錄了 127 次才成功 這實在是太挑戰 I 人我了"
+}
+</script>
+</meta></meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2025", "item": "https://blog.wei-lee.me/posts/tech/2025"}, {"@type": "ListItem", "position": 5, "name": "03", "item": "https://blog.wei-lee.me/posts/tech/2025/03"}, {"@type": "ListItem", "position": 6, "name": "Opensource4you airflow 3 0 event promotion", "item": "https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "黃金流沙饅頭營 Airflow 3.0 宣傳影片 幕後花絮", "about": "Tech", "datePublished": "2025-03-29 11:50"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion" property="og:url"/><meta content="article" property="og:type"/><meta content="黃金流沙饅頭營 Airflow 3.0 宣傳影片 幕後花絮" property="og:title"/><meta content="C" property="og:locale"/></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🏷️ Tags" role="presentation"><a href="/tags.html"><span>🏷️ Tags</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            黃金流沙饅頭營 Airflow 3.0 宣傳影片 幕後花絮
+            <br/>
+<small class="post-subtitle-white">拋頭露面實在不是 I 人如我做的來的</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2025/03/29 - Sat">2025/03/29 - Sat</time>
+          • 1 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/cover.jpeg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>這實在是嘔心瀝血之作啊<br/>
+除了腳本反覆雕琢，錄影更是錄了 127 次才成功<br/>
+這實在是太挑戰 I 人我了</p>
+<!--more-->
+<blockquote>
+<p>你會介意拍個一分鐘的宣傳短片嗎？<br/>
+大概20秒自我介紹 40秒講一下你對 airflow 大版最期待的功德是啥</p>
+</blockquote>
+<p>當初就是收到了一個這樣的訊息<br/>
+到現在寫這篇文章的時候才發現嘉平打錯字了</p>
+<h2 id="_1">腳本</h2>
+<p>大家好，我是李唯。目前是 Apache Airflow 的 committer，平時在幾個開源社群間走跳。在源來適你，姑且算是 airflow 組的 mentor 。在今年九月即將於台北舉辦的 PyCon Taiwan 也擔任了 5 ~ 6 年的志工，最常像現在這樣，宣傳大會以及目前絕贊徵稿中的資訊。現在正是投稿的時刻。</p>
+<p>回到 Airflow。爲什麼要使用 Airflow? 因為 Airflow 是一個好工具。它可以幫助你輕鬆完成各種任務的排程。而三月底 Airflow 將迎來它睽違 5 年的大更新。<br/>
+最令人期待的功能想必就是大家敲碗許久的的 Dag versioning ，讓使用者方便比對過去 Dag 執行時的邏輯。<br/>
+除此之外，Airflow 3 加強了 Data asset 的概念。讓使用者可以直接定義一個 top level 的 asset，並讓 dag 相依於 asset 進行排程。如果能串起這一個又一個的 asset 和 dag ，也許就能產出更 data centric 的 use cases。<br/>
+除了功能更強更厲害，就在今天早上，過去過時的UI已經死了。我們想讓UI重新開始，因此用 React 重新寫過介面，為了帶給使用者嶄新的體驗。<br/>
+功能很多是很棒，但升版是一件很累的事啊。如果你從來不覺得升版開心過，除了 Airflow 本身自帶的升版工具外，我們這次跟 ruff 進行合作，加入了許多 airflow 2 to 3 的規則，讓你能更快速的將 Dag 搬到 Airflow 3。聽到這裡，我想你心裡多少也有些想法吧，希望你務必加入我們社群，一起讓台灣的工程師在世界的舞臺上被看到。</p>
+<h2 id="_2">腳本撰寫</h2>
+<p>我其實也不確定最後的影片是不是完全照著腳本念<br/>
+但實在太羞恥了，我也不敢自己看一遍</p>
+<p>不過看完腳本你也發現了吧<br/>
+沒錯！<br/>
+除了 Airflow 外，我還偷渡了 <a href="https://tw.pycon.org/2025/en-us/speaking/cfp">PyCon Taiwan 的徵稿資訊</a><br/>
+都看到這了，擇日不如撞日，現在就去投稿吧 💪</p>
+<p>自我介紹大概還是抓在 20 秒左右<br/>
+簡單帶到我在源來適你幹嘛，還得切到推廣 PyCon Taiwan 的徵稿資訊<br/>
+就沒有機會提到 <a href="https://github.com/commitizen-tools/">commitizen-tools</a> 了</p>
+<p>Airflow 的介紹則是分為幾個部分</p>
+<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-63%3A+DAG+Versioning">AIP-63 DAG Versioning</a>： 畢竟是大家敲碗數年的功能</li>
+<li><a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-73+Expanded+Data+Awareness">AIP-73 Expanded Data Awareness</a>： 裡面有一部分是我貢獻的，當然要自肥一下</li>
+<li><a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-38+Modern+Web+Application">AIP-38 Modern Web Application</a>： 剛好錄影當天早上 <a href="https://github.com/apache/airflow/pull/46942">Remove old UI and webserver #46942</a> 被 merge 了，也算是比較好理解的概念，就提一下</li>
+<li><a href="https://github.com/apache/airflow/issues/41641">Airflow 2 to 3 auto migration rules #41641</a>： 現在這也算是我在 own 的功能，也能減輕大家升版到 Airflow 3 的壓力</li>
+</ul>
+<p>光是提到這幾點，大概就要 1 分 40 秒了<br/>
+原本好像還有想提到另一個什麼功能，但最後砍掉了</p>
+<h2 id="_3">錄影</h2>
+<p>之所以要錄這麼多次，主要還是希望不要離腳本太遠<br/>
+尤其是重要的台詞，那個味道還是要在<br/>
+不然應該可以輕鬆錄錄就結束了</p>
+<p>雖然好像錄了很多次，但有幾次錄了 3 秒就咖掉了<br/>
+不過相機裡面有這麼多影片數，我就堆上去充數了</p>
+<p>背景的設計則是我自豪的工作空間<br/>
+調了幾個角度沒辦法再拍到更多周邊<br/>
+右後方放了一些搖曳露營的，左後方則是放了燈<br/>
+升降桌調整到適當的高度，讓他們能正常入鏡<br/>
+說背景要扣分的<br/>
+我看你是完全不懂哦</p>
+<h2 id="mygo">MyGO 在哪裡，絕對難不倒你</h2>
+<p><img alt="mygo-restore-right" src="/images/meme/mygo-restore-right.jpg"/></p>
+<p><img alt="mygo-why-harahikage" src="/images/meme/mygo-why-harahikage.jpg"/></p>
+<p><img alt="mygo-harahikage-is-agood-song" src="/images/meme/mygo-harahikage-is-agood-song.jpg"/></p>
+<p><img alt="mygo-accumulate" src="/images/meme/mygo-accumulate.jpg"/></p>
+<p><img alt="mygo-accumulate-2" src="/images/meme/mygo-accumulate-2.jpg"/></p>
+<p><img alt="mygo-weak-self" src="/images/meme/mygo-weak-self.jpg"/></p>
+<p><img alt="mygo-crychic-restart" src="/images/meme/mygo-crychic-restart.jpg"/></p>
+<p><img alt="mygo-never-happy" src="/images/meme/mygo-never-happy.jpg"/></p>
+<p><img alt="mygo-thoughts" src="/images/meme/mygo-thoughts.jpg"/></p>
+<p><img alt="mygo-join-my-band" src="/images/meme/mygo-join-my-band.jpg"/></p>
+<blockquote>
+<p>要偷渡幾次 MyGo 😂</p>
+</blockquote>
+<p>沒想到我的宣傳文發出來後，2 分鐘內就被抓包</p>
+<blockquote>
+<p>啊，竟然一發佈就被抓到</p>
+<p>不過是 10 次，我的腳本偷渡了 10 次<br/>
+如果不算影片右邊的小燈立牌</p>
+</blockquote>
+<p>恩，對，是 10 次</p>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=黃金流沙饅頭營 Airflow 3.0 宣傳影片 幕後花絮  - 拋頭露面實在不是 I 人如我做的來的&amp;url=https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion&amp;title=黃金流沙饅頭營 Airflow 3.0 宣傳影片 幕後花絮" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=黃金流沙饅頭營 Airflow 3.0 宣傳影片 幕後花絮&amp;body=https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/airflow.html">Airflow</a><a href="https://blog.wei-lee.me/tag/airflow-30.html">Airflow 3.0</a><a href="https://blog.wei-lee.me/tag/yuan-lai-shi-ni.html">源來適你</a> </aside>
+<div class="clear"></div>
+</section>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2025/03/opensource4you-airflow-3-0-event-promotion" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>
