@@ -27,7 +27,6 @@ Cover: /images/posts-image/2025-badger-2040/badger-2040.jpeg
 
 ![badger 2040](/images/posts-image/2025-badger-2040/badger-2040.jpeg)
 
-
 ## 如何重設
 進入正題，其實一切都寫在 [badger2040] 這個 repo 的 README 中了
 
