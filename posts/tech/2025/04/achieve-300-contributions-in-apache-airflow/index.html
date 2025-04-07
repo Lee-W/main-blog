@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>Achieve 300 contributions in Apache Airflow </title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="Following up on Achieve 200 contributions in Apache Airflow. Just a quick reflection on what I did between 200 and 300 contributions." name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Airflow" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="Achieve 300 contributions in Apache Airflow " prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="Following up on Achieve 200 contributions in Apache Airflow. Just a quick reflection on what I did between 200 and 300 contributions." prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow" prefix="og: http://ogp.me/ns#" property="og:url"/>
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2025-04-06 11:45:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Airflow" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="Achieve 300 contributions in Apache Airflow " name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" name="twitter:image:src"/>
+<meta content="Following up on Achieve 200 contributions in Apache Airflow. Just a quick reflection on what I did between 200 and 300 contributions." name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Achieve 300 contributions in Apache Airflow",
+  "headline": "Achieve 300 contributions in Apache Airflow",
+  "datePublished": "2025-04-06 11:45:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "https://blog.wei-lee.me//images/cover.jpeg",
+  "url": "https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow",
+  "description": "Following up on Achieve 200 contributions in Apache Airflow. Just a quick reflection on what I did between 200 and 300 contributions."
+}
+</script>
+</meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2025", "item": "https://blog.wei-lee.me/posts/tech/2025"}, {"@type": "ListItem", "position": 5, "name": "04", "item": "https://blog.wei-lee.me/posts/tech/2025/04"}, {"@type": "ListItem", "position": 6, "name": "Achieve 300 contributions in apache airflow", "item": "https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "Achieve 300 contributions in Apache Airflow", "about": "Tech", "datePublished": "2025-04-06 11:45"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow" property="og:url"/><meta content="article" property="og:type"/><meta content="Achieve 300 contributions in Apache Airflow" property="og:title"/><meta content="C" property="og:locale"/></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🏷️ Tags" role="presentation"><a href="/tags.html"><span>🏷️ Tags</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            Achieve 300 contributions in Apache Airflow
+        </h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2025/04/06 - Sun">2025/04/06 - Sun</time>
+          • 5 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/cover.jpeg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>Following up on <a href="{filename}/posts/book/2024/11-achieve-200-contributions-in-apache-airflow.md">Achieve 200 contributions in Apache Airflow</a>.<br/>
+Just a quick reflection on what I did between 200 and 300 contributions.</p>
+<!--more-->
+<p>It seems that most of the PRs still relate to Dataset/Asset. I thought I had spent more time on AIP-72 and AIP-83, but perhaps those are PRs created by others that I took over. Or maybe my memory is just failing me...</p>
+<p><img alt="airflow-300-contributions" src="/images/posts-image/2025-achieve-300-contributions-in-apache-airflow/airflow-300-contributions.jpg"/></p>
+<p>In addition to the Airflow repo itself, I also spent a decent amount of time contributing to <a href="https://github.com/astral-sh/ruff/pulls/Lee-W">ruff - Airflow rules</a>, which makes me the 29th contributor to ruff. It’s kind of weird, considering that I know almost nothing about Rust.</p>
+<p><img alt="ruff" src="/images/posts-image/2025-achieve-300-contributions-in-apache-airflow/ruff.png"/></p>
+<div class="toc">
+<ul>
+<li><a href="#dataset-asset-alias">Dataset / Asset Alias</a></li>
+<li><a href="#dataset-asset">Dataset / Asset</a></li>
+<li><a href="#aip-74-75-data-asset-and-asset-centric-syntax">AIP-74, 75 - Data Asset and Asset Centric Syntax</a></li>
+<li><a href="#aip-72-task-execution-interface">AIP-72 - Task Execution Interface</a></li>
+<li><a href="#tooling-for-migrating-airflow-2-to-3">Tooling for migrating Airflow 2 to 3</a></li>
+<li><a href="#aip-83-amendment-restore-uniqueness-for-logical_date-while-allowing-it-to-be-nullable">AIP-83 amendment - Restore uniqueness for logical_date while allowing it to be nullable</a></li>
+<li><a href="#providers">Providers</a></li>
+<li><a href="#misc">Misc</a></li>
+</ul>
+</div>
+<h2 id="dataset-asset-alias">Dataset / Asset Alias</h2>
+<ol>
+<li><a href="https://github.com/apache/airflow/pull/41091">set "has_outlet_datasets" to true if "dataset alias" exists</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41097">Add dataset alias unique constraint and remove wrong dataset alias removing logic</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41152">docs(dataset): illustrate when dataset aliases are resolved</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41398">fix DagPriorityParsingRequest unique constraint error when dataset aliases are resolved into new datasets</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41828">fix(dag): avoid getting dataset next run info for unresolved dataset alias</a></li>
+<li><a href="https://github.com/apache/airflow/pull/42189">allow dataset alias to add more than one dataset events</a></li>
+</ol>
+<h2 id="dataset-asset">Dataset / Asset</h2>
+<ol>
+<li><a href="https://github.com/apache/airflow/pull/41264">Add DatasetDagRunQueue to all the consuming DAGs of a dataset alias</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41279">Fix dataset page cannot correctly load triggered dag runs due to lack of dagId</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41300">Show only the source on the consumer DAG page and only triggered DAG run in the producer DAG page</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41301">fix wrong link to the source DAG in consumer DAG's dataset event section</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41814">feat(datasets): make strict_dataset_uri_validation default to True</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41987">Rewrite how dag to dataset / dataset alias are stored</a></li>
+<li><a href="https://github.com/apache/airflow/pull/42055">Rewrite how DAG to dataset / dataset alias are stored</a></li>
+<li><a href="https://github.com/apache/airflow/pull/42733">fix(datasets/managers): fix error handling file loc when dataset alias resolved into new datasets</a></li>
+</ol>
+<h2 id="aip-74-75-data-asset-and-asset-centric-syntax">AIP-74, 75 - Data Asset and Asset Centric Syntax</h2>
+<ol>
+<li><a href="https://github.com/apache/airflow/pull/41348">Rename dataset related python variable names to asset</a></li>
+<li><a href="https://github.com/apache/airflow/pull/42023">Rename Dataset database tables as Asset</a></li>
+<li><a href="https://github.com/apache/airflow/pull/42579">Rename dataset endpoints as asset endpoints</a></li>
+<li><a href="https://github.com/apache/airflow/pull/42735">fix(assets/managers): fix error handling file loc when asset alias resolved into new assets</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43073">Rename dataset as asset in UI</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43110">feat(providers/amazon): Use asset in common provider</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43111">feat(providers/openlineage): Use asset in common provider</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43112">feat(providers/fab): Use asset in common provider</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43142">Add Dataset, Model asset subclasses</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43245">fix(migration): fix dataset to asset migration typo</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43313">Fix AIP-74 migration errors</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43314">fix typo in dag_schedule_dataset_alias_reference migration file</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43373">add migration file to rename dag_schedule_dataset_alias_reference constraint typo</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43425">Resolve warning in Dataset Alias migration</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43469">fix(providers/fab): alias is_authorized_dataset to is_authorized_asset</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43470">fix(providers/amazon): alias is_authorized_dataset to is_authorized_asset</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43693">remove the to-write asset active dag warnings that already exists in the db instead of those that does not exist</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43773">Move Asset user facing components to task_sdk</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43774">Add missing attribute "name" and "group" for Asset and "group" for AssetAlias in serialization, api and methods</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43873">fix(scheduler_job_runner/asset): fix how asset dag warning is added</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43922">Raise deprecation warning when accessing inlet or outlet events through str</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44413">feat(dataset): allow "airflow.dataset.metadata.Metadata" import for backward compat</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44635">feat(datasets): add backward compat for DatasetAll, DatasetAny, expand_alias_to_datasets and DatasetAliasEvent</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44639">Respect Asset.name when accessing inlet and outlet events</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44681">fix(providers/common/compat): add back add_input_dataset and add_output_dataset to NoOpCollector</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44791">Raise deprecation warning when accessing metadata through str</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44831">Fail a task if an inlet or outlet asset is inactive or an inactive asset is added to an asset alias</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44836">feat(asset): change asset inactive warning to log Asset instead of AssetModel</a></li>
+<li><a href="https://github.com/apache/airflow/pull/46721">Combine asset events fetching logic into one SQL query and clean up unnecessary asset-triggered dag data</a></li>
+</ol>
+<h2 id="aip-72-task-execution-interface">AIP-72 - Task Execution Interface</h2>
+<ol>
+<li><a href="https://github.com/apache/airflow/pull/45960">feat(task_sdk): add support for inlet_events in Task Context</a></li>
+</ol>
+<h2 id="tooling-for-migrating-airflow-2-to-3">Tooling for migrating Airflow 2 to 3</h2>
+<ol>
+<li><a href="https://github.com/apache/airflow/pull/43878">ci(github-actions): add uv to news-fragment action</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44181">docs(newsfragement): fix typos in 41762, 42060 and remove unnecessary 41814</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44242">docs(newsfragment): these deprecated things are functions instead of arguments</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44378">docs(newsfragment): add template for significant newsfragments</a></li>
+<li><a href="https://github.com/apache/airflow/pull/45214">feat(cli): add "core.task_runner" and "core.enable_xcom_pickling" to unsupported config check to command "airflow config lint"</a></li>
+<li><a href="https://github.com/apache/airflow/pull/45678">Update existing significant newsfragments with the later introduced template format</a></li>
+<li><a href="https://github.com/apache/airflow/pull/45701">Extend and fix "airflow config lint" rules</a></li>
+<li><a href="https://github.com/apache/airflow/pull/45736">Backport "airflow config lint"</a></li>
+<li><a href="https://github.com/apache/airflow/pull/45737">Add newsfragment and migration rules for scheduler.dag_dir_list_interval → dag_bundles.refresh_interval configuration change</a></li>
+<li><a href="https://github.com/apache/airflow/pull/45740">Add missing significant newsfragments and migration rules needed</a></li>
+<li><a href="https://github.com/apache/airflow/pull/46007">ci(github-actions): add a script to check significant newsfragments</a></li>
+<li><a href="https://github.com/apache/airflow/pull/46364">docs(newsfragment): add significant newsfragment to PR 42252</a></li>
+<li><a href="https://github.com/apache/airflow/pull/46404">ci(github-actions): relax docutils version to support python 3.8</a></li>
+<li><a href="https://github.com/apache/airflow/pull/46409">docs(newsfragments): update migration rules status</a></li>
+<li><a href="https://github.com/apache/airflow/pull/46509">fix(task_sdk): add missing type column to TIRuntimeCheckPayload</a></li>
+<li><a href="https://github.com/apache/airflow/pull/46611">docs(newsfragments): update 46572 newsfrgments content</a></li>
+<li><a href="https://github.com/apache/airflow/pull/46752">Fix significant format and update the checking script</a></li>
+<li><a href="https://github.com/apache/airflow/pull/46757">feat: migrate new config rules back to v2-10-test</a></li>
+<li><a href="https://github.com/apache/airflow/pull/47049">docs(newsfragments): update migration rules in newsfragments</a></li>
+</ol>
+<h2 id="aip-83-amendment-restore-uniqueness-for-logical_date-while-allowing-it-to-be-nullable">AIP-83 amendment - Restore uniqueness for logical_date while allowing it to be nullable</h2>
+<ol>
+<li><a href="https://github.com/apache/airflow/pull/46460">Set logical_date and data_interval to None for asset-triggered dags and forbid them to be accessed in context/template</a></li>
+</ol>
+<h2 id="providers">Providers</h2>
+<ol>
+<li><a href="https://github.com/apache/airflow/pull/41417">add missing sync_hook_class to CloudDataTransferServiceAsyncHook</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41815">fix test_yandex_lockbox_secret_backend_get_connection_from_json by removing non-json extra</a></li>
+<li><a href="https://github.com/apache/airflow/pull/42408">handle ClientError raised after key is missing during DyanmoDB table.get_item</a></li>
+<li><a href="https://github.com/apache/airflow/pull/42490">fix(providers/common/sql): add dummy connection setter for backward compatibility</a></li>
+<li><a href="https://github.com/apache/airflow/pull/42736">feat(providers/common/sql): add warning to connection setter</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44140">fix(providers/databricks): remove additional argument passed to repair_run</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44468">fix(provider/edge): add back missing method map</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44833">docs(newsfragments): fix typo and improve significant newfragment template</a></li>
+</ol>
+<h2 id="misc">Misc</h2>
+<ol>
+<li><a href="https://github.com/apache/airflow/pull/41166">fix(TriggeredDagRuns): fix wrong link in triggered dag run</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41177">Return string representation if XComArgs existing during resolving and include_xcom is set to False</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41182">Allowing DateTimeSensorAsync, FileSensor and TimeSensorAsync to start execution from trigger during dynamic task mapping</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41259">refactor how triggered dag run url is replaced</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41275">Change inserted airflow version of "update-migration-references" command from airflow_version='...' to airflow_version="..."</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41403">Fix missing source link for the mapped task with index 0</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41621">remove the removed --use-migration-files argument of "airflow db reset" command in run_generate_migration.sh</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41691">docs(deferring): fix missing import in example and remove unnecessary example</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41834">Set end_date and duration for triggers completed with end_from_trigger as True</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41924">ci: improve check_deferrable_default script to cover positional variables</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41942">ci: improve check_deferrable_default script to cover positional variables</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41968">Add warning that listeners can be dangerous</a></li>
+<li><a href="https://github.com/apache/airflow/pull/41984">ci: auto fix default_deferrable value with LibCST</a></li>
+<li><a href="https://github.com/apache/airflow/pull/42083">ci(pre-commit): lower minimum libcst version to 1.1.0 for python 3.8 support</a></li>
+<li><a href="https://github.com/apache/airflow/pull/42089">Autofix default deferrable with LibCST</a></li>
+<li><a href="https://github.com/apache/airflow/pull/42304">add "enable_tracemalloc" to log memory usage in scheduler</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43372">ci(pre-commit): migrate pre-commit config</a></li>
+<li><a href="https://github.com/apache/airflow/pull/43877">fix(dag_warning): rename argument error_type as warning_type</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44091">Add newsfragment PR 43393</a></li>
+<li><a href="https://github.com/apache/airflow/pull/44475">refactor(trigger_rule): remove deprecated NONE_FAILED_OR_SKIPPED</a></li>
+<li><a href="https://github.com/apache/airflow/pull/46707">Ensure check_query_exists returns a bool (#43978)</a></li>
+</ol>
+<hr/>
+<p>Okay, so that's it. If I ever have such a summary, the next time I'll start with <a href="https://github.com/apache/airflow/pull/47381">feat(api_fastapi): include asset ID in asset nodes when calling "/ui/dependencies" and "/ui/structure/structure_data" #47381</a>.</p>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=Achieve 300 contributions in Apache Airflow &amp;url=https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow&amp;title=Achieve 300 contributions in Apache Airflow" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=Achieve 300 contributions in Apache Airflow&amp;body=https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/airflow.html">Airflow</a> </aside>
+<div class="clear"></div>
+</section>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2025/04/achieve-300-contributions-in-apache-airflow" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>
