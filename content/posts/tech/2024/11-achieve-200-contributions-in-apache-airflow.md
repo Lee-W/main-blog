@@ -11,7 +11,7 @@ This is more like a personal reflection, and I really doubt it would benefit any
 
 There are actually 202 now, but I have the screenshot when it achieved 200, so I'll just keep 200 in the title.
 
-![2024-07-30-05-15-PM-200-PRs](/images/posts-image/achieve-200-contributions-in-apache-airflow/2024-07-30-05-15-PM-200-PRs.png)
+![2024-07-30-05-15-PM-200-PRs](/images/posts-image/2024-achieve-200-contributions-in-apache-airflow/2024-07-30-05-15-PM-200-PRs.png)
 
 The merged pull request is at 166 (+2). I am unsure about the remaining 34 contributions, perhaps due to the suggestions I provided for the PRs I reviewed. There are 2 PRs in review.
 
