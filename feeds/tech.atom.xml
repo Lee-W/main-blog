@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-04-14T09:45:00+08:00</updated><entry><title>可以封存我在 PyPI 上的沒用套件了！</title><link href="https://blog.wei-lee.me/posts/tech/2025/04/i-can-archive-my-useless-package-on-pypi-now" rel="alternate"></link><published>2025-04-14T09:45:00+08:00</published><updated>2025-04-14T09:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-04-14:/posts/tech/2025/04/i-can-archive-my-useless-package-on-pypi-now</id><summary type="html">&lt;p&gt;&lt;a href="https://blog.pypi.org/posts/2025-01-30-archival/"&gt;PyPI Now Supports Project Archival&lt;/a&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-05-04T22:45:00+08:00</updated><entry><title>2025/04/14 - 05/04 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/05/2025-04-14-05-04-open-source-report" rel="alternate"></link><published>2025-05-04T22:45:00+08:00</published><updated>2025-05-04T22:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-05-04:/posts/tech/2025/05/2025-04-14-05-04-open-source-report</id><summary type="html">&lt;p&gt;最近確實在開源貢獻稍微少了點 🥺&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;最近確實在開源貢獻稍微少了點 🥺&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;前幾週 Airflow 3 忙到快 Burn out&lt;br&gt;
+接著就跑去日本休息了一下&lt;br&gt;
+感覺回來還是微忙，需要慢慢抓回生活的步調&lt;br&gt;
+但還是稍微創了一些 issue 跟看了幾隻 PR&lt;/p&gt;
+&lt;p&gt;今天是星戰日&lt;br&gt;
+願原力與大家同在&lt;/p&gt;
+&lt;p&gt;&lt;img alt="may-4th" src="/images/posts-image/2025-04-14-05-04-open-source-report/may-4th.jpeg"&gt;&lt;/p&gt;
+&lt;h2 id="commitizen"&gt;commitizen&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Create issues&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1385"&gt;Deprecate cz_customize #1385&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1397"&gt;Add support for PEP 751 lockfiles #1397&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Review PRs&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1394"&gt;build(deps): bump argcomplete from 3.5.3 to 3.6.2 #1394&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1395"&gt;ci(github-actions): bump deprecated ubuntu-20.04 to ubuntu-22.04 #1395&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1396"&gt;fix(commit): use os.unlink to remove temp file #1396&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>可以封存我在 PyPI 上的沒用套件了！</title><link href="https://blog.wei-lee.me/posts/tech/2025/04/i-can-archive-my-useless-package-on-pypi-now" rel="alternate"></link><published>2025-04-14T09:45:00+08:00</published><updated>2025-04-14T09:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-04-14:/posts/tech/2025/04/i-can-archive-my-useless-package-on-pypi-now</id><summary type="html">&lt;p&gt;&lt;a href="https://blog.pypi.org/posts/2025-01-30-archival/"&gt;PyPI Now Supports Project Archival&lt;/a&gt;&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a href="https://blog.pypi.org/posts/2025-01-30-archival/"&gt;PyPI Now Supports Project Archival&lt;/a&gt;&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -15246,75 +15270,4 @@ Line Server 會傳一個 postback event 給我們，裡面包含著 data 參數�
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://devdocs.line.me/en/#template-messages"&gt;API Reference - Messaging API&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/line/line-bot-sdk-python#templatesendmessage---buttonstemplate"&gt;line-bot-sdk-python&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Chat Bot"></category></entry><entry><title>Deploy LineBot on Heroku</title><link href="https://blog.wei-lee.me/posts/tech/2016/11/deploy-linebot-on-heroku" rel="alternate"></link><published>2016-11-27T06:05:00+08:00</published><updated>2016-11-27T06:05:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2016-11-27:/posts/tech/2016/11/deploy-linebot-on-heroku</id><summary type="html">&lt;p&gt;上一篇提到如何用 ngrok&lt;br&gt;
-讓我們可以不用架 Https Server，直接在本地端測試 Bot&lt;/p&gt;
-&lt;p&gt;再來要談的是如何把 Bot 部署到 Heroku 上&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;上一篇提到如何用 ngrok&lt;br&gt;
-讓我們可以不用架 Https Server，直接在本地端測試 Bot&lt;/p&gt;
-&lt;p&gt;再來要談的是如何把 Bot 部署到 Heroku 上&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;h1 id="why-not-ngrok"&gt;Why not ngrok&lt;/h1&gt;
-&lt;p&gt;使用 ngrok 必須要讓你的本地端一直開著才能收到訊息&lt;br&gt;
-而且免費版的 ngrok 每次都會更改 url&lt;br&gt;
-所以我們需要一個可以讓其他人較長時間測試的 Server&lt;/p&gt;
-&lt;p&gt;以我自己的開發習慣&lt;br&gt;
-我會使用 ngrok，來做 Bot 的基本除錯&lt;br&gt;
-Heroku 則是用來讓其他人測試功能&lt;br&gt;
-真的要上線的時候才會自己架一個 Https Server&lt;/p&gt;
-&lt;p&gt;Line 的帳號也是 ngrok, heroku 跟上線需要的各申請一個&lt;br&gt;
-不過 ngrok 可以好幾個 Line Bot 專案共用一個即可&lt;/p&gt;
-&lt;h1 id="heroku"&gt;Heroku&lt;/h1&gt;
-&lt;h2 id="create-app"&gt;Create App&lt;/h2&gt;
-&lt;p&gt;先上&lt;a href="https://www.heroku.com"&gt;Heroku&lt;/a&gt; 辦個帳號&lt;/p&gt;
-&lt;p&gt;到個人的 dashboard&lt;br&gt;
-&lt;code&gt;New&lt;/code&gt; → &lt;code&gt;Create New App&lt;/code&gt;&lt;br&gt;
-選一個名字，就創好 App 了&lt;/p&gt;
-&lt;h2 id="deploy"&gt;Deploy&lt;/h2&gt;
-&lt;h3 id="add-remote"&gt;Add Remote&lt;/h3&gt;
-&lt;p&gt;在部署之前要先安裝&lt;a href="https://devcenter.heroku.com/articles/heroku-command-line"&gt;Heroku CLI&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;再來我們要到原本 line-echobot，將 heroku 加入這個專案的 remote&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;heroku&lt;span class="w"&gt; &lt;/span&gt;login
-heroku&lt;span class="w"&gt; &lt;/span&gt;git:remote&lt;span class="w"&gt; &lt;/span&gt;-a&lt;span class="w"&gt; &lt;/span&gt;leewbot
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;接著用 &lt;code&gt;git remote -v&lt;/code&gt; 就能看到 &lt;code&gt;heroku&lt;/code&gt; 已經被加入 remote 了&lt;br&gt;
-以後只要 &lt;code&gt;git push heroku master&lt;/code&gt;，就能部署到 Heroku&lt;br&gt;
-不過我們還必須要多做一些設定才能讓 Bot 順利的部署&lt;/p&gt;
-&lt;h3 id="environment-variables"&gt;Environment Variables&lt;/h3&gt;
-&lt;p&gt;首先是我們原先設定的環境變數&lt;br&gt;
-Heroku 是透過這個指令來做設定&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;heroku&lt;span class="w"&gt; &lt;/span&gt;config:set&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;env key&amp;quot;&lt;/span&gt;:&lt;span class="s2"&gt;&amp;quot;env value&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;或者也能到 dashboard 的 &lt;code&gt;Settings&lt;/code&gt; → &lt;code&gt;Config Variables&lt;/code&gt; → &lt;code&gt;Reveal Config Vars&lt;/code&gt; 做設定&lt;/p&gt;
-&lt;h3 id="python-environments"&gt;Python Environments&lt;/h3&gt;
-&lt;p&gt;因為 Heroku 支援多種不同的語言&lt;br&gt;
-所以要讓 Heroku 知道我們使用的是 Python&lt;/p&gt;
-&lt;p&gt;Heroku 可過專案中是否有 &lt;code&gt;requirements.txt&lt;/code&gt; 來判斷這個專案是否為 Python 專案&lt;br&gt;
-並且安裝 &lt;code&gt;requirements.txt&lt;/code&gt; 內的函式庫&lt;br&gt;
-名稱如果打錯，可能會讓 Heroku 不知道這是 Python 專案，導致部署失敗&lt;/p&gt;
-&lt;p&gt;另外可以透過 &lt;code&gt;runtime.txt&lt;/code&gt; 來指定 Python 的版本&lt;br&gt;
-目前支援這兩種版本&lt;br&gt;
-* &lt;code&gt;python-2.7.12&lt;/code&gt;&lt;br&gt;
-* &lt;code&gt;python-3.5.2&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id="deploy-settings-procfile"&gt;Deploy Settings - Procfile&lt;/h3&gt;
-&lt;p&gt;再來必須要讓 Heroku 知道我們執行專案的指令是什麼&lt;br&gt;
-這個指令就是寫在 &lt;code&gt;Profile&lt;/code&gt; 中&lt;/p&gt;
-&lt;p&gt;這裡使用的部署套件是 gunicorn&lt;br&gt;
-先在 &lt;code&gt;requirements.txt&lt;/code&gt; 加入 &lt;code&gt;gunicorn==19.0.0&lt;/code&gt;&lt;br&gt;
-再來創一個 &lt;code&gt;Profile&lt;/code&gt;，內容是&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;web: gunicorn line_echobot.wsgi --log-file -
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;如果用其他的部署套件，則需要修改 web 後面的指令&lt;/p&gt;
-&lt;p&gt;到了這裡就做好所有的設定了&lt;br&gt;
-最後只要 &lt;code&gt;git push heroku master&lt;/code&gt; 就會部署到 Heroku 上&lt;/p&gt;
-&lt;p&gt;透過 &lt;code&gt;heroku open&lt;/code&gt; 能看到剛剛部署上去的專案&lt;br&gt;
-接著把專案的網址加上我們先前設定的 callback url &lt;code&gt;echobot/callback&lt;/code&gt;&lt;br&gt;
-設定到 Line Bot 的 Webhook URL，就完成了&lt;/p&gt;
-&lt;h1 id="reference"&gt;Reference&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://devcenter.heroku.com/articles/getting-started-with-python#introduction"&gt;Getting Started on Heroku with Python&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://devcenter.heroku.com/articles/deploying-python"&gt;Deploying Python and Django Apps on Heroku&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Heroku"></category><category term="Django"></category><category term="Chat Bot"></category><category term="Deployment"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Chat Bot"></category></entry></feed>
