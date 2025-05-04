@@ -294,22 +294,22 @@
 <li>執行的障礙： 要弄清楚這東西該怎麼用</li>
 <li>評估的障礙： 了解發生了什麼事</li>
 </ul>
-<div class="mermaid">
+<pre class="mermaid">
 flowchart LR
     subgraph 執行階段
         direction LR
         計畫 --&gt; 制定 --&gt; 執行
     end
     目標 --&gt; 執行階段 --&gt; 外界
-</div>
-<div class="mermaid">
+</pre>
+<pre class="mermaid">
 flowchart RL
     subgraph 評估階段
         direction RL
         感知 --&gt; 解釋 --&gt; 比較
     end
     外界 --&gt; 評估階段 --&gt; 目標
-</div>
+</pre>
 <h4 id="_3">人類的認知與情感</h4>
 <ul>
 <li>本能層次<ul>
@@ -374,22 +374,22 @@ flowchart RL
 </ul>
 </li>
 </ul>
-<div class="mermaid">
+<pre class="mermaid">
 flowchart LR
     subgraph 前饋
         direction LR
         有什麼可以做 --&gt; 該做什麼 --&gt; 該怎麼做
     end
     目標 --&gt; 前饋--&gt; 外界
-</div>
-<div class="mermaid">
+</pre>
+<pre class="mermaid">
 flowchart RL
     subgraph 回饋
         direction RL
         發生了什麼 --&gt; 是什麼意思 --&gt; 這樣可以嗎
     end
     外界 --&gt; 回饋--&gt; 目標
-</div>
+</pre>
 <ul>
 <li><strong>設計的基本原則</strong><ol>
 <li>可發現性<ul>
@@ -565,12 +565,12 @@ flowchart RL
 </ul>
 <h3 id="ch-5-">Ch 5 - 人為過失？錯了，是設計不良</h3>
 <h4 id="_17">了解過失的原因</h4>
-<div class="mermaid">
+<pre class="mermaid">
 flowchart LR
     過失發生 --&gt; cause(找到人犯錯的原因) --&gt; 重新設計產品/執行程序 --&gt; 防止過失再發生
 
     style cause fill:#f9f,stroke:#33,stroke-width:4px
-</div>
+</pre>
 <ul>
 <li>如果不能防止人犯錯，那它就不是個好設計</li>
 </ul>
@@ -653,12 +653,12 @@ flowchart LR
 <ul>
 <li>基於規則的錯誤可能的發生原因</li>
 </ul>
-<div class="mermaid">
+<pre class="mermaid">
 flowchart LR
     case{情況判斷} --&gt; |錯誤| 用錯誤的目標或計劃 --&gt; 用不適當的規則
     case{情況判斷} --&gt; |正確| 用正確的規則
     用正確的規則 --&gt; 規則本身有問題 &amp; 評估錯誤
-</div>
+</pre>
 <ul>
 <li>如何避免？<ul>
 <li>提供使用者引導，用容易理解的方式顯示當前的狀態</li>
@@ -775,10 +775,10 @@ flowchart LR
 </li>
 </ul>
 <h4 id="_34">人本設計過程</h4>
-<div class="mermaid">
+<pre class="mermaid">
 flowchart LR
     觀察 --&gt; 衍生想法 --&gt; 製作原型 --&gt; 測試 --&gt; 觀察
-</div>
+</pre>
 <ul>
 <li>觀察<ul>
 <li>設計研究和市場調查<ul>
@@ -878,11 +878,11 @@ flowchart LR
 <ul>
 <li>標準化提供了易用性的重大突破</li>
 </ul>
-<div class="mermaid">
+<pre class="mermaid">
 flowchart LR
     standerize{標準化} --&gt; |太早| 標準可能會被定在不夠好的技術
     standerize{標準化} --&gt; |太晚| late["市面上已經有過多不同的產品，無法得到協議"]
-</div>
+</pre>
 <ul>
 <li>故意添加的困難<ul>
 <li>e.g, 安全系統</li>

@@ -342,23 +342,23 @@ Björn 分享了他從出家前到還俗的過程和各種想法&lt;br&gt;
 &lt;li&gt;執行的障礙： 要弄清楚這東西該怎麼用&lt;/li&gt;
 &lt;li&gt;評估的障礙： 了解發生了什麼事&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 flowchart LR
     subgraph 執行階段
         direction LR
         計畫 --&gt; 制定 --&gt; 執行
     end
     目標 --&gt; 執行階段 --&gt; 外界
-&lt;/div&gt;
+&lt;/pre&gt;
 
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 flowchart RL
     subgraph 評估階段
         direction RL
         感知 --&gt; 解釋 --&gt; 比較
     end
     外界 --&gt; 評估階段 --&gt; 目標
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;h4 id="_3"&gt;人類的認知與情感&lt;/h4&gt;
 &lt;ul&gt;
@@ -424,23 +424,23 @@ flowchart RL
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 flowchart LR
     subgraph 前饋
         direction LR
         有什麼可以做 --&gt; 該做什麼 --&gt; 該怎麼做
     end
     目標 --&gt; 前饋--&gt; 外界
-&lt;/div&gt;
+&lt;/pre&gt;
 
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 flowchart RL
     subgraph 回饋
         direction RL
         發生了什麼 --&gt; 是什麼意思 --&gt; 這樣可以嗎
     end
     外界 --&gt; 回饋--&gt; 目標
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;設計的基本原則&lt;/strong&gt;&lt;ol&gt;
@@ -617,12 +617,12 @@ flowchart RL
 &lt;/ul&gt;
 &lt;h3 id="ch-5-"&gt;Ch 5 - 人為過失？錯了，是設計不良&lt;/h3&gt;
 &lt;h4 id="_17"&gt;了解過失的原因&lt;/h4&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 flowchart LR
     過失發生 --&gt; cause(找到人犯錯的原因) --&gt; 重新設計產品/執行程序 --&gt; 防止過失再發生
 
     style cause fill:#f9f,stroke:#33,stroke-width:4px
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;如果不能防止人犯錯，那它就不是個好設計&lt;/li&gt;
@@ -706,12 +706,12 @@ flowchart LR
 &lt;ul&gt;
 &lt;li&gt;基於規則的錯誤可能的發生原因&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 flowchart LR
     case{情況判斷} --&gt; |錯誤| 用錯誤的目標或計劃 --&gt; 用不適當的規則
     case{情況判斷} --&gt; |正確| 用正確的規則
     用正確的規則 --&gt; 規則本身有問題 &amp; 評估錯誤
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;如何避免？&lt;ul&gt;
@@ -829,10 +829,10 @@ flowchart LR
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id="_34"&gt;人本設計過程&lt;/h4&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 flowchart LR
     觀察 --&gt; 衍生想法 --&gt; 製作原型 --&gt; 測試 --&gt; 觀察
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;觀察&lt;ul&gt;
@@ -933,11 +933,11 @@ flowchart LR
 &lt;ul&gt;
 &lt;li&gt;標準化提供了易用性的重大突破&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 flowchart LR
     standerize{標準化} --&gt; |太早| 標準可能會被定在不夠好的技術
     standerize{標準化} --&gt; |太晚| late["市面上已經有過多不同的產品，無法得到協議"]
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;故意添加的困難&lt;ul&gt;

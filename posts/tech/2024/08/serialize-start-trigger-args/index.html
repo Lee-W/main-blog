@@ -234,7 +234,7 @@
 <h2 id="why-do-we-need-serialization-here">Why do we need serialization here?</h2>
 <p>Before we discuss how to make the serialization work correctly, we should probably also consider why we need serialization.</p>
 <p>Let's bring back the diagram in the <a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker">first article</a>.</p>
-<div class="mermaid">
+<pre class="mermaid">
 sequenceDiagram
     autonumber
     Scheduler -&gt;&gt; Worker: change the TaskInstanceState to QUEUED
@@ -245,7 +245,7 @@ sequenceDiagram
     Scheduler -&gt;&gt; Worker 2: Change the TaskInstanceState to QUEUED
     Worker 2 -&gt;&gt; Worker 2: run "next_method"
     Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
-</div>
+</pre>
 <p>In step 3, we raise a TaskDeferred exception. It will be caught in <a href="https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/taskinstance.py#L283-L297">airflow/models/taskinstance.py::_run_raw_task</a>, which calls <a href="https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/taskinstance.py#L1611">_defer_task</a> after <code>defer_task</code> and writes a trigger row into the <a href="https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/trigger.py#L62">trigger</a> table in the database <a href="https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/taskinstance.py#L1643-L1644">here</a>. That's why it needs to be serialized.</p>
 <div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">trigger_row</span><span class="p">)</span>
 <span class="n">session</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>

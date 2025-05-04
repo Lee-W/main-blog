@@ -198,7 +198,7 @@
 但現在有 <code>run_id</code> 了，所以不再需要了<br/>
 而另外一個用途是將 dag runs 切隔成不同的區間（partition）</p>
 <p>e.g.,</p>
-<div class="mermaid">
+<pre class="mermaid">
 gantt
     dateFormat YYYY-MM-DD
     tickInterval 1day
@@ -206,7 +206,7 @@ gantt
         Interval 1 :done, 2025-02-19, 1d
         Interval 2 :done, 2025-02-20, 1d
         Interval 3 :done, 2025-02-21, 1d
-</div>
+</pre>
 <p>第一個 dag run 的 <code>logical_date</code> 就會是 <code>2025/02/19</code><br/>
 表示的是 <code>2025/02/19</code> ~ <code>2025/02/20</code> 這個區間<br/>
 以此延伸概念</p>

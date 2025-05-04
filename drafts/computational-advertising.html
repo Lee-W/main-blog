@@ -613,7 +613,7 @@
 </ol>
 </li>
 </ul>
-<div class="mermaid">
+<pre class="mermaid">
 flowchart LR
     User --2.1--&gt;Media
     Media --2.2--&gt; ADX
@@ -626,7 +626,7 @@ flowchart LR
     Ad[廣告主]
     DSP[DSP 1..n]
     ADX[ADX]
-</div>
+</pre>
 <ul>
 <li><a href="https://www.iab.com/">IAB</a> 制定了 <a href="https://openrtb.github.io/OpenRTB/">OpenRTB</a> 接口標準，已經被一些 ADX 採用</li>
 </ul>
@@ -644,7 +644,7 @@ flowchart LR
 </ol>
 </li>
 </ul>
-<div class="mermaid">
+<pre class="mermaid">
 flowchart TD
     User --1. 訪問--&gt; Media --2. 廣告請求--&gt; SAD
     SAD --3. 曝光機會詢問--&gt; DAD --&gt; adop
@@ -656,7 +656,7 @@ flowchart TD
     SAD[供給方廣告投放機]
     DAD[需求方廣告投放機]
     adop{是否需要廣告機會}
-</div>
+</pre>
 <ul>
 <li>計價方式: CPM<ul>
 <li>沒有多方競價，又有選擇流量的便利，因此比一般比市場 CPM 單價更高</li>
@@ -757,7 +757,7 @@ flowchart TD
 </ol>
 </li>
 </ul>
-<div class="mermaid">
+<pre class="mermaid">
 
 flowchart LR
     TA[受眾標籤] --&gt; AD[SSP 內部廣告]
@@ -777,7 +777,7 @@ flowchart LR
     subgraph market [市場]
     DSPs[DSP 1..n]
     end
-</div>
+</pre>
 <ul>
 <li>決策過程<ol>
 <li>估算出被聚合的 ADN 和內部廣告的 eCPM</li>
@@ -819,7 +819,7 @@ flowchart LR
 </ul>
 </li>
 </ul>
-<div class="mermaid">
+<pre class="mermaid">
 flowchart LR
     user --1--&gt; media
     media --2--&gt; user
@@ -835,7 +835,7 @@ flowchart LR
     media[媒體伺服器]
     ADX
     DSPs[DSP 1..n]
-</div>
+</pre>
 <!--progress line-->
 <h2 id="ch7">Ch7 資料加工與交易</h2>
 <p>在本章中，我們首先介紹哪些數據資產具有明確的市場價值，價值高低如何，這些是我們收集、交換和加工數據之前非常重要的判斷基礎。在</p>

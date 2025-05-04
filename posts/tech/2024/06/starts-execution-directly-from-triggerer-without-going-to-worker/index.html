@@ -191,7 +191,7 @@
 <h2 id="how-did-the-deferrable-operator-work-before-this-change">How did the deferrable operator work before this change?</h2>
 <p>When a task with <code>deferrable=True</code> is triggered, the <a href="https://airflow.apache.org/docs/apache-airflow/2.9.1/administration-and-deployment/scheduler.html">scheduler</a> assigns a worker to run the <code>execute</code> method of the operator (e.g., <a href="https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/operators/trigger_dagrun.py#L73">TriggerDagRunOperator</a>). If the task runs <a href="https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/operators/trigger_dagrun.py#L211">self.defer</a> which raises a <a href="https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/models/baseoperator.py#L1684">TaskDeferred</a>. The scheduler will change the task instance state to <a href="https://github.com/apache/airflow/blob/e299ac91e2fddc709487aaaa4bb24162f77ba615/airflow/utils/state.py#L59C17-L59C25">deferred</a>. Then the <a href="https://airflow.apache.org/docs/apache-airflow/2.9.1/authoring-and-scheduling/deferring.html">triggerer</a> will pick up the task and run the task in an async manner. After finishing, the trigger <code>yield</code> a TriggerEvent. Then the scheduler will once again assign a worker to run this task and run the <code>next_method</code> which is usually named as <code>execute_complate</code>.</p>
 <p>The current flow looks like this.</p>
-<div class="mermaid">
+<pre class="mermaid">
 sequenceDiagram
     autonumber
     Scheduler -&gt;&gt; Worker: change the TaskInstanceState to QUEUED
@@ -202,10 +202,10 @@ sequenceDiagram
     Scheduler -&gt;&gt; Worker 2: Change the TaskInstanceState to QUEUED
     Worker 2 -&gt;&gt; Worker 2: run "next_method"
     Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
-</div>
+</pre>
 <h2 id="why-do-we-want-it">Why do we want it?</h2>
 <p>If you take a look at <a href="https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/providers/amazon/aws/sensors/s3.py#L346-L367">S3KeysUnchangedSensor</a>, the only thing that the <a href="https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/providers/amazon/aws/sensors/s3.py#L346-L367">execute method</a> do is pretty much just deferring. Thus, we don’t really to execute it from a worker and than defer it to triggerer. We can just start the execution from triggerer and change the flow to the following.</p>
-<div class="mermaid">
+<pre class="mermaid">
 sequenceDiagram
     autonumber
     Scheduler -&gt;&gt; Triggerer: raise "TaskDeferred" and change TaskInstanceState to DEFERRED
@@ -214,15 +214,15 @@ sequenceDiagram
     Scheduler -&gt;&gt; Worker 2: Change the TaskInstanceState to QUEUED
     Worker 2 -&gt;&gt; Worker 2: run "next_method"
     Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
-</div>
+</pre>
 <p>And, in some cases, we don’t even need to run “next_method” in the triggerer, so we probably could support skip “next_method” as well in the future.</p>
-<div class="mermaid">
+<pre class="mermaid">
 sequenceDiagram
     autonumber
     Scheduler -&gt;&gt; Triggerer: raise "TaskDeferred" and change TaskInstanceState to DEFERRED
     Triggerer -) Triggerer: run "run" and yield "TriggerEvent"
     Triggerer --) Scheduler: Change the TaskInstanceState to SUCCESS
-</div>
+</pre>
 <h2 id="how-does-it-affect-dag-authors">How does it affect DAG authors?</h2>
 <p>Well, not much at this moment. Ideally, everything should be the same but more efficient, and it might also open new opportunities for other use cases.</p>
 <h2 id="how-does-it-affect-operator-authors">How does it affect operator authors?</h2>

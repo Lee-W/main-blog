@@ -400,7 +400,7 @@ commitzien 的文件沒有做 versioning ，所以應該是不會有太大的影
 但現在有 &lt;code&gt;run_id&lt;/code&gt; 了，所以不再需要了&lt;br&gt;
 而另外一個用途是將 dag runs 切隔成不同的區間（partition）&lt;/p&gt;
 &lt;p&gt;e.g.,&lt;/p&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 gantt
     dateFormat YYYY-MM-DD
     tickInterval 1day
@@ -408,7 +408,7 @@ gantt
         Interval 1 :done, 2025-02-19, 1d
         Interval 2 :done, 2025-02-20, 1d
         Interval 3 :done, 2025-02-21, 1d
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;p&gt;第一個 dag run 的 &lt;code&gt;logical_date&lt;/code&gt; 就會是 &lt;code&gt;2025/02/19&lt;/code&gt;&lt;br&gt;
 表示的是 &lt;code&gt;2025/02/19&lt;/code&gt; ~ &lt;code&gt;2025/02/20&lt;/code&gt; 這個區間&lt;br&gt;
@@ -1204,10 +1204,10 @@ review 的過程也會更加熟悉 Airflow&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;How task instances look up dag runs now&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 flowchart LR
     task-instance --run_id--&gt; DagRun
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;h3 id="proposal"&gt;Proposal&lt;/h3&gt;
 &lt;ul&gt;
@@ -2304,7 +2304,7 @@ ones, we reverse the order &lt;a href="https://github.com/apache/airflow/blob/72
 &lt;h2 id="why-cant-it-be-supported-directly"&gt;Why can't it be supported directly?&lt;/h2&gt;
 &lt;p&gt;If we look back to &lt;a href="https://github.com/apache/airflow/tree/25616424975e86f69cee35fb65c85283dcc0e245"&gt;commit 25616424975&lt;/a&gt; (one commit before this PR), the decision on whether a task should be sent to the worker of the triggerer is made in &lt;a href="https://github.com/apache/airflow/blob/25616424975e86f69cee35fb65c85283dcc0e245/airflow/models/dagrun.py#L1571-L1586"&gt;airflow/models/dagrun.py::DagRun::schedule_tis&lt;/a&gt; and it used &lt;code&gt;start_from_trigger&lt;/code&gt; and &lt;code&gt;start_trigger_args&lt;/code&gt; to do so. To visualize this, let's take a look at the following two flowcharts.&lt;/p&gt;
 &lt;p&gt;This is what Airflow did before the introduction of the "start execution from trigger" feature. We checked whether the task inherited from an &lt;a href="https://airflow.apache.org/docs/apache-airflow/2.10.0/_modules/airflow/operators/empty.html#EmptyOperator"&gt;EmptyOperator&lt;/a&gt;. If so, we marked it as a success. Otherwise, we added the task to the list of tasks to be scheduled.&lt;/p&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 ---
 title: Schedule a task (before start_from_trigger was introduced)
 ---
@@ -2319,10 +2319,10 @@ flowchart TD
     start --&gt; is_empty
     is_empty --yes--&gt; dummy
     is_empty --noo--&gt; worker
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;p&gt;Now, we add an additional check to see if &lt;code&gt;start_from_trigger&lt;/code&gt; is set to True to determine whether to delay this task at this stage.&lt;/p&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 ---
 title: Schedule a task (after start_from_trigger was introduced)
 ---
@@ -2348,7 +2348,7 @@ flowchart TD
 
     style start_from_trigger color:#FFFFFF, stroke:#00C853, fill:#00C853
     style trigger color:#FFFFFF, stroke:#00C853, fill:#00C853
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;p&gt;The issue is that when tasks are mapped, the scheduler does not execute their &lt;code&gt;__init__&lt;/code&gt; method. We cannot determine the actual values of &lt;code&gt;start_from_trigger&lt;/code&gt; and &lt;code&gt;start_trigger_args&lt;/code&gt; until the task is initialized, which does not occur in the scheduler. If we only check these values at the class level, this feature becomes entirely useless, as we cannot map tasks with different values.&lt;/p&gt;
 &lt;p&gt;We are in a situation where we need these values to decide whether they should go to the worker or the triggerer, but we can only obtain them from the worker.&lt;/p&gt;
@@ -2541,7 +2541,7 @@ Adios elegant 👋&lt;/p&gt;
 &lt;h2 id="why-do-we-need-serialization-here"&gt;Why do we need serialization here?&lt;/h2&gt;
 &lt;p&gt;Before we discuss how to make the serialization work correctly, we should probably also consider why we need serialization.&lt;/p&gt;
 &lt;p&gt;Let's bring back the diagram in the &lt;a href="https://blog.wei-lee.me/posts/tech/2024/06/starts-execution-directly-from-triggerer-without-going-to-worker"&gt;first article&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 sequenceDiagram
     autonumber
     Scheduler -&gt;&gt; Worker: change the TaskInstanceState to QUEUED
@@ -2552,7 +2552,7 @@ sequenceDiagram
     Scheduler -&gt;&gt; Worker 2: Change the TaskInstanceState to QUEUED
     Worker 2 -&gt;&gt; Worker 2: run "next_method"
     Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;p&gt;In step 3, we raise a TaskDeferred exception. It will be caught in &lt;a href="https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/taskinstance.py#L283-L297"&gt;airflow/models/taskinstance.py::_run_raw_task&lt;/a&gt;, which calls &lt;a href="https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/taskinstance.py#L1611"&gt;_defer_task&lt;/a&gt; after &lt;code&gt;defer_task&lt;/code&gt; and writes a trigger row into the &lt;a href="https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/trigger.py#L62"&gt;trigger&lt;/a&gt; table in the database &lt;a href="https://github.com/apache/airflow/blob/84dcfe7eb2c3862f543a350db0f1212ea17dc3db/airflow/models/taskinstance.py#L1643-L1644"&gt;here&lt;/a&gt;. That's why it needs to be serialized.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trigger_row&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -3056,7 +3056,7 @@ pdb&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;&am
 &lt;!--more--&gt;
 
 &lt;p&gt;There are actually 202 now, but I have the screenshot when it achieved 200, so I'll just keep 200 in the title.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="2024-07-30-05-15-PM-200-PRs" src="/images/posts-image/achieve-200-contributions-in-apache-airflow/2024-07-30-05-15-PM-200-PRs.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="2024-07-30-05-15-PM-200-PRs" src="/images/posts-image/2024-achieve-200-contributions-in-apache-airflow/2024-07-30-05-15-PM-200-PRs.png"&gt;&lt;/p&gt;
 &lt;p&gt;The merged pull request is at 166 (+2). I am unsure about the remaining 34 contributions, perhaps due to the suggestions I provided for the PRs I reviewed. There are 2 PRs in review.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://github.com/apache/airflow/pull/41097"&gt;Add dataset alias unique constraint and remove wrong dataset alias removing logic&lt;/a&gt;&lt;/li&gt;
@@ -3639,7 +3639,7 @@ Star 數不算太多，就沒特別試了&lt;br&gt;
 &lt;h2 id="how-did-the-deferrable-operator-work-before-this-change"&gt;How did the deferrable operator work before this change?&lt;/h2&gt;
 &lt;p&gt;When a task with &lt;code&gt;deferrable=True&lt;/code&gt; is triggered, the &lt;a href="https://airflow.apache.org/docs/apache-airflow/2.9.1/administration-and-deployment/scheduler.html"&gt;scheduler&lt;/a&gt; assigns a worker to run the &lt;code&gt;execute&lt;/code&gt; method of the operator (e.g., &lt;a href="https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/operators/trigger_dagrun.py#L73"&gt;TriggerDagRunOperator&lt;/a&gt;). If the task runs &lt;a href="https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/operators/trigger_dagrun.py#L211"&gt;self.defer&lt;/a&gt; which raises a &lt;a href="https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/models/baseoperator.py#L1684"&gt;TaskDeferred&lt;/a&gt;. The scheduler will change the task instance state to &lt;a href="https://github.com/apache/airflow/blob/e299ac91e2fddc709487aaaa4bb24162f77ba615/airflow/utils/state.py#L59C17-L59C25"&gt;deferred&lt;/a&gt;. Then the &lt;a href="https://airflow.apache.org/docs/apache-airflow/2.9.1/authoring-and-scheduling/deferring.html"&gt;triggerer&lt;/a&gt; will pick up the task and run the task in an async manner. After finishing, the trigger &lt;code&gt;yield&lt;/code&gt; a TriggerEvent. Then the scheduler will once again assign a worker to run this task and run the &lt;code&gt;next_method&lt;/code&gt; which is usually named as &lt;code&gt;execute_complate&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The current flow looks like this.&lt;/p&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 sequenceDiagram
     autonumber
     Scheduler -&gt;&gt; Worker: change the TaskInstanceState to QUEUED
@@ -3650,11 +3650,11 @@ sequenceDiagram
     Scheduler -&gt;&gt; Worker 2: Change the TaskInstanceState to QUEUED
     Worker 2 -&gt;&gt; Worker 2: run "next_method"
     Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;h2 id="why-do-we-want-it"&gt;Why do we want it?&lt;/h2&gt;
 &lt;p&gt;If you take a look at &lt;a href="https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/providers/amazon/aws/sensors/s3.py#L346-L367"&gt;S3KeysUnchangedSensor&lt;/a&gt;, the only thing that the &lt;a href="https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/providers/amazon/aws/sensors/s3.py#L346-L367"&gt;execute method&lt;/a&gt; do is pretty much just deferring. Thus, we don’t really to execute it from a worker and than defer it to triggerer. We can just start the execution from triggerer and change the flow to the following.&lt;/p&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 sequenceDiagram
     autonumber
     Scheduler -&gt;&gt; Triggerer: raise "TaskDeferred" and change TaskInstanceState to DEFERRED
@@ -3663,16 +3663,16 @@ sequenceDiagram
     Scheduler -&gt;&gt; Worker 2: Change the TaskInstanceState to QUEUED
     Worker 2 -&gt;&gt; Worker 2: run "next_method"
     Worker 2 -&gt;&gt; Scheduler: Change the TaskInstanceState to SUCCESS
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;p&gt;And, in some cases, we don’t even need to run “next_method” in the triggerer, so we probably could support skip “next_method” as well in the future.&lt;/p&gt;
-&lt;div class="mermaid"&gt;
+&lt;pre class="mermaid"&gt;
 sequenceDiagram
     autonumber
     Scheduler -&gt;&gt; Triggerer: raise "TaskDeferred" and change TaskInstanceState to DEFERRED
     Triggerer -) Triggerer: run "run" and yield "TriggerEvent"
     Triggerer --) Scheduler: Change the TaskInstanceState to SUCCESS
-&lt;/div&gt;
+&lt;/pre&gt;
 
 &lt;h2 id="how-does-it-affect-dag-authors"&gt;How does it affect DAG authors?&lt;/h2&gt;
 &lt;p&gt;Well, not much at this moment. Ideally, everything should be the same but more efficient, and it might also open new opportunities for other use cases.&lt;/p&gt;
