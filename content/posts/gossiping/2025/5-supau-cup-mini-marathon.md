@@ -5,7 +5,7 @@ Category: Gossiping
 Tags: Exercise, Running
 Slug: supau-cup-mini-marathon
 Authors: Wei Lee
-Cover: /images/posts-image/IMG_6185.jpeg
+Cover: /images/posts-image/2025-supau-cup-mini-marathon/finish.jpeg
 
 畢竟舒跑杯當天是星戰日，還是該表示一下我對星戰的愛
 The Force is strong with this shirt.
