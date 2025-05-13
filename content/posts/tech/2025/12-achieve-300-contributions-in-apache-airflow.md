@@ -5,7 +5,7 @@ Tags: Airflow
 Slug: achieve-300-contributions-in-apache-airflow
 Authors: Wei Lee
 
-Following up on [Achieve 200 contributions in Apache Airflow]({filename}/posts/book/2024/11-achieve-200-contributions-in-apache-airflow.md).
+Following up on [Achieve 200 contributions in Apache Airflow]({filename}/posts/tech/2024/11-achieve-200-contributions-in-apache-airflow.md).
 Just a quick reflection on what I did between 200 and 300 contributions.
 
 <!--more-->
