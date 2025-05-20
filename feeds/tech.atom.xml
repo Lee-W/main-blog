@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-05-13T22:40:00+08:00</updated><entry><title>2025/05/05 - 05/11 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/05/2025-05-05-05-11-open-source-report" rel="alternate"></link><published>2025-05-13T22:40:00+08:00</published><updated>2025-05-13T22:40:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-05-13:/posts/tech/2025/05/2025-05-05-05-11-open-source-report</id><summary type="html">&lt;p&gt;最進收到不少 commitizen 的文件 PR&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-05-20T10:30:00+08:00</updated><entry><title>2025/05/12 - 05/18 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/05/2025-05-12-05-18-open-source-report" rel="alternate"></link><published>2025-05-20T10:30:00+08:00</published><updated>2025-05-20T10:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-05-20:/posts/tech/2025/05/2025-05-12-05-18-open-source-report</id><summary type="html">&lt;p&gt;這開 PR 的速度...&lt;br&gt;
+我們 Review 的速度實在跟不上 🥲&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;這開 PR 的速度...&lt;br&gt;
+我們 Review 的速度實在跟不上 🥲&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;那一天 Santi 終於回想起了，曾經被貢獻者狂洗 PR&lt;br&gt;
+前幾天他還來問我們，這個 Tim 是誰 😆&lt;br&gt;
+不過我當年應該也是沒開的這麼誇張快啦 😱&lt;/p&gt;
+&lt;p&gt;萬分感謝 🙏&lt;br&gt;
+我想接下來幾週的紀錄應該就是 commitizen 獨霸了&lt;br&gt;
+而且大多應該是都是 review PR 跟分類 issue&lt;/p&gt;
+&lt;h2 id="commitizen"&gt;commitizen&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Review PRs&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1408"&gt;docs(pull_request_template): make the checklist holistic #1408&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1407"&gt;refactor: fix typos #1407&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1404"&gt;docs: improve clarity of docs and fix typo/grammar issues #1404&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1414"&gt;feat(cli): add --tag-format argument to changelog command #1414&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1416"&gt;refactor: improve readability and fix typos #1416&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1417"&gt;refactor(git): improve readability and remove map variable #1417&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1418"&gt;fix(bump): don't fail if an invalid version tag is present (fix #1410) #1418&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1423"&gt;test(changelog): code cleanup and better type #1423&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1421"&gt;refactor(default): capitalize all constants and remove unnecessary variables #1421&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1428"&gt;refactor: misc cleanup #1428&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Triage issue&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1409"&gt;poetry all tests fail #1409&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>2025/05/05 - 05/11 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/05/2025-05-05-05-11-open-source-report" rel="alternate"></link><published>2025-05-13T22:40:00+08:00</published><updated>2025-05-13T22:40:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-05-13:/posts/tech/2025/05/2025-05-05-05-11-open-source-report</id><summary type="html">&lt;p&gt;最進收到不少 commitizen 的文件 PR&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最進收到不少 commitizen 的文件 PR&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -14912,99 +14943,4 @@ Unlike &lt;code&gt;ale&lt;/code&gt;, &lt;code&gt;python-mode&lt;/code&gt; check 
 &lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:pymode_lint_ignore &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;C0111,W0621,E501,F0002&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Note that space cannot appear in &lt;code&gt;pymode_lint_ignore&lt;/code&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Code Quality"></category><category term="Vim"></category></entry><entry><title>git ignore-io 與 開源貢獻經驗</title><link href="https://blog.wei-lee.me/posts/tech/2017/02/git-ignoreio-and-open-source-experience" rel="alternate"></link><published>2017-02-28T21:56:00+08:00</published><updated>2017-02-28T21:56:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2017-02-28:/posts/tech/2017/02/git-ignoreio-and-open-source-experience</id><summary type="html">&lt;p&gt;雖然已經隔了一年多&lt;br&gt;
-當初 git ignore-io 這個小功能，也是花了一兩個月&lt;br&gt;
-好不容易才&lt;a href="https://github.com/tj/git-extras"&gt;git extras&lt;/a&gt; merge 回去的&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;雖然已經隔了一年多&lt;br&gt;
-當初 git ignore-io 這個小功能，也是花了一兩個月&lt;br&gt;
-好不容易才&lt;a href="https://github.com/tj/git-extras"&gt;git extras&lt;/a&gt; merge 回去的&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;p&gt;當初看到這封信的時候，很是感動啊 xd&lt;br&gt;
-&lt;img alt="accepted" src="/images/posts-image/2017-02-28-git-ignoreio-and-open-source-experience/1-accepted.jpg"&gt;&lt;/p&gt;
-&lt;h2 id="git-ignore-io"&gt;git ignore-io&lt;/h2&gt;
-&lt;p&gt;這個工具主要是從&lt;a href="https://www.gitignore.io"&gt;gitignoore.io&lt;/a&gt; 上下載 .gitignore 的範本&lt;br&gt;
-e.g.,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;ignore-io&lt;span class="w"&gt; &lt;/span&gt;-a&lt;span class="w"&gt; &lt;/span&gt;vim&lt;span class="w"&gt; &lt;/span&gt;osx&lt;span class="w"&gt; &lt;/span&gt;python
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;像這就是 vim 常見的暫存檔們&lt;br&gt;
-一般來說應該被忽略掉，不用被 commit&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# Created by https://www.gitignore.io/api/vim
-
-### Vim ###
-# swap
-[._]*.s[a-v][a-z]
-[._]*.sw[a-p]
-[._]s[a-v][a-z]
-[._]sw[a-p]
-# session
-Session.vim
-# temporary
-.netrwhist
-*~
-# auto-generated tag files
-tags
-
-# End of https://www.gitignore.io/api/vim
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;hr&gt;
-&lt;p&gt;當初可是連文件都要寫好，才會被作者接受&lt;br&gt;
-所以我這裡就直接沿用我當初寫的文件了 xD&lt;/p&gt;
-&lt;p&gt;Without option, &lt;code&gt;git ignore-io &amp;lt;type&amp;gt;&lt;/code&gt; shows the sample gitignore of specified types on screen.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;ignore-io&lt;span class="w"&gt; &lt;/span&gt;vim
-
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;# Created by https://www.gitignore.io/api/vim&lt;/span&gt;
-
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;### Vim ###&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;._&lt;span class="o"&gt;]&lt;/span&gt;*.s&lt;span class="o"&gt;[&lt;/span&gt;a-w&lt;span class="o"&gt;][&lt;/span&gt;a-z&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;._&lt;span class="o"&gt;]&lt;/span&gt;s&lt;span class="o"&gt;[&lt;/span&gt;a-w&lt;span class="o"&gt;][&lt;/span&gt;a-z&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;*.un~
-&lt;span class="w"&gt;    &lt;/span&gt;Session.vim
-&lt;span class="w"&gt;    &lt;/span&gt;.netrwhist
-&lt;span class="w"&gt;    &lt;/span&gt;*~
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;To export it to &lt;code&gt;.gitignore&lt;/code&gt; file you can use the following options:  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-a&lt;/code&gt; or &lt;code&gt;--append&lt;/code&gt; to append the result to &lt;code&gt;.gitignore&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-r&lt;/code&gt; or &lt;code&gt;--replace&lt;/code&gt; to export &lt;code&gt;.gitignore&lt;/code&gt; with the result&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;ignore-io&lt;span class="w"&gt; &lt;/span&gt;vim&lt;span class="w"&gt; &lt;/span&gt;python
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;For efficiency, &lt;code&gt;git ignore-io&lt;/code&gt; store all available types at &lt;code&gt;~/.gi_list&lt;/code&gt;.&lt;br&gt;
-To list all the available types:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-l&lt;/code&gt; or &lt;code&gt;-L&lt;/code&gt; : These two options will show the list in different format. Just try it.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;You can also search type from the list by:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-s &amp;lt;word&amp;gt;&lt;/code&gt; or &lt;code&gt;--search &amp;lt;word&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;ignore-io&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;ja
-
-&lt;span class="w"&gt;    &lt;/span&gt;django
-&lt;span class="w"&gt;    &lt;/span&gt;jabref
-&lt;span class="w"&gt;    &lt;/span&gt;java
-&lt;span class="w"&gt;    &lt;/span&gt;ninja
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;hr&gt;
-&lt;h2 id="_1"&gt;為什麼要貢獻開源專案？&lt;/h2&gt;
-&lt;p&gt;貢獻開源專案最主要的原因&lt;br&gt;
-還是就是&lt;strong&gt;我需要這個功能啊！！！&lt;/strong&gt;&lt;br&gt;
-但是就沒有人寫，bug 沒有人修&lt;br&gt;
-所以就只好先承認自己就是「沒有人」了 xd&lt;/p&gt;
-&lt;p&gt;其實 gitignore.io 本身就有提供一個簡單的 script &lt;a href="https://www.gitignore.io/docs#-install-command-line"&gt;gi&lt;/a&gt;&lt;br&gt;
-不過實在有點不夠我用 xD&lt;br&gt;
-於是我就寫了&lt;a href="https://github.com/Lee-W/gi_extension"&gt;gi_extension&lt;/a&gt;&lt;br&gt;
-後來又覺得，如果整併的 git extras&lt;br&gt;
-我就能透過 homebrew 安裝了 (?????&lt;/p&gt;
-&lt;p&gt;整個從 pull request 到 merge 的過程其實蠻有趣的&lt;br&gt;
-我找到當初我開的&lt;a href="https://github.com/tj/git-extras/pull/439"&gt;pr #439&lt;/a&gt; 和&lt;a href="https://github.com/tj/git-extras/pull/448"&gt;pr #448&lt;/a&gt;&lt;br&gt;
-從 shell script 的風格（有人建議我用&lt;a href="https://github.com/koalaman/shellcheck"&gt;shellcheck&lt;/a&gt;）到 command 的 option 為什麼要這樣命名&lt;br&gt;
-都有人跟我討論，給我建議&lt;br&gt;
-從中也學到了很多&lt;br&gt;
-&lt;del&gt;貢獻這些專案還能去申請 SITCON 跟 COSCUP 的開源貢獻票，這樣就不用跟大家搶票了&lt;/del&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Open Source"></category></entry></feed>
+&lt;p&gt;Note that space cannot appear in &lt;code&gt;pymode_lint_ignore&lt;/code&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Code Quality"></category><category term="Vim"></category></entry></feed>
