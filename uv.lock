@@ -300,6 +300,7 @@ dependencies = [
     { name = "pelican-seo" },
     { name = "pelican-series" },
     { name = "pelican-share-post" },
+    { name = "pelican-statistics" },
     { name = "pelican-tag-cloud" },
     { name = "pelican-webassets" },
     { name = "pillow" },
@@ -332,6 +333,7 @@ requires-dist = [
     { name = "pelican-seo", specifier = ">=1.2.2" },
     { name = "pelican-series", specifier = ">=3.0.0" },
     { name = "pelican-share-post", specifier = ">=1.1.0" },
+    { name = "pelican-statistics", specifier = ">=1.0.0" },
     { name = "pelican-tag-cloud", specifier = ">=1.0.1" },
     { name = "pelican-webassets", specifier = ">=2.0.0" },
     { name = "pillow", specifier = ">=11.0.0" },
@@ -587,6 +589,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/0c/c2/ff54225243bb001c1a0d82bc953f6219a5698286f3dcc9680666ef735c0e/pelican_share_post-1.2.1.tar.gz", hash = "sha256:f6dc774ba2527f8a10e8c27dcf8d63d05515b94e05eca7dc7a647e2683a6be3d", size = 5343, upload-time = "2025-03-23T18:33:34.476Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/42/7d/1ce09fa82d59f32e516e0b148946a3840d2984d693520ae8368d3e0773f8/pelican_share_post-1.2.1-py3-none-any.whl", hash = "sha256:fc299140bb66e0fac23b4e907e8be161b678c6dd81cabc582c74479f2cd33efb", size = 6221, upload-time = "2025-03-23T18:33:32.993Z" },
+]
+
+[[package]]
+name = "pelican-statistics"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "beautifulsoup4" },
+    { name = "pelican" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5e/b5/ff348ea371553423afd666bc6544509b6b4ed267f77887972088cac0109f/pelican_statistics-1.0.0.tar.gz", hash = "sha256:d9d20b262bb8e9af975c68fb73169fd9d588f26ff340260387ec4dc81f2d13b0", size = 5410, upload-time = "2025-01-12T09:54:35.008Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/89/94/cea69c4042022106cf9ae93c6d1af32770bf8f154903d09a63d305f01043/pelican_statistics-1.0.0-py3-none-any.whl", hash = "sha256:f2397fc1cee0731e65057d755c5aa8811d075b20c11b2bdc07a88ea7b7dc40e1", size = 6242, upload-time = "2025-01-12T09:54:32.484Z" },
 ]
 
 [[package]]

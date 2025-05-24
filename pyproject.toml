@@ -16,6 +16,7 @@ dependencies = [
     "pelican-seo>=1.2.2",
     "pelican-series>=3.0.0",
     "pelican-share-post>=1.1.0",
+    "pelican-statistics>=1.0.0",
     "pelican-tag-cloud>=1.0.1",
     "pelican-webassets>=2.0.0",
     "pelican[markdown]>=4.10.1",
