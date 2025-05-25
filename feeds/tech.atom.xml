@@ -1,5 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-05-20T10:30:00+08:00</updated><entry><title>2025/05/12 - 05/18 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/05/2025-05-12-05-18-open-source-report" rel="alternate"></link><published>2025-05-20T10:30:00+08:00</published><updated>2025-05-20T10:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-05-20:/posts/tech/2025/05/2025-05-12-05-18-open-source-report</id><summary type="html">&lt;p&gt;這開 PR 的速度...&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-05-25T23:15:00+08:00</updated><entry><title>2025/05/19 - 05/25 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/05/2025-05-19-05-25-open-source-report" rel="alternate"></link><published>2025-05-25T23:15:00+08:00</published><updated>2025-05-25T23:15:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-05-25:/posts/tech/2025/05/2025-05-19-05-25-open-source-report</id><summary type="html">&lt;p&gt;你問我跟得上嗎？你才得給我跟上！&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;你問我跟得上嗎？你才得給我跟上！&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;本想這麼說的，然後這時候 BGM 在下一首 Emiya&lt;/p&gt;
+&lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6GKxOE9OBLLnaLF1uQP29V?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;但 Tim 大大的 PR 實在太多了&lt;br&gt;
+真的跟不上 🥲&lt;/p&gt;
+&lt;h2 id="commitizen"&gt;Commitizen&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Review&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1404"&gt;docs: improve clarity of docs and fix typo/grammar issues #1404&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;我沒辦法 merge ， Axel 有要求改動&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1412"&gt;refactor(customize): improve code readability #1412&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1417"&gt;refactor(git): code cleanup and test coverage #1417&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1422"&gt;refactor(bump): code cleanup and better test coverage #1422&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1423"&gt;test(changelog): code cleanup and better type #1423&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1426"&gt;refactor(commit): simplify call #1426&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1427"&gt;refactor(check): code cleanup #1427&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1429"&gt;refactor(bump): add type for out, replace function with re escape #1429&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1430"&gt;refactor(version_scheme): cleanup #1430&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1436"&gt;docs(ISSUE_TEMPLATE): correct labels #1436&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1437"&gt;docs(label_issues): add logics for adding os related labels #1437&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1438"&gt;docs(bug_report): add fallback command if cz version --report is not available #1438&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1442"&gt;refactor(git): extract _create_commit_cmd_string, better test coverage #1442&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1443"&gt;refactor(changelog): minor cleanup #1443&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1444"&gt;refactor(BaseConfig): update function name, upgrade mypy version #1444&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1447"&gt;fix(defaults): add non-capitalized default constants back and deprecated warning #1447&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1448"&gt;docs(label_pr.yml): add labels based on new PR title #1448&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1450"&gt;build(termcolor): remove termcolor &amp;lt;3 restriction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1453"&gt;refactor(changelog): better typing, yield #1453&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1456/"&gt;docs(taplo): add toml formatter #1456&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Close issue&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1435"&gt;Version 4.7.2 breaks cz_github_jira_conventional because of missing defaults.bump_pattern #1435&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/558"&gt;tag message for annotated_tag option #558&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1434"&gt;pre-commit fail even if the problem is fixed automatically #1434&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Create issue&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1445"&gt;Redesign how configuration, flag, and default are handled #1445&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1446"&gt;Clarify what's a breaking change in commitizen #1446&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Create PR&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1457"&gt;4.8.3 candidate #1457&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;其實這個只是把 Tim 大的十幾個 PR 先 merge 進來的 branch ，裡面沒有一行 code 是我寫的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="opensource4youreadme"&gt;opensource4you/readme&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Create PR&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/opensource4you/readme/pull/8"&gt;Add Jason as Apache Airflow mentor #8&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;畢竟 Jason 大大都當上 committer 這麼久了，應該要被掛名主要 mentor 了吧&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="pycon-etl"&gt;pycon-etl&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Create PR&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/pycontw/pycon-etl/pull/158"&gt;Upgrade to airflow 2 #158&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;終於至少是先把 PR 開出來了，還有許多問題要解，但升到 2.11 應該不是太大的問題&lt;/li&gt;
+&lt;li&gt;升到 3.0 應該會是下一個 PR ，有一兩個 clean up 用的 dag 會需要重寫，其他看起來應該是...不會有太大的問題...吧&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>2025/05/12 - 05/18 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/05/2025-05-12-05-18-open-source-report" rel="alternate"></link><published>2025-05-20T10:30:00+08:00</published><updated>2025-05-20T10:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-05-20:/posts/tech/2025/05/2025-05-12-05-18-open-source-report</id><summary type="html">&lt;p&gt;這開 PR 的速度...&lt;br&gt;
 我們 Review 的速度實在跟不上 🥲&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這開 PR 的速度...&lt;br&gt;
 我們 Review 的速度實在跟不上 🥲&lt;/p&gt;
@@ -14869,78 +14945,4 @@ Flask 把 request 這種幾乎所有 view function 都會用到的參數直接�
 但身為星戰迷，實在無法抵抗光劍的誘惑&lt;br&gt;
 The force is strong in this session&lt;/p&gt;
 &lt;p&gt;一把最簡單的光劍大概台幣 1000 可以起來&lt;br&gt;
-感覺有時間蠻值得來玩玩的 xD&lt;/p&gt;</content><category term="Tech"></category><category term="Conference"></category><category term="SITCON"></category></entry><entry><title>Tool for Checking Python Coding Style</title><link href="https://blog.wei-lee.me/posts/tech/2017/03/tools-for-checking-python-coding-style" rel="alternate"></link><published>2017-03-15T19:13:00+08:00</published><updated>2017-03-15T19:13:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2017-03-15:/posts/tech/2017/03/tools-for-checking-python-coding-style</id><summary type="html">&lt;p&gt;&lt;a href="https://www.pylint.org"&gt;Pylint&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="setup"&gt;Setup&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;pylint
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="usage"&gt;Usage&lt;/h2&gt;
-&lt;h3 id="generate-a-code-quality-report"&gt;Generate a code quality report&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pylint&lt;span class="w"&gt; &lt;/span&gt;your_code.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</summary><content type="html">&lt;p&gt;&lt;a href="https://www.pylint.org"&gt;Pylint&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="setup"&gt;Setup&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;pylint
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="usage"&gt;Usage&lt;/h2&gt;
-&lt;h3 id="generate-a-code-quality-report"&gt;Generate a code quality report&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pylint&lt;span class="w"&gt; &lt;/span&gt;your_code.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;!--more--&gt;
-
-&lt;h3 id="customize-your-pylint-settings"&gt;Customize your pylint settings&lt;/h3&gt;
-&lt;p&gt;Some rules in default settings might be too trivial.&lt;br&gt;
-(e.g. PEP8 E501: line too long error (no more than 79 characters) )&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Generate &lt;code&gt;pylintrc&lt;/code&gt; file&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pylint&lt;span class="w"&gt; &lt;/span&gt;--generate-rcfile&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.pylintrc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This generate a common used &lt;code&gt;pylintrc&lt;/code&gt;.&lt;br&gt;
-For further customization, you'll have to change this file.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Generate a code quality report using you &lt;code&gt;pylintrc&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pylint&lt;span class="w"&gt; &lt;/span&gt;--rcfile&lt;span class="w"&gt; &lt;/span&gt;~/.pylintrc&lt;span class="w"&gt; &lt;/span&gt;you_code.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="integrate-with-vim"&gt;Integrate with Vim&lt;/h2&gt;
-&lt;h3 id="1-ale"&gt;1. &lt;a href="https://github.com/w0rp/ale"&gt;ale&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="ale-screenshot" src="/images/posts-image/2017-03-15-tools-for-checking-python-coding-style/vwpqY4G.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ale&lt;/code&gt; also supports other linters in other languages.&lt;br&gt;
-It uses the new async feature in vim 8.&lt;br&gt;
-Thus, it checks your code when you are typing. (You can disable it.)&lt;/p&gt;
-&lt;p&gt;The following settings are for pylint in &lt;code&gt;~/.vimrc&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# The default value is pytlinh&lt;/span&gt;
-&lt;span class="c1"&gt;# If your pylint executable is not pylint, it should be set&lt;/span&gt;
-&lt;span class="nb"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;g:ale_python_pylint_executable&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pylint&amp;#39;&lt;/span&gt;
-
-&lt;span class="c1"&gt;# options of your pylint command&lt;/span&gt;
-&lt;span class="nb"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;g:ale_python_pylint_options&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--rcfile ~/.pylintrc&amp;#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;All the available linters are enabled by default.&lt;br&gt;
-For Python, &lt;code&gt;flake8&lt;/code&gt;, &lt;code&gt;mypy&lt;/code&gt; are also used.&lt;br&gt;
-Thus, you might find that even if you ignore some rules in &lt;code&gt;pylintc&lt;/code&gt;, you are still notified.&lt;/p&gt;
-&lt;p&gt;In this case, add the following setting in &lt;code&gt;~/.vimrc&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;g:ale_linters&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
-&lt;span class="se"&gt;\ &lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;python&amp;#39;&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pylint&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;,
-&lt;span class="se"&gt;\}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This enables &lt;code&gt;pylint&lt;/code&gt; as the only linter for Python&lt;/p&gt;
-&lt;p&gt;p.s. &lt;code&gt;mypy&lt;/code&gt;, &lt;code&gt;flake8&lt;/code&gt; are also great linters. I'm just not familiar with it&lt;/p&gt;
-&lt;h3 id="2-python-mode"&gt;2. &lt;a href="https://github.com/python-mode/python-mode"&gt;python-mode&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;It's a powerful package supports not only linters but also plenty of useful features a python programmer would need.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="python-mode-screenshot" src="/images/posts-image/2017-03-15-tools-for-checking-python-coding-style/5FffIqN.png"&gt;&lt;br&gt;
-Unlike &lt;code&gt;ale&lt;/code&gt;, &lt;code&gt;python-mode&lt;/code&gt; check your code only when you save or open your python file (You can set this in your &lt;code&gt;~/.vimrc&lt;/code&gt;)&lt;/p&gt;
-&lt;p&gt;Add these lines in &lt;code&gt;~/.vimrc&lt;/code&gt;  to enable &lt;code&gt;pylint&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:pymode_lint_checkers &lt;span class="p"&gt;=&lt;/span&gt; [&lt;span class="s1"&gt;&amp;#39;pyflakes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pylint&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pep8&amp;#39;&lt;/span&gt;]
-&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:pymode_lint_ignore &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;C0111,W0621,E501,F0002&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Note that space cannot appear in &lt;code&gt;pymode_lint_ignore&lt;/code&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Code Quality"></category><category term="Vim"></category></entry></feed>
+感覺有時間蠻值得來玩玩的 xD&lt;/p&gt;</content><category term="Tech"></category><category term="Conference"></category><category term="SITCON"></category></entry></feed>
