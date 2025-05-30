@@ -5,6 +5,7 @@ Category: Tech
 Tags: Airflow
 Slug: airflow-multilingual
 Authors: Wei Lee
+Cover: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
 
 > What is my sacrifice?
 >
@@ -20,13 +21,13 @@ Authors: Wei Lee
 
 ## TL;DR
 
-1. [Andor: A Star Wars Story] 超級好看，做第二點就去看！
+1. [Andor: A Star Wars Story] 超級好看，做完第二點就去看！
 2. 最近在 Airflow 引入 i18n 的 PR [Feature/implement i18n for Dashboard and SideBar #50626][airflow-pr-50626] 正在票選本月最棒棒 PR [[VOTE] May 2025 PR of the Month][2025-pr-vote]
     * 如果你也認同這個 PR 像那天最棒的演唱會一樣棒的話，投下你的票吧！
 
 ![mygo-best-concert](/images/meme/mygo-best-concert.jpg)
 
-歐內該，如果沒有去投票的話，哇搭吸
+歐內該，如果沒有去投票的話，哇搭係
 
 ![mygo-everything](/images/meme/mygo-everything.jpg)
 
@@ -34,7 +35,7 @@ Authors: Wei Lee
 自從 [Jason] 成為 Apache Airflow 的 committer （同場加映： [從 0 成為 Apache Airflow Committer]）
 [源來適你][OpenSource4You] 的 `#apache-airflow` 就熱鬧了不少
 ~~我也從主要 Mentor ，追加了 Meme Bot 的 title~~
-[guan404ming] 的 PR 數也怪追上 [Jason]，還有族繁不及備載的新朋友們
+[guan404ming] 的 PR 數也快追上 [Jason]，還有族繁不及備載的新朋友們
 但我怕再載下去就要壓過主角 [RoyLee1224] 的篇幅了
 
 ## 很久很久以前（其實也就不到一個月前）
@@ -127,16 +128,16 @@ TP 在信件中所提到的 Running 也是
 
 不過 Jens 舉的幾個例子也不無道理
 如果有人今天問我 git 提交該怎麼寫，我可能也會一時反應不過來
-啊啊...原來是 git commit 啊（虧我還是 commitizen 的維護者）
+啊啊...原來是 git commit 啊（虧我還是 [commitizen] 的維護者）
 
 只能說也許我們不是這個功能的目標客群吧
-在 airflow dev mailing list 或參與 issue 討論的我們，或許都是不是
+在 airflow dev mailing list 或參與 issue 討論的我們，或許都不是
 我們或多或少都對英文有些熟悉
 但正是因為想降低入門門檻，讓更多人接近 Airflow
 我們才決定做這件事，至少我是這麼認為的
 
 這也讓我想到， [Python 官方說明文件臺灣繁體中文翻譯計畫] 的朋友們
-我確定是是他們還是 yyc 有跟我聊到（亦或者只是我夢到的不存在的記憶）
+我不確定是他們還是 yyc 有跟我聊到（亦或者我中了強壯路人的咒術產生了不存在的記憶）
 雖然我們得讀英文，也該熟悉英文
 有時甚至到許多詞彙的繁體中文翻譯都不熟悉了
 但做繁體中文翻譯這件事依然重要
@@ -152,6 +153,7 @@ Make a sunrise that I know I'll never ~~see~~ need
 
 但這段 Luthen 獨白實在是太棒了
 我不捨得在副標題把它改掉
+當初看到傻眼，直接跑去查演員到底是誰，詮釋的太好了吧
 
 寫這篇文除了為熱帶的土地發聲
 也是要推薦我熱愛的影集 [Andor: A Star Wars Story]
@@ -181,3 +183,4 @@ Make a sunrise that I know I'll never ~~see~~ need
 [jscheffl]: https://github.com/jscheffl
 
 [Python 官方說明文件臺灣繁體中文翻譯計畫]: https://github.com/python/python-docs-zh-tw
+[commitizen]: https://github.com/commitizen-tools/commitizen
