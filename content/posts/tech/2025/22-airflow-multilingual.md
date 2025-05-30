@@ -5,6 +5,7 @@ Category: Tech
 Tags: Airflow
 Slug: airflow-multilingual
 Authors: Wei Lee
+Image: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
 Cover: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
 
 > What is my sacrifice?
