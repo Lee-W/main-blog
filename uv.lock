@@ -295,6 +295,7 @@ dependencies = [
     { name = "markdown-del-ins" },
     { name = "markdown-mermaidjs" },
     { name = "pelican", extra = ["markdown"] },
+    { name = "pelican-featured-image" },
     { name = "pelican-neighbors" },
     { name = "pelican-render-math" },
     { name = "pelican-seo" },
@@ -328,6 +329,7 @@ requires-dist = [
     { name = "markdown-del-ins", specifier = ">=1.0.0" },
     { name = "markdown-mermaidjs", specifier = ">=1.0.0" },
     { name = "pelican", extras = ["markdown"], specifier = ">=4.10.1" },
+    { name = "pelican-featured-image", specifier = ">=1.1.0" },
     { name = "pelican-neighbors", specifier = ">=1.2.0" },
     { name = "pelican-render-math", specifier = ">=1.0.3" },
     { name = "pelican-seo", specifier = ">=1.2.2" },
@@ -526,6 +528,19 @@ wheels = [
 [package.optional-dependencies]
 markdown = [
     { name = "markdown" },
+]
+
+[[package]]
+name = "pelican-featured-image"
+version = "1.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "beautifulsoup4" },
+    { name = "pelican" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ec/27/c73a5fd09a65ab37d1910102355776df3d19248ad8da1cc4d4884e3959f0/pelican_featured_image-1.1.0.tar.gz", hash = "sha256:08369c51458c6dff48a5f0338aa26c7388121ff37607695ca7365911db5e7b2d", size = 4551, upload-time = "2025-03-18T16:50:08.539Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/74/37/b296a149b69e3167a41a18eabd868ddc977f61e82f4c5e31f69a0516a9dc/pelican_featured_image-1.1.0-py3-none-any.whl", hash = "sha256:52d3192b542b5b2bd0b0222e4936567c0448687a500d0fbbe6e105a565f9ac13", size = 4998, upload-time = "2025-03-18T16:50:07.368Z" },
 ]
 
 [[package]]

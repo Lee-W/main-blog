@@ -11,6 +11,7 @@ dependencies = [
     "invoke>=2.2.0",
     "markdown-del-ins>=1.0.0",
     "markdown-mermaidjs>=1.0.0",
+    "pelican-featured-image>=1.1.0",
     "pelican-neighbors>=1.2.0",
     "pelican-render-math>=1.0.3",
     "pelican-seo>=1.2.2",

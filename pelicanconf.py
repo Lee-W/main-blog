@@ -92,6 +92,7 @@ MARKDOWN = {
 PLUGIN_PATHS = ["pelican-plugins"]
 PLUGINS = [
     "another_read_more_link",
+    "pelican.plugins.featured_image",
     "pelican.plugins.series",
     "pelican.plugins.statistics",
     "pelican.plugins.render_math",
