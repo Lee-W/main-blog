@@ -62,13 +62,13 @@
 <meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
 <meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
 <meta content="Airflow" prefix="og: http://ogp.me/ns#" property="article:tag"/>
-<meta content="https://blog.wei-lee.me/images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<meta content="https://blog.wei-lee.me/images/posts-image/2025-airflow-multilingual/andor-poster.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@clleew" name="twitter:site"/>
 <meta content="Airflow 多語系化  - Make a sunrise that I know I'll never see" name="twitter:title"/>
 <meta content="https://blog.wei-lee.me/posts/tech/2025/05/airflow-multilingual" name="twitter:url"/>
-<meta content="https://blog.wei-lee.me/images/cover.jpeg" name="twitter:image:src"/>
+<meta content="https://blog.wei-lee.me/images/posts-image/2025-airflow-multilingual/andor-poster.jpeg" name="twitter:image:src"/>
 <meta content="What is my sacrifice? I’m condemned to use the tools of my enemy to defeat them. I burn my decency for someone else’s future. I burn my..." name="twitter:description"/>
 <script type="application/ld+json">
 {
@@ -83,7 +83,7 @@
     "name": "Wei Lee",
     "url": "https://blog.wei-lee.me/author/wei-lee.html"
   },
-  "image": "https://blog.wei-lee.me//images/cover.jpeg",
+  "image": "",
   "url": "https://blog.wei-lee.me/posts/tech/2025/05/airflow-multilingual",
   "description": "What is my sacrifice? I’m condemned to use the tools of my enemy to defeat them. I burn my decency for someone else’s future. I burn my..."
 }
@@ -161,7 +161,7 @@
           • 2 min read
         </div>
 <div class="post-cover cover">
-<img alt="Category Tech" src="https://blog.wei-lee.me/images/cover.jpeg"/>
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/posts-image/2025-airflow-multilingual/andor-poster.jpeg"/>
 </div>
 </div>
 </header>
@@ -182,20 +182,20 @@
 <!--more-->
 <h2 id="tldr">TL;DR</h2>
 <ol>
-<li><a href="https://www.disneyplus.com/browse/entity-faba988a-a9f5-45f2-a074-0775a7d6f67a">Andor: A Star Wars Story</a> 超級好看，做第二點就去看！</li>
+<li><a href="https://www.disneyplus.com/browse/entity-faba988a-a9f5-45f2-a074-0775a7d6f67a">Andor: A Star Wars Story</a> 超級好看，做完第二點就去看！</li>
 <li>最近在 Airflow 引入 i18n 的 PR <a href="https://github.com/apache/airflow/pull/50626">Feature/implement i18n for Dashboard and SideBar #50626</a> 正在票選本月最棒棒 PR <a href="https://lists.apache.org/thread/fwn3lo21qpdg0wrfq8odcwq6ojx74784">[VOTE] May 2025 PR of the Month</a><ul>
 <li>如果你也認同這個 PR 像那天最棒的演唱會一樣棒的話，投下你的票吧！</li>
 </ul>
 </li>
 </ol>
 <p><img alt="mygo-best-concert" src="/images/meme/mygo-best-concert.jpg"/></p>
-<p>歐內該，如果沒有去投票的話，哇搭吸</p>
+<p>歐內該，如果沒有去投票的話，哇搭係</p>
 <p><img alt="mygo-everything" src="/images/meme/mygo-everything.jpg"/></p>
 <h2 id="_1">前言</h2>
 <p>自從 <a href="https://github.com/jason810496">Jason</a> 成為 Apache Airflow 的 committer （同場加映： <a href="https://blog.zhu424.dev/zh-tw/open-source-contribution/becoming-an-apache-airflow-committer-from-0/#%E6%88%90%E7%82%BA-committer">從 0 成為 Apache Airflow Committer</a>）<br/>
 <a href="https://github.com/opensource4you/readme?tab=readme-ov-file#%E7%9B%AE%E5%89%8D%E6%9C%89-mentor-%E5%B8%B6%E7%9A%84%E5%B0%88%E6%A1%88">源來適你</a> 的 <code>#apache-airflow</code> 就熱鬧了不少<br/>
 <del>我也從主要 Mentor ，追加了 Meme Bot 的 title</del><br/>
-<a href="https://github.com/guan404ming">guan404ming</a> 的 PR 數也怪追上 <a href="https://github.com/jason810496">Jason</a>，還有族繁不及備載的新朋友們<br/>
+<a href="https://github.com/guan404ming">guan404ming</a> 的 PR 數也快追上 <a href="https://github.com/jason810496">Jason</a>，還有族繁不及備載的新朋友們<br/>
 但我怕再載下去就要壓過主角 <a href="https://github.com/RoyLee1224">RoyLee1224</a> 的篇幅了</p>
 <h2 id="_2">很久很久以前（其實也就不到一個月前）</h2>
 <p>某天在頻道中就出現了這篇酷酷的訊息</p>
@@ -268,14 +268,14 @@ TP 在信件中所提到的 Running 也是<br/>
 翻譯這些字本身就帶有「了解當初 Airflow 為何如此設計、命名」的含義在</p>
 <p>不過 Jens 舉的幾個例子也不無道理<br/>
 如果有人今天問我 git 提交該怎麼寫，我可能也會一時反應不過來<br/>
-啊啊...原來是 git commit 啊（虧我還是 commitizen 的維護者）</p>
+啊啊...原來是 git commit 啊（虧我還是 <a href="https://github.com/commitizen-tools/commitizen">commitizen</a> 的維護者）</p>
 <p>只能說也許我們不是這個功能的目標客群吧<br/>
-在 airflow dev mailing list 或參與 issue 討論的我們，或許都是不是<br/>
+在 airflow dev mailing list 或參與 issue 討論的我們，或許都不是<br/>
 我們或多或少都對英文有些熟悉<br/>
 但正是因為想降低入門門檻，讓更多人接近 Airflow<br/>
 我們才決定做這件事，至少我是這麼認為的</p>
 <p>這也讓我想到， <a href="https://github.com/python/python-docs-zh-tw">Python 官方說明文件臺灣繁體中文翻譯計畫</a> 的朋友們<br/>
-我確定是是他們還是 yyc 有跟我聊到（亦或者只是我夢到的不存在的記憶）<br/>
+我不確定是他們還是 yyc 有跟我聊到（亦或者我中了強壯路人的咒術產生了不存在的記憶）<br/>
 雖然我們得讀英文，也該熟悉英文<br/>
 有時甚至到許多詞彙的繁體中文翻譯都不熟悉了<br/>
 但做繁體中文翻譯這件事依然重要<br/>
@@ -286,7 +286,8 @@ TP 在信件中所提到的 Running 也是<br/>
 所以副標題更應該像是</p>
 <p>Make a sunrise that I know I'll never <del>see</del> need</p>
 <p>但這段 Luthen 獨白實在是太棒了<br/>
-我不捨得在副標題把它改掉</p>
+我不捨得在副標題把它改掉<br/>
+當初看到傻眼，直接跑去查演員到底是誰，詮釋的太好了吧</p>
 <p>寫這篇文除了為熱帶的土地發聲<br/>
 也是要推薦我熱愛的影集 <a href="https://www.disneyplus.com/browse/entity-faba988a-a9f5-45f2-a074-0775a7d6f67a">Andor: A Star Wars Story</a><br/>
 我最喜歡的真人影集沒有之一<br/>
