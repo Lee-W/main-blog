@@ -1,5 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-06-04T09:50:00+08:00</updated><entry><title>2025/05/26 - 06/01 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/06/2025-05-26-06-01-open-source-report" rel="alternate"></link><published>2025-06-04T09:50:00+08:00</published><updated>2025-06-04T09:50:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-06-04:/posts/tech/2025/06/2025-05-26-06-01-open-source-report</id><summary type="html">&lt;p&gt;commitizen 終於不用寄生在 airflow 的頻道&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-06-06T23:15:00+08:00</updated><entry><title>讓照片自動分類的腳本</title><link href="https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo" rel="alternate"></link><published>2025-06-06T23:15:00+08:00</published><updated>2025-06-06T23:15:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-06-06:/posts/tech/2025/06/script-to-organize-photo</id><summary type="html">&lt;p&gt;這篇文章想記錄下我分類照片的腳本&lt;br&gt;
+但一直想不到有趣的標題&lt;br&gt;
+原本想放棄時後才發現，這直白的標題...&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;這篇文章想記錄下我分類照片的腳本&lt;br&gt;
+但一直想不到有趣的標題&lt;br&gt;
+原本想放棄時後才發現，這直白的標題...&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;不就跟芙莉蓮內的魔法很像嗎！&lt;br&gt;
+所以才想到了這個副標題，並且附上了四月初的芙莉蓮快閃店&lt;br&gt;
+而且也符合現實&lt;br&gt;
+需要整理的照片，最早可以回朔到兩年前的...&lt;br&gt;
+所以我也開始接受了「恩...照片就是整理不完了吧...」&lt;/p&gt;
+&lt;h2 id="_1"&gt;怎麼突然要整理照片了呢&lt;/h2&gt;
+&lt;p&gt;最近源來適你有個有趣的活動 - 《工程師的搜尋紀錄》&lt;br&gt;
+前幾場有講到火鳳燎原、奇幻文學跟活俠傳&lt;br&gt;
+雖然都不太熟，但每一場都超有趣的！&lt;/p&gt;
+&lt;p&gt;想說也可以來分享些什麼，就決定分享「朝聖之路」&lt;br&gt;
+（也因此要從照片堆中翻出相關的照片...）&lt;/p&gt;
+&lt;p&gt;&lt;img alt="you-went-?" src="/images/posts-image/2025-script-to-organize-photo/you-went.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;我今天把九成的投影片做完了&lt;br&gt;
+雖然有點花了太多時間在這件事上...&lt;br&gt;
+但我覺得會是一場很好玩的分享！&lt;br&gt;
+歡迎下週三 6/11 20:30 (TST) 透過 &lt;a href="https://meet.google.com/gyr-szii-eos"&gt;這個連結&lt;/a&gt; 一起來找我聊聊 🙂&lt;/p&gt;
+&lt;h2 id="_2"&gt;目標： 要把照片整理成什麼怎樣&lt;/h2&gt;
+&lt;p&gt;G7 拍的照片會分為 jpg 跟 rw2 檔&lt;br&gt;
+我希望他們能根據日期以及檔案類型被歸類在不同的資料夾&lt;br&gt;
+大致的結構如下&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;.
+├── 0101
+│   ├── JPG
+│   └── RW2
+└── 0102
+    ├── JPG
+    └── RW2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="_3"&gt;腳本設計&lt;/h2&gt;
+&lt;p&gt;首先要找出跟拍攝日期相關的 &lt;a href="https://zh.wikipedia.org/zh-tw/Exif"&gt;Exif&lt;/a&gt;&lt;br&gt;
+其中包含&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;306 DateTime&lt;/li&gt;
+&lt;li&gt;36867 DateTimeOriginal&lt;/li&gt;
+&lt;li&gt;36868 DateTimeDigitized&lt;/li&gt;
+&lt;li&gt;36880 OffsetTime&lt;/li&gt;
+&lt;li&gt;36881 OffsetTimeOriginal&lt;/li&gt;
+&lt;li&gt;36882 OffsetTimeDigitized&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;雖然最後發現，照片們都只有 &lt;code&gt;306 DateTime&lt;/code&gt;...&lt;/p&gt;
+&lt;p&gt;上次已經有了用 &lt;a href="https://pypi.org/project/pillow/"&gt;Pillow&lt;/a&gt; 寫腳本刪除部落格照片 Exif 標籤的經驗&lt;/p&gt;
+&lt;p&gt;這次只要&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;讀完 Exif 標籤&lt;/li&gt;
+&lt;li&gt;建立資料夾&lt;/li&gt;
+&lt;li&gt;再將相對應的照片放進&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;輕鬆愜意就能解決了&lt;/p&gt;
+&lt;p&gt;沒想到整理到 RW2 檔的時候， Pillow 告訴我&lt;/p&gt;
+&lt;p&gt;&lt;img alt="daga-kotowaru" src="/images/meme/jojo-daga-kotowaru.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/python-pillow/Pillow/issues/1118"&gt;Add support of RW2 files #1118&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;還好後來還是有找到適合的函式庫 &lt;a href="https://pypi.org/project/ExifRead/"&gt;ExifRead&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/usr/bin/env -S uv run --script&lt;/span&gt;
+&lt;span class="c1"&gt;# /// script&lt;/span&gt;
+&lt;span class="c1"&gt;# requires-python = &amp;quot;&amp;gt;=3.13&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;# dependencies = [&lt;/span&gt;
+&lt;span class="c1"&gt;#     &amp;quot;ExifRead&amp;quot;,&lt;/span&gt;
+&lt;span class="c1"&gt;#     &amp;quot;tqdm&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;# ]&lt;/span&gt;
+&lt;span class="c1"&gt;# ///&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;glob&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;shutil&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;collections&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;defaultdict&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pathlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;exifread&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;tqdm&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;tqdm&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;build_directory_mapping&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;]]:&lt;/span&gt;
+    &lt;span class="n"&gt;directory_mapping&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;defaultdict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;pbar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tqdm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;**/*&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;root_dir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;recursive&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="n"&gt;desc&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Building directory mapping&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;pbar&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;file_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;file_path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_file&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+            &lt;span class="k"&gt;continue&lt;/span&gt;
+
+        &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;rb&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;file_handle&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;exif&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;exifread&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;process_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;file_handle&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;details&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;extract_thumbnail&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;strict&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;exif&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="n"&gt;datetime_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;exif&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;EXIF DateTimeOriginal&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;
+                &lt;span class="n"&gt;created_time&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strptime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;datetime_str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;%Y:%m:&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt; %H:%M:%S&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+                &lt;span class="n"&gt;created_year&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;created_time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                &lt;span class="n"&gt;created_date&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;created_time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;%m&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                &lt;span class="n"&gt;file_ext&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;file_path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;suffix&lt;/span&gt;
+
+                &lt;span class="n"&gt;directory_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;created_time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;created_date&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;file_path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;suffix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+                &lt;span class="n"&gt;directory_mapping&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;directory_name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="n"&gt;tqdm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Cannot get exif from &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;pbar&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_description&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Processing &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;directory_mapping&lt;/span&gt;
+
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;directory_mapping&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;build_directory_mapping&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+    &lt;span class="n"&gt;tqdm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;pbar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tqdm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;directory_mapping&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;leave&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;directory_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;images&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;pbar&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;directory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;directory_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;exist_ok&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;pbar&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_description&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Directory &amp;#39;&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;directory_name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#39; created&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tqdm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;images&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;leave&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="n"&gt;pbar&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_description&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Moving &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="n"&gt;shutil&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;move&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;再來只要輸入指令&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;--script&lt;span class="w"&gt; &lt;/span&gt;photo_organizer.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;就能讓照片被分類進對應的資料夾&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;什麼？你說上面那串酷酷的註解是什麼&lt;br&gt;
+那是 uv 根據 &lt;a href="https://peps.python.org/pep-0723/"&gt;PEP 723&lt;/a&gt; 所實作的功能&lt;br&gt;
+讓使用者讀取了腳本的 metadata 後，自動去安裝需要的套件後執行腳本&lt;br&gt;
+👉 &lt;a href="https://docs.astral.sh/uv/guides/scripts/#running-scripts"&gt;uv - Running scripts&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;結束後，照片就整理完了對吧！&lt;br&gt;
+對吧...&lt;/p&gt;
+&lt;p&gt;沒有，這只是個開始&lt;br&gt;
+再來還得花時間看完照片們，看哪些要留些不要留&lt;br&gt;
+畢竟&lt;a href="https://blog.wei-lee.me/posts/book/2016/03/essentialism"&gt;少，但是更好&lt;/a&gt;&lt;br&gt;
+我已經接受照片是整理不完的事實了 🤷‍♂️&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category></entry><entry><title>2025/05/26 - 06/01 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/06/2025-05-26-06-01-open-source-report" rel="alternate"></link><published>2025-06-04T09:50:00+08:00</published><updated>2025-06-04T09:50:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-06-04:/posts/tech/2025/06/2025-05-26-06-01-open-source-report</id><summary type="html">&lt;p&gt;commitizen 終於不用寄生在 airflow 的頻道&lt;br&gt;
 而是有自己獨立的頻道啦！&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;commitizen 終於不用寄生在 airflow 的頻道&lt;br&gt;
 而是有自己獨立的頻道啦！&lt;/p&gt;
@@ -800,7 +942,7 @@ commitzien 的文件沒有做 versioning ，所以應該是不會有太大的影
 讓 &lt;code&gt;airflow.cfg&lt;/code&gt; 只記錄我們改寫的那些選項&lt;br&gt;
 是不是 best practice 我也不太確定&lt;br&gt;
 但應該是會省去管理 airflow.cfg 的成本&lt;br&gt;
-尤其是這種可能會一手接一手的專案&lt;/p&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>AIP-83 修正案</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" rel="alternate"></link><published>2025-02-20T22:50:00+08:00</published><updated>2025-02-20T22:50:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-20:/posts/tech/2025/02/aip-83-amendment</id><summary type="html">&lt;p&gt;海（？）的對面是 backfill 跟 data completeness&lt;/p&gt;
+尤其是這種可能會一手接一手的專案&lt;/p&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>AIP-83 修正案</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" rel="alternate"></link><published>2025-02-20T22:50:00+08:00</published><updated>0205-06-06T00:00:00+08:06</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-20:/posts/tech/2025/02/aip-83-amendment</id><summary type="html">&lt;p&gt;海（？）的對面是 backfill 跟 data completeness&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;海（？）的對面是 backfill 跟 data completeness&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -14816,117 +14958,4 @@ ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;~/.v
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Tech"></category><category term="Paper"></category><category term="Deep Learning"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category></entry><entry><title>[Paper] Understanding Personality through Social Media</title><link href="https://blog.wei-lee.me/posts/tech/2017/04/Understanding-Personality-through-Social-Media" rel="alternate"></link><published>2017-04-05T22:30:00+08:00</published><updated>2017-04-05T22:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2017-04-05:/posts/tech/2017/04/Understanding-Personality-through-Social-Media</id><summary type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Main Purpose: To see how linguistic features correlate with each personality trait.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;a href="https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf"&gt;Paper&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Main Purpose: To see how linguistic features correlate with each personality trait.&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#problem-of-past-researches"&gt;Problem of Past Researches&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#mbti"&gt;MBTI&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#data"&gt;Data&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#features"&gt;Features&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#prediction"&gt;Prediction&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Use Twitter to predict MBIT personality.&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id="problem-of-past-researches"&gt;Problem of Past Researches&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Language on social media has richer content that makes the typical linguistic analysis tool perform poorly (e.g. iono → I don't know)&lt;/li&gt;
-&lt;li&gt;Gain personality information is costly (e.g. Big Five Questionnaire)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="mbti"&gt;MBTI&lt;/h3&gt;
-&lt;p&gt;Instead of commonly used big five theory, MBTI is used in this paper.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Myers–Briggs_Type_Indicator"&gt;Myers-Briggs Type Indicator&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;There are 4 types of personality trait&lt;br&gt;
-i.e.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Introversion(I) / Extroversion(E)&lt;/li&gt;
-&lt;li&gt;Intuition(N) / Sensing(S)&lt;/li&gt;
-&lt;li&gt;Feeling(F) / Thinking(T)&lt;/li&gt;
-&lt;li&gt;Perception(P) / Judging(J)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Personality can be expressed as a code with 4 letters.&lt;br&gt;
-e.g. ENFJ, INTP&lt;/p&gt;
-&lt;h3 id="data"&gt;Data&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;A Twitter dataset&lt;ul&gt;
-&lt;li&gt;Around 90,000 users&lt;/li&gt;
-&lt;li&gt;120,000 personality-related tweets from 2006~2015 (out of 1.7 M tweets)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="what-is-the-so-called-personliaty-related-tweets"&gt;What is the so-called personliaty-related tweets?&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;English Tweets that contain users' own MBIT code.&lt;br&gt;
-    e.g.&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;"I'm an ENFJ"&lt;/code&gt; is qualified&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;"My friend is an ISFJ"&lt;/code&gt; is not qualified&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Heuristic rules is used (e.g. &lt;code&gt;"I'm"&lt;/code&gt;, &lt;code&gt;"I got"&lt;/code&gt;, &lt;code&gt;"I have been a"&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;No classification method is used for ensuring the personality code is indeed the user's&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="distribution"&gt;Distribution&lt;/h4&gt;
-&lt;p&gt;Personality distribution of this data is skewed.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="MBTI-bar" src="/images/posts-image/2017-04-05-understanding-personliaty-through-social-media/MBTI-bar.png"&gt;&lt;/p&gt;
-&lt;p&gt;However, in the real word, the personality distribution might also be skewed.&lt;/p&gt;
-&lt;h3 id="features"&gt;Features&lt;/h3&gt;
-&lt;h4 id="1-n-grams"&gt;1. n-grams&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Most frequent 1,000 unigram, bigram, trigram words and phrases&lt;/li&gt;
-&lt;li&gt;1,000 dimensions vectors for unigram, bigram trigram for each user&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="2-twitter-part-of-speech-tags"&gt;2. Twitter Part-of-speech tags&lt;/h4&gt;
-&lt;p&gt;Based on &lt;a href="http://www.cs.cmu.edu/~ark/TweetNLP/gimpel+etal.acl11.pdf"&gt;Part-of-Speech Tagging for Twitter: Annotation, Features, and Experiments&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;25 types with some Twitter-specific tag.&lt;br&gt;
-  e.g.&lt;ul&gt;
-&lt;li&gt;hashtag&lt;/li&gt;
-&lt;li&gt;at-mention&lt;/li&gt;
-&lt;li&gt;URL&lt;/li&gt;
-&lt;li&gt;emoticon&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="3word-vectors"&gt;3.word vectors&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Word Vector Settings&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;2,334,564 words&lt;/li&gt;
-&lt;li&gt;500 dimension&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Extracted Features&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Average word vectors&lt;/li&gt;
-&lt;li&gt;Weighted average word vectors (weighted according to TF-IDF)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="prediction"&gt;Prediction&lt;/h3&gt;
-&lt;p&gt;Logistic Regression is used (Random Forest and SVM produced similar results)&lt;/p&gt;
-&lt;h4 id="accuracy-measurement"&gt;Accuracy Measurement&lt;/h4&gt;
-&lt;p&gt;Since the data is skewed, AUC is used.&lt;/p&gt;
-&lt;h4 id="accuracy"&gt;Accuracy&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Indivisula Features&lt;ul&gt;
-&lt;li&gt;Word Vector Only → (AUC=0.651)&lt;/li&gt;
-&lt;li&gt;n-gram only → (AUC=0.607)&lt;/li&gt;
-&lt;li&gt;POS only → (AUC=0.585)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Combined Features&lt;ul&gt;
-&lt;li&gt;All three features → (AUC=0.661)&lt;/li&gt;
-&lt;li&gt;POS + n-gram → (AUC=0.616)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="insight"&gt;Insight&lt;/h4&gt;
-&lt;p&gt;Among the results, word vector performs best which might illustrate that predictions based on social media and language would work.&lt;/p&gt;
-&lt;p&gt;During the POS conversion process, information is compressed into 25 tags and might lost some important one.&lt;br&gt;
-This might be the reason why it performs worse.&lt;/p&gt;</content><category term="Tech"></category><category term="Paper"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="MBTI"></category><category term="Personality"></category></entry></feed>
+&lt;/script&gt;</content><category term="Tech"></category><category term="Paper"></category><category term="Deep Learning"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category></entry></feed>

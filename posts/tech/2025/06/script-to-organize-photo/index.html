@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>讓照片自動分類的腳本  - 我明明一直知道照片的數量很多，為什麼沒有想過早一點整理呢。</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="這篇文章想記錄下我分類照片的腳本 但一直想不到有趣的標題 原本想放棄時後才發現，這直白的標題..." name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Python" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="讓照片自動分類的腳本  - 我明明一直知道照片的數量很多，為什麼沒有想過早一點整理呢。" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="這篇文章想記錄下我分類照片的腳本 但一直想不到有趣的標題 原本想放棄時後才發現，這直白的標題..." prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo" prefix="og: http://ogp.me/ns#" property="og:url"/>
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2025-06-06 23:15:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me/images/posts-image/2025-script-to-organize-photo/Frieren.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="讓照片自動分類的腳本  - 我明明一直知道照片的數量很多，為什麼沒有想過早一點整理呢。" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me/images/posts-image/2025-script-to-organize-photo/Frieren.jpeg" name="twitter:image:src"/>
+<meta content="這篇文章想記錄下我分類照片的腳本 但一直想不到有趣的標題 原本想放棄時後才發現，這直白的標題..." name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "讓照片自動分類的腳本 - 我明明一直知道照片的數量很多，為什麼沒有想過早一點整理呢。",
+  "headline": "讓照片自動分類的腳本 - 我明明一直知道照片的數量很多，為什麼沒有想過早一點整理呢。",
+  "datePublished": "2025-06-06 23:15:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "",
+  "url": "https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo",
+  "description": "這篇文章想記錄下我分類照片的腳本 但一直想不到有趣的標題 原本想放棄時後才發現，這直白的標題..."
+}
+</script>
+</meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2025", "item": "https://blog.wei-lee.me/posts/tech/2025"}, {"@type": "ListItem", "position": 5, "name": "06", "item": "https://blog.wei-lee.me/posts/tech/2025/06"}, {"@type": "ListItem", "position": 6, "name": "Script to organize photo", "item": "https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "讓照片自動分類的腳本", "about": "Tech", "datePublished": "2025-06-06 23:15"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo" property="og:url"/><meta content="article" property="og:type"/><meta content="讓照片自動分類的腳本" property="og:title"/><meta content="C" property="og:locale"/></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🏷️ Tags" role="presentation"><a href="/tags.html"><span>🏷️ Tags</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            讓照片自動分類的腳本
+            <br/>
+<small class="post-subtitle-white">我明明一直知道照片的數量很多，為什麼沒有想過早一點整理呢。</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2025/06/06 - Fri">2025/06/06 - Fri</time>
+          • 2 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/posts-image/2025-script-to-organize-photo/Frieren.jpeg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>這篇文章想記錄下我分類照片的腳本<br/>
+但一直想不到有趣的標題<br/>
+原本想放棄時後才發現，這直白的標題...</p>
+<!--more-->
+<p>不就跟芙莉蓮內的魔法很像嗎！<br/>
+所以才想到了這個副標題，並且附上了四月初的芙莉蓮快閃店<br/>
+而且也符合現實<br/>
+需要整理的照片，最早可以回朔到兩年前的...<br/>
+所以我也開始接受了「恩...照片就是整理不完了吧...」</p>
+<h2 id="_1">怎麼突然要整理照片了呢</h2>
+<p>最近源來適你有個有趣的活動 - 《工程師的搜尋紀錄》<br/>
+前幾場有講到火鳳燎原、奇幻文學跟活俠傳<br/>
+雖然都不太熟，但每一場都超有趣的！</p>
+<p>想說也可以來分享些什麼，就決定分享「朝聖之路」<br/>
+（也因此要從照片堆中翻出相關的照片...）</p>
+<p><img alt="you-went-?" src="/images/posts-image/2025-script-to-organize-photo/you-went.jpg"/></p>
+<p>我今天把九成的投影片做完了<br/>
+雖然有點花了太多時間在這件事上...<br/>
+但我覺得會是一場很好玩的分享！<br/>
+歡迎下週三 6/11 20:30 (TST) 透過 <a href="https://meet.google.com/gyr-szii-eos">這個連結</a> 一起來找我聊聊 🙂</p>
+<h2 id="_2">目標： 要把照片整理成什麼怎樣</h2>
+<p>G7 拍的照片會分為 jpg 跟 rw2 檔<br/>
+我希望他們能根據日期以及檔案類型被歸類在不同的資料夾<br/>
+大致的結構如下</p>
+<div class="highlight"><pre><span></span><code>.
+├── 0101
+│   ├── JPG
+│   └── RW2
+└── 0102
+    ├── JPG
+    └── RW2
+</code></pre></div>
+<h2 id="_3">腳本設計</h2>
+<p>首先要找出跟拍攝日期相關的 <a href="https://zh.wikipedia.org/zh-tw/Exif">Exif</a><br/>
+其中包含</p>
+<ul>
+<li>306 DateTime</li>
+<li>36867 DateTimeOriginal</li>
+<li>36868 DateTimeDigitized</li>
+<li>36880 OffsetTime</li>
+<li>36881 OffsetTimeOriginal</li>
+<li>36882 OffsetTimeDigitized</li>
+</ul>
+<p>雖然最後發現，照片們都只有 <code>306 DateTime</code>...</p>
+<p>上次已經有了用 <a href="https://pypi.org/project/pillow/">Pillow</a> 寫腳本刪除部落格照片 Exif 標籤的經驗</p>
+<p>這次只要</p>
+<ol>
+<li>讀完 Exif 標籤</li>
+<li>建立資料夾</li>
+<li>再將相對應的照片放進</li>
+</ol>
+<p>輕鬆愜意就能解決了</p>
+<p>沒想到整理到 RW2 檔的時候， Pillow 告訴我</p>
+<p><img alt="daga-kotowaru" src="/images/meme/jojo-daga-kotowaru.png"/></p>
+<p><a href="https://github.com/python-pillow/Pillow/issues/1118">Add support of RW2 files #1118</a></p>
+<p>還好後來還是有找到適合的函式庫 <a href="https://pypi.org/project/ExifRead/">ExifRead</a></p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env -S uv run --script</span>
+<span class="c1"># /// script</span>
+<span class="c1"># requires-python = "&gt;=3.13"</span>
+<span class="c1"># dependencies = [</span>
+<span class="c1">#     "ExifRead",</span>
+<span class="c1">#     "tqdm"</span>
+<span class="c1"># ]</span>
+<span class="c1"># ///</span>
+
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">exifread</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+
+<span class="k">def</span> <span class="nf">build_directory_mapping</span><span class="p">(</span><span class="n">root</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"."</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+    <span class="n">directory_mapping</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span>
+        <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"**/*"</span><span class="p">,</span> <span class="n">root_dir</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">desc</span><span class="o">=</span><span class="s2">"Building directory mapping"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">pbar</span><span class="p">:</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">file_path</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+            <span class="k">continue</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_handle</span><span class="p">:</span>
+            <span class="n">exif</span> <span class="o">=</span> <span class="n">exifread</span><span class="o">.</span><span class="n">process_file</span><span class="p">(</span><span class="n">file_handle</span><span class="p">,</span> <span class="n">details</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">extract_thumbnail</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">exif</span><span class="p">:</span>
+                <span class="n">datetime_str</span> <span class="o">=</span> <span class="n">exif</span><span class="p">[</span><span class="s2">"EXIF DateTimeOriginal"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+                <span class="n">created_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">datetime_str</span><span class="p">,</span> <span class="s2">"%Y:%m:</span><span class="si">%d</span><span class="s2"> %H:%M:%S"</span><span class="p">)</span>
+
+                <span class="n">created_year</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">created_time</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+                <span class="n">created_date</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">created_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%m</span><span class="si">%d</span><span class="s2">"</span><span class="p">)</span>
+                <span class="n">file_ext</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">file_path</span><span class="o">.</span><span class="n">suffix</span>
+
+                <span class="n">directory_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">created_time</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">created_date</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">file_path</span><span class="o">.</span><span class="n">suffix</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s2">"</span>
+                <span class="n">directory_mapping</span><span class="p">[</span><span class="n">directory_name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">tqdm</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Cannot get exif from </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">pbar</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Processing </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">directory_mapping</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">directory_mapping</span> <span class="o">=</span> <span class="n">build_directory_mapping</span><span class="p">()</span>
+
+    <span class="n">tqdm</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">directory_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">directory_name</span><span class="p">,</span> <span class="n">images</span> <span class="ow">in</span> <span class="n">pbar</span><span class="p">:</span>
+        <span class="n">directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">directory_name</span><span class="p">)</span>
+        <span class="n">directory</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">pbar</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Directory '</span><span class="si">{</span><span class="n">directory_name</span><span class="si">}</span><span class="s2">' created"</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+            <span class="n">pbar</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Moving </span><span class="si">{</span><span class="n">image</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">directory</span><span class="p">)</span>
+</code></pre></div>
+<p>再來只要輸入指令</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>--script<span class="w"> </span>photo_organizer.py
+</code></pre></div>
+<p>就能讓照片被分類進對應的資料夾</p>
+<hr/>
+<p>什麼？你說上面那串酷酷的註解是什麼<br/>
+那是 uv 根據 <a href="https://peps.python.org/pep-0723/">PEP 723</a> 所實作的功能<br/>
+讓使用者讀取了腳本的 metadata 後，自動去安裝需要的套件後執行腳本<br/>
+👉 <a href="https://docs.astral.sh/uv/guides/scripts/#running-scripts">uv - Running scripts</a></p>
+<hr/>
+<p>結束後，照片就整理完了對吧！<br/>
+對吧...</p>
+<p>沒有，這只是個開始<br/>
+再來還得花時間看完照片們，看哪些要留些不要留<br/>
+畢竟<a href="https://blog.wei-lee.me/posts/book/2016/03/essentialism">少，但是更好</a><br/>
+我已經接受照片是整理不完的事實了 🤷‍♂️</p>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=讓照片自動分類的腳本  - 我明明一直知道照片的數量很多，為什麼沒有想過早一點整理呢。&amp;url=https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo&amp;title=讓照片自動分類的腳本" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=讓照片自動分類的腳本&amp;body=https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/python.html">Python</a> </aside>
+<div class="clear"></div>
+</section>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>
