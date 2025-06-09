@@ -1,5 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-06-06T23:15:00+08:00</updated><entry><title>讓照片自動分類的腳本</title><link href="https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo" rel="alternate"></link><published>2025-06-06T23:15:00+08:00</published><updated>2025-06-06T23:15:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-06-06:/posts/tech/2025/06/script-to-organize-photo</id><summary type="html">&lt;p&gt;這篇文章想記錄下我分類照片的腳本&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-06-09T09:45:00+08:00</updated><entry><title>2025/06/02 - 06/08 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/06/2025-06-02-06-08-open-source-report" rel="alternate"></link><published>2025-06-09T09:45:00+08:00</published><updated>2025-06-09T09:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-06-09:/posts/tech/2025/06/2025-06-02-06-08-open-source-report</id><summary type="html">&lt;p&gt;這週熊大還是很猛的一直發 PR 給 commitizen&lt;br&gt;
+除了熊大外，還有新朋友幻影也立刻趕到戰場&lt;br&gt;
+不過這週除了 commitizen 外，我也花了不少時間在整理 PyCon TW 的 airflow！&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;這週熊大還是很猛的一直發 PR 給 commitizen&lt;br&gt;
+除了熊大外，還有新朋友幻影也立刻趕到戰場&lt;br&gt;
+不過這週除了 commitizen 外，我也花了不少時間在整理 PyCon TW 的 airflow！&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;順帶一提， PyCon Taiwan 2025 的售票開始了&lt;br&gt;
+&lt;a href="https://tw.pycon.org/2025/registration/tickets"&gt;現在就搶票！&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="pycon-etl"&gt;pycon-etl&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pull Requests&lt;ul&gt;
+&lt;li&gt;完成並且合併 &lt;a href="https://github.com/pycontw/pycon-etl/pull/158"&gt;Upgrade to Airflow 2.11.0 #158&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;時隔許久，我終於成功參加到 data team 的討論（之前每次想參加都剛好有事...）&lt;br&gt;
+  剛好去解釋了一下這個超大 PR 到底在幹嘛，隔天組長就幫我合併了&lt;br&gt;
+  （感謝 Henry!）&lt;/li&gt;
+&lt;li&gt;部署上去其實還是花了一點時間，但最後終於成功了！&lt;br&gt;
+&lt;strong&gt;從 Airflow 1.10.15 升版到 2.11.0！&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;開 PR &lt;a href="https://github.com/pycontw/pycon-etl/pull/160"&gt;docs: fix readme path #160&lt;/a&gt; 並且合併它&lt;ul&gt;
+&lt;li&gt;但上面那個 PR 把 readme 的路徑改掉了&lt;br&gt;
+  忘記 GitHub 其實吃不到 &lt;code&gt;docs/index.md&lt;/code&gt; ，所以還是得改成 &lt;code&gt;docs/README.md&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;開草稿 PR &lt;a href="https://github.com/pycontw/pycon-etl/pull/159"&gt;Upgrade to Airflow 3 #159&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;這個 PR 也弄到 87% 好了！&lt;br&gt;
+  畢竟 pycon-etl 資料庫裡面大多是遠古時代來的，又用了 airflow 不建議在 production 用的 SQLite&lt;br&gt;
+  資料搬遷上有不少的眉眉角角要處理&lt;br&gt;
+  雖然會需要手動 patch，但看起來是都解決了，之後要再貢獻回去&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Issues&lt;ul&gt;
+&lt;li&gt;開 &lt;a href="https://github.com/pycontw/pycon-etl/issues/161"&gt;[CI/CD] Sync up master branch to prod automatically #161&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;總覺得現在流程有不少可以自動化，並且應該被記錄的更完整&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="commitizen_cz_template"&gt;commitizen_cz_template&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;審查並合併 PR &lt;a href="https://github.com/commitizen-tools/commitizen_cz_template/pull/5"&gt;Fix some typos and update link #5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="commitizen"&gt;commitizen&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;審查 PRs&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1466"&gt;refactor: improve types and avoid nested loop, add types for untyped functions #1466&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1468"&gt;refactor(BaseCommitizen): remove unused process_commit #1468&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1469"&gt;refactor(conventional_commits): make schema_pattern more readable #1469&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1470"&gt;refactor(check): rename variable and compile pattern once #1470&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1471"&gt;refactor: do not guess if changelog format is provided, make function private #1471&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1472"&gt;refactor(cz): better typing and refactor message method #1472&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1482/commits"&gt;Upgrade ruff and add RUF022 &amp;amp; RUF100 #1482&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1483"&gt;build(.gitignore): ignore pyrightconfig.json and poetry.toml #1483&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1485"&gt;refactor(questions): type questions with TypedDict #1485&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1489"&gt;Add FAQ explaining why Pydantic is not used #1489&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1490"&gt;build(poetry): run poetry update to keep the packages up to date #1490&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1491"&gt;fix(commit): emit deprecated warning of cz commit -s BEFORE going through dialog, add deprecation warning on cz commit --help #1491&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1492"&gt;fix(deprecated): mark deprecated will be removed in v5 #1492&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1494"&gt;ci(pyproject.toml): strict check for invalid commit messages #1494&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1496"&gt;docs(feature_request): eliminate duplicated label #1496&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1504"&gt;perf(bump): avoid unnecessary list construction and rename variable t… #1504&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1505"&gt;refactor(bump): simplify nested if #1505&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1506"&gt;refactor(git): retype get_commits parameter to make it more friendly to call sites #1506&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1508"&gt;refactor(bump): eliminate similar patterns in code #1508&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1509"&gt;ci(mypy): fix linter error #1509&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1517"&gt;build: add PGH003 and PGH004, add types-colorama #1517&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;分類 issues&lt;ol&gt;
+&lt;li&gt;Close &lt;a href="https://github.com/commitizen-tools/commitizen/issues/1473"&gt;Those "XXX will be removed in commitizen 4." are not removed in v4, discuss when to remove them? #1473&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1501"&gt;Enable ruff rule PGH003 #1501&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1502"&gt;Discuss adding :meta private: to the doc string #1502&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1503"&gt;Fix tpl.filename type #1503&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1514"&gt;Deprecate Questions in defaults.py #1514&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1515"&gt;we might be able to move it to type_checking. but this can be next pr or let ruff handle it in the future #1515&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;開 issue &lt;a href="https://github.com/commitizen-tools/commitizen/issues/1510"&gt;Generate expected bump version comment when receiving a new pull request #1510&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;之前 4.0 就是不小心被升版的...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;延續 &lt;a href="https://blog.wei-lee.me/posts/tech/2025/05/airflow-multilingual"&gt;Airflow 多語系化&lt;/a&gt; 所提到的概念跟得到的反饋&lt;br&gt;
+我也希望我能多實踐我相信且支持的想法&lt;br&gt;
+所這篇試著把原本習慣使用英文的字，翻譯成漢語試試看&lt;/p&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>讓照片自動分類的腳本</title><link href="https://blog.wei-lee.me/posts/tech/2025/06/script-to-organize-photo" rel="alternate"></link><published>2025-06-06T23:15:00+08:00</published><updated>2025-06-06T23:15:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-06-06:/posts/tech/2025/06/script-to-organize-photo</id><summary type="html">&lt;p&gt;這篇文章想記錄下我分類照片的腳本&lt;br&gt;
 但一直想不到有趣的標題&lt;br&gt;
 原本想放棄時後才發現，這直白的標題...&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這篇文章想記錄下我分類照片的腳本&lt;br&gt;
@@ -942,7 +1032,7 @@ commitzien 的文件沒有做 versioning ，所以應該是不會有太大的影
 讓 &lt;code&gt;airflow.cfg&lt;/code&gt; 只記錄我們改寫的那些選項&lt;br&gt;
 是不是 best practice 我也不太確定&lt;br&gt;
 但應該是會省去管理 airflow.cfg 的成本&lt;br&gt;
-尤其是這種可能會一手接一手的專案&lt;/p&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>AIP-83 修正案</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" rel="alternate"></link><published>2025-02-20T22:50:00+08:00</published><updated>0205-06-06T00:00:00+08:06</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-20:/posts/tech/2025/02/aip-83-amendment</id><summary type="html">&lt;p&gt;海（？）的對面是 backfill 跟 data completeness&lt;/p&gt;
+尤其是這種可能會一手接一手的專案&lt;/p&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>AIP-83 修正案</title><link href="https://blog.wei-lee.me/posts/tech/2025/02/aip-83-amendment" rel="alternate"></link><published>2025-02-20T22:50:00+08:00</published><updated>0205-06-09T00:00:00+08:06</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-02-20:/posts/tech/2025/02/aip-83-amendment</id><summary type="html">&lt;p&gt;海（？）的對面是 backfill 跟 data completeness&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;海（？）的對面是 backfill 跟 data completeness&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -14770,192 +14860,4 @@ ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;~/.v
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/3536"&gt;.nvimrc doesn't seem to be loaded up or working and it cannot create backups on editing existing files&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/1755"&gt;No python interpreter found.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Vim"></category><category term="Neovim"></category></entry><entry><title>[Paper] Deep Learning-Based Document Modeling for Personality Detection from Text</title><link href="https://blog.wei-lee.me/posts/tech/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text" rel="alternate"></link><published>2017-04-11T17:59:00+08:00</published><updated>2017-04-11T17:59:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2017-04-11:/posts/tech/2017/04/Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Data Set&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://mypersonality.org/wiki/doku.php?id=wcpr13"&gt;James Pennebaker and Laura King's stream-of-consciousness essay dataset&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;NRC Word-Emotion Association Lexicon&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</summary><content type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://sentic.net/deep-learning-based-personality-detection.pdf"&gt;Paper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Implementation: &lt;a href="https://github.com/SenticNet/Personality-Detection"&gt;Personality-Detection&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Data Set&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://mypersonality.org/wiki/doku.php?id=wcpr13"&gt;James Pennebaker and Laura King's stream-of-consciousness essay dataset&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;NRC Word-Emotion Association Lexicon&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!--more--&gt;
-
-&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#practical-application-of-personality-detection"&gt;Practical Application of Personality Detection&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#personality-theory-used-in-this-paper"&gt;Personality Theory Used in This Paper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#basic-idea-of-the-method"&gt;Basic Idea of the Method&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#overview-of-the-method"&gt;Overview of the Method&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#1-preprocessing"&gt;1. Preprocessing&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#2-document-level-feature-extraction"&gt;2. Document-level feature extraction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#3-filtering"&gt;3. Filtering&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#4-word-level-feature-extraction"&gt;4. Word-level feature extraction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#5-classification"&gt;5. Classification&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#network-architecture-in-detail"&gt;Network Architecture in Detail&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#main-steps-7-layers"&gt;Main Steps (7 Layers)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#training"&gt;Training&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id="practical-application-of-personality-detection"&gt;Practical Application of Personality Detection&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Product and Service Recommendation (People with similar personalities might have similar favors)&lt;/li&gt;
-&lt;li&gt;Mental Health Diagnosis&lt;/li&gt;
-&lt;li&gt;Forensics: Reduce the circle of suspects&lt;/li&gt;
-&lt;li&gt;Human Resource: One's suitablitlty for certain jobs&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="personality-theory-used-in-this-paper"&gt;Personality Theory Used in This Paper&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Big_Five_personality_traits"&gt;Big Five Personality Trait&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="basic-idea-of-the-method"&gt;Basic Idea of the Method&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Feed sentences from essays to convolution filter → Sentence model in the form of n-gram feature vectors&lt;/li&gt;
-&lt;li&gt;Aggregate the vectors of a document's sentences and combine them with Masiresse features to represent the document&lt;/li&gt;
-&lt;li&gt;Classification: Feed the document vectors into a fully connected neural network&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="overview-of-the-method"&gt;Overview of the Method&lt;/h2&gt;
-&lt;h3 id="1-preprocessing"&gt;1. Preprocessing&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Sentence Splitting&lt;/li&gt;
-&lt;li&gt;Data Cleaning&lt;/li&gt;
-&lt;li&gt;Unification (e.g. lowercase)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="2-document-level-feature-extraction"&gt;2. Document-level feature extraction&lt;/h3&gt;
-&lt;p&gt;Mairesse baseline feature set (e.g. word count, average sentence length)&lt;/p&gt;
-&lt;h3 id="3-filtering"&gt;3. Filtering&lt;/h3&gt;
-&lt;p&gt;Sentences without personliaty clues are dropped&lt;br&gt;
-(Based on &lt;a href="http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"&gt;NRC Word-Emotion Association Lexicon&lt;/a&gt;)&lt;/p&gt;
-&lt;h3 id="4-word-level-feature-extraction"&gt;4. Word-level feature extraction&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;word2vec&lt;/li&gt;
-&lt;li&gt;Variable number of fixed-length word feature vectors → Variable number of sentences → Document&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="5-classification"&gt;5. Classification&lt;/h3&gt;
-&lt;p&gt;Deep CNN (Conolutional Nerual Network)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Input&lt;ul&gt;
-&lt;li&gt;Words: Fixed-length feature vector using word2vec&lt;/li&gt;
-&lt;li&gt;Sentences: Variable number of word vectors&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Process&lt;ul&gt;
-&lt;li&gt;Word Vector is reduced to a fixed length vector of each sentence&lt;/li&gt;
-&lt;li&gt;Document: Variable number of such fixed-length sentence vector&lt;/li&gt;
-&lt;li&gt;Document vector is then reduced to a fixed-length document vector&lt;/li&gt;
-&lt;li&gt;This Document vector is then concatenated with document-level features&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Predict&lt;ul&gt;
-&lt;li&gt;Yes / No (5 different personality traits are trained separately)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="network-architecture-in-detail"&gt;Network Architecture in Detail&lt;/h2&gt;
-&lt;h3 id="main-steps-7-layers"&gt;Main Steps (7 Layers)&lt;/h3&gt;
-&lt;h4 id="word-vectorization"&gt;Word Vectorization&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Layer 1: Input&lt;ul&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(R ^{D \times S\times W \times E}\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;Use Google's pretrained word2vec&lt;/li&gt;
-&lt;li&gt;In implementation, all the documents contain the same number of sentences.&lt;br&gt;
-  Shorter documents are padded shorter sentences with dummy words.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="sentence-vectorization"&gt;Sentence Vectorization&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Layer 2: Convolution&lt;ul&gt;
-&lt;li&gt;3 convolutional filters: unigram, bigram, trigram&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Layer 3: Max Polling&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="document-vectorization"&gt;Document Vectorization&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Layer 4: 1-max pooling&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="classification-yesno"&gt;Classification: (Yes/No)&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Layer 5: Linear with Sigmoid activation&lt;/li&gt;
-&lt;li&gt;Layer 6, 7&lt;ul&gt;
-&lt;li&gt;2 Neuron (yes/no) Softmax Output (ReLU and tanh perform worse)&lt;/li&gt;
-&lt;li&gt;fully connected layer of size 200&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="training"&gt;Training&lt;/h3&gt;
-&lt;p&gt;Objective Function: Negative Log Likelihood&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="Tech"></category><category term="Paper"></category><category term="Deep Learning"></category><category term="Machine Learning"></category><category term="NLP"></category><category term="Big Five Theory"></category><category term="Personality"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"></category><category term="Vim"></category><category term="Neovim"></category></entry></feed>
