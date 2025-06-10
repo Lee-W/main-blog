@@ -1,7 +1,6 @@
 Title: AIP-83 修正案
 Subtitle: 把 execution date 都移掉，我們就能自由了嗎
 Date: 2025-02-20 22:50
-Modified: 205
 Category: Tech
 Tags: Airflow, Airflow 3.0, Airflow Improvement Proposal
 Slug: aip-83-amendment
