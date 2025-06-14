@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2025-03-30 17:12
+modified: 2025-06-14 10:13
 slug: about-me
 ---
 
@@ -10,16 +10,16 @@ This is Wei Lee. I'm a
 * 🐍 [Pythonista](https://pycon-note.wei-lee.me/)
 * 🐍 [PyCon Taiwan](https://tw.pycon.org/) organizer
 * [commitizen-tools](https://github.com/commitizen-tools) maintainer
-* [Apache Airflow] committer
-* [opensource4you](https://github.com/opensource4you/) Airflow mentor(?)
+* [Apache Airflow](https://github.com/apache/airflow/) committer
+* `#apache-airflow` Mentor and Memebot Bot @ [OpenSource4You](https://github.com/opensource4you/)
 * [📷 Traveler](https://travlog.wei-lee.me/)
 * ⛺ Member of [台湾野クル▲](https://twitter.com/Taiwannokuru)
-* 📺 Anime Lover
+* 📺 [Anime Lover](https://anilist.co/user/clleew/animelist/)
 * 📖 Reader
 * 🎵 Ukulele Player
 * 🔒 Locker
 
-I enjoy automating tedious tasks and creating high-quality code. Enjoy participating in open-source communities and contributing to open-source projects. Traveling is also a passion of mine, and I often use PyCon as an opportunity to explore new places. I have attended PyCon Taiwan 🇹🇼, PyCon US 🇺🇸, PyCon JP 🇯🇵, PyCon CA 🇨🇦, Remote Python Pizza 🍕, Euro Python (remotely) 🇪🇺 and PyCon APAC 🇵🇭.
+I enjoy automating tedious tasks and creating high-quality code. Enjoy participating in open-source communities and contributing to open-source projects. Traveling is also a passion of mine, and I often use PyCon as an opportunity to explore new places. I have attended PyCon Taiwan 🇹🇼, PyCon US 🇺🇸, PyCon JP 🇯🇵, PyCon CA 🇨🇦, Remote Python Pizza 🍕, Euro Python (remotely) 🇪🇺, and PyCon APAC 🇵🇭.
 
 I share my technical notes, book digests, and occasional thoughts here. If you're interested in cooking, anime, and traveling, I chat about those things on [Those things no one cares about](https://travlog.wei-lee.me/).
 
@@ -51,7 +51,7 @@ I use
 * **Programming Language**: Python
 * **Data Engineering**: Snowflake, Redis, SQLite, PostgreSQL, MySQL, Redshift
 * **MLOps**: Apache Airflow, DVC, dbt, Great Expectations
-* **Backend Development**: FastAPI, flask, Django,
+* **Backend Development**: FastAPI, Flask, Django,
 * **DevOps tools and others**: GitHub Actions, Docker, Kubernetes, Jenkins,  Git, AWS Services
 
 ## Work Experience
@@ -72,7 +72,7 @@ I use
     * Add REST API endpoint to manipulate queued dataset events
     * Upgrade apache-airflow-providers-weaviate to 2.0.0 for weaviate-client >= 4.4.0 support
     * Add Azure managed identities support to apache-airflow-providers-microsoft-azure
-    * Add defult_deferrable configuration for easily turning on the deferrable mode of operators
+    * Add `default_deferrable` configuration for easily turning on the deferrable mode of operators
 * [astronomer-providers](https://github.com/astronomer/astronomer-providers)
     * Contribute existing operators/sensors back to [apache-airflow] and deprecate this project to reduce maintenance efforts
     * Automated the deployment of integration tests and testing against the release of the airflow provider ([#987](https://github.com/astronomer/astronomer-providers/pull/987), [#1107](https://github.com/astronomer/astronomer-providers/pull/1107), [#1139](https://github.com/astronomer/astronomer-providers/pull/1139), [#1110](https://github.com/astronomer/astronomer-providers/pull/1110))
@@ -83,7 +83,7 @@ I use
 
 * Productionize machine learning projects
     * Implemented SQS and gRPC services for grouping emails with similar structures and extracting user-sensitive data to increase the amount of training data without violating customer privacy regulations.
-    *  Designed and Implemented a two-stage labeling system that automatically communicates between Amazon Mechanical Turk and in-house experts to generate high-quality labeled data and enhance merchandise taxonomy to increase customer conversion rate.
+    *  Designed and implemented a two-stage labeling system that automatically communicates between Amazon Mechanical Turk and in-house experts to generate high-quality labeled data and enhance merchandise taxonomy to increase customer conversion rate.
     * Migrated and automated the deployment process of AWS Lambda procedures that process customer lifetime value, reducing the effort of maintenance and deployment.
 * Build and maintain data pipelines on [Apache Airflow]
     * Implemented a pipeline that processes data larger than 10 GB to infer personalized preferences to help increase customer satisfaction.
@@ -107,14 +107,14 @@ I use
 **[May 2018 - Nov 2018] Chief Teaching Assistant, [X-Village](https://www.facebook.com/X-Village-423736361424301/?ref=br_rs)**
 
 * Managed the executive team with 16 members
-* Organized two months of full-time courses and a one-semester 3 credit course
+* Organized two months of full-time courses and a one-semester 3-credit course
 * Reviewed the teaching proposal of the Python course, "Programming Design Foundation"
-* Designed exercises for "Data Structure," the first section of "Computer Science Foundations"
-* Lectured "Web Programming, Database/Cloud Computing," the fourth section of "Computer Science Foundations"
+* Designed exercises for "Data Structure," the first section of "Computer Science Foundations."
+* Lectured on "Web Programming, Database/Cloud Computing," the fourth section of "Computer Science Foundations"
 
-*X-Village* is an experimental education program aiming to equip students not major in computer science with computational thinking and to enhance future cooperation between computer science and other areas.
+*X-Village* is an experimental education program designed to equip students who do not major in computer science with computational thinking skills and to foster future collaboration between computer science and other disciplines.
 
-I was the program executor and the leader of the teaching assistant team. I also designed a half-day exercise for *Data Structure* and lectured a four-hour web backend course for *Web Programming, Database/Cloud Computing*.
+I was the program executor and the leader of the teaching assistant team. I also designed a half-day exercise for *Data Structure* and lectured on a four-hour web backend course for *Web Programming, Database/Cloud Computing*.
 
 * [Website](https://sites.google.com/view/x-village/home?authuser=0)
 * [Facebook Fan Page](https://www.facebook.com/X-Village-423736361424301/)
@@ -123,23 +123,23 @@ I was the program executor and the leader of the teaching assistant team. I also
 
 * Maintained legacy systems implemented in multiple languages, including `C#`, `VBScript`, `PHP`, etc.
 * Developed automation programs for generating reports, which save 80% of human labor time
-* Delivered a human resource management system using [django](https://www.djangoproject.com)
+* Delivered a human resource management system using [Django](https://www.djangoproject.com)
 
 [Astronomer]: https://www.astronomer.io/
 
 ## Community Involvement
 **[Nov 2023 - Current] Volunteer, [PyCon Taiwan](https://tw.pycon.org/)**
 
-* Maintain [pycontw-blog](https://github.com/pycontw/pycontw-blog)
+* Maintain [pycontw-blog]
 
 **[Nov 2022 - Sep 2023] Marketing Team Lead, [PyCon Taiwan 2023](https://tw.pycon.org/2023/)**
 
-* Migrated PyCon Taiwan Blog to [pycontw-blog](https://github.com/pycontw/pycontw-blog) / <https://conf.python.tw>
+* Migrated PyCon Taiwan Blog to [pycontw-blog] / <https://conf.python.tw>
 
 **[Nov 2021 - Sep 2022] Vice-Chairperson, [PyCon APAC 2022](https://tw.pycon.org/2022/)**
 
 * Coordinated three squads, including planning, sponsorship, and social media
-* Hosted the first Ask Me Anything event to promote Call for Proposals
+* Hosted the first Ask Me Anything event to promote the Call for Proposals
 
 **[Oct 2020 - Nov 2021] Chairperson, [PyCon Taiwan 2021](https://tw.pycon.org/2021/)**
 
@@ -154,7 +154,13 @@ I was the program executor and the leader of the teaching assistant team. I also
 * Contact keynote speakers and financial aid applicants
 * Contribute to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
 
+[pycontw-blog]: https://github.com/pycontw/pycontw-blog
+
 ## Talk and Tutorial
+* Hold on! You have a data team in PyCon Taiwan!
+    1. **2025/07/** 🇨🇿 - [EuroPython 2025](https://ep2025.europython.eu/session/hold-on-you-have-a-data-team-in-pycon-taiwan)
+* 朝聖之旅
+    1. **2025/06/11** 🇹🇼 - 工程師的搜尋紀錄 → [slide](https://speakerdeck.com/leew/zhao-sheng-zhi-lu)
 * Airflow 3.0 The First Glance
     1. **2025/03/28** 🇹🇼 [黃金流沙饅頭營](https://www.icloud.com/pages/0c6_qp3_RnuCJfcIh8_9xnqLA#2025_%E9%BB%83%E9%87%91%E6%B5%81%E6%B2%99%E9%A5%85%E9%A0%AD%E7%87%9F) → [slide](https://speakerdeck.com/leew/20250328-airflow-3-dot-0-the-first-glance)
 * 踏入開源的第一步
@@ -200,11 +206,27 @@ I was the program executor and the leader of the teaching assistant team. I also
 
 For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/).
 
-## Podcast
+## Podcast / Show
 * [PyCast](https://pycast.firstory.io/)
     1. [S4EP6｜ Python Taiwan 年會搞了 13 年，到底在 『稿』什麼？ feat. Andy Lee, Wei Lee, TengLin Yu](https://open.firstory.me/story/clz1c1b2c03m701vggil3837p)
     2. [S2EP4 | Emergence: 佛系經營社群的二三事，原來你我都是這片雪花的一部分 - Taihsiang & Wei](https://pycast.firstory.io/episodes/cl8pof56x05p901ws56y185jl)
     3. [EP2 | 職場邊緣人教你如何讓 WFH 變得更有趣](https://pycast.firstory.io/episodes/ckovh74d9nw2t0818urqtusva)
+* [WFH Pythonista](https://www.youtube.com/playlist?list=PLCBCxsuKTqkDXxXKWnWzldHUvdYbpCLij)
+        * [WFH Pythonista Ep#15 w/ David Lu and Wei Lee (PyCon Taiwan Organizers)](https://www.youtube.com/watch?v=JH5HQZIfY34)
+
+## Development Sprint
+* Apache Airflow
+    1. [DurianPy](https://www.meetup.com/durianpy/events/308390476/)
+    1. PyCon APAC 2025
+    1. [PyCon TW 2024](https://hackmd.io/LKLr7XyOR9mK1AEEnvnCuQ#Apache-Airflow)
+* commitizen-tools
+    1. [PyCon US 2024](https://us.pycon.org/2024/events/dev-sprints/#sprint-3)
+    2. [COSCUP 2024](https://pretalx.coscup.org/coscup-2024/talk/SDR77M/)
+    3. [PyCon TW 2023](https://hackmd.io/R98LEB4MSxm4AeExmxuZnA#commitizen-tools)
+    4. [PyCon TW 2022](https://hackmd.io/UYumgLy_QxaCSCqrXKDBpw#commitizen-tools)
+    5. [PyCon TW 2021](https://hackmd.io/PAgYsu5nSHyERIRaUokWxQ#commitizen-tools)
+    6. PyCon TW 2020
+    7. PyCon CA 2019
 
 ## Award
 * Honorable Mention, 2013 Railway Application Section Problem Solving Competition
@@ -231,7 +253,7 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 * [Git Tutorial](https://github.com/Lee-W/git-tutorial)
     * example: [Git-Tutorial-Sample](https://github.com/Lee-W/Git-Tutorial-Sample)
 
-### Books Notes
+### Book Notes
 * [Learning Python 5e Note](https://github.com/Lee-W/Learning_Python)
 * [Python Cookbook](https://github.com/Lee-W/Python_Cookbook)
 * [The Clean Code](http://wei-lee.me/posts/tech/2018/11/the-clean-code/)
