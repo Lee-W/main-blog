@@ -1,5 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-06-09T09:45:00+08:00</updated><entry><title>2025/06/02 - 06/08 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/06/2025-06-02-06-08-open-source-report" rel="alternate"></link><published>2025-06-09T09:45:00+08:00</published><updated>2025-06-09T09:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-06-09:/posts/tech/2025/06/2025-06-02-06-08-open-source-report</id><summary type="html">&lt;p&gt;這週熊大還是很猛的一直發 PR 給 commitizen&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"></link><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"></link><id>https://blog.wei-lee.me/</id><updated>2025-06-17T12:30:00+08:00</updated><entry><title>2025/06/09 - 06/15 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/06/2025-06-09-06-15-open-source-report" rel="alternate"></link><published>2025-06-17T12:30:00+08:00</published><updated>2025-06-17T12:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-06-17:/posts/tech/2025/06/2025-06-09-06-15-open-source-report</id><summary type="html">&lt;p&gt;原本以為這週因為有 CPython Sprint 有機會開一個 PR&lt;br&gt;
+但我果然不會寫 Python 😞&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;原本以為這週因為有 CPython Sprint 有機會開一個 PR&lt;br&gt;
+但我果然不會寫 Python 😞&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="commitizen"&gt;commitizen&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;合併 &lt;a href="https://github.com/commitizen-tools/commitizen/pull/1457"&gt;4.8.3 candidate #1457&lt;/a&gt; 並且釋出 &lt;a href="https://github.com/commitizen-tools/commitizen/releases/tag/v4.8.3"&gt;4.8.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;開 PR&lt;ol&gt;
+&lt;li&gt;開 &lt;a href="https://github.com/commitizen-tools/commitizen/pull/1554"&gt;ci(github-actions): set organization to true for JamesIves/github-sponsors-readme-action@v1 #1554&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;這個 PR 解決了一些問題，這是個好消息，但還需要在一個 PR 才能把問題完全解決掉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;審閱 PRs&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1516"&gt;test(cz_customize): add missing YAML configuration file tests #1516&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1522"&gt;docs(CHANGELOG): run pre-commit run --all-files to fix CI #1522&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1523"&gt;refactor(bump): use a loop to shorten a series of similar NotAllowed exceptions #1523&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1527"&gt;refactor(Init): use ternary operator #1527&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1533"&gt;docs(defaults): deprecate type Questions #1533&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1535"&gt;docs(customization.md): fix grammar mistake, add title to code blocks #1535&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1536"&gt;docs(bump.md): fix minor grammar issue and add titles for code blocks #1536&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1544"&gt;refactor(ParseArgs): simplify &lt;strong&gt;call&lt;/strong&gt; function body #1544&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1543"&gt;refactor(ScmProvider): replace sorted with max #1543&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1546"&gt;refactor(ExpectedExit): make the constructor more compact #1546&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1547"&gt;refactor(git): remove redundant if branch #1547&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1549"&gt;refactor(TagRules): extract tag_formats property and simplify list comprehension #1549&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1550"&gt;fix(Changelog): fix _export_template variable type #1550&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1552"&gt;fix(CommitizenProvider): raise if version is None #1552&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1553"&gt;fix(Bump): rewrite --get-next NotAllowed error message for consistency #1553&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;關閉 issues&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/637"&gt;Support tox &amp;gt;= 4.0.0 #637&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1433"&gt;Absolute link or link to Markdown files? #1433&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1493"&gt;Check every commit message in PR CI #1493&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1420"&gt;Support termcolor version 3 #1420&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1501"&gt;Enable ruff rule PGH003 #1501&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1474"&gt;Support the latest version of Ruff #1474&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1370"&gt;Add filter/search feature for commit change type #1370&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;分類 issue&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1525"&gt;commitizen 4.8.3 includes dependency importlib_metadata for Python &amp;gt; 3.9 #1525&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1530"&gt;2nd git.commit error: "On branch main nothing to commit, working tree clean" #1530&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="pycon-etl"&gt;pycon-etl&lt;/h2&gt;
+&lt;p&gt;終於讓 &lt;a href="https://github.com/pycontw/pycon-etl/pull/159"&gt;Upgrade to Airflow 3.0.2 #159&lt;/a&gt; 準備好了！&lt;br&gt;
+雖然還需要等 Henry 大大審閱，但目前已經把現階段遇到的問題都解掉了&lt;br&gt;
+Dag &lt;code&gt;airflow_log_cleanup&lt;/code&gt; 重新整理過，之後應該會再用 &lt;code&gt;task_group&lt;/code&gt; 重寫一次&lt;/p&gt;
+&lt;p&gt;最近剛好需要研究 &lt;a href="https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#external-db-managers"&gt;external_db_managers&lt;/a&gt;，得看 &lt;a href="https://airflow.apache.org/docs/apache-airflow-providers-fab/stable/index.html"&gt;apache-airflow-providers-fab&lt;/a&gt; 是怎麼做的&lt;br&gt;
+就順便搞懂了要怎麼把 PyCon TW 這邊驗證機制設定好&lt;/p&gt;</content><category term="Tech"></category><category term="Open Source"></category><category term="開源貢獻週報"></category></entry><entry><title>2025/06/02 - 06/08 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/06/2025-06-02-06-08-open-source-report" rel="alternate"></link><published>2025-06-09T09:45:00+08:00</published><updated>2025-06-09T09:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-06-09:/posts/tech/2025/06/2025-06-02-06-08-open-source-report</id><summary type="html">&lt;p&gt;這週熊大還是很猛的一直發 PR 給 commitizen&lt;br&gt;
 除了熊大外，還有新朋友幻影也立刻趕到戰場&lt;br&gt;
 不過這週除了 commitizen 外，我也花了不少時間在整理 PyCon TW 的 airflow！&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;這週熊大還是很猛的一直發 PR 給 commitizen&lt;br&gt;
@@ -14842,22 +14897,4 @@ Parallel: 一個時間點同時跑&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Log is also natural language.&lt;br&gt;
 The sequence of words and expression is important sequential data.&lt;/p&gt;
-&lt;p&gt;這場我真的就有點聽不太懂了＠＠&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Conference"></category><category term="PyCon"></category></entry><entry><title>Common Neovim Problems</title><link href="https://blog.wei-lee.me/posts/tech/2017/05/common-neovim-problems" rel="alternate"></link><published>2017-05-14T13:13:00+08:00</published><updated>2017-05-14T13:13:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2017-05-14:/posts/tech/2017/05/common-neovim-problems</id><summary type="html">&lt;p&gt;隨手記錄一下，轉換成 Neovim 遇到的問題&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;隨手記錄一下，轉換成 Neovim 遇到的問題&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;h2 id="load-vimrc-from-neovim"&gt;Load ~/.vimrc from neovim&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;XDG_CONFIG_HOME&lt;/span&gt;&lt;span class="p"&gt;:=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="p"&gt;/.config&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
-ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;~/.vim&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim
-ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;~/.vimrc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$XDG_CONFIG_HOME&lt;/span&gt;/nvim/init.vim
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="no-python-interpreter-found"&gt;No python interpreter found.&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;neovim
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/3536"&gt;.nvimrc doesn't seem to be loaded up or working and it cannot create backups on editing existing files&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/neovim/neovim/issues/1755"&gt;No python interpreter found.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"></category><category term="Vim"></category><category term="Neovim"></category></entry></feed>
+&lt;p&gt;這場我真的就有點聽不太懂了＠＠&lt;/p&gt;</content><category term="Tech"></category><category term="Python"></category><category term="Conference"></category><category term="PyCon"></category></entry></feed>
