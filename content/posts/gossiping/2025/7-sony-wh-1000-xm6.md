@@ -5,7 +5,7 @@ Category: Gossiping
 Tags: Headphones, Unboxing
 Slug: sony-wh-1000-xm6-unboxing
 Authors: Wei Lee
-Cover: /images/posts-image/8-open-box.jpeg
+Cover: /images/posts-image/2025-sony-wh-1000-xm6-unboxing/8-open-box.jpeg
 
 自從 2018 年買了 Sony WH-1000 XM 3 到現在
 終於更新我的耳機了
@@ -27,7 +27,7 @@ XM 5 出的時候，換換病就已經快到末期了
 順帶一提，現在已經是都沒貨了
 今天是正式發售第一天
 
-![out-of-stock](/images/posts-image/out-of-stock.png)
+![out-of-stock](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/out-of-stock.png)
 
 我記得好像開放預購沒幾天就已經缺貨不能訂惹
 
@@ -36,53 +36,53 @@ XM 5 出的時候，換換病就已經快到末期了
 想說今天應該可以收到吧，果然很準時
 一大早就收到了
 
-![1-box](/images/posts-image/1-box.jpeg)
+![1-box](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/1-box.jpeg)
 
 除了耳機以外，還附贈兩包空氣
 非常的貼心
 
-![2-headphone-with-air](/images/posts-image/2-headphone-with-air.jpeg)
+![2-headphone-with-air](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/2-headphone-with-air.jpeg)
 
 
-![3-open](/images/posts-image/3-open.jpeg)
+![3-open](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/3-open.jpeg)
 
 外包裝其實也蠻好看的
 應該不會丟掉，會拿來收納其他東西
 
-![4-clean-box](/images/posts-image/4-clean-box.jpeg)
+![4-clean-box](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/4-clean-box.jpeg)
 
 說明書直接跟耳機盒綁一起
 
-![5-open-it](/images/posts-image/5-open-it.jpeg)
+![5-open-it](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/5-open-it.jpeg)
 
 這次買的是深藍色
 
-![6-headphone-box](/images/posts-image/6-headphone-box.jpeg)
+![6-headphone-box](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/6-headphone-box.jpeg)
 
 大家推爆的磁吸設計，確實是蠻方便的
 
-![7-magnet](/images/posts-image/7-magnet.jpeg)
+![7-magnet](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/7-magnet.jpeg)
 
 內部看起來也很有質感
 線材稍微不是那麼好收就是惹，要塞一下
 
-![8-open-box](/images/posts-image/8-open-box.jpeg)
+![8-open-box](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/8-open-box.jpeg)
 
-![9-out-of-box](/images/posts-image/9-out-of-box.jpeg)
+![9-out-of-box](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/9-out-of-box.jpeg)
 
 電源鍵比以往更明顯，以往的電源鍵跟模式調整按鍵是一樣的
 雖然我是從沒沒為此困擾過
 
-![10-power-button](/images/posts-image/10-power-button.jpeg)
+![10-power-button](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/10-power-button.jpeg)
 
 跟以前的 XM3 比較，少了一個飛機的轉接頭
 雖然也不常用到
 
-![11-compare-with-xm3-1](/images/posts-image/11-compare-with-xm3-1.jpeg)
+![11-compare-with-xm3-1](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/11-compare-with-xm3-1.jpeg)
 
 XM 3 的耳罩直接脫皮到都沒皮了
 
-![12-compare-with-xm3-2](/images/posts-image/12-compare-with-xm3-2.jpeg)
+![12-compare-with-xm3-2](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/12-compare-with-xm3-2.jpeg)
 
 音質的話，反正就是很好聽吧
 我木耳，聽不太懂，聽得很開心就是了
