@@ -1,0 +1,405 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>DurianPy - Apache Airflow Development Sprint  - You were the chosen one!</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="First, I would like to thank Arnel for inviting me to the Airflow Development Sprint. It seems that the sprint I led at PyCon APAC 2025..." name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Python" name="tags"/>
+<meta content="Airflow" name="tags"/>
+<meta content="Development Sprint" name="tags"/>
+<meta content="DurianPy" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="DurianPy - Apache Airflow Development Sprint  - You were the chosen one!" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="First, I would like to thank Arnel for inviting me to the Airflow Development Sprint. It seems that the sprint I led at PyCon APAC 2025..." prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
+<meta content="https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint" prefix="og: http://ogp.me/ns#" property="og:url">
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type">
+<meta content="2025-06-23 00:15:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Airflow" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Development Sprint" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="DurianPy" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me/images/posts-image/2025-durianpy-apache-airflow-development-sprint/P1280744.JPG" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="DurianPy - Apache Airflow Development Sprint  - You were the chosen one!" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me/images/posts-image/2025-durianpy-apache-airflow-development-sprint/P1280744.JPG" name="twitter:image:src"/>
+<meta content="First, I would like to thank Arnel for inviting me to the Airflow Development Sprint. It seems that the sprint I led at PyCon APAC 2025..." name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "DurianPy - Apache Airflow Development Sprint - You were the chosen one!",
+  "headline": "DurianPy - Apache Airflow Development Sprint - You were the chosen one!",
+  "datePublished": "2025-06-23 00:15:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "",
+  "url": "https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint",
+  "description": "First, I would like to thank Arnel for inviting me to the Airflow Development Sprint. It seems that the sprint I led at PyCon APAC 2025..."
+}
+</script>
+</meta></meta></meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2025", "item": "https://blog.wei-lee.me/posts/tech/2025"}, {"@type": "ListItem", "position": 5, "name": "06", "item": "https://blog.wei-lee.me/posts/tech/2025/06"}, {"@type": "ListItem", "position": 6, "name": "Durianpy apache airflow development sprint", "item": "https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "DurianPy - Apache Airflow Development Sprint", "about": "Tech", "datePublished": "2025-06-23 00:15"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint" property="og:url"/><meta content="article" property="og:type"/><meta content="DurianPy - Apache Airflow Development Sprint" property="og:title"/><meta content="C" property="og:locale"/></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🏷️ Tags" role="presentation"><a href="/tags.html"><span>🏷️ Tags</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            DurianPy - Apache Airflow Development Sprint
+            <br/>
+<small class="post-subtitle-white">You were the chosen one!</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2025/06/23 - Mon">2025/06/23 - Mon</time>
+          • 4 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/posts-image/2025-durianpy-apache-airflow-development-sprint/P1280744.JPG"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>First, I would like to thank Arnel for inviting me to the Airflow Development Sprint. It seems that the sprint I led at PyCon APAC 2025 in March was a success, encouraging him to host another in his hometown 🙌.</p>
+<p>I also want to express my sincere gratitude to Dom, Emily, and Di-Di. You played a crucial role in making my experience in Davao memorable. My journey would not have been nearly as smooth and enjoyable without your assistance.</p>
+<!--more-->
+<h2 id="before-the-sprint">Before the Sprint</h2>
+<p>Honestly, I was somewhat concerned about my ability to lead a worthwhile event. It's not a small expense for both sides. However, if they believe I might be capable, then perhaps being a yes man this time might not be a bad idea.</p>
+<h2 id="development-sprint">Development Sprint</h2>
+<p>Before this began, we had a brief chat with the DurianPy organizers. I had the honor of meeting the legendary Anakin Skywalker. I thought it was just a nickname for a Star Wars fan. It turns out to be his real name, but he hasn't yet stepped into the Star Wars world. During this year's Star Wars Celebration, I was also lucky to meet another Anakin Skywalker, Hayden Christensen. It was quite intriguing to meet two Anakins in a row.</p>
+<p><img alt="There is another" src="/images/posts-image/2025-durianpy-apache-airflow-development-sprint/17506004384785.jpg"/></p>
+<p>Even though Anakin is not a Star Wars fan, Sean is! We discussed our love for Rogue One, Andor, and Rebels. I shared some Star Wars novels that I truly enjoy. (👉 <a href="https://travlog.wei-lee.me/pages/star-wars-novel-ranking.html">星際大戰小說排名</a>)</p>
+<p>It's a shame I didn't mention this quote to him in person.</p>
+<blockquote>
+<p>I have friends everywhere.</p>
+</blockquote>
+<h3 id="what-i-did">What I did</h3>
+<p>I outlined the steps for initiating contributions to Airflow. This included instructions on setting up <code>breeze</code>, an overview of Airflow's high-level project structure, and guidance on identifying potential changes to create pull requests.</p>
+<p><a href="https://www.linkedin.com/posts/durianpy_durianpy-pythonsprint-opensourceph-activity-7342017222132801536-HQv-?rcm=ACoAAAwuJ3cBSUYBWI2zB_4HRnocCjUmJx9GzCg">🎤 Happening Now: D-Day!</a></p>
+<p>After that, I used my previous slide <a href="https://speakerdeck.com/leew/20250328-airflow-3-dot-0-the-first-glance">Airflow 3.0 The First Glance</a> to introduce some of the new features in Airflow 3. DatasetAlias/AssetAlias is not an easy concept to describe 🤔. The second photo in this post (with my weird gesture) shows my attempt to explain it.</p>
+<p><a href="https://www.linkedin.com/posts/durianpy_durianpy-pythonsprint-davaotech-activity-7342029111814430720-FcQD?rcm=ACoAAAwuJ3cBSUYBWI2zB_4HRnocCjUmJx9GzCg">🎙️ 𝗛𝗮𝗽𝗽𝗲𝗻𝗶𝗻𝗴 𝗡𝗼𝘄 | Introduction to Airflow 3.0</a></p>
+<p>I also discussed the Airflow instance we have in <a href="https://tw.pycon.org/">PyCon Taiwan</a> - <a href="https://github.com/pycontw/pycon-etl">pycon-etl</a> to demonstrate the power of ruff <a href="https://docs.astral.sh/ruff/rules/#airflow-air">AIR</a> rules. The PR <a href="https://github.com/pycontw/pycon-etl/pull/159">Upgrade to Airflow 3.0.2 #159</a>, which I used for demonstration, was merged shortly after my presentation. 🙌</p>
+<p>The rest of the time, I just sit there and see whether anyone needs my help. 👀</p>
+<p><a href="https://www.linkedin.com/posts/durianpy_durianpy-pythonsprint-davaotech-activity-7342090544518467585-jMXN?rcm=ACoAAAwuJ3cBSUYBWI2zB_4HRnocCjUmJx9GzCg">📍 𝐇𝐚𝐩𝐩𝐞𝐧𝐢𝐧𝐠 𝐍𝐨𝐰: 𝐏𝐲𝐭𝐡𝐨𝐧 𝐒𝐩𝐫𝐢𝐧𝐭 – 𝐂𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐧𝐠 𝐭𝐨 𝐀𝐩𝐚𝐜𝐡𝐞 𝐀𝐢𝐫𝐟𝐥𝐨𝐰</a></p>
+<h3 id="what-we-achieved">What we achieved</h3>
+<ul>
+<li>Pull requests created by the attendees<ol>
+<li><a href="https://github.com/apache/airflow/pull/51980">docs: fix grammar, spelling, and spacing in README #51980</a></li>
+<li><a href="https://github.com/apache/airflow/pull/51981">fix(dev): guard missing --language if --add-missing is used in dev/i18n/check_translations_completeness.py #51981</a><ul>
+<li>I'm also an attendee. So technically, my PR counts ➕.</li>
+</ul>
+</li>
+<li><a href="https://github.com/apache/airflow/pull/51982">remove directed acyclic graphs #51982</a><ul>
+<li><strong>We finally get rid of the idea of directed acyclic graphs (DAGs) in Airflow!</strong></li>
+</ul>
+</li>
+<li><a href="https://github.com/apache/airflow/pull/51983">docs: update vertex AI generative model documentation #51983</a></li>
+<li><a href="https://github.com/apache/airflow/pull/51987">refactor: remove dag.py params typechecking #51987</a></li>
+<li><a href="https://github.com/apache/airflow/pull/51985">fix: add space to goto instances in contributors quick start #51985</a></li>
+<li><a href="https://github.com/apache/airflow/pull/51986">docs: Format consistency for variables/directories/flags in unit_tests.rst #51986</a></li>
+<li><a href="https://github.com/apache/airflow/pull/51988">docs: update remote logging configuration for Azure Blob Storage #51988</a></li>
+<li><a href="https://github.com/apache/airflow/pull/51990">Add comma #51990</a><ul>
+<li>I don't even have a chance to take a look. Shahar beats me 🙌</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Other PRs I reviewed<ol>
+<li><a href="https://github.com/apache/airflow/pull/49470">Resolve OOM When Reading Large Logs in Webserver #49470</a><ul>
+<li>This consumes most of my energy. It's a huge PR with an awesome improvement. I'm really looking forward to its merging. 👀</li>
+</ul>
+</li>
+<li><a href="https://github.com/apache/airflow/pull/51847">fix(provider): Fix kwargs handling in Azure Data Lake Storage V2 Hook methods #51847</a></li>
+<li><a href="https://github.com/apache/airflow/pull/51097">[Discord Provider] Add support to embeds in Discord Webhook and Notifier #51097</a></li>
+</ol>
+</li>
+</ul>
+<h2 id="one-more-thing">One more thing</h2>
+<p>In the afternoon, I saw that Jarek and Shahar had started PR reviews. Jarek messaged me, mentioning that he noticed we were in a sprint. I then thought, why not invite him to share a few words with the DurianPy attendees? Jarek's encouragement was uplifting, and I hope it helps DurianPy's further growth.<br/>
+When I served as the chair of <a href="https://tw.pycon.org/">PyCon Taiwan</a>, Jarek also helped us run a development sprint. Unfortunately, I couldn't participate at that time as I was leading commitizen-tools. Now, here I am, leading the Airflow development sprint.</p>
+<h2 id="all-about-davao">All about Davao</h2>
+<p>I truly appreciate my time here in Davao. It is a beautifully peaceful and cozy place. I was pleasantly surprised to find that I can even go on my anime pilgrimage here. (Thanks, Emily!) Davao is featured in the film <a href="https://www.netflix.com/title/81439253">Mobile Suit Gundam: Hathaway's Flash</a>. Dom took me to the most famous location shown in it. Although I haven't seen the movie yet, it's available on Netflix, so I should make time to watch it.</p>
+<p><img alt="P1280744" src="/images/posts-image/2025-durianpy-apache-airflow-development-sprint/P1280744.JPG"/></p>
+<p><img alt="P1280750" src="/images/posts-image/2025-durianpy-apache-airflow-development-sprint/P1280750.JPG"/></p>
+<p>I considered eating at this specific Jollibee, but we have something even more exciting planned for later. We visited a local weekend market and enjoyed Filipino cuisine.</p>
+<p><img alt="913CCF6F-8048-486A-984C-EB3F20213009_1_105_c" src="/images/posts-image/2025-durianpy-apache-airflow-development-sprint/913CCF6F-8048-486A-984C-EB3F20213009_1_105_c.jpeg"/></p>
+<p><img alt="EE8B4B7B-5A8D-4CE4-9FAF-FABC7530E59E_1_105_c" src="/images/posts-image/2025-durianpy-apache-airflow-development-sprint/EE8B4B7B-5A8D-4CE4-9FAF-FABC7530E59E_1_105_c.jpeg"/></p>
+<p>Fortunately, I still have the opportunity to grab some Jollibee for lunch during the sprint.</p>
+<p><img alt="5A7801F0-6986-470D-8B66-AFAA5257C424_1_105_c" src="/images/posts-image/2025-durianpy-apache-airflow-development-sprint/5A7801F0-6986-470D-8B66-AFAA5257C424_1_105_c.jpeg"/></p>
+<p>At dinner time, we went to a well-known local restaurant. This time, I remembered to bring my PyCon hat!</p>
+<p><img alt="101CFC4E-B12A-47C0-AE2C-56E0639AD4CF_1_105_c" src="/images/posts-image/2025-durianpy-apache-airflow-development-sprint/101CFC4E-B12A-47C0-AE2C-56E0639AD4CF_1_105_c.jpeg"/></p>
+<p>Here are the souvenirs I got: the t-shirt and tote bag from DurianPy, the adorable bubble tea doll from Charm, and some chocolate with unusual flavors that I had to buy.<br/>
+(This time, I brought the Acrylic stand of Nina and Lancelot for traveling.)</p>
+<p><img alt="9D691FF9-5223-463A-9980-FD45060821A0_1_201_a" src="/images/posts-image/2025-durianpy-apache-airflow-development-sprint/9D691FF9-5223-463A-9980-FD45060821A0_1_201_a.heic"/></p>
+<p>before Dom dropped me off at the airport. These are the last gifts he shared with me. Thanks again, Dom!</p>
+<p><img alt="308E25B8-1B17-40EE-9294-0D333FBA4A46_1_105_c" src="/images/posts-image/2025-durianpy-apache-airflow-development-sprint/308E25B8-1B17-40EE-9294-0D333FBA4A46_1_105_c.jpeg"/></p>
+<p>and the trip concludes with Nina. I suppose we can regard it as somewhat similar to the Filipino beef bowl from Yoshinoya.</p>
+<p><img alt="3CE2D2C6-8FBE-4137-BD9F-401AB6B6ECAB_1_102_o" src="/images/posts-image/2025-durianpy-apache-airflow-development-sprint/3CE2D2C6-8FBE-4137-BD9F-401AB6B6ECAB_1_102_o.jpeg"/></p>
+<hr/>
+<blockquote>
+<p>You were the chosen one.<br/>
+It was said that you would take the T-shirt, not give it up.</p>
+</blockquote>
+<p>At the close of the sprint, we had a lucky draw. Anakin was the first to be drawn. He truly is the chosen one in every regard.</p>
+<p><img alt="8AA26F8F-FE1D-4F04-B2F3-6BA6A3BA5A77_1_105_c" src="/images/posts-image/2025-durianpy-apache-airflow-development-sprint/8AA26F8F-FE1D-4F04-B2F3-6BA6A3BA5A77_1_105_c.jpeg"/></p>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=DurianPy - Apache Airflow Development Sprint  - You were the chosen one!&amp;url=https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint&amp;title=DurianPy - Apache Airflow Development Sprint" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=DurianPy - Apache Airflow Development Sprint&amp;body=https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/python.html">Python</a><a href="https://blog.wei-lee.me/tag/airflow.html">Airflow</a><a href="https://blog.wei-lee.me/tag/development-sprint.html">Development Sprint</a><a href="https://blog.wei-lee.me/tag/durianpy.html">DurianPy</a> </aside>
+<div class="clear"></div>
+</section>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2025/06/durianpy-apache-airflow-development-sprint" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>CPython Workshop 2025 我不會寫 Python 😞  - 因為山在那裡</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/drafts/cpython-workshop-2025-i-dont-know-how-to-write-python.html" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="CPython Workshop June 圓滿落幕 原本因為想要邀請 Donghee Na 來擔任 Keynote Kwon Han 也一直提到希望能在台灣辦這樣的 Sprint 高見龍老師去年又在鐵人 …" name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="PyCon TW" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="CPython Workshop 2025 我不會寫 Python 😞  - 因為山在那裡" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="CPython Workshop June 圓滿落幕 原本因為想要邀請 Donghee Na 來擔任 Keynote Kwon Han 也一直提到希望能在台灣辦這樣的 Sprint 高見龍老師去年又在鐵人 …" prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale"/>
+<meta content="https://blog.wei-lee.me/drafts/cpython-workshop-2025-i-dont-know-how-to-write-python.html" prefix="og: http://ogp.me/ns#" property="og:url"/>
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2025-06-20 09:10:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="PyCon TW" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="CPython Workshop 2025 我不會寫 Python 😞  - 因為山在那裡" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/drafts/cpython-workshop-2025-i-dont-know-how-to-write-python.html" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" name="twitter:image:src"/>
+<meta content="CPython Workshop June 圓滿落幕 原本因為想要邀請 Donghee Na 來擔任 Keynote Kwon Han 也一直提到希望能在台灣辦這樣的 Sprint 高見龍老師去年又在鐵人 …" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "CPython Workshop 2025 我不會寫 Python 😞 - 因為山在那裡",
+  "headline": "CPython Workshop 2025 我不會寫 Python 😞 - 因為山在那裡",
+  "datePublished": "2025-06-20 09:10:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "https://blog.wei-lee.me//images/cover.jpeg",
+  "url": "https://blog.wei-lee.me/drafts/cpython-workshop-2025-i-dont-know-how-to-write-python.html",
+  "description": "CPython Workshop June 圓滿落幕 原本因為想要邀請 Donghee Na 來擔任 Keynote Kwon Han 也一直提到希望能在台灣辦這樣的 Sprint 高見龍老師去年又在鐵人 …"
+}
+</script>
+</meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/drafts/cpython-workshop-2025-i-dont-know-how-to-write-python.html" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Drafts", "item": "https://blog.wei-lee.me/drafts"}, {"@type": "ListItem", "position": 3, "name": "Cpython workshop 2025 i dont know how to write python", "item": "https://blog.wei-lee.me/drafts/cpython-workshop-2025-i-dont-know-how-to-write-python.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "CPython Workshop 2025 我不會寫 Python 😞", "about": "Tech", "datePublished": "2025-06-20 09:10"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/drafts/cpython-workshop-2025-i-dont-know-how-to-write-python.html" property="og:url"/><meta content="article" property="og:type"/><meta content="CPython Workshop 2025 我不會寫 Python 😞" property="og:title"/><meta content="C" property="og:locale"/></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🏷️ Tags" role="presentation"><a href="/tags.html"><span>🏷️ Tags</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            CPython Workshop 2025 我不會寫 Python 😞
+            <br/>
+<small class="post-subtitle-white">因為山在那裡</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2025/06/20 - Fri">2025/06/20 - Fri</time>
+</div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/cover.jpeg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p><a href="https://pycontw.kktix.cc/events/2025-june-cpython-workshop">CPython Workshop June</a> 圓滿落幕</p>
+<!--more-->
+<p>原本因為想要邀請 Donghee Na 來擔任 Keynote<br/>
+Kwon Han 也一直提到希望能在台灣辦這樣的 Sprint<br/>
+高見龍老師去年又在鐵人賽寫了 <a href="https://pythonbook.cc/chapters/cpython">為你自己讀 CPython 原始碼</a><br/>
+這似乎是個必須發生的事了</p>
+<p>不確定事情會不會造我想發生的樣貌前進<br/>
+也不確定 PyCon TW 是不是跟我<br/>
+一開始提了很長的案<br/>
+原本想說可以去台南辦，我有機會聯絡到的幫助應該比較多<br/>
+最後還是因為人數考量留在台北<br/>
+但也因此有辦法跟高見龍老師搭上線<br/>
+想到鐵人曬我頒獎給龍哥就覺得，我何德何能<br/>
+這次能有這個活動認真想想真的也是受了高見龍老師各種幫忙<br/>
+太佛<br/>
+就真的會有點拍謝的那麼多<br/>
+連場地都用五倍紅寶石</p>
+<p>雖然前期我稍微推了一點點事情<br/>
+但最後我頻寬有限，稍微有點推不動了<br/>
+只能在我有限的精力下盡可能的<br/>
+最後還是由 PyCon TW 最強的，獲得世界認可的 PSF Fellow Winnie Ke<br/>
+👉 []</p>
+<p>活動當天 PyCon TW 2025 的議程組長有問我「為什麼今年積極想推這件事」</p>
+<p>此乃良機 &lt;- 四疊半神話大系</p>
+<p>我想大概就跟我在源來適你那邊積極想推 Airflow 跟 commitizen 一樣吧<br/>
+希望台灣人能在這些舞台上的能見度更多一點<br/>
+我也知道這件是不是一簇可跡的<br/>
+但 10 年前沒有來得及把樹種下去<br/>
+現在開始種，也許能期待 10 年後長出一點點</p>
+<p>活動當天比想像中的順利許多<br/>
+也確實有人成功發出 PR 或解決 issue<br/>
+或者是能多對 CPython 了解一點，都是很成功的第一步<br/>
+我們的目的確實就是希望激發一些淺在貢獻者<br/>
+我其實有找到我可能有機會貢獻的內容<br/>
+但最後在幫大家解問題，跟交流， code 就只寫到一半<br/>
+確實，比想像中的好一點，但也許也是因為如此，才會覺得沒辦法再讓更多潛在貢獻者很可惜<br/>
+而且也不是我們不夠努力，而是就是有人要搞，還是內部人士</p>
+<p><a href="https://pythonbook.cc/chapters/cpython">為你自己讀 CPython 原始碼</a></p>
+<p><img alt="group-photo" src="/images/posts-image/2025-cpython-workshop-2025-i-dont-know-how-to-write-python/group-photo.jpg"/></p>
+<h2 id="_1">🙂</h2>
+<p>如果說要說美中不足，也許是難以解釋的神秘現象吧<br/>
+40 人的場地，現場怎麼數都無法接近 40 人<br/>
+雖然我知道有人身體不適臨時無法前來，但似乎還是比想像的難以解釋一點</p>
+<p>讓我想到之前 Leon 提到 Sciwork Sprint 把參與費用提高的事<br/>
+Kir 也告訴我，知識是有價的，費用收得太低，並不是所有人都會珍惜<br/>
+當內部人士也是如此，就特別令人遺憾<br/>
+彷彿聽到在耳邊的呢喃聲</p>
+<blockquote>
+<p>哈哈！想推廣台灣開發 CPython 的量能嗎<br/>
+只要我死佔住一個名額不釋出，就可以減少一個潛在的開發者了！</p>
+</blockquote>
+<p>我們努力想推動一些什麼的同時，快樂寶貝也很努力的為大家帶來快樂 🙂<br/>
+或許這就是為什麼很多好意，最後都會被消磨掉<br/>
+許多規則也會被改得越來越嚴格<br/>
+畢竟快樂寶貝想為大家帶來快樂的決心，就跟 Palpatine 一樣從未如此堅定<br/>
+看看諸多現況又對此特別有感<br/>
+是不是就像是魔法少女小圓中的「許下多少的希望、便會帶來多少的絕望」呢</p>
+<p>啊啊，不行，想想漢隆剃刀（Hanlon's razor）</p>
+<blockquote>
+<p>能解釋為愚蠢的，就不要解釋為惡意。</p>
+</blockquote>
+<p>跟不是漢隆剃刀的</p>
+<blockquote>
+<p>你要原諒他，他可憐，沒人教他</p>
+</blockquote>
+<p>好吧<br/>
+或許該思考有沒有一種可能他們其實是文盲<br/>
+只是根本沒看懂報名資訊就先報名了</p>
+<p>查了一下內政部在 2025/03/13 發佈的識字率統計是 99.32%<br/>
+0.68% 的台灣人，也許並不是那麼稀有<br/>
+畢竟時不時就會在電影院跟演唱會遇到</p>
+<p>Tai 也說過不要去擔心無法控制的事<br/>
+這是確實，台灣的識字率已經遠超過我能努力的範圍了<br/>
+我手上要做的事也早就像山一樣多了<br/>
+這也讓我想起了，登山者們的一句話</p>
+<blockquote>
+<p>為什麼要爬山</p>
+</blockquote>
+<p>剩下的那一半在副標題回答了<br/>
+甚是快樂 😇</p>
+<p>哇，突然想到快樂寶貝要是登山無法閱讀告示牌，確實有些危險<br/>
+希望他們平安</p>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=CPython Workshop 2025 我不會寫 Python 😞  - 因為山在那裡&amp;url=https://blog.wei-lee.me/drafts/cpython-workshop-2025-i-dont-know-how-to-write-python.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/drafts/cpython-workshop-2025-i-dont-know-how-to-write-python.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/drafts/cpython-workshop-2025-i-dont-know-how-to-write-python.html&amp;title=CPython Workshop 2025 我不會寫 Python 😞" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=CPython Workshop 2025 我不會寫 Python 😞&amp;body=https://blog.wei-lee.me/drafts/cpython-workshop-2025-i-dont-know-how-to-write-python.html" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/pycon-tw.html">PyCon TW</a> </aside>
+<div class="clear"></div>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>

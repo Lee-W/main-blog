@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>AIP-90 - 圓環之理的人們  - 原來是小圓成神的世界線</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/drafts/aip-90.html" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="不過 Human In The Loop 這個詞其實有正確的翻譯 - 人機迴圈 「圓環之理」（円環の理；Law of Cycles） 原文連結: AIP-90 筆記 動機 考量因素 技術細節 使 …" name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Airflow" name="tags"/>
+<meta content="Airflow 3.1" name="tags"/>
+<meta content="Airflow Improvement Proposal" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="AIP-90 - 圓環之理的人們  - 原來是小圓成神的世界線" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="不過 Human In The Loop 這個詞其實有正確的翻譯 - 人機迴圈 「圓環之理」（円環の理；Law of Cycles） 原文連結: AIP-90 筆記 動機 考量因素 技術細節 使 …" prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
+<meta content="https://blog.wei-lee.me/drafts/aip-90.html" prefix="og: http://ogp.me/ns#" property="og:url">
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2025-05-25 23:10:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Airflow" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Airflow 3.1" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Airflow Improvement Proposal" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="AIP-90 - 圓環之理的人們  - 原來是小圓成神的世界線" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/drafts/aip-90.html" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" name="twitter:image:src"/>
+<meta content="不過 Human In The Loop 這個詞其實有正確的翻譯 - 人機迴圈 「圓環之理」（円環の理；Law of Cycles） 原文連結: AIP-90 筆記 動機 考量因素 技術細節 使 …" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "AIP-90 - 圓環之理的人們 - 原來是小圓成神的世界線",
+  "headline": "AIP-90 - 圓環之理的人們 - 原來是小圓成神的世界線",
+  "datePublished": "2025-05-25 23:10:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "https://blog.wei-lee.me//images/cover.jpeg",
+  "url": "https://blog.wei-lee.me/drafts/aip-90.html",
+  "description": "不過 Human In The Loop 這個詞其實有正確的翻譯 - 人機迴圈 「圓環之理」（円環の理；Law of Cycles） 原文連結: AIP-90 筆記 動機 考量因素 技術細節 使 …"
+}
+</script>
+</meta></meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/drafts/aip-90.html" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Drafts", "item": "https://blog.wei-lee.me/drafts"}, {"@type": "ListItem", "position": 3, "name": "Aip 90", "item": "https://blog.wei-lee.me/drafts/aip-90.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "AIP-90 - 圓環之理的人們", "about": "Tech", "datePublished": "2025-05-25 23:10"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/drafts/aip-90.html" property="og:url"/><meta content="article" property="og:type"/><meta content="AIP-90 - 圓環之理的人們" property="og:title"/><meta content="C" property="og:locale"/></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🏷️ Tags" role="presentation"><a href="/tags.html"><span>🏷️ Tags</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            AIP-90 - 圓環之理的人們
+            <br/>
+<small class="post-subtitle-white">原來是小圓成神的世界線</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2025/05/25 - Sun">2025/05/25 - Sun</time>
+</div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/cover.jpeg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>不過 Human In The Loop 這個詞其實有正確的翻譯 - 人機迴圈</p>
+<p>「圓環之理」（円環の理；Law of Cycles）</p>
+<!--more-->
+<ul>
+<li>原文連結: <a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-90+Human+in+the+loop">AIP-90</a></li>
+</ul>
+<div class="toc">
+<ul>
+<li><a href="#_1">筆記</a><ul>
+<li><a href="#_2">動機</a></li>
+<li><a href="#_3">考量因素</a></li>
+<li><a href="#_4">技術細節</a></li>
+<li><a href="#_5">使用者會如何被影響</a></li>
+<li><a href="#_6">其他考慮？</a></li>
+<li><a href="#aip">AIP 完成要件</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_1">筆記</h2>
+<h3 id="_2">動機</h3>
+<ul>
+<li>部分 workflow 需要人類決策介入（尤其是 GenAI）</li>
+<li>常見情境<ol>
+<li>human branch operator ，由人決定下一個該執行的任務 (e.g., 內容審核)</li>
+<li>同意 / 拒絕</li>
+<li>由人提供輸入</li>
+</ol>
+</li>
+</ul>
+<h3 id="_3">考量因素</h3>
+<ul>
+<li>獨立於 airflow 核心，並且是可選用的 provider</li>
+<li>特定身份的人才能回應這種 task<ul>
+<li>如果未來 Airflow 支援使用者群組，應該要改用使用者群組而非身份（目前是 fab 的概念）</li>
+<li>當多個擁有相同身份的人，第一個動作的人將被視為完成任務的人，其他人將不再能執行動作</li>
+</ul>
+</li>
+<li>等待輸入中的 task 的狀態是 <code>deferred</code> (TBD)</li>
+<li>UI<ul>
+<li>在 UI 顯示正等待使用者輸入的 tasks</li>
+<li>使用者可以根據 task 需求，透過以下兩種做法完成任務<ul>
+<li>分支或 "同意 / 拒絕"（UI 顯示可選選項）</li>
+<li>輸入（UI 顯示輸入表格，類似 dag Param）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>API<ul>
+<li>URL 端點<ol>
+<li>取得等待輸入的 task 的細節 (e.g., 上游 XCom 或可選選項)</li>
+<li>標記 task 為完成（要輸入 task 或下一個 task 所需的資料）</li>
+<li>產生分享連結<ol>
+<li>直接開啟，並導向所需細節</li>
+<li>在使用者已登入的情況下，直接一鍵完成任務（e.g., 電子郵件中的同意連結）</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>資安考量<ul>
+<li><em>產生分享連結</em> 的 URL 端點<ul>
+<li>預設為不開啟</li>
+<li>產生連結時，會產生一個 token，以避免 CSRF</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>不受影響，但相關的現有 dag, task 行爲<ul>
+<li>Airflow 管理員或有權限者，可以直接將 task 標記為"成功" 或 "失敗"（同一般 task）</li>
+<li>等待輸入中的 DagRun 的狀態會是 "running" (同 deferrable operator)</li>
+<li>XCom 輸入可以作為人類輸入的參考，同理 XCom 輸出也可能在 task 中受人類改變，並且被下游 task 使用</li>
+</ul>
+</li>
+<li>待解決<ul>
+<li>通知跟設定應該要能依據組織或人的層級做設定，而不是 dag 層級</li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">技術細節</h3>
+<ul>
+<li>Provider 名稱<ul>
+<li>apache-airflow-providers-human (Human Interaction)</li>
+</ul>
+</li>
+<li>Operators<ul>
+<li><code>HumanOperator(BaseOperator)</code><ul>
+<li>參數<ul>
+<li><code>subject: str</code></li>
+<li><code>body: str | None</code></li>
+<li><code>params: ParamDict | None</code></li>
+<li><code>options: list[str]</code></li>
+<li><code>default: str | None</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>ApprovalOperator(HumanOperator)</code><ul>
+<li>參數<ul>
+<li><code>options: list[str] = ("Approve", "Reject")</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>HumanTerminationOperator(HumanOperator)</code><ul>
+<li>參數<ul>
+<li><code>options: list[str] = ("Approve", "Reject")</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>HumanBranchOperator(HumanOperator)</code><ul>
+<li>參數<ul>
+<li><code>multiple: bool</code>: 是否可以多選</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>HumanEntryOperator(HumanOperator)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="_5">使用者會如何被影響</h3>
+<p>大部分不受引響，但這個 provider 要新增一個新的資料表 (table) 用來存這些 human 任務的狀態，另外也要記錄被誰同意或拒絕</p>
+<h3 id="_6">其他考慮？</h3>
+<ul>
+<li>相關 AIP<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-68+Extended+Plugin+Interface+for+React+Views">AIP-68</a> Extended Plugin Interface for React Views<ul>
+<li>讓 UI 可以被 Human Interaction provider 客製化（e.g., 同意頁面）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果人類沒有及時回應<ul>
+<li>可以設定 timeout ，超過就視為消極同意（？）</li>
+<li>如何達到重複通知、escalations、timeout？<ul>
+<li>直接用現有的 dag 邏輯去整合</li>
+<li>為了將降低複雜度，<strong>一個 task 只能有一個完成活動</strong></li>
+<li>初版先不做這些現有 dag 邏輯能整合的流程的最佳化，之後再說</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="aip">AIP 完成要件</h3>
+<ul>
+<li>provider 要被發佈到 PyPI 上，並且能跟 Airflow 3.1+ 一起安裝</li>
+<li>最前面提到的三個 flow ，要可以透過 UI 跟 API 達到</li>
+<li>足夠的範例跟文件</li>
+</ul>
+<hr/>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">host</span> <span class="o">=</span> <span class="s2">"http://localhost:28080"</span>
+
+<span class="n">token_endpoint</span> <span class="o">=</span> <span class="s2">"/auth/token"</span>
+<span class="n">dag_endpoint</span> <span class="o">=</span> <span class="s2">"/api/v2/dags"</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">host</span><span class="si">}{</span><span class="n">token_endpoint</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">"username"</span><span class="p">:</span> <span class="s2">"admin"</span><span class="p">,</span> <span class="s2">"password"</span><span class="p">:</span> <span class="s2">"admin"</span><span class="p">})</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">"access_token"</span><span class="p">]</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Authorization"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">"</span><span class="p">}</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">host</span><span class="si">}{</span><span class="n">dag_endpoint</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="n">ti_id</span> <span class="o">=</span> <span class="s2">"0197931e-e467-725a-b3db-4bdbbe153eb3"</span>
+
+<span class="n">response_endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"/api/v2/interactive/</span><span class="si">{</span><span class="n">ti_id</span><span class="si">}</span><span class="s2">/response"</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Approve"</span><span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">host</span><span class="si">}{</span><span class="n">response_endpoint</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=AIP-90 - 圓環之理的人們  - 原來是小圓成神的世界線&amp;url=https://blog.wei-lee.me/drafts/aip-90.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/drafts/aip-90.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/drafts/aip-90.html&amp;title=AIP-90 - 圓環之理的人們" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=AIP-90 - 圓環之理的人們&amp;body=https://blog.wei-lee.me/drafts/aip-90.html" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/airflow.html">Airflow</a><a href="https://blog.wei-lee.me/tag/airflow-31.html">Airflow 3.1</a><a href="https://blog.wei-lee.me/tag/airflow-improvement-proposal.html">Airflow Improvement Proposal</a> </aside>
+<div class="clear"></div>
+<div class="series">
+<p>This post is part <built-in 0x7ffad4660c10="" at="" index="" method="" object="" of="" str=""> of the "" series:</built-in></p>
+<ol class="parts">
+</ol>
+</div>
+</section>
+<aside class="post-nav">
+<div class="clear"></div>
+</aside>
+</div>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>
