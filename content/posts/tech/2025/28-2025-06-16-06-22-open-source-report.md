@@ -1,9 +1,9 @@
-Title: 2025/06/16 - 06/23 開源貢獻週報
+Title: 2025/06/16 - 06/22 開源貢獻週報
 Subtitle: 我的意思就是速度太快了
 Date: 2025-06-24 10:00
 Category: Tech
 Tags: Open Source, 開源貢獻週報
-Slug: 2025-06-16-06-23-open-source-report
+Slug: 2025-06-16-06-2s-open-source-report
 Authors: Wei Lee
 Cover: /images/meme/mygo-too-fast.jpg
 
