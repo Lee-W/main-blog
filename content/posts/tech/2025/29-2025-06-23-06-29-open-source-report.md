@@ -11,7 +11,7 @@ Cover:
 
 <!--more-->
 
-## comtizien
+## commtizien
 * 審閱 PR [refactor(Init): extract _get_config_data for readability #1538](https://github.com/commitizen-tools/commitizen/pull/1538)
     * 這週還是努力看了一個 PR 嗚嗚嗚嗚嗚
 
