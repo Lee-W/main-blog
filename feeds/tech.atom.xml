@@ -3,7 +3,7 @@
 </summary><content type="html">&lt;p&gt;這是個充滿 PyCon TW 的一週&lt;/p&gt;
 &lt;!--more--&gt;
 
-&lt;h2 id="comtizien"&gt;comtizien&lt;/h2&gt;
+&lt;h2 id="commtizien"&gt;commtizien&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;審閱 PR &lt;a href="https://github.com/commitizen-tools/commitizen/pull/1538"&gt;refactor(Init): extract _get_config_data for readability #1538&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;這週還是努力看了一個 PR 嗚嗚嗚嗚嗚&lt;/li&gt;
