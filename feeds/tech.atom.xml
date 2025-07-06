@@ -40,7 +40,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;完成 PR &lt;a href="https://github.com/pycontw/pycon-etl/pull/167"&gt;feat(discord): move all discord message sending to dag "discord_message_notification" and use Asset to trigger #167&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;延續 &lt;a href="{filename}/posts/gossiping/2025/29-2025-06-23-06-29-open-source-report.md"&gt;2025/06/23 - 06/29 開源貢獻週報 - 事不宜遲，現在就購票吧&lt;/a&gt; 繼續改下去，將 &lt;a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-75+New+Asset-Centric+Syntax"&gt;AIP-75&lt;/a&gt; 加入的新語法也用上了，但確實是比較合理&lt;/li&gt;
+&lt;li&gt;延續 &lt;a href="https://blog.wei-lee.me/posts/tech/2025/07/2025-06-23-06-29-open-source-report"&gt;2025/06/23 - 06/29 開源貢獻週報 - 事不宜遲，現在就購票吧&lt;/a&gt; 繼續改下去，將 &lt;a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-75+New+Asset-Centric+Syntax"&gt;AIP-75&lt;/a&gt; 加入的新語法也用上了，但確實是比較合理&lt;/li&gt;
 &lt;li&gt;用 &lt;a href="https://airflow.apache.org/docs/apache-airflow-providers-http/stable/_api/airflow/providers/http/hooks/http/index.html#airflow.providers.http.hooks.http.HttpHook"&gt;HttpHook&lt;/a&gt; 重新寫過傳送 Discord 訊息的邏輯，並且讓上游的資源（Asset） 在傳送資源事件額外資訊（Asset Event Extra）只傳 Airflow 變數（Variable）的鍵，到了傳送訊息的 Dag 才去取得實際的值，以確保所有的 webhook 都是由 Airflow 變數所管理&lt;/li&gt;
 &lt;li&gt;現在所有資產跟 Dag 之間的相依大概長這樣 &lt;img alt="assets" src="/images/posts-image/2025-06-30-07-06-open-source-report/assets.jpg"&gt;&lt;/li&gt;
 &lt;/ul&gt;
