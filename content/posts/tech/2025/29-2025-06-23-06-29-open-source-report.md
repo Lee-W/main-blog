@@ -5,7 +5,6 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-06-23-06-29-open-source-report
 Authors: Wei Lee
-Cover:
 
 這是個充滿 PyCon TW 的一週
 
