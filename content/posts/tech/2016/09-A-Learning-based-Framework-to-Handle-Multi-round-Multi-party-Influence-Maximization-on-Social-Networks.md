@@ -51,7 +51,7 @@ Authors: Wei Lee
 
 ## 4. Methodology
 
-* NP-hardness of MRCIM → looks for approxmiate solution
+* NP-hardness of MRCIM → looks for approximate solution
 * Max the inflence for each round does not guarantee overall max
     * Due to the fact that each round are not independent
 
