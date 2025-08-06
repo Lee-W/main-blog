@@ -466,7 +466,6 @@ ngrok http 8000
 
 ## Reference
 
-* [新版 Line@ Messaging API 使用心得 (Line Bot v2)
-](http://studyhost.blogspot.tw/2016/10/line-messaging-api-line-bot-v2.html)
+* [新版 Line@ Messaging API 使用心得 (Line Bot v2)](http://studyhost.blogspot.tw/2016/10/line-messaging-api-line-bot-v2.html)
 * [LineBot - Sinatra](http://jiunjiun.logdown.com/posts/2016/10/06/linebot-with-sinatra)
 * [ngrok](https://ngrok.com)
