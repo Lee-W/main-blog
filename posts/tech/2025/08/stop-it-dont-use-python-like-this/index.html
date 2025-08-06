@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>住手啊，這樣用 Python 寫程式沒有人會獲得幸福的  - 小林寫得很好，學學小林</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="內有九龍大眾浪漫暴雷，請小心服用 倒是最近意外發現原來漫畫還在連載中 好久沒看到被動畫先結束的作品了" name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Anime" name="tags"/>
+<meta content="Python" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="住手啊，這樣用 Python 寫程式沒有人會獲得幸福的  - 小林寫得很好，學學小林" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="內有九龍大眾浪漫暴雷，請小心服用 倒是最近意外發現原來漫畫還在連載中 好久沒看到被動畫先結束的作品了" prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
+<meta content="https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this" prefix="og: http://ogp.me/ns#" property="og:url"/>
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2025-08-06 23:27:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Anime" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="住手啊，這樣用 Python 寫程式沒有人會獲得幸福的  - 小林寫得很好，學學小林" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me/images/cover.jpeg" name="twitter:image:src"/>
+<meta content="內有九龍大眾浪漫暴雷，請小心服用 倒是最近意外發現原來漫畫還在連載中 好久沒看到被動畫先結束的作品了" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "住手啊，這樣用 Python 寫程式沒有人會獲得幸福的 - 小林寫得很好，學學小林",
+  "headline": "住手啊，這樣用 Python 寫程式沒有人會獲得幸福的 - 小林寫得很好，學學小林",
+  "datePublished": "2025-08-06 23:27:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "https://blog.wei-lee.me//images/cover.jpeg",
+  "url": "https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this",
+  "description": "內有九龍大眾浪漫暴雷，請小心服用 倒是最近意外發現原來漫畫還在連載中 好久沒看到被動畫先結束的作品了"
+}
+</script>
+</meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2025", "item": "https://blog.wei-lee.me/posts/tech/2025"}, {"@type": "ListItem", "position": 5, "name": "08", "item": "https://blog.wei-lee.me/posts/tech/2025/08"}, {"@type": "ListItem", "position": 6, "name": "Stop it dont use python like this", "item": "https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "住手啊，這樣用 Python 寫程式沒有人會獲得幸福的", "about": "Tech", "datePublished": "2025-08-06 23:27"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this" property="og:url"/><meta content="article" property="og:type"/><meta content="住手啊，這樣用 Python 寫程式沒有人會獲得幸福的" property="og:title"/><meta content="C" property="og:locale"/></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🏷️ Tags" role="presentation"><a href="/tags.html"><span>🏷️ Tags</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            住手啊，這樣用 Python 寫程式沒有人會獲得幸福的
+            <br/>
+<small class="post-subtitle-white">小林寫得很好，學學小林</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2025/08/06 - Wed">2025/08/06 - Wed</time>
+          • 1 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/cover.jpeg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>內有<a href="https://ani.gamer.com.tw/animeVideo.php?sn=42909">九龍大眾浪漫</a>暴雷，請小心服用<br/>
+倒是最近意外發現原來漫畫還在連載中<br/>
+好久沒看到被動畫先結束的作品了</p>
+<!--more-->
+<p>動畫結尾的味道跟愛在雨過天晴時有那麼一點點像<br/>
+讓我覺得好像蠻自然的<br/>
+不過兩部比起來，我還是更喜歡愛在雨過天晴時多了不少<br/>
+愛在雨過天晴時真的是一部很美的作品<br/>
+但九龍大眾浪漫的鋪成真的是相當相當的有趣</p>
+<hr/>
+<p>說了這麼多應該防雷防夠了<br/>
+有看動畫大概都猜到我要說什麼了<br/>
+就是動畫第 11 集<br/>
+鼬瓏打算透過這段程式碼關掉地球子星</p>
+<p><img alt="Python Code" src="/images/posts-image/2025-stop-it-dont-use-python-like-this/python-code.jpg"/></p>
+<p>為了跟上 AI 的時代，我也跟隨潮流問了一下 ChatGPT 確認這是哪個程式語言<br/>
+果然是我稍微懂一點點，但不太多的 Python<br/>
+既然是 ChatGPT 說的，那肯定不會錯吧<br/>
+你不會騙我吧， ChatGPT，現代人最相信你了</p>
+<p><img alt="ChatGPT" src="/images/posts-image/2025-stop-it-dont-use-python-like-this/chatgpt.jpg"/></p>
+<h2 id="_1">程式碼本體</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, World!"</span><span class="p">)</span>
+<span class="c1"># Imaginary Code to delete a specific program</span>
+
+
+<span class="k">def</span> <span class="nf">delete_program</span><span class="p">(</span><span class="n">program_name</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Check if the program exists</span>
+        <span class="k">if</span> <span class="n">program_exists</span><span class="p">(</span><span class="n">program_name</span><span class="p">):</span>
+            <span class="c1"># Perform the deletion of the program</span>
+            <span class="n">delete_file</span><span class="p">(</span><span class="n">program_name</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The program '</span><span class="si">{</span><span class="n">program_name</span><span class="si">}</span><span class="s2">' has been successfully deleted."</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The program '</span><span class="si">{</span><span class="n">program_name</span><span class="si">}</span><span class="s2">' does not exist."</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"An error occurred while deleting the program: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">program_exists</span><span class="p">(</span><span class="n">program_name</span><span class="p">):</span>
+    <span class="c1"># Here we simulate checking if the program exists in the system</span>
+    <span class="c1"># In reality, this would check the filesystem or registry</span>
+    <span class="k">return</span> <span class="n">program_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"program1"</span><span class="p">,</span> <span class="s2">"program2"</span><span class="p">,</span> <span class="s2">"program3"</span><span class="p">]</span>  <span class="c1"># Example programs</span>
+
+
+<span class="k">def</span> <span class="nf">delete_file</span><span class="p">(</span><span class="n">program_name</span><span class="p">):</span>
+    <span class="c1"># Simulate the file deletion</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Deleting program: </span><span class="si">{</span><span class="n">program_name</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
+
+
+<span class="c1"># Example usage</span>
+</code></pre></div>
+<h2 id="_2">閱讀程式碼</h2>
+<p>來看看這段程式碼是實際上在幹麻</p>
+<ol>
+<li>印出 "Hello, World!" <em>（不是...為什麼...）</em></li>
+<li>定義 <code>delete_program</code> 函式<ol>
+<li>確認程式是否存在<ol>
+<li>如果存在，嘗試刪除它，印出檔案已刪除的訊息</li>
+<li>如果不存在，印出檔案不存在的訊息</li>
+</ol>
+</li>
+<li>如果刪除的期間發生例外事件，則印出警告訊息 <em>(TP 表示 <code>{str(e)}</code> 到底是誰教的)</em></li>
+</ol>
+</li>
+<li>定義 <code>program_exists</code> 函式<ol>
+<li>程式名稱是否為 "program1", "program2", "program3" 之一</li>
+</ol>
+</li>
+<li>定義 <code>delete_file</code> 函式<ol>
+<li>印出刪除檔案的訊息</li>
+</ol>
+</li>
+</ol>
+<p><img alt="can't delete" src="/images/posts-image/2025-stop-it-dont-use-python-like-this/cannot-delete.jpg"/></p>
+<blockquote>
+<p>丟臉死了，根本不敢說出去<br/>
+不管下了幾次停止命令，都沒有反應</p>
+</blockquote>
+<p>自己打造的東西刪除不了應該不是什麼太奇怪的事<br/>
+隨便都可以刪的話，公司的權限也設的太隨意</p>
+<p>先不說裡面所有的邏輯都只有印出訊息<br/>
+照劇情看來，問題比較像是正在執行中的程式沒有回應<br/>
+把程式碼本身刪掉應該也是沒用<br/>
+還是它支援熱插拔，但生產環境的程式不會這樣吧...</p>
+<p>後面說要下停止命令倒是比較合理一點<br/>
+假設主機就是遠在天上的地球子星<br/>
+看來是想 ssh （或其他方式）連進去，然後輸入的指令無效<br/>
+但看到這段程式碼，我開始懷疑輸入的指令會不會也是錯的...</p>
+<p>還是去學學小林吧，小林比較會用 Python 寫程式<br/>
+👉 <a href="https://blog.wei-lee.me/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection">小林的程式會不會遇到 SQL Injection</a>)</p>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=住手啊，這樣用 Python 寫程式沒有人會獲得幸福的  - 小林寫得很好，學學小林&amp;url=https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+<i aria-hidden="true" class="icon icon-twitter"></i><span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+<i aria-hidden="true" class="icon icon-facebook"></i><span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this&amp;title=住手啊，這樣用 Python 寫程式沒有人會獲得幸福的" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;" title="LinkedIn">
+<i aria-hidden="true" class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=住手啊，這樣用 Python 寫程式沒有人會獲得幸福的&amp;body=https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this" title="Email">
+<i aria-hidden="true" class="icon icon-mail"></i><span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/anime.html">Anime</a><a href="https://blog.wei-lee.me/tag/python.html">Python</a> </aside>
+<div class="clear"></div>
+</section>
+<aside class="post-nav">
+<a class="post-nav-prev" href="https://blog.wei-lee.me/posts/tech/2025/08/europython-2025-airflow-development-sprint">
+<section class="post-nav-teaser">
+<i class="icon icon-arrow-right"></i>
+<h2 class="post-nav-title">EuroPython 2025 Airflow Development Sprint</h2>
+<p class="post-nav-excerpt">Finally back from EuroPython and recovering a bit from the long travel. It's time to...</p>
+<p class="post-nav-meta"><time datetime="2025/08/02 - Sat">2025/08/02 - Sat</time></p>
+</section>
+</a>
+<div class="clear"></div>
+</aside>
+</div>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2025/08/stop-it-dont-use-python-like-this" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre code";
+    var rstSelector=".highlight pre code";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>
