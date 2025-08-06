@@ -56,4 +56,4 @@ Authors: Wei Lee
       尤其做好事的人，內心往往要比一般人更柔軟與敏感才是。
     * The road to hell is paved with good intensions.
 
-同場加映作者的文章: [「愛台灣，就是畢業了先不要回來。」──現在我明白，這句話背後的沉重](https://crossing.cw.com.tw/blogTopic.action?id=689&nid=7083)
+同場加映作者的文章: [「愛台灣，就是畢業了先不要回來。」──現在我明白，這句話背後的沉重](https://crossing.cw.com.tw/article/7083)

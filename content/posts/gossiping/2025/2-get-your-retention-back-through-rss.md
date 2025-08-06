@@ -57,6 +57,6 @@ Cover: /images/meme/mygo-restore-right.jpg
 ~~不可能，絕對不可能~~
 [How to Support NetNewsWire] 有提到，像這樣寫篇文章出來，就是支持他的好方法！
 
-[RSS 文藝復興與注意權]: https://dev.kalanlife.com/random/rss-revival-and-attention
+[RSS 文藝復興與注意權]: https://blog.kalan.dev/random/rss-revival-and-attention
 [NetNewsWire]: https://netnewswire.com/
 [How to Support NetNewsWire]: https://github.com/Ranchero-Software/NetNewsWire/blob/main/Technotes/HowToSupportNetNewsWire.markdown

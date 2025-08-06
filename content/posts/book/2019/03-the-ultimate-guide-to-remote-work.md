@@ -137,7 +137,7 @@ Hope this excerpt would help if you're working remotely or considering it.
         * Price: `$14.95/month` to `$49.95/year`
     * [Jobspresso](https://jobspresso.co) allows you to search for jobs in specific categories, such as marketing, copywriting, project management, and support. All of the jobs listed are curated for remote workers.
     * [Remote.co](https://remote.co) is passionate about remote work and partners with startups that feel the same way.
-    * [We Work Remotely](https://weworkremotely.com) is sponsored by Basecamp and their book Remote, which delves into all things related to working remotely. The job board is updated daily, and you can subscribe to the site's RSS feed to get informed of new job postings.
+    * [We Work Remotely](https://weworkremotely.com/) is sponsored by Basecamp and their book Remote, which delves into all things related to working remotely. The job board is updated daily, and you can subscribe to the site's RSS feed to get informed of new job postings.
     * [Working Nomads](https://www.workingnomads.co/jobs) provides a curated list of remote jobs for individuals who want to travel while they work.
 
 * How to Apply and Interview for a Remote Work Job

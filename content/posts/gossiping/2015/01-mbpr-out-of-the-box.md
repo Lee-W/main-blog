@@ -25,7 +25,7 @@ Authors: Wei Lee
 1. 沒有 guake terminal
 guake terminal 實在太好用了啊ＸＤ
 雖然可以用 iTerm2 做出類似的效果，但感覺還是不太對
-[SETUP ITERM2 TO BEHAVE LIKE GUAKE](http://ivanvillareal.com/osx/setup-iterm2-to-behave-like-guake/)
+[SETUP ITERM2 TO BEHAVE LIKE GUAKE](https://ivanvillareal.com/setup-iterm2-to-behave-like-guake/)
 
 2. 不支援 NTFS 寫入
 下面這裡提供一個在 PTT 找到的解決方案

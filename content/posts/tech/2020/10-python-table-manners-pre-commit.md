@@ -56,7 +56,7 @@ repos:
         * `args`: 執行這個 hook 的額外參數
 
 pre-commit 整理了較為通用的 hook 在 [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks)
-除此之外，如 [black](https://github.com/psf/black) 和 [flake8](https://gitlab.com/pycqa/flake8) 等工具也都有提供 pre-commit hook
+除此之外，如 [black](https://github.com/psf/black) 和 [flake8](https://github.com/PyCQA/flake8) 等工具也都有提供 pre-commit hook
 
 另外，**建議 rev 不要使用 master，而應該使用版本號等明確的 rev**
 原因是預設 pre-commit 會在執行時將 hook 專案 clone 下來
