@@ -6,7 +6,7 @@ Tags: Anime, Python
 Slug: stop-it-dont-use-python-like-this
 Authors: Wei Lee
 
-內有[九龍大眾浪漫](https://ani.gamer.com.tw/animeVideo.php?sn=42909)暴雷，請小心服用
+內有[九龍大眾浪漫]暴雷，請小心服用
 倒是最近意外發現原來漫畫還在連載中
 好久沒看到被動畫先結束的作品了
 
@@ -103,3 +103,10 @@ def delete_file(program_name):
 
 還是去學學小林吧，小林比較會用 Python 寫程式
 👉 [小林的程式會不會遇到 SQL Injection]({filename}/posts/tech/2020/17-will-kobayashi-s-code-encounter-sql-injection.md))
+
+
+## 參考作品
+* [九龍大眾浪漫]
+
+
+[九龍大眾浪漫]: https://ani.gamer.com.tw/animeVideo.php?sn=42909
