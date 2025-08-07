@@ -93,7 +93,11 @@
 看來是想 ssh （或其他方式）連進去，然後輸入的指令無效&lt;br&gt;
 但看到這段程式碼，我開始懷疑輸入的指令會不會也是錯的...&lt;/p&gt;
 &lt;p&gt;還是去學學小林吧，小林比較會用 Python 寫程式&lt;br&gt;
-👉 &lt;a href="https://blog.wei-lee.me/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection"&gt;小林的程式會不會遇到 SQL Injection&lt;/a&gt;)&lt;/p&gt;</content><category term="Tech"/><category term="Anime"/><category term="Python"/></entry><entry><title>EuroPython 2025 Airflow Development Sprint</title><link href="https://blog.wei-lee.me/posts/tech/2025/08/europython-2025-airflow-development-sprint" rel="alternate"/><published>2025-08-02T22:20:00+08:00</published><updated>2025-08-02T22:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-08-02:/posts/tech/2025/08/europython-2025-airflow-development-sprint</id><summary type="html">&lt;p&gt;Finally back from EuroPython and recovering a bit from the long travel.&lt;br&gt;
+👉 &lt;a href="https://blog.wei-lee.me/posts/tech/2020/09/will-kobayashi-s-code-encounter-sql-injection"&gt;小林的程式會不會遇到 SQL Injection&lt;/a&gt;)&lt;/p&gt;
+&lt;h2 id="_3"&gt;參考作品&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ani.gamer.com.tw/animeVideo.php?sn=42909"&gt;九龍大眾浪漫&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"/><category term="Anime"/><category term="Python"/></entry><entry><title>EuroPython 2025 Airflow Development Sprint</title><link href="https://blog.wei-lee.me/posts/tech/2025/08/europython-2025-airflow-development-sprint" rel="alternate"/><published>2025-08-02T22:20:00+08:00</published><updated>2025-08-02T22:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-08-02:/posts/tech/2025/08/europython-2025-airflow-development-sprint</id><summary type="html">&lt;p&gt;Finally back from EuroPython and recovering a bit from the long travel.&lt;br&gt;
 It's time to review how the development sprint went this time.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Finally back from EuroPython and recovering a bit from the long travel.&lt;br&gt;
 It's time to review how the development sprint went this time.&lt;/p&gt;
@@ -8920,7 +8924,7 @@ pipenv&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/spa
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;pre-commit 整理了較為通用的 hook 在 &lt;a href="https://github.com/pre-commit/pre-commit-hooks"&gt;pre-commit-hooks&lt;/a&gt;&lt;br&gt;
-除此之外，如 &lt;a href="https://github.com/psf/black"&gt;black&lt;/a&gt; 和 &lt;a href="https://gitlab.com/pycqa/flake8"&gt;flake8&lt;/a&gt; 等工具也都有提供 pre-commit hook&lt;/p&gt;
+除此之外，如 &lt;a href="https://github.com/psf/black"&gt;black&lt;/a&gt; 和 &lt;a href="https://github.com/PyCQA/flake8"&gt;flake8&lt;/a&gt; 等工具也都有提供 pre-commit hook&lt;/p&gt;
 &lt;p&gt;另外，&lt;strong&gt;建議 rev 不要使用 master，而應該使用版本號等明確的 rev&lt;/strong&gt;&lt;br&gt;
 原因是預設 pre-commit 會在執行時將 hook 專案 clone 下來&lt;br&gt;
 如果沒有特別設定， pre-commit 不會把最新版 pull 下來&lt;br&gt;
