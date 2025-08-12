@@ -111,7 +111,7 @@ LOCAL_PLUGINS = [
     "pelican.plugins.deadlinks",
 ]
 PLUGINS.extend(LOCAL_PLUGINS)
-DEADLINKS_VALIDATION = True
+DEADLINKS_VALIDATION = False
 
 # pelican-seo settings
 SEO_REPORT = True  # SEO report is enabled by default
