@@ -50,3 +50,6 @@ timeline
 
 嚇得我馬上開一個 PR [feat(i18n): add missing Taiwanese Mandarain translations #54653](https://github.com/apache/airflow/pull/54653)
 剛剛被合併了，現在是 100% 了
+
+## Reference
+* [JOJO 的奇妙冒險 星塵遠征軍](https://ani.gamer.com.tw/animeVideo.php?sn=6271)
