@@ -1,11 +1,10 @@
 Title: Airflow 的測試要用 unittest 風格還是 pytest 風格的 assert
 Subtitle: 問就是 pytest
-Date: 2025-08-20 08:50
+Date: 2025-08-20 09:00
 Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: consistent-test-assertion-style-pytest-native-vs-unittest-style
 Authors: Wei Lee
-Status: draft
 
 剛開始貢獻 Airflow 的時候
 非常的訝異，怎麼到處都是 unittest 風格的測試
