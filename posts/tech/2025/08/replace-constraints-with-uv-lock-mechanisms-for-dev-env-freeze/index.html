@@ -10,7 +10,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="origin" name="referrer"/>
 <meta content="Pelican" name="generator"/>
-<link href="https://blog.wei-lee.me/drafts/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze.html" rel="canonical"/>
+<link href="https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze" rel="canonical"/>
 <!-- Feed -->
 <link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
 <!-- TODO: combine -->
@@ -46,18 +46,18 @@
         break;
     }
   </script>
-<meta content="我以為有了 PEP 751 一切的 lock 問題就會解決 😢 但它好像只是讓 requirements.txt 更好了很多 細節還是交給個工具去解決 👉 原文： [DISCUSS] Replace constraints with uv …" name="description"/>
+<meta content="我以為有了 PEP 751 一切的 lock 問題就會解決 😢 但它好像只是讓 requirements.txt 更好了很多 細節還是交給個工具去解決" name="description"/>
 <meta content="Wei Lee" name="author"/>
 <meta content="Airflow" name="tags"/>
 <meta content="Airflow 開發生情報" name="tags"/>
 <!-- Open Graph -->
 <meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
 <meta content="要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔 " prefix="og: http://ogp.me/ns#" property="og:title">
-<meta content="我以為有了 PEP 751 一切的 lock 問題就會解決 😢 但它好像只是讓 requirements.txt 更好了很多 細節還是交給個工具去解決 👉 原文： [DISCUSS] Replace constraints with uv …" prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="我以為有了 PEP 751 一切的 lock 問題就會解決 😢 但它好像只是讓 requirements.txt 更好了很多 細節還是交給個工具去解決" prefix="og: http://ogp.me/ns#" property="og:description">
 <meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
-<meta content="https://blog.wei-lee.me/drafts/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze.html" prefix="og: http://ogp.me/ns#" property="og:url"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze" prefix="og: http://ogp.me/ns#" property="og:url"/>
 <meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
-<meta content="2025-08-21 08:00:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="2025-08-21 10:05:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
 <meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
 <meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
 <meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
@@ -68,16 +68,16 @@
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@clleew" name="twitter:site"/>
 <meta content="要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔 " name="twitter:title"/>
-<meta content="https://blog.wei-lee.me/drafts/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze.html" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze" name="twitter:url"/>
 <meta content="https://blog.wei-lee.me/images/cover.jpeg" name="twitter:image:src"/>
-<meta content="我以為有了 PEP 751 一切的 lock 問題就會解決 😢 但它好像只是讓 requirements.txt 更好了很多 細節還是交給個工具去解決 👉 原文： [DISCUSS] Replace constraints with uv …" name="twitter:description"/>
+<meta content="我以為有了 PEP 751 一切的 lock 問題就會解決 😢 但它好像只是讓 requirements.txt 更好了很多 細節還是交給個工具去解決" name="twitter:description"/>
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "Article",
   "name": "要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔",
   "headline": "要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔",
-  "datePublished": "2025-08-21 08:00:00+08:00",
+  "datePublished": "2025-08-21 10:05:00+08:00",
   "dateModified": "",
   "author": {
     "@type": "Person",
@@ -85,11 +85,11 @@
     "url": "https://blog.wei-lee.me/author/wei-lee.html"
   },
   "image": "https://blog.wei-lee.me//images/cover.jpeg",
-  "url": "https://blog.wei-lee.me/drafts/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze.html",
-  "description": "我以為有了 PEP 751 一切的 lock 問題就會解決 😢 但它好像只是讓 requirements.txt 更好了很多 細節還是交給個工具去解決 👉 原文： [DISCUSS] Replace constraints with uv …"
+  "url": "https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze",
+  "description": "我以為有了 PEP 751 一切的 lock 問題就會解決 😢 但它好像只是讓 requirements.txt 更好了很多 細節還是交給個工具去解決"
 }
 </script>
-</meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/drafts/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze.html" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Drafts", "item": "https://blog.wei-lee.me/drafts"}, {"@type": "ListItem", "position": 3, "name": "Replace constraints with uv lock mechanisms for dev env freeze", "item": "https://blog.wei-lee.me/drafts/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔", "about": "Tech", "datePublished": "2025-08-21 08:00"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/drafts/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze.html" property="og:url"/><meta content="article" property="og:type"/><meta content="要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔" property="og:title"/><meta content="C" property="og:locale"/></head>
+</meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2025", "item": "https://blog.wei-lee.me/posts/tech/2025"}, {"@type": "ListItem", "position": 5, "name": "08", "item": "https://blog.wei-lee.me/posts/tech/2025/08"}, {"@type": "ListItem", "position": 6, "name": "Replace constraints with uv lock mechanisms for dev env freeze", "item": "https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔", "about": "Tech", "datePublished": "2025-08-21 10:05"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze" property="og:url"/><meta content="article" property="og:type"/><meta content="要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔" property="og:title"/><meta content="C" property="og:locale"/></head>
 <body class="category-template">
 <div class="nav-header">
 <nav aria-label="Main" class="nav-wrapper">
@@ -157,7 +157,8 @@
             Wei Lee
           </h4>
 <time datetime="2025/08/21 - Thu">2025/08/21 - Thu</time>
-</div>
+          • 1 min read
+        </div>
 <div class="post-cover cover">
 <img alt="Category Tech" src="https://blog.wei-lee.me/images/cover.jpeg"/>
 </div>
@@ -216,23 +217,23 @@
 <section class="post-footer">
 <div class="post-share">
 <span class="post-info-label">Share</span>
-<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔&amp;url=https://blog.wei-lee.me/drafts/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;" title="Twitter">
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔&amp;url=https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;" title="Twitter">
 <i aria-hidden="true" class="fab fa-twitter"></i>
 <span class="hidden">Twitter</span>
 </a>
-<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/drafts/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze.html" onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;" title="Facebook">
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze" onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;" title="Facebook">
 <i aria-hidden="true" class="fa-brands fa-facebook"></i>
 <span class="hidden">Facebook</span>
 </a>
-<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/drafts/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze.html&amp;title=要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720'); return false;" title="LinkedIn">
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze&amp;title=要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720'); return false;" title="LinkedIn">
 <i aria-hidden="true" class="fa-brands fa-linkedin"></i>
 <span class="hidden">LinkedIn</span>
 </a>
-<a aria-label="Mastodon" class="mastodon" href="https://mtd.pythonasia.org/share?text=%E8%A6%81%E4%B8%8D%E8%A6%81%E7%94%A8%20uv.lock%20%E5%8F%96%E4%BB%A3%20airflow%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E7%94%A8%E7%9A%84%20constraints%20%E6%AA%94%20https%3A//blog.wei-lee.me/drafts/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze.html" onclick="window.open(this.href, 'mastodon-share', 'width=930,height=720'); return false;" title="Mastodon">
+<a aria-label="Mastodon" class="mastodon" href="https://mtd.pythonasia.org/share?text=%E8%A6%81%E4%B8%8D%E8%A6%81%E7%94%A8%20uv.lock%20%E5%8F%96%E4%BB%A3%20airflow%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E7%94%A8%E7%9A%84%20constraints%20%E6%AA%94%20https%3A//blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze" onclick="window.open(this.href, 'mastodon-share', 'width=930,height=720'); return false;" title="Mastodon">
 <i aria-hidden="true" class="fa-brands fa-mastodon fa-xl" style="color: #74C0FC;"></i>
 <span class="hidden">Mastodon</span>
 </a>
-<a aria-label="Email" class="email" href="mailto:?subject=要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔&amp;body=https://blog.wei-lee.me/drafts/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze.html" title="Email">
+<a aria-label="Email" class="email" href="mailto:?subject=要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔&amp;body=https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze" title="Email">
 <i aria-hidden="true" class="fa-solid fa-envelope"></i>
 <span class="hidden">Email</span>
 </a>
@@ -243,9 +244,22 @@
 <div class="clear"></div>
 </section>
 <aside class="post-nav">
+<a class="post-nav-prev" href="https://blog.wei-lee.me/posts/tech/2025/08/consistent-test-assertion-style-pytest-native-vs-unittest-style">
+<section class="post-nav-teaser">
+<i class="icon icon-arrow-right"></i>
+<h2 class="post-nav-title">Airflow 的測試要用 unittest 風格還是 pytest 風格的 assert</h2>
+<p class="post-nav-excerpt">剛開始貢獻 Airflow 的時候 非常的訝異，怎麼到處都是 unittest 風格的測試 我...真的要讀空氣的就寫 unittest 風格嗎...</p>
+<p class="post-nav-meta"><time datetime="2025/08/20 - Wed">2025/08/20 - Wed</time></p>
+</section>
+</a>
 <div class="clear"></div>
 </aside>
 </div>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2025/08/replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
 </article>
 </main>
 <div class="nav-footer">
