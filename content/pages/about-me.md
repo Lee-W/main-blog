@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2025-06-14 10:13
+modified: 2025-08-21 10:40
 slug: about-me
 ---
 
@@ -10,18 +10,20 @@ This is Wei Lee. I'm a
 * 🐍 [Pythonista](https://pycon-note.wei-lee.me/)
 * 🐍 [PyCon Taiwan](https://tw.pycon.org/) organizer
 * [commitizen-tools](https://github.com/commitizen-tools) maintainer
-* [Apache Airflow](https://github.com/apache/airflow/) committer, Taiwanese Mandarian Code Owner and Translation Owner
-* `#apache-airflow` Mentor and Memebot Bot @ [OpenSource4You](https://github.com/opensource4you/)
-* [📷 Traveler](https://travlog.wei-lee.me/)
-* ⛺ Member of [台湾野クル▲](https://twitter.com/Taiwannokuru)
+* [Apache Airflow](https://github.com/apache/airflow/) committer, Taiwanese Mandarin Code Owner and Translation Owner
+* `#apache-airflow` Mentor and Memebot Bot, `#commitizen` Mentor @ [OpenSource4You](https://github.com/opensource4you/)
+* [📷 Traveler][travlog]
+* ⛺ [台湾野クル▲](https://twitter.com/Taiwannokuru) 部員
 * 📺 [Anime Lover](https://anilist.co/user/clleew/animelist/)
 * 📖 Reader
 * 🎵 Ukulele Player
 * 🔒 Locker
 
-I enjoy automating tedious tasks and creating high-quality code. Enjoy participating in open-source communities and contributing to open-source projects. Traveling is also a passion of mine, and I often use PyCon as an opportunity to explore new places. I have attended PyCon Taiwan 🇹🇼, PyCon US 🇺🇸, PyCon JP 🇯🇵, PyCon CA 🇨🇦, Remote Python Pizza 🍕, Euro Python (remotely) 🇪🇺, and PyCon APAC 🇵🇭.
+I enjoy automating tedious tasks and creating high-quality code. Enjoy participating in open-source communities and contributing to open-source projects. Traveling is also a passion of mine, and I often use Python events as an opportunity to explore new places. I have attended PyCon Taiwan 🇹🇼, PyCon US 🇺🇸, PyCon JP 🇯🇵, PyCon CA 🇨🇦, Remote Python Pizza 💻, Euro Python 💻 🇨🇿, PyCon APAC 🇵🇭, and DurianPy 🇵🇭.
 
-I share my technical notes, book digests, and occasional thoughts here. If you're interested in cooking, anime, and traveling, I chat about those things on [Those things no one cares about](https://travlog.wei-lee.me/).
+I share my technical notes, book digests, and occasional thoughts here. If you're interested in cooking, anime, and traveling, I chat about those things on [Those things no one cares about][travlog].
+
+[travlog]: https://travlog.wei-lee.me/
 
 ---
 
@@ -30,6 +32,7 @@ You can find me through
 * [![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://in.linkedin.com/in/clleew)
 * [![twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/clleew)
 * [![github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Lee-W/)
+* [![Mastodon](https://img.shields.io/mastodon/follow/109323826846876448?domain=mtd.pythonasia.org)
 
 ---
 
@@ -58,12 +61,11 @@ I use
 **[Aug 2024 - Current] Senior Software Engineer, [Astronomer]**
 
 * [apache-airflow]
-    * Add "DatasetAlias" for creating datasets or dataset events in runtime
+    * Add "DatasetAlias" for creating datasets or dataset events at runtime
     * Implement half of [AIP-74](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-74+Introducing+Data+Assets) and part of [AIP-75](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-75+New+Asset-Centric+Syntax)
+    * Leading the implementation of [AIP-90](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-90+Human+in+the+loop)
 * [ruff](https://github.com/astral-sh/ruff)
     * Implement most of the [AIR3XX](https://docs.astral.sh/ruff/rules/#airflow-air) rules to facilitate the migration from Airflow 2 to Airflow 3
-
-[apache-airflow]: https://github.com/apache/airflow/
 
 **[Feb 2023 - July 2024] Software Engineer, [Astronomer]**
 
@@ -77,7 +79,11 @@ I use
     * Contribute existing operators/sensors back to [apache-airflow] and deprecate this project to reduce maintenance efforts
     * Automated the deployment of integration tests and testing against the release of the airflow provider ([#987](https://github.com/astronomer/astronomer-providers/pull/987), [#1107](https://github.com/astronomer/astronomer-providers/pull/1107), [#1139](https://github.com/astronomer/astronomer-providers/pull/1139), [#1110](https://github.com/astronomer/astronomer-providers/pull/1110))
 * [ask-astro](https://github.com/astronomer/ask-astro)
-    * Setup local dev tools and fix various existing bugs
+    * Set up local dev tools and fix various existing bugs
+
+[Astronomer]: https://www.astronomer.io/
+
+[apache-airflow]: https://github.com/apache/airflow/
 
 **[Apr 2017 - Feb 2023] Machine Learning Engineer, [Rakuten USA](https://www.rakuten.com/)**
 
@@ -87,16 +93,16 @@ I use
     * Migrated and automated the deployment process of AWS Lambda procedures that process customer lifetime value, reducing the effort of maintenance and deployment.
 * Build and maintain data pipelines on [Apache Airflow]
     * Implemented a pipeline that processes data larger than 10 GB to infer personalized preferences to help increase customer satisfaction.
-    * Migrated legacy 1.x Airflow server on AWS EC2 to 2.0.2 Airflow on AWS MWAA, saving developers' effort on dealing with legacy dependencies issues, and created a development airflow environment for doing experiments without affecting the production pipeline.
-    * Refactored data writing mechanism and reduced the data write time and AWS S3 cost.
+    * Migrated legacy 1.x Airflow server on AWS EC2 to 2.0.2 Airflow on AWS MWAA, saving developers' effort on dealing with legacy dependencies issues, and created a development Airflow environment for doing experiments without affecting the production pipeline.
+    * Refactored the data writing mechanism and reduced the data write time and AWS S3 cost.
     * Built alerts and dashboards to monitor pipeline metrics, minimizing the effort of troubleshooting using DataDog, Prometheus, and Kibana.
 * Standardize and maintain software engineering practices
-    * Created and maintained the project templates, with automatic code quality check, testing, containerization, project versioning, releasing, and deployment, and a standard workflow for existing projects to update tools, which reduced project creation time, the communication overhead during code review and provided an easy way for developers to introduce new standards.
+    * Created and maintained the project templates, with automatic code quality check, testing, containerization, project versioning, releasing, and deployment, and a standard workflow for existing projects to update tools, which reduced project creation time, the communication overhead during code review, and provided an easy way for developers to introduce new standards.
     * Implemented a life-cycle configuration management tool and a workflow for creating Amazon Sagemaker notebook instances, which saves data scientists' time in handling engineering problems.
     * Improved container build time and reduced execution time by 70\% for Jenkins CI/CD pipelines.
     * Maintain the core package that's used among most existing projects
 * Optimized SQL in a data pipeline and reduced the execution time from infeasible to within half a day.
-* Cooperate with overseas teams in US, Ukraine, and India
+* Cooperate with overseas teams in the US, Ukraine, and India
 
 **[Jan 2019 - March 2019] Project Manager, [DLT Lab](https://dlt.csie.ncku.edu.tw)**
 
@@ -125,12 +131,11 @@ I was the program executor and the leader of the teaching assistant team. I also
 * Developed automation programs for generating reports, which save 80% of human labor time
 * Delivered a human resource management system using [Django](https://www.djangoproject.com)
 
-[Astronomer]: https://www.astronomer.io/
-
 ## Community Involvement
-**[Nov 2023 - Current] Volunteer, [PyCon Taiwan](https://tw.pycon.org/)**
+**[Nov 2023 - Current] Everywhere, [PyCon Taiwan](https://tw.pycon.org/)**
 
 * Maintain [pycontw-blog]
+* Upgrade [PyCon-ETL](https://github.com/pycontw/PyCon-ETL) from Airflow 1 to 3
 
 **[Nov 2022 - Sep 2023] Marketing Team Lead, [PyCon Taiwan 2023](https://tw.pycon.org/2023/)**
 
@@ -157,8 +162,12 @@ I was the program executor and the leader of the teaching assistant team. I also
 [pycontw-blog]: https://github.com/pycontw/pycontw-blog
 
 ## Talk and Tutorial
+* Seamless Migration: Leveraging Ruff for a Smooth Transition from Airflow 2 to Airflow 3
+    * **2025/10/08** 🇺🇸 - [Airflow Summit 2025](https://airflowsummit.org/sessions/2025/seamless-migration-leveraging-ruff-for-a-smooth-transition-from-airflow-2-to-airflow-3/)
+* Unlocking the Future of Data Pipelines - Apache Airflow 3
+    * **2025/09/06** 🇹🇼 - [PyCon TW 2025](https://tw.pycon.org/2025/en-us/conference/talk/366)
 * Hold on! You have a data team in PyCon Taiwan!
-    1. **2025/07/** 🇨🇿 - [EuroPython 2025](https://ep2025.europython.eu/session/hold-on-you-have-a-data-team-in-pycon-taiwan)
+    1. **2025/07/18** 🇨🇿 - [EuroPython 2025](https://ep2025.europython.eu/session/hold-on-you-have-a-data-team-in-pycon-taiwan) → [slide](https://speakerdeck.com/leew/hold-on-you-have-a-data-team-in-pycon-taiwan)
 * 朝聖之旅
     1. **2025/06/11** 🇹🇼 - 工程師的搜尋紀錄 → [slide](https://speakerdeck.com/leew/zhao-sheng-zhi-lu)
 * Airflow 3.0 The First Glance
@@ -216,17 +225,20 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/).
 
 ## Development Sprint
 * Apache Airflow
+    1. [EuroPython 2025](https://blog.wei-lee.me/posts/tech/2025/08/europython-2025-airflow-development-sprint/)
     1. [DurianPy](https://www.meetup.com/durianpy/events/308390476/)
     1. PyCon APAC 2025
     1. [PyCon TW 2024](https://hackmd.io/LKLr7XyOR9mK1AEEnvnCuQ#Apache-Airflow)
 * commitizen-tools
     1. [PyCon US 2024](https://us.pycon.org/2024/events/dev-sprints/#sprint-3)
     2. [COSCUP 2024](https://pretalx.coscup.org/coscup-2024/talk/SDR77M/)
-    3. [PyCon TW 2023](https://hackmd.io/R98LEB4MSxm4AeExmxuZnA#commitizen-tools)
-    4. [PyCon TW 2022](https://hackmd.io/UYumgLy_QxaCSCqrXKDBpw#commitizen-tools)
-    5. [PyCon TW 2021](https://hackmd.io/PAgYsu5nSHyERIRaUokWxQ#commitizen-tools)
-    6. PyCon TW 2020
-    7. PyCon CA 2019
+    3. [scisprint Taipei 2024 March](https://sciwork.kktix.cc/events/scisprint-202403-taipei)
+    4. [PyCon TW 2023](https://hackmd.io/R98LEB4MSxm4AeExmxuZnA#commitizen-tools)
+    5. [Scisprint@Amazon Taipei 2023](https://sciwork.kktix.cc/events/scisprint-202302-taipei)
+    6. [PyCon TW 2022](https://hackmd.io/UYumgLy_QxaCSCqrXKDBpw#commitizen-tools)
+    7. [PyCon TW 2021](https://hackmd.io/PAgYsu5nSHyERIRaUokWxQ#commitizen-tools)
+    8. PyCon TW 2020
+    9. PyCon CA 2019
 
 ## Award
 * Honorable Mention, 2013 Railway Application Section Problem Solving Competition
