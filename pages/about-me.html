@@ -131,16 +131,16 @@
 <li>🐍 <a href="https://pycon-note.wei-lee.me/">Pythonista</a></li>
 <li>🐍 <a href="https://tw.pycon.org/">PyCon Taiwan</a> organizer</li>
 <li><a href="https://github.com/commitizen-tools">commitizen-tools</a> maintainer</li>
-<li><a href="https://github.com/apache/airflow/">Apache Airflow</a> committer, Taiwanese Mandarian Code Owner and Translation Owner</li>
-<li><code>#apache-airflow</code> Mentor and Memebot Bot @ <a href="https://github.com/opensource4you/">OpenSource4You</a></li>
+<li><a href="https://github.com/apache/airflow/">Apache Airflow</a> committer, Taiwanese Mandarin Code Owner and Translation Owner</li>
+<li><code>#apache-airflow</code> Mentor and Memebot Bot, <code>#commitizen</code> Mentor @ <a href="https://github.com/opensource4you/">OpenSource4You</a></li>
 <li><a href="https://travlog.wei-lee.me/">📷 Traveler</a></li>
-<li>⛺ Member of <a href="https://twitter.com/Taiwannokuru">台湾野クル▲</a></li>
+<li>⛺ <a href="https://twitter.com/Taiwannokuru">台湾野クル▲</a> 部員</li>
 <li>📺 <a href="https://anilist.co/user/clleew/animelist/">Anime Lover</a></li>
 <li>📖 Reader</li>
 <li>🎵 Ukulele Player</li>
 <li>🔒 Locker</li>
 </ul>
-<p>I enjoy automating tedious tasks and creating high-quality code. Enjoy participating in open-source communities and contributing to open-source projects. Traveling is also a passion of mine, and I often use PyCon as an opportunity to explore new places. I have attended PyCon Taiwan 🇹🇼, PyCon US 🇺🇸, PyCon JP 🇯🇵, PyCon CA 🇨🇦, Remote Python Pizza 🍕, Euro Python (remotely) 🇪🇺, and PyCon APAC 🇵🇭.</p>
+<p>I enjoy automating tedious tasks and creating high-quality code. Enjoy participating in open-source communities and contributing to open-source projects. Traveling is also a passion of mine, and I often use Python events as an opportunity to explore new places. I have attended PyCon Taiwan 🇹🇼, PyCon US 🇺🇸, PyCon JP 🇯🇵, PyCon CA 🇨🇦, Remote Python Pizza 💻, Euro Python 💻 🇨🇿, PyCon APAC 🇵🇭, and DurianPy 🇵🇭.</p>
 <p>I share my technical notes, book digests, and occasional thoughts here. If you're interested in cooking, anime, and traveling, I chat about those things on <a href="https://travlog.wei-lee.me/">Those things no one cares about</a>.</p>
 <hr/>
 <p>You can find me through</p>
@@ -148,6 +148,7 @@
 <li><a href="https://in.linkedin.com/in/clleew"><img alt="linkedin" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white"/></a></li>
 <li><a href="https://twitter.com/clleew"><img alt="twitter" src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&amp;logo=twitter&amp;logoColor=white"/></a></li>
 <li><a href="https://github.com/Lee-W/"><img alt="github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&amp;logo=github&amp;logoColor=white"/></a></li>
+<li>[<img alt="Mastodon" src="https://img.shields.io/mastodon/follow/109323826846876448?domain=mtd.pythonasia.org"/></li>
 </ul>
 <hr/>
 <p>I use</p>
@@ -191,8 +192,9 @@
 <p><strong>[Aug 2024 - Current] Senior Software Engineer, <a href="https://www.astronomer.io/">Astronomer</a></strong></p>
 <ul>
 <li><a href="https://github.com/apache/airflow/">apache-airflow</a><ul>
-<li>Add "DatasetAlias" for creating datasets or dataset events in runtime</li>
+<li>Add "DatasetAlias" for creating datasets or dataset events at runtime</li>
 <li>Implement half of <a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-74+Introducing+Data+Assets">AIP-74</a> and part of <a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-75+New+Asset-Centric+Syntax">AIP-75</a></li>
+<li>Leading the implementation of <a href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-90+Human+in+the+loop">AIP-90</a></li>
 </ul>
 </li>
 <li><a href="https://github.com/astral-sh/ruff">ruff</a><ul>
@@ -216,7 +218,7 @@
 </ul>
 </li>
 <li><a href="https://github.com/astronomer/ask-astro">ask-astro</a><ul>
-<li>Setup local dev tools and fix various existing bugs</li>
+<li>Set up local dev tools and fix various existing bugs</li>
 </ul>
 </li>
 </ul>
@@ -230,20 +232,20 @@
 </li>
 <li>Build and maintain data pipelines on <a href="https://airflow.apache.org/">Apache Airflow</a><ul>
 <li>Implemented a pipeline that processes data larger than 10 GB to infer personalized preferences to help increase customer satisfaction.</li>
-<li>Migrated legacy 1.x Airflow server on AWS EC2 to 2.0.2 Airflow on AWS MWAA, saving developers' effort on dealing with legacy dependencies issues, and created a development airflow environment for doing experiments without affecting the production pipeline.</li>
-<li>Refactored data writing mechanism and reduced the data write time and AWS S3 cost.</li>
+<li>Migrated legacy 1.x Airflow server on AWS EC2 to 2.0.2 Airflow on AWS MWAA, saving developers' effort on dealing with legacy dependencies issues, and created a development Airflow environment for doing experiments without affecting the production pipeline.</li>
+<li>Refactored the data writing mechanism and reduced the data write time and AWS S3 cost.</li>
 <li>Built alerts and dashboards to monitor pipeline metrics, minimizing the effort of troubleshooting using DataDog, Prometheus, and Kibana.</li>
 </ul>
 </li>
 <li>Standardize and maintain software engineering practices<ul>
-<li>Created and maintained the project templates, with automatic code quality check, testing, containerization, project versioning, releasing, and deployment, and a standard workflow for existing projects to update tools, which reduced project creation time, the communication overhead during code review and provided an easy way for developers to introduce new standards.</li>
+<li>Created and maintained the project templates, with automatic code quality check, testing, containerization, project versioning, releasing, and deployment, and a standard workflow for existing projects to update tools, which reduced project creation time, the communication overhead during code review, and provided an easy way for developers to introduce new standards.</li>
 <li>Implemented a life-cycle configuration management tool and a workflow for creating Amazon Sagemaker notebook instances, which saves data scientists' time in handling engineering problems.</li>
 <li>Improved container build time and reduced execution time by 70\% for Jenkins CI/CD pipelines.</li>
 <li>Maintain the core package that's used among most existing projects</li>
 </ul>
 </li>
 <li>Optimized SQL in a data pipeline and reduced the execution time from infeasible to within half a day.</li>
-<li>Cooperate with overseas teams in US, Ukraine, and India</li>
+<li>Cooperate with overseas teams in the US, Ukraine, and India</li>
 </ul>
 <p><strong>[Jan 2019 - March 2019] Project Manager, <a href="https://dlt.csie.ncku.edu.tw">DLT Lab</a></strong></p>
 <ul>
@@ -272,9 +274,10 @@
 <li>Delivered a human resource management system using <a href="https://www.djangoproject.com">Django</a></li>
 </ul>
 <h2 id="community-involvement">Community Involvement</h2>
-<p><strong>[Nov 2023 - Current] Volunteer, <a href="https://tw.pycon.org/">PyCon Taiwan</a></strong></p>
+<p><strong>[Nov 2023 - Current] Everywhere, <a href="https://tw.pycon.org/">PyCon Taiwan</a></strong></p>
 <ul>
 <li>Maintain <a href="https://github.com/pycontw/pycontw-blog">pycontw-blog</a></li>
+<li>Upgrade <a href="https://github.com/pycontw/PyCon-ETL">PyCon-ETL</a> from Airflow 1 to 3</li>
 </ul>
 <p><strong>[Nov 2022 - Sep 2023] Marketing Team Lead, <a href="https://tw.pycon.org/2023/">PyCon Taiwan 2023</a></strong></p>
 <ul>
@@ -300,8 +303,16 @@
 </ul>
 <h2 id="talk-and-tutorial">Talk and Tutorial</h2>
 <ul>
+<li>Seamless Migration: Leveraging Ruff for a Smooth Transition from Airflow 2 to Airflow 3<ul>
+<li><strong>2025/10/08</strong> 🇺🇸 - <a href="https://airflowsummit.org/sessions/2025/seamless-migration-leveraging-ruff-for-a-smooth-transition-from-airflow-2-to-airflow-3/">Airflow Summit 2025</a></li>
+</ul>
+</li>
+<li>Unlocking the Future of Data Pipelines - Apache Airflow 3<ul>
+<li><strong>2025/09/06</strong> 🇹🇼 - <a href="https://tw.pycon.org/2025/en-us/conference/talk/366">PyCon TW 2025</a></li>
+</ul>
+</li>
 <li>Hold on! You have a data team in PyCon Taiwan!<ol>
-<li><strong>2025/07/</strong> 🇨🇿 - <a href="https://ep2025.europython.eu/session/hold-on-you-have-a-data-team-in-pycon-taiwan">EuroPython 2025</a></li>
+<li><strong>2025/07/18</strong> 🇨🇿 - <a href="https://ep2025.europython.eu/session/hold-on-you-have-a-data-team-in-pycon-taiwan">EuroPython 2025</a> → <a href="https://speakerdeck.com/leew/hold-on-you-have-a-data-team-in-pycon-taiwan">slide</a></li>
 </ol>
 </li>
 <li>朝聖之旅<ol>
@@ -398,6 +409,7 @@
 <h2 id="development-sprint">Development Sprint</h2>
 <ul>
 <li>Apache Airflow<ol>
+<li><a href="https://blog.wei-lee.me/posts/tech/2025/08/europython-2025-airflow-development-sprint/">EuroPython 2025</a></li>
 <li><a href="https://www.meetup.com/durianpy/events/308390476/">DurianPy</a></li>
 <li>PyCon APAC 2025</li>
 <li><a href="https://hackmd.io/LKLr7XyOR9mK1AEEnvnCuQ#Apache-Airflow">PyCon TW 2024</a></li>
@@ -406,7 +418,9 @@
 <li>commitizen-tools<ol>
 <li><a href="https://us.pycon.org/2024/events/dev-sprints/#sprint-3">PyCon US 2024</a></li>
 <li><a href="https://pretalx.coscup.org/coscup-2024/talk/SDR77M/">COSCUP 2024</a></li>
+<li><a href="https://sciwork.kktix.cc/events/scisprint-202403-taipei">scisprint Taipei 2024 March</a></li>
 <li><a href="https://hackmd.io/R98LEB4MSxm4AeExmxuZnA#commitizen-tools">PyCon TW 2023</a></li>
+<li><a href="https://sciwork.kktix.cc/events/scisprint-202302-taipei">Scisprint@Amazon Taipei 2023</a></li>
 <li><a href="https://hackmd.io/UYumgLy_QxaCSCqrXKDBpw#commitizen-tools">PyCon TW 2022</a></li>
 <li><a href="https://hackmd.io/PAgYsu5nSHyERIRaUokWxQ#commitizen-tools">PyCon TW 2021</a></li>
 <li>PyCon TW 2020</li>
