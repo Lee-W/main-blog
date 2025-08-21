@@ -1,10 +1,9 @@
 Title: 要不要用 uv.lock 取代 airflow 開發環境用的 constraints 檔
-Date: 2025-08-21 08:00
+Date: 2025-08-21 10:05
 Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze
 Authors: Wei Lee
-Status: draft
 
 我以為有了 [PEP 751] 一切的 lock 問題就會解決 😢
 但它好像只是讓 `requirements.txt` 更好了很多
