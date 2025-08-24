@@ -175,7 +175,7 @@ I was the program executor and the leader of the teaching assistant team. I also
 * 踏入開源的第一步
     1. **2025/03/16** 💻 NetDB - Tech Day, Invited Talk  → [slide](https://speakerdeck.com/leew/20250316-ta-ru-kai-yuan-de-di-bu)
 * Unleash the Chaos: Developing a Linter for Un-Pythonic Code!
-    1. **2025/03/02** 🇵🇭 [PyCon APAC 2025](https://pycon-apac.python.ph/) → [slide](https://speakerdeck.com/leew/unleash-the-chaos-developing-a-linter-for-un-pythonic-code-806b2bae-e161-4762-b0d5-d9fb8efdd24a)
+    1. **2025/03/02** 🇵🇭 [PyCon APAC 2025](https://pycon-apac.python.ph/) → [slide](https://speakerdeck.com/leew/unleash-the-chaos-developing-a-linter-for-un-pythonic-code-806b2bae-e161-4762-b0d5-d9fb8efdd24a), [🎬recording](https://www.youtube.com/watch?v=tbSZx0UsWfQ)
     2. **2024/09/21** 🇹🇼 [PyCon TW 2024](https://tw.pycon.org/2024/conference/talk/311) → [slide](https://speakerdeck.com/leew/unleash-the-chaos-developing-a-linter-for-un-pythonic-code), [🎬recording](https://www.youtube.com/watch?v=2jUd0o8VuE0)
 * Unlocking Python's Core Magic
     1. **2024/09/28** 🇯🇵 [PyCon JP 2024](https://2024.pycon.jp/en/talk/AQKFHX) → [slide](https://speakerdeck.com/leew/unlocking-pythons-core-magic), [🎬recording](https://www.youtube.com/watch?v=9jbHA6tE9MM)
@@ -225,10 +225,10 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/).
 
 ## Development Sprint
 * Apache Airflow
-    1. [EuroPython 2025](https://blog.wei-lee.me/posts/tech/2025/08/europython-2025-airflow-development-sprint/)
-    1. [DurianPy](https://www.meetup.com/durianpy/events/308390476/)
-    1. PyCon APAC 2025
-    1. [PyCon TW 2024](https://hackmd.io/LKLr7XyOR9mK1AEEnvnCuQ#Apache-Airflow)
+    1. [EuroPython 2025](https://github.com/EuroPython/website/pull/1437)
+    2. [DurianPy](https://www.meetup.com/durianpy/events/308390476/)
+    3. PyCon APAC 2025
+    4. [PyCon TW 2024](https://hackmd.io/LKLr7XyOR9mK1AEEnvnCuQ#Apache-Airflow)
 * commitizen-tools
     1. [PyCon US 2024](https://us.pycon.org/2024/events/dev-sprints/#sprint-3)
     2. [COSCUP 2024](https://pretalx.coscup.org/coscup-2024/talk/SDR77M/)

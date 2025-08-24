@@ -1,7 +1,7 @@
 Title: COSCUP 2020 / SITCON 2020
 Date: 2020-08-21 15:21
 Category: Tech
-Tags: COSCUP, SITCON
+Tags: COSCUP, SITCON, commitizen-tools
 Slug: coscup-2020-sitcon-2020
 Authors: Wei Lee
 

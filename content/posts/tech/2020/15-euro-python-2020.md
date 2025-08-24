@@ -1,7 +1,7 @@
 Title: EuroPython 2020
 Date: 2020-08-06 15:15
 Category: Tech
-Tags: Python, PyCon
+Tags: Python, PyCon, EuroPython, EuroPython 2020, commitizen-tools
 Slug: europython-2020
 Authors: Wei Lee
 
