@@ -50,12 +50,13 @@
 <meta content="Wei Lee" name="author"/>
 <meta content="Python" name="tags"/>
 <meta content="Git" name="tags"/>
+<meta content="commitizen-tools" name="tags"/>
 <!-- Open Graph -->
 <meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
 <meta content="Python Table Manners - Commitizen: 規格化 commit message " prefix="og: http://ogp.me/ns#" property="og:title">
 <meta content="接續著前一篇的 pre-commit ，繼續談 git 相關的工具 這篇來聊聊如何透過 commitizen 規範 commit message 還有規範過的 commit message 能拿來做什麼" prefix="og: http://ogp.me/ns#" property="og:description">
 <meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale">
-<meta content="https://blog.wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen" prefix="og: http://ogp.me/ns#" property="og:url"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen" prefix="og: http://ogp.me/ns#" property="og:url">
 <meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
 <meta content="2020-03-01 00:45:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
 <meta content="2020-07-19 16:47:00+08:00" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
@@ -63,6 +64,7 @@
 <meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
 <meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
 <meta content="Git" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="commitizen-tools" prefix="og: http://ogp.me/ns#" property="article:tag"/>
 <meta content="https://blog.wei-lee.me/images/cover.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
@@ -89,7 +91,7 @@
   "description": "接續著前一篇的 pre-commit ，繼續談 git 相關的工具 這篇來聊聊如何透過 commitizen 規範 commit message 還有規範過的 commit message 能拿來做什麼"
 }
 </script>
-</meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2020", "item": "https://blog.wei-lee.me/posts/tech/2020"}, {"@type": "ListItem", "position": 5, "name": "03", "item": "https://blog.wei-lee.me/posts/tech/2020/03"}, {"@type": "ListItem", "position": 6, "name": "Python table manners commitizen", "item": "https://blog.wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "Python Table Manners - Commitizen: 規格化 commit message", "about": "Tech", "datePublished": "2020-03-01 00:45"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen" property="og:url"/><meta content="article" property="og:type"/><meta content="Python Table Manners - Commitizen: 規格化 commit message" property="og:title"/><meta content="C" property="og:locale"/></head>
+</meta></meta></meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2020", "item": "https://blog.wei-lee.me/posts/tech/2020"}, {"@type": "ListItem", "position": 5, "name": "03", "item": "https://blog.wei-lee.me/posts/tech/2020/03"}, {"@type": "ListItem", "position": 6, "name": "Python table manners commitizen", "item": "https://blog.wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "Python Table Manners - Commitizen: 規格化 commit message", "about": "Tech", "datePublished": "2020-03-01 00:45"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/posts/tech/2020/03/python-table-manners-commitizen" property="og:url"/><meta content="article" property="og:type"/><meta content="Python Table Manners - Commitizen: 規格化 commit message" property="og:title"/><meta content="C" property="og:locale"/></head>
 <body class="category-template">
 <div class="nav-header">
 <nav aria-label="Main" class="nav-wrapper">
@@ -530,7 +532,7 @@ commitizen 提升版本號時，就會一併更新檔案的內容<br/>
 <div class="clear"></div>
 </div>
 <aside class="post-tags">
-<a href="https://blog.wei-lee.me/tag/python.html">Python</a><a href="https://blog.wei-lee.me/tag/git.html">Git</a> </aside>
+<a href="https://blog.wei-lee.me/tag/python.html">Python</a><a href="https://blog.wei-lee.me/tag/git.html">Git</a><a href="https://blog.wei-lee.me/tag/commitizen-tools.html">commitizen-tools</a> </aside>
 <div class="clear"></div>
 <div class="series">
 <p>This post is part 8 of the "Python Table Manners" series:</p>
