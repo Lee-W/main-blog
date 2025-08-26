@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"/><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"/><id>https://blog.wei-lee.me/</id><updated>2025-08-25T09:25:00+08:00</updated><entry><title>2025/08/18 - 08/24 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/08/2025-08-18-08-24-open-source-report" rel="alternate"/><published>2025-08-25T09:25:00+08:00</published><updated>2025-08-25T09:25:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-08-25:/posts/tech/2025/08/2025-08-18-08-24-open-source-report</id><summary type="html">&lt;p&gt;終於把熊大的 PR 們都看完了&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"/><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"/><id>https://blog.wei-lee.me/</id><updated>2025-08-26T12:20:00+08:00</updated><entry><title>2025/08/18 - 08/24 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/08/2025-08-18-08-24-open-source-report" rel="alternate"/><published>2025-08-25T09:25:00+08:00</published><updated>2025-08-25T09:25:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-08-25:/posts/tech/2025/08/2025-08-18-08-24-open-source-report</id><summary type="html">&lt;p&gt;終於把熊大的 PR 們都看完了&lt;br&gt;
 雖然還有幾個需要討論還沒合併&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;終於把熊大的 PR 們都看完了&lt;br&gt;
 雖然還有幾個需要討論還沒合併&lt;/p&gt;
@@ -322,7 +322,7 @@ commitizen 也應該導入像 Airflow 那樣的 stale bot 才對&lt;br&gt;
 感覺比較「官方」一點&lt;br&gt;
 但 uv 對 &lt;a href="https://docs.astral.sh/uv/concepts/projects/layout/#pylocktoml"&gt;pylock.toml&lt;/a&gt; 的支援還是比較像是以前的 &lt;code&gt;requirements.txt&lt;/code&gt;&lt;br&gt;
 而沒有辦法取代 &lt;code&gt;uv.lock&lt;/code&gt;&lt;br&gt;
-那在流程簡化上好像就沒什麼幫助&lt;/p&gt;</content><category term="Tech"/><category term="Airflow"/><category term="Airflow 開發生情報"/></entry><entry><title>Airflow 的測試要用 unittest 風格還是 pytest 風格的 assert</title><link href="https://blog.wei-lee.me/posts/tech/2025/08/consistent-test-assertion-style-pytest-native-vs-unittest-style" rel="alternate"/><published>2025-08-20T09:00:00+08:00</published><updated>2025-08-20T09:00:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-08-20:/posts/tech/2025/08/consistent-test-assertion-style-pytest-native-vs-unittest-style</id><summary type="html">&lt;p&gt;剛開始貢獻 Airflow 的時候&lt;br&gt;
+那在流程簡化上好像就沒什麼幫助&lt;/p&gt;</content><category term="Tech"/><category term="Airflow"/><category term="Airflow 開發生情報"/></entry><entry><title>Airflow 的測試要用 unittest 風格還是 pytest 風格的 assert</title><link href="https://blog.wei-lee.me/posts/tech/2025/08/consistent-test-assertion-style-pytest-native-vs-unittest-style" rel="alternate"/><published>2025-08-20T09:00:00+08:00</published><updated>2025-08-26T12:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-08-20:/posts/tech/2025/08/consistent-test-assertion-style-pytest-native-vs-unittest-style</id><summary type="html">&lt;p&gt;剛開始貢獻 Airflow 的時候&lt;br&gt;
 非常的訝異，怎麼到處都是 unittest 風格的測試&lt;br&gt;
 我...真的要讀空氣的就寫 unittest 風格嗎&lt;br&gt;
 但我以為那已經跟白鬍子一樣，是上個時代的敗北者了&lt;/p&gt;
@@ -347,6 +347,15 @@ commitizen 也應該導入像 Airflow 那樣的 stale bot 才對&lt;br&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img alt="blue-giant-chris-3" src="/images/meme/blue-giant-chris-3.jpg"&gt;&lt;/p&gt;
+&lt;h2 id="_1"&gt;後續討論&lt;/h2&gt;
+&lt;p&gt;我就想說有印象後面還有繼續討論&lt;br&gt;
+稍微翻了一下信箱才找到&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://lists.apache.org/thread/1jvbqk3bw5gyyzpx1qmf4y5w8385ccrz"&gt;RE: Re: [DISCUSS] Consistent test assertion style: pytest-native vs unittest-style&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lists.apache.org/thread/nqb5msnr67734yx0421cpzdjw6rwvq0m"&gt;Re: [DISCUSS] Consistent test assertion style: pytest-native vs unittest-style&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Re: 外，還有 Re: Re:&lt;br&gt;
+我現在是在看孤獨搖滾劇場版嗎 😆&lt;/p&gt;
 &lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.kobo.com/tw/zh/ebook/blue-giant-supreme-01"&gt;BLUE GIANT SUPREME藍色巨星 歐洲篇&lt;/a&gt;&lt;/li&gt;
