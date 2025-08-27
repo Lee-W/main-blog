@@ -24,12 +24,14 @@ linter 除了能檢查是否不符風格，通常也能用來檢查語法錯誤
 以下面這段程式碼為例
 
 <!-- blacken-docs:off -->
+
 ```python
 # bad_code.py
 import os
 
 os =  "My Operating system"
 ```
+
 <!-- blacken-docs:on -->
 
 這段程式碼出現了兩個問題

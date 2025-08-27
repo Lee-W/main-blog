@@ -68,7 +68,6 @@ alpha 2 不是好好的嗎
 
 ![mygo-it-is-but-it-is-not](/images/meme/mygo-it-is-but-it-is-not.jpg)
 
-
 然而！
 最近已經要開始撰寫 GO 的 SDK 了
 現在就點擊 <https://apache-airflow.slack.com/archives/C07813CNKA8/p1748434643593459> 一起 GO 起來吧！

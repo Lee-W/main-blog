@@ -349,10 +349,12 @@ a 會在 475 行被初始化成 [SQLParam](https://github.com/webpy/webpy/blob/0
 1701 行的 `[self.eval_node(node, mapping) for node in nodes]` 會產生
 
 <!-- blacken-docs:off -->
+
 ```python
 >>> self.eval_node(node, mapping) for node in nodes
 ['account =', <sql: '"1\' OR \'1\'=\'1"'>, ' AND password=', <sql: '"1\' OR \'1\'=\'1"'>]
 ```
+
 <!-- blacken-docs:on -->
 
 這個 list 會接著被帶入 `SQLQuery.join` 整合成一整個 SQL 的片段
@@ -456,4 +458,7 @@ PyCon JP 2019 時，我也去了鷲宮神社留下我的祝福
 即便如此，京阿尼還是很快就站起來
 一年過後的現在宣布「小林家的龍女僕將於 2021 年開播 」🎉
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">TVアニメ第2期「小林さんちのメイドラゴンS」2021年放送決定！SuperでSupremeなSecond lifeがStartします！<br>そして、メイドラゴンS(読み:エス)ティザービジュアル公開！ティザーサイトもぜひチェックお願いします！　<a href="https://t.co/pKOgbEe3sL">https://t.co/pKOgbEe3sL</a> <a href="https://twitter.com/hashtag/meidragon?src=hash&amp;ref_src=twsrc%5Etfw">#meidragon</a> <a href="https://t.co/XoyiBPbnvt">pic.twitter.com/XoyiBPbnvt</a></p>&mdash; TVアニメ「小林さんちのメイドラゴンS」公式 (@maidragon_anime) <a href="https://twitter.com/maidragon_anime/status/1292838380187746305?ref_src=twsrc%5Etfw">August 10, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- rumdl-disable MD034 -->
+> TVアニメ第2期「小林さんちのメイドラゴンS」2021年放送決定！SuperでSupremeなSecond lifeがStartします！
+> そして、メイドラゴンS(読み:エス)ティザービジュアル公開！ティザーサイトもぜひチェックお願いします！
+> https://maidragon.jp #meidragon

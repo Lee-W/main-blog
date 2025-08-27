@@ -138,8 +138,8 @@ origin is a short hand name of that remote url. In other word, your repo.
 `git push -u origin master`
 
 * upload *master* to *origin*
-8 -u tell git the default url to push for that branch(master) is origin, it would also make `git pull` remember
-    * Do `-u` and after that you can just use `git push`
+    * -u tell git the default url to push for that branch(master) is origin, it would also make `git pull` remember
+    * Do `-u` once and after that you can just use `git push`
 
 ### pull
 

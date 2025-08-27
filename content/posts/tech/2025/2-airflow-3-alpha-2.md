@@ -67,7 +67,6 @@ Then, you'll see the familiar Airflow 2 homepage.
 
 ![airflow-2-ui](/images/posts-image/2025-airflow-alpha-2/airflow-2-ui.jpg)
 
-
 Let's click the "Check it out now" link and we'll find
 
 ![page-not-found](/images/posts-image/2025-airflow-alpha-2/page-not-found.jpg)
@@ -78,15 +77,13 @@ If you look at the URL, it goes to `http://localhost:29091/webapp`. Out of curio
 
 ![airflow-3-ui](/images/posts-image/2025-airflow-alpha-2/airflow-3-ui.png)
 
-
-[Breeze] (Airflow's local development tool) uses port `28080` as the homepage. So... the counterpart of `29091` would probably be `9091`, and it turns out that I'm right.
+[Breeze](https://github.com/apache/airflow/blob/main/dev/breeze/doc/README.rst) (Airflow's local development tool) uses port `28080` as the homepage. So... the counterpart of `29091` would probably be `9091`, and it turns out that I'm right.
 
 It's now tracked by issue ["Check it out" link to New UI does not work #46514](https://github.com/apache/airflow/issues/46514).
 
 In the new UI, you can find a `Legacy UI` button on the left-hand side.
 
 ![legacy-ui](/images/posts-image/2025-airflow-alpha-2/legacy-ui.png)
-
 
 After you click it, you'll find out it does not work either, and that's why I created the issue ["Legacy UI" button in New UI does not work #46516](https://github.com/apache/airflow/issues/46516).
 
@@ -109,7 +106,7 @@ This command tells you what configuration has been removed or moved somewhere el
 
 If you follow the examples above, it comes with a default `airflow.cfg`. After running the command above, you'll see
 
-```
+```text
 Found issues in your airflow.cfg:
   - Removed deprecated `cookie_samesite` configuration parameter from `webserver` section.
   - `dag_dir_list_interval` configuration parameter moved from `scheduler` section to `dag_processor` section as `refresh_interval`.
@@ -159,7 +156,7 @@ uv run ruff check dags/ --preview --select AIR301,AIR302,AIR303
 
 and get the following error message
 
-```
+```text
 dags/legacy_dag.py:7:2: AIR301 DAG should have an explicit `schedule` argument
   |
 7 | @dag()
@@ -212,7 +209,6 @@ But the truth is, this is just another excuse of mine; I simply couldn't finish 
 
 [uv]: https://docs.astral.sh/uv/
 [PyPI]: https://pypi.org/
-[Breeze]: https://github.com/apache/airflow/blob/main/dev/breeze/doc/README.rst
 [PEP 735]: https://peps.python.org/pep-0735/
 
 [Airflow 2 to 3 auto migration rules #41641]: https://github.com/apache/airflow/issues/41641

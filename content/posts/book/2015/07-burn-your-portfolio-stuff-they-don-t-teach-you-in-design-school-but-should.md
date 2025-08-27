@@ -5,7 +5,6 @@ Tags: Design
 Slug: burn-your-portfolio-stuff-they-don-t-teach-you-in-design-school-but-should
 Authors: Wei Lee
 
-
 * 隨時趕在對方需要以前，讓他們大吃一驚
     * 上司要求下午三點要東西，兩點就備妥
 

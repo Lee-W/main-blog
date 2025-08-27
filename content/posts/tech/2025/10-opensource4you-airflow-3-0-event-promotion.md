@@ -87,7 +87,6 @@ Airflow 的介紹則是分為幾個部分
 
 ![mygo-join-my-band](/images/meme/mygo-join-my-band.jpg)
 
-
 > 要偷渡幾次 MyGo 😂
 
 沒想到我的宣傳文發出來後，2 分鐘內就被抓包

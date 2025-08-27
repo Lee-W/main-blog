@@ -89,7 +89,6 @@ Authors: Wei Lee
         * [Slide](https://speakerdeck.com/leew/intro-to-airflow-from-zero-to-hero)
 - **[相關技術文章](https://blog.wei-lee.me/tag/airflow.html)**
 
-
 ### Ruff (主要貢獻部分與 Airflow 遷移相關)
 - **專案實際應用**
     - 雖非商業應用，但[廣泛應用於大開源專案和企業](https://github.com/astral-sh/ruff#whos-using-ruff)

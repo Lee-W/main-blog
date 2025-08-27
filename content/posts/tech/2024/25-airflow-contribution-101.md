@@ -32,7 +32,7 @@ issue 解完就開 pull requests
 開發的流程大致就是如此
 
 ### 除了開發以外
-#### 1. 幫忙 review [pull requests] (PR)
+#### 1. 幫忙 review [pull requests](https://github.com/apache/airflow/pulls) (PR)
 
 很多人以為要是 committer 或是 maintainer 才能 review PRs，但其實所有人都可以
 即便還不懂 Airflow 的運作，也可以單就 Python 的開發給建議
@@ -139,7 +139,6 @@ Kafka 還能每週開周會，真的是有夠拼的
 [Community]: https://airflow.apache.org/community/
 [good first issue]: https://github.com/apache/airflow/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22
 [area:providers]: https://github.com/apache/airflow/issues?q=is%3Aopen+is%3Aissue+label%3Aarea%3Aproviders+
-[pull requests]: https://github.com/apache/airflow/pulls
 [needs-triage]: https://github.com/apache/airflow/issues?q=is%3Aissue+is%3Aopen+label%3Aneeds-triage
 [collaborators]: https://github.com/apache/airflow/blob/24811f729f0e20dfff1be9afa8bf4a60b44fe628/.asf.yaml#L121
 [ask-astro]: https://github.com/astronomer/ask-astro

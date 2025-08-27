@@ -37,5 +37,4 @@ Authors: Wei Lee
 
 ![neovim-iTerm2](/images/posts-image/2025-neovim-flashing-after-upgrade-to-0-11/neovim-iTerm2.png)
 
-
 [LazyVim]: https://www.lazyvim.org/

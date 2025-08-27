@@ -13,7 +13,7 @@ Series: Line Bot Tutorial
 
 <!--more-->
 
-# Why not ngrok
+## Why not ngrok
 使用 ngrok 必須要讓你的本地端一直開著才能收到訊息
 而且免費版的 ngrok 每次都會更改 url
 所以我們需要一個可以讓其他人較長時間測試的 Server
@@ -26,18 +26,18 @@ Heroku 則是用來讓其他人測試功能
 Line 的帳號也是 ngrok, heroku 跟上線需要的各申請一個
 不過 ngrok 可以好幾個 Line Bot 專案共用一個即可
 
-# Heroku
+## Heroku
 
-## Create App
+### Create App
 先上[Heroku](https://www.heroku.com) 辦個帳號
 
 到個人的 dashboard
 `New` → `Create New App`
 選一個名字，就創好 App 了
 
-## Deploy
+### Deploy
 
-### Add Remote
+#### Add Remote
 在部署之前要先安裝[Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
 
 再來我們要到原本 line-echobot，將 heroku 加入這個專案的 remote
@@ -51,7 +51,7 @@ heroku git:remote -a leewbot
 以後只要 `git push heroku master`，就能部署到 Heroku
 不過我們還必須要多做一些設定才能讓 Bot 順利的部署
 
-### Environment Variables
+#### Environment Variables
 首先是我們原先設定的環境變數
 Heroku 是透過這個指令來做設定
 
@@ -61,7 +61,7 @@ heroku config:set "env key":"env value"
 
 或者也能到 dashboard 的 `Settings` → `Config Variables` → `Reveal Config Vars` 做設定
 
-### Python Environments
+#### Python Environments
 因為 Heroku 支援多種不同的語言
 所以要讓 Heroku 知道我們使用的是 Python
 
@@ -74,7 +74,7 @@ Heroku 可過專案中是否有 `requirements.txt` 來判斷這個專案是否�
 * `python-2.7.12`
 * `python-3.5.2`
 
-### Deploy Settings - Procfile
+#### Deploy Settings - Procfile
 再來必須要讓 Heroku 知道我們執行專案的指令是什麼
 這個指令就是寫在 `Profile` 中
 
@@ -95,6 +95,6 @@ web: gunicorn line_echobot.wsgi --log-file -
 接著把專案的網址加上我們先前設定的 callback url `echobot/callback`
 設定到 Line Bot 的 Webhook URL，就完成了
 
-# Reference
+## Reference
 * [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
 * [Deploying Python and Django Apps on Heroku](https://devcenter.heroku.com/articles/deploying-python)

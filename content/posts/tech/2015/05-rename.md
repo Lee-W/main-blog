@@ -35,7 +35,7 @@ files 要使用萬用字元，pattern 則是使用 regular expression
 
 ***需要特別注意要跳脫的字元***
 可以參考下面這篇文章整理需要跳脫的保留字
-[[Regular Expression] 使用正規表達時需要 escape 的保留字](http://awei791129.pixnet.net/blog/post/53319618-%5Bregular-expression%5D-使用正規表達時需要-escape-的 )
+[[Regular Expression] 使用正規表達時需要 escape 的保留字](https://awei791129.pixnet.net/blog/post/53319618)
 
 ## 保留原本檔名的片段
 

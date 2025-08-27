@@ -16,7 +16,7 @@ Cover: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
 >
 > Everything!
 >
-> - Luthen Rael
+> -- Luthen Rael
 
 <!--more-->
 

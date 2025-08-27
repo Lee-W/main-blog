@@ -51,6 +51,7 @@ pandas_requirements = [
 接著可以看到 `pandas_requirements` 在 [240行](https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L240) 被用到
 
 <!-- blacken-docs:off -->
+
 ```python
     ...
     extras_require={
@@ -61,6 +62,7 @@ pandas_requirements = [
     ...
 
 ```
+
 <!-- blacken-docs:on -->
 
 原來 `pip install snowflake-connector-python[pandas]` 同時會安裝 `pandas_requirements` 中的 pandas 跟 pyarrow

@@ -10,7 +10,6 @@ Authors: Wei Lee
 
 ![reality-is-business](/images/books/reality-is-business.jpeg)
 
-
 <!--more-->
 
 在閱讀本書前，聽到朋友分享部分內容，就覺得有些似曾相識

@@ -65,5 +65,4 @@ MyGO!!!!! 怎麼可能是浪費時間呢
 migration 的 patch 跟幾個可以玩的 dag 有試試看，目前看起來應該、可能、大概沒問題...吧
 下一步就是要升上 Airflow 3 了！
 
-
 [sciwork]: https://sciwork.dev/

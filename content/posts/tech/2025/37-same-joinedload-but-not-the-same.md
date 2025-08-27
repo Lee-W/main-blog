@@ -15,7 +15,7 @@ Cover: /images/meme/mygo-it-is-but-it-is-not.jpg
 但昨天在重構 [Allow generating human-in-the-loop links that can be redirected to the corresponding page and perform action #53907][airflow-pr-53907] 並實作哲佑大大給我的 joinedload 建議時
 就一切都炸掉了
 
-```
+```text
   File "/opt/airflow/airflow-core/src/airflow/api_fastapi/core_api/services/public/hitl.py", line 59, in get_task_instnace
     query = query.options(joinedload(TI.hitl_detail))
   File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/strategy_options.py", line 1219, in __call__

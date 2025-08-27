@@ -84,11 +84,13 @@ trace 的過程還有踩到一個雷是「pip 裝的 pelican 並不是 master �
 所以第一步就是要從 [setup.py](https://github.com/getpelican/pelican/blob/master/setup.py#L15) 找出 pelican 這個指令是哪裡來的
 
 <!-- blacken-docs:off -->
+
 ```python
     ...
     "pelican = pelican:main",
     ...
 ```
+
 <!-- blacken-docs:on -->
 
 #### pelican/__init__.py

@@ -73,7 +73,6 @@ Authors: Wei Lee
 
 ---
 
-
 延續 [Airflow 多語系化]({filename}/posts/tech/2025/22-airflow-multilingual.md) 所提到的概念跟得到的反饋
 我也希望我能多實踐我相信且支持的想法
 所這篇試著把原本習慣使用英文的字，翻譯成漢語試試看

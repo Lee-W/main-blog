@@ -1,4 +1,4 @@
-Title: 遇到 Error: fatal: could not read Username for 'https://github.com': terminal prompts disabled 怎麼辦 😱
+Title: 遇到 Error: fatal: could not read Username for '<https://github.com>': terminal prompts disabled 怎麼辦 😱
 Date: 2024-01-17 22:56
 Category: Tech
 Tags: GitHub Actions, CI/CD, GitHub

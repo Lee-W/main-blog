@@ -22,12 +22,12 @@ Series: Line Bot Tutorial
 
 <!--more-->
 
-# Template
+## Template
 
 Template 分為 Button, Confirm 跟 Carousel 三種
 這些功能也是我認為從 Line Bot Trail 升級到 Line Messaging API 最好用的功能
 
-## Example
+### Example
 
 以下的測試是 bot 收到關鍵字，回傳相對應的訊息
 
@@ -59,7 +59,7 @@ Template 分為 Button, Confirm 跟 Carousel 三種
 * Carousel 則可以用 5 個 CarouselColumn，每一個 Column 支援 3 個 Action
     * 另外需要注意的是 Carousel 中每一個 Column 的 action 數量必須是一樣的
 
-# Action
+## Action
 
 這些 action 的 label 參數，就是顯示在按鍵上的文字，必須在 20 字以內
 
@@ -68,7 +68,7 @@ e.g. 這是我按下上面 Button 的 postback 的效果
 ![text_example](/images/posts-image/2016-11-27-more-about-line-messaging-api-template-messages/ow2G8wU.png)
 而 text 就是設定為 postback ( 注意並非 label 的 'postback')
 
-## Postback
+### Postback
 
 當使用者按了這個按鍵
 Line Server 會傳一個 postback event 給我們，裡面包含著 data 參數中設定的字串
@@ -76,12 +76,12 @@ Line Server 會傳一個 postback event 給我們，裡面包含著 data 參數�
 
 Postback 可以不給 text 參數
 
-## Message
+### Message
 
 text 參數在 Message Action 是必須的，也不能給空字串
 如果希望這個按鍵，只有顯示但不會由使用者傳文字過來，可以給一串空白 (e.g. ' ')
 
-## URI
+### URI
 
 使用者按下這個按鍵就會用 Line 的瀏覽器跳到外部網頁
 

@@ -76,6 +76,7 @@ If the attributes `start_trigger_args` and `start_from_trigger` are defined as c
 Let's start from [airflow/models/dagrun.py](https://github.com/apache/airflow/blob/9901a065fcd93307d8e1d69e34621966d7313511/airflow/models/dagrun.py#L1541-L1545). Airflow verifies if the `start_from_trigger` attribute is set to `True` and the `start_from_trigger` attribute is set. If both conditions are met, the `defer_task` method will be called with `exception=None`.
 
 <!-- blacken-docs:off -->
+
 ```python
             elif ti.task.start_from_trigger is True and ti.task.start_trigger_args is not None:
                 ti.start_date = timezone.utcnow()
@@ -83,6 +84,7 @@ Let's start from [airflow/models/dagrun.py](https://github.com/apache/airflow/bl
                     ti.try_number += 1
                 ti.defer_task(exception=None, session=session)
 ```
+
 <!-- blacken-docs:on -->
 
 Then, let's go to [airflow/models/taskinstance.py](https://github.com/apache/airflow/blob/9901a065fcd93307d8e1d69e34621966d7313511/airflow/models/taskinstance.py#L1607-L1621).
