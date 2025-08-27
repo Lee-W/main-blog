@@ -43,7 +43,6 @@ XM 5 出的時候，換換病就已經快到末期了
 
 ![2-headphone-with-air](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/2-headphone-with-air.jpeg)
 
-
 ![3-open](/images/posts-image/2025-sony-wh-1000-xm6-unboxing/3-open.jpeg)
 
 外包裝其實也蠻好看的

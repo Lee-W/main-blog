@@ -18,6 +18,7 @@ pip3 install ipython notebook
 ipython2 kernelspec install-self
 ipython3 kernelspec install-self
 ```
+
 <!--more-->
 
 就能在 ipython notebook 裡面同時使用兩種版本的 Python 了

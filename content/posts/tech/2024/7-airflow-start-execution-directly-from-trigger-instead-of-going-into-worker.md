@@ -114,6 +114,7 @@ class WaitOneHourSensor(BaseSensorOperator):
 
 Let's take a look at [airflow/models/dagrun.py](https://github.com/apache/airflow/blob/3d97474a49a00bb6fcd67cf20d470a1fc2861f4f/airflow/models/dagrun.py#L1541-L1553)
 <!-- blacken-docs:off -->
+
 ```python
             elif (
                 ti.task.start_trigger is not None
@@ -129,6 +130,7 @@ Let's take a look at [airflow/models/dagrun.py](https://github.com/apache/airflo
                     session=session,
                 )
 ```
+
 <!-- blacken-docs:on -->
 
 It checks whether a task has both `start_trigger` and `next_method` set. If so, we'll defer this task by calling `defer_task` instead of adding it to `schedulable_ti_ids.` (The `on_execute_callback`, `on_success_callback`, and `outlets` checks are actually wrong and are addressed in [#39585](https://github.com/apache/airflow/pull/39585)).

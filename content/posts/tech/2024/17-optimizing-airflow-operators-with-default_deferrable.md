@@ -46,12 +46,13 @@ By enabling this configuration, all the current operators that support deferrabl
 **Step 2**: Change the default value of the argument `deferrable` in every operator/sensor to `conf.getboolean("operators", "default_deferrable", fallback=False)`; this is how Airflow retrieves the value from `airflow.cfg` or environment variables.
 
 <!-- blacken-docs:off -->
+
 ```python
         deferrable: bool = conf.getboolean("operators", "default_deferrable", fallback=False),
 ```
+
 <!-- blacken-docs:on -->
 
 **Step 3**: Kindly ask every contributor to add this default value to every operator/sensor and reviewer to check
-
 
 **Step 4**: Pray that everyone will follow 🙏...... at least that is what we did at that moment

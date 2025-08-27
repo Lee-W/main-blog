@@ -128,6 +128,7 @@ There's not much we can do unless we rewrite the entire dynamic task mapping fea
 Let's go back to [where we decide whether to defer or not](https://github.com/apache/airflow/pull/39912/files#diff-649fbbf224bab54417f03338c27d0fdb3c3336e53a522a13dfd9806c99f63137R1580-R1594). We implemented a new `expand_start_from_trigger` method and try to provide a way for the mapped operator to get `start_from_trigger.` For non-mapped operators, this method only returns `self.start_from_trigger`.
 
 <!-- blacken-docs:off -->
+
 ```python
             # check "start_trigger_args" to see whether the operator supports start execution from triggerer
             # if so, we'll then check "start_from_trigger" to see whether this feature is turned on and defer
@@ -145,6 +146,7 @@ Let's go back to [where we decide whether to defer or not](https://github.com/ap
                 else:
                     schedulable_ti_ids.append((ti.task_id, ti.map_index))
 ```
+
 <!-- blacken-docs:on -->
 
 For the mapped operator, it checks whether the argument `start_from_trigger` is passed through `partial`, `expand`, and `expand_kwargs` (the methods you need to use dynamic task mapping as mentioned in the "What is dynamic task mapping anyway?" section). If so, we'll use this value to decide whether to defer the task.
@@ -177,7 +179,7 @@ def expand_start_from_trigger(self, *, context: Context, session: Session) -> bo
 
 Note that the argument name must be the same to take effect. If you're doing something like
 
-```
+```text
 def __init__(self, sft: bool):
     self.start_from_trigger = sft
 ```

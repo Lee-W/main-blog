@@ -18,8 +18,8 @@ Series: 帶我讀 AIP
 
 主要包含以下兩份文件
 
-1. [AIP-83 amendment to support classic Airflow authoring style] : 修正案本身，包含了問題跟修正的方向
-2. [Option 2 clarification doc WIP] : 針對共識修正方案的細節補充
+1. [AIP-83 amendment to support classic Airflow authoring style] - 修正案本身，包含了問題跟修正的方向
+2. [Option 2 clarification doc WIP] - 針對共識修正方案的細節補充
 
 以下是我看完它們做的一些筆記
 之前就因為雖然看過，但忘了記了細節，問了蠢問題...
@@ -155,7 +155,6 @@ Daniel (修正案提案者之一) 說自己以前是 Data Engineer 的時候，�
         * 過濾 `logical_date` 範圍的參數將被無視
     * 如果 `logical_date` 有被提供，沒有 `logical_date` 的 dag runs 全部會被無視
     * 原本過濾 `logical_date` 都行為都不會改變，沒有 `logical_date` 的 dag runs 則是自動被跳過
-
 
 ---
 

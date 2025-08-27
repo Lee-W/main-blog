@@ -108,6 +108,7 @@ e.g.,
 ### Exercise4 用 Python 做排序 (ex4.py)
 
 <!-- blacken-docs:off -->
+
 ```python
 some_list = [
     65, 81, 65, 19, 6, 28, 86, 40, 72, 27,
@@ -122,6 +123,7 @@ some_list = [
     18, 9, 64, 51, 76, 76, 96, 5, 18
 ]
 ```
+
 <!-- blacken-docs:on -->
 
 寫過 Python 的人，一定馬上就會想到用 `sort` 或 `sorted`

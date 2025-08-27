@@ -73,7 +73,6 @@ Python 自帶的編輯器，在終端機輸入 `IDLE` 就能開啟
 
 ![learning-curve](/images/posts-image/2024-Introducing-Python-ch19-final/learning-curve.jpg)
 
-
 👉 [Python Table Manners 番外 - 編輯器]({filename}/posts/tech/2021/2-python-table-manners-editor.md)
 
 ## Documentation and naming

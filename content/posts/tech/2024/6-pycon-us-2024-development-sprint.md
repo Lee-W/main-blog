@@ -15,7 +15,6 @@ The last time I came to [PyCon US]({filename}/posts/tech/2019/03-how-was-pycon-u
 
 ![registration-broad-2](/images/posts-image/2024-pycon-us-2024-development-sprint/registration-broad-2.jpeg)
 
-
 Disclaimer: the doll has absolutely nothing to do with Python and commitizen-tools. It's just cute, and it might make it easier for people to find me 😆
 
 ![commitizen-tools](/images/posts-image/2024-pycon-us-2024-development-sprint/commitizen-tools.jpeg)

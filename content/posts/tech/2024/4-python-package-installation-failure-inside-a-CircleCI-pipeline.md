@@ -14,7 +14,7 @@ Authors: Wei Lee
 
 這次是在 CircleCI 中，設定 Python 的環境時，遇到以下的錯誤訊息
 
-```
+```text
 Traceback (most recent call last):
   File "/.../python3.9/site-packages/build/__main__.py", line 176, in _handle_build_error
     yield

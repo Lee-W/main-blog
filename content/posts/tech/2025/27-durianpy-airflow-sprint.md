@@ -22,7 +22,6 @@ Before this began, we had a brief chat with the DurianPy organizers. I had the h
 
 ![There is another](/images/posts-image/2025-durianpy-apache-airflow-development-sprint/17506004384785.jpg)
 
-
 Even though Anakin is not a Star Wars fan, Sean is! We discussed our love for Rogue One, Andor, and Rebels. I shared some Star Wars novels that I truly enjoy. (👉 [星際大戰小說排名](https://travlog.wei-lee.me/pages/star-wars-novel-ranking.html))
 
 It's a shame I didn't mention this quote to him in person.

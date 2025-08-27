@@ -221,7 +221,7 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/).
     2. [S2EP4 | Emergence: 佛系經營社群的二三事，原來你我都是這片雪花的一部分 - Taihsiang & Wei](https://pycast.firstory.io/episodes/cl8pof56x05p901ws56y185jl)
     3. [EP2 | 職場邊緣人教你如何讓 WFH 變得更有趣](https://pycast.firstory.io/episodes/ckovh74d9nw2t0818urqtusva)
 * [WFH Pythonista](https://www.youtube.com/playlist?list=PLCBCxsuKTqkDXxXKWnWzldHUvdYbpCLij)
-        * [WFH Pythonista Ep#15 w/ David Lu and Wei Lee (PyCon Taiwan Organizers)](https://www.youtube.com/watch?v=JH5HQZIfY34)
+    * [WFH Pythonista Ep#15 w/ David Lu and Wei Lee (PyCon Taiwan Organizers)](https://www.youtube.com/watch?v=JH5HQZIfY34)
 
 ## Development Sprint
 * Apache Airflow
@@ -276,6 +276,5 @@ GPA: 3.77/4.0 (CSIE GA: 3.87/4.0)
 * [Intro to Machine Learning](https://github.com/Lee-W/Intro_to_Machine_Learning_Udacity)
 * [Intro to Data Science Udacity](https://github.com/Lee-W/Intro_to_Data_Science_Udacity)
 * [Assignments for Udacity Deep Learning class with TensorFlow](https://github.com/Lee-W/Deep-Learning-Udacity)
-
 
 [Apache Airflow]: https://airflow.apache.org/

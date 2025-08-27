@@ -147,7 +147,7 @@ except RequestError:
 ## 鄉民教我做的聊天機器人
 
 * [slide](https://www.slideshare.net/RyanChao3/pycon2017-chatbot)
-* [共筆](https://hackmd.io/s/Hyt_yvak-#1325-1355-talk-鄉民教我做的聊天機器人 )
+* [共筆](https://hackmd.io/s/Hyt_yvak-#1325-1355-talk-鄉民教我做的聊天機器人)
 * [Line Bot](https://line.me/R/ti/p/%40nlj2850e)
 
 ### Chinese Conversation Data

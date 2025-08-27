@@ -33,7 +33,6 @@ Authors: Wei Lee
 所以下面就只是當天我寫下的筆記簡單整理過的版本
 *斜線的部分是我自己的補充或想法*
 
-
 [TOC]
 
 ## Where to find Python code

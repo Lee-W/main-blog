@@ -29,8 +29,6 @@ pip3 install line-bot-sdk
 
 另外官方也提供[java](https://github.com/line/line-bot-sdk-java), [go](https://github.com/line/line-bot-sdk-go), [php](https://github.com/line/line-bot-sdk-php), [ruby](https://github.com/line/line-bot-sdk-ruby), [perl](https://github.com/line/line-bot-sdk-perl) 的版本
 
-# Start Project
-
 ## Create Project
 
 ```shell

@@ -12,7 +12,7 @@ Authors: Wei Lee
 
 許久以前的某一天突然就遇到了 [fzf](https://github.com/junegunn/fzf) 壞掉的問題
 
-```
+```text
 Failed to run `config` for telescope-fzf-native.nvim
 
 ...m/lazy/telescope.nvim/lua/telescope/_extensions/init.lua:10: 'fzf' extension doesn't exist or isn't installed: ...hare/nvim/lazy/telescope-fzf-native.nvim/lua/fzf_lib.lua:11: dlopen(/.../.local/share/nvim/lazy/telescope-fzf-native.nvim/lua/../build/libfzf.so, 0x0005): tried: '/.../.local/share/nvim/lazy/telescope-fzf-native.nvim/lua/../build/libfzf.so' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/.../.local/share/nvim/lazy/telescope-fzf-native.nvim/lua/../build/libfzf.so' (no such file), '/.../.local/share/nvim/lazy/telescope-fzf-native.nvim/lua/../build/libfzf.so' (no such file)

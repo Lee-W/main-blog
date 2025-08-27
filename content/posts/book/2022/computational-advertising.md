@@ -283,7 +283,6 @@ flowchart LR
     ADX[ADX]
 ```
 
-
 * [IAB](https://www.iab.com/) 制定了 [OpenRTB](https://openrtb.github.io/OpenRTB/) 接口標準，已經被一些 ADX 採用
 
 #### 優選（Preferred Deal，PD）
@@ -433,7 +432,6 @@ flowchart LR
 
 <!--progress line-->
 
-
 ## Ch7 資料加工與交易
 
 在本章中，我們首先介紹哪些數據資產具有明確的市場價值，價值高低如何，這些是我們收集、交換和加工數據之前非常重要的判斷基礎。在
@@ -534,7 +532,6 @@ iOS與Android在應用內廣告使用的用戶ID有所不同：前者是蘋果�
     * 限制處理權，即
     * 數據攜帶權，即
 
-
 ## Ch 8 News Feed 與原生廣告
 
 8.1　移動廣告的現狀與挑戰
@@ -606,7 +603,6 @@ iOS與Android在應用內廣告使用的用戶ID有所不同：前者是蘋果�
 一是要判斷用戶當前的場景及意圖，二是要確定根據用戶的意圖提供什麼樣的信息。
 
 FAN的eCPM一般來說要高於其他ADN。另外，FAN還有對媒體廣告位的分級評定製度，級別不同的廣告位會以不同質量的廣告填充，eCPM水平也會相差巨大（甚至有一個數量級的差距）。 與其他大多數變現產品不同，FAN迄今爲止沒有引入任何程序化交易的成分：既沒有向DSP開放RTB接口，也沒有從其他ADX那裏購買流量。
-
 
 ## Ch 9
 一般的个性化系统由4个主体部分构成。 （1）用于实时响应请求，完成决策的在线投放引擎（online serving engine）。 （2）离线的分布式计算（distributed computing）数据处理平台。 （3）是用于在线实时反馈的流计算（stream computing）平台。 （4）连接和转运以上三部分数据流的数据高速公路（data highway）。
