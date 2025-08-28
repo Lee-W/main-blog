@@ -232,11 +232,11 @@ Use <code>admin</code> as the username and the content of the file <code>standal
 </code></pre></div>
 <p>This command tells you what configuration has been removed or moved somewhere else. It also detected environment variables and whatever will be loaded into Airflow. Check <a href="https://airflow.apache.org/docs/apache-airflow/stable/howto/set-config.html">Setting Configuration Options</a> for details.</p>
 <p>If you follow the examples above, it comes with a default <code>airflow.cfg</code>. After running the command above, you'll see</p>
-<div class="highlight"><pre><span></span><code><span class="k">Found</span><span class="w"> </span><span class="n">issues</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">airflow</span><span class="p">.</span><span class="n">cfg</span><span class="o">:</span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Removed</span><span class="w"> </span><span class="n">deprecated</span><span class="w"> </span><span class="n n-Quoted">`cookie_samesite`</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n n-Quoted">`webserver`</span><span class="w"> </span><span class="n">section</span><span class="p">.</span>
-<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n n-Quoted">`dag_dir_list_interval`</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="n">moved</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n n-Quoted">`scheduler`</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n n-Quoted">`dag_processor`</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n n-Quoted">`refresh_interval`</span><span class="p">.</span>
+<div class="highlight"><pre><span></span><code>Found issues in your airflow.cfg:
+  - Removed deprecated `cookie_samesite` configuration parameter from `webserver` section.
+  - `dag_dir_list_interval` configuration parameter moved from `scheduler` section to `dag_processor` section as `refresh_interval`.
 
-<span class="n">Please</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="n">accordingly</span><span class="p">.</span>
+Please update your configuration file accordingly.
 </code></pre></div>
 <p>Even Airflow has not migrated to Airflow 3 yet.</p>
 <p><img alt="ironic" src="/images/meme/star-wars-ironic.jpg"/></p>
@@ -269,43 +269,43 @@ Use <code>admin</code> as the username and the content of the file <code>standal
 uv<span class="w"> </span>run<span class="w"> </span>ruff<span class="w"> </span>check<span class="w"> </span>dags/<span class="w"> </span>--preview<span class="w"> </span>--select<span class="w"> </span>AIR301,AIR302,AIR303
 </code></pre></div>
 <p>and get the following error message</p>
-<div class="highlight"><pre><span></span><code><span class="n">dags</span><span class="o">/</span><span class="n">legacy_dag</span><span class="p">.</span><span class="n">py</span><span class="o">:</span><span class="mi">7</span><span class="o">:</span><span class="mi">2</span><span class="o">:</span><span class="w"> </span><span class="n">AIR301</span><span class="w"> </span><span class="n">DAG</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">explicit</span><span class="w"> </span><span class="n n-Quoted">`schedule`</span><span class="w"> </span><span class="n">argument</span>
-<span class="w">  </span><span class="o">|</span>
-<span class="mi">7</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">@dag</span><span class="p">()</span>
-<span class="w">  </span><span class="o">|</span><span class="w">  </span><span class="o">^^^^^</span><span class="w"> </span><span class="n">AIR301</span>
-<span class="mi">8</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">def</span><span class="w"> </span><span class="n">air_301_dag</span><span class="p">()</span><span class="o">:</span>
-<span class="mi">9</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="n">pass</span>
-<span class="w">  </span><span class="o">|</span>
+<div class="highlight"><pre><span></span><code>dags/legacy_dag.py:7:2: AIR301 DAG should have an explicit `schedule` argument
+  |
+7 | @dag()
+  |  ^^^^^ AIR301
+8 | def air_301_dag():
+9 |     pass
+  |
 
-<span class="n">dags</span><span class="o">/</span><span class="n">legacy_dag</span><span class="p">.</span><span class="n">py</span><span class="o">:</span><span class="mi">12</span><span class="o">:</span><span class="mi">6</span><span class="o">:</span><span class="w"> </span><span class="n">AIR302</span><span class="w"> </span><span class="err">[</span><span class="o">*</span><span class="err">]</span><span class="w"> </span><span class="n n-Quoted">`schedule_interval`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">removed</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">Airflow</span><span class="w"> </span><span class="mf">3.0</span>
-<span class="w">   </span><span class="o">|</span>
-<span class="mi">12</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">@dag</span><span class="p">(</span><span class="n">schedule_interval</span><span class="o">=</span><span class="s2">"0 * * * *"</span><span class="p">)</span>
-<span class="w">   </span><span class="o">|</span><span class="w">      </span><span class="o">^^^^^^^^^^^^^^^^^</span><span class="w"> </span><span class="n">AIR302</span>
-<span class="mi">13</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">def</span><span class="w"> </span><span class="n">air_302_dag</span><span class="p">()</span><span class="o">:</span>
-<span class="mi">14</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="n">pass</span>
-<span class="w">   </span><span class="o">|</span>
-<span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="k">help</span><span class="o">:</span><span class="w"> </span><span class="k">Use</span><span class="w"> </span><span class="n n-Quoted">`schedule`</span><span class="w"> </span><span class="n">instead</span>
+dags/legacy_dag.py:12:6: AIR302 [*] `schedule_interval` is removed in Airflow 3.0
+   |
+12 | @dag(schedule_interval="0 * * * *")
+   |      ^^^^^^^^^^^^^^^^^ AIR302
+13 | def air_302_dag():
+14 |     pass
+   |
+   = help: Use `schedule` instead
 
-<span class="n">dags</span><span class="o">/</span><span class="n">legacy_dag</span><span class="p">.</span><span class="n">py</span><span class="o">:</span><span class="mi">17</span><span class="o">:</span><span class="mi">15</span><span class="o">:</span><span class="w"> </span><span class="n">AIR302</span><span class="w"> </span><span class="n n-Quoted">`airflow.datasets.Dataset`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">removed</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">Airflow</span><span class="w"> </span><span class="mf">3.0</span>
-<span class="w">   </span><span class="o">|</span>
-<span class="mi">17</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">@dag</span><span class="p">(</span><span class="k">schedule</span><span class="o">=</span><span class="n">Dataset</span><span class="p">(</span><span class="s2">"test"</span><span class="p">))</span>
-<span class="w">   </span><span class="o">|</span><span class="w">               </span><span class="o">^^^^^^^</span><span class="w"> </span><span class="n">AIR302</span>
-<span class="mi">18</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">def</span><span class="w"> </span><span class="n">air_303_dag</span><span class="p">()</span><span class="o">:</span>
-<span class="mi">19</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="n">FileSensor</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="s2">"wait_for_file"</span><span class="p">,</span><span class="w"> </span><span class="n">filepath</span><span class="o">=</span><span class="s2">"/tmp/temporary_file_for_testing"</span><span class="p">)</span>
-<span class="w">   </span><span class="o">|</span>
-<span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="k">help</span><span class="o">:</span><span class="w"> </span><span class="k">Use</span><span class="w"> </span><span class="n n-Quoted">`airflow.sdk.definitions.asset.Asset`</span><span class="w"> </span><span class="n">instead</span>
+dags/legacy_dag.py:17:15: AIR302 `airflow.datasets.Dataset` is removed in Airflow 3.0
+   |
+17 | @dag(schedule=Dataset("test"))
+   |               ^^^^^^^ AIR302
+18 | def air_303_dag():
+19 |     FileSensor(task_id="wait_for_file", filepath="/tmp/temporary_file_for_testing")
+   |
+   = help: Use `airflow.sdk.definitions.asset.Asset` instead
 
-<span class="n">dags</span><span class="o">/</span><span class="n">legacy_dag</span><span class="p">.</span><span class="n">py</span><span class="o">:</span><span class="mi">19</span><span class="o">:</span><span class="mi">5</span><span class="o">:</span><span class="w"> </span><span class="n">AIR303</span><span class="w"> </span><span class="n n-Quoted">`airflow.sensors.filesystem.FileSensor`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">moved</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n n-Quoted">`standard`</span><span class="w"> </span><span class="n">provider</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">Airflow</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span>
-<span class="w">   </span><span class="o">|</span>
-<span class="mi">17</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">@dag</span><span class="p">(</span><span class="k">schedule</span><span class="o">=</span><span class="n">Dataset</span><span class="p">(</span><span class="s2">"test"</span><span class="p">))</span>
-<span class="mi">18</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">def</span><span class="w"> </span><span class="n">air_303_dag</span><span class="p">()</span><span class="o">:</span>
-<span class="mi">19</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="n">FileSensor</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="s2">"wait_for_file"</span><span class="p">,</span><span class="w"> </span><span class="n">filepath</span><span class="o">=</span><span class="s2">"/tmp/temporary_file_for_testing"</span><span class="p">)</span>
-<span class="w">   </span><span class="o">|</span><span class="w">     </span><span class="o">^^^^^^^^^^</span><span class="w"> </span><span class="n">AIR303</span>
-<span class="w">   </span><span class="o">|</span>
-<span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="k">help</span><span class="o">:</span><span class="w"> </span><span class="k">Install</span><span class="w"> </span><span class="n n-Quoted">`apache-airflow-provider-standard&gt;=0.0.2`</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n n-Quoted">`airflow.providers.standard.sensors.filesystem.FileSensor`</span><span class="w"> </span><span class="n">instead</span><span class="p">.</span>
+dags/legacy_dag.py:19:5: AIR303 `airflow.sensors.filesystem.FileSensor` is moved into `standard` provider in Airflow 3.0;
+   |
+17 | @dag(schedule=Dataset("test"))
+18 | def air_303_dag():
+19 |     FileSensor(task_id="wait_for_file", filepath="/tmp/temporary_file_for_testing")
+   |     ^^^^^^^^^^ AIR303
+   |
+   = help: Install `apache-airflow-provider-standard&gt;=0.0.2` and use `airflow.providers.standard.sensors.filesystem.FileSensor` instead.
 
-<span class="k">Found</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">errors</span><span class="p">.</span>
-<span class="err">[</span><span class="o">*</span><span class="err">]</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">fixable</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n n-Quoted">`--fix`</span><span class="w"> </span><span class="k">option</span><span class="p">.</span>
+Found 4 errors.
+[*] 1 fixable with the `--fix` option.
 </code></pre></div>
 <p>If you find anything missing regarding migration tooling, please comment on  <a href="https://github.com/apache/airflow/issues/41641">Airflow 2 to 3 auto migration rules #41641</a>. This is the root issue where we try to track everything related to migration rules.</p>
 <h2 id="why-does-the-title-look-so-weird">Why does the title look so weird</h2>

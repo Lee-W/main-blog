@@ -174,8 +174,8 @@
 於是就有人寫了這個<a href="https://github.com/calevans/external">External.js</a></p>
 <!--more-->
 <p>有了 External.js，就可以不用把所有的內容都寫在 <code>index.html</code> 裡面</p>
-<h1 id="install">Install</h1>
-<h2 id="method1-download">Method1: Download</h2>
+<h2 id="install">Install</h2>
+<h3 id="method1-download">Method1: Download</h3>
 <ol>
 <li>到 <a href="https://github.com/calevans/external">external</a> 下載</li>
 <li>把 extneral 裡面的 external 資料夾放到 plugin 裡面</li>
@@ -183,7 +183,7 @@
 </ol>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="s1">'plugin/external/external.js'</span><span class="p">,</span><span class="w"> </span><span class="nx">condition</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="w"> </span><span class="s1">'[data-external]'</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
 </code></pre></div>
-<h2 id="method2-submodule">Method2: Submodule</h2>
+<h3 id="method2-submodule">Method2: Submodule</h3>
 <p>不過為了讓他的更新也能被追蹤，我使用了 git submodule</p>
 <ul>
 <li>git submodule</li>
@@ -196,16 +196,16 @@
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="s1">'plugin/external/external/external.js'</span><span class="p">,</span><span class="w"> </span><span class="nx">condition</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="w"> </span><span class="s1">'[data-external]'</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
 </code></pre></div>
 <p>( 注意兩種方式加入的內容有些微的不同 )</p>
-<h1 id="usage">Usage</h1>
+<h2 id="usage">Usage</h2>
 <p>之後就能使用 <code>data-external</code> 這個 tag 來載入外部的 html</p>
-<h2 id="indexhtml">原本的 index.html</h2>
+<h3 id="indexhtml">原本的 index.html</h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">"module_01/index.html"</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
 </code></pre></div>
-<h2 id="html">外部 html</h2>
+<h3 id="html">外部 html</h3>
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- module_01/index.html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> This is external <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
 </code></pre></div>
-<h2 id="html_1">載入後的 html</h2>
+<h3 id="html_1">載入後的 html</h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-external</span><span class="o">=</span><span class="s">"module_01/index.html"</span><span class="p">&gt;</span>
     <span class="cm">&lt;!-- module_01/index.html --&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> This is external <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
