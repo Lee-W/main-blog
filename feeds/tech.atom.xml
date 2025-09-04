@@ -1,5 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"/><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"/><id>https://blog.wei-lee.me/</id><updated>2025-09-04T18:45:00+08:00</updated><entry><title>DAG 即將從 Airflow 移除</title><link href="https://blog.wei-lee.me/posts/tech/2025/09/removing-DAG-from-airflow" rel="alternate"/><published>2025-09-04T18:45:00+08:00</published><updated>2025-09-04T18:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-09-04:/posts/tech/2025/09/removing-DAG-from-airflow</id><summary type="html">&lt;p&gt;突然覺得爛新聞的聳動標題很適合這次的生情報 😆&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"/><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"/><id>https://blog.wei-lee.me/</id><updated>2025-09-04T23:50:00+08:00</updated><entry><title>貢獻 CPython 101</title><link href="https://blog.wei-lee.me/posts/tech/2025/09/contribute-to-cpython-your-first-step" rel="alternate"/><published>2025-09-04T23:50:00+08:00</published><updated>2025-09-04T23:50:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-09-04:/posts/tech/2025/09/contribute-to-cpython-your-first-step</id><summary type="html">&lt;p&gt;如同副標題所說&lt;br&gt;
+在一切開始之前， &lt;a href="https://github.com/python/cpython/"&gt;CPython&lt;/a&gt; != &lt;a href="https://cython.org/"&gt;Cython&lt;/a&gt;&lt;br&gt;
+那 CPython 是什麼？&lt;br&gt;
+如果你不知道你在用的 Python 是不是 CPython，那 87% 就是 CPython&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;如同副標題所說&lt;br&gt;
+在一切開始之前， &lt;a href="https://github.com/python/cpython/"&gt;CPython&lt;/a&gt; != &lt;a href="https://cython.org/"&gt;Cython&lt;/a&gt;&lt;br&gt;
+那 CPython 是什麼？&lt;br&gt;
+如果你不知道你在用的 Python 是不是 CPython，那 87% 就是 CPython&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;TL;DR: 去看 &lt;a href="https://devguide.python.org/"&gt;Python Developer’s Guide&lt;/a&gt;&lt;/p&gt;
+&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#_1"&gt;前言&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_2"&gt;進入正題&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#_3"&gt;開發環境設定&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#issue"&gt;找 issue 解&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_5"&gt;開始修改到完成修改&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_6"&gt;除了開發以外還可以做什麼&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_7"&gt;其他資源&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_8"&gt;雜談&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="_1"&gt;前言&lt;/h2&gt;
+&lt;p&gt;這次很開心終於有 CPython 的核心開發者，高天跟 DongHee 來台灣帶 CPython 的開發&lt;br&gt;
+為了讓他們可以專注帶已經進入狀況的開發者們更快進入 CPython 的開發&lt;br&gt;
+PyCon Taiwan 這邊也有人會帶初次接觸的人，快速設定好環境&lt;br&gt;
+而這次那個人就是我&lt;/p&gt;
+&lt;p&gt;&lt;img alt="chi" src="/images/posts-image/2025-cpython-contribution-101/chi.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;這篇文章就是明天衝刺開發要用的筆記&lt;br&gt;
+&lt;del&gt;雖然我平常自己帶 Airflow 都沒這麼認真&lt;/del&gt;&lt;/p&gt;
+&lt;h2 id="_2"&gt;進入正題&lt;/h2&gt;
+&lt;h3 id="_3"&gt;開發環境設定&lt;/h3&gt;
+&lt;p&gt;以下以 macOS 為例，畢竟我也沒其他系統&lt;br&gt;
+如果是 Linux，反正都用 Linux 了，這些小問題一定解得動&lt;br&gt;
+但如果是 Windows，我只能&lt;br&gt;
+&lt;img alt="oshiyawaseni" src="/images/posts-image/2025-cpython-contribution-101/oshiyawaseni.jpg"&gt;&lt;br&gt;
+（或者請你參考 &lt;a href="https://devguide.python.org/"&gt;Python Developer’s Guide&lt;/a&gt; ）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先將 Git 設定好（macOS 應該是預設就有吧 🤔）&lt;/li&gt;
+&lt;li&gt;將 &lt;a href="https://github.com/python/cpython/"&gt;CPython&lt;/a&gt; Fork 到你的 GitHub&lt;br&gt;
+&lt;img alt="fork" src="/images/posts-image/2025-cpython-contribution-101/fork.jpg"&gt;&lt;/li&gt;
+&lt;li&gt;Clone 專案到本地端&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/&amp;lt;your_username&amp;gt;/cpython
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;cpython
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;建置你的 CPython (macOS only)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;./configure&lt;span class="w"&gt; &lt;/span&gt;--with-pydebug&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;-j8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;跑測試 (macOS only)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;./python.exe&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-j8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;沒錯，你沒看錯&lt;br&gt;
+只有 macOS 需要 &lt;code&gt;.exe&lt;/code&gt;，&lt;br&gt;
+為了跟 &lt;code&gt;python&lt;/code&gt; 這個資料夾做區別&lt;/p&gt;
+&lt;p&gt;這幾步都跑過，開發環境大致上就沒問題了&lt;/p&gt;
+&lt;h3 id="issue"&gt;找 issue 解&lt;/h3&gt;
+&lt;p&gt;接著要去 &lt;a href="https://github.com/python/cpython/issues"&gt;CPython issues&lt;/a&gt; 的大海中找到適合自己的 issue&lt;br&gt;
+建議先找&lt;a href="https://github.com/python/cpython/issues?q=is%3Aissue%20state%3Aopen%20label%3Aeasy%20no%3Aassignee"&gt;有 Easy 標籤，並且沒有被指派的 issues&lt;/a&gt;&lt;br&gt;
+如果已經有人發 PR 了，就不要再做一次&lt;/p&gt;
+&lt;p&gt;當然也可能發現還沒被發出來的問題&lt;br&gt;
+這時候應該要先發 GitHub Issue&lt;br&gt;
+敘述問題，最重要的是遇到問題的環境，如何重現&lt;br&gt;
+但繁瑣的小問題，像是當英文小老師修錯字就可以不發 issue 直接發 PR&lt;/p&gt;
+&lt;p&gt;之前參加的衝刺開發的觀察&lt;br&gt;
+大多初次參與 CPython 的貢獻者都是以文件貢獻為主&lt;br&gt;
+也可以先找找看有 &lt;a href="https://github.com/python/cpython/issues?q=sort%3Aupdated-desc+state%3Aopen+label%3Adocs"&gt;Docs&lt;/a&gt; 標籤的 issue&lt;br&gt;
+要如何編譯文件可以參考 &lt;a href="https://devguide.python.org/documentation/start-documenting/"&gt;Documentation - Getting Started&lt;/a&gt;&lt;br&gt;
+如果你是 *nix 系統，而且是懶人的話，指令下收&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Doc
+make&lt;span class="w"&gt; &lt;/span&gt;venv
+make&lt;span class="w"&gt; &lt;/span&gt;html
+make&lt;span class="w"&gt; &lt;/span&gt;check
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;除此之外這些是我在各處收集到的，各路大大的貢獻建議 &lt;del&gt;跟一些我的廢話&lt;/del&gt;&lt;/p&gt;
+&lt;h4 id="tp"&gt;TP&lt;/h4&gt;
+&lt;p&gt;TP 大大在上次 CPython 工作坊給的建議&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果有人有興趣開始貢獻&lt;/p&gt;
+&lt;p&gt;CPython issues:&lt;br&gt;
+&lt;a href="https://github.com/python/cpython/issues"&gt;https://github.com/python/cpython/issues&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可以找有 easy label 的開始研究&lt;br&gt;
+這類問題很多都已經有人嘗試過，可以看看是不是已經有人發了 PR 只是還沒 merge&lt;br&gt;
+如果有就不要再做一次，不過可以考慮協助 review PR&lt;/p&gt;
+&lt;p&gt;很多 easy 也會有 docs label，代表是文件相關&lt;br&gt;
+要做這類貢獻的話需要 build docs 才知道你改的結果&lt;br&gt;
+參考 &lt;a href="https://devguide.python.org/documentation/start-documenting/"&gt;https://devguide.python.org/documentation/start-documenting/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我另外找了幾個簡單主題，有興趣的可以試試看&lt;/p&gt;
+&lt;p&gt;沒有標 docs 不過其實是文件相關 &lt;a href="https://github.com/python/cpython/issues/56959"&gt;https://github.com/python/cpython/issues/56959&lt;/a&gt;&lt;br&gt;
+算是牽涉滿廣的問題，有興趣帶回家做的可以試試 &lt;a href="https://github.com/python/cpython/issues/67928"&gt;https://github.com/python/cpython/issues/67928&lt;/a&gt;&lt;br&gt;
+已經有人發了 PR 不過放棄了，可以根據他的 PR 接過來做 &lt;a href="https://github.com/python/cpython/pull/19109"&gt;https://github.com/python/cpython/pull/19109&lt;/a&gt;&lt;br&gt;
+同上，可以考慮接過來做 &lt;a href="https://github.com/python/cpython/pull/1011"&gt;https://github.com/python/cpython/pull/1011&lt;/a&gt;&lt;br&gt;
+好像沒人在做 (有一些很古老的 patch 可以參考) &lt;a href="https://github.com/python/cpython/issues/53891"&gt;https://github.com/python/cpython/issues/53891&lt;/a&gt;&lt;br&gt;
+三年沒更新了，應該可以接著做 &lt;a href="https://github.com/python/cpython/pull/30086"&gt;https://github.com/python/cpython/pull/30086&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;或在 Python Taiwan Discord 伺服器的 &lt;code&gt;🏃｜cpython&lt;/code&gt; 頻道可以翻到原文&lt;/p&gt;
+&lt;h4 id="_4"&gt;高天&lt;/h4&gt;
+&lt;p&gt;高天大大建議大家先看自己有興趣的函式庫，再去找相關的 issue&lt;br&gt;
+&lt;a href="https://github.com/python/cpython/issues?q=sort%3Aupdated-desc+state%3Aopen+label%3Adocs"&gt;Docs&lt;/a&gt; 雖然技術要求不高，但吃表達能力跟語言能力，他也比較少碰&lt;/p&gt;
+&lt;p&gt;我自己最初碰 CPython 也是從可能比較簡單的函式庫 &lt;code&gt;json&lt;/code&gt; 下手&lt;br&gt;
+唯一一個開過的 PR 也是延伸 &lt;code&gt;json&lt;/code&gt; 的功能&lt;br&gt;
+（雖然最後沒合併，到現在好像還是開放 issue）&lt;br&gt;
+文件的部分則是有在 EuroPython 2025 聽到朋友抱怨&lt;br&gt;
+只為了改六行文件，花了他一整天，實在很挫折&lt;br&gt;
+雖然第二天的衝刺開發他還是乖乖地又回去貢獻 CPython 了 😆&lt;/p&gt;
+&lt;h4 id="tachibana"&gt;Tachibana さん&lt;/h4&gt;
+&lt;p&gt;Tachibana さん在 PyCon US 的時候聽到有 &lt;a href="https://github.com/python/cpython/issues?q=sort%3Aupdated-desc%20is%3Aissue%20is%3Aopen%20label%3Atopic-repl"&gt;topic-repl&lt;/a&gt; 標籤的 issue，可能比較好解&lt;br&gt;
+我們猜應該是比較新，所以簡單的 issue 還沒被解完&lt;/p&gt;
+&lt;p&gt;順帶一提 Tachibana さん在 PyCon TW 2025 Day 1 有酷酷的演講&lt;/p&gt;
+&lt;p&gt;&lt;img alt="tachibana" src="/images/posts-image/2025-cpython-contribution-101/tachibana.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;雖然我聽不到，要去 PyCon JP 2025 才能聽了&lt;/p&gt;
+&lt;h3 id="_5"&gt;開始修改到完成修改&lt;/h3&gt;
+&lt;p&gt;如果編輯器有設定自動修正格式的話，建議關掉&lt;br&gt;
+避免改到不應該動的程式碼&lt;br&gt;
+CPython 本身沒有用 Ruff，其他的風格該怎麼寫就讀一下的空氣吧&lt;/p&gt;
+&lt;p&gt;如果成功完成了程式碼的修改，可以透過這些指令來測試&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# macOS only&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 建置你的 CPython&lt;/span&gt;
+./configure&lt;span class="w"&gt; &lt;/span&gt;--with-pydebug&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;-j8
+
+&lt;span class="c1"&gt;# 執行修改過的 CPython 做人工測試&lt;/span&gt;
+./python.text
+
+&lt;span class="c1"&gt;# 跑測試&lt;/span&gt;
+./python.text&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-j8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;如果一切都沒問題，就可以開新的 Git 分支&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;checkout&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;fix-issue-12345&lt;span class="w"&gt; &lt;/span&gt;main
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;接著做 patchcheck&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;make&lt;span class="w"&gt; &lt;/span&gt;patchcheck
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;再來就可以發 Pull Request 到 &lt;a href="https://github.com/python/cpython/"&gt;CPython&lt;/a&gt; 了&lt;br&gt;
+標題通常會以 &lt;code&gt;gh-12345: Fix some bug in spam module&lt;/code&gt; 這樣的格式&lt;/p&gt;
+&lt;p&gt;至於最後一步的 &lt;code&gt;Misc/NEWS.d&lt;/code&gt;，我就不是很確定了&lt;br&gt;
+我看最新的幾隻 PRs 都沒有加&lt;/p&gt;
+&lt;p&gt;如果是第一次貢獻 CPython，會需要簽 Contributor Licensing Agreement (CLA)&lt;br&gt;
+流程可以參考 &lt;a href="https://devguide.python.org/getting-started/pull-request-lifecycle/#cla"&gt;Licensing&lt;/a&gt;&lt;br&gt;
+沒有簽的話，發完 PR， CI 會提醒你要簽&lt;/p&gt;
+&lt;h3 id="_6"&gt;除了開發以外還可以做什麼&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;審閱 &lt;a href="https://github.com/python/cpython/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aopen+-is%3Adraft+"&gt;PR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;分類 issue（參考 &lt;a href="https://devguide.python.org/triage/"&gt;Issues and Triaging&lt;/a&gt;）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這兩步都可以讓大家比較容易知道整個開發流程大致上是怎麼進行&lt;br&gt;
+也是專案中一直都會需要有人做，但可能沒那麼被重視的事&lt;br&gt;
+畢竟能讓自己的程式碼進入專案，聽起來就比較厲害&lt;/p&gt;
+&lt;h3 id="_7"&gt;其他資源&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=WGXXxGLBVF4"&gt;Keynote: You don’t have to be a compiler engineer to work on Python — Savannah Bailey&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;Savannah 今年在 EuroPython 有分享了她成為 CPython 核心開發者的心路歷程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://savannah.dev/posts/how-your-code-runs-in-a-jit-build/"&gt;How JIT builds of CPython actually work&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;如果對 JIT 有興趣，Savannah 最近也寫了相關的介紹文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pythonbook.cc/chapters/cpython/introduction"&gt;來讀 CPython 原始碼&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;龍哥去年鐵人賽的文章，雖然 3.12 離現在 main 的 3.15 有幾個版本了，但...概念應該還是通用吧&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="_8"&gt;雜談&lt;/h2&gt;
+&lt;p&gt;今年邀請到 Donghee Na 來擔任 Keynote 講者&lt;br&gt;
+Kwon Han 也一直提到希望能在台灣辦 CPython 的衝刺開發&lt;br&gt;
+龍哥去年又在鐵人賽寫了 &lt;a href="https://pythonbook.cc/chapters/cpython/introduction"&gt;來讀 CPython 原始碼&lt;/a&gt;&lt;br&gt;
+高天也剛好會來參加 PyCon Taiwan 2025&lt;br&gt;
+總覺得今年是必須得做這些事的天時地利人和&lt;/p&gt;
+&lt;p&gt;說是這麼說，但我好像也就是在前期稍微推進了點事情&lt;br&gt;
+最後我頻寬有限，稍微有點沒力了&lt;br&gt;
+只能在有限的精力下盡可能的小力小力的推&lt;br&gt;
+最後還是由 PyCon TW 最強的，獲得世界認可的 PSF Fellow Winnie Ke 一肩扛下&lt;br&gt;
+👉 &lt;a href="https://pyfound.blogspot.com/2024/10/announcing-python-software-foundation.html"&gt;Announcing Python Software Foundation Fellow Members for Q2 2024! 🎉&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;除此之外，她在官網上的自我介紹是這樣寫的&lt;br&gt;
+&lt;img alt="winnie" src="/images/posts-image/2025-cpython-contribution-101/winnie.jpg"&gt;&lt;br&gt;
+有 C，有 Python&lt;br&gt;
+看來劍指 CPython 核心開發者的意圖是相當明顯了&lt;/p&gt;
+&lt;hr&gt;</content><category term="Tech"/><category term="Python"/><category term="CPython"/></entry><entry><title>DAG 即將從 Airflow 移除</title><link href="https://blog.wei-lee.me/posts/tech/2025/09/removing-DAG-from-airflow" rel="alternate"/><published>2025-09-04T18:45:00+08:00</published><updated>2025-09-04T18:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-09-04:/posts/tech/2025/09/removing-DAG-from-airflow</id><summary type="html">&lt;p&gt;突然覺得爛新聞的聳動標題很適合這次的生情報 😆&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;突然覺得爛新聞的聳動標題很適合這次的生情報 😆&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -11520,211 +11712,4 @@ python&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;PERSONAL_TOKEN&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;${{ secrets.PERSONAL_ACCESS_TOKEN }}&lt;/span&gt;
 &lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;PUBLISH_BRANCH&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;master&lt;/span&gt;
 &lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;PUBLISH_DIR&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;./output&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Tech"/><category term="Python"/><category term="GitHub Action"/><category term="Blog"/><category term="CI/CD"/></entry><entry><title>EDBT-ICDT 2018</title><link href="https://blog.wei-lee.me/posts/tech/2020/01/edbt-icdt-2018" rel="alternate"/><published>2020-01-03T15:30:00+08:00</published><updated>2020-01-03T15:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2020-01-03:/posts/tech/2020/01/edbt-icdt-2018</id><summary type="html">&lt;p&gt;整理筆記時，翻到兩年前去研討會的筆記&lt;br&gt;
-想說放著也不會增值，就整理出來了&lt;br&gt;
-雖然大部分的內容的印象都已經有點模糊了&lt;br&gt;
-不過就加減把當初的筆記湊起來&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;整理筆記時，翻到兩年前去研討會的筆記&lt;br&gt;
-想說放著也不會增值，就整理出來了&lt;br&gt;
-雖然大部分的內容的印象都已經有點模糊了&lt;br&gt;
-不過就加減把當初的筆記湊起來&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;p&gt;當時我覺得最有趣的論文是 &lt;a href="http://www.vldb.org/pvldb/vol9/p1465-milo.pdf"&gt;Interactive Rule Refinement for Fraud Detection.&lt;/a&gt;&lt;br&gt;
-不過竟然沒有做到太多筆記&lt;/p&gt;
-&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#day-1-keynote"&gt;Day 1 - Keynote&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#large-scale-machine-learning-where-do-relational-systems-fit-in-by-chris-jermaine"&gt;Large Scale Machine Learning: Where Do Relational Systems Fit In? (by Chris Jermaine)&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#ml-vs-ai"&gt;ML vs AI&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#intro-to-ml"&gt;Intro to ML&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#take-home-point"&gt;Take-Home Point&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#detecting-database-file-tampering-through-page-carving"&gt;Detecting Database File Tampering through Page Carving&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#extracting-statistical-graph-features-for-accurate-and-efficient-time-series-classification"&gt;Extracting Statistical Graph Features for Accurate and Efficient Time Series Classification&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id="day-1-keynote"&gt;Day 1 - Keynote&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;In theoretical CS&lt;ul&gt;
-&lt;li&gt;Polynomial time → easy/fast&lt;ul&gt;
-&lt;li&gt;However, that's not always the case&lt;/li&gt;
-&lt;li&gt;e.g., &lt;span class="math"&gt;\(O(n^{100})\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;When &lt;code&gt;n&lt;/code&gt; grows, even &lt;span class="math"&gt;\(O(n^2)\)&lt;/span&gt; is not efficient&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;We're stuck on many problems even just in &lt;span class="math"&gt;\(O(n^2)\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;No &lt;span class="math"&gt;\(N^{2-\epsilon}\)&lt;/span&gt; time algorithms known for&lt;ul&gt;
-&lt;li&gt;String matching&lt;/li&gt;
-&lt;li&gt;computational geometry&lt;/li&gt;
-&lt;li&gt;graph problem in sparse graphs&lt;/li&gt;
-&lt;li&gt;many problems from database&lt;/li&gt;
-&lt;li&gt;many other problems&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Why are we stuck?&lt;/strong&gt;&lt;ul&gt;
-&lt;li&gt;The traditional hardness in complexity tells us little about runtime&lt;/li&gt;
-&lt;li&gt;fine-grained hardness idea&lt;ol&gt;
-&lt;li&gt;identify key hard problem&lt;/li&gt;
-&lt;li&gt;......&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="large-scale-machine-learning-where-do-relational-systems-fit-in-by-chris-jermaine"&gt;Large Scale Machine Learning: Where Do Relational Systems Fit In? (by Chris Jermaine)&lt;/h2&gt;
-&lt;p&gt;Currently, ML community cares about new models instead of theory and fundamental ML design&lt;/p&gt;
-&lt;h3 id="ml-vs-ai"&gt;ML vs AI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;ML is one approach to AI&lt;/li&gt;
-&lt;li&gt;Classic AI: a programmer/expert imparting knowledge to a system&lt;/li&gt;
-&lt;li&gt;ML is fundamentally statistical&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="intro-to-ml"&gt;Intro to ML&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Distributed ML&lt;ul&gt;
-&lt;li&gt;Most ML systems use a "parameter server" model&lt;ul&gt;
-&lt;li&gt;Essentially a distributed key-value pair&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Negatives&lt;ul&gt;
-&lt;li&gt;Parameter server compute model very limiting&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Data Parallel ML&lt;ul&gt;
-&lt;li&gt;Each compute server runs same computation on different data&lt;/li&gt;
-&lt;li&gt;Global state updated via aggregation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="want-to-scale-out-to-speed-up-learning"&gt;Want to scale out to speed up learning?&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;scale out ineffective in data parallel param server&lt;ul&gt;
-&lt;li&gt;no easy way to add machines and have a graph execute faster&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Only easy way to scale out is to add compute servers&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="take-home-point"&gt;Take-Home Point&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Current ML systems are &lt;strong&gt;easily&lt;/strong&gt; applicable only to&lt;ul&gt;
-&lt;li&gt;Relatively small model problems&lt;/li&gt;
-&lt;li&gt;That is run on a single machine&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="detecting-database-file-tampering-through-page-carving"&gt;Detecting Database File Tampering through Page Carving&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Attack Vector: File Tampering&lt;ul&gt;
-&lt;li&gt;Occurs at the OS level → outside DBMS control&lt;ul&gt;
-&lt;li&gt;Bypass DBMS control&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Page Deconstruction&lt;ul&gt;
-&lt;li&gt;Page Header&lt;ul&gt;
-&lt;li&gt;Checksum&lt;/li&gt;
-&lt;li&gt;PageID&lt;/li&gt;
-&lt;li&gt;Row Count&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;DBStorageAuditor&lt;ul&gt;
-&lt;li&gt;Goal: find inconsistency in storage&lt;ul&gt;
-&lt;li&gt;which is created by direct file manipulation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="extracting-statistical-graph-features-for-accurate-and-efficient-time-series-classification"&gt;Extracting Statistical Graph Features for Accurate and Efficient Time Series Classification&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Time series: Any data that is ordered&lt;/li&gt;
-&lt;li&gt;Time Series Classification&lt;ul&gt;
-&lt;li&gt;similarity-based kNN (e.g., kNN-ED, kNN-DTW)&lt;ul&gt;
-&lt;li&gt;similarity can be unreliable&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Shaplets&lt;ul&gt;
-&lt;li&gt;high computation complexity&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Why multiscale&lt;ul&gt;
-&lt;li&gt;sometimes global features are more important while sometimes local features are more important&lt;/li&gt;
-&lt;li&gt;in this research, both global and local are considered&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Visibility Graphs&lt;/li&gt;
-&lt;li&gt;Multiscale Visibility Graphs&lt;/li&gt;
-&lt;/ul&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="Tech"/><category term="Conference"/></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Tech"/><category term="Python"/><category term="GitHub Action"/><category term="Blog"/><category term="CI/CD"/></entry></feed>
