@@ -1,6 +1,7 @@
 Title: 貢獻 CPython 101
 Subtitle: CPython != Cython
 Date: 2025-09-04 23:50
+Modified: 2025-09-05 11:30
 Category: Tech
 Tags: Python, CPython
 Slug: contribute-to-cpython-your-first-step
@@ -30,6 +31,16 @@ PyCon Taiwan 這邊也有人會帶初次接觸的人，快速設定好環境
 ~~雖然我平常自己帶 Airflow 都沒這麼認真~~
 
 ## 進入正題
+
+### 重新設定對衝刺開發的期待
+這不是工作坊，也不是教學
+所以環境設定完後，就是大家自己找 issue 開始做
+
+以 CPython 來說
+如果能在衝刺開發的現場成功設定完環境，就能算是及格了
+能成功重現錯誤，就算相當不錯了
+能成功發出一個 PR ，對於一個初心者，就太成功了！
+（摘要自高天當天的分享）
 
 ### 開發環境設定
 以下以 macOS 為例，畢竟我也沒其他系統
@@ -68,7 +79,10 @@ cd cpython
 
 ### 找 issue 解
 接著要去 [CPython issues] 的大海中找到適合自己的 issue
-建議先找[有 Easy 標籤，並且沒有被指派的 issues][easy-unassigned]
+~~建議先找[有 Easy 標籤，並且沒有被指派的 issues][easy-unassigned]~~
+*高天後來建議不找 Easy 標籤*
+*因為做標籤的人沒有足夠的心力把標籤標好*
+*所以可能漏掉簡單的任務，或者只是把看起來簡單（但其實很難）的標成 Easy*
 如果已經有人發 PR 了，就不要再做一次
 
 當然也可能發現還沒被發出來的問題
@@ -153,10 +167,10 @@ CPython 本身沒有用 Ruff，其他的風格該怎麼寫就讀一下的空氣�
 ./configure --with-pydebug && make -j8
 
 # 執行修改過的 CPython 做人工測試
-./python.text
+./python.exe
 
 # 跑測試
-./python.text -m test -j8
+./python.exe -m test -j8
 ```
 
 如果一切都沒問題，就可以開新的 Git 分支
