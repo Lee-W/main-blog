@@ -58,7 +58,7 @@
 <meta content="https://blog.wei-lee.me/posts/tech/2025/09/contribute-to-cpython-your-first-step" prefix="og: http://ogp.me/ns#" property="og:url"/>
 <meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
 <meta content="2025-09-04 23:50:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
-<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="2025-09-05 11:30:00+08:00" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
 <meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
 <meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
 <meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
@@ -78,7 +78,7 @@
   "name": "貢獻 CPython 101 - CPython != Cython",
   "headline": "貢獻 CPython 101 - CPython != Cython",
   "datePublished": "2025-09-04 23:50:00+08:00",
-  "dateModified": "",
+  "dateModified": "2025-09-05 11:30:00+08:00",
   "author": {
     "@type": "Person",
     "name": "Wei Lee",
@@ -159,6 +159,7 @@
             Wei Lee
           </h4>
 <time datetime="2025/09/04 - Thu">2025/09/04 - Thu</time>
+          • <time datetime="2025/09/05 - Fri"> Updated on 2025/09/05 - Fri</time>
           • 2 min read
         </div>
 <div class="post-cover cover">
@@ -181,14 +182,15 @@
 <ul>
 <li><a href="#_1">前言</a></li>
 <li><a href="#_2">進入正題</a><ul>
-<li><a href="#_3">開發環境設定</a></li>
+<li><a href="#_3">重新設定對衝刺開發的期待</a></li>
+<li><a href="#_4">開發環境設定</a></li>
 <li><a href="#issue">找 issue 解</a></li>
-<li><a href="#_5">開始修改到完成修改</a></li>
-<li><a href="#_6">除了開發以外還可以做什麼</a></li>
-<li><a href="#_7">其他資源</a></li>
+<li><a href="#_6">開始修改到完成修改</a></li>
+<li><a href="#_7">除了開發以外還可以做什麼</a></li>
+<li><a href="#_8">其他資源</a></li>
 </ul>
 </li>
-<li><a href="#_8">雜談</a></li>
+<li><a href="#_9">雜談</a></li>
 </ul>
 </div>
 <h2 id="_1">前言</h2>
@@ -200,7 +202,15 @@ PyCon Taiwan 這邊也有人會帶初次接觸的人，快速設定好環境<br/
 <p>這篇文章就是明天衝刺開發要用的筆記<br/>
 <del>雖然我平常自己帶 Airflow 都沒這麼認真</del></p>
 <h2 id="_2">進入正題</h2>
-<h3 id="_3">開發環境設定</h3>
+<h3 id="_3">重新設定對衝刺開發的期待</h3>
+<p>這不是工作坊，也不是教學<br/>
+所以環境設定完後，就是大家自己找 issue 開始做</p>
+<p>以 CPython 來說<br/>
+如果能在衝刺開發的現場成功設定完環境，就能算是及格了<br/>
+能成功重現錯誤，就算相當不錯了<br/>
+能成功發出一個 PR ，對於一個初心者，就太成功了！<br/>
+（摘要自高天當天的分享）</p>
+<h3 id="_4">開發環境設定</h3>
 <p>以下以 macOS 為例，畢竟我也沒其他系統<br/>
 如果是 Linux，反正都用 Linux 了，這些小問題一定解得動<br/>
 但如果是 Windows，我只能<br/>
@@ -231,7 +241,10 @@ PyCon Taiwan 這邊也有人會帶初次接觸的人，快速設定好環境<br/
 <p>這幾步都跑過，開發環境大致上就沒問題了</p>
 <h3 id="issue">找 issue 解</h3>
 <p>接著要去 <a href="https://github.com/python/cpython/issues">CPython issues</a> 的大海中找到適合自己的 issue<br/>
-建議先找<a href="https://github.com/python/cpython/issues?q=is%3Aissue%20state%3Aopen%20label%3Aeasy%20no%3Aassignee">有 Easy 標籤，並且沒有被指派的 issues</a><br/>
+<del>建議先找<a href="https://github.com/python/cpython/issues?q=is%3Aissue%20state%3Aopen%20label%3Aeasy%20no%3Aassignee">有 Easy 標籤，並且沒有被指派的 issues</a></del><br/>
+<em>高天後來建議不找 Easy 標籤</em><br/>
+<em>因為做標籤的人沒有足夠的心力把標籤標好</em><br/>
+<em>所以可能漏掉簡單的任務，或者只是把看起來簡單（但其實很難）的標成 Easy</em><br/>
 如果已經有人發 PR 了，就不要再做一次</p>
 <p>當然也可能發現還沒被發出來的問題<br/>
 這時候應該要先發 GitHub Issue<br/>
@@ -269,7 +282,7 @@ make<span class="w"> </span>check
 三年沒更新了，應該可以接著做 <a href="https://github.com/python/cpython/pull/30086">https://github.com/python/cpython/pull/30086</a></p>
 </blockquote>
 <p>或在 Python Taiwan Discord 伺服器的 <code>🏃｜cpython</code> 頻道可以翻到原文</p>
-<h4 id="_4">高天</h4>
+<h4 id="_5">高天</h4>
 <p>高天大大建議大家先看自己有興趣的函式庫，再去找相關的 issue<br/>
 <a href="https://github.com/python/cpython/issues?q=sort%3Aupdated-desc+state%3Aopen+label%3Adocs">Docs</a> 雖然技術要求不高，但吃表達能力跟語言能力，他也比較少碰</p>
 <p>我自己最初碰 CPython 也是從可能比較簡單的函式庫 <code>json</code> 下手<br/>
@@ -284,7 +297,7 @@ make<span class="w"> </span>check
 <p>順帶一提 Tachibana さん在 PyCon TW 2025 Day 1 有酷酷的演講</p>
 <p><img alt="tachibana" src="/images/posts-image/2025-cpython-contribution-101/tachibana.jpg"/></p>
 <p>雖然我聽不到，要去 PyCon JP 2025 才能聽了</p>
-<h3 id="_5">開始修改到完成修改</h3>
+<h3 id="_6">開始修改到完成修改</h3>
 <p>如果編輯器有設定自動修正格式的話，建議關掉<br/>
 避免改到不應該動的程式碼<br/>
 CPython 本身沒有用 Ruff，其他的風格該怎麼寫就讀一下的空氣吧</p>
@@ -295,10 +308,10 @@ CPython 本身沒有用 Ruff，其他的風格該怎麼寫就讀一下的空氣�
 ./configure<span class="w"> </span>--with-pydebug<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>-j8
 
 <span class="c1"># 執行修改過的 CPython 做人工測試</span>
-./python.text
+./python.exe
 
 <span class="c1"># 跑測試</span>
-./python.text<span class="w"> </span>-m<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-j8
+./python.exe<span class="w"> </span>-m<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-j8
 </code></pre></div>
 <p>如果一切都沒問題，就可以開新的 Git 分支</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix-issue-12345<span class="w"> </span>main
@@ -313,7 +326,7 @@ CPython 本身沒有用 Ruff，其他的風格該怎麼寫就讀一下的空氣�
 <p>如果是第一次貢獻 CPython，會需要簽 Contributor Licensing Agreement (CLA)<br/>
 流程可以參考 <a href="https://devguide.python.org/getting-started/pull-request-lifecycle/#cla">Licensing</a><br/>
 沒有簽的話，發完 PR， CI 會提醒你要簽</p>
-<h3 id="_6">除了開發以外還可以做什麼</h3>
+<h3 id="_7">除了開發以外還可以做什麼</h3>
 <ol>
 <li>審閱 <a href="https://github.com/python/cpython/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aopen+-is%3Adraft+">PR</a></li>
 <li>分類 issue（參考 <a href="https://devguide.python.org/triage/">Issues and Triaging</a>）</li>
@@ -321,7 +334,7 @@ CPython 本身沒有用 Ruff，其他的風格該怎麼寫就讀一下的空氣�
 <p>這兩步都可以讓大家比較容易知道整個開發流程大致上是怎麼進行<br/>
 也是專案中一直都會需要有人做，但可能沒那麼被重視的事<br/>
 畢竟能讓自己的程式碼進入專案，聽起來就比較厲害</p>
-<h3 id="_7">其他資源</h3>
+<h3 id="_8">其他資源</h3>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=WGXXxGLBVF4">Keynote: You don’t have to be a compiler engineer to work on Python — Savannah Bailey</a><ul>
 <li>Savannah 今年在 EuroPython 有分享了她成為 CPython 核心開發者的心路歷程</li>
@@ -336,7 +349,7 @@ CPython 本身沒有用 Ruff，其他的風格該怎麼寫就讀一下的空氣�
 </ul>
 </li>
 </ul>
-<h2 id="_8">雜談</h2>
+<h2 id="_9">雜談</h2>
 <p>今年邀請到 Donghee Na 來擔任 Keynote 講者<br/>
 Kwon Han 也一直提到希望能在台灣辦 CPython 的衝刺開發<br/>
 龍哥去年又在鐵人賽寫了 <a href="https://pythonbook.cc/chapters/cpython/introduction">來讀 CPython 原始碼</a><br/>
