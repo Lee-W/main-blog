@@ -1,16 +1,16 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2025-08-21 10:40
+modified: 2025-10-21 22:55
 slug: about-me
 ---
 
-This is Wei Lee. I'm a
+This is Wei Lee / 李唯. I'm a
 
 * 🐍 [Pythonista](https://pycon-note.wei-lee.me/)
 * 🐍 [PyCon Taiwan](https://tw.pycon.org/) organizer
 * [commitizen-tools](https://github.com/commitizen-tools) maintainer
-* [Apache Airflow](https://github.com/apache/airflow/) committer, Taiwanese Mandarin Code Owner and Translation Owner
+* [Apache Airflow](https://github.com/apache/airflow/) PMC Member, Taiwanese Mandarin Code Owner and Translation Owner
 * `#apache-airflow` Mentor and Memebot Bot, `#commitizen` Mentor @ [OpenSource4You](https://github.com/opensource4you/)
 * [📷 Traveler][travlog]
 * ⛺ [台湾野クル▲](https://twitter.com/Taiwannokuru) 部員
@@ -163,9 +163,9 @@ I was the program executor and the leader of the teaching assistant team. I also
 
 ## Talk and Tutorial
 * Seamless Migration: Leveraging Ruff for a Smooth Transition from Airflow 2 to Airflow 3
-    * **2025/10/08** 🇺🇸 - [Airflow Summit 2025](https://airflowsummit.org/sessions/2025/seamless-migration-leveraging-ruff-for-a-smooth-transition-from-airflow-2-to-airflow-3/)
+    * **2025/10/08** 🇺🇸 - [Airflow Summit 2025](https://airflowsummit.org/sessions/2025/seamless-migration-leveraging-ruff-for-a-smooth-transition-from-airflow-2-to-airflow-3/) → [slide](https://drive.google.com/file/d/1_2cxR8uOtWOphPPUD3IuwuRPcIBU4DXV/view?usp=drive_link)
 * Unlocking the Future of Data Pipelines - Apache Airflow 3
-    * **2025/09/06** 🇹🇼 - [PyCon TW 2025](https://tw.pycon.org/2025/en-us/conference/talk/366)
+    * **2025/09/06** 🇹🇼 - [PyCon TW 2025](https://tw.pycon.org/2025/en-us/conference/talk/366) → [slide](https://speakerdeck.com/leew/unlocking-the-future-of-data-pipeline-942ed56f-0083-4e25-9e30-04850095e824)
 * Hold on! You have a data team in PyCon Taiwan!
     1. **2025/07/18** 🇨🇿 - [EuroPython 2025](https://ep2025.europython.eu/session/hold-on-you-have-a-data-team-in-pycon-taiwan) → [slide](https://speakerdeck.com/leew/hold-on-you-have-a-data-team-in-pycon-taiwan)
 * 朝聖之旅
