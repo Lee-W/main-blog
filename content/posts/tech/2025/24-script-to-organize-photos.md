@@ -2,7 +2,7 @@ Title: 讓照片自動分類的腳本
 Subtitle: 我明明一直知道照片的數量很多，為什麼沒有想過早一點整理呢。
 Date: 2025-06-06 23:15
 Category: Tech
-Tags: Python
+Tags: Python, Tool, Photo
 Slug: script-to-organize-photo
 Authors: Wei Lee
 Cover: /images/posts-image/2025-script-to-organize-photo/Frieren.jpeg
