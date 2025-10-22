@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"/><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"/><id>https://blog.wei-lee.me/</id><updated>2025-10-13T21:55:00+08:00</updated><entry><title>雖然只有一下下，還是想愛木須龍一下</title><link href="https://blog.wei-lee.me/posts/tech/2025/10/airflow-top-commit-count-moment" rel="alternate"/><published>2025-10-13T21:55:00+08:00</published><updated>2025-10-13T21:55:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-10-13:/posts/tech/2025/10/airflow-top-commit-count-moment</id><summary type="html">&lt;p&gt;之前有某一週的某個瞬間發現我很接近當週最多提交數&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"/><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"/><id>https://blog.wei-lee.me/</id><updated>2025-10-22T21:10:00+08:00</updated><entry><title>2025/09/08 - 10/19 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/10/2025-09-08-10-19-open-source-report" rel="alternate"/><published>2025-10-22T21:10:00+08:00</published><updated>2025-10-22T21:10:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-10-22:/posts/tech/2025/10/2025-09-08-10-19-open-source-report</id><summary type="html">&lt;p&gt;因為諸多研討會跟出差，中間出門了一陣子&lt;br&gt;
+加減還是有看一些 PR&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;因為諸多研討會跟出差，中間出門了一陣子&lt;br&gt;
+加減還是有看一些 PR&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;原本想說回來可以再看一些，但這次時差的影響真的比想像中的大&lt;br&gt;
+光是要抓回生活的節奏就花了不少時間&lt;br&gt;
+開始煮飯跟開始打拳真的是抓回節奏的第一步&lt;/p&gt;
+&lt;p&gt;除此之外也因為一些事，更理解了資深開源貢獻者們在各種事情的處理態度&lt;br&gt;
+不過我實在是沒體力寫小論文，所以就走了另一條&lt;br&gt;
+畢竟這是場馬拉松（至少我是這麼希望的）&lt;br&gt;
+自身的身心健康還是更為重要，這樣才能走得長久&lt;/p&gt;
+&lt;h2 id="commitizen-tools"&gt;commitizen-tools&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;分類 issues&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1586"&gt;Allow amend! prefix #1586&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1628"&gt;Add issue forms of performance improvement, test, refactoring, etc. #1628&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;合併 &lt;a href="https://github.com/commitizen-tools/commitizen/issues/1588"&gt;Allow partial customization of Conventional Commits: add/remove change types and extend configuration options #1588&lt;/a&gt; 到 &lt;a href="https://github.com/commitizen-tools/commitizen/issues/1385"&gt;Deprecate cz_customize #1385&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;發布&lt;ul&gt;
+&lt;li&gt;開 &lt;a href="https://github.com/commitizen-tools/commitizen/pull/1589"&gt;Release 4.9.0 #1589&lt;/a&gt; 以發佈 &lt;a href="https://github.com/commitizen-tools/commitizen/releases/tag/v4.9.0"&gt;4.9.0&lt;/a&gt; 然後撤銷（因為少了一個相依套件）&lt;/li&gt;
+&lt;li&gt;修復 &lt;a href="https://github.com/commitizen-tools/commitizen/issues/1602"&gt;Tag: Diverging master history breaking 4.9.1 detection with 'pre-commit autoupdate' #1602&lt;/a&gt;，並且發佈 &lt;a href="https://github.com/commitizen-tools/commitizen/releases/tag/v4.9.1"&gt;4.9.1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;審閱 PRs&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1603"&gt;test(Init): add type hint and rename variable #1603&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1607"&gt;refactor(BaseCommitizen): construct Style object directly to get rid … #1607&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1608"&gt;refactor(BaseCommitizen): remove NotImplementedError and make them ab… #1608&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1605"&gt;refactor(Init): make project_info a module and remove self.project_info #1605&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1611"&gt;style(UvProvider): fix typo in comment #1611&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1587"&gt;feat: allow amend! prefix as created by git --fixup=reword:&lt;commit&gt; #1587&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1604"&gt;fix(Init): raise InitFailedError on keyboard interrupt on pre-commit … #1604&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1627"&gt;docs: enable blank issue and add url to contact links #1627&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="github.com/commitizen-tools/commitizen/pull/1626"&gt;refactor(ConventionalCommitsCz): rewrite message method to make the p… #1626&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1619"&gt;test: rename the fixture config to mock_config for better code search #1619&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1621"&gt;test(utils): do not create file for simplicity #1621&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1624"&gt;test(changelog): remove unused timer fixture #1624&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1622"&gt;refactor(Bump): remove use of getattr #1622&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1629"&gt;refactor(cmd): unnest try except #1629&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="jordanbairdice"&gt;jordanbaird/Ice&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;加入 &lt;a href="https://github.com/jordanbaird/Ice/issues/647"&gt;[Bug]: \&amp;lt;MacOS Tahoe app crashes&amp;gt; #647&lt;/a&gt; 討論&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"/><category term="Open Source"/><category term="開源貢獻週報"/></entry><entry><title>雖然只有一下下，還是想愛木須龍一下</title><link href="https://blog.wei-lee.me/posts/tech/2025/10/airflow-top-commit-count-moment" rel="alternate"/><published>2025-10-13T21:55:00+08:00</published><updated>2025-10-13T21:55:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-10-13:/posts/tech/2025/10/airflow-top-commit-count-moment</id><summary type="html">&lt;p&gt;之前有某一週的某個瞬間發現我很接近當週最多提交數&lt;br&gt;
 但輸給了 GitHub 機器人&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;之前有某一週的某個瞬間發現我很接近當週最多提交數&lt;br&gt;
 但輸給了 GitHub 機器人&lt;/p&gt;
@@ -11511,92 +11558,4 @@ python&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://jacobian.org/2019/nov/11/python-environment-2020/"&gt;My Python Development Environment, 2020 Edition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-jp-2019/2019/10/modern-development-environments-for-pythonistas/"&gt;Modern development environments for Pythonistas - PyCon JP 2019&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"/><category term="Python"/></entry><entry><title>pipenv 和 poerty 如何處理在不同作業系統下相依套件不同</title><link href="https://blog.wei-lee.me/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent" rel="alternate"/><published>2020-02-12T11:45:00+08:00</published><updated>2020-02-12T11:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2020-02-12:/posts/tech/2020/02/how-pipenv-and-poetry-stores-if-dependencies-platform-dependent</id><summary type="html">&lt;p&gt;用 &lt;a href="https://twine.readthedocs.io/en/latest/"&gt;twine&lt;/a&gt; 上傳 Python 套件&lt;br&gt;
-在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 &lt;code&gt;jeepney&lt;/code&gt; 套件&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;用 &lt;a href="https://twine.readthedocs.io/en/latest/"&gt;twine&lt;/a&gt; 上傳 Python 套件&lt;br&gt;
-在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 &lt;code&gt;jeepney&lt;/code&gt; 套件&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#_1"&gt;問題的根源&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#pipenv"&gt;pipenv 怎麼處理&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#poetry"&gt;Poetry 怎麼處理&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_2"&gt;總結&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id="_1"&gt;問題的根源&lt;/h2&gt;
-&lt;p&gt;目前最新版 (3.1.1) 的 twine 相依於套件 &lt;a href="https://github.com/jaraco/keyring"&gt;keyring&lt;/a&gt; (&lt;a href="https://github.com/pypa/twine/blob/3.1.1/setup.cfg#L44"&gt;setup.cfg#L44&lt;/a&gt;)&lt;br&gt;
-而 keyring 在不同的作業系統中，相依的套件是不同的 (&lt;a href="https://github.com/jaraco/keyring/blob/master/setup.cfg#L30"&gt;setup.cfg#L30&lt;/a&gt;)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;install_requires&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;pywin&lt;/span&gt;&lt;span class="mi"&gt;32&lt;/span&gt;&lt;span class="n"&gt;-ctypes&lt;/span&gt;&lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;0&lt;/span&gt;&lt;span class="err"&gt;,!&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;1&lt;/span&gt;&lt;span class="err"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sys_platform&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;win32&amp;quot;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;SecretStorage&lt;/span&gt;&lt;span class="err"&gt;&amp;gt;&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="err"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sys_platform&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;linux&amp;quot;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;jeepney&lt;/span&gt;&lt;span class="err"&gt;&amp;gt;&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.4&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;2&lt;/span&gt;&lt;span class="err"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sys_platform&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;linux&amp;quot;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;importlib_metadata&lt;/span&gt;&lt;span class="err"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;python_version&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;3.8&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;我缺少的的確就是那幾個 &lt;code&gt;sys_platform=="linux"&lt;/code&gt; 的套件&lt;/p&gt;
-&lt;h2 id="pipenv"&gt;pipenv 怎麼處理&lt;/h2&gt;
-&lt;p&gt;基本上 &lt;code&gt;pipenv&lt;/code&gt; 不算有解決這個問題， &lt;code&gt;pipenv&lt;/code&gt; 只會將目前系統的所需套件寫進 &lt;strong&gt;Pipfile.lock&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;以 twine 為例，在 macOS 透過 &lt;code&gt;pipenv&lt;/code&gt; 安裝 ，跑 &lt;code&gt;pipenv graph&lt;/code&gt;指令&lt;br&gt;
-就會發現 keyring 只會直接相依於 importlib-metadata&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  - keyring [required: &amp;gt;=15.1, installed: 21.1.0]
-    - importlib-metadata [required: Any, installed: 1.5.0]
-      - zipp [required: &amp;gt;=0.5, installed: 2.2.0]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;但換到 Ubuntu 上跑，就會多了 SecretStorage 跟 jeepney&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  - keyring [required: &amp;gt;=15.1, installed: 21.1.0]
-    - importlib-metadata [required: Any, installed: 1.5.0]
-      - zipp [required: &amp;gt;=0.5, installed: 2.2.0]
-    - jeepney [required: &amp;gt;=0.4.2, installed: 0.4.2]
-    - SecretStorage [required: &amp;gt;=3, installed: 3.1.2]
-      - cryptography [required: Any, installed: 2.8]
-        - cffi [required: &amp;gt;=1.8,!=1.11.3, installed: 1.14.0]
-          - pycparser [required: Any, installed: 2.19]
-        - six [required: &amp;gt;=1.4.1, installed: 1.14.0]
-      - jeepney [required: &amp;gt;=0.4.2, installed: 0.4.2]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;這個問題也有其他人提過 (&lt;a href="https://github.com/pypa/pipenv/issues/3902"&gt;Cross-platform Pipenv.lock? #3902&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;pipenv&lt;/code&gt; 貢獻者給的建議是使用 &lt;code&gt;pipenv install --keep-outdated&lt;/code&gt;&lt;br&gt;
-但這個指令的說明是 &lt;strong&gt;Keep out-dated dependencies from being updated in Pipfile.lock.&lt;/strong&gt;&lt;br&gt;
-總覺得好像不是在這個 use case 下使用的&lt;/p&gt;
-&lt;p&gt;最後我的解決方案是是把那幾個平台相依的套件安裝進去&lt;br&gt;
-原因是在 production 的環境就是需要這幾個多安裝的套件，我在 local 多裝幾個套件好像也沒什麼差&lt;br&gt;
-但如果今天是相反的狀況，我可能就會傾向 local 跑在 docker 裡&lt;/p&gt;
-&lt;h2 id="poetry"&gt;Poetry 怎麼處理&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://python-poetry.org/"&gt;poerty&lt;/a&gt; 對這個問題則是有比較好的解法&lt;/p&gt;
-&lt;p&gt;透過 poetry 安裝 twine 後&lt;br&gt;
-產生的 &lt;strong&gt;poetry.lock&lt;/strong&gt; 會把 &lt;code&gt;marker = "sys_platform == \"linux\""&lt;/code&gt; 記錄下來&lt;br&gt;
-實際 &lt;code&gt;poetry shell&lt;/code&gt; 進去看，的確也沒多安裝這些套件&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[[package]]&lt;/span&gt;
-&lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;main&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Store and access your passwords safely.&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;keyring&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;optional&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;
-&lt;span class="n"&gt;python-versions&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;gt;=3.6&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;21.1.0&amp;quot;&lt;/span&gt;
-
-&lt;span class="k"&gt;[package.dependencies]&lt;/span&gt;
-&lt;span class="n"&gt;SecretStorage&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;gt;=3&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;jeepney&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;gt;=0.4.2&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;pywin32-ctypes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;lt;0.1.0 || &amp;gt;0.1.0,&amp;lt;0.1.1 || &amp;gt;0.1.1&amp;quot;&lt;/span&gt;
-
-&lt;span class="p"&gt;......&lt;/span&gt;
-
-&lt;span class="k"&gt;[[package]]&lt;/span&gt;
-&lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;main&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Python bindings to FreeDesktop.org Secret Service API&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;marker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;sys_platform == &lt;/span&gt;&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;&lt;span class="s2"&gt;linux&lt;/span&gt;&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;secretstorage&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;optional&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;
-&lt;span class="n"&gt;python-versions&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;gt;=3.5&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;3.1.2&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="_2"&gt;總結&lt;/h2&gt;
-&lt;p&gt;poetry 在處理不同平台相依套件不同的狀況，處理得比較好&lt;br&gt;
-它會把所有需要的資訊記錄下來，在不同的平台進行不同的安裝&lt;/p&gt;
-&lt;p&gt;如果要用 pipenv 則可以使用 &lt;code&gt;pipenv install --keep-outdated&lt;/code&gt;&lt;br&gt;
-或者就直接多安裝這幾個不是每個平台都需要的套件&lt;/p&gt;</content><category term="Tech"/><category term="Python"/><category term="Dependency"/></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"/><category term="Python"/></entry></feed>
