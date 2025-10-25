@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<title>成為 Airflow PMC Member  - "I'm the PMC." "Not yet."</title>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="origin" name="referrer"/>
+<meta content="Pelican" name="generator"/>
+<link href="https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member" rel="canonical"/>
+<!-- Feed -->
+<link href="https://blog.wei-lee.me/feeds/all.atom.xml" rel="alternate" title="Those aren't written down are meant to be forgotten Full Atom Feed" type="application/atom+xml"/>
+<!-- TODO: combine -->
+<link href="https://blog.wei-lee.me/theme/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/pagefind-ui-custom.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/code-copy.css" rel="stylesheet" type="text/css"/>
+<link href="https://blog.wei-lee.me/theme/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet"/>
+<!-- Custom fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    var siteUrl = 'https://blog.wei-lee.me';
+  </script>
+<script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+<meta content="去了 COC NA 的朋友跟大家分享 不能說自己是 PMC ，要說是 PMC Member，不然會被資深前輩們友善指導 其實也蠻合理的 就連我的不寫程式的英文老師都告訴我是 PMC Member，不是 PMC" name="description"/>
+<meta content="Wei Lee" name="author"/>
+<meta content="Airflow" name="tags"/>
+<!-- Open Graph -->
+<meta content="Those aren't written down are meant to be forgotten" prefix="og: http://ogp.me/ns#" property="og:site_name">
+<meta content="成為 Airflow PMC Member  - &quot;I'm the PMC.&quot; &quot;Not yet.&quot;" prefix="og: http://ogp.me/ns#" property="og:title">
+<meta content="去了 COC NA 的朋友跟大家分享 不能說自己是 PMC ，要說是 PMC Member，不然會被資深前輩們友善指導 其實也蠻合理的 就連我的不寫程式的英文老師都告訴我是 PMC Member，不是 PMC" prefix="og: http://ogp.me/ns#" property="og:description">
+<meta content="zh-tw" prefix="og: http://ogp.me/ns#" property="og:locale"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member" prefix="og: http://ogp.me/ns#" property="og:url"/>
+<meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
+<meta content="2025-10-25 23:25:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
+<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
+<meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
+<meta content="Airflow" prefix="og: http://ogp.me/ns#" property="article:tag"/>
+<meta content="https://blog.wei-lee.me/images/posts-image/2025-becoming-an-airflow-pmc-member/airflow-summit.jpeg" prefix="og: http://ogp.me/ns#" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@clleew" name="twitter:site"/>
+<meta content="成為 Airflow PMC Member  - &quot;I'm the PMC.&quot; &quot;Not yet.&quot;" name="twitter:title"/>
+<meta content="https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member" name="twitter:url"/>
+<meta content="https://blog.wei-lee.me/images/posts-image/2025-becoming-an-airflow-pmc-member/airflow-summit.jpeg" name="twitter:image:src"/>
+<meta content="去了 COC NA 的朋友跟大家分享 不能說自己是 PMC ，要說是 PMC Member，不然會被資深前輩們友善指導 其實也蠻合理的 就連我的不寫程式的英文老師都告訴我是 PMC Member，不是 PMC" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "成為 Airflow PMC Member - &#34;I&#39;m the PMC.&#34; &#34;Not yet.&#34;",
+  "headline": "成為 Airflow PMC Member - &#34;I&#39;m the PMC.&#34; &#34;Not yet.&#34;",
+  "datePublished": "2025-10-25 23:25:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Wei Lee",
+    "url": "https://blog.wei-lee.me/author/wei-lee.html"
+  },
+  "image": "",
+  "url": "https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member",
+  "description": "去了 COC NA 的朋友跟大家分享 不能說自己是 PMC ，要說是 PMC Member，不然會被資深前輩們友善指導 其實也蠻合理的 就連我的不寫程式的英文老師都告訴我是 PMC Member，不是 PMC"
+}
+</script>
+</meta></meta></meta></meta></link></meta><link href="https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Those aren't written down are meant to be forgotten", "item": "https://blog.wei-lee.me"}, {"@type": "ListItem", "position": 2, "name": "Posts", "item": "https://blog.wei-lee.me/posts"}, {"@type": "ListItem", "position": 3, "name": "Tech", "item": "https://blog.wei-lee.me/posts/tech"}, {"@type": "ListItem", "position": 4, "name": "2025", "item": "https://blog.wei-lee.me/posts/tech/2025"}, {"@type": "ListItem", "position": 5, "name": "10", "item": "https://blog.wei-lee.me/posts/tech/2025/10"}, {"@type": "ListItem", "position": 6, "name": "Becoming an airflow pmc member", "item": "https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member"}, {"@type": "ListItem", "position": 7, "name": "Index", "item": "https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Wei Lee"}, "publisher": {"@type": "Organization", "name": "Those aren't written down are meant to be forgotten"}, "headline": "成為 Airflow PMC Member", "about": "Tech", "datePublished": "2025-10-25 23:25"}</script><meta content="summary" name="twitter:card"/><meta content="https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member" property="og:url"/><meta content="article" property="og:type"/><meta content="成為 Airflow PMC Member" property="og:title"/><meta content="C" property="og:locale"/></head>
+<body class="category-template">
+<div class="nav-header">
+<nav aria-label="Main" class="nav-wrapper">
+<ul>
+<li class="nav-🏠 Home" role="presentation"><a href="/"><span>🏠 Home</span></a></li>
+<li class="nav-About Me" role="presentation"><a href="/pages/about-me.html"><span>About Me</span></a></li>
+<li class="nav-👨‍💻 Tech active" role="presentation"><a href="/category/tech.html"><span>👨‍💻 Tech</span></a></li>
+<li class="nav-📚 Book Digest" role="presentation"><a href="/category/book.html"><span>📚 Book Digest</span></a></li>
+<li class="nav-💬 Gossiping" role="presentation"><a href="/category/gossiping.html"><span>💬 Gossiping</span></a></li>
+<li class="nav-🏷️ Tags" role="presentation"><a href="/tags.html"><span>🏷️ Tags</span></a></li>
+<li class="nav-🗄️ Archives" role="presentation"><a href="/archives.html"><span>🗄️ Archives</span></a></li>
+<li class="nav-📚 Series" role="presentation"><a href="/series_list.html"><span>📚 Series</span></a></li>
+<li class="nav-🔍 Search" role="presentation"><a href="/search.html"><span>🔍 Search</span></a></li>
+</ul>
+<ul class="nav-meta">
+<li class="nav-linkedin"><a aria-label="Linkedin" href="https://tw.linkedin.com/in/clleew" target="_blank"><i aria-hidden="true" class="icon icon-linkedin"></i>
+<span>Linkedin</span>
+</a></li>
+<li class="nav-github"><a aria-label="Github" href="https://github.com/Lee-W" target="_blank"><i aria-hidden="true" class="icon icon-github"></i>
+<span>GitHub</span>
+</a></li>
+<li class="nav-twitter"><a aria-label="Twitter" href="https://twitter.com/clleew" target="_blank"><i aria-hidden="true" class="icon icon-twitter"></i>
+<span>Twitter</span>
+</a></li>
+<li class="nav-search" style="display: none;">
+<a title="Search">
+<i aria-hidden="true" class="icon icon-search"></i>
+<span>Search</span>
+</a>
+</li>
+</ul> </nav>
+<div class="nav-wrapper-control">
+<div class="inner">
+<a class="nav-menu" role="button"><i aria-hidden="true" class="icon icon-menu"></i>Menu</a>
+<a class="nav-search" role="button" style="display: none;" title="Search"><i aria-hidden="true" class="icon icon-search"></i></a>
+</div>
+</div>
+</div>
+<div aria-label="Close" class="nav-close" role="button"></div>
+<section class="page-wrapper" id="wrapper">
+<!-- Progressbar -->
+<div class="progress-container">
+<span class="progress-bar"></span>
+</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="post-header has-cover">
+<div class="inner">
+<span class="post-info">
+<span class="post-type">Article</span>
+<span class="post-count">Tech</span>
+</span>
+<h1 class="post-title">
+            成為 Airflow PMC Member
+            <br/>
+<small class="post-subtitle-white">"I'm the PMC." "Not yet."</small>
+</h1>
+<div class="post-meta">
+<div class="post-meta-avatars">
+<figure class="post-meta-avatar avatar">
+<a class="author-avatar" href="https://blog.wei-lee.me/author/wei-lee.html">
+<img alt="Wei Lee" class="author-profile-image" src="https://blog.wei-lee.me//images/avatar.jpeg"/>
+</a>
+</figure>
+</div>
+<h4 class="post-meta-author">
+            Wei Lee
+          </h4>
+<time datetime="2025/10/25 - Sat">2025/10/25 - Sat</time>
+          • 2 min read
+        </div>
+<div class="post-cover cover">
+<img alt="Category Tech" src="https://blog.wei-lee.me/images/posts-image/2025-becoming-an-airflow-pmc-member/airflow-summit.jpeg"/>
+</div>
+</div>
+</header>
+<!-- Post content -->
+<main class="content" data-pagefind-body="" role="main">
+<article class="post">
+<div class="inner">
+<section class="post-content">
+<p>去了 COC NA 的朋友跟大家分享</p>
+<blockquote>
+<p>不能說自己是 PMC ，要說是 PMC Member，不然會被資深前輩們友善指導</p>
+</blockquote>
+<p>其實也蠻合理的<br/>
+就連我的不寫程式的英文老師都告訴我是 PMC Member，不是 PMC</p>
+<!--more-->
+<p>上一個做了類似的事的人，被四位絕地大師衝進辦公室逮捕<br/>
+雖然他後來當了 20 年皇帝，但最後還是被丟下去了</p>
+<h2 id="_1">不然來寫篇心得吧</h2>
+<p>最近看 <a href="https://lists.apache.org/list.html?&lt;dev@airflow.apache.org">Airflow 開發郵件群組</a>，想來盤中統計 <a href="https://lists.apache.org/thread/7mbztc6dchh73c7cnn7sjm1qtt6gj5zw">[VOTE] Finalizing “DAG” terminology for docs and blog ("dag" vs "DAG" vs "Dag")</a> 的投票數<br/>
+在 DuckDuck GO 輸入 "committer airflow" 想看到底哪些票是 binding<br/>
+結果發現前幾筆不是強者我朋友的文章，就是強者我朋友的演講</p>
+<p><img alt="duckduckgo" src="/images/posts-image/2025-becoming-an-airflow-pmc-member/duckduckgo.jpg"/></p>
+<ol>
+<li><a href="https://blog.zhu424.dev/zh-tw/open-source-contribution/becoming-an-apache-airflow-committer-from-0/">從 0 成為 Apache Airflow Committer</a></li>
+<li><a href="https://guan404ming.com/blog/0">開源之旅 - Apache Airflow Committer</a></li>
+</ol>
+<p>不知道為什麼可以這麼強 😲<br/>
+但我只能說<strong>好強</strong> 🙇</p>
+<p>許久以前有說要寫篇文章給 "給學弟妹的矽谷 AI / Software 指南"<br/>
+雖然這件事一直都有放在心上<br/>
+但直到專案都結束了，文章還是沒有寫出來<br/>
+這次總算是真的是有好好寫完心得文了</p>
+<h2 id="_2">這一切是怎麼發生的</h2>
+<h3 id="_3">收到邀請</h3>
+<p>我大概是去松山喝橘子汁前收到邀請信<br/>
+如果要接受邀請的話，請先按下不表<br/>
+在 Airflow Summit 2025 給大家一個驚喜<br/>
+那是一定沒問題<br/>
+畢竟接下來幾天我要去把島波海道接起來，也沒空大肆宣揚</p>
+<p><img alt="orange-juice" src="/images/posts-image/2025-becoming-an-airflow-pmc-member/orange-juice.jpeg"/></p>
+<p>順帶一提，這次喝到的橘子汁中，我最喜歡的是不知火</p>
+<h3 id="_4">正式公布</h3>
+<p>Airflow Summit 的 Keynote 演講結束，Jarek 宣布了此次的 PMC 和 Committer 團隊新成員</p>
+<p><img alt="annocement" src="/images/posts-image/2025-becoming-an-airflow-pmc-member/annocement.jpeg"/></p>
+<p>身為遲到仔（但其實也沒遲到），到場的時候前面都坐滿了<br/>
+只能坐在很後面，所以拍到的照片很糊<br/>
+說到這個，下次 Airflow Summit 開場應該教大家如何關門<br/>
+要離開也稍微安靜點，不是開完門後就放它在那邊撞<br/>
+吵都吵死了，到底是有什麼毛病 💢</p>
+<p>回來後，就有了這封公告信件 📩<br/>
+<a href="https://lists.apache.org/thread/02f8f85cvkk9rx9wzsmykxtqg7tbghdr">New PMC members: VIncent Beck, Wei Lee and committer: Guan Ming</a></p>
+<p>冠銘，我努力幫你澄清你叫冠銘，而不是 Guan 了<br/>
+也許你真的得改名鮭魚 🍣，大家才不會誤會 😆</p>
+<h3 id="committer-pmc-member">從 Committer 到 PMC member</h3>
+<p>查了一下，我在 2024 年 4 月成為 Airflow 的 Committer<br/>
+而一年半之後的現在，成為了 PMC Member</p>
+<p>我很有印象是在第 132 個貢獻後成為 Committer<br/>
+但這次剛好在旅遊中，沒有特別去翻，我想大概是 400 出頭吧</p>
+<p>比較有印象的貢獻，除了蹭了 TP 設計的 Dataset Alias, AIP-74, 75<br/>
+AIP-84 的某一個面向跟哲佑、 Kalyan 合作搞定<br/>
+再來就是<a href="https://docs.astral.sh/ruff/rules/#airflow-air">Ruff 的 AIR 遷移規則</a>跟 AIP-90<br/>
+雖然這兩個不是由我起頭，但最後都算由我主導完成的</p>
+<p>除此之外，大概就是幫助新朋友進入 Airflow 的貢獻吧<br/>
+從<a href="{filename}/posts/tech/2025/25-airflow-contribution-101.md">貢獻 Airflow 101 - 姑且算是個 mentor(?)...吧？</a>回顧了去年還有些死寂的 <code>#apache-airflow</code><br/>
+現在已經是很多迷途之子會來的地方了<br/>
+撐過初期死寂的最大動力，果然還是 MyGO 梗圖吧<br/>
+社團內潛伏的 GO 廚們都會浮起來一起 GO</p>
+<p><img alt="mygo-get-lost-together" src="/images/meme/mygo-get-lost-together.jpg"/></p>
+<p>玩著玩著，也讓這裡成為<a href="https://github.com/opensource4you/readme">源來適你</a>的 MyGO 分部<br/>
+時至今日， MyGO 跟 Ave Mujica 依然是 <code>#apache-airflow</code> 的參考讀物</p>
+<p><img alt="airflow-101" src="/images/posts-image/2025-becoming-an-airflow-pmc-member/airflow-101.jpg"/></p>
+<p>這次能在 Airflow Summmit 前拿到燈的娃娃，我也是相當驚訝</p>
+<p><img alt="avemujica-destiny" src="/images/meme/avemujica-destiny.jpg"/></p>
+<p><a href="https://github.com/opensource4you/readme">源來適你</a> MyGO 分部出外景!!!</p>
+<p><img alt="airflow-summit" src="/images/posts-image/2025-becoming-an-airflow-pmc-member/airflow-summit.jpeg"/></p>
+<p>佛系的部分，依然是很佛系<br/>
+願者上鉤，有意願就來玩<br/>
+我有心力就盡量幫忙，沒力了我就休息<br/>
+我如此，想來參與的人也是如此<br/>
+以自己的狀況為重<br/>
+我希望大家能在舒適的步伐下慢慢的前進<br/>
+比氣長，而不是一次消耗殆盡</p>
+<p>雖然嘉平當初也很懷疑到底要怎麼佛系<br/>
+但現在也長到 Airflow 社群認知到有一群台灣人在參與了<br/>
+能看到更多的台灣人在國際的舞台上被看到，確實是蠻值得開心的</p>
+<h3 id="_5">これから</h3>
+<p>本來想參考「路人超能 100」最終回的標題<br/>
+但想不到梗了，就只抄了後半部</p>
+<p>成為 PMC Member 之後...<br/>
+現階段還沒有太多的改變，我還是在做原本的事</p>
+<p>也許就像我當初對 Peter 問題</p>
+<blockquote>
+<p>要怎樣才能成為 Committer</p>
+</blockquote>
+<p>的回答</p>
+<blockquote>
+<p>就持續參與吧，並發揮影響力吧<br/>
+當你已經成為實質 Committer 的時候，社群會認可你的付出<br/>
+而稱號會隨之而來</p>
+</blockquote>
+<p>（類似是這樣啦，都過半年了）</p>
+<h2 id="_6">用善逸去換善意，雖然善逸會覺得到底關他什麼事</h2>
+<p>COSCUP 2025 的<a href="https://coscup.org/2025/sessions/J3NAGQ">20 週年論壇：總召視角下的開源精神</a><br/>
+Singing 是這麼說的</p>
+<blockquote>
+<p>用善意去交換善意</p>
+</blockquote>
+<p>當時的這句話讓我很有共鳴<br/>
+也讓我想起了著名薩克斯風手宮本大跟克里斯的一段對話<br/>
+宮本問了克里斯為什麼要這麼幫他</p>
+<p><img alt="be-kind-to-someone-is-just-wonderful" src="/images/meme/blue-giant-be-kind-to-someone-is-just-wonderful.jpg"/></p>
+<p>克里斯就只是在某一刻，認知到某一部分世界的運轉方式</p>
+<p><img alt="how-the-world-works" src="/images/meme/blue-giant-how-the-world-works.jpg"/></p>
+<p>但他希望他也能讓更多的地方能是這麼運轉的</p>
+<p><img alt="blue-giant-chris-3" src="/images/meme/blue-giant-chris-3.jpg"/></p>
+<p>我踏入開源的原因好像就只是這麼單純<br/>
+可能我比較笨，沒辦法想太複雜的事，哭了 😢</p>
+<p>年初跟實驗室學弟妹分享了<a href="https://speakerdeck.com/leew/20250316-ta-ru-kai-yuan-de-di-bu">踏入開源的第一步</a>，說了我走上開源這條路的故事<br/>
+大學時期，我受到工資管系學長啟蒙了開源的概念<br/>
+後來參與 SITCON、COSCUP、MOPCON，不斷地讓我泡在開源的氛圍中<br/>
+到現在主要參與的 PyCon TW，才讓一切開花結果<br/>
+一路走來受到了許多人的幫助<br/>
+特別是幾任 PyCon TW 的前主席們對我影響最深<br/>
+像是「不爽不要做」或「不要去煩惱無法掌控的事」<br/>
+也許就是這樣，我才可以佛系地走到現在吧（笑</p>
+<p>所以當開源金城武創立<a href="https://github.com/opensource4you/readme">源來適你</a>的時候<br/>
+我才盡量在有限的心力下，幫一點點忙<br/>
+想把當初收到的善意傳下去，並希望收到這些善意的人會再傳下去</p>
+<p>雖然聽起來很雞湯、很正向<br/>
+但不時還是會遇到快樂寶貝或是內政部統計少於 1% 的稀有存在<br/>
+EuroPython 2025 的 <a href="https://programme.europython.eu/europython-2025/talk/GS8GHZ/">How to deal with toxic people</a> 是這麼建議的</p>
+<p><img alt="euro-python-boxing" src="/images/posts-image/2025-becoming-an-airflow-pmc-member/euro-python-boxing.jpeg"/></p>
+<p>但我房間不大，沒辦法放沙包<br/>
+所以我的建議是忽略他們<br/>
+馬上關掉電腦，快點去看部好作品</p>
+<p>既然前面都是以樂團作品為主，就在最後推薦幾部我喜歡的幾部相關動畫吧！</p>
+<ul>
+<li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=34030">BanG Dream! It's MyGO!!!!!</a></li>
+<li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=41638">BanG Dream! Ave Mujica</a></li>
+<li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=40645">少女樂團 吶喊吧</a></li>
+<li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=42894">搖滾樂是淑女的嗜好</a></li>
+<li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=44247">歌聲是法式千層酥</a></li>
+<li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=31599">孤獨搖滾！</a></li>
+<li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=3193">K-ON！！輕音部</a></li>
+</ul>
+<p>我知道好像有些人不太喜歡 Ave Mujica<br/>
+如果你不喜歡，那我會</p>
+<p><img alt="mygo-oshiyawaseni" src="/images/meme/mygo-oshiyawaseni.jpg"/></p>
+<p>所以不要來找我吵架</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://www.kobo.com/tw/zh/ebook/blue-giant-supreme-01">BLUE GIANT SUPREME藍色巨星 歐洲篇</a></li>
+<li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=34030">BanG Dream! It's MyGO!!!!!</a></li>
+<li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=41638">BanG Dream! Ave Mujica</a></li>
+</ul>
+</section>
+<section class="post-footer">
+<div class="post-share">
+<span class="post-info-label">Share</span>
+<a aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=成為 Airflow PMC Member - &quot;I'm the PMC.&quot; &quot;Not yet.&quot;&amp;url=https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;" title="Twitter">
+<i aria-hidden="true" class="fab fa-twitter"></i>
+<span class="hidden">Twitter</span>
+</a>
+<a aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member" onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;" title="Facebook">
+<i aria-hidden="true" class="fa-brands fa-facebook"></i>
+<span class="hidden">Facebook</span>
+</a>
+<a aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member&amp;title=成為 Airflow PMC Member" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720'); return false;" title="LinkedIn">
+<i aria-hidden="true" class="fa-brands fa-linkedin"></i>
+<span class="hidden">LinkedIn</span>
+</a>
+<a aria-label="Mastodon" class="mastodon" href="https://mtd.pythonasia.org/share?text=%E6%88%90%E7%82%BA%20Airflow%20PMC%20Member%20https%3A//blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member" onclick="window.open(this.href, 'mastodon-share', 'width=930,height=720'); return false;" title="Mastodon">
+<i aria-hidden="true" class="fa-brands fa-mastodon fa-xl" style="color: #74C0FC;"></i>
+<span class="hidden">Mastodon</span>
+</a>
+<a aria-label="Email" class="email" href="mailto:?subject=成為 Airflow PMC Member&amp;body=https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member" title="Email">
+<i aria-hidden="true" class="fa-solid fa-envelope"></i>
+<span class="hidden">Email</span>
+</a>
+<div class="clear"></div>
+</div>
+<aside class="post-tags">
+<a href="https://blog.wei-lee.me/tag/airflow.html">Airflow</a> </aside>
+<div class="clear"></div>
+</section>
+<aside class="post-nav">
+<a class="post-nav-prev" href="https://blog.wei-lee.me/posts/tech/2025/10/it-matters-revised">
+<section class="post-nav-teaser">
+<i class="icon icon-arrow-right"></i>
+<h2 class="post-nav-title">ウォール・ローゼが突破された！</h2>
+<p class="post-nav-excerpt">哦，不是，是 IT Matters 的初選過了 想說源來適你粉專才發了一篇很多強者報名的貼文 我作為陪跑者的任務應該已經結束了，沒想到有通過</p>
+<p class="post-nav-meta"><time datetime="2025/10/25 - Sat">2025/10/25 - Sat</time></p>
+</section>
+</a>
+<div class="clear"></div>
+</aside>
+</div>
+<script type="text/javascript">var use_utterance = true;</script>
+<section class="post-comments">
+<script async="" crossorigin="anonymous" data-issue-term="https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member" data-label="blog-comment" data-repo="Lee-W/main-blog" data-theme="github-light" src="https://utteranc.es/client.js">
+</script>
+</section>
+</article>
+</main>
+<div class="nav-footer">
+<nav aria-label="Footer" class="nav-wrapper">
+<span class="nav-copy">Those aren't written down are meant to be forgotten © 2023
+          <a class="nav-rss" href="https://blog.wei-lee.me/feeds/all.atom.xml" target="_blank" title="RSS"><i class="icon icon-rss"></i></a>
+</span>
+<span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> • Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> •
+          <a class="menu-item js-theme" data-dark="Dark theme" data-light="Light theme" data-system="System theme" href="#">
+<span class="theme-icon"></span><span class="theme-text">System theme</span>
+</a>
+</span>
+</nav>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<!-- TODO: minify -->
+<script src="https://blog.wei-lee.me/theme/js/jquery.fitvids.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/script.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/clipboard.min.js" type="text/javascript"></script>
+<script src="https://blog.wei-lee.me/theme/js/copy-to-clipboard.js" type="text/javascript"></script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3J7XQ46QH5"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3J7XQ46QH5', { 'anonymize_ip': true });
+    </script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({
+              element: "#search",
+              showImages: false,
+          });
+      });
+  </script>
+<!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet"/>
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre code";
+    var rstSelector=".highlight pre code";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+</html>

@@ -1,5 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"/><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"/><id>https://blog.wei-lee.me/</id><updated>2025-10-25T11:20:00+08:00</updated><entry><title>ウォール・ローゼが突破された！</title><link href="https://blog.wei-lee.me/posts/tech/2025/10/it-matters-revised" rel="alternate"/><published>2025-10-25T11:20:00+08:00</published><updated>2025-10-25T11:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-10-25:/posts/tech/2025/10/it-matters-revised</id><summary type="html">&lt;p&gt;哦，不是，是 &lt;a href="https://award.ima.org.tw/"&gt;IT Matters&lt;/a&gt; 的初選過了&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"/><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"/><id>https://blog.wei-lee.me/</id><updated>2025-10-25T23:25:00+08:00</updated><entry><title>成為 Airflow PMC Member</title><link href="https://blog.wei-lee.me/posts/tech/2025/10/becoming-an-airflow-pmc-member" rel="alternate"/><published>2025-10-25T23:25:00+08:00</published><updated>2025-10-25T23:25:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-10-25:/posts/tech/2025/10/becoming-an-airflow-pmc-member</id><summary type="html">&lt;p&gt;去了 COC NA 的朋友跟大家分享&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不能說自己是 PMC ，要說是 PMC Member，不然會被資深前輩們友善指導&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其實也蠻合理的&lt;br&gt;
+就連我的不寫程式的英文老師都告訴我是 PMC Member，不是 PMC&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;去了 COC NA 的朋友跟大家分享&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不能說自己是 PMC ，要說是 PMC Member，不然會被資深前輩們友善指導&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其實也蠻合理的&lt;br&gt;
+就連我的不寫程式的英文老師都告訴我是 PMC Member，不是 PMC&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;上一個做了類似的事的人，被四位絕地大師衝進辦公室逮捕&lt;br&gt;
+雖然他後來當了 20 年皇帝，但最後還是被丟下去了&lt;/p&gt;
+&lt;h2 id="_1"&gt;不然來寫篇心得吧&lt;/h2&gt;
+&lt;p&gt;最近看 &lt;a href="https://lists.apache.org/list.html?&amp;lt;dev@airflow.apache.org"&gt;Airflow 開發郵件群組&lt;/a&gt;，想來盤中統計 &lt;a href="https://lists.apache.org/thread/7mbztc6dchh73c7cnn7sjm1qtt6gj5zw"&gt;[VOTE] Finalizing “DAG” terminology for docs and blog ("dag" vs "DAG" vs "Dag")&lt;/a&gt; 的投票數&lt;br&gt;
+在 DuckDuck GO 輸入 "committer airflow" 想看到底哪些票是 binding&lt;br&gt;
+結果發現前幾筆不是強者我朋友的文章，就是強者我朋友的演講&lt;/p&gt;
+&lt;p&gt;&lt;img alt="duckduckgo" src="/images/posts-image/2025-becoming-an-airflow-pmc-member/duckduckgo.jpg"&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://blog.zhu424.dev/zh-tw/open-source-contribution/becoming-an-apache-airflow-committer-from-0/"&gt;從 0 成為 Apache Airflow Committer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://guan404ming.com/blog/0"&gt;開源之旅 - Apache Airflow Committer&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;不知道為什麼可以這麼強 😲&lt;br&gt;
+但我只能說&lt;strong&gt;好強&lt;/strong&gt; 🙇&lt;/p&gt;
+&lt;p&gt;許久以前有說要寫篇文章給 "給學弟妹的矽谷 AI / Software 指南"&lt;br&gt;
+雖然這件事一直都有放在心上&lt;br&gt;
+但直到專案都結束了，文章還是沒有寫出來&lt;br&gt;
+這次總算是真的是有好好寫完心得文了&lt;/p&gt;
+&lt;h2 id="_2"&gt;這一切是怎麼發生的&lt;/h2&gt;
+&lt;h3 id="_3"&gt;收到邀請&lt;/h3&gt;
+&lt;p&gt;我大概是去松山喝橘子汁前收到邀請信&lt;br&gt;
+如果要接受邀請的話，請先按下不表&lt;br&gt;
+在 Airflow Summit 2025 給大家一個驚喜&lt;br&gt;
+那是一定沒問題&lt;br&gt;
+畢竟接下來幾天我要去把島波海道接起來，也沒空大肆宣揚&lt;/p&gt;
+&lt;p&gt;&lt;img alt="orange-juice" src="/images/posts-image/2025-becoming-an-airflow-pmc-member/orange-juice.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;順帶一提，這次喝到的橘子汁中，我最喜歡的是不知火&lt;/p&gt;
+&lt;h3 id="_4"&gt;正式公布&lt;/h3&gt;
+&lt;p&gt;Airflow Summit 的 Keynote 演講結束，Jarek 宣布了此次的 PMC 和 Committer 團隊新成員&lt;/p&gt;
+&lt;p&gt;&lt;img alt="annocement" src="/images/posts-image/2025-becoming-an-airflow-pmc-member/annocement.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;身為遲到仔（但其實也沒遲到），到場的時候前面都坐滿了&lt;br&gt;
+只能坐在很後面，所以拍到的照片很糊&lt;br&gt;
+說到這個，下次 Airflow Summit 開場應該教大家如何關門&lt;br&gt;
+要離開也稍微安靜點，不是開完門後就放它在那邊撞&lt;br&gt;
+吵都吵死了，到底是有什麼毛病 💢&lt;/p&gt;
+&lt;p&gt;回來後，就有了這封公告信件 📩&lt;br&gt;
+&lt;a href="https://lists.apache.org/thread/02f8f85cvkk9rx9wzsmykxtqg7tbghdr"&gt;New PMC members: VIncent Beck, Wei Lee and committer: Guan Ming&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;冠銘，我努力幫你澄清你叫冠銘，而不是 Guan 了&lt;br&gt;
+也許你真的得改名鮭魚 🍣，大家才不會誤會 😆&lt;/p&gt;
+&lt;h3 id="committer-pmc-member"&gt;從 Committer 到 PMC member&lt;/h3&gt;
+&lt;p&gt;查了一下，我在 2024 年 4 月成為 Airflow 的 Committer&lt;br&gt;
+而一年半之後的現在，成為了 PMC Member&lt;/p&gt;
+&lt;p&gt;我很有印象是在第 132 個貢獻後成為 Committer&lt;br&gt;
+但這次剛好在旅遊中，沒有特別去翻，我想大概是 400 出頭吧&lt;/p&gt;
+&lt;p&gt;比較有印象的貢獻，除了蹭了 TP 設計的 Dataset Alias, AIP-74, 75&lt;br&gt;
+AIP-84 的某一個面向跟哲佑、 Kalyan 合作搞定&lt;br&gt;
+再來就是&lt;a href="https://docs.astral.sh/ruff/rules/#airflow-air"&gt;Ruff 的 AIR 遷移規則&lt;/a&gt;跟 AIP-90&lt;br&gt;
+雖然這兩個不是由我起頭，但最後都算由我主導完成的&lt;/p&gt;
+&lt;p&gt;除此之外，大概就是幫助新朋友進入 Airflow 的貢獻吧&lt;br&gt;
+從&lt;a href="{filename}/posts/tech/2025/25-airflow-contribution-101.md"&gt;貢獻 Airflow 101 - 姑且算是個 mentor(?)...吧？&lt;/a&gt;回顧了去年還有些死寂的 &lt;code&gt;#apache-airflow&lt;/code&gt;&lt;br&gt;
+現在已經是很多迷途之子會來的地方了&lt;br&gt;
+撐過初期死寂的最大動力，果然還是 MyGO 梗圖吧&lt;br&gt;
+社團內潛伏的 GO 廚們都會浮起來一起 GO&lt;/p&gt;
+&lt;p&gt;&lt;img alt="mygo-get-lost-together" src="/images/meme/mygo-get-lost-together.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;玩著玩著，也讓這裡成為&lt;a href="https://github.com/opensource4you/readme"&gt;源來適你&lt;/a&gt;的 MyGO 分部&lt;br&gt;
+時至今日， MyGO 跟 Ave Mujica 依然是 &lt;code&gt;#apache-airflow&lt;/code&gt; 的參考讀物&lt;/p&gt;
+&lt;p&gt;&lt;img alt="airflow-101" src="/images/posts-image/2025-becoming-an-airflow-pmc-member/airflow-101.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;這次能在 Airflow Summmit 前拿到燈的娃娃，我也是相當驚訝&lt;/p&gt;
+&lt;p&gt;&lt;img alt="avemujica-destiny" src="/images/meme/avemujica-destiny.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/opensource4you/readme"&gt;源來適你&lt;/a&gt; MyGO 分部出外景!!!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="airflow-summit" src="/images/posts-image/2025-becoming-an-airflow-pmc-member/airflow-summit.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;佛系的部分，依然是很佛系&lt;br&gt;
+願者上鉤，有意願就來玩&lt;br&gt;
+我有心力就盡量幫忙，沒力了我就休息&lt;br&gt;
+我如此，想來參與的人也是如此&lt;br&gt;
+以自己的狀況為重&lt;br&gt;
+我希望大家能在舒適的步伐下慢慢的前進&lt;br&gt;
+比氣長，而不是一次消耗殆盡&lt;/p&gt;
+&lt;p&gt;雖然嘉平當初也很懷疑到底要怎麼佛系&lt;br&gt;
+但現在也長到 Airflow 社群認知到有一群台灣人在參與了&lt;br&gt;
+能看到更多的台灣人在國際的舞台上被看到，確實是蠻值得開心的&lt;/p&gt;
+&lt;h3 id="_5"&gt;これから&lt;/h3&gt;
+&lt;p&gt;本來想參考「路人超能 100」最終回的標題&lt;br&gt;
+但想不到梗了，就只抄了後半部&lt;/p&gt;
+&lt;p&gt;成為 PMC Member 之後...&lt;br&gt;
+現階段還沒有太多的改變，我還是在做原本的事&lt;/p&gt;
+&lt;p&gt;也許就像我當初對 Peter 問題&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;要怎樣才能成為 Committer&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;的回答&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;就持續參與吧，並發揮影響力吧&lt;br&gt;
+當你已經成為實質 Committer 的時候，社群會認可你的付出&lt;br&gt;
+而稱號會隨之而來&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;（類似是這樣啦，都過半年了）&lt;/p&gt;
+&lt;h2 id="_6"&gt;用善逸去換善意，雖然善逸會覺得到底關他什麼事&lt;/h2&gt;
+&lt;p&gt;COSCUP 2025 的&lt;a href="https://coscup.org/2025/sessions/J3NAGQ"&gt;20 週年論壇：總召視角下的開源精神&lt;/a&gt;&lt;br&gt;
+Singing 是這麼說的&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用善意去交換善意&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;當時的這句話讓我很有共鳴&lt;br&gt;
+也讓我想起了著名薩克斯風手宮本大跟克里斯的一段對話&lt;br&gt;
+宮本問了克里斯為什麼要這麼幫他&lt;/p&gt;
+&lt;p&gt;&lt;img alt="be-kind-to-someone-is-just-wonderful" src="/images/meme/blue-giant-be-kind-to-someone-is-just-wonderful.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;克里斯就只是在某一刻，認知到某一部分世界的運轉方式&lt;/p&gt;
+&lt;p&gt;&lt;img alt="how-the-world-works" src="/images/meme/blue-giant-how-the-world-works.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;但他希望他也能讓更多的地方能是這麼運轉的&lt;/p&gt;
+&lt;p&gt;&lt;img alt="blue-giant-chris-3" src="/images/meme/blue-giant-chris-3.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;我踏入開源的原因好像就只是這麼單純&lt;br&gt;
+可能我比較笨，沒辦法想太複雜的事，哭了 😢&lt;/p&gt;
+&lt;p&gt;年初跟實驗室學弟妹分享了&lt;a href="https://speakerdeck.com/leew/20250316-ta-ru-kai-yuan-de-di-bu"&gt;踏入開源的第一步&lt;/a&gt;，說了我走上開源這條路的故事&lt;br&gt;
+大學時期，我受到工資管系學長啟蒙了開源的概念&lt;br&gt;
+後來參與 SITCON、COSCUP、MOPCON，不斷地讓我泡在開源的氛圍中&lt;br&gt;
+到現在主要參與的 PyCon TW，才讓一切開花結果&lt;br&gt;
+一路走來受到了許多人的幫助&lt;br&gt;
+特別是幾任 PyCon TW 的前主席們對我影響最深&lt;br&gt;
+像是「不爽不要做」或「不要去煩惱無法掌控的事」&lt;br&gt;
+也許就是這樣，我才可以佛系地走到現在吧（笑&lt;/p&gt;
+&lt;p&gt;所以當開源金城武創立&lt;a href="https://github.com/opensource4you/readme"&gt;源來適你&lt;/a&gt;的時候&lt;br&gt;
+我才盡量在有限的心力下，幫一點點忙&lt;br&gt;
+想把當初收到的善意傳下去，並希望收到這些善意的人會再傳下去&lt;/p&gt;
+&lt;p&gt;雖然聽起來很雞湯、很正向&lt;br&gt;
+但不時還是會遇到快樂寶貝或是內政部統計少於 1% 的稀有存在&lt;br&gt;
+EuroPython 2025 的 &lt;a href="https://programme.europython.eu/europython-2025/talk/GS8GHZ/"&gt;How to deal with toxic people&lt;/a&gt; 是這麼建議的&lt;/p&gt;
+&lt;p&gt;&lt;img alt="euro-python-boxing" src="/images/posts-image/2025-becoming-an-airflow-pmc-member/euro-python-boxing.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;但我房間不大，沒辦法放沙包&lt;br&gt;
+所以我的建議是忽略他們&lt;br&gt;
+馬上關掉電腦，快點去看部好作品&lt;/p&gt;
+&lt;p&gt;既然前面都是以樂團作品為主，就在最後推薦幾部我喜歡的幾部相關動畫吧！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ani.gamer.com.tw/animeVideo.php?sn=34030"&gt;BanG Dream! It's MyGO!!!!!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ani.gamer.com.tw/animeVideo.php?sn=41638"&gt;BanG Dream! Ave Mujica&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ani.gamer.com.tw/animeVideo.php?sn=40645"&gt;少女樂團 吶喊吧&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ani.gamer.com.tw/animeVideo.php?sn=42894"&gt;搖滾樂是淑女的嗜好&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ani.gamer.com.tw/animeVideo.php?sn=44247"&gt;歌聲是法式千層酥&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ani.gamer.com.tw/animeVideo.php?sn=31599"&gt;孤獨搖滾！&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ani.gamer.com.tw/animeVideo.php?sn=3193"&gt;K-ON！！輕音部&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我知道好像有些人不太喜歡 Ave Mujica&lt;br&gt;
+如果你不喜歡，那我會&lt;/p&gt;
+&lt;p&gt;&lt;img alt="mygo-oshiyawaseni" src="/images/meme/mygo-oshiyawaseni.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;所以不要來找我吵架&lt;/p&gt;
+&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.kobo.com/tw/zh/ebook/blue-giant-supreme-01"&gt;BLUE GIANT SUPREME藍色巨星 歐洲篇&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ani.gamer.com.tw/animeVideo.php?sn=34030"&gt;BanG Dream! It's MyGO!!!!!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ani.gamer.com.tw/animeVideo.php?sn=41638"&gt;BanG Dream! Ave Mujica&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"/><category term="Airflow"/></entry><entry><title>ウォール・ローゼが突破された！</title><link href="https://blog.wei-lee.me/posts/tech/2025/10/it-matters-revised" rel="alternate"/><published>2025-10-25T11:20:00+08:00</published><updated>2025-10-25T11:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-10-25:/posts/tech/2025/10/it-matters-revised</id><summary type="html">&lt;p&gt;哦，不是，是 &lt;a href="https://award.ima.org.tw/"&gt;IT Matters&lt;/a&gt; 的初選過了&lt;br&gt;
 想說源來適你粉專才發了一篇很多強者報名的貼文&lt;br&gt;
 我作為陪跑者的任務應該已經結束了，沒想到有通過&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;哦，不是，是 &lt;a href="https://award.ima.org.tw/"&gt;IT Matters&lt;/a&gt; 的初選過了&lt;br&gt;
@@ -3603,7 +3756,7 @@ EOL 已經過了...&lt;br&gt;
 &lt;/ul&gt;
 &lt;h2 id="_1"&gt;雜談&lt;/h2&gt;
 &lt;p&gt;剛好看到這個 PEP 覺得有點有趣&lt;br&gt;
-讀著讀著就想到，這不就是迪亞波羅的替身能力嗎！&lt;/p&gt;</content><category term="Tech"/><category term="Python"/><category term="Python Enhancement Proposal"/><category term="Digest"/></entry><entry><title>貢獻 Airflow 101</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101" rel="alternate"/><published>2024-11-19T22:45:00+08:00</published><updated>2024-11-19T22:45:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-19:/posts/tech/2024/11/airflow-contribution-101</id><summary type="html">&lt;p&gt;至少在&lt;a href="https://github.com/opensource4you/readme/blob/24bc45fb88e6ebc38deb5e20533f3eef2752ba96/README.md?plain=1#L51-L55"&gt;源來適你的名單&lt;/a&gt;上是有我的名字&lt;br&gt;
+讀著讀著就想到，這不就是迪亞波羅的替身能力嗎！&lt;/p&gt;</content><category term="Tech"/><category term="Python"/><category term="Python Enhancement Proposal"/><category term="Digest"/></entry><entry><title>貢獻 Airflow 101</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/airflow-contribution-101" rel="alternate"/><published>2024-11-19T22:45:00+08:00</published><updated>2025-10-25T18:05:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-19:/posts/tech/2024/11/airflow-contribution-101</id><summary type="html">&lt;p&gt;至少在&lt;a href="https://github.com/opensource4you/readme/blob/24bc45fb88e6ebc38deb5e20533f3eef2752ba96/README.md?plain=1#L51-L55"&gt;源來適你的名單&lt;/a&gt;上是有我的名字&lt;br&gt;
 雖然 &lt;code&gt;#airflow-技術討論&lt;/code&gt; 這個頻道偏死寂&lt;br&gt;
 但我就是佛系投入、佛系經營&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;至少在&lt;a href="https://github.com/opensource4you/readme/blob/24bc45fb88e6ebc38deb5e20533f3eef2752ba96/README.md?plain=1#L51-L55"&gt;源來適你的名單&lt;/a&gt;上是有我的名字&lt;br&gt;
@@ -3702,7 +3855,7 @@ review 的過程也會更加熟悉 Airflow&lt;/p&gt;
 這時候可以去 PyPI (e.g., &lt;code&gt;apache-airflow==2.10.3rc1&lt;/code&gt;) 上安裝 release candidate 測試&lt;br&gt;
 並且回去 GitHub issues 和 Dev list 回報測試結果&lt;/p&gt;
 &lt;h2 id="_3"&gt;源來適你&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://www.facebook.com/opensource4you"&gt;源來適你 / opensource4you&lt;/a&gt;是我大學修分散式系統的助教帥哥嘉平創的社群&lt;br&gt;
+&lt;p&gt;&lt;a href="https://www.facebook.com/opensource4you"&gt;源來適你 / opensource4you&lt;/a&gt;是我大學修分散式系統的助教開源金城武嘉平創的社群&lt;br&gt;
 &lt;del&gt;因為裡面很多人在戰 Airflow，我就加進去潛水了&lt;/del&gt;&lt;br&gt;
 另外，我研究所學長，傳說中三個月成為 committer&lt;br&gt;
 人稱開源渣男的辣個男人&lt;br&gt;
@@ -3732,7 +3885,7 @@ review 的過程也會更加熟悉 Airflow&lt;/p&gt;
 整體來說這件事是還蠻令人開心的&lt;/p&gt;
 &lt;p&gt;這篇文章之後就會直接放在源來適你的 &lt;code&gt;#airflow-技術討論&lt;/code&gt;&lt;br&gt;
 讓大家知道可以怎麼開始貢獻 Airflow 跟可以預期從我這得到什麼幫助&lt;br&gt;
-（恩，對，可能太多幫助）&lt;/p&gt;</content><category term="Tech"/><category term="Python"/><category term="Airflow"/><category term="源來適你"/></entry><entry><title>AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/aip-83" rel="alternate"/><published>2024-11-19T19:30:00+08:00</published><updated>2024-11-19T21:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-19:/posts/tech/2024/11/aip-83</id><summary type="html">&lt;p&gt;最近要 review 幾個 AIP-83 的 pull requests&lt;br&gt;
+（恩，對，可能不會有太多幫助）&lt;/p&gt;</content><category term="Tech"/><category term="Python"/><category term="Airflow"/><category term="源來適你"/></entry><entry><title>AIP-83 - Rename execution_date -&gt; logical_date and remove unique constraint</title><link href="https://blog.wei-lee.me/posts/tech/2024/11/aip-83" rel="alternate"/><published>2024-11-19T19:30:00+08:00</published><updated>2024-11-19T21:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2024-11-19:/posts/tech/2024/11/aip-83</id><summary type="html">&lt;p&gt;最近要 review 幾個 AIP-83 的 pull requests&lt;br&gt;
 重新回來整理一下筆記&lt;br&gt;
 避免 review 的時候搞不清楚狀況&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;最近要 review 幾個 AIP-83 的 pull requests&lt;br&gt;
@@ -11427,300 +11580,4 @@ test/test_title.py .              [100%]
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?time_continue=201&amp;amp;v=pX1_I_sEi8k"&gt;快快樂樂成為 Coding Ninja (by pytest) - PyCon APAC 2015&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/"&gt;Pytest: Rapid Simple Testing -  Swiss Python Summit 2016&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"/><category term="Python"/><category term="Test"/></entry><entry><title>Python Table Manners - 虛擬環境和套件管理</title><link href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-dependency-mangement" rel="alternate"/><published>2020-02-23T12:24:00+08:00</published><updated>2020-10-04T15:22:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2020-02-23:/posts/tech/2020/02/python-table-manners-dependency-mangement</id><summary type="html">&lt;p&gt;開始 Python 專案時，第一步都是建立一個專屬於專案的虛擬環境&lt;br&gt;
-會需要這麼做是為了避免不同的 Python 專案需要使用到不同版本的套件&lt;br&gt;
-假設專案 A 需要 &lt;code&gt;lib==2.3.5&lt;/code&gt; 而專案 B 需要 &lt;code&gt;lib==1.0.0&lt;/code&gt;&lt;br&gt;
-如果 &lt;code&gt;lib&lt;/code&gt; 都被安裝在本機中，就會有其中一個專案跑不起來&lt;br&gt;
-所以只要兩個專案都有建立虛擬環境，它們就都能在自己的虛擬環境中安裝所需的 &lt;code&gt;lib&lt;/code&gt; 版本&lt;br&gt;
-理想上，本機的環境是不需要安裝套件的&lt;br&gt;
-因為每一個專案都會在個字的虛擬環境內執行，並安裝各自的套件&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;開始 Python 專案時，第一步都是建立一個專屬於專案的虛擬環境&lt;br&gt;
-會需要這麼做是為了避免不同的 Python 專案需要使用到不同版本的套件&lt;br&gt;
-假設專案 A 需要 &lt;code&gt;lib==2.3.5&lt;/code&gt; 而專案 B 需要 &lt;code&gt;lib==1.0.0&lt;/code&gt;&lt;br&gt;
-如果 &lt;code&gt;lib&lt;/code&gt; 都被安裝在本機中，就會有其中一個專案跑不起來&lt;br&gt;
-所以只要兩個專案都有建立虛擬環境，它們就都能在自己的虛擬環境中安裝所需的 &lt;code&gt;lib&lt;/code&gt; 版本&lt;br&gt;
-理想上，本機的環境是不需要安裝套件的&lt;br&gt;
-因為每一個專案都會在個字的虛擬環境內執行，並安裝各自的套件&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#venv"&gt;venv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#pipenv"&gt;pipenv&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#pipenv_1"&gt;安裝 pipenv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_1"&gt;初始化環境&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_2"&gt;安裝套件&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_3"&gt;安裝開發環境套件&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_4"&gt;在虛擬環境中執行指令&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_5"&gt;其他功能&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#poetry"&gt;Poetry&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#_6"&gt;基本使用&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_7"&gt;其他工具&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#pip-tools"&gt;pip-tools&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#dephell"&gt;dephell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_8"&gt;自動偵測套件版本並適當升級的服務&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#bonus-pipx-python"&gt;Bonus: pipx - 在系統安裝 Python 工具&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#reference"&gt;Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id="venv"&gt;venv&lt;/h2&gt;
-&lt;p&gt;建立虛擬環境，最基本作法是使用 &lt;a href="https://docs.python.org/3/library/venv.html"&gt;venv&lt;/a&gt;&lt;br&gt;
-透過以下幾個指令建立，並把需要的套件寫入 &lt;code&gt;requirements.txt&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 建立 Python 虛擬環境到 ./venv&lt;/span&gt;
-python&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;venv&lt;span class="w"&gt; &lt;/span&gt;./venv
-
-&lt;span class="c1"&gt;# 啟動 Python 虛擬環境 (for Unix like)&lt;/span&gt;
-&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;venv/bin/activate
-
-&lt;span class="c1"&gt;# 將虛擬環境用到的套件寫入 requirements.txt&lt;/span&gt;
-pip&lt;span class="w"&gt; &lt;/span&gt;freeze&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;requirements.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;p.s. 基本上這個系列文會以 Unix 系統（macOS, Linux）為主&lt;/p&gt;
-&lt;p&gt;但這個做法會遇到幾個問題&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;忘記開啟/關閉虛擬環境&lt;/li&gt;
-&lt;li&gt;忘記把新安裝的套件寫入 requirements.txt&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pip freeze&lt;/code&gt; 安裝一些不必要的套件&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;一開始我會使用 &lt;a href="https://github.com/bndr/pipreqs"&gt;pipreqs&lt;/a&gt; 來解決 &lt;code&gt;pip freeze&lt;/code&gt; 所造成的雜亂&lt;br&gt;
-但是忘記更新 requirements.txt 跟開關虛擬環境的問題還是存在&lt;br&gt;
-常常我在本地測試成功，push 到遠端的時候又告訴我少了套件&lt;br&gt;
-只好再送一個 Pull Request 修正......&lt;/p&gt;
-&lt;h2 id="pipenv"&gt;pipenv&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://pipenv.readthedocs.io/en/latest/"&gt;pipenv&lt;/a&gt; 可以用來同時管理虛擬環境跟套件&lt;br&gt;
-pipenv 不使用 &lt;code&gt;requirements.txt&lt;/code&gt;，而是使用自定義的 &lt;code&gt;Pipfile&lt;/code&gt; 跟 &lt;code&gt;Pipfile.lock&lt;/code&gt; 管理套件&lt;br&gt;
-它的好處是能透過單一指令將套件安裝到虛擬環境中，並且更新到 &lt;code&gt;Pipfile&lt;/code&gt; 以及 &lt;code&gt;Pipfile.lock&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id="pipenv_1"&gt;安裝 pipenv&lt;/h3&gt;
-&lt;p&gt;根據不同的系統，可以在 &lt;a href="https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv"&gt;Installing Pipenv&lt;/a&gt; 找到安裝 pipenv 的方式&lt;/p&gt;
-&lt;p&gt;不過最簡單的做法還是透過 &lt;code&gt;pip&lt;/code&gt; 安裝&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;pipenv
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id="_1"&gt;初始化環境&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 初始化虛擬環境&lt;/span&gt;
-&lt;span class="c1"&gt;# 如果 Pipfile 跟 Pipfile.lock 還不存在，則會產生&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;install
-
-&lt;span class="c1"&gt;# 指定用特定版本的 Python 來產生虛擬環境&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;--python&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.6.4
-
-&lt;span class="c1"&gt;# 移除虛擬環境&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;--rm
-
-&lt;span class="c1"&gt;# 列出虛擬環境的所在位置&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;--where
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;初始化虛擬環境後，會產生 &lt;code&gt;Pipfile&lt;/code&gt; 跟 &lt;code&gt;Pipfile.lock&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Pipfile&lt;/code&gt; 是 &lt;a href="https://github.com/toml-lang/toml"&gt;toml&lt;/a&gt; 格式的檔案&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;source&lt;/strong&gt;: 指定要去找套件的倉儲，預設是 &lt;a href="https://pypi.org/"&gt;PyPI&lt;/a&gt; ，也可以再加上私有的 PyPI&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;dev-package&lt;/strong&gt;: 開發環境所需套件&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;packages&lt;/strong&gt;: 預設安裝套件（通常是 Production 用）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[[source]]&lt;/span&gt;
-&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;pypi&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;https://pypi.org/simple&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;verify_ssl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;
-
-&lt;span class="k"&gt;[dev-packages]&lt;/span&gt;
-
-&lt;span class="k"&gt;[packages]&lt;/span&gt;
-
-&lt;span class="k"&gt;[requires]&lt;/span&gt;
-&lt;span class="n"&gt;python_version&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;3.7&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Pipfile.lock&lt;/code&gt; 是 JSON 格式的檔案&lt;ul&gt;
-&lt;li&gt;同樣是記錄安裝的套件，但會同時記錄下套件相依的其他套件（假設安裝了 &lt;code&gt;requests&lt;/code&gt; 套件，而 &lt;code&gt;requests&lt;/code&gt; 相依於 &lt;code&gt;urllib3&lt;/code&gt; ，則 &lt;code&gt;requests&lt;/code&gt; 跟 &lt;code&gt;urllibs&lt;/code&gt; 都會列在這）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;_meta&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;hash&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;sha256&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;...&amp;quot;&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;pipfile-spec&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;requires&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;python_version&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;3.7&amp;quot;&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;sources&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;pypi&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;url&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;https://pypi.org/simple&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;verify_ssl&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;default&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{},&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;develop&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;通常沒有什麼特別的理由，可以不用動到 &lt;code&gt;Pipfile&lt;/code&gt; 跟 &lt;code&gt;Pipfile.lock&lt;/code&gt;&lt;br&gt;
-交給 &lt;code&gt;pipenv&lt;/code&gt; 管理就好&lt;/p&gt;
-&lt;h3 id="_2"&gt;安裝套件&lt;/h3&gt;
-&lt;p&gt;pipenv 的另一個好處是，它的 API 基本上跟 &lt;a href="https://pip.pypa.io/en/stable/"&gt;pip&lt;/a&gt; 是一樣的&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝套件&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;package&amp;gt;&lt;span class="o"&gt;==&lt;/span&gt;&amp;lt;version&amp;gt;
-
-&lt;span class="c1"&gt;# 解除安裝套件&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;uninstall&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;package&amp;gt;
-
-&lt;span class="c1"&gt;# 更新套件&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;update&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;以安裝 &lt;a href="https://requests.readthedocs.io/en/master/"&gt;requests&lt;/a&gt; 為例&lt;br&gt;
-會更新在 Pipfile 的 &lt;strong&gt;packages&lt;/strong&gt; 區段&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[packages]&lt;/span&gt;
-&lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;*&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Pipfile.lock 中除了 &lt;code&gt;requests&lt;/code&gt; 外，還會列出 &lt;code&gt;requests&lt;/code&gt; 的相依套件 &lt;code&gt;urllib3&lt;/code&gt; (Ref: &lt;a href="https://github.com/psf/requests/blob/v2.22.0/setup.py#L47"&gt;setup.py#L47&lt;/a&gt;)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;......&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;default&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="err"&gt;......&lt;/span&gt;
-
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;requests&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;hashes&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
-&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;sha256:11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;sha256:9cf5292fcd0f598c671cfc1e0d7d1a7f13bb8085e9a590f48c010551dc6c4b31&amp;quot;&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;index&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;pypi&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;version&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;==2.22.0&amp;quot;&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;urllib3&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;hashes&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
-&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;sha256:3de946ffbed6e6746608990594d08faac602528ac7015ac28d33cee6a45b7398&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;sha256:9a107b99a5393caf59c7aa3c1249c16e6879447533d0887f4336dde834c7be86&amp;quot;&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;version&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;==1.25.6&amp;quot;&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="err"&gt;......&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;可以注意到每個安裝的套件會有三個欄位 &lt;strong&gt;index&lt;/strong&gt;, &lt;strong&gt;version&lt;/strong&gt; 和 &lt;strong&gt;hashes&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;index&lt;/strong&gt;: 套件從哪裡裝的&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;version&lt;/strong&gt;: 安裝的版本&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;hashes&lt;/strong&gt;: 下載這個套件時產生的雜湊值 (hashing)&lt;br&gt;
-  只要套件內容有改變，就會產生不同的雜湊值&lt;br&gt;
-  可以用於驗證下次安裝時，這個套件的內容是否跟這次相同&lt;br&gt;
-  有些套件雖然改了內容，但沒有更新版本號&lt;br&gt;
-  雜湊值可以用來避免使用者在沒注意到的情況下安裝了不同的套件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下面兩個指令就會運用到 &lt;strong&gt;hashes&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝時同時確認 Pipfile.lock ，如果 lock 檔跟實際安裝的有衝突，則會取消安裝&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;--deploy
-
-&lt;span class="c1"&gt;# 直接使用 Pipfile.lock 安裝套件&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;--ignore-pipfile
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id="_3"&gt;安裝開發環境套件&lt;/h3&gt;
-&lt;p&gt;有些套件（e.g., 測試工具）不需要在 Production 的環境上安裝&lt;br&gt;
-以往會將不同的套件用不同的 &lt;code&gt;requirements.txt&lt;/code&gt; 來管理 (e.g.,  &lt;code&gt;requirements/dev.txt&lt;/code&gt;, &lt;code&gt;requirements/prod.txt&lt;/code&gt;)&lt;br&gt;
-pipenv 則是將開發環境才需要的套件寫在 Pipfile 的 &lt;strong&gt;dev-packages&lt;/strong&gt; 內&lt;br&gt;
-只要在安裝時後面加上選項 &lt;code&gt;--dev&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;e.g.,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝開發環境套件&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;package&amp;gt;&lt;span class="o"&gt;==&lt;/span&gt;&amp;lt;version&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;--dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id="_4"&gt;在虛擬環境中執行指令&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 在虛擬環境中執行 [command]&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;command&amp;gt;
-
-&lt;span class="c1"&gt;# e.g.,&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;python&lt;span class="w"&gt; &lt;/span&gt;your_program.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;雖然可以透過 &lt;code&gt;pipenv shell&lt;/code&gt; 進入到虛擬環境，但我不太建議使用&lt;br&gt;
-原因是我常常會進入虛擬環境後，亂下 &lt;code&gt;pip install &amp;lt;package&amp;gt;&lt;/code&gt; 的指令&lt;br&gt;
-然後就沒被 Pipfile 給記錄到...&lt;/p&gt;
-&lt;h3 id="_5"&gt;其他功能&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;pipenv check&lt;/code&gt;: 檢查安裝的套件是否有已知的安全性問題&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pipenv graph&lt;/code&gt;: 檢視整個相依套件的相依圖&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pipenv open &amp;lt;package&amp;gt;&lt;/code&gt;: 開啟安裝的套件（不知道什麼時候養成了「懶得看文件，直接 trace code」的習慣...）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="poetry"&gt;Poetry&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://python-poetry.org/"&gt;poetry&lt;/a&gt; 是目前很多人說可以取代 pipenv 的工具&lt;br&gt;
-除了 pipenv 包含的功能外，它還能用來初始化專案、上傳套件&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;pipenv 被抱怨的原因&lt;ul&gt;
-&lt;li&gt;之前有相隔快兩年沒有新的版本釋出（2020 年倒是更新了幾次）&lt;/li&gt;
-&lt;li&gt;lock 太慢&lt;/li&gt;
-&lt;li&gt;不會自動跟 setup.py 中的 &lt;code&gt;install_rquires&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;poetry 使用下來體驗還算不錯&lt;br&gt;
-而且它採用 pyproject.toml 來做配置設定，這點我就蠻喜歡的&lt;/p&gt;
-&lt;p&gt;我會建議如果要寫 Python 函式庫的話，可以使用 poetry&lt;br&gt;
-至於 Python 應用，使用 pipenv 還是 poetry 就看個人的喜好了&lt;/p&gt;
-&lt;h3 id="_6"&gt;基本使用&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 初始化 poetry 專案&lt;/span&gt;
-poetry&lt;span class="w"&gt; &lt;/span&gt;init
-
-&lt;span class="c1"&gt;# 安裝套件&lt;/span&gt;
-poetry&lt;span class="w"&gt; &lt;/span&gt;install
-
-&lt;span class="c1"&gt;# 加入新的套件&lt;/span&gt;
-poetry&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;package&amp;gt;
-
-&lt;span class="c1"&gt;# 移除套件&lt;/span&gt;
-poetry&lt;span class="w"&gt; &lt;/span&gt;remove&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="_7"&gt;其他工具&lt;/h2&gt;
-&lt;h3 id="pip-tools"&gt;pip-tools&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://github.com/jazzband/pip-tools"&gt;pip-tools&lt;/a&gt; 主要的功能是產生 hashes ，並不能用來管理虛擬環境&lt;br&gt;
-這套工具比較適合習慣使用 pip 跟 virtualenv ，但又想要有 Pipfile.lock 的功能的情況&lt;/p&gt;
-&lt;h3 id="dephell"&gt;dephell&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://github.com/dephell/dephell"&gt;dephell&lt;/a&gt; 是個 all-in-one 的工具&lt;br&gt;
-當初看到覺得很有趣，但還沒有時間好好研究&lt;br&gt;
-目前使用到對我最有幫助的功能是它能在轉換不同的格式 (e.g., Pipfile → pyproject.toml)&lt;/p&gt;
-&lt;h3 id="_8"&gt;自動偵測套件版本並適當升級的服務&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://pyup.io"&gt;pyup.io&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://dependabot.com"&gt;dependabot&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="bonus-pipx-python"&gt;Bonus: pipx - 在系統安裝 Python 工具&lt;/h2&gt;
-&lt;p&gt;雖然建議 Python 的套件都裝在虛擬環境，但如果平時要使用的工具 (e.g., &lt;a href="http://www.pyinvoke.org/"&gt;invoke&lt;/a&gt;, &lt;a href="https://pypi.org/project/awscli/"&gt;awscli&lt;/a&gt;) 都裝在虛擬環境&lt;br&gt;
-每次使用這些工具都得進入虛擬環境就太麻煩了&lt;br&gt;
-&lt;a href="https://pipxproject.github.io/pipx/"&gt;pipx&lt;/a&gt; 會為每個工具創建一個專屬的虛擬環境，並且設定好 PATH&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;安裝 pipx，並設定 PATH&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;pipx
-python&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;pipx&lt;span class="w"&gt; &lt;/span&gt;ensurepath
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;li&gt;安裝工具&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipx&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;package&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-tw-2018/2019/10/is-your-dev-env-alright/"&gt;這樣的開發環境沒問題嗎？ - PyCon TW 2018&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-us-2018/2019/11/pipenv-the-future-of-python-dependency-management/"&gt;Pipenv: The Future of Python Dependency Management - PyCon US 2018&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://wei-lee.me/pycon-note/posts/pycon-de-2018/2019/12/python-dependency-management/"&gt;Python Dependency Management - PyCon DE 2018&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"/><category term="Python"/><category term="Dependency"/></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"/><category term="Python"/><category term="Test"/></entry></feed>
