@@ -1,6 +1,7 @@
 Title: 貢獻 Airflow 101
 Subtitle: 姑且算是個 mentor(?)...吧？
 Date: 2024-11-19 22:45
+Modified: 2025-10-25 18:05
 Category: Tech
 Tags: Python, Airflow, 源來適你
 Slug: airflow-contribution-101
@@ -99,7 +100,7 @@ Airflow 的 Release 都會開 GitHub issue 來紀錄，會以 "Status of testing
 並且回去 GitHub issues 和 Dev list 回報測試結果
 
 ## 源來適你
-[源來適你 / opensource4you]是我大學修分散式系統的助教帥哥嘉平創的社群
+[源來適你 / opensource4you]是我大學修分散式系統的助教開源金城武嘉平創的社群
 ~~因為裡面很多人在戰 Airflow，我就加進去潛水了~~
 另外，我研究所學長，傳說中三個月成為 committer
 人稱開源渣男的辣個男人
@@ -132,7 +133,7 @@ Kafka 還能每週開周會，真的是有夠拼的
 
 這篇文章之後就會直接放在源來適你的 `#airflow-技術討論`
 讓大家知道可以怎麼開始貢獻 Airflow 跟可以預期從我這得到什麼幫助
-（恩，對，可能太多幫助）
+（恩，對，可能不會有太多幫助）
 
 [源來適你的名單]: https://github.com/opensource4you/readme/blob/24bc45fb88e6ebc38deb5e20533f3eef2752ba96/README.md?plain=1#L51-L55
 [breeze]: https://github.com/apache/airflow/tree/main/dev/breeze/doc
