@@ -80,7 +80,7 @@ AIP-84 的某一個面向跟哲佑、 Kalyan 合作搞定
 雖然這兩個不是由我起頭，但最後都算由我主導完成的
 
 除此之外，大概就是幫助新朋友進入 Airflow 的貢獻吧
-從[貢獻 Airflow 101 - 姑且算是個 mentor(?)...吧？]({filename}/posts/tech/2025/25-airflow-contribution-101.md)回顧了去年還有些死寂的 `#apache-airflow`
+從[貢獻 Airflow 101 - 姑且算是個 mentor(?)...吧？]({filename}/posts/tech/2024/25-airflow-contribution-101.md)回顧了去年還有些死寂的 `#apache-airflow`
 現在已經是很多迷途之子會來的地方了
 撐過初期死寂的最大動力，果然還是 MyGO 梗圖吧
 社團內潛伏的 GO 廚們都會浮起來一起 GO
