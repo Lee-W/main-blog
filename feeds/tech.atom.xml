@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"/><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"/><id>https://blog.wei-lee.me/</id><updated>2025-11-12T10:30:00+08:00</updated><entry><title>更新到 pytest 9.0.0 了，大家記得更新環境</title><link href="https://blog.wei-lee.me/posts/tech/2025/11/pytest-9-upgrade" rel="alternate"/><published>2025-11-12T10:30:00+08:00</published><updated>2025-11-12T10:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-11-12:/posts/tech/2025/11/pytest-9-upgrade</id><summary type="html">&lt;p&gt;寫這篇文的時候，&lt;a href="https://github.com/pytest-dev/pytest/releases/tag/9.0.1"&gt;9.0.1&lt;/a&gt; 剛好出來...&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"/><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"/><id>https://blog.wei-lee.me/</id><updated>2025-11-17T09:40:00+08:00</updated><entry><title>2025/11/10 - 11/16 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/11/2025-11-10-11-16-open-source-report" rel="alternate"/><published>2025-11-17T09:40:00+08:00</published><updated>2025-11-17T09:40:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-11-17:/posts/tech/2025/11/2025-11-10-11-16-open-source-report</id><summary type="html">&lt;p&gt;上週主要專注在看 commitizen 的 PRs&lt;br&gt;
+這週就順手發了幾隻小 PRs&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;上週主要專注在看 commitizen 的 PRs&lt;br&gt;
+這週就順手發了幾隻小 PRs&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="commitizen"&gt;commitizen&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;分類 issues&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1643"&gt;[refactor] separate option validation in bump #1643&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1640"&gt;Not possible to use --get-next when changelog is enabled #1640&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;審閱 PRs&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1645"&gt;fix(bump): remove NotAllowed related to --get-next option, and other related refactoring #1645&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1595"&gt;test(changelog): cover incremental_build #1595&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1646"&gt;fix(bump): extract option validation and new version resolution #1646&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;發佈 &lt;a href="https://github.com/commitizen-tools/commitizen/releases/tag/v4.10.0"&gt;v4.10.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;開 PRs&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1647"&gt;build(pyproject.toml): update dev group spec from poetry style to PEP 735 style #1647&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1648"&gt;feat: Drop support for Python 3.9 as EOL reached and add Python 3.14 support #1648&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1649"&gt;ci(github-actions): add python 3.14 to github-actions and tox #1649&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="commitizen-actions"&gt;commitizen-actions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;審閱 PR&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen-action/pull/103"&gt;feat: add more output information #103&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;看的時候我還不小心以為是 commitizen 本身，這邊實在太少更新了...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="pycon-etl"&gt;pycon-etl&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;分類 issue&lt;ol&gt;
+&lt;li&gt;關閉 &lt;a href="https://github.com/pycontw/pycon-etl/issues/67"&gt;[Bug Report] poetry installing flask-openid (1.2.5): Failed #67&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;開啟 issue &lt;a href="https://github.com/pycontw/pycon-etl/issues/188"&gt;[Feature Request] Auto-Check Dockerfile and pyproject.toml inconsistency #188&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;開 PR &lt;a href="https://github.com/pycontw/pycon-etl/pull/187"&gt;build: upgrade airflow to 3.1.3 #187&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;週六 Airflow 發佈 3.1.3 (&lt;a href="https://lists.apache.org/thread/mhz6w5gj5o45x0jbm4qpjq34f7h0yy20"&gt;[ANNOUNCE] Apache Airflow 3.1.3 Released&lt;/a&gt;)，週日就完成 3.1.3 的更新和部署 💪&lt;ul&gt;
+&lt;li&gt;恩...雖然這個 PR 原本是要升到 3.1.2 ，拖太久一直沒部署，就乾脆直上 3.1.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"/><category term="Open Source"/><category term="開源貢獻週報"/></entry><entry><title>更新到 pytest 9.0.0 了，大家記得更新環境</title><link href="https://blog.wei-lee.me/posts/tech/2025/11/pytest-9-upgrade" rel="alternate"/><published>2025-11-12T10:30:00+08:00</published><updated>2025-11-12T10:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-11-12:/posts/tech/2025/11/pytest-9-upgrade</id><summary type="html">&lt;p&gt;寫這篇文的時候，&lt;a href="https://github.com/pytest-dev/pytest/releases/tag/9.0.1"&gt;9.0.1&lt;/a&gt; 剛好出來...&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;寫這篇文的時候，&lt;a href="https://github.com/pytest-dev/pytest/releases/tag/9.0.1"&gt;9.0.1&lt;/a&gt; 剛好出來...&lt;/p&gt;
 &lt;!--more--&gt;
 
@@ -10337,177 +10388,4 @@ commitizen 提升版本號時，就會一併更新檔案的內容&lt;br&gt;
 &lt;li&gt;&lt;a href="https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/"&gt;How to Write Good Commit Messages: A Practical Git Guide&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.conventionalcommits.org/en/v1.0.0/"&gt;Conventional Commit&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://semver.org/"&gt;Semantic Version&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"/><category term="Python"/><category term="Git"/><category term="commitizen-tools"/></entry><entry><title>Python Table Manners - pre-commit: git commit 前做完檢查</title><link href="https://blog.wei-lee.me/posts/tech/2020/02/python-table-manners-pre-commit" rel="alternate"/><published>2020-02-28T23:10:00+08:00</published><updated>2020-10-04T16:10:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2020-02-28:/posts/tech/2020/02/python-table-manners-pre-commit</id><summary type="html">&lt;p&gt;前一篇提到了透過 &lt;a href="http://www.pyinvoke.org/"&gt;invoke&lt;/a&gt; 簡化繁瑣的指令&lt;br&gt;
-但人類除了是懶惰的，還是健忘的&lt;br&gt;
-即使已經更簡便了，沒被督促常常還是會忘了執 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;前一篇提到了透過 &lt;a href="http://www.pyinvoke.org/"&gt;invoke&lt;/a&gt; 簡化繁瑣的指令&lt;br&gt;
-但人類除了是懶惰的，還是健忘的&lt;br&gt;
-即使已經更簡便了，沒被督促常常還是會忘了執行&lt;br&gt;
-就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑&lt;br&gt;
-這篇來聊聊如何透過 &lt;a href="https://pre-commit.com"&gt;pre-commit&lt;/a&gt; 強制做檢查&lt;/p&gt;
-&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#pre-commit"&gt;pre-commit&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#pre-commit_1"&gt;使用 pre-commit 進行檢查&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#pre-commit-hook"&gt;設定 pre-commit hook&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#pre-commit_2"&gt;安裝 pre-commit 到專案中&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#pre-commit-hook_1"&gt;使用自定義的 pre-commit hook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#pre-commit-hook_2"&gt;為自己的工具加上 pre-commit hook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#bonus-commit"&gt;Bonus: 可以只跳警告不擋下 commit 嗎？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#reference"&gt;Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id="pre-commit"&gt;pre-commit&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://pre-commit.com/"&gt;pre-commit&lt;/a&gt; 讓我們能方便的加入 &lt;a href="https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks"&gt;Git Hook&lt;/a&gt;，並在各種 git 的相關操作前進行檢查&lt;/p&gt;
-&lt;p&gt;正如它的命名，它可以在進行 &lt;code&gt;git commit&lt;/code&gt; 前執行一些操作&lt;br&gt;
-不過並不僅限於 commit 前，也可以在其它 git 的階段進行&lt;br&gt;
-之所以要這麼做就是為了讓不符合要求的程式碼，從最一開始就不會進入到版本庫 （pre commit）或 git 伺服器 （pre push）&lt;/p&gt;
-&lt;h2 id="pre-commit_1"&gt;使用 pre-commit 進行檢查&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安裝 pre-commit&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;pre-commit&lt;span class="w"&gt; &lt;/span&gt;--dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id="pre-commit-hook"&gt;設定 pre-commit hook&lt;/h3&gt;
-&lt;p&gt;先透過設定檔 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt;，告訴 pre-commit 要做哪些檢查&lt;br&gt;
-需要注意的是，專案必須要是一個 git 專案&lt;br&gt;
-這些 git hook 都會被寫入 &lt;code&gt;.git/hooks/&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;e.g.,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;repos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;repo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;https://github.com/pre-commit/pre-commit-hooks&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;rev&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;v3.2.0&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;hooks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;end-of-file-fixer&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;trailing-whitespace&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;args&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;--markdown-linebreak-ext=md&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;以上面的例子來說&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;repos&lt;/code&gt; 告訴 pre-commit 要去哪邊找到這些 hook&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;repo&lt;/code&gt;: 去找專案 &lt;a href="https://github.com/pre-commit/pre-commit-hooks"&gt;pre-commit-hooks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;rev&lt;/code&gt;: 在專案 pre-commit-hooks 找到 rev &lt;a href="https://github.com/pre-commit/pre-commit-hooks/tree/v2.3.0"&gt;v2.3.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hooks&lt;/code&gt;: 在 pre-commit-hooks rev v2.3.0 的 &lt;a href="https://github.com/pre-commit/pre-commit-hooks/blob/v2.3.0/.pre-commit-hooks.yaml"&gt;.pre-commit-hooks.yaml&lt;/a&gt; 中尋找指定的 hook&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;id&lt;/code&gt;: hook id&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;args&lt;/code&gt;: 執行這個 hook 的額外參數&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;pre-commit 整理了較為通用的 hook 在 &lt;a href="https://github.com/pre-commit/pre-commit-hooks"&gt;pre-commit-hooks&lt;/a&gt;&lt;br&gt;
-除此之外，如 &lt;a href="https://github.com/psf/black"&gt;black&lt;/a&gt; 和 &lt;a href="https://github.com/PyCQA/flake8"&gt;flake8&lt;/a&gt; 等工具也都有提供 pre-commit hook&lt;/p&gt;
-&lt;p&gt;另外，&lt;strong&gt;建議 rev 不要使用 master，而應該使用版本號等明確的 rev&lt;/strong&gt;&lt;br&gt;
-原因是預設 pre-commit 會在執行時將 hook 專案 clone 下來&lt;br&gt;
-如果沒有特別設定， pre-commit 不會把最新版 pull 下來&lt;br&gt;
-指到的 master 就會是第一次 pre-commit 抓到時的 master，不是最新版的 master&lt;/p&gt;
-&lt;p&gt;寫完設定檔後，接著就是把 pre-commit hook 安裝到 git 專案中&lt;/p&gt;
-&lt;h2 id="pre-commit_2"&gt;安裝 pre-commit 到專案中&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 將 pre-commit hook 安裝到 git 專案&lt;/span&gt;
-pipenv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;pre-commit&lt;span class="w"&gt; &lt;/span&gt;install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;需要注意的是每次重新 clone 之後，都必須要執行一次&lt;br&gt;
-雖然可以將 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt; 加入版本控制&lt;br&gt;
-但 &lt;code&gt;.git/hook/&lt;/code&gt; 是不能被加入版本控制的&lt;/p&gt;
-&lt;p&gt;執行完會出現以下訊息&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pre-commit&lt;span class="w"&gt; &lt;/span&gt;installed&lt;span class="w"&gt; &lt;/span&gt;at&lt;span class="w"&gt; &lt;/span&gt;.git/hooks/pre-commit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;第一次進行 git commit 時，會將 &lt;a href="https://github.com/pre-commit/pre-commit-hooks"&gt;pre-commit-hooks&lt;/a&gt; clone 到 pre-commit 統一管理的地方&lt;br&gt;
-之後就會進行 &lt;code&gt;Fix End of Files&lt;/code&gt; 跟 &lt;code&gt;Trim Trailing Whitespace&lt;/code&gt; 的檢查&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Initializing&lt;span class="w"&gt; &lt;/span&gt;environment&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;https://github.com/pre-commit/pre-commit-hooks.
-&lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Installing&lt;span class="w"&gt; &lt;/span&gt;environment&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;https://github.com/pre-commit/pre-commit-hooks.
-&lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Once&lt;span class="w"&gt; &lt;/span&gt;installed&lt;span class="w"&gt; &lt;/span&gt;this&lt;span class="w"&gt; &lt;/span&gt;environment&lt;span class="w"&gt; &lt;/span&gt;will&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;reused.
-&lt;span class="o"&gt;[&lt;/span&gt;INFO&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;This&lt;span class="w"&gt; &lt;/span&gt;may&lt;span class="w"&gt; &lt;/span&gt;take&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;few&lt;span class="w"&gt; &lt;/span&gt;minutes...
-Fix&lt;span class="w"&gt; &lt;/span&gt;End&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;Files.........................................................Passed
-Trim&lt;span class="w"&gt; &lt;/span&gt;Trailing&lt;span class="w"&gt; &lt;/span&gt;Whitespace.................................................Passed
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;如果沒有通過， git 會阻止你進行 commit&lt;/p&gt;
-&lt;p&gt;pre-commit 每次都只會針對要 commit 的檔案做檢查&lt;br&gt;
-所以建議第一次將 pre-commit 引入專案時，可以先檢查所有的檔案&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;pre-commit&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;--all-files
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="pre-commit-hook_1"&gt;使用自定義的 pre-commit hook&lt;/h2&gt;
-&lt;p&gt;下面的例子是在 commit 前，要進行 pytest 的檢查&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;repos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;repo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;local&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;hooks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pytest&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pytest&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;stages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;commit&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;language&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;system&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;pipenv run pytest&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;pass_filenames&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;false&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;types&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;repo: local&lt;/code&gt;: 直接在本地資料夾執行&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;hooks&lt;/code&gt;: 有哪些 hook 要執行&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;id&lt;/code&gt;, &lt;code&gt;name&lt;/code&gt;: hook 的 id / name 是 &lt;code&gt;pytest&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;stages&lt;/code&gt;: 在 &lt;code&gt;commit&lt;/code&gt; 前執行&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;language&lt;/code&gt;: 直接使用系統執行 &lt;code&gt;entry&lt;/code&gt; 內的指令&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;entry&lt;/code&gt;: 這個 hook 要執行的指令是 &lt;code&gt;pipenv run pytest&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;types&lt;/code&gt;: 只有在 python 這種檔案類型才進行檢查&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pass_filenames&lt;/code&gt;: 是否要將 commit 的檔案名稱作為 &lt;code&gt;entry&lt;/code&gt; 中指令的參數&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;其中 &lt;code&gt;stages&lt;/code&gt; 總共有六種&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;commit&lt;/li&gt;
-&lt;li&gt;merge-commit&lt;/li&gt;
-&lt;li&gt;push&lt;/li&gt;
-&lt;li&gt;prepare-commit-msg&lt;/li&gt;
-&lt;li&gt;commit-msg&lt;/li&gt;
-&lt;li&gt;manual&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;需要注意的是當執行 &lt;code&gt;pipenv run pre-commit commit&lt;/code&gt; 時&lt;br&gt;
-預設只會寫入 &lt;code&gt;.git/hooks/pre-commit&lt;/code&gt;&lt;br&gt;
-如果要加入其他階段，則必須要在後面加入參數 &lt;code&gt;-t [hook-type]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;e.g.,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pipenv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;pre-commit&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;pre-push
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;支援 6 種 hook-type&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;pre-commit&lt;/li&gt;
-&lt;li&gt;pre-merge-commit&lt;/li&gt;
-&lt;li&gt;pre-push&lt;/li&gt;
-&lt;li&gt;prepare-commit-msg&lt;/li&gt;
-&lt;li&gt;commit-msg&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;像是 pytest 這種需要執行比較久的任務&lt;br&gt;
-我就不見得會在 commit 這個 stage 做檢查&lt;br&gt;
-而是會把 &lt;code&gt;stages&lt;/code&gt; 改成 &lt;code&gt;push&lt;/code&gt;&lt;br&gt;
-並安裝 pre-push 的 hook (i.e., &lt;code&gt;pipenv run pre-commit install -t pre-push&lt;/code&gt;)&lt;/p&gt;
-&lt;p&gt;如果不想要每個 hook 都各自做設定，可以在 &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt; 加上 &lt;code&gt;default_stages&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;default_stages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;push&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;表示如果沒有特定指定 &lt;code&gt;stages&lt;/code&gt; 的 hook 都只在 &lt;code&gt;push&lt;/code&gt; 的階段做檢查&lt;/p&gt;
-&lt;h2 id="pre-commit-hook_2"&gt;為自己的工具加上 pre-commit hook&lt;/h2&gt;
-&lt;p&gt;為你寫的工具加上 pre-commit hook 可以讓人更方便使用你的工具&lt;br&gt;
-在工具專案中加入 &lt;code&gt;.pre-commit-hooks.yaml&lt;/code&gt; 讓 pre-commit 知道其他人引入你的工具時要做什麼處理&lt;br&gt;
-撰寫的方式跟 local 的 repo 的寫法相似&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;repos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;repo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;local&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;hooks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;...&lt;/span&gt;
-&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;...&lt;/span&gt;
-&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;...&lt;/span&gt;
-&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;...&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id="bonus-commit"&gt;Bonus: 可以只跳警告不擋下 commit 嗎？&lt;/h2&gt;
-&lt;p&gt;根據 &lt;a href="https://github.com/pre-commit/pre-commit/issues/923"&gt;Can I show warning message without blocking the commit? #923&lt;/a&gt; 提到的， pre-commit 認為這不是好的作法&lt;br&gt;
-但仍然可以透過對 &lt;code&gt;entry&lt;/code&gt; 內指令的操作達到類似的效果&lt;/p&gt;
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mropengate.blogspot.com/2019/08/pre-commit-git-hooks_4.html"&gt;提升程式碼品質：使用 Pre-Commit (Git Hooks)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"/><category term="Python"/><category term="Git"/><category term="Code Quality"/></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"/><category term="Python"/><category term="Git"/><category term="commitizen-tools"/></entry></feed>
