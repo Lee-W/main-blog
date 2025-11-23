@@ -89,7 +89,7 @@ I use
 
 * Productionize machine learning projects
     * Implemented SQS and gRPC services for grouping emails with similar structures and extracting user-sensitive data to increase the amount of training data without violating customer privacy regulations.
-    *  Designed and implemented a two-stage labeling system that automatically communicates between Amazon Mechanical Turk and in-house experts to generate high-quality labeled data and enhance merchandise taxonomy to increase customer conversion rate.
+    * Designed and implemented a two-stage labeling system that automatically communicates between Amazon Mechanical Turk and in-house experts to generate high-quality labeled data and enhance merchandise taxonomy to increase customer conversion rate.
     * Migrated and automated the deployment process of AWS Lambda procedures that process customer lifetime value, reducing the effort of maintenance and deployment.
 * Build and maintain data pipelines on [Apache Airflow]
     * Implemented a pipeline that processes data larger than 10 GB to infer personalized preferences to help increase customer satisfaction.
