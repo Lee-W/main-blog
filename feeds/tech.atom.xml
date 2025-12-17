@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"/><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"/><id>https://blog.wei-lee.me/</id><updated>2025-12-08T21:20:00+08:00</updated><entry><title>2025/12/01 - 12/07 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/12/2025-12-01-12-07-open-source-report" rel="alternate"/><published>2025-12-08T21:20:00+08:00</published><updated>2025-12-08T21:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-12-08:/posts/tech/2025/12/2025-12-01-12-07-open-source-report</id><summary type="html">&lt;p&gt;總之，先恭喜熊老師成為 commitizen 的維護者&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Those aren't written down are meant to be forgotten - Tech</title><link href="https://blog.wei-lee.me/" rel="alternate"/><link href="https://blog.wei-lee.me/feeds/tech.atom.xml" rel="self"/><id>https://blog.wei-lee.me/</id><updated>2025-12-17T11:30:00+08:00</updated><entry><title>2025/12/08 - 12/14 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/12/2025-12-08-12-14-open-source-report" rel="alternate"/><published>2025-12-17T11:30:00+08:00</published><updated>2025-12-17T11:30:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-12-17:/posts/tech/2025/12/2025-12-08-12-14-open-source-report</id><summary type="html">&lt;p&gt;原本 11 月底就想發佈 4.10.1&lt;br&gt;
+但實在太忙了，一直沒時間弄...&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;原本 11 月底就想發佈 4.10.1&lt;br&gt;
+但實在太忙了，一直沒時間弄...&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;h2 id="commitizen"&gt;commitizen&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;審閱 PRs&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1657"&gt;docs(config): split the configuration documentation into pages#1657&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1713"&gt;docs(bump): fix broken documentation format #1713&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1714"&gt;docs(exit_codes.md): move "ignoring errors" from bump doc to exit_cod… #1714&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1719"&gt;docs: add missing site_url #1719&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1718"&gt;docs: add missing dark mode back #1718&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1720"&gt;style(mkdocs.yml): make indent consistent in nav section #1720&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/pull/1723"&gt;docs: fix some format issues in docs #1723&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;分類 Issues&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1706"&gt;next step could be update it to pyproject.toml with maybe uv or poetry #1706&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1707"&gt;Update the document to instruct the user to build, publish, and install a customized commitizen package instead of installing with edit-mode #1707&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1709"&gt;Update cz template page #1709&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1710"&gt;Mark cz_customize as deprecated / likely to be removed in documentation #1710&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1701"&gt;Discuss if we should adjust the interesting order in configuration file resolution #1701&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1703"&gt;[question] Pull request links and contributors in changelog? #1703&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1580"&gt;_bump_with_regex function changes dependencies if they have same version number #1580&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1716"&gt;Broken 404 page #1716&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/commitizen-tools/commitizen/issues/1721"&gt;Fix broken links in docs #1721&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;開 PR &lt;a href="https://github.com/commitizen-tools/commitizen/pull/1717"&gt;Release v4.10.1 #1717&lt;/a&gt; 來發佈 v4.10.1&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"/><category term="Open Source"/><category term="開源貢獻週報"/></entry><entry><title>2025/12/01 - 12/07 開源貢獻週報</title><link href="https://blog.wei-lee.me/posts/tech/2025/12/2025-12-01-12-07-open-source-report" rel="alternate"/><published>2025-12-08T21:20:00+08:00</published><updated>2025-12-08T21:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2025-12-08:/posts/tech/2025/12/2025-12-01-12-07-open-source-report</id><summary type="html">&lt;p&gt;總之，先恭喜熊老師成為 commitizen 的維護者&lt;br&gt;
 之前在 Sciwork 總是被問，為什麼沒有其他台灣人一起來玩 commmitizen&lt;br&gt;
 這不是來了嗎&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;總之，先恭喜熊老師成為 commitizen 的維護者&lt;br&gt;
@@ -9236,57 +9267,4 @@ cookiecutter 背後是透過 jinja2 來取代這些值&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://docs.github.com/en/free-pro-team@latest/actions"&gt;GitHub Actions&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://hynek.me/articles/python-github-actions/"&gt;Python in GitHub Actions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Tech"/><category term="Python"/><category term="CI/CD"/><category term="commitizen-tools"/></entry><entry><title>snowflake-connector-python: 你的 pyarrow 不是你的 pyarrow</title><link href="https://blog.wei-lee.me/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem" rel="alternate"/><published>2020-12-22T23:20:00+08:00</published><updated>2020-12-22T23:20:00+08:00</updated><author><name>Wei Lee</name></author><id>tag:blog.wei-lee.me,2020-12-22:/posts/tech/2020/12/snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem</id><summary type="html">&lt;p&gt;這是個不好好看文件，胡亂嘗試、多繞了一圈才解決問題的經驗&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;這是個不好好看文件，胡亂嘗試、多繞了一圈才解決問題的經驗&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;p&gt;最近剛好接手了別人弄到一半的專案&lt;br&gt;
-在嘗試把專案跑起來的時候，遇到了這個問題&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;Optional&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;dependency&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pyarrow&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;installed&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;please&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;see&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;following&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;install&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;instructions&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;https&lt;/span&gt;:&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="nv"&gt;docs&lt;/span&gt;.&lt;span class="nv"&gt;snowflake&lt;/span&gt;.&lt;span class="nv"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;en&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;user&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;guide&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;connector&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;pandas&lt;/span&gt;.&lt;span class="nv"&gt;html&lt;/span&gt;#&lt;span class="nv"&gt;installation&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;看起來是 &lt;code&gt;pyarrow&lt;/code&gt; 沒有裝起來，所以可以先嘗試 &lt;code&gt;pip install pyarrow&lt;/code&gt;&lt;br&gt;
-但很不幸的，這麼做並不會解決問題&lt;br&gt;
-&lt;a href="https://github.com/snowflakedb/snowflake-connector-python"&gt;snowflake-connector-python&lt;/a&gt; v2.3.7 需要的 &lt;code&gt;pyarrow&lt;/code&gt; 版本必須是 &amp;gt;=0.17.0, &amp;lt; 0.18.0&lt;br&gt;
-這也不是什麼大問題，只要改成 &lt;code&gt;pip install pyarrow==0.17.0&lt;/code&gt; 就可以解決&lt;/p&gt;
-&lt;p&gt;不過如果每個套件遇到類似的問題都要這樣試，可能會花上不少的時間&lt;br&gt;
-對 pip 稍有概念的人看到 &lt;em&gt;Optional dependency: 'pyarrow' is not installed&lt;/em&gt; 可能會聯想到沒裝 extra requirement&lt;br&gt;
-所以我第一個嘗試其實是 &lt;code&gt;pip install snowflake-connector-python[pyarrow]&lt;/code&gt;&lt;br&gt;
-但安裝完以後，還是跳出了同樣的錯誤訊息&lt;br&gt;
-而且進到虛擬環境中會發現連 &lt;code&gt;pyarrow&lt;/code&gt; 都沒有被安裝&lt;/p&gt;
-&lt;p&gt;這時也只好點進它的文件，看是不是有需要額外設定什麼&lt;br&gt;
-👉 &lt;a href="https://docs.snowflake.com/en/user-guide/python-connector-pandas.html#installation"&gt;Using Pandas DataFrames with the Python Connector&lt;/a&gt;&lt;br&gt;
-點進文件馬上就會看到的指令是 &lt;code&gt;pip install snowflake-connector-python[pandas]&lt;/code&gt;&lt;br&gt;
-因為我要裝 &lt;code&gt;pyarrow&lt;/code&gt; 所以我將後面的 &lt;code&gt;pandas&lt;/code&gt; 改成 &lt;code&gt;pyarrow&lt;/code&gt;&lt;br&gt;
-不過這其實就跟前次嘗試的指令是一樣的，同樣不能解決問題&lt;br&gt;
-就在我百思不得其解時，我隨意測試了跟文件上一模一樣的指令&lt;br&gt;
-(i.e., &lt;code&gt;pip install snowflake-connector-python[pandas]&lt;/code&gt;)&lt;br&gt;
-然後一切的問題就解決了......&lt;/p&gt;
-&lt;p&gt;既然解決了，就要回去思考為什麼能解決&lt;br&gt;
-回去看 &lt;a href="https://github.com/snowflakedb/snowflake-connector-python/tree/v2.3.7/"&gt;snowflake-python-connector @ v2.3.7&lt;/a&gt; 的 setup.py&lt;br&gt;
-在 &lt;a href="https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L44"&gt;44行&lt;/a&gt; 可以找到 &lt;code&gt;'pyarrow&amp;gt;=0.17.0,&amp;lt;0.18.0'&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;pandas_requirements&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
-    &lt;span class="c1"&gt;# Must be kept in sync with pyproject.toml&lt;/span&gt;
-    &lt;span class="s2"&gt;&amp;quot;pyarrow&amp;gt;=0.17.0,&amp;lt;0.18.0&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="s2"&gt;&amp;quot;pandas&amp;gt;=1.0.0,&amp;lt;1.2.0&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;接著可以看到 &lt;code&gt;pandas_requirements&lt;/code&gt; 在 &lt;a href="https://github.com/snowflakedb/snowflake-connector-python/blob/v2.3.7/setup.py#L240"&gt;240行&lt;/a&gt; 被用到&lt;/p&gt;
-&lt;!-- blacken-docs:off --&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="o"&gt;...&lt;/span&gt;
-    &lt;span class="n"&gt;extras_require&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="s2"&gt;&amp;quot;secure-local-storage&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
-            &lt;span class="s1"&gt;&amp;#39;keyring&amp;lt;22.0.0,!=16.1.0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="s2"&gt;&amp;quot;pandas&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pandas_requirements&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="o"&gt;...&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;!-- blacken-docs:on --&gt;
-
-&lt;p&gt;原來 &lt;code&gt;pip install snowflake-connector-python[pandas]&lt;/code&gt; 同時會安裝 &lt;code&gt;pandas_requirements&lt;/code&gt; 中的 pandas 跟 pyarrow&lt;br&gt;
-snowflake-connector-python 並不會單獨裝 pyarrow，這也難怪前面的嘗試會失敗&lt;br&gt;
-但其實這個問題只要都造著文件做就能解決，就是因為自作聰明才繞了一大圈&lt;br&gt;
-所以我說文件還是要好好的看啊！&lt;/p&gt;</content><category term="Tech"/><category term="Python"/><category term="snowflake"/></entry></feed>
+&lt;/ul&gt;</content><category term="Tech"/><category term="Python"/><category term="CI/CD"/><category term="commitizen-tools"/></entry></feed>
