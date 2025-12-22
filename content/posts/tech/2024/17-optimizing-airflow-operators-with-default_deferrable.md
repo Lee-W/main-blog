@@ -1,6 +1,7 @@
 Title: Optimizing Airflow Operators
 Subtitle: Converting to Async with default_deferrable Config
 Date: 2024-08-29 22:00
+Modified: 2025-12-22 09:30
 Category: Tech
 Tags: Python, Airflow, Airflow 2.7
 Slug: optimizing-airflow-operators-with-default_deferrable
@@ -18,6 +19,7 @@ It's a [configuration](https://airflow.apache.org/docs/apache-airflow/stable/con
 
 ```cfg
 # airflow.cfg
+[operators]
 default_deferrable = true
 ```
 
