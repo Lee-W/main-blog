@@ -59,7 +59,7 @@
 <meta content="https://blog.wei-lee.me/posts/tech/2024/08/optimizing-airflow-operators-with-default_deferrable" prefix="og: http://ogp.me/ns#" property="og:url">
 <meta content="article" prefix="og: http://ogp.me/ns#" property="og:type"/>
 <meta content="2024-08-29 22:00:00+08:00" prefix="og: http://ogp.me/ns#" property="article:published_time"/>
-<meta content="" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
+<meta content="2025-12-22 09:30:00+08:00" prefix="og: http://ogp.me/ns#" property="article:modified_time"/>
 <meta content="https://blog.wei-lee.me/author/wei-lee.html" prefix="og: http://ogp.me/ns#" property="article:author"/>
 <meta content="Tech" prefix="og: http://ogp.me/ns#" property="article:section">
 <meta content="Python" prefix="og: http://ogp.me/ns#" property="article:tag"/>
@@ -80,7 +80,7 @@
   "name": "Optimizing Airflow Operators - Converting to Async with default_deferrable Config",
   "headline": "Optimizing Airflow Operators - Converting to Async with default_deferrable Config",
   "datePublished": "2024-08-29 22:00:00+08:00",
-  "dateModified": "",
+  "dateModified": "2025-12-22 09:30:00+08:00",
   "author": {
     "@type": "Person",
     "name": "Wei Lee",
@@ -161,6 +161,7 @@
             Wei Lee
           </h4>
 <time datetime="2024/08/29 - Thu">2024/08/29 - Thu</time>
+          • <time datetime="2025/12/22 - Mon"> Updated on 2025/12/22 - Mon</time>
           • 2 min read
         </div>
 <div class="post-cover cover">
@@ -179,6 +180,7 @@
 <h2 id="so-what-is-this-default_deferrable-config">So, what is this default_deferrable config?</h2>
 <p>It's a <a href="https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#default-deferrable">configuration</a> that you can specify in the <code>airflow.cfg</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># airflow.cfg</span>
+<span class="k">[operators]</span>
 <span class="na">default_deferrable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
 </code></pre></div>
 <p>or through the environment variable</p>
