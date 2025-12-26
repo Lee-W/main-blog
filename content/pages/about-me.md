@@ -1,14 +1,14 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2025-10-21 22:55
+modified: 2025-12-26 18:15
 slug: about-me
 ---
 
 This is Wei Lee / 李唯. I'm a
 
 * 🐍 [Pythonista](https://pycon-note.wei-lee.me/)
-* 🐍 [PyCon Taiwan](https://tw.pycon.org/) organizer
+* 🐍 [PyCon Taiwan](https://tw.pycon.org/) volunteer
 * [commitizen-tools](https://github.com/commitizen-tools) maintainer
 * [Apache Airflow](https://github.com/apache/airflow/) PMC Member, Taiwanese Mandarin Code Owner and Translation Owner
 * `#apache-airflow` Mentor and Memebot Bot, `#commitizen` Mentor @ [OpenSource4You](https://github.com/opensource4you/)
@@ -29,9 +29,9 @@ I share my technical notes, book digests, and occasional thoughts here. If you'r
 
 You can find me through
 
-* [![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://in.linkedin.com/in/clleew)
+* [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://in.linkedin.com/in/clleew)
 * [![twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/clleew)
-* [![github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Lee-W/)
+* [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Lee-W/)
 * [![Mastodon](https://img.shields.io/mastodon/follow/109323826846876448?domain=mtd.pythonasia.org)](https://mtd.pythonasia.org/@weilee)
 
 ---
@@ -162,6 +162,10 @@ I was the program executor and the leader of the teaching assistant team. I also
 [pycontw-blog]: https://github.com/pycontw/pycontw-blog
 
 ## Talk and Tutorial
+* 觸發觸發器器，那個你可能不熟的 Apache Airflow 元件
+    * *20251224* 🇹🇼 → [slide](https://speakerdeck.com/leew/chu-fa-chu-fa-qi-qi-na-ge-ni-ke-neng-bu-shou-de-apache-airflow-yuan-jian)
+* 開源菜雞的隨意雜談
+    * *20251127* 🇹🇼 - [Python 衝刺開發工作坊活動](https://proj.moe.edu.tw/itsa/News_Photo_Content.aspx?n=4396&s=19297) → [slide](https://speakerdeck.com/leew/20251127-kai-yuan-cai-ji-de-sui-yi-za-tan)
 * Seamless Migration: Leveraging Ruff for a Smooth Transition from Airflow 2 to Airflow 3
     * **2025/10/08** 🇺🇸 - [Airflow Summit 2025](https://airflowsummit.org/sessions/2025/seamless-migration-leveraging-ruff-for-a-smooth-transition-from-airflow-2-to-airflow-3/) → [slide](https://drive.google.com/file/d/1_2cxR8uOtWOphPPUD3IuwuRPcIBU4DXV/view?usp=drive_link)
 * Unlocking the Future of Data Pipelines - Apache Airflow 3
@@ -241,6 +245,7 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/).
     9. PyCon CA 2019
 
 ## Award
+* 2025 IT Matters Awards 開源社群貢獻獎
 * Honorable Mention, 2013 Railway Application Section Problem Solving Competition
 
 ## Publication
