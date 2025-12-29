@@ -35,7 +35,11 @@
 |
 
 .. raw:: html
-    :file: ../../../static/post-static/2025-2021-2024-yearly-review/all.html
+
+   <iframe
+     src="/static/post-static/2025-2021-2024-yearly-review/all.html"
+     style="width:100%;height:700px;border:none">
+   </iframe>
 
 | 寫得最多的姑且還是技術相關文章
 | 再來就是各種娛樂的心得了
@@ -46,7 +50,11 @@
 |
 
 .. raw:: html
-    :file: ../../../static/post-static/2025-2021-2024-yearly-review/all-category.html
+
+   <iframe
+     src="/static/post-static/2025-2021-2024-yearly-review/all-category.html"
+     style="width:100%;height:700px;border:none">
+   </iframe>
 
 2021 年
 -------
@@ -56,7 +64,11 @@
 | 尤其是熱衷於 `衛宮家今天的餐桌風景 <https://travlog.wei-lee.me/pages/emiya-toc.html>`_
 
 .. raw:: html
-    :file: ../../../static/post-static/2025-2021-2024-yearly-review/2021.html
+
+   <iframe
+     src="/static/post-static/2025-2021-2024-yearly-review/2021.html"
+     style="width:100%;height:700px;border:none">
+   </iframe>
 
 2022 年
 -------
@@ -65,7 +77,12 @@
 | 但整體寫作頻率大幅下降 🥲
 
 .. raw:: html
-    :file: ../../../static/post-static/2025-2021-2024-yearly-review/2022.html
+
+   <iframe
+     src="/static/post-static/2025-2021-2024-yearly-review/2022.html"
+     style="width:100%;height:700px;border:none">
+   </iframe>
+
 
 2023 年
 -------
@@ -76,7 +93,11 @@
 | 不過主要是在寫娛樂相關的心得，大概都是動畫相關的吧我猜
 
 .. raw:: html
-    :file: ../../../static/post-static/2025-2021-2024-yearly-review/2023.html
+
+   <iframe
+     src="/static/post-static/2025-2021-2024-yearly-review/2023.html"
+     style="width:100%;height:700px;border:none">
+   </iframe>
 
 2024 年
 -------
@@ -87,7 +108,11 @@
 | 然後其實我還沒寫完......
 
 .. raw:: html
-    :file: ../../../static/post-static/2025-2021-2024-yearly-review/2024.html
+
+   <iframe
+     src="/static/post-static/2025-2021-2024-yearly-review/2024.html"
+     style="width:100%;height:700px;border:none">
+   </iframe>
 
 寫廢文就是棒
 ==============
