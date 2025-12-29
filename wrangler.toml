@@ -1,0 +1,5 @@
+name = "main-blog"
+compatibility_date = "2025-12-29"
+
+[assets]
+directory = "./output"
