@@ -12,6 +12,7 @@ dependencies = [
   "invoke>=2.2.0",
   "markdown-del-ins>=1.0.0",
   "markdown-mermaidjs>=1.0.0",
+  "pagefind[extended]>=1.4.0",
   "pelican-deadlinks",
   "pelican-neighbors>=1.2.0",
   "pelican-render-math>=1.0.3",
