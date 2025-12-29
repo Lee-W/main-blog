@@ -12,6 +12,7 @@ from pelicanconf import HOST
 SITEURL = f"https://{HOST}"
 RELATIVE_URLS = False
 
+FEED_MAX_ITEMS = 30
 FEED_ALL_ATOM = "feeds/all.atom.xml"
 CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 
