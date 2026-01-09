@@ -13,7 +13,7 @@ Authors: Wei Lee
 
 [TOC]
 
-## Issue
+## 發生什麼事
 上個月更新到 Neovim 0.11.0 後
 每次存檔後， iTerm 的視窗就會不斷閃爍
 關閉的時候還會出現一串亂碼
@@ -21,13 +21,13 @@ Authors: Wei Lee
 或是 [LazyVim] 的某些 UI 元件壞掉惹
 但試著試著都解決不了這個問題
 
-## Root Cause
+## 原因
 後來翻到[iterm2 3.5.6+ with neovim 0.11, on FocusGained, j/k jump to top/bottom of buffer #33127](https://github.com/neovim/neovim/issues/33127)
 
 原來是因為之前 iTerm 有問過我要不要允許 session 去 resize 我的 window
 看起來很合理就按了允許
 
-## Solution
+## 如何解決
 解決方式也很簡單，就是「回到過去，阻止按下允許的自己」
 或者你可以在 iTerm 的設定中，再次把這個選項關閉
 

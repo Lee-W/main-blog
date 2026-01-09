@@ -6,3 +6,4 @@ PostgresSQL
 wit
 NotIn
 iTerm
+noice
