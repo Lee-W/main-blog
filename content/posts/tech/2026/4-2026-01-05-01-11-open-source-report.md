@@ -1,4 +1,4 @@
-Title: 2025/01/05 - 01/11 開源貢獻週報
+Title: 2026/01/05 - 01/11 開源貢獻週報
 Subtitle: 回來了， commitizen 的大家都回來了！
 Date: 2026-01-11 22:40
 Category: Tech
