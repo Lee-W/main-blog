@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2017-02-03 13:06
-modified: 2025-12-26 18:15
+modified: 2026-01-25 15:00
 slug: about-me
 ---
 
@@ -163,7 +163,7 @@ I was the program executor and the leader of the teaching assistant team. I also
 
 ## Talk and Tutorial
 * 觸發觸發器器，那個你可能不熟的 Apache Airflow 元件
-    * *20251224* 🇹🇼 → [slide](https://speakerdeck.com/leew/chu-fa-chu-fa-qi-qi-na-ge-ni-ke-neng-bu-shou-de-apache-airflow-yuan-jian)
+    * *20251224* 🇹🇼 - 玉山 DE Talk→ [slide](https://speakerdeck.com/leew/chu-fa-chu-fa-qi-qi-na-ge-ni-ke-neng-bu-shou-de-apache-airflow-yuan-jian)
 * 開源菜雞的隨意雜談
     * *20251127* 🇹🇼 - [Python 衝刺開發工作坊活動](https://proj.moe.edu.tw/itsa/News_Photo_Content.aspx?n=4396&s=19297) → [slide](https://speakerdeck.com/leew/20251127-kai-yuan-cai-ji-de-sui-yi-za-tan)
 * Seamless Migration: Leveraging Ruff for a Smooth Transition from Airflow 2 to Airflow 3
