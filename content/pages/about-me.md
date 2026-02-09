@@ -234,15 +234,16 @@ For more slides, please check my [Speaker Deck](https://speakerdeck.com/leew/).
     3. PyCon APAC 2025
     4. [PyCon TW 2024](https://hackmd.io/LKLr7XyOR9mK1AEEnvnCuQ#Apache-Airflow)
 * commitizen-tools
-    1. [PyCon US 2024](https://us.pycon.org/2024/events/dev-sprints/#sprint-3)
-    2. [COSCUP 2024](https://pretalx.coscup.org/coscup-2024/talk/SDR77M/)
-    3. [scisprint Taipei 2024 March](https://sciwork.kktix.cc/events/scisprint-202403-taipei)
-    4. [PyCon TW 2023](https://hackmd.io/R98LEB4MSxm4AeExmxuZnA#commitizen-tools)
-    5. [Scisprint@Amazon Taipei 2023](https://sciwork.kktix.cc/events/scisprint-202302-taipei)
-    6. [PyCon TW 2022](https://hackmd.io/UYumgLy_QxaCSCqrXKDBpw#commitizen-tools)
-    7. [PyCon TW 2021](https://hackmd.io/PAgYsu5nSHyERIRaUokWxQ#commitizen-tools)
-    8. PyCon TW 2020
-    9. PyCon CA 2019
+    1. [scisprint Taipei 2026 January](https://sciwork.dev/sprint/2026/01-taipei)
+    2. [PyCon US 2024](https://us.pycon.org/2024/events/dev-sprints/#sprint-3)
+    3. [COSCUP 2024](https://pretalx.coscup.org/coscup-2024/talk/SDR77M/)
+    4. [scisprint Taipei 2024 March](https://sciwork.kktix.cc/events/scisprint-202403-taipei)
+    5. [PyCon TW 2023](https://hackmd.io/R98LEB4MSxm4AeExmxuZnA#commitizen-tools)
+    6. [Scisprint@Amazon Taipei 2023](https://sciwork.kktix.cc/events/scisprint-202302-taipei)
+    7. [PyCon TW 2022](https://hackmd.io/UYumgLy_QxaCSCqrXKDBpw#commitizen-tools)
+    8. [PyCon TW 2021](https://hackmd.io/PAgYsu5nSHyERIRaUokWxQ#commitizen-tools)
+    9. PyCon TW 2020
+    10. PyCon CA 2019
 
 ## Award
 * 2025 IT Matters Awards 開源社群貢獻獎
