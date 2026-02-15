@@ -3,7 +3,7 @@
 
 :date: 2025-01-28 20:15
 :tags: Writing
-:category: Gossiping
+:category: Random Thoughts
 :slug: 2021-2024-yearly-review
 :authors: Lee-W
 
@@ -18,7 +18,7 @@
 前言
 ====
 
-| 繼上次的 `2020 發文頻率分析 - 回顧 2020 我所寫的文章 <{filename}/posts/gossiping/2021/1-post-frequency-analysis.rst>`_ 已經隔了四年了
+| 繼上次的 `2020 發文頻率分析 - 回顧 2020 我所寫的文章 <{filename}/posts/random-thoughts/2021/1-post-frequency-analysis.rst>`_ 已經隔了四年了
 | 也為此更新了我許久以前開發的分析工具 `pelican-stat <https://github.com/Lee-W/pelican-stat>`_
 | 順便試試我的 `cookiecutter-python-template 3.0.0 <https://github.com/Lee-W/cookiecutter-python-template/>`_ 做得如何
 | 雖然有些小 bug ，但整體用起來蠻順的

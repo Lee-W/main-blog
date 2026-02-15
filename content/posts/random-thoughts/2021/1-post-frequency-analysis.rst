@@ -4,7 +4,7 @@
 :date: 2021-02-03 18:19
 :modified: 2023-01-27 11:27
 :tags: Writing
-:category: Gossiping
+:category: Random Thoughts
 :slug: post-frequency-analysis
 :authors: Lee-W
 :series: 2020 發文頻率分析

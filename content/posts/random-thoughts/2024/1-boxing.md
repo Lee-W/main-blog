@@ -2,7 +2,7 @@ Title: 這一拳下去，我可能會死
 Subtitle: 用投資大盤的方式，投資健康
 Date: 2024-08-11 13:15
 Modified: 2024-08-14 20:00
-Category: Gossiping
+Category: Random Thoughts
 Tags: Exercise, Boxing
 Slug: boxing
 Authors: Wei Lee

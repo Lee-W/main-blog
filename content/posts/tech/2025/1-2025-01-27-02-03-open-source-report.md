@@ -108,7 +108,7 @@ Issue [Add general python distribution setup steps #112](https://github.com/pyco
 
 ## pelican-stat
 
-這是在 [2021 ~ 2024 年度回顧 - 持續紀錄的秘訣是寫廢文]({filename}/posts/gossiping/2025/1-2021-2024-yearly-review.rst) 提到的工具
+這是在 [2021 ~ 2024 年度回顧 - 持續紀錄的秘訣是寫廢文]({filename}/posts/random-thoughts/2025/1-2021-2024-yearly-review.rst) 提到的工具
 除了更新專案結構，大多都是細碎的小 PRs 而已
 原本以為更新 6.0.0 就不會有奇怪的特殊字元
 結果只是換了別的特殊字元...

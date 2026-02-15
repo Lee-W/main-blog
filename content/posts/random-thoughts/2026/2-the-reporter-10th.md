@@ -1,7 +1,7 @@
 Title: 報導者十週年
 Subtitle: 8836 分之 1
 Date: 2026-01-25 13:08
-Category: Gossiping
+Category: Random Thoughts
 Tags: 報導者
 Slug: the-reporter-10th
 Authors: Wei Lee
@@ -125,7 +125,7 @@ Cover: /images/posts-image/2026/the-reporter-10th/IMG_0422.JPEG
 裡面有提供 RSS！
 你說 RSS 是什麼嗎？問得太好了！
 這裡有一篇文章告訴你這是什麼，以及為什麼你該用它
-[透過 RSS 奪回你的注意權！ - 現在正是復權的時刻]({filename}/posts/gossiping/2025/2-get-your-retention-back-through-rss.md)
+[透過 RSS 奪回你的注意權！ - 現在正是復權的時刻]({filename}/posts/random-thoughts/2025/2-get-your-retention-back-through-rss.md)
 
 聽這段表演，我最大的敗筆就是 *大意了，沒有閃*
 我忘記台灣音樂表演的配置，大多都會讓我的耳朵受不了
@@ -169,7 +169,7 @@ Cover: /images/posts-image/2026/the-reporter-10th/IMG_0422.JPEG
 但我確實有因為晚會覺得很感動啦！
 
 那我哭的原因是什麼呢？
-[推しは推せる時に推せる]({filename}/posts/gossiping/2025/4-support-your-oshi-while-you-can.md)
+[推しは推せる時に推せる]({filename}/posts/random-thoughts/2025/4-support-your-oshi-while-you-can.md)
 就只是覺得這裡很像是以前聽小松表演的氛圍
 然而已經好久好久好久沒聽到小松的演出了 😢
 

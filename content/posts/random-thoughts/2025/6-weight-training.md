@@ -1,7 +1,7 @@
 Title: 你有在健身哦？
 Subtitle: 怎麼都看不出來
 Date: 2025-05-24 13:05
-Category: Gossiping
+Category: Random Thoughts
 Tags: Exercise, Weight Training
 Slug: weight-training
 Authors: Wei Lee
@@ -10,7 +10,7 @@ Authors: Wei Lee
 
 <!--more-->
 
-最近跟[一拳可能會打死我]({filename}/posts/gossiping/2024/1-boxing.md)的學姊聊到，去健身房對我在運動的表現的幫助
+最近跟[一拳可能會打死我]({filename}/posts/random-thoughts/2024/1-boxing.md)的學姊聊到，去健身房對我在運動的表現的幫助
 才想到可以來寫篇文章紀錄這件事
 
 認真回朔了一下，第一次去體驗健身是 2023/01/16
@@ -72,6 +72,6 @@ Authors: Wei Lee
 確實是有緩慢的往好的方向前進
 從 `一般（需改善）` 進展到 `良好（健康標準範圍）`
 畢竟小時候就是運動量偏低，老了才來追趕，沒有那麼快追得上的
-只能像之前說的[用投資大盤的方式，投資健康]({filename}/posts/gossiping/2024/1-boxing.md)，慢慢進步
+只能像之前說的[用投資大盤的方式，投資健康]({filename}/posts/random-thoughts/2024/1-boxing.md)，慢慢進步
 不過話說回來，這兩年半下來
 大盤的漲幅應該是比我在健康上的進步幅度大很得多了嗚嗚嗚嗚嗚 🥲

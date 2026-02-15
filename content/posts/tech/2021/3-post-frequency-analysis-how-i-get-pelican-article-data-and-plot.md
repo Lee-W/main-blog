@@ -15,7 +15,7 @@ Series: 2020 發文頻率分析
 
 1. [如何得到 pelican 文章資訊並用來做圖]({filename}/posts/tech/2021/3-post-frequency-analysis-how-i-get-pelican-article-data-and-plot.md)： 就是本文，主要會聊開發 [pelican-stat](https://github.com/Lee-W/pelican-stat) 的過程
 2. [如何在 pelican 頁面中嵌入 HTML]({filename}/posts/tech/2021/4-post-frequency-analysis-how-to-embed-html-in-pelican.md)： 將產生的互動式趨勢圖嵌入 pelican 的文章中，遇到的各種雷
-3. [2020 過去了，我寫了什麼文章]({filename}/posts/gossiping/2021/1-post-frequency-analysis.rst)： 2020 主要發了什麼文章，並聊聊當初為什麼會想寫這些文章
+3. [2020 過去了，我寫了什麼文章]({filename}/posts/random-thoughts/2021/1-post-frequency-analysis.rst)： 2020 主要發了什麼文章，並聊聊當初為什麼會想寫這些文章
 
 [TOC]
 

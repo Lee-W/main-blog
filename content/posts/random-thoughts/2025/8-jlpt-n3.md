@@ -1,7 +1,7 @@
 Title: JLPT N3
 Subtitle: 我打宿儺！？
 Date: 2025-08-28 22:55
-Category: Gossiping
+Category: Random Thoughts
 Tags: JLPT, Japanese
 Slug: JLPT-N3
 Authors: Wei Lee

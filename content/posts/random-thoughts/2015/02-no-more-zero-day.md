@@ -1,6 +1,6 @@
 Title: No More Zero Day
 Date: 2015-10-27 06:53
-Category: Gossiping
+Category: Random Thoughts
 Tags: Productivity
 Slug: no-more-zero-day
 Authors: Wei Lee

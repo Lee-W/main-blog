@@ -1,7 +1,7 @@
 Title: 推しは推せる時に推せる
 Subtitle: 說在 guru 畢業之後
 Date: 2025-05-03 12:55
-Category: Gossiping
+Category: Random Thoughts
 Tags: Music
 Slug: support-your-oshi-while-you-can
 Authors: Wei Lee

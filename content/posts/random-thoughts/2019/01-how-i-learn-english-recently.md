@@ -1,6 +1,6 @@
 Title: 最近的念英文小結
 Date: 2019-09-09 09:40
-Category: Gossiping
+Category: Random Thoughts
 Tags: English
 Slug: how-i-learn-english-recently
 Authors: Wei Lee

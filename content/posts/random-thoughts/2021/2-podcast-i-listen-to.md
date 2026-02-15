@@ -1,6 +1,6 @@
 Title: Podcast 聽什麼
 Date: 2021-12-27 20:06
-Category: Gossiping
+Category: Random Thoughts
 Tags: Podcast
 Slug: podcast-i-listen-to
 Authors: Wei Lee

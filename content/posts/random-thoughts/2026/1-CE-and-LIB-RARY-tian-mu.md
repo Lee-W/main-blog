@@ -1,7 +1,7 @@
 Title: CE' & LIB-RARY 天母店
 Subtitle: 划算、安靜的工作空間
 Date: 2026-01-09 21:30
-Category: Gossiping
+Category: Random Thoughts
 Tags: Coworking Space
 Slug: CE-and-LIB-RARY-tian-mu
 Authors: Wei Lee

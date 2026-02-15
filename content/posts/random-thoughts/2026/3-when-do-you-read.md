@@ -1,7 +1,7 @@
 Title: 大家都什麼時候看書呢？
 Subtitle: 買電子書不是因為討厭實體書，是因為窮
 Date: 2026-02-15 19:35
-Category: Gossiping
+Category: Random Thoughts
 Tags: Reading, BlogBlog 同樂會
 Slug: when-do-you-read
 Authors: Wei Lee

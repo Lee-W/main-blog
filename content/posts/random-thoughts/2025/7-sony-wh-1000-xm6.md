@@ -1,7 +1,7 @@
 Title: Sony WH-1000 XM6 開箱
 Subtitle: 正直、正義、可折疊都回來了！
 Date: 2025-06-10 19:25
-Category: Gossiping
+Category: Random Thoughts
 Tags: Headphones, Unboxing
 Slug: sony-wh-1000-xm6-unboxing
 Authors: Wei Lee

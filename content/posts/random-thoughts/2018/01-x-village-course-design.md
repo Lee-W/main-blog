@@ -1,6 +1,6 @@
 Title: X-Village 課程設計
 Date: 2018-09-24 15:15
-Category: Gossiping
+Category: Random Thoughts
 Tags: Education
 Slug: X-Village-Course-Design
 Authors: Wei Lee

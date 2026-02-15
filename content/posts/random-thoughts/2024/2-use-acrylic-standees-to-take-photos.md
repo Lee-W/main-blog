@@ -2,7 +2,7 @@ Title: 用立牌拍照的哲學思辨
 Subtitle: ブログのひとりごと
 Date: 2024-10-23 08:10
 Modified: 2024-10-23 23:50
-Category: Gossiping
+Category: Random Thoughts
 Tags: Anime
 Slug: use-acrylic-standees-to-take-photos
 Authors: Wei Lee

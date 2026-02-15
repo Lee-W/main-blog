@@ -1,7 +1,7 @@
 Title: 9 公里慢跑初體驗
 Subtitle: 還在 GO!!!!!
 Date: 2025-05-01 14:55
-Category: Gossiping
+Category: Random Thoughts
 Tags: Exercise, Running
 Slug: first-9-km-run
 Authors: Wei Lee

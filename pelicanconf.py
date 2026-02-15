@@ -135,7 +135,7 @@ MENUITEMS = (
     ("About Me", "/pages/about-me.html"),
     ("👨‍💻 Tech", "/category/tech.html"),
     ("📚 Book Digest", "/category/book.html"),
-    ("💬 Gossiping", "/category/gossiping.html"),
+    ("💬 Random Thoughts", "/category/random-thoughts.html"),
     ("🏷️ Tags", "/tags.html"),
     ("🗄️ Archives", "/archives.html"),
     ("📚 Series", "/series_list.html"),
@@ -143,7 +143,7 @@ MENUITEMS = (
 )
 
 # Content Setting
-DEFAULT_CATEGORY = "Gossiping"
+DEFAULT_CATEGORY = "Random Thoughts"
 ARTICLE_EXCLUDES = ["static"]
 
 # Theme Setting
