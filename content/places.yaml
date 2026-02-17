@@ -1,6 +1,22 @@
+# content/posts/random-thoughts/2024/1-boxing.md
 boxing-nan-jing:
   name: 拳擊天地 南京館
   lat: 25.052214
   lon: 121.5389868
   address: 臺北市中山區南京東路三段91-2號
-  tags: [exercise, boxing]
+  tags: [Taiwan, exercise, boxing]
+
+# content/posts/random-thoughts/2026/4-review-blogblog-jan-review.md
+kitano-tenman-jinja:
+  name: 北野天満神社
+  lat: 34.701786
+  lon: 135.189254
+  address: 兵庫県神戸市中央区北野町3丁目12-1
+  tags: [Japan]
+
+takachiho-shrine:
+  name: 高千穗神社
+  lat: 28.375074
+  lon: 129.489884
+  address: 宮崎県西臼杵郡高千穂町三田井1037
+  tags: [Japan]
