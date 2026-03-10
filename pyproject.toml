@@ -42,7 +42,7 @@ dev = [
 
 [tool.uv.sources]
 pelican-deadlinks = { git = "https://github.com/pelican-plugins/deadlinks" }
-attila = { git = "https://github.com/Lee-W/attila/", rev = "weilee-customization" }
+attila = { git = "https://github.com/Lee-W/attila/", rev = "2.1.0" }
 
 [tool.ruff]
 line-length = 88
