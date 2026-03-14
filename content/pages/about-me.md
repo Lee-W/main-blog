@@ -5,9 +5,7 @@ modified: 2026-03-14 15:03
 slug: about-me
 ---
 
-<link rel="stylesheet" href="/static/pelican_heatmap.css">
 <div id="writing-heatmap"></div>
-<script src="/static/pelican_heatmap.js" defer></script>
 
 This is Wei Lee / 李唯. I'm a
 

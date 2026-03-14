@@ -5,7 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-  "attila",
+  "attila>=2.2.0",
   "beautifulsoup4>=4.12.3",
   "cssmin>=0.2.0",
   "ghp-import>=2.1.0",
@@ -43,7 +43,7 @@ dev = [
 
 [tool.uv.sources]
 pelican-deadlinks = { git = "https://github.com/pelican-plugins/deadlinks" }
-attila = { git = "https://github.com/Lee-W/attila/", rev = "2.1.0" }
+attila = { git = "https://github.com/Lee-W/attila/"}
 
 [tool.ruff]
 line-length = 88
