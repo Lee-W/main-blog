@@ -95,6 +95,7 @@ MARKDOWN = {
 PLUGIN_PATHS = ["pelican-plugins"]
 PLUGINS = [
     "another_read_more_link",
+    "pelican.plugins.heatmap",
     "pelican.plugins.osm",
     "pelican.plugins.neighbors",
     "pelican.plugins.render_math",
@@ -160,9 +161,7 @@ MARKDOWN["extension_configs"]["markdown_mermaidjs"] = {}
 
 # Plugin-setting
 EXTRA_PLUGINS = [
-    "extract_toc",
-    "i18n_subsites",
     "pelican.plugins.webassets",
     "pelican.plugins.tag_cloud",
 ]
-PLUGIN_PATHS.extend(EXTRA_PLUGINS)
+PLUGINS.extend(EXTRA_PLUGINS)
