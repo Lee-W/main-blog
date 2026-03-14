@@ -44,7 +44,6 @@ dev = [
 [tool.uv.sources]
 pelican-deadlinks = { git = "https://github.com/pelican-plugins/deadlinks" }
 attila = { git = "https://github.com/Lee-W/attila/"}
-pelican-osm = { path = "../../personal/pelican-osm", editable = true }
 
 [tool.ruff]
 line-length = 88

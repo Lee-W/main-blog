@@ -402,7 +402,7 @@ requires-dist = [
     { name = "pelican-deadlinks", git = "https://github.com/pelican-plugins/deadlinks" },
     { name = "pelican-heatmap", specifier = ">=0.2.2" },
     { name = "pelican-neighbors", specifier = ">=1.2.0" },
-    { name = "pelican-osm", editable = "../../personal/pelican-osm" },
+    { name = "pelican-osm", specifier = ">=0.3.1" },
     { name = "pelican-render-math", specifier = ">=1.0.3" },
     { name = "pelican-seo", specifier = ">=1.2.2" },
     { name = "pelican-series", specifier = ">=3.0.0" },
@@ -694,45 +694,15 @@ wheels = [
 
 [[package]]
 name = "pelican-osm"
-version = "0.3.0"
-source = { editable = "../../personal/pelican-osm" }
+version = "0.3.1"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pelican" },
     { name = "pyyaml" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "pelican", specifier = ">=4.5" },
-    { name = "pyyaml", specifier = ">=6.0" },
-]
-
-[package.metadata.requires-dev]
-base = [{ name = "poethepoet", specifier = ">=0.41.0" }]
-dev = [
-    { name = "commitizen", specifier = ">=4.13.9" },
-    { name = "mypy", specifier = ">=1.19.1" },
-    { name = "poethepoet", specifier = ">=0.41.0" },
-    { name = "prek", specifier = ">=0.3.3" },
-    { name = "pytest", specifier = ">=9" },
-    { name = "pytest-cov", specifier = ">=4" },
-    { name = "pytest-regressions", specifier = ">=2.4.0" },
-    { name = "pytest-xdist", specifier = ">=3.1.0" },
-    { name = "ruff", specifier = ">=0.15.1" },
-    { name = "types-pyyaml", specifier = ">=6.0.12.20250915" },
-]
-linters = [
-    { name = "commitizen", specifier = ">=4.13.9" },
-    { name = "mypy", specifier = ">=1.19.1" },
-    { name = "prek", specifier = ">=0.3.3" },
-    { name = "ruff", specifier = ">=0.15.1" },
-    { name = "types-pyyaml", specifier = ">=6.0.12.20250915" },
-]
-test = [
-    { name = "pytest", specifier = ">=9" },
-    { name = "pytest-cov", specifier = ">=4" },
-    { name = "pytest-regressions", specifier = ">=2.4.0" },
-    { name = "pytest-xdist", specifier = ">=3.1.0" },
+sdist = { url = "https://files.pythonhosted.org/packages/23/b2/9a5c747547ca2da7359c571054689f48a583163d8b9e0ba3aadd8948988f/pelican_osm-0.3.1.tar.gz", hash = "sha256:8ade4888022dc7ded50d5efa873ff03604544e13b1c28deb9db4e94358d9c3b5", size = 13490, upload-time = "2026-03-14T16:47:35.842Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/23/b0/903a5aa858d6c3a862ca20cdd623b987200af05f579615e2255d6925eb8e/pelican_osm-0.3.1-py3-none-any.whl", hash = "sha256:b3fe99a202854c2301618b69099087a002aa2a9c07ac8ddc2945847c3b4844d2", size = 14833, upload-time = "2026-03-14T16:47:34.201Z" },
 ]
 
 [[package]]
