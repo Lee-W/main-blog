@@ -11,7 +11,7 @@ Cover: /images/posts-image/2026/nekton-fujisawa/day-1.jpeg
 
 <!--more-->
 
-{% place nekton-fujisawa %}
+{% place places.yaml#nekton-fujisawa %}
 
 距離藤澤車站非常非常近
 如果是想巡禮《青春豬頭少年》系列，或是打算去江之島玩

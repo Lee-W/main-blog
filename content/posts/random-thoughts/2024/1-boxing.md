@@ -30,7 +30,7 @@ EP.138 才是學姊主要講拳擊相關的部分， EP.137 是聊她的本業
 
 我平時都是去`拳擊天地 南京館`練拳
 
-{% place boxing-nan-jing %}
+{% place places.yaml#boxing-nan-jing %}
 
 除非要帶朋友去玩，不然我都在很奇怪的時間去
 正常上班族應該是遇不太到我

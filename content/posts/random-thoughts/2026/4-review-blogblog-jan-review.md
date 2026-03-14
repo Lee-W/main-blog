@@ -157,11 +157,11 @@ Trilium Notes 看起來蠻酷的
 我也有 2 本御朱印帳，跟 Abend 的 12 本都沒重複
 分別來自
 
-{% place kitano-tenman-jinja %}
+{% place places.yaml#kitano-tenman-jinja %}
 
 跟
 
-{% place takachiho-shrine %}
+{% place places.yaml#takachiho-shrine %}
 
 看到三毛貓的特殊御朱印，想到我還有動畫聯名御朱印呢
 這 2 本御朱印帳也都是聖地巡禮時買的
