@@ -95,6 +95,7 @@ MARKDOWN = {
 PLUGIN_PATHS = ["pelican-plugins"]
 PLUGINS = [
     "another_read_more_link",
+    "pelican.plugins.random_article",
     "pelican.plugins.heatmap",
     "pelican.plugins.osm",
     "pelican.plugins.neighbors",
@@ -142,6 +143,7 @@ MENUITEMS = (
     ("🗄️ Archives", "/archives.html"),
     ("📚 Series", "/series_list.html"),
     ("🔍 Search", "/search.html"),
+    ("🎲 Random", "/random/index.html"),
 )
 
 # Content Setting
