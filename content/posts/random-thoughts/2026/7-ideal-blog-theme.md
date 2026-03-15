@@ -12,7 +12,7 @@ Series: 理想的日常 (2026)
 因為 BlogBlog 同樂會，看到大家有很多酷酷的 Blog 功能
 像是 [Wiwi 的貼文和筆記 | Wiwi.Blog](https://wiwi.blog/) 的**隨機** 跟 [Alex Hsu](https://alexhsu.com/) 的 **寫作日曆**
 人家都有這些酷酷的功能耶，我也想要
-於是就花了不少時間寫了幾個 pelican 的插件
+於是就花了不少時間寫了幾個 pelican 的外掛
 
 1. [pelican-heatmap](https://github.com/Lee-W/pelican-heatmap) → 寫作日曆
 2. [pelican-random-article](https://github.com/Lee-W/pelican-random-article) → 隨機文章
