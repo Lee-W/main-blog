@@ -1,5 +1,5 @@
 Title: [Book] 隨機騙局
-Date: 2016-04-05 14:02
+Date: 2016-04-05 14:02 +0800
 Category: Book
 Tags: Other
 Slug: fooled-by-randomness

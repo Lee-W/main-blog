@@ -1,6 +1,6 @@
 Title: Python Table Manners 系列
-Date: 2020-02-22 19:32
-Modified: 2020-03-18 10:20
+Date: 2020-02-22 19:32 +0800
+Modified: 2020-03-18 10:20 +0800
 Category: Tech
 Tags: Python
 Slug: python-table-manners-series

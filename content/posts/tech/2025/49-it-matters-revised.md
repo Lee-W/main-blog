@@ -1,5 +1,5 @@
 Title: ウォール・ローゼが突破された！
-Date: 2025-10-25 11:20
+Date: 2025-10-25 11:20 +0800
 Category: Tech
 Tags: Open Source
 Slug: it-matters-revised

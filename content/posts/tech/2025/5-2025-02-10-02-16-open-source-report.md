@@ -1,6 +1,6 @@
 Title: 2025/02/10 - 02/16 開源貢獻週報
 Subtitle: iThome 的得獎者還在 GO
-Date: 2025-02-16 22:35
+Date: 2025-02-16 22:35 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-02-10-02-16-open-source-report

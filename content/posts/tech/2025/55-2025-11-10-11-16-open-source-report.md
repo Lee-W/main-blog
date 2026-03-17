@@ -1,6 +1,6 @@
 Title: 2025/11/10 - 11/16 開源貢獻週報
 Subtitle: 這週的 commitizen 是發 PR 的回合
-Date: 2025-11-17 09:40
+Date: 2025-11-17 09:40 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-11-10-11-16-open-source-report

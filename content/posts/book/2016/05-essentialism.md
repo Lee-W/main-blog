@@ -1,5 +1,5 @@
 Title: [Book] 少，但是更好
-Date: 2016-03-11 14:29
+Date: 2016-03-11 14:29 +0800
 Category: Book
 Tags: Productivity
 Slug: essentialism

@@ -1,6 +1,6 @@
 Title: 開源菜雞的隨意雜談
 Subtitle: 這天，台灣多了 5 位 Airflow 貢獻者
-Date: 2025-12-03 23:05
+Date: 2025-12-03 23:05 +0800
 Category: Tech
 Tags: Airflow, Development Sprint
 Slug: some-random-guy-talk-about-airflow

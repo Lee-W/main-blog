@@ -1,5 +1,5 @@
 Title: [Book] Zero to One
-Date: 2015-02-16 08:57
+Date: 2015-02-16 08:57 +0800
 Category: Book
 Tags: Startup
 Slug: zero-to-one

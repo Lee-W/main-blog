@@ -1,5 +1,5 @@
 Title: 理想的優雅憤怒
-Date: 2026-03-16 23:35
+Date: 2026-03-16 23:35 +0800
 Category: Random Thoughts
 Tags: BlogBlog 同樂會
 Slug: ideal-elegant-anger

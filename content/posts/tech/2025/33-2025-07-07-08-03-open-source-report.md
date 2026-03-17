@@ -1,6 +1,6 @@
 Title: 2025/07/07 - 08/03 開源貢獻週報
 Subtitle: ただいま
-Date: 2025-07-03 23:00
+Date: 2025-07-03 23:00 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-07-07-08-03-open-source-report

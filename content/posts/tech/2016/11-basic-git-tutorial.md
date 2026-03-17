@@ -1,5 +1,5 @@
 Title: Basic Git Tutorial
-Date: 2016-09-16 15:41
+Date: 2016-09-16 15:41 +0800
 Category: Tech
 Tags: Git, Tutorial
 Slug: basic-git-tutorial

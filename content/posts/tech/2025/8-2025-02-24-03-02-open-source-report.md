@@ -1,6 +1,6 @@
 Title: 2025/02/24 - 03/02 開源貢獻週報
 Subtitle: commitizen-tools 支援 uv 啦！
-Date: 2025-03-02 10:50
+Date: 2025-03-02 10:50 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-02-24-03-02-open-source-report

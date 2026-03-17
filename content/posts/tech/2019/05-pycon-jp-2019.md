@@ -1,5 +1,5 @@
 Title: PyCon JP 2019
-Date: 2019-10-12 22:30
+Date: 2019-10-12 22:30 +0800
 Category: Tech
 Tags: Conference, PyCon, Python
 Slug: pycon-jp-2019

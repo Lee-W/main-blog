@@ -1,6 +1,6 @@
 Title: Intro to Airflow - From Zero to Hero
 Subtitle: 3/16 有拍抗女神更精彩的分享，敬請期待
-Date: 2024-02-20 23:59
+Date: 2024-02-20 23:59 +0800
 Category: Tech
 Tags: 源來適你, Airflow, Talks
 Slug: intro-to-airflow-from-zero-to-hero

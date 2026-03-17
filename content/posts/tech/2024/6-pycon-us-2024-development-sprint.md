@@ -1,5 +1,5 @@
 Title: PyCon US 2024 Development Sprint
-Date: 2024-05-21 10:15
+Date: 2024-05-21 10:15 +0800
 Category: Tech
 Tags: PyCon, Python, Development Sprint, commitizen-tools
 Slug: pycon-us-2024-development-sprint

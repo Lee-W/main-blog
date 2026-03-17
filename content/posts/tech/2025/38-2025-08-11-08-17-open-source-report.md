@@ -1,6 +1,6 @@
 Title: 2025/08/11 - 08/17 開源貢獻週報
 Subtitle: 難得準時
-Date: 2025-08-17 14:50
+Date: 2025-08-17 14:50 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-08-11-08-17-open-source-report

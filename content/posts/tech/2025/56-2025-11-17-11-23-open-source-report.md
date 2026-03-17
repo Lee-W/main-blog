@@ -1,6 +1,6 @@
 Title: 2025/11/17 - 11/23 開源貢獻週報
 Subtitle: commitizen-tools 的新子專案 setup-cz!
-Date: 2025-11-24 08:50
+Date: 2025-11-24 08:50 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-11-17-11-23-open-source-report

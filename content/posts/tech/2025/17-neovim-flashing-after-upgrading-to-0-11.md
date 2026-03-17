@@ -1,6 +1,6 @@
 Title: 更新 Neovim 0.11.0 後， iTerm 視窗一直閃
 Subtitle: 沒有大意是好事，但過猶不及
-Date: 2025-05-07 09:20
+Date: 2025-05-07 09:20 +0800
 Category: Tech
 Tags: Neovim
 Slug: neovim-flashing-after-upgrading-to-0-11

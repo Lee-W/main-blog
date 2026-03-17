@@ -1,5 +1,5 @@
 Title: [Book] 賈伯斯傳
-Date: 2016-09-14 04:53
+Date: 2016-09-14 04:53 +0800
 Category: Book
 Tags: Autobiography
 Slug: jobs

@@ -1,5 +1,5 @@
 Title: DVC - Data Versioning
-Date: 2021-06-14 15:18
+Date: 2021-06-14 15:18 +0800
 Category: Tech
 Tags: Data, Version Control, DVC
 Slug: dvc-data-versioning

@@ -1,5 +1,5 @@
 Title: 2025/02/17 - 02/23 開源貢獻週報
-Date: 2025-02-23 23:15
+Date: 2025-02-23 23:15 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-02-17-02-23-open-source-report

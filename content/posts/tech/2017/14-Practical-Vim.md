@@ -1,5 +1,5 @@
 Title: Practical Vim
-Date: 2017-06-26 08:50
+Date: 2017-06-26 08:50 +0800
 Category: Tech
 Tags: Vim, Note
 Slug: Practical-Vim

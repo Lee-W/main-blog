@@ -1,5 +1,5 @@
 Title: Dual Boot FreeBSD Using GRUB2
-Date: 2014-10-21 08:56
+Date: 2014-10-21 08:56 +0800
 Category: Tech
 Tags: Linux-Unix, Dual Boot
 Slug: dual-boot-freebsd-using-grub2

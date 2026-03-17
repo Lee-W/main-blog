@@ -1,6 +1,6 @@
 Title: Airflow 多語系化
 Subtitle: Make a sunrise that I know I'll never see
-Date: 2025-05-30 16:35
+Date: 2025-05-30 16:35 +0800
 Category: Tech
 Tags: 源來適你, Airflow
 Slug: airflow-multilingual

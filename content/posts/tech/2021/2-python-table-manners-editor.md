@@ -1,5 +1,5 @@
 Title: Python Table Manners 番外 - 編輯器
-Date: 2021-01-02 12:57
+Date: 2021-01-02 12:57 +0800
 Category: Tech
 Tags: Python, editor
 Slug: python-table-manner-editor

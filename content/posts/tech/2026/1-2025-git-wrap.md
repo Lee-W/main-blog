@@ -1,5 +1,5 @@
 Title: 2025 Git Wrapped
-Date: 2026-01-03 20:55
+Date: 2026-01-03 20:55 +0800
 Category: Tech
 Tags: Open Source, 年度回顧
 Slug: 2025-git-wrapped

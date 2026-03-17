@@ -1,6 +1,6 @@
 Title: Python Table Manners - 程式碼風格
-Date: 2020-02-26 18:39
-Modified: 2020-10-04 15:57
+Date: 2020-02-26 18:39 +0800
+Modified: 2020-10-04 15:57 +0800
 Category: Tech
 Tags: Python, Code Quality
 Slug: python-table-manners-coding-style

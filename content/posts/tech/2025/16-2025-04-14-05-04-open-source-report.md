@@ -1,6 +1,6 @@
 Title: 2025/04/14 - 05/04 開源貢獻週報
 Subtitle: May the Force be with You
-Date: 2025-05-04 22:45
+Date: 2025-05-04 22:45 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-04-14-05-04-open-source-report

@@ -1,6 +1,6 @@
 Title: Play with the latest Airflow 3.0.0 alpha 1!
 Subtitle: I mean alpha 2...
-Date: 2025-02-09 11:20
+Date: 2025-02-09 11:20 +0800
 Category: Tech
 Tags: Airflow, Airflow 3.0
 Slug: airflow-3-0-0-a2

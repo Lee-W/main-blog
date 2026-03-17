@@ -1,5 +1,5 @@
 Title: [Book] 葛洛夫給經理人的第一課：從煮蛋、賣咖啡的早餐店談高效能管理之道
-Date: 2020-09-10 12:53
+Date: 2020-09-10 12:53 +0800
 Category: Book
 Tags: Management
 Slug: high-output-management

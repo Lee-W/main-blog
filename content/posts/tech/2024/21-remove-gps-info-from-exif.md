@@ -1,6 +1,6 @@
 Title: 移除照片 Exif 中的 GPSInfo
 Subtitle: 氣息遮斷 A+
-Date: 2024-11-03 10:40
+Date: 2024-11-03 10:40 +0800
 Category: Tech
 Tags: Python, Blog, Pre-commit
 Slug: remove-gps-info-from-exif

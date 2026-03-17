@@ -1,5 +1,5 @@
 Title: [Note] Effective Python
-Date: 2019-01-19 16:45
+Date: 2019-01-19 16:45 +0800
 Category: Tech
 Tags: Python, Note
 Slug: effective-python

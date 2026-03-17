@@ -1,5 +1,5 @@
 Title: 我如何更有效率的使用時間
-Date: 2017-02-03 00:53
+Date: 2017-02-03 00:53 +0800
 Category: Random Thoughts
 Tags: Productivity
 Slug: how-do-i-manage-my-time

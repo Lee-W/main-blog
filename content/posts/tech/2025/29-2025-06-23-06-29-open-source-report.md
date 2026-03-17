@@ -1,6 +1,6 @@
 Title: 2025/06/23 - 06/29 開源貢獻週報
 Subtitle: 事不宜遲，現在就購票吧
-Date: 2025-07-01 10:40
+Date: 2025-07-01 10:40 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-06-23-06-29-open-source-report

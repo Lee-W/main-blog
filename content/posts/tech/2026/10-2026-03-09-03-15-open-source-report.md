@@ -1,6 +1,6 @@
 Title: 2026/03/09 - 03/15 開源貢獻週報
 Subtitle: 大家一起來用 pelican 寫部落格！
-Date: 2026-03-15 21:50
+Date: 2026-03-15 21:50 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2026-03-09-03-15-open-source-report

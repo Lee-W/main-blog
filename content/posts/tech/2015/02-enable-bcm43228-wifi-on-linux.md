@@ -1,5 +1,5 @@
 Title: 驅動 BCM43228 網卡在 Linux 的無線功能
-Date: 2015-01-28 08:52
+Date: 2015-01-28 08:52 +0800
 Category: Tech
 Tags: Linux-Unix, Dual Boot
 Slug: enable-bcm43228-wifi-on-linux

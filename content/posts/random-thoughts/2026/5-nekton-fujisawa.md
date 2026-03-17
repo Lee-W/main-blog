@@ -1,5 +1,5 @@
 Title: NEKTON FUJISAWA コワーキングスペース&シェアキッチン
-Date: 2026-03-04 22:17
+Date: 2026-03-04 22:17 +0800
 Category: Random Thoughts
 Tags: Coworking Space, 日本, 神奈川
 Slug: nekton-fujisawa

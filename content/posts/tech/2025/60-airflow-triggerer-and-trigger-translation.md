@@ -1,5 +1,5 @@
 Title: 觸發觸發器的元件，是不是該叫觸發觸發器器
-Date: 2025-12-04 22:40
+Date: 2025-12-04 22:40 +0800
 Category: Tech
 Tags: Airflow
 Slug: airflow-triggerer-trigger-translation

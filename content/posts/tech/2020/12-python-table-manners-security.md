@@ -1,6 +1,6 @@
 Title: Python Table Manners - 安全性檢查
-Date: 2020-03-22 13:10
-Modified: 2020-10-04 16:13
+Date: 2020-03-22 13:10 +0800
+Modified: 2020-10-04 16:13 +0800
 Category: Tech
 Tags: Python, Security
 Slug: python-table-manners-security

@@ -1,6 +1,6 @@
 Title: 黃金流沙饅頭營 Airflow 3.0 宣傳影片 幕後花絮
 Subtitle: 拋頭露面實在不是 I 人如我做的來的
-Date: 2025-03-29 11:50
+Date: 2025-03-29 11:50 +0800
 Category: Tech
 Tags: Airflow, Airflow 3.0, 源來適你
 Slug: opensource4you-airflow-3-0-event-promotion

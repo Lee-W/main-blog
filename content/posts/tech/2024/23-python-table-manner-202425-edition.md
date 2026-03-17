@@ -1,6 +1,6 @@
 Title: Python Table Manners
 Subtitle: 2024/25 edition 製作確定
-Date: 2024-11-13 23:00
+Date: 2024-11-13 23:00 +0800
 Category: Tech
 Tags: Python
 Slug: python-table-manners-series-2024-2025-edition

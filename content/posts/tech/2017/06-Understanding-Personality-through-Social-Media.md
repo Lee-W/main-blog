@@ -1,5 +1,5 @@
 Title: [Paper] Understanding Personality through Social Media
-Date: 2017-04-05 22:30
+Date: 2017-04-05 22:30 +0800
 Category: Tech
 Tags: Paper, Machine Learning, NLP, MBTI, Personality
 Slug: Understanding-Personality-through-Social-Media

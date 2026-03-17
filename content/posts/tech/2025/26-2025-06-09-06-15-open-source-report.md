@@ -1,6 +1,6 @@
 Title: 2025/06/09 - 06/15 開源貢獻週報
 Subtitle: Airflow 3 PR 準備好了！
-Date: 2025-06-17 12:30
+Date: 2025-06-17 12:30 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-06-09-06-15-open-source-report

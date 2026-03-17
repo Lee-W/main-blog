@@ -1,6 +1,6 @@
 Title: Python Table Manners - 管理繁瑣任務
-Date: 2020-02-27 20:04
-Modified: 2022-02-03 16:12
+Date: 2020-02-27 20:04 +0800
+Modified: 2022-02-03 16:12 +0800
 Category: Tech
 Tags: Python, Task
 Slug: python-table-manners-manage-trivial-tasks

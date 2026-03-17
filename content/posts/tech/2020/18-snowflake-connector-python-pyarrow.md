@@ -1,5 +1,5 @@
 Title: snowflake-connector-python: 你的 pyarrow 不是你的 pyarrow
-Date: 2020-12-22 23:20
+Date: 2020-12-22 23:20 +0800
 Category: Tech
 Tags: Python, snowflake
 Slug: snowflake-python-connector-install-extra-pyarrow-will-not-solve-your-problem

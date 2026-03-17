@@ -1,6 +1,6 @@
 Title: 2026/01/05 - 01/11 開源貢獻週報
 Subtitle: 回來了， commitizen 的大家都回來了！
-Date: 2026-01-11 22:40
+Date: 2026-01-11 22:40 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2026-01-05-01-11-open-source-report

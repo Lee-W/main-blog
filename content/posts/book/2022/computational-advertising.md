@@ -1,5 +1,5 @@
 Title: [Book] 計算廣告：互聯網商業變現的市場與技術
-Date: 2021-02-13 22:35
+Date: 2021-02-13 22:35 +0800
 Category: Book
 Tags: Advertising
 Slug: computational-advertising

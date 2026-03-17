@@ -1,5 +1,5 @@
 Title: [Book] 為什麼他接的案子比我多
-Date: 2015-11-29 12:16
+Date: 2015-11-29 12:16 +0800
 Category: Book
 Tags: Design
 Slug: burn-your-portfolio-stuff-they-don-t-teach-you-in-design-school-but-should

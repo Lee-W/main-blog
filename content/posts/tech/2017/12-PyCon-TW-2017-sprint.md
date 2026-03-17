@@ -1,5 +1,5 @@
 Title: PyCon TW 2017 - Sprint
-Date: 2017-06-17 16:07
+Date: 2017-06-17 16:07 +0800
 Category: Tech
 Tags: Python, Conference, PyCon
 Slug: PyCon-TW-2017-Sprint

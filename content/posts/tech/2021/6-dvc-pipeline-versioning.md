@@ -1,6 +1,6 @@
 Title: DVC - Pipeline Versioning
-Date: 2021-06-20 11:30
-Modified: 2021-06-27 17:58
+Date: 2021-06-20 11:30 +0800
+Modified: 2021-06-27 17:58 +0800
 Category: Tech
 Tags: Data, Version Control, DVC
 Slug: dvc-pipeline-versioning

@@ -1,6 +1,6 @@
 Title: 2025/05/12 - 05/18 開源貢獻週報
 Subtitle: 這週又是 commitizen 的大勝利，感謝 Tim 大的努力
-Date: 2025-05-20 10:30
+Date: 2025-05-20 10:30 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-05-12-05-18-open-source-report

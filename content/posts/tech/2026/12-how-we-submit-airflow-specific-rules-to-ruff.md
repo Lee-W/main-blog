@@ -1,6 +1,6 @@
 Title: 如何把 Airflow 規則貢獻進 Ruff？
-Date: 2026-03-17 17:05
-Modified: 2026-03-17 21:40
+Date: 2026-03-17 17:05 +0800
+Modified: 2026-03-17 21:40 +0800
 Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: how-we-submit-airflow-specific-rules-to-ruff

@@ -1,5 +1,5 @@
 Title: MacBook Pro Retina 開箱
-Date: 2015-01-02 04:14
+Date: 2015-01-02 04:14 +0800
 Category: Random Thoughts
 Tags: mac, unboxing
 Slug: mbpr-out-of-the-box

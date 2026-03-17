@@ -1,5 +1,5 @@
 Title: [Paper] Deep Learning-Based Document Modeling for Personality Detection from Text
-Date: 2017-04-11 17:59
+Date: 2017-04-11 17:59 +0800
 Category: Tech
 Tags: Paper, Deep Learning, Machine Learning, NLP, Big Five Theory, Personality
 Slug: Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text

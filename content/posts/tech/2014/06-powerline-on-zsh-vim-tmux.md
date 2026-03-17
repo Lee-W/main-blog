@@ -1,5 +1,5 @@
 Title: powerline on zsh, vim, tmux
-Date: 2014-07-30 15:01
+Date: 2014-07-30 15:01 +0800
 Category: Tech
 Tags: Linux-Unix, Utility
 Slug: powerline-on-zsh-vim-tmux

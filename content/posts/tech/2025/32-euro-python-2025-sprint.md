@@ -1,5 +1,5 @@
 Title: EuroPython 2025 Airflow Development Sprint
-Date: 2025-08-02 22:20
+Date: 2025-08-02 22:20 +0800
 Category: Tech
 Tags: EuroPython, Development Sprint
 Slug: europython-2025-airflow-development-sprint

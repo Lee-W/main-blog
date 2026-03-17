@@ -1,5 +1,5 @@
 Title: Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」的草稿
-Date: 2024-07-13 12:20
+Date: 2024-07-13 12:20 +0800
 Category: Tech
 Tags: Python, Study Session
 Slug: Introducing-Python-ch19-draft

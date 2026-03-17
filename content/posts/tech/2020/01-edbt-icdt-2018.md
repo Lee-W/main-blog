@@ -1,5 +1,5 @@
 Title: EDBT-ICDT 2018
-Date: 2020-01-03 15:30
+Date: 2020-01-03 15:30 +0800
 Category: Tech
 Tags: Conference
 Slug: edbt-icdt-2018

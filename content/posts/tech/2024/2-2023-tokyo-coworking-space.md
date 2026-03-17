@@ -1,5 +1,5 @@
 Title: 2023 東京 Coworking Spaces
-Date: 2024-01-22 22:58
+Date: 2024-01-22 22:58 +0800
 Category: Tech
 Tags: Coworking Space
 Slug: 2023-tokyo-coworking-space

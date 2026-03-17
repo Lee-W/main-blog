@@ -1,5 +1,5 @@
 Title: Git and Git Hub
-Date: 2014-02-22 16:18
+Date: 2014-02-22 16:18 +0800
 Category: Tech
 Tags: Git, Tutorial, Deprecated
 Slug: git-and-git-hub

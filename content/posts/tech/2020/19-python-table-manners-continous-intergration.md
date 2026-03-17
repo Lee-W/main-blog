@@ -1,5 +1,5 @@
 Title: Python Table Manners - 持續整合/部署
-Date: 2020-12-31 17:53
+Date: 2020-12-31 17:53 +0800
 Category: Tech
 Tags: Python, CI/CD, commitizen-tools
 Slug: python-table-manner-continuous-integration

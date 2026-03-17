@@ -1,5 +1,5 @@
 Title: rename - 批次更改檔名
-Date: 2015-02-22 15:06
+Date: 2015-02-22 15:06 +0800
 Category: Tech
 Tags: Linux-Unix, Shell Script
 Slug: rename

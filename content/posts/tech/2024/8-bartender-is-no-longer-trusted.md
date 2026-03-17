@@ -1,5 +1,5 @@
 Title: Bartender 失去信任的此時，我們該何去何從
-Date: 2024-06-15 11:58
+Date: 2024-06-15 11:58 +0800
 Category: Tech
 Tags: Mac
 Slug: where-should-we-go-if-bartender-is-no-longer-considered-safe

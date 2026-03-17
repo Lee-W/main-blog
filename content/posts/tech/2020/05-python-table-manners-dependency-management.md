@@ -1,6 +1,6 @@
 Title: Python Table Manners - 虛擬環境和套件管理
-Date: 2020-02-23 12:24
-Modified: 2020-10-04 15:22
+Date: 2020-02-23 12:24 +0800
+Modified: 2020-10-04 15:22 +0800
 Category: Tech
 Tags: Python, Dependency
 Slug: python-table-manners-dependency-mangement

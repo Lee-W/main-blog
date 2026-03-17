@@ -1,5 +1,5 @@
 Title: [Book] 告別菜尾時代
-Date: 2018-11-07 14:00
+Date: 2018-11-07 14:00 +0800
 Category: Book
 Tags: Story
 Slug: it-s-time-for-the-young-generation

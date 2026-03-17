@@ -1,6 +1,6 @@
 Title: 2025/06/02 - 06/08 開源貢獻週報
 Subtitle: Airflow 2 升上去了， Airflow 3 就不遠了！
-Date: 2025-06-09 09:45
+Date: 2025-06-09 09:45 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-06-02-06-08-open-source-report

@@ -1,5 +1,5 @@
 Title: 2020 發文頻率分析 - 如何在 pelican 頁面中嵌入 HTML
-Date: 2021-01-29 23:10
+Date: 2021-01-29 23:10 +0800
 Category: Tech
 Tags: pelican
 Slug: post-frequency-analysis-how-to-embed-html-in-pelican

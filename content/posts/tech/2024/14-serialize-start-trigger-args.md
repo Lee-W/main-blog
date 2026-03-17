@@ -1,6 +1,6 @@
 Title: Serialize StartTriggerArgs
 Subtitle: That's not how Airflow serialization works!
-Date: 2024-08-18 10:30
+Date: 2024-08-18 10:30 +0800
 Category: Tech
 Tags: Python, Airflow, Airflow 2.10
 Slug: serialize-start-trigger-args

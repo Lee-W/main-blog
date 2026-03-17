@@ -1,5 +1,5 @@
 Title: 一覺醒來 Neovim 的 treesitter 就壞掉了
-Date: 2026-01-09 12:30
+Date: 2026-01-09 12:30 +0800
 Category: Tech
 Tags: Neovim
 Slug: neovim-treesitter-was-broken

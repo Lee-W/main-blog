@@ -1,5 +1,5 @@
 Title: [Book] 最高學以致用法
-Date: 2021-02-13 22:35
+Date: 2021-02-13 22:35 +0800
 Category: Book
 Tags: Learning
 Slug: the-power-of-output

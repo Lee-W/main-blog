@@ -1,5 +1,5 @@
 Title: Line Echo Bot on Django
-Date: 2016-11-24 03:26
+Date: 2016-11-24 03:26 +0800
 Category: Tech
 Tags: Django, Chat Bot
 Slug: line-echo-bot-on-django

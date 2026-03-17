@@ -1,5 +1,5 @@
 Title: [Book] 穀倉效應
-Date: 2016-10-04 15:00
+Date: 2016-10-04 15:00 +0800
 Category: Book
 Tags: Team
 Slug: the-silo-effect

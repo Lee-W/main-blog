@@ -1,5 +1,5 @@
 Title: [Book] 演算法統治世界
-Date: 2016-05-04 12:00
+Date: 2016-05-04 12:00 +0800
 Category: Book
 Tags: Algorithm
 Slug: automate-this-how-algorithms-came-to-rule-our-world

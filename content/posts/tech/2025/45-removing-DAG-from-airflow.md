@@ -1,6 +1,6 @@
 Title: DAG 即將從 Airflow 移除
 Subtitle: 網酸： 早該了
-Date: 2025-09-04 18:45
+Date: 2025-09-04 18:45 +0800
 Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: removing-DAG-from-airflow

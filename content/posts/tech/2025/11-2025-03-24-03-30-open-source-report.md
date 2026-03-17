@@ -1,6 +1,6 @@
 Title: 2025/03/24 - 03/30 開源貢獻週報
 Subtitle: 這些遠古 issue 不知道現在還有沒有效
-Date: 2025-03-30 23:00
+Date: 2025-03-30 23:00 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-03-24-03-30-open-source-report

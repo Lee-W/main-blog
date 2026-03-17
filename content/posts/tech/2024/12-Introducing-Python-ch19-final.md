@@ -1,6 +1,6 @@
 Title: Gobby's Python 讀書會 - 「第十九章 成為 Python 鐵粉」決定版
-Date: 2024-08-06 19:58
-Modified: 2024-08-06 23:35
+Date: 2024-08-06 19:58 +0800
+Modified: 2024-08-06 23:35 +0800
 Category: Tech
 Tags: Python, Study Session
 Slug: Introducing-Python-ch19-final

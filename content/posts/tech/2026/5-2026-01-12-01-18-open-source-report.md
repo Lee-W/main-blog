@@ -1,6 +1,6 @@
 Title: 2026/01/12 - 01/18 開源貢獻週報
 Subtitle: 3.1.6 釋出當天， pycon-etl 就跟上了！
-Date: 2026-01-18 22:45
+Date: 2026-01-18 22:45 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2026-01-12-01-18-open-source-report

@@ -1,5 +1,5 @@
 Title: Deploy LineBot on Heroku
-Date: 2016-11-27 06:05
+Date: 2016-11-27 06:05 +0800
 Category: Tech
 Tags: Heroku, Django, Chat Bot, Deployment
 Slug: deploy-linebot-on-heroku

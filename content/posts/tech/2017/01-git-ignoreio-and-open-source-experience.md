@@ -1,5 +1,5 @@
 Title: git ignore-io 與 開源貢獻經驗
-Date: 2017-02-28 21:56
+Date: 2017-02-28 21:56 +0800
 Category: Tech
 Tags: Open Source
 Slug: git-ignoreio-and-open-source-experience

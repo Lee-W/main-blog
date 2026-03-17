@@ -1,5 +1,5 @@
 Title: [Book] 學徒模式
-Date: 2020-09-17 11:30
+Date: 2020-09-17 11:30 +0800
 Category: Book
 Tags: Career Path
 Slug: apprenticeship-patterns

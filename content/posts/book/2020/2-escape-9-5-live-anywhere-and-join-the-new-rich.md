@@ -1,5 +1,5 @@
 Title: [Book] 一週工作四小時
-Date: 2020-07-06 10:47
+Date: 2020-07-06 10:47 +0800
 Category: Book
 Tags: Productivity, Business
 Slug: escape-9-5-live-anywhere-and-join-the-new-rich

@@ -1,5 +1,5 @@
 Title: [C++] 如何 create thread
-Date: 2013-12-11 00:56
+Date: 2013-12-11 00:56 +0800
 Category: Tech
 Tags: C++, Thread
 Slug: how-to-create-thread-in-c-plus-plus

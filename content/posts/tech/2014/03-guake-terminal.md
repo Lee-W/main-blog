@@ -1,5 +1,5 @@
 Title: Guake terminal
-Date: 2014-02-09 07:02
+Date: 2014-02-09 07:02 +0800
 Category: Tech
 Tags: Linux-Unix, Utility
 Slug: guake-terminal

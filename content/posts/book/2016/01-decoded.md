@@ -1,5 +1,5 @@
 Title: [Book] 行銷前必修的購物心理學
-Date: 2016-01-01 03:16
+Date: 2016-01-01 03:16 +0800
 Category: Book
 Tags: Sales
 Slug: decoded

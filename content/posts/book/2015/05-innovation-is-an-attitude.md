@@ -1,5 +1,5 @@
 Title: [Book] 創新是一種態度
-Date: 2015-10-06 12:04
+Date: 2015-10-06 12:04 +0800
 Category: Book
 Tags: Innovation
 Slug: innovation-is-an-attitude

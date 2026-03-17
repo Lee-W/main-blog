@@ -1,5 +1,5 @@
 Title: [Book] 你如何衡量你的人生
-Date: 2016-08-26 03:26
+Date: 2016-08-26 03:26 +0800
 Category: Book
 Tags: Inspiring
 Slug: how-will-you-measure-your-life

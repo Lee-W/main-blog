@@ -1,5 +1,5 @@
 Title: autojump - 在 terminal 中快速跳轉資料夾
-Date: 2014-02-01 16:58
+Date: 2014-02-01 16:58 +0800
 Category: Tech
 Tags: Linux-Unix, Utility
 Slug: autojump

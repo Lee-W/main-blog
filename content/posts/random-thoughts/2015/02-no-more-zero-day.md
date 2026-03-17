@@ -1,5 +1,5 @@
 Title: No More Zero Day
-Date: 2015-10-27 06:53
+Date: 2015-10-27 06:53 +0800
 Category: Random Thoughts
 Tags: Productivity
 Slug: no-more-zero-day

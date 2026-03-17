@@ -1,5 +1,5 @@
 Title: More than Just Echo Bot
-Date: 2016-11-29 01:57
+Date: 2016-11-29 01:57 +0800
 Category: Tech
 Tags: Chat Bot, NLP, Machine Learning
 Slug: more-than-just-echo-bot

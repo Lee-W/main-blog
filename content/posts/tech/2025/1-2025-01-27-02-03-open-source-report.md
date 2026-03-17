@@ -1,6 +1,6 @@
 Title: 2025/01/27 - 02/03 開源貢獻週報
 Subtitle: 我愛慕虛榮啦
-Date: 2025-02-02 21:00
+Date: 2025-02-02 21:00 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-01-27-02-03-open-source-report

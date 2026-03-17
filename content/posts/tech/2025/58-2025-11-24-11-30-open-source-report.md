@@ -1,6 +1,6 @@
 Title: 2025/11/24 - 11/30 開源貢獻週報
 Subtitle: 這週是開源音樂的回合
-Date: 2025-11-30 16:30
+Date: 2025-11-30 16:30 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-11-24-11-30-open-source-report

@@ -1,5 +1,5 @@
 Title: Introduction to Chatbot
-Date: 2016-11-21 08:18
+Date: 2016-11-21 08:18 +0800
 Category: Tech
 Tags: Chat Bot
 Slug: introduction-to-chatbot

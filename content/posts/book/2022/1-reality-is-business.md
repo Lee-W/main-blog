@@ -1,6 +1,6 @@
 Title: [Book] 真相製造
 Subtitle: 你所相信的真相真的是真相嗎？
-Date: 2022-02-03 16:10
+Date: 2022-02-03 16:10 +0800
 Category: Book
 Tags: News, Society
 Slug: reality-is-business

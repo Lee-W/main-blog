@@ -1,6 +1,6 @@
 Title: Python Table Manners - 測試 (一)
-Date: 2020-02-24 23:33
-Modified: 2020-10-04 15:33
+Date: 2020-02-24 23:33 +0800
+Modified: 2020-10-04 15:33 +0800
 Category: Tech
 Tags: Python, Test
 Slug: python-table-manners-test-1

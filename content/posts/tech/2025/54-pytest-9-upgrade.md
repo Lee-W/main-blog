@@ -1,5 +1,5 @@
 Title: 更新到 pytest 9.0.0 了，大家記得更新環境
-Date: 2025-11-12 10:30
+Date: 2025-11-12 10:30 +0800
 Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: pytest-9-upgrade

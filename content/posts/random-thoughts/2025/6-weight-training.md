@@ -1,6 +1,6 @@
 Title: 你有在健身哦？
 Subtitle: 怎麼都看不出來
-Date: 2025-05-24 13:05
+Date: 2025-05-24 13:05 +0800
 Category: Random Thoughts
 Tags: Exercise, Weight Training
 Slug: weight-training

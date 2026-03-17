@@ -1,5 +1,5 @@
 Title: [Book] OKR 做最重要的事
-Date: 2019-06-16 17:18
+Date: 2019-06-16 17:18 +0800
 Category: Book
 Tags: Productivity
 Slug: measure-what-matters

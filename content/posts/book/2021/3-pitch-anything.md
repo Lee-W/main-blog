@@ -1,5 +1,5 @@
 Title: [Book] 為什麼Google、LinkedIn、波音、高通、迪士尼都找他合作？
-Date: 2021-12-12 09:28
+Date: 2021-12-12 09:28 +0800
 Category: Book
 Tags: Business
 Slug: pitch-anyting

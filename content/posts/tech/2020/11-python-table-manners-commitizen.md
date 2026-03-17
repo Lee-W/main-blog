@@ -1,6 +1,6 @@
 Title: Python Table Manners - Commitizen: 規格化 commit message
-Date: 2020-03-01 00:45
-Modified: 2020-07-19 16:47
+Date: 2020-03-01 00:45 +0800
+Modified: 2020-07-19 16:47 +0800
 Category: Tech
 Tags: Python, Git, commitizen-tools
 Slug: python-table-manners-commitizen

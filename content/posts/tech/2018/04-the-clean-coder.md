@@ -1,5 +1,5 @@
 Title: [Note] The Clean Coder
-Date: 2018-11-16 15:03
+Date: 2018-11-16 15:03 +0800
 Category: Tech
 Tags: Note, Software Engineering
 Slug: the-clean-coder

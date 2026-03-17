@@ -1,6 +1,6 @@
 Title: 重設 Badger 2040
 Subtitle: 客製化自己的電子識別證！
-Date: 2025-02-12 23:35
+Date: 2025-02-12 23:35 +0800
 Category: Tech
 Tags: Hardware
 Slug: how-to-reset-bader-2024

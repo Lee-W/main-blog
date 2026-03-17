@@ -1,6 +1,6 @@
 Title: 2025/09/08 - 10/19 開源貢獻週報
 Subtitle: 時差爆擊
-Date: 2025-10-22 21:10
+Date: 2025-10-22 21:10 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-09-08-10-19-open-source-report

@@ -1,5 +1,5 @@
 Title: 2025/04/07 - 04/13 開源貢獻週報
-Date: 2025-04-13 19:00
+Date: 2025-04-13 19:00 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-04-07-04-13-open-source-report

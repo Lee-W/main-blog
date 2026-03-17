@@ -1,6 +1,6 @@
 Title: 透過 RSS 奪回你的注意權！
 Subtitle: 現在正是復權的時刻
-Date: 2025-01-29 21:15
+Date: 2025-01-29 21:15 +0800
 Category: Random Thoughts
 Tags: Reading
 Slug: get-your-retention-back-through-rss

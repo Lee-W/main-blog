@@ -1,6 +1,6 @@
 Title: 2025/08/18 - 08/24 開源貢獻週報
 Subtitle: 手起刀落，再見了遠古 PRs 😢
-Date: 2025-08-25 09:25
+Date: 2025-08-25 09:25 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-08-18-08-24-open-source-report

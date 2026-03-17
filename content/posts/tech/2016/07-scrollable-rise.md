@@ -1,5 +1,5 @@
 Title: Scrollable RISE
-Date: 2016-08-15 03:22
+Date: 2016-08-15 03:22 +0800
 Category: Tech
 Tags: Python, Jupyter, reveal.js
 Slug: scrollable-rise

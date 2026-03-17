@@ -1,5 +1,5 @@
 Title: Reveal.js 安裝錯誤
-Date: 2016-02-20 03:57
+Date: 2016-02-20 03:57 +0800
 Category: Tech
 Tags: JavaScript, reveal.js
 Slug: reveal-s-installation-error

@@ -1,6 +1,6 @@
 Title: 2025/12/08 - 12/14 開源貢獻週報
 Subtitle: commitizen 發佈 v4.10.1
-Date: 2025-12-17 11:30
+Date: 2025-12-17 11:30 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-12-08-12-14-open-source-report

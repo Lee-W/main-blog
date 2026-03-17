@@ -1,6 +1,6 @@
 Title: 2025/08/04 - 08/10 開源貢獻週報
 Subtitle: 申し訳ございません
-Date: 2025-08-12 22:37
+Date: 2025-08-12 22:37 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-08-04-08-10-open-source-report

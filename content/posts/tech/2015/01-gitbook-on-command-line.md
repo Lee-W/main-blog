@@ -1,5 +1,5 @@
 Title: Gitbook on Command Line
-Date: 2015-01-23 07:34
+Date: 2015-01-23 07:34 +0800
 Category: Tech
 Tags: Git Book
 Slug: gitbook-on-command-line

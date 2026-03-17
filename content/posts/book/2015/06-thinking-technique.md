@@ -1,5 +1,5 @@
 Title: [Book] 思考的技術
-Date: 2015-10-18 11:45
+Date: 2015-10-18 11:45 +0800
 Category: Book
 Tags: Thinking
 Slug: thinking-technique

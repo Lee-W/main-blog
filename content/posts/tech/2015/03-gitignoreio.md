@@ -1,5 +1,5 @@
 Title: gitignore.io
-Date: 2015-02-03 05:58
+Date: 2015-02-03 05:58 +0800
 Category: Tech
 Tags: Git, Deprecated, Utility
 Slug: gitignoreio

@@ -1,5 +1,5 @@
 Title: [Book] Clean Coder
-Date: 2015-01-17 09:35
+Date: 2015-01-17 09:35 +0800
 Category: Book
 Tags: Software Engineering, Code Quality
 Slug: Soft

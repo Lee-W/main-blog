@@ -1,5 +1,5 @@
 Title: [Book] 設計的心理學
-Date: 2023-01-01 17:34
+Date: 2023-01-01 17:34 +0800
 Category: Book
 Tags: Design
 Slug: the-design-of-everyday-things

@@ -1,5 +1,5 @@
 Title: Linux 開機自動掛載分割區
-Date: 2014-02-01 16:44
+Date: 2014-02-01 16:44 +0800
 Category: Tech
 Tags: Linux-Unix, Dual Boot
 Slug: auto-mount-disk-after-boot

@@ -1,6 +1,6 @@
 Title: Atomic Commits: An Easy & Proven Way to Manage & Automate Release Process
 Subtitle: COSCUP 2023
-Date: 2023-08-13 11:45
+Date: 2023-08-13 11:45 +0800
 Category: Tech
 Tags: PyCon TW, COSCUP
 Slug: atomic-commits-coscup-2023

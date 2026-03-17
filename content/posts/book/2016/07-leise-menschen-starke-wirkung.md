@@ -1,5 +1,5 @@
 Title: [Book] 內向者的優勢
-Date: 2016-04-19 11:55
+Date: 2016-04-19 11:55 +0800
 Category: Book
 Tags: Emotion
 Slug: leise-menschen-starke-wirkung

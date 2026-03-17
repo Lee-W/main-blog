@@ -1,6 +1,6 @@
 Title: 淺嚐 uv
 Subtitle: 先從部落格開始
-Date: 2024-10-21 18:50
+Date: 2024-10-21 18:50 +0800
 Category: Tech
 Tags: Python, Blog
 Slug: dabble-uv

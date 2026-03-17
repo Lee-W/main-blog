@@ -1,5 +1,5 @@
 Title: vimspell - vim 檢查英文文法的套件
-Date: 2015-02-14 09:59
+Date: 2015-02-14 09:59 +0800
 Category: Tech
 Tags: Vim
 Slug: vim-spell-check

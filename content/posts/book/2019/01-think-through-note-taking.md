@@ -1,5 +1,5 @@
 Title: [Book] 電腦玩物站長的筆記思考術
-Date: 2019-01-07 22:50
+Date: 2019-01-07 22:50 +0800
 Category: Book
 Tags: Note-Taking
 Slug: think-through-note-taking

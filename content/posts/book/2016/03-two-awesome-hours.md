@@ -1,5 +1,5 @@
 Title: [Book] 每天最重要的兩小時
-Date: 2016-01-10 02:31
+Date: 2016-01-10 02:31 +0800
 Category: Book
 Tags: Productivity
 Slug: two-awesome-hours

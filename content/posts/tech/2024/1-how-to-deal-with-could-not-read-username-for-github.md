@@ -1,5 +1,5 @@
 Title: 遇到 Error: fatal: could not read Username for '<https://github.com>': terminal prompts disabled 怎麼辦 😱
-Date: 2024-01-17 22:56
+Date: 2024-01-17 22:56 +0800
 Category: Tech
 Tags: GitHub Actions, CI/CD, GitHub
 Slug: how-to-deal-with-could-not-read-username-for-github

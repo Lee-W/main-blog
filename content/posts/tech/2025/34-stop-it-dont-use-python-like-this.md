@@ -1,6 +1,6 @@
 Title: 住手啊，這樣用 Python 寫程式沒有人會獲得幸福的
 Subtitle: 小林寫得很好，學學小林
-Date: 2025-08-06 23:27
+Date: 2025-08-06 23:27 +0800
 Category: Tech
 Tags: Anime, Python
 Slug: stop-it-dont-use-python-like-this

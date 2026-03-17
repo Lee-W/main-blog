@@ -1,5 +1,5 @@
 Title: Android Studio + Genymotion 安裝
-Date: 2014-12-29 09:26
+Date: 2014-12-29 09:26 +0800
 Category: Tech
 Tags: Android
 Slug: android-studio-and-genymotion-installation

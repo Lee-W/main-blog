@@ -1,6 +1,6 @@
 Title: 成為 Airflow PMC Member
 Subtitle: "I'm the PMC." "Not yet."
-Date: 2025-10-25 23:25
+Date: 2025-10-25 23:25 +0800
 Category: Tech
 Tags: Airflow
 Slug: becoming-an-airflow-pmc-member

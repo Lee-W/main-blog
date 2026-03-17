@@ -1,6 +1,6 @@
 Title: Building a Customized Linter
 Subtitle: Checking the Default Value of default_deferrable through AST
-Date: 2024-09-01 19:15
+Date: 2024-09-01 19:15 +0800
 Category: Tech
 Tags: Python, Airflow, Airflow 2.7, AST
 Slug: check_default_value_of_default_deferrable_through_ast

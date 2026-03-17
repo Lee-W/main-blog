@@ -1,5 +1,5 @@
 Title: 小林的程式會不會遇到 SQL Injection
-Date: 2020-09-22 12:50
+Date: 2020-09-22 12:50 +0800
 Category: Tech
 Tags: Python, Anime
 Slug: will-kobayashi-s-code-encounter-sql-injection

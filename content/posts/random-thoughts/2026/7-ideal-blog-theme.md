@@ -1,5 +1,5 @@
 Title: 理想的部落格主題
-Date: 2026-03-15 17:20
+Date: 2026-03-15 17:20 +0800
 Category: Random Thoughts
 Tags: BlogBlog 同樂會, Blog
 Slug: ideal-blog-theme

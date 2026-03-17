@@ -1,7 +1,7 @@
 Title: 用立牌拍照的哲學思辨
 Subtitle: ブログのひとりごと
-Date: 2024-10-23 08:10
-Modified: 2024-10-23 23:50
+Date: 2024-10-23 08:10 +0800
+Modified: 2024-10-23 23:50 +0800
 Category: Random Thoughts
 Tags: Anime
 Slug: use-acrylic-standees-to-take-photos

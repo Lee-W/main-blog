@@ -1,6 +1,6 @@
 Title: Apache Airflow 3.1.8 發佈！
 Subtitle: pycon-etl 再次拯救 SQLite 使用者
-Date: 2026-03-17 16:25
+Date: 2026-03-17 16:25 +0800
 Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: apache-airflow-3-1-8-release

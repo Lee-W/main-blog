@@ -1,5 +1,5 @@
 Title: pipenv 和 poerty 如何處理在不同作業系統下相依套件不同
-Date: 2020-02-12 11:45
+Date: 2020-02-12 11:45 +0800
 Category: Tech
 Tags: Python, Dependency
 Slug: how-pipenv-and-poetry-stores-if-dependencies-platform-dependent

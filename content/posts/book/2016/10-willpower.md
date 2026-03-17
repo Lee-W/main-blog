@@ -1,5 +1,5 @@
 Title: [Book] 增強你的意志力
-Date: 2016-06-27 02:55
+Date: 2016-06-27 02:55 +0800
 Category: Book
 Tags: Productivity
 Slug: willpower

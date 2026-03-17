@@ -1,5 +1,5 @@
 Title: GitHub Resume
-Date: 2017-08-01 23:00
+Date: 2017-08-01 23:00 +0800
 Category: Tech
 Tags: GitHub, Resume
 Slug: GitHub-Resume

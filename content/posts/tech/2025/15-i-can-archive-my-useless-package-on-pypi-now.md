@@ -1,6 +1,6 @@
 Title: 可以封存我在 PyPI 上的沒用套件了！
 Subtitle: 其實三個月前就可以了...
-Date: 2025-04-14 09:45
+Date: 2025-04-14 09:45 +0800
 Category: Tech
 Tags: Python, PyPI
 Slug: i-can-archive-my-useless-package-on-pypi-now

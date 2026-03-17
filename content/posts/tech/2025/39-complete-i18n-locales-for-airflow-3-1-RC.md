@@ -1,5 +1,5 @@
 Title: Airflow 3.1 RC 出來前，你各位要好好翻譯啊
-Date: 2025-08-19 21:35
+Date: 2025-08-19 21:35 +0800
 Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: complete-i18n-locales-for-airflow-3-1-RC

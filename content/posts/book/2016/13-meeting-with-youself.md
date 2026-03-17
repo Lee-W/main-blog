@@ -1,5 +1,5 @@
 Title: [Book] 一個人的會議時間
-Date: 2016-08-27 00:50
+Date: 2016-08-27 00:50 +0800
 Category: Book
 Tags: Productivity
 Slug: meeting-with-youself

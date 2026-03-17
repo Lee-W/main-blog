@@ -1,6 +1,6 @@
 Title: 2025/08/25 - 08/31 開源貢獻週報
 Subtitle: 又要休刊了
-Date: 2025-09-03 10:20
+Date: 2025-09-03 10:20 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-08-25-08-31-open-source-report

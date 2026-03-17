@@ -1,6 +1,6 @@
 Title: 舒跑杯 9 公里完賽
 Subtitle: 原來是一種春日癮
-Date: 2025-05-11 18:30
+Date: 2025-05-11 18:30 +0800
 Category: Random Thoughts
 Tags: Exercise, Running
 Slug: supau-cup-mini-marathon

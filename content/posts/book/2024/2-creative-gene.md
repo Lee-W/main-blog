@@ -1,6 +1,6 @@
 Title: [Book] 創作的基因：書籍、電影、音樂,賦予遊戲製作人小島秀夫無限創意的文化記憶
-Date: 2024-05-13 09:52
-Modified: 2024-05-13 22:05
+Date: 2024-05-13 09:52 +0800
+Modified: 2024-05-13 22:05 +0800
 Category: Book
 Tags: Game, Creative
 Slug: creative-gene

@@ -1,5 +1,5 @@
 Title: Using GitHub to Develop Software Collaboratively
-Date: 2016-09-15 01:26
+Date: 2016-09-15 01:26 +0800
 Category: Tech
 Tags: Git, GitHub
 Slug: using-github-to-develop-software-collaboratively

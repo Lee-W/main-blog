@@ -1,5 +1,5 @@
 Title: [Book] 最後的演講
-Date: 2016-06-06 08:32
+Date: 2016-06-06 08:32 +0800
 Category: Book
 Tags: Inspiring
 Slug: the-last-lecture

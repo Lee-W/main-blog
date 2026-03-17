@@ -1,6 +1,6 @@
 Title: commitizen 首頁
 Subtitle: 也許令人困擾的問題，不需要最複雜的解法
-Date: 2025-10-26 11:48
+Date: 2025-10-26 11:48 +0800
 Category: Tech
 Tags: commitizen-tools
 Slug: commitizen-home-page

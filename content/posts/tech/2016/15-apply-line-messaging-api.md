@@ -1,5 +1,5 @@
 Title: Apply Line Messaging API
-Date: 2016-11-22 12:43
+Date: 2016-11-22 12:43 +0800
 Category: Tech
 Tags: Chat Bot
 Slug: apply-line-messaging-api

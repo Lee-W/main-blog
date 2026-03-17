@@ -1,6 +1,6 @@
 Title: 2025/06/30 - 07/06 開源貢獻週報
 Subtitle: 下一期八月再見
-Date: 2025-07-06 21:55
+Date: 2025-07-06 21:55 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-06-30-07-06-open-source-report

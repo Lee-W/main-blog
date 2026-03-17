@@ -1,6 +1,6 @@
 Title: 2025/12/01 - 12/07 開源貢獻週報
 Subtitle: 恭喜熊老師成為 commitizen 維護者
-Date: 2025-12-08 21:20
+Date: 2025-12-08 21:20 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-12-01-12-07-open-source-report

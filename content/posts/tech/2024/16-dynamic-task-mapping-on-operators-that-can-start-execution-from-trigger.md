@@ -1,6 +1,6 @@
 Title: Dynamic task mapping on operators that can start execution from trigger
 Subtitle: This is not the feature you're looking for
-Date: 2024-08-25 23:30
+Date: 2024-08-25 23:30 +0800
 Category: Tech
 Tags: Python, Airflow, Airflow 2.10
 Slug: dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger

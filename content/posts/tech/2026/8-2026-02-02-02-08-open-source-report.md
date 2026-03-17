@@ -1,6 +1,6 @@
 Title: 2026/02/02 - 02/08 開源貢獻週報
 Subtitle: pycon-etl 又一次即時更新到最新版 Airflow
-Date: 2026-02-08 22:20
+Date: 2026-02-08 22:20 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2026-02-02-02-08-open-source-report

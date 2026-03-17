@@ -1,5 +1,5 @@
 Title: [Book] The Ultimate Guide to Remote Work
-Date: 2019-08-13 10:55
+Date: 2019-08-13 10:55 +0800
 Category: Book
 Tags: Remote Job
 Slug: the-ultimate-guide-to-remote-work
