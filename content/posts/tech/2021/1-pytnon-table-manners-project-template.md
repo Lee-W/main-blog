@@ -1,5 +1,5 @@
 Title: Python Table Manners - Cookiecutter 專案模板
-Date: 2021-1-1 13:30
+Date: 2021-01-01 13:30 +0800
 Category: Tech
 Tags: Python
 Slug: python-table-manners-cookiecutter
