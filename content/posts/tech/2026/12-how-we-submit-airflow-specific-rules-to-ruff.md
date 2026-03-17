@@ -1,5 +1,6 @@
 Title: 如何把 Airflow 規則貢獻進 Ruff？
 Date: 2026-03-17 17:05
+Modified: 2026-03-17 21:40
 Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: how-we-submit-airflow-specific-rules-to-ruff
@@ -51,6 +52,10 @@ Airflow 社群就沒人看他 PR？
 ## 我怎麼想
 恩...這原本就是我提的討論
 倒是提醒我現在要幫 Illya 開 2 個討論來確認那些是否為 Airflow 社群想要的最佳實踐
+
+更新： 在我發完這篇文沒多久 Illya 就發了這 2 個討論
+1. [[VOTE] New DAG Authorship Best Practice: Use `.output` Instead of `xcom_pull` Template Strings](https://lists.apache.org/thread/1oh64pgco8bcbsxyyyflm7ccg1x3frol)
+2. [[VOTE] New DAG Authorship Best Practice: Prefer `@task.short_circuit` over trivial `@task.branch`](https://lists.apache.org/thread/odmymy6kn5rqx17x44ydq43c1vfqh511)
 
 [Airflow 開發者討論群]: https://lists.apache.org/list.html?<dev@airflow.apache.org>
 [Explore and add static checks for DAGs for early detection of common issues #43176]: https://github.com/apache/airflow/issues/43176
