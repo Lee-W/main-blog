@@ -1,7 +1,7 @@
 Title: 理想的料理用油
 Date: 2026-03-07 20:37
 Category: Random Thoughts
-Tags: BlogBlog 同樂會, 日常
+Tags: BlogBlog 同樂會, 料理
 Slug: ideal-oil
 Series: 理想的日常 (2026)
 

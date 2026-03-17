@@ -1,7 +1,7 @@
 Title: 理想的優雅憤怒
 Date: 2026-03-16 23:35
 Category: Random Thoughts
-Tags: BlogBlog 同樂會, Blog
+Tags: BlogBlog 同樂會
 Slug: ideal-elegant-anger
 Series: 理想的日常 (2026)
 
