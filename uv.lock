@@ -712,15 +712,15 @@ wheels = [
 
 [[package]]
 name = "pelican-osm"
-version = "0.3.1"
+version = "0.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pelican" },
     { name = "pyyaml" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/23/b2/9a5c747547ca2da7359c571054689f48a583163d8b9e0ba3aadd8948988f/pelican_osm-0.3.1.tar.gz", hash = "sha256:8ade4888022dc7ded50d5efa873ff03604544e13b1c28deb9db4e94358d9c3b5", size = 13490, upload-time = "2026-03-14T16:47:35.842Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c2/1f/e2b41e2f777a4ba581c041f17cfa8393e1676d15efc280aa61b509a46ecd/pelican_osm-0.4.0.tar.gz", hash = "sha256:de23ddb0e340b944b2b05669dc4dca14f734cf89439665b4d7bc35bbb1e5ce8b", size = 16356, upload-time = "2026-03-25T12:51:41.394Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/23/b0/903a5aa858d6c3a862ca20cdd623b987200af05f579615e2255d6925eb8e/pelican_osm-0.3.1-py3-none-any.whl", hash = "sha256:b3fe99a202854c2301618b69099087a002aa2a9c07ac8ddc2945847c3b4844d2", size = 14833, upload-time = "2026-03-14T16:47:34.201Z" },
+    { url = "https://files.pythonhosted.org/packages/4d/c0/e19cf7e6b9e8075034df646390b4ac450b2bc1f1b9e3cbc21b317f2c7377/pelican_osm-0.4.0-py3-none-any.whl", hash = "sha256:ee51fc295dd208b278629c1d8ea3e2f1d165401e72527c1abdc507e598c192f0", size = 17735, upload-time = "2026-03-25T12:51:39.321Z" },
 ]
 
 [[package]]
