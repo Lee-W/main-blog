@@ -1,5 +1,5 @@
 Title: 理想的鞋子
-Date: 2026-03-28 10:40 +0800
+Date: 2026-03-27 10:40 +0800
 Category: Random Thoughts
 Tags: BlogBlog 同樂會
 Slug: ideal-shoes
