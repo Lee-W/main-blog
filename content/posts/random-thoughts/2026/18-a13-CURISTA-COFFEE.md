@@ -13,11 +13,12 @@ Cover: /images/posts-image/2026/a13-CURISTA-COFFEE/curista-coffee.jpeg
 
 ## ☕ 店家資訊
 
-- 插座：部分座位有
-- WiFi：有
-- 限時：客滿 2 小時
-- 安靜程度：★★★☆☆（平日）
-- 適合工作：★★★☆☆
+- 營業時間： 11:00 ~ 21:30
+- 插座： 不少
+- WiFi： ✅
+- 限時： 無
+- 安靜程度： ★★★☆☆（平日）
+- 適合工作： ★★★☆☆
 
 {% place coworking.yaml#a13-CURISTA-COFFEE %}
 
