@@ -77,7 +77,7 @@ SOCIAL = (
     ("Twitter", "https://twitter.com/clleew"),
     ("RSS", f"https://{HOST}/feeds/all.atom.xml"),
 )
-JINJA_GLOBALS = {"POST_SHARE_MASTODON_DOMAIN": "mtd.pythonasia.org"}
+JINJA_GLOBALS = {"POST_SHARE_MASTODON_DOMAIN": "g0v.social"}
 
 # Markdown extension
 MARKDOWN = {
