@@ -42,6 +42,10 @@ dev = [
   "ruff>=0.6.9",
 ]
 
+[tool.uv]
+required-version = ">=0.9.17"
+exclude-newer = "4 days"
+
 [tool.uv.sources]
 pelican-deadlinks = { git = "https://github.com/pelican-plugins/deadlinks" }
 attila = { git = "https://github.com/Lee-W/attila/"}
