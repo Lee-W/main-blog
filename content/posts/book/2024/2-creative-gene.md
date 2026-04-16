@@ -5,6 +5,7 @@ Category: Book
 Tags: Game, Creative
 Slug: creative-gene
 Authors: Wei Lee
+Lang: zh-tw
 
 ![creative-gene](/images/books/creative-gene.jpg)
 

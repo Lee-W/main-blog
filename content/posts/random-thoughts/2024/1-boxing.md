@@ -6,6 +6,7 @@ Category: Random Thoughts
 Tags: Exercise, Boxing
 Slug: boxing
 Authors: Wei Lee
+Lang: zh-tw
 
 除了跟風蹭時事外，之前有答應拳館學姊要分享她的 podcast 訪談
 （雖然這個部落格其實也沒什麼人看嗚嗚嗚）

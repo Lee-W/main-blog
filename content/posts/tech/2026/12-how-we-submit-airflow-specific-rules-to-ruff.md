@@ -5,6 +5,7 @@ Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: how-we-submit-airflow-specific-rules-to-ruff
 Authors: Wei Lee
+Lang: zh-tw
 
 現在最新的規則長這樣 👉 [Proposing Airflow Best Practices and Ruff AIR Rules](https://github.com/apache/airflow/blob/10ccbd0295f48431cd40c7949ed9c3f1deb22396/contributing-docs/24_proposing_best_practices_and_air_rules.rst#L18)
 

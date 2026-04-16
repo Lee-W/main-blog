@@ -4,6 +4,7 @@ Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: recommendation-for-addition-to-PR-awards
 Authors: Wei Lee
+Lang: zh-tw
 
 前情提要
 Apache Airflow 社群 一直有個獎項叫做本月 PR (PR of the month)

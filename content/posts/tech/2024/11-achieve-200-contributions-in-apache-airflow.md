@@ -4,6 +4,7 @@ Category: Tech
 Tags: Airflow
 Slug: achieve-200-contributions-in-apache-airflow
 Authors: Wei Lee
+Lang: en
 
 This is more like a personal reflection, and I really doubt it would benefit anyone. But it's my blog anyway. I can write whatever I want, lol.
 

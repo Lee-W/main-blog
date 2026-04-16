@@ -4,8 +4,9 @@ Date: 2025-01-29 21:15 +0800
 Category: Random Thoughts
 Tags: Reading
 Slug: get-your-retention-back-through-rss
-Authors: Wei Lee
 Cover: /images/meme/mygo-restore-right.jpg
+Authors: Wei Lee
+Lang: zh-tw
 
 前陣子看到[RSS 文藝復興與注意權]覺得很有趣
 最近終於要來嘗試實踐了

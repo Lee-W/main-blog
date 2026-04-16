@@ -5,6 +5,7 @@ Category: Tech
 Tags: Note, Software Engineering
 Slug: clean-code
 Authors: Wei Lee
+Lang: zh-tw
 
 既然都把 The Clean Coder 做完了
 就順便把原本在 GitBook 的 The Clean Code 一起搬過來好了

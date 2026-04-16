@@ -4,6 +4,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-02-17-02-23-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 第四周了！姑且能算是一個月了吧！
 

@@ -4,6 +4,7 @@ Category: Tech
 Tags: tool
 Slug: record-terminal-actions-and-export-as-gif
 Authors: Wei Lee
+Lang: zh-tw
 
 想說 [commitizen](https://github.com/commitizen-tools/commitizen) README 的 demo 動畫也好久沒更新了
 可以來研究一下怎麼產出新的動畫更新上去

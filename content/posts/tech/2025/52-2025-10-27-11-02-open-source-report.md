@@ -4,6 +4,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-10-27-11-02-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 上週什麼都沒做 😢
 

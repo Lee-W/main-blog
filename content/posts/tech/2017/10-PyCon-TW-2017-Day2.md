@@ -4,8 +4,9 @@ Modified: 2017-06-18 12:37 +0800
 Category: Tech
 Tags: Python, Conference, PyCon
 Slug: PyCon-TW-2017-Day2
-Authors: Wei Lee
 Series: PyCon TW 2017
+Authors: Wei Lee
+Lang: zh-tw
 
 第二天有一整個時段的 Job Fair，可以出去晃晃到各個攤販聊天
 最有印象的大概就是 Carousel，跟他們聊得還蠻開心的

@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-06-02-06-08-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 這週熊大還是很猛的一直發 PR 給 commitizen
 除了熊大外，還有新朋友幻影也立刻趕到戰場

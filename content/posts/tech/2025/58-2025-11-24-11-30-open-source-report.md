@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-11-24-11-30-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 準備要出門去聽 OCF 舉辦的 [Mong Tong × XTRUX《明日音》專場](https://ocf.tw/story/epaper/2025/202510news/main/)
 

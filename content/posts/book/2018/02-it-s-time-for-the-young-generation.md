@@ -4,6 +4,7 @@ Category: Book
 Tags: Story
 Slug: it-s-time-for-the-young-generation
 Authors: Wei Lee
+Lang: zh-tw
 
 ![Imgur](/images/books/it-s-time-for-the-young-generatrion-to-see-and-be-seen-by-the-world.jpg)
 

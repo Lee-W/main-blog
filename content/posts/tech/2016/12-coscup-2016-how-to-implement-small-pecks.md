@@ -4,6 +4,7 @@ Category: Tech
 Tags: COSCUP, Chat Bot
 Slug: coscup-2016-how-to-implement-small-pecks
 Authors: Wei Lee
+Lang: zh-tw
 
 今年 COSCUP 的聊天機器人「小啄」
 終於在今天宣告退休了

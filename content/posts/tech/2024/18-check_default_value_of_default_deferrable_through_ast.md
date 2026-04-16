@@ -4,9 +4,10 @@ Date: 2024-09-01 19:15 +0800
 Category: Tech
 Tags: Python, Airflow, Airflow 2.7, AST
 Slug: check_default_value_of_default_deferrable_through_ast
-Authors: Wei Lee
 Series: Unleash the Chaos: Developing a Linter for Un-Pythonic Code!
 Cover: /images/posts-image/2024-check_default_value_of_default_deferrable_through_ast/surely-you-can-do-better.jpg
+Authors: Wei Lee
+Lang: en
 
 In the previous article, I mentioned that we can only kindly ask users to add the default value of deferrable correctly. But... the fact is we can do better.
 

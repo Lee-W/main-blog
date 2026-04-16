@@ -4,6 +4,7 @@ Category: Book
 Tags: Economics
 Slug: freakonomics
 Authors: Wei Lee
+Lang: zh-tw
 
 <!--more-->
 

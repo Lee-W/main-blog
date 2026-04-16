@@ -3,8 +3,9 @@ Date: 2026-03-04 22:17 +0800
 Category: Random Thoughts
 Tags: Coworking Space, 日本, 神奈川
 Slug: nekton-fujisawa
-Authors: Wei Lee
 Cover: /images/posts-image/2026/nekton-fujisawa/day-1.jpeg
+Authors: Wei Lee
+Lang: zh-tw
 
 原本預計要去另一間工作空間，卻剛好遇到放假，現場沒有人可以接待
 誤打誤撞之下，來到了這家 [NEKTON FUJISAWA](https://maps.app.goo.gl/au5oE193xV4NvWX4A)

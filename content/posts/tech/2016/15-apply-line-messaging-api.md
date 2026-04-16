@@ -3,8 +3,9 @@ Date: 2016-11-22 12:43 +0800
 Category: Tech
 Tags: Chat Bot
 Slug: apply-line-messaging-api
-Authors: Wei Lee
 Series: Line Bot Tutorial
+Authors: Wei Lee
+Lang: zh-tw
 
 先到[Messaging API](https://business.line.me/zh-hant/services/bot) 申請帳號
 

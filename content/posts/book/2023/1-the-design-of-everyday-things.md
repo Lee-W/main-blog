@@ -4,6 +4,7 @@ Category: Book
 Tags: Design
 Slug: the-design-of-everyday-things
 Authors: Wei Lee
+Lang: zh-tw
 
 大四修了創意設計，就曾經看過這本書
 當時就覺得這本書真的很有趣

@@ -4,8 +4,9 @@ Modified: 2017-06-18 14:08 +0800
 Category: Tech
 Tags: Python, Conference, PyCon
 Slug: PyCon-TW-2017-Day3
-Authors: Wei Lee
 Series: PyCon TW 2017
+Authors: Wei Lee
+Lang: zh-tw
 
 這天就是 PyCon 的最後一天了
 聽說這是 PyCon 第一次引入 Unconference

@@ -4,8 +4,9 @@ Date: 2025-08-16 11:35 +0800
 Category: Tech
 Tags: Python, gotcha, SQLAlchemy
 Slug: same-joinedload-but-not-the-same
-Authors: Wei Lee
 Cover: /images/meme/mygo-it-is-but-it-is-not.jpg
+Authors: Wei Lee
+Lang: zh-tw
 
 直覺上應該都會覺得 `from sqlalchemy.orm import joinedload` 跟 `from sqlalchemy.orm.strategy_options import joinedload` 是一樣的東西吧！
 前者應該是後者的語法糖，這樣就可以少打一些字

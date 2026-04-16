@@ -4,6 +4,7 @@ Category: Tech
 Tags: COSCUP, SITCON, commitizen-tools
 Slug: coscup-2020-sitcon-2020
 Authors: Wei Lee
+Lang: zh-tw
 
 因為這次 COSCUP 跟 SITCON 只隔了一週，就順手寫在一起了
 

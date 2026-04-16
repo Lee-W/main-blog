@@ -5,8 +5,9 @@ Modified: 2025-12-22 09:30 +0800
 Category: Tech
 Tags: Python, Airflow, Airflow 2.7
 Slug: optimizing-airflow-operators-with-default_deferrable
-Authors: Wei Lee
 Series: Unleash the Chaos: Developing a Linter for Un-Pythonic Code!
+Authors: Wei Lee
+Lang: en
 
 In the article series [What If...? Running Airflow Tasks without the workers]({filename}/posts/tech/2024/7-airflow-start-execution-directly-from-trigger-instead-of-going-into-worker.md), I introduced one of the new features of Airflow 2.10.0. It's time to introduce a feature in Airflow 2.7.0 (no, it's not).
 

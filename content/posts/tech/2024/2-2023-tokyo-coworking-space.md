@@ -4,6 +4,7 @@ Category: Tech
 Tags: Coworking Space
 Slug: 2023-tokyo-coworking-space
 Authors: Wei Lee
+Lang: zh-tw
 
 因緣際會下 2023 稍微去了幾次東京
 因為想待在日本久一點，但又沒有那麼多假

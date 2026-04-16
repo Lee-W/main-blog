@@ -4,6 +4,7 @@ Category: Tech
 Tags: Mac
 Slug: where-should-we-go-if-bartender-is-no-longer-considered-safe
 Authors: Wei Lee
+Lang: zh-tw
 
 > 世界上絕對不能背叛客人的兩種職業，一種是醫師與藥劑是，另一種則是... 調酒師！
 >

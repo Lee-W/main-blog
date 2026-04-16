@@ -4,6 +4,7 @@ Category: Random Thoughts
 Tags: Productivity
 Slug: no-more-zero-day
 Authors: Wei Lee
+Lang: zh-tw
 
 決定開始來寫些程式以外的內容
 整理之前看過的書或文章，跟大家分享心得或書摘

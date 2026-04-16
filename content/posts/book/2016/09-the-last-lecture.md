@@ -4,6 +4,7 @@ Category: Book
 Tags: Inspiring
 Slug: the-last-lecture
 Authors: Wei Lee
+Lang: zh-tw
 
 <!--more-->
 

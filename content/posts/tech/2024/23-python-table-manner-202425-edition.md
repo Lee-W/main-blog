@@ -4,8 +4,9 @@ Date: 2024-11-13 23:00 +0800
 Category: Tech
 Tags: Python
 Slug: python-table-manners-series-2024-2025-edition
-Authors: Wei Lee
 Series: Python Table Manners 2024/25 edition
+Authors: Wei Lee
+Lang: zh-tw
 
 雖然也是有動畫作品 2017 宣布劇場版製作確定
 到了 2024 年就確定不製作了 🤔

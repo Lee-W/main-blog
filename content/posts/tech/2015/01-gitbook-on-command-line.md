@@ -4,6 +4,7 @@ Category: Tech
 Tags: Git Book
 Slug: gitbook-on-command-line
 Authors: Wei Lee
+Lang: zh-tw
 
 最近比較認真在寫 Gitbook，順便記錄一下該怎麼用
 簡單來說 Gitbook 就是可以使用 Markdown 來寫書的平台，可以轉成各種電子書的格式

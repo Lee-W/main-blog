@@ -5,8 +5,9 @@ Modified: 2024-10-23 23:50 +0800
 Category: Random Thoughts
 Tags: Anime
 Slug: use-acrylic-standees-to-take-photos
-Authors: Wei Lee
 Cover: /images/posts-image/2024-use-acrylic-standees-to-take-photos/IMG_1743.jpeg
+Authors: Wei Lee
+Lang: zh-tw
 
 PyCon APAC 2023 的時候， KK 就對我使用立牌拍照的行為
 提出了這個疑問

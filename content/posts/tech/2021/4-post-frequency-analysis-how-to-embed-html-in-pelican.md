@@ -3,8 +3,9 @@ Date: 2021-01-29 23:10 +0800
 Category: Tech
 Tags: pelican
 Slug: post-frequency-analysis-how-to-embed-html-in-pelican
-Authors: Wei Lee
 Series: 2020 發文頻率分析
+Authors: Wei Lee
+Lang: zh-tw
 
 因為不想在文章裡面直接寫 HTML（主要是不想自己去調大小、風格什麼的）
 我花了點時間研究要怎麼樣正確且優雅（？）的在 pelican 中嵌入 HTML

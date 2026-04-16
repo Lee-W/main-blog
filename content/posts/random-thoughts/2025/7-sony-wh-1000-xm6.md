@@ -4,8 +4,9 @@ Date: 2025-06-10 19:25 +0800
 Category: Random Thoughts
 Tags: Headphones, Unboxing
 Slug: sony-wh-1000-xm6-unboxing
-Authors: Wei Lee
 Cover: /images/posts-image/2025-sony-wh-1000-xm6-unboxing/8-open-box.jpeg
+Authors: Wei Lee
+Lang: zh-tw
 
 自從 2018 年買了 Sony WH-1000 XM 3 到現在
 終於更新我的耳機了

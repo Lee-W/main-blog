@@ -4,6 +4,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-03-31-04-06-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 在 Airflow 即將邁入 3.0 之際， PyCon TW 維護的 Airflow 終於有望邁入 2.0 了！（咦？）
 

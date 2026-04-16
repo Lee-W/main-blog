@@ -3,8 +3,9 @@ Date: 2016-11-27 06:05 +0800
 Category: Tech
 Tags: Heroku, Django, Chat Bot, Deployment
 Slug: deploy-linebot-on-heroku
-Authors: Wei Lee
 Series: Line Bot Tutorial
+Authors: Wei Lee
+Lang: zh-tw
 
 上一篇提到如何用 ngrok
 讓我們可以不用架 Https Server，直接在本地端測試 Bot

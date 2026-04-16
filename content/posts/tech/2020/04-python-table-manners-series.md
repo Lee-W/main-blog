@@ -4,8 +4,9 @@ Modified: 2020-03-18 10:20 +0800
 Category: Tech
 Tags: Python
 Slug: python-table-manners-series
-Authors: Wei Lee
 Series: Python Table Manners
+Authors: Wei Lee
+Lang: zh-tw
 
 <!--more-->
 

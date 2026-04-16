@@ -4,8 +4,9 @@ Date: 2025-07-06 21:55 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-06-30-07-06-open-source-report
-Authors: Wei Lee
 Cover: /images/meme/jojo-last-hamon.png
+Authors: Wei Lee
+Lang: zh-tw
 
 下個禮拜就要出發前往 EuroPython 了
 這段期間除了上班以外的時間，都會拿來旅遊

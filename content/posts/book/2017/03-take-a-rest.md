@@ -1,9 +1,10 @@
-title: [Book] 此人進廠維修中
-date: 2017-03-05 11:40
+Title: [Book] 此人進廠維修中
+Date: 2017-03-05 11:40
 Category: Book
 Tags: Emotion
 Slug: take-a-rest
 Authors: Wei Lee
+Lang: zh-tw
 
 ![此人進廠維修中](/images/books/this-guy-is-in-maintainence.jpg)
 

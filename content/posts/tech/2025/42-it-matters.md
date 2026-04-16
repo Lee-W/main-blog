@@ -3,8 +3,9 @@ Date: 2025-08-24 17:55 +0800
 Category: Tech
 Tags: Open Source
 Slug: what-have-you-done-since-2022-07
-Authors: Wei Lee
 Series: IT Matters Awards 2025
+Authors: Wei Lee
+Lang: zh-tw
 
 這聽起來像是動畫作品中
 反派角色做了什麼很瘋狂的事

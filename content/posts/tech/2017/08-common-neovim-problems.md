@@ -4,6 +4,7 @@ Category: Tech
 Tags: Vim, Neovim
 Slug: common-neovim-problems
 Authors: Wei Lee
+Lang: zh-tw
 
 隨手記錄一下，轉換成 Neovim 遇到的問題
 

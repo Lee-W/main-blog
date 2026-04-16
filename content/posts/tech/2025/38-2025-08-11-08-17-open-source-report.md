@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-08-11-08-17-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 晚上要去電影院當鬼滅 Kids 了
 出門前先來記錄一下

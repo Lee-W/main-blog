@@ -4,9 +4,10 @@ Date: 2025-02-20 22:50 +0800
 Category: Tech
 Tags: Airflow, Airflow 3.0, Airflow Improvement Proposal
 Slug: aip-83-amendment
-Authors: Wei Lee
-Cover: /images/meme/aot-freedom.png
 Series: 帶我讀 AIP
+Cover: /images/meme/aot-freedom.png
+Authors: Wei Lee
+Lang: zh-tw
 
 海（？）的對面是 backfill 跟 data completeness
 

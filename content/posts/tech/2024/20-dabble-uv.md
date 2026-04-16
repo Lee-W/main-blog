@@ -5,6 +5,7 @@ Category: Tech
 Tags: Python, Blog
 Slug: dabble-uv
 Authors: Wei Lee
+Lang: zh-tw
 
 隨著快速又強大的 linter [ruff][ruff] 被大量採用
 志在取代 pip （？）的 [uv][uv] 也隨之問世

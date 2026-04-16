@@ -4,6 +4,7 @@ Category: Tech
 Tags: Python, Dependency
 Slug: how-pipenv-and-poetry-stores-if-dependencies-platform-dependent
 Authors: Wei Lee
+Lang: zh-tw
 
 用 [twine](https://twine.readthedocs.io/en/latest/) 上傳 Python 套件
 在 mac 的本地端測試有成功，但丟上 CI 跑在 Ubuntu 的 image 內會缺少 `jeepney` 套件

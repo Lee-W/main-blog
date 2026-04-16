@@ -3,8 +3,9 @@ Date: 2021-01-02 12:57 +0800
 Category: Tech
 Tags: Python, editor
 Slug: python-table-manner-editor
-Authors: Wei Lee
 Series: Python Table Manners
+Authors: Wei Lee
+Lang: zh-tw
 
 在最開始的規劃中，並沒有想要寫編輯器
 不過半年前（可能更久以前...），朋友有建議可以寫這個主題

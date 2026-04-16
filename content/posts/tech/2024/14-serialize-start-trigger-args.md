@@ -4,9 +4,10 @@ Date: 2024-08-18 10:30 +0800
 Category: Tech
 Tags: Python, Airflow, Airflow 2.10
 Slug: serialize-start-trigger-args
-Authors: Wei Lee
 Series: What If...? Running Airflow Tasks without the workers
 Cover: /images/posts-image/2024-serialize-start-trigger-args/han.jpg
+Authors: Wei Lee
+Lang: en
 
 This article discusses the implementation details of `StartTriggerArgs`, which may not interest most Airflow users. However, if you're a contributor or simply interested in how Airflow works, let's dive in.
 

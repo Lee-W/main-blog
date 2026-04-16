@@ -4,6 +4,7 @@ Category: Tech
 Tags: Python, PyCon, EuroPython, EuroPython 2020, commitizen-tools
 Slug: europython-2020
 Authors: Wei Lee
+Lang: zh-tw
 
 好不容易投稿上了 EuroPython
 原本打算順便去愛爾蘭的 Skellig Michael

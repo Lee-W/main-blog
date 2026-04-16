@@ -4,6 +4,7 @@ Category: Book
 Tags: Learning
 Slug: understand-a-book
 Authors: Wei Lee
+Lang: zh-tw
 
 這本書我大概在三月就看完了
 沒想到拖到現在才有時間好好做筆記

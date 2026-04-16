@@ -4,8 +4,9 @@ Date: 2026-01-09 21:30 +0800
 Category: Random Thoughts
 Tags: Coworking Space
 Slug: CE-and-LIB-RARY-tian-mu
-Authors: Wei Lee
 Cover: /images/posts-image/2026/CE-and-LIB-RARY-tian-mu/IMG_0925.jpeg
+Authors: Wei Lee
+Lang: zh-tw
 
 前幾天有事要去芝山，約的時間剛好是我下班後
 所以我得在白天先到附近找地方工作

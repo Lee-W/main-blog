@@ -4,6 +4,7 @@ Category: Book
 Tags: Note-Taking
 Slug: think-through-note-taking
 Authors: Wei Lee
+Lang: zh-tw
 
 去年剛看完這本書的時候，實在覺得跟想像的很不一樣
 直到現在終於有空好好的再翻過一遍，做一些紀錄了

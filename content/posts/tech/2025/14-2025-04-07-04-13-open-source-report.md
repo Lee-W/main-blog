@@ -4,6 +4,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-04-07-04-13-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 這幾週忙到快死掉惹，還能 review 兩個 PR 已經是盡力惹
 

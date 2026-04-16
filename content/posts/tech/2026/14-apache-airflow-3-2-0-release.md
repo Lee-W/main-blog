@@ -6,6 +6,7 @@ Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: apache-airflow-3-2-0-release
 Authors: Wei Lee
+Lang: zh-tw
 
 上次 [Apache Airflow 3.1.8 發佈！]({filename}/posts/tech/2026/11-apche-airflow-3-1-8-release.md) 的時候，我成功測試出 SQLite 升級的錯誤
 但這次 3.2.0 的發佈就錯過了 🤦‍♂️

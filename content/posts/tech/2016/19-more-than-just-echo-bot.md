@@ -3,8 +3,9 @@ Date: 2016-11-29 01:57 +0800
 Category: Tech
 Tags: Chat Bot, NLP, Machine Learning
 Slug: more-than-just-echo-bot
-Authors: Wei Lee
 Series: Line Bot Tutorial
+Authors: Wei Lee
+Lang: zh-tw
 
 知道怎麼實作一個會 Echo 的 Bot 後
 再來就要思考，開發一個 Bot 我們要提供什麼功能

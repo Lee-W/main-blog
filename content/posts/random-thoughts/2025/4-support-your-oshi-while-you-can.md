@@ -4,8 +4,9 @@ Date: 2025-05-03 12:55 +0800
 Category: Random Thoughts
 Tags: Music
 Slug: support-your-oshi-while-you-can
-Authors: Wei Lee
 Cover: /images/posts-image/2025-support-your-oshi-while-you-can/IMG_0631.JPG
+Authors: Wei Lee
+Lang: zh-tw
 
 雖然副標題是 gura 畢業，但我其實沒在追 VTuber 🙇‍♂️
 只是 Youtube 有推播會聽的成程度

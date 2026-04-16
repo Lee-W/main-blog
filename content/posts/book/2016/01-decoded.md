@@ -4,6 +4,7 @@ Category: Book
 Tags: Sales
 Slug: decoded
 Authors: Wei Lee
+Lang: zh-tw
 
 ![decode](http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/061/88/0010618819.jpg&v=529dcf77&w=348&h=348)
 

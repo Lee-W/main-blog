@@ -1,9 +1,10 @@
-title: [Book] 看！情緒幹得好事
-date: 2017-02-04 10:16
+Title: [Book] 看！情緒幹得好事
+Date: 2017-02-04 10:16
 Category: Book
 Tags: Emotion
 Slug: fuck-feelings
 Authors: Wei Lee
+Lang: zh-tw
 
 ![F*ck Feelings](/images/books/fuck-feelings.jpg)
 

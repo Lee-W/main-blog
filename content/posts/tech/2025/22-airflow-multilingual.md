@@ -4,9 +4,10 @@ Date: 2025-05-30 16:35 +0800
 Category: Tech
 Tags: 源來適你, Airflow
 Slug: airflow-multilingual
-Authors: Wei Lee
-Image: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
 Cover: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
+Authors: Wei Lee
+Lang: zh-tw
+Image: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
 
 > What is my sacrifice?
 >

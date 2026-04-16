@@ -4,6 +4,7 @@ Category: Book
 Tags: Career Path
 Slug: apprenticeship-patterns
 Authors: Wei Lee
+Lang: zh-tw
 
 ![apprenticeship-patterns](/images/books/apprenticeships-pattern.jpg)
 

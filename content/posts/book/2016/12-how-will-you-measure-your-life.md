@@ -4,6 +4,7 @@ Category: Book
 Tags: Inspiring
 Slug: how-will-you-measure-your-life
 Authors: Wei Lee
+Lang: zh-tw
 
 最近發現竟然沒有把這本還蠻喜歡的書 po 上來
 就好好的把之前整理的書摘，再重新整理過一遍

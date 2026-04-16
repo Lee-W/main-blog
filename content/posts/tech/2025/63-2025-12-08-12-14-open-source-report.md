@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-12-08-12-14-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 原本 11 月底就想發佈 4.10.1
 但實在太忙了，一直沒時間弄...

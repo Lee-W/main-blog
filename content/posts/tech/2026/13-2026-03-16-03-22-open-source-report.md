@@ -4,6 +4,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2026-03-16-03-22-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 最近實在太過忙碌，真的很不過再分出去給 commitizen
 希望之後生活節奏穩定下來可以把好多我還沒看的 PRs 看一看...

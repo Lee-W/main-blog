@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-07-07-08-03-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 雖然不多，但在這段旅行期間還是有很些微的開源貢獻
 

@@ -4,6 +4,7 @@ Category: Random Thoughts
 Tags: Inspiring, TEDx
 Slug: tedx-tainan-2016
 Authors: Wei Lee
+Lang: zh-tw
 
 趁著昨天才剛結束
 把一些感受記錄下來

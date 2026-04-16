@@ -4,6 +4,7 @@ Category: Book
 Tags: Startup
 Slug: zero-to-one
 Authors: Wei Lee
+Lang: zh-tw
 
 ![Zero to One](/images/books/zero-to-one.jpg)
 

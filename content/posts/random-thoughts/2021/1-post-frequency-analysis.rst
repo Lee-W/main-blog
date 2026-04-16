@@ -6,8 +6,9 @@
 :tags: Writing
 :category: Random Thoughts
 :slug: post-frequency-analysis
-:authors: Lee-W
+:authors: Wei Lee
 :series: 2020 發文頻率分析
+:lang: zh-tw
 
 | 為了方便的嵌入下面的幾張圖（它們是可互動的哦！）
 | 這我第一次使用 reStructuredText 寫文章

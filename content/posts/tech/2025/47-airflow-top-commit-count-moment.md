@@ -3,8 +3,9 @@ Date: 2025-10-13 21:55 +0800
 Category: Tech
 Tags: Airflow
 Slug: airflow-top-commit-count-moment
-Authors: Wei Lee
 Cover: /images/meme/mygo-vanity.jpg
+Authors: Wei Lee
+Lang: zh-tw
 
 之前有某一週的某個瞬間發現我很接近當週最多提交數
 但輸給了 GitHub 機器人

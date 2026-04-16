@@ -4,6 +4,7 @@ Category: Tech
 Tags: Neovim
 Slug: neo-vim-fzf-not-loaded
 Authors: Wei Lee
+Lang: zh-tw
 
 簡單記錄一下之前使用 Neovim 遇到的套件問題
 不是什麼有深度的技術文章

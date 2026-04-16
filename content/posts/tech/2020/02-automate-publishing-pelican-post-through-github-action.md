@@ -4,6 +4,7 @@ Category: Tech
 Tags: Python, GitHub Action, Blog, CI/CD
 Slug: automate-publish-pelican-through-github-action
 Authors: Wei Lee
+Lang: zh-tw
 
 最近因為在貢獻 [commitizen](https://github.com/Woile/commitizen)，開始碰到 [GitHub Action](https://github.com/features/actions)
 （ Python 也有自己的 commitizen 了！！！）

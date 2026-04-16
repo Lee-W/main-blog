@@ -6,6 +6,7 @@ Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: consistent-test-assertion-style-pytest-native-vs-unittest-style
 Authors: Wei Lee
+Lang: zh-tw
 
 剛開始貢獻 Airflow 的時候
 非常的訝異，怎麼到處都是 unittest 風格的測試

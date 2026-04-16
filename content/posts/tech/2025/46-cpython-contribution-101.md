@@ -5,8 +5,9 @@ Modified: 2025-09-05 11:30 +0800
 Category: Tech
 Tags: Python, CPython
 Slug: contribute-to-cpython-your-first-step
-Authors: Wei Lee
 Cover: /images/posts-image/2025-cpython-contribution-101/chi.jpg
+Authors: Wei Lee
+Lang: zh-tw
 
 如同副標題所說
 在一切開始之前， [CPython] != [Cython]

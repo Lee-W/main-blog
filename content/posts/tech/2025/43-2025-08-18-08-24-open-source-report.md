@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-08-18-08-24-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 終於把熊大的 PR 們都看完了
 雖然還有幾個需要討論還沒合併

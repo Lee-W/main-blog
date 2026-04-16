@@ -5,6 +5,7 @@ Category: Tech
 Tags: 源來適你, Airflow, Talks
 Slug: intro-to-airflow-from-zero-to-hero
 Authors: Wei Lee
+Lang: zh-tw
 
 上週六感謝[源來適你](https://www.facebook.com/profile.php?id=100090487996922)邀請我到社群線上分享 Airflow
 好久沒有準備超過 10 分鐘的分享了 😱

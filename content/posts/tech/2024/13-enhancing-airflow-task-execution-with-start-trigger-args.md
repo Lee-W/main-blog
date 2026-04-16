@@ -3,8 +3,9 @@ Date: 2024-08-12 22:54 +0800
 Category: Tech
 Tags: Python, Airflow, Airflow 2.10
 Slug: enhancing-airflow-task-execution-with-start-trigger-args
-Authors: Wei Lee
 Series: What If...? Running Airflow Tasks without the workers
+Authors: Wei Lee
+Lang: en
 
 As mentioned in [Starts Airflow task execution directly from the triggerer]({filename}/posts/tech/2024/7-airflow-start-execution-directly-from-trigger-instead-of-going-into-worker.md), the syntax of this feature will change after [#39585](https://github.com/apache/airflow/pull/39585) merged.
 

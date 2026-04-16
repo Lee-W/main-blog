@@ -4,6 +4,7 @@ Category: Book
 Tags: Team
 Slug: the-silo-effect
 Authors: Wei Lee
+Lang: zh-tw
 
 ![The silo effect](/images/books/the-slio-effect.jpg)
 

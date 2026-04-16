@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-05-26-06-01-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 commitizen 終於不用寄生在 airflow 的頻道
 而是有自己獨立的頻道啦！

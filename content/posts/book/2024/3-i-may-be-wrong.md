@@ -5,6 +5,7 @@ Category: Book
 Tags: Mind
 Slug: I-May-Be-Wrong
 Authors: Wei Lee
+Lang: zh-tw
 
 ![i-may-be-wrong](/images/books/i-may-be-wrong.jpeg)
 

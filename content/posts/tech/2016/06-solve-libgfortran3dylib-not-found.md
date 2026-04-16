@@ -4,6 +4,7 @@ Category: Tech
 Tags: R, mac
 Slug: solve-libgfortran3dylib-not-found
 Authors: Wei Lee
+Lang: zh-tw
 
 最近在 mac 上更新了 gcc 6 後，不管是開 Octave 還是 R
 都會出現以下的錯誤訊息

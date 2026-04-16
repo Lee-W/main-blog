@@ -4,6 +4,7 @@ Category: Book
 Tags: Health
 Slug: why-we-sleep
 Authors: Wei Lee
+Lang: zh-tw
 
 這本書除了提供關於有用的睡眠建議外，它也是一本相當有趣的書
 探討各種人類跟睡眠有關的行爲、迷思

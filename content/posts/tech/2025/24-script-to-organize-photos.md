@@ -4,8 +4,9 @@ Date: 2025-06-06 23:15 +0800
 Category: Tech
 Tags: Python, Tool, Photo
 Slug: script-to-organize-photo
-Authors: Wei Lee
 Cover: /images/posts-image/2025-script-to-organize-photo/Frieren.jpeg
+Authors: Wei Lee
+Lang: zh-tw
 
 這篇文章想記錄下我分類照片的腳本
 但一直想不到有趣的標題

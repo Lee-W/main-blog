@@ -4,8 +4,9 @@ Modified: 2022-02-03 16:12 +0800
 Category: Tech
 Tags: Python, Task
 Slug: python-table-manners-manage-trivial-tasks
-Authors: Wei Lee
 Series: Python Table Manners
+Authors: Wei Lee
+Lang: zh-tw
 
 前面幾篇從套件管理、虛擬環境、測試、風格檢查到自動排版，提到了很多的工具
 每一個工具又有各自的參數和設定

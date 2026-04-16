@@ -4,6 +4,7 @@ Category: Random Thoughts
 Tags: English
 Slug: how-i-learn-english-recently
 Authors: Wei Lee
+Lang: zh-tw
 
 今年五月跑去 PyCon US 順便在美國晃了一個月後
 發現自己的英文口說實在太爛了

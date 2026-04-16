@@ -5,6 +5,7 @@ Category: Tech
 Tags: Python, Blog, Pre-commit
 Slug: remove-gps-info-from-exif
 Authors: Wei Lee
+Lang: zh-tw
 
 最近聽了 Podcast [What's on Django TV tonight?][pythonbytes] 跟 [Pre-commit Hooks for Python Devs][talkpython]
 發現了 [exif-stripper][exif-stripper] 這個酷東西

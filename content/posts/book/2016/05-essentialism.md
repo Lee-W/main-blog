@@ -4,6 +4,7 @@ Category: Book
 Tags: Productivity
 Slug: essentialism
 Authors: Wei Lee
+Lang: zh-tw
 
 ![Essentialism](/images/books/essentialism.jpg)
 

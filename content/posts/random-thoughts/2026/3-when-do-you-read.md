@@ -5,6 +5,7 @@ Category: Random Thoughts
 Tags: Reading, BlogBlog 同樂會
 Slug: when-do-you-read
 Authors: Wei Lee
+Lang: zh-tw
 
 > 這是我的「[BlogBlog 同樂會 - 2026 年 2 月](https://blogblog.club/party/)」的投稿文章。本月主題是「[只有我這樣嗎？]」，由 [Wiwi] 主持。如果你有自己的部落格，歡迎一起來參加！
 

@@ -4,6 +4,7 @@ Category: Book
 Tags: Business
 Slug: pitch-anyting
 Authors: Wei Lee
+Lang: zh-tw
 
 這本書的中文書名真的有夠長，又沒有記憶點...
 反倒是英文 Pitch Anything ，一看就不會忘

@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2026-03-09-03-15-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 這週開源了 3 個 [pelican](https://getpelican.com/) 的外掛，應該能算是小有貢獻吧！
 

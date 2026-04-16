@@ -4,6 +4,7 @@ Category: Book
 Tags: Software Engineering, Team
 Slug: the-mythical-man-month
 Authors: Wei Lee
+Lang: zh-tw
 
 ![人月神話](/images/books/the-mythical-man-month.jpg)
 

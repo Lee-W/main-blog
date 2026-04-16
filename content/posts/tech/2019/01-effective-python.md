@@ -4,6 +4,7 @@ Category: Tech
 Tags: Python, Note
 Slug: effective-python
 Authors: Wei Lee
+Lang: zh-tw
 
 ![effective python](/images/books/effective-python.jpg)
 

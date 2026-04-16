@@ -5,6 +5,7 @@ Category: Tech
 Tags: blog
 Slug: pagefind-ui
 Authors: Wei Lee
+Lang: zh-tw
 
 當我說搜尋功能，我指的是真的可以用的搜尋功能
 

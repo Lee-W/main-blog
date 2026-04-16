@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-09-08-10-19-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 因為諸多研討會跟出差，中間出門了一陣子
 加減還是有看一些 PR

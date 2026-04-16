@@ -4,8 +4,9 @@ Modified: 2024-07-30 23:55 +0800
 Category: Tech
 Tags: Airflow, Airflow 2.10, Triggerer
 Slug: starts-execution-directly-from-triggerer-without-going-to-worker
-Authors: Wei Lee
 Series: What If...? Running Airflow Tasks without the workers
+Authors: Wei Lee
+Lang: en
 
 A few weeks ago, I submitted [#38674](https://github.com/apache/airflow/pull/38674) to [airflow](https://github.com/apache/airflow) to Airflow, which was later selected as the PR of the month. (Thanks, Kaxil, for the nomination!)
 

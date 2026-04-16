@@ -4,6 +4,7 @@ Category: Tech
 Tags: Python, Study Session
 Slug: Introducing-Python-ch19-draft
 Authors: Wei Lee
+Lang: zh-tw
 
 最近半年 Gobby 為了學 Python 籌備了 Python 的讀書會
 找了各路的人來導讀這本[精通 Python｜運用簡單的套件進行現代運算](https://www.tenlong.com.tw/products/9789865024864)

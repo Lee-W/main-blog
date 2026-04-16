@@ -5,6 +5,7 @@ Category: Tech
 Tags: Neovim
 Slug: neovim-flashing-after-upgrading-to-0-11
 Authors: Wei Lee
+Lang: zh-tw
 
 大意了沒有閃，確實不是件好事
 但一直閃也很令人困擾啊！

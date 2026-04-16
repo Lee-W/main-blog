@@ -5,6 +5,7 @@ Category: Book
 Tags: News, Society
 Slug: reality-is-business
 Authors: Wei Lee
+Lang: zh-tw
 
 一言以蔽之，這是關於假新聞，關於真相如何在這個時代被製造的書
 

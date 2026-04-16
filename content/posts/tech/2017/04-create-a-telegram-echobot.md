@@ -4,6 +4,7 @@ Category: Tech
 Tags: Chat Bot, Flask
 Slug: create-a-telegram-echobot
 Authors: Wei Lee
+Lang: zh-tw
 
 最近當助教要出一個 Telegram Bot 相關的 Project
 先來寫一篇簡單的教學，減少之後的問題 XDD

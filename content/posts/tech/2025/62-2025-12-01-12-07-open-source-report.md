@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-12-01-12-07-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 總之，先恭喜熊老師成為 commitizen 的維護者
 之前在 Sciwork 總是被問，為什麼沒有其他台灣人一起來玩 commmitizen

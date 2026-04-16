@@ -4,8 +4,9 @@ Modified: 2020-10-04 15:57 +0800
 Category: Tech
 Tags: Python, Code Quality
 Slug: python-table-manners-coding-style
-Authors: Wei Lee
 Series: Python Table Manners
+Authors: Wei Lee
+Lang: zh-tw
 
 接下來要介紹的是 linters
 它們是用來檢查程式是否符合特定程式碼風格的一類工具

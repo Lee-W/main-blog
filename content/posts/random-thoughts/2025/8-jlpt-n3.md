@@ -5,6 +5,7 @@ Category: Random Thoughts
 Tags: JLPT, Japanese
 Slug: JLPT-N3
 Authors: Wei Lee
+Lang: zh-tw
 
 誒不是，然後宿儺還真的被三輪的新·陰流 簡易領域打倒了？
 

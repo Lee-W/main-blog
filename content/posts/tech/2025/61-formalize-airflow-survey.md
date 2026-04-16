@@ -4,6 +4,7 @@ Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: formalising-how-we-already-run-the-airflow-suvery
 Authors: Wei Lee
+Lang: zh-tw
 
 因為之前 Airflow 問卷的執行沒有足夠明確被討論過，造成了一些風風雨雨
 所以 Apache Airflow 的 PMC 花了點時間讓這件事正式化

@@ -4,6 +4,7 @@ Category: Book
 Tags: Productivity
 Slug: meeting-with-youself
 Authors: Wei Lee
+Lang: zh-tw
 
 ![一個人的會議時間](/images/books/self-meeting-time.jpg)
 

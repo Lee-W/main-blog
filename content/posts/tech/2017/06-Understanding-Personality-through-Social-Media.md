@@ -4,6 +4,7 @@ Category: Tech
 Tags: Paper, Machine Learning, NLP, MBTI, Personality
 Slug: Understanding-Personality-through-Social-Media
 Authors: Wei Lee
+Lang: en
 
 [Paper](https://pdfs.semanticscholar.org/1503/fc3acf17b1972c9a16e40b3eba6c2a140624.pdf)
 

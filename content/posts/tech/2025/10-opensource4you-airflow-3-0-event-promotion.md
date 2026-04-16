@@ -5,6 +5,7 @@ Category: Tech
 Tags: Airflow, Airflow 3.0, 源來適你
 Slug: opensource4you-airflow-3-0-event-promotion
 Authors: Wei Lee
+Lang: zh-tw
 
 這實在是嘔心瀝血之作啊
 除了腳本反覆雕琢，錄影更是錄了 127 次才成功

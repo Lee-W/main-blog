@@ -4,6 +4,7 @@ Category: Book
 Tags: Game Theory
 Slug: how-to-think-like-a-game-theorist
 Authors: Wei Lee
+Lang: zh-tw
 
 ![How to think like a game theorist](http://pic.eslite.com/Upload/Product/201402/m/635279634797871250.jpg)
 

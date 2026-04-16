@@ -5,6 +5,8 @@ Category: Random Thoughts
 Tags: Coworking Space
 Slug: a13-CURISTA-COFFEE
 Cover: /images/posts-image/2026/a13-CURISTA-COFFEE/curista-coffee.jpeg
+Authors: Wei Lee
+Lang: zh-tw
 
 因為最近搬離台北市區了
 上京看電影前，要找個可以去工作的地方

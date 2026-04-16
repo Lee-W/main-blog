@@ -4,8 +4,9 @@ Modified: 2020-10-04 16:13 +0800
 Category: Tech
 Tags: Python, Security
 Slug: python-table-manners-security
-Authors: Wei Lee
 Series: Python Table Manners
+Authors: Wei Lee
+Lang: zh-tw
 
 果然在沒有寫作松的督促下，馬上就拖稿了 XD
 接下來要介紹在 Python 專案中做安全性檢查的工具

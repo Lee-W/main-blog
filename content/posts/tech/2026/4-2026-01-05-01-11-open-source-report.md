@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2026-01-05-01-11-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 聖誕節到新年期間，所有 commitizen 的維護者都回來看 PRs 了
 好久沒看到 commitizen 機器動得這麼快，有點感動

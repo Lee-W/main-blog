@@ -3,8 +3,9 @@ Date: 2018-09-24 15:15 +0800
 Category: Random Thoughts
 Tags: Education
 Slug: X-Village-Course-Design
-Authors: Wei Lee
 Series: X-Village
+Authors: Wei Lee
+Lang: zh-tw
 
 要一次說完整個 X-Village ，還是有點太花時間
 先來聊聊我這次接觸到跟課程設計有關的部分

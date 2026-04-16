@@ -5,6 +5,7 @@ Category: Book
 Tags: Productivity
 Slug: atomic-habit
 Authors: Wei Lee
+Lang: zh-tw
 
 終於把之前很多人在討論的這本書看完了
 也許是太久沒看書了，看書的速度下降了很多

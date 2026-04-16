@@ -5,7 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-03-07-03-23-open-source-report
 Authors: Wei Lee
-Cover:
+Lang: zh-tw
 
 那前兩週跑去哪了
 恩...就...沒有貢獻...

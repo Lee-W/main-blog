@@ -4,8 +4,9 @@ Modified: 2020-07-19 16:47 +0800
 Category: Tech
 Tags: Python, Git, commitizen-tools
 Slug: python-table-manners-commitizen
-Authors: Wei Lee
 Series: Python Table Manners
+Authors: Wei Lee
+Lang: zh-tw
 
 接續著前一篇的 pre-commit ，繼續談 git 相關的工具
 這篇來聊聊如何透過 [commitizen](https://github.com/commitizen-tools/commitizen) 規範 commit message

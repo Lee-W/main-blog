@@ -4,6 +4,7 @@ Category: Tech
 Tags: JSON, TIL
 Slug: til-string-is-a-kind-of-json
 Authors: Wei Lee
+Lang: zh-tw
 
 之前在 review [airflow PR](https://github.com/apache/airflow/pull/33224) 的時候問了一個蠢問題
 

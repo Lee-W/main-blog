@@ -4,8 +4,9 @@ Date: 2025-12-03 23:05 +0800
 Category: Tech
 Tags: Airflow, Development Sprint
 Slug: some-random-guy-talk-about-airflow
-Authors: Wei Lee
 Cover: /images/posts-image/2025-python-workshop-in-tainan/seigaku.jpeg
+Authors: Wei Lee
+Lang: zh-tw
 
 三月邦邦找我回實驗室分享的時候，老師說我畢業後都沒回去台南找他
 依稀又有印象嘉平好像在某次跟大家說，每次都他上來台北，總是要換我們去台南吧吧

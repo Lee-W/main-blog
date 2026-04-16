@@ -3,8 +3,9 @@ Date: 2020-12-31 17:53 +0800
 Category: Tech
 Tags: Python, CI/CD, commitizen-tools
 Slug: python-table-manner-continuous-integration
-Authors: Wei Lee
 Series: Python Table Manners
+Authors: Wei Lee
+Lang: zh-tw
 
 這篇好像真的拖得很久...
 原本預定的發表時間還是 2020-03-04 呢 ......

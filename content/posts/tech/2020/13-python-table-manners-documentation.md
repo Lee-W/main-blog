@@ -4,8 +4,9 @@ Modified: 2020-10-04 16:49 +0800
 Category: Tech
 Tags: Python, Documentation
 Slug: python-table-manners-documentation
-Authors: Wei Lee
 Series: Python Table Manners
+Authors: Wei Lee
+Lang: zh-tw
 
 Python 開源專案中，[Sphinx](https://www.sphinx-doc.org/en/master/) 是很常見的文件產生工具
 它能將 [reStructuredText](https://docutils.sourceforge.io/rst.html) 寫成的文件轉成網頁

@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-02-24-03-02-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 果然還是自己需要的功能最能加速開發進度呢
 

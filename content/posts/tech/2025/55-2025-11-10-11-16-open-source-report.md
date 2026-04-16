@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-11-10-11-16-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 上週主要專注在看 commitizen 的 PRs
 這週就順手發了幾隻小 PRs

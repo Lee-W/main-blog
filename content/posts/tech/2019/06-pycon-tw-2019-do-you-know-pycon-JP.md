@@ -4,6 +4,7 @@ Category: Tech
 Tags: Conference, PyCon
 Slug: pycon-tw-2019-do-you-know-pycon-jp
 Authors: Wei Lee
+Lang: zh-tw
 
 [TOC]
 

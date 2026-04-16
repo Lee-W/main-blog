@@ -3,8 +3,9 @@ Date: 2026-01-03 20:55 +0800
 Category: Tech
 Tags: Open Source, 年度回顧
 Slug: 2025-git-wrapped
-Authors: Wei Lee
 Cover: /images/posts-image/2026/2025-git-wrap/github.jpg
+Authors: Wei Lee
+Lang: zh-tw
 
 繼 Spotify 每年都有年度回顧
 越來越多的服務開始提供這樣的功能

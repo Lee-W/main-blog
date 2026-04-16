@@ -5,6 +5,7 @@ Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: removing-DAG-from-airflow
 Authors: Wei Lee
+Lang: zh-tw
 
 突然覺得爛新聞的聳動標題很適合這次的生情報 😆
 

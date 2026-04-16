@@ -4,9 +4,10 @@ Date: 2026-04-14 19:30 +0800
 Category: Random Thoughts
 Tags: Open Source, IT Matters Awards, 總統府, BanG Dream
 Slug: tomorin-goes-to-presidential-office
-Authors: Wei Lee
 Series: IT Matters Awards 2025
 Cover: /images/posts-image/2026/tomorin-goes-to-presidential-office/me-cover.png
+Authors: Wei Lee
+Lang: zh-tw
 
 能做開源做到被總統接見，真是始料未及
 人生成就解鎖 🔓

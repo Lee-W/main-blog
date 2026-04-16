@@ -5,6 +5,7 @@ Category: Tech
 Tags: Anime, Python
 Slug: stop-it-dont-use-python-like-this
 Authors: Wei Lee
+Lang: zh-tw
 
 內有[九龍大眾浪漫]暴雷，請小心服用
 倒是最近意外發現原來漫畫還在連載中

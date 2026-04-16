@@ -4,6 +4,7 @@ Category: Tech
 Tags: Airflow
 Slug: airflow-triggerer-trigger-translation
 Authors: Wei Lee
+Lang: zh-tw
 
 最近突然好奇 Apache Airflow 的 Trigger 跟 Trigger**er** 到底是怎麼翻譯的
 去看了一下，竟然都翻譯成觸發器

@@ -4,9 +4,10 @@ Date: 2024-08-25 23:30 +0800
 Category: Tech
 Tags: Python, Airflow, Airflow 2.10
 Slug: dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger
-Authors: Wei Lee
 Series: What If...? Running Airflow Tasks without the workers
 Cover: /images/posts-image/2024-dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger/not-looking-for.jpg
+Authors: Wei Lee
+Lang: en
 
 As mentioned in [the first article of this series]({filename}/posts/tech/2024/7-airflow-start-execution-directly-from-trigger-instead-of-going-into-worker.md), dynamic task mapping was not supported before [this PR](https://github.com/apache/airflow/pull/39912). However, it's now supported.
 

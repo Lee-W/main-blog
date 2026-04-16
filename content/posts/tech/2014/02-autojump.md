@@ -4,6 +4,7 @@ Category: Tech
 Tags: Linux-Unix, Utility
 Slug: autojump
 Authors: Wei Lee
+Lang: zh-tw
 
 快速跳轉資料夾的工具
 

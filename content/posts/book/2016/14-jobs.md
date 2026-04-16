@@ -4,6 +4,7 @@ Category: Book
 Tags: Autobiography
 Slug: jobs
 Authors: Wei Lee
+Lang: zh-tw
 
 記得我去上海交通大學交換的時候
 一門有關創新的課，老師跟我們說一定要看喬布斯傳

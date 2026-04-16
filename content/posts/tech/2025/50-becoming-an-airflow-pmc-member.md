@@ -4,8 +4,9 @@ Date: 2025-10-25 23:25 +0800
 Category: Tech
 Tags: Airflow
 Slug: becoming-an-airflow-pmc-member
-Authors: Wei Lee
 Cover: /images/posts-image/2025-becoming-an-airflow-pmc-member/airflow-summit.jpeg
+Authors: Wei Lee
+Lang: zh-tw
 
 去了 COC NA 的朋友跟大家分享
 

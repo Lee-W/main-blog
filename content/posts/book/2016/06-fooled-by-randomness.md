@@ -4,6 +4,7 @@ Category: Book
 Tags: Other
 Slug: fooled-by-randomness
 Authors: Wei Lee
+Lang: zh-tw
 
 ![fooled by randomness](http://pic.eslite.com/Upload/Product/201405/m/635359124106127500.jpg)
 

@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-03-24-03-30-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 稍微花了點時間把存在瀏覽器分頁，但一直沒看的 issue 看一看
 但有些太遠古了...

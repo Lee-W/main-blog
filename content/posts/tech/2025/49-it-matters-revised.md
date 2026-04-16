@@ -4,6 +4,8 @@ Category: Tech
 Tags: Open Source
 Slug: it-matters-revised
 Series: IT Matters Awards 2025
+Authors: Wei Lee
+Lang: zh-tw
 
 哦，不是，是 [IT Matters](https://award.ima.org.tw/) 的初選過了
 想說源來適你粉專才發了一篇很多強者報名的貼文

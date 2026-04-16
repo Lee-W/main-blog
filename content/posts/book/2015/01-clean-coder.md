@@ -4,6 +4,7 @@ Category: Book
 Tags: Software Engineering, Code Quality
 Slug: Soft
 Authors: Wei Lee
+Lang: zh-tw
 
 ![Clean Coder](/images/books/clean-coder.jpg)
 

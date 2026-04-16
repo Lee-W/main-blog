@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-08-25-08-31-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 接下來要出差，然後要去 PyCon JP 跟 Airflow Summit
 會有一段時間不在

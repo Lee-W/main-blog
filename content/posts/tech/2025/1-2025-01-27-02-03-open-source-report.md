@@ -4,8 +4,9 @@ Date: 2025-02-02 21:00 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-01-27-02-03-open-source-report
-Authors: Wei Lee
 Cover: /images/meme/mygo-vanity.jpg
+Authors: Wei Lee
+Lang: zh-tw
 
 今年想做個新的嘗試
 每週記錄工作以外，我在開源專案的貢獻

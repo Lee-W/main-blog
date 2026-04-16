@@ -3,8 +3,9 @@ Date: 2026-01-09 12:30 +0800
 Category: Tech
 Tags: Neovim
 Slug: neovim-treesitter-was-broken
-Authors: Wei Lee
 Cover: /images/posts-image/2026/neovim-treesitter-was-broken/neovim-treesitter-was-broken.png
+Authors: Wei Lee
+Lang: zh-tw
 
 通常我都會讓 [LazyVim](https://www.lazyvim.org/) 每天去抓最新版本的外掛
 抓著抓著，某一天就壞掉了...

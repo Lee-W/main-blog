@@ -4,8 +4,9 @@ Modified: 2020-10-04 15:22 +0800
 Category: Tech
 Tags: Python, Dependency
 Slug: python-table-manners-dependency-mangement
-Authors: Wei Lee
 Series: Python Table Manners
+Authors: Wei Lee
+Lang: zh-tw
 
 開始 Python 專案時，第一步都是建立一個專屬於專案的虛擬環境
 會需要這麼做是為了避免不同的 Python 專案需要使用到不同版本的套件

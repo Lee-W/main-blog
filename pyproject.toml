@@ -1,11 +1,11 @@
 [project]
 name = "main-blog"
 version = "0.1.0"
-description = "Add your description here"
+description = "Wei's personal blog"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-  "attila>=2.3.0",
+  "attila>=2.4.0",
   "beautifulsoup4>=4.12.3",
   "cssmin>=0.2.0",
   "ghp-import>=2.1.0",
@@ -30,6 +30,7 @@ dependencies = [
   "pelican-osm>=0.3.1",
   "pelican-heatmap>=0.2.3",
   "pelican-random-article",
+  "pelican-i18n-subsites>=1.0.0",
 ]
 
 [dependency-groups]
@@ -47,8 +48,8 @@ required-version = ">=0.9.17"
 exclude-newer = "4 days"
 
 [tool.uv.sources]
+attila = { url = "https://github.com/Lee-W/attila/releases/download/v2.4.0/attila-2.4.0-py3-none-any.whl" }
 pelican-deadlinks = { git = "https://github.com/pelican-plugins/deadlinks" }
-attila = { git = "https://github.com/Lee-W/attila/"}
 
 [tool.ruff]
 line-length = 88

@@ -11,6 +11,7 @@ PATH = "content"
 # Blog Conf
 AUTHOR = "Wei Lee"
 SITEURL = "http://localhost:8000"
+STATIC_SITEURL = SITEURL
 SITELOGO = "/images/avatar.jpg"
 BROWSER_COLOR = "#333333"
 HEADER_COVER = "/images/cover.jpeg"
@@ -18,8 +19,14 @@ DEFAULT_DATE_FORMAT = "%Y/%m/%d - %a"
 
 # Locale
 TIMEZONE = "Asia/Taipei"
-DEFAULT_LANG = "zh-tw"
 OG_LOCALE = "zh-tw"
+LANGUAGES = [("zh-tw", "/"), ("en", "/en/")]
+CURRENT_LANG = "zh-tw"
+CATEGORY_TRANSLATIONS = {
+    "Tech": "技術",
+    "Random Thoughts": "隨筆",
+    "Book": "讀書筆記",
+}
 
 # Utterance (comment system)
 UTTERANCES_LABEL = "blog-comment"
@@ -95,10 +102,9 @@ MARKDOWN = {
 PLUGIN_PATHS = ["pelican-plugins"]
 PLUGINS = [
     "another_read_more_link",
-    "pelican.plugins.random_article",
-    "pelican.plugins.heatmap",
-    "pelican.plugins.osm",
+    "pelican.plugins.i18n_subsites",
     "pelican.plugins.neighbors",
+    "pelican.plugins.random_article",
     "pelican.plugins.render_math",
     "pelican.plugins.seo",
     "pelican.plugins.series",
@@ -106,6 +112,8 @@ PLUGINS = [
     "pelican.plugins.statistics",
     "pelican.plugins.tag_cloud",
     "pelican.plugins.webassets",
+    "pelican.plugins.heatmap",
+    "pelican.plugins.osm",
 ]
 ANOTHER_READ_MORE_LINK = ""
 PAGEFIND_ENABLED = True
@@ -117,6 +125,32 @@ LOCAL_PLUGINS = [
 PLUGINS.extend(LOCAL_PLUGINS)
 DEADLINKS_VALIDATION = False
 
+# mapping: language_code -> settings_overrides_dict
+DEFAULT_LANG = "zh-tw"
+I18N_TEMPLATES_LANG = "en"
+I18N_SUBSITES = {
+    "en": {
+        "SITENAME": "Those aren't written down are meant to be forgotten",
+        "CURRENT_LANG": "EN",
+        "CATEGORY_TRANSLATIONS": {},
+        "MENUITEMS": (
+            ("🏠 Home", "/en/"),
+            ("About Me", "/en/pages/about-me.html"),
+            ("👨‍💻 Tech", "/en/category/tech.html"),
+            ("📚 Book Digest", "/en/category/book.html"),
+            ("💬 Random Thoughts", "/en/category/random-thoughts.html"),
+            ("🏷️ Tags", "/en/tags.html"),
+            ("🗄️ Archives", "/en/archives.html"),
+            ("📚 Series", "/en/series_list.html"),
+            ("🔍 Search", "/en/search.html"),
+            ("🎲 Random", "/en/random/index.html"),
+        ),
+    },
+}
+JINJA_ENVIRONMENT = {
+    "extensions": ["jinja2.ext.i18n"],
+}
+
 # pelican-seo settings
 SEO_REPORT = True  # SEO report is enabled by default
 SEO_ENHANCER = True  # SEO enhancer is disabled by default
@@ -126,7 +160,7 @@ SEO_ENHANCER_TWITTER_CARDS = True  # Subfeature of SEO enhancer
 
 # ----this blog only----
 # Blog Conf
-SITENAME = "Those aren't written down are meant to be forgotten"
+SITENAME = "不寫下來的東西都會被遺忘"
 SITETITLE = SITENAME
 
 # Utterance (comment system)
@@ -134,16 +168,16 @@ UTTERANCES_REPO = "Lee-W/main-blog"
 
 # Page Setting
 MENUITEMS = (
-    ("🏠 Home", "/"),
-    ("About Me", "/pages/about-me.html"),
-    ("👨‍💻 Tech", "/category/tech.html"),
-    ("📚 Book Digest", "/category/book.html"),
-    ("💬 Random Thoughts", "/category/random-thoughts.html"),
-    ("🏷️ Tags", "/tags.html"),
-    ("🗄️ Archives", "/archives.html"),
-    ("📚 Series", "/series_list.html"),
-    ("🔍 Search", "/search.html"),
-    ("🎲 Random", "/random/index.html"),
+    ("🏠 首頁", "/"),
+    ("關於我", "/pages/about-me.html"),
+    ("👨‍💻 技術", "/category/tech.html"),
+    ("📚 讀書筆記", "/category/book.html"),
+    ("💬 隨筆", "/category/random-thoughts.html"),
+    ("🏷️ 標籤", "/tags.html"),
+    ("🗄️ 歸檔", "/archives.html"),
+    ("📚 系列文章", "/series_list.html"),
+    ("🔍 搜尋", "/search.html"),
+    ("🎲 隨機", "/random/index.html"),
 )
 
 # Content Setting

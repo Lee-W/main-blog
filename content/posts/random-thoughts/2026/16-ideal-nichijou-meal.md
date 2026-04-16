@@ -4,6 +4,8 @@ Category: Random Thoughts
 Tags: BlogBlog 同樂會
 Slug: ideal-nichijou-meal
 Series: 理想的日常 (2026)
+Authors: Wei Lee
+Lang: zh-tw
 
 > 這是我的「[BlogBlog 同樂會 - 2026 年 3 月](https://blogblog.club/party/)」的投稿文章。本月主題是「[理想的日常]」，由 [Alex Hsu](https://alexhsu.com/) 主持。如果你有自己的部落格，歡迎一起來參加！
 

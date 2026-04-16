@@ -5,7 +5,8 @@
 :tags: Writing
 :category: Random Thoughts
 :slug: 2021-2024-yearly-review
-:authors: Lee-W
+:authors: Wei Lee
+:lang: zh-tw
 
 | 前陣子好像蠻多人在回顧 2024
 | 現在趁著農曆的新年，正好是時候我也來寫一下

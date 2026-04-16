@@ -4,6 +4,7 @@ Category: Tech
 Tags: Inspiring, Vim
 Slug: article-man-theory
 Authors: Wei Lee
+Lang: zh-tw
 
 這篇文實在太有趣了，還是該留下來做個紀錄 XD
 

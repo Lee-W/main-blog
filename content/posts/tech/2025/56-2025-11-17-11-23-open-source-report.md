@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-11-17-11-23-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 commitizen 作者 Santi 強勢回歸
 推出 commitizen 的新 GitHub Action [setup-cz](https://github.com/commitizen-tools/setup-cz/)

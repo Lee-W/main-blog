@@ -5,6 +5,8 @@ Tags: BlogBlog 同樂會
 Slug: ideal-doll
 Series: 理想的日常 (2026)
 Cover: /images/posts-image/2026/ideal/tomori-doll.jpeg
+Authors: Wei Lee
+Lang: zh-tw
 
 > 這是我的「[BlogBlog 同樂會 - 2026 年 3 月](https://blogblog.club/party/)」的投稿文章。本月主題是「[理想的日常](https://alexhsu.com/perfect-days)」，由 [Alex Hsu](https://alexhsu.com/) 主持。如果你有自己的部落格，歡迎一起來參加！
 

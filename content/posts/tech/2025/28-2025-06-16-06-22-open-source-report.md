@@ -4,8 +4,9 @@ Date: 2025-06-24 10:00 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-06-16-06-2s-open-source-report
-Authors: Wei Lee
 Cover: /images/meme/mygo-too-fast.jpg
+Authors: Wei Lee
+Lang: zh-tw
 
 因為上週跑去 DurianPy 了，實在沒有什麼時間看其他 PRs
 隨著 EuroPython 的接近，接下來審閱的速度也會慢下來

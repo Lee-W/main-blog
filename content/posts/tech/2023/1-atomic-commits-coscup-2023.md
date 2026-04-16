@@ -5,6 +5,7 @@ Category: Tech
 Tags: PyCon TW, COSCUP
 Slug: atomic-commits-coscup-2023
 Authors: Wei Lee
+Lang: zh-tw
 
 隨著 [commitizen](https://github.com/commitizen-tools/commitizen) v3 的發佈和今年辦在日本的 PyCon APAC
 我一時被沖昏了頭

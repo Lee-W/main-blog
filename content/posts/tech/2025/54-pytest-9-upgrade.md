@@ -4,6 +4,7 @@ Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: pytest-9-upgrade
 Authors: Wei Lee
+Lang: zh-tw
 
 寫這篇文的時候，[9.0.1](https://github.com/pytest-dev/pytest/releases/tag/9.0.1) 剛好出來...
 <!--more-->

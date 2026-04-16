@@ -4,8 +4,9 @@ Date: 2024-09-02 21:35 +0800
 Category: Tech
 Tags: Python, Airflow, AST
 Slug: dig-into-ast-a-bit-more
-Authors: Wei Lee
 Series: Unleash the Chaos: Developing a Linter for Un-Pythonic Code!
+Authors: Wei Lee
+Lang: en
 
 The purpose of this post was to delve into the [ast](https://docs.python.org/3/library/ast.html)
 But...

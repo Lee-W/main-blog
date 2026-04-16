@@ -4,6 +4,7 @@ Category: Tech
 Tags: Python, PyCon, Python Pizza, commitizen-tools
 Slug: remote-python-pizza-2020
 Authors: Wei Lee
+Lang: zh-tw
 
 上週六參加了第一場遠端的 Python 研討會 [Remote Python Pizza](https://remote.python.pizza/)
 由於疫情的關係，國外的 PyCon 大多轉往線上或取消

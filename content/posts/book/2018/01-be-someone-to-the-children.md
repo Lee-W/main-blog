@@ -4,6 +4,7 @@ Category: Book
 Tags: Education
 Slug: be-someone-to-the-children
 Authors: Wei Lee
+Lang: zh-tw
 Summary: Story
 
 跟蘇老師合作了半年下來

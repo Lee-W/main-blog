@@ -4,8 +4,9 @@ Date: 2025-02-09 11:20 +0800
 Category: Tech
 Tags: Airflow, Airflow 3.0
 Slug: airflow-3-0-0-a2
-Authors: Wei Lee
 Cover: /images/posts-image/2025-airflow-alpha-2/airflow-3-ui.png
+Authors: Wei Lee
+Lang: zh-tw
 
 As announcements in the Airflow dev mailing list, ~~[📢 Apache Airflow 3.0.0apha1 is available for testing! 🎉]~~ [📢 Apache Airflow 3.0.0apha2 is available for testing! 🎉]
 

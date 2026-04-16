@@ -3,8 +3,9 @@ Date: 2021-01-01 13:30 +0800
 Category: Tech
 Tags: Python
 Slug: python-table-manners-cookiecutter
-Authors: Wei Lee
 Series: Python Table Manners
+Authors: Wei Lee
+Lang: zh-tw
 
 [Python Table Manners 系列]({filename}/posts/tech/2020/04-python-table-manners-series.md) 整理了各種開發 Python 專案能用到的工具們
 如果每次重新開啟新專案都得重複設定的步驟就很浪費時間

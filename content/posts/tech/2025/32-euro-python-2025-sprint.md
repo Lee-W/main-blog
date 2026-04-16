@@ -3,8 +3,9 @@ Date: 2025-08-02 22:20 +0800
 Category: Tech
 Tags: EuroPython, Development Sprint
 Slug: europython-2025-airflow-development-sprint
-Authors: Wei Lee
 Cover: /images/posts-image/2025-europython-2025-airflow-development-sprint/venue.jpeg
+Authors: Wei Lee
+Lang: en
 
 Finally back from EuroPython and recovering a bit from the long travel.
 It's time to review how the development sprint went this time.

@@ -5,6 +5,7 @@ Category: Random Thoughts
 Tags: Exercise, Weight Training
 Slug: weight-training
 Authors: Wei Lee
+Lang: zh-tw
 
 對啦，我也看不出來啦嗚嗚嗚嗚嗚 😭
 

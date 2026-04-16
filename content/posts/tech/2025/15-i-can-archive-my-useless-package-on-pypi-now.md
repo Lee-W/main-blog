@@ -5,6 +5,7 @@ Category: Tech
 Tags: Python, PyPI
 Slug: i-can-archive-my-useless-package-on-pypi-now
 Authors: Wei Lee
+Lang: zh-tw
 
 [PyPI Now Supports Project Archival]
 

@@ -4,8 +4,9 @@ Date: 2026-01-25 13:08 +0800
 Category: Random Thoughts
 Tags: 報導者
 Slug: the-reporter-10th
-Authors: Wei Lee
 Cover: /images/posts-image/2026/the-reporter-10th/IMG_0422.JPEG
+Authors: Wei Lee
+Lang: zh-tw
 
 朋友每次都跟我分享她會去參加贊助者優先的線下活動
 我也是贊助了一段時間，是該來行使一下我的贊助者權益了

@@ -6,6 +6,7 @@ Category: Tech
 Tags: Python, Airflow, 源來適你
 Slug: airflow-contribution-101
 Authors: Wei Lee
+Lang: zh-tw
 
 至少在[源來適你的名單]上是有我的名字
 雖然 `#airflow-技術討論` 這個頻道偏死寂

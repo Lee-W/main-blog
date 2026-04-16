@@ -4,6 +4,7 @@ Category: Tech
 Tags: Paper, Deep Learning, Machine Learning, NLP, Big Five Theory, Personality
 Slug: Deep-Learning-Based-Document-Modeling-for-Personality-Detection-from-Text
 Authors: Wei Lee
+Lang: en
 
 * [Paper](https://sentic.net/deep-learning-based-personality-detection.pdf)
 * Implementation: [Personality-Detection](https://github.com/SenticNet/Personality-Detection)

@@ -5,6 +5,7 @@ Category: Tech
 Tags: Python, Study Session
 Slug: Introducing-Python-ch19-final
 Authors: Wei Lee
+Lang: zh-tw
 
 繼上次的[草稿]({filename}/posts/tech/2024/10-Introducing-Python-ch19-draft.md)後該來個決定版了
 

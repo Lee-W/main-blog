@@ -4,6 +4,7 @@ Category: Tech
 Tags: Python, Django, mac
 Slug: solve-django-admin-cant-find-the-djangocore-on-mac
 Authors: Wei Lee
+Lang: zh-tw
 
 ## 問題
 

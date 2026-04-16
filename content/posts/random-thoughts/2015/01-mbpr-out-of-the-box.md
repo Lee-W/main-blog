@@ -4,6 +4,7 @@ Category: Random Thoughts
 Tags: mac, unboxing
 Slug: mbpr-out-of-the-box
 Authors: Wei Lee
+Lang: zh-tw
 
 這篇只是想給自己換 MacBook Pro Retina 留下一個紀念
 順便紀錄一些從 Ubuntu 轉過來不習慣的地方

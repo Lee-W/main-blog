@@ -4,6 +4,7 @@ Category: Book
 Tags: Management
 Slug: high-output-management
 Authors: Wei Lee
+Lang: zh-tw
 
 ![high-output-management](/images/books/high-output-management.jpg)
 

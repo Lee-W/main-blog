@@ -4,8 +4,9 @@ Date: 2025-05-01 14:55 +0800
 Category: Random Thoughts
 Tags: Exercise, Running
 Slug: first-9-km-run
-Authors: Wei Lee
 Cover: /images/posts-image/2025-first-9-km-run/mygo-bottle.jpeg
+Authors: Wei Lee
+Lang: zh-tw
 
 今年 5/4 糊裡糊塗就被抓去報名[舒跑杯]
 原本想說反正是早上，應該不會衝到星戰日的活動

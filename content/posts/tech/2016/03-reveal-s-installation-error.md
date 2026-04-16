@@ -4,6 +4,7 @@ Category: Tech
 Tags: JavaScript, reveal.js
 Slug: reveal-s-installation-error
 Authors: Wei Lee
+Lang: zh-tw
 
 當我安裝步驟執行到
 

@@ -4,6 +4,7 @@ Category: Tech
 Tags: Airflow
 Slug: achieve-400-contributions-in-apache-airflow
 Authors: Wei Lee
+Lang: zh-tw
 
 Following up on [Achieve 300 contributions in Apache Airflow]({filename}/posts/tech/2025/12-achieve-300-contributions-in-apache-airflow.md).
 Just a quick reflection on what I did between 300 and 400 contributions.

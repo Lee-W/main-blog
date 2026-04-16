@@ -4,8 +4,9 @@ Date: 2025-05-11 18:30 +0800
 Category: Random Thoughts
 Tags: Exercise, Running
 Slug: supau-cup-mini-marathon
-Authors: Wei Lee
 Cover: /images/posts-image/2025-supau-cup-mini-marathon/finish.jpeg
+Authors: Wei Lee
+Lang: zh-tw
 
 畢竟舒跑杯當天是星戰日，還是該表示一下我對星戰的愛
 The Force is strong with this shirt.

@@ -4,8 +4,9 @@ Date: 2025-02-12 23:35 +0800
 Category: Tech
 Tags: Hardware
 Slug: how-to-reset-bader-2024
-Authors: Wei Lee
 Cover: /images/posts-image/2025-badger-2040/badger-2040.jpeg
+Authors: Wei Lee
+Lang: zh-tw
 
 前年去 PyCon APAC 抽到酷酷的 Badger 2040
 可以當時鐘、當電子書（但應該是沒人會這樣用啦...）

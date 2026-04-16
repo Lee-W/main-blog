@@ -5,6 +5,7 @@ Category: Tech
 Tags: commitizen-tools
 Slug: commitizen-home-page
 Authors: Wei Lee
+Lang: zh-tw
 
 以前 commitizen-tools 的首頁是 <https://commitizen-tools.github.io/commitizen/>
 而不是 <https://commitizen-tools.github.io/>

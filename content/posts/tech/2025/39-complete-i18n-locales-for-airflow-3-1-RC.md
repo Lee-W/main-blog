@@ -4,6 +4,7 @@ Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: complete-i18n-locales-for-airflow-3-1-RC
 Authors: Wei Lee
+Lang: zh-tw
 
 為了讓自己更有動力好好的讀 Airflow 開發郵件群組 (Airflow dev mailing list)
 多開了 [Airflow 生情報](/tag/airflow-kai-fa-sheng-qing-bao.html) 的標籤

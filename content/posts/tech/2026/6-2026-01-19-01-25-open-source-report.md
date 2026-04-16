@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2026-01-19-01-25-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 這週發現酷酷的新專案
 所以 commitizen 的 PR 看得有點少

@@ -1,9 +1,10 @@
-title: [Book] IDEA 物語
-date: 2016-01-01 11:39
+Title: [Book] IDEA 物語
+Date: 2016-01-01 11:39
 Category: Book
 Tags: Design
 Slug: the-art-of-innovation
 Authors: Wei Lee
+Lang: zh-tw
 
 ![the-art-of-innovation](http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/018/29/0010182963.jpg&v=3c3d169c&w=348&h=348)
 

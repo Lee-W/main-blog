@@ -4,8 +4,9 @@ Date: 2025-05-25 23:15 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-05-19-05-25-open-source-report
-Authors: Wei Lee
 Cover: /images/meme/fate-emiya-can-you-keep-up.png
+Authors: Wei Lee
+Lang: zh-tw
 
 你問我跟得上嗎？你才得給我跟上！
 

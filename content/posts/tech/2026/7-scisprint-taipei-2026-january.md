@@ -4,8 +4,9 @@ Date: 2026-02-01 13:45 +0800
 Category: Tech
 Tags: Development Sprint
 Slug: scisprint-taipei-2026-january
-Authors: Wei Lee
 Cover: /images/posts-image/2026/scisprint-2026-jan/scisprint.jpg
+Authors: Wei Lee
+Lang: en
 
 It's been a long time since I last led a development sprint for [commitizen-tools].
 I've been focused on the Airflow community for some time, and the Taiwan community now seems to be doing well. It feels like a good time for me to come back and make some more contributions to [commitizen-tools].

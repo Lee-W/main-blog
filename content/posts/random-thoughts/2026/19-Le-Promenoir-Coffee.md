@@ -5,6 +5,8 @@ Category: Random Thoughts
 Tags: Coworking Space
 Slug: Le-Promenoir-Coffee
 Cover: /images/posts-image/2026/Le-Promenoir-Coffee/desk.JPEG
+Authors: Wei Lee
+Lang: zh-tw
 
 上次因為晚上要去真善美影城看紀錄片`大風之島`
 白天就先到西門附近找個地方工作

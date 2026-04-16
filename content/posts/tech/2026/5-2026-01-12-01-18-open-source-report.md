@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2026-01-12-01-18-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 沒錯，這週二[[ANNOUNCE] Apache Airflow 3.1.6 Released](https://lists.apache.org/thread/07wrnk9p4hod0t74cdzmdobmy1dntql6)一發佈
 我就發了 PR 給 pycon-etl ，並且第一時間部署上去了！

@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-06-09-06-15-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 原本以為這週因為有 CPython Sprint 有機會開一個 PR
 但我果然不會寫 Python 😞

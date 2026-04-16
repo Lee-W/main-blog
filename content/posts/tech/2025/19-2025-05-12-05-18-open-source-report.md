@@ -5,7 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-05-12-05-18-open-source-report
 Authors: Wei Lee
-Cover:
+Lang: zh-tw
 
 這開 PR 的速度...
 我們 Review 的速度實在跟不上 🥲

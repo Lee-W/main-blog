@@ -5,6 +5,7 @@ Category: Random Thoughts
 Tags: Reading, BlogBlog 同樂會
 Slug: review-blogblog-jan-review
 Authors: Wei Lee
+Lang: zh-tw
 
 二月初注意才注意到 [BlogBlog 同樂會](https://blogblog.club/)
 已經錯過了一月的主題──推坑

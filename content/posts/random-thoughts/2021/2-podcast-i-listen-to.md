@@ -4,6 +4,7 @@ Category: Random Thoughts
 Tags: Podcast
 Slug: podcast-i-listen-to
 Authors: Wei Lee
+Lang: zh-tw
 
 之前跟朋友聊到在聽什麼 podcast 就一直想寫文章整理
 最近又被茶魚飯厚的故事感動了

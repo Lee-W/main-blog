@@ -5,6 +5,7 @@ Category: Tech
 Tags: Python, PyCon, Conference
 Slug: how-was-pycon-us-2019
 Authors: Wei Lee
+Lang: zh-tw
 
 既然自稱 Python 的信徒
 總是要來世界最大的 PyCon 朝聖一下 XD

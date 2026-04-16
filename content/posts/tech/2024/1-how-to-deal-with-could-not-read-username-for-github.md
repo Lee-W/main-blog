@@ -4,6 +4,7 @@ Category: Tech
 Tags: GitHub Actions, CI/CD, GitHub
 Slug: how-to-deal-with-could-not-read-username-for-github
 Authors: Wei Lee
+Lang: zh-tw
 
 相信有在用 GitHub Actions 的大家應該都有用過 [actions/checkout](https://github.com/actions/checkout)
 

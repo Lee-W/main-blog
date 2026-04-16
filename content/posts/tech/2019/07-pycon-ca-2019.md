@@ -4,6 +4,7 @@ Category: Tech
 Tags: Python, PyCon, PyCon CA, PyCon CA 2019, commitizen-tools
 Slug: pycon-ca-2019
 Authors: Wei Lee
+Lang: zh-tw
 
 隔了一個多月，終於有時間可以來補 PyCon CA 2019 的心得
 這是我今年參加的第四場 PyCon

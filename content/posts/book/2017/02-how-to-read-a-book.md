@@ -1,9 +1,10 @@
-title: [Book] 如何閱讀一本書
-date: 2017-03-03 20:41
+Title: [Book] 如何閱讀一本書
+Date: 2017-03-03 20:41
 Category: Book
 Tags: Other
 Slug: how-to-read-a-book
 Authors: Wei Lee
+Lang: zh-tw
 
 ![how-to-read-a-book](/images/books/how-to-read-a-book.jpg)
 

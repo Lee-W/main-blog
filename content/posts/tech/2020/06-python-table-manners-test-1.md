@@ -4,8 +4,9 @@ Modified: 2020-10-04 15:33 +0800
 Category: Tech
 Tags: Python, Test
 Slug: python-table-manners-test-1
-Authors: Wei Lee
 Series: Python Table Manners
+Authors: Wei Lee
+Lang: zh-tw
 
 設定完環境後，接著開始要開發程式的各項功能
 要驗證程式正確性時，我們就會撰寫測試案例

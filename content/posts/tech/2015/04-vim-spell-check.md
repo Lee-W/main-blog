@@ -4,6 +4,7 @@ Category: Tech
 Tags: Vim
 Slug: vim-spell-check
 Authors: Wei Lee
+Lang: zh-tw
 
 [vimspell](http://www.vim.org/scripts/script.php?script_id=465) 是一套提供 vim 根據字典來檢查文法的套件
 有了 vimsepll，寫 Markdown 或 LaTeX 的時候，就不用再怕拼錯字了

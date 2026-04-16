@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-08-04-08-10-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 許久以前在邦邦的日本語曾經學過這些日文
 

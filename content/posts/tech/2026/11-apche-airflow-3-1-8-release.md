@@ -5,6 +5,7 @@ Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: apache-airflow-3-1-8-release
 Authors: Wei Lee
+Lang: zh-tw
 
 Apache Airflow 3.1.8 於上週發佈
 [pycon-etl](https://github.com/pycontw/pycon-etl)又又又又又再一次成為了 SQLite 使用者的救星

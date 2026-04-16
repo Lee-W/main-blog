@@ -3,8 +3,9 @@ Date: 2022-02-23 11:05 +0800
 Category: Tech
 Tags: Pelican, blog
 Slug: use-github-issues-as-comment-system
-comment_id: use-github-issues-as-comment-system
 Authors: Wei Lee
+Lang: zh-tw
+comment_id: use-github-issues-as-comment-system
 
 之前看到有人用 GitHub Issues 當部落格的留言區，一直讓我想從 Disqus 搬走
 想了很久，終於在過年期間弄好了，弄起來比想像的簡單許多

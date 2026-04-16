@@ -1,9 +1,10 @@
-title: [Book] 做工的人
-date: 2017-03-24 18:48
+Title: [Book] 做工的人
+Date: 2017-03-24 18:48
 Category: Book
 Tags: Story
 Slug: worker
 Authors: Wei Lee
+Lang: zh-tw
 
 ![做工的人](/images/books/workers.jpg)
 

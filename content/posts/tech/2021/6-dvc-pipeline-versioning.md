@@ -4,8 +4,9 @@ Modified: 2021-06-27 17:58 +0800
 Category: Tech
 Tags: Data, Version Control, DVC
 Slug: dvc-pipeline-versioning
-Authors: Wei Lee
 Series: Data Version Control Tutorial
+Authors: Wei Lee
+Lang: en
 
 We've versioned our data in the previous post. This article will demonstrate how we could define a data pipeline and version it through DVC.
 

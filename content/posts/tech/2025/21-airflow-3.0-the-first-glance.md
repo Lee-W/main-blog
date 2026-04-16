@@ -4,8 +4,9 @@ Date: 2025-05-29 21:55 +0800
 Category: Tech
 Tags: 源來適你, Airflow 3.0
 Slug: airflow-3-0-the-first-glance
-Authors: Wei Lee
 Cover:/images/meme/mygo-it-s-mygo.jpg
+Authors: Wei Lee
+Lang: zh-tw
 
 今天聽 Python Bytes [#433] 提到 Airflow 3 才提醒我
 兩個月前的黃金流沙饅頭營，我還沒寫篇文章記錄一下

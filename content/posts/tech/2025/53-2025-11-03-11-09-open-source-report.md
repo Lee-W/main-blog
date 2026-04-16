@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2025-11-03-11-09-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 下週一準備來發佈 commitizen `v4.10.0`
 有興趣的可以 git checkout 到 `v4-10-0` 的分支玩玩看

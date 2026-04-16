@@ -4,6 +4,7 @@ Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: replace-constraints-with-uv-lock-mechanisms-for-dev-env-freeze
 Authors: Wei Lee
+Lang: zh-tw
 
 我以為有了 [PEP 751] 一切的 lock 問題就會解決 😢
 但它好像只是讓 `requirements.txt` 更好了很多

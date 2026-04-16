@@ -5,6 +5,7 @@ Category: Tech
 Tags: Open Source, 開源貢獻週報
 Slug: 2026-02-09-03-08-open-source-report
 Authors: Wei Lee
+Lang: zh-tw
 
 月報就算了
 這段時間的開源貢獻也是少到有點汗顏
