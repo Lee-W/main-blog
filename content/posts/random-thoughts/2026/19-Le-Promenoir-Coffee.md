@@ -69,7 +69,7 @@ Lang: zh-tw
 - 靠牆座位都有插
 - 桌面空間很大
 
-基本上不用擔心用電或空間問
+基本上不用擔心用電或空間問題
 很適合帶整套設備來工作
 
 ![pizza](/images/posts-image/2026/Le-Promenoir-Coffee/pizza.JPEG)
