@@ -16,23 +16,8 @@ SITELOGO = "/images/avatar.jpg"
 BROWSER_COLOR = "#333333"
 HEADER_COVER = "/images/cover.jpeg"
 DEFAULT_DATE_FORMAT = "%Y/%m/%d - %a"
-
-# Locale
 TIMEZONE = "Asia/Taipei"
-OG_LOCALE = "zh-tw"
-LANGUAGES = [("zh-tw", "/"), ("en", "/en/")]
-CURRENT_LANG = "zh-tw"
-CATEGORY_TRANSLATIONS = {
-    "Tech": "技術",
-    "Random Thoughts": "隨筆",
-    "Book": "讀書筆記",
-}
-
-# Utterance (comment system)
-UTTERANCES_LABEL = "blog-comment"
-COMMENTS_INTRO = (
-    "Do you like this article? What do your tink about it? Leave you comment below"
-)
+SHOW_ARTICLE_MODIFIED_TIME = True
 
 # Page Setting
 MAIN_MENU = True
@@ -49,18 +34,13 @@ DIRECT_TEMPLATES = (
     "series_list",
     "search",
 )
+CATEGORIES_URL = "category"
+TAGS_URL = "tag"
 
 # Content Setting
 ARTICLE_URL = "posts/{category}/{date:%Y}/{date:%m}/{slug}"
 ARTICLE_SAVE_AS = "posts/{category}/{date:%Y}/{date:%m}/{slug}/index.html"
 STATIC_PATHS = ["images", "extra", "static"]
-
-# Theme Setting
-THEME = attila.get_path()
-JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
-SHOW_ARTICLE_MODIFIED_TIME = True
-CATEGORIES_URL = "category"
-TAGS_URL = "tag"
 
 # License
 CC_LICENSE = {
@@ -98,6 +78,46 @@ MARKDOWN = {
     "output_format": "html5",
 }
 
+# Utterance (comment system)
+UTTERANCES_LABEL = "blog-comment"
+COMMENTS_INTRO = "你喜歡這篇文章嗎？你覺得怎麼樣？歡迎在下方留言。"
+
+# Theme Setting
+THEME = attila.get_path()
+
+# i18n
+JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
+OG_LOCALE = "zh-tw"
+DEFAULT_LANG = "zh-tw"
+I18N_TEMPLATES_LANG = "en"
+LANGUAGES = [("zh-tw", "/"), ("en", "/en/")]
+CURRENT_LANG = "zh-tw"
+CATEGORY_TRANSLATIONS = {
+    "Tech": "技術",
+    "Random Thoughts": "隨筆",
+    "Book": "讀書筆記",
+}
+I18N_SUBSITES = {
+    "en": {
+        "SITENAME": "Those aren't written down are meant to be forgotten",
+        "COMMENTS_INTRO": "Do you like this article? What do your tink about it? Leave you comment below",
+        "CURRENT_LANG": "EN",
+        "CATEGORY_TRANSLATIONS": {},
+        "MENUITEMS": (
+            ("🏠 Home", "/en/"),
+            ("About Me", "/en/pages/about-me.html"),
+            ("👨‍💻 Tech", "/en/category/tech.html"),
+            ("📚 Book Digest", "/en/category/book.html"),
+            ("💬 Random Thoughts", "/en/category/random-thoughts.html"),
+            ("🏷️ Tags", "/en/tags.html"),
+            ("🗄️ Archives", "/en/archives.html"),
+            ("📚 Series", "/en/series_list.html"),
+            ("🔍 Search", "/en/search.html"),
+            ("🎲 Random", "/en/random/index.html"),
+        ),
+    },
+}
+
 # Plugin-setting
 PLUGIN_PATHS = ["pelican-plugins"]
 PLUGINS = [
@@ -124,32 +144,6 @@ LOCAL_PLUGINS = [
 ]
 PLUGINS.extend(LOCAL_PLUGINS)
 DEADLINKS_VALIDATION = False
-
-# mapping: language_code -> settings_overrides_dict
-DEFAULT_LANG = "zh-tw"
-I18N_TEMPLATES_LANG = "en"
-I18N_SUBSITES = {
-    "en": {
-        "SITENAME": "Those aren't written down are meant to be forgotten",
-        "CURRENT_LANG": "EN",
-        "CATEGORY_TRANSLATIONS": {},
-        "MENUITEMS": (
-            ("🏠 Home", "/en/"),
-            ("About Me", "/en/pages/about-me.html"),
-            ("👨‍💻 Tech", "/en/category/tech.html"),
-            ("📚 Book Digest", "/en/category/book.html"),
-            ("💬 Random Thoughts", "/en/category/random-thoughts.html"),
-            ("🏷️ Tags", "/en/tags.html"),
-            ("🗄️ Archives", "/en/archives.html"),
-            ("📚 Series", "/en/series_list.html"),
-            ("🔍 Search", "/en/search.html"),
-            ("🎲 Random", "/en/random/index.html"),
-        ),
-    },
-}
-JINJA_ENVIRONMENT = {
-    "extensions": ["jinja2.ext.i18n"],
-}
 
 # pelican-seo settings
 SEO_REPORT = True  # SEO report is enabled by default
@@ -187,17 +181,10 @@ ARTICLE_EXCLUDES = ["static"]
 # Theme Setting
 PYGMENTS_STYLE = "monokai"
 AUTHOR_META = {
-    "wei lee": {
+    "Wei Lee": {
         "image": "/images/avatar.jpeg",
     }
 }
 
 # Markdown extension
 MARKDOWN["extension_configs"]["markdown_mermaidjs"] = {}
-
-# Plugin-setting
-EXTRA_PLUGINS = [
-    "pelican.plugins.webassets",
-    "pelican.plugins.tag_cloud",
-]
-PLUGINS.extend(EXTRA_PLUGINS)

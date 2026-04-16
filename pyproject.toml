@@ -14,6 +14,7 @@ dependencies = [
   "markdown-mermaidjs>=1.0.0",
   "pagefind[extended]>=1.4.0",
   "pelican-deadlinks",
+  "pelican-i18n-subsites>=1.0.0",
   "pelican-neighbors>=1.2.0",
   "pelican-render-math>=1.0.3",
   "pelican-seo>=1.2.2",
@@ -27,10 +28,9 @@ dependencies = [
   "python-gettext>=5.0",
   "typogrify>=2.0.7",
   "webassets>=2.0",
-  "pelican-osm>=0.3.1",
   "pelican-heatmap>=0.2.3",
-  "pelican-random-article",
-  "pelican-i18n-subsites>=1.0.0",
+  "pelican-osm>=0.3.1",
+  "pelican-random-article>=0.2.0",
 ]
 
 [dependency-groups]
@@ -43,25 +43,15 @@ dev = [
   "ruff>=0.6.9",
 ]
 
+
 [tool.uv]
 required-version = ">=0.9.17"
 exclude-newer = "4 days"
 
 [tool.uv.sources]
+# attila = { git = "https://github.com/Lee-W/attila/"}
 attila = { url = "https://github.com/Lee-W/attila/releases/download/v2.4.0/attila-2.4.0-py3-none-any.whl" }
 pelican-deadlinks = { git = "https://github.com/pelican-plugins/deadlinks" }
-
-[tool.ruff]
-line-length = 88
-
-[tool.ruff.lint]
-ignore = ["E501", "D1", "D415"]
-
-[tool.ruff.lint.isort]
-known-first-party = ["commitizen", "tests"]
-
-[tool.ruff.lint.pydocstyle]
-convention = "google"
 
 
 [tool.commitizen]
@@ -72,7 +62,6 @@ message_template = "{{change_type}}: {{message}}"
 example = "post: this is my first post"
 schema = "<type>: <body>"
 schema_pattern = "^((new post|post update|new draft|draft update|post metadata|typo|config|theme|dependency|static page)): .*"
-bump_map = { "break" = "MAJOR", "new" = "MINOR", "fix" = "PATCH", "hotfix" = "PATCH" }
 info = "This is commit convention for my blog post"
 
 [[tool.commitizen.customize.questions]]
@@ -96,3 +85,16 @@ message = "What type of commit is it?"
 type = "input"
 name = "message"
 message = "Message body: \n"
+
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+ignore = ["E501", "D1", "D415"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["commitizen", "tests"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

@@ -3,7 +3,7 @@ revision = 3
 requires-python = ">=3.14"
 
 [options]
-exclude-newer = "2026-04-12T15:24:48.62883Z"
+exclude-newer = "2026-04-12T16:12:04.454596Z"
 exclude-newer-span = "P4D"
 
 [[package]]
@@ -444,7 +444,7 @@ requires-dist = [
     { name = "pelican-i18n-subsites", specifier = ">=1.0.0" },
     { name = "pelican-neighbors", specifier = ">=1.2.0" },
     { name = "pelican-osm", specifier = ">=0.3.1" },
-    { name = "pelican-random-article" },
+    { name = "pelican-random-article", specifier = ">=0.2.0" },
     { name = "pelican-render-math", specifier = ">=1.0.3" },
     { name = "pelican-seo", specifier = ">=1.2.2" },
     { name = "pelican-series", specifier = ">=3.0.0" },
