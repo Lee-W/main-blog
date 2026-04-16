@@ -31,6 +31,8 @@ dependencies = [
   "pelican-heatmap>=0.2.3",
   "pelican-osm>=0.3.1",
   "pelican-random-article>=0.2.0",
+  # security (indirect dep)
+  "Pygments>=2.20.0"
 ]
 
 [dependency-groups]
