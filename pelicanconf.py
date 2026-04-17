@@ -91,6 +91,10 @@ OG_LOCALE = "zh-tw"
 DEFAULT_LANG = "zh-tw"
 I18N_TEMPLATES_LANG = "en"
 LANGUAGES = [("zh-tw", "/"), ("en", "/en/")]
+LANGUAGE_NAMES = {
+    "zh-tw": "台灣漢語",
+    "en": "English",
+}
 CURRENT_LANG = "zh-tw"
 CATEGORY_TRANSLATIONS = {
     "Tech": "技術",
