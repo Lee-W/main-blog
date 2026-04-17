@@ -44,7 +44,7 @@ STATIC_PATHS = ["images", "extra", "static"]
 
 # License
 CC_LICENSE = {
-    "name": "Creative Commons Attribution-ShareAlike",
+    "name": "創用 CC 姓名標示─相同方式分享",
     "version": "4.0",
     "slug": "by-sa",
 }
@@ -57,7 +57,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Social widget
-SOCIAL_PROFILE_LABEL = "Keep In Touch"
+SOCIAL_PROFILE_LABEL = "保持聯繫"
 SOCIAL = (
     ("Linkedin", "https://tw.linkedin.com/in/clleew"),
     ("GitHub", "https://github.com/Lee-W"),
@@ -96,30 +96,17 @@ LANGUAGE_NAMES = {
     "en": "English",
 }
 CURRENT_LANG = "zh-tw"
-CATEGORY_TRANSLATIONS = {
-    "Tech": "技術",
-    "Random Thoughts": "隨筆",
-    "Book": "讀書筆記",
-}
 I18N_SUBSITES = {
     "en": {
-        "SITENAME": "Those aren't written down are meant to be forgotten",
+        "CC_LICENSE": {
+            "name": "Creative Commons Attribution-ShareAlike",
+            "version": "4.0",
+            "slug": "by-sa",
+        },
+        "SOCIAL_PROFILE_LABEL": "Keep In Touch",
         "COMMENTS_INTRO": "Do you like this article? What do your tink about it? Leave you comment below",
         "CURRENT_LANG": "EN",
-        "CATEGORY_TRANSLATIONS": {},
-        "MENUITEMS": (
-            ("🏠 Home", "/en/"),
-            ("About Me", "/en/pages/about-me.html"),
-            ("👨‍💻 Tech", "/en/category/tech.html"),
-            ("📚 Book Digest", "/en/category/book.html"),
-            ("💬 Random Thoughts", "/en/category/random-thoughts.html"),
-            ("🏷️ Tags", "/en/tags.html"),
-            ("🗄️ Archives", "/en/archives.html"),
-            ("📚 Series", "/en/series_list.html"),
-            ("🔍 Search", "/en/search.html"),
-            ("🎲 Random", "/en/random/index.html"),
-        ),
-    },
+    }
 }
 
 # Plugin-setting
@@ -167,7 +154,7 @@ UTTERANCES_REPO = "Lee-W/main-blog"
 # Page Setting
 MENUITEMS = (
     ("🏠 首頁", "/"),
-    ("關於我", "/pages/about-me.html"),
+    ("👤 關於我", "/pages/about-me.html"),
     ("👨‍💻 技術", "/category/tech.html"),
     ("📚 讀書筆記", "/category/book.html"),
     ("💬 隨筆", "/category/random-thoughts.html"),
@@ -192,3 +179,29 @@ AUTHOR_META = {
 
 # Markdown extension
 MARKDOWN["extension_configs"]["markdown_mermaidjs"] = {}
+
+# i18n
+CATEGORY_TRANSLATIONS = {
+    "Tech": "技術",
+    "Random Thoughts": "隨筆",
+    "Book": "讀書筆記",
+}
+I18N_SUBSITES["en"].update(
+    {
+        "en": {
+            "MENUITEMS": (
+                ("🏠 Home", "/en/"),
+                ("👤 About Me", "/en/pages/about-me.html"),
+                ("👨‍💻 Tech", "/en/category/tech.html"),
+                ("📚 Book Digest", "/en/category/book.html"),
+                ("💬 Random Thoughts", "/en/category/random-thoughts.html"),
+                ("🏷️ Tags", "/en/tags.html"),
+                ("🗄️ Archives", "/en/archives.html"),
+                ("📚 Series", "/en/series_list.html"),
+                ("🔍 Search", "/en/search.html"),
+                ("🎲 Random", "/en/random/index.html"),
+            ),
+            "SITENAME": "Those aren't written down are meant to be forgotten",
+        },
+    }
+)
