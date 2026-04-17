@@ -188,20 +188,18 @@ CATEGORY_TRANSLATIONS = {
 }
 I18N_SUBSITES["en"].update(
     {
-        "en": {
-            "MENUITEMS": (
-                ("🏠 Home", "/en/"),
-                ("👤 About Me", "/en/pages/about-me.html"),
-                ("👨‍💻 Tech", "/en/category/tech.html"),
-                ("📚 Book Digest", "/en/category/book.html"),
-                ("💬 Random Thoughts", "/en/category/random-thoughts.html"),
-                ("🏷️ Tags", "/en/tags.html"),
-                ("🗄️ Archives", "/en/archives.html"),
-                ("📚 Series", "/en/series_list.html"),
-                ("🔍 Search", "/en/search.html"),
-                ("🎲 Random", "/en/random/index.html"),
-            ),
-            "SITENAME": "Those aren't written down are meant to be forgotten",
-        },
+        "MENUITEMS": (
+            ("🏠 Home", "/en/"),
+            ("👤 About Me", "/en/pages/about-me.html"),
+            ("👨‍💻 Tech", "/en/category/tech.html"),
+            ("📚 Book Digest", "/en/category/book.html"),
+            ("💬 Random Thoughts", "/en/category/random-thoughts.html"),
+            ("🏷️ Tags", "/en/tags.html"),
+            ("🗄️ Archives", "/en/archives.html"),
+            ("📚 Series", "/en/series_list.html"),
+            ("🔍 Search", "/en/search.html"),
+            ("🎲 Random", "/en/random/index.html"),
+        ),
+        "SITENAME": "Those aren't written down are meant to be forgotten",
     }
 )
