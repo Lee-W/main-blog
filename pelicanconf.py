@@ -34,7 +34,10 @@ DIRECT_TEMPLATES = (
     "series_list",
 )
 CATEGORIES_URL = "category"
-TAGS_URL = "tag"
+TAGS_URL = "tags.html"
+TAGS_SAVE_AS = "tags.html"
+SERIES_LIST_URL = "series_list.html"
+SERIES_LIST_SAVE_AS = "series_list.html"
 
 # Content Setting
 ARTICLE_URL = "posts/{category}/{date:%Y}/{date:%m}/{slug}"
@@ -157,6 +160,7 @@ MENUITEMS = (
     ("👨‍💻 技術", "/category/tech.html"),
     ("📚 讀書筆記", "/category/book.html"),
     ("💬 隨筆", "/category/random-thoughts.html"),
+    ("🗺️ 共同工作", "/pages/coworking.html"),
     ("🏷️ 標籤", "/tags.html"),
     ("🗄️ 歸檔", "/archives.html"),
     ("📚 系列文章", "/series_list.html"),
@@ -197,6 +201,7 @@ I18N_SUBSITES["en"].update(
             ("👨‍💻 Tech", "/en/category/tech.html"),
             ("📚 Book Digest", "/en/category/book.html"),
             ("💬 Random Thoughts", "/en/category/random-thoughts.html"),
+            ("🗺️ Coworking", "/en/pages/coworking.html"),
             ("🏷️ Tags", "/en/tags.html"),
             ("🗄️ Archives", "/en/archives.html"),
             ("📚 Series", "/en/series_list.html"),
