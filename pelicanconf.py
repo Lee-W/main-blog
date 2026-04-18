@@ -32,7 +32,6 @@ DIRECT_TEMPLATES = (
     "archives",
     "tags",
     "series_list",
-    "search",
 )
 CATEGORIES_URL = "category"
 TAGS_URL = "tag"
@@ -161,7 +160,6 @@ MENUITEMS = (
     ("🏷️ 標籤", "/tags.html"),
     ("🗄️ 歸檔", "/archives.html"),
     ("📚 系列文章", "/series_list.html"),
-    ("🔍 搜尋", "/search.html"),
     ("🎲 隨機", "/random/index.html"),
 )
 
@@ -202,7 +200,6 @@ I18N_SUBSITES["en"].update(
             ("🏷️ Tags", "/en/tags.html"),
             ("🗄️ Archives", "/en/archives.html"),
             ("📚 Series", "/en/series_list.html"),
-            ("🔍 Search", "/en/search.html"),
             ("🎲 Random", "/en/random/index.html"),
         ),
         "SITENAME": "Those aren't written down are meant to be forgotten",

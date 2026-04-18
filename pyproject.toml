@@ -5,7 +5,7 @@ description = "Wei's personal blog"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-  "attila>=2.6.1",
+  "attila>=2.7.0",
   "beautifulsoup4>=4.12.3",
   "cssmin>=0.2.0",
   "ghp-import>=2.1.0",
@@ -28,8 +28,8 @@ dependencies = [
   "python-gettext>=5.0",
   "typogrify>=2.0.7",
   "webassets>=2.0",
-  "pelican-heatmap>=0.2.4",
-  "pelican-osm>=0.3.1",
+  "pelican-heatmap>=0.2.5",
+  "pelican-osm>=0.5.0",
   "pelican-random-article>=0.2.0",
   # security (indirect dep)
   "Pygments>=2.20.0",
