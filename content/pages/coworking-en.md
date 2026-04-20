@@ -1,6 +1,6 @@
-Title: 共同工作空間
+Title: Coworking Spaces
 Slug: coworking
-Lang: zh-tw
+Lang: en
 
 {% place_list coworking %}
 
