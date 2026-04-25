@@ -109,9 +109,7 @@ I18N_SUBSITES = {
 }
 
 # Plugin-setting
-PLUGIN_PATHS = ["pelican-plugins"]
 PLUGINS = [
-    "another_read_more_link",
     "pelican.plugins.i18n_subsites",
     "pelican.plugins.neighbors",
     "pelican.plugins.random_article",
@@ -125,7 +123,6 @@ PLUGINS = [
     "pelican.plugins.heatmap",
     "pelican.plugins.osm",
 ]
-ANOTHER_READ_MORE_LINK = ""
 PAGEFIND_ENABLED = True
 
 # Local plugins
