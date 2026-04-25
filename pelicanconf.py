@@ -188,7 +188,7 @@ I18N_SUBSITES["en"].update(
     {
         "CATEGORY_TRANSLATIONS": {
             "Tech": "Tech",
-            "Random Thoughts": "Random Thoughs",
+            "Random Thoughts": "Random Thoughts",
             "Book": "Book",
         },
         "MENUITEMS": (
