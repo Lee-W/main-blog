@@ -107,7 +107,7 @@ I18N_SUBSITES = {
         },
         "SOCIAL_PROFILE_LABEL": "Keep In Touch",
         "COMMENTS_INTRO": "Do you like this article? What do your tink about it? Leave you comment below",
-        "CURRENT_LANG": "EN",
+        "CURRENT_LANG": "en",
     }
 }
 
