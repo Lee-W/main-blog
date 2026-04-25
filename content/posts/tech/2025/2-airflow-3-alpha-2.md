@@ -202,7 +202,7 @@ If you find anything missing regarding migration tooling, please comment on  [Ai
 ## Why does the title look so weird
 Well... this post was supposed to be published on Thursday. It was still alpha1. Then, alpha2 was released around the Airflow 3.0 dev call. It's midnight where I am, so... I can't really attend. Sleep is important. Staying up is bad.
 
-![avemujica-bad-for-helth](/images/meme/avemujica-bad-for-helth.jpg)
+![avemujica-bad-for-health](/images/meme/avemujica-bad-for-health.jpg)
 
 If you're curious about why sleep is important, I recommend reading [[Book] 為什麼要睡覺]({filename}/posts/book/2020/5-why-we-sleep.md) (Why We Sleep), one of my favorite books. I probably should re-read it as well...
 
