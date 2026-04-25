@@ -1,10 +1,10 @@
-# Taiwan - Taipei
+# 臺灣 - 臺北
 CE-LIB-RARY-tianmu:
   name: CE' & LIB-RARY 天母店
   lat: 25.1085347
   lon: 121.5248391
-  address: 臺北市士林區天母
-  tags: [Taiwan, Taipei, Tianmu]
+  address: 臺北市士林區中山北路六段217號
+  tags: [臺灣, 臺北, 士林]
   hours: "11:00 ~"
   power: "✅"
   wifi: "✅"
@@ -12,6 +12,7 @@ CE-LIB-RARY-tianmu:
   noise: "★★★★☆"
   work_score: "★★★★☆"
   min_spend: "150 元"
+  meal: "✅"
   urls:
     - label: "CE' & LIB-RARY 天母店"
       href: "{filename}posts/random-thoughts/2026/1-CE-and-LIB-RARY-tian-mu.md"
@@ -21,7 +22,7 @@ Le-Promenoir-Coffee:
   lat: 25.043040
   lon: 121.510207
   address: 臺北市中正區延平南路98號4樓
-  tags: [Taiwan, Taipei]
+  tags: [臺灣, 臺北, 中正]
   hours: "11:00 ~ 19:00"
   power: "✅"
   wifi: "✅"
@@ -29,6 +30,7 @@ Le-Promenoir-Coffee:
   noise: "★★☆☆☆"
   work_score: "★★★★☆"
   min_spend: "250 元"
+  meal: "✅ (輕食)"
   urls:
     - label: "4F劇場咖啡 Le Promenoir Coffee"
       href: "{filename}posts/random-thoughts/2026/19-Le-Promenoir-Coffee.md"
@@ -38,7 +40,7 @@ a13-CURISTA-COFFEE:
   lat: 25.037011
   lon: 121.568061
   address: 臺北市信義區松仁路58號4樓
-  tags: [Taiwan, Taipei]
+  tags: [臺灣, 臺北, 信義]
   hours: "11:00 ~ 21:30"
   power: "部分"
   wifi: "✅"
@@ -46,17 +48,36 @@ a13-CURISTA-COFFEE:
   noise: "★★★☆☆"
   work_score: "★★★☆☆"
   min_spend: "一杯飲料"
+  meal: "❌"
   urls:
     - label: "CURISTA COFFEE 遠百信義A13店"
       href: "{filename}posts/random-thoughts/2026/18-a13-CURISTA-COFFEE.md"
 
-# Japan - Kanagawa
+AthenaBooks:
+  name: 春秋書店
+  lat: 25.0548722222222
+  lon: 121.520255555556
+  address: 臺北市大同區赤峰街41巷7號
+  tags: [臺灣, 臺北, 大同]
+  hours: "12:00 ~ 22:00"
+  power: "✅ (大多有)"
+  wifi: "✅"
+  time_limit: "❌"
+  noise: "★★★★☆"
+  work_score: "★★★★☆"
+  min_spend: "一杯飲料"
+  meal: "❌"
+  urls:
+    - label: "春秋書店"
+      href: "{filename}posts/random-thoughts/2026/21-AthenaBooks.md"
+
+# 日本 - 神奈川
 nekton-fujisawa:
   name: NEKTON FUJISAWA
   lat: 35.337732
   lon: 139.485783
   address: 神奈川県藤沢市鵠沼橘1-17-11 順天ビル4F
-  tags: [Japan, Kanagawa, Fujisawa]
+  tags: [日本, 神奈川, 藤沢]
   hours: "平日 08:00 ~ 21:00 / 假日 10:00 ~ 21:00"
   power: "✅"
   wifi: "✅"
@@ -73,7 +94,7 @@ yokohamawakusupesu:
   lat: 35.4642129
   lon: 139.6221786
   address: 神奈川県横浜市
-  tags: [Japan, Kanagawa, Yokohama]
+  tags: [日本, 神奈川, 横浜]
   hours: "07:00 ~ 22:00"
   power: "✅"
   wifi: "✅"
@@ -90,7 +111,7 @@ andwork-kawasaki:
   lat: 35.5289529
   lon: 139.7012887
   address: 神奈川県川崎市（川崎）
-  tags: [Japan, Kanagawa, Kawasaki]
+  tags: [日本, 神奈川, 川崎]
   hours: "07:00 ~ 22:00"
   power: "✅"
   wifi: "✅"
@@ -102,13 +123,13 @@ andwork-kawasaki:
     - label: "2023 東京 Coworking Spaces"
       href: "{filename}posts/tech/2024/2-2023-tokyo-coworking-space.md"
 
-# Japan - Tokyo
+# 日本 - 東京
 ota-fab:
   name: Kamata Coworking Space Ōta fab
   lat: 35.5639484
   lon: 139.7158506
   address: 東京都大田区（京急蒲田）
-  tags: [Japan, Tokyo, Kamata]
+  tags: [日本, 東京, 蒲田]
   hours: "09:00 ~ 19:00"
   power: "✅"
   wifi: "✅"
@@ -125,7 +146,7 @@ basispoint-ueno:
   lat: 35.710474
   lon: 139.7769557
   address: 東京都台東区（上野）
-  tags: [Japan, Tokyo, Ueno]
+  tags: [日本, 東京, 上野]
   hours: "08:00 ~ 22:00"
   power: "✅"
   wifi: "✅"
@@ -142,7 +163,7 @@ monz-space:
   lat: 35.6666451
   lon: 139.7685447
   address: 東京都中央区（築地）
-  tags: [Japan, Tokyo, Tsukiji]
+  tags: [日本, 東京, 築地]
   hours: "09:00 ~ 18:00"
   power: "✅"
   wifi: "✅"
@@ -159,7 +180,7 @@ tefu-lounge-shimokitazawa:
   lat: 35.660654
   lon: 139.6665697
   address: 東京都世田谷区（下北澤）
-  tags: [Japan, Tokyo, Shimokitazawa]
+  tags: [日本, 東京, 下北澤]
   hours: "09:00 ~ 23:30"
   power: "✅"
   wifi: "✅"
@@ -176,7 +197,7 @@ andwork-shibuya:
   lat: 35.6624331
   lon: 139.6996875
   address: 東京都渋谷区（渋谷）
-  tags: [Japan, Tokyo, Shibuya]
+  tags: [日本, 東京, 渋谷]
   hours: "07:00 ~ 24:00"
   power: "✅"
   wifi: "✅"
@@ -193,7 +214,7 @@ neko-cafe-mocha-ikebukuro:
   lat: 35.7297456
   lon: 139.7154370
   address: 東京都豊島区（池袋）
-  tags: [Japan, Tokyo, Ikebukuro]
+  tags: [日本, 東京, 池袋]
   hours: "10:00 ~ 20:00"
   power: "✅"
   wifi: "✅"
