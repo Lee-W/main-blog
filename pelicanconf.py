@@ -103,7 +103,7 @@ I18N_SUBSITES = {
             "slug": "by-sa",
         },
         "SOCIAL_PROFILE_LABEL": "Keep In Touch",
-        "COMMENTS_INTRO": "Do you like this article? What do your tink about it? Leave you comment below",
+        "COMMENTS_INTRO": "Do you like this article? What do you think about it? Leave your comment below",
         "CURRENT_LANG": "en",
     }
 }
@@ -118,6 +118,7 @@ PLUGINS = [
     "pelican.plugins.series",
     "pelican.plugins.share_post",
     "pelican.plugins.statistics",
+    "pelican.plugins.summary_link",
     "pelican.plugins.tag_cloud",
     "pelican.plugins.webassets",
     "pelican.plugins.heatmap",
