@@ -39,6 +39,13 @@ repos:
 
   - repo: local
     hooks:
+      - id: check-post-metadata
+        name: Check post metadata style
+        language: system
+        entry: uv run python scripts/check_post_metadata.py
+        args: ["--categories", "Tech,Random Thoughts,Book"]
+        files: ^content/posts/.*\.md$
+
       - id: remove-gps-from-image-exif
         name: Remove GPS Info from image exif
         language: system
