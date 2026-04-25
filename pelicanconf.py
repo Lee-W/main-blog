@@ -157,6 +157,7 @@ UTTERANCES_REPO = "Lee-W/main-blog"
 MENUITEMS = (
     ("🏠 首頁", "/"),
     ("👤 關於我", "/pages/about-me.html"),
+    ("🕰️ 近況", "/pages/now.html"),
     ("👨‍💻 技術", "/category/tech.html"),
     ("📚 讀書筆記", "/category/book.html"),
     ("💬 隨筆", "/category/random-thoughts.html"),
@@ -198,9 +199,10 @@ I18N_SUBSITES["en"].update(
         "MENUITEMS": (
             ("🏠 Home", "/en/"),
             ("👤 About Me", "/en/pages/about-me.html"),
+            ("🕰️ Now", "/en/pages/now.html"),
             ("👨‍💻 Tech", "/en/category/tech.html"),
             ("📚 Book Digest", "/en/category/book.html"),
-            ("💬 Random Thoughts", "/en/category/random-thoughts.html"),
+            # ("💬 Random Thoughts", "/en/category/random-thoughts.html"),
             ("🗺️ Coworking", "/en/pages/coworking.html"),
             ("🏷️ Tags", "/en/tags.html"),
             ("🗄️ Archives", "/en/archives.html"),
