@@ -45,10 +45,10 @@ Lang: zh-tw
 
 總統府攝影竟然無視燈
 
-<figure>
-  <img src="/images/meme/mygo-ignore-tomorin.jpg" alt="立希表示，總統府攝影竟然無視燈">
-  <figcaption>出自《BanG Dream! It's MyGO!!!!!》第 9 集</figcaption>
-</figure>
+![立希表示，總統府攝影竟然無視燈](/images/meme/mygo-ignore-tomorin.jpg)
+/// caption
+出自《BanG Dream! It's MyGO!!!!!》第 9 集
+///
 
 但接見時，我的座位在前排
 所以就連總統本人都沒有辦法無視燈了！
