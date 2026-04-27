@@ -73,6 +73,7 @@ MARKDOWN = {
         "markdown.extensions.nl2br": {},
         "markdown.extensions.toc": {"toc_depth": "1-3"},
         "markdown_del_ins": {},
+        "pymdownx.blocks.caption": {},
     },
     "output_format": "html5",
 }
