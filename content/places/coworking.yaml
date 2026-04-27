@@ -4,7 +4,10 @@ CE-LIB-RARY-tianmu:
   lat: 25.1085347
   lon: 121.5248391
   address: 臺北市士林區中山北路六段217號
-  tags: [臺灣, 臺北, 士林]
+  country: 臺灣
+  city: 臺北
+  district: 士林
+  tags: []
   hours: "11:00 ~"
   power: "✅"
   wifi: "✅"
@@ -22,7 +25,10 @@ Le-Promenoir-Coffee:
   lat: 25.043040
   lon: 121.510207
   address: 臺北市中正區延平南路98號4樓
-  tags: [臺灣, 臺北, 中正]
+  country: 臺灣
+  city: 臺北
+  district: 中正
+  tags: []
   hours: "11:00 ~ 19:00"
   power: "✅"
   wifi: "✅"
@@ -40,7 +46,10 @@ a13-CURISTA-COFFEE:
   lat: 25.037011
   lon: 121.568061
   address: 臺北市信義區松仁路58號4樓
-  tags: [臺灣, 臺北, 信義]
+  country: 臺灣
+  city: 臺北
+  district: 信義
+  tags: []
   hours: "11:00 ~ 21:30"
   power: "部分"
   wifi: "✅"
@@ -58,7 +67,10 @@ AthenaBooks:
   lat: 25.0548722222222
   lon: 121.520255555556
   address: 臺北市大同區赤峰街41巷7號
-  tags: [臺灣, 臺北, 大同]
+  country: 臺灣
+  city: 臺北
+  district: 大同
+  tags: []
   hours: "12:00 ~ 22:00"
   power: "✅ (大多有)"
   wifi: "✅"
@@ -77,7 +89,10 @@ nekton-fujisawa:
   lat: 35.337732
   lon: 139.485783
   address: 神奈川県藤沢市鵠沼橘1-17-11 順天ビル4F
-  tags: [日本, 神奈川, 藤沢]
+  country: 日本
+  city: 神奈川
+  district: 藤沢
+  tags: []
   hours: "平日 08:00 ~ 21:00 / 假日 10:00 ~ 21:00"
   power: "✅"
   wifi: "✅"
@@ -94,7 +109,10 @@ yokohamawakusupesu:
   lat: 35.4642129
   lon: 139.6221786
   address: 神奈川県横浜市
-  tags: [日本, 神奈川, 横浜]
+  country: 日本
+  city: 神奈川
+  district: 横浜
+  tags: []
   hours: "07:00 ~ 22:00"
   power: "✅"
   wifi: "✅"
@@ -111,7 +129,10 @@ andwork-kawasaki:
   lat: 35.5289529
   lon: 139.7012887
   address: 神奈川県川崎市（川崎）
-  tags: [日本, 神奈川, 川崎]
+  country: 日本
+  city: 神奈川
+  district: 川崎
+  tags: []
   hours: "07:00 ~ 22:00"
   power: "✅"
   wifi: "✅"
@@ -125,11 +146,14 @@ andwork-kawasaki:
 
 # 日本 - 東京
 ota-fab:
-  name: Kamata Coworking Space Ōta fab
+  name: おおたfab
   lat: 35.5639484
   lon: 139.7158506
-  address: 東京都大田区（京急蒲田）
-  tags: [日本, 東京, 蒲田]
+  address: 東京都大田区西蒲田７丁目４−４ 6F
+  country: 日本
+  city: 東京
+  district: 蒲田
+  tags: []
   hours: "09:00 ~ 19:00"
   power: "✅"
   wifi: "✅"
@@ -145,8 +169,11 @@ basispoint-ueno:
   name: BasisPoint 上野店
   lat: 35.710474
   lon: 139.7769557
-  address: 東京都台東区（上野）
-  tags: [日本, 東京, 上野]
+  address: 110-0015 東京都台東区東上野２丁目１８−９ ファーストビル 2F
+  country: 日本
+  city: 東京
+  district: 上野
+  tags: ["Closed"]
   hours: "08:00 ~ 22:00"
   power: "✅"
   wifi: "✅"
@@ -162,8 +189,11 @@ monz-space:
   name: MONZ SPACE
   lat: 35.6666451
   lon: 139.7685447
-  address: 東京都中央区（築地）
-  tags: [日本, 東京, 築地]
+  address: 東京都中央区築地４丁目３−８ 登喜和ビル ５階
+  country: 日本
+  city: 東京
+  district: 築地
+  tags: []
   hours: "09:00 ~ 18:00"
   power: "✅"
   wifi: "✅"
@@ -176,11 +206,14 @@ monz-space:
       href: "{filename}posts/tech/2024/2-2023-tokyo-coworking-space.md"
 
 tefu-lounge-shimokitazawa:
-  name: (tefu) lounge Shimokitazawa
+  name: (tefu) lounge 下北沢
   lat: 35.660654
   lon: 139.6665697
-  address: 東京都世田谷区（下北澤）
-  tags: [日本, 東京, 下北澤]
+  address: 東京都世田谷区北沢２丁目２１−２２
+  country: 日本
+  city: 東京
+  district: 下北澤
+  tags: []
   hours: "09:00 ~ 23:30"
   power: "✅"
   wifi: "✅"
@@ -193,11 +226,14 @@ tefu-lounge-shimokitazawa:
       href: "{filename}posts/tech/2024/2-2023-tokyo-coworking-space.md"
 
 andwork-shibuya:
-  name: .andwork shibuya
+  name: アンドワーク渋谷
   lat: 35.6624331
   lon: 139.6996875
-  address: 東京都渋谷区（渋谷）
-  tags: [日本, 東京, 渋谷]
+  address: 東京都渋谷区神南１丁目２０−１３ The Millennials 渋谷内
+  country: 日本
+  city: 東京
+  district: 渋谷
+  tags: []
   hours: "07:00 ~ 24:00"
   power: "✅"
   wifi: "✅"
@@ -213,8 +249,11 @@ neko-cafe-mocha-ikebukuro:
   name: 猫カフェ モカラウンジ 池袋東口店
   lat: 35.7297456
   lon: 139.7154370
-  address: 東京都豊島区（池袋）
-  tags: [日本, 東京, 池袋]
+  address: 東京都豊島区東池袋１丁目２２−５ サンケエビル 4F
+  country: 日本
+  city: 東京
+  district: 池袋
+  tags: []
   hours: "10:00 ~ 20:00"
   power: "✅"
   wifi: "✅"
