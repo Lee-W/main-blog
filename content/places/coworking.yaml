@@ -7,7 +7,6 @@ CE-LIB-RARY-tianmu:
   country: 臺灣
   city: 臺北
   district: 士林
-  tags: []
   hours: "11:00 ~"
   power: "✅"
   wifi: "✅"
@@ -16,6 +15,7 @@ CE-LIB-RARY-tianmu:
   work_score: "★★★★☆"
   min_spend: "150 元"
   meal: "✅"
+  tags: []
   urls:
     - label: "CE' & LIB-RARY 天母店"
       href: "{filename}posts/random-thoughts/2026/1-CE-and-LIB-RARY-tian-mu.md"
@@ -28,7 +28,6 @@ Le-Promenoir-Coffee:
   country: 臺灣
   city: 臺北
   district: 中正
-  tags: []
   hours: "11:00 ~ 19:00"
   power: "✅"
   wifi: "✅"
@@ -37,6 +36,7 @@ Le-Promenoir-Coffee:
   work_score: "★★★★☆"
   min_spend: "250 元"
   meal: "✅ (輕食)"
+  tags: []
   urls:
     - label: "4F劇場咖啡 Le Promenoir Coffee"
       href: "{filename}posts/random-thoughts/2026/19-Le-Promenoir-Coffee.md"
@@ -49,7 +49,6 @@ a13-CURISTA-COFFEE:
   country: 臺灣
   city: 臺北
   district: 信義
-  tags: []
   hours: "11:00 ~ 21:30"
   power: "部分"
   wifi: "✅"
@@ -58,6 +57,7 @@ a13-CURISTA-COFFEE:
   work_score: "★★★☆☆"
   min_spend: "一杯飲料"
   meal: "❌"
+  tags: []
   urls:
     - label: "CURISTA COFFEE 遠百信義A13店"
       href: "{filename}posts/random-thoughts/2026/18-a13-CURISTA-COFFEE.md"
@@ -70,7 +70,6 @@ AthenaBooks:
   country: 臺灣
   city: 臺北
   district: 大同
-  tags: []
   hours: "12:00 ~ 22:00"
   power: "✅ (大多有)"
   wifi: "✅"
@@ -79,6 +78,7 @@ AthenaBooks:
   work_score: "★★★★☆"
   min_spend: "一杯飲料"
   meal: "❌"
+  tags: []
   urls:
     - label: "春秋書店"
       href: "{filename}posts/random-thoughts/2026/21-AthenaBooks.md"
@@ -92,7 +92,6 @@ nekton-fujisawa:
   country: 日本
   city: 神奈川
   district: 藤沢
-  tags: []
   hours: "平日 08:00 ~ 21:00 / 假日 10:00 ~ 21:00"
   power: "✅"
   wifi: "✅"
@@ -100,6 +99,7 @@ nekton-fujisawa:
   noise: "★★★★☆"
   work_score: "★★★★★"
   min_spend: "¥2,100"
+  tags: []
   urls:
     - label: "NEKTON FUJISAWA"
       href: "{filename}posts/random-thoughts/2026/5-nekton-fujisawa.md"
@@ -112,7 +112,6 @@ yokohamawakusupesu:
   country: 日本
   city: 神奈川
   district: 横浜
-  tags: []
   hours: "07:00 ~ 22:00"
   power: "✅"
   wifi: "✅"
@@ -120,6 +119,7 @@ yokohamawakusupesu:
   noise: "★★★★☆"
   work_score: "★★★★☆"
   min_spend: "¥2,000"
+  tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
       href: "{filename}posts/tech/2024/2-2023-tokyo-coworking-space.md"
@@ -132,7 +132,6 @@ andwork-kawasaki:
   country: 日本
   city: 神奈川
   district: 川崎
-  tags: []
   hours: "07:00 ~ 22:00"
   power: "✅"
   wifi: "✅"
@@ -140,6 +139,7 @@ andwork-kawasaki:
   noise: "★★☆☆☆"
   work_score: "★★☆☆☆"
   min_spend: "¥2,000"
+  tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
       href: "{filename}posts/tech/2024/2-2023-tokyo-coworking-space.md"
@@ -153,7 +153,6 @@ ota-fab:
   country: 日本
   city: 東京
   district: 蒲田
-  tags: []
   hours: "09:00 ~ 19:00"
   power: "✅"
   wifi: "✅"
@@ -161,6 +160,7 @@ ota-fab:
   noise: "★★★★☆"
   work_score: "★★★★★"
   min_spend: "¥1,800"
+  tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
       href: "{filename}posts/tech/2024/2-2023-tokyo-coworking-space.md"
@@ -173,7 +173,6 @@ basispoint-ueno:
   country: 日本
   city: 東京
   district: 上野
-  tags: ["Closed"]
   hours: "08:00 ~ 22:00"
   power: "✅"
   wifi: "✅"
@@ -181,6 +180,7 @@ basispoint-ueno:
   noise: "★★★★☆"
   work_score: "★★★★☆"
   min_spend: "¥2,860"
+  tags: ["Closed"]
   urls:
     - label: "2023 東京 Coworking Spaces"
       href: "{filename}posts/tech/2024/2-2023-tokyo-coworking-space.md"
@@ -193,7 +193,6 @@ monz-space:
   country: 日本
   city: 東京
   district: 築地
-  tags: []
   hours: "09:00 ~ 18:00"
   power: "✅"
   wifi: "✅"
@@ -201,6 +200,7 @@ monz-space:
   noise: "★★★☆☆"
   work_score: "★★★★☆"
   min_spend: "¥2,000"
+  tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
       href: "{filename}posts/tech/2024/2-2023-tokyo-coworking-space.md"
@@ -213,7 +213,6 @@ tefu-lounge-shimokitazawa:
   country: 日本
   city: 東京
   district: 下北澤
-  tags: []
   hours: "09:00 ~ 23:30"
   power: "✅"
   wifi: "✅"
@@ -221,6 +220,7 @@ tefu-lounge-shimokitazawa:
   noise: "★★★☆☆"
   work_score: "★★★★☆"
   min_spend: "¥3,000"
+  tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
       href: "{filename}posts/tech/2024/2-2023-tokyo-coworking-space.md"
@@ -233,7 +233,6 @@ andwork-shibuya:
   country: 日本
   city: 東京
   district: 渋谷
-  tags: []
   hours: "07:00 ~ 24:00"
   power: "✅"
   wifi: "✅"
@@ -241,6 +240,7 @@ andwork-shibuya:
   noise: "★★★☆☆"
   work_score: "★★★☆☆"
   min_spend: "¥3,000"
+  tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
       href: "{filename}posts/tech/2024/2-2023-tokyo-coworking-space.md"
@@ -253,7 +253,6 @@ neko-cafe-mocha-ikebukuro:
   country: 日本
   city: 東京
   district: 池袋
-  tags: []
   hours: "10:00 ~ 20:00"
   power: "✅"
   wifi: "✅"
@@ -261,6 +260,7 @@ neko-cafe-mocha-ikebukuro:
   noise: "★★★★☆"
   work_score: "★★★☆☆"
   min_spend: "¥3,025"
+  tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
       href: "{filename}posts/tech/2024/2-2023-tokyo-coworking-space.md"
