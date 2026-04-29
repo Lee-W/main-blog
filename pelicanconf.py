@@ -74,6 +74,9 @@ MARKDOWN = {
         "markdown.extensions.toc": {"toc_depth": "1-3"},
         "markdown_del_ins": {},
         "pymdownx.blocks.caption": {},
+        "pymdownx.superfences": {},
+        "pymdownx.details": {},
+        "pymdownx.snippets": {},
     },
     "output_format": "html5",
 }
