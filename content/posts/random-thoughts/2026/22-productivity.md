@@ -16,7 +16,7 @@ Lang: zh-tw
 只是中間還是猶豫了一下，要不要寫我在用的工具們
 但最後最想寫的果然還是這個啊 ✏️
 
-    免責聲明： 雖然我講的一口好生產力（或者也沒講好），但我還是在追求生產力的路上載浮載沉
+*免責聲明： 雖然我講的一口好生產力（或者也沒講好），但我還是在追求生產力的路上載浮載沉*
 
 ---
 
@@ -30,6 +30,9 @@ Lang: zh-tw
 QB 曾這麼說
 
 ![QB](/images/posts-image/QB.png)
+/// caption
+出自 [魔法少女小圓 劇場版 新篇 叛逆的物語](https://ani.gamer.com.tw/animeVideo.php?sn=12331)
+///
 
 先要能意識到，並且接受情緒的存在
 這點也許不是對每個人都很容易，我推薦可以從[看！情緒幹得好事]({filename}/posts/book/2017/01-fuck-feelings.md)找到一些方向
@@ -41,6 +44,9 @@ QB 曾這麼說
 而所有的做法之前，最重要、最有效的就是**好好睡覺**
 
 ![avemujica-sleep-now](/images/posts-image/avemujica-sleep-now.png)
+/// caption
+出自 [BanG Dream! Ave Mujica [4]](https://ani.gamer.com.tw/animeVideo.php?sn=41924)
+///
 
 人的注意力是有限的
 在睡眠不足的情況下，無法穩定並正確地做出決策並進而行動
@@ -92,8 +98,4 @@ TL;DR: 如果在這篇文章想帶走一個概念，那我會說**好好睡覺**
 ---
 
 在寫這篇文章的時候，才發現我接近10年前就寫過類似的內容了 👉 [我如何更有效率的使用時間]({filename}/posts/random-thoughts/2017/01-how-do-i-manage-time.md)
-## 參考資料
-1. [魔法少女小圓 劇場版 新篇 叛逆的物語](https://ani.gamer.com.tw/animeVideo.php?sn=12331)
-2. [BanG Dream! Ave Mujica [4]](https://ani.gamer.com.tw/animeVideo.php?sn=41924)
-
 [原子習慣]: {filename}/posts/book/2020/1-atomic-habit.md#16
