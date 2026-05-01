@@ -175,8 +175,7 @@ ARTICLE_EXCLUDES = ["static"]
 # Theme Setting
 PYGMENTS_STYLE = "monokai"
 AUTHOR_META = {
-    # TODO: need a fix in attila
-    "wei lee": {
+    "Wei Lee": {
         "image": "/images/avatar.jpeg",
     }
 }
