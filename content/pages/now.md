@@ -1,5 +1,6 @@
 Title: 近況
 Date: 2026-04-25 18:50
+Modified: 2026-05-01 21:40
 Slug: now
 Lang: zh-tw
 
@@ -9,11 +10,11 @@ Lang: zh-tw
 * 💤 嘗試提早睡覺，但還沒成功
 
 ## 🏆 最近感到驕傲的
-* 📸 [帶了邦邦娃們進總統府，並最後帶著高松燈跟台灣總統合照]({filename}/posts/random-thoughts/2026/20-tomorin-goes-to-presidential-office.md)
+* 🗺️ 花了很多時間，整理我的[聖地巡禮列表](https://travlog.wei-lee.me/pages/pilgrimage)
+* 📸 [帶了邦邦娃們進總統府，最後帶著高松燈跟台灣總統合照]({filename}/posts/random-thoughts/2026/20-tomorin-goes-to-presidential-office.md)
 
 ## 🔥 最近熱衷的
-* 參加 [BlogBlog.Club - 部落部落俱樂部](https://blogblog.club/): 慢慢把原本會發在其他服務的內容，都放到部落格
-* 浪費太多時間修改部落格[主題](https://github.com/Lee-W/attila/)跟外掛...
+* 參加 [BlogBlog.Club - 部落部落俱樂部](https://blogblog.club/) → 慢慢把原本會發在其他服務的內容，都放到部落格
 
 ## 🧑‍💻 最近做的
 * Apache Airflow
@@ -21,12 +22,22 @@ Lang: zh-tw
     * （自稱）SQLite 資料庫升級守門員
 
 ## 🔍 最近研究的
-* [claude-howto](https://github.com/luongnv89/claude-howto): 最近更高強度的使用 Claude Code，想花點時間研究該怎麼更有效使用它
-* [agent-flow](https://github.com/josix/agent-flow/): Josix 做的酷酷 Claude Code 外掛，我也想做一個一輩子樂團版的
+* [claude-howto](https://github.com/luongnv89/claude-howto)   → 想更有效使用 Claude
+* [agent-flow](https://github.com/josix/agent-flow/) → 想組個「一輩子 Agent 團」
 
 ## 📺 最近看的
-* [異國日記](https://ani.gamer.com.tw/animeVideo.php?sn=46926)
+* 🎬 [銀河特急Milky☆Subway](https://anilist.co/anime/204949/--/): 好怪，再看一眼，喜歡
 * [淡島百景](https://ani.gamer.com.tw/animeVideo.php?sn=48595)
+
+??? 其他在追的 2026 春季新番
+* Re: 從零開始的異世界生活 第四季
+* 女僕小姐的貪吃日常
+* 上伊那牡丹，醉姿如百合
+* 朱音落雨
+* 黃泉使者
+* 婚姻劇毒
+* 魔法帽的工作室
+* 春夏秋冬代行者 春之舞
 
 即時跟到我在看什麼 👉 [AniList](https://anilist.co/user/clleew/), [Letterbox](https://letterboxd.com/clleew/), [Trakt](https://app.trakt.tv/users/clleew)
 作品心得 👉[那些沒人在乎的事](https://travlog.wei-lee.me/)
@@ -34,9 +45,15 @@ Lang: zh-tw
 ## 🎵 最近聽的
 * [BanG Dream! Special LIVE in TAIPEI](https://bang-dream.com/bsl-taipei2026/): 到現在還走不出大佳河濱公園
 * ユイカ
-    * [姫様にはなれない](https://youtu.be/ic9XKLWMbCw?si=sukGknz4pIacAdcn): 無可救藥的喜歡這首歌給人的安心感，甚至聽了會莫名泛淚地那麼喜歡
-* [江松霖](https://www.youtube.com/@sungsungvideo): 我是小松全肯定廚，可以聽小松的歌一輩子
+    * [姫様にはなれない](https://youtu.be/ic9XKLWMbCw?si=sukGknz4pIacAdcn) → 無可救藥的喜歡這首歌給人的安心感，甚至聽了會莫名泛淚地那麼喜歡
+* [江松霖](https://www.youtube.com/@sungsungvideo) → 小松全肯定廚，可以聽小松的歌一輩子
 * 📻 [尼我喝牛奶：你的次文化指南](https://neildrinkmilk.firstory.io/)
+
+## 🌟 最近推的
+* [渡瀬 結月](https://x.com/Watase_Yuzuki) → 看過現場睦葉炫風現場，就被圈粉了
+* [羊宮妃那](https://x.com/Hina_Youmiya) → 羊黑一拳打死 🥊
+* [Aimer](https://x.com/Aimer_and_staff) → 繳了最久的 FC 税
+* [江松霖](https://www.youtube.com/@sungsungvideo) → 小松的歌要聽一輩子
 
 ## 🏃‍➡️ 最近動的
 * 🥊 [拳擊]({filename}/posts/random-thoughts/2024/1-boxing.md)
@@ -48,7 +65,7 @@ Lang: zh-tw
 * 早餐: 燕麥片 + 無糖豆漿
 * 自己煮: 水煮雞胸肉 + 水煮青菜
 
-主要不是為了健康，只是因為比較省事
+不是為了健康，只是因為比較省事
 
 ## ℹ️ 這是什麼
 這個頁面記錄我現在在做什麼、在想什麼
