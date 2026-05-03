@@ -29,15 +29,17 @@ Lang: en
 * 🎬 [Galaxy Express Milky☆Subway](https://anilist.co/anime/204949/--/) → weird… let me watch that again. I like it.
 * [A Hundred Scenes of AWAJIMA](https://ani.gamer.com.tw/animeVideo.php?sn=48595)
 
+<!-- rumdl-disable -->
 ??? Other 2026 Spring anime I'm following
-* Re: ZERO -Starting Life in Another World- Season 4
-* The Food Diary of Miss Maid
-* Botan Kamiina Fully Blossoms When Drunk
-* Akane-banashi
-* Daemons of the Shadow Realm
-* Marriage Toxin
-* Witch Hat Atelier
-* Agents of the Four Seasons: Dance of Spring
+    * Re: ZERO -Starting Life in Another World- Season 4
+    * The Food Diary of Miss Maid
+    * Botan Kamiina Fully Blossoms When Drunk
+    * Akane-banashi
+    * Daemons of the Shadow Realm
+    * Marriage Toxin
+    * Witch Hat Atelier
+    * Agents of the Four Seasons: Dance of Spring
+<!-- rumdl-disable -->
 
 You can follow what I'm watching in real time 👉 [AniList](https://anilist.co/user/clleew/), [Letterboxd](https://letterboxd.com/clleew/), [Trakt](https://app.trakt.tv/users/clleew)  
 My thoughts 👉 [Those Things No One Cares About](https://travlog.wei-lee.me/)

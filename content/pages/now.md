@@ -29,15 +29,17 @@ Lang: zh-tw
 * 🎬 [銀河特急Milky☆Subway](https://anilist.co/anime/204949/--/): 好怪，再看一眼，喜歡
 * [淡島百景](https://ani.gamer.com.tw/animeVideo.php?sn=48595)
 
+<!-- rumdl-disable -->
 ??? 其他在追的 2026 春季新番
-* Re: 從零開始的異世界生活 第四季
-* 女僕小姐的貪吃日常
-* 上伊那牡丹，醉姿如百合
-* 朱音落雨
-* 黃泉使者
-* 婚姻劇毒
-* 魔法帽的工作室
-* 春夏秋冬代行者 春之舞
+    * Re: 從零開始的異世界生活 第四季
+    * 女僕小姐的貪吃日常
+    * 上伊那牡丹，醉姿如百合
+    * 朱音落雨
+    * 黃泉使者
+    * 婚姻劇毒
+    * 魔法帽的工作室
+    * 春夏秋冬代行者 春之舞
+<!-- rumdl-disable -->
 
 即時跟到我在看什麼 👉 [AniList](https://anilist.co/user/clleew/), [Letterbox](https://letterboxd.com/clleew/), [Trakt](https://app.trakt.tv/users/clleew)
 作品心得 👉[那些沒人在乎的事](https://travlog.wei-lee.me/)
