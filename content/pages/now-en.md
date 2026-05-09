@@ -1,6 +1,6 @@
 Title: Now
 Date: 2026-04-25 18:50
-Modified: 2026-05-01 21:40
+Modified: 2026-05-09 11:00
 Slug: now
 Lang: en
 
@@ -10,11 +10,13 @@ Lang: en
 * 💤 Trying to go to bed earlier, but not there yet
 
 ## 🏆 Something I'm proud of recently
+* 😭 Someone recently said they really loved my writing and even wrote [a blog post](https://shuojen.com/blog/2026/05/03/weilee) recommending my blog. I was so touched that I literally cried
 * 🗺️ Spent quite a bit of time organizing my [pilgrimage list](https://travlog.wei-lee.me/pages/pilgrimage)
 * 📸 [Brought BanG Dream! dolls into the Presidential Office and took a photo with Tomori Takamatsu and the President of Taiwan]({filename}/posts/random-thoughts/2026/20-tomorin-goes-to-presidential-office.md)
 
 ## 🔥 Things I'm into lately
 * Joining [BlogBlog.Club](https://blogblog.club/) → slowly moving content from other platforms back to my own blog
+* Having a friendly "blog arms race" with [another Wei](https://weiblog.me/) to see who can make their blog cooler first ~~before we burn through all our tokens~~ — and hopefully write more along the way
 
 ## 🧑‍💻 What I've been doing
 * Apache Airflow
@@ -45,7 +47,7 @@ You can follow what I'm watching in real time 👉 [AniList](https://anilist.co/
 My thoughts 👉 [Those Things No One Cares About](https://travlog.wei-lee.me/)
 
 ## 🎵 What I've been listening to
-* [BanG Dream! Special LIVE in TAIPEI](https://bang-dream.com/bsl-taipei2026/) → still not over Dajia Riverside Park
+* [BanG Dream! Special LIVE in TAIPEI](https://bang-dream.com/bsl-taipei2026/) → still stuck at Dajia Riverside Park
 * YUIKA
     * [I Can't Become a Princess](https://youtu.be/ic9XKLWMbCw?si=sukGknz4pIacAdcn) → I love how comforting this song feels — it almost makes me tear up
 * [江松霖](https://www.youtube.com/@sungsungvideo) → full-on fan, could listen forever

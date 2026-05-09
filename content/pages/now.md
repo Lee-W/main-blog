@@ -1,6 +1,6 @@
 Title: 近況
 Date: 2026-04-25 18:50
-Modified: 2026-05-01 21:40
+Modified: 2026-05-09 11:00
 Slug: now
 Lang: zh-tw
 
@@ -10,11 +10,13 @@ Lang: zh-tw
 * 💤 嘗試提早睡覺，但還沒成功
 
 ## 🏆 最近感到驕傲的
+* 😭 最近有人覺得我寫的文章很棒，並且寫了[一篇文](https://shuojen.com/blog/2026/05/03/weilee)來推薦，感動到痛哭流涕
 * 🗺️ 花了很多時間，整理我的[聖地巡禮列表](https://travlog.wei-lee.me/pages/pilgrimage)
 * 📸 [帶了邦邦娃們進總統府，最後帶著高松燈跟台灣總統合照]({filename}/posts/random-thoughts/2026/20-tomorin-goes-to-presidential-office.md)
 
 ## 🔥 最近熱衷的
 * 參加 [BlogBlog.Club - 部落部落俱樂部](https://blogblog.club/) → 慢慢把原本會發在其他服務的內容，都放到部落格
+* 跟[另一個Wei](https://weiblog.me/)軍備競賽，看誰可以把部落格弄得更酷~~把 Token 先燒完~~，可已多寫一些文章
 
 ## 🧑‍💻 最近做的
 * Apache Airflow
@@ -34,7 +36,7 @@ Lang: zh-tw
     * Re: 從零開始的異世界生活 第四季
     * 女僕小姐的貪吃日常
     * 上伊那牡丹，醉姿如百合
-    * 朱音落雨
+    * 朱音落語
     * 黃泉使者
     * 婚姻劇毒
     * 魔法帽的工作室
