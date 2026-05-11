@@ -16,7 +16,7 @@ Lang: zh-tw
 
 ## 🔥 最近熱衷的
 * 參加 [BlogBlog.Club - 部落部落俱樂部](https://blogblog.club/) → 慢慢把原本會發在其他服務的內容，都放到部落格
-* 跟[另一個Wei](https://weiblog.me/)軍備競賽，看誰可以把部落格弄得更酷~~把 Token 先燒完~~，可已多寫一些文章
+* 跟[另一個Wei](https://weiblog.me/)軍備競賽，看誰可以把部落格弄得更酷~~把 Token 先燒完~~，可以多寫一些文章
 
 ## 🧑‍💻 最近做的
 * Apache Airflow
