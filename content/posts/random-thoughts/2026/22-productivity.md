@@ -29,7 +29,7 @@ Lang: zh-tw
 那怎樣才算是穩定的情緒呢
 QB 曾這麼說
 
-![QB](/images/posts-image/QB.png)
+![QB](/images/meme/QB.png)
 /// caption
 出自 [魔法少女小圓 劇場版 新篇 叛逆的物語](https://ani.gamer.com.tw/animeVideo.php?sn=12331)
 ///
@@ -43,7 +43,7 @@ QB 曾這麼說
 並且進而控制~~圓環之理~~情緒
 而所有的做法之前，最重要、最有效的就是**好好睡覺**
 
-![avemujica-sleep-now](/images/posts-image/avemujica-sleep-now.png)
+![avemujica-sleep-now](/images/meme/avemujica-sleep-now.png)
 /// caption
 出自 [BanG Dream! Ave Mujica [4]](https://ani.gamer.com.tw/animeVideo.php?sn=41924)
 ///
