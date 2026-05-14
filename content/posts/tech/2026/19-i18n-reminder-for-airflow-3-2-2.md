@@ -37,7 +37,7 @@ zh-TW  100.0%
 
 ![我愛慕虛榮啦](/images/meme/mygo-vanity.jpg)
 
-![不客氣]({static}/images/posts-image/2026/i18n-reminder-for-airflow-3-2-2/you-are-welcom.jpg)
+![不客氣](/images/posts-image/2026/i18n-reminder-for-airflow-3-2-2/you-are-welcom.jpg)
 
 我近期比較喜歡用台灣漢語/華語這個詞
 但對於繁體中文這個用法，我也不算是有特別的想法
