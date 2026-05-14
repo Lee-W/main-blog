@@ -1,7 +1,7 @@
 Title: 2020 發文頻率分析 - 如何得到 pelican 文章資訊並用來做圖
 Date: 2021-01-29 18:45 +0800
 Category: Tech
-Tags: Python, pelican
+Tags: Python, Pelican
 Slug: post-frequency-analysis-how-i-get-pelican-article-data-and-plot
 Series: 2020 發文頻率分析
 Authors: Wei Lee

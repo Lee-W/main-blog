@@ -1,7 +1,7 @@
 Title: MacBook Pro Retina 開箱
 Date: 2015-01-02 04:14 +0800
 Category: Random Thoughts
-Tags: mac, unboxing
+Tags: Mac, Unboxing
 Slug: mbpr-out-of-the-box
 Authors: Wei Lee
 Lang: zh-tw

@@ -1,7 +1,7 @@
 Title: 男子漢理論
 Date: 2016-03-15 02:13 +0800
 Category: Tech
-Tags: Inspiring, Vim
+Tags: Thinking, Vim
 Slug: article-man-theory
 Authors: Wei Lee
 Lang: zh-tw

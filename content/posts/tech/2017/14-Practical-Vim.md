@@ -1,7 +1,7 @@
 Title: Practical Vim
 Date: 2017-06-26 08:50 +0800
 Category: Tech
-Tags: Vim, Note
+Tags: Vim
 Slug: Practical-Vim
 Authors: Wei Lee
 Lang: zh-tw

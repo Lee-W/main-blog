@@ -1,7 +1,7 @@
 Title: EDBT-ICDT 2018
 Date: 2020-01-03 15:30 +0800
 Category: Tech
-Tags: Conference
+Tags: Paper, Data
 Slug: edbt-icdt-2018
 Authors: Wei Lee
 Lang: zh-tw

@@ -1,7 +1,7 @@
 Title: [Book] 最後的演講
 Date: 2016-06-06 08:32 +0800
 Category: Book
-Tags: Inspiring
+Tags: Thinking
 Slug: the-last-lecture
 Authors: Wei Lee
 Lang: zh-tw

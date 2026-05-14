@@ -1,7 +1,7 @@
 Title: 理想的部落格主題
 Date: 2026-03-15 17:20 +0800
 Category: Random Thoughts
-Tags: BlogBlog 同樂會, Blog
+Tags: BlogBlog 同樂會, Blog, Lifestyle
 Slug: ideal-blog-theme
 Series: 理想的日常 (2026)
 Authors: Wei Lee

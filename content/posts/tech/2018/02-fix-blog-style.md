@@ -1,7 +1,7 @@
 Title: Blog 風格修正
 Date: 2018-10-14 21:00 +0800
 Category: Tech
-Tags: Develop
+Tags: Development
 Slug: fix-blog-style
 Authors: Wei Lee
 Lang: zh-tw

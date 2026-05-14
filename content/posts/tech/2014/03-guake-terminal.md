@@ -1,7 +1,7 @@
 Title: Guake terminal
 Date: 2014-02-09 07:02 +0800
 Category: Tech
-Tags: Linux-Unix, Utility
+Tags: Linux-Unix, Tool
 Slug: guake-terminal
 Authors: Wei Lee
 Lang: zh-tw

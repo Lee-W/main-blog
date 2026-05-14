@@ -1,7 +1,7 @@
 Title: 理想的 A3 海報運送
 Date: 2026-03-17 21:20 +0800
 Category: Random Thoughts
-Tags: BlogBlog 同樂會
+Tags: BlogBlog 同樂會, Lifestyle
 Slug: ideal-poster-transportation
 Series: 理想的日常 (2026)
 Authors: Wei Lee

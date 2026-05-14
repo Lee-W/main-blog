@@ -1,7 +1,7 @@
 Title: TEDx Tainan 2016 - 0 到 1
 Date: 2016-11-21 03:27 +0800
 Category: Random Thoughts
-Tags: Inspiring, TEDx
+Tags: Thinking, TEDx
 Slug: tedx-tainan-2016
 Authors: Wei Lee
 Lang: zh-tw

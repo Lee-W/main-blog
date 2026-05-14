@@ -1,7 +1,7 @@
 Title: 理想的出門娃娃
 Date: 2026-03-26 18:50 +0800
 Category: Random Thoughts
-Tags: BlogBlog 同樂會
+Tags: BlogBlog 同樂會, Lifestyle
 Slug: ideal-doll
 Series: 理想的日常 (2026)
 Cover: /images/posts-image/2026/ideal/tomori-doll.jpeg

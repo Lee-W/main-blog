@@ -2,7 +2,7 @@ Title: [Note] Clean Code
 Date: 2018-11-16 17:08 +0800
 Modified: 2020-10-08 16:12 +0800
 Category: Tech
-Tags: Note, Software Engineering
+Tags: Software Engineering
 Slug: clean-code
 Authors: Wei Lee
 Lang: zh-tw

@@ -1,7 +1,7 @@
 Title: Utterances - 用 GitHub Issues 當文章留言區
 Date: 2022-02-23 11:05 +0800
 Category: Tech
-Tags: Pelican, blog
+Tags: Pelican, Blog
 Slug: use-github-issues-as-comment-system
 Authors: Wei Lee
 Lang: zh-tw
@@ -70,7 +70,7 @@ e.g.,
 Title: Utterances - 用 GitHub Issues 作為文章留言區
 Date: 2022-02-23 10:40 +0800
 Category: Tech
-Tags: Pelican, blog
+Tags: Pelican, Blog
 Slug: use-github-issues-as-comment-system
 comment_id: use-github-issues-as-comment-system
 Authors: Wei Lee

@@ -1,7 +1,7 @@
 Title: PyCon CA 2019
 Date: 2019-12-23 17:51 +0800
 Category: Tech
-Tags: Python, PyCon, PyCon CA, PyCon CA 2019, commitizen-tools
+Tags: Python, PyCon, PyCon CA, commitizen-tools
 Slug: pycon-ca-2019
 Authors: Wei Lee
 Lang: zh-tw

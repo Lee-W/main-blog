@@ -2,7 +2,7 @@ Title: 平平都是 joinedload
 Subtitle: <ruby>仝款<rt>kāng-khuán</rt></ruby>，<ruby>無仝<rt>bô kāng</rt></ruby><ruby>師傅<rt>sai-hū</rt></ruby>
 Date: 2025-08-16 11:35 +0800
 Category: Tech
-Tags: Python, gotcha, SQLAlchemy
+Tags: Python, Gotcha, SQLAlchemy
 Slug: same-joinedload-but-not-the-same
 Cover: /images/meme/mygo-it-is-but-it-is-not.jpg
 Authors: Wei Lee

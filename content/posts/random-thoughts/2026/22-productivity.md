@@ -2,7 +2,7 @@ Title: 生產力
 Subtitle: 健康に良くない
 Date: 2026-04-25 16:40 +0800
 Category: Random Thoughts
-Tags: BlogBlog 同樂會, Productivity
+Tags: BlogBlog 同樂會, Productivity, Lifestyle
 Slug: productivity
 Cover: /images/meme/avemujica-bad-for-health.jpg
 Authors: Wei Lee

@@ -1,7 +1,7 @@
 Title: PyCon TW 2019 - Do you know PyCon JP
 Date: 2019-10-28 12:35 +0800
 Category: Tech
-Tags: Conference, PyCon
+Tags: PyCon
 Slug: pycon-tw-2019-do-you-know-pycon-jp
 Authors: Wei Lee
 Lang: zh-tw

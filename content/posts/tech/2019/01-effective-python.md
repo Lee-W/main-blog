@@ -1,7 +1,7 @@
 Title: [Note] Effective Python
 Date: 2019-01-19 16:45 +0800
 Category: Tech
-Tags: Python, Note
+Tags: Python, Note-Taking
 Slug: effective-python
 Authors: Wei Lee
 Lang: zh-tw

@@ -2,7 +2,7 @@ Title: PyCon TW 2017 - Day 1
 Date: 2017-06-09 09:00 +0800
 Modified: 2017-06-18 11:41 +0800
 Category: Tech
-Tags: Python, Conference, PyCon
+Tags: Python, PyCon
 Slug: PyCon-TW-2017-Day1
 Series: PyCon TW 2017
 Authors: Wei Lee

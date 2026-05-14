@@ -2,7 +2,7 @@ Title: Pagefind UI 我的超人
 Subtitle: 你也許不會發現，但這裡多了搜尋功能
 Date: 2023-11-01 23:10 +0800
 Category: Tech
-Tags: blog
+Tags: Blog
 Slug: pagefind-ui
 Authors: Wei Lee
 Lang: zh-tw

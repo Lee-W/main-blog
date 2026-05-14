@@ -1,7 +1,7 @@
 Title: 理想的日常
 Date: 2026-03-31 15:20 +0800
 Category: Random Thoughts
-Tags: BlogBlog 同樂會
+Tags: BlogBlog 同樂會, Lifestyle
 Slug: ideal-nichijou
 Series: 理想的日常 (2026)
 Cover: /images/posts-image/2026/ideal/avalon.JPEG

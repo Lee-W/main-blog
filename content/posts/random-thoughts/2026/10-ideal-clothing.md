@@ -2,7 +2,7 @@ Title: 理想的衣著
 Date: 2026-03-24 23:35 +0800
 Modified: 2026-03-25 09:50 +0800
 Category: Random Thoughts
-Tags: BlogBlog 同樂會
+Tags: BlogBlog 同樂會, Lifestyle
 Slug: ideal-clothing
 Series: 理想的日常 (2026)
 Authors: Wei Lee

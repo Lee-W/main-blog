@@ -1,7 +1,7 @@
 Title: [Book] 如何閱讀一本書
-Date: 2017-03-03 20:41
+Date: 2017-03-03 20:41 +0800
 Category: Book
-Tags: Other
+Tags: Learning
 Slug: how-to-read-a-book
 Authors: Wei Lee
 Lang: zh-tw

@@ -1,7 +1,7 @@
 Title: 將終端機畫面紀錄成 gif
 Date: 2024-04-07 22:42 +0800
 Category: Tech
-Tags: tool
+Tags: Tool
 Slug: record-terminal-actions-and-export-as-gif
 Authors: Wei Lee
 Lang: zh-tw

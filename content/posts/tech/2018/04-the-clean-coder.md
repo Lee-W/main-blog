@@ -1,7 +1,7 @@
 Title: [Note] The Clean Coder
 Date: 2018-11-16 15:03 +0800
 Category: Tech
-Tags: Note, Software Engineering
+Tags: Software Engineering, Soft Skill
 Slug: the-clean-coder
 Authors: Wei Lee
 Lang: zh-tw

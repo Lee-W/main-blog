@@ -1,7 +1,7 @@
 Title: 從 Andromoney 到 MOZE
 Date: 2018-09-09 16:00 +0800
 Category: Tech
-Tags: Develop, Utility
+Tags: Development, Tool
 Slug: from-andromoney-to-moze
 Authors: Wei Lee
 Lang: zh-tw

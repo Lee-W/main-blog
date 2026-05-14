@@ -2,7 +2,7 @@ Title: [Book]  我可能錯了：森林智者的最後一堂人生課
 Date: 2024-06-27 21:08 +0800
 Modified: 2024-06-28 09:52 +0800
 Category: Book
-Tags: Mind
+Tags: Thinking
 Slug: I-May-Be-Wrong
 Authors: Wei Lee
 Lang: zh-tw

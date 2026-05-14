@@ -1,7 +1,7 @@
 Title: 理想的旅伴
 Date: 2026-03-27 16:00 +0800
 Category: Random Thoughts
-Tags: BlogBlog 同樂會
+Tags: BlogBlog 同樂會, Lifestyle
 Slug: ideal-travel-buddy
 Series: 理想的日常 (2026)
 Authors: Wei Lee
@@ -27,4 +27,3 @@ OK 人 + 攻略大師
 
 就像股癌說的
 不要當奧咖
-
