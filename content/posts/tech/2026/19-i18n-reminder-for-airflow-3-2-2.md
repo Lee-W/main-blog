@@ -29,7 +29,7 @@ zh-TW  100.0%
 ```
 
 ![mob-100](/images/meme/mob-100.png)
-///caption
+/// caption
 出自[路人超能 100 [11]](https://ani.gamer.com.tw/animeVideo.php?sn=6258)
 ///
 

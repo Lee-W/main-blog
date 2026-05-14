@@ -18,7 +18,7 @@ Lang: zh-tw
 然後就忘了
 
 ![I'm unafraid of oblivion](/images/meme/avemujica-unafraid-of-oblivion.jpg)
-///caption
+/// caption
 出自 [BanG Dream! Ave Mujica](https://ani.gamer.com.tw/animeVideo.php?sn=41638)
 ///
 
