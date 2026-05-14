@@ -1,7 +1,7 @@
 Title: 2025 Git Wrapped
 Date: 2026-01-03 20:55 +0800
 Category: Tech
-Tags: Open Source, 年度回顧
+Tags: Open Source, Annual Review
 Slug: 2025-git-wrapped
 Cover: /images/posts-image/2026/2025-git-wrap/github.jpg
 Authors: Wei Lee

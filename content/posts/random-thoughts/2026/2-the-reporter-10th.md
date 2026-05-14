@@ -2,7 +2,7 @@ Title: 報導者十週年
 Subtitle: 8836 分之 1
 Date: 2026-01-25 13:08 +0800
 Category: Random Thoughts
-Tags: 報導者
+Tags: 報導者, Podcast
 Slug: the-reporter-10th
 Cover: /images/posts-image/2026/the-reporter-10th/IMG_0422.JPEG
 Authors: Wei Lee

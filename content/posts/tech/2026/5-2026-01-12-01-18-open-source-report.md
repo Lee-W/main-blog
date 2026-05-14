@@ -40,7 +40,7 @@ Lang: zh-tw
     1. [cz command shows ExpectedExit Exception #1789](https://github.com/commitizen-tools/commitizen/issues/1789)
     2. [4.11.0 is missing on PyPI #1790](https://github.com/commitizen-tools/commitizen/issues/1790)
 
-## commitizen-aciton
+## commitizen-action
 * 審閱 PR
     1. [feat: add --build-metadata option #107](https://github.com/commitizen-tools/commitizen-action/pull/107)
 

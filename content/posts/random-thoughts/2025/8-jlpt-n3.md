@@ -3,7 +3,7 @@ Subtitle: 我打宿儺！？
 Date: 2025-08-28 22:55 +0800
 Category: Random Thoughts
 Tags: JLPT, Japanese
-Slug: JLPT-N3
+Slug: jlpt-n3
 Authors: Wei Lee
 Lang: zh-tw
 

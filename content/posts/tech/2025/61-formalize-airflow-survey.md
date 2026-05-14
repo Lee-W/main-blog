@@ -2,7 +2,7 @@ Title: Apache Airflow 年度問卷流程正式化
 Date: 2025-12-07 13:10 +0800
 Category: Tech
 Tags: Airflow, Airflow 開發生情報
-Slug: formalising-how-we-already-run-the-airflow-suvery
+Slug: formalising-how-we-already-run-the-airflow-survey
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -32,7 +32,7 @@ Lang: zh-tw
     * 例外: (可隱藏的資訊)
         * re 問題 4 ，如有選填的 PII
         * 詐騙資訊
-10. 如果 ASF 沒有提供適合的平台，讓問卷能在 "apachr.org" 下執行，那問卷要被架在哪都可以
+10. 如果 ASF 沒有提供適合的平台，讓問卷能在 "apache.org" 下執行，那問卷要被架在哪都可以
 11. 如果有任何單位想支持或贊助問卷，並負擔費用，那沒問題
     * 應在 PMC 發佈贊助徵求 (call for sponsor) 後，進行申請，並取得 PMC 同意才行
     * 執行方

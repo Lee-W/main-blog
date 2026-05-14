@@ -1,7 +1,7 @@
 Title: Fix Neovim "'fzf' extension doesn't exist or isn't installed:"
 Date: 2024-06-25 23:25 +0800
 Category: Tech
-Tags: Neovim
+Tags: NeoVim
 Slug: neo-vim-fzf-not-loaded
 Authors: Wei Lee
 Lang: zh-tw

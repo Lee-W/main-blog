@@ -1,7 +1,7 @@
 Title: 一覺醒來 Neovim 的 treesitter 就壞掉了
 Date: 2026-01-09 12:30 +0800
 Category: Tech
-Tags: Neovim
+Tags: NeoVim, Tool
 Slug: neovim-treesitter-was-broken
 Cover: /images/posts-image/2026/neovim-treesitter-was-broken/neovim-treesitter-was-broken.png
 Authors: Wei Lee

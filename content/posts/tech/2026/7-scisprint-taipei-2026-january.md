@@ -2,7 +2,7 @@ Title: scisprint Taipei 2026 January
 Subtitle: The famous Tim!
 Date: 2026-02-01 13:45 +0800
 Category: Tech
-Tags: Development Sprint
+Tags: Development Sprint, Open Source, commitizen
 Slug: scisprint-taipei-2026-january
 Cover: /images/posts-image/2026/scisprint-2026-jan/scisprint.jpg
 Authors: Wei Lee

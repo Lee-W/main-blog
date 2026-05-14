@@ -3,7 +3,7 @@ Subtitle: 划算、安靜的工作空間
 Date: 2026-01-09 21:30 +0800
 Category: Random Thoughts
 Tags: Coworking Space
-Slug: CE-and-LIB-RARY-tian-mu
+Slug: ce-and-lib-rary-tian-mu
 Cover: /images/posts-image/2026/CE-and-LIB-RARY-tian-mu/IMG_0925.jpeg
 Authors: Wei Lee
 Lang: zh-tw

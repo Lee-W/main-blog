@@ -2,7 +2,7 @@ Title: 推しは推せる時に推せる
 Subtitle: 說在 guru 畢業之後
 Date: 2025-05-03 12:55 +0800
 Category: Random Thoughts
-Tags: Music
+Tags: Music, Lifestyle
 Slug: support-your-oshi-while-you-can
 Cover: /images/posts-image/2025-support-your-oshi-while-you-can/IMG_0631.JPG
 Authors: Wei Lee

@@ -2,7 +2,7 @@ Title: 成為 Airflow PMC Member
 Subtitle: "I'm the PMC." "Not yet."
 Date: 2025-10-25 23:25 +0800
 Category: Tech
-Tags: Airflow
+Tags: Airflow, Open Source, Apache
 Slug: becoming-an-airflow-pmc-member
 Cover: /images/posts-image/2025-becoming-an-airflow-pmc-member/airflow-summit.jpeg
 Authors: Wei Lee
@@ -54,7 +54,7 @@ Lang: zh-tw
 ### 正式公布
 Airflow Summit 的 Keynote 演講結束，Jarek 宣布了此次的 PMC 和 Committer 團隊新成員
 
-![annocement](/images/posts-image/2025-becoming-an-airflow-pmc-member/annocement.jpeg)
+![announcement](/images/posts-image/2025-becoming-an-airflow-pmc-member/annocement.jpeg)
 
 身為遲到仔（但其實也沒遲到），到場的時候前面都坐滿了
 只能坐在很後面，所以拍到的照片很糊
@@ -200,7 +200,8 @@ EuroPython 2025 的 [How to deal with toxic people] 是這麼建議的
 * [BanG Dream! It's MyGO!!!!!]
 * [BanG Dream! Ave Mujica]
 
-[Airflow 開發郵件群組]: https://lists.apache.org/list.html?<dev@airflow.apache.org>
+<!-- markdownlint-disable MD034 -->
+[Airflow 開發郵件群組]: https://lists.apache.org/list.html?dev@airflow.apache.org
 [從 0 成為 Apache Airflow Committer]: https://blog.zhu424.dev/zh-tw/open-source-contribution/becoming-an-apache-airflow-committer-from-0/
 [開源之旅 - Apache Airflow Committer]: https://guan404ming.com/blog/0
 [Ruff 的 AIR 遷移規則]: https://docs.astral.sh/ruff/rules/#airflow-air

@@ -126,7 +126,7 @@ Trilium Notes 看起來蠻酷的
 但我近期覺得，只要對方不要批評，我就很感謝了
 雖然對方批評，我也只能
 
-![oshiyawaseni](/images/posts-image/2025-cpython-contribution-101/oshiyawaseni.jpg)
+![oshiyawaseni](/images/meme/mygo-oshiyawaseni.jpg)
 
 * [培養「日記習慣」：每天為自己保留一段與內心對話的時間 - 皆米的記事本](https://jai33snotes.com/start-journalling/), [請開始紀錄吧 | 卡美桑的家](https://kamesanblog.github.io/posts/20260117-please-take-notes/), [如果要推坑你一件事，我會推薦你開始寫作 - 只贏](https://onlywin.substack.com/p/303)
 
