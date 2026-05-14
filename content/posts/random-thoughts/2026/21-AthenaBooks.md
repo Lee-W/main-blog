@@ -3,7 +3,7 @@ Subtitle: 被書包圍的工作空間
 Date: 2026-04-25 12:10 +0800
 Category: Random Thoughts
 Tags: Coworking Space
-Slug: AthenaBooks
+Slug: athena-books
 Cover: /images/posts-image/2026/AthenaBooks/work.jpeg
 Authors: Wei Lee
 Lang: zh-tw

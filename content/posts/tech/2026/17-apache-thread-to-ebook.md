@@ -1,7 +1,7 @@
 Title: 將 Apache 討論串變成電子書的魔法
 Date: 2026-05-12 12:10 +0800
 Category: Tech
-Tags: Airflow
+Tags: Airflow, Tool
 Slug: apache-thread-to-ebook
 Authors: Wei Lee
 Lang: zh-tw
@@ -45,7 +45,7 @@ Apache 的郵件群組背後是使用 [Apache Pony Mail™](https://ponymail.apa
 現在就用得到了
 
 待會準備來細看 Java SDK 跟 AERR 討論
-順便來復活一下，一樣是沒人在乎的[Airflow 開發生情報](tag/airflow-kai-fa-sheng-qing-bao)系列
+順便來復活一下，一樣是沒人在乎的[Airflow 開發生情報](/tag/airflow-kai-fa-sheng-qing-bao)系列
 
 ```sh
 uv run https://gist.github.com/Lee-W/5e5798400132ac3cf0775e33a260e91a \

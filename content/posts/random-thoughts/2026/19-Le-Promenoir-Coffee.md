@@ -3,7 +3,7 @@ Subtitle: 披薩真的好好吃...
 Date: 2026-04-02 20:05 +0800
 Category: Random Thoughts
 Tags: Coworking Space
-Slug: Le-Promenoir-Coffee
+Slug: le-promenoir-coffee
 Cover: /images/posts-image/2026/Le-Promenoir-Coffee/desk.JPEG
 Authors: Wei Lee
 Lang: zh-tw

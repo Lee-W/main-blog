@@ -1,7 +1,7 @@
 Title: Apache Airflow 3.2.0 發佈！
 Subtitle: 大家的 SQLite 資料庫升級守門員，這次失手了 😢
-Date: 2026-04-15 12:00
-Modified: 2026-04-15 17:30
+Date: 2026-04-15 12:00 +0800
+Modified: 2026-04-15 17:30 +0800
 Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: apache-airflow-3-2-0-release
@@ -105,7 +105,7 @@ breeze shell \
     --mount-sources selected \
 ```
 
-#### 5. 使用剛備份的 SQLite 資料庫測試升級、降級、再升級
+#### 4. 使用剛備份的 SQLite 資料庫測試升級、降級、再升級
 
 在 `breeze` 的 shell 中執行：
 

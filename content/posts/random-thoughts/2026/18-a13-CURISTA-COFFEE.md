@@ -3,7 +3,7 @@ Subtitle: 信義區看電影前的臨時工作點
 Date: 2026-04-01 23:59 +0800
 Category: Random Thoughts
 Tags: Coworking Space
-Slug: a13-CURISTA-COFFEE
+Slug: a13-curista-coffee
 Cover: /images/posts-image/2026/a13-CURISTA-COFFEE/curista-coffee.jpeg
 Authors: Wei Lee
 Lang: zh-tw
