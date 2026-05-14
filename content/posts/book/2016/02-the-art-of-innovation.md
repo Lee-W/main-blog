@@ -1,5 +1,5 @@
 Title: [Book] IDEA 物語
-Date: 2016-01-01 11:39
+Date: 2016-01-01 11:39 +0800
 Category: Book
 Tags: Design
 Slug: the-art-of-innovation

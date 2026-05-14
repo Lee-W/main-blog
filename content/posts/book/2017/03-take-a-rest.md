@@ -1,5 +1,5 @@
 Title: [Book] 此人進廠維修中
-Date: 2017-03-05 11:40
+Date: 2017-03-05 11:40 +0800
 Category: Book
 Tags: Emotion
 Slug: take-a-rest

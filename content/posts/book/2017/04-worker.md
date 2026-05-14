@@ -1,5 +1,5 @@
 Title: [Book] 做工的人
-Date: 2017-03-24 18:48
+Date: 2017-03-24 18:48 +0800
 Category: Book
 Tags: Story
 Slug: worker
