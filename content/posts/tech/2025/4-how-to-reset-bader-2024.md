@@ -35,7 +35,7 @@ Lang: zh-tw
 2. 透過 USB 將 Badger 2040 的板子連接到電腦
 3. 長按 Badger 2040 背後的 `BOOT/USR` 鍵，並按下 `RESET` 鍵，這時電腦應該會連接到板子
 4. 以 macOS 為例，把最新的韌體拉近連接到的裝置，它會重設整台裝置
-6. 接下來就可以跟著 [Badger 2040 W] 的教學步驟，把識別證的內容寫進去了
+5. 接下來就可以跟著 [Badger 2040 W] 的教學步驟，把識別證的內容寫進去了
 
 [badger2040]: https://github.com/pimoroni/badger2040
 [Badger 2040 W]: https://developer.auth0.com/resources/labs/events/badger-2040-w#troubleshooting

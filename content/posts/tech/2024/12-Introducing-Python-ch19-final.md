@@ -3,7 +3,7 @@ Date: 2024-08-06 19:58 +0800
 Modified: 2024-08-06 23:35 +0800
 Category: Tech
 Tags: Python, Study Session
-Slug: Introducing-Python-ch19-final
+Slug: introducing-python-ch19-final
 Authors: Wei Lee
 Lang: zh-tw
 

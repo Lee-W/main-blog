@@ -6,7 +6,7 @@ Slug: 2025-05-05-05-11-open-source-report
 Authors: Wei Lee
 Lang: zh-tw
 
-最進收到不少 commitizen 的文件 PR
+最近收到不少 commitizen 的文件 PR
 
 <!--more-->
 

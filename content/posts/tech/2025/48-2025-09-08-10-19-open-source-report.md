@@ -38,7 +38,7 @@ Lang: zh-tw
     6. [feat: allow amend! prefix as created by git --fixup=reword:<commit> #1587](https://github.com/commitizen-tools/commitizen/pull/1587)
     7. [fix(Init): raise InitFailedError on keyboard interrupt on pre-commit … #1604](https://github.com/commitizen-tools/commitizen/pull/1604)
     8. [docs: enable blank issue and add url to contact links #1627](https://github.com/commitizen-tools/commitizen/pull/1627)
-    9. [refactor(ConventionalCommitsCz): rewrite message method to make the p… #1626](github.com/commitizen-tools/commitizen/pull/1626)
+    9. [refactor(ConventionalCommitsCz): rewrite message method to make the p… #1626](https://github.com/commitizen-tools/commitizen/pull/1626)
     10. [test: rename the fixture config to mock_config for better code search #1619](https://github.com/commitizen-tools/commitizen/pull/1619)
     11. [test(utils): do not create file for simplicity #1621](https://github.com/commitizen-tools/commitizen/pull/1621)
     12. [test(changelog): remove unused timer fixture #1624](https://github.com/commitizen-tools/commitizen/pull/1624)

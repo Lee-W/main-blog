@@ -3,7 +3,7 @@ Subtitle: 網酸： 早該了
 Date: 2025-09-04 18:45 +0800
 Category: Tech
 Tags: Airflow, Airflow 開發生情報
-Slug: removing-DAG-from-airflow
+Slug: removing-dag-from-airflow
 Authors: Wei Lee
 Lang: zh-tw
 

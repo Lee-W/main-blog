@@ -6,7 +6,7 @@ Tags: Airflow, Airflow 3.0
 Slug: airflow-3-0-0-a2
 Cover: /images/posts-image/2025-airflow-alpha-2/airflow-3-ui.png
 Authors: Wei Lee
-Lang: zh-tw
+Lang: en
 
 As announcements in the Airflow dev mailing list, ~~[📢 Apache Airflow 3.0.0apha1 is available for testing! 🎉]~~ [📢 Apache Airflow 3.0.0apha2 is available for testing! 🎉]
 
@@ -119,7 +119,7 @@ Even Airflow has not migrated to Airflow 3 yet.
 
 ![ironic](/images/meme/star-wars-ironic.jpg)
 
-Issue [Legacy configuration not removed or updated #46517](https://github.com/apache/airflow/issues/46517) was also created.  
+Issue [Legacy configuration not removed or updated #46517](https://github.com/apache/airflow/issues/46517) was also created.
 
 ### Dags - ruff >= 0.95
 Yep, this is the [ruff](https://docs.astral.sh/ruff/) you know (or probably should know). Recently, we added more [Airflow rules (with code AIR)](https://docs.astral.sh/ruff/rules/#airflow-air) to ruff. The ones that start with `3` (i.e., AIR301, AIR302, AIR302) are those that help you migrate to Airflow 3.0.

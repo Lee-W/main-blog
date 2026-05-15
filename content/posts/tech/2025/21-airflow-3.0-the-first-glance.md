@@ -4,7 +4,7 @@ Date: 2025-05-29 21:55 +0800
 Category: Tech
 Tags: 源來適你, Airflow 3.0
 Slug: airflow-3-0-the-first-glance
-Cover:/images/meme/mygo-it-s-mygo.jpg
+Cover: /images/meme/mygo-it-s-mygo.jpg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -22,15 +22,15 @@ Lang: zh-tw
 還好時隔兩個月， Airflow 3.0 並沒有跟我當初講的差太多
 
 1. 什麼是 Airflow
-2. 為什麼要用 Aiflow
+2. 為什麼要用 Airflow
 3. AIP-63 - Dag Versioning
 4. AIP-38 - Modern Web Design
 5. AIP-72 - TaskSDK
     * 提到的比較少，當時對使用者來說也不太重要（這裡記住，待會會考）
-7. AIR-73 - Expanded Data Awareness
-8. AIP-82 - External Event Driven Scheduling
-9. Migration tool - (`airflow conflg lint`, `ruff`)
-10. 一起來貢獻 Airflow 叭
+6. AIR-73 - Expanded Data Awareness
+7. AIP-82 - External Event Driven Scheduling
+8. Migration tool - (`airflow config lint`, `ruff`)
+9. 一起來貢獻 Airflow 叭
 
 倒是 AIP-82 我也是為了這場分享才第一次使用
 雖然在之前有大概知道在幹嘛

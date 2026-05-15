@@ -4,7 +4,7 @@ Date: 2024-08-29 22:00 +0800
 Modified: 2025-12-22 09:30 +0800
 Category: Tech
 Tags: Python, Airflow, Airflow 2.7
-Slug: optimizing-airflow-operators-with-default_deferrable
+Slug: optimizing-airflow-operators-with-default-deferrable
 Series: Unleash the Chaos: Developing a Linter for Un-Pythonic Code!
 Authors: Wei Lee
 Lang: en
@@ -13,7 +13,7 @@ In the article series [What If...? Running Airflow Tasks without the workers]({f
 
 <!--more-->
 
-Even though Grammarly suggested such a fancy post title, this article will only discuss the simple pull request [Add default_deferrable config #31712](https://github.com/apache/airflow/pull/31712). This was the first major thing I did since joining Astronomer.io and the first pull request that got voted PR of the month. Even though it turned out to be relatively easy, we tried some hacky things with [Cluster Policty](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/cluster-policies.html) before it looks like this. But I think that a topic for another day.
+Even though Grammarly suggested such a fancy post title, this article will only discuss the simple pull request [Add default_deferrable config #31712](https://github.com/apache/airflow/pull/31712). This was the first major thing I did since joining Astronomer.io and the first pull request that got voted PR of the month. Even though it turned out to be relatively easy, we tried some hacky things with [Cluster Policy](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/cluster-policies.html) before it looks like this. But I think that a topic for another day.
 
 ## So, what is this default_deferrable config?
 It's a [configuration](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html#default-deferrable) that you can specify in the `airflow.cfg` file.

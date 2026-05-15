@@ -1,7 +1,7 @@
 Title: Achieve 300 contributions in Apache Airflow
 Date: 2025-04-06 11:45 +0800
 Category: Tech
-Tags: Airflow
+Tags: Airflow, Open Source
 Slug: achieve-300-contributions-in-apache-airflow
 Authors: Wei Lee
 Lang: en

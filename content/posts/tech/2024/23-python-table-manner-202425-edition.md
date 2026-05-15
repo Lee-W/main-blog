@@ -23,7 +23,7 @@ Lang: zh-tw
 
 ![share](/images/posts-image/2024-python-table-manners/share.png)
 
-另外就是發現 cookicutter 在我沒注意的期間也加了不少酷酷的功能
+另外就是發現 cookiecutter 在我沒注意的期間也加了不少酷酷的功能
 看到新功能就想玩一下
 
 整個系列還是會圍繞在我的 Python 專案模板 [cookiecutter-python-template](https://github.com/Lee-W/cookiecutter-python-template/) 用到的工具

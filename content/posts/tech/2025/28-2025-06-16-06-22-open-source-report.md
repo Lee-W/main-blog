@@ -3,7 +3,7 @@ Subtitle: 我的意思就是速度太快了
 Date: 2025-06-24 10:00 +0800
 Category: Tech
 Tags: Open Source, 開源貢獻週報
-Slug: 2025-06-16-06-2s-open-source-report
+Slug: 2025-06-16-06-22-open-source-report
 Cover: /images/meme/mygo-too-fast.jpg
 Authors: Wei Lee
 Lang: zh-tw
@@ -13,7 +13,7 @@ Lang: zh-tw
 
 <!--more-->
 
-## comtizien
+## commitizen
 * 審閱 PRs
     1. [refactor(Init): fix unbounded variable in _ask_tag_format #1529](https://github.com/commitizen-tools/commitizen/pull/1529)
     2. [refactor(changelog): shorten condition expression and early return #1541](https://github.com/commitizen-tools/commitizen/pull/1541)

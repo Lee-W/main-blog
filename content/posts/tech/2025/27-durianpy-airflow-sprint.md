@@ -6,7 +6,7 @@ Tags: Python, Airflow, Development Sprint, DurianPy
 Slug: durianpy-apache-airflow-development-sprint
 Cover: /images/posts-image/2025-durianpy-apache-airflow-development-sprint/P1280744.JPG
 Authors: Wei Lee
-Lang: zh-tw
+Lang: en
 
 First, I would like to thank Arnel for inviting me to the Airflow Development Sprint. It seems that the sprint I led at PyCon APAC 2025 in March was a success, encouraging him to host another in his hometown 🙌.
 

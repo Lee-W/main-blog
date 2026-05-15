@@ -2,7 +2,7 @@ Title: Python package installation failure inside a CircleCI pipeline
 Date: 2024-04-04 15:06 +0800
 Category: Tech
 Tags: CircleCI, CI/CD, Python
-Slug: python-package-installation-failure-inside-a-CircleCI-pipeline
+Slug: python-package-installation-failure-inside-a-circleci-pipeline
 Authors: Wei Lee
 Lang: zh-tw
 

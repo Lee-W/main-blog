@@ -1,7 +1,7 @@
 Title: Achieve 200 contributions in Apache Airflow
 Date: 2024-07-31 23:55 +0800
 Category: Tech
-Tags: Airflow
+Tags: Airflow, Open Source
 Slug: achieve-200-contributions-in-apache-airflow
 Authors: Wei Lee
 Lang: en
@@ -162,7 +162,7 @@ The count of PRs might appear to be higher than the value I added (and it actual
 21. [Respect "soft_fail" argument when "poke" is called](https://github.com/apache/airflow/pull/33401)
 22. [respect soft_fail argument when ExternalTaskSensor runs in deferrable mode](https://github.com/apache/airflow/pull/33196)
 
-### Add defult_deferrable configuration for easily turning on the deferrable mode of operators
+### Add default_deferrable configuration for easily turning on the deferrable mode of operators
 1. [build(pre-commit): add list of supported deferrable operators to doc](https://github.com/apache/airflow/pull/32514)
 2. [build(pre-commit): check deferrable default value](https://github.com/apache/airflow/pull/32370)
 3. [Add default_deferrable config](https://github.com/apache/airflow/pull/31712) (PR of the month)

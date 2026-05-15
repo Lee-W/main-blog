@@ -1,7 +1,7 @@
 Title: ウォール・ローゼが突破された！
 Date: 2025-10-25 11:20 +0800
 Category: Tech
-Tags: Open Source
+Tags: Open Source, Airflow, Ruff
 Slug: it-matters-revised
 Series: IT Matters Awards 2025
 Authors: Wei Lee

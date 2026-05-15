@@ -17,7 +17,7 @@ Lang: zh-tw
 並且讓發佈 [commitizen 4.3.0](https://pypi.org/project/commitizen/4.3.0/)
 但我忘記加文件了...
 所以又開了 [docs(config): add uv provider description #1362](https://github.com/commitizen-tools/commitizen/pull/1362) 的 PR 補上
-commitzien 的文件沒有做 versioning ，所以應該是不會有太大的影響
+commitizen 的文件沒有做 versioning ，所以應該是不會有太大的影響
 雖然我覺得我們總有一天要做這件事
 
 另外看了 Axel 的大 PR [feat(tags): adds legacy_tag_formats and ignored_tag_formats settings #1297](https://github.com/commitizen-tools/commitizen/pull/1297)，並且 approve

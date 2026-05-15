@@ -2,7 +2,7 @@
 ###########################################################
 
 :date: 2025-01-28 20:15 +0800
-:tags: Writing
+:tags: Writing, Annual Review
 :category: Random Thoughts
 :slug: 2021-2024-yearly-review
 :authors: Wei Lee

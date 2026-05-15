@@ -1,7 +1,7 @@
 Title: Achieve 400 contributions in Apache Airflow
 Date: 2025-08-07 20:10 +0800
 Category: Tech
-Tags: Airflow
+Tags: Airflow, Open Source
 Slug: achieve-400-contributions-in-apache-airflow
 Authors: Wei Lee
 Lang: en
@@ -35,7 +35,7 @@ gh pr list \
         --jq "[.[]
                 | select(.mergedAt > \"$START_MERGED_AT\" and .mergedAt < \"$END_MERGED_AT\")]
                 | sort_by(.mergedAt)[]
-                | \"1. [\(.title) #\(.number)](\(.url))\"" |
+                | \"1. [\(.title) #\(.number)](\(.url))\"" \
         > output.md
 ```
 

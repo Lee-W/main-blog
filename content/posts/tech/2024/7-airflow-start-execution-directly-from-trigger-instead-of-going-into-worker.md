@@ -20,7 +20,7 @@ Even though this feature will not look the same after [#39585](https://github.co
 
 ## How did the deferrable operator work before this change?
 
-When a task with `deferrable=True` is triggered, the [scheduler](https://airflow.apache.org/docs/apache-airflow/2.9.1/administration-and-deployment/scheduler.html) assigns a worker to run the `execute` method of the operator (e.g., [TriggerDagRunOperator](https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/operators/trigger_dagrun.py#L73)). If the task runs [self.defer](https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/operators/trigger_dagrun.py#L211) which raises a [TaskDeferred](https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/models/baseoperator.py#L1684). The scheduler will change the task instance state to [deferred](https://github.com/apache/airflow/blob/e299ac91e2fddc709487aaaa4bb24162f77ba615/airflow/utils/state.py#L59C17-L59C25). Then the [triggerer](https://airflow.apache.org/docs/apache-airflow/2.9.1/authoring-and-scheduling/deferring.html) will pick up the task and run the task in an async manner. After finishing, the trigger `yield` a TriggerEvent. Then the scheduler will once again assign a worker to run this task and run the `next_method` which is usually named as `execute_complate`.
+When a task with `deferrable=True` is triggered, the [scheduler](https://airflow.apache.org/docs/apache-airflow/2.9.1/administration-and-deployment/scheduler.html) assigns a worker to run the `execute` method of the operator (e.g., [TriggerDagRunOperator](https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/operators/trigger_dagrun.py#L73)). If the task runs [self.defer](https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/operators/trigger_dagrun.py#L211) which raises a [TaskDeferred](https://github.com/apache/airflow/blob/2d53c1089f78d8d1416f51af60e1e0354781c661/airflow/models/baseoperator.py#L1684). The scheduler will change the task instance state to [deferred](https://github.com/apache/airflow/blob/e299ac91e2fddc709487aaaa4bb24162f77ba615/airflow/utils/state.py#L59C17-L59C25). Then the [triggerer](https://airflow.apache.org/docs/apache-airflow/2.9.1/authoring-and-scheduling/deferring.html) will pick up the task and run the task in an async manner. After finishing, the trigger `yield` a TriggerEvent. Then the scheduler will once again assign a worker to run this task and run the `next_method` which is usually named as `execute_complete`.
 
 The current flow looks like this.
 
@@ -65,7 +65,7 @@ sequenceDiagram
 Well, not much at this moment. Ideally, everything should be the same but more efficient, and it might also open new opportunities for other use cases.
 
 ## How does it affect operator authors?
-A new way to way to implement operators in an async manner
+A new way to implement operators in an async manner
 
 ## Let's see how it looks like
 

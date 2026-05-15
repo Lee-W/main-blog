@@ -17,6 +17,8 @@ Lang: zh-tw
 
 👉 原文： [[DISCUSS] Consistent test assertion style: pytest-native vs unittest-style](https://lists.apache.org/thread/41b04mg0rolv0sj98jhogsztstxnqfg5)
 
+## 本文
+
 結論是 TP 所提出的
 
 ```python
@@ -31,6 +33,8 @@ assert mock_http_run.mock_calls == [
 ]
 assert mock_paginate.mock_calls == []
 ```
+
+## 我怎麼想
 
 ![blue-giant-chris-3](/images/meme/blue-giant-chris-3.jpg)
 

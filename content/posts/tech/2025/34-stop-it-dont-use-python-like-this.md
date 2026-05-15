@@ -103,7 +103,7 @@ def delete_file(program_name):
 但看到這段程式碼，我開始懷疑輸入的指令會不會也是錯的...
 
 還是去學學小林吧，小林比較會用 Python 寫程式
-👉 [小林的程式會不會遇到 SQL Injection]({filename}/posts/tech/2020/17-will-kobayashi-s-code-encounter-sql-injection.md))
+👉 [小林的程式會不會遇到 SQL Injection]({filename}/posts/tech/2020/17-will-kobayashi-s-code-encounter-sql-injection.md)
 
 ## 參考作品
 * [九龍大眾浪漫]

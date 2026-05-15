@@ -113,7 +113,7 @@ session.flush()
 ## How do we get it resolved?
 Returning to the PR [Enhance start_trigger_args serialization #40993](https://github.com/apache/airflow/pull/40993).
 
-We are aware of the locations for [serializing StartTriggerArgs](https://github.com/apache/airflow/pull/40993/files#diff-807ca0a4fd53aeb41166621c9842b0f89b7931fc64e9a60befa36c776db45efaR1126-R1128) and [deserializing StartTriggerArgs](https://github.com/apache/airflow/pull/40993/files#diff-807ca0a4fd53aeb41166621c9842b0f89b7931fc64e9a60befa36c776db45efaR1315-R1318). The current implementation is incorrect, so our objective is to [rewrite the serialize/deserialize method](<https://github.com/apache/airflow/pull/40993/files#diff-807ca0a4fd53aeb41166621c9842b0f89b7931fc64e9a60befa36c776db45efaR353-R386).
+We are aware of the locations for [serializing StartTriggerArgs](https://github.com/apache/airflow/pull/40993/files#diff-807ca0a4fd53aeb41166621c9842b0f89b7931fc64e9a60befa36c776db45efaR1126-R1128) and [deserializing StartTriggerArgs](https://github.com/apache/airflow/pull/40993/files#diff-807ca0a4fd53aeb41166621c9842b0f89b7931fc64e9a60befa36c776db45efaR1315-R1318). The current implementation is incorrect, so our objective is to [rewrite the serialize/deserialize method](https://github.com/apache/airflow/pull/40993/files#diff-807ca0a4fd53aeb41166621c9842b0f89b7931fc64e9a60befa36c776db45efaR353-R386).
 
 Within the arguments of StartTriggerArgs, `trigger_cls` and `next_method` are either strings or None, so there isn't much to do with them. However, we'll need to make some additional adjustments for `trigger_kwargs` and `next_kwargs`, which are dictionaries, and for `timeout`, which is a timedelta.
 

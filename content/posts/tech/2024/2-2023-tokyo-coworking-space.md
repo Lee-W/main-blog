@@ -126,7 +126,7 @@ MONZ SPACE 幾乎在築地市場旁邊
 * 營業時間： 07:00 ~ 24:00
 * 價錢: ￥3,000
 
-這是我東京第一間去的 coworking sapce
+這是我東京第一間去的 coworking space
 一開始蠻喜歡的
 多去了幾間之後，我覺得這間只有還可以
 本質是飯店的交誼空間
@@ -134,7 +134,7 @@ MONZ SPACE 幾乎在築地市場旁邊
 飲料是有幾種選擇的咖啡機，我覺得蠻夠的
 位置在涉谷這點可能是他最大的優點
 
-![.andwork shibuya](/images/posts-image/2024-2023-tokyo-coworking-space/17057695142234.jpg)  
+![.andwork shibuya](/images/posts-image/2024-2023-tokyo-coworking-space/17057695142234.jpg)
 
 ## .andwork kawasaki (川崎)
 * [Google Map](https://maps.app.goo.gl/JHFqummPCTrKf4oC7)

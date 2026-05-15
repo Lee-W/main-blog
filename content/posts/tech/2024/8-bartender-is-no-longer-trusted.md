@@ -6,7 +6,7 @@ Slug: where-should-we-go-if-bartender-is-no-longer-considered-safe
 Authors: Wei Lee
 Lang: zh-tw
 
-> 世界上絕對不能背叛客人的兩種職業，一種是醫師與藥劑是，另一種則是... 調酒師！
+> 世界上絕對不能背叛客人的兩種職業，一種是醫師與藥劑師，另一種則是... 調酒師！
 >
 > -- 佐佐倉溜
 
@@ -50,7 +50,7 @@ Bartender 默默的就易主了
 ### HiddenBar
 🔗 [link to Github](https://github.com/UeharaYou/HiddenBar)
 
-[UeharaYou](/UeharaYou) fork [hidden](https://github.com/dwarvesf/hidden) 出來維護的的版本
+[UeharaYou](https://github.com/UeharaYou) fork [hidden](https://github.com/dwarvesf/hidden) 出來維護的的版本
 Star 數不算太多，就沒特別試了
 但我有同事用這個
 

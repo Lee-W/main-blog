@@ -16,7 +16,7 @@ Lang: zh-tw
 
 ![archive-project](/images/posts-image/2025-i-can-archive-my-useless-package-on-pypi-now/archive-project.jpg)
 
-![templater3](/images/posts-image/2025-i-can-archive-my-useless-package-on-pypi-now//templater3.jpg)
+![templater3](/images/posts-image/2025-i-can-archive-my-useless-package-on-pypi-now/templater3.jpg)
 
 順手就把 templater3 封存起來，試試上線的新功能就是愉快
 這是以前的工作讀論文的時候用到的專案

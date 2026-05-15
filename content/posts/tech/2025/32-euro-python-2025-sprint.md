@@ -1,7 +1,7 @@
 Title: EuroPython 2025 Airflow Development Sprint
 Date: 2025-08-02 22:20 +0800
 Category: Tech
-Tags: EuroPython, Development Sprint
+Tags: EuroPython, Development Sprint, Open Source, Airflow
 Slug: europython-2025-airflow-development-sprint
 Cover: /images/posts-image/2025-europython-2025-airflow-development-sprint/venue.jpeg
 Authors: Wei Lee

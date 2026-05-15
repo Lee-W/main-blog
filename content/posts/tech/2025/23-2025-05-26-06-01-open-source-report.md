@@ -60,7 +60,7 @@ MyGO!!!!! 怎麼可能是浪費時間呢
 還蠻開心讓我初入開源的專案，到現在還在緩慢成長中
 雖然緩慢是因為我們 PR 看得慢嗚嗚嗚
 
-## pycon-etcl
+## pycon-etl
 這週除了 commitizen，我花了不少時間中於把 [Upgrade to Airflow 2.11.0 #158](https://github.com/pycontw/pycon-etl/pull/158/files) 整理完了！
 只要等 Henry 看完這個 PR ，就可以部署上去試試看了
 migration 的 patch 跟幾個可以玩的 dag 有試試看，目前看起來應該、可能、大概沒問題...吧
