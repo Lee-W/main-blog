@@ -8,6 +8,8 @@ Lang: en
 
 [Pylint](https://www.pylint.org)
 
+<!--more-->
+
 ## Setup
 
 ```shell
@@ -21,8 +23,6 @@ pip install pylint
 ```shell
 pylint your_code.py
 ```
-
-<!--more-->
 
 ### Customize your pylint settings
 

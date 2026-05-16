@@ -1,13 +1,13 @@
 Title: vimspell - vim 檢查英文文法的套件
 Date: 2015-02-14 09:59 +0800
 Category: Tech
-Tags: Vim
+Tags: Vim, Text Editor
 Slug: vim-spell-check
 Authors: Wei Lee
 Lang: zh-tw
 
 [vimspell](http://www.vim.org/scripts/script.php?script_id=465) 是一套提供 vim 根據字典來檢查文法的套件
-有了 vimsepll，寫 Markdown 或 LaTeX 的時候，就不用再怕拼錯字了
+有了 vimspell，寫 Markdown 或 LaTeX 的時候，就不用再怕拼錯字了
 
 <!--more-->
 
@@ -27,7 +27,7 @@ Bundle 'vimspell'
 
 我下載的是 `en_US.zip`
 
-解壓縮完後，用 vim 開啟街壓縮完的資料夾
+解壓縮完後，用 vim 開啟解壓縮完的資料夾
 應該會看到下面這樣
 ![1_directory](/images/posts-image/2015-02-14-vim-spell-check/gLWMnmW.png)
 

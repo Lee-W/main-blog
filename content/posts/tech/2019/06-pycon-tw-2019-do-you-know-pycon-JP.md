@@ -6,12 +6,14 @@ Slug: pycon-tw-2019-do-you-know-pycon-jp
 Authors: Wei Lee
 Lang: zh-tw
 
-[TOC]
-
 每年的 PyCon TW 都是我在台灣蠻期待的研討會
 雖然第一年來的時候，幾乎什麼都聽不懂
 但還是被各種大家正在做正在研究的事有些震撼到
 而今年跟往年不同的是，我誤打誤撞的成為了 PyCon TW 志工
+
+<!--more-->
+
+[TOC]
 
 多誤打誤撞呢
 大概就是我在報名了 PyCon JP 參訪團後不久突然收到了這個訊息

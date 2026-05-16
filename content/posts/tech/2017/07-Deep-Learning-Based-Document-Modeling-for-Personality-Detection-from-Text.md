@@ -21,7 +21,7 @@ Lang: en
 * Product and Service Recommendation (People with similar personalities might have similar favors)
 * Mental Health Diagnosis
 * Forensics: Reduce the circle of suspects
-* Human Resource: One's suitablitlty for certain jobs
+* Human Resource: One's suitability for certain jobs
 
 ## Personality Theory Used in This Paper
 
@@ -47,7 +47,7 @@ Mairesse baseline feature set (e.g. word count, average sentence length)
 
 ### 3. Filtering
 
-Sentences without personliaty clues are dropped
+Sentences without personality clues are dropped
 (Based on [NRC Word-Emotion Association Lexicon](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm))
 
 ### 4. Word-level feature extraction
@@ -57,7 +57,7 @@ Sentences without personliaty clues are dropped
 
 ### 5. Classification
 
-Deep CNN (Conolutional Nerual Network)
+Deep CNN (Convolutional Neural Network)
 
 * Input
     * Words: Fixed-length feature vector using word2vec

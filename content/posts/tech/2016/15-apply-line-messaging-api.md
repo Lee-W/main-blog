@@ -1,7 +1,7 @@
 Title: Apply Line Messaging API
 Date: 2016-11-22 12:43 +0800
 Category: Tech
-Tags: Chat Bot
+Tags: Chat Bot, Line, Tutorial
 Slug: apply-line-messaging-api
 Series: Line Bot Tutorial
 Authors: Wei Lee

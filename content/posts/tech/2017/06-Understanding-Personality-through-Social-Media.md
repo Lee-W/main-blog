@@ -44,7 +44,7 @@ e.g. ENFJ, INTP
     * Around 90,000 users
     * 120,000 personality-related tweets from 2006~2015 (out of 1.7 M tweets)
 
-#### What is the so-called personliaty-related tweets?
+#### What is the so-called personality-related tweets?
 
 * English Tweets that contain users' own MBIT code.
     e.g.
@@ -99,7 +99,7 @@ Since the data is skewed, AUC is used.
 
 #### Accuracy
 
-* Indivisula Features
+* Individual Features
     * Word Vector Only → (AUC=0.651)
     * n-gram only → (AUC=0.607)
     * POS only → (AUC=0.585)

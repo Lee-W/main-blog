@@ -37,7 +37,7 @@ pipenv install mkdocs --dev
 首先進到專案資料夾中，初始化 mkdocs 需要的檔案
 
 ```sh
-pipenv run mkdir new .
+pipenv run mkdocs new .
 ```
 
 執行後，資料夾會多出以下兩個檔案

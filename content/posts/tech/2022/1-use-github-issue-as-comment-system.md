@@ -26,7 +26,7 @@ comment_id: use-github-issues-as-comment-system
 
 [TOC]
 
-### 如何在 elegant 設定 utterances
+## 如何在 elegant 設定 utterances
 
 根據 [Comments — Enable Utterances](https://elegant.oncrashreboot.com/enable-utterances-comments) ， pelican 這端只要在 `pelicanconf.py` 加入 `UTTERANCES_REPO`
 
@@ -80,14 +80,14 @@ Authors: Wei Lee
 
 ![comment-with-comment-id](/images/posts-image/2021-use-github-issues-as-comment-system/comment-with-comment-id.png)
 
-我會建議可以的話為每篇文章加上 `commend_id`
+我會建議可以的話為每篇文章加上 `comment_id`
 除了比較好看以外，也能避免換網域，評論全都不見的問題
 ~~但像我這種沒什麼人留言的就沒差了 😭~~
 
 ## elegant 是怎麼做到的？
 
-為了能更容易在 attlia 加入 utterances，我稍微研究了 elegant 是怎麼加的
-以下的程式碼都是使用 [elegnat @ v5.4.0](https://github.com/Pelican-Elegant/elegant/tree/V5.4.0)
+為了能更容易在 attila 加入 utterances，我稍微研究了 elegant 是怎麼加的
+以下的程式碼都是使用 [elegant @ v5.4.0](https://github.com/Pelican-Elegant/elegant/tree/V5.4.0)
 
 在 elegant 中全域搜尋 utterances，會先找到 [elegant/templates/_includes/utterances_scripts.html](https://github.com/Pelican-Elegant/elegant/blob/V5.4.0/templates/_includes/utterances_scripts.html)
 
@@ -144,7 +144,7 @@ Authors: Wei Lee
     * `templates/partials/utterances_scripts.html`
 3. 在 render每篇文章的 template 中使用 `comments_script_utterances`
     * `templates/article.html#L222`
-4. 確保 macro 用到的參數，即使在 `peliconconf.py` 沒有正確設定的狀況下，依然有適當的預設值
+4. 確保 macro 用到的參數，即使在 `pelicanconf.py` 沒有正確設定的狀況下，依然有適當的預設值
     * `templates/partials/_defaults.html`
     * `templates/article.html#L212`
 

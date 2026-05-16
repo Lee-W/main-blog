@@ -22,7 +22,7 @@ Lang: zh-tw
 brew install rename
 ```
 
-# 使用
+## 使用
 
 ```shell
 rename s/pattern1/pattern2/ files

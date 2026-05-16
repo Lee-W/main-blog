@@ -424,9 +424,9 @@ with log_level(logging.DEBUG, "mylog") as logger:
 * 在程式碼加入以下這行，就能讓程式執行到這一步時停下，開啟互動式的 python shell
 
 ```python
-import pdf
+import pdb
 
-pdf.set_trace()
+pdb.set_trace()
 ```
 
 * 檢視執行中的程式
@@ -474,7 +474,7 @@ time1 = tracemalloc.take_snapshot()
 
 # some code that waste memory
 
-time2 = tracemallo.take_snapshot()
+time2 = tracemalloc.take_snapshot()
 
 stats = time2.compare_to(time1, "lineno")
 for stat in stats:

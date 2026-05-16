@@ -158,7 +158,7 @@ settings["MARKDOWN"] = {}
 
 ### plot
 最初版測試用的 script，先了用我比較熟悉的 [bokeh](https://docs.bokeh.org/en/latest/index.html) 寫
-但上次有朋友安利我 [ploty](https://plotly.com/python/) 很好用，就決定來玩玩看
+但上次有朋友安利我 [plotly](https://plotly.com/python/) 很好用，就決定來玩玩看
 使用上覺得兩個函式庫都還蠻直覺的
-但 ploty 可以不用多做設定就有 hover tool ，還蠻方便的
+但 plotly 可以不用多做設定就有 hover tool ，還蠻方便的
 因為這部分的程式碼大多都是看文件就能找到，就不特別聊了

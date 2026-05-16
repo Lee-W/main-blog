@@ -388,7 +388,7 @@ Use `dvc push` to send your updates to remote storage.
 $ git checkout dvc.lock params.yaml
 ```
 
-We're not going to store this parameter change. Run `git checkout out params.yaml dvc.lock` to restore the previous state.
+We're not going to store this parameter change. Run `git checkout params.yaml dvc.lock` to restore the previous state.
 
 ### Track metrics
 We now know how to track parameters. Next, we'll see how changing these parameters affect the performance of our models. You may have already noticed that we've outputted a `output/metrics.json` file. Although we could track it as the output file, DVC has better support for metrics files.

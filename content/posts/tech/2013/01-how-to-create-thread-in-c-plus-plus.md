@@ -12,7 +12,7 @@ Lang: zh-tw
 <!--more-->
 
 要使用 C++11 的 `thread` 在編譯時要加上 `-std=c++11 -pthread`
-(`-std=c++ -lphread` 好像也可以 )
+(`-std=c++11 -lpthread` 好像也可以 )
 
 e.g. `g++ -o t thread.cpp -std=c++11 -pthread`
 `-std=c++11` :  是指定 c++ 的版本
@@ -37,7 +37,7 @@ thread 的 constructor 的第一個參數是函數名稱，第二個以後就是
 using namespace std;
 
 void fun1() {
-        cout<<"This is funtion1"<<endl;
+        cout<<"This is function1"<<endl;
 }
 
 void fun2(int p1, int p2) {
@@ -73,11 +73,11 @@ using namespace std;
 class A {
 public:
         void fun1(int p1) {
-                cout<<"This is funtion1"<<endl;
+                cout<<"This is function1"<<endl;
         }
 
         void fun2() {
-                thread t(&example::fun1, this, 1);
+                thread t(&A::fun1, this, 1);
                 t.join();
         }
 };
@@ -100,7 +100,7 @@ using namespace std;
 class A {
 public:
         void fun1() {
-                cout<<"This is funtion1"<<endl;
+                cout<<"This is function1"<<endl;
         };
 };
 

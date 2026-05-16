@@ -24,7 +24,7 @@ Trace/BPT trap: 5
 ( 版本號則要根據自身 gcc 的版本來做修改 )
 
 ```shell
-ln -s /usr/local/lib/gcc/5/ /usr/local/lib/gcc/6/
+ln -s /usr/local/lib/gcc/6/ /usr/local/lib/gcc/5/
 ```
 
 ## Reference

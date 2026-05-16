@@ -15,6 +15,8 @@ Lang: zh-tw
 想說這次不去，說不定就不會再有這樣的揪團了
 就衝動的報名下去了 XD
 
+<!--more-->
+
 [TOC]
 
 ## Development Sprint

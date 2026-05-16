@@ -149,7 +149,7 @@ gi -a "types"
 
 ```shell
 gi -e "types"
-# e.g.,e.g.,, gi -e vim osx
+# e.g., gi -e vim osx
 ```
 
 ### 更新本地端的支援列表

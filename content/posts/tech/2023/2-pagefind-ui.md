@@ -15,7 +15,7 @@ Lang: zh-tw
 
 [TOC]
 
-### 什麼是 [Pagefind UI](https://pagefind.app/) 呢
+## 什麼是 [Pagefind UI](https://pagefind.app/) 呢
 
 根據官網的介紹
 

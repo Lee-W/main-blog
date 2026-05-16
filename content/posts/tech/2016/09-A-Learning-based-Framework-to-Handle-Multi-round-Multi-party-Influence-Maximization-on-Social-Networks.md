@@ -35,8 +35,8 @@ Lang: en
 1. Known strategy → Both know and unknown
     * Known or Unknown but available to compete → Train a model to learn strategy
     * Unknown → Game-theoretical solution to seek the Nash equilibrium
-2. Single-roung → Multi-round
-3. Model driven → learning-based, data-drivern
+2. Single-round → Multi-round
+3. Model driven → learning-based, data-driven
 4. Not considering different network topology → General to adapt both opponent's strategy and environment setting (e.g. underlying network topology)
 
 ## 2. Problem Statement
@@ -53,19 +53,19 @@ Lang: en
 ## 4. Methodology
 
 * NP-hardness of MRCIM → looks for approximate solution
-* Max the inflence for each round does not guarantee overall max
+* Max the influence for each round does not guarantee overall max
     * Due to the fact that each round are not independent
 
 ### 4.1 Preliminary: Reinforcement Learning
 
 * Learn a policy $\pi(s)$ to determine which action to take state s (environment)
 * How to estimated $\pi$?
-    * Expected Accmulated Reward of a state (V function)
+    * Expected Accumulated Reward of a state (V function)
         * $ V^\pi(s) = E_\pi\{R_t|S_t=s\}=...$
-    * Expected Accmulated Reward of a state-action pair (Q function)
+    * Expected Accumulated Reward of a state-action pair (Q function)
         * $ Q^\pi(s, a) = E_\pi\{R_t|S_t=s, a_t=a\}=...$
 
-The optimal $\pi$ can be obtained through Q functinon
+The optimal $\pi$ can be obtained through Q function
 
 $ \pi = \arg \min_{a\in A}Q(s,a)$
 
@@ -103,7 +103,7 @@ $ \pi = \arg \min_{a\in A}Q(s,a)$
     * Features Designed
         * Number of free nodes
         * Sum of degrees of all nodes
-        * Sum of weight of the edges for which bot h vertices are free
+        * Sum of weight of the edges for which both vertices are free
         * Max degree among all free nodes
         * Max sum of free out-edge weight of a node among nodes which are the first player's neighbors
         * Second player's
@@ -159,29 +159,29 @@ $ Algorithm $
 
 * The difference between the known case is that experience cannot be obtained through simulation
 * Train against unknown opponent's strategy during competition
-    * It's feasible because STORM-Q only needs to know the seed-selection outcoms of the opponent to update the Q-table, not exact strategy it takes
+    * It's feasible because STORM-Q only needs to know the seed-selection outcomes of the opponent to update the Q-table, not exact strategy it takes
 
 ### Unknown
 
 * Goal: Create a general model to compete a variety of rational strategies
-* Assumption: The oppoent is rational (Wants to max influence and knows its oppoent wants so)
+* Assumption: The opponent is rational (Wants to max influence and knows its opponent wants so)
 * STORM-QQ
-    * Two STROM-Q compete and update Q-tabale at the same time
+    * Two STORM-Q compete and update Q-table at the same time
     * Using current Q-table during training phase
     * Pure Strategy
         * Does Not guarantee that equilibrium exists in MRCIM
 * STORM-MM
     * Mix Strategy (Samples an action from the distribution of actions in each state)
     * In two-player zero-sum game
-        * Nash equilibrium is graranteed to exist with miexed strategies
+        * Nash equilibrium is guaranteed to exist with mixed strategies
         * Use MINMAX theorem to find the equilibrium
-    * $Q(s, a, o)$: The reward of first party when using strategy $a$ against oppoent's strategy $o$ in state $s$
+    * $Q(s, a, o)$: The reward of first party when using strategy $a$ against opponent's strategy $o$ in state $s$
     * $Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma V(s_{t+1})]$
     * Operations  Research
 
-* The difference between STROM-QQ and STORM-MM
+* The difference between STORM-QQ and STORM-MM
 
-|STROM-QQ|STROM-MM|
+|STORM-QQ|STORM-MM|
 |--|--|
 |Max the reward in their own Q-table|Finds equilibrium with one Q-table and determines both side's $a$ at the same time|
 |Pure Strategies|Mixed Strategies|

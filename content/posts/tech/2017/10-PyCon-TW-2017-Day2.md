@@ -27,7 +27,7 @@ Lang: zh-tw
 
 ## 議程
 
-* [[Keynote] Building for Failure: Leraning Lessons from Aviation](#1)
+* [[Keynote] Building for Failure: Learning Lessons from Aviation](#1)
 * [自py系列2] 投資策略驗證系統
     * [slide](https://docs.google.com/presentation/d/1i5PwAHxXZQ2fewn194_gRU3kMG5s-04s1Pil0yJREHQ/edit#slide=id.g1ce6af9da4_1_8)
     * [共筆](https://hackfoldr.org/pycontw2017/https%253A%252F%252Fhackmd.io%252Fs%252FBkMVJwTy-)

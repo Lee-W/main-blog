@@ -1,7 +1,7 @@
 Title: Introduction to Chatbot
 Date: 2016-11-21 08:18 +0800
 Category: Tech
-Tags: Chat Bot
+Tags: Chat Bot, NLP, Line
 Slug: introduction-to-chatbot
 Series: Line Bot Tutorial
 Authors: Wei Lee

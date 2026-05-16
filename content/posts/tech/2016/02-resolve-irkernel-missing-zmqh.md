@@ -6,6 +6,8 @@ Slug: resolve-irkernel-missing-zmqh
 Authors: Wei Lee
 Lang: zh-tw
 
+記錄在安裝 IRKernel 時，出現 `zmq.h` 找不到錯誤的解決方式。
+
 <!--more-->
 
 ## 安裝 IRKernel

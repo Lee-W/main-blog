@@ -25,11 +25,11 @@ Lang: zh-tw
 安裝這些 powerline 之前要先下載 powerline 字體
 不然可能會無法正常顯示
 在 [powerline-fonts](https://github.com/Lokaltog/powerline-fonts) 下載後，之後安裝就完成了
-*記得要把終端機的字體條成這些有 powerline 結尾的字體，我當初就是沒用這個卡了很久 = =*
+*記得要把終端機的字體調成這些有 powerline 結尾的字體，我當初就是沒用這個卡了很久 = =*
 
 ```shell
-git clone https://github.com/Lokaltog/powerline-fonts /tmp/git/clone
-sudo mv /tmp/git-clone/powerline-fonts /usr/share/fonts/powerline-fonts
+git clone https://github.com/Lokaltog/powerline-fonts /tmp/git-clone
+sudo mv /tmp/git-clone /usr/share/fonts/powerline-fonts
 sudo fc-cache -v -f
 ```
 

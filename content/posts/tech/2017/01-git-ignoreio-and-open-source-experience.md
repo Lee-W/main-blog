@@ -17,7 +17,7 @@ Lang: zh-tw
 
 ## git ignore-io
 
-這個工具主要是從[gitignoore.io](https://www.gitignore.io) 上下載 .gitignore 的範本
+這個工具主要是從[gitignore.io](https://www.gitignore.io) 上下載 .gitignore 的範本
 e.g.,
 
 ```bash

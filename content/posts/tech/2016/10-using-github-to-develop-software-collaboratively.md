@@ -17,7 +17,7 @@ Lang: zh-tw
 
 ## Introduction to Git Hub (Company)
 
-There are around 2600 staffs in GitHub and 40% of them live in San Fransisco.
+There are around 2600 staffs in GitHub and 40% of them live in San Francisco.
 Among them, there is one Taiwanese.
 
 ## Git
@@ -36,13 +36,13 @@ git init "path"
 ```
 
 `.git` is just a folder with normal file
-There is no daemon or background progress
+There is no daemon or background process
 Everything is operated in file
 Never `rm -rf .git` XD
 
 ```shell
 git status
-touch README.mdd
+touch README.md
 ```
 
 There are three main stages

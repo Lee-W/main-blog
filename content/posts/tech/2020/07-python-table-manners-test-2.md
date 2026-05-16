@@ -78,7 +78,7 @@ def db():
     _db.close()
 
 
-@pytest.fixtures(scope="function")
+@pytest.fixture(scope="function")
 def insert_admin_user(db):
     # 初始化 user
     user = User(name="admin")

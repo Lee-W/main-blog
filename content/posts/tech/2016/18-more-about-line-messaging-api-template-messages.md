@@ -1,7 +1,7 @@
 Title: More About Line Messaging API - Template Messages
 Date: 2016-11-27 06:08 +0800
 Category: Tech
-Tags: Chat Bot
+Tags: Chat Bot, Line, Tutorial
 Slug: more-about-line-messaging-api-template-messages
 Series: Line Bot Tutorial
 Authors: Wei Lee
@@ -73,7 +73,7 @@ e.g. 這是我按下上面 Button 的 postback 的效果
 
 當使用者按了這個按鍵
 Line Server 會傳一個 postback event 給我們，裡面包含著 data 參數中設定的字串
-在收到 event 的時候，透過 `event.postback.postback.data` 取出 data
+在收到 event 的時候，透過 `event.postback.data` 取出 data
 
 Postback 可以不給 text 參數
 
