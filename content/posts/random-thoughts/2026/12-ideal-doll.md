@@ -45,6 +45,6 @@ Lang: zh-tw
 
 ---
 
-回顧了兩年前的[用立牌拍照的哲學思辨]({filename}/posts/random-thoughts/2024/2-use-acrylic-standees-to-take-photos.md)
+回顧了兩年前的[用立牌拍照的哲學思辨]({filename}/posts/random-thoughts/2024/02-use-acrylic-standees-to-take-photos.md)
 我已經從只有立牌到擁有娃娃，並且會帶出門了...
 果然宅宅一直走下去，必定會在 PVC 跟娃中選至少一條走嗎...

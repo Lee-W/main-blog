@@ -60,7 +60,7 @@ Lang: zh-tw
 * [江松霖](https://www.youtube.com/@sungsungvideo) → 小松的歌要聽一輩子
 
 ## 🏃‍➡️ 最近動的
-* 🥊 [拳擊]({filename}/posts/random-thoughts/2024/1-boxing.md)
+* 🥊 [拳擊]({filename}/posts/random-thoughts/2024/01-boxing.md)
 * 🏹 弓道 （因為射不中，所以不敢選中靶的 emoji）
 * 🏋️ 健身
 * 🗡️ [演武](https://www.facebook.com/kobusuishinliu)

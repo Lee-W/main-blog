@@ -25,7 +25,7 @@ The Force is strong with this shirt.
 ![finish.jpeg](/images/posts-image/2025-supau-cup-mini-marathon/finish.jpeg)
 
 原本以為比練習的時候快了不少
-翻了一下[9 公里慢跑初體驗]({filename}/posts/random-thoughts/2025/3-first-9-km-run.md)才發現，也不過就快了 1 分鐘左右
+翻了一下[9 公里慢跑初體驗]({filename}/posts/random-thoughts/2025/03-first-9-km-run.md)才發現，也不過就快了 1 分鐘左右
 根本就沒顯著差異 🥺
 
 ![result.jpeg](/images/posts-image/2025-supau-cup-mini-marathon/result.jpeg)

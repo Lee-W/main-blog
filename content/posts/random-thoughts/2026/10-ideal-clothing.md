@@ -12,7 +12,7 @@ Lang: zh-tw
 
 <!--more-->
 
-一直以來，我都不能理解對他人的容貌、衣著有一堆意見的[快樂寶貝]({filename}/posts/random-thoughts/2026/8-ideal-elegant-anger.md)，到底有什麼毛病
+一直以來，我都不能理解對他人的容貌、衣著有一堆意見的[快樂寶貝]({filename}/posts/random-thoughts/2026/08-ideal-elegant-anger.md)，到底有什麼毛病
 
 在這個社群發達的年代，更是有不少人甚至會為此感到容貌焦慮
 我不能理解的最大原因，大概就是快樂寶貝們怎麼這麼閒

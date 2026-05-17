@@ -21,7 +21,7 @@ Lang: zh-tw
 
 接著在因緣巧合下接觸了各種不同的運動
 
-其中我練得最認真的是拳擊 ([用投資大盤的方式，投資健康]({filename}/posts/random-thoughts/2024/1-boxing.md))
+其中我練得最認真的是拳擊 ([用投資大盤的方式，投資健康]({filename}/posts/random-thoughts/2024/01-boxing.md))
 時至今日，它已經是我一週開始的重要訊號
 雖然每次要去上課都還是會覺得有些抗拒
 但沒能去上課，就會有種一週無法開始的感覺
@@ -48,7 +48,7 @@ Lang: zh-tw
 到某個時間點，我發現我在拳擊、弓道、武士刀各種運動都卡關了
 我聽不懂教練們跟我說的哪裡哪裡要放鬆，哪裡哪裡要用力
 就意識到真的得去健身房找教練調整一下身體使用方式
-所以就開始[健身]({filename}/posts/random-thoughts/2025/6-weight-training.md)了
+所以就開始[健身]({filename}/posts/random-thoughts/2025/06-weight-training.md)了
 這是我近年來數一數二正確的決定，只可惜沒早點開始
 之前的抗拒心理應該是來自「健身房是巨巨去的地方，不適合我這樣的哥布林」的既定印象
 

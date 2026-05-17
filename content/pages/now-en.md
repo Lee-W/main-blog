@@ -60,7 +60,7 @@ My thoughts 👉 [Those Things No One Cares About](https://travlog.wei-lee.me/)
 * [江松霖](https://www.youtube.com/@sungsungvideo) → will keep recommending forever
 
 ## 🏃‍➡️ What I’ve been doing physically
-* 🥊 [Boxing]({filename}/posts/random-thoughts/2024/1-boxing.md)
+* 🥊 [Boxing]({filename}/posts/random-thoughts/2024/01-boxing.md)
 * 🏹 Kyudo (not good enough to deserve a “bullseye” emoji)
 * 🏋️ Gym
 * 🗡️ [Martial performance]((https://www.facebook.com/kobusuishinliu))

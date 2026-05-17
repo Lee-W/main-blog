@@ -110,7 +110,7 @@ Trilium Notes 看起來蠻酷的
 但裡面不少做法比較挑戰一點
 可能要慢慢來
 不過我想先來推薦一本書！
-[[Book] 為什麼要睡覺]({filename}/posts/book/2020/5-why-we-sleep.md)
+[[Book] 為什麼要睡覺]({filename}/posts/book/2020/05-why-we-sleep.md)
 
 * [徒手健身推坑 | 西瓜生長日記 🍉](https://watermelon.bearblog.dev/calisthenics/)
 
@@ -234,8 +234,8 @@ Trilium Notes 看起來蠻酷的
 因為它最能引起我的共鳴
 之前我寫過的幾篇文章中，也常提到對「信仰」和生活的思考
 
-* [推しは推せる時に推せる]({filename}/posts/random-thoughts/2025/4-support-your-oshi-while-you-can.md)
-* [報導者十週年]({filename}/posts/random-thoughts/2026/2-the-reporter-10th.md#_2) 最後無關報導者的一段
+* [推しは推せる時に推せる]({filename}/posts/random-thoughts/2025/04-support-your-oshi-while-you-can.md)
+* [報導者十週年]({filename}/posts/random-thoughts/2026/02-the-reporter-10th.md#_2) 最後無關報導者的一段
 
 ---
 

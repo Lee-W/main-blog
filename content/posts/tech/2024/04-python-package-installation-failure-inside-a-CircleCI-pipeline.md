@@ -6,7 +6,7 @@ Slug: python-package-installation-failure-inside-a-circleci-pipeline
 Authors: Wei Lee
 Lang: zh-tw
 
-就像上次的[github actions 上遇到的]({filename}/posts/tech/2024/1-how-to-deal-with-could-not-read-username-for-github.md)
+就像上次的[github actions 上遇到的]({filename}/posts/tech/2024/01-how-to-deal-with-could-not-read-username-for-github.md)
 原本跑得好好的 CI pipeline 又又又死掉了
 
 <!--more-->

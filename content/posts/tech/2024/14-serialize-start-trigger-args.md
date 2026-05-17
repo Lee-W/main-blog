@@ -88,7 +88,7 @@ But,  ...
 
 Before we discuss how to make the serialization work correctly, we should probably also consider why we need serialization.
 
-Let's bring back the diagram in the [first article]({filename}/posts/tech/2024/7-airflow-start-execution-directly-from-trigger-instead-of-going-into-worker.md).
+Let's bring back the diagram in the [first article]({filename}/posts/tech/2024/07-airflow-start-execution-directly-from-trigger-instead-of-going-into-worker.md).
 
 ```mermaid
 sequenceDiagram

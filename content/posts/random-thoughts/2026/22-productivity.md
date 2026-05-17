@@ -57,7 +57,7 @@ QB 曾這麼說
 不然就會陷入「原本要早睡，最後還是滑手機滑到很晚」
 
 看到[劉昕](https://shuaixin.cc/)寫的[為什麼我九點睡？](https://shuaixin.cc/Sleep-at-9/)就覺得好理想，我希望我哪天可以做到
-至於要怎麼有效地好好睡覺，一切的心法都放在[為什麼要睡覺]({filename}/posts/book/2020/5-why-we-sleep.md)了
+至於要怎麼有效地好好睡覺，一切的心法都放在[為什麼要睡覺]({filename}/posts/book/2020/05-why-we-sleep.md)了
 要先有好好睡覺，才有辦法開始談生產力
 
 ---
@@ -97,4 +97,4 @@ TL;DR: 如果在這篇文章想帶走一個概念，那我會說**好好睡覺**
 ---
 
 在寫這篇文章的時候，才發現我接近10年前就寫過類似的內容了 👉 [我如何更有效率的使用時間]({filename}/posts/random-thoughts/2017/01-how-do-i-manage-time.md)
-[原子習慣]: {filename}/posts/book/2020/1-atomic-habit.md#16
+[原子習慣]: {filename}/posts/book/2020/01-atomic-habit.md#16

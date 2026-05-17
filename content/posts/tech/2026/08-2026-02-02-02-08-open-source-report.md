@@ -7,7 +7,7 @@ Slug: 2026-02-02-02-08-open-source-report
 Authors: Wei Lee
 Lang: zh-tw
 
-上週沒特別發一篇週報，但整週的貢獻都寫在 [scisprint Taipei 2026 January]({filename}/posts/tech/2026/7-scisprint-taipei-2026-january.md) 了
+上週沒特別發一篇週報，但整週的貢獻都寫在 [scisprint Taipei 2026 January]({filename}/posts/tech/2026/07-scisprint-taipei-2026-january.md) 了
 
 <!--more-->
 
