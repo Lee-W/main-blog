@@ -1,13 +1,12 @@
 Title: 你何不問問你自己
 Subtitle: 謝謝你 Claude
-Date: 2026-05-19 08:00 +0800
+Date: 2026-05-19 11:50 +0800
 Category: Random Thoughts
 Tags: Blog
 Slug: why-not-ask-yourself
 Cover: /images/meme/mygo-believe-in-yourself.jpg
 Authors: Wei Lee
 Lang: zh-tw
-Status: Draft
 
 原本想問 Claude 在某某情境下，推薦我去哪間電影院
 然後得到了這個...
