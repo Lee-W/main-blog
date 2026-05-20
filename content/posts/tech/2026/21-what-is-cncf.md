@@ -12,7 +12,7 @@ Lang: zh-tw
 <!--more-->
 
 我思索了一下 🤔
-那肯定是 **Cookie Nana Cake Friends**!
+那肯定是 **Cookie Naan Cake Friends**!
 大家都是食物好朋友
 
 ![CNCF](/images/posts-image/2026/what-is-cncf/CNCF.png)
