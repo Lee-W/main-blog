@@ -45,7 +45,7 @@ QB 曾這麼說
 
 ![avemujica-sleep-now](/images/meme/avemujica-sleep-now.png)
 /// caption
-出自 [BanG Dream! Ave Mujica [4]](https://ani.gamer.com.tw/animeVideo.php?sn=41924)
+© BanG Dream! Project | 出自 [BanG Dream! Ave Mujica [4]](https://ani.gamer.com.tw/animeVideo.php?sn=41924)
 ///
 
 人的注意力是有限的

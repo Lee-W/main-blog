@@ -19,7 +19,7 @@ Lang: zh-tw
 
 ![I'm unafraid of oblivion](/images/meme/avemujica-unafraid-of-oblivion.jpg)
 /// caption
-出自 [BanG Dream! Ave Mujica](https://ani.gamer.com.tw/animeVideo.php?sn=41638)
+© BanG Dream! Project | 出自 [BanG Dream! Ave Mujica](https://ani.gamer.com.tw/animeVideo.php?sn=41638)
 ///
 
 之所以會想起來，是因為看到了 LQ7 大大最新的[跟風]

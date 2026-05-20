@@ -47,7 +47,7 @@ Lang: zh-tw
 
 ![立希表示，總統府攝影竟然無視燈](/images/meme/mygo-ignore-tomorin.jpg)
 /// caption
-出自[《BanG Dream! It's MyGO!!!!!》第 9 集](https://ani.gamer.com.tw/animeVideo.php?sn=34281)
+© BanG Dream! Project | 出自[《BanG Dream! It's MyGO!!!!!》第 9 集](https://ani.gamer.com.tw/animeVideo.php?sn=34281)
 ///
 
 但接見時，我的座位在前排
