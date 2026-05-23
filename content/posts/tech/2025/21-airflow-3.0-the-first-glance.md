@@ -67,7 +67,10 @@ alpha 2 不是好好的嗎
 可是那時候除了 Python 以外並沒有實作其他的 SDK
 你可以用其他語言的 SDK ，但並沒有所謂其他語言的 SDK
 
-![mygo-it-is-but-it-is-not](/images/meme/mygo-it-is-but-it-is-not.jpg)
+![avemujica-it-is-but-it-is-not](/images/meme/avemujica-it-is-but-it-is-not.jpg)
+/// caption
+© BanG Dream! Project | 出自 [BanG Dream! Ave Mujica](https://ani.gamer.com.tw/animeVideo.php?sn=41638)
+///
 
 然而！
 最近已經要開始撰寫 GO 的 SDK 了

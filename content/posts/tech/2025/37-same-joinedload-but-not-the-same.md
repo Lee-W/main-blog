@@ -4,7 +4,7 @@ Date: 2025-08-16 11:35 +0800
 Category: Tech
 Tags: Python, Gotcha, SQLAlchemy
 Slug: same-joinedload-but-not-the-same
-Cover: /images/meme/mygo-it-is-but-it-is-not.jpg
+Cover: /images/meme/avemujica-it-is-but-it-is-not.jpg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -44,7 +44,10 @@ __'. Did you mean: '__ne__'?
 joinedload = strategy_options.joinedload._unbound_fn
 ```
 
-![mygo-it-is-but-it-is-not](/images/meme/mygo-it-is-but-it-is-not.jpg)
+![avemujica-it-is-but-it-is-not](/images/meme/avemujica-it-is-but-it-is-not.jpg)
+/// caption
+© BanG Dream! Project | 出自 [BanG Dream! Ave Mujica](https://ani.gamer.com.tw/animeVideo.php?sn=41638)
+///
 
 至於 `from sqlalchemy.orm.strategy_options import joinedload` 是怎麼來的
 這是 neovim 中的 LSP 建議的，然後又是來自 SQLAlchemy
