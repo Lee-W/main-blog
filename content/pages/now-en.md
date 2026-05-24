@@ -1,6 +1,6 @@
 Title: Now
 Date: 2026-04-25 18:50
-Modified: 2026-05-09 11:00
+Modified: 2026-05-24 09:50
 Slug: now
 Lang: en
 
@@ -16,6 +16,7 @@ Lang: en
 
 ## 🔥 Things I'm into lately
 * Joining [BlogBlog.Club](https://blogblog.club/) → slowly moving content from other platforms back to my own blog
+* Building AI workflow [Maigo](https://github.com/lee-W/maigo) and mujica (private) so I'm constantly surrounded by BanG Dream! even while working
 * Having a friendly "blog arms race" with [another Wei](https://weiblog.me/) to see who can make their blog cooler first ~~before we burn through all our tokens~~ — and hopefully write more along the way
 
 ## 🧑‍💻 What I've been doing
@@ -23,24 +24,21 @@ Lang: en
     * [AIP-76](https://github.com/orgs/apache/projects/542) (in progress)
     * (self-proclaimed) SQLite database upgrade guardian
 
-## 🔍 What I've been exploring
-* [claude-howto](https://github.com/luongnv89/claude-howto) → trying to use Claude more effectively
-* [agent-flow](https://github.com/josix/agent-flow/) → want to build a "lifetime Agent team"
-
 ## 📺 What I've been watching
 * 🎬 [Galaxy Express Milky☆Subway](https://anilist.co/anime/204949/--/) → weird… let me watch that again. I like it.
-* [A Hundred Scenes of AWAJIMA](https://ani.gamer.com.tw/animeVideo.php?sn=48595)
+* [Awajima Hyakkei](https://ani.gamer.com.tw/animeVideo.php?sn=48595)
 
 <!-- rumdl-disable -->
 ??? Other 2026 Spring anime I'm following
-    * Re: ZERO -Starting Life in Another World- Season 4
-    * The Food Diary of Miss Maid
     * Botan Kamiina Fully Blossoms When Drunk
+    * The Food Diary of Miss Maid
+    * Re: ZERO -Starting Life in Another World- Season 4
     * Akane-banashi
+    * Witch Hat Atelier
     * Daemons of the Shadow Realm
     * Marriage Toxin
-    * Witch Hat Atelier
     * Agents of the Four Seasons: Dance of Spring
+    * CANDY CARIES
 <!-- rumdl-disable -->
 
 You can follow what I'm watching in real time 👉 [AniList](https://anilist.co/user/clleew/), [Letterboxd](https://letterboxd.com/clleew/), [Trakt](https://app.trakt.tv/users/clleew)  

@@ -1,6 +1,6 @@
 Title: 近況
 Date: 2026-04-25 18:50
-Modified: 2026-05-09 11:00
+Modified: 2026-05-24 09:50
 Slug: now
 Lang: zh-tw
 
@@ -16,6 +16,7 @@ Lang: zh-tw
 
 ## 🔥 最近熱衷的
 * 參加 [BlogBlog.Club - 部落部落俱樂部](https://blogblog.club/) → 慢慢把原本會發在其他服務的內容，都放到部落格
+* 開發 [Maigo（迷子）](https://github.com/lee-W/maigo) 跟私有的 mujica 兩個 AI agent 的工作流，讓我在做事的時候也被邦邦環繞
 * 跟[另一個Wei](https://weiblog.me/)軍備競賽，看誰可以把部落格弄得更酷~~把 Token 先燒完~~，可以多寫一些文章
 
 ## 🧑‍💻 最近做的
@@ -23,24 +24,21 @@ Lang: zh-tw
     * [AIP-76](https://github.com/orgs/apache/projects/542) (進行中)
     * （自稱）SQLite 資料庫升級守門員
 
-## 🔍 最近研究的
-* [claude-howto](https://github.com/luongnv89/claude-howto)   → 想更有效使用 Claude
-* [agent-flow](https://github.com/josix/agent-flow/) → 想組個「一輩子 Agent 團」
-
 ## 📺 最近看的
 * 🎬 [銀河特急Milky☆Subway](https://anilist.co/anime/204949/--/): 好怪，再看一眼，喜歡
 * [淡島百景](https://ani.gamer.com.tw/animeVideo.php?sn=48595)
 
 <!-- rumdl-disable -->
 ??? 其他在追的 2026 春季新番
-    * Re: 從零開始的異世界生活 第四季
-    * 女僕小姐的貪吃日常
     * 上伊那牡丹，醉姿如百合
+    * 女僕小姐的貪吃日常
+    * Re: 從零開始的異世界生活 第四季
     * 朱音落語
+    * 魔法帽的工作室
     * 黃泉使者
     * 婚姻劇毒
-    * 魔法帽的工作室
     * 春夏秋冬代行者 春之舞
+    * CANDY CARIES 蛀在糖糖裡
 <!-- rumdl-disable -->
 
 即時跟到我在看什麼 👉 [AniList](https://anilist.co/user/clleew/), [Letterbox](https://letterboxd.com/clleew/), [Trakt](https://app.trakt.tv/users/clleew)
