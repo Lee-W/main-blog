@@ -85,6 +85,9 @@ MARKDOWN = {
 UTTERANCES_LABEL = "blog-comment"
 COMMENTS_INTRO = "你喜歡這篇文章嗎？你覺得怎麼樣？歡迎在下方留言。"
 
+# pelican-random-article
+RANDOM_ARTICLE_BUTTON = True
+
 # Theme Setting
 THEME = attila.get_path()
 
