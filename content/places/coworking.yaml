@@ -41,6 +41,27 @@ Le-Promenoir-Coffee:
     - label: "4F劇場咖啡 Le Promenoir Coffee"
       href: "{filename}/posts/random-thoughts/2026/19-Le-Promenoir-Coffee.md"
 
+notch-coffee-honten:
+  name: NOTCH咖啡 本町店
+  lat: 25.0454762
+  lon: 121.5134240
+  address: 臺北市中正區黎明里重慶南路一段35號
+  country: 臺灣
+  city: 臺北
+  district: 中正
+  hours: "07:40 ~ 20:30"
+  power: "✅"
+  wifi: "✅ (不算快，但夠用)"
+  time_limit: "❌"
+  noise: "★★★☆☆"
+  work_score: "★★★★☆"
+  min_spend: "一杯飲品"
+  meal: "✅"
+  tags: []
+  urls:
+    - label: "NOTCH咖啡 本町店"
+      href: "{filename}/posts/random-thoughts/2026/31-notch-coffee-honten.md"
+
 a13-CURISTA-COFFEE:
   name: CURISTA COFFEE奎士咖啡 遠百信義A13店
   lat: 25.037011
