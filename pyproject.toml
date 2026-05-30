@@ -27,11 +27,11 @@ dependencies = [
   "python-gettext>=5.0",
   "typogrify>=2.0.7",
   "webassets>=2.0",
-  "attila>=2.11.0",
-  "pelican-heatmap>=0.4.0",
-  "pelican-osm[validate]>=0.13.0",
-  "pelican-summary-link>=0.2.2",
-  "pelican-random-article>=0.2.0",
+  "attila>=2.12.1",
+  "pelican-heatmap>=0.4.1",
+  "pelican-osm[validate]>=0.13.1",
+  "pelican-summary-link>=0.2.3",
+  "pelican-random-article>=0.2.1",
 ]
 
 [dependency-groups]
@@ -57,8 +57,8 @@ pelican-summary-link = false
 pelican-random-article =false
 
 [tool.uv.sources]
-attila = { git = "https://github.com/Lee-W/attila/"}
 pelican-deadlinks = { git = "https://github.com/pelican-plugins/deadlinks" }
+attila = { path = "../../personal/attila", editable = true }
 
 
 [tool.commitizen]
