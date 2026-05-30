@@ -296,7 +296,7 @@ def main():
 
     # Validate dates
     try:
-        start_date = datetime.strptime(args.start_date, "%Y-%m-%d")
+        datetime.strptime(args.start_date, "%Y-%m-%d")
     except ValueError:
         parser.error(f"Invalid start-date format: {args.start_date}")
 
