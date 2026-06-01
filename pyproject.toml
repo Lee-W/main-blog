@@ -58,7 +58,7 @@ pelican-random-article =false
 
 [tool.uv.sources]
 pelican-deadlinks = { git = "https://github.com/pelican-plugins/deadlinks" }
-attila = { path = "../../personal/attila", editable = true }
+attila = { git = "https://github.com/Lee-W/attila/" }
 
 
 [tool.commitizen]

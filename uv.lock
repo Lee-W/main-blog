@@ -37,7 +37,7 @@ wheels = [
 [[package]]
 name = "attila"
 version = "2.12.1"
-source = { editable = "../../personal/attila" }
+source = { git = "https://github.com/Lee-W/attila/#524892906d541a22d49917be70ad9bc14603cc13" }
 dependencies = [
     { name = "pelican" },
     { name = "pelican-heatmap" },
@@ -50,39 +50,6 @@ dependencies = [
     { name = "pelican-sitemap" },
     { name = "pelican-statistics" },
     { name = "pelican-webassets" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "pelican", specifier = ">=4.0.0" },
-    { name = "pelican-heatmap", specifier = ">=0.2.2" },
-    { name = "pelican-image-process", specifier = ">=3.0.0" },
-    { name = "pelican-minify", specifier = ">=2.0.0" },
-    { name = "pelican-neighbors", specifier = ">=1.2.0" },
-    { name = "pelican-osm", specifier = ">=0.3.0" },
-    { name = "pelican-related-posts", specifier = ">=1.0.0" },
-    { name = "pelican-seo", specifier = ">=1.2.0" },
-    { name = "pelican-sitemap", specifier = ">=1.2.0" },
-    { name = "pelican-statistics", specifier = ">=1.0.0" },
-    { name = "pelican-webassets", specifier = ">=2.1.0" },
-]
-
-[package.metadata.requires-dev]
-base = [{ name = "poethepoet", specifier = ">=0.34.0" }]
-dev = [
-    { name = "beautifulsoup4" },
-    { name = "commitizen", specifier = ">=4.13.10" },
-    { name = "poethepoet", specifier = ">=0.34.0" },
-    { name = "pytest", specifier = ">=9.0.0" },
-    { name = "ruff", specifier = ">=0.15.4" },
-]
-linters = [
-    { name = "commitizen", specifier = ">=4.13.10" },
-    { name = "ruff", specifier = ">=0.15.4" },
-]
-test = [
-    { name = "beautifulsoup4" },
-    { name = "pytest", specifier = ">=9.0.0" },
 ]
 
 [[package]]
@@ -477,7 +444,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "attila", editable = "../../personal/attila" },
+    { name = "attila", git = "https://github.com/Lee-W/attila/" },
     { name = "beautifulsoup4", specifier = ">=4.12.3" },
     { name = "cssmin", specifier = ">=0.2.0" },
     { name = "invoke", specifier = ">=2.2.0" },
