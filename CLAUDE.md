@@ -19,9 +19,10 @@ uv run inv livereload      # Build and serve with live reload on file changes
 uv run inv clean           # Remove generated files in output/
 uv run inv preview         # Build production version (uses publishconf.py)
 uv run inv style           # Run ruff linting + commitizen commit style check
-uv run inv format          # Auto-fix ruff lint issues
+uv run inv format          # Auto-fix ruff format + lint issues
 uv run inv security_check  # Run pip-audit on dependencies
 uv run inv check_and_remove_image_exif_gps_info  # Strip GPS EXIF from images
+uv run inv build_publish   # Build production version with publishconf.py (alias for preview)
 ```
 
 Build with pagefind search index:
