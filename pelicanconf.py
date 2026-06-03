@@ -130,6 +130,7 @@ PLUGINS = [
     "pelican.plugins.webassets",
     "pelican.plugins.heatmap",
     "pelican.plugins.osm",
+    "pelican.plugins.on_this_day",
 ]
 PAGEFIND_ENABLED = True
 SUMMARY_LINK_FORMAT = ""
