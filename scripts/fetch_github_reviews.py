@@ -4,17 +4,26 @@ Fetch reviewed PRs from GitHub and generate a contribution report markdown file.
 
 import argparse
 import os
-from datetime import datetime
+import subprocess
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import requests
 
 
-def get_github_token() -> str:
-    """Get GitHub token from environment."""
-    if not (token := os.environ.get("GITHUB_TOKEN")):
-        raise ValueError("GITHUB_TOKEN environment variable not set")
-    return token
+def get_github_token() -> str | None:
+    """Get GitHub token from GITHUB_TOKEN env var or gh CLI."""
+    if token := os.environ.get("GITHUB_TOKEN"):
+        return token
+    try:
+        result = subprocess.run(
+            ["gh", "auth", "token"], capture_output=True, text=True
+        )
+        if result.returncode == 0:
+            return result.stdout.strip()
+    except FileNotFoundError:
+        pass
+    return None
 
 
 def fetch_contributions(
@@ -22,13 +31,12 @@ def fetch_contributions(
     start_date: str,
     end_date: str,
     excluded_repos: list[str],
-    token: str,
+    token: str | None,
 ) -> dict[str, dict[str, list[dict]]]:
-    """Fetch all contributions (issues, PRs, reviews, commits) by user."""
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github.v3+json",
-    }
+    """Fetch all contributions (issues, PRs, reviews, releases) by user."""
+    headers = {"Accept": "application/vnd.github.v3+json"}
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
 
     # Contribution types to fetch
     queries = {
@@ -71,7 +79,7 @@ def fetch_contributions(
                     contributions_by_repo[repo_full_name] = {
                         "issues": [],
                         "prs": [],
-                        "commits": [],
+                        "releases": [],
                         "reviewed": [],
                     }
 
@@ -97,74 +105,73 @@ def fetch_contributions(
 
             page += 1
 
-    # Fetch commits separately using REST API
+    repos = []
     page = 1
     per_page = 100
 
     while True:
-        url = "https://api.github.com/search/commits"
-        params = {
-            "q": f"author:{username} committer-date:{start_date}..{end_date}",
-            "sort": "committer-date",
-            "order": "desc",
-            "per_page": per_page,
-            "page": page,
-        }
+        response = requests.get(
+            f"https://api.github.com/users/{username}/repos",
+            headers=headers,
+            params={"per_page": per_page, "page": page},
+        )
+        response.raise_for_status()
+        data = response.json()
+        if not data:
+            break
+        repos.extend(r["full_name"] for r in data)
+        if len(data) < per_page:
+            break
+        page += 1
 
-        try:
-            response = requests.get(url, headers=headers, params=params)
+    start_dt = datetime.strptime(start_date, "%Y-%m-%d")
+    end_dt = datetime.strptime(end_date, "%Y-%m-%d")
+
+    for repo_full_name in repos:
+        if any(excluded in repo_full_name for excluded in excluded_repos):
+            continue
+
+        page = 1
+        while True:
+            response = requests.get(
+                f"https://api.github.com/repos/{repo_full_name}/releases",
+                headers=headers,
+                params={"per_page": per_page, "page": page},
+            )
             response.raise_for_status()
-
             data = response.json()
-            if not (items := data.get("items", [])):
+            if not data:
                 break
 
-            for item in items:
-                # Extract repo from HTML URL
-                # URL format: https://github.com/owner/repo/commit/sha
-                url_parts = item["html_url"].split("/")
-                if len(url_parts) >= 5:
-                    repo_full_name = f"{url_parts[3]}/{url_parts[4]}"
-                else:
+            for release in data:
+                published_at = release.get("published_at")
+                if not published_at:
                     continue
-
-                # Check if repo should be excluded
-                if any(excluded in repo_full_name for excluded in excluded_repos):
+                published_dt = datetime.strptime(published_at[:10], "%Y-%m-%d")
+                if not (start_dt <= published_dt <= end_dt):
                     continue
 
                 if repo_full_name not in contributions_by_repo:
                     contributions_by_repo[repo_full_name] = {
                         "issues": [],
                         "prs": [],
-                        "commits": [],
+                        "releases": [],
                         "reviewed": [],
                     }
 
-                # Extract commit message (first line)
-                message = item["commit"]["message"].split("\n")[0]
                 contribution = {
-                    "title": message,
-                    "sha": item["sha"][:7],  # Short SHA
-                    "url": item["html_url"],
+                    "title": release["name"] or release["tag_name"],
+                    "tag": release["tag_name"],
+                    "url": release["html_url"],
                     "repo": repo_full_name,
                 }
 
-                # Avoid duplicates
-                if contribution not in contributions_by_repo[repo_full_name]["commits"]:
-                    contributions_by_repo[repo_full_name]["commits"].append(
-                        contribution
-                    )
+                if contribution not in contributions_by_repo[repo_full_name]["releases"]:
+                    contributions_by_repo[repo_full_name]["releases"].append(contribution)
 
-            # Check if there are more pages
-            if len(items) < per_page:
+            if len(data) < per_page:
                 break
-
             page += 1
-
-        except requests.exceptions.RequestException as e:
-            # Commits API might fail on some cases, continue without commits
-            print(f"Warning: Could not fetch commits - {e}")
-            break
 
     return contributions_by_repo
 
@@ -186,7 +193,7 @@ def generate_markdown(
 
     lines = [
         f"Title: {start_dt.year}/{start_formatted} - {end_formatted} 開源貢獻週報",
-        f"Date: {end_dt.strftime('%Y-%m-%d %H:%M')} +0800",
+        f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M')} +0800",
         "Category: Tech",
         "Tags: Open Source, 開源貢獻週報",
         f"Slug: {start_date}-{end_date}-open-source-report",
@@ -202,7 +209,7 @@ def generate_markdown(
 
         # Skip repo if no contributions
         if not any(
-            [items["issues"], items["prs"], items["commits"], items["reviewed"]]
+            [items["issues"], items["prs"], items["releases"], items["reviewed"]]
         ):
             continue
 
@@ -224,12 +231,11 @@ def generate_markdown(
                     f"    {i}. [{item['title']} #{item['number']}]({item['url']})"
                 )
 
-        # Commits
-        if items["commits"]:
-            lines.append("* Push")
-            for i, item in enumerate(items["commits"], 1):
+        if items["releases"]:
+            lines.append("* Releases")
+            for i, item in enumerate(items["releases"], 1):
                 lines.append(
-                    f"    {i}. [{item['title']}]({item['url']}) ({item['sha']})"
+                    f"    {i}. [{item['title']}]({item['url']}) ({item['tag']})"
                 )
 
         # Reviewed PRs
@@ -253,10 +259,10 @@ def main():
         "--username", default="Lee-W", help="GitHub username (default: Lee-W)"
     )
     parser.add_argument(
-        "--start-date", required=True, help="Start date in YYYY-MM-DD format"
+        "--start-date", help="Start date in YYYY-MM-DD format"
     )
     parser.add_argument(
-        "--end-date", help="End date in YYYY-MM-DD format (default: today)"
+        "--end-date", help="End date in YYYY-MM-DD format"
     )
     parser.add_argument(
         "--exclude",
@@ -294,21 +300,33 @@ def main():
     # Remove duplicates
     excluded_repos = list(set(excluded_repos))
 
-    # Validate dates
-    try:
-        datetime.strptime(args.start_date, "%Y-%m-%d")
-    except ValueError:
-        parser.error(f"Invalid start-date format: {args.start_date}")
+    today = datetime.now()
+    weekday = today.weekday()
 
-    end_date = datetime.now()
+    if args.start_date:
+        try:
+            start_date = datetime.strptime(args.start_date, "%Y-%m-%d")
+        except ValueError:
+            parser.error(f"Invalid start-date format: {args.start_date}")
+    else:
+        if weekday == 6:
+            start_date = today - timedelta(days=6)
+        else:
+            start_date = today - timedelta(days=weekday + 7)
+
     if args.end_date:
         try:
             end_date = datetime.strptime(args.end_date, "%Y-%m-%d")
         except ValueError:
             parser.error(f"Invalid end-date format: {args.end_date}")
+    else:
+        if weekday == 6:
+            end_date = today
+        else:
+            end_date = today - timedelta(days=weekday + 1)
 
     print(f"Fetching contributions by {args.username}")
-    print(f"Date range: {args.start_date} to {end_date.strftime('%Y-%m-%d')}")
+    print(f"Date range: {start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')}")
     if excluded_repos:
         print(f"Excluding repos: {', '.join(sorted(excluded_repos))}")
 
@@ -316,7 +334,7 @@ def main():
 
     contributions_by_repo = fetch_contributions(
         args.username,
-        args.start_date,
+        start_date.strftime("%Y-%m-%d"),
         end_date.strftime("%Y-%m-%d"),
         excluded_repos,
         token,
@@ -328,13 +346,13 @@ def main():
 
     total_issues = sum(len(c["issues"]) for c in contributions_by_repo.values())
     total_prs = sum(len(c["prs"]) for c in contributions_by_repo.values())
-    total_commits = sum(len(c["commits"]) for c in contributions_by_repo.values())
+    total_releases = sum(len(c["releases"]) for c in contributions_by_repo.values())
     total_reviewed = sum(len(c["reviewed"]) for c in contributions_by_repo.values())
 
     print("Found:")
     print(f"  {total_issues} created issues")
     print(f"  {total_prs} created PRs")
-    print(f"  {total_commits} commits")
+    print(f"  {total_releases} releases")
     print(f"  {total_reviewed} reviewed PRs")
     print(f"  across {len(contributions_by_repo)} repos")
 
@@ -347,8 +365,8 @@ def main():
                 details.append(f"{len(contrib['issues'])} issues")
             if contrib["prs"]:
                 details.append(f"{len(contrib['prs'])} PRs")
-            if contrib["commits"]:
-                details.append(f"{len(contrib['commits'])} commits")
+            if contrib["releases"]:
+                details.append(f"{len(contrib['releases'])} releases")
             if contrib["reviewed"]:
                 details.append(f"{len(contrib['reviewed'])} reviewed")
             if details:
@@ -357,7 +375,7 @@ def main():
 
     markdown = generate_markdown(
         contributions_by_repo,
-        args.start_date,
+        start_date.strftime("%Y-%m-%d"),
         end_date.strftime("%Y-%m-%d"),
         args.username,
     )
