@@ -1,0 +1,126 @@
+# 臺灣 - 臺北
+CE-LIB-RARY-tianmu:
+  name: CE' & LIB-RARY 天母店
+  lat: 25.1085347
+  lon: 121.5248391
+  address: 臺北市士林區中山北路六段217號
+  country: 臺灣
+  city: 臺北
+  district: 士林
+  hours: "11:00 ~"
+  power: "✅"
+  wifi: "✅"
+  time_limit: "❌"
+  noise: "★★★★☆"
+  work_score: "★★★★☆"
+  min_spend: "150 元"
+  meal: "✅"
+  tags: []
+  urls:
+    - label: "CE' & LIB-RARY 天母店"
+      href: "{filename}/posts/random-thoughts/2026/01-CE-and-LIB-RARY-tian-mu.md"
+
+Le-Promenoir-Coffee:
+  name: 4F劇場咖啡 Le Promenoir Coffee
+  lat: 25.043040
+  lon: 121.510207
+  address: 臺北市中正區延平南路98號4樓
+  country: 臺灣
+  city: 臺北
+  district: 中正
+  hours: "11:00 ~ 19:00"
+  power: "✅"
+  wifi: "✅"
+  time_limit: "❌"
+  noise: "★★☆☆☆"
+  work_score: "★★★★☆"
+  min_spend: "250 元"
+  meal: "✅ (輕食)"
+  tags: []
+  urls:
+    - label: "4F劇場咖啡 Le Promenoir Coffee"
+      href: "{filename}/posts/random-thoughts/2026/19-Le-Promenoir-Coffee.md"
+
+notch-coffee-honten:
+  name: NOTCH咖啡 本町店
+  lat: 25.0454762
+  lon: 121.5134240
+  address: 臺北市中正區黎明里重慶南路一段35號
+  country: 臺灣
+  city: 臺北
+  district: 中正
+  hours: "07:40 ~ 20:30"
+  power: "✅"
+  wifi: "✅ (不算快，但夠用)"
+  time_limit: "❌"
+  noise: "★★★☆☆"
+  work_score: "★★★★☆"
+  min_spend: "一杯飲品"
+  meal: "✅"
+  tags: []
+  urls:
+    - label: "NOTCH咖啡 本町店"
+      href: "{filename}/posts/random-thoughts/2026/31-notch-coffee-honten.md"
+
+a13-CURISTA-COFFEE:
+  name: CURISTA COFFEE奎士咖啡 遠百信義A13店
+  lat: 25.037011
+  lon: 121.568061
+  address: 臺北市信義區松仁路58號4樓
+  country: 臺灣
+  city: 臺北
+  district: 信義
+  hours: "11:00 ~ 21:30"
+  power: "部分"
+  wifi: "✅"
+  time_limit: "❌"
+  noise: "★★★☆☆"
+  work_score: "★★★☆☆"
+  min_spend: "一杯飲料"
+  meal: "❌"
+  tags: []
+  urls:
+    - label: "CURISTA COFFEE 遠百信義A13店"
+      href: "{filename}/posts/random-thoughts/2026/18-a13-CURISTA-COFFEE.md"
+
+AthenaBooks:
+  name: 春秋書店
+  lat: 25.0548722222222
+  lon: 121.520255555556
+  address: 臺北市大同區赤峰街41巷7號
+  country: 臺灣
+  city: 臺北
+  district: 大同
+  hours: "12:00 ~ 22:00"
+  power: "✅ (大多有)"
+  wifi: "✅"
+  time_limit: "❌"
+  noise: "★★★★☆"
+  work_score: "★★★★☆"
+  min_spend: "一杯飲料"
+  meal: "❌"
+  tags: []
+  urls:
+    - label: "春秋書店"
+      href: "{filename}/posts/random-thoughts/2026/21-AthenaBooks.md"
+
+sky-coki:
+  name: Sky Cofi 咖啡館
+  lat: 25.05229062886351
+  lon: 121.54627750185514
+  address: 臺北市松山區中正里南京東路三段287號16樓
+  country: 臺灣
+  city: 臺北
+  district: 松山
+  hours: "08:30 ~ 18:30"
+  power: "✅ (大多有)"
+  wifi: "✅"
+  time_limit: "根據消費方案"
+  noise: "★★★☆☆"
+  work_score: "★★★★☆"
+  min_spend: "根據消費方案"
+  meal: "✅ （輕食）"
+  tags: []
+  urls:
+    - label: "Sky Cofi 咖啡館"
+      href: "{filename}/posts/random-thoughts/2026/25-sky-cofi.md"

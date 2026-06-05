@@ -1,7 +1,18 @@
 Title: Coworking Spaces
 Slug: coworking
 Lang: en
+Modified: 2026-06-05 11:34 +0800
 
-{% place_list coworking group_by="country,city,district" group_summary_at="country,city" %}
+[TOC]
 
-{% place coworking %}
+## Taiwan
+
+{% place_list coworking/taiwan group_by="country,city,district" group_summary_at="country,city" %}
+
+{% place coworking/taiwan %}
+
+## Japan
+
+{% place_list coworking/japan group_by="country,city,district" group_summary_at="country,city" %}
+
+{% place coworking/japan %}
