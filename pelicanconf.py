@@ -145,6 +145,7 @@ DEADLINKS_VALIDATION = False
 
 # pelican-tabular settings
 TABULAR_COUNT_TEMPLATE = ""  # suppress the row-count line under tables
+TABULAR_GROUP_COUNT_TEMPLATE = ""  # suppress per-group counts in group headers
 
 # pelican-seo settings
 SEO_REPORT = True  # SEO report is enabled by default

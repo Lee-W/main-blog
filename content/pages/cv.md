@@ -1,10 +1,8 @@
----
 Title: CV
 Date: 2026-04-17 00:00 +0800
-Modified: 2026-06-08 15:40 +0800
+Modified: 2026-06-08 20:30 +0800
 Slug: cv
 Lang: en
----
 
 [TOC]
 
@@ -30,35 +28,35 @@ Lang: en
 **[Feb 2023 – Jul 2024] Software Engineer, [Astronomer]**
 
 * [apache-airflow]
-    * Allow Airflow tasks to execute directly from the triggerer
-    * Add REST API endpoint to manipulate queued dataset events
-    * Upgrade apache-airflow-providers-weaviate to 2.0.0 for weaviate-client >= 4.4.0 support
-    * Add Azure managed identities support to apache-airflow-providers-microsoft-azure
-    * Add `default_deferrable` configuration for easily turning on the deferrable mode of operators
+    * Allowed Airflow tasks to execute directly from the triggerer
+    * Added REST API endpoint to manipulate queued dataset events
+    * Upgraded apache-airflow-providers-weaviate to 2.0.0 for weaviate-client >= 4.4.0 support
+    * Added Azure managed identities support to apache-airflow-providers-microsoft-azure
+    * Added `default_deferrable` configuration for easily turning on the deferrable mode of operators
 * [astronomer-providers](https://github.com/astronomer/astronomer-providers)
-    * Contribute existing operators/sensors back to [apache-airflow] and deprecate this project to reduce maintenance efforts
+    * Contributed existing operators/sensors back to [apache-airflow] and deprecated this project to reduce maintenance efforts
     * Automated the deployment of integration tests and testing against the release of the airflow provider ([#987](https://github.com/astronomer/astronomer-providers/pull/987), [#1107](https://github.com/astronomer/astronomer-providers/pull/1107), [#1139](https://github.com/astronomer/astronomer-providers/pull/1139), [#1110](https://github.com/astronomer/astronomer-providers/pull/1110))
 * [ask-astro](https://github.com/astronomer/ask-astro)
-    * Set up local dev tools and fix various existing bugs
+    * Set up local dev tools and fixed various existing bugs
 
 **[Apr 2017 – Feb 2023] Machine Learning Engineer, [Rakuten USA](https://www.rakuten.com/)**
 
-* Productionize machine learning projects
+* Productionized machine learning projects
     * Implemented SQS and gRPC services for grouping emails with similar structures and extracting user-sensitive data to increase the amount of training data without violating customer privacy regulations
     * Designed and implemented a two-stage labeling system that automatically communicates between Amazon Mechanical Turk and in-house experts to generate high-quality labeled data and enhance merchandise taxonomy to increase customer conversion rate
     * Migrated and automated the deployment process of AWS Lambda procedures that process customer lifetime value, reducing the effort of maintenance and deployment
-* Build and maintain data pipelines on [Apache Airflow](https://airflow.apache.org/)
+* Built and maintained data pipelines on [Apache Airflow](https://airflow.apache.org/)
     * Implemented a pipeline that processes data larger than 10 GB to infer personalized preferences to help increase customer satisfaction
     * Migrated legacy 1.x Airflow server on AWS EC2 to 2.0.2 Airflow on AWS MWAA, saving developers' effort on dealing with legacy dependencies issues, and created a development Airflow environment for doing experiments without affecting the production pipeline
     * Refactored the data writing mechanism and reduced the data write time and AWS S3 cost
     * Built alerts and dashboards to monitor pipeline metrics, minimizing the effort of troubleshooting using DataDog, Prometheus, and Kibana
-* Standardize and maintain software engineering practices
+* Standardized and maintained software engineering practices
     * Created and maintained the project templates, with automatic code quality check, testing, containerization, project versioning, releasing, and deployment, and a standard workflow for existing projects to update tools, which reduced project creation time, the communication overhead during code review, and provided an easy way for developers to introduce new standards
     * Implemented a life-cycle configuration management tool and a workflow for creating Amazon Sagemaker notebook instances, which saves data scientists' time in handling engineering problems
     * Improved container build time and reduced execution time by 70% for Jenkins CI/CD pipelines
-    * Maintain the core package that's used among most existing projects
+    * Maintained the core package that was used among most existing projects
 * Optimized SQL in a data pipeline and reduced the execution time from infeasible to within half a day
-* Cooperate with overseas teams in the US, Ukraine, and India
+* Cooperated with overseas teams in the US, Ukraine, and India
 
 **[Jan 2019 – Mar 2019] Project Manager, [DLT Lab](https://dlt.csie.ncku.edu.tw)**
 
@@ -111,14 +109,14 @@ Lang: en
 
 **[Jul 2019 – Nov 2019] Program Committee Member, [PyCon Taiwan 2019](https://tw.pycon.org/2019)**
 
-* Contact keynote speakers and financial aid applicants
-* Contribute to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
+* Contacted keynote speakers and financial aid applicants
+* Contributed to the [post-event report generator](https://github.com/pycontw/pycontw-postevent-report-generator)
 
 [pycontw-blog]: https://github.com/pycontw/pycontw-blog
 
 ## Talks
 
-{% table data/talks.yaml fields="date,event,title,slide,recording" sort_by="date" sort_order="desc" field_labels="date:Date,event:Event,title:Title,slide:Slide,recording:Recording" %}
+{% table data/talks.yaml fields="date,event,title,slide,recording" sort_by="date" sort_order="desc" group_by="date:year" group_summary_at="date:year" date_format="%m/%d" field_labels="date:Date,event:Event,title:Title,slide:Slide,recording:Recording" aria_columns="slide,recording" %}
 
 For more slides, check my [Speaker Deck](https://speakerdeck.com/leew/).
 
@@ -133,22 +131,7 @@ For more slides, check my [Speaker Deck](https://speakerdeck.com/leew/).
 
 ## Development Sprints
 
-* Apache Airflow
-    1. [EuroPython 2025](https://github.com/EuroPython/website/pull/1437)
-    2. [DurianPy](https://www.meetup.com/durianpy/events/308390476/)
-    3. PyCon APAC 2025
-    4. [PyCon TW 2024](https://hackmd.io/LKLr7XyOR9mK1AEEnvnCuQ#Apache-Airflow)
-* commitizen-tools
-    1. [scisprint Taipei 2026 January](https://sciwork.dev/sprint/2026/01-taipei)
-    2. [PyCon US 2024](https://us.pycon.org/2024/events/dev-sprints/#sprint-3)
-    3. [COSCUP 2024](https://pretalx.coscup.org/coscup-2024/talk/SDR77M/)
-    4. [scisprint Taipei 2024 March](https://sciwork.kktix.cc/events/scisprint-202403-taipei)
-    5. [PyCon TW 2023](https://hackmd.io/R98LEB4MSxm4AeExmxuZnA#commitizen-tools)
-    6. [Scisprint@Amazon Taipei 2023](https://sciwork.kktix.cc/events/scisprint-202302-taipei)
-    7. [PyCon TW 2022](https://hackmd.io/UYumgLy_QxaCSCqrXKDBpw#commitizen-tools)
-    8. [PyCon TW 2021](https://hackmd.io/PAgYsu5nSHyERIRaUokWxQ#commitizen-tools)
-    9. PyCon TW 2020
-    10. PyCon CA 2019
+{% table data/sprints.yaml fields="event,link" group_by="project" group_summary_at="project" field_labels="event:Event,link:Link" aria_columns="link" %}
 
 ## Awards
 

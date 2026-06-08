@@ -1,0 +1,74 @@
+- project: Apache Airflow
+  event: EuroPython 2025
+  link:
+    text: "🔗"
+    href: "https://github.com/EuroPython/website/pull/1437"
+
+- project: Apache Airflow
+  event: DurianPy
+  link:
+    text: "🔗"
+    href: "https://www.meetup.com/durianpy/events/308390476/"
+
+- project: Apache Airflow
+  event: PyCon APAC 2025
+
+- project: Apache Airflow
+  event: PyCon TW 2024
+  link:
+    text: "🔗"
+    href: "https://hackmd.io/LKLr7XyOR9mK1AEEnvnCuQ#Apache-Airflow"
+
+- project: commitizen-tools
+  event: scisprint Taipei 2026 January
+  link:
+    text: "🔗"
+    href: "https://sciwork.dev/sprint/2026/01-taipei"
+
+- project: commitizen-tools
+  event: PyCon US 2024
+  link:
+    text: "🔗"
+    href: "https://us.pycon.org/2024/events/dev-sprints/#sprint-3"
+
+- project: commitizen-tools
+  event: COSCUP 2024
+  link:
+    text: "🔗"
+    href: "https://pretalx.coscup.org/coscup-2024/talk/SDR77M/"
+
+- project: commitizen-tools
+  event: scisprint Taipei 2024 March
+  link:
+    text: "🔗"
+    href: "https://sciwork.kktix.cc/events/scisprint-202403-taipei"
+
+- project: commitizen-tools
+  event: PyCon TW 2023
+  link:
+    text: "🔗"
+    href: "https://hackmd.io/R98LEB4MSxm4AeExmxuZnA#commitizen-tools"
+
+- project: commitizen-tools
+  event: Scisprint@Amazon Taipei 2023
+  link:
+    text: "🔗"
+    href: "https://sciwork.kktix.cc/events/scisprint-202302-taipei"
+
+- project: commitizen-tools
+  event: PyCon TW 2022
+  link:
+    text: "🔗"
+    href: "https://hackmd.io/UYumgLy_QxaCSCqrXKDBpw#commitizen-tools"
+
+- project: commitizen-tools
+  event: PyCon TW 2021
+  link:
+    text: "🔗"
+    href: "https://hackmd.io/PAgYsu5nSHyERIRaUokWxQ#commitizen-tools"
+
+- project: commitizen-tools
+  event: PyCon TW 2020
+
+- project: commitizen-tools
+  event: PyCon CA 2019
