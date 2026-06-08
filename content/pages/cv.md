@@ -1,9 +1,9 @@
 ---
-title: CV
-date: 2026-04-17 00:00
-modified: 2026-04-17 00:00
-slug: cv
-lang: en
+Title: CV
+Date: 2026-04-17 00:00 +0800
+Modified: 2026-06-08 15:40 +0800
+Slug: cv
+Lang: en
 ---
 
 [TOC]
@@ -23,14 +23,14 @@ lang: en
 * [apache-airflow]
     * Add "DatasetAlias" for creating datasets or dataset events at runtime
     * Implement half of [AIP-74](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-74+Introducing+Data+Assets) and part of [AIP-75](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-75+New+Asset-Centric+Syntax)
-    * Leading the implementation of [AIP-90](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-90+Human+in+the+loop)
+    * Lead the implementation of [AIP-90](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-90+Human+in+the+loop)
 * [ruff](https://github.com/astral-sh/ruff)
     * Implement most of the [AIR3XX](https://docs.astral.sh/ruff/rules/#airflow-air) rules to facilitate the migration from Airflow 2 to Airflow 3
 
 **[Feb 2023 – Jul 2024] Software Engineer, [Astronomer]**
 
 * [apache-airflow]
-    * Allow Airflow tasks to execute directly from the trigger
+    * Allow Airflow tasks to execute directly from the triggerer
     * Add REST API endpoint to manipulate queued dataset events
     * Upgrade apache-airflow-providers-weaviate to 2.0.0 for weaviate-client >= 4.4.0 support
     * Add Azure managed identities support to apache-airflow-providers-microsoft-azure
