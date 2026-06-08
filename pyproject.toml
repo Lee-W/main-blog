@@ -33,7 +33,7 @@ dependencies = [
   "pelican-summary-link>=0.2.3",
   "pelican-random-article>=0.2.1",
   "pelican-on-this-day>=0.2.0",
-  "pelican-tabular>=0.3.1",
+  "pelican-tabular>=0.4.0",
 ]
 
 [dependency-groups]
