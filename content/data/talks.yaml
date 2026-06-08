@@ -1,0 +1,241 @@
+- date: 2026-06-02
+  event: "🇹🇼 Computex 2026"
+  title: "Your AI Is Only As Good As Your Data Pipeline"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/youral-is-only-as-good-as-your-data-pipeline"
+
+- date: 2025-12-24
+  event: "🇹🇼 玉山 DE Talk"
+  title: "觸發觸發器器，那個你可能不熟的 Apache Airflow 元件"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/chu-fa-chu-fa-qi-qi-na-ge-ni-ke-neng-bu-shou-de-apache-airflow-yuan-jian"
+
+- date: 2025-11-27
+  event: "🇹🇼 Python 衝刺開發工作坊"
+  title: "開源菜雞的隨意雜談"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/20251127-kai-yuan-cai-ji-de-sui-yi-za-tan"
+
+- date: 2025-10-08
+  event: "🇺🇸 Airflow Summit 2025"
+  title: "Seamless Migration: Leveraging Ruff for a Smooth Transition from Airflow 2 to Airflow 3"
+  slide:
+    text: "🔗"
+    href: "https://drive.google.com/file/d/1_2cxR8uOtWOphPPUD3IuwuRPcIBU4DXV/view?usp=drive_link"
+
+- date: 2025-09-06
+  event: "🇹🇼 PyCon TW 2025"
+  title: "Unlocking the Future of Data Pipelines - Apache Airflow 3"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/unlocking-the-future-of-data-pipeline-942ed56f-0083-4e25-9e30-04850095e824"
+
+- date: 2025-07-18
+  event: "🇨🇿 EuroPython 2025"
+  title: "Hold on! You have a data team in PyCon Taiwan!"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/hold-on-you-have-a-data-team-in-pycon-taiwan"
+
+- date: 2025-06-11
+  event: "🇹🇼 工程師的搜尋紀錄"
+  title: "朝聖之旅"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/zhao-sheng-zhi-lu"
+
+- date: 2025-03-28
+  event: "🇹🇼 黃金流沙饅頭營"
+  title: "Airflow 3.0 The First Glance"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/20250328-airflow-3-dot-0-the-first-glance"
+
+- date: 2025-03-16
+  event: "💻 NetDB Tech Day"
+  title: "踏入開源的第一步"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/20250316-ta-ru-kai-yuan-de-di-bu"
+
+- date: 2025-03-02
+  event: "🇵🇭 PyCon APAC 2025"
+  title: "Unleash the Chaos: Developing a Linter for Un-Pythonic Code!"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/unleash-the-chaos-developing-a-linter-for-un-pythonic-code-806b2bae-e161-4762-b0d5-d9fb8efdd24a"
+  recording:
+    text: "🔗"
+    href: "https://www.youtube.com/watch?v=tbSZx0UsWfQ"
+
+- date: 2024-09-28
+  event: "🇯🇵 PyCon JP 2024"
+  title: "Unlocking Python's Core Magic"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/unlocking-pythons-core-magic"
+  recording:
+    text: "🔗"
+    href: "https://www.youtube.com/watch?v=9jbHA6tE9MM"
+
+- date: 2024-09-21
+  event: "🇹🇼 PyCon TW 2024"
+  title: "Unleash the Chaos: Developing a Linter for Un-Pythonic Code!"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/unleash-the-chaos-developing-a-linter-for-un-pythonic-code"
+  recording:
+    text: "🔗"
+    href: "https://www.youtube.com/watch?v=2jUd0o8VuE0"
+
+- date: 2024-09-11
+  event: "🇺🇸 Airflow Summit 2024"
+  title: "What If...? Running Airflow Tasks without the workers"
+  slide:
+    text: "🔗"
+    href: "https://docs.google.com/presentation/d/1XGd7bQg6cGLNbHFiZjX__SmI4FLw6D_iASY9eRSO4mo/edit?usp=sharing"
+  recording:
+    text: "🔗"
+    href: "https://www.youtube.com/watch?v=WkljjYtqu8Q"
+
+- date: 2024-05-08
+  event: "💻 Airflow Town Hall"
+  title: "Starts Airflow task execution directly from the triggerer"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/starts-airflow-task-execution-directly-from-the-triggerer"
+
+- date: 2024-02-17
+  event: "💻 源來適你"
+  title: "Intro to Airflow - From Zero to Hero"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/intro-to-airflow-from-zero-to-hero"
+
+- date: 2023-07-29
+  event: "🇹🇼 COSCUP 2023"
+  title: "Atomic Commits: An Easy & Proven Way to Manage & Automate Release Process"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/atomic-commits-an-easy-and-proven-way-to-manage-and-automate-release-process"
+  recording:
+    text: "🔗"
+    href: "https://www.youtube.com/watch?v=IxzN9ClXhs8"
+
+- date: 2020-11-07
+  event: "🇹🇼 Taichung.py"
+  title: "Python Table Manners"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/python-table-manners-at-taichung-dot-py"
+
+- date: 2020-10-16
+  event: "🇹🇼 Hualien.py"
+  title: "Python Table Manners"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-hualien-py"
+
+- date: 2020-08-31
+  event: "🇹🇼 Kaohsiung.py"
+  title: "Python Table Manners"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-kaohsiung-dot-py"
+
+- date: 2020-07-24
+  event: "💻 EuroPython 2020"
+  title: "Python Table Manners"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020"
+  recording:
+    text: "🔗"
+    href: "https://www.youtube.com/watch?v=m6rF3Kah928"
+
+- date: 2020-06-18
+  event: "🇹🇼 Taipei.py"
+  title: "commitizen-tools: What can we gain from crafting a git message convention?"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/commitizen-tools-what-can-we-gain-from-crafting-a-git-message-convention-at-taipey-dot-py"
+
+- date: 2020-04-25
+  event: "💻 Remote Python Pizza 2020"
+  title: "commitizen-tools: What can we gain from crafting a git message convention?"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/what-can-we-gain-from-crafting-a-git-message-convention-at-remote-python-pizza-2020"
+
+- date: 2019-11-17
+  event: "🇨🇦 PyCon CA 2019"
+  title: "Python Table Manners"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019"
+
+- date: 2019-10-24
+  event: "🇹🇼 Taipei.py"
+  title: "Python Table Manners"
+
+- date: 2019-09-16
+  event: "🇯🇵 PyCon JP 2019"
+  title: "How to get more than PyCon in a PyCon"
+  slide:
+    text: "🔗"
+    href: "https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9"
+
+- date: 2019-03-24
+  event: "🇹🇼 SITCON 2019"
+  title: "X-Village - 用不到兩個月準備兩個月的課程"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng"
+  recording:
+    text: "🔗"
+    href: "https://www.youtube.com/watch?v=kf0KFyb-wcA"
+
+- date: 2018-08-16
+  event: "🇹🇼 X-Village"
+  title: "CRUD in Flask"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/x-village-crud-in-flask-1"
+
+- date: 2018-03-12
+  event: "🇹🇼 NCKU CSIE"
+  title: "Intro to Python Data Science Tools"
+  slide:
+    text: "🔗"
+    href: "https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20190312"
+
+- date: 2018-02-27
+  event: "🇹🇼 NCKU CSIE"
+  title: "Intro to Python Data Science Tools"
+  slide:
+    text: "🔗"
+    href: "https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20180227"
+
+- date: 2017-01-22
+  event: "🇹🇼 成大工資管營"
+  title: "資管講座"
+  slide:
+    text: "🔗"
+    href: "https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang"
+
+- date: 2016-12-08
+  event: "🇹🇼 NCKU CSIE"
+  title: "Bot Development"
+  slide:
+    text: "🔗"
+    href: "https://hackmd.io/p/HkW8LjRfl"
+
+- date: 2016-11-03
+  event: "🇹🇼 深度之夜"
+  title: "Keras Demo"
+  slide:
+    text: "🔗"
+    href: "https://github.com/Lee-W/Keras-Mnist-Example"

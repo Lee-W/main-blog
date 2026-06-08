@@ -33,6 +33,7 @@ dependencies = [
   "pelican-summary-link>=0.2.3",
   "pelican-random-article>=0.2.1",
   "pelican-on-this-day>=0.2.0",
+  "pelican-tabular>=0.3.1",
 ]
 
 [dependency-groups]
@@ -57,6 +58,7 @@ pelican-osm = false
 pelican-summary-link = false
 pelican-random-article = false
 pelican-on-this-day = false
+pelican-tabular = false
 
 [tool.uv.sources]
 pelican-deadlinks = { git = "https://github.com/pelican-plugins/deadlinks" }

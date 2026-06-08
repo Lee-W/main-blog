@@ -118,39 +118,7 @@ lang: en
 
 ## Talks
 
-| Date | Event | Title | Links |
-|------|-------|-------|-------|
-| 2025/12/24 | 🇹🇼 玉山 DE Talk | 觸發觸發器器，那個你可能不熟的 Apache Airflow 元件 | [slide](https://speakerdeck.com/leew/chu-fa-chu-fa-qi-qi-na-ge-ni-ke-neng-bu-shou-de-apache-airflow-yuan-jian) |
-| 2025/11/27 | 🇹🇼 Python 衝刺開發工作坊 | 開源菜雞的隨意雜談 | [slide](https://speakerdeck.com/leew/20251127-kai-yuan-cai-ji-de-sui-yi-za-tan) |
-| 2025/10/08 | 🇺🇸 Airflow Summit 2025 | Seamless Migration: Leveraging Ruff for a Smooth Transition from Airflow 2 to Airflow 3 | [slide](https://drive.google.com/file/d/1_2cxR8uOtWOphPPUD3IuwuRPcIBU4DXV/view?usp=drive_link) |
-| 2025/09/06 | 🇹🇼 PyCon TW 2025 | Unlocking the Future of Data Pipelines - Apache Airflow 3 | [slide](https://speakerdeck.com/leew/unlocking-the-future-of-data-pipeline-942ed56f-0083-4e25-9e30-04850095e824) |
-| 2025/07/18 | 🇨🇿 EuroPython 2025 | Hold on! You have a data team in PyCon Taiwan! | [slide](https://speakerdeck.com/leew/hold-on-you-have-a-data-team-in-pycon-taiwan) |
-| 2025/06/11 | 🇹🇼 工程師的搜尋紀錄 | 朝聖之旅 | [slide](https://speakerdeck.com/leew/zhao-sheng-zhi-lu) |
-| 2025/03/28 | 🇹🇼 黃金流沙饅頭營 | Airflow 3.0 The First Glance | [slide](https://speakerdeck.com/leew/20250328-airflow-3-dot-0-the-first-glance) |
-| 2025/03/16 | 💻 NetDB Tech Day | 踏入開源的第一步 | [slide](https://speakerdeck.com/leew/20250316-ta-ru-kai-yuan-de-di-bu) |
-| 2025/03/02 | 🇵🇭 PyCon APAC 2025 | Unleash the Chaos: Developing a Linter for Un-Pythonic Code! | [slide](https://speakerdeck.com/leew/unleash-the-chaos-developing-a-linter-for-un-pythonic-code-806b2bae-e161-4762-b0d5-d9fb8efdd24a) · [recording](https://www.youtube.com/watch?v=tbSZx0UsWfQ) |
-| 2024/09/28 | 🇯🇵 PyCon JP 2024 | Unlocking Python's Core Magic | [slide](https://speakerdeck.com/leew/unlocking-pythons-core-magic) · [recording](https://www.youtube.com/watch?v=9jbHA6tE9MM) |
-| 2024/09/21 | 🇹🇼 PyCon TW 2024 | Unleash the Chaos: Developing a Linter for Un-Pythonic Code! | [slide](https://speakerdeck.com/leew/unleash-the-chaos-developing-a-linter-for-un-pythonic-code) · [recording](https://www.youtube.com/watch?v=2jUd0o8VuE0) |
-| 2024/09/11 | 🇺🇸 Airflow Summit 2024 | What If...? Running Airflow Tasks without the workers | [slide](https://docs.google.com/presentation/d/1XGd7bQg6cGLNbHFiZjX__SmI4FLw6D_iASY9eRSO4mo/edit?usp=sharing) · [recording](https://www.youtube.com/watch?v=WkljjYtqu8Q) |
-| 2024/05/08 | 💻 Airflow Town Hall | Starts Airflow task execution directly from the triggerer | [slide](https://speakerdeck.com/leew/starts-airflow-task-execution-directly-from-the-triggerer) |
-| 2024/02/17 | 💻 源來適你 | Intro to Airflow - From Zero to Hero | [slide](https://speakerdeck.com/leew/intro-to-airflow-from-zero-to-hero) |
-| 2023/07/29 | 🇹🇼 COSCUP 2023 | Atomic Commits: An Easy & Proven Way to Manage & Automate Release Process | [slide](https://speakerdeck.com/leew/atomic-commits-an-easy-and-proven-way-to-manage-and-automate-release-process) · [recording](https://www.youtube.com/watch?v=IxzN9ClXhs8) |
-| 2020/11/07 | 🇹🇼 Taichung.py | Python Table Manners | [slide](https://speakerdeck.com/leew/python-table-manners-at-taichung-dot-py) |
-| 2020/10/16 | 🇹🇼 Hualien.py | Python Table Manners | [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-hualien-py) |
-| 2020/08/31 | 🇹🇼 Kaohsiung.py | Python Table Manners | [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-kaohsiung-dot-py) |
-| 2020/07/24 | 💻 EuroPython 2020 | Python Table Manners | [slide](https://speakerdeck.com/leew/python-table-manners-cut-the-cookie-gracefully-at-euro-python-2020) · [recording](https://www.youtube.com/watch?v=m6rF3Kah928) |
-| 2020/06/18 | 🇹🇼 Taipei.py | commitizen-tools: What can we gain from crafting a git message convention? | [slide](https://speakerdeck.com/leew/commitizen-tools-what-can-we-gain-from-crafting-a-git-message-convention-at-taipey-dot-py) |
-| 2020/04/25 | 💻 Remote Python Pizza 2020 | commitizen-tools: What can we gain from crafting a git message convention? | [slide](https://speakerdeck.com/leew/what-can-we-gain-from-crafting-a-git-message-convention-at-remote-python-pizza-2020) |
-| 2019/11/17 | 🇨🇦 PyCon CA 2019 | Python Table Manners | [slide](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019) |
-| 2019/10/24 | 🇹🇼 Taipei.py | Python Table Manners | — |
-| 2019/09/16 | 🇯🇵 PyCon JP 2019 | How to get more than PyCon in a PyCon | [slide](https://docs.google.com/presentation/d/1buthYkXvgjbrvb3CT9eXUKklRZOTPc4aN3RgH1PZayk/edit#slide=id.g5cf8cd871b_0_9) |
-| 2019/03/24 | 🇹🇼 SITCON 2019 | X-Village - 用不到兩個月準備兩個月的課程 | [slide](https://speakerdeck.com/leew/x-village-yong-bu-dao-liang-ge-yue-zhun-bei-liang-ge-yue-de-ke-cheng) · [recording](https://www.youtube.com/watch?v=kf0KFyb-wcA) |
-| 2018/08/16 | 🇹🇼 X-Village | CRUD in Flask | [slide](https://speakerdeck.com/leew/x-village-crud-in-flask-1) |
-| 2018/03/12 | 🇹🇼 NCKU CSIE | Intro to Python Data Science Tools | [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20190312) |
-| 2018/02/27 | 🇹🇼 NCKU CSIE | Intro to Python Data Science Tools | [slide](https://github.com/Lee-W/Intro_to_Python_Data_Science_Tools/tree/v.20180227) |
-| 2017/01/22 | 🇹🇼 成大工資管營 | 資管講座 | [slide](https://speakerdeck.com/leew/chang-gong-zi-guan-de-yan-jiang) |
-| 2016/12/08 | 🇹🇼 NCKU CSIE | Bot Development | [slide](https://hackmd.io/p/HkW8LjRfl) |
-| 2016/11/03 | 🇹🇼 深度之夜 | Keras Demo | [slide](https://github.com/Lee-W/Keras-Mnist-Example) |
+{% table data/talks.yaml fields="date,event,title,slide,recording" sort_by="date" sort_order="desc" field_labels="date:Date,event:Event,title:Title,slide:Slide,recording:Recording" %}
 
 For more slides, check my [Speaker Deck](https://speakerdeck.com/leew/).
 

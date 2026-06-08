@@ -131,6 +131,7 @@ PLUGINS = [
     "pelican.plugins.heatmap",
     "pelican.plugins.osm",
     "pelican.plugins.on_this_day",
+    "pelican.plugins.tabular",
 ]
 PAGEFIND_ENABLED = True
 SUMMARY_LINK_FORMAT = ""
@@ -141,6 +142,9 @@ LOCAL_PLUGINS = [
 ]
 PLUGINS.extend(LOCAL_PLUGINS)
 DEADLINKS_VALIDATION = False
+
+# pelican-tabular settings
+TABULAR_COUNT_TEMPLATE = ""  # suppress the row-count line under tables
 
 # pelican-seo settings
 SEO_REPORT = True  # SEO report is enabled by default
