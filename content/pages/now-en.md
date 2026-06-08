@@ -1,6 +1,6 @@
 Title: Now
-Date: 2026-04-25 18:50
-Modified: 2026-05-24 09:50
+Date: 2026-04-25 18:50 +0800
+Modified: 2026-05-24 09:50 +0800
 Slug: now
 Lang: en
 
@@ -57,7 +57,7 @@ My thoughts 👉 [Those Things No One Cares About](https://travlog.wei-lee.me/)
 * [Aimer](https://x.com/Aimer_and_staff) → longest-running fan club membership
 * [江松霖](https://www.youtube.com/@sungsungvideo) → will keep recommending forever
 
-## 🏃‍➡️ What I’ve been doing physically
+## 🏃‍➡️ What I've been doing physically
 * 🥊 [Boxing]({filename}/posts/random-thoughts/2024/01-boxing.md)
 * 🏹 Kyudo (not good enough to deserve a “bullseye” emoji)
 * 🏋️ Gym

@@ -1,10 +1,8 @@
----
-title: 關於我
-date: 2017-02-03 13:06
-modified: 2026-04-17 21:30
-slug: about-me
-lang: zh-tw
----
+Title: 關於我
+Date: 2017-02-03 13:06 +0800
+Modified: 2026-04-17 21:30 +0800
+Slug: about-me
+Lang: zh-tw
 
 <div id="writing-heatmap"></div>
 
