@@ -1,10 +1,12 @@
 Title: CV
 Date: 2026-04-17 00:00 +0800
-Modified: 2026-06-09 12:00 +0800
+Modified: 2026-06-09 18:00 +0800
 Slug: cv
 Lang: en
 
 [TOC]
+
+Apache Airflow [PMC member](https://projects.apache.org/committee.html?airflow) and committer, and Senior Software Engineer with 9 years of experience. Leads major platform features (multiple AIPs) and the Airflow 2-to-3 migration tooling, mentors contributors into committers, and speaks at international conferences. Experienced working across globally distributed teams in the US, Europe, and Asia. Background in data engineering and MLOps; recipient of the 2025 IT Matters Open Source Community Contribution Award.
 
 ## Skills
 
@@ -12,22 +14,24 @@ Lang: en
 * **Data Engineering**: Snowflake, Redis, SQLite, PostgreSQL, MySQL, Redshift
 * **MLOps**: Apache Airflow, DVC, dbt, Great Expectations
 * **Backend Development**: FastAPI, Flask, Django
-* **DevOps**: GitHub Actions, Docker, Kubernetes, Jenkins, Git, AWS Services
+* **DevOps**: GitHub Actions, Docker, Kubernetes, Jenkins, Git; AWS (S3, Lambda, EC2, MWAA, SageMaker, SQS)
 
 ## Work Experience
 
 **[Aug 2024 – Present] Senior Software Engineer, [Astronomer]**
 
-* [apache-airflow] — committer and Project Management Committee (PMC) member
-    * One of the project's most active contributors and reviewers, with 500+ commits
-    * Lead the design and backend implementation of [AIP-90](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-90+Human+in+the+loop) (Human in the Loop — letting data pipelines pause for human review or input), delivered in Airflow 3.1.0, collaborating with PMC members and community contributors and demoing at Airflow dev calls and town halls
-    * Implement [AIP-74](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-74+Introducing+Data+Assets) and part of [AIP-75](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-75+New+Asset-Centric+Syntax) (Data Assets — a flagship Airflow 3 redesign of how pipelines declare the data they produce and consume), unblocking the asset features for Airflow 3
-    * Develop [AIP-76](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-76+Asset+Partitions) (Asset Partitions — processing large datasets partition by partition) across both backend and frontend (first released in Airflow 3.2.0, completing in 3.3.0), including the partition and temporal mappers and backfill support; to be presented at [Airflow Summit 2026](https://airflowsummit.org/sessions/2026/asset-partitions-matching-workflow-to-the-right-data/)
-    * Add "DatasetAlias" (shipped in 2.10.0) for creating datasets or dataset events at runtime
-    * Drive the authentication portion of [AIP-84](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-84+UI+REST+API) (UI REST API) to completion when it became a critical, bandwidth-constrained deliverable
+* [apache-airflow] (Apache Software Foundation top-level project) — committer and Project Management Committee (PMC) member
+    * Contribute to project governance, release management, and technical direction as a PMC member; one of its most active contributors and reviewers, with 500+ commits
+    * Drove the implementation of [AIP-76](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-76+Asset+Partitions) (Asset Partitions — processing large datasets partition by partition), first released in Airflow 3.2.0 and completing in 3.3.0, including the partition and temporal mappers and backfill support; to be presented at [Airflow Summit 2026](https://airflowsummit.org/sessions/2026/asset-partitions-matching-workflow-to-the-right-data/)
+    * Led the end-to-end design and backend implementation of [AIP-90](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-90+Human+in+the+loop) (Human in the Loop — letting data pipelines pause for human review or input), delivered in Airflow 3.1.0, collaborating with PMC members and community contributors and demoing at Airflow dev calls and town halls
+    * Designed and implemented [AIP-74](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-74+Introducing+Data+Assets) and part of [AIP-75](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-75+New+Asset-Centric+Syntax) (Data Assets — a flagship Airflow 3 redesign of how pipelines declare the data they produce and consume), unblocking the asset features for Airflow 3
+    * Designed and implemented "DatasetAlias" (shipped in 2.10.0) for creating datasets or dataset events at runtime
+    * Stepped in to deliver the authentication layer of [AIP-84](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-84+UI+REST+API) (UI REST API), driving the implementation with the community when it became critical and the team was stretched thin
+    * Contributed across core Airflow 3 components, including the Task SDK (asset events / `inlet_events`), mapped operators, task groups, and the SQLite metadata DB migration
+    * Added missing Taiwanese Mandarin translations to Airflow's i18n
 * [ruff](https://github.com/astral-sh/ruff)
-    * Lead the development of the automated Airflow 2-to-3 migration tooling — a critical lever for Airflow 3 adoption — implementing 100+ auto-fixing Rust lint rules ([AIR3XX](https://docs.astral.sh/ruff/rules/#airflow-air)) that let users upgrade with minimal manual effort; collaborate with the Astral team and presented this work at [Airflow Summit 2025](https://airflowsummit.org/sessions/2025/seamless-migration-leveraging-ruff-for-a-smooth-transition-from-airflow-2-to-airflow-3/)
-* Mentor multiple community members into Apache Airflow committers and grow an Airflow OSS community in Taiwan
+    * Led the development of the automated Airflow 2-to-3 migration tooling — a critical lever for Airflow 3 adoption — implementing 100+ auto-fixing Rust lint rules ([AIR3XX](https://docs.astral.sh/ruff/rules/#airflow-air)) that let users upgrade with minimal manual effort; built with the Astral team and presented at [Airflow Summit 2025](https://airflowsummit.org/sessions/2025/seamless-migration-leveraging-ruff-for-a-smooth-transition-from-airflow-2-to-airflow-3/)
+* Mentored multiple community members into Apache Airflow committers and grew an Airflow OSS community in Taiwan
 
 **[Feb 2023 – Jul 2024] Software Engineer, [Astronomer]**
 
@@ -41,7 +45,7 @@ Lang: en
     * Led the deprecation of this project (125+ PRs), contributing existing operators/sensors back to [apache-airflow] to reduce maintenance efforts
     * Automated the provider release-candidate verification and release process, and the integration test deployment ([#987](https://github.com/astronomer/astronomer-providers/pull/987), [#1107](https://github.com/astronomer/astronomer-providers/pull/1107), [#1139](https://github.com/astronomer/astronomer-providers/pull/1139), [#1110](https://github.com/astronomer/astronomer-providers/pull/1110))
 * [ask-astro](https://github.com/astronomer/ask-astro)
-    * Productionized the project and improved its stability
+    * Built data-ingestion pipelines (Stack Overflow, astro-cli, blog content) feeding ask-astro's LLM/RAG knowledge base, added request metric tracking and answer-retry reliability, and set up its dev tooling, docs, and CI
 
 **[Apr 2017 – Feb 2023] Machine Learning Engineer, [Rakuten USA](https://www.rakuten.com/)**
 
@@ -139,7 +143,7 @@ For more slides, check my [Speaker Deck](https://speakerdeck.com/leew/).
 
 ## Awards
 
-* [2025 IT Matters Awards 開源社群貢獻獎](https://award.ima.org.tw/history_2025.html) — awardees were received by the President of Taiwan
+* 2025 IT Matters Awards 開源社群貢獻獎 — awardees were [received by the President of Taiwan](https://www.president.gov.tw/News/39967)
 * [Honorable Mention, 2013 Railway Application Section Problem Solving Competition](https://ilin.iim.ncku.edu.tw/files/ilinwang_NCKU_INFORMS_RAS2013_newsletter%208.pdf)
 
 ## Publications
