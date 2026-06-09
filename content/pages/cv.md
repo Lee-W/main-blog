@@ -1,6 +1,6 @@
 Title: CV
 Date: 2026-04-17 00:00 +0800
-Modified: 2026-06-08 20:30 +0800
+Modified: 2026-06-09 12:00 +0800
 Slug: cv
 Lang: en
 
@@ -8,7 +8,7 @@ Lang: en
 
 ## Skills
 
-* **Programming Language**: Python
+* **Programming Language**: Python, Rust
 * **Data Engineering**: Snowflake, Redis, SQLite, PostgreSQL, MySQL, Redshift
 * **MLOps**: Apache Airflow, DVC, dbt, Great Expectations
 * **Backend Development**: FastAPI, Flask, Django
@@ -18,26 +18,30 @@ Lang: en
 
 **[Aug 2024 – Present] Senior Software Engineer, [Astronomer]**
 
-* [apache-airflow]
-    * Add "DatasetAlias" for creating datasets or dataset events at runtime
-    * Implement half of [AIP-74](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-74+Introducing+Data+Assets) and part of [AIP-75](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-75+New+Asset-Centric+Syntax)
-    * Lead the implementation of [AIP-90](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-90+Human+in+the+loop)
+* [apache-airflow] — committer and Project Management Committee (PMC) member
+    * One of the project's most active contributors and reviewers, with 500+ commits
+    * Lead the design and backend implementation of [AIP-90](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-90+Human+in+the+loop) (Human in the Loop — letting data pipelines pause for human review or input), delivered in Airflow 3.1.0, collaborating with PMC members and community contributors and demoing at Airflow dev calls and town halls
+    * Implement [AIP-74](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-74+Introducing+Data+Assets) and part of [AIP-75](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-75+New+Asset-Centric+Syntax) (Data Assets — a flagship Airflow 3 redesign of how pipelines declare the data they produce and consume), unblocking the asset features for Airflow 3
+    * Develop [AIP-76](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-76+Asset+Partitions) (Asset Partitions — processing large datasets partition by partition) across both backend and frontend (first released in Airflow 3.2.0, completing in 3.3.0), including the partition and temporal mappers and backfill support; to be presented at [Airflow Summit 2026](https://airflowsummit.org/sessions/2026/asset-partitions-matching-workflow-to-the-right-data/)
+    * Add "DatasetAlias" (shipped in 2.10.0) for creating datasets or dataset events at runtime
+    * Drive the authentication portion of [AIP-84](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-84+UI+REST+API) (UI REST API) to completion when it became a critical, bandwidth-constrained deliverable
 * [ruff](https://github.com/astral-sh/ruff)
-    * Implement most of the [AIR3XX](https://docs.astral.sh/ruff/rules/#airflow-air) rules to facilitate the migration from Airflow 2 to Airflow 3
+    * Lead the development of the automated Airflow 2-to-3 migration tooling — a critical lever for Airflow 3 adoption — implementing 100+ auto-fixing Rust lint rules ([AIR3XX](https://docs.astral.sh/ruff/rules/#airflow-air)) that let users upgrade with minimal manual effort; collaborate with the Astral team and presented this work at [Airflow Summit 2025](https://airflowsummit.org/sessions/2025/seamless-migration-leveraging-ruff-for-a-smooth-transition-from-airflow-2-to-airflow-3/)
+* Mentor multiple community members into Apache Airflow committers and grow an Airflow OSS community in Taiwan
 
 **[Feb 2023 – Jul 2024] Software Engineer, [Astronomer]**
 
 * [apache-airflow]
-    * Allowed Airflow tasks to execute directly from the triggerer
+    * Optimized task scheduling by allowing deferrable tasks to execute directly from the triggerer (Airflow's component for efficient asynchronous task execution), bypassing the worker; presented this work at [Airflow Summit 2024](https://airflowsummit.org/sessions/2024/what-if-running-airflow-tasks-without-the-workers/)
     * Added REST API endpoint to manipulate queued dataset events
-    * Upgraded apache-airflow-providers-weaviate to 2.0.0 for weaviate-client >= 4.4.0 support
-    * Added Azure managed identities support to apache-airflow-providers-microsoft-azure
     * Added `default_deferrable` configuration for easily turning on the deferrable mode of operators
+    * Added Azure Managed Identity support to apache-airflow-providers-microsoft-azure (Microsoft Liftr project) for near-credential-free authentication
+    * Upgraded apache-airflow-providers-weaviate to 2.0.0 for weaviate-client >= 4.4.0 support
 * [astronomer-providers](https://github.com/astronomer/astronomer-providers)
-    * Contributed existing operators/sensors back to [apache-airflow] and deprecated this project to reduce maintenance efforts
-    * Automated the deployment of integration tests and testing against the release of the airflow provider ([#987](https://github.com/astronomer/astronomer-providers/pull/987), [#1107](https://github.com/astronomer/astronomer-providers/pull/1107), [#1139](https://github.com/astronomer/astronomer-providers/pull/1139), [#1110](https://github.com/astronomer/astronomer-providers/pull/1110))
+    * Led the deprecation of this project (125+ PRs), contributing existing operators/sensors back to [apache-airflow] to reduce maintenance efforts
+    * Automated the provider release-candidate verification and release process, and the integration test deployment ([#987](https://github.com/astronomer/astronomer-providers/pull/987), [#1107](https://github.com/astronomer/astronomer-providers/pull/1107), [#1139](https://github.com/astronomer/astronomer-providers/pull/1139), [#1110](https://github.com/astronomer/astronomer-providers/pull/1110))
 * [ask-astro](https://github.com/astronomer/ask-astro)
-    * Set up local dev tools and fixed various existing bugs
+    * Productionized the project and improved its stability
 
 **[Apr 2017 – Feb 2023] Machine Learning Engineer, [Rakuten USA](https://www.rakuten.com/)**
 
@@ -135,8 +139,8 @@ For more slides, check my [Speaker Deck](https://speakerdeck.com/leew/).
 
 ## Awards
 
-* 2025 IT Matters Awards 開源社群貢獻獎
-* Honorable Mention, 2013 Railway Application Section Problem Solving Competition
+* [2025 IT Matters Awards 開源社群貢獻獎](https://award.ima.org.tw/history_2025.html) — awardees were received by the President of Taiwan
+* [Honorable Mention, 2013 Railway Application Section Problem Solving Competition](https://ilin.iim.ncku.edu.tw/files/ilinwang_NCKU_INFORMS_RAS2013_newsletter%208.pdf)
 
 ## Publications
 
