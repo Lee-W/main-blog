@@ -16,14 +16,55 @@ def get_github_token() -> str | None:
     if token := os.environ.get("GITHUB_TOKEN"):
         return token
     try:
-        result = subprocess.run(
-            ["gh", "auth", "token"], capture_output=True, text=True
-        )
+        result = subprocess.run(["gh", "auth", "token"], capture_output=True, text=True)
         if result.returncode == 0:
             return result.stdout.strip()
     except FileNotFoundError:
         pass
     return None
+
+
+def user_commented_in_range(
+    repo_full_name: str,
+    issue_number: int,
+    username: str,
+    start_date: str,
+    end_date: str,
+    headers: dict[str, str],
+) -> bool:
+    """Check whether the user posted a comment on an issue/PR within the date range.
+
+    Search's ``commenter:`` qualifier only tells us the user commented at some
+    point; it can't filter by comment date. We confirm by walking the issue's
+    comments (filtered server-side with ``since``) and matching the author.
+    """
+    page = 1
+    per_page = 100
+    while True:
+        response = requests.get(
+            f"https://api.github.com/repos/{repo_full_name}/issues/{issue_number}/comments",
+            headers=headers,
+            params={
+                "since": f"{start_date}T00:00:00Z",
+                "per_page": per_page,
+                "page": page,
+            },
+        )
+        response.raise_for_status()
+        comments = response.json()
+        if not comments:
+            return False
+
+        for comment in comments:
+            author = (comment.get("user") or {}).get("login", "")
+            if author.lower() != username.lower():
+                continue
+            if comment["created_at"][:10] <= end_date:
+                return True
+
+        if len(comments) < per_page:
+            return False
+        page += 1
 
 
 def fetch_contributions(
@@ -33,16 +74,22 @@ def fetch_contributions(
     excluded_repos: list[str],
     token: str | None,
 ) -> dict[str, dict[str, list[dict]]]:
-    """Fetch all contributions (issues, PRs, reviews, releases) by user."""
+    """Fetch all contributions (issues, PRs, reviews, comments, releases) by user."""
     headers = {"Accept": "application/vnd.github.v3+json"}
     if token:
         headers["Authorization"] = f"Bearer {token}"
 
-    # Contribution types to fetch
+    # Contribution types to fetch.
+    #
+    # Authored issues/PRs and reviews filter on `created` (when the thread was
+    # opened). Comments instead filter on `updated` so threads opened earlier
+    # but replied to this week become candidates; each candidate is then
+    # verified against the actual comment timestamps below.
     queries = {
         "issues": f"author:{username} created:{start_date}..{end_date} is:issue",
         "prs": f"author:{username} created:{start_date}..{end_date} is:pr",
         "reviewed": f"reviewed-by:{username} created:{start_date}..{end_date} is:pr",
+        "commented": f"commenter:{username} updated:{start_date}..{end_date}",
     }
 
     contributions_by_repo = {}
@@ -75,12 +122,31 @@ def fetch_contributions(
                 if any(excluded in repo_full_name for excluded in excluded_repos):
                     continue
 
+                # `commented` returns threads the user replied to, including
+                # ones they authored (already captured as issues/prs) and ones
+                # only updated for unrelated reasons. Drop self-authored threads
+                # and verify a real comment lands in the date range.
+                if contribution_type == "commented":
+                    author = (item.get("user") or {}).get("login", "")
+                    if author.lower() == username.lower():
+                        continue
+                    if not user_commented_in_range(
+                        repo_full_name,
+                        item["number"],
+                        username,
+                        start_date,
+                        end_date,
+                        headers,
+                    ):
+                        continue
+
                 if repo_full_name not in contributions_by_repo:
                     contributions_by_repo[repo_full_name] = {
                         "issues": [],
                         "prs": [],
                         "releases": [],
                         "reviewed": [],
+                        "commented": [],
                     }
 
                 contribution = {
@@ -157,6 +223,7 @@ def fetch_contributions(
                         "prs": [],
                         "releases": [],
                         "reviewed": [],
+                        "commented": [],
                     }
 
                 contribution = {
@@ -166,8 +233,13 @@ def fetch_contributions(
                     "repo": repo_full_name,
                 }
 
-                if contribution not in contributions_by_repo[repo_full_name]["releases"]:
-                    contributions_by_repo[repo_full_name]["releases"].append(contribution)
+                if (
+                    contribution
+                    not in contributions_by_repo[repo_full_name]["releases"]
+                ):
+                    contributions_by_repo[repo_full_name]["releases"].append(
+                        contribution
+                    )
 
             if len(data) < per_page:
                 break
@@ -209,7 +281,13 @@ def generate_markdown(
 
         # Skip repo if no contributions
         if not any(
-            [items["issues"], items["prs"], items["releases"], items["reviewed"]]
+            [
+                items["issues"],
+                items["prs"],
+                items["releases"],
+                items["reviewed"],
+                items["commented"],
+            ]
         ):
             continue
 
@@ -246,9 +324,43 @@ def generate_markdown(
                     f"    {i}. [{item['title']} #{item['number']}]({item['url']})"
                 )
 
+        # Commented Issues/PRs
+        if items["commented"]:
+            lines.append("* 參與討論")
+            for i, item in enumerate(items["commented"], 1):
+                lines.append(
+                    f"    {i}. [{item['title']} #{item['number']}]({item['url']})"
+                )
+
         lines.append("")
 
     return "\n".join(lines)
+
+
+REPORT_DIR = Path("content/posts/tech")
+
+
+def resolve_output_path(start_date: str, end_date: str) -> Path:
+    """Derive the report's file path from its date range.
+
+    Posts are named ``{seq}-{slug}.md`` under ``content/posts/tech/{year}/``.
+    If a report for this week already exists we reuse its path so regenerating
+    overwrites in place; otherwise we take the next sequence number in the
+    year directory.
+    """
+    slug = f"{start_date}-{end_date}-open-source-report"
+    year_dir = REPORT_DIR / start_date[:4]
+
+    existing = sorted(year_dir.glob(f"*-{slug}.md"))
+    if existing:
+        return existing[0]
+
+    max_seq = 0
+    for path in year_dir.glob("*.md"):
+        prefix = path.name.split("-", 1)[0]
+        if prefix.isdigit():
+            max_seq = max(max_seq, int(prefix))
+    return year_dir / f"{max_seq + 1}-{slug}.md"
 
 
 def main():
@@ -258,12 +370,8 @@ def main():
     parser.add_argument(
         "--username", default="Lee-W", help="GitHub username (default: Lee-W)"
     )
-    parser.add_argument(
-        "--start-date", help="Start date in YYYY-MM-DD format"
-    )
-    parser.add_argument(
-        "--end-date", help="End date in YYYY-MM-DD format"
-    )
+    parser.add_argument("--start-date", help="Start date in YYYY-MM-DD format")
+    parser.add_argument("--end-date", help="End date in YYYY-MM-DD format")
     parser.add_argument(
         "--exclude",
         type=str,
@@ -280,7 +388,10 @@ def main():
     parser.add_argument(
         "--output",
         type=Path,
-        help="Output markdown file path (optional, prints to stdout if not provided)",
+        help=(
+            "Output markdown file path. Defaults to the auto-derived post path "
+            "under content/posts/tech/{year}/ based on the date range."
+        ),
     )
     parser.add_argument(
         "--dry-run",
@@ -326,7 +437,9 @@ def main():
             end_date = today - timedelta(days=weekday + 1)
 
     print(f"Fetching contributions by {args.username}")
-    print(f"Date range: {start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')}")
+    print(
+        f"Date range: {start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')}"
+    )
     if excluded_repos:
         print(f"Excluding repos: {', '.join(sorted(excluded_repos))}")
 
@@ -348,12 +461,14 @@ def main():
     total_prs = sum(len(c["prs"]) for c in contributions_by_repo.values())
     total_releases = sum(len(c["releases"]) for c in contributions_by_repo.values())
     total_reviewed = sum(len(c["reviewed"]) for c in contributions_by_repo.values())
+    total_commented = sum(len(c["commented"]) for c in contributions_by_repo.values())
 
     print("Found:")
     print(f"  {total_issues} created issues")
     print(f"  {total_prs} created PRs")
     print(f"  {total_releases} releases")
     print(f"  {total_reviewed} reviewed PRs")
+    print(f"  {total_commented} commented issues/PRs")
     print(f"  across {len(contributions_by_repo)} repos")
 
     if args.dry_run:
@@ -369,6 +484,8 @@ def main():
                 details.append(f"{len(contrib['releases'])} releases")
             if contrib["reviewed"]:
                 details.append(f"{len(contrib['reviewed'])} reviewed")
+            if contrib["commented"]:
+                details.append(f"{len(contrib['commented'])} commented")
             if details:
                 print(f"  {repo}: {', '.join(details)}")
         return
@@ -380,11 +497,13 @@ def main():
         args.username,
     )
 
-    if args.output:
-        args.output.write_text(markdown, encoding="utf-8")
-        print(f"✓ Markdown written to {args.output}")
-    else:
-        print("\n" + markdown)
+    output = args.output or resolve_output_path(
+        start_date.strftime("%Y-%m-%d"),
+        end_date.strftime("%Y-%m-%d"),
+    )
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(markdown, encoding="utf-8")
+    print(f"✓ Markdown written to {output}")
 
 
 if __name__ == "__main__":
