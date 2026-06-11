@@ -312,6 +312,8 @@ def check_image_usage(_) -> None:
         if len(files) > 1 and url in disk and "/meme/" not in url
     }
     print(f"\n=== Reused across articles (outside /images/meme/): {len(reused)} ===")
+    print("    (referencing the original post folder is fine;")
+    print("     consider moving to /images/meme/ only if it is a meme)")
     for url, files in sorted(reused.items()):
         print(f"  {url}")
         for f in sorted(files):
