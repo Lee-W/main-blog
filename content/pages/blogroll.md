@@ -8,6 +8,7 @@ Lang: zh-tw
 
 | 部落格 | 備註 |
 | --- | --- |
+| [那些沒人在乎的事](https://travlog.wei-lee.me/) | 我的另一個部落格，料理、動漫和旅遊的日常 |
 | [Huli's blog](https://blog.huli.tw/) | 這個部落格之所以會開始就是受到 Huli 大大啟發 |
 | [Huli's blog（生活）](https://life.huli.tw/) | |
 | [烏龜漫遊 2.0](https://lankudot.airfishlab.com/) | 現實中真的會一起看電影的朋朋 |

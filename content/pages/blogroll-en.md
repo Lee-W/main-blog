@@ -8,6 +8,7 @@ The blogs I subscribe to via [RSS]({filename}/posts/random-thoughts/2025/02-get-
 
 | Blog | Notes |
 | --- | --- |
+| [Those things no one cares about](https://travlog.wei-lee.me/) | Another blog of mine, all about cooking, anime, and travel. |
 | [Huli's blog](https://blog.huli.tw/) | This blog is the very reason I started writing my own |
 | [Huli's blog（生活）](https://life.huli.tw/) | |
 | [烏龜漫遊 2.0](https://lankudot.airfishlab.com/) | A friend I actually watch movies with in real life |
