@@ -34,6 +34,7 @@ dependencies = [
   "pelican-random-article>=0.2.1",
   "pelican-on-this-day>=0.4.0",
   "pelican-tabular>=0.4.0",
+  "pelican-sitemap>=1.2.2",
 ]
 
 [dependency-groups]

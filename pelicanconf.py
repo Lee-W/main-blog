@@ -124,6 +124,7 @@ PLUGINS = [
     "pelican.plugins.seo",
     "pelican.plugins.series",
     "pelican.plugins.share_post",
+    "pelican.plugins.sitemap",
     "pelican.plugins.statistics",
     "pelican.plugins.summary_link",
     "pelican.plugins.tag_cloud",
@@ -146,6 +147,21 @@ DEADLINKS_VALIDATION = False
 # pelican-tabular settings
 TABULAR_COUNT_TEMPLATE = ""  # suppress the row-count line under tables
 TABULAR_GROUP_COUNT_TEMPLATE = ""  # suppress per-group counts in group headers
+
+# pelican-sitemap settings
+SITEMAP = {
+    "format": "xml",
+    "priorities": {
+        "articles": 0.7,
+        "indexes": 0.5,
+        "pages": 0.6,
+    },
+    "changefreqs": {
+        "articles": "monthly",
+        "indexes": "weekly",
+        "pages": "monthly",
+    },
+}
 
 # pelican-seo settings
 SEO_REPORT = True  # SEO report is enabled by default

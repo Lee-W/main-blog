@@ -19,5 +19,8 @@ DELETE_OUTPUT_DIRECTORY = True
 
 UMAMI_WEBSITE_ID = os.environ.get("UMAMI_WEBSITE_ID")
 
+# Point the SEO enhancer-generated robots.txt at the sitemap
+SEO_ENHANCER_SITEMAP_URL = f"{SITEURL}/sitemap.xml"
+
 # local plugins
 DEADLINKS_VALIDATION = False
