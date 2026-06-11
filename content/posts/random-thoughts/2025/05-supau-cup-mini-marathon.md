@@ -50,7 +50,7 @@ The Force is strong with this shirt.
 真的是好東西
 可惜當初沒有直接買一整盒
 
-![mygo-bottle](/images/posts-image/2025-first-9-km-run/mygo-bottle.jpeg)
+![mygo-bottle](/images/meme/mygo-bottle.jpeg)
 
 自從我買了這個杯子，高蛋白的消耗速度就特別快
 之前發了一篇這樣的廢文

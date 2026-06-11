@@ -47,7 +47,7 @@ PyCon Taiwan 這邊也有人會帶初次接觸的人，快速設定好環境
 以下以 macOS 為例，畢竟我也沒其他系統
 如果是 Linux，反正都用 Linux 了，這些小問題一定解得動
 但如果是 Windows，我只能
-![oshiyawaseni](/images/posts-image/2025-cpython-contribution-101/oshiyawaseni.jpg)
+![oshiyawaseni](/images/meme/mygo-oshiyawaseni.jpg)
 （或者請你參考 [Python Developer’s Guide] ）
 
 1. 先將 Git 設定好（macOS 應該是預設就有吧 🤔）
