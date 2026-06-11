@@ -269,6 +269,70 @@ def new_airflow_report(c, title, slug=""):
     _create_post_from_template("airflow-report.md", title, "Tech", slug)
 
 
+@task
+def check_image_usage(_) -> None:
+    """Report orphan, cross-article reused, and duplicate-content images."""
+    import hashlib
+    import urllib.parse
+    from collections import defaultdict
+
+    ref_patterns = [
+        re.compile(r"\]\(\s*(/images/[^)]+?)\s*\)"),
+        re.compile(r"src=[\"'](/images/[^\"']+)[\"']"),
+        re.compile(r"^(?:Cover|Image):\s*(/images/\S+)", re.M),
+    ]
+    refs: dict[str, set[str]] = defaultdict(set)
+    for md in Path("content").rglob("*.md"):
+        if "posts" not in md.parts and "pages" not in md.parts:
+            continue
+        text = md.read_text()
+        for pattern in ref_patterns:
+            for match in pattern.findall(text):
+                refs[urllib.parse.unquote(match.strip())].add(str(md))
+
+    config_used = {"/images/avatar.jpeg", "/images/cover.jpeg"}
+    disk = {
+        f"/{path.relative_to('content')}": path
+        for path in Path("content/images").rglob("*")
+        if path.is_file() and path.name != ".DS_Store"
+    }
+
+    orphans = sorted(
+        (path.stat().st_size, url)
+        for url, path in disk.items()
+        if url not in refs and url not in config_used
+    )
+    print(f"=== Orphan images: {len(orphans)} ===")
+    for size, url in reversed(orphans):
+        print(f"  {size / 1024 / 1024:6.2f} MB  {url}")
+
+    reused = {
+        url: files
+        for url, files in refs.items()
+        if len(files) > 1 and url in disk and "/meme/" not in url
+    }
+    print(f"\n=== Reused across articles (outside /images/meme/): {len(reused)} ===")
+    for url, files in sorted(reused.items()):
+        print(f"  {url}")
+        for f in sorted(files):
+            print(f"      {f}")
+
+    by_digest: dict[str, list[str]] = defaultdict(list)
+    for url, path in disk.items():
+        by_digest[hashlib.md5(path.read_bytes()).hexdigest()].append(url)
+    duplicates = [sorted(urls) for urls in by_digest.values() if len(urls) > 1]
+    print(f"\n=== Identical file contents: {len(duplicates)} group(s) ===")
+    for urls in sorted(duplicates):
+        print("  " + " == ".join(urls))
+
+    dead = sorted(url for url in refs if url not in disk)
+    print(f"\n=== Referenced but missing on disk: {len(dead)} ===")
+    for url in dead:
+        print(f"  {url}")
+        for f in sorted(refs[url]):
+            print(f"      {f}")
+
+
 def _get_exif_tag_ids_by_names(names: Sequence[str]) -> set[int]:
     return {getattr(ExifBase, name).value for name in names}
 
