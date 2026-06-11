@@ -164,14 +164,14 @@ def pelican_run(cmd):
     pelican_main(shlex.split(cmd))
 
 
-@task
-def style(c):
+@task(optional=["rev_range"])
+def style(c, rev_range="origin/main.."):
     """Run style check on python code"""
     python_targets = "pelicanconf.py publishconf.py tasks.py"
     c.run(
         f"""
         uv run ruff check {python_targets} && \
-        uv run cz check --rev-range origin/main..
+        uv run cz check --rev-range {shlex.quote(rev_range)}
         """
     )
 

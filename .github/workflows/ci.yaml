@@ -1,7 +1,10 @@
 ---
-name: New pull request received
+name: CI
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
   workflow_dispatch:
     inputs:
@@ -33,7 +36,11 @@ jobs:
 
       - name: Check Python coding style
         run: |
-          uv run inv style
+          if [ "${{ github.event_name }}" = "push" ]; then
+            uv run inv style --rev-range "${{ github.event.before }}..${{ github.sha }}"
+          else
+            uv run inv style
+          fi
 
       - name: Check whether pelican local pages is buildable
         run: |
