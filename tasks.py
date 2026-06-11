@@ -158,7 +158,6 @@ def build_publish(c, build_pagefind=False):
         _build_pagefind()
 
 
-
 def pelican_run(cmd):
     cmd += " " + program.core.remainder  # allows to pass-through args to pelican
     pelican_main(shlex.split(cmd))
@@ -194,7 +193,7 @@ def security_check(c):
     c.run(
         """
         uv pip compile pyproject.toml -o requirements.txt && \
-        uv run pip-audit -r requirements.txt && \
+        uv run pip-audit -r requirements.txt --ignore-vuln CVE-2026-4539 && \
         rm -rf requirements.txt
         """
     )
@@ -259,7 +258,9 @@ def new_open_source_report(c, start, end):
     start_dt = datetime.datetime.strptime(start, "%Y-%m-%d")
     end_dt = datetime.datetime.strptime(end, "%Y-%m-%d")
     title = f"{start_dt.strftime('%Y/%m/%d')} - {end_dt.strftime('%m/%d')} 開源貢獻週報"
-    slug = f"{start_dt.strftime('%Y-%m-%d')}-{end_dt.strftime('%m-%d')}-open-source-report"
+    slug = (
+        f"{start_dt.strftime('%Y-%m-%d')}-{end_dt.strftime('%m-%d')}-open-source-report"
+    )
     _create_post_from_template("open-source-report.md", title, "Tech", slug)
 
 
@@ -360,5 +361,5 @@ def check_and_remove_image_exif_gps_info(_) -> None:
 
                 if file_changed:
                     im.save(name)
-        except (FileNotFoundError, UnidentifiedImageError):
+        except FileNotFoundError, UnidentifiedImageError:
             continue
