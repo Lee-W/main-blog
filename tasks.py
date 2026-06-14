@@ -16,7 +16,7 @@ from pelican import main as pelican_main
 from pelican.server import ComplexHTTPRequestHandler, RootedHTTPServer
 from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
 from PIL.ExifTags import Base as ExifBase
-from PIL.Image import UnidentifiedImageError
+from PIL.Image import Resampling, UnidentifiedImageError
 from PIL.Image import open as pil_open
 
 OPEN_BROWSER_ON_SERVE = True
@@ -270,6 +270,25 @@ def new_airflow_report(c, title, slug=""):
     _create_post_from_template("airflow-report.md", title, "Tech", slug)
 
 
+def _dhash(path: Path, hash_size: int = 8) -> int | None:
+    """Perceptual difference-hash of an image (None if it can't be opened)."""
+    try:
+        with pil_open(path) as im:
+            small = im.convert("L").resize(
+                (hash_size + 1, hash_size), Resampling.LANCZOS
+            )
+    except UnidentifiedImageError, OSError, ValueError:
+        return None
+    pixels = list(small.getdata())
+    bits = 0
+    for row in range(hash_size):
+        for col in range(hash_size):
+            left = pixels[row * (hash_size + 1) + col]
+            right = pixels[row * (hash_size + 1) + col + 1]
+            bits = (bits << 1) | int(left > right)
+    return bits
+
+
 @task
 def check_image_usage(_) -> None:
     """Report orphan, cross-article reused, and duplicate-content images."""
@@ -321,12 +340,35 @@ def check_image_usage(_) -> None:
             print(f"      {f}")
 
     by_digest: dict[str, list[str]] = defaultdict(list)
+    digest_by_url: dict[str, str] = {}
     for url, path in disk.items():
-        by_digest[hashlib.md5(path.read_bytes()).hexdigest()].append(url)
+        digest = hashlib.md5(path.read_bytes()).hexdigest()
+        by_digest[digest].append(url)
+        digest_by_url[url] = digest
     duplicates = [sorted(urls) for urls in by_digest.values() if len(urls) > 1]
     print(f"\n=== Identical file contents: {len(duplicates)} group(s) ===")
     for urls in sorted(duplicates):
         print("  " + " == ".join(urls))
+
+    # Near-duplicates: visually similar but not byte-identical (re-compressed,
+    # resized, or EXIF-stripped copies that md5 alone cannot catch).
+    near_dup_threshold = 5
+    hashes = [(url, h) for url in disk if (h := _dhash(disk[url])) is not None]
+    near_dups = []
+    for i, (url_a, hash_a) in enumerate(hashes):
+        for url_b, hash_b in hashes[i + 1 :]:
+            if digest_by_url[url_a] == digest_by_url[url_b]:
+                continue  # already reported above as identical contents
+            distance = (hash_a ^ hash_b).bit_count()
+            if distance <= near_dup_threshold:
+                near_dups.append((distance, url_a, url_b))
+    near_dups.sort()
+    print(
+        f"\n=== Near-duplicate images "
+        f"(perceptual, Hamming <= {near_dup_threshold}): {len(near_dups)} pair(s) ==="
+    )
+    for distance, url_a, url_b in near_dups:
+        print(f"  d={distance}  {url_a}  ~~  {url_b}")
 
     dead = sorted(url for url in refs if url not in disk)
     print(f"\n=== Referenced but missing on disk: {len(dead)} ===")
