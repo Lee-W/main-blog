@@ -4,7 +4,7 @@ Date: 2025-05-03 12:55 +0800
 Category: Random Thoughts
 Tags: Music
 Slug: support-your-oshi-while-you-can
-Cover: /images/posts-image/2025-support-your-oshi-while-you-can/IMG_0631.JPG
+Cover: /images/posts-image/2025-support-your-oshi-while-you-can/better.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -66,7 +66,7 @@ Lang: zh-tw
 
 時至今日，我的手機桌布依然是 2017 巡迴發售單曲的封面
 
-![IMG_0631](/images/posts-image/2025-support-your-oshi-while-you-can/IMG_0631.JPG)
+![better](/images/posts-image/2025-support-your-oshi-while-you-can/better.jpeg)
 
 倒是想到買這場巡迴的趣事
 當初只要能在路上遇到她跟她買那張巡迴票，就可以得到她手寫的信

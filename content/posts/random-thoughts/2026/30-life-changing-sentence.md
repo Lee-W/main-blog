@@ -3,7 +3,7 @@ Date: 2026-05-27 14:55 +0800
 Category: Random Thoughts
 Tags: BlogBlog 同樂會, Life
 Slug: life-changing-sentence
-Cover: /images/posts-image/2026/life-changing-sentence/better.jpeg
+Cover: /images/posts-image/2025-support-your-oshi-while-you-can/better.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -122,7 +122,7 @@ Lang: zh-tw
 > 事與願違才是人生
 
 ### PyCon TW 2017
-![pycontw-2017-buy-first-then-consider](/images/posts-image/2026/life-changing-sentence/pycontw-2017-buy-first-then-consider.jpeg)
+![pycontw-2017-buy-first-then-consider](/images/posts-image/2017-06-11-PyCon-TW-2017-Day3/2-buy-first.jpg)
 
 [PyCon TW 2017 第三天 閃電秀]({filename}/posts/tech/2017/11-PyCon-TW-2017-Day3.md#lightning-talk)的一段售票宣傳
 畢竟改變人生觀的一句話，也不一定是要改變我的嘛
@@ -181,7 +181,7 @@ You only live once.
 
 更好這張手工單曲的封面也存在著對我很有意義的一句話
 
-![better](/images/posts-image/2026/life-changing-sentence/better.jpeg)
+![better](/images/posts-image/2025-support-your-oshi-while-you-can/better.jpeg)
 
 自從我買到這張單曲後，我已經 9 年沒有換過鎖定螢幕的照片了
 它從那時就一直支持著我

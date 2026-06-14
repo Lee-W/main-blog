@@ -54,7 +54,7 @@ TypeError: Object of type datetime is not JSON serializable
 
 Surely Airflow can do better.
 
-![surely airflow can do better](/images/posts-image/2024-serialize-start-trigger-args/dooku.jpg)
+![surely airflow can do better](/images/meme/dooku-surely-you-can-do-better.jpg)
 
 ## Why is this happening?
 

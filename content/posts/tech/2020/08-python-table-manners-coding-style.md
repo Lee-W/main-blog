@@ -284,8 +284,6 @@ pipenv run black <package>
 
 ![black-fix-2](/images/posts-image/2020-02-22-python-table-manner-series/black-fix-2.jpg)
 
-![black-fix-3](/images/posts-image/2020-02-22-python-table-manner-series/black-fix-3.jpg)
-
 如果只想要檢查程式碼是否符合 black 的風格
 而不要直接做修正，可以在指令後面加入 `--check` 參數
 
