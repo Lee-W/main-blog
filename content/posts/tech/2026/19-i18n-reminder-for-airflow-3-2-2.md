@@ -36,6 +36,9 @@ zh-TW  100.0%
 我還是要來愛木須龍一下啦！
 
 ![我愛慕虛榮啦](/images/meme/mygo-vanity.jpg)
+/// caption
+© BanG Dream! Project｜出自 [《BanG Dream! It's MyGO!!!!!》第 10 集](https://ani.gamer.com.tw/animeVideo.php?sn=34517)
+///
 
 ![不客氣](/images/posts-image/2026/i18n-reminder-for-airflow-3-2-2/you-are-welcom.jpg)
 

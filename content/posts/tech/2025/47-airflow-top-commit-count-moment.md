@@ -21,8 +21,8 @@ Lang: zh-tw
 而且這篇文章也只是想愛木須龍，隨便記錄一下
 
 ![mygo-vanity](/images/meme/mygo-vanity.jpg)
+/// caption
+© BanG Dream! Project｜出自 [《BanG Dream! It's MyGO!!!!!》第 10 集](https://ani.gamer.com.tw/animeVideo.php?sn=34517)
+///
 
 ![duration](/images/posts-image/2025-airflow-top-commit-count-moment/period.jpg)
-
-## Reference
-* [BanG Dream! It's MyGO!!!!!](https://ani.gamer.com.tw/animeVideo.php?sn=34030)

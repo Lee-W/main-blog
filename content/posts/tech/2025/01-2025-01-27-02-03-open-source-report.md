@@ -23,6 +23,9 @@ Lang: zh-tw
 不過追根究底可能就跟聖愛音一樣
 
 ![mygo-vanity](/images/meme/mygo-vanity.jpg)
+/// caption
+© BanG Dream! Project｜出自 [《BanG Dream! It's MyGO!!!!!》第 10 集](https://ani.gamer.com.tw/animeVideo.php?sn=34517)
+///
 
 這週因為過年所以特別多
 下週以後就不知道了
