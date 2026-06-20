@@ -1,6 +1,7 @@
 Title: Open Source Team Taiwan
 Subtitle: Your AI Is Only As Good As Your Pipeline
 Date: 2026-06-08 08:15 +0800
+Modified: 2026-06-20 16:00 +0800
 Category: Tech
 Tags: Computex, Airflow
 Slug: open-source-team-taiwan
@@ -39,6 +40,11 @@ Lang: zh-tw
 
 不過能實體見到社群夥伴還是蠻好的
 尤其是聊到料理的部分，**巴狄尼絲莊園頂級初榨橄欖油**是好油，記住了
+
+![oil](/images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/oil.jpeg)
+/// caption
+後來社群夥伴帶了一瓶送我，真的很讚
+///
 
 開源區本身設計蠻不錯的
 進入整個展區後走幾步就會看到 Open Source 的大字
