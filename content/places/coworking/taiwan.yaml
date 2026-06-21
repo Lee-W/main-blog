@@ -124,3 +124,24 @@ sky-coki:
   urls:
     - label: "Sky Cofi 咖啡館"
       href: "{filename}/posts/random-thoughts/2026/25-sky-cofi.md"
+
+daychill-specialty-coffee:
+  name: Daychill Specialty Coffee Co.
+  lat: 25.051973724626745
+  lon: 121.55914385673243
+  address: 臺北市松山區東光里南京東路五段55-1號
+  country: 臺灣
+  city: 臺北
+  district: 松山
+  hours: "12:00 ~ 23:00（週一休息）"
+  power: "✅ (大多有)"
+  wifi: "✅"
+  time_limit: "❌"
+  noise: "★★★★☆"
+  work_score: "★★★☆☆"
+  min_spend: "一杯飲品"
+  meal: "❌"
+  tags: []
+  urls:
+    - label: "Daychill Specialty Coffee Co."
+      href: "{filename}/posts/random-thoughts/2026/35-daychill-specialty-coffee.md"
