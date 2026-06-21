@@ -62,3 +62,7 @@ Lang: zh-tw
 至於安靜程度就很不一定
 通常是蠻安靜的，但還是遇到過幾次極吵的時候
 不過這時候只要拿出我的[XM6]({filename}/posts/random-thoughts/2025/07-sony-wh-1000-xm6.md)就沒問題了 👌
+
+---
+
+更多我去過的工作空間，可以參考我的[🗺️ 共同工作空間地圖]({filename}/pages/coworking.md)
