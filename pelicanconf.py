@@ -83,7 +83,7 @@ MARKDOWN = {
 
 # Utterance (comment system)
 UTTERANCES_LABEL = "blog-comment"
-COMMENTS_INTRO = '喜歡這篇文章的話，歡迎在下方留言（需要 GitHub 帳號），或是<a href="mailto:weilee.rx+blog@gmail.com">寄 Email 找我聊聊！</a>'
+COMMENTS_INTRO = '喜歡這篇文章的話，歡迎在下方留言（需要 GitHub 帳號），或是<a href="mailto:hello+blog@wei-lee.me">寄 Email 找我聊聊！</a>'
 
 # pelican-random-article
 RANDOM_ARTICLE_BUTTON = True
@@ -110,7 +110,7 @@ I18N_SUBSITES = {
             "slug": "by-sa",
         },
         "SOCIAL_PROFILE_LABEL": "Keep In Touch",
-        "COMMENTS_INTRO": 'If you enjoyed this article, feel free to leave a comment below (GitHub account required), or <a href="mailto:weilee.rx+blog@gmail.com">drop me an email to chat!</a>',
+        "COMMENTS_INTRO": 'If you enjoyed this article, feel free to leave a comment below (GitHub account required), or <a href="mailto:hello+blog@wei-lee.me">drop me an email to chat!</a>',
         "CURRENT_LANG": "en",
     }
 }
