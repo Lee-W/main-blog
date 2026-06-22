@@ -1,13 +1,12 @@
 Title: Daychill Specialty Coffee Co.
 Subtitle: 驚為天人的咖啡
-Date: 2026-06-22 07:49 +0800
+Date: 2026-06-22 20:10 +0800
 Category: Random Thoughts
 Tags: Coworking Space, 娃： 小睦, 娃： 企鵝
 Slug: daychill-specialty-coffee
 Cover: /images/posts-image/2026/daychill-specialty-coffee/IMG_3681.jpeg
 Authors: Wei Lee
 Lang: zh-tw
-Status: Draft
 
 生日品嚐了一點[理想的日常](https://travlog.wei-lee.me/posts/review/2026/06/hanoi-pho)曾有滋味後
 還是得面對現實，找個地方工作，最後找到了這間咖啡廳
