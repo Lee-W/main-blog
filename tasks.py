@@ -10,6 +10,7 @@ from collections.abc import Sequence
 from pathlib import Path
 from string import Template
 
+from invoke.exceptions import Exit
 from invoke.main import program
 from invoke.tasks import task
 from pelican import main as pelican_main
@@ -167,12 +168,23 @@ def pelican_run(cmd):
 def style(c, rev_range="origin/main.."):
     """Run style check on python code"""
     python_targets = "pelicanconf.py publishconf.py tasks.py"
-    c.run(
-        f"""
-        uv run ruff check {python_targets} && \
-        uv run cz check --rev-range {shlex.quote(rev_range)}
-        """
+    c.run(f"uv run ruff check {python_targets}")
+
+    commit_count = subprocess.run(
+        ["git", "rev-list", "--count", rev_range],
+        check=False,
+        capture_output=True,
+        text=True,
     )
+    if commit_count.returncode != 0:
+        print(f"Skipping commit style check: invalid rev range {rev_range!r}")
+        return
+
+    if commit_count.stdout.strip() == "0":
+        print(f"Skipping commit style check: no commits in {rev_range!r}")
+        return
+
+    c.run(f"uv run cz check --rev-range {shlex.quote(rev_range)}")
 
 
 @task
@@ -189,7 +201,7 @@ def format(c):
 
 @task
 def security_check(c):
-    """Run pip-autid on dependencies"""
+    """Run pip-audit on dependencies"""
     c.run(
         """
         uv pip compile pyproject.toml -o requirements.txt && \
@@ -197,6 +209,26 @@ def security_check(c):
         rm -rf requirements.txt
         """
     )
+
+
+@task
+def check_content(c):
+    """Run local content quality checks."""
+    post_files = sorted(str(path) for path in Path("content/posts").rglob("*.md"))
+    metadata_check = subprocess.run(
+        [
+            sys.executable,
+            "scripts/check_post_metadata.py",
+            "--categories",
+            "Tech,Random Thoughts,Book",
+            *post_files,
+        ],
+        check=False,
+    )
+    if metadata_check.returncode != 0:
+        raise Exit(metadata_check.returncode)
+
+    check_image_usage(c)
 
 
 def _create_post_from_template(

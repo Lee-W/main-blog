@@ -14,8 +14,10 @@ uv run inv clean           # Remove generated files
 uv run inv preview         # Build production version
 uv run inv style           # Lint + commit style check
 uv run inv format          # Auto-fix lint issues
-uv run inv security_check  # Audit dependencies
-uv run inv check_and_remove_image_exif_gps_info  # Strip GPS EXIF from images
+uv run inv check-content   # Check post metadata and image usage
+uv run inv security-check  # Audit dependencies
+uv run inv check-and-remove-image-exif-gps-info  # Strip GPS EXIF from images
+uv run inv check-image-usage  # Report orphan, reused, duplicate, and missing images
 ```
 
 Build with search index:
@@ -44,5 +46,6 @@ content/
 Deployed to Cloudflare Pages via `wrangler`:
 
 ```bash
+uv run inv build-publish --build-pagefind
 wrangler pages deploy output
 ```
