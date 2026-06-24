@@ -67,6 +67,58 @@ def user_commented_in_range(
         page += 1
 
 
+def user_reviewed_in_range(
+    repo_full_name: str,
+    pr_number: int,
+    username: str,
+    start_date: str,
+    end_date: str,
+    headers: dict[str, str],
+) -> bool:
+    """Check whether the user submitted a PR review within the date range.
+
+    Search's ``reviewed-by:`` qualifier only tells us the user reviewed the PR
+    at some point; it can't filter by review date. We confirm by walking the
+    PR's reviews and matching the author and ``submitted_at``.
+    """
+    page = 1
+    per_page = 100
+    while True:
+        response = requests.get(
+            f"https://api.github.com/repos/{repo_full_name}/pulls/{pr_number}/reviews",
+            headers=headers,
+            params={"per_page": per_page, "page": page},
+        )
+        response.raise_for_status()
+        reviews = response.json()
+        if not reviews:
+            return False
+
+        for review in reviews:
+            author = (review.get("user") or {}).get("login", "")
+            if author.lower() != username.lower():
+                continue
+            submitted_at = review.get("submitted_at")
+            if submitted_at and start_date <= submitted_at[:10] <= end_date:
+                return True
+
+        if len(reviews) < per_page:
+            return False
+        page += 1
+
+
+def empty_contributions() -> dict[str, list[dict]]:
+    """Return the per-repo contribution buckets in render order."""
+    return {
+        "issues": [],
+        "prs": [],
+        "commits": [],
+        "releases": [],
+        "reviewed": [],
+        "commented": [],
+    }
+
+
 def fetch_contributions(
     username: str,
     start_date: str,
@@ -81,14 +133,16 @@ def fetch_contributions(
 
     # Contribution types to fetch.
     #
-    # Authored issues/PRs and reviews filter on `created` (when the thread was
-    # opened). Comments instead filter on `updated` so threads opened earlier
-    # but replied to this week become candidates; each candidate is then
-    # verified against the actual comment timestamps below.
+    # Authored issues/PRs filter on `created` (when the thread was opened).
+    # Reviews and comments instead filter on `updated` so threads opened in an
+    # earlier week but acted on this week become candidates; each candidate is
+    # then verified against the actual review/comment timestamps below. Using
+    # `created` for reviews would only catch PRs *opened* this week (e.g. fresh
+    # bot PRs) and silently drop reviews on older human PRs.
     queries = {
         "issues": f"author:{username} created:{start_date}..{end_date} is:issue",
         "prs": f"author:{username} created:{start_date}..{end_date} is:pr",
-        "reviewed": f"reviewed-by:{username} created:{start_date}..{end_date} is:pr",
+        "reviewed": f"reviewed-by:{username} updated:{start_date}..{end_date} is:pr",
         "commented": f"commenter:{username} updated:{start_date}..{end_date}",
     }
 
@@ -140,14 +194,21 @@ def fetch_contributions(
                     ):
                         continue
 
+                # `reviewed` uses an `updated` window (see queries above), so a
+                # PR bumped this week for unrelated reasons can slip in. Confirm
+                # the user actually submitted a review within the date range.
+                if contribution_type == "reviewed" and not user_reviewed_in_range(
+                    repo_full_name,
+                    item["number"],
+                    username,
+                    start_date,
+                    end_date,
+                    headers,
+                ):
+                    continue
+
                 if repo_full_name not in contributions_by_repo:
-                    contributions_by_repo[repo_full_name] = {
-                        "issues": [],
-                        "prs": [],
-                        "releases": [],
-                        "reviewed": [],
-                        "commented": [],
-                    }
+                    contributions_by_repo[repo_full_name] = empty_contributions()
 
                 contribution = {
                     "title": item["title"],
@@ -171,7 +232,7 @@ def fetch_contributions(
 
             page += 1
 
-    repos = []
+    owned_repos = []
     page = 1
     per_page = 100
 
@@ -185,15 +246,80 @@ def fetch_contributions(
         data = response.json()
         if not data:
             break
-        repos.extend(r["full_name"] for r in data)
+        owned_repos.extend(
+            {"full_name": r["full_name"], "pushed_at": r.get("pushed_at")} for r in data
+        )
         if len(data) < per_page:
             break
         page += 1
 
+    owned_set = {r["full_name"] for r in owned_repos}
+    since = f"{start_date}T00:00:00Z"
+    until = f"{end_date}T23:59:59Z"
+
+    # Direct commits to your own repos. The search/issues queries above only see
+    # work that goes through a PR/issue, so a repo you push straight to (e.g.
+    # Lee-W/ring) would otherwise never appear. We only record a per-repo commit
+    # count (not individual commits) and link to the filtered commits view. Skip
+    # repos last pushed before the window — they can't have commits in range, and
+    # probing every archived repo wastes API calls (and trips rate limits).
+    for repo in owned_repos:
+        repo_full_name = repo["full_name"]
+        if any(excluded in repo_full_name for excluded in excluded_repos):
+            continue
+        if repo["pushed_at"] and repo["pushed_at"][:10] < start_date:
+            continue
+
+        commit_count = 0
+        page = 1
+        while True:
+            response = requests.get(
+                f"https://api.github.com/repos/{repo_full_name}/commits",
+                headers=headers,
+                params={
+                    "author": username,
+                    "since": since,
+                    "until": until,
+                    "per_page": per_page,
+                    "page": page,
+                },
+            )
+            # Empty repositories (no commits yet) respond 409.
+            if response.status_code == 409:
+                break
+            response.raise_for_status()
+            data = response.json()
+            if not data:
+                break
+
+            commit_count += len(data)
+            if len(data) < per_page:
+                break
+            page += 1
+
+        if commit_count:
+            contributions_by_repo.setdefault(repo_full_name, empty_contributions())
+            contributions_by_repo[repo_full_name]["commits"].append(
+                {
+                    "count": commit_count,
+                    "url": (
+                        f"https://github.com/{repo_full_name}/commits"
+                        f"?author={username}&since={start_date}&until={end_date}"
+                    ),
+                    "repo": repo_full_name,
+                }
+            )
+
     start_dt = datetime.strptime(start_date, "%Y-%m-%d")
     end_dt = datetime.strptime(end_date, "%Y-%m-%d")
 
-    for repo_full_name in repos:
+    # Releases for owned repos plus any repo we already saw a contribution in
+    # (covers releases you cut in org/3rd-party repos, which the owned-repos
+    # listing above misses). For non-owned repos only count releases you
+    # authored; for your own repos count them all.
+    release_repos = owned_set | set(contributions_by_repo.keys())
+
+    for repo_full_name in sorted(release_repos):
         if any(excluded in repo_full_name for excluded in excluded_repos):
             continue
 
@@ -217,14 +343,12 @@ def fetch_contributions(
                 if not (start_dt <= published_dt <= end_dt):
                     continue
 
-                if repo_full_name not in contributions_by_repo:
-                    contributions_by_repo[repo_full_name] = {
-                        "issues": [],
-                        "prs": [],
-                        "releases": [],
-                        "reviewed": [],
-                        "commented": [],
-                    }
+                if repo_full_name not in owned_set:
+                    author = (release.get("author") or {}).get("login", "")
+                    if author.lower() != username.lower():
+                        continue
+
+                contributions_by_repo.setdefault(repo_full_name, empty_contributions())
 
                 contribution = {
                     "title": release["name"] or release["tag_name"],
@@ -284,6 +408,7 @@ def generate_markdown(
             [
                 items["issues"],
                 items["prs"],
+                items["commits"],
                 items["releases"],
                 items["reviewed"],
                 items["commented"],
@@ -308,6 +433,12 @@ def generate_markdown(
                 lines.append(
                     f"    {i}. [{item['title']} #{item['number']}]({item['url']})"
                 )
+
+        # Direct commits (aggregated count, not individual commits)
+        if items["commits"]:
+            count = sum(c["count"] for c in items["commits"])
+            url = items["commits"][0]["url"]
+            lines.append(f"* [Commits]({url})（{count} 個）")
 
         if items["releases"]:
             lines.append("* Releases")
@@ -459,6 +590,11 @@ def main():
 
     total_issues = sum(len(c["issues"]) for c in contributions_by_repo.values())
     total_prs = sum(len(c["prs"]) for c in contributions_by_repo.values())
+    total_commits = sum(
+        commit["count"]
+        for c in contributions_by_repo.values()
+        for commit in c["commits"]
+    )
     total_releases = sum(len(c["releases"]) for c in contributions_by_repo.values())
     total_reviewed = sum(len(c["reviewed"]) for c in contributions_by_repo.values())
     total_commented = sum(len(c["commented"]) for c in contributions_by_repo.values())
@@ -466,6 +602,7 @@ def main():
     print("Found:")
     print(f"  {total_issues} created issues")
     print(f"  {total_prs} created PRs")
+    print(f"  {total_commits} direct commits")
     print(f"  {total_releases} releases")
     print(f"  {total_reviewed} reviewed PRs")
     print(f"  {total_commented} commented issues/PRs")
@@ -480,6 +617,9 @@ def main():
                 details.append(f"{len(contrib['issues'])} issues")
             if contrib["prs"]:
                 details.append(f"{len(contrib['prs'])} PRs")
+            if contrib["commits"]:
+                count = sum(c["count"] for c in contrib["commits"])
+                details.append(f"{count} commits")
             if contrib["releases"]:
                 details.append(f"{len(contrib['releases'])} releases")
             if contrib["reviewed"]:
