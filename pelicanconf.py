@@ -114,6 +114,7 @@ I18N_SUBSITES = {
         "CURRENT_LANG": "en",
     }
 }
+I18N_UNTRANSLATED_ARTICLES = "remove"
 
 # Plugin-setting
 PLUGINS = [
