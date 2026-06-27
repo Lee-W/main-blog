@@ -47,7 +47,7 @@ The blogs I subscribe to via [RSS]({filename}/posts/random-thoughts/2025/02-get-
 | [只贏](https://www.onlywin.work/) | | |
 | [ikuka 的第一個家](https://blog.ikukaroom.com/) | | |
 | [Eddie Lv](https://eddielv.com/) | | |
-| [Shuyu Pixelart](https://shuyulin1127.com) | | [![Shuyu Pixelart](https://bear-images.sfo2.cdn.digitaloceanspaces.com/shuyulin1127/shuyupixelart_88x31.gif)](https://shuyulin1127.com) |
+| [Shuyu Pixelart](https://shuyulin1127.com) | Pixel art is super cute! | [![Shuyu Pixelart](https://bear-images.sfo2.cdn.digitaloceanspaces.com/shuyulin1127/shuyupixelart_88x31.gif)](https://shuyulin1127.com) |
 
 ## News & Media
 
