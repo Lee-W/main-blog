@@ -1,6 +1,6 @@
 Title: Blogroll
 Date: 2026-06-08 21:00 +0800
-Modified: 2026-06-11 09:31 +0800
+Modified: 2026-06-27 17:25 +0800
 Slug: blogroll
 Lang: en
 
@@ -31,20 +31,23 @@ The blogs I subscribe to via [RSS]({filename}/posts/random-thoughts/2025/02-get-
 | [高見龍](https://kaochenlong.com/) | |
 | [Iqbal's Weblog](https://iqbalabdullah.net/en/) | |
 | [Core Dispatch](https://coredispatch.xyz/) | Notes on CPython core development |
+| [Toomore Chiang](https://toomore.net/) | |
+| [Neil's Blog](https://blog.neil-lin.com/) | |
 
 ## BlogBlog Universe
 
-| Blog | Notes |
-| --- | --- |
-| [BlogBlog.Club 部落部落俱樂部](https://blogblog.club/blog) | Let's all write blogs together! |
-| [Wiwi.Blog](https://wiwi.blog/blog) | |
-| [yunColorBlog](https://yuncolorblog.com/) | |
-| [LQ7 的創作與想像](https://lq7.tw/) | The very first person to leave a comment on my blog — gave me the motivation to keep writing! |
-| [Shuo-jen Blog](https://shuojen.com/blog) | Once wrote a post recommending my blog, which gave me even more reason to keep going! |
-| [資工小廢物 - JN](https://blog.giveanornot.com/) | Their blog is so beautiful! It made me stop tweaking my own theme and just write instead (???) |
-| [只贏](https://www.onlywin.work/) | |
-| [ikuka 的第一個家](https://blog.ikukaroom.com/) | |
-| [Eddie Lv](https://eddielv.com/) | |
+| Blog | Notes | Badge |
+| --- | --- | --- |
+| [BlogBlog.Club 部落部落俱樂部](https://blogblog.club/blog) | Let's all write blogs together! | |
+| [Wiwi.Blog](https://wiwi.blog/blog) | | |
+| [yunColorBlog](https://yuncolorblog.com/) | | |
+| [LQ7 的創作與想像](https://lq7.tw/) | The very first person to leave a comment on my blog — gave me the motivation to keep writing! | |
+| [Shuo-jen Blog](https://shuojen.com/blog) | Once wrote a post recommending my blog, which gave me even more reason to keep going! | |
+| [資工小廢物 - JN](https://blog.giveanornot.com/) | Their blog is so beautiful! It made me stop tweaking my own theme and just write instead (???) | [![資工小廢物 - JN](https://blog.giveanornot.com/logo.webp)](https://blog.giveanornot.com/) |
+| [只贏](https://www.onlywin.work/) | | |
+| [ikuka 的第一個家](https://blog.ikukaroom.com/) | | |
+| [Eddie Lv](https://eddielv.com/) | | |
+| [Shuyu Pixelart](https://shuyulin1127.com) | | [![Shuyu Pixelart](https://bear-images.sfo2.cdn.digitaloceanspaces.com/shuyulin1127/shuyupixelart_88x31.gif)](https://shuyulin1127.com) |
 
 ## News & Media
 
