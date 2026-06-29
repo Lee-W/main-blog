@@ -7,7 +7,6 @@ Slug: taipei-claude-and-ai-ethics
 Cover: /images/posts-image/2026/taipei-claude-and-ai-ethics/event-photo-1.jpeg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 前一段時間收到朋友邀請參加 [Taipei | Claude and AI Ethics](https://luma.com/claude-taipei-3?tk=M8Qciv)
 
