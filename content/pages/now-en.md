@@ -61,7 +61,7 @@ My thoughts 👉 [Those Things No One Cares About](https://travlog.wei-lee.me/)
 * 🥊 [Boxing]({filename}/posts/random-thoughts/2024/01-boxing.md)
 * 🏹 Kyudo (not good enough to deserve a “bullseye” emoji)
 * 🏋️ Gym
-* 🗡️ [Martial performance]((https://www.facebook.com/kobusuishinliu))
+* 🗡️ [Martial performance](https://www.facebook.com/kobusuishinliu)
 
 ## 🍽️ What I've been eating/drinking
 * Breakfast: oatmeal + unsweetened soy milk

@@ -70,7 +70,7 @@ Keynote Speaker 的演講廳完全是大家可以邊吃飯邊聽議程的 XD
 
 因為我是這天的下午分享，聽的議程就比較少
 印象最深刻的是 **Fun with compilers: exploring languages one Python at a time**
-[GitHub]([Fun with compilers: exploring languages one Python at a time](https://github.com/pdmccormick/pyconca2019-fun-with-compilers))
+[GitHub](https://github.com/pdmccormick/pyconca2019-fun-with-compilers)
 之前有人問我 Python 到底是編譯還是直譯
 這位講者給的答案是 Python 就只是個語言，要看用哪個 implementation 來跑
 ![is-python-compiled-or-interpreted](/images/posts-image/2019-12-23-pycon-ca-2019/15770893777395.jpg)
