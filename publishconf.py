@@ -16,11 +16,16 @@ FEED_ALL_ATOM = "feeds/all.atom.xml"
 CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 
 DELETE_OUTPUT_DIRECTORY = True
+DRAFT_SAVE_AS = ""
+DRAFT_URL = ""
+DRAFT_LANG_SAVE_AS = ""
+DRAFT_LANG_URL = ""
+DRAFT_PAGE_SAVE_AS = ""
+DRAFT_PAGE_URL = ""
+DRAFT_PAGE_LANG_SAVE_AS = ""
+DRAFT_PAGE_LANG_URL = ""
 
 UMAMI_WEBSITE_ID = os.environ.get("UMAMI_WEBSITE_ID")
-
-# Point the SEO enhancer-generated robots.txt at the sitemap
-SEO_ENHANCER_SITEMAP_URL = f"{SITEURL}/sitemap.xml"
 
 # local plugins
 DEADLINKS_VALIDATION = False

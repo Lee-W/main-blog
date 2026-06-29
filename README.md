@@ -11,7 +11,7 @@ uv run inv serve           # Serve at localhost:8000
 uv run inv reserve         # Build then serve
 uv run inv livereload      # Build and serve with live reload
 uv run inv clean           # Remove generated files
-uv run inv preview         # Build production version
+uv run inv preview         # Build production version, including Pagefind
 uv run inv style           # Lint + commit style check
 uv run inv format          # Auto-fix lint issues
 uv run inv check-content   # Check post metadata and image usage
@@ -46,6 +46,6 @@ content/
 Deployed to Cloudflare Pages via `wrangler`:
 
 ```bash
-uv run inv build-publish --build-pagefind
+uv run inv build-publish
 wrangler pages deploy output
 ```

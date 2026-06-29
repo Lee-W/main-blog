@@ -11,7 +11,9 @@ SITEURL = "http://localhost:8000"
 STATIC_SITEURL = SITEURL
 SITELOGO = "/images/avatar.jpeg"
 BROWSER_COLOR = "#333333"
-HEADER_COVER = "/images/cover.jpeg"
+HEADER_COVER = "images/cover.jpeg"
+SITE_DESCRIPTION = "開源、技術、閱讀，以及日常"
+SITESUBTITLE = SITE_DESCRIPTION
 DEFAULT_DATE_FORMAT = "%Y/%m/%d - %a"
 TIMEZONE = "Asia/Taipei"
 SHOW_ARTICLE_MODIFIED_TIME = True
@@ -40,6 +42,9 @@ SERIES_LIST_SAVE_AS = "series_list.html"
 ARTICLE_URL = "posts/{category}/{date:%Y}/{date:%m}/{slug}"
 ARTICLE_SAVE_AS = "posts/{category}/{date:%Y}/{date:%m}/{slug}/index.html"
 STATIC_PATHS = ["images", "extra", "static"]
+EXTRA_PATH_METADATA = {
+    "extra/robots.txt": {"path": "robots.txt"},
+}
 
 # License
 CC_LICENSE = {
@@ -93,7 +98,7 @@ THEME = attila.get_path()
 
 # i18n
 JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
-OG_LOCALE = "zh-tw"
+OG_LOCALE = "zh_TW"
 DEFAULT_LANG = "zh-tw"
 I18N_TEMPLATES_LANG = "en"
 LANGUAGES = [("zh-tw", "/"), ("en", "/en/")]
@@ -112,9 +117,13 @@ I18N_SUBSITES = {
         "SOCIAL_PROFILE_LABEL": "Keep In Touch",
         "COMMENTS_INTRO": 'If you enjoyed this article, feel free to leave a comment below (GitHub account required), or <a href="mailto:hello+blog@wei-lee.me">drop me an email to chat!</a>',
         "CURRENT_LANG": "en",
+        "OG_LOCALE": "en_US",
+        "SITE_DESCRIPTION": "Open source, technology, books, and everyday life.",
+        "SITESUBTITLE": "Open source, technology, books, and everyday life.",
     }
 }
 I18N_UNTRANSLATED_ARTICLES = "remove"
+I18N_UNTRANSLATED_PAGES = "remove"
 
 # Plugin-setting
 PLUGINS = [
@@ -141,10 +150,11 @@ SUMMARY_LINK_FORMAT = ""
 # Local plugins
 LOCAL_PLUGINS = [
     "pelican.plugins.deadlinks",
+    "image_markup",
 ]
+PLUGIN_PATHS = ["plugins"]
 PLUGINS.extend(LOCAL_PLUGINS)
 DEADLINKS_VALIDATION = False
-
 # pelican-tabular settings
 TABULAR_COUNT_TEMPLATE = ""  # suppress the row-count line under tables
 TABULAR_GROUP_COUNT_TEMPLATE = ""  # suppress per-group counts in group headers
@@ -166,9 +176,9 @@ SITEMAP = {
 
 # pelican-seo settings
 SEO_REPORT = True  # SEO report is enabled by default
-SEO_ENHANCER = True  # SEO enhancer is disabled by default
-SEO_ENHANCER_OPEN_GRAPH = True  # Subfeature of SEO enhancer
-SEO_ENHANCER_TWITTER_CARDS = True  # Subfeature of SEO enhancer
+SEO_ENHANCER = False
+SEO_ENHANCER_OPEN_GRAPH = False
+SEO_ENHANCER_TWITTER_CARDS = False
 
 
 # ----this blog only----

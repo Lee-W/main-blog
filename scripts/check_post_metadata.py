@@ -80,7 +80,10 @@ def check_file(path: Path, valid_categories: list[str]) -> list[str]:
             f"  Lang must be one of {sorted(VALID_LANGS)}, got '{metadata['Lang']}'"
         )
 
-    if "Status" in metadata and metadata["Status"] not in VALID_STATUSES:
+    if (
+        "Status" in metadata
+        and metadata["Status"].lower() not in VALID_STATUSES
+    ):
         errors.append(
             f"  Status must be one of {sorted(VALID_STATUSES)}, "
             f"got '{metadata['Status']}'"

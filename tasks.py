@@ -1,6 +1,7 @@
 import datetime
 import glob
 import os
+import posixpath
 import re
 import shlex
 import shutil
@@ -9,7 +10,9 @@ import sys
 from collections.abc import Sequence
 from pathlib import Path
 from string import Template
+from urllib.parse import unquote, urlparse
 
+from bs4 import BeautifulSoup
 from invoke.exceptions import Exit
 from invoke.main import program
 from invoke.tasks import task
@@ -39,11 +42,83 @@ CONFIG = {
 
 
 def _build_pagefind():
-    if (
-        subprocess.call(["uv", "run", "python", "-m", "pagefind", "--site", "output"])
-        == 1
-    ):
-        print("failed to call 'uv run python -m pagefind --site output'")
+    subprocess.run(
+        ["uv", "run", "python", "-m", "pagefind", "--site", "output"],
+        check=True,
+    )
+
+
+def _output_target_exists(output_root: Path, page: Path, href: str) -> bool:
+    parsed = urlparse(href)
+    if parsed.netloc and parsed.netloc != SETTINGS["HOST"]:
+        return True
+    if parsed.scheme in {"mailto", "tel", "javascript"} or not parsed.path:
+        return True
+
+    if parsed.path.startswith("/"):
+        target = output_root / unquote(parsed.path.lstrip("/"))
+    else:
+        target = page.parent / unquote(parsed.path)
+    candidates = [target]
+    if not target.suffix:
+        candidates.extend((target / "index.html", target.with_suffix(".html")))
+    return any(candidate.exists() for candidate in candidates)
+
+
+def _fix_internal_links() -> None:
+    """Repair i18n links that point at Pelican's legacy language URLs."""
+    output_root = Path(CONFIG["deploy_path"]).resolve()
+    pages = list(output_root.rglob("*.html"))
+    legacy_routes: dict[str, str] = {}
+
+    for page in pages:
+        soup = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
+        language = soup.html.get("lang") if soup.html else None
+        canonical = soup.select_one('link[rel="canonical"]')
+        if not language or canonical is None or not canonical.get("href"):
+            continue
+        route = urlparse(canonical["href"]).path
+        slug = Path(route.rstrip("/")).name
+        if not slug:
+            continue
+
+        is_article = soup.select_one('meta[property="og:type"][content="article"]')
+        if is_article:
+            legacy_routes[f"/{slug}-{language}.html"] = route
+            legacy_routes[f"/en/{slug}-{language}.html"] = route
+        elif "/pages/" in route:
+            legacy_routes[f"/pages/{slug}-{language}.html"] = route
+            legacy_routes[f"/en/pages/{slug}-{language}.html"] = route
+
+    fixed = 0
+    for page in pages:
+        html = page.read_text(encoding="utf-8")
+        soup = BeautifulSoup(html, "html.parser")
+        changed = False
+        for anchor in soup.find_all("a", href=True):
+            href = anchor["href"]
+            if _output_target_exists(output_root, page, href):
+                continue
+            parsed = urlparse(href)
+            replacement = legacy_routes.get(parsed.path)
+            if replacement is None and anchor.get("data-fallback"):
+                replacement = anchor["data-fallback"]
+            if replacement is None and "/../" in parsed.path:
+                replacement = posixpath.normpath(parsed.path)
+            if replacement is None and (
+                "/tag/" in parsed.path
+                or "/category/" in parsed.path
+                or "/author/" in parsed.path
+            ):
+                replacement = "/en/" if parsed.path.startswith("/en/") else "/"
+            if replacement is None:
+                continue
+            anchor["href"] = parsed._replace(path=replacement).geturl()
+            changed = True
+            fixed += 1
+        if changed:
+            page.write_text(str(soup), encoding="utf-8")
+    print(f"Fixed {fixed} generated internal i18n link(s)")
 
 
 @task
@@ -58,6 +133,7 @@ def clean(c):
 def build(c, build_pagefind=False):
     """Build local version of site"""
     pelican_run("-s {settings_base}".format(**CONFIG))
+    _fix_internal_links()
     if build_pagefind:
         _build_pagefind()
 
@@ -66,6 +142,7 @@ def build(c, build_pagefind=False):
 def rebuild(c, build_pagefind=False):
     """`build` with the delete switch"""
     pelican_run("-d -s {settings_base}".format(**CONFIG))
+    _fix_internal_links()
     if build_pagefind:
         _build_pagefind()
 
@@ -110,6 +187,8 @@ def reserve(c):
 def preview(c):
     """Build production version of site"""
     pelican_run("-s {settings_publish}".format(**CONFIG))
+    _fix_internal_links()
+    _build_pagefind()
 
 
 @task
@@ -151,12 +230,12 @@ def livereload(c):
     server.serve(host=CONFIG["host"], port=CONFIG["port"], root=CONFIG["deploy_path"])
 
 
-@task(optional=["--build-pagefind"])
-def build_publish(c, build_pagefind=False):
+@task
+def build_publish(c):
     """Build pages with publishconf.py"""
     pelican_run("-s {settings_publish}".format(**CONFIG))
-    if build_pagefind:
-        _build_pagefind()
+    _fix_internal_links()
+    _build_pagefind()
 
 
 def pelican_run(cmd):
@@ -167,7 +246,7 @@ def pelican_run(cmd):
 @task(optional=["rev_range"])
 def style(c, rev_range="origin/main.."):
     """Run style check on python code"""
-    python_targets = "pelicanconf.py publishconf.py tasks.py"
+    python_targets = "pelicanconf.py publishconf.py tasks.py scripts plugins"
     c.run(f"uv run ruff check {python_targets}")
 
     commit_count = subprocess.run(
@@ -190,7 +269,7 @@ def style(c, rev_range="origin/main.."):
 @task
 def format(c):
     """Run autoformater on python code"""
-    python_targets = "pelicanconf.py publishconf.py tasks.py"
+    python_targets = "pelicanconf.py publishconf.py tasks.py scripts plugins"
     c.run(
         f"""
         uv run ruff format {python_targets} && \
