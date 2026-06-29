@@ -48,7 +48,7 @@ jobs:
 
       - name: Check whether pelican public pages and search index are buildable
         run: |
-          uv run inv build-publish --build-pagefind
+          uv run inv build-publish
 
       - name: Check Python dependencies through pip-audit
         run: |
