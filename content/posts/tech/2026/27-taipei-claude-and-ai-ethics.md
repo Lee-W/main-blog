@@ -1,6 +1,6 @@
 Title: Taipei | Claude and AI Ethics
 Subtitle: 起因竟是大港開唱 2026 ?!
-Date: 2026-06-29 08:00 +0800
+Date: 2026-06-29 21:30 +0800
 Category: Tech
 Tags: AI Ethics, Claude
 Slug: taipei-claude-and-ai-ethics
