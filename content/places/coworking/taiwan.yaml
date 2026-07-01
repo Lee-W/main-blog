@@ -145,3 +145,24 @@ daychill-specialty-coffee:
   urls:
     - label: "Daychill Specialty Coffee Co."
       href: "{filename}/posts/random-thoughts/2026/35-daychill-specialty-coffee.md"
+
+curista-coffee-city-hall:
+  name: CURISTA COFFEE 奎士咖啡 市府旗艦店
+  lat: 25.041842
+  lon: 121.564147
+  address: 臺北市信義區新仁里忠孝東路四段563號1樓
+  country: 臺灣
+  city: 臺北
+  district: 信義
+  hours: "07:30 ~ 20:00"
+  power: "✅ (大多有)"
+  wifi: "✅ (稍慢，但堪用)"
+  time_limit: "滿人限時兩小時"
+  noise: "★★★☆☆"
+  work_score: "★★★★☆"
+  min_spend: "一杯飲品"
+  meal: "✅ （燉飯不推）"
+  tags: []
+  urls:
+    - label: "CURISTA COFFEE 奎士咖啡 市府旗艦店"
+      href: "{filename}/posts/random-thoughts/2026/36-curista-coffee-city-hall.md"
