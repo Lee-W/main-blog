@@ -1,13 +1,12 @@
 Title: CURISTA COFFEE 奎士咖啡 市府旗艦店
 Subtitle: AI 推薦我好多次了
-Date: 2026-07-04 08:00 +0800
+Date: 2026-07-01 22:24 +0800
 Category: Random Thoughts
 Tags: Coworking Space, 娃： 小睦
 Slug: curista-coffee-city-hall
 Cover: /images/posts-image/2026/curista-coffee-city-hall/coffee.jpeg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 之前問 AI 哪裡適合工作，好幾次都被推薦這邊
 
