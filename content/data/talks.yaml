@@ -5,6 +5,12 @@
   title: "Asset Partitions: Matching Workflow to the Right Data"
 
 - date: 2026-06-02
+  event:
+    text: "【DIGITIMES 2026 GenAI技術論壇】"
+    href: "https://www.digitimes.com.tw/seminar/DForum_20260717/"
+  title: "[Panel] 從免費工具到企業護城河：以開源思維驅動AI變現與人才佈局"
+
+- date: 2026-06-02
   event: "🇹🇼 Computex 2026"
   title: "Your AI Is Only As Good As Your Data Pipeline"
   slide:
