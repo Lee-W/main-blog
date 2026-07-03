@@ -109,6 +109,7 @@ LANGUAGE_NAMES = {
 CURRENT_LANG = "zh-tw"
 I18N_SUBSITES = {
     "en": {
+        "LOCALE": "C",
         "CC_LICENSE": {
             "name": "Creative Commons Attribution-ShareAlike",
             "version": "4.0",
@@ -143,6 +144,7 @@ PLUGINS = [
     "pelican.plugins.osm",
     "pelican.plugins.on_this_day",
     "pelican.plugins.tabular",
+    "pelican.themes.attila.readtime",
 ]
 PAGEFIND_ENABLED = True
 SUMMARY_LINK_FORMAT = ""
