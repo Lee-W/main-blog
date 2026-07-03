@@ -1,6 +1,6 @@
 Title: 第一次公布 Apache Airflow 新任 committer ⭐
 Subtitle: 戒慎恐懼
-Date: 2026-07-03 10:50 +0800
+Date: 2026-07-03 08:20 +0800
 Category: Tech
 Tags: Airflow, Airflow 開發生情報
 Slug: my-first-committer-announcement
