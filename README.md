@@ -51,7 +51,10 @@ the build. To publish one:
 
 Before the PR merges, a GitHub Actions workflow removes the draft status and
 rewrites the post's `Date` to the moment it ships, so the published date is
-accurate without manual editing. See
+accurate without manual editing. It also corrects each post's filename to use
+the next zero-padded sequence number in its category/year directory. Draft
+siblings do not reserve sequence numbers and are moved after the publishing
+post when their provisional number conflicts. See
 [`.github/workflows/prepare-publication.yaml`](.github/workflows/prepare-publication.yaml)
 for the details.
 

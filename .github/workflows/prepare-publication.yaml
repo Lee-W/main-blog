@@ -1,10 +1,10 @@
 # Stamps a draft post with its real publication time at merge.
 #
 # Drafts carry `Status: draft` and a placeholder `Date`. When a PR with a
-# `new post:` commit has auto-merge enabled, this workflow removes the draft
-# status and rewrites `Date` to "now" (Asia/Taipei), then commits the result
-# back to the PR branch so the post that lands on `main` is dated at the
-# moment it actually shipped. Whether a PR qualifies is decided by
+# `new post:` commit has auto-merge enabled, this workflow corrects the filename
+# sequence, removes the draft status, and rewrites `Date` to "now"
+# (Asia/Taipei), then commits the result back to the PR branch. Whether a PR
+# qualifies is decided by
 # scripts/prepare_publication.py from commit messages, not the PR title (which
 # is freeform and can go stale, e.g. reused from an earlier `new draft:` PR).
 # The metadata edit is done by that script's `prepare` mode; ci.yaml runs the
@@ -75,8 +75,8 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           token: ${{ secrets.PUBLISH_TOKEN }}
 
-      # Removes Status: draft and rewrites Date for posts this PR changes vs the
-      # base; a no-op (success) when there is nothing to prepare.
+      # Corrects the category/year filename sequence, removes Status: draft, and
+      # rewrites Date for posts this PR changes vs the base.
       - name: Prepare publication metadata
         working-directory: pull-request
         run: >-
