@@ -188,6 +188,10 @@ SEO_ENHANCER_TWITTER_CARDS = False
 SITENAME = "不寫下來的東西都會被遺忘"
 SITETITLE = SITENAME
 
+# Attila refresh: this is the blog variant (brick is the theme default, so no
+# brand override needed). Adds body.site-blog for the theme's per-site styling.
+SITE_VARIANT = "blog"
+
 # Utterance (comment system)
 UTTERANCES_REPO = "Lee-W/main-blog"
 
