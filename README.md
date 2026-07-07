@@ -43,18 +43,17 @@ content/
 
 ## Publishing
 
-Drafts (`uv run inv new_draft ...`) carry `Status: draft` and are excluded from
-the build. To publish one:
+Drafts (`uv run inv new_draft ...`) and new posts (`uv run inv new_post ...`)
+are created without numeric prefixes. Drafts carry `Status: draft` and are
+excluded from the build. To publish one:
 
 1. Include a commit named `new post: <title>` in the pull request.
 2. Enable auto-merge.
 
-Before the PR merges, a GitHub Actions workflow removes the draft status and
-rewrites the post's `Date` to the moment it ships, so the published date is
-accurate without manual editing. It also corrects each post's filename to use
-the next zero-padded sequence number in its category/year directory. Draft
-siblings do not reserve sequence numbers and are moved after the publishing
-post when their provisional number conflicts. See
+Before the PR merges, a GitHub Actions workflow assigns the final sequence
+number, removes the draft status, and rewrites the post's `Date` to the
+moment it ships, so the published date is accurate without manual editing. It
+also moves any colliding drafts after the publishing post. See
 [`.github/workflows/prepare-publication.yaml`](.github/workflows/prepare-publication.yaml)
 for the details.
 
