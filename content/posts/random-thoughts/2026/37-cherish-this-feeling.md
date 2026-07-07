@@ -1,13 +1,12 @@
 Title: 我想珍惜，我還能感受到很喜歡的這種心情
 Subtitle:
-Date: 2026-07-07 15:02 +0800
+Date: 2026-07-07 23:26 +0800
 Category: Random Thoughts
 Tags: Anime, Lifestyle
 Slug: cherish-this-feeling
 Cover: /images/posts-image/2026/cherish-this-feeling/goods-haul.jpg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 [推しは推せる時に推せる]({filename}/posts/random-thoughts/2025/04-support-your-oshi-while-you-can.md)
 
