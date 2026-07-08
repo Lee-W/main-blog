@@ -1,5 +1,6 @@
 import datetime
 import glob
+import hashlib
 import os
 import posixpath
 import re
@@ -7,6 +8,9 @@ import shlex
 import shutil
 import subprocess
 import sys
+import tempfile
+import urllib.parse
+from collections import defaultdict
 from collections.abc import Sequence
 from pathlib import Path
 from string import Template
@@ -281,13 +285,23 @@ def format(c):
 @task
 def security_check(c):
     """Run pip-audit on dependencies"""
-    c.run(
-        """
-        uv pip compile pyproject.toml -o requirements.txt && \
-        uv run pip-audit -r requirements.txt --ignore-vuln CVE-2026-4539 && \
-        rm -rf requirements.txt
-        """
-    )
+    # CVE-2026-4539 ignored since 2026-06-12. Re-check with
+    # `uv run pip-audit -r requirements.txt` (no --ignore-vuln) whether a fix
+    # has shipped upstream before renewing this ignore.
+
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".txt", delete=False
+    ) as requirements_file:
+        requirements_path = requirements_file.name
+
+    try:
+        c.run(f"uv pip compile pyproject.toml -o {shlex.quote(requirements_path)}")
+        c.run(
+            f"uv run pip-audit -r {shlex.quote(requirements_path)} "
+            "--ignore-vuln CVE-2026-4539"
+        )
+    finally:
+        Path(requirements_path).unlink(missing_ok=True)
 
 
 @task
@@ -403,9 +417,6 @@ def _dhash(path: Path, hash_size: int = 8) -> int | None:
 @task
 def check_image_usage(_) -> None:
     """Report orphan, cross-article reused, and duplicate-content images."""
-    import hashlib
-    import urllib.parse
-    from collections import defaultdict
 
     ref_patterns = [
         re.compile(r"\]\(\s*(/images/[^)]+?)\s*\)"),
@@ -505,14 +516,15 @@ def check_and_remove_image_exif_gps_info(_) -> None:
     for name in filenames:
         try:
             with pil_open(name) as im:
+                exif = im.getexif()
                 tag_ids = _get_exif_tag_ids_by_names(exif_tags_to_remove)
                 file_changed = False
                 for tag_id in tag_ids:
-                    if im.getexif().get(tag_id) and im._exif:
+                    if tag_id in exif:
                         file_changed = True
-                        im._exif[tag_id] = None
+                        del exif[tag_id]
 
                 if file_changed:
-                    im.save(name)
+                    im.save(name, exif=exif)
         except FileNotFoundError, UnidentifiedImageError:
             continue

@@ -10,8 +10,7 @@ dependencies = [
   "invoke>=2.2.0",
   "markdown-del-ins>=1.0.0",
   "markdown-mermaidjs>=1.0.0",
-  "pagefind[extended]>=1.4.0",
-  "pelican-deadlinks",
+  "pagefind[extended]>=1.5.2",
   "pelican-i18n-subsites>=1.0.0",
   "pelican-neighbors>=1.2.0",
   "pelican-render-math>=1.0.3",
@@ -27,8 +26,8 @@ dependencies = [
   "python-gettext>=5.0",
   "typogrify>=2.0.7",
   "webassets>=2.0",
-  "attila>=3.2.0",
-  "pelican-heatmap>=0.4.1",
+  "attila>=3.2.1",
+  "pelican-heatmap>=0.5.1",
   "pelican-osm[validate]>=0.13.1",
   "pelican-summary-link>=0.2.3",
   "pelican-random-article>=0.2.1",
@@ -40,9 +39,9 @@ dependencies = [
 [dependency-groups]
 dev = [
   "commitizen>=3.29.1",
-  "invoke>=2.2.0",
   "livereload>=2.7.0",
   "pip-audit>=2.7.3",
+  "pre-commit>=4.0.0",
   "pre-commit-hooks>=5.0.0",
   "pytest>=9.1.1",
   "ruff>=0.6.9",
@@ -63,7 +62,6 @@ pelican-on-this-day = false
 pelican-tabular = false
 
 [tool.uv.sources]
-pelican-deadlinks = { git = "https://github.com/pelican-plugins/deadlinks" }
 attila = { git = "https://github.com/Lee-W/attila/" }
 
 

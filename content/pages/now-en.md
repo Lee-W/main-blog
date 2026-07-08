@@ -16,7 +16,7 @@ Lang: en
 
 ## 🔥 Things I'm into lately
 * Joining [BlogBlog.Club](https://blogblog.club/) → slowly moving content from other platforms back to my own blog
-* Building AI workflow [Maigo](https://github.com/lee-W/maigo) and mujica (private) so I'm constantly surrounded by BanG Dream! even while working
+* Building AI workflow [Maigo](https://github.com/Lee-W/maigo) and mujica (private) so I'm constantly surrounded by BanG Dream! even while working
 * Having a friendly "blog arms race" with [another Wei](https://weiblog.me/) to see who can make their blog cooler first ~~before we burn through all our tokens~~ — and hopefully write more along the way
 
 ## 🧑‍💻 What I've been doing
@@ -39,7 +39,7 @@ Lang: en
     * Marriage Toxin
     * Agents of the Four Seasons: Dance of Spring
     * CANDY CARIES
-<!-- rumdl-disable -->
+<!-- rumdl-enable -->
 
 You can follow what I'm watching in real time 👉 [AniList](https://anilist.co/user/clleew/), [Letterboxd](https://letterboxd.com/clleew/), [Trakt](https://app.trakt.tv/users/clleew)  
 My thoughts 👉 [Those Things No One Cares About](https://travlog.wei-lee.me/)
@@ -71,7 +71,7 @@ Not really for health reasons — just because it's simple and low effort
 
 ## ℹ️ What this is
 This page is a snapshot of what I'm doing and thinking right now.
-Inspired by [ChengHao's Status](https://blog.yangjerry.tw/now/).
+Inspired by [TICO's Status](https://blog.yangjerry.tw/now/).
 
 > I’m not great at starting conversations, so this page should come in handy.
 

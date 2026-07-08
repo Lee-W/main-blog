@@ -1,6 +1,6 @@
 # blog.wei-lee.me
 
-Wei's personal blog — tech, books, and random thoughts. Built with [Pelican](https://getpelican.com/) and the customized [Attila](https://github.com/Lee-W/attila) theme. Deployed to Cloudflare Pages.
+Wei's personal blog — tech, books, and random thoughts. Built with [Pelican](https://getpelican.com/) and the customized [Attila](https://github.com/Lee-W/attila) theme. Deployed to Cloudflare Workers.
 
 ## Commands
 
@@ -64,9 +64,6 @@ already-published posts keep their original publication dates.
 
 ## Deployment
 
-Deployed to Cloudflare Pages via `wrangler`:
-
-```bash
-uv run inv build-publish
-wrangler pages deploy output
-```
+Deployed to Cloudflare Workers static assets, configured via `wrangler.toml`.
+Cloudflare's Git integration builds and deploys automatically on every push to
+`main` — no manual `wrangler deploy` step is needed.

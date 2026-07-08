@@ -26,6 +26,3 @@ DRAFT_PAGE_LANG_SAVE_AS = ""
 DRAFT_PAGE_LANG_URL = ""
 
 UMAMI_WEBSITE_ID = os.environ.get("UMAMI_WEBSITE_ID")
-
-# local plugins
-DEADLINKS_VALIDATION = False
