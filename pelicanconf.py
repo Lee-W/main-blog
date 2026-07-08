@@ -41,6 +41,8 @@ SERIES_LIST_SAVE_AS = "series_list.html"
 # Content Setting
 ARTICLE_URL = "posts/{category}/{date:%Y}/{date:%m}/{slug}"
 ARTICLE_SAVE_AS = "posts/{category}/{date:%Y}/{date:%m}/{slug}/index.html"
+# Both are required together: STATIC_PATHS makes Pelican copy the directory,
+# EXTRA_PATH_METADATA remaps individual files' output path within it.
 STATIC_PATHS = ["images", "extra", "static"]
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
@@ -151,12 +153,10 @@ SUMMARY_LINK_FORMAT = ""
 
 # Local plugins
 LOCAL_PLUGINS = [
-    "pelican.plugins.deadlinks",
     "image_markup",
 ]
 PLUGIN_PATHS = ["plugins"]
 PLUGINS.extend(LOCAL_PLUGINS)
-DEADLINKS_VALIDATION = False
 # pelican-tabular settings
 TABULAR_COUNT_TEMPLATE = ""  # suppress the row-count line under tables
 TABULAR_GROUP_COUNT_TEMPLATE = ""  # suppress per-group counts in group headers

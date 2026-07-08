@@ -6,7 +6,9 @@ Lang: zh-tw
 
 <div id="writing-heatmap"></div>
 
-我是李唯（Wei Lee）。
+---
+
+我是李唯（Wei Lee）
 
 * 🐍 Python 愛好者、[PyCon Taiwan](https://tw.pycon.org/) 志工
 * [commitizen-tools](https://github.com/commitizen-tools) 維護者
@@ -17,7 +19,7 @@ Lang: zh-tw
 * 📺 [動漫愛好者](https://anilist.co/user/clleew/animelist/)
 * 📖 閱讀、🎵 喜歡烏克麗麗、🔒 Locker
 
-熱愛把麻煩的事情自動化——工作上如此，生活中也一樣。這個部落格用來記錄技術筆記、書摘，和偶爾浮現的想法。料理、動漫和旅遊的日常則在 [那些沒人在意的事][travlog] 上。
+熱愛把麻煩的事情自動化——工作上如此，生活中也一樣。這個部落格用來記錄技術筆記、書摘，和偶爾浮現的想法。料理、動漫和旅遊的日常則在 [那些沒人在乎的事][travlog] 上
 
 → [更詳細的介紹與 CV（英文）](/en/pages/cv.html)
 

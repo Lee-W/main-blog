@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a personal blog built with [Pelican](https://getpelican.com/) (Python static site generator), using a customized [Attila](https://github.com/Lee-W/attila) theme. Content is written in Markdown. The site is deployed to Cloudflare Pages via `wrangler.toml`.
+This is a personal blog built with [Pelican](https://getpelican.com/) (Python static site generator), using a customized [Attila](https://github.com/Lee-W/attila) theme. Content is written in Markdown. The site is deployed to Cloudflare Workers static assets (configured in `wrangler.toml`); Cloudflare's Git integration builds and deploys automatically on push to `main`, no manual `wrangler deploy` step needed.
 
 ## Common Commands
 
@@ -36,7 +36,7 @@ uv run inv build --build-pagefind
 ### Configuration
 
 - `pelicanconf.py` — development config (SITEURL is `localhost:8000`, feeds disabled)
-- `publishconf.py` — production config (extends pelicanconf, enables feeds, reads `GOOGLE_ANALYTICS` and `UMAMI_WEBSITE_ID` env vars)
+- `publishconf.py` — production config (extends pelicanconf, enables feeds, reads `UMAMI_WEBSITE_ID` env vars)
 - `tasks.py` — all invoke task definitions
 
 ### Content Structure
@@ -50,7 +50,7 @@ content/
   pages/           # Static pages (about, etc.)
   images/          # Post images
   static/          # Static files excluded from article processing
-  extra/           # Extra files like CNAME
+  extra/           # Extra static files (e.g. robots.txt)
   places/          # OSM/map data
 ```
 
