@@ -1,13 +1,12 @@
 Title: LARGE Café 樂居咖啡
 Subtitle: 我可能是錯的
-Date: 2026-07-07 15:02 +0800
+Date: 2026-07-09 10:03 +0800
 Category: Random Thoughts
 Tags: Coworking Space, 娃： 小睦
 Slug: large-cafe
 Cover: /images/posts-image/2026/large-cafe/croissant-and-coffee.jpeg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 進來的時候會覺得，我是不是走錯地方
 但也許我也真的是
