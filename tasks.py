@@ -10,6 +10,7 @@ import subprocess
 import sys
 import tempfile
 import urllib.parse
+import xml.etree.ElementTree as ET
 from collections import defaultdict
 from collections.abc import Sequence
 from pathlib import Path
@@ -52,25 +53,166 @@ def _build_pagefind():
     )
 
 
-def _output_target_exists(output_root: Path, page: Path, href: str) -> bool:
+def _find_output_target(output_root: Path, page: Path, href: str) -> Path | None:
     parsed = urlparse(href)
     if parsed.netloc and parsed.netloc != SETTINGS["HOST"]:
-        return True
+        return None
     if parsed.scheme in {"mailto", "tel", "javascript"} or not parsed.path:
-        return True
+        return None
 
     if parsed.path.startswith("/"):
         target = output_root / unquote(parsed.path.lstrip("/"))
     else:
         target = page.parent / unquote(parsed.path)
-    candidates = [target]
+    candidates = [target / "index.html"] if target.is_dir() else [target]
     if not target.suffix:
         candidates.extend((target / "index.html", target.with_suffix(".html")))
-    return any(candidate.exists() for candidate in candidates)
+    return next(
+        (candidate.resolve() for candidate in candidates if candidate.is_file()), None
+    )
+
+
+def _cloudflare_route_for_file(output_root: Path, target: Path) -> str:
+    relative = target.resolve().relative_to(output_root.resolve())
+    if relative.name == "index.html":
+        parent = relative.parent.as_posix()
+        return "/" if parent == "." else f"/{parent}/"
+    if relative.suffix == ".html":
+        return f"/{relative.with_suffix('').as_posix()}"
+    return f"/{relative.as_posix()}"
+
+
+def _canonicalize_cloudflare_url(url: str) -> str:
+    parsed = urllib.parse.urlsplit(url)
+    path = posixpath.normpath(parsed.path)
+    if parsed.path.endswith("/") and not path.endswith("/"):
+        path += "/"
+    if path.endswith("/index.html"):
+        path = path[: -len("index.html")]
+    elif path.endswith(".html"):
+        path = path[: -len(".html")]
+    return urllib.parse.urlunsplit(parsed._replace(path=path))
+
+
+def _add_hreflang_links(soup: BeautifulSoup) -> bool:
+    """Add alternate-language metadata for pages with real translations."""
+    canonical = soup.select_one('link[rel="canonical"][href]')
+    language_menu = soup.select_one("#nav-language-menu")
+    if canonical is None or language_menu is None or soup.head is None:
+        return False
+
+    canonical_url = canonical["href"]
+    canonical_path = urlparse(canonical_url).path
+    site_root = urllib.parse.urljoin(canonical_url, "/")
+    alternates: dict[str, str] = {}
+    for anchor in language_menu.find_all("a", href=True):
+        path = urlparse(anchor["href"]).path
+        # The language picker falls back to a subsite's home page when no
+        # translation exists. Do not advertise that fallback as a translation.
+        if path in {"/", "/en/"} and canonical_path not in {"/", "/en/"}:
+            continue
+        lang = "en" if path.startswith("/en/") or path == "/en/" else "zh-TW"
+        alternates[lang] = urllib.parse.urljoin(site_root, path)
+
+    if len(alternates) < 2:
+        return False
+
+    for old_link in soup.select('link[rel="alternate"][hreflang]'):
+        old_link.decompose()
+    for lang, href in sorted(alternates.items()):
+        soup.head.append(
+            soup.new_tag("link", rel="alternate", hreflang=lang, href=href)
+        )
+    soup.head.append(
+        soup.new_tag(
+            "link",
+            rel="alternate",
+            hreflang="x-default",
+            href=alternates["zh-TW"],
+        )
+    )
+    return True
+
+
+def _normalize_absolute_url(url: str) -> str:
+    return _canonicalize_cloudflare_url(url)
+
+
+def _normalize_sitemap(path: Path) -> int:
+    """Fix translated URLs and merge duplicate sitemap entries."""
+    if not path.exists():
+        return 0
+
+    sitemap_namespace = "http://www.sitemaps.org/schemas/sitemap/0.9"
+    xhtml_namespace = "http://www.w3.org/1999/xhtml"
+    ET.register_namespace("", sitemap_namespace)
+    ET.register_namespace("xhtml", xhtml_namespace)
+    tree = ET.parse(path)
+    root = tree.getroot()
+    loc_tag = f"{{{sitemap_namespace}}}loc"
+    alternate_tag = f"{{{xhtml_namespace}}}link"
+    seen: dict[str, ET.Element] = {}
+    duplicates = 0
+
+    for url_element in list(root):
+        loc = url_element.find(loc_tag)
+        if loc is None or not loc.text:
+            continue
+        loc.text = _normalize_absolute_url(loc.text)
+
+        for alternate in url_element.findall(alternate_tag):
+            href = alternate.attrib.pop("ref", None) or alternate.get("href")
+            if href:
+                href = _normalize_absolute_url(href)
+                alternate.set("href", href)
+
+        if loc.text in seen:
+            target = seen[loc.text]
+            existing_languages = {
+                link.get("hreflang") for link in target.findall(alternate_tag)
+            }
+            for alternate in url_element.findall(alternate_tag):
+                if alternate.get("hreflang") not in existing_languages:
+                    target.append(alternate)
+            root.remove(url_element)
+            duplicates += 1
+            continue
+
+        seen[loc.text] = url_element
+
+    for url_element in root:
+        alternate_links = url_element.findall(alternate_tag)
+        by_language = {link.get("hreflang"): link for link in alternate_links}
+        if "zh-tw" in by_language and "en" in by_language:
+            default_link = ET.Element(
+                alternate_tag,
+                {
+                    "rel": "alternate",
+                    "hreflang": "x-default",
+                    "href": by_language["zh-tw"].get("href", ""),
+                },
+            )
+            url_element.append(default_link)
+
+    tree.write(path, encoding="utf-8", xml_declaration=True)
+    return duplicates
+
+
+def _preserve_atom_entry_ids(output_root: Path) -> int:
+    """Keep legacy Atom IDs while canonical article links gain a trailing slash."""
+    pattern = re.compile(r"(<id>tag:[^<]+?)/</id>")
+    updated = 0
+    for feed_path in output_root.rglob("*.atom.xml"):
+        content = feed_path.read_text(encoding="utf-8")
+        content, count = pattern.subn(r"\1</id>", content)
+        if count:
+            feed_path.write_text(content, encoding="utf-8")
+            updated += count
+    return updated
 
 
 def _fix_internal_links() -> None:
-    """Repair i18n links that point at Pelican's legacy language URLs."""
+    """Normalize generated links for i18n and Cloudflare Static Assets."""
     output_root = Path(CONFIG["deploy_path"]).resolve()
     pages = list(output_root.rglob("*.html"))
     legacy_routes: dict[str, str] = {}
@@ -95,15 +237,29 @@ def _fix_internal_links() -> None:
             legacy_routes[f"/en/pages/{slug}-{language}.html"] = route
 
     fixed = 0
+    hreflang_pages = 0
     for page in pages:
         html = page.read_text(encoding="utf-8")
         soup = BeautifulSoup(html, "html.parser")
         changed = False
         for anchor in soup.find_all("a", href=True):
             href = anchor["href"]
-            if _output_target_exists(output_root, page, href):
-                continue
             parsed = urlparse(href)
+            if (
+                parsed.netloc
+                and parsed.netloc != SETTINGS["HOST"]
+                or parsed.scheme in {"mailto", "tel", "javascript"}
+                or not parsed.path
+            ):
+                continue
+            target = _find_output_target(output_root, page, href)
+            if target is not None:
+                replacement = _cloudflare_route_for_file(output_root, target)
+                if replacement != parsed.path:
+                    anchor["href"] = parsed._replace(path=replacement).geturl()
+                    changed = True
+                    fixed += 1
+                continue
             replacement = legacy_routes.get(parsed.path)
             if replacement is None and anchor.get("data-fallback"):
                 replacement = anchor["data-fallback"]
@@ -117,12 +273,31 @@ def _fix_internal_links() -> None:
                 replacement = "/en/" if parsed.path.startswith("/en/") else "/"
             if replacement is None:
                 continue
+            replacement_target = _find_output_target(
+                output_root,
+                page,
+                parsed._replace(path=replacement).geturl(),
+            )
+            if replacement_target is not None:
+                replacement = _cloudflare_route_for_file(
+                    output_root, replacement_target
+                )
             anchor["href"] = parsed._replace(path=replacement).geturl()
             changed = True
             fixed += 1
+        if _add_hreflang_links(soup):
+            changed = True
+            hreflang_pages += 1
         if changed:
             page.write_text(str(soup), encoding="utf-8")
-    print(f"Fixed {fixed} generated internal i18n link(s)")
+    sitemap_duplicates = _normalize_sitemap(output_root / "sitemap.xml")
+    preserved_feed_ids = _preserve_atom_entry_ids(output_root)
+    print(
+        f"Fixed {fixed} generated internal link(s); "
+        f"added hreflang to {hreflang_pages} page(s); "
+        f"removed {sitemap_duplicates} duplicate sitemap URL(s); "
+        f"preserved {preserved_feed_ids} Atom entry ID(s)"
+    )
 
 
 @task

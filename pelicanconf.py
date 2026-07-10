@@ -33,14 +33,32 @@ DIRECT_TEMPLATES = (
     "series_list",
 )
 CATEGORIES_URL = "category"
-TAGS_URL = "tags.html"
+ARCHIVES_URL = "archives"
+ARCHIVES_SAVE_AS = "archives.html"
+AUTHORS_URL = "authors"
+AUTHORS_SAVE_AS = "authors.html"
+CATEGORIES_URL = "categories"
+CATEGORIES_SAVE_AS = "categories.html"
+TAGS_URL = "tags"
 TAGS_SAVE_AS = "tags.html"
-SERIES_LIST_URL = "series_list.html"
+SERIES_LIST_URL = "series_list"
 SERIES_LIST_SAVE_AS = "series_list.html"
 
 # Content Setting
-ARTICLE_URL = "posts/{category}/{date:%Y}/{date:%m}/{slug}"
+ARTICLE_URL = "posts/{category}/{date:%Y}/{date:%m}/{slug}/"
 ARTICLE_SAVE_AS = "posts/{category}/{date:%Y}/{date:%m}/{slug}/index.html"
+PAGE_URL = "pages/{slug}"
+PAGE_SAVE_AS = "pages/{slug}.html"
+CATEGORY_URL = "category/{slug}"
+CATEGORY_SAVE_AS = "category/{slug}.html"
+TAG_URL = "tag/{slug}"
+TAG_SAVE_AS = "tag/{slug}.html"
+AUTHOR_URL = "author/{slug}"
+AUTHOR_SAVE_AS = "author/{slug}.html"
+PAGINATION_PATTERNS = (
+    (1, "{name}", "{name}{extension}"),
+    (2, "{name}{number}", "{name}{number}{extension}"),
+)
 # Both are required together: STATIC_PATHS makes Pelican copy the directory,
 # EXTRA_PATH_METADATA remaps individual files' output path within it.
 STATIC_PATHS = ["images", "extra", "static"]
@@ -97,6 +115,7 @@ RANDOM_ARTICLE_BUTTON = True
 
 # Theme Setting
 THEME = attila.get_path()
+THEME_TEMPLATES_OVERRIDES = ["templates"]
 
 # i18n
 JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
@@ -118,6 +137,12 @@ I18N_SUBSITES = {
             "slug": "by-sa",
         },
         "SOCIAL_PROFILE_LABEL": "Keep In Touch",
+        "SOCIAL": (
+            ("Linkedin", "https://tw.linkedin.com/in/clleew"),
+            ("GitHub", "https://github.com/Lee-W"),
+            ("Twitter", "https://twitter.com/clleew"),
+            ("RSS", f"https://{HOST}/en/feeds/all.atom.xml"),
+        ),
         "COMMENTS_INTRO": 'If you enjoyed this article, feel free to leave a comment below (GitHub account required), or <a href="mailto:hello+blog@wei-lee.me">drop me an email to chat!</a>',
         "CURRENT_LANG": "en",
         "OG_LOCALE": "en_US",
@@ -198,27 +223,27 @@ UTTERANCES_REPO = "Lee-W/main-blog"
 # Page Setting
 MENUITEMS = (
     ("🏠 首頁", "/"),
-    ("👤 關於我", "/pages/about-me.html"),
-    ("🕰️ 近況", "/pages/now.html"),
+    ("👤 關於我", "/pages/about-me"),
+    ("🕰️ 近況", "/pages/now"),
     (
         "📂 分類",
         (
-            ("👨‍💻 技術", "/category/tech.html"),
-            ("📚 讀書筆記", "/category/book.html"),
-            ("💬 隨筆", "/category/random-thoughts.html"),
+            ("👨‍💻 技術", "/category/tech"),
+            ("📚 讀書筆記", "/category/book"),
+            ("💬 隨筆", "/category/random-thoughts"),
         ),
     ),
     (
         "🧭 探索",
         (
-            ("🏷️ 標籤", "/tags.html"),
-            ("🗄️ 歸檔", "/archives.html"),
-            ("📚 系列文章", "/series_list.html"),
-            ("🗺️ 共同工作", "/pages/coworking.html"),
-            ("📜 部落卷", "/pages/blogroll.html"),
+            ("🏷️ 標籤", "/tags"),
+            ("🗄️ 歸檔", "/archives"),
+            ("📚 系列文章", "/series_list"),
+            ("🗺️ 共同工作", "/pages/coworking"),
+            ("📜 部落卷", "/pages/blogroll"),
         ),
     ),
-    ("🎲 隨機", "/random/index.html"),
+    ("🎲 隨機", "/random/"),
 )
 
 # Content Setting
@@ -251,27 +276,27 @@ I18N_SUBSITES["en"].update(
         },
         "MENUITEMS": (
             ("🏠 Home", "/en/"),
-            ("👤 About Me", "/en/pages/about-me.html"),
-            ("🕰️ Now", "/en/pages/now.html"),
+            ("👤 About Me", "/en/pages/about-me"),
+            ("🕰️ Now", "/en/pages/now"),
             (
                 "📂 Categories",
                 (
-                    ("👨‍💻 Tech", "/en/category/tech.html"),
-                    ("📚 Book Digest", "/en/category/book.html"),
-                    # ("💬 Random Thoughts", "/en/category/random-thoughts.html"),
+                    ("👨‍💻 Tech", "/en/category/tech"),
+                    ("📚 Book Digest", "/en/category/book"),
+                    # ("💬 Random Thoughts", "/en/category/random-thoughts"),
                 ),
             ),
             (
                 "🧭 Explore",
                 (
-                    ("🏷️ Tags", "/en/tags.html"),
-                    ("🗄️ Archives", "/en/archives.html"),
-                    ("📚 Series", "/en/series_list.html"),
-                    ("🗺️ Coworking", "/en/pages/coworking.html"),
-                    ("📜 Blogroll", "/en/pages/blogroll.html"),
+                    ("🏷️ Tags", "/en/tags"),
+                    ("🗄️ Archives", "/en/archives"),
+                    ("📚 Series", "/en/series_list"),
+                    ("🗺️ Coworking", "/en/pages/coworking"),
+                    ("📜 Blogroll", "/en/pages/blogroll"),
                 ),
             ),
-            ("🎲 Random", "/en/random/index.html"),
+            ("🎲 Random", "/en/random/"),
         ),
         "SITENAME": "Those aren't written down are meant to be forgotten",
     }

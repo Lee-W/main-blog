@@ -89,7 +89,7 @@ Lang: zh-tw
     - **2024/02/17** 💻 [源來適你](https://www.facebook.com/opensource4you)  
         * 主題：Intro to Airflow - From Zero to Hero  
         * [Slide](https://speakerdeck.com/leew/intro-to-airflow-from-zero-to-hero)
-- **[相關技術文章](https://blog.wei-lee.me/tag/airflow.html)**
+- **[相關技術文章](https://blog.wei-lee.me/tag/airflow)**
 
 ### Ruff (主要貢獻部分與 Airflow 遷移相關)
 - **專案實際應用**
@@ -130,7 +130,7 @@ Lang: zh-tw
     - **2023/07/29** 🇹🇼 [COSCUP 2023](https://coscup.org/2023/zh-TW/session/TUGLJP)  
         * 主題：Atomic Commits: An Easy & Proven Way to Manage & Automate Release Process  
         * [Slide](https://speakerdeck.com/leew/atomic-commits-an-easy-and-proven-way-to-manage-and-automate-release-process) | [🎬Recording](https://www.youtube.com/watch?v=IxzN9ClXhs8)
-* [相關技術文章](https://blog.wei-lee.me/tag/commitizen-tools.html)
+* [相關技術文章](https://blog.wei-lee.me/tag/commitizen-tools)
 
 ## 社群與志工經驗
 - **國際社群志工經驗**

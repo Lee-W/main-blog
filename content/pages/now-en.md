@@ -1,4 +1,5 @@
 Title: Now
+Summary: A snapshot of what I'm doing, watching, listening to, recommending, and thinking about right now.
 Date: 2026-04-25 18:50 +0800
 Modified: 2026-07-08 23:13 +0800
 Slug: now

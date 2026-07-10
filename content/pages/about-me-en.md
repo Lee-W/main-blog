@@ -1,4 +1,5 @@
 Title: About Me
+Summary: I'm Wei Lee, an open-source developer who enjoys Python, automation, and writing down what I learn.
 Date: 2017-02-03 13:06 +0800
 Modified: 2026-04-17 21:30 +0800
 Slug: about-me
@@ -18,13 +19,13 @@ I'm Wei Lee / 李唯.
 
 I automate things for a living and, honestly, for fun too. Open source is where I spend most of my time — maintaining [commitizen-tools](https://github.com/commitizen-tools) and contributing to [Apache Airflow](https://github.com/apache/airflow/). This blog is where I keep technical notes, book digests, and occasional thoughts. Cooking, anime, and travel live on [Those things no one cares about][travlog].
 
-→ [Full CV](/en/pages/cv.html)
+→ [Full CV](/en/pages/cv)
 
 [travlog]: https://travlog.wei-lee.me/
 
 ---
 
-Enjoying the content? Subscribe via [RSS](/feeds/all.atom.xml), leave a comment on any post, or send me an email.
+Enjoying the content? Subscribe via [RSS](/en/feeds/all.atom.xml), leave a comment on any post, or [send me an email](mailto:hello+blog@wei-lee.me).
 Beyond that, you can also find me at
 
 * <i class="fa-brands fa-linkedin"></i> [LinkedIn](https://tw.linkedin.com/in/clleew)

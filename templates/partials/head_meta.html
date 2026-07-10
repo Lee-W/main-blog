@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta name="generator" content="Pelican" />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#222426" media="(prefers-color-scheme: dark)" />
+
+{% if GOOGLE_SITE_VERIFICATION %}
+<meta name="google-site-verification" content="{{ GOOGLE_SITE_VERIFICATION }}">
+{% endif %}
+
+{% if SITE_DESCRIPTION and not article and not page %}
+<meta name="description" content="{{ SITE_DESCRIPTION|e }}" />
+{% endif %}
+
+{% set content_item = article if article else page if page else None %}
+{% if content_item and content_item.robots %}
+<meta name="robots" content="{{ content_item.robots|e }}" />
+{% endif %}

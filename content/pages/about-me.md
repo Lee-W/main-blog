@@ -1,4 +1,5 @@
 Title: 關於我
+Summary: 我是李唯（Wei Lee），熱愛開源、Python、自動化與把經驗寫下來。
 Date: 2017-02-03 13:06 +0800
 Modified: 2026-04-17 21:30 +0800
 Slug: about-me
@@ -21,13 +22,13 @@ Lang: zh-tw
 
 熱愛把麻煩的事情自動化——工作上如此，生活中也一樣。這個部落格用來記錄技術筆記、書摘，和偶爾浮現的想法。料理、動漫和旅遊的日常則在 [那些沒人在乎的事][travlog] 上
 
-→ [更詳細的介紹與 CV（英文）](/en/pages/cv.html)
+→ [更詳細的介紹與 CV（英文）](/en/pages/cv)
 
 [travlog]: https://travlog.wei-lee.me/
 
 ---
 
-喜歡這裡的內容嗎？歡迎透過 [RSS](/feeds/all.atom.xml) 訂閱、在文章下方留言，或直接寄信給我。
+喜歡這裡的內容嗎？歡迎透過 [RSS](/feeds/all.atom.xml) 訂閱、在文章下方留言，或直接[寄信給我](mailto:hello+blog@wei-lee.me)。
 除此之外，你可以在這裡找到我
 
 * <i class="fa-brands fa-linkedin"></i> [LinkedIn](https://tw.linkedin.com/in/clleew)
