@@ -5,7 +5,7 @@ import sys
 
 sys.path.append(os.curdir)
 from pelicanconf import *  # noqa: F401, E402, F403
-from pelicanconf import HOST
+from pelicanconf import HOST, I18N_SUBSITES
 
 SITEURL = f"https://{HOST}"
 STATIC_SITEURL = SITEURL
@@ -14,6 +14,7 @@ RELATIVE_URLS = False
 FEED_MAX_ITEMS = 30
 FEED_ALL_ATOM = "feeds/all.atom.xml"
 CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
+I18N_SUBSITES["en"]["FEED_DOMAIN"] = f"{SITEURL}/en"
 
 DELETE_OUTPUT_DIRECTORY = True
 DRAFT_SAVE_AS = ""

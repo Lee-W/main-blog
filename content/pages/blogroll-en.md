@@ -1,10 +1,11 @@
 Title: Blogroll
+Summary: Blogs, community friends, and news publications I subscribe to through RSS.
 Date: 2026-06-08 21:00 +0800
 Modified: 2026-06-27 17:25 +0800
 Slug: blogroll
 Lang: en
 
-The blogs I subscribe to via [RSS]({filename}/posts/random-thoughts/2025/02-get-your-retention-back-through-rss.md)
+The blogs I subscribe to via [RSS]({filename}/posts/random-thoughts/2025/02-get-your-retention-back-through-rss.md).
 
 | Blog | Notes |
 | --- | --- |

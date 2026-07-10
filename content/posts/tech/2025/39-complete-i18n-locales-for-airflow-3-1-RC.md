@@ -7,7 +7,7 @@ Authors: Wei Lee
 Lang: zh-tw
 
 為了讓自己更有動力好好的讀 Airflow 開發郵件群組 (Airflow dev mailing list)
-多開了 [Airflow 生情報](/tag/airflow-kai-fa-sheng-qing-bao.html) 的標籤
+多開了 [Airflow 生情報](/tag/airflow-kai-fa-sheng-qing-bao) 的標籤
 會不會跟其他發個一篇就沒有下一篇的文一樣撐不過第二篇不知道
 但先來試試看水溫
 
