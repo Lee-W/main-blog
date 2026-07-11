@@ -1,7 +1,7 @@
 Title: 近況
 Summary: 我現在的狀態，以及最近在做、看、聽、推薦與關注的事。
 Date: 2026-04-25 18:50 +0800
-Modified: 2026-07-08 23:13 +0800
+Modified: 2026-07-11 15:50 +0800
 Slug: now
 Lang: zh-tw
 
@@ -11,7 +11,7 @@ Lang: zh-tw
 * 💤 嘗試提早睡覺，稍微改善，但稱不上成功
 
 ## 🏆 最近感到驕傲的
-* 😭 最近有人覺得我寫的文章很棒，並且把我的部落格加進他們的部落卷
+* 😭 最近有人覺得我寫的文章很棒，並且把我的部落格加進他們的[部落卷](/pages/blogroll)
 * 🏆 上次在 COMPUTEX 的小演講獲得好評
 
 ## 🔥 最近熱衷的
@@ -28,12 +28,14 @@ Lang: zh-tw
 <!-- rumdl-disable -->
 ??? "其他在追的 2026 夏季新番"
     * [THE WORLD IS DANCING 世界在起舞](https://ani.gamer.com.tw/animeVideo.php?sn=49812)
-    * [二十世紀電氣目錄](https://www.netflix.com/title/81698957)
     * [BanG Dream！YUME∞MITA](https://ani.gamer.com.tw/animeVideo.php?sn=49822)
     * [尼古喵喵](https://ani.gamer.com.tw/animeVideo.php?sn=49825)
+    * [躲在超市後門抽菸的兩人](https://www.netflix.com/title/82757039)
     * [畫完這個再去死](https://ani.gamer.com.tw/animeVideo.php?sn=49850)
+    * [二十世紀電氣目錄](https://www.netflix.com/title/81698957)
     * [相反的你和我 第二季](https://ani.gamer.com.tw/animeVideo.php?sn=49896)
     * [黃泉使者](https://ani.gamer.com.tw/animeVideo.php?sn=49574)
+    * [雷霆三人組](https://www.netflix.com/title/82736186)
 <!-- rumdl-enable -->
 
 即時跟到我在看什麼 👉 [AniList](https://anilist.co/user/clleew/), [Letterboxd](https://letterboxd.com/clleew/), [Trakt](https://app.trakt.tv/users/clleew)

@@ -1,7 +1,7 @@
 Title: Now
 Summary: A snapshot of what I'm doing, watching, listening to, recommending, and thinking about right now.
 Date: 2026-04-25 18:50 +0800
-Modified: 2026-07-08 23:13 +0800
+Modified: 2026-07-11 15:50 +0800
 Slug: now
 Lang: en
 
@@ -11,7 +11,8 @@ Lang: en
 * 💤 Trying to go to bed earlier. Slightly better, but not quite a success
 
 ## 🏆 Something I'm proud of recently
-* 😭 Someone recently said my writing was great and added my blog to their blogroll
+* 😭 Someone recently said my writing was great and added my blog to their [blogroll](/pages/blogroll)
+
 * 🏆 My small talk at COMPUTEX got good feedback
 
 ## 🔥 Things I'm into lately
@@ -28,12 +29,14 @@ Lang: en
 <!-- rumdl-disable -->
 ??? "Other 2026 Summer anime I'm following"
     * [THE WORLD IS DANCING](https://ani.gamer.com.tw/animeVideo.php?sn=49812)
-    * [20th Century Electricity Catalog](https://www.netflix.com/title/81698957)
     * [BanG Dream! YUME∞MITA](https://ani.gamer.com.tw/animeVideo.php?sn=49822)
     * [Yani Neko](https://ani.gamer.com.tw/animeVideo.php?sn=49825)
+    * [Smoking Behind the Supermarket with You](https://www.netflix.com/title/82757039)
     * [Draw This, Then Die](https://ani.gamer.com.tw/animeVideo.php?sn=49850)
+    * [20th Century Electricity Catalog](https://www.netflix.com/title/81698957)
     * [You and I Are Polar Opposites Season 2](https://ani.gamer.com.tw/animeVideo.php?sn=49896)
     * [Yomi no Tsugai](https://ani.gamer.com.tw/animeVideo.php?sn=49574)
+    * [Thunder 3](https://www.netflix.com/title/82736186)
 <!-- rumdl-enable -->
 
 You can follow what I'm watching in real time 👉 [AniList](https://anilist.co/user/clleew/), [Letterboxd](https://letterboxd.com/clleew/), [Trakt](https://app.trakt.tv/users/clleew)
