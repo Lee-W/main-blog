@@ -1,13 +1,12 @@
 Title: JLPT N2
 Subtitle: 還在 N5 文法掙扎的我
-Date: 2026-07-07 15:02 +0800
+Date: 2026-07-11 10:01 +0800
 Category: Random Thoughts
 Tags: JLPT, Japanese
 Slug: jlpt-n2
 Cover: /images/posts-image/2026/jlpt-n2/jlpt-n2-exam-venue.jpg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 反正我沒有太大一定得考過的壓力
 這次報名也只是志在參加
