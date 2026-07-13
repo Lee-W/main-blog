@@ -1,12 +1,11 @@
 Title: 參加 BlogBlog 同樂會的一些變化
-Date: 2026-07-07 15:02 +0800
+Date: 2026-07-13 22:24 +0800
 Category: Random Thoughts
 Tags: BlogBlog 同樂會, Blog, Lifestyle
 Slug: blogblog-meetup-changes
 Cover: /images/posts-image/2026/blogblog-meetup-changes/notebook.jpg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 參加 [BlogBlog 同樂會](https://blogblog.club/party/)後，都沉迷於部落友的文章，看書的時間大幅減少了 😱
 
