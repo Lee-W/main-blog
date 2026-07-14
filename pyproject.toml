@@ -32,7 +32,7 @@ dependencies = [
   "pelican-summary-link>=0.2.3",
   "pelican-random-article>=0.3.0",
   "pelican-on-this-day>=0.4.0",
-  "pelican-tabular>=0.4.0",
+  "pelican-tabular>=0.5.0",
   "pelican-sitemap>=1.2.2",
 ]
 
