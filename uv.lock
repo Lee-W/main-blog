@@ -490,7 +490,7 @@ requires-dist = [
     { name = "pelican-heatmap", specifier = ">=0.5.1" },
     { name = "pelican-i18n-subsites", specifier = ">=1.0.0" },
     { name = "pelican-neighbors", specifier = ">=1.2.0" },
-    { name = "pelican-on-this-day", specifier = ">=0.4.0" },
+    { name = "pelican-on-this-day", specifier = ">=0.5.0" },
     { name = "pelican-osm", extras = ["validate"], specifier = ">=0.13.1" },
     { name = "pelican-random-article", specifier = ">=0.3.0" },
     { name = "pelican-render-math", specifier = ">=1.0.3" },
@@ -806,14 +806,14 @@ wheels = [
 
 [[package]]
 name = "pelican-on-this-day"
-version = "0.4.0"
+version = "0.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pelican" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/36/29/27e9e1703751f40b828d85d6373b4c972bd6ae54a33bc1c29fac0df5aafc/pelican_on_this_day-0.4.0.tar.gz", hash = "sha256:1d7d6faa2bc64e1be3a6207a8e28f7f6a76685c62c9c744bcfdeb87e6d2818c9", size = 4839, upload-time = "2026-06-11T01:32:04.263Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ea/b2/51795ae3f2bd0ff862c10dc4723477a6390d6352a89f50b13bc5f521ea87/pelican_on_this_day-0.5.0.tar.gz", hash = "sha256:52fffb61497781e76a727dffd49fc02fa0d930ecd173a97d3781e2fb83344b53", size = 5386, upload-time = "2026-07-13T14:49:06.077Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/4c/30/a43a78a392e589fcd89ad2788e17d1d6e85c16e2d39dadbe8bbd1a45b92a/pelican_on_this_day-0.4.0-py3-none-any.whl", hash = "sha256:e666ed6449d035357d1a3b8d0e9187e63ad00da185f0dcfe6e1910c42a42052f", size = 6870, upload-time = "2026-06-11T01:32:03.19Z" },
+    { url = "https://files.pythonhosted.org/packages/e8/e3/7e4410efedcf2fb6cdc90ceb3197ba3957e6b22de88c783ebe8b348e05f3/pelican_on_this_day-0.5.0-py3-none-any.whl", hash = "sha256:49941d4b1567d17bfeb265c6c98699f805ef088724320b11134d0de7c55dd84a", size = 7443, upload-time = "2026-07-13T14:49:05.058Z" },
 ]
 
 [[package]]
