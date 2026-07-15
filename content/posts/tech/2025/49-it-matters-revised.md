@@ -35,7 +35,7 @@ Lang: zh-tw
 我謝謝你 😇
 
 雖然我投影片就是把同樣的內容複製一遍
-但倒是有發生個小插曲，讓我再次感到自己身為 Airflow 台灣漢語翻譯負責人是有價值的
+但倒是有發生個小插曲，讓我再次感到自己身為 Airflow 臺灣華語翻譯負責人是有價值的
 避免在台灣的文件中出現開源社區這樣的詞
 查了一下，苗栗有個地方叫開元里，也許那裡有開元社區吧
 但依然是錯字 🤦‍♂️
@@ -52,7 +52,7 @@ Lang: zh-tw
 
 - **個人貢獻**
   - 現任 [Committer](https://github.com/apache/airflow/blob/610b5c0458a835d0e9db0aac4aab8e0caf625002/airflow-core/docs/project.rst?plain=1#L108)，具備直接合併程式碼的權限
-  - [台灣漢語程式碼、翻譯負責人](https://github.com/apache/airflow/blob/610b5c0458a835d0e9db0aac4aab8e0caf625002/.github/CODEOWNERS#L48)
+  - [臺灣華語程式碼、翻譯負責人](https://github.com/apache/airflow/blob/610b5c0458a835d0e9db0aac4aab8e0caf625002/.github/CODEOWNERS#L48)
   - [貢獻量前 20 名貢獻者](https://github.com/apache/airflow/graphs/contributors)
   - 發起 [350+ 合併 PRs](https://github.com/apache/airflow/pulls?q=sort%3Aupdated-desc+is%3Apr+author%3ALee-W+is%3Amerged+)
   - 主導多項 Airflow Improvement Proposal (AIP)  
@@ -100,7 +100,7 @@ Lang: zh-tw
 - **程式碼與設計**
   - 詳述於第一點各中專案個人貢獻
 - **文件與翻譯**
-  - 擔任 Airflow [台灣漢語程式碼、翻譯負責人](https://github.com/apache/airflow/blob/610b5c0458a835d0e9db0aac4aab8e0caf625002/.github/CODEOWNERS#L48)，負責審閱台灣漢語翻譯相關 PRs
+  - 擔任 Airflow [臺灣華語程式碼、翻譯負責人](https://github.com/apache/airflow/blob/610b5c0458a835d0e9db0aac4aab8e0caf625002/.github/CODEOWNERS#L48)，負責審閱臺灣華語翻譯相關 PRs
 - **專案治理** (自 2022/07/01 起算)
   - 擔任 Airflow Committer
     - [審閱約 1,000 合併 PRs](https://github.com/apache/airflow/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aopen+reviewed-by%3ALee-W+-author%3ALee-W)

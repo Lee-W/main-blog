@@ -125,6 +125,7 @@ RANDOM_ARTICLE_BUTTON = True
 # Theme Setting
 THEME = attila.get_path()
 THEME_TEMPLATES_OVERRIDES = ["templates"]
+CSS_OVERRIDE = ("static/rights-notice.css",)
 
 # i18n
 JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
@@ -133,7 +134,7 @@ DEFAULT_LANG = "zh-tw"
 I18N_TEMPLATES_LANG = "en"
 LANGUAGES = [("zh-tw", "/"), ("en", "/en/")]
 LANGUAGE_NAMES = {
-    "zh-tw": "台灣漢語",
+    "zh-tw": "臺灣華語",
     "en": "English",
 }
 CURRENT_LANG = "zh-tw"
@@ -250,6 +251,7 @@ MENUITEMS = (
             ("📚 系列文章", "/series_list"),
             ("🗺️ 共同工作", "/pages/coworking"),
             ("📜 部落卷", "/pages/blogroll"),
+            ("©️ 著作權", "/pages/copyright"),
         ),
     ),
     ("🎲 隨機", "/random/"),
@@ -303,6 +305,7 @@ I18N_SUBSITES["en"].update(
                     ("📚 Series", "/en/series_list"),
                     ("🗺️ Coworking", "/en/pages/coworking"),
                     ("📜 Blogroll", "/en/pages/blogroll"),
+                    ("©️ Copyright", "/en/pages/copyright"),
                 ),
             ),
             ("🎲 Random", "/en/random/"),

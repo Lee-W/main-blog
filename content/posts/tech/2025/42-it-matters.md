@@ -41,7 +41,7 @@ Lang: zh-tw
     - [月下載量約 1,400 萬](https://pypistats.org/packages/apache-airflow)
 - **個人身份與影響力**
     - 現任 [Committer](https://airflow.apache.org/community/#committers)，具備直接合併程式碼權限
-    - [台灣漢語程式碼負責人、翻譯負責人](https://github.com/apache/airflow/blob/eae6578ca53b3a8b29755ebb00d1059d2d409ee8/.github/CODEOWNERS#L48)
+    - [臺灣華語程式碼負責人、翻譯負責人](https://github.com/apache/airflow/blob/eae6578ca53b3a8b29755ebb00d1059d2d409ee8/.github/CODEOWNERS#L48)
 - **技術與專案貢獻（2023 至今）**
     - 專案[前 20 名貢獻者](https://github.com/apache/airflow/graphs/contributors)
     - [400+ 個貢獻](https://github.com/apache/airflow/graphs/contributors)
