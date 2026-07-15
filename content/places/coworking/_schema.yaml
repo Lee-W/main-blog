@@ -1,0 +1,128 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: Coworking places
+description: >
+  Work-friendly places I have personally visited. Omit status for normal
+  entries; only record known exceptions such as closed places.
+type: object
+additionalProperties:
+  type: object
+  additionalProperties: true
+  required: [name, lat, lon]
+  properties:
+    name:
+      type: string
+      title: 地點
+      x-osm-list-i18n:
+        title:
+          en: Place
+    lat:
+      type: number
+      minimum: -90
+      maximum: 90
+      x-osm-list-hidden: true
+    lon:
+      type: number
+      minimum: -180
+      maximum: 180
+      x-osm-list-hidden: true
+    address:
+      type: string
+      title: 地址
+      x-osm-list-hidden: true
+      x-osm-list-i18n:
+        title:
+          en: Address
+    country:
+      type: string
+      title: 國家
+      x-osm-list-i18n:
+        title:
+          en: Country
+    city:
+      type: string
+      title: 城市
+      x-osm-list-i18n:
+        title:
+          en: City
+    district:
+      type: string
+      title: 區域
+      x-osm-list-i18n:
+        title:
+          en: Area
+    status:
+      type: string
+      title: 狀態
+      x-osm-list-i18n:
+        title:
+          en: Status
+    closed_date:
+      type: string
+      title: 歇業時間
+      x-osm-list-i18n:
+        title:
+          en: Closed
+    visit_note:
+      type: string
+      title: 造訪備註
+      x-osm-list-i18n:
+        title:
+          en: Visit note
+    hours:
+      type: string
+      title: 營業時間
+      x-osm-list-i18n:
+        title:
+          en: Hours
+    power:
+      type: string
+      title: 插座
+      x-osm-list-i18n:
+        title:
+          en: Power
+    wifi:
+      type: string
+      title: Wi-Fi
+    time_limit:
+      type: string
+      title: 限時
+      x-osm-list-i18n:
+        title:
+          en: Time limit
+    noise:
+      type: string
+      title: 安靜程度
+      x-osm-list-i18n:
+        title:
+          en: Quietness
+    work_score:
+      type: string
+      title: 工作適合度
+      x-osm-list-i18n:
+        title:
+          en: Work score
+    min_spend:
+      type: string
+      title: 低消
+      x-osm-list-i18n:
+        title:
+          en: Minimum spend
+    meal:
+      type: string
+      title: 餐點
+      x-osm-list-i18n:
+        title:
+          en: Food
+    tags:
+      type: array
+      items:
+        type: string
+    urls:
+      type: array
+      items:
+        type: object
+        properties:
+          label:
+            type: string
+          href:
+            type: string
