@@ -155,6 +155,7 @@ I18N_SUBSITES = {
         ),
         "COMMENTS_INTRO": 'If you enjoyed this article, feel free to leave a comment below (GitHub account required), or <a href="mailto:hello+blog@wei-lee.me">drop me an email to chat!</a>',
         "CURRENT_LANG": "en",
+        "CSS_OVERRIDE": ("../static/rights-notice.css",),
         "OG_LOCALE": "en_US",
         "SITE_DESCRIPTION": "Open source, technology, books, and everyday life.",
         "SITESUBTITLE": "Open source, technology, books, and everyday life.",
