@@ -13,7 +13,7 @@ Lang: zh-tw
 
 * 🐍 Python 愛好者、[PyCon Taiwan](https://tw.pycon.org/) 志工
 * [commitizen-tools](https://github.com/commitizen-tools) 維護者
-* [Apache Airflow](https://github.com/apache/airflow/) PMC 成員、台灣漢語程式碼負責人與翻譯負責人
+* [Apache Airflow](https://github.com/apache/airflow/) PMC 成員、臺灣華語程式碼負責人與翻譯負責人
 * [OpenSource4You](https://github.com/opensource4you/) `#apache-airflow`, `#commitizen` 導師與梗圖機器人
 * [📷 旅行者][travlog] — PyCon Taiwan 🇹🇼、PyCon US 🇺🇸、PyCon JP 🇯🇵、PyCon CA 🇨🇦、Remote Python Pizza 💻、EuroPython 🇨🇿、PyCon APAC 🇵🇭、DurianPy 🇵🇭 等研討會
 * ⛺ [台湾野クル▲](https://twitter.com/Taiwannokuru) 部員

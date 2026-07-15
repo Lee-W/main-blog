@@ -21,7 +21,7 @@ Lang: zh-tw
 
 ## 🧑‍💻 最近做的
 * Apache Airflow
-    * （自稱）SQLite 資料庫升級跟台灣漢語翻譯守門員
+    * （自稱）SQLite 資料庫升級跟臺灣華語翻譯守門員
 
 ## 📺 最近看的
 * [穹廬下的魔女](https://ani.gamer.com.tw/animeVideo.php?sn=49885)

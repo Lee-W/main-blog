@@ -24,7 +24,7 @@ def test_add_hreflang_links_for_translated_page():
         """
         <html><head><link rel="canonical" href="https://example.com/pages/about.html"></head>
         <body><ul id="nav-language-menu">
-          <li><a href="/pages/about.html">台灣漢語</a></li>
+          <li><a href="/pages/about.html">臺灣華語</a></li>
           <li><a href="/en/pages/about.html">English</a></li>
         </ul></body></html>
         """,
@@ -49,7 +49,7 @@ def test_add_hreflang_links_ignores_language_home_fallback():
         """
         <html><head><link rel="canonical" href="https://example.com/posts/only-zh"></head>
         <body><ul id="nav-language-menu">
-          <li><a href="/posts/only-zh">台灣漢語</a></li>
+          <li><a href="/posts/only-zh">臺灣華語</a></li>
           <li><a href="/en/">English</a></li>
         </ul></body></html>
         """,
