@@ -95,7 +95,8 @@ basispoint-ueno:
   noise: "★★★★☆"
   work_score: "★★★★☆"
   min_spend: "¥2,860"
-  tags: ["Closed"]
+  status: 已歇業
+  tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
       href: "{filename}/posts/tech/2024/02-2023-tokyo-coworking-space.md"
