@@ -8,7 +8,7 @@ Cover: /images/meme/bad-for-health-keychain.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
-> 這是我的「[BlogBlog 同樂會 - 2026 年 7 月](https://blogblog.club/party/)」的投稿文章。本月主題是「有趣的小知識或冷門概念」，由劉昕主持。如果你有自己的部落格，歡迎一起來參加！
+這是我的「[BlogBlog 同樂會 - 2026 年 7 月](https://blogblog.club/party/)」的投稿文章。本月主題是「[有趣的小知識或冷門概念](https://shuaixin.cc/Fun-Fact/)」，由[劉昕](https://shuaixin.cc/)主持。如果你有自己的部落格，歡迎一起來參加！
 
 <!--more-->
 
