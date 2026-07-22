@@ -1,6 +1,6 @@
 Title: 我不用脆
 Subtitle: 考 100 分
-Date: 2026-07-22 14:11 +0800
+Date: 2026-07-22 18:47 +0800
 Category: Random Thoughts
 Tags: Lifestyle, Social Network
 Slug: i-dont-use-threads
