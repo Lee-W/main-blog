@@ -1,12 +1,14 @@
 Title: 貢獻 Airflow 101
 Subtitle: 姑且算是個 mentor(?)...吧？
 Date: 2024-11-19 22:45 +0800
-Modified: 2025-10-25 18:05 +0800
+Modified: 2026-07-22 18:45 +0800
 Category: Tech
 Tags: Python, Airflow, 源來適你
 Slug: airflow-contribution-101
 Authors: Wei Lee
 Lang: zh-tw
+
+> PA: `#airflow-技術討論` 現已更名 `#apache-airflow` (至少在 2026-07-22 的此刻還是)
 
 至少在[源來適你的名單]上是有我的名字
 雖然 `#airflow-技術討論` 這個頻道偏死寂
