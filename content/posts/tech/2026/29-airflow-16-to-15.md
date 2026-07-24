@@ -1,6 +1,6 @@
 Title: 16 → 15
 Subtitle: 595 → 656
-Date: 2026-07-23 10:32 +0800
+Date: 2026-07-24 11:24 +0800
 Category: Tech
 Tags: Airflow, Open Source
 Slug: airflow-16-to-15
