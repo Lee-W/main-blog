@@ -154,7 +154,7 @@ sky-coki:
       href: "{filename}/posts/random-thoughts/2026/25-sky-cofi.md"
 
 daychill-specialty-coffee:
-  name: Daychill Specialty Coffee Co.
+  name: Daychill Specialty Coffee Co.（⛔ 已歇業）
   lat: 25.051973724626745
   lon: 121.55914385673243
   address: 臺北市松山區東光里南京東路五段55-1號
@@ -162,6 +162,8 @@ daychill-specialty-coffee:
   city: 臺北
   district: 松山
   category: 咖啡廳
+  status: ⛔ 已歇業
+  closed_date: ""  # TODO: 草稿未寫明確歇業日期，待填
   hours: "12:00 ~ 23:00（週一休息）"
   power: "✅ (大多有)"
   wifi: "✅"
@@ -174,6 +176,8 @@ daychill-specialty-coffee:
   urls:
     - label: "Daychill Specialty Coffee Co."
       href: "{filename}/posts/random-thoughts/2026/35-daychill-specialty-coffee.md"
+    - label: "Daychill 最後的波紋"
+      href: "{filename}/posts/random-thoughts/2026/46-daychill-the-last.md"
 
 curista-coffee-city-hall:
   name: CURISTA COFFEE 奎士咖啡 市府旗艦店
