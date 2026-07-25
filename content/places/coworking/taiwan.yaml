@@ -7,6 +7,7 @@ CE-LIB-RARY-tianmu:
   country: 臺灣
   city: 臺北
   district: 士林
+  category: 咖啡廳
   hours: "11:00 ~"
   power: "✅"
   wifi: "✅"
@@ -28,6 +29,7 @@ Le-Promenoir-Coffee:
   country: 臺灣
   city: 臺北
   district: 中正
+  category: 咖啡廳
   hours: "11:00 ~ 19:00"
   power: "✅"
   wifi: "✅"
@@ -49,6 +51,7 @@ notch-coffee-honten:
   country: 臺灣
   city: 臺北
   district: 中正
+  category: 咖啡廳
   hours: "07:40 ~ 20:30"
   power: "✅"
   wifi: "✅ (不算快，但夠用)"
@@ -70,6 +73,7 @@ large-cafe:
   country: 臺灣
   city: 臺北
   district: 中山
+  category: 咖啡廳
   hours: "10:00 ~ 18:00 or 21:00"
   power: "✅"
   wifi: "✅"
@@ -91,6 +95,7 @@ a13-CURISTA-COFFEE:
   country: 臺灣
   city: 臺北
   district: 信義
+  category: 咖啡廳
   hours: "11:00 ~ 21:30"
   power: "部分"
   wifi: "✅"
@@ -112,6 +117,7 @@ AthenaBooks:
   country: 臺灣
   city: 臺北
   district: 大同
+  category: 書店
   hours: "12:00 ~ 22:00"
   power: "✅ (大多有)"
   wifi: "✅"
@@ -133,6 +139,7 @@ sky-coki:
   country: 臺灣
   city: 臺北
   district: 松山
+  category: 咖啡廳
   hours: "08:30 ~ 18:30"
   power: "✅ (大多有)"
   wifi: "✅"
@@ -154,6 +161,7 @@ daychill-specialty-coffee:
   country: 臺灣
   city: 臺北
   district: 松山
+  category: 咖啡廳
   hours: "12:00 ~ 23:00（週一休息）"
   power: "✅ (大多有)"
   wifi: "✅"
@@ -175,6 +183,7 @@ curista-coffee-city-hall:
   country: 臺灣
   city: 臺北
   district: 信義
+  category: 咖啡廳
   hours: "07:30 ~ 20:00"
   power: "✅ (大多有)"
   wifi: "✅ (稍慢，但堪用)"
