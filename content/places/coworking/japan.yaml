@@ -85,7 +85,7 @@ ota-fab:
       href: "{filename}/posts/tech/2024/02-2023-tokyo-coworking-space.md"
 
 basispoint-ueno:
-  name: BasisPoint 上野店
+  name: BasisPoint 上野店（⛔ 已歇業）
   lat: 35.710474
   lon: 139.7769557
   address: 110-0015 東京都台東区東上野２丁目１８−９ ファーストビル 2F
@@ -100,7 +100,7 @@ basispoint-ueno:
   noise: "★★★★☆"
   work_score: "★★★★☆"
   min_spend: "¥2,860"
-  status: 已歇業
+  status: ⛔ 已歇業
   tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
