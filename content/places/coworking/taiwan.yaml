@@ -222,3 +222,28 @@ cafe-raco:
   urls:
     - label: "CAFE RACO"
       href: "{filename}/posts/random-thoughts/2026/43-cafe-raco.md"
+
+# 臺灣 - 臺南
+
+run-xue-coworking:
+  name: 潤學商務共享中心
+  lat: 22.994112
+  lon: 120.200229
+  address: 臺南市中西區南美里民生路一段167號3F
+  country: 臺灣
+  city: 臺南
+  district: 中西
+  category: 共享空間
+  hours: "08:30 ~ 17:30"
+  power: "✅"
+  wifi: "✅"
+  time_limit: "❌"
+  noise: "★★★★★"
+  work_score: "★★★★☆"
+  min_spend: "200 元"
+  meal: "❌"
+  visit_note: 蚊子多，入口建築略顯陰暗，但空間內部有好好整理過
+  tags: []
+  urls:
+    - label: "潤學商務共享中心"
+      href: "{filename}/posts/random-thoughts/2026/room-share.md"
