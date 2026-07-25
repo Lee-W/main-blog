@@ -102,6 +102,7 @@ JINJA_GLOBALS = {"POST_SHARE_MASTODON_DOMAIN": "g0v.social"}
 # Markdown extension
 MARKDOWN = {
     "extension_configs": {
+        "markdown.extensions.admonition": {},
         "markdown.extensions.extra": {},
         "markdown.extensions.codehilite": {"css_class": "highlight"},
         "markdown.extensions.nl2br": {},
