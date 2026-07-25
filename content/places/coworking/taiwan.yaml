@@ -222,3 +222,28 @@ cafe-raco:
   urls:
     - label: "CAFE RACO"
       href: "{filename}/posts/random-thoughts/2026/43-cafe-raco.md"
+
+# 臺灣 - 臺南
+
+hour-jungle-cafe:
+  name: Hour Jungle Café
+  lat: 22.996670
+  lon: 120.210693
+  address: 臺南市中西區赤嵌里中山路193號
+  country: 臺灣
+  city: 臺南
+  district: 中西
+  category: 咖啡廳
+  hours: "09:00 ~ 18:00 (平日)"
+  power: "✅"
+  wifi: "✅"
+  time_limit: "根據消費方案"
+  noise: "★★★☆☆"
+  work_score: "★★★★☆"
+  min_spend: "130 元 / 3 小時"
+  meal: "✅ （輕食）"
+  visit_note: "適合搭車前、短時間工作、旅途中臨時辦公"
+  tags: []
+  urls:
+    - label: "Hour Jungle Café"
+      href: "{filename}/posts/random-thoughts/2026/hour-jungle-cafe.md"
