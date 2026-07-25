@@ -163,7 +163,7 @@ daychill-specialty-coffee:
   district: 松山
   category: 咖啡廳
   status: ⛔ 已歇業
-  closed_date: ""  # TODO: 草稿未寫明確歇業日期，待填
+  closed_date: "2026-07-12"
   hours: "12:00 ~ 23:00（週一休息）"
   power: "✅ (大多有)"
   wifi: "✅"
@@ -200,3 +200,25 @@ curista-coffee-city-hall:
   urls:
     - label: "CURISTA COFFEE 奎士咖啡 市府旗艦店"
       href: "{filename}/posts/random-thoughts/2026/36-curista-coffee-city-hall.md"
+
+cafe-raco:
+  name: CAFE RACO
+  lat: 25.058665
+  lon: 121.534909
+  address: 臺北市中山區松江里民生東路二段147巷1號1樓
+  country: 臺灣
+  city: 臺北
+  district: 中山
+  category: 咖啡廳
+  hours: "09:00 ~ 21:00"
+  power: "✅ (大多有)"
+  wifi: "✅ (要連到對的 wifi)"
+  time_limit: "❌"
+  noise: "★★★☆☆"
+  work_score: "★★★★☆"
+  min_spend: "一杯飲品"
+  meal: "✅ （輕食）"
+  tags: []
+  urls:
+    - label: "CAFE RACO"
+      href: "{filename}/posts/random-thoughts/2026/cafe-raco.md"
