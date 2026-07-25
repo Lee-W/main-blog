@@ -50,6 +50,17 @@ additionalProperties:
       x-osm-list-i18n:
         title:
           en: Area
+    category:
+      type: string
+      title: 類型
+      x-osm-list-hidden: true
+      x-osm-icon:
+        咖啡廳: ☕
+        共享空間: 🏢
+        書店: 📚
+      x-osm-list-i18n:
+        title:
+          en: Type
     status:
       type: string
       title: 狀態
