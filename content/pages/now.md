@@ -1,13 +1,13 @@
 Title: 近況
 Summary: 我現在的狀態，以及最近在做、看、聽、推薦與關注的事。
 Date: 2026-04-25 18:50 +0800
-Modified: 2026-07-11 15:50 +0800
+Modified: 2026-07-28 23:45 +0800
 Slug: now
 Lang: zh-tw
 
 ## 🤔 最近的狀態
 * 😫 身心極度疲憊不堪，如果我做了或少做什麼讓你失望，我很抱歉，但我盡力了
-* 📱 繼續減少社群使用
+* 📱 繼續減少社群平台使用
 * 💤 嘗試提早睡覺，稍微改善，但稱不上成功
 
 ## 🏆 最近感到驕傲的
@@ -16,17 +16,22 @@ Lang: zh-tw
 
 ## 🔥 最近熱衷的
 * 參加 [BlogBlog.Club - 部落部落俱樂部](https://blogblog.club/) (從第二期投稿到現在還沒停過！)
+* 把電子郵件搬到自己的網域
 * 開發 [RiNG](https://github.com/Lee-W/ring/) 同時管理多個 AI agent session 的小工具
 * 開發 [Maigo（迷子）](https://github.com/Lee-W/maigo) 跟私有的 mujica 兩個 AI agent 的工作流，讓我在做事的時候也被邦邦環繞
 
 ## 🧑‍💻 最近做的
 * Apache Airflow
+    * [common.ai provider](https://airflow.apache.org/docs/apache-airflow-providers-common-ai/stable/index.html)
     * （自稱）SQLite 資料庫升級跟臺灣華語翻譯守門員
 
 ## 📺 最近看的
 * [穹廬下的魔女](https://ani.gamer.com.tw/animeVideo.php?sn=49885)
+
 <!-- rumdl-disable -->
 ??? "其他在追的 2026 夏季新番"
+    * [感謝對戰。～大小姐才不玩格鬥遊戲～](https://ani.gamer.com.tw/animeVideo.php?sn=49981)
+    * [擅長逃跑的殿下 第二季](https://ani.gamer.com.tw/animeVideo.php?sn=49853)
     * [THE WORLD IS DANCING 世界在起舞](https://ani.gamer.com.tw/animeVideo.php?sn=49812)
     * [BanG Dream！YUME∞MITA](https://ani.gamer.com.tw/animeVideo.php?sn=49822)
     * [尼古喵喵](https://ani.gamer.com.tw/animeVideo.php?sn=49825)
@@ -36,6 +41,7 @@ Lang: zh-tw
     * [相反的你和我 第二季](https://ani.gamer.com.tw/animeVideo.php?sn=49896)
     * [黃泉使者](https://ani.gamer.com.tw/animeVideo.php?sn=49574)
     * [雷霆三人組](https://www.netflix.com/title/82736186)
+    * [CANDY CARIES 蛀在糖糖裡](https://ani.gamer.com.tw/animeVideo.php?sn=48557)
 <!-- rumdl-enable -->
 
 即時跟到我在看什麼 👉 [AniList](https://anilist.co/user/clleew/), [Letterboxd](https://letterboxd.com/clleew/), [Trakt](https://app.trakt.tv/users/clleew)
@@ -48,6 +54,9 @@ Lang: zh-tw
 ## 🌟 最近推的
 * [渡瀬 結月](https://x.com/Watase_Yuzuki) → 看過睦葉炫風現場，就被圈粉了
 * [羊宮妃那](https://x.com/Hina_Youmiya) → 羊黑一拳打死 🥊
+
+![punch](/images/posts-image/2026/now/punch.jpeg)
+
 * [Aimer](https://x.com/Aimer_and_staff) → 繳了最久的 FC 税
 * [江松霖](https://www.youtube.com/@sungsungvideo) → 小松的歌要聽一輩子
 
@@ -59,7 +68,6 @@ Lang: zh-tw
 
 ## 🍽️ 最近吃的╱喝的
 * 早餐: 燕麥片 + 無糖豆漿
-* 自己煮: 水煮雞胸肉 + 水煮青菜
 
 不是為了健康，只是因為比較省事
 
