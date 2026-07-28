@@ -1,7 +1,7 @@
 Title: Now
 Summary: A snapshot of what I'm doing, watching, listening to, recommending, and thinking about right now.
 Date: 2026-04-25 18:50 +0800
-Modified: 2026-07-11 15:50 +0800
+Modified: 2026-07-28 23:45 +0800
 Slug: now
 Lang: en
 
@@ -17,17 +17,22 @@ Lang: en
 
 ## 🔥 Things I'm into lately
 * Joining [BlogBlog.Club](https://blogblog.club/) (I've been submitting since the second issue and still haven't stopped!)
+* Moving my email to my own domain
 * Building [RiNG](https://github.com/Lee-W/ring/), a small tool for managing multiple AI agent sessions at once
 * Building [Maigo](https://github.com/Lee-W/maigo) and mujica (private), two AI agent workflows, so I'm constantly surrounded by BanG Dream! even while working
 
 ## 🧑‍💻 What I've been doing
 * Apache Airflow
+    * [common.ai provider](https://airflow.apache.org/docs/apache-airflow-providers-common-ai/stable/index.html)
     * (self-proclaimed) SQLite database upgrade and Taiwanese Mandarin translation gatekeeper
 
 ## 📺 What I've been watching
 * [A Witch's Life in Mongol](https://ani.gamer.com.tw/animeVideo.php?sn=49885)
+
 <!-- rumdl-disable -->
 ??? "Other 2026 Summer anime I'm following"
+    * [Young Ladies Don’t Play Fighting Games](https://ani.gamer.com.tw/animeVideo.php?sn=49981)
+    * [The Elusive Samurai Season 2](https://ani.gamer.com.tw/animeVideo.php?sn=49853)
     * [THE WORLD IS DANCING](https://ani.gamer.com.tw/animeVideo.php?sn=49812)
     * [BanG Dream! YUME∞MITA](https://ani.gamer.com.tw/animeVideo.php?sn=49822)
     * [Yani Neko](https://ani.gamer.com.tw/animeVideo.php?sn=49825)
@@ -37,6 +42,7 @@ Lang: en
     * [You and I Are Polar Opposites Season 2](https://ani.gamer.com.tw/animeVideo.php?sn=49896)
     * [Yomi no Tsugai](https://ani.gamer.com.tw/animeVideo.php?sn=49574)
     * [Thunder 3](https://www.netflix.com/title/82736186)
+    * [CANDY CARIES](https://ani.gamer.com.tw/animeVideo.php?sn=48557)
 <!-- rumdl-enable -->
 
 You can follow what I'm watching in real time 👉 [AniList](https://anilist.co/user/clleew/), [Letterboxd](https://letterboxd.com/clleew/), [Trakt](https://app.trakt.tv/users/clleew)
@@ -49,6 +55,9 @@ My thoughts 👉 [Those Things No One Cares About](https://travlog.wei-lee.me/)
 ## 🌟 What I've been recommending
 * [Yuzuki Watase](https://x.com/Watase_Yuzuki) → got completely hooked after seeing her live in Mutsumi's whirlwind
 * [Hina Youmiya](https://x.com/Hina_Youmiya) → punch a Youmiya anti-fan dead 🥊
+
+![punch](/images/posts-image/2026/now/punch.jpeg)
+
 * [Aimer](https://x.com/Aimer_and_staff) → the fan club membership I've been paying for the longest
 * [江松霖](https://www.youtube.com/@sungsungvideo) → I will listen to his songs forever
 
@@ -60,7 +69,6 @@ My thoughts 👉 [Those Things No One Cares About](https://travlog.wei-lee.me/)
 
 ## 🍽️ What I've been eating/drinking
 * Breakfast: oatmeal + unsweetened soy milk
-* Home-cooked: boiled chicken breast + boiled vegetables
 
 Not really for health reasons — just because it's simple and low effort
 
