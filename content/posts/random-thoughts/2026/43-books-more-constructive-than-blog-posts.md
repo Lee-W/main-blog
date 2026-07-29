@@ -6,8 +6,7 @@ Slug: books-more-constructive-than-blog-posts
 Authors: Wei Lee
 Lang: zh-tw
 
-在[參加 BlogBlog 同樂會的一些變化]({filename}/posts/random-thoughts/2026/39-blogblog-meetup-changes.md)
-回了這麼一段話
+在[參加 BlogBlog 同樂會的一些變化]({filename}/posts/random-thoughts/2026/39-blogblog-meetup-changes.md) LQ7 回了這麼一段話
 
 > 總覺得書終究比 Blog 廢文們(?)有建設性一點
 
