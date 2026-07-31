@@ -1,5 +1,5 @@
 Title: 我也有自己網域的電子郵件啦！
-Date: 2026-07-31 23:02 +0800
+Date: 2026-07-31 23:18 +0800
 Category: Random Thoughts
 Tags: Blog, Lifestyle, Tool
 Slug: now-i-also-have-my-own-domain-email
