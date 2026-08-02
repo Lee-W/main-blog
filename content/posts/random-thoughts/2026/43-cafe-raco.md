@@ -1,5 +1,5 @@
 Title: CAFE RACO
-Date: 2026-07-25 23:10 +0800
+Date: 2026-08-02 17:15 +0800
 Category: Random Thoughts
 Tags: Coworking Space
 Slug: cafe-raco
