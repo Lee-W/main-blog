@@ -1,11 +1,10 @@
 Title: 溺水
-Date: 2026-08-02 21:10 +0800
+Date: 2026-08-02 22:17 +0800
 Category: Random Thoughts
 Tags: Lifestyle, Life
 Slug: drowning
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 看到 JN 的[一個小時](https://blog.giveanornot.com/an-hour/)，再加上時候也差不多到了
 就決定來寫這篇文了
