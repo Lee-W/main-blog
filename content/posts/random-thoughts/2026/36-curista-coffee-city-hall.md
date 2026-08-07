@@ -22,7 +22,7 @@ Lang: zh-tw
 - 低消： 一杯飲品
 - 賣正餐： ✅ （燉飯不推）
 
-{% place coworking.yaml#curista-coffee-city-hall %}
+{% place coworking/taiwan.yaml#curista-coffee-city-hall %}
 
 整體環境還算不錯，原本以為是一整棟的，但其實只有一樓
 有插座的主要是窗邊跟最裡面

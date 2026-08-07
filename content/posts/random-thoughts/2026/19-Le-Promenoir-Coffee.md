@@ -25,7 +25,7 @@ Lang: zh-tw
 - 適合工作： ★★★★☆
 - 低消： 250 元
 
-{% place coworking.yaml#Le-Promenoir-Coffee %}
+{% place coworking/taiwan.yaml#Le-Promenoir-Coffee %}
 
 ---
 

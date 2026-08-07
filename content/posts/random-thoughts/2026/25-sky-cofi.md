@@ -23,7 +23,7 @@ Lang: zh-tw
 - 低消： 根據消費方案
 - 賣正餐： ✅ （輕食）
 
-{% place coworking.yaml#sky-coki %}
+{% place coworking/taiwan.yaml#sky-coki %}
 
 因為前住處離這邊不遠，有時候遇到停水或停電就會來這工作
 最近搬離臺北市了，進城如果找不到更好的選擇就會來

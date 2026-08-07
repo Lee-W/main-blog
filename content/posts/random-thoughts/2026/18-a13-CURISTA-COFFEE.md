@@ -22,7 +22,7 @@ Lang: zh-tw
 - 安靜程度： ★★★☆☆（平日）
 - 適合工作： ★★★☆☆
 
-{% place coworking.yaml#a13-CURISTA-COFFEE %}
+{% place coworking/taiwan.yaml#a13-CURISTA-COFFEE %}
 
 ---
 

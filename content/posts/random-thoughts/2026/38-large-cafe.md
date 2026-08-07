@@ -23,7 +23,7 @@ Lang: zh-tw
 - 低消： 一杯飲品
 - 賣正餐： ✅
 
-{% place coworking.yaml#large-cafe %}
+{% place coworking/taiwan.yaml#large-cafe %}
 
 這個空間看起來主要是提供建築師或相關從業人員討論案子使用
 除了空間很有設計感外

@@ -12,7 +12,7 @@ Lang: zh-tw
 
 <!--more-->
 
-{% place coworking.yaml#nekton-fujisawa %}
+{% place coworking/japan.yaml#nekton-fujisawa %}
 
 距離藤澤車站非常非常近
 如果是想巡禮《青春豬頭少年》系列，或是打算去江之島玩
