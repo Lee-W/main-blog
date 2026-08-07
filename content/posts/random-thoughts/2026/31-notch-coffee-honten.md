@@ -24,7 +24,7 @@ Lang: zh-tw
 - 低消： 一杯飲品，可以壓在一百出頭
 - 賣正餐： ✅
 
-{% place coworking.yaml#notch-coffee-honten %}
+{% place coworking/taiwan.yaml#notch-coffee-honten %}
 
 ---
 

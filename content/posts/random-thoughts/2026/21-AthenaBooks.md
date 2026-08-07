@@ -24,7 +24,7 @@ Lang: zh-tw
 - 低消： 一杯飲料
 - 賣正餐： ❌
 
-{% place coworking.yaml#AthenaBooks %}
+{% place coworking/taiwan.yaml#AthenaBooks %}
 
 ---
 

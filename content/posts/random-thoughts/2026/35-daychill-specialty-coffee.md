@@ -23,7 +23,7 @@ Lang: zh-tw
 - 低消： 一杯飲品
 - 賣正餐： ❌
 
-{% place coworking.yaml#daychill-specialty-coffee %}
+{% place coworking/taiwan.yaml#daychill-specialty-coffee %}
 
 工作空間整體算是普通，畢竟還是間咖啡廳
 插頭夠多
