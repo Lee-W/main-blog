@@ -5,10 +5,13 @@ Fetch reviewed PRs from GitHub and generate a contribution report markdown file.
 import argparse
 import os
 import subprocess
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import requests
+
+TAIPEI_TZ = ZoneInfo("Asia/Taipei")
 
 
 def get_github_token() -> str | None:
@@ -16,7 +19,9 @@ def get_github_token() -> str | None:
     if token := os.environ.get("GITHUB_TOKEN"):
         return token
     try:
-        result = subprocess.run(["gh", "auth", "token"], capture_output=True, text=True)
+        result = subprocess.run(
+            ["gh", "auth", "token"], capture_output=True, text=True, check=False
+        )
         if result.returncode == 0:
             return result.stdout.strip()
     except FileNotFoundError:
@@ -310,8 +315,8 @@ def fetch_contributions(
                 }
             )
 
-    start_dt = datetime.strptime(start_date, "%Y-%m-%d")
-    end_dt = datetime.strptime(end_date, "%Y-%m-%d")
+    start_dt = date.fromisoformat(start_date)
+    end_dt = date.fromisoformat(end_date)
 
     # Releases for owned repos plus any repo we already saw a contribution in
     # (covers releases you cut in org/3rd-party repos, which the owned-repos
@@ -339,7 +344,7 @@ def fetch_contributions(
                 published_at = release.get("published_at")
                 if not published_at:
                     continue
-                published_dt = datetime.strptime(published_at[:10], "%Y-%m-%d")
+                published_dt = date.fromisoformat(published_at[:10])
                 if not (start_dt <= published_dt <= end_dt):
                     continue
 
@@ -380,8 +385,8 @@ def generate_markdown(
 ) -> str:
     """Generate markdown content for contribution report."""
 
-    start_dt = datetime.strptime(start_date, "%Y-%m-%d")
-    end_dt = datetime.strptime(end_date, "%Y-%m-%d")
+    start_dt = date.fromisoformat(start_date)
+    end_dt = date.fromisoformat(end_date)
 
     # Format dates for Chinese title
     start_formatted = start_dt.strftime("%-m/%-d").lstrip("0")  # Remove leading zero
@@ -389,7 +394,7 @@ def generate_markdown(
 
     lines = [
         f"Title: {start_dt.year}/{start_formatted} - {end_formatted} 開源貢獻週報",
-        f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M')} +0800",
+        f"Date: {datetime.now(tz=TAIPEI_TZ).strftime('%Y-%m-%d %H:%M %z')}",
         "Category: Tech",
         "Tags: Open Source, 開源貢獻週報",
         f"Slug: {start_date}-{end_date}-open-source-report",
@@ -542,12 +547,12 @@ def main():
     # Remove duplicates
     excluded_repos = list(set(excluded_repos))
 
-    today = datetime.now()
+    today = datetime.now(tz=TAIPEI_TZ).date()
     weekday = today.weekday()
 
     if args.start_date:
         try:
-            start_date = datetime.strptime(args.start_date, "%Y-%m-%d")
+            start_date = date.fromisoformat(args.start_date)
         except ValueError:
             parser.error(f"Invalid start-date format: {args.start_date}")
     else:
@@ -558,7 +563,7 @@ def main():
 
     if args.end_date:
         try:
-            end_date = datetime.strptime(args.end_date, "%Y-%m-%d")
+            end_date = date.fromisoformat(args.end_date)
         except ValueError:
             parser.error(f"Invalid end-date format: {args.end_date}")
     else:
