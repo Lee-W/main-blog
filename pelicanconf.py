@@ -184,6 +184,7 @@ PLUGINS = [
     "pelican.plugins.on_this_day",
     "pelican.plugins.tabular",
     "pelican.themes.attila.readtime",
+    "pelican.plugins.stat",
 ]
 PAGEFIND_ENABLED = True
 SUMMARY_LINK_FORMAT = ""
