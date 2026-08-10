@@ -384,17 +384,17 @@ def livereload(c):
     theme_path = SETTINGS["THEME"]
     watched_globs = [
         CONFIG["settings_base"],
-        "{}/templates/**/*.html".format(theme_path),
+        f"{theme_path}/templates/**/*.html",
     ]
 
     content_file_extensions = [".md", ".rst"]
     for extension in content_file_extensions:
-        content_glob = "{0}/**/*{1}".format(SETTINGS["PATH"], extension)
+        content_glob = f"{SETTINGS['PATH']}/**/*{extension}"
         watched_globs.append(content_glob)
 
     static_file_extensions = [".css", ".js"]
     for extension in static_file_extensions:
-        static_file_glob = "{0}/static/**/*{1}".format(theme_path, extension)
+        static_file_glob = f"{theme_path}/static/**/*{extension}"
         watched_globs.append(static_file_glob)
 
     for g in watched_globs:
@@ -555,8 +555,8 @@ def new_draft(c, title, category, slug="", lang="zh-tw"):
 @task
 def new_open_source_report(c, start, end):
     """Create a new 開源貢獻週報 post (--start YYYY-MM-DD --end YYYY-MM-DD)"""
-    start_dt = datetime.datetime.strptime(start, "%Y-%m-%d")
-    end_dt = datetime.datetime.strptime(end, "%Y-%m-%d")
+    start_dt = datetime.date.fromisoformat(start)
+    end_dt = datetime.date.fromisoformat(end)
     title = f"{start_dt.strftime('%Y/%m/%d')} - {end_dt.strftime('%m/%d')} 開源貢獻週報"
     slug = (
         f"{start_dt.strftime('%Y-%m-%d')}-{end_dt.strftime('%m-%d')}-open-source-report"
@@ -596,7 +596,7 @@ def check_image_usage(_) -> None:
     ref_patterns = [
         re.compile(r"\]\(\s*(/images/[^)]+?)\s*\)"),
         re.compile(r"src=[\"'](/images/[^\"']+)[\"']"),
-        re.compile(r"^(?:Cover|Image):\s*(/images/\S+)", re.M),
+        re.compile(r"^(?:Cover|Image):\s*(/images/\S+)", re.MULTILINE),
     ]
     refs: dict[str, set[str]] = defaultdict(set)
     for md in Path("content").rglob("*.md"):

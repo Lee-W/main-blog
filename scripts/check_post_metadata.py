@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Check Pelican post metadata style consistency."""
 
 from __future__ import annotations
@@ -46,7 +45,7 @@ def check_file(path: Path, valid_categories: list[str]) -> list[str]:
     errors: list[str] = []
     try:
         metadata, order = parse_metadata(path)
-    except Exception as e:
+    except (OSError, UnicodeError) as e:
         return [f"  failed to parse metadata: {e}"]
 
     for field in REQUIRED_FIELDS:
@@ -71,19 +70,14 @@ def check_file(path: Path, valid_categories: list[str]) -> list[str]:
         and "Category" in metadata
         and metadata["Category"] not in valid_categories
     ):
-        errors.append(
-            f"  Category '{metadata['Category']}' not in {valid_categories}"
-        )
+        errors.append(f"  Category '{metadata['Category']}' not in {valid_categories}")
 
     if "Lang" in metadata and metadata["Lang"] not in VALID_LANGS:
         errors.append(
             f"  Lang must be one of {sorted(VALID_LANGS)}, got '{metadata['Lang']}'"
         )
 
-    if (
-        "Status" in metadata
-        and metadata["Status"].lower() not in VALID_STATUSES
-    ):
+    if "Status" in metadata and metadata["Status"].lower() not in VALID_STATUSES:
         errors.append(
             f"  Status must be one of {sorted(VALID_STATUSES)}, "
             f"got '{metadata['Status']}'"
