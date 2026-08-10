@@ -5,10 +5,6 @@ Modified: 2026-04-17 21:30 +0800
 Slug: about-me
 Lang: zh-tw
 
-<div id="writing-heatmap"></div>
-
----
-
 我是李唯（Wei Lee）
 
 * 🐍 Python 愛好者、[PyCon Taiwan](https://tw.pycon.org/) 志工
@@ -35,3 +31,9 @@ Lang: zh-tw
 * <i class="fa-brands fa-x-twitter"></i> [Twitter / X](https://twitter.com/clleew)
 * <i class="fa-brands fa-github"></i> [GitHub](https://github.com/Lee-W/)
 * <i class="fa-brands fa-mastodon"></i> [Mastodon](https://g0v.social/@weilee)
+
+---
+
+{% heatmap %}
+
+{% writing_stats %}
