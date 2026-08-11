@@ -1,6 +1,7 @@
 Title: Taipei | Claude and AI Ethics
 Subtitle: 起因竟是大港開唱 2026 ?!
 Date: 2026-06-29 21:30 +0800
+Modified: 2026-08-11 10:55 +0800
 Category: Tech
 Tags: AI Ethics, Claude
 Slug: taipei-claude-and-ai-ethics
@@ -71,7 +72,9 @@ Lang: zh-tw
 
 1. N.D. California（目前在這）
 2. 9th Circuit
-3. D.C. Circuit
+3. D.C. Circuit > 其實另一個訴訟在這邊，因為法律有規定專屬管轄（想要用特定法律告人必須來這邊）
+
+> 08/11 更新： 感謝 Peter 協助糾錯
 
 另一條線是 **4/17 的白宮會面**
 Anthropic 退出之後，Google、OpenAI、xAI 都跟五角大廈簽了合約
