@@ -1,12 +1,11 @@
 Title: 一些 AI GitHub 帳號趣事
-Date: 2026-08-10 23:56 +0800
+Date: 2026-08-12 11:49 +0800
 Category: Tech
 Tags: Airflow, GitHub, Open Source
 Slug: ai-github-account-stories
 Cover: /images/posts-image/2026/ai-github-account-stories/ari4ka-approval.jpg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 在這個 AI 盛行的時代，AI Slop 真的蠻煩的
 但有時候還是會有一些有趣的事情發生
