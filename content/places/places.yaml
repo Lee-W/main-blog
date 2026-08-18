@@ -23,3 +23,20 @@ takachiho-shrine:
   lon: 129.489884
   address: 宮崎県西臼杵郡高千穂町三田井1037
   tags: [Japan]
+
+# content/posts/random-thoughts/2026/ichigo-ichie.md
+mangyoji:
+  name: 萬行寺
+  icon: 🛕
+  lat: 33.5925365
+  lon: 130.4117886
+  address: 福岡県福岡市博多区祇園町1-28
+  country: 日本
+  city: 福岡県
+  district: 博多区
+  osm_type: node
+  osm_id: 534043687
+  tags: [Japan]
+  urls:
+    - label: "一期一會"
+      href: "{filename}/posts/random-thoughts/2026/ichigo-ichie.md"
