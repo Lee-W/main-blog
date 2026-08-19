@@ -1,12 +1,11 @@
 Title: 一期一會
-Date: 2026-08-18 11:23 +0800
+Date: 2026-08-19 08:44 +0800
 Category: Random Thoughts
 Tags: BlogBlog 同樂會, Life, Japan
 Slug: ichigo-ichie
 Cover: /images/posts-image/2026/ichigo-ichie/juyondai.jpeg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 > 這是我的「[BlogBlog 同樂會 - 2026 年 8 月](https://blogblog.club/party/)」的投稿文章。本月主題是「[一期一會](https://blog.ikukaroom.com/ichigo-ichie/)」，由 [ikuka](https://blog.ikukaroom.com/) 主持。如果你有自己的部落格，歡迎一起來參加！
 
