@@ -11,12 +11,12 @@ This page only includes coworking spaces and work-friendly places I have persona
 
 ## Taiwan
 
-{% place_list coworking/taiwan group_by="country,city,district" group_summary_at="country,city" %}
-
 {% place coworking/taiwan %}
+
+{% place_list coworking/taiwan group_by="country,city,district" group_summary_at="country,city" %}
 
 ## Japan
 
-{% place_list coworking/japan group_by="country,city,district" group_summary_at="country,city" %}
-
 {% place coworking/japan %}
+
+{% place_list coworking/japan group_by="country,city,district" group_summary_at="country,city" %}
