@@ -1,11 +1,10 @@
 Title: 電子溝通的禮儀
-Date: 2026-08-12 23:26 +0800
+Date: 2026-08-25 21:29 +0800
 Category: Random Thoughts
 Tags: Lifestyle, Communication
 Slug: electronic-communication-etiquette
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 看到 Eddie 的[沒看 E-mail 耶](https://eddielv.com/musings/donot-reading-email/)，還是會覺得不看信的某些存在很不可思議😲
 
