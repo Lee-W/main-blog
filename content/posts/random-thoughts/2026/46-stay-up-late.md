@@ -1,11 +1,10 @@
 Title: 晚上不睡覺
-Date: 2026-08-18 11:50 +0800
+Date: 2026-09-01 06:06 +0800
 Category: Random Thoughts
 Tags: BlogBlog 同樂會, Productivity, Lifestyle
 Slug: stay-up-late
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 > 這是我的「[BlogBlog 同樂會 - 2026 年 9 月](https://blogblog.club/party/)」的投稿文章。本月主題是「[晚上不睡覺](https://jasonjlai.net/zh/3pwriting/stay-up.html)」，由 [Jason Lai](https://jasonjlai.net/) 主持。如果你有自己的部落格，歡迎一起來參加！
 
