@@ -1,11 +1,10 @@
 Title: 我也很喜歡文章簡單好讀的部落格
-Date: 2026-08-14 21:30 +0800
+Date: 2026-09-07 08:10 +0800
 Category: Random Thoughts
 Tags: Blog, Reading
 Slug: i-also-like-easy-to-read-blogs
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 [我須要含有易讀文章的部落格！](https://eddielv.com/musings/2026new-year-eva/easy-to-read/)的標題有個錯字
 
