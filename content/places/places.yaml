@@ -14,14 +14,18 @@ kitano-tenman-jinja:
   lat: 34.701786
   lon: 135.189254
   address: 兵庫県神戸市中央区北野町3丁目12-1
+  osm_type: way
+  osm_id: 572305913
   tags: [Japan]
 
 takachiho-shrine:
   name: 高千穗神社
   icon: ⛩️
-  lat: 28.375074
-  lon: 129.489884
+  lat: 32.7066706
+  lon: 131.3018922
   address: 宮崎県西臼杵郡高千穂町三田井1037
+  osm_type: way
+  osm_id: 757459506
   tags: [Japan]
 
 # content/posts/random-thoughts/2026/ichigo-ichie.md

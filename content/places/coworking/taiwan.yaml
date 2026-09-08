@@ -29,6 +29,8 @@ Le-Promenoir-Coffee:
   country: 臺灣
   city: 臺北
   district: 中正
+  osm_type: node
+  osm_id: 13426096701
   category: 咖啡廳
   hours: "11:00 ~ 19:00"
   power: "✅"
@@ -51,6 +53,8 @@ notch-coffee-honten:
   country: 臺灣
   city: 臺北
   district: 中正
+  osm_type: node
+  osm_id: 4298897609
   category: 咖啡廳
   hours: "07:40 ~ 20:30"
   power: "✅"
@@ -139,6 +143,8 @@ sky-coki:
   country: 臺灣
   city: 臺北
   district: 松山
+  osm_type: node
+  osm_id: 13462268101
   category: 咖啡廳
   hours: "08:30 ~ 18:30"
   power: "✅ (大多有)"
@@ -187,6 +193,8 @@ curista-coffee-city-hall:
   country: 臺灣
   city: 臺北
   district: 信義
+  osm_type: node
+  osm_id: 10675699621
   category: 咖啡廳
   hours: "07:30 ~ 20:00"
   power: "✅ (大多有)"
