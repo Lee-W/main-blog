@@ -83,6 +83,17 @@ additionalProperties:
         title:
           en: District
 
+    # ── OSM linkage ─────────────────────────────────────────────
+    osm_type:
+      type: string
+      enum: [node, way, relation]
+      title: OSM 類型
+      x-osm-list-hidden: true
+    osm_id:
+      type: integer
+      title: OSM ID
+      x-osm-list-hidden: true
+
     # ── Lifecycle ───────────────────────────────────────────────
     status:
       type: string
