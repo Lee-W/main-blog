@@ -1,7 +1,7 @@
 Title: Now
 Summary: A snapshot of what I'm doing, watching, listening to, recommending, and thinking about right now.
 Date: 2026-04-25 18:50 +0800
-Modified: 2026-07-28 23:45 +0800
+Modified: 2026-09-12 01:30 +0800
 Slug: now
 Lang: en
 
@@ -11,36 +11,37 @@ Lang: en
 * 💤 Trying to go to bed earlier. Slightly better, but not quite a success
 
 ## 🏆 Something I'm proud of recently
+* 🚴 Cycled a full lap around Lake Biwa (split across two days)
 * 😭 Someone recently said my writing was great and added my blog to their [blogroll](/pages/blogroll)
-
-* 🏆 My small talk at COMPUTEX got good feedback
 
 ## 🔥 Things I'm into lately
 * Joining [BlogBlog.Club](https://blogblog.club/) (I've been submitting since the second issue and still haven't stopped!)
 * Moving my email to my own domain
-* Building [RiNG](https://github.com/Lee-W/ring/), a small tool for managing multiple AI agent sessions at once
-* Building [Maigo](https://github.com/Lee-W/maigo) and mujica (private), two AI agent workflows, so I'm constantly surrounded by BanG Dream! even while working
 
 ## 🧑‍💻 What I've been doing
 * Apache Airflow
     * [common.ai provider](https://airflow.apache.org/docs/apache-airflow-providers-common-ai/stable/index.html)
     * (self-proclaimed) SQLite database upgrade and Taiwanese Mandarin translation gatekeeper
+* [RiNG](https://github.com/Lee-W/ring/): a small tool for managing multiple AI agent sessions at once
+* [Maigo](https://github.com/Lee-W/maigo) and mujica (private), two AI agent workflows, so I'm constantly surrounded by BanG Dream! even while working
 
 ## 📺 What I've been watching
-* [A Witch's Life in Mongol](https://ani.gamer.com.tw/animeVideo.php?sn=49885)
+* [Goodbye, Lara](https://ani.gamer.com.tw/animeVideo.php?sn=49965)
+    * An unexpected gem — I already wanted to watch it, but didn't expect it to be this good
 
 <!-- rumdl-disable -->
 ??? "Other 2026 Summer anime I'm following"
+    * [A Witch's Life in Mongol](https://ani.gamer.com.tw/animeVideo.php?sn=49885)
     * [Young Ladies Don’t Play Fighting Games](https://ani.gamer.com.tw/animeVideo.php?sn=49981)
     * [The Elusive Samurai Season 2](https://ani.gamer.com.tw/animeVideo.php?sn=49853)
     * [THE WORLD IS DANCING](https://ani.gamer.com.tw/animeVideo.php?sn=49812)
-    * [BanG Dream! YUME∞MITA](https://ani.gamer.com.tw/animeVideo.php?sn=49822)
     * [Yani Neko](https://ani.gamer.com.tw/animeVideo.php?sn=49825)
+    * [BanG Dream! YUME∞MITA](https://ani.gamer.com.tw/animeVideo.php?sn=49822)
     * [Smoking Behind the Supermarket with You](https://www.netflix.com/title/82757039)
     * [Draw This, Then Die](https://ani.gamer.com.tw/animeVideo.php?sn=49850)
-    * [20th Century Electricity Catalog](https://www.netflix.com/title/81698957)
-    * [You and I Are Polar Opposites Season 2](https://ani.gamer.com.tw/animeVideo.php?sn=49896)
     * [Yomi no Tsugai](https://ani.gamer.com.tw/animeVideo.php?sn=49574)
+    * [You and I Are Polar Opposites Season 2](https://ani.gamer.com.tw/animeVideo.php?sn=49896)
+    * [20th Century Electricity Catalog](https://www.netflix.com/title/81698957)
     * [Thunder 3](https://www.netflix.com/title/82736186)
     * [CANDY CARIES](https://ani.gamer.com.tw/animeVideo.php?sn=48557)
 <!-- rumdl-enable -->
@@ -60,12 +61,6 @@ My thoughts 👉 [Those Things No One Cares About](https://travlog.wei-lee.me/)
 
 * [Aimer](https://x.com/Aimer_and_staff) → the fan club membership I've been paying for the longest
 * [江松霖](https://www.youtube.com/@sungsungvideo) → I will listen to his songs forever
-
-## 🏃‍➡️ What I've been doing physically
-* 🥊 [Boxing]({filename}/posts/random-thoughts/2024/01-boxing.md)
-* 🏹 Kyudo (not good enough to deserve a “bullseye” emoji)
-* 🏋️ Gym
-* 🗡️ [Martial performance](https://www.facebook.com/kobusuishinliu)
 
 ## 🍽️ What I've been eating/drinking
 * Breakfast: oatmeal + unsweetened soy milk
