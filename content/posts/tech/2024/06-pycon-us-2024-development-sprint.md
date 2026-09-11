@@ -10,15 +10,15 @@ The last time I came to [PyCon US]({filename}/posts/tech/2019/03-how-was-pycon-u
 
 <!--more-->
 
-![broad](/images/posts-image/2024-pycon-us-2024-development-sprint/broad.jpeg)
+![broad](/images/post-images/2024-pycon-us-2024-development-sprint/broad.jpeg)
 
-![registration-broad-1](/images/posts-image/2024-pycon-us-2024-development-sprint/registration-broad-1.jpeg)
+![registration-broad-1](/images/post-images/2024-pycon-us-2024-development-sprint/registration-broad-1.jpeg)
 
-![registration-broad-2](/images/posts-image/2024-pycon-us-2024-development-sprint/registration-broad-2.jpeg)
+![registration-broad-2](/images/post-images/2024-pycon-us-2024-development-sprint/registration-broad-2.jpeg)
 
 Disclaimer: the doll has absolutely nothing to do with Python and commitizen-tools. It's just cute, and it might make it easier for people to find me 😆
 
-![commitizen-tools](/images/posts-image/2024-pycon-us-2024-development-sprint/commitizen-tools.jpeg)
+![commitizen-tools](/images/post-images/2024-pycon-us-2024-development-sprint/commitizen-tools.jpeg)
 
 It turns out that no one is interested in such a small project. 🥲 I met someone who said he wanted to take a look, but he left after lunch. I feel like I've already gotten used to it, or maybe I just should. Or I should just lead [airflow](https://github.com/apache/airflow/) next time 🥲
 
@@ -77,6 +77,6 @@ During the sprint, I shared commitizen-tools with Takanoryさん. Later, he intr
 
 After the sprint, a couple of APAC folks went to this church restaurant. It was quite a pleasant dinner. Always love to hangout with Pythonistas 😄
 
-![church-1](/images/posts-image/2024-pycon-us-2024-development-sprint/church-1.jpeg)
-![church-2](/images/posts-image/2024-pycon-us-2024-development-sprint/church-2.jpeg)
-![church-3](/images/posts-image/2024-pycon-us-2024-development-sprint/church-3.jpeg)
+![church-1](/images/post-images/2024-pycon-us-2024-development-sprint/church-1.jpeg)
+![church-2](/images/post-images/2024-pycon-us-2024-development-sprint/church-2.jpeg)
+![church-3](/images/post-images/2024-pycon-us-2024-development-sprint/church-3.jpeg)

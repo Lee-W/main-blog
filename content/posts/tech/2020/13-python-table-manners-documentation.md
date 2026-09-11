@@ -19,7 +19,7 @@ Python 開源專案中，[Sphinx](https://www.sphinx-doc.org/en/master/) 是很�
 Guido 也說簡單一點的文件可以使用 Markdown 而不需使用 Shpinx
 （我又要搬同一張截圖出來救援了 XD）
 
-![because-guido-say-so](/images/posts-image/2020-02-22-python-table-manner-series/because-guido-say-so.png)
+![because-guido-say-so](/images/post-images/2020-02-22-python-table-manner-series/because-guido-say-so.png)
 
 [TOC]
 
@@ -53,7 +53,7 @@ pipenv run mkdocs serve
 
 打開瀏覽器，進入 `http://127.0.0.1:8000/` 就能看到最初始的頁面
 
-![initial document](/images/posts-image/2020-02-22-python-table-manner-series/initial document.jpg)
+![initial document](/images/post-images/2020-02-22-python-table-manner-series/initial document.jpg)
 
 ### 修改網站名稱
 初始的 `mkdocs.yml` 預設只會有這一行
@@ -95,7 +95,7 @@ nav:
 位置是透過參數 `docs_dir` 來決定相對路徑
 如果沒有設定，預設是相對於 `docs`
 
-![separate page](/images/posts-image/2020-02-22-python-table-manner-series/separate page.jpg)
+![separate page](/images/post-images/2020-02-22-python-table-manner-series/separate page.jpg)
 
 ### 內部連結
 撰寫文件時，為了讓使用者更容易找到其他頁面，會使用到內部連結
@@ -130,7 +130,7 @@ theme:
   name: 'material'
 ```
 
-![material theme](/images/posts-image/2020-02-22-python-table-manner-series/material theme.jpg)
+![material theme](/images/post-images/2020-02-22-python-table-manner-series/material theme.jpg)
 
 ### 輸出靜態網頁
 為了要能部署到其他服務 (e.g., GitHub Page）上，要先在本地將 Markdown 寫成的文件輸出成網頁

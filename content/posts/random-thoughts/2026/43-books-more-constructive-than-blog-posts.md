@@ -14,7 +14,7 @@ Lang: zh-tw
 
 所以我現在睡前開始看書了
 
-![anon-soyo](/images/posts-image/2026/books-more-constructive-than-blog-posts/anosoyo-score.jpeg)
+![anon-soyo](/images/post-images/2026/books-more-constructive-than-blog-posts/anosoyo-score.jpeg)
 
 [為什麼要睡覺]({filename}/posts/book/2020/05-why-we-sleep.md) 的筆記有提到
 

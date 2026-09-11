@@ -13,7 +13,7 @@ Just a quick reflection on what I did between 300 and 400 contributions.
 
 The count is now quite inaccurate. I never really understood the difference between the PR I created and the number of commits I contributed. However, I decided to include PRs from [feat(api_fastapi): include asset ID in asset nodes when calling "/ui/dependencies" and "/ui/structure/structure_data" #47381](https://github.com/apache/airflow/pull/47381) to [build(pre-commit): upgrade node version to 22.18.0 and flynt 1.0.6 #54009](https://github.com/apache/airflow/pull/54009) as part of my 300 to 400 contributions. This should be approximately correct. Next time, we'll start from [build(pre-commit): upgrade node version to 22.18.0 and flynt 1.0.6 #54009](https://github.com/apache/airflow/pull/54009).
 
-![400](/images/posts-image/2025-achieve-400-contributions-in-apache-airflow/400.jpg)
+![400](/images/post-images/2025-achieve-400-contributions-in-apache-airflow/400.jpg)
 
 This time, I created the following script to help me list the PRs I need in my preferred format. It’s quite convenient.
 

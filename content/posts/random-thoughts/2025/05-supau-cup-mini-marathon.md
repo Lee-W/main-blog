@@ -4,7 +4,7 @@ Date: 2025-05-11 18:30 +0800
 Category: Random Thoughts
 Tags: Exercise, Running
 Slug: supau-cup-mini-marathon
-Cover: /images/posts-image/2025-supau-cup-mini-marathon/finish.jpeg
+Cover: /images/post-images/2025-supau-cup-mini-marathon/finish.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -13,7 +13,7 @@ The Force is strong with this shirt.
 
 <!--more-->
 
-![star-wars](/images/posts-image/2025-supau-cup-mini-marathon/star-wars.jpeg)
+![star-wars](/images/post-images/2025-supau-cup-mini-marathon/star-wars.jpeg)
 
 這次慢跑聽的歌單是 わかれ道の、その先へ Day 2 的歌單
 比 Day 1 少 1 分鐘，也少了一首春日影 🥺
@@ -22,13 +22,13 @@ The Force is strong with this shirt.
 
 最後在倒數第二首歌<ruby>聿日箋秋<rt>いちじつせんしゅう</rt></ruby>抵達終點
 
-![finish.jpeg](/images/posts-image/2025-supau-cup-mini-marathon/finish.jpeg)
+![finish.jpeg](/images/post-images/2025-supau-cup-mini-marathon/finish.jpeg)
 
 原本以為比練習的時候快了不少
 翻了一下[9 公里慢跑初體驗]({filename}/posts/random-thoughts/2025/03-first-9-km-run.md)才發現，也不過就快了 1 分鐘左右
 根本就沒顯著差異 🥺
 
-![result.jpeg](/images/posts-image/2025-supau-cup-mini-marathon/result.jpeg)
+![result.jpeg](/images/post-images/2025-supau-cup-mini-marathon/result.jpeg)
 
 不過跑起來倒是輕鬆不少
 到大概 6, 7 公里才開始覺得有點累
@@ -50,7 +50,7 @@ The Force is strong with this shirt.
 真的是好東西
 可惜當初沒有直接買一整盒
 
-![mygo-bottle](/images/posts-image/2025-first-9-km-run/mygo-bottle.jpeg)
+![mygo-bottle](/images/post-images/2025-first-9-km-run/mygo-bottle.jpeg)
 
 自從我買了這個杯子，高蛋白的消耗速度就特別快
 之前發了一篇這樣的廢文

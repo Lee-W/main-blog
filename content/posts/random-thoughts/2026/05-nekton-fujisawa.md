@@ -3,7 +3,7 @@ Date: 2026-03-04 22:17 +0800
 Category: Random Thoughts
 Tags: Coworking Space, Japan
 Slug: nekton-fujisawa
-Cover: /images/posts-image/2026/nekton-fujisawa/day-1.jpeg
+Cover: /images/post-images/2026/nekton-fujisawa/day-1.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -27,7 +27,7 @@ Lang: zh-tw
 
 除了偶爾有人開會或討論時會稍微有些聲音之外，整體氛圍算是相當安靜
 
-![around](/images/posts-image/2026/nekton-fujisawa/around.jpeg)
+![around](/images/post-images/2026/nekton-fujisawa/around.jpeg)
 
 店內提供好幾台螢幕可供使用
 幾乎每個座位都有兩個插座，對需要長時間工作的旅人來說很友善
@@ -39,14 +39,14 @@ Lang: zh-tw
 我去的兩天，兩天都有鯛魚燒
 第二天沒有紅茶，第一天的紅茶可能是 SR 事件
 
-![food](/images/posts-image/2026/nekton-fujisawa/food.jpeg)
+![food](/images/post-images/2026/nekton-fujisawa/food.jpeg)
 
 是一個會讓人靜下心來、專注工作
 同時又能感到舒適放鬆的地方
 
-![day-1](/images/posts-image/2026/nekton-fujisawa/day-1.jpeg)
+![day-1](/images/post-images/2026/nekton-fujisawa/day-1.jpeg)
 
-![day-2](/images/posts-image/2026/nekton-fujisawa/day-2.jpeg)
+![day-2](/images/post-images/2026/nekton-fujisawa/day-2.jpeg)
 
 ---
 

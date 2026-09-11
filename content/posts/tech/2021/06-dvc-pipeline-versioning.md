@@ -500,7 +500,7 @@ file:///....../confusion_matrix.html
 
 The following is a screenshot of the generated plot.
 
-![confusion-matrix](/images/posts-image/2021-dvc/confusion-matrix.jpg)
+![confusion-matrix](/images/post-images/2021-dvc/confusion-matrix.jpg)
 
 As of now, DVC does not track our plot (i.e. `confusion-matrix.jpg`) but only our data to plot (i.e., `output/test_data_results.csv`). Let's add `plot` as the final stage of our pipeline.
 

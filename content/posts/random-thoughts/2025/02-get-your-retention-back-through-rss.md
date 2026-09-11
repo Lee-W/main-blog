@@ -31,13 +31,13 @@ Lang: zh-tw
 看了一下 [repo](https://github.com/Ranchero-Software/NetNewsWire) ，果然是 Native app
 而且也可以隔成不同的資料夾來整理你所追蹤的網站
 
-![menu](/images/posts-image/2025-get-your-retention-back-through-rss/menu.jpg)
+![menu](/images/post-images/2025-get-your-retention-back-through-rss/menu.jpg)
 
 按左上角的 `+` ，然後 `New Feed`
 在 URL 內輸入 RSS Feed
 如果想追蹤的網站有支援，符號通常長得像是 <i class="icon icon-rss"></i>
 
-![add-new-feed](/images/posts-image/2025-get-your-retention-back-through-rss/add-new-feed.jpg)
+![add-new-feed](/images/post-images/2025-get-your-retention-back-through-rss/add-new-feed.jpg)
 
 [NetNewsWire] 也支援 iCloud 同步跟其他我沒用過的服務來同步，相當的方便
 

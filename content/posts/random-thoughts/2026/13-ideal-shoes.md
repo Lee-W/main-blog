@@ -4,7 +4,7 @@ Category: Random Thoughts
 Tags: BlogBlog 同樂會, Lifestyle
 Slug: ideal-shoes
 Series: 理想的日常 (2026)
-Cover: /images/posts-image/2026/ideal/weapon.jpeg
+Cover: /images/post-images/2026/ideal/weapon.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -45,7 +45,7 @@ Palladium 原本是我的出門理想鞋，防水實在太方便了
 寫這篇文的時候倒是想起
 之前 JOJO 曾經發文問大家覺得我的鞋子跟武器哪個比較多
 
-![weapon](/images/posts-image/2026/ideal/weapon.jpeg)
+![weapon](/images/post-images/2026/ideal/weapon.jpeg)
 
 我記得答案好像是一樣多
 （我還有一把日本弓平常放在教室）

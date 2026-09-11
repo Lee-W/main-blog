@@ -20,7 +20,7 @@ Lang: zh-tw
 
 而這篇理想的料理用油就是 Casa del Agua 歐嘉西班牙特級冷壓初榨橄欖油
 
-![oil](/images/posts-image/2026/ideal/oil.jpeg)
+![oil](/images/post-images/2026/ideal/oil.jpeg)
 
 為什麼它是我理想的料理用油呢
 就只是因為它是我初期開始料理時，那時的室友告訴我是好油

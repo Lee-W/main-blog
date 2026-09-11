@@ -30,7 +30,7 @@ Dag 警察知法犯法！
 把這張圖丟給 Claude Code ，它完全亂產一通，看來星戰的世界複雜到 Claude 也無法理解
 不過也先驗證了我的一個假設，如果 Airflow 的 Dag 有環，是會出錯的
 
-![AirflowDagCycleException](/images/posts-image/2026/is-this-a-dag-star-wars-watch-order/17786528033392.jpg)
+![AirflowDagCycleException](/images/post-images/2026/is-this-a-dag-star-wars-watch-order/17786528033392.jpg)
 
 因為整個 Dag 的程式碼很長，我把它摺疊起來，想看的自己點開
 
@@ -255,21 +255,21 @@ Dag 警察知法犯法！
 
 因為 Dag 很長，理所當然它渲染出來的圖片也是很長...
 
-![star_wars_watch_order-graph-2](/images/posts-image/2026/is-this-a-dag-star-wars-watch-order/star_wars_watch_order-graph-2.png)
+![star_wars_watch_order-graph-2](/images/post-images/2026/is-this-a-dag-star-wars-watch-order/star_wars_watch_order-graph-2.png)
 
 
 這樣就很難閱讀了，所以我改成 Airflow 的 [任務群組 (Task Group)](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html#taskgroups)
 將它們透過年代分組
 另外改變了 task_display_name ，讓任務 (Task) 顯示的名稱是故事本身
 
-![Airflow Task Group: high_republic](/images/posts-image/2026/is-this-a-dag-star-wars-watch-order/17786583893858.jpg)
-![Airflow Task Group: prequel](/images/posts-image/2026/is-this-a-dag-star-wars-watch-order/17786584021276.jpg)
-![Airflow Task Group: original](/images/posts-image/2026/is-this-a-dag-star-wars-watch-order/17786584242808.jpg)
-![Airflow Task Group: sequel](/images/posts-image/2026/is-this-a-dag-star-wars-watch-order/17786584387330.jpg)
+![Airflow Task Group: high_republic](/images/post-images/2026/is-this-a-dag-star-wars-watch-order/17786583893858.jpg)
+![Airflow Task Group: prequel](/images/post-images/2026/is-this-a-dag-star-wars-watch-order/17786584021276.jpg)
+![Airflow Task Group: original](/images/post-images/2026/is-this-a-dag-star-wars-watch-order/17786584242808.jpg)
+![Airflow Task Group: sequel](/images/post-images/2026/is-this-a-dag-star-wars-watch-order/17786584387330.jpg)
 
 這些透過年代分組的任務群組，本身也透過時序接在一起
 
-![star_wars_watch_order-graph](/images/posts-image/2026/is-this-a-dag-star-wars-watch-order/star_wars_watch_order-graph.png)
+![star_wars_watch_order-graph](/images/post-images/2026/is-this-a-dag-star-wars-watch-order/star_wars_watch_order-graph.png)
 
 
 ??? "Dag star_wars_watch_order_by_era"

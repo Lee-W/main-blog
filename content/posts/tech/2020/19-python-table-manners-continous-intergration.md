@@ -33,7 +33,7 @@ Lang: zh-tw
 確認已經通過基本的檢查，才讓人工介入（維護者審核）
 那就能省下你很多時間
 
-![pass](/images/posts-image/2020-02-22-python-table-manner-series/pass.jpg)
+![pass](/images/post-images/2020-02-22-python-table-manner-series/pass.jpg)
 
 當這個 pull request 通過所有測試和人工審核，merge 回 master 分支之後
 接下來就要讓服務上線或是發佈套件，而這些步驟通常都很重複性且繁瑣
@@ -64,7 +64,7 @@ name: python check
 
 這會顯示在 **Actions** > **Workflows** 中
 
-![workflow](/images/posts-image/2020-02-22-python-table-manner-series/workflow.jpg)
+![workflow](/images/post-images/2020-02-22-python-table-manner-series/workflow.jpg)
 
 接著要指定哪些事件發生時要執行這個 workflow
 (See more 👉 [Events that trigger workflows](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows))
@@ -105,7 +105,7 @@ jobs:
 
 當這個 workflow 被執行的時候，可以在 GitHub Actions 看到細節
 
-![step](/images/posts-image/2020-02-22-python-table-manner-series/job.jpg)
+![step](/images/post-images/2020-02-22-python-table-manner-series/job.jpg)
 
 ### Merge into master
 上個 workflow 只要偵測到任何 push 或 pull request 就會執行
@@ -135,7 +135,7 @@ jobs:
 因為它們不適合被公開，所以要設定在 secret 裡面
 設定 secret 的頁面可以從 **Settings** > **Secrets** > **New repository secret** (右上角) 找到
 
-![secret](/images/posts-image/2020-02-22-python-table-manner-series/secret.jpg)
+![secret](/images/post-images/2020-02-22-python-table-manner-series/secret.jpg)
 
 在 job 取出 secret 的方式則是如下使用 `${{ secrets.secret_id }}` 這樣的語法
 

@@ -5,7 +5,7 @@ Category: Tech
 Tags: Python, Airflow, Airflow 2.10
 Slug: dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger
 Series: What If...? Running Airflow Tasks without the workers
-Cover: /images/posts-image/2024-dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger/not-looking-for.jpg
+Cover: /images/post-images/2024-dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger/not-looking-for.jpg
 Authors: Wei Lee
 Lang: en
 
@@ -121,7 +121,7 @@ The issue is that when tasks are mapped, the scheduler does not execute their `_
 
 We are in a situation where we need these values to decide whether they should go to the worker or the triggerer, but we can only obtain them from the worker.
 
-![you need start_from_trigger](/images/posts-image/2024-dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger/you-need.jpg)
+![you need start_from_trigger](/images/post-images/2024-dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger/you-need.jpg)
 
 ## What can we do?
 There's not much we can do unless we rewrite the entire dynamic task mapping feature in Airflow. The following is pretty much the only workaround available at the moment.
@@ -194,13 +194,13 @@ One last thing to note is that we're not resolving XCom for these 2 values.
 ## So how can we use it?
 I intentionally don't include a table of contents in this article, and it starts with how this feature works under the hood instead of how to use it. If you don’t know if you need to combine this feature with dynamic task mapping, you don't.
 
-![this is not the feature you're looking for](/images/posts-image/2024-dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger/not-looking-for.jpg)
+![this is not the feature you're looking for](/images/post-images/2024-dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger/not-looking-for.jpg)
 
 This feature has some limitations. The syntax is slightly different from standard dynamic task mapping, which makes it easy to go wrong. Also, it does not resolve XCom when trying to expand `start_from_trigger` and `.start_trigger_arg`, which makes this feature less powerful.
 
 Unless you know the risk and the difference between it and dynamic task mapping on standard operators.
 
-![don't try it](/images/posts-image/2024-dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger/donot-try-it.jpg)
+![don't try it](/images/post-images/2024-dynamic-task-mapping-on-operators-that-can-start-execution-from-trigger/donot-try-it.jpg)
 
 **Warning: Proceed at your own risk.**
 

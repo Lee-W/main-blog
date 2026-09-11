@@ -24,7 +24,7 @@ Lang: zh-tw
 
 最後就會像是這樣
 
-![new-feature-without-test](/images/posts-image/2020-02-22-python-table-manner-series/new-feature.jpg)
+![new-feature-without-test](/images/post-images/2020-02-22-python-table-manner-series/new-feature.jpg)
 
 **總之，要寫測試！**
 

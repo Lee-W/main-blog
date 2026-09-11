@@ -78,7 +78,7 @@ N3 的合格標準是總分 95/180 以上，每科都得在 19/60 以上
 唯一的解釋大概就是動畫看得夠多吧
 大概有這麼多
 
-![anilist](/images/posts-image/2025-jlpt-n3/anilist.jpg)
+![anilist](/images/post-images/2025-jlpt-n3/anilist.jpg)
 
 還不算小時候隨便看看的，跟之前有多刷幾遍的作品
 或沒被記錄在 AniList 資料庫的非日式動畫

@@ -19,7 +19,7 @@ Lang: zh-tw
 今天是星戰日
 願原力與大家同在
 
-![may-4th](/images/posts-image/2025-04-14-05-04-open-source-report/may-4th.jpeg)
+![may-4th](/images/post-images/2025-04-14-05-04-open-source-report/may-4th.jpeg)
 
 ## commitizen
 * Create issues

@@ -68,7 +68,7 @@ Tags: tag1, tag2
 Slug: post-slug
 Authors: Wei Lee
 Series: Series Name  # optional
-Cover: /images/posts-image/...  # optional
+Cover: /images/post-images/...  # optional
 Lang: en  # optional, defaults to zh-tw
 ```
 

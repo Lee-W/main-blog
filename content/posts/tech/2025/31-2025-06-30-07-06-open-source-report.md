@@ -36,11 +36,11 @@ Lang: zh-tw
         * 很多邏輯應該可以刪掉，但我只先把原本 bash 改成 Python 或是 Airflow 任務
         * 原本一個做這麼多事的任務被我拆成一個個細小的任務  
           (原來可以有巢狀 TaskGroup 🤔)
-          ![task-groups](/images/posts-image/2025-06-30-07-06-open-source-report/task-groups.jpg)
+          ![task-groups](/images/post-images/2025-06-30-07-06-open-source-report/task-groups.jpg)
 * 完成 PR [feat(discord): move all discord message sending to dag "discord_message_notification" and use Asset to trigger #167](https://github.com/pycontw/pycon-etl/pull/167)
     * 延續 [2025/06/23 - 06/29 開源貢獻週報 - 事不宜遲，現在就購票吧]({filename}/posts/tech/2025/29-2025-06-23-06-29-open-source-report.md) 繼續改下去，將 [AIP-75](https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-75+New+Asset-Centric+Syntax) 加入的新語法也用上了，但確實是比較合理
     * 用 [HttpHook](https://airflow.apache.org/docs/apache-airflow-providers-http/stable/_api/airflow/providers/http/hooks/http/index.html#airflow.providers.http.hooks.http.HttpHook) 重新寫過傳送 Discord 訊息的邏輯，並且讓上游的資源（Asset） 在傳送資源事件額外資訊（Asset Event Extra）只傳 Airflow 變數（Variable）的鍵，到了傳送訊息的 Dag 才去取得實際的值，以確保所有的 webhook 都是由 Airflow 變數所管理
-    * 現在所有資產跟 Dag 之間的相依大概長這樣 ![assets](/images/posts-image/2025-06-30-07-06-open-source-report/assets.jpg)
+    * 現在所有資產跟 Dag 之間的相依大概長這樣 ![assets](/images/post-images/2025-06-30-07-06-open-source-report/assets.jpg)
 
 
 ---

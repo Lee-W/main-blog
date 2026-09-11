@@ -3,7 +3,7 @@ Date: 2026-05-23 17:00 +0800
 Category: Random Thoughts
 Tags: Anime, Lifestyle
 Slug: nine-anime-that-builds-me
-Cover: /images/posts-image/2026/nine-anime-that-builds-me/nine-animes.jpg
+Cover: /images/post-images/2026/nine-anime-that-builds-me/nine-animes.jpg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -27,7 +27,7 @@ Lang: zh-tw
 結果一開始動筆，很輕鬆就達到了 10 部
 我最後耍了點詐，把它們都放進九宮格
 
-![9-animes](/images/posts-image/2026/nine-anime-that-builds-me/nine-animes.jpg)
+![9-animes](/images/post-images/2026/nine-anime-that-builds-me/nine-animes.jpg)
 
 /// caption
 透過 [私を構成する9つのアニメ](https://tlpt-telepath.github.io/9-animes/) 製作
@@ -187,7 +187,7 @@ https://tlpt-telepath.github.io/9-animes/
 在看《聲之形》前，我有好好看完的作品應該不到 20 部吧
 在寫文的當下我已經看完 623 部了
 
-![anilist](/images/posts-image/2026/nine-anime-that-builds-me/anilist.jpg)
+![anilist](/images/post-images/2026/nine-anime-that-builds-me/anilist.jpg)
 /// caption
 這是我追蹤在看的作品的工具，[anilist](https://anilist.co/user/clleew/)
 ///
@@ -219,7 +219,7 @@ https://tlpt-telepath.github.io/9-animes/
 
 當初看完這段真的好感動好感動，寫下這段文字的時候也是 😭
 
-![i-am-here](/images/posts-image/2026/nine-anime-that-builds-me/i-am-here.png)
+![i-am-here](/images/post-images/2026/nine-anime-that-builds-me/i-am-here.png)
 /// caption
 ©「映像研」製作委員会 | 出自 [《別對映像研出手！》第七集](https://ani.gamer.com.tw/animeVideo.php?sn=14730)
 ///

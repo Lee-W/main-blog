@@ -4,7 +4,7 @@ Date: 2025-10-25 23:25 +0800
 Category: Tech
 Tags: Airflow, Open Source, Apache
 Slug: becoming-an-airflow-pmc-member
-Cover: /images/posts-image/2025-becoming-an-airflow-pmc-member/airflow-summit.jpeg
+Cover: /images/post-images/2025-becoming-an-airflow-pmc-member/airflow-summit.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -25,7 +25,7 @@ Lang: zh-tw
 在 DuckDuck GO 輸入 "committer airflow" 想看到底哪些票是 binding
 結果發現前幾筆不是強者我朋友的文章，就是強者我朋友的演講
 
-![duckduckgo](/images/posts-image/2025-becoming-an-airflow-pmc-member/duckduckgo.jpg)
+![duckduckgo](/images/post-images/2025-becoming-an-airflow-pmc-member/duckduckgo.jpg)
 
 1. [從 0 成為 Apache Airflow Committer]
 2. [開源之旅 - Apache Airflow Committer]
@@ -47,14 +47,14 @@ Lang: zh-tw
 那是一定沒問題
 畢竟接下來幾天我要去把島波海道接起來，也沒空大肆宣揚
 
-![orange-juice](/images/posts-image/2025-becoming-an-airflow-pmc-member/orange-juice.jpeg)
+![orange-juice](/images/post-images/2025-becoming-an-airflow-pmc-member/orange-juice.jpeg)
 
 順帶一提，這次喝到的橘子汁中，我最喜歡的是不知火
 
 ### 正式公布
 Airflow Summit 的 Keynote 演講結束，Jarek 宣布了此次的 PMC 和 Committer 團隊新成員
 
-![announcement](/images/posts-image/2025-becoming-an-airflow-pmc-member/annocement.jpeg)
+![announcement](/images/post-images/2025-becoming-an-airflow-pmc-member/annocement.jpeg)
 
 身為遲到仔（但其實也沒遲到），到場的時候前面都坐滿了
 只能坐在很後面，所以拍到的照片很糊
@@ -91,7 +91,7 @@ AIP-84 的某一個面向跟哲佑、 Kalyan 合作搞定
 玩著玩著，也讓這裡成為[源來適你]的 MyGO 分部
 時至今日， MyGO 跟 Ave Mujica 依然是 `#apache-airflow` 的參考讀物
 
-![airflow-101](/images/posts-image/2025-becoming-an-airflow-pmc-member/airflow-101.jpg)
+![airflow-101](/images/post-images/2025-becoming-an-airflow-pmc-member/airflow-101.jpg)
 
 這次能在 Airflow Summmit 前拿到燈的娃娃，我也是相當驚訝
 
@@ -99,7 +99,7 @@ AIP-84 的某一個面向跟哲佑、 Kalyan 合作搞定
 
 [源來適你] MyGO 分部出外景!!!
 
-![airflow-summit](/images/posts-image/2025-becoming-an-airflow-pmc-member/airflow-summit.jpeg)
+![airflow-summit](/images/post-images/2025-becoming-an-airflow-pmc-member/airflow-summit.jpeg)
 
 佛系的部分，依然是很佛系
 願者上鉤，有意願就來玩
@@ -172,7 +172,7 @@ Singing 是這麼說的
 但不時還是會遇到快樂寶貝或是內政部統計少於 1% 的稀有存在
 EuroPython 2025 的 [How to deal with toxic people] 是這麼建議的
 
-![euro-python-boxing](/images/posts-image/2025-becoming-an-airflow-pmc-member/euro-python-boxing.jpeg)
+![euro-python-boxing](/images/post-images/2025-becoming-an-airflow-pmc-member/euro-python-boxing.jpeg)
 
 但我房間不大，沒辦法放沙包
 所以我的建議是忽略他們

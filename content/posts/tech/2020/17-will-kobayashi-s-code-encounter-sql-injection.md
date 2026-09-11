@@ -18,10 +18,10 @@ Lang: zh-tw
 去年看了京阿尼的作品[小林家的龍女僕](https://zh.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E5%AE%B6%E7%9A%84%E9%BE%8D%E5%A5%B3%E5%83%95)
 
 第一集就發現主角小林也是寫 Python 的工程師，就開心地分享了這個消息
-![del](/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/del.jpg)
+![del](/images/post-images/2020-will-kobayashi-s-code-encounter-sql-injection/del.jpg)
 
 沒想到馬上就有朋友問我這段程式碼會不會有 SQL injection
-![will it encounter sql injection](/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/will it encounter sql injection.png)
+![will it encounter sql injection](/images/post-images/2020-will-kobayashi-s-code-encounter-sql-injection/will it encounter sql injection.png)
 
 單看這一段程式碼其實很難直接下定論
 畢竟 key 根本就不會被帶入 `session_id=$key`，誰知道 db 怎麼實作的
@@ -67,7 +67,7 @@ SELECT * FROM users WHERE (name = '1' OR '1'='1') and (pw = '1' OR '1'='1');
 根據 web.py 的 [tags](https://github.com/webpy/webpy/tags) 頁面，在那之後的第一個發佈是 `webpy-0.39`
 可以推測，這最有可能是第一個包含小林撰寫程式碼的發佈
 
-![web.py release](/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/webpy tag.jpg)
+![web.py release](/images/post-images/2020-will-kobayashi-s-code-encounter-sql-injection/webpy tag.jpg)
 
 我們先從安裝 `web.py==0.39` 到虛擬環境中開始
 （p.s. web 跟 py 中間的 . 是必要的，因為真的有個套件叫 webpy）
@@ -259,7 +259,7 @@ pdbpp 在安裝後會取代原生的 pdb
     * 不過需要注意的是，如果要能客製化 highlight 風格，需要直接從 master branch 安裝的版本，目前還沒把這個修正釋出到 PyPI 上
 2. sticky mode（在除錯器的上方一直顯示目前追到的程式碼）
 
-![sticky mode example](/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/sticky mode.jpg)
+![sticky mode example](/images/post-images/2020-will-kobayashi-s-code-encounter-sql-injection/sticky mode.jpg)
 
 順便記錄一下常用到的 pdbpp 指令
 
@@ -441,7 +441,7 @@ DELETE FROM USER WHERE account = '' OR ''=''
 其實小林家的龍女僕，還有其他場景也有出現 Python
 像是這裡說了小林自從開始寫 Python 後變得開朗了許多呢（誤
 
-![kobayashi becomes hayppier](/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/kobayashi becomes hayppier.png)
+![kobayashi becomes hayppier](/images/post-images/2020-will-kobayashi-s-code-encounter-sql-injection/kobayashi becomes hayppier.png)
 
 我也是自從寫了 Python 後，每次考試都考 100 分呢（並沒有）
 所以大家一起來寫 Python 吧 🐍
@@ -454,7 +454,7 @@ DELETE FROM USER WHERE account = '' OR ''=''
 PyCon JP 2019 時，我也去了鷲宮神社留下我的祝福
 不會日文的我，就只簡單的寫了 **Pray for Kyoani**
 
-![pray for kyoani](/images/posts-image/2020-will-kobayashi-s-code-encounter-sql-injection/pray for kyoani.jpg)
+![pray for kyoani](/images/post-images/2020-will-kobayashi-s-code-encounter-sql-injection/pray for kyoani.jpg)
 
 即便如此，京阿尼還是很快就站起來
 一年過後的現在宣布「小林家的龍女僕將於 2021 年開播 」🎉

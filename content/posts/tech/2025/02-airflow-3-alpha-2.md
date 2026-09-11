@@ -4,7 +4,7 @@ Date: 2025-02-09 11:20 +0800
 Category: Tech
 Tags: Airflow, Airflow 3.0
 Slug: airflow-3-0-0-a2
-Cover: /images/posts-image/2025-airflow-alpha-2/airflow-3-ui.png
+Cover: /images/post-images/2025-airflow-alpha-2/airflow-3-ui.png
 Authors: Wei Lee
 Lang: en
 
@@ -66,17 +66,17 @@ Use `admin` as the username and the content of the file `standalone_admin_passwo
 
 Then, you'll see the familiar Airflow 2 homepage.
 
-![airflow-2-ui](/images/posts-image/2025-airflow-alpha-2/airflow-2-ui.jpg)
+![airflow-2-ui](/images/post-images/2025-airflow-alpha-2/airflow-2-ui.jpg)
 
 Let's click the "Check it out now" link and we'll find
 
-![page-not-found](/images/posts-image/2025-airflow-alpha-2/page-not-found.jpg)
+![page-not-found](/images/post-images/2025-airflow-alpha-2/page-not-found.jpg)
 
 ![nani](/images/meme/jotaro-nani.jpg)
 
 If you look at the URL, it goes to `http://localhost:29091/webapp`. Out of curiosity, I changed it to `http://localhost:9091/webapp`, and the new UI is here.
 
-![airflow-3-ui](/images/posts-image/2025-airflow-alpha-2/airflow-3-ui.png)
+![airflow-3-ui](/images/post-images/2025-airflow-alpha-2/airflow-3-ui.png)
 
 [Breeze](https://github.com/apache/airflow/blob/main/dev/breeze/doc/README.rst) (Airflow's local development tool) uses port `28080` as the homepage. So... the counterpart of `29091` would probably be `9091`, and it turns out that I'm right.
 
@@ -84,7 +84,7 @@ It's now tracked by issue ["Check it out" link to New UI does not work #46514](h
 
 In the new UI, you can find a `Legacy UI` button on the left-hand side.
 
-![legacy-ui](/images/posts-image/2025-airflow-alpha-2/legacy-ui.png)
+![legacy-ui](/images/post-images/2025-airflow-alpha-2/legacy-ui.png)
 
 After you click it, you'll find out it does not work either, and that's why I created the issue ["Legacy UI" button in New UI does not work #46516](https://github.com/apache/airflow/issues/46516).
 

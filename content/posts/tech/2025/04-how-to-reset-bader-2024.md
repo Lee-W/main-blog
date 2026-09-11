@@ -4,7 +4,7 @@ Date: 2025-02-12 23:35 +0800
 Category: Tech
 Tags: Hardware
 Slug: how-to-reset-bader-2024
-Cover: /images/posts-image/2025-badger-2040/badger-2040.jpeg
+Cover: /images/post-images/2025-badger-2040/badger-2040.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -26,7 +26,7 @@ Lang: zh-tw
 我還特別把小林的資訊寫進去
 恩...但我後來沒有拿出來...
 
-![badger 2040](/images/posts-image/2025-badger-2040/badger-2040.jpeg)
+![badger 2040](/images/post-images/2025-badger-2040/badger-2040.jpeg)
 
 ## 如何重設
 進入正題，其實一切都寫在 [badger2040] 這個 repo 的 README 中了

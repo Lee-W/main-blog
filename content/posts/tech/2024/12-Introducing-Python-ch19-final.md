@@ -59,7 +59,7 @@ pipenv, poetry 跟 pipx 更多的介紹可以參考 [Python Table Manners - 虛�
 
 Python 自帶的編輯器，在終端機輸入 `IDLE` 就能開啟
 
-![IDLE.jpg](/images/posts-image/2024-Introducing-Python-ch19-final/IDLE.jpg)
+![IDLE.jpg](/images/post-images/2024-Introducing-Python-ch19-final/IDLE.jpg)
 
 * [PyCharm](https://www.jetbrains.com/pycharm/)
 * [IPython](https://ipython.org/)
@@ -72,7 +72,7 @@ Python 自帶的編輯器，在終端機輸入 `IDLE` 就能開啟
 
 大致上學習曲線如下（PyCharm可以參考 IntelliJ）
 
-![learning-curve](/images/posts-image/2024-Introducing-Python-ch19-final/learning-curve.jpg)
+![learning-curve](/images/post-images/2024-Introducing-Python-ch19-final/learning-curve.jpg)
 
 👉 [Python Table Manners 番外 - 編輯器]({filename}/posts/tech/2021/02-python-table-manners-editor.md)
 

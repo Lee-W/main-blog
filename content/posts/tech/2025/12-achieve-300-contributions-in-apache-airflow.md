@@ -13,11 +13,11 @@ Just a quick reflection on what I did between 200 and 300 contributions.
 
 It seems that most of the PRs still relate to Dataset/Asset. I thought I had spent more time on AIP-72 and AIP-83, but perhaps those are PRs created by others that I took over. Or maybe my memory is just failing me...
 
-![airflow-300-contributions](/images/posts-image/2025-achieve-300-contributions-in-apache-airflow/airflow-300-contributions.jpg)
+![airflow-300-contributions](/images/post-images/2025-achieve-300-contributions-in-apache-airflow/airflow-300-contributions.jpg)
 
 In addition to the Airflow repo itself, I also spent a decent amount of time contributing to [ruff - Airflow rules](https://github.com/astral-sh/ruff/pulls/Lee-W), which makes me the 29th contributor to ruff. It’s kind of weird, considering that I know almost nothing about Rust.
 
-![ruff](/images/posts-image/2025-achieve-300-contributions-in-apache-airflow/ruff.png)
+![ruff](/images/post-images/2025-achieve-300-contributions-in-apache-airflow/ruff.png)
 
 [TOC]
 

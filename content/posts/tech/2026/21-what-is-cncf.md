@@ -3,7 +3,7 @@ Date: 2026-05-20 23:31 +0800
 Category: Tech
 Tags: Open Source
 Slug: what-is-cncf
-Cover: /images/posts-image/2026/what-is-cncf/CNCF.png
+Cover: /images/post-images/2026/what-is-cncf/CNCF.png
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -15,7 +15,7 @@ Lang: zh-tw
 那肯定是 **Cookie Naan Cake Friends**!
 大家都是食物好朋友
 
-![CNCF](/images/posts-image/2026/what-is-cncf/CNCF.png)
+![CNCF](/images/post-images/2026/what-is-cncf/CNCF.png)
 而且範圍比[蛋餅好朋友](https://www.youtube.com/watch?v=SrGCmZqjz7o)更大了
 
 不過你想問的如果是軟體工程方面的 CNCF

@@ -21,7 +21,7 @@ Lang: zh-tw
 認真要再推一些的話，可能還有 5 部左右在台灣看得到
 剩下可能就真的失傳了 🥲
 
-![toc](/images/posts-image/2024-the-Essential-Guide-to-Japanese-Animated-Cinema/toc.jpg)
+![toc](/images/post-images/2024-the-Essential-Guide-to-Japanese-Animated-Cinema/toc.jpg)
 
 倒是之前在看這本書的時候 MyVideo 突然推薦我看喬望尼之島
 
@@ -44,4 +44,4 @@ Lang: zh-tw
 這些不同的意見也給了我對這些作品新的想法
 而且他的目次頁用了硝子，真是有品味
 
-![shoko](/images/posts-image/2024-the-Essential-Guide-to-Japanese-Animated-Cinema/shoko.jpg)
+![shoko](/images/post-images/2024-the-Essential-Guide-to-Japanese-Animated-Cinema/shoko.jpg)

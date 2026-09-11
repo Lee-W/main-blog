@@ -49,7 +49,7 @@ EuroPython 2020 在 3 月底的時候公佈轉成線上會議
 EuroPython 設計了很完整的架構，讓會眾可以更快速的找到各個資訊在 Discord 的哪裡
 
 ### Lobby
-![lobby](/images/posts-image/2020-07-28-euro-python-2020/lobby.jpg)
+![lobby](/images/post-images/2020-07-28-euro-python-2020/lobby.jpg)
 
 Lobby 的 Channel Category 主要是註冊用跟大會公告
 進到 `info-desk` 輸入自己的票務資訊後，就會有機器人自動設定正確的權限
@@ -61,7 +61,7 @@ Lobby 的 Channel Category 主要是註冊用跟大會公告
 但 after party 的時間，在台灣的凌晨，我就沒有參加到了
 
 ### Conference Tracks
-![conference tracks](/images/posts-image/2020-07-28-euro-python-2020/conference-track.png)
+![conference tracks](/images/post-images/2020-07-28-euro-python-2020/conference-track.png)
 
 註冊後最重要的是 Conference Tracks 這個 Channel Category
 microsoft / brain/ ni /parrot 可以看成 PyCon TW 的 r0 / r1 /r2，總之就是不同的 track
@@ -77,7 +77,7 @@ microsoft / brain/ ni /parrot 可以看成 PyCon TW 的 r0 / r1 /r2，總之就�
 一天大概只有兩、三場
 
 ### Sponsor Exhibit
-![sponsor exhibit](/images/posts-image/2020-07-28-euro-python-2020/sponsor.jpg)
+![sponsor exhibit](/images/post-images/2020-07-28-euro-python-2020/sponsor.jpg)
 
 贊助商也會有各自的頻道
 也會有各自的 Zoom ，可以跟跟會眾互動
@@ -88,14 +88,14 @@ microsoft / brain/ ni /parrot 可以看成 PyCon TW 的 r0 / r1 /r2，總之就�
 畢竟就是在等下一場演講，好像就還是得看完 XD
 
 ### Attendee Rooms
-![attendee rooms](/images/posts-image/2020-07-28-euro-python-2020/attendee-rooms.jpg)
+![attendee rooms](/images/post-images/2020-07-28-euro-python-2020/attendee-rooms.jpg)
 
 會眾有一整個 Channel Category
 好像可以自己創主題式的討論
 但這部分我就真的沒什麼參與到了
 
 ### Backstage
-![backstage](/images/posts-image/2020-07-28-euro-python-2020/speaker-backstage.jpg)
+![backstage](/images/post-images/2020-07-28-euro-python-2020/speaker-backstage.jpg)
 
 講者後台的設計就真的有點複雜
 在線上會議會遇到的一個問題是「怎麼提醒講者時間快到了」，直接在演講中打斷講者好像不太適合
@@ -148,7 +148,7 @@ Noah 分享了亞太地區 PyCon 的近況
 原本應該要去聽 Advanced Infrastructure Management in Kubernetes using Python
 但這場從 `ni-peek` 看到的截圖實在太有趣了，就來看 Ram Rachum 如何現場完成合音器
 
-![music](/images/posts-image/2020-07-28-euro-python-2020/music.png)
+![music](/images/post-images/2020-07-28-euro-python-2020/music.png)
 
 #### Python Table Manners: Cut the Cookie Gracefully
 這場是我自己的演講 XD
@@ -202,7 +202,7 @@ Ian 很喜歡收明信片 XD
 即興上場還是會有點卡
 
 #### Guido van Rossum Q&A
-![guido](/images/posts-image/2020-07-28-euro-python-2020/guido.png)
+![guido](/images/post-images/2020-07-28-euro-python-2020/guido.png)
 
 Guido 的訪談算是第二天的重頭戲，稍微紀錄一下我比較有印象的內容
 
@@ -219,7 +219,7 @@ Guido 的訪談算是第二天的重頭戲，稍微紀錄一下我比較有印�
 除了專案以外，還有人帶初學者 session ，讓第一次參加的人可以更容易進入狀況
 算是蠻好的設計，也許我們可以來學一下 🤔
 
-![sprint](/images/posts-image/2020-07-28-euro-python-2020/sprint.jpeg)
+![sprint](/images/post-images/2020-07-28-euro-python-2020/sprint.jpeg)
 
 今年線上的 Sprint 好像沒有很多人參與
 也可能是 commitizen 的 Sprint 真的太邊緣了.....
@@ -230,12 +230,12 @@ Guido 的訪談算是第二天的重頭戲，稍微紀錄一下我比較有印�
 這兩天把 [commitizen](https://github.com/commitizen-tools/commitizen) 1/3 的 open issue 解掉
 而且釋出 2.0
 邊緣歸邊緣，我們還是很有產出的！
-![commitizen result](/images/posts-image/2020-07-28-euro-python-2020/commitizen result.png)
+![commitizen result](/images/post-images/2020-07-28-euro-python-2020/commitizen result.png)
 
 Sprint 的中間還有個有趣的小插曲
 因為大家很好奇怎麼做 [mate](https://zh.wikipedia.org/wiki/%E7%91%AA%E9%BB%9B%E8%8C%B6)
 第二天的晚上，就突然開了一個做瑪黛茶的 Open Space XD
 
-![mate annonucement](/images/posts-image/2020-07-28-euro-python-2020/mate annonucement.png)
+![mate annonucement](/images/post-images/2020-07-28-euro-python-2020/mate annonucement.png)
 
-![mate open space](/images/posts-image/2020-07-28-euro-python-2020/mate open space.png)
+![mate open space](/images/post-images/2020-07-28-euro-python-2020/mate open space.png)

@@ -57,11 +57,11 @@ Lang: zh-tw
 其實我的瀏覽器也對 Threads 過敏
 打開來會像這樣
 
-![broken Threads partial](/images/posts-image/2026/i-dont-use-threads/broken-threads-partial.jpg)
+![broken Threads partial](/images/post-images/2026/i-dont-use-threads/broken-threads-partial.jpg)
 
 我沒有印象我有做過什麼設定，但我很開心這件事發生了
 
 <!-- rumdl-disable -->
 ??? "完整的 Threads 頁面太長了，想看可以自己點開"
-    ![broken Threads full](/images/posts-image/2026/i-dont-use-threads/broken-threads-full.jpg)
+    ![broken Threads full](/images/post-images/2026/i-dont-use-threads/broken-threads-full.jpg)
 <!-- rumdl-enable -->

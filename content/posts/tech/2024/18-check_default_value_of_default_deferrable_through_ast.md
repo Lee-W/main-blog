@@ -212,6 +212,6 @@ def _is_valid_deferrable_default(default: ast.AST) -> bool:
 ## Conclusion
 After introducing this check, many deferrable operators were added, and none came without `deferrable = conf.getboolean("operators", "default_deferrable", fallback=False)`. This is expected to continue.
 
-![actally-no](/images/posts-image/2024-check_default_value_of_default_deferrable_through_ast/actually-no.jpg)
+![actally-no](/images/post-images/2024-check_default_value_of_default_deferrable_through_ast/actually-no.jpg)
 
 While writing this post and examining the AST, I realized that there are still some edge cases I missed, so I improved it by [ci: improve check_deferrable_default script to cover positional variables #41924](https://github.com/apache/airflow/pull/41924). Before checking that PR, you can try reread the script to see whether you can find where the missing piece is.

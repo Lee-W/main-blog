@@ -4,7 +4,7 @@ Category: Random Thoughts
 Tags: BlogBlog 同樂會, Lifestyle
 Slug: ideal-doll
 Series: 理想的日常 (2026)
-Cover: /images/posts-image/2026/ideal/tomori-doll.jpeg
+Cover: /images/post-images/2026/ideal/tomori-doll.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -27,7 +27,7 @@ Lang: zh-tw
 雖然不會因此就不買娃，但確實比較不容易失心瘋爆買
 至於會不會爆買配件就比較難說了...最近一直好想去布布媽手作
 
-![mortis-doll](/images/posts-image/2026/ideal/mortis-doll.jpeg)
+![mortis-doll](/images/post-images/2026/ideal/mortis-doll.jpeg)
 
 因為大小剛好塞得進安利美特賣的娃包（原本是要買給野活部的撫子跟凜...）
 所以最常跟著我出門的是提拉米蘇小莫（提拉米蘇是 [FF 46 Day 2](https://travlog.wei-lee.me/posts/review/2026/02/ff-46/) 買到的）
@@ -35,7 +35,7 @@ Lang: zh-tw
 （結果下單隔天等不到的 Mortis 就到了...）
 但現在意外變成了我的主力
 
-![tomori-doll](/images/posts-image/2026/ideal/tomori-doll.jpeg)
+![tomori-doll](/images/post-images/2026/ideal/tomori-doll.jpeg)
 
 再來就是大小姑且帶得出門，專用娃包也剛抵達的小燈
 換上了 10 週年的娃衣，還幫她找了一隻 Suica 企鵝陪她

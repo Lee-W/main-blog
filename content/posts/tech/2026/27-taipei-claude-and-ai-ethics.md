@@ -5,7 +5,7 @@ Modified: 2026-08-11 10:55 +0800
 Category: Tech
 Tags: AI Ethics, Claude
 Slug: taipei-claude-and-ai-ethics
-Cover: /images/posts-image/2026/taipei-claude-and-ai-ethics/event-photo-1.jpeg
+Cover: /images/post-images/2026/taipei-claude-and-ai-ethics/event-photo-1.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -27,19 +27,19 @@ Lang: zh-tw
 總之這次是在討論前段時間 Anthropic 跟美國政府的訴訟案
 會場是在 g0v 的空間
 
-![event-photo-1](/images/posts-image/2026/taipei-claude-and-ai-ethics/event-photo-1.jpeg)
+![event-photo-1](/images/post-images/2026/taipei-claude-and-ai-ethics/event-photo-1.jpeg)
 
-![event-photo-2](/images/posts-image/2026/taipei-claude-and-ai-ethics/event-photo-2.jpeg)
+![event-photo-2](/images/post-images/2026/taipei-claude-and-ai-ethics/event-photo-2.jpeg)
 
-![event-photo-3](/images/posts-image/2026/taipei-claude-and-ai-ethics/event-photo-3.jpeg)
+![event-photo-3](/images/post-images/2026/taipei-claude-and-ai-ethics/event-photo-3.jpeg)
 
-![event-photo-4](/images/posts-image/2026/taipei-claude-and-ai-ethics/event-photo-4.jpeg)
+![event-photo-4](/images/post-images/2026/taipei-claude-and-ai-ethics/event-photo-4.jpeg)
 
-![event-photo-5](/images/posts-image/2026/taipei-claude-and-ai-ethics/event-photo-5.jpeg)
+![event-photo-5](/images/post-images/2026/taipei-claude-and-ai-ethics/event-photo-5.jpeg)
 
-![event-photo-6](/images/posts-image/2026/taipei-claude-and-ai-ethics/event-photo-6.jpeg)
+![event-photo-6](/images/post-images/2026/taipei-claude-and-ai-ethics/event-photo-6.jpeg)
 
-![event-photo-7](/images/posts-image/2026/taipei-claude-and-ai-ethics/event-photo-7.jpeg)
+![event-photo-7](/images/post-images/2026/taipei-claude-and-ai-ethics/event-photo-7.jpeg)
 
 整場議程蠻有趣的，也聽到不少有趣的知識和想法
 最大的遺憾大概是不能留下來跟大家繼續交流，剛好當天結束後有行程 😢

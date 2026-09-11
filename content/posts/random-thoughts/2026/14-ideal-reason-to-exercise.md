@@ -30,7 +30,7 @@ Lang: zh-tw
 
 弓道則是在看 `輝夜姬想讓人告白~` 第二季的時候
 意外看到了這篇弓道警察貼文 <https://x.com/Leek653124710/status/1251641679460708352>
-![kakuya](/images/posts-image/2026/ideal/kakuya.jpg)
+![kakuya](/images/post-images/2026/ideal/kakuya.jpg)
 心血來潮查了一下，發現住處附近還真的有弓道課程
 就拉著我的宅宅好朋友去報名了
 雖然 Archer 這個詞可能比較意指西洋反曲弓

@@ -255,7 +255,7 @@ complexity 複雜性
 uncertainty 不確定性
 ambiguity 指令模糊程度
 
-![cua](/images/posts-image/2020-high-output-management/cua.png)
+![cua](/images/post-images/2020-high-output-management/cua.png)
 
 * e.g., 某個剛進公司的新人身上
     * **剛開始較關心自身的利益 → 給明確的工作架構，降低複雜性及不確定性**
@@ -376,7 +376,7 @@ ambiguity 指令模糊程度
         * 「再回收」： 放回之前他表現優異的工作上
             * 一個人可能被晉升到超出他能力太多的職位，因此有很長的時間他都達不到及格邊緣
 
-![Peter's Principle](/images/posts-image/2020-high-output-management/peter's principle.png)
+![Peter's Principle](/images/post-images/2020-high-output-management/peter's principle.png)
 
 ## 第16章：別等火燒眉毛才訓練
 * 經理人應該扛起訓練員工的責任 → 部門產出即經理人產出

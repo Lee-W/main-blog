@@ -17,7 +17,7 @@ Lang: zh-tw
 
 ## Safety - 檢查相依套件
 
-![depbot](/images/posts-image/2020-02-22-python-table-manner-series/depbot.jpg)
+![depbot](/images/post-images/2020-02-22-python-table-manner-series/depbot.jpg)
 
 不知道大家有沒有在 GitHub 上看過這樣的畫面
 這個訊息告訴我們，專案的相依套件中可能有安全漏洞
@@ -40,7 +40,7 @@ pipenv install safety --dev
 pipenv run safety check
 ```
 
-![safety-not-found](/images/posts-image/2020-02-22-python-table-manner-series/safety-not-found.jpg)
+![safety-not-found](/images/post-images/2020-02-22-python-table-manner-series/safety-not-found.jpg)
 
 在 [pycontw-postevent-report-generator commit 128d](https://github.com/pycontw/pycontw-postevent-report-generator/commit/128d271942099b94faca3693d6c146c879e3b414) ，透過 safety 不會找到任何安全漏洞
 
@@ -52,7 +52,7 @@ pipenv install insecure-package --dev
 
 再試一次就能看到 Safety 將 insecure-package 列為不安全的套件
 
-![safety-found-insecure](/images/posts-image/2020-02-22-python-table-manner-series/safety-found-insecure.jpg)
+![safety-found-insecure](/images/post-images/2020-02-22-python-table-manner-series/safety-found-insecure.jpg)
 
 另外需要注意的是 `safety check` 是對當前環境做檢查
 務必確定已經有進入專案的虛擬環境，不然 Safety 只會檢查到本機使用的套件有沒有漏洞
@@ -85,7 +85,7 @@ pipenv install bandit --dev
 pipenv run bandit -r <package>
 ```
 
-![bandit-result](/images/posts-image/2020-02-22-python-table-manner-series/bandit-result.jpg)
+![bandit-result](/images/post-images/2020-02-22-python-table-manner-series/bandit-result.jpg)
 
 執行後就會看到一個列表，整理出專案中可能有的安全性漏洞
 每一個項目中會有以下五個欄位

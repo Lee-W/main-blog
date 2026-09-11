@@ -4,7 +4,7 @@ Date: 2026-04-02 20:05 +0800
 Category: Random Thoughts
 Tags: Coworking Space
 Slug: le-promenoir-coffee
-Cover: /images/posts-image/2026/Le-Promenoir-Coffee/desk.JPEG
+Cover: /images/post-images/2026/Le-Promenoir-Coffee/desk.JPEG
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -35,33 +35,33 @@ Lang: zh-tw
 結果發現這間藏在中山堂裡的劇場咖啡  
 竟然意外地很適合工作
 
-![door](/images/posts-image/2026/Le-Promenoir-Coffee/door.JPEG)
+![door](/images/post-images/2026/Le-Promenoir-Coffee/door.JPEG)
 
 而且店內擺滿各種很有品味的收藏！
 
 雖然我沒有很看懂，但是是一代大作的`阿基拉`
 
-![akira](/images/posts-image/2026/Le-Promenoir-Coffee/akira.JPEG)
+![akira](/images/post-images/2026/Le-Promenoir-Coffee/akira.JPEG)
 
 之前有去電影院看而且很喜歡的[回憶三部曲](https://travlog.wei-lee.me/posts/review/2021/09/memories/)
 
-![memories](/images/posts-image/2026/Le-Promenoir-Coffee/memories.JPEG)
+![memories](/images/post-images/2026/Le-Promenoir-Coffee/memories.JPEG)
 
-![memories-2](/images/posts-image/2026/Le-Promenoir-Coffee/memories-2.JPEG)
+![memories-2](/images/post-images/2026/Le-Promenoir-Coffee/memories-2.JPEG)
 
 我心中非常經典的作品`王牌冤家`
 而且還是日本版的海報耶！
 
-![enternal-sunshine-of-the-spotless-mind](/images/posts-image/2026/Le-Promenoir-Coffee/enternal-sunshine-of-the-spotless-mind.JPEG)
+![enternal-sunshine-of-the-spotless-mind](/images/post-images/2026/Le-Promenoir-Coffee/enternal-sunshine-of-the-spotless-mind.JPEG)
 
 竟然還有星塵遠征軍的那張照片嗎！！！
 
-![jojo](/images/posts-image/2026/Le-Promenoir-Coffee/jojo.JPEG)
+![jojo](/images/post-images/2026/Le-Promenoir-Coffee/jojo.JPEG)
 
 在正式開始工作前看到這些東西一再讚嘆
 啊，這真是間有品味的店
 
-![desk](/images/posts-image/2026/Le-Promenoir-Coffee/desk.JPEG)
+![desk](/images/post-images/2026/Le-Promenoir-Coffee/desk.JPEG)
 
 再來是正題，工作空間的部分
 
@@ -72,7 +72,7 @@ Lang: zh-tw
 基本上不用擔心用電或空間問題
 很適合帶整套設備來工作
 
-![pizza](/images/posts-image/2026/Le-Promenoir-Coffee/pizza.JPEG)
+![pizza](/images/post-images/2026/Le-Promenoir-Coffee/pizza.JPEG)
 
 最後是正正題，墨西哥辣雞披薩真的有夠好吃😋
 不知道是太餓，還是它真的就是那麼好吃

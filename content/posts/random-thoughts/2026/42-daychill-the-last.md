@@ -4,7 +4,7 @@ Date: 2026-07-26 10:32 +0800
 Category: Random Thoughts
 Tags: Coworking Space, 娃： 小睦, 娃： 企鵝, 娃： 小祥, 娃： 小燈
 Slug: daychill-the-last
-Cover: /images/posts-image/2026/daychill-the-last/tiramisu-and-latte.jpeg
+Cover: /images/post-images/2026/daychill-the-last/tiramisu-and-latte.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -25,32 +25,32 @@ Lang: zh-tw
 後來趁著還營業，多試了幾種咖啡
 
 `巧克力女孩`，味道有點太淡
-![巧克力女孩](/images/posts-image/2026/daychill-the-last/chocolate-girl.jpeg)
+![巧克力女孩](/images/post-images/2026/daychill-the-last/chocolate-girl.jpeg)
 
 `巧克力阿嬤拿鐵`，很不錯，但手沖還是好喝一點
 
-![巧克力阿嬤拿鐵](/images/posts-image/2026/daychill-the-last/chocolate-grandma-latte.jpeg)
+![巧克力阿嬤拿鐵](/images/post-images/2026/daychill-the-last/chocolate-grandma-latte.jpeg)
 
 `蘇門答臘 虎皇 林東曼特寧` 風味更有層次，但苦味稍微少了點
 
 `手撕豬肉`價位偏高，份量不算多，但味道很不錯
 
-![手撕豬肉](/images/posts-image/2026/daychill-the-last/pulled-pork.jpeg)
+![手撕豬肉](/images/post-images/2026/daychill-the-last/pulled-pork.jpeg)
 
 ---
 
 最後營業的這天，我回來道別了
 
-![店門口](/images/posts-image/2026/daychill-the-last/storefront-farewell.jpeg)
+![店門口](/images/post-images/2026/daychill-the-last/storefront-farewell.jpeg)
 
-![店內的畫作牆](/images/posts-image/2026/daychill-the-last/interior-art-wall.jpeg)
+![店內的畫作牆](/images/post-images/2026/daychill-the-last/interior-art-wall.jpeg)
 
-![海景畫作](/images/posts-image/2026/daychill-the-last/ocean-painting.jpeg)
+![海景畫作](/images/post-images/2026/daychill-the-last/ocean-painting.jpeg)
 
 又坐回第一次來時坐的那個位置
 點了一樣的`巧克力阿嬤`和`提拉米蘇`
 
-![巧克力阿嬤跟提拉米蘇](/images/posts-image/2026/daychill-the-last/tiramisu-and-latte.jpeg)
+![巧克力阿嬤跟提拉米蘇](/images/post-images/2026/daychill-the-last/tiramisu-and-latte.jpeg)
 
 再見啦，也許在某個地方再相見
 

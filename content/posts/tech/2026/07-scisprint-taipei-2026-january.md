@@ -4,7 +4,7 @@ Date: 2026-02-01 13:45 +0800
 Category: Tech
 Tags: Development Sprint, Open Source, commitizen
 Slug: scisprint-taipei-2026-january
-Cover: /images/posts-image/2026/scisprint-2026-jan/scisprint.jpg
+Cover: /images/post-images/2026/scisprint-2026-jan/scisprint.jpg
 Authors: Wei Lee
 Lang: en
 
@@ -69,7 +69,7 @@ We chatted about how things have been going lately, and he finally had the chanc
 
 I couldn't even remember the last time I chatted with *woile*, so it was really good to see him again. He's one of the most important mentors and friends on my open-source development path. Oh, and by the way, he also built a very cool receipts platform called [Reciperium](https://www.reciperium.com/). Go check it out!
 
-![scisprint](/images/posts-image/2026/scisprint-2026-jan/scisprint.jpg)
+![scisprint](/images/post-images/2026/scisprint-2026-jan/scisprint.jpg)
 
 Side note: If you look closely, I was holding an acrylic stand. I brought Tomorin with me this time. She was there to watch everyone contribute. No one ignores her. If you do… Rikki will know.
 

@@ -4,7 +4,7 @@ Date: 2025-06-06 23:15 +0800
 Category: Tech
 Tags: Python, Tool, Photo
 Slug: script-to-organize-photo
-Cover: /images/posts-image/2025-script-to-organize-photo/Frieren.jpeg
+Cover: /images/post-images/2025-script-to-organize-photo/Frieren.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -29,7 +29,7 @@ Lang: zh-tw
 想說也可以來分享些什麼，就決定分享「朝聖之路」
 （也因此要從照片堆中翻出相關的照片...）
 
-![you-went-?](/images/posts-image/2025-script-to-organize-photo/you-went.jpg)
+![you-went-?](/images/post-images/2025-script-to-organize-photo/you-went.jpg)
 
 我今天把九成的投影片做完了
 雖然有點花了太多時間在這件事上...

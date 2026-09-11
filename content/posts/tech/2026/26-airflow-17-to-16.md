@@ -15,14 +15,14 @@ Lang: zh-tw
 不過昨天還是有個小小的里程碑突破了
 下午的時候還是
 
-![contributions-588](/images/posts-image/2026/airflow-17-to-16/588.png)
+![contributions-588](/images/post-images/2026/airflow-17-to-16/588.png)
 
 一口氣合併了幾個 PR 終於到 16 了
-![contributions-595](/images/posts-image/2026/airflow-17-to-16/595.png)
+![contributions-595](/images/post-images/2026/airflow-17-to-16/595.png)
 
 雖然還是上不了 GitHub 專案上的名人榜（？）
 
-![contributors](/images/posts-image/2026/airflow-17-to-16/contributors.jpg)
+![contributors](/images/post-images/2026/airflow-17-to-16/contributors.jpg)
 
 要上名人榜，目前最少要 673
 但前面大多是活躍貢獻者

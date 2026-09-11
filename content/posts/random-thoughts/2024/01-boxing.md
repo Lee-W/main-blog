@@ -25,7 +25,7 @@ EP.138 才是學姊主要講拳擊相關的部分， EP.137 是聊她的本業
 雖然她不會真的打我（至少我是這麼希望啦......）
 但她這一拳下來，我可能會死
 
-![punch.jpg](/images/posts-image/2024-boxing/punch.jpg)
+![punch.jpg](/images/post-images/2024-boxing/punch.jpg)
 
 [TOC]
 

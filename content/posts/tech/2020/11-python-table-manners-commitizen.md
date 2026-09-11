@@ -17,13 +17,13 @@ Lang: zh-tw
 [TOC]
 
 ## 為什麼要好好寫 commit message
-![no-good-commit](/images/posts-image/2020-02-22-python-table-manner-series/no-good-commit.jpg)
+![no-good-commit](/images/post-images/2020-02-22-python-table-manner-series/no-good-commit.jpg)
 
 如果不好好寫有意義的 commit message，每次都只用 "update" 當訊息
 當你下了 `git log` 指令，就會看到一堆 "update"
 然後哪天系統出錯的時候，你也會不知道要回朔到哪一個版本
 
-![bad-commit](/images/posts-image/2020-02-22-python-table-manner-series/bad-commit.jpg)
+![bad-commit](/images/post-images/2020-02-22-python-table-manner-series/bad-commit.jpg)
 (from [hackjutsu/bad-commit-example](https://github.com/hackjutsu/bad-commit-example/commits/master))
 
 撰寫好的 commit message，除了讓未來的自己知道自己在幹嘛
@@ -60,31 +60,31 @@ cz init
 
 一開始會先問想使用哪種設定檔
 
-![cz-init-1](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-1.png)
+![cz-init-1](/images/post-images/2020-02-22-python-table-manner-series/cz-init-1.png)
 
 接著要選擇一套 commit 規範，預設有三種
 如果有安裝其他的 commit 規範，它們也會出現在選項中（See more 👉 [Third-Party Commitizen Templates](https://commitizen-tools.github.io/commitizen/third-party-commitizen/)）
 
-![cz-init-2](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-2.png)
+![cz-init-2](/images/post-images/2020-02-22-python-table-manner-series/cz-init-2.png)
 
 再來會問最新的 git tag 是否為最新的版本號
 如果不是，就會列出 `git tag` 所有的結果
 如果完全沒有用過 git tag，預設會是 `0.0.1`
 
-![cz-init-3](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-3.jpg)
+![cz-init-3](/images/post-images/2020-02-22-python-table-manner-series/cz-init-3.jpg)
 
 之後會詢問版本的格式要是如何
 常用的格式有 `$version` (e.g., `1.0.0`) 或 `v$version` (e.g., `v1.0.0`)
 
-![cz-init-4](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-4.jpg)
+![cz-init-4](/images/post-images/2020-02-22-python-table-manner-series/cz-init-4.jpg)
 
 最後會確認要不要將驗證 commit message 的 pre-commit hook 設定好
 
-![cz-init-5.jpg](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-5.jpg)
+![cz-init-5.jpg](/images/post-images/2020-02-22-python-table-manner-series/cz-init-5.jpg)
 
 完成後就會看到以下畫面
 
-![cz-init-6.jpg](/images/posts-image/2020-02-22-python-table-manner-series/cz-init-6.jpg)
+![cz-init-6.jpg](/images/post-images/2020-02-22-python-table-manner-series/cz-init-6.jpg)
 
 相對應的設定也會加入到設定檔 `pyproject.toml` (或 `.cz.toml`)
 
@@ -106,7 +106,7 @@ cz commit
 以 `cz_conventional_commits` 這套規則為例
 會先詢問這次的 commit 做了哪一種改動
 
-![commitizen-1](/images/posts-image/2020-02-22-python-table-manner-series/commitizen-1.jpg)
+![commitizen-1](/images/post-images/2020-02-22-python-table-manner-series/commitizen-1.jpg)
 
 接著會要求輸入這次改動各項細節
 
@@ -116,7 +116,7 @@ cz commit
 * Is this a BREAKING CHANGE？： 這是否是一個重大改動
 * Footer： 其他參考資訊，通常可以將 Issue 的編號寫在這
 
-![commitizen-2-w1024](/images/posts-image/2020-02-22-python-table-manner-series/commitizen-2.jpg)
+![commitizen-2-w1024](/images/post-images/2020-02-22-python-table-manner-series/commitizen-2.jpg)
 
 回答完，就會產生 commit message **feat(blog-post): update python table manners series**
 最下方則是 pre-commit hook 的 commit message 格式檢查通過
@@ -281,7 +281,7 @@ message = "Do you want to add body message in commit?"
 ```
 
 設定完之後，再使用 `cz commit` 就可以看到客製化過後的問題了
-![customize](/images/posts-image/2020-02-22-python-table-manner-series/customize.jpg)
+![customize](/images/post-images/2020-02-22-python-table-manner-series/customize.jpg)
 
 ### 將客製化的 commit 規範寫成 Python 套件發佈
 這個做法比較複雜，也比較不常會用到，所以我只會概略地講
@@ -357,7 +357,7 @@ commitizen 會試著找出文件中最新釋出版本 (e.g., `1.0.5`) 的位置�
 我在 Taipei.py 第一次試講 Python Table Manners 時
 有一頁就提到了，雖然 Python 也有 commitizen 這個工具，但還不太成熟
 
-![commitizen is not mature](/images/posts-image/2020-02-22-python-table-manner-series/not-mature-1.jpg)
+![commitizen is not mature](/images/post-images/2020-02-22-python-table-manner-series/not-mature-1.jpg)
 
 沒想到在 PyCon CA 的前一個禮拜我認真測試時
 才發現其實 commitizen 已經很夠用了，該有的功能都有
@@ -365,7 +365,7 @@ commitizen 會試著找出文件中最新釋出版本 (e.g., `1.0.5`) 的位置�
 這時就覺得信奉 Python （？？？）的我，好像應該好好的介紹 Python 的工具
 而不是 JavaScript 的 [commitizen](https://github.com/commitizen)
 
-![i am the one who's not mature](/images/posts-image/2020-02-22-python-table-manner-series/not-mature-2.jpg)
+![i am the one who's not mature](/images/post-images/2020-02-22-python-table-manner-series/not-mature-2.jpg)
 
 於是我就在 PyCon CA 前一個禮拜，開始貢獻起 [commitizen](https://github.com/commitizen-tools/commitizen)
 把我遇到的 issues 都修了，就順便把投影片中相關的內容一起翻新了
@@ -401,9 +401,9 @@ commitizen 會試著找出文件中最新釋出版本 (e.g., `1.0.5`) 的位置�
 貢獻的過程，也會很快就收到作者 [Woile](https://github.com/Woile) 的回饋
 它也會用很友善的文字，讓我覺得貢獻 commitizen 所花的時間，是有受到重視的
 
-![friendly-response-1](/images/posts-image/2020-02-22-python-table-manner-series/friendly-response-1.jpg)
+![friendly-response-1](/images/post-images/2020-02-22-python-table-manner-series/friendly-response-1.jpg)
 
-![friendly-response-2](/images/posts-image/2020-02-22-python-table-manner-series/friendly-response-2.jpg)
+![friendly-response-2](/images/post-images/2020-02-22-python-table-manner-series/friendly-response-2.jpg)
 
 除此之外， commitizen 測試覆蓋率很高，比較不需要怕改錯了會不會弄壞舊有的功能
 程式碼風格上，透過 black 跟 flake8 來規範，讓程式碼閱讀起來輕鬆很多

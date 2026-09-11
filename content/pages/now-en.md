@@ -56,7 +56,7 @@ My thoughts 👉 [Those Things No One Cares About](https://travlog.wei-lee.me/)
 * [Yuzuki Watase](https://x.com/Watase_Yuzuki) → got completely hooked after seeing her live in Mutsumi's whirlwind
 * [Hina Youmiya](https://x.com/Hina_Youmiya) → punch a Youmiya anti-fan dead 🥊
 
-![punch](/images/posts-image/2026/now/punch.jpeg)
+![punch](/images/post-images/2026/now/punch.jpeg)
 
 * [Aimer](https://x.com/Aimer_and_staff) → the fan club membership I've been paying for the longest
 * [江松霖](https://www.youtube.com/@sungsungvideo) → I will listen to his songs forever

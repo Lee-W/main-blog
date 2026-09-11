@@ -35,14 +35,14 @@ Remote Python Pizza 的時間非常緊湊
 大概聽到八點就開始覺得有點累了
 不過坐在客廳用電視投影演講是真的還蠻爽的 XD
 
-![tv](/images/posts-image/2020-05-03-remote-python-pizza/tv.jpeg)
+![tv](/images/post-images/2020-05-03-remote-python-pizza/tv.jpeg)
 
 為了響應 Remote Python Pizza ，我當天的晚餐也是吃 Pizza
 而且 Discord 中就有一個 `#cafeteria` 頻道，讓大家曬自己的 Pizza 照
 其實還蠻 High 的 XD
 我覺得這是線上會議**鼓勵會眾互動非常棒的設計**
 
-![pizza](/images/posts-image/2020-05-03-remote-python-pizza/pizza.jpeg)
+![pizza](/images/post-images/2020-05-03-remote-python-pizza/pizza.jpeg)
 
 第一場 Hynek 的 *On the Meaning of Version Numbers* 就先介紹了 [SemVar](https://semver.org/)
 主要說大部分的專案都沒辦法用好 SemVar ，所以 SemVar 可能太難遵守，不見得是一個很好的作法
@@ -53,7 +53,7 @@ Remote Python Pizza 的時間非常緊湊
 一場演講只要十分鐘，完全是個適合推廣 [commitizen-tools](https://github.com/commitizen-tools) 的好機會
 就毅然決然的投稿了 XD
 
-![my-avatar](/images/posts-image/2020-05-03-remote-python-pizza/my-avatar.jpg)
+![my-avatar](/images/post-images/2020-05-03-remote-python-pizza/my-avatar.jpg)
 
 不過真的沒想到，官網會直接用我 Twitter 的大頭貼＠＠
 不過既然都被用了兵長的頭貼，我就順勢穿著調查兵團的披風來給演講了 XD
@@ -68,7 +68,7 @@ python -m pip install commitizen
 Disconnect3d 給的 *sudo python is a trap, use isolate mode* 是我印象最深刻的一場
 現場 demo 如果你使用了 `sudo python`，駭客多輕鬆就可以駭入你的電腦
 所以不要使用 `sudo python` 啊！
-![sudo-python-is-a-trap](/images/posts-image/2020-05-03-remote-python-pizza/sudo-python-is-a-trap.jpg)
+![sudo-python-is-a-trap](/images/post-images/2020-05-03-remote-python-pizza/sudo-python-is-a-trap.jpg)
 
 整體節奏太緊湊，實在沒什麼時間好好做筆記
 之後再找個時間把比較有趣的內容補起來

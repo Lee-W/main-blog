@@ -5,7 +5,7 @@ Category: Random Thoughts
 Tags: Open Source, IT Matters Awards, 總統府, BanG Dream
 Slug: tomorin-goes-to-presidential-office
 Series: IT Matters Awards 2025
-Cover: /images/posts-image/2026/tomorin-goes-to-presidential-office/me-cover.png
+Cover: /images/post-images/2026/tomorin-goes-to-presidential-office/me-cover.png
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -36,7 +36,7 @@ Lang: zh-tw
 後面一堆學界、業界大神，我何德何能，戒慎恐懼啊 😱
 但也因此外套上燈的やほぬい，也被拍得還算清楚！
 
-![group-photo](/images/posts-image/2026/tomorin-goes-to-presidential-office/group-photo.jpg)
+![group-photo](/images/post-images/2026/tomorin-goes-to-presidential-office/group-photo.jpg)
 
 倒是 TICO 的鏡音鈴沒拍到 😢
 
@@ -98,7 +98,7 @@ Lang: zh-tw
 感謝翰儒給我的好建議，讓我把 Python 跟 Apache Airflow 的胸針別在領帶上
 （西裝外套太厚穿不過去...）
 
-![me](/images/posts-image/2026/tomorin-goes-to-presidential-office/me.jpeg)
+![me](/images/post-images/2026/tomorin-goes-to-presidential-office/me.jpeg)
 
 他們都是當天有跟總統互動到的大大們
 我只有在拍完合照後跟賴總統握到手
@@ -107,7 +107,7 @@ Lang: zh-tw
 一時找不到手機，沒有在總統府內跟娃娃們拍到照
 最後只在總統府的對面，拍了一張坐娃小燈
 
-![tomorin](/images/posts-image/2026/tomorin-goes-to-presidential-office/tomorin.jpeg)
+![tomorin](/images/post-images/2026/tomorin-goes-to-presidential-office/tomorin.jpeg)
 
 身為專業遲到仔的我，這次接見也差點遲到
 還因為忘了拿東西，中途回家兩次
@@ -115,7 +115,7 @@ Lang: zh-tw
 第二次是忘了帶睦跟企鵝
 畢竟小睦是我最重要的出門夥伴之一，沒有帶到是不能接受的 🤯
 最後附上我帶的邦邦娃跟 TICO 的鈴跟總統府紀念品的合照
-![doll](/images/posts-image/2026/tomorin-goes-to-presidential-office/doll.jpeg)
+![doll](/images/post-images/2026/tomorin-goes-to-presidential-office/doll.jpeg)
 
 `《𝗕𝗮𝗻𝗚 𝗗𝗿𝗲𝗮𝗺! 𝗦𝗽𝗲𝗰𝗶𝗮𝗹 𝗟𝗜𝗩𝗘 𝗶𝗻 𝗧𝗔𝗜𝗣𝗘𝗜》 Day 3 @ 總統府`圓滿結束🎉
 

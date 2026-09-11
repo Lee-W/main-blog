@@ -4,7 +4,7 @@ Date: 2026-05-08 09:55 +0800
 Category: Random Thoughts
 Tags: Coworking Space, 娃： 小睦, 娃： 企鵝, 娃： 燈
 Slug: sky-cofi
-Cover: /images/posts-image/2026/sky-cofi/IMG_3052.jpeg
+Cover: /images/post-images/2026/sky-cofi/IMG_3052.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -47,17 +47,17 @@ Lang: zh-tw
 早上先在家工作一下，通勤再推一點進度
 到 Sky Cofi ，剛好吃個簡單的午餐
 
-![IMG_3050](/images/posts-image/2026/sky-cofi/IMG_3050.jpeg)
+![IMG_3050](/images/post-images/2026/sky-cofi/IMG_3050.jpeg)
 
 再配一杯咖啡，就可以達到 290 元
 ~~我絕對不會說我是因為李子點了`印尼 亞齊 迦佑 蜜處理`~~
 
-![IMG_3049](/images/posts-image/2026/sky-cofi/IMG_3049.jpeg)
+![IMG_3049](/images/post-images/2026/sky-cofi/IMG_3049.jpeg)
 
 我平時比較喜歡坐中間的大桌或靠窗的座位
 桌子比較高，有時候可以站起來工作
 
-![IMG_3052](/images/posts-image/2026/sky-cofi/IMG_3052.jpeg)
+![IMG_3052](/images/post-images/2026/sky-cofi/IMG_3052.jpeg)
 
 至於安靜程度就很不一定
 通常是蠻安靜的，但還是遇到過幾次極吵的時候
