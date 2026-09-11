@@ -4,7 +4,7 @@ Date: 2026-07-01 22:24 +0800
 Category: Random Thoughts
 Tags: Coworking Space, 娃： 小睦
 Slug: curista-coffee-city-hall
-Cover: /images/posts-image/2026/curista-coffee-city-hall/coffee.jpeg
+Cover: /images/post-images/2026/curista-coffee-city-hall/coffee.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -31,26 +31,26 @@ Lang: zh-tw
 
 咖啡的話，點了這隻木星
 
-![coffee](/images/posts-image/2026/curista-coffee-city-hall/coffee.jpeg)
+![coffee](/images/post-images/2026/curista-coffee-city-hall/coffee.jpeg)
 
 意外的很不合我的胃口＠＠
 這個苦味不是我喜歡的苦味
 
 倒是最近響應世足賽有一些酷酷的活動
 
-![ad](/images/posts-image/2026/curista-coffee-city-hall/ad.jpeg)
+![ad](/images/post-images/2026/curista-coffee-city-hall/ad.jpeg)
 
 所以我就幫小睦買了一個符合她的髮色跟裝飾的抹茶提拉米蘇
-![tiramisu](/images/posts-image/2026/curista-coffee-city-hall/tiramisu.jpeg)
+![tiramisu](/images/post-images/2026/curista-coffee-city-hall/tiramisu.jpeg)
 
 隔幾天我又來了，這次就比較保守的點了深培的摩卡
 上次在 [A13店]({filename}/posts/random-thoughts/2026/18-a13-CURISTA-COFFEE.md) 喝得很喜歡
 
-![mocha](/images/posts-image/2026/curista-coffee-city-hall/mocha.jpeg)
+![mocha](/images/post-images/2026/curista-coffee-city-hall/mocha.jpeg)
 
 雖然有提供正餐，但是燉飯不推...
 下次可能會試試看 pizza
-![risotto](/images/posts-image/2026/curista-coffee-city-hall/risotto.jpeg)
+![risotto](/images/post-images/2026/curista-coffee-city-hall/risotto.jpeg)
 
 ---
 

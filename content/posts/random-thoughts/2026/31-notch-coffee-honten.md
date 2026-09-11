@@ -4,7 +4,7 @@ Date: 2026-05-28 19:07 +0800
 Category: Random Thoughts
 Tags: Coworking Space, 娃： 祥子
 Slug: notch-coffee-honten
-Cover: /images/posts-image/2026/notch-coffee-honten/work-setup-with-black-knight-latte.jpeg
+Cover: /images/post-images/2026/notch-coffee-honten/work-setup-with-black-knight-latte.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -33,7 +33,7 @@ NOTCH咖啡 本町店 的優勢是價格便宜、交通方便跟營業時間長
 整體氛圍也算舒服，看起來是老建築改建
 稱不上太安靜，就是一般的咖啡廳，但不至於影響到我工作的程度
 
-![IMG_3431](/images/posts-image/2026/notch-coffee-honten/work-setup-with-black-knight-latte.jpeg)
+![IMG_3431](/images/post-images/2026/notch-coffee-honten/work-setup-with-black-knight-latte.jpeg)
 
 咖啡的話，我點了這杯黑武士
 是黑糖拿鐵 + 咖啡凍
@@ -49,14 +49,14 @@ NOTCH咖啡 本町店 的優勢是價格便宜、交通方便跟營業時間長
 
 咖啡廳本身應該是老屋改造，裡面也很多很酷的台灣早期物件
 
-![IMG_3432](/images/posts-image/2026/notch-coffee-honten/vintage-interior.jpeg)
+![IMG_3432](/images/post-images/2026/notch-coffee-honten/vintage-interior.jpeg)
 
 晚餐我也是在這吃，就算準了要待到關店
 原本想要點飯類，但當天沒飯了
 最後點了黑胡椒雞肉披薩
 好吃是好吃，但好像除了起司我吃不太出其他的味道...
 
-![IMG_3434](/images/posts-image/2026/notch-coffee-honten/black-pepper-chicken-pizza.jpeg)
+![IMG_3434](/images/post-images/2026/notch-coffee-honten/black-pepper-chicken-pizza.jpeg)
 
 ---
 

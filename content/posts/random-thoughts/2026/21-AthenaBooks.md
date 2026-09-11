@@ -4,7 +4,7 @@ Date: 2026-04-25 12:10 +0800
 Category: Random Thoughts
 Tags: Coworking Space
 Slug: athena-books
-Cover: /images/posts-image/2026/AthenaBooks/work.jpeg
+Cover: /images/post-images/2026/AthenaBooks/work.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -31,7 +31,7 @@ Lang: zh-tw
 一進門會看到很多的書
 恩，畢竟是書店
 
-![book](/images/posts-image/2026/AthenaBooks/book.jpeg)
+![book](/images/post-images/2026/AthenaBooks/book.jpeg)
 
 不過這裡不是漫畫咖啡店，書都是要結帳後才可以翻閱
 所以更像是被書包圍的工作空間，而不是可以隨手翻書的地方
@@ -50,20 +50,20 @@ Lang: zh-tw
 
 整體氛圍非常的舒服安靜
 
-![work](/images/posts-image/2026/AthenaBooks/work.jpeg)
+![work](/images/post-images/2026/AthenaBooks/work.jpeg)
 
 這次點了它深培的咖啡（哪次不是點深培）
 真的好苦，好喜歡
 
 結帳櫃檯看到這本書，就想到我另一個部落格 [那些沒人在乎的事](https://travlog.wei-lee.me/) 的網域是用 travlog
 
-![travlogue](/images/posts-image/2026/AthenaBooks/travlogue.jpeg)
+![travlogue](/images/post-images/2026/AthenaBooks/travlogue.jpeg)
 
 雖然我平常出來咖啡廳工作不太點點心
 但在這間店待得很舒服，最後點了一個咖啡核桃的軟餅乾
 烤過之後的味道真的很棒
 
-![cookie](/images/posts-image/2026/AthenaBooks/cookie.jpeg)
+![cookie](/images/post-images/2026/AthenaBooks/cookie.jpeg)
 
 ---
 

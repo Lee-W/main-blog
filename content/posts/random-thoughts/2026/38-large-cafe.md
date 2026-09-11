@@ -4,7 +4,7 @@ Date: 2026-07-09 10:03 +0800
 Category: Random Thoughts
 Tags: Coworking Space, 娃： 小睦
 Slug: large-cafe
-Cover: /images/posts-image/2026/large-cafe/croissant-and-coffee.jpeg
+Cover: /images/post-images/2026/large-cafe/croissant-and-coffee.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -29,7 +29,7 @@ Lang: zh-tw
 除了空間很有設計感外
 裡面也有很多裝潢材料跟相關的書籍和雜誌可以看
 
-![croissant-and-coffee](/images/posts-image/2026/large-cafe/croissant-and-coffee.jpeg)
+![croissant-and-coffee](/images/post-images/2026/large-cafe/croissant-and-coffee.jpeg)
 
 我先點了兩樣東西：
 
@@ -39,7 +39,7 @@ Lang: zh-tw
 這可頌真的是有夠好吃
 雖然吃不太飽，導致我還要點 120 元的手工水餃
 
-![dumplings](/images/posts-image/2026/large-cafe/dumplings.jpeg)
+![dumplings](/images/post-images/2026/large-cafe/dumplings.jpeg)
 
 但我也不後悔點它，因為就真的很好吃
 水餃本身也是不錯

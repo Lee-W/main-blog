@@ -10,7 +10,7 @@ Lang: zh-tw
 
 <!--more-->
 
-![vip](/images/posts-image/2020-coscup-2020-sitcon-2020/vip.jpg)
+![vip](/images/post-images/2020-coscup-2020-sitcon-2020/vip.jpg)
 
 [TOC]
 
@@ -21,7 +21,7 @@ Lang: zh-tw
 不得不說，在全世界都受疫情所苦，實體研討會紛紛取消
 能舉辦一場累計 2800 人次的會議，真的是很厲害 😲😲😲
 
-![2800](/images/posts-image/2020-coscup-2020-sitcon-2020/2800.jpg)
+![2800](/images/post-images/2020-coscup-2020-sitcon-2020/2800.jpg)
 
 ### 前夜派對
 去年收到前夜派對的訊息時，票早就已經賣光了 😢
@@ -78,9 +78,9 @@ COSCUP 的主題相對算是廣泛
 
 其實我也很不習慣中文的 git ，但要改他實在有點麻煩 XD
 
-![java script](/images/posts-image/2020-coscup-2020-sitcon-2020/java script.jpg)
-![no space inside javascript](/images/posts-image/2020-coscup-2020-sitcon-2020/no space inside javascript.jpg)
-![upper case coscup](/images/posts-image/2020-coscup-2020-sitcon-2020/upper case coscup.jpg)
+![java script](/images/post-images/2020-coscup-2020-sitcon-2020/java script.jpg)
+![no space inside javascript](/images/post-images/2020-coscup-2020-sitcon-2020/no space inside javascript.jpg)
+![upper case coscup](/images/post-images/2020-coscup-2020-sitcon-2020/upper case coscup.jpg)
 
 啊，然後附上我的[閃電秀投影片](https://speakerdeck.com/leew/coscup-2020-lightning-talk)
 
@@ -92,7 +92,7 @@ COSCUP 的主題相對算是廣泛
 
 除此之外，還想聽聽「臉書資料探勘－鯉魚教の教主崇拜分析」
 但不小心在攤位聊得太開心，只趕上感謝教主
-![liyu](/images/posts-image/2020-coscup-2020-sitcon-2020/liyu.jpg)
+![liyu](/images/post-images/2020-coscup-2020-sitcon-2020/liyu.jpg)
 
 ### 最不友善贊助商
 今年其實我是以贊助商（社群？）的身份來的

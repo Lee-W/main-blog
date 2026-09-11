@@ -12,14 +12,14 @@ commitizen 終於不用寄生在 airflow 的頻道
 
 <!--more-->
 
-![commitizen-channel-annoucement](/images/posts-image/2025-open-source-report/commitizen-channel-annoucement.jpg)
+![commitizen-channel-annoucement](/images/post-images/2025-open-source-report/commitizen-channel-annoucement.jpg)
 
 MyGO!!!!! 怎麼可能是浪費時間呢
 是心靈的饗宴
 
 倒是我也被發現在 [sciwork] 有一席之地
 
-![sciwork-commitizen-channel-found](/images/posts-image/2025-open-source-report/sciwork-commitizen-channel-found.jpg)
+![sciwork-commitizen-channel-found](/images/post-images/2025-open-source-report/sciwork-commitizen-channel-found.jpg)
 
 不過我其實很潛水
 大多都是被邀請去參加活動的時候，我會回一下我沒辦法去

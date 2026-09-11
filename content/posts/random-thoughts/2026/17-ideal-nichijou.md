@@ -4,7 +4,7 @@ Category: Random Thoughts
 Tags: BlogBlog 同樂會, Lifestyle
 Slug: ideal-nichijou
 Series: 理想的日常 (2026)
-Cover: /images/posts-image/2026/ideal/avalon.JPEG
+Cover: /images/post-images/2026/ideal/avalon.JPEG
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -59,7 +59,7 @@ Lang: zh-tw
 離開前，浮現了與大家一起煮飯、過節、跨年、玩雞馬、玩迴力鏢大亂鬥的畫面
 去年的聖誕派對就真的是最後一次了
 
-![party](/images/posts-image/2026/ideal/party.JPEG)
+![party](/images/post-images/2026/ideal/party.JPEG)
 
 ---
 
@@ -84,6 +84,6 @@ Lang: zh-tw
 最後放上去年去巡禮的理想鄉 - Avalon
 (F/SF 最後一集才剛出現這個地點！)
 
-![avalon](/images/posts-image/2026/ideal/avalon.JPEG)
+![avalon](/images/post-images/2026/ideal/avalon.JPEG)
 
 [理想的日常]: https://alexhsu.com/perfect-days

@@ -12,7 +12,7 @@ Lang: zh-tw
 每一個工具又有各自的參數和設定
 這麼多指令怎麼可能記得起來 😱
 
-![too-many-commands](/images/posts-image/2020-02-22-python-table-manner-series/too-many-commands.jpg)
+![too-many-commands](/images/post-images/2020-02-22-python-table-manner-series/too-many-commands.jpg)
 
 <!--more-->
 
@@ -45,11 +45,11 @@ pipenv install invoke --dev
 checkout 到 [commit 83e4](https://github.com/pycontw/pycontw-postevent-report-generator/tree/83e48c6443303045ed1de2f020297c3110bb1300)，回到使用 invoke 管理指令前
 從當時的文件可以看到，還需要使用相對冗長的指令
 
-![before-invoke](/images/posts-image/2020-02-22-python-table-manner-series/before-invoke.jpg)
+![before-invoke](/images/post-images/2020-02-22-python-table-manner-series/before-invoke.jpg)
 
 到了 [commit 72ad](https://github.com/pycontw/pycontw-postevent-report-generator/tree/72ad956fd200867dc292a156c97a99a09ebe0104) (實作已經在 [commit bc98](https://github.com/pycontw/pycontw-postevent-report-generator/commit/bc98eec28037a9bed5063fef0f0f564893fce3ac) 完成，只是在 commit 72ad 才更新文件)，已經可以使用較短且較為統一的指令 (以 `inv` 作為開頭)
 
-![after-invoke](/images/posts-image/2020-02-22-python-table-manner-series/after-invoke.jpg)
+![after-invoke](/images/post-images/2020-02-22-python-table-manner-series/after-invoke.jpg)
 
 除此之外，引入 invoke 後，也不用每次都去翻文件
 `invoke --list` 可以列出所有可用的指令

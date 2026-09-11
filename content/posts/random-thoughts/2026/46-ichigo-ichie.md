@@ -3,7 +3,7 @@ Date: 2026-08-19 08:44 +0800
 Category: Random Thoughts
 Tags: BlogBlog 同樂會, Life, Japan
 Slug: ichigo-ichie
-Cover: /images/posts-image/2026/ichigo-ichie/juyondai.jpeg
+Cover: /images/post-images/2026/ichigo-ichie/juyondai.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -62,15 +62,15 @@ CWT 也去見了一些朋友，沒想到被親友第一次在路上捕捉已經�
 
 清酒之王：十四代（後來常在股癌的節目上聽到）
 
-![juyondai](/images/posts-image/2026/ichigo-ichie/juyondai.jpeg)
+![juyondai](/images/post-images/2026/ichigo-ichie/juyondai.jpeg)
 
 青森蘋果，我這輩子沒吃過這麼好吃的蘋果
 
-![aomori-apple](/images/posts-image/2026/ichigo-ichie/aomori-apple.jpeg)
+![aomori-apple](/images/post-images/2026/ichigo-ichie/aomori-apple.jpeg)
 
 還有其他厲害的酒們
 
-![sake-and-whisky-lineup](/images/posts-image/2026/ichigo-ichie/sake-and-whisky-lineup.jpeg)
+![sake-and-whisky-lineup](/images/post-images/2026/ichigo-ichie/sake-and-whisky-lineup.jpeg)
 
 這可能是我這輩子喝得最醉的一天，但老闆實在盛情難卻
 而且老闆最後還不收我們錢...

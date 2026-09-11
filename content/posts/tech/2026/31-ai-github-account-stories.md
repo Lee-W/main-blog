@@ -3,7 +3,7 @@ Date: 2026-08-12 11:49 +0800
 Category: Tech
 Tags: Airflow, GitHub, Open Source
 Slug: ai-github-account-stories
-Cover: /images/posts-image/2026/ai-github-account-stories/ari4ka-approval.jpg
+Cover: /images/post-images/2026/ai-github-account-stories/ari4ka-approval.jpg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -13,7 +13,7 @@ Lang: zh-tw
 <!--more-->
 
 像是這篇[台鐵誤點](https://travlog.wei-lee.me/posts/travel/2026/07/tra-delay/)在我發佈之後，得到了 Ari4ka 的認可
-![approval](/images/posts-image/2026/ai-github-account-stories/ari4ka-approval.jpg)
+![approval](/images/post-images/2026/ai-github-account-stories/ari4ka-approval.jpg)
 我想他一定也是認可，[羊黑就該一拳打死](https://travlog.wei-lee.me/posts/travel/2026/07/pomunoki-tainan)
 
 <https://github.com/Lee-W/travlog/pull/77#pullrequestreview-4795260636>

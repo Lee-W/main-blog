@@ -3,7 +3,7 @@ Date: 2026-07-13 22:24 +0800
 Category: Random Thoughts
 Tags: BlogBlog 同樂會, Blog, Lifestyle
 Slug: blogblog-meetup-changes
-Cover: /images/posts-image/2026/blogblog-meetup-changes/notebook.jpg
+Cover: /images/post-images/2026/blogblog-meetup-changes/notebook.jpg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -23,7 +23,7 @@ Lang: zh-tw
 搭車的時候，先把文章的草稿寫下來
 回去有電腦的時候只要打上去，順過一次就可以發了
 
-![notebook](/images/posts-image/2026/blogblog-meetup-changes/notebook.jpg)
+![notebook](/images/post-images/2026/blogblog-meetup-changes/notebook.jpg)
 
 這本筆記本是 [PyCon US 2019]({filename}/posts/tech/2019/03-how-was-pycon-us-2019.md) 拿到的
 直到今年才正式啟用

@@ -4,7 +4,7 @@ Date: 2026-01-25 13:08 +0800
 Category: Random Thoughts
 Tags: 報導者, Podcast
 Slug: the-reporter-10th
-Cover: /images/posts-image/2026/the-reporter-10th/IMG_0422.JPEG
+Cover: /images/post-images/2026/the-reporter-10th/IMG_0422.JPEG
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -41,16 +41,16 @@ Lang: zh-tw
 
 一進門就會看到報導者的首篇文章
 
-![IMG_0401](/images/posts-image/2026/the-reporter-10th/IMG_0401.JPEG)
+![IMG_0401](/images/post-images/2026/the-reporter-10th/IMG_0401.JPEG)
 
 接著會是一個一個小區塊，展示不同形式的報導製作過程
 
-![IMG_0404](/images/posts-image/2026/the-reporter-10th/IMG_0404.JPEG)
+![IMG_0404](/images/post-images/2026/the-reporter-10th/IMG_0404.JPEG)
 
 報導者的各種報導中，我最常接觸的是 Podcast [The Real Story]
 是我能以最少能量，最高頻率接觸報導者的方式
 
-![IMG_0411](/images/posts-image/2026/the-reporter-10th/IMG_0411.JPEG)
+![IMG_0411](/images/post-images/2026/the-reporter-10th/IMG_0411.JPEG)
 
 原來 Podcast 這個詞的 Pod 最初是跟 iPod 有關的 🤔
 
@@ -59,7 +59,7 @@ Lang: zh-tw
 另外展覽內的人真的是很多
 幾乎都是快速看完就得往下一個區塊走
 
-![IMG_0415](/images/posts-image/2026/the-reporter-10th/IMG_0415.JPEG)
+![IMG_0415](/images/post-images/2026/the-reporter-10th/IMG_0415.JPEG)
 
 雖然展覽本身很棒，但報導者平時在做的事情更棒
 不過後來 [The Real Story] 的節目有說到，看到這麼多人來看展對他們來說也是一種激勵
@@ -68,31 +68,31 @@ Lang: zh-tw
 
 最後一區是讀者回饋
 
-![IMG_0418](/images/posts-image/2026/the-reporter-10th/IMG_0418.JPEG)
+![IMG_0418](/images/post-images/2026/the-reporter-10th/IMG_0418.JPEG)
 
 如果你還沒看過[地。-關於地球的運動-](https://travlog.wei-lee.me/posts/review/2025/03/chi-on-the-movements-of-the-earth/)
 那你應該現在去看，真的很好看
 
-![IMG_0419](/images/posts-image/2026/the-reporter-10th/IMG_0419.JPEG)
+![IMG_0419](/images/post-images/2026/the-reporter-10th/IMG_0419.JPEG)
 
 在報導者的展覽裡，也看得到開源
 
-![IMG_0420](/images/posts-image/2026/the-reporter-10th/IMG_0420.JPEG)
+![IMG_0420](/images/post-images/2026/the-reporter-10th/IMG_0420.JPEG)
 
 最後只買了求生口哨
 說到這個，最近佐賀偶像是傳奇也有出聯名求生包
 
-![IMG_0422](/images/posts-image/2026/the-reporter-10th/IMG_0422.JPEG)
+![IMG_0422](/images/post-images/2026/the-reporter-10th/IMG_0422.JPEG)
 
 目前已經有 8836 位定期定額的贊助者了
 繼續往 10000 位前進中
 
-![IMG_0423](/images/posts-image/2026/the-reporter-10th/IMG_0423.JPEG)
+![IMG_0423](/images/post-images/2026/the-reporter-10th/IMG_0423.JPEG)
 
 我手中的那個透明磚塊，就是開放透明之磚
 是定期定額贊助者的特典
 
-![IMG_0425](/images/posts-image/2026/the-reporter-10th/IMG_0425.JPEG)
+![IMG_0425](/images/post-images/2026/the-reporter-10th/IMG_0425.JPEG)
 
 展覽結束後，才跑來門口拍照
 準備過去晚會
@@ -101,15 +101,15 @@ Lang: zh-tw
 
 一進門就會看到哥吉拉（？！）
 
-![IMG_0430](/images/posts-image/2026/the-reporter-10th/IMG_0430.JPEG)
+![IMG_0430](/images/post-images/2026/the-reporter-10th/IMG_0430.JPEG)
 
 透過開放透明之磚看著舞台
 
-![IMG_0439](/images/posts-image/2026/the-reporter-10th/IMG_0439.JPEG)
+![IMG_0439](/images/post-images/2026/the-reporter-10th/IMG_0439.JPEG)
 
 晚會的節目單
 
-![IMG_0436](/images/posts-image/2026/the-reporter-10th/IMG_0436.JPEG)
+![IMG_0436](/images/post-images/2026/the-reporter-10th/IMG_0436.JPEG)
 
 1. 十年回顧 (表演)
 2. 報導者與被報導者 (訪談)
@@ -149,20 +149,20 @@ Lang: zh-tw
 每次聽到這種願意為了信念去努力、去改變的故事
 還是會覺得蠻感動的
 
-![IMG_0443](/images/posts-image/2026/the-reporter-10th/IMG_0443.JPEG)
+![IMG_0443](/images/post-images/2026/the-reporter-10th/IMG_0443.JPEG)
 
 `一起走一條不輕鬆的路`是黃玠跟萬芳，令人感到溫暖的音樂表演
 
-![IMG_0444](/images/posts-image/2026/the-reporter-10th/IMG_0444.JPEG)
-![IMG_0448](/images/posts-image/2026/the-reporter-10th/IMG_0448.JPEG)
-![IMG_0452](/images/posts-image/2026/the-reporter-10th/IMG_0452.JPEG)
+![IMG_0444](/images/post-images/2026/the-reporter-10th/IMG_0444.JPEG)
+![IMG_0448](/images/post-images/2026/the-reporter-10th/IMG_0448.JPEG)
+![IMG_0452](/images/post-images/2026/the-reporter-10th/IMG_0452.JPEG)
 
 > 感謝
 > 支持報導者的每一個人
 > 與
 > 今天來參加活動的你們
 
-![IMG_0460](/images/posts-image/2026/the-reporter-10th/IMG_0460.JPEG)
+![IMG_0460](/images/post-images/2026/the-reporter-10th/IMG_0460.JPEG)
 
 ## 雖然無關報導者十週年
 擔任現場現場志工的朋友告訴我這整場晚會很感動，他也哭了好幾次

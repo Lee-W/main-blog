@@ -133,7 +133,7 @@
 | 雖然也可能像巴德尼先生說的
 |
 
-.. image:: /images/posts-image/2025-2021-2024-yearly-review/junk-message.png
+.. image:: /images/post-images/2025-2021-2024-yearly-review/junk-message.png
   :alt: Junk Message
 
 | 但也可能像拉婓爾說的記錄下感動

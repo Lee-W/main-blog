@@ -40,7 +40,7 @@ zh-TW  100.0%
 © BanG Dream! Project｜出自 [《BanG Dream! It's MyGO!!!!!》第 10 集](https://ani.gamer.com.tw/animeVideo.php?sn=34517)
 ///
 
-![不客氣](/images/posts-image/2026/i18n-reminder-for-airflow-3-2-2/you-are-welcom.jpg)
+![不客氣](/images/post-images/2026/i18n-reminder-for-airflow-3-2-2/you-are-welcom.jpg)
 
 我近期比較喜歡用臺灣華語這個詞
 但對於繁體中文這個用法，我也不算是有特別的想法

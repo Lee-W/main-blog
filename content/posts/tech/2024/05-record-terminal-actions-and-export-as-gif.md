@@ -9,7 +9,7 @@ Lang: zh-tw
 想說 [commitizen](https://github.com/commitizen-tools/commitizen) README 的 demo 動畫也好久沒更新了
 可以來研究一下怎麼產出新的動畫更新上去
 
-![commitizen-demo](/images/posts-image/2024-record-terminal-actions-and-export-as-gif/commitizen-demo.jpg)
+![commitizen-demo](/images/post-images/2024-record-terminal-actions-and-export-as-gif/commitizen-demo.jpg)
 
 <!--more-->
 
@@ -66,4 +66,4 @@ agg --font-family "ComicShannsMono Nerd Font" \
 既然是分享 asciinema 的文章
 當然是得把文章用到的指令們直接做成 gif demo 吧！
 
-![asciinema](/images/posts-image/2024-record-terminal-actions-and-export-as-gif/asciinema.gif)
+![asciinema](/images/post-images/2024-record-terminal-actions-and-export-as-gif/asciinema.gif)

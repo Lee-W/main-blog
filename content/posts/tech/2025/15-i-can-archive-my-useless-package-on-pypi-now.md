@@ -14,9 +14,9 @@ Lang: zh-tw
 這篇是 PyPI 官方部落格在今年 01/30 的發文
 實際上我也是剛上線就跑去玩了一下
 
-![archive-project](/images/posts-image/2025-i-can-archive-my-useless-package-on-pypi-now/archive-project.jpg)
+![archive-project](/images/post-images/2025-i-can-archive-my-useless-package-on-pypi-now/archive-project.jpg)
 
-![templater3](/images/posts-image/2025-i-can-archive-my-useless-package-on-pypi-now/templater3.jpg)
+![templater3](/images/post-images/2025-i-can-archive-my-useless-package-on-pypi-now/templater3.jpg)
 
 順手就把 templater3 封存起來，試試上線的新功能就是愉快
 這是以前的工作讀論文的時候用到的專案

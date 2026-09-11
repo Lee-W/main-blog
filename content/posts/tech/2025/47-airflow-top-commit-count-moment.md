@@ -15,7 +15,7 @@ Lang: zh-tw
 這次我剛好就截到了這張圖！
 我根本不知道我的 35 提交是哪來的
 
-![35 commits](/images/posts-image/2025-airflow-top-commit-count-moment/35-commits.png)
+![35 commits](/images/post-images/2025-airflow-top-commit-count-moment/35-commits.png)
 
 但好吧，反正 GitHub 說得算
 而且這篇文章也只是想愛木須龍，隨便記錄一下
@@ -25,4 +25,4 @@ Lang: zh-tw
 © BanG Dream! Project｜出自 [《BanG Dream! It's MyGO!!!!!》第 10 集](https://ani.gamer.com.tw/animeVideo.php?sn=34517)
 ///
 
-![duration](/images/posts-image/2025-airflow-top-commit-count-moment/period.jpg)
+![duration](/images/post-images/2025-airflow-top-commit-count-moment/period.jpg)

@@ -47,21 +47,21 @@ UTTERANCES_LABEL = "comment"
 使用的標籤本身必須要已經存在
 如果沒有的話，可以到先到 repo 的 Issues 頁面建立
 
-![create-label](/images/posts-image/2021-use-github-issues-as-comment-system/create-label.png)
+![create-label](/images/post-images/2021-use-github-issues-as-comment-system/create-label.png)
 
 下一步要為你的 GitHub 帳號安裝 [utterances 的 GitHub App](https://github.com/apps/utterances)，並賦予部落格 repo 讀寫 issues 的權限
 
-![utterances](/images/posts-image/2021-use-github-issues-as-comment-system/utterances.png)
+![utterances](/images/post-images/2021-use-github-issues-as-comment-system/utterances.png)
 
 設定完成後就能在文章的最下面看到留言的區塊
 
-![comment-empty](/images/posts-image/2021-use-github-issues-as-comment-system/comment-empty.png)
+![comment-empty](/images/post-images/2021-use-github-issues-as-comment-system/comment-empty.png)
 
 完成留言後，就會出現在 GitHub Issues 上了
 攥寫這篇文章的時候是用 localhost 測試，所以屆時裡面的連結會無效
 但實際部署到 GitHub Pages 後，它就會寫入實際的網址
 
-![comment-result](/images/posts-image/2021-use-github-issues-as-comment-system/comment-result.png)
+![comment-result](/images/post-images/2021-use-github-issues-as-comment-system/comment-result.png)
 
 如果覺得用文章的 URL 當 issue 的標題很醜，可以在文章的 metadata 中加入 comment_id
 e.g.,
@@ -78,7 +78,7 @@ Authors: Wei Lee
 
 再留言一次就會產生以 `comment_id` 為標題的 issue
 
-![comment-with-comment-id](/images/posts-image/2021-use-github-issues-as-comment-system/comment-with-comment-id.png)
+![comment-with-comment-id](/images/post-images/2021-use-github-issues-as-comment-system/comment-with-comment-id.png)
 
 我會建議可以的話為每篇文章加上 `comment_id`
 除了比較好看以外，也能避免換網域，評論全都不見的問題

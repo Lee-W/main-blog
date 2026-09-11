@@ -25,15 +25,15 @@ Lang: zh-tw
 PyCon CA 每一位講者的議程都會發篇推特宣傳
 而且會積極地邀請你一起來宣傳自己的分享
 這點還蠻有趣的
-![-w375](/images/posts-image/2019-12-23-pycon-ca-2019/15720217074612.jpg)
+![-w375](/images/post-images/2019-12-23-pycon-ca-2019/15720217074612.jpg)
 
 ## 會場
 PyCon CA 辦在一個市中心的宴會廳
 
-![Hall way](/images/posts-image/2019-12-23-pycon-ca-2019/15770893363222.jpg)
+![Hall way](/images/post-images/2019-12-23-pycon-ca-2019/15770893363222.jpg)
 
 Keynote Speaker 的演講廳完全是大家可以邊吃飯邊聽議程的 XD
-![Keynote](/images/posts-image/2019-12-23-pycon-ca-2019/15770893540925.jpg)
+![Keynote](/images/post-images/2019-12-23-pycon-ca-2019/15770893540925.jpg)
 
 ## 議程
 提醒議程的方式很好玩
@@ -73,7 +73,7 @@ Keynote Speaker 的演講廳完全是大家可以邊吃飯邊聽議程的 XD
 [GitHub](https://github.com/pdmccormick/pyconca2019-fun-with-compilers)
 之前有人問我 Python 到底是編譯還是直譯
 這位講者給的答案是 Python 就只是個語言，要看用哪個 implementation 來跑
-![is-python-compiled-or-interpreted](/images/posts-image/2019-12-23-pycon-ca-2019/15770893777395.jpg)
+![is-python-compiled-or-interpreted](/images/post-images/2019-12-23-pycon-ca-2019/15770893777395.jpg)
 
 * **PySpark: avoiding common pitfalls and keeping your sanity** ([note](https://wei-lee.me/pycon-note/posts/pycon-ca-2019/2019/12/pyspark-avoiding-common-pitfalls-and-keeping-your-sanity/))
     * PySpark 跟 Python 語法上一些不同需要注意的地方
@@ -105,7 +105,7 @@ PyCon CA 當天來聽的人也算不少，我想應該還算成功吧
 
 [slide](https://speakerdeck.com/leew/python-table-manners-a-clean-style-at-pycon-ca-2019)
 
-![myself](/images/posts-image/2019-12-23-pycon-ca-2019/15770893864623.jpg)
+![myself](/images/post-images/2019-12-23-pycon-ca-2019/15770893864623.jpg)
 
 一個有趣的小插曲是
 我原本介紹了一套 Java Script 的工具 [commitizen](https://github.com/commitizen)
@@ -124,9 +124,9 @@ PyCon CA 前，我就把遇到的 Bug 都修完了
 在 PyCon CA 前，幾乎沒有人想填 [wiki](https://github.com/pyconca/2019-wiki)
 都是到 PyCon CA 開始後，甚至是 Sprint 開始後才慢慢有專案出現 XD
 
-![Broad](/images/posts-image/2019-12-23-pycon-ca-2019/15770894153368.jpg)
+![Broad](/images/post-images/2019-12-23-pycon-ca-2019/15770894153368.jpg)
 
-![Sprint](/images/posts-image/2019-12-23-pycon-ca-2019/15770894201423.jpg)
+![Sprint](/images/post-images/2019-12-23-pycon-ca-2019/15770894201423.jpg)
 
 原則上不供餐，鼓勵你和你的夥伴一起出去吃飯
 其實我覺得挺好的

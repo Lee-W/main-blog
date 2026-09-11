@@ -36,7 +36,7 @@ Lang: zh-tw
 但大多時候都會遇到魔族
 它們學習語言
 
-![frieren-demon-lie](/images/posts-image/2026/drowning/frieren-demon-lie.jpg)
+![frieren-demon-lie](/images/post-images/2026/drowning/frieren-demon-lie.jpg)
 /// caption
 ©「葬送のフリーレン」製作委員会｜出自 [葬送的芙莉蓮 [7]](https://ani.gamer.com.tw/animeVideo.php?sn=35447)
 ///

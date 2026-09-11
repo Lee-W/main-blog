@@ -166,7 +166,7 @@ flake8 在大多數狀況已經足夠
 花時間去修改成符合某些 pylint 過於嚴格的檢查，或設定 `.pylint`，對我來說並不值得
 而且 Guido 也是這麼說的 XD
 
-![because-guido-say-so](/images/posts-image/2020-02-22-python-table-manner-series/because-guido-say-so.png)
+![because-guido-say-so](/images/post-images/2020-02-22-python-table-manner-series/because-guido-say-so.png)
 
 ## 型別檢查 - mypy
 [mypy](http://mypy-lang.org/) 是 Python 做靜態型別檢查的工具
@@ -280,9 +280,9 @@ pipenv run black <package>
 上面紅色的部分是原本的程式碼，下面綠色是修正過的結果
 (p.s. 當時設定的長度是 119)
 
-![black-fix-1](/images/posts-image/2020-02-22-python-table-manner-series/black-fix-1.jpg)
+![black-fix-1](/images/post-images/2020-02-22-python-table-manner-series/black-fix-1.jpg)
 
-![black-fix-2](/images/posts-image/2020-02-22-python-table-manner-series/black-fix-2.jpg)
+![black-fix-2](/images/post-images/2020-02-22-python-table-manner-series/black-fix-2.jpg)
 
 如果只想要檢查程式碼是否符合 black 的風格
 而不要直接做修正，可以在指令後面加入 `--check` 參數

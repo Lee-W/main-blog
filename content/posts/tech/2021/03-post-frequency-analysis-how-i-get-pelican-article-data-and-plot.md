@@ -95,7 +95,7 @@ e.g.,
 最後就能做出像這樣的圖
 產生的會是可以互動的 HTML 檔案
 
-![newplot](/images/posts-image/2021-2020-post-frequency/newplot.png)
+![newplot](/images/post-images/2021-2020-post-frequency/newplot.png)
 
 ## 設計 pelican-stat
 在開始寫 pelican-stat 前，我有找到類似的工具 👉 [panorama](https://github.com/romainx/panorama)

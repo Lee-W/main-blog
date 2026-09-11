@@ -4,7 +4,7 @@ Date: 2026-04-01 23:59 +0800
 Category: Random Thoughts
 Tags: Coworking Space
 Slug: a13-curista-coffee
-Cover: /images/posts-image/2026/a13-CURISTA-COFFEE/curista-coffee.jpeg
+Cover: /images/post-images/2026/a13-CURISTA-COFFEE/curista-coffee.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -36,7 +36,7 @@ Lang: zh-tw
 如果客滿的話會限制用餐 2 小時，沒有客滿可以繼續待著
 整體來說，用電腦還算舒服
 
-![IMG_2546](/images/posts-image/2026/a13-CURISTA-COFFEE/curista-coffee.jpeg)
+![IMG_2546](/images/post-images/2026/a13-CURISTA-COFFEE/curista-coffee.jpeg)
 
 小杯的摩卡 140 元，蠻好喝的
 份量比想像中的還要足夠

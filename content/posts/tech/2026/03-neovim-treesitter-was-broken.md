@@ -3,7 +3,7 @@ Date: 2026-01-09 12:30 +0800
 Category: Tech
 Tags: NeoVim, Tool
 Slug: neovim-treesitter-was-broken
-Cover: /images/posts-image/2026/neovim-treesitter-was-broken/neovim-treesitter-was-broken.png
+Cover: /images/post-images/2026/neovim-treesitter-was-broken/neovim-treesitter-was-broken.png
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -16,7 +16,7 @@ Lang: zh-tw
 
 更新完之後就出現了這個訊息
 
-![neovim-treesitter-was-broken](/images/posts-image/2026/neovim-treesitter-was-broken/neovim-treesitter-was-broken.png)
+![neovim-treesitter-was-broken](/images/post-images/2026/neovim-treesitter-was-broken/neovim-treesitter-was-broken.png)
 
 ```console
 ...m/0.11.4/share/nvim/runtime/lua/vim/treesitter/.

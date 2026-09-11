@@ -25,11 +25,11 @@ A3 海報收納硬殼一度賣到缺貨
 但其實也許我們不需要硬殼
 只要一個 A3 的公文袋
 
-![poster-Portfolio](/images/posts-image/2026/ideal/poster-Portfolio.jpeg)
+![poster-Portfolio](/images/post-images/2026/ideal/poster-Portfolio.jpeg)
 
 再搭配一個 MyGO!!!!! 的托特包就好了
 
-![poster-tote-bag](/images/posts-image/2026/ideal/poster-tote-bag.jpeg)
+![poster-tote-bag](/images/post-images/2026/ideal/poster-tote-bag.jpeg)
 
 當初只是為了支持 MyGO!!!!! 劇場版在台灣的代理才順手買的
 沒想到意外地超級實用

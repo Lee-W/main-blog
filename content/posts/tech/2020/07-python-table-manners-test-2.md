@@ -271,7 +271,7 @@ pipenv run pytest --cov=report_generator --cov-report=term-missing test/
 
 從下面的結果可以看到哪些檔案的哪些部分沒有被測試到
 
-![test-coverage](/images/posts-image/2020-02-22-python-table-manner-series/test-coverage.jpg)
+![test-coverage](/images/post-images/2020-02-22-python-table-manner-series/test-coverage.jpg)
 
 如果想看精美的網頁版報告，可以試試看以下的指令
 報告會產生在專案資料夾下的 `htmlcov`

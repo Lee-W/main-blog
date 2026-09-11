@@ -4,7 +4,7 @@ Date: 2026-07-11 10:01 +0800
 Category: Random Thoughts
 Tags: JLPT, Japanese
 Slug: jlpt-n2
-Cover: /images/posts-image/2026/jlpt-n2/jlpt-n2-exam-venue.jpg
+Cover: /images/post-images/2026/jlpt-n2/jlpt-n2-exam-venue.jpg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -16,7 +16,7 @@ Lang: zh-tw
 早上考試真的是頗累
 尤其現在不住在台北市，光是進城就是一段路
 
-![N2 exam](/images/posts-image/2026/jlpt-n2/jlpt-n2-exam-venue.jpg)
+![N2 exam](/images/post-images/2026/jlpt-n2/jlpt-n2-exam-venue.jpg)
 
 N3 有三節考試
 N2 只剩下讀跟聽，兩節

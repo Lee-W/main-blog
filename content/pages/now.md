@@ -55,7 +55,7 @@ Lang: zh-tw
 * [渡瀬 結月](https://x.com/Watase_Yuzuki) → 看過睦葉炫風現場，就被圈粉了
 * [羊宮妃那](https://x.com/Hina_Youmiya) → 羊黑一拳打死 🥊
 
-![punch](/images/posts-image/2026/now/punch.jpeg)
+![punch](/images/post-images/2026/now/punch.jpeg)
 
 * [Aimer](https://x.com/Aimer_and_staff) → 繳了最久的 FC 税
 * [江松霖](https://www.youtube.com/@sungsungvideo) → 小松的歌要聽一輩子

@@ -4,7 +4,7 @@ Date: 2026-06-22 20:10 +0800
 Category: Random Thoughts
 Tags: Coworking Space, 娃： 小睦, 娃： 企鵝
 Slug: daychill-specialty-coffee
-Cover: /images/posts-image/2026/daychill-specialty-coffee/IMG_3681.jpeg
+Cover: /images/post-images/2026/daychill-specialty-coffee/IMG_3681.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -32,19 +32,19 @@ Lang: zh-tw
 但整體氛圍相當舒服，大致上也是很安靜
 讓人心很容易靜下來
 
-![工作空間](/images/posts-image/2026/daychill-specialty-coffee/IMG_3673.jpeg)
+![工作空間](/images/post-images/2026/daychill-specialty-coffee/IMG_3673.jpeg)
 
 它的「Daychill 特調 巧克力 阿嬤」真是喝到嚇到
 也太好喝了
 苦得恰到好處，巧克力的味道也很明確
 
-![巧克力阿嬤](/images/posts-image/2026/daychill-specialty-coffee/IMG_3675.jpeg)
+![巧克力阿嬤](/images/post-images/2026/daychill-specialty-coffee/IMG_3675.jpeg)
 
 實在太好喝了，決定再加點個東西配
 畢竟我帶著提拉米蘇小睦出門就點了份提拉米蘇
 味道也是很不錯
 
-![提拉米蘇](/images/posts-image/2026/daychill-specialty-coffee/IMG_3681.jpeg)
+![提拉米蘇](/images/post-images/2026/daychill-specialty-coffee/IMG_3681.jpeg)
 
 下次應該還會想帶著電腦再來工作，也許可以試試「Daychill 特調 巧克力 女孩」
 

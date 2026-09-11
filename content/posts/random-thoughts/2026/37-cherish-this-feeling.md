@@ -4,7 +4,7 @@ Date: 2026-07-07 23:26 +0800
 Category: Random Thoughts
 Tags: Anime, Lifestyle
 Slug: cherish-this-feeling
-Cover: /images/posts-image/2026/cherish-this-feeling/goods-haul.jpg
+Cover: /images/post-images/2026/cherish-this-feeling/goods-haul.jpg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -30,12 +30,12 @@ Lang: zh-tw
 
 不過說了這麼多，我其實只是想說我最後買了這些
 
-![what i bought](/images/posts-image/2026/cherish-this-feeling/goods-haul.jpg)
+![what i bought](/images/post-images/2026/cherish-this-feeling/goods-haul.jpg)
 
 一回到家就把鍵帽換上了
 （喜歡的話，這是[Deity Mark 祇印工作室](https://lit.link/en/deitymark)做的）
 
-![keyboard](/images/posts-image/2026/cherish-this-feeling/keyboard-keycaps.jpg)
+![keyboard](/images/post-images/2026/cherish-this-feeling/keyboard-keycaps.jpg)
 
 不過上面那些真的是我猶豫要不要買的時候真實在想的
 不過，上面那些真的都是我猶豫要不要買的時候，腦袋裡真正想的事

@@ -37,7 +37,7 @@ Lang: zh-tw
 
 準備這場分享比較挑戰的大概是這個吧
 
-![30-meme](/images/posts-image/2025-airflow-3-0-the-first-glance/30-meme.jpg)
+![30-meme](/images/post-images/2025-airflow-3-0-the-first-glance/30-meme.jpg)
 
 雖然很麻煩，但又覺得不能在這裡退縮（這種事可能還是退縮一下比較好...）
 不過最後我還是達成了！

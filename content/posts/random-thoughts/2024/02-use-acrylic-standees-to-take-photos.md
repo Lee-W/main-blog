@@ -5,7 +5,7 @@ Modified: 2024-10-23 23:50 +0800
 Category: Random Thoughts
 Tags: Anime
 Slug: use-acrylic-standees-to-take-photos
-Cover: /images/posts-image/2024-use-acrylic-standees-to-take-photos/IMG_1743.jpeg
+Cover: /images/post-images/2024-use-acrylic-standees-to-take-photos/IMG_1743.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -28,7 +28,7 @@ PyCon APAC 2023 的時候， KK 就對我使用立牌拍照的行為
 只要他們到達了這個地方，出現在照片中
 就是我來到這裡，代我記錄所見所聞
 
-![IMG_1743](/images/posts-image/2024-use-acrylic-standees-to-take-photos/IMG_1743.jpeg)
+![IMG_1743](/images/post-images/2024-use-acrylic-standees-to-take-photos/IMG_1743.jpeg)
 
 對於一個喜歡獨旅且並沒有想太常讓自己出現在相片的人來說
 這實在是跨時代的發明
@@ -53,21 +53,21 @@ but, I'm so offended! 😡
 也就是我推的孩子 / 推しの子 中的我推
 但不是這種我推
 
-![push](/images/posts-image/2024-use-acrylic-standees-to-take-photos/push.jpg)
+![push](/images/post-images/2024-use-acrylic-standees-to-take-photos/push.jpg)
 
 我的 pre-anime/pre-music era 對於推し這個概念也不甚理解
 隨著時間的推移才發現「啊，原來人始終是需要信仰的啊」
 這也是為什麼進擊的巨人中最觸動我的話是肯尼說的
 
-![aot](/images/posts-image/2024-use-acrylic-standees-to-take-photos/aot.png)
+![aot](/images/post-images/2024-use-acrylic-standees-to-take-photos/aot.png)
 
 玩了 MyGO 二選一，我最後選了
 
-![mygo-long-life](/images/posts-image/2024-use-acrylic-standees-to-take-photos/mygo-long-life.jpeg)
+![mygo-long-life](/images/post-images/2024-use-acrylic-standees-to-take-photos/mygo-long-life.jpeg)
 
 在江戶前精靈中，我大受這句話所觸動
 
-![elf](/images/posts-image/2024-use-acrylic-standees-to-take-photos/elf.png)
+![elf](/images/post-images/2024-use-acrylic-standees-to-take-photos/elf.png)
 
 雖然我並沒有因為這樣考試都考 100 分
 但我覺得我的人生過得更快樂了

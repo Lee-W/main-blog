@@ -4,7 +4,7 @@ Date: 2025-05-01 14:55 +0800
 Category: Random Thoughts
 Tags: Exercise, Running
 Slug: first-9-km-run
-Cover: /images/posts-image/2025-first-9-km-run/mygo-bottle.jpeg
+Cover: /images/post-images/2025-first-9-km-run/mygo-bottle.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -31,7 +31,7 @@ Lang: zh-tw
 雖然跑得很慢，勇哥就算讓我 20 圈大概還是能超過我
 但我還是一步都沒停下來的把 9 公里跑完了！
 
-![9km](/images/posts-image/2025-first-9-km-run/9km.jpeg)
+![9km](/images/post-images/2025-first-9-km-run/9km.jpeg)
 
 過程中支撐著我的就是上週六去聽的 MyGO!!!!!, Ave Mujica 對邦歌單！
 
@@ -64,7 +64,7 @@ Lang: zh-tw
 結束後，還能用上週買的 MyGO!!!!! 杯杯喝高蛋白
 從跑步的開始到結束都在 GO
 
-![mygo-bottle](/images/posts-image/2025-first-9-km-run/mygo-bottle.jpeg)
+![mygo-bottle](/images/post-images/2025-first-9-km-run/mygo-bottle.jpeg)
 
 啊，聽這個清單的缺點，就是邊跑會想邊打 call
 很不方便

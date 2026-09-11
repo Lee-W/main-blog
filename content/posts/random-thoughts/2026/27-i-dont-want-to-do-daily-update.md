@@ -38,7 +38,7 @@ Lang: zh-tw
 
 節錄一下，此刻的寫作日曆長這樣
 
-![posting-calendar](/images/posts-image/2026/i-dont-want-to-do-daily-update/posting-calendar.jpg)
+![posting-calendar](/images/post-images/2026/i-dont-want-to-do-daily-update/posting-calendar.jpg)
 
 目前是連續六週
 

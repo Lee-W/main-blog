@@ -5,7 +5,7 @@ Category: Tech
 Tags: Python, Airflow, Airflow 2.10
 Slug: serialize-start-trigger-args
 Series: What If...? Running Airflow Tasks without the workers
-Cover: /images/posts-image/2024-serialize-start-trigger-args/han.jpg
+Cover: /images/post-images/2024-serialize-start-trigger-args/han.jpg
 Authors: Wei Lee
 Lang: en
 
@@ -82,7 +82,7 @@ class StartTriggerArgs:
 and wish Airflow would magically handle everything for me.
 
 But,  ...
-![That's not how airflow serialization works](/images/posts-image/2024-serialize-start-trigger-args/han.jpg)
+![That's not how airflow serialization works](/images/post-images/2024-serialize-start-trigger-args/han.jpg)
 
 ## Why do we need serialization here?
 

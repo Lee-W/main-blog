@@ -3,7 +3,7 @@ Date: 2025-08-02 22:20 +0800
 Category: Tech
 Tags: EuroPython, Development Sprint, Open Source, Airflow
 Slug: europython-2025-airflow-development-sprint
-Cover: /images/posts-image/2025-europython-2025-airflow-development-sprint/venue.jpeg
+Cover: /images/post-images/2025-europython-2025-airflow-development-sprint/venue.jpeg
 Authors: Wei Lee
 Lang: en
 
@@ -50,8 +50,8 @@ After completing the setup, I dedicated most of my time to triaging and checking
 
 It's not as productive as I would have expected this time. Nonetheless, helping new friends take their first steps toward open source remains a meaningful experience.
 
-![IMG_6993](/images/posts-image/2025-europython-2025-airflow-development-sprint/venue.jpeg)
+![IMG_6993](/images/post-images/2025-europython-2025-airflow-development-sprint/venue.jpeg)
 
 Plus, the food was really good
 
-![IMG_7011](/images/posts-image/2025-europython-2025-airflow-development-sprint/airflow.jpeg)
+![IMG_7011](/images/post-images/2025-europython-2025-airflow-development-sprint/airflow.jpeg)

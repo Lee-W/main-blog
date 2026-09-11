@@ -17,7 +17,7 @@ Lang: zh-tw
 這次不知道是因為線上，還是只是我太沒梗了嗚嗚嗚
 內容已經不夠充實了，娛樂效果還不足 🥲
 
-![star](/images/posts-image/2024-intro-to-airflow-from-zero-to-hero/star.jpg)
+![star](/images/post-images/2024-intro-to-airflow-from-zero-to-hero/star.jpg)
 
 這次的分享主要介紹了 Airflow 的 component
 透過 WebUI 觸發 DAG 後， worker, scheduler, metadata database 是怎麼互動？
@@ -44,7 +44,7 @@ Dataset 目前還沒有辦法自動偵測 data 是否改變
 討論了不少職涯、公司的商業模式、技術問題
 雖然我離公司很商業的部分有點距離，很多問題都只能窩不知道
 
-![i-don't-know](/images/posts-image/2024-intro-to-airflow-from-zero-to-hero/i-don't-know.jpg)
+![i-don't-know](/images/post-images/2024-intro-to-airflow-from-zero-to-hero/i-don't-know.jpg)
 
 簡單記錄一下這次的分享
 不過最重要還是要宣傳**暫定 3/16 Sat 10:00 a.m. 拍抗女神在源來適你的分享**

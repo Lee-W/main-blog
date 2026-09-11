@@ -4,7 +4,7 @@ Date: 2026-06-18 19:14 +0800
 Category: Random Thoughts
 Tags: BlogBlog 同樂會, Music
 Slug: music-and-memory
-Cover: /images/posts-image/2026/music-and-memory/song-ep-cover.jpeg
+Cover: /images/post-images/2026/music-and-memory/song-ep-cover.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -20,7 +20,7 @@ Lang: zh-tw
 這句話似乎符合上一期的 BlogBlog 同樂會
 但當時實在沒有體力把這張講義翻出來 🫩
 
-![music-is-essential-to-life](/images/posts-image/2026/music-and-memory/music-is-essential-to-life.jpeg)
+![music-is-essential-to-life](/images/post-images/2026/music-and-memory/music-is-essential-to-life.jpeg)
 
 這是大二時去吉他社學烏克麗麗，沙沙學長發給大家最後的講義
 直到現在還是能想起一點當時木製舞台跟一活的事
@@ -46,7 +46,7 @@ Lang: zh-tw
 ## 第二樂章
 這是 [PyCon TW 2026](https://tw.pycon.org/2026/) 慶功宴[Sebastián](https://tiangolo.com/) 幫我簽名的烏克麗麗
 
-![seb-signature](/images/posts-image/2026/music-and-memory/seb-signature.jpeg)
+![seb-signature](/images/post-images/2026/music-and-memory/seb-signature.jpeg)
 
 原本這段只有這句話就會完結了，但寫到這就多喚醒了一些記憶
 
@@ -78,13 +78,13 @@ Seb 說如果大家都彈，那他也能表演一下
 
 我買了張單曲給這期同樂會了 [^2]
 
-![song-ep](/images/posts-image/2026/music-and-memory/song-ep.png)
+![song-ep](/images/post-images/2026/music-and-memory/song-ep.png)
 
 而這張單曲是江松霖的 我不害怕 EP
 
-![song-ep-cover](/images/posts-image/2026/music-and-memory/song-ep-cover.jpeg)
+![song-ep-cover](/images/post-images/2026/music-and-memory/song-ep-cover.jpeg)
 
-![sung-ep-inside](/images/posts-image/2026/music-and-memory/sung-ep-inside.jpeg)
+![sung-ep-inside](/images/post-images/2026/music-and-memory/sung-ep-inside.jpeg)
 
 被我買下這張後，庫存就只剩下一張了
 
@@ -96,17 +96,17 @@ Seb 說如果大家都彈，那他也能表演一下
 那一天，我遇到江松霖的音樂
 也許就如同歌詞所說，是被安排的最好的路
 
-![sung](/images/posts-image/2026/music-and-memory/sung.JPEG)
+![sung](/images/post-images/2026/music-and-memory/sung.JPEG)
 
 往後的數年間，我聽了 [17 場]({filename}/posts/random-thoughts/2025/04-support-your-oshi-while-you-can.md)小松的現場表演
 每次我都會留到最後，就只是想謝謝她的音樂帶給我力量
 （我甚至有參加到跟小松一起唱卡啦 OK 的活動哦！）
 
-![IMG_6177](/images/posts-image/2025-support-your-oshi-while-you-can/IMG_6177.jpeg)
+![IMG_6177](/images/post-images/2025-support-your-oshi-while-you-can/IMG_6177.jpeg)
 
 當下的我的感受也許就像是如此吧
 
-![P1280343](/images/posts-image/2025-support-your-oshi-while-you-can/P1280343.JPG)
+![P1280343](/images/post-images/2025-support-your-oshi-while-you-can/P1280343.JPG)
 /// caption
 《地。-關於地球的運動-》展
 ///
@@ -115,12 +115,12 @@ Seb 說如果大家都彈，那他也能表演一下
 
 那一刻的感動[^3]，給了我好多的力量
 
-![chi-touched](/images/posts-image/2026/music-and-memory/touched.png)
+![chi-touched](/images/post-images/2026/music-and-memory/touched.png)
 /// caption
 © 魚豊・小学館｜出自 [地。—關於地球的運動—(01)](https://www.kobo.com/tw/zh/ebook/Pbze620HRj-zmo9o9aiV7w)
 ///
 
-![ai](/images/posts-image/2026/music-and-memory/ai.png)
+![ai](/images/post-images/2026/music-and-memory/ai.png)
 /// caption
 © 魚豊・小学館｜出自 [地。—關於地球的運動—(01)](https://www.kobo.com/tw/zh/ebook/Pbze620HRj-zmo9o9aiV7w)
 ///
@@ -131,18 +131,18 @@ Seb 說如果大家都彈，那他也能表演一下
 也許是小松那彷彿能接住一切的親和感
 [也許是](https://www.youtube.com/watch?v=CN9K2v7_jk8&list=RDCN9K2v7_jk8&start_radio=1)小松一首我很喜歡的歌
 
-![maybe-so](/images/posts-image/2026/music-and-memory/maybe-so.jpeg)
+![maybe-so](/images/post-images/2026/music-and-memory/maybe-so.jpeg)
 
 雖然小松已經很久都沒在台前表演過了
 但如同曾帶給我們力量的小松希望我們一切都好一樣
 
-![hope-everything-went-well](/images/posts-image/2026/music-and-memory/hope-everything-went-well.jpeg)
+![hope-everything-went-well](/images/post-images/2026/music-and-memory/hope-everything-went-well.jpeg)
 
 我也希望小松一切都好
 希望我們都可以期待明天是美好的事
 也可以一起繼續相信
 
-![better](/images/posts-image/2025-support-your-oshi-while-you-can/better.jpeg)
+![better](/images/post-images/2025-support-your-oshi-while-you-can/better.jpeg)
 
 ---
 

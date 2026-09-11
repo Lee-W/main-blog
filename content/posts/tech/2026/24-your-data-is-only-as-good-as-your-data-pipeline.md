@@ -5,7 +5,7 @@ Modified: 2026-06-20 16:00 +0800
 Category: Tech
 Tags: Computex, Airflow
 Slug: open-source-team-taiwan
-Cover: /images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/short-talk.jpeg
+Cover: /images/post-images/2026/your-data-is-only-as-good-as-your-data-pipeline/short-talk.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -16,14 +16,14 @@ Lang: zh-tw
 
 先上娃，這就是我（幾乎）所有的邦娃了
 
-![all my bangdream plushies](/images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/all-my-bangdream-plushies.jpeg)
+![all my bangdream plushies](/images/post-images/2026/your-data-is-only-as-good-as-your-data-pipeline/all-my-bangdream-plushies.jpeg)
 
 雖然行政院長沒走到這麼深入，但數發部長的某一張照片可能有拍到她們！
 
 ## Open Source Team Taiwan
 這是我第一次進入 Computex，沒想到第一次參展就是攤位方（？！）
 
-![entry](/images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/entry.jpeg)
+![entry](/images/post-images/2026/your-data-is-only-as-good-as-your-data-pipeline/entry.jpeg)
 
 畢竟是硬體的場子，以前都沒有來過
 這次靠著[源來適你](https://github.com/opensource4you/readme)來蹭一下，也稍微幫點忙
@@ -31,7 +31,7 @@ Lang: zh-tw
 除了幫忙擺設娃娃外，我還負責顧攤並給了一個短講
 
 攤位大概長這樣
-![booth](/images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/booth.jpeg)
+![booth](/images/post-images/2026/your-data-is-only-as-good-as-your-data-pipeline/booth.jpeg)
 
 每次顧攤需要用到英文，就會覺得自己英文還是不夠用 😢
 不過這邊是~~沒人在乎~~的 2 館 4 樓 [^2]，比較少人來
@@ -41,7 +41,7 @@ Lang: zh-tw
 不過能實體見到社群夥伴還是蠻好的
 尤其是聊到料理的部分，**巴狄尼絲莊園頂級初榨橄欖油**是好油，記住了
 
-![oil](/images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/oil.jpeg)
+![oil](/images/post-images/2026/your-data-is-only-as-good-as-your-data-pipeline/oil.jpeg)
 /// caption
 後來社群夥伴帶了一瓶送我，真的很讚
 ///
@@ -49,17 +49,17 @@ Lang: zh-tw
 開源區本身設計蠻不錯的
 進入整個展區後走幾步就會看到 Open Source 的大字
 
-![open source team taiwan](/images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/open-source-team-taiwan.jpeg)
+![open source team taiwan](/images/post-images/2026/your-data-is-only-as-good-as-your-data-pipeline/open-source-team-taiwan.jpeg)
 
 經典的 hello world
 
-![open source team taiwan - hello world](/images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/open-source-team-taiwan-hello-world.jpeg)
+![open source team taiwan - hello world](/images/post-images/2026/your-data-is-only-as-good-as-your-data-pipeline/open-source-team-taiwan-hello-world.jpeg)
 
-![open contribute lead](/images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/open-contribute-lead.jpeg)
+![open contribute lead](/images/post-images/2026/your-data-is-only-as-good-as-your-data-pipeline/open-contribute-lead.jpeg)
 
 而且我的佈置還是有吸引到一些人來，甚至有人帶來愛爽來跟我的娃娃們拍照呢！
 
-![anon-soyo](/images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/anon-soyo.jpeg)
+![anon-soyo](/images/post-images/2026/your-data-is-only-as-good-as-your-data-pipeline/anon-soyo.jpeg)
 
 除了我們社群的短講外，其他社群也有幾場短講
 印象最深刻的是黃亮勳的那場
@@ -67,11 +67,11 @@ Lang: zh-tw
 這次聽完他分享，還是有點覺得，我真的配得到這個獎嗎（掩面
 其他得獎者都對台灣好有想法好有貢獻
 
-![Twinkle AI](/images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/twinkle-ai.jpeg)
+![Twinkle AI](/images/post-images/2026/your-data-is-only-as-good-as-your-data-pipeline/twinkle-ai.jpeg)
 
 ## Your AI Is Only As Good As Your Pipeline
 
-![short talk](/images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/short-talk.jpeg)
+![short talk](/images/post-images/2026/your-data-is-only-as-good-as-your-data-pipeline/short-talk.jpeg)
 
 短講其實是我自找的
 原本嘉平在問的時候沒人想講，但我又希望社群跟開源可以有多點舞台
@@ -79,7 +79,7 @@ Lang: zh-tw
 還拉了哲佑一起下水，感謝他無怨無悔的幫忙
 就算他很怨很悔還是感謝他啦 🙏
 
-![累，但為了社群努力了](/images/posts-image/2026/your-data-is-only-as-good-as-your-data-pipeline/slack-short-talk-recruit.jpg)
+![累，但為了社群努力了](/images/post-images/2026/your-data-is-only-as-good-as-your-data-pipeline/slack-short-talk-recruit.jpg)
 
 累啦，哪次不累
 但就為了社群辛苦一下啊

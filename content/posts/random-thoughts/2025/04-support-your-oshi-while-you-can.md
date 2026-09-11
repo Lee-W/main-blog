@@ -4,7 +4,7 @@ Date: 2025-05-03 12:55 +0800
 Category: Random Thoughts
 Tags: Music
 Slug: support-your-oshi-while-you-can
-Cover: /images/posts-image/2025-support-your-oshi-while-you-can/better.jpeg
+Cover: /images/post-images/2025-support-your-oshi-while-you-can/better.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -28,11 +28,11 @@ Lang: zh-tw
 
 第一次參加小松的現場演出是替代役剛退役
 
-![P1010330](/images/posts-image/2025-support-your-oshi-while-you-can/P1010330.jpeg)
+![P1010330](/images/post-images/2025-support-your-oshi-while-you-can/P1010330.jpeg)
 
 就像是《地。-關於地球的運動-》展的副標題說的那樣
 
-![P1280343](/images/posts-image/2025-support-your-oshi-while-you-can/P1280343.JPG)
+![P1280343](/images/post-images/2025-support-your-oshi-while-you-can/P1280343.JPG)
 
 > 見つけた時、世界が変わる
 
@@ -66,7 +66,7 @@ Lang: zh-tw
 
 時至今日，我的手機桌布依然是 2017 巡迴發售單曲的封面
 
-![better](/images/posts-image/2025-support-your-oshi-while-you-can/better.jpeg)
+![better](/images/post-images/2025-support-your-oshi-while-you-can/better.jpeg)
 
 倒是想到買這場巡迴的趣事
 當初只要能在路上遇到她跟她買那張巡迴票，就可以得到她手寫的信
@@ -80,7 +80,7 @@ Lang: zh-tw
 
 展示一下我在 2016 開始推的各種周邊們
 
-![IMG_6177](/images/posts-image/2025-support-your-oshi-while-you-can/IMG_6177.jpeg)
+![IMG_6177](/images/post-images/2025-support-your-oshi-while-you-can/IMG_6177.jpeg)
 
 至於為什麼沒有去收之前的單曲跟小物
 這時候就要套一句蒼月的話
@@ -106,7 +106,7 @@ Lang: zh-tw
 雖然我在遙遠到連會後問卷 QR code 都掃不到的 7 樓
 但整場演出還是相當的享受
 
-![P1280568](/images/posts-image/2025-support-your-oshi-while-you-can/P1280568.JPG)
+![P1280568](/images/post-images/2025-support-your-oshi-while-you-can/P1280568.JPG)
 
 雖然不知道還能 GO 多久
 但趁還能 GO 的時候就盡量 GO

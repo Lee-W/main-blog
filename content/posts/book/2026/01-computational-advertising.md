@@ -201,7 +201,7 @@ Status: draft
         * 使用者輸入的查詢（query）透過與關鍵詞匹配，來確定是否可以觸發該條廣告
     * 結算方式：  CPC
     * 曝光區一般分為北、東、南3個部分，其中南區較為少用
-        * ![ad-loc](/images/posts-image/2026/computational-advertising/ad-loc.jpg)
+        * ![ad-loc](/images/post-images/2026/computational-advertising/ad-loc.jpg)
 * 產品策略
     * 查詢擴充： 為廣告主自動擴展相關的查詢詞，擴大匹配流量
         * 精確匹配

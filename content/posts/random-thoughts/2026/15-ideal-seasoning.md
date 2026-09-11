@@ -4,7 +4,7 @@ Category: Random Thoughts
 Tags: BlogBlog 同樂會, Lifestyle
 Slug: ideal-seasoning
 Series: 理想的日常 (2026)
-Cover: /images/posts-image/2026/ideal/seasoning.jpeg
+Cover: /images/post-images/2026/ideal/seasoning.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -18,7 +18,7 @@ Lang: zh-tw
 
 剛好最近整理搬家的東西整理到這個
 
-![seasoning](/images/posts-image/2026/ideal/seasoning.jpeg)
+![seasoning](/images/post-images/2026/ideal/seasoning.jpeg)
 
 小磨坊的義大利香料！！！
 最初是我還住在麥帥大橋的時候，煮雞腿肉用的調味料
@@ -28,4 +28,4 @@ Lang: zh-tw
 
 直到搬家的最後一次煮飯，我還是用上了現代最強調味料 - 義大利香料！
 
-![last-meal](/images/posts-image/2026/ideal/last-meal.jpeg)
+![last-meal](/images/post-images/2026/ideal/last-meal.jpeg)

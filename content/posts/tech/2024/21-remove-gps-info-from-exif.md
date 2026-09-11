@@ -31,7 +31,7 @@ Stefanie 也寫了 [Mind Your Image Metadata][Mind Your Image Metadata] 解釋�
 我對這件事一直都稍微有些注意
 在匯出照片放上部落格的時候，都會確定我沒有選到 `Location Information`
 
-![export-location](/images/posts-image/2024-remove-gps-info-from-exif/export-location.jpg)
+![export-location](/images/post-images/2024-remove-gps-info-from-exif/export-location.jpg)
 
 我一直有在想應該要寫個工具自動確認並清除
 如果有 pre-commit hook 就更好了
@@ -128,7 +128,7 @@ def popitem(self):
 當然邊緣人如我也是自帶這種消除存在感的能力
 但我沒有要參加聖杯戰爭，所以也沒什麼用
 
-![Assassin](/images/posts-image/2024-remove-gps-info-from-exif/Assassin.jpeg)
+![Assassin](/images/post-images/2024-remove-gps-info-from-exif/Assassin.jpeg)
 
 不過透過這篇文章學到如何把照片中的 GPS 資訊刪除
 避免太常被奇怪的人麥當勞歡樂送，就能得到氣息遮斷 B 的證書哦（並沒有

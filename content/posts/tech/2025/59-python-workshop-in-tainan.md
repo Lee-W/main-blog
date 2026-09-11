@@ -4,7 +4,7 @@ Date: 2025-12-03 23:05 +0800
 Category: Tech
 Tags: Airflow, Development Sprint
 Slug: some-random-guy-talk-about-airflow
-Cover: /images/posts-image/2025-python-workshop-in-tainan/seigaku.jpeg
+Cover: /images/post-images/2025-python-workshop-in-tainan/seigaku.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -65,7 +65,7 @@ Lang: zh-tw
 
 偷偷辦活動還被發現（笑
 
-![message](/images/posts-image/2025-python-workshop-in-tainan/message.jpg)
+![message](/images/post-images/2025-python-workshop-in-tainan/message.jpg)
 
 但我可是有認真在工作的！
 我基本上只是等看看有沒有貢獻者有問題，沒有就繼續做我的事
@@ -89,7 +89,7 @@ Lang: zh-tw
 [性格せいかく](https://www.instagram.com/tainan_singlebrunch/)的拉花真的很棒，食物也很好吃
 
 看啊，燈笑得多開心
-![seigaku](/images/posts-image/2025-python-workshop-in-tainan/seigaku.jpeg)
+![seigaku](/images/post-images/2025-python-workshop-in-tainan/seigaku.jpeg)
 而且，獨 GOGO ，不如眾 GOGO
 照片中右邊的小扭蛋，是這次坐旁邊的客人的
 一開始還想說我放這麼多娃娃是不是太怪了
@@ -104,6 +104,6 @@ Lang: zh-tw
 除了咖啡好喝外，他的食物也超好吃
 我的天啊，那個香蒜醬，真的是太香了
 
-![11](/images/posts-image/2025-python-workshop-in-tainan/11.jpeg)
+![11](/images/post-images/2025-python-workshop-in-tainan/11.jpeg)
 他有跟我說滿一千也可以免運幫我寄咖啡來北部
 希望我都寫下來了，這次喝完要記得可以跟他們訂

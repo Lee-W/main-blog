@@ -13,7 +13,7 @@ Lang: zh-tw
 
 <!--more-->
 
-![github-contributor-ranking](/images/posts-image/2026/airflow-16-to-15/github-contributor-ranking.jpg)
+![github-contributor-ranking](/images/post-images/2026/airflow-16-to-15/github-contributor-ranking.jpg)
 
 單就 GitHub 上的貢獻數，其實早就不是衡量我對 Airflow 社群投入程度的指標了
 
@@ -30,20 +30,20 @@ Lang: zh-tw
 像是上週在[【DIGITIMES 2026 GenAI技術論壇】](https://www.digitimes.com.tw/seminar/DForum_20260717/)分享 Airflow 在這個 AI 時代的角色跟可能的應用
 還有最重要的，放上我拿著燈的形象照，讓現場的大家都無法無視燈！
 
-![forum](/images/posts-image/2026/airflow-16-to-15/forum.jpeg)
+![forum](/images/post-images/2026/airflow-16-to-15/forum.jpeg)
 
 不過那天我是帶小睦輕裝出門，沒有帶小燈
 
-![mortis](/images/posts-image/2026/airflow-16-to-15/mortis.jpeg)
+![mortis](/images/post-images/2026/airflow-16-to-15/mortis.jpeg)
 
 也跟台灣的 Airflow 貢獻者們（還有源來適你的社群夥伴）線下交流
 
-![taiwan-airflow-contributors](/images/posts-image/2026/airflow-16-to-15/taiwan-airflow-contributors.jpg)
+![taiwan-airflow-contributors](/images/post-images/2026/airflow-16-to-15/taiwan-airflow-contributors.jpg)
 /// caption
 這張 Henry 閉眼了
 ///
 
-![taiwan-airflow-contributors-2](/images/posts-image/2026/airflow-16-to-15/taiwan-airflow-contributors-2.jpg)
+![taiwan-airflow-contributors-2](/images/post-images/2026/airflow-16-to-15/taiwan-airflow-contributors-2.jpg)
 /// caption
 但這張很多人都不知道在看什麼
 ///

@@ -21,7 +21,7 @@ Lang: zh-tw
 發了一篇推薦
 稍微給了我一點想要重新整理的動力
 
-![share](/images/posts-image/2024-python-table-manners/share.png)
+![share](/images/post-images/2024-python-table-manners/share.png)
 
 另外就是發現 cookiecutter 在我沒注意的期間也加了不少酷酷的功能
 看到新功能就想玩一下

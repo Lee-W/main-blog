@@ -26,14 +26,14 @@ Lang: zh-tw
 就是動畫第 11 集
 鼬瓏打算透過這段程式碼關掉地球子星
 
-![Python Code](/images/posts-image/2025-stop-it-dont-use-python-like-this/python-code.jpg)
+![Python Code](/images/post-images/2025-stop-it-dont-use-python-like-this/python-code.jpg)
 
 為了跟上 AI 的時代，我也跟隨潮流問了一下 ChatGPT 確認這是哪個程式語言
 果然是我稍微懂一點點，但不太多的 Python
 既然是 ChatGPT 說的，那肯定不會錯吧
 你不會騙我吧， ChatGPT，現代人最相信你了
 
-![ChatGPT](/images/posts-image/2025-stop-it-dont-use-python-like-this/chatgpt.jpg)
+![ChatGPT](/images/post-images/2025-stop-it-dont-use-python-like-this/chatgpt.jpg)
 
 ## 程式碼本體
 
@@ -84,7 +84,7 @@ def delete_file(program_name):
 4. 定義 `delete_file` 函式
     1. 印出刪除檔案的訊息
 
-![can't delete](/images/posts-image/2025-stop-it-dont-use-python-like-this/cannot-delete.jpg)
+![can't delete](/images/post-images/2025-stop-it-dont-use-python-like-this/cannot-delete.jpg)
 
 > 丟臉死了，根本不敢說出去
 > 不管下了幾次停止命令，都沒有反應

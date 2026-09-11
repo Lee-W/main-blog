@@ -14,11 +14,11 @@ Lang: zh-tw
 這是各個 powerline 的預覽圖
 
 1. vim  
-  ![1_vim](/images/posts-image/2014-07-30-powerline-on-zsh-vim-tmux/VTM4866.png)
+  ![1_vim](/images/post-images/2014-07-30-powerline-on-zsh-vim-tmux/VTM4866.png)
 2. tmux  
-  ![2_tmux](/images/posts-image/2014-07-30-powerline-on-zsh-vim-tmux/LLJ9xjk.png)
+  ![2_tmux](/images/post-images/2014-07-30-powerline-on-zsh-vim-tmux/LLJ9xjk.png)
 3. zsh  
-  ![3_zsh](/images/posts-image/2014-07-30-powerline-on-zsh-vim-tmux/tOvzhK3.png)
+  ![3_zsh](/images/post-images/2014-07-30-powerline-on-zsh-vim-tmux/tOvzhK3.png)
 
 ## powerline 字體
 

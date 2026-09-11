@@ -4,10 +4,10 @@ Date: 2025-05-30 16:35 +0800
 Category: Tech
 Tags: 源來適你, Airflow
 Slug: airflow-multilingual
-Cover: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
+Cover: /images/post-images/2025-airflow-multilingual/andor-poster.jpeg
 Authors: Wei Lee
 Lang: zh-tw
-Image: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
+Image: /images/post-images/2025-airflow-multilingual/andor-poster.jpeg
 
 > What is my sacrifice?
 >
@@ -43,7 +43,7 @@ Image: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
 ## 很久很久以前（其實也就不到一個月前）
 某天在頻道中就出現了這篇酷酷的訊息
 
-![start](/images/posts-image/2025-airflow-multilingual/start.jpg)
+![start](/images/post-images/2025-airflow-multilingual/start.jpg)
 
 但[#50626][airflow-pr-50626]主要是前端程式碼的改動
 我能提供的幫助比日本原裝進口的壓縮機還稀少
@@ -54,7 +54,7 @@ Image: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
 不過沒想到這麼快樂的地方，竟然有人給 👎
 壞，真的太壞了
 
-![meme-speaks-louder](/images/posts-image/2025-airflow-multilingual/meme-speaks-louder.png)
+![meme-speaks-louder](/images/post-images/2025-airflow-multilingual/meme-speaks-louder.png)
 
 我很喜歡這句
 
@@ -62,7 +62,7 @@ Image: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
 
 也許我應該把它寫進，已經很~~荒唐~~歡樂的頻道簡介中
 
-![channel-intro](/images/posts-image/2025-airflow-multilingual/channel-intro.jpg)
+![channel-intro](/images/post-images/2025-airflow-multilingual/channel-intro.jpg)
 
 翻了一下紀錄，[RoyLee1224] 是上個月才加入 Airflow 貢獻的新朋友
 [Feature/implement i18n for Dashboard and SideBar #50626][airflow-pr-50626] 是他的第三個 PR
@@ -87,11 +87,11 @@ Image: /images/posts-image/2025-airflow-multilingual/andor-poster.jpeg
 此時此刻的 main 分支 ([6a7d257]) 跑起來大概會像是這樣
 左下角的 `User` 按一下，就可以看到選擇語言的選單
 
-![select-lang](/images/posts-image/2025-airflow-multilingual/select-lang.jpg)
+![select-lang](/images/post-images/2025-airflow-multilingual/select-lang.jpg)
 
 選擇繁體中文就會看到以下的介面
 
-![tw-ui](/images/posts-image/2025-airflow-multilingual/tw-ui.jpg)
+![tw-ui](/images/post-images/2025-airflow-multilingual/tw-ui.jpg)
 
 瀏覽了一下， Asset 的翻譯也許可以再想想
 TP 之前提議的資料也許不錯
@@ -145,7 +145,7 @@ TP 在信件中所提到的 Running 也是
 但做繁體中文翻譯這件事依然重要
 為的就是要讓更多的臺灣人更無阻力的去接觸這些技術
 
-![love-this-land](/images/posts-image/2025-airflow-multilingual/love-this-land.jpg)
+![love-this-land](/images/post-images/2025-airflow-multilingual/love-this-land.jpg)
 
 我也是因為熱愛這片土地，所以試著用我的方式去做一些事
 即使這也許是我永遠用不到的

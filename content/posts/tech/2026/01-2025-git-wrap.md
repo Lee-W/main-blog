@@ -3,7 +3,7 @@ Date: 2026-01-03 20:55 +0800
 Category: Tech
 Tags: Open Source, Annual Review
 Slug: 2025-git-wrapped
-Cover: /images/posts-image/2026/2025-git-wrap/github.jpg
+Cover: /images/post-images/2026/2025-git-wrap/github.jpg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -19,7 +19,7 @@ Lang: zh-tw
 那就先來看看 2024
 
 ## Git Wrapped 2024
-![git-wrapped-2024](/images/posts-image/2026/2025-git-wrap/git-wrapped-2024.png)
+![git-wrapped-2024](/images/post-images/2026/2025-git-wrap/git-wrapped-2024.png)
 
 Top 1% / Saga mode 的條件都是 2000+ commits
 我的提交 (commits) 有一部分是 [bahamut_ani_stat](https://github.com/Lee-W/bahamut_ani_stat) 的每日爬蟲
@@ -31,7 +31,7 @@ Top 1% / Saga mode 的條件都是 2000+ commits
 
 感覺跟 2024 差距不大 🤔
 
-![git-wrapped-2025](/images/posts-image/2026/2025-git-wrap/git-wrapped-2025.png)
+![git-wrapped-2025](/images/post-images/2026/2025-git-wrap/git-wrapped-2025.png)
 
 ## Git Wrapped 2024 v.s. 2025
 
@@ -39,7 +39,7 @@ Top 1% / Saga mode 的條件都是 2000+ commits
 原來完全是場誤會
 老實說有點驚訝，我覺得我今年在 commitizen 的付出比以往多很多說 😢
 
-![git-wrapped-vs](/images/posts-image/2026/2025-git-wrap/git-wrapped-vs.png)
+![git-wrapped-vs](/images/post-images/2026/2025-git-wrap/git-wrapped-vs.png)
 
 ## GitHub
 
@@ -49,4 +49,4 @@ Top 1% / Saga mode 的條件都是 2000+ commits
 基於 Firefox 的瀏覽器又又又又又被歧視了
 為什麼我說又呢？
 
-![github](/images/posts-image/2026/2025-git-wrap/github.jpg)
+![github](/images/post-images/2026/2025-git-wrap/github.jpg)

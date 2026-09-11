@@ -5,7 +5,7 @@ Modified: 2025-09-05 11:30 +0800
 Category: Tech
 Tags: Python, CPython
 Slug: contribute-to-cpython-your-first-step
-Cover: /images/posts-image/2025-cpython-contribution-101/chi.jpg
+Cover: /images/post-images/2025-cpython-contribution-101/chi.jpg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -26,7 +26,7 @@ TL;DR: 去看 [Python Developer’s Guide]
 PyCon Taiwan 這邊也有人會帶初次接觸的人，快速設定好環境
 而這次那個人就是我
 
-![chi](/images/posts-image/2025-cpython-contribution-101/chi.jpg)
+![chi](/images/post-images/2025-cpython-contribution-101/chi.jpg)
 
 這篇文章就是明天衝刺開發要用的筆記
 ~~雖然我平常自己帶 Airflow 都沒這麼認真~~
@@ -52,7 +52,7 @@ PyCon Taiwan 這邊也有人會帶初次接觸的人，快速設定好環境
 
 1. 先將 Git 設定好（macOS 應該是預設就有吧 🤔）
 2. 將 [CPython] Fork 到你的 GitHub  
-   ![fork](/images/posts-image/2025-cpython-contribution-101/fork.jpg)
+   ![fork](/images/post-images/2025-cpython-contribution-101/fork.jpg)
 3. Clone 專案到本地端
 
 ```shell
@@ -150,7 +150,7 @@ Tachibana さん在 PyCon US 的時候聽到有 [topic-repl] 標籤的 issue，�
 
 順帶一提 Tachibana さん在 PyCon TW 2025 Day 1 有酷酷的演講
 
-![tachibana](/images/posts-image/2025-cpython-contribution-101/tachibana.jpg)
+![tachibana](/images/post-images/2025-cpython-contribution-101/tachibana.jpg)
 
 雖然我聽不到，要去 PyCon JP 2025 才能聽了
 
@@ -226,7 +226,7 @@ Kwon Han 也一直提到希望能在台灣辦 CPython 的衝刺開發
 👉 [Announcing Python Software Foundation Fellow Members for Q2 2024! 🎉](https://pyfound.blogspot.com/2024/10/announcing-python-software-foundation.html)
 
 除此之外，她在官網上的自我介紹是這樣寫的
-![winnie](/images/posts-image/2025-cpython-contribution-101/winnie.jpg)
+![winnie](/images/post-images/2025-cpython-contribution-101/winnie.jpg)
 有 C，有 Python
 看來劍指 CPython 核心開發者的意圖是相當明顯了
 

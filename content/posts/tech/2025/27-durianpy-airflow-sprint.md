@@ -4,7 +4,7 @@ Date: 2025-06-23 00:15 +0800
 Category: Tech
 Tags: Python, Airflow, Development Sprint, DurianPy
 Slug: durianpy-apache-airflow-development-sprint
-Cover: /images/posts-image/2025-durianpy-apache-airflow-development-sprint/P1280744.JPG
+Cover: /images/post-images/2025-durianpy-apache-airflow-development-sprint/P1280744.JPG
 Authors: Wei Lee
 Lang: en
 
@@ -21,7 +21,7 @@ Honestly, I was somewhat concerned about my ability to lead a worthwhile event. 
 ## Development Sprint
 Before this began, we had a brief chat with the DurianPy organizers. I had the honor of meeting the legendary Anakin Skywalker. I thought it was just a nickname for a Star Wars fan. It turns out to be his real name, but he hasn't yet stepped into the Star Wars world. During this year's Star Wars Celebration, I was also lucky to meet another Anakin Skywalker, Hayden Christensen. It was quite intriguing to meet two Anakins in a row.
 
-![There is another](/images/posts-image/2025-durianpy-apache-airflow-development-sprint/17506004384785.jpg)
+![There is another](/images/post-images/2025-durianpy-apache-airflow-development-sprint/17506004384785.jpg)
 
 Even though Anakin is not a Star Wars fan, Sean is! We discussed our love for Rogue One, Andor, and Rebels. I shared some Star Wars novels that I truly enjoy. (👉 [星際大戰小說排名](https://travlog.wei-lee.me/pages/star-wars-novel-ranking.html))
 
@@ -80,36 +80,36 @@ When I served as the chair of [PyCon Taiwan], Jarek also helped us run a develop
 ## All about Davao
 I truly appreciate my time here in Davao. It is a beautifully peaceful and cozy place. I was pleasantly surprised to find that I can even go on my anime pilgrimage here. (Thanks, Emily!) Davao is featured in the film [Mobile Suit Gundam: Hathaway's Flash](https://www.netflix.com/title/81439253). Dom took me to the most famous location shown in it. Although I haven't seen the movie yet, it's available on Netflix, so I should make time to watch it.
 
-![P1280744](/images/posts-image/2025-durianpy-apache-airflow-development-sprint/P1280744.JPG)
+![P1280744](/images/post-images/2025-durianpy-apache-airflow-development-sprint/P1280744.JPG)
 
-![P1280750](/images/posts-image/2025-durianpy-apache-airflow-development-sprint/P1280750.JPG)
+![P1280750](/images/post-images/2025-durianpy-apache-airflow-development-sprint/P1280750.JPG)
 
 I considered eating at this specific Jollibee, but we have something even more exciting planned for later. We visited a local weekend market and enjoyed Filipino cuisine.
 
-![913CCF6F-8048-486A-984C-EB3F20213009_1_105_c](/images/posts-image/2025-durianpy-apache-airflow-development-sprint/913CCF6F-8048-486A-984C-EB3F20213009_1_105_c.jpeg)
+![913CCF6F-8048-486A-984C-EB3F20213009_1_105_c](/images/post-images/2025-durianpy-apache-airflow-development-sprint/913CCF6F-8048-486A-984C-EB3F20213009_1_105_c.jpeg)
 
-![EE8B4B7B-5A8D-4CE4-9FAF-FABC7530E59E_1_105_c](/images/posts-image/2025-durianpy-apache-airflow-development-sprint/EE8B4B7B-5A8D-4CE4-9FAF-FABC7530E59E_1_105_c.jpeg)
+![EE8B4B7B-5A8D-4CE4-9FAF-FABC7530E59E_1_105_c](/images/post-images/2025-durianpy-apache-airflow-development-sprint/EE8B4B7B-5A8D-4CE4-9FAF-FABC7530E59E_1_105_c.jpeg)
 
 Fortunately, I still have the opportunity to grab some Jollibee for lunch during the sprint.
 
-![5A7801F0-6986-470D-8B66-AFAA5257C424_1_105_c](/images/posts-image/2025-durianpy-apache-airflow-development-sprint/5A7801F0-6986-470D-8B66-AFAA5257C424_1_105_c.jpeg)
+![5A7801F0-6986-470D-8B66-AFAA5257C424_1_105_c](/images/post-images/2025-durianpy-apache-airflow-development-sprint/5A7801F0-6986-470D-8B66-AFAA5257C424_1_105_c.jpeg)
 
 At dinner time, we went to a well-known local restaurant. This time, I remembered to bring my PyCon hat!
 
-![101CFC4E-B12A-47C0-AE2C-56E0639AD4CF_1_105_c](/images/posts-image/2025-durianpy-apache-airflow-development-sprint/101CFC4E-B12A-47C0-AE2C-56E0639AD4CF_1_105_c.jpeg)
+![101CFC4E-B12A-47C0-AE2C-56E0639AD4CF_1_105_c](/images/post-images/2025-durianpy-apache-airflow-development-sprint/101CFC4E-B12A-47C0-AE2C-56E0639AD4CF_1_105_c.jpeg)
 
 Here are the souvenirs I got: the t-shirt and tote bag from DurianPy, the adorable bubble tea doll from Charm, and some chocolate with unusual flavors that I had to buy.
 (This time, I brought the Acrylic stand of Nina and Lancelot for traveling.)
 
-![9D691FF9-5223-463A-9980-FD45060821A0_1_201_a](/images/posts-image/2025-durianpy-apache-airflow-development-sprint/9D691FF9-5223-463A-9980-FD45060821A0_1_201_a.heic)
+![9D691FF9-5223-463A-9980-FD45060821A0_1_201_a](/images/post-images/2025-durianpy-apache-airflow-development-sprint/9D691FF9-5223-463A-9980-FD45060821A0_1_201_a.heic)
 
 before Dom dropped me off at the airport. These are the last gifts he shared with me. Thanks again, Dom!
 
-![308E25B8-1B17-40EE-9294-0D333FBA4A46_1_105_c](/images/posts-image/2025-durianpy-apache-airflow-development-sprint/308E25B8-1B17-40EE-9294-0D333FBA4A46_1_105_c.jpeg)
+![308E25B8-1B17-40EE-9294-0D333FBA4A46_1_105_c](/images/post-images/2025-durianpy-apache-airflow-development-sprint/308E25B8-1B17-40EE-9294-0D333FBA4A46_1_105_c.jpeg)
 
 and the trip concludes with Nina. I suppose we can regard it as somewhat similar to the Filipino beef bowl from Yoshinoya.
 
-![3CE2D2C6-8FBE-4137-BD9F-401AB6B6ECAB_1_102_o](/images/posts-image/2025-durianpy-apache-airflow-development-sprint/3CE2D2C6-8FBE-4137-BD9F-401AB6B6ECAB_1_102_o.jpeg)
+![3CE2D2C6-8FBE-4137-BD9F-401AB6B6ECAB_1_102_o](/images/post-images/2025-durianpy-apache-airflow-development-sprint/3CE2D2C6-8FBE-4137-BD9F-401AB6B6ECAB_1_102_o.jpeg)
 
 ---
 
@@ -118,4 +118,4 @@ and the trip concludes with Nina. I suppose we can regard it as somewhat similar
 
 At the close of the sprint, we had a lucky draw. Anakin was the first to be drawn. He truly is the chosen one in every regard.
 
-![8AA26F8F-FE1D-4F04-B2F3-6BA6A3BA5A77_1_105_c](/images/posts-image/2025-durianpy-apache-airflow-development-sprint/8AA26F8F-FE1D-4F04-B2F3-6BA6A3BA5A77_1_105_c.jpeg)
+![8AA26F8F-FE1D-4F04-B2F3-6BA6A3BA5A77_1_105_c](/images/post-images/2025-durianpy-apache-airflow-development-sprint/8AA26F8F-FE1D-4F04-B2F3-6BA6A3BA5A77_1_105_c.jpeg)

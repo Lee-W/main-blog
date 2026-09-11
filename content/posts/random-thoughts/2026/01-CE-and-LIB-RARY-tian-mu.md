@@ -4,7 +4,7 @@ Date: 2026-01-09 21:30 +0800
 Category: Random Thoughts
 Tags: Coworking Space
 Slug: ce-and-lib-rary-tian-mu
-Cover: /images/posts-image/2026/CE-and-LIB-RARY-tian-mu/IMG_0925.jpeg
+Cover: /images/post-images/2026/CE-and-LIB-RARY-tian-mu/IMG_0925.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -24,11 +24,11 @@ Lang: zh-tw
 
 幾乎每個座位都有插座，包括用餐區
 
-![food](/images/posts-image/2026/CE-and-LIB-RARY-tian-mu/IMG_0924.jpeg)
+![food](/images/post-images/2026/CE-and-LIB-RARY-tian-mu/IMG_0924.jpeg)
 
 牛肉蠻好吃的
 
-![coworking-space](/images/posts-image/2026/CE-and-LIB-RARY-tian-mu/IMG_0925.jpeg)
+![coworking-space](/images/post-images/2026/CE-and-LIB-RARY-tian-mu/IMG_0925.jpeg)
 
 空間安排：
 * 一樓可以小聲交談  

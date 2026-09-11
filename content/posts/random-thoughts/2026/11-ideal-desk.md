@@ -4,7 +4,7 @@ Category: Random Thoughts
 Tags: BlogBlog 同樂會, Lifestyle
 Slug: ideal-desk
 Series: 理想的日常 (2026)
-Cover: /images/posts-image/2026/ideal/ideal-desk-11.jpeg
+Cover: /images/post-images/2026/ideal/ideal-desk-11.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
@@ -19,7 +19,7 @@ Lang: zh-tw
 不管怎樣，我們就開始吧！
 全景圖大概是長這樣
 
-![ideal-desk-1](/images/posts-image/2026/ideal/ideal-desk-1.jpeg)
+![ideal-desk-1](/images/post-images/2026/ideal/ideal-desk-1.jpeg)
 
 桌子是 Funte Prime 電動升降桌 (3 節，150 * 80 cm)
 非周邊的物品中，最值得的投資
@@ -33,11 +33,11 @@ Lang: zh-tw
 檯燈是 COMF-PRO 康樸樂 VISION6 五段式護眼檯燈
 右邊則是拿來放筆電的架子
 
-![ideal-desk-2](/images/posts-image/2026/ideal/ideal-desk-2.jpeg)
+![ideal-desk-2](/images/post-images/2026/ideal/ideal-desk-2.jpeg)
 
 台灣野活部的滑板桌，平常會拿來放平板跟閱讀器
 
-![ideal-desk-3](/images/posts-image/2026/ideal/ideal-desk-3.jpeg)
+![ideal-desk-3](/images/post-images/2026/ideal/ideal-desk-3.jpeg)
 
 鍵盤是 ErgoKB Phoenix v2
 花了一點時間才習慣這種特殊配置的鍵盤
@@ -47,11 +47,11 @@ Lang: zh-tw
 
 右上角是報導者的開放透明之磚
 
-![ideal-desk-4](/images/posts-image/2026/ideal/ideal-desk-4.jpeg)
+![ideal-desk-4](/images/post-images/2026/ideal/ideal-desk-4.jpeg)
 
 環球影城買的瑪利歐磚塊衛生紙盒
 
-![ideal-desk-5](/images/posts-image/2026/ideal/ideal-desk-5.jpeg)
+![ideal-desk-5](/images/post-images/2026/ideal/ideal-desk-5.jpeg)
 
 接下來就要開始周邊展示了
 
@@ -63,7 +63,7 @@ Lang: zh-tw
 下面的杯墊都是搖曳露營的
 最左邊是在本栖高校買的凜隔熱墊
 
-![ideal-desk-6](/images/posts-image/2026/ideal/ideal-desk-6.jpeg)
+![ideal-desk-6](/images/post-images/2026/ideal/ideal-desk-6.jpeg)
 
 PVC 是台灣野活部團露抽到的凜
 接著是一番賞抽到的頭上有撫子的凜
@@ -71,7 +71,7 @@ PVC 是台灣野活部團露抽到的凜
 對著路人旋轉燈的仁菜（燈可以轉！）
 最後是仁菜、撫子、凜、泳裝妖精崔斯坦、泳裝妖精蘭斯洛特跟撫子還有撫子的飯友
 
-![ideal-desk-7](/images/posts-image/2026/ideal/ideal-desk-7.jpeg)
+![ideal-desk-7](/images/post-images/2026/ideal/ideal-desk-7.jpeg)
 
 螢幕下面是一整套的搖曳露營帳篷轉蛋
 包圍著星野愛
@@ -86,12 +86,12 @@ PVC 是台灣野活部團露抽到的凜
 最右邊是睡眠中的小圓跟 QB
 還有我最喜歡的周邊 - 聲之形的枡
 
-![ideal-desk-8](/images/posts-image/2026/ideal/ideal-desk-8.jpeg)
+![ideal-desk-8](/images/post-images/2026/ideal/ideal-desk-8.jpeg)
 
 公視留言抽獎抽到的凜立牌
 搖曳露營的可動日曆，每個月都要記得手動更新
 
-![ideal-desk-9](/images/posts-image/2026/ideal/ideal-desk-9.jpeg)
+![ideal-desk-9](/images/post-images/2026/ideal/ideal-desk-9.jpeg)
 
 買っちゃた立牌，所以我說該買了吧
 
@@ -102,12 +102,12 @@ PVC 是台灣野活部團露抽到的凜
 最後面的那個是我的 Amazon Echo 3rd Generation
 其實用到現在還是很好用，雖然官網折舊價只剩下 5 元，真是可憐
 
-![ideal-desk-10](/images/posts-image/2026/ideal/ideal-desk-10.jpeg)
+![ideal-desk-10](/images/post-images/2026/ideal/ideal-desk-10.jpeg)
 
 這次MyGO!!!!!×Ave Mujica ツーマンライブ買的睦、祥子、燈娃娃
 雖然很可愛，但做工蠻爛的
 祥子已經有一條線斷掉，之後還要找時間補
 
-![ideal-desk-11](/images/posts-image/2026/ideal/ideal-desk-11.jpeg)
+![ideal-desk-11](/images/post-images/2026/ideal/ideal-desk-11.jpeg)
 
 畢竟是每天會花很長時間相處的環境，還是得要好好佈置一下呢 ⭐

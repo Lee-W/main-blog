@@ -13,7 +13,7 @@ Lang: zh-tw
 
 <!--more-->
 
-![資深影迷 Wei Lee...](/images/posts-image/2026/why-not-ask-yourself/IMG_3341.jpeg)
+![資深影迷 Wei Lee...](/images/post-images/2026/why-not-ask-yourself/IMG_3341.jpeg)
 
 它連結到的頁面就是[電影院座位個人喜好](https://travlog.wei-lee.me/pages/theaters-preference)
 謝謝你，Claude
