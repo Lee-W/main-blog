@@ -33,8 +33,8 @@ Lang: zh-tw
 尤其在這個 token 有可能沒花完的時代，也常會有種要用好用滿的焦慮
 而最近則在這些只會讓自己更睡不著的行動中，追加了 2 個
 
-1. [看部落格文章]({filename}/posts/random-thoughts/2026/39-blogblog-meetup-changes.md)
-2. [看書]({filename}/posts/random-thoughts/2026/43-books-more-constructive-than-blog-posts.md)
+1. [看部落格文章]({filename}/posts/random-thoughts/2026/40-blogblog-meetup-changes.md)
+2. [看書]({filename}/posts/random-thoughts/2026/44-books-more-constructive-than-blog-posts.md)
 
 雖然還是時不時會做出錯誤的決策去滑手機，但增加了幾個好一點的行動
 至少讓我在沒辦法做出「去睡覺」這個最佳決策時，還有機會做出沒那麼糟的決策

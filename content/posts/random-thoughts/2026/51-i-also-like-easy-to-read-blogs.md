@@ -19,7 +19,7 @@ Eddie 的文都很快就可以讀完，又很有趣
 確實有不少朋友都說我最近都不發文了
 其實也不是，我只是發在大家平常不會看的地方而已
 
-除了上次在 [參加 BlogBlog 同樂會的一些變化]({filename}/posts/random-thoughts/2026/39-blogblog-meetup-changes.md) 提到的
+除了上次在 [參加 BlogBlog 同樂會的一些變化]({filename}/posts/random-thoughts/2026/40-blogblog-meetup-changes.md) 提到的
 看的內容從演算法餵食的多巴胺，轉為自己選擇的多巴胺外（[現在正是復權的時刻]({filename}/posts/random-thoughts/2025/02-get-your-retention-back-through-rss.md)！）
 
 還有一點就是想要找過往的文字，實在比在平台上找簡單太多太多太多太多
