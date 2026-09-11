@@ -1,7 +1,7 @@
 Title: 近況
 Summary: 我現在的狀態，以及最近在做、看、聽、推薦與關注的事。
 Date: 2026-04-25 18:50 +0800
-Modified: 2026-07-28 23:45 +0800
+Modified: 2026-09-12 01:30 +0800
 Slug: now
 Lang: zh-tw
 
@@ -11,35 +11,37 @@ Lang: zh-tw
 * 💤 嘗試提早睡覺，稍微改善，但稱不上成功
 
 ## 🏆 最近感到驕傲的
+* 🚴 琵琶湖環湖一周（分兩天）
 * 😭 最近有人覺得我寫的文章很棒，並且把我的部落格加進他們的[部落卷](/pages/blogroll)
-* 🏆 上次在 COMPUTEX 的小演講獲得好評
 
 ## 🔥 最近熱衷的
 * 參加 [BlogBlog.Club - 部落部落俱樂部](https://blogblog.club/) (從第二期投稿到現在還沒停過！)
 * 把電子郵件搬到自己的網域
-* 開發 [RiNG](https://github.com/Lee-W/ring/) 同時管理多個 AI agent session 的小工具
-* 開發 [Maigo（迷子）](https://github.com/Lee-W/maigo) 跟私有的 mujica 兩個 AI agent 的工作流，讓我在做事的時候也被邦邦環繞
 
 ## 🧑‍💻 最近做的
 * Apache Airflow
     * [common.ai provider](https://airflow.apache.org/docs/apache-airflow-providers-common-ai/stable/index.html)
     * （自稱）SQLite 資料庫升級跟臺灣華語翻譯守門員
+* [RiNG](https://github.com/Lee-W/ring/): 同時管理多個 AI agent session 的小工具
+* [Maigo（迷子）](https://github.com/Lee-W/maigo) 跟私有的 mujica 兩個 AI agent 的工作流，讓我在做事的時候也被邦邦環繞
 
 ## 📺 最近看的
-* [穹廬下的魔女](https://ani.gamer.com.tw/animeVideo.php?sn=49885)
+* [再見菈菈](https://ani.gamer.com.tw/animeVideo.php?sn=49965)
+    * 意外的寶藏，原本就想看，但沒想到這麼好看
 
 <!-- rumdl-disable -->
 ??? "其他在追的 2026 夏季新番"
+    * [穹廬下的魔女](https://ani.gamer.com.tw/animeVideo.php?sn=49885)
     * [感謝對戰。～大小姐才不玩格鬥遊戲～](https://ani.gamer.com.tw/animeVideo.php?sn=49981)
     * [擅長逃跑的殿下 第二季](https://ani.gamer.com.tw/animeVideo.php?sn=49853)
     * [THE WORLD IS DANCING 世界在起舞](https://ani.gamer.com.tw/animeVideo.php?sn=49812)
-    * [BanG Dream！YUME∞MITA](https://ani.gamer.com.tw/animeVideo.php?sn=49822)
     * [尼古喵喵](https://ani.gamer.com.tw/animeVideo.php?sn=49825)
+    * [BanG Dream！YUME∞MITA](https://ani.gamer.com.tw/animeVideo.php?sn=49822)
     * [躲在超市後門抽菸的兩人](https://www.netflix.com/title/82757039)
     * [畫完這個再去死](https://ani.gamer.com.tw/animeVideo.php?sn=49850)
-    * [二十世紀電氣目錄](https://www.netflix.com/title/81698957)
-    * [相反的你和我 第二季](https://ani.gamer.com.tw/animeVideo.php?sn=49896)
     * [黃泉使者](https://ani.gamer.com.tw/animeVideo.php?sn=49574)
+    * [相反的你和我 第二季](https://ani.gamer.com.tw/animeVideo.php?sn=49896)
+    * [二十世紀電氣目錄](https://www.netflix.com/title/81698957)
     * [雷霆三人組](https://www.netflix.com/title/82736186)
     * [CANDY CARIES 蛀在糖糖裡](https://ani.gamer.com.tw/animeVideo.php?sn=48557)
 <!-- rumdl-enable -->
@@ -59,12 +61,6 @@ Lang: zh-tw
 
 * [Aimer](https://x.com/Aimer_and_staff) → 繳了最久的 FC 税
 * [江松霖](https://www.youtube.com/@sungsungvideo) → 小松的歌要聽一輩子
-
-## 🏃‍➡️ 最近動的
-* 🥊 [拳擊]({filename}/posts/random-thoughts/2024/01-boxing.md)
-* 🏹 弓道 （因為射不中，所以不敢選中靶的 emoji）
-* 🏋️ 健身
-* 🗡️ [演武](https://www.facebook.com/kobusuishinliu)
 
 ## 🍽️ 最近吃的╱喝的
 * 早餐: 燕麥片 + 無糖豆漿
