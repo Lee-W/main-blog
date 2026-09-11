@@ -6,6 +6,7 @@ from pathlib import Path
 import pytest
 
 from scripts.prepare_publication import (
+    base_published_numbers,
     changed_posts,
     check,
     check_filename_numbers,
@@ -373,6 +374,77 @@ def test_changed_posts_includes_renamed_draft_but_not_published_post(
     assert changed_posts("base") == [
         Path("content/posts/02-draft.md"),
     ]
+
+
+def init_repo_with_base(tmp_path, siblings):
+    """Create a repo whose ``base`` branch holds *siblings* in a post directory.
+
+    ``siblings`` maps filename to draft status, mirroring how published posts
+    and drafts coexist in a category/year directory.
+    """
+    subprocess.run(["git", "init", "-q"], check=True)
+    subprocess.run(["git", "config", "user.email", "test@example.com"], check=True)
+    subprocess.run(["git", "config", "user.name", "Test"], check=True)
+    posts = tmp_path / "content" / "posts" / "review" / "2026"
+    posts.mkdir(parents=True)
+    for name, is_draft in siblings.items():
+        write_post(posts / name, status="Status: draft" if is_draft else "")
+    subprocess.run(["git", "add", "content"], check=True)
+    subprocess.run(["git", "commit", "-q", "-m", "config: base"], check=True)
+    subprocess.run(["git", "branch", "base"], check=True)
+    return posts
+
+
+def test_base_published_numbers_ignores_drafts_and_unnumbered_posts(
+    tmp_path, monkeypatch
+):
+    monkeypatch.chdir(tmp_path)
+    init_repo_with_base(
+        tmp_path,
+        {"01-published.md": False, "02-draft.md": True, "unnumbered.md": False},
+    )
+    directory = Path("content/posts/review/2026")
+
+    assert base_published_numbers("base", directory) == [1]
+
+
+def test_check_rejects_number_already_used_on_the_base_branch(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    posts = init_repo_with_base(tmp_path, {"01-published.md": False})
+
+    # The base branch publishes 02 after this branch was created, so the branch
+    # still sees only 01 in its own working tree.
+    subprocess.run(["git", "checkout", "-q", "base"], check=True)
+    write_post(posts / "02-elsewhere.md", status="")
+    subprocess.run(["git", "add", "content"], check=True)
+    subprocess.run(["git", "commit", "-q", "-m", "new post: elsewhere"], check=True)
+    subprocess.run(["git", "checkout", "-q", "-"], check=True)
+
+    publishing = posts / "02-publishing.md"
+    write_post(publishing, status="")
+    relative = Path("content/posts/review/2026/02-publishing.md")
+
+    assert check_filename_numbers([relative]) == 0
+    assert check_filename_numbers([relative], "base") == 1
+
+
+def test_prepare_numbers_after_the_base_branch(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    posts = init_repo_with_base(tmp_path, {"01-published.md": False})
+
+    subprocess.run(["git", "checkout", "-q", "base"], check=True)
+    write_post(posts / "02-elsewhere.md", status="")
+    subprocess.run(["git", "add", "content"], check=True)
+    subprocess.run(["git", "commit", "-q", "-m", "new post: elsewhere"], check=True)
+    subprocess.run(["git", "checkout", "-q", "-"], check=True)
+
+    publishing = posts / "publishing.md"
+    write_post(publishing)
+    relative = Path("content/posts/review/2026/publishing.md")
+
+    assert prepare([relative], "2026-06-30 18:20 +0800", "base") == 0
+    assert (posts / "03-publishing.md").exists()
+    assert not (posts / "02-publishing.md").exists()
 
 
 def test_has_publish_commit_detects_prefixed_subject(tmp_path, monkeypatch):
