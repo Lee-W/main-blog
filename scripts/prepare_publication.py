@@ -140,7 +140,60 @@ def filename_number(path: Path) -> int | None:
     return int(match.group(1)) if match else None
 
 
-def check_filename_numbers(paths: list[Path]) -> int:
+def base_published_numbers(base_ref: str, directory: Path) -> list[int]:
+    """Return published post numbers in *directory* as of *base_ref*.
+
+    The branch only carries the siblings that existed when it was created, so a
+    branch opened before another publication merged would otherwise hand out a
+    number the base branch has already used. Reading the base ref instead of the
+    working tree keeps numbering correct without forcing a rebase first.
+    """
+    listing = subprocess.run(
+        ["git", "ls-tree", "-r", "--name-only", "-z", base_ref, "--", directory],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if listing.returncode != 0:
+        return []
+
+    numbers: list[int] = []
+    for name in listing.stdout.split("\0"):
+        sibling = Path(name)
+        if sibling.suffix != ".md" or sibling.parent != directory:
+            continue
+        number = filename_number(sibling)
+        if number is None:
+            continue
+        blob = subprocess.run(
+            ["git", "show", f"{base_ref}:{name}"],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        if blob.returncode != 0 or draft_status_text(blob.stdout, name):
+            continue
+        numbers.append(number)
+    return numbers
+
+
+def next_filename_number(
+    directory: Path, publishing_paths: set[Path], base_ref: str | None
+) -> int:
+    """Return the number the next post published in *directory* should take."""
+    published_numbers = [
+        number
+        for sibling in directory.glob("*.md")
+        if sibling.resolve() not in publishing_paths
+        and not draft_status(sibling)
+        and (number := filename_number(sibling)) is not None
+    ]
+    if base_ref is not None:
+        published_numbers += base_published_numbers(base_ref, directory)
+    return max(published_numbers, default=0) + 1
+
+
+def check_filename_numbers(paths: list[Path], base_ref: str | None = None) -> int:
     """Require publishing posts to follow the latest published sibling.
 
     Numbering is scoped to the category/year directory. Draft siblings and all
@@ -154,14 +207,7 @@ def check_filename_numbers(paths: list[Path]) -> int:
 
     errors: list[str] = []
     for directory, publishing_posts in by_directory.items():
-        published_numbers = [
-            number
-            for sibling in directory.glob("*.md")
-            if sibling.resolve() not in publishing_paths
-            and not draft_status(sibling)
-            and (number := filename_number(sibling)) is not None
-        ]
-        next_number = max(published_numbers, default=0) + 1
+        next_number = next_filename_number(directory, publishing_paths, base_ref)
 
         numbered_posts: list[tuple[int, Path]] = []
         for path in publishing_posts:
@@ -304,7 +350,9 @@ def repair_unnumbered_filename_references(paths: list[Path]) -> list[Path]:
     return changed
 
 
-def correct_filename_numbers(paths: list[Path]) -> list[Path]:
+def correct_filename_numbers(
+    paths: list[Path], base_ref: str | None = None
+) -> list[Path]:
     """Correct publishing filenames and move colliding drafts after them."""
     publishing_paths = {path.resolve() for path in paths}
     by_directory: dict[Path, list[Path]] = {}
@@ -313,14 +361,7 @@ def correct_filename_numbers(paths: list[Path]) -> list[Path]:
 
     replacements: dict[Path, Path] = {}
     for directory, publishing_posts in by_directory.items():
-        published_numbers = [
-            number
-            for sibling in directory.glob("*.md")
-            if sibling.resolve() not in publishing_paths
-            and not draft_status(sibling)
-            and (number := filename_number(sibling)) is not None
-        ]
-        next_number = max(published_numbers, default=0) + 1
+        next_number = next_filename_number(directory, publishing_paths, base_ref)
         publishing_posts.sort(
             key=lambda path: (filename_number(path) or sys.maxsize, path.name)
         )
@@ -405,9 +446,9 @@ def prepare_post(path: Path, date: str) -> bool:
     return updated != original
 
 
-def check(paths: list[Path]) -> int:
+def check(paths: list[Path], base_ref: str | None = None) -> int:
     """Validate publication status and filename sequence."""
-    failed = check_filename_numbers(paths)
+    failed = check_filename_numbers(paths, base_ref)
     failed |= check_filename_references(paths)
     drafts = [path for path in paths if draft_status(path)]
     if drafts:
@@ -422,9 +463,9 @@ def check(paths: list[Path]) -> int:
     return failed
 
 
-def prepare(paths: list[Path], date: str) -> int:
+def prepare(paths: list[Path], date: str, base_ref: str | None = None) -> int:
     """Prepare every changed post for publication."""
-    paths = correct_filename_numbers(paths)
+    paths = correct_filename_numbers(paths, base_ref)
     repair_unnumbered_filename_references(paths)
     changed = [path for path in paths if prepare_post(path, date)]
     if changed:
@@ -433,7 +474,7 @@ def prepare(paths: list[Path], date: str) -> int:
             print(f"Prepared {path}")
     else:
         print("No changed draft posts need preparation.")
-    return check(paths)
+    return check(paths, base_ref)
 
 
 def main() -> int:
@@ -481,11 +522,11 @@ def main() -> int:
                     file=sys.stderr,
                 )
                 return 1
-            return check(posts)
+            return check(posts, args.base_ref)
         if prepared:
             print("Publication metadata is already prepared.")
-            return check(posts)
-        return prepare(posts, args.date or publication_date())
+            return check(posts, args.base_ref)
+        return prepare(posts, args.date or publication_date(), args.base_ref)
     except (OSError, ValueError, subprocess.CalledProcessError) as error:
         print(error, file=sys.stderr)
         return 1
