@@ -1,12 +1,11 @@
 Title: 最近發現的 IG 新功能
-Date: 2026-09-11 15:35 +0800
+Date: 2026-09-13 08:20 +0800
 Category: Random Thoughts
 Tags: Social Network
 Slug: ig-unsend-read-receipt
 Cover: /images/post-images/2026/ig-unsend-read-receipt/unsend-feature.jpeg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 雖然想離開社群平台，但有時候焦慮時還是會滑一下滑一下
 才發現了這個功能
