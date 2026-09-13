@@ -3,6 +3,9 @@
     text: "🇺🇸 Airflow Summit 2026"
     href: "https://airflowsummit.org/sessions/2026/asset-partitions-matching-workflow-to-the-right-data/"
   title: "Asset Partitions: Matching Workflow to the Right Data"
+  slide:
+    text: "📊"
+    href: "https://speakerdeck.com/leew/asset-partitions-matching-workflow-to-the-right-data"
 
 - date: 2026-06-02
   event:
