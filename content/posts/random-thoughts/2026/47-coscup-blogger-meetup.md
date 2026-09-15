@@ -1,12 +1,11 @@
 Title: 寫作 COSCUP 讀作部落友見面會
-Date: 2026-09-11 15:36 +0800
+Date: 2026-09-15 08:19 +0800
 Category: Random Thoughts
 Tags: Blog
 Slug: coscup-blogger-meetup
 Cover: /images/post-images/2026/coscup-blogger-meetup/pycon-tw-booth-meetup.jpg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 COSCUP 2026 的文章人還在我的草稿深處
 不如就把這件事個別抓出來寫吧
