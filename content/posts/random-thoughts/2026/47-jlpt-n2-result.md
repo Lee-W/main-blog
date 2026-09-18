@@ -1,12 +1,11 @@
 Title: N2 的結果是？？？
-Date: 2026-09-06 21:31 +0800
+Date: 2026-09-18 21:33 +0800
 Category: Random Thoughts
 Tags: JLPT, Japanese
 Slug: jlpt-n2-result
 Cover: /images/post-images/2026/jlpt-n2-result/anime-stats-after-n2.jpg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 在 [JLPT N2]({filename}/posts/random-thoughts/2026/39-jlpt-n2.md) 中有提到，我今年去考了 N2
 而前段時間也終於公布成績了
