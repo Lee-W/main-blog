@@ -1,11 +1,31 @@
+{# Show the notice in the language of the page being rendered; each language
+   now has its own copyright and privacy page. #}
+{% set rights_lang = page_lang|default(DEFAULT_LANG)|lower|replace('_', '-') %}
+{% set rights_base = '/ja' if rights_lang == 'ja' else ('/en' if rights_lang == 'en' else '') %}
 <div class="rights-notice">
-  <p>作品截圖、梗圖等第三方素材，權利仍屬原權利人所有。</p>
-  <p>Rights in screenshots, memes, and other third-party material remain with their respective owners.</p>
+  {%- if rights_lang == 'ja' %}
   <p>作品のスクリーンショットやミーム画像などの権利は、それぞれの権利者に帰属します。</p>
   <p class="rights-notice-link">
-    <a href="{% if CURRENT_LANG == 'en' %}/en/pages/copyright{% else %}/pages/copyright{% endif %}">著作權與權利通知 / Copyright &amp; Rights Notice / 著作権と権利に関するご連絡</a>
+    <a href="{{ rights_base }}/pages/copyright">著作権と権利に関するご連絡</a>
   </p>
   <p class="rights-notice-link">
-    <a href="{% if CURRENT_LANG == 'en' %}/en/pages/privacy{% else %}/pages/privacy{% endif %}">隱私權說明 / Privacy / プライバシーについて</a>
+    <a href="{{ rights_base }}/pages/privacy">プライバシーについて</a>
   </p>
+  {%- elif rights_lang == 'en' %}
+  <p>Rights in screenshots, memes, and other third-party material remain with their respective owners.</p>
+  <p class="rights-notice-link">
+    <a href="{{ rights_base }}/pages/copyright">Copyright &amp; Rights Notice</a>
+  </p>
+  <p class="rights-notice-link">
+    <a href="{{ rights_base }}/pages/privacy">Privacy</a>
+  </p>
+  {%- else %}
+  <p>作品截圖、梗圖等第三方素材，權利仍屬原權利人所有。</p>
+  <p class="rights-notice-link">
+    <a href="/pages/copyright">著作權與權利通知</a>
+  </p>
+  <p class="rights-notice-link">
+    <a href="/pages/privacy">隱私權說明</a>
+  </p>
+  {%- endif %}
 </div>

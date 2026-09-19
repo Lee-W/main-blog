@@ -340,8 +340,7 @@ I18N_SUBSITES["en"].update(
 I18N_SUBSITES["ja"].update(
     {
         # Articles and the untranslated pages are removed from this subsite, so
-        # the menu only lists what actually exists there. Copyright and privacy
-        # live on the main site as one trilingual page, hence the #ja anchors.
+        # the menu only lists what actually exists there.
         "MENUITEMS": (
             ("🏠 ホーム", "/ja/"),
             ("👤 プロフィール", "/ja/pages/about-me"),
@@ -349,8 +348,8 @@ I18N_SUBSITES["ja"].update(
             (
                 "🧭 そのほか",
                 (
-                    ("©️ 著作権", "/pages/copyright#ja"),
-                    ("🔒 プライバシー", "/pages/privacy#ja"),
+                    ("©️ 著作権", "/ja/pages/copyright"),
+                    ("🔒 プライバシー", "/ja/pages/privacy"),
                 ),
             ),
         ),
