@@ -133,10 +133,11 @@ JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
 OG_LOCALE = "zh_TW"
 DEFAULT_LANG = "zh-tw"
 I18N_TEMPLATES_LANG = "en"
-LANGUAGES = [("zh-tw", "/"), ("en", "/en/")]
+LANGUAGES = [("zh-tw", "/"), ("en", "/en/"), ("ja", "/ja/")]
 LANGUAGE_NAMES = {
     "zh-tw": "臺灣華語",
     "en": "English",
+    "ja": "日本語",
 }
 CURRENT_LANG = "zh-tw"
 I18N_SUBSITES = {
@@ -162,6 +163,23 @@ I18N_SUBSITES = {
         "SITESUBTITLE": "Open source, technology, books, and everyday life.",
     }
 }
+I18N_SUBSITES["ja"] = {
+    "LOCALE": "C",
+    "SOCIAL_PROFILE_LABEL": "連絡先",
+    "SOCIAL": (
+        ("Linkedin", "https://tw.linkedin.com/in/clleew"),
+        ("GitHub", "https://github.com/Lee-W"),
+        ("Twitter", "https://twitter.com/clleew"),
+        ("RSS", f"https://{HOST}/ja/feeds/all.atom.xml"),
+    ),
+    "COMMENTS_INTRO": '記事を気に入っていただけたら、下のコメント欄（GitHub アカウントが必要です）か、<a href="mailto:hello+blog@wei-lee.me">メール</a>でお気軽にどうぞ。',
+    "CURRENT_LANG": "ja",
+    "CSS_OVERRIDE": ("../static/rights-notice.css",),
+    "OG_LOCALE": "ja_JP",
+    "SITE_DESCRIPTION": "オープンソース、技術、読書、そして日々のこと。",
+    "SITESUBTITLE": "オープンソース、技術、読書、そして日々のこと。",
+}
+
 I18N_UNTRANSLATED_ARTICLES = "remove"
 I18N_UNTRANSLATED_PAGES = "remove"
 
@@ -316,5 +334,26 @@ I18N_SUBSITES["en"].update(
             ("🎲 Random", "/en/random/"),
         ),
         "SITENAME": "Those aren't written down are meant to be forgotten",
+    }
+)
+
+I18N_SUBSITES["ja"].update(
+    {
+        # Articles and the untranslated pages are removed from this subsite, so
+        # the menu only lists what actually exists there. Copyright and privacy
+        # live on the main site as one trilingual page, hence the #ja anchors.
+        "MENUITEMS": (
+            ("🏠 ホーム", "/ja/"),
+            ("👤 プロフィール", "/ja/pages/about-me"),
+            ("🗺️ コワーキングスペース", "/ja/pages/coworking"),
+            (
+                "🧭 そのほか",
+                (
+                    ("©️ 著作権", "/pages/copyright#ja"),
+                    ("🔒 プライバシー", "/pages/privacy#ja"),
+                ),
+            ),
+        ),
+        "SITENAME": "書き留めないことは忘れられる",
     }
 )
