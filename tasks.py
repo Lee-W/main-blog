@@ -104,15 +104,24 @@ def _add_hreflang_links(soup: BeautifulSoup) -> bool:
     canonical_url = canonical["href"]
     canonical_path = urlparse(canonical_url).path
     site_root = urllib.parse.urljoin(canonical_url, "/")
+    language_roots = {
+        urlparse(root).path.rstrip("/"): "zh-TW" if lang == "zh-tw" else lang
+        for lang, root in SETTINGS["LANGUAGES"]
+    }
     alternates: dict[str, str] = {}
     for anchor in language_menu.find_all("a", href=True):
         path = urlparse(anchor["href"]).path
         # The language picker falls back to a subsite's home page when no
         # translation exists. Do not advertise that fallback as a translation.
-        if path in {"/", "/en/"} and canonical_path not in {"/", "/en/"}:
+        if (
+            path.rstrip("/") in language_roots
+            and canonical_path.rstrip("/") not in language_roots
+        ):
             continue
-        lang = "en" if path.startswith("/en/") or path == "/en/" else "zh-TW"
-        alternates[lang] = urllib.parse.urljoin(site_root, path)
+        for root in sorted(language_roots, key=len, reverse=True):
+            if path.rstrip("/") == root or path.startswith(f"{root}/"):
+                alternates[language_roots[root]] = urllib.parse.urljoin(site_root, path)
+                break
 
     if len(alternates) < 2:
         return False
@@ -123,14 +132,15 @@ def _add_hreflang_links(soup: BeautifulSoup) -> bool:
         soup.head.append(
             soup.new_tag("link", rel="alternate", hreflang=lang, href=href)
         )
-    soup.head.append(
-        soup.new_tag(
-            "link",
-            rel="alternate",
-            hreflang="x-default",
-            href=alternates["zh-TW"],
+    if "zh-TW" in alternates:
+        soup.head.append(
+            soup.new_tag(
+                "link",
+                rel="alternate",
+                hreflang="x-default",
+                href=alternates["zh-TW"],
+            )
         )
-    )
     return True
 
 
@@ -183,7 +193,16 @@ def _normalize_sitemap(path: Path) -> int:
     for url_element in root:
         alternate_links = url_element.findall(alternate_tag)
         by_language = {link.get("hreflang"): link for link in alternate_links}
-        if "zh-tw" in by_language and "en" in by_language:
+        translations = {
+            language for language in by_language if language != "x-default"
+        }
+        # Mirror the rule the HTML pass applies: point x-default at the default
+        # language whenever the entry actually has more than one translation.
+        if (
+            "zh-tw" in by_language
+            and len(translations) > 1
+            and "x-default" not in by_language
+        ):
             default_link = ET.Element(
                 alternate_tag,
                 {
@@ -216,6 +235,16 @@ def _fix_internal_links() -> None:
     output_root = Path(CONFIG["deploy_path"]).resolve()
     pages = list(output_root.rglob("*.html"))
     legacy_routes: dict[str, str] = {}
+    # Longest first, so /ja/ never loses to the default language's "/".
+    subsite_roots = sorted(
+        (
+            urlparse(language_root).path
+            for _, language_root in SETTINGS["LANGUAGES"]
+            if urlparse(language_root).path.strip("/")
+        ),
+        key=len,
+        reverse=True,
+    )
 
     for page in pages:
         soup = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
@@ -229,12 +258,12 @@ def _fix_internal_links() -> None:
             continue
 
         is_article = soup.select_one('meta[property="og:type"][content="article"]')
-        if is_article:
-            legacy_routes[f"/{slug}-{language}.html"] = route
-            legacy_routes[f"/en/{slug}-{language}.html"] = route
-        elif "/pages/" in route:
-            legacy_routes[f"/pages/{slug}-{language}.html"] = route
-            legacy_routes[f"/en/pages/{slug}-{language}.html"] = route
+        for _, language_root in SETTINGS["LANGUAGES"]:
+            prefix = urlparse(language_root).path.rstrip("/")
+            if is_article:
+                legacy_routes[f"{prefix}/{slug}-{language}.html"] = route
+            elif "/pages/" in route:
+                legacy_routes[f"{prefix}/pages/{slug}-{language}.html"] = route
 
     fixed = 0
     hreflang_pages = 0
@@ -270,7 +299,11 @@ def _fix_internal_links() -> None:
                 or "/category/" in parsed.path
                 or "/author/" in parsed.path
             ):
-                replacement = "/en/" if parsed.path.startswith("/en/") else "/"
+                # Fall back to the home page of the subsite the link sits in.
+                replacement = next(
+                    (root for root in subsite_roots if parsed.path.startswith(root)),
+                    "/",
+                )
             if replacement is None:
                 continue
             replacement_target = _find_output_target(

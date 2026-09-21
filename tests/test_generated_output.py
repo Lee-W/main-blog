@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 
 from bs4 import BeautifulSoup
 
+import tasks
 from tasks import (
     _add_hreflang_links,
     _canonicalize_cloudflare_url,
@@ -26,6 +27,7 @@ def test_add_hreflang_links_for_translated_page():
         <body><ul id="nav-language-menu">
           <li><a href="/pages/about.html">臺灣華語</a></li>
           <li><a href="/en/pages/about.html">English</a></li>
+          <li><a href="/ja/pages/about.html">日本語</a></li>
         </ul></body></html>
         """,
         "html.parser",
@@ -39,6 +41,7 @@ def test_add_hreflang_links_for_translated_page():
     }
     assert links == {
         "en": "https://example.com/en/pages/about.html",
+        "ja": "https://example.com/ja/pages/about.html",
         "x-default": "https://example.com/pages/about.html",
         "zh-TW": "https://example.com/pages/about.html",
     }
@@ -51,6 +54,7 @@ def test_add_hreflang_links_ignores_language_home_fallback():
         <body><ul id="nav-language-menu">
           <li><a href="/posts/only-zh">臺灣華語</a></li>
           <li><a href="/en/">English</a></li>
+          <li><a href="/ja/">日本語</a></li>
         </ul></body></html>
         """,
         "html.parser",
@@ -58,6 +62,55 @@ def test_add_hreflang_links_ignores_language_home_fallback():
 
     assert not _add_hreflang_links(soup)
     assert not soup.select('link[rel="alternate"][hreflang]')
+
+
+def test_add_hreflang_links_skips_pages_without_a_default_language_version():
+    """English-only pages drop hreflang instead of pointing it at another language."""
+    soup = BeautifulSoup(
+        """
+        <html><head><link rel="canonical" href="https://example.com/en/pages/cv.html"></head>
+        <body><ul id="nav-language-menu">
+          <li><a href="/">臺灣華語</a></li>
+          <li><a href="/en/pages/cv.html">English</a></li>
+          <li><a href="/ja/">日本語</a></li>
+        </ul></body></html>
+        """,
+        "html.parser",
+    )
+
+    assert not _add_hreflang_links(soup)
+    assert not soup.select('link[rel="alternate"][hreflang]')
+
+
+def test_normalize_sitemap_adds_x_default_without_an_english_version(tmp_path):
+    """x-default follows the HTML rule: any second translation is enough."""
+    sitemap = tmp_path / "sitemap.xml"
+    sitemap.write_text(
+        """<?xml version="1.0" encoding="utf-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+                xmlns:xhtml="http://www.w3.org/1999/xhtml">
+          <url>
+            <loc>https://example.com/pages/blogroll.html</loc>
+            <xhtml:link rel="alternate" hreflang="zh-tw" href="https://example.com/pages/blogroll.html" />
+            <xhtml:link rel="alternate" hreflang="ja" href="https://example.com/ja/pages/blogroll.html" />
+          </url>
+          <url>
+            <loc>https://example.com/en/pages/cv.html</loc>
+            <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/pages/cv.html" />
+          </url>
+        </urlset>
+        """,
+        encoding="utf-8",
+    )
+
+    _normalize_sitemap(sitemap)
+
+    content = sitemap.read_text(encoding="utf-8")
+    assert content.count('hreflang="x-default"') == 1
+    assert (
+        '<xhtml:link rel="alternate" hreflang="x-default" '
+        'href="https://example.com/pages/blogroll" />' in content
+    )
 
 
 def test_normalize_sitemap_merges_translated_page_entries(tmp_path):
@@ -119,3 +172,24 @@ def test_preserve_atom_entry_ids_removes_only_entry_id_trailing_slash(tmp_path):
     assert '<link href="https://example.com/posts/example/" />' in content
     assert "<id>tag:example.com,2026-07-10:/posts/example</id>" in content
     assert "<id>https://example.com/</id>" in content
+
+
+def test_dead_listing_links_fall_back_to_their_own_subsite(tmp_path, monkeypatch):
+    """A tag page that no subsite generated should not dump readers on another one."""
+    page = tmp_path / "ja/pages/now.html"
+    page.parent.mkdir(parents=True)
+    page.write_text(
+        '<html lang="ja"><head>'
+        '<link rel="canonical" href="http://localhost:8000/ja/pages/now">'
+        "</head><body>"
+        '<a href="/ja/tag/missing.html">ja</a>'
+        '<a href="/en/tag/missing.html">en</a>'
+        '<a href="/tag/missing.html">zh-tw</a>'
+        "</body></html>"
+    )
+    monkeypatch.setitem(tasks.CONFIG, "deploy_path", str(tmp_path))
+
+    tasks._fix_internal_links()
+
+    soup = BeautifulSoup(page.read_text(), "html.parser")
+    assert [anchor["href"] for anchor in soup.find_all("a")] == ["/ja/", "/en/", "/"]
