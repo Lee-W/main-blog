@@ -55,7 +55,10 @@ def _build_pagefind():
 
 def _find_output_target(output_root: Path, page: Path, href: str) -> Path | None:
     parsed = urlparse(href)
-    if parsed.netloc and parsed.netloc != SETTINGS["HOST"]:
+    if parsed.netloc and parsed.netloc not in {
+        SETTINGS["HOST"],
+        urlparse(SETTINGS["SITEURL"]).netloc,
+    }:
         return None
     if parsed.scheme in {"mailto", "tel", "javascript"} or not parsed.path:
         return None
@@ -276,7 +279,8 @@ def _fix_internal_links() -> None:
             parsed = urlparse(href)
             if (
                 parsed.netloc
-                and parsed.netloc != SETTINGS["HOST"]
+                and parsed.netloc
+                not in {SETTINGS["HOST"], urlparse(SETTINGS["SITEURL"]).netloc}
                 or parsed.scheme in {"mailto", "tel", "javascript"}
                 or not parsed.path
             ):
