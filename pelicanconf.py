@@ -339,15 +339,16 @@ I18N_SUBSITES["en"].update(
 
 I18N_SUBSITES["ja"].update(
     {
-        # Articles and the untranslated pages are removed from this subsite, so
-        # the menu only lists what actually exists there.
+        # Article listings stay hidden until Japanese articles are available.
         "MENUITEMS": (
             ("🏠 ホーム", "/ja/"),
             ("👤 プロフィール", "/ja/pages/about-me"),
+            ("🕰️ 近況", "/ja/pages/now"),
             ("🗺️ コワーキングスペース", "/ja/pages/coworking"),
             (
                 "🧭 そのほか",
                 (
+                    ("📜 ブログロール", "/ja/pages/blogroll"),
                     ("©️ 著作権", "/ja/pages/copyright"),
                     ("🔒 プライバシー", "/ja/pages/privacy"),
                 ),
