@@ -1,11 +1,10 @@
 Title: 獨立地圖
-Date: 2026-08-12 23:37 +0800
+Date: 2026-09-21 14:42 +0800
 Category: Random Thoughts
 Tags: Blog, Pelican, Tool, Lifestyle
 Slug: now-i-also-have-my-own-map
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 Wiwi 在[幫大家畫地圖](https://wiwi.blog/blog/openstreetmap/) 推薦大家可以標記 [OpenStreetMap](https://www.openstreetmap.org/) 的地圖跟經營自己的獨立網站
 
