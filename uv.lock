@@ -597,7 +597,7 @@ requires-dist = [
     { name = "pelican-i18n-subsites", specifier = ">=1.0.0" },
     { name = "pelican-neighbors", specifier = ">=1.2.0" },
     { name = "pelican-on-this-day", specifier = ">=0.5.0" },
-    { name = "pelican-osm", extras = ["validate"], specifier = ">=0.16.0" },
+    { name = "pelican-osm", extras = ["validate"], specifier = ">=0.16.1" },
     { name = "pelican-random-article", specifier = ">=0.3.0" },
     { name = "pelican-render-math", specifier = ">=1.0.3" },
     { name = "pelican-seo", specifier = ">=1.2.2" },
@@ -607,7 +607,7 @@ requires-dist = [
     { name = "pelican-stat", specifier = ">=0.4.0" },
     { name = "pelican-statistics", specifier = ">=1.0.0" },
     { name = "pelican-summary-link", specifier = ">=0.2.3" },
-    { name = "pelican-tabular", specifier = ">=0.5.0" },
+    { name = "pelican-tabular", specifier = ">=0.8.0" },
     { name = "pelican-tag-cloud", specifier = ">=1.0.1" },
     { name = "pelican-webassets", specifier = ">=2.0.0" },
     { name = "pillow", specifier = ">=11.0.0" },
@@ -1036,15 +1036,16 @@ wheels = [
 
 [[package]]
 name = "pelican-osm"
-version = "0.16.0"
+version = "0.16.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pelican" },
+    { name = "pelican-tabular" },
     { name = "pyyaml" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c5/37/6816f069e532bb12cf9aaddf0dbf815c99c1ee7e23fc19401cc5f1a4e4c5/pelican_osm-0.16.0.tar.gz", hash = "sha256:b0e0ed9d48d09a58237d49499737110711142431a0a4e2a6707018e08169ad89", size = 67333, upload-time = "2026-09-08T10:54:41.965Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/37/f1/c7433966d1e39ffcc263a26df9a837890511479a5a44498caae36db07cd1/pelican_osm-0.16.1.tar.gz", hash = "sha256:aa81592ef77c41fa2e3ff67d028e4214134498a0b355ae1cf2dbc39bd6e1222b", size = 62693, upload-time = "2026-09-19T01:09:46.805Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9a/96/4c7a49424f616d49c7b17810404b3448504c86c82bbf4a267505d971c0d4/pelican_osm-0.16.0-py3-none-any.whl", hash = "sha256:6a9327fcd2120f5e06ff371a5c47ef21cc16df5fcd3fd9d49c251fa36f10f3a2", size = 58542, upload-time = "2026-09-08T10:54:40.683Z" },
+    { url = "https://files.pythonhosted.org/packages/0b/9b/d49a5d0997e7e58fa358e421f2a61ca35e98458996e2e9712e6449dee15a/pelican_osm-0.16.1-py3-none-any.whl", hash = "sha256:8df54a78432a20ca0bd251d5d4b58995f0e200000f1ac05e1ac9d2f36750e915", size = 53284, upload-time = "2026-09-19T01:09:45.191Z" },
 ]
 
 [package.optional-dependencies]
@@ -1181,15 +1182,15 @@ wheels = [
 
 [[package]]
 name = "pelican-tabular"
-version = "0.5.0"
+version = "0.8.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pelican" },
     { name = "pyyaml" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/90/e4/153a06de17e0b44d0320d37acc3bdeea13a06ca37c25de1c522f4b82dfe3/pelican_tabular-0.5.0.tar.gz", hash = "sha256:3536de8f480951f7c81d059da6de7feabf0eabd552ea3f5c86d88dc018315dc9", size = 11769, upload-time = "2026-07-13T15:18:41.41Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/36/bb/c202785c193fbd60ca46e5aeb19bf92561167dd24c63bf3d4a1847537ed4/pelican_tabular-0.8.0.tar.gz", hash = "sha256:1faeabc0eab55b6654e614485e31989499ff2d4bf116cca0812f3e6c0d4e7b0b", size = 60975, upload-time = "2026-09-20T09:57:06.037Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/40/5d/74fdb3cfb518d8db51300e0dfd7050f98ca006d8c469e4b2a148d1b78c70/pelican_tabular-0.5.0-py3-none-any.whl", hash = "sha256:334eb1235d01dd9e5670d800e22bfcfbdc2d445e1a23ac2cae68890b7b9cc3a5", size = 12197, upload-time = "2026-07-13T15:18:40.217Z" },
+    { url = "https://files.pythonhosted.org/packages/fd/d3/4785a2b970b5c1f130c017ed6bc1fe4e0f5585bd921bbc914a1e67289c2d/pelican_tabular-0.8.0-py3-none-any.whl", hash = "sha256:9247ce370ce84dbbb18074606c313e490518a30ae4389ad04447ae2211f6a541", size = 54589, upload-time = "2026-09-20T09:57:04.494Z" },
 ]
 
 [[package]]
