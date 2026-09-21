@@ -12,7 +12,7 @@ Lang: en
 
 ## 🏆 Something I'm proud of recently
 * 🚴 Cycled a full lap around Lake Biwa (split across two days)
-* 😭 Someone recently said my writing was great and added my blog to their [blogroll](/pages/blogroll)
+* 😭 Someone recently said my writing was great and added my blog to their [blogroll](/en/pages/blogroll)
 
 ## 🔥 Things I'm into lately
 * Joining [BlogBlog.Club](https://blogblog.club/) (I've been submitting since the second issue and still haven't stopped!)
