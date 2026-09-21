@@ -174,6 +174,30 @@ def test_preserve_atom_entry_ids_removes_only_entry_id_trailing_slash(tmp_path):
     assert "<id>https://example.com/</id>" in content
 
 
+def test_japanese_article_links_resolve_to_main_site_in_local_build(
+    tmp_path, monkeypatch
+):
+    article = tmp_path / "posts/example/index.html"
+    article.parent.mkdir(parents=True)
+    article.write_text(
+        '<html lang="zh-tw"><head>'
+        '<link rel="canonical" href="http://localhost:8000/posts/example/">'
+        '<meta property="og:type" content="article"></head><body>Article</body></html>'
+    )
+    page = tmp_path / "ja/pages/blogroll.html"
+    page.parent.mkdir(parents=True)
+    page.write_text(
+        '<html lang="ja"><head>'
+        '<link rel="canonical" href="http://localhost:8000/ja/pages/blogroll">'
+        '</head><body><a href="http://localhost:8000/ja/example-zh-tw.html">'
+        "RSS</a></body></html>"
+    )
+    monkeypatch.setitem(tasks.CONFIG, "deploy_path", str(tmp_path))
+    tasks._fix_internal_links()
+    soup = BeautifulSoup(page.read_text(), "html.parser")
+    assert soup.a["href"] == "http://localhost:8000/posts/example/"
+
+
 def test_dead_listing_links_fall_back_to_their_own_subsite(tmp_path, monkeypatch):
     """A tag page that no subsite generated should not dump readers on another one."""
     page = tmp_path / "ja/pages/now.html"
