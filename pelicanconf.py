@@ -164,6 +164,8 @@ I18N_SUBSITES = {
     }
 }
 I18N_SUBSITES["ja"] = {
+    # Keep random discovery available until Japanese articles are published.
+    "RANDOM_ARTICLE_FALLBACK_URL": "/random/",
     "LOCALE": "C",
     "SOCIAL_PROFILE_LABEL": "連絡先",
     "SOCIAL": (
@@ -187,7 +189,6 @@ I18N_UNTRANSLATED_PAGES = "remove"
 PLUGINS = [
     "pelican.plugins.i18n_subsites",
     "pelican.plugins.neighbors",
-    "pelican.plugins.random_article",
     "pelican.plugins.render_math",
     "pelican.plugins.seo",
     "pelican.plugins.series",
@@ -209,6 +210,7 @@ SUMMARY_LINK_FORMAT = ""
 
 # Local plugins
 LOCAL_PLUGINS = [
+    "random_article_subsites",
     "image_markup",
 ]
 PLUGIN_PATHS = ["plugins"]
@@ -353,6 +355,7 @@ I18N_SUBSITES["ja"].update(
                     ("🔒 プライバシー", "/ja/pages/privacy"),
                 ),
             ),
+            ("🎲 ランダム", "/ja/random/"),
         ),
         "SITENAME": "書き留めないことは忘れられる",
     }
