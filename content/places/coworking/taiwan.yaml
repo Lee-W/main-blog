@@ -14,7 +14,7 @@ CE-LIB-RARY-tianmu:
   time_limit: "❌"
   noise: "★★★★☆"
   work_score: "★★★★☆"
-  min_spend: "150 元"
+  min_spend: "NT$150"
   meal: "✅"
   tags: []
   urls:
@@ -23,6 +23,11 @@ CE-LIB-RARY-tianmu:
 
 Le-Promenoir-Coffee:
   name: 4F劇場咖啡 Le Promenoir Coffee
+  translations:
+    en:
+      meal: ✅ (light meals)
+    ja:
+      meal: ✅（軽食）
   lat: 25.043040
   lon: 121.510207
   address: 臺北市中正區延平南路98號4樓
@@ -38,7 +43,7 @@ Le-Promenoir-Coffee:
   time_limit: "❌"
   noise: "★★☆☆☆"
   work_score: "★★★★☆"
-  min_spend: "250 元"
+  min_spend: "NT$250"
   meal: "✅ (輕食)"
   tags: []
   urls:
@@ -47,6 +52,13 @@ Le-Promenoir-Coffee:
 
 notch-coffee-honten:
   name: NOTCH咖啡 本町店
+  translations:
+    en:
+      wifi: ✅ (not fast, but adequate)
+      min_spend: One drink
+    ja:
+      wifi: ✅（速くはないが十分使える）
+      min_spend: ドリンク1杯
   lat: 25.0454762
   lon: 121.5134240
   address: 臺北市中正區黎明里重慶南路一段35號
@@ -71,6 +83,11 @@ notch-coffee-honten:
 
 large-cafe:
   name: LARGE Café 樂居咖啡
+  translations:
+    en:
+      min_spend: One drink
+    ja:
+      min_spend: ドリンク1杯
   lat: 25.048489150673845
   lon: 121.53749846280837
   address: 臺北市中山區長安東路二段142號B1
@@ -93,6 +110,13 @@ large-cafe:
 
 a13-CURISTA-COFFEE:
   name: CURISTA COFFEE奎士咖啡 遠百信義A13店
+  translations:
+    en:
+      power: Some seats
+      min_spend: One drink
+    ja:
+      power: 一部の席
+      min_spend: ドリンク1杯
   lat: 25.037011
   lon: 121.568061
   address: 臺北市信義區松仁路58號4樓
@@ -106,7 +130,7 @@ a13-CURISTA-COFFEE:
   time_limit: "❌"
   noise: "★★★☆☆"
   work_score: "★★★☆☆"
-  min_spend: "一杯飲料"
+  min_spend: "一杯飲品"
   meal: "❌"
   tags: []
   urls:
@@ -115,6 +139,13 @@ a13-CURISTA-COFFEE:
 
 AthenaBooks:
   name: 春秋書店
+  translations:
+    en:
+      power: ✅ (most seats)
+      min_spend: One drink
+    ja:
+      power: ✅（ほとんどの席）
+      min_spend: ドリンク1杯
   lat: 25.0548722222222
   lon: 121.520255555556
   address: 臺北市大同區赤峰街41巷7號
@@ -128,7 +159,7 @@ AthenaBooks:
   time_limit: "❌"
   noise: "★★★★☆"
   work_score: "★★★★☆"
-  min_spend: "一杯飲料"
+  min_spend: "一杯飲品"
   meal: "❌"
   tags: []
   urls:
@@ -137,6 +168,17 @@ AthenaBooks:
 
 sky-coki:
   name: Sky Cofi 咖啡館
+  translations:
+    en:
+      power: ✅ (most seats)
+      time_limit: Depends on the plan
+      min_spend: Depends on the plan
+      meal: ✅ (light meals)
+    ja:
+      power: ✅（ほとんどの席）
+      time_limit: 利用プランによる
+      min_spend: 利用プランによる
+      meal: ✅（軽食）
   lat: 25.05229062886351
   lon: 121.54627750185514
   address: 臺北市松山區中正里南京東路三段287號16樓
@@ -161,6 +203,19 @@ sky-coki:
 
 daychill-specialty-coffee:
   name: Daychill Specialty Coffee Co.（⛔ 已歇業）
+  translations:
+    en:
+      name: Daychill Specialty Coffee Co.（⛔ Closed）
+      status: ⛔ Closed
+      hours: 12:00 ~ 23:00 (closed Mondays)
+      power: ✅ (most seats)
+      min_spend: One drink
+    ja:
+      name: Daychill Specialty Coffee Co.（⛔ 閉店）
+      status: ⛔ 閉店
+      hours: 12:00 ~ 23:00（月曜休み）
+      power: ✅（ほとんどの席）
+      min_spend: ドリンク1杯
   lat: 25.051973724626745
   lon: 121.55914385673243
   address: 臺北市松山區東光里南京東路五段55-1號
@@ -187,6 +242,19 @@ daychill-specialty-coffee:
 
 curista-coffee-city-hall:
   name: CURISTA COFFEE 奎士咖啡 市府旗艦店
+  translations:
+    en:
+      power: ✅ (most seats)
+      wifi: ✅ (slightly slow, but usable)
+      time_limit: 2-hour limit when full
+      min_spend: One drink
+      meal: ✅ (I don't recommend the risotto)
+    ja:
+      power: ✅（ほとんどの席）
+      wifi: ✅（少し遅いが使える）
+      time_limit: 満席時は2時間まで
+      min_spend: ドリンク1杯
+      meal: ✅（リゾットはおすすめしない）
   lat: 25.041842
   lon: 121.564147
   address: 臺北市信義區新仁里忠孝東路四段563號1樓
@@ -211,6 +279,17 @@ curista-coffee-city-hall:
 
 cafe-raco:
   name: CAFE RACO
+  translations:
+    en:
+      power: ✅ (most seats)
+      wifi: ✅ (connect to the right Wi-Fi network)
+      min_spend: One drink
+      meal: ✅ (light meals)
+    ja:
+      power: ✅（ほとんどの席）
+      wifi: ✅（接続する Wi-Fi を選ぶ必要あり）
+      min_spend: ドリンク1杯
+      meal: ✅（軽食）
   lat: 25.058665
   lon: 121.534909
   address: 臺北市中山區松江里民生東路二段147巷1號1樓
@@ -235,6 +314,11 @@ cafe-raco:
 
 run-xue-coworking:
   name: 潤學商務共享中心
+  translations:
+    en:
+      visit_note: Lots of mosquitoes. The building entrance is a bit dim, but the interior has been tidied up nicely.
+    ja:
+      visit_note: 蚊が多く、建物の入口は少し薄暗いが、室内はきちんと整えられている。
   lat: 22.994112
   lon: 120.200229
   address: 臺南市中西區南美里民生路一段167號3F
@@ -248,7 +332,7 @@ run-xue-coworking:
   time_limit: "❌"
   noise: "★★★★★"
   work_score: "★★★★☆"
-  min_spend: "200 元"
+  min_spend: "NT$200"
   meal: "❌"
   visit_note: 蚊子多，入口建築略顯陰暗，但空間內部有好好整理過
   tags: []

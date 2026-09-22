@@ -1,6 +1,11 @@
 # 日本 - 神奈川
 nekton-fujisawa:
   name: NEKTON FUJISAWA
+  translations:
+    en:
+      hours: Weekdays 08:00 ~ 21:00 / Weekends and holidays 10:00 ~ 21:00
+    ja:
+      hours: 平日 08:00 ~ 21:00 / 休日 10:00 ~ 21:00
   lat: 35.337732
   lon: 139.485783
   address: 神奈川県藤沢市鵠沼橘1-17-11 順天ビル4F
@@ -86,6 +91,13 @@ ota-fab:
 
 basispoint-ueno:
   name: BasisPoint 上野店（⛔ 已歇業）
+  translations:
+    en:
+      name: BasisPoint 上野店（⛔ Closed）
+      status: ⛔ Closed
+    ja:
+      name: BasisPoint 上野店（⛔ 閉店）
+      status: ⛔ 閉店
   lat: 35.710474
   lon: 139.7769557
   address: 110-0015 東京都台東区東上野２丁目１８−９ ファーストビル 2F
