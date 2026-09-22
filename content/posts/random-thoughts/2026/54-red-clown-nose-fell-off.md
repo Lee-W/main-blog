@@ -1,11 +1,10 @@
 Title: 啊，紅鼻子掉下來了
-Date: 2026-09-22 23:20 +0900
+Date: 2026-09-23 07:30 +0800
 Category: Random Thoughts
 Tags: Blog
 Slug: red-clown-nose-fell-off
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 記得很久很久以前，LQ7 曾說過我喜歡寫搞耍文
 
