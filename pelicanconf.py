@@ -219,6 +219,23 @@ PLUGINS.extend(LOCAL_PLUGINS)
 TABULAR_COUNT_TEMPLATE = ""  # suppress the row-count line under tables
 TABULAR_GROUP_COUNT_TEMPLATE = ""  # suppress per-group counts in group headers
 
+# Text translations for place lists and map popups. Geographic group keys
+# remain canonical until group-value labels are supported by the plugins.
+OSM_TRANSLATIONS = {
+    "fields": [
+        "name",
+        "status",
+        "hours",
+        "power",
+        "wifi",
+        "time_limit",
+        "min_spend",
+        "meal",
+        "visit_note",
+    ],
+    "source_lang": "zh-TW",
+}
+
 # pelican-sitemap settings
 SITEMAP = {
     "format": "xml",
