@@ -1,3 +1,12 @@
+- date: 2026-09-17
+  event:
+    text: "💻 Software Freedom Day Bukidnon 2026"
+    href: "https://luma.com/fd55728f"
+  title: "Orchestration Still Matters: Apache Airflow in the Age of AI"
+  slide:
+    text: "📊"
+    href: "https://speakerdeck.com/leew/asset-partitions-matching-workflow-to-the-right-datahttps://speakerdeck.com/leew/orchestration-still-matters-apache-airflow-in-the-age-of-ai"
+
 - date: 2026-08-31
   event:
     text: "🇺🇸 Airflow Summit 2026"
