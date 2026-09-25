@@ -1,11 +1,10 @@
 Title: 15 → 14
-Date: 2026-09-22 23:22 +0900
+Date: 2026-09-25 22:41 +0800
 Category: Tech
 Tags: Airflow, Open Source
 Slug: airflow-15-to-14
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 短期沒意義的虛榮心目標終於達到了
 
