@@ -1,11 +1,10 @@
 Title: Airflow 的前世今生
-Date: 2026-09-26 14:38 +0800
+Date: 2026-09-27 21:45 +0800
 Category: Tech
 Tags: Airflow, Open Source, PyCon TW
 Slug: happy-birthday-airflow
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 上週受到 [Software Freedom Day Bukidnon](https://www.facebook.com/sfd.bukidnon.ph) 的邀請去分享 Airflow
 
