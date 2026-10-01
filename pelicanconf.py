@@ -188,6 +188,7 @@ I18N_UNTRANSLATED_PAGES = "remove"
 # Plugin-setting
 PLUGINS = [
     "pelican.plugins.i18n_subsites",
+    "pelican.plugins.i18n_feeds",
     "pelican.plugins.neighbors",
     "pelican.plugins.render_math",
     "pelican.plugins.seo",
