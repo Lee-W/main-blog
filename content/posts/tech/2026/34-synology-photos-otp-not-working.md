@@ -1,11 +1,10 @@
 Title: Synology Photos 驗證碼又又又又又沒用了
-Date: 2026-09-11 15:30 +0800
+Date: 2026-10-02 12:22 +0800
 Category: Tech
 Tags: Synology, NAS
 Slug: synology-photos-otp-not-working
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 太久沒有登入 Synology Photos ，就會因為 session 過期需要重新登入
 然後重新登入的時候，有時候又會一直遇到驗證碼錯誤...
