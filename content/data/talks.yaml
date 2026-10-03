@@ -1,3 +1,9 @@
+- date: 2026-10-11
+  event:
+    text: "Community Over Code Glasgow 2026"
+    href: "https://web.cvent.com/event/ac71ce47-2b5f-424c-abfe-5b48255315fb/summary?RefId=XSummary&session=83b96684-dbdf-4b0f-81d2-94eaf1446127"
+  title: "Airflow Beyond Python: New Languages for Tasks and Workflows"
+
 - date: 2026-09-17
   event:
     text: "💻 Software Freedom Day Bukidnon 2026"
