@@ -2,7 +2,7 @@ Title: NOTCH咖啡 本町店
 Subtitle: Join me, and together we can rule the coworking side
 Date: 2026-05-28 19:07 +0800
 Category: Random Thoughts
-Tags: Coworking Space, 娃： 祥子
+Tags: Coworking Space, 娃： 小祥
 Slug: notch-coffee-honten
 Cover: /images/post-images/2026/notch-coffee-honten/work-setup-with-black-knight-latte.jpeg
 Authors: Wei Lee

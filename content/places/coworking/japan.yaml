@@ -44,7 +44,7 @@ yokohamawakusupesu:
   tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
-      href: "{filename}/posts/tech/2024/02-2023-tokyo-coworking-space.md"
+      href: "{filename}/posts/random-thoughts/2024/03-2023-tokyo-coworking-space.md"
 
 andwork-kawasaki:
   name: .andwork kawasaki
@@ -65,7 +65,7 @@ andwork-kawasaki:
   tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
-      href: "{filename}/posts/tech/2024/02-2023-tokyo-coworking-space.md"
+      href: "{filename}/posts/random-thoughts/2024/03-2023-tokyo-coworking-space.md"
 
 # 日本 - 東京
 ota-fab:
@@ -87,7 +87,7 @@ ota-fab:
   tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
-      href: "{filename}/posts/tech/2024/02-2023-tokyo-coworking-space.md"
+      href: "{filename}/posts/random-thoughts/2024/03-2023-tokyo-coworking-space.md"
 
 basispoint-ueno:
   name: BasisPoint 上野店（⛔ 已歇業）
@@ -116,7 +116,7 @@ basispoint-ueno:
   tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
-      href: "{filename}/posts/tech/2024/02-2023-tokyo-coworking-space.md"
+      href: "{filename}/posts/random-thoughts/2024/03-2023-tokyo-coworking-space.md"
 
 monz-space:
   name: MONZ SPACE
@@ -137,7 +137,7 @@ monz-space:
   tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
-      href: "{filename}/posts/tech/2024/02-2023-tokyo-coworking-space.md"
+      href: "{filename}/posts/random-thoughts/2024/03-2023-tokyo-coworking-space.md"
 
 tefu-lounge-shimokitazawa:
   name: (tefu) lounge 下北沢
@@ -158,7 +158,7 @@ tefu-lounge-shimokitazawa:
   tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
-      href: "{filename}/posts/tech/2024/02-2023-tokyo-coworking-space.md"
+      href: "{filename}/posts/random-thoughts/2024/03-2023-tokyo-coworking-space.md"
 
 andwork-shibuya:
   name: アンドワーク渋谷
@@ -179,7 +179,7 @@ andwork-shibuya:
   tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
-      href: "{filename}/posts/tech/2024/02-2023-tokyo-coworking-space.md"
+      href: "{filename}/posts/random-thoughts/2024/03-2023-tokyo-coworking-space.md"
 
 neko-cafe-mocha-ikebukuro:
   name: 猫カフェ モカラウンジ 池袋東口店
@@ -201,4 +201,4 @@ neko-cafe-mocha-ikebukuro:
   tags: []
   urls:
     - label: "2023 東京 Coworking Spaces"
-      href: "{filename}/posts/tech/2024/02-2023-tokyo-coworking-space.md"
+      href: "{filename}/posts/random-thoughts/2024/03-2023-tokyo-coworking-space.md"

@@ -1,7 +1,7 @@
 Title: 溺水
 Date: 2026-08-02 22:17 +0800
 Category: Random Thoughts
-Tags: Lifestyle, Life
+Tags: Lifestyle
 Slug: drowning
 Authors: Wei Lee
 Lang: zh-tw

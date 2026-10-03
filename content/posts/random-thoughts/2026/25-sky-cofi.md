@@ -2,7 +2,7 @@ Title: Sky Cofi 咖啡館
 Subtitle: 進城遠端辦公不會錯的選擇
 Date: 2026-05-08 09:55 +0800
 Category: Random Thoughts
-Tags: Coworking Space, 娃： 小睦, 娃： 企鵝, 娃： 燈
+Tags: Coworking Space, 娃： 小睦, 娃： 企鵝, 娃： 小燈
 Slug: sky-cofi
 Cover: /images/post-images/2026/sky-cofi/IMG_3052.jpeg
 Authors: Wei Lee

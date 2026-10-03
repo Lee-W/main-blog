@@ -2,7 +2,7 @@ Title: 現在我有部落卷
 Subtitle: 我很喜歡部落卷
 Date: 2026-06-11 13:42 +0800
 Category: Random Thoughts
-Tags: Blog, Life
+Tags: Blog, Lifestyle
 Slug: now-i-also-have-blogroll
 Authors: Wei Lee
 Lang: zh-tw

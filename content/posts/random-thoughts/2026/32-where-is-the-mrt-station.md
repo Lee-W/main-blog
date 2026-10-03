@@ -1,7 +1,7 @@
 Title: 捷運站在哪裡，絕對難不倒你
 Date: 2026-06-01 13:42 +0800
 Category: Random Thoughts
-Tags: Life
+Tags: Lifestyle
 Slug: where-is-the-mrt-station
 Authors: Wei Lee
 Lang: zh-tw
