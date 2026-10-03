@@ -1,7 +1,7 @@
 Title: 改變人生觀的一句話
 Date: 2026-05-27 14:55 +0800
 Category: Random Thoughts
-Tags: BlogBlog 同樂會, Life
+Tags: BlogBlog 同樂會, Lifestyle
 Slug: life-changing-sentence
 Cover: /images/post-images/2025-support-your-oshi-while-you-can/better.jpeg
 Authors: Wei Lee

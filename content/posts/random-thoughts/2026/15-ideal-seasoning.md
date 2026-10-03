@@ -1,7 +1,7 @@
 Title: 理想的調味料
 Date: 2026-03-29 21:30 +0800
 Category: Random Thoughts
-Tags: BlogBlog 同樂會, Lifestyle
+Tags: BlogBlog 同樂會, Lifestyle, Cooking
 Slug: ideal-seasoning
 Series: 理想的日常 (2026)
 Cover: /images/post-images/2026/ideal/seasoning.jpeg

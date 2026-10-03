@@ -67,6 +67,7 @@ PAGINATION_PATTERNS = (
 # EXTRA_PATH_METADATA remaps individual files' output path within it.
 STATIC_PATHS = ["images", "extra", "static"]
 EXTRA_PATH_METADATA = {
+    "extra/_redirects": {"path": "_redirects"},
     "extra/robots.txt": {"path": "robots.txt"},
     "extra/favicon.ico": {"path": "favicon.ico"},
     "extra/favicon-16.png": {"path": "favicon-16.png"},

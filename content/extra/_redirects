@@ -1,0 +1,21 @@
+# Preserve published article URLs after category changes.
+/posts/tech/2024/01/2023-tokyo-coworking-space /posts/random-thoughts/2024/01/2023-tokyo-coworking-space/ 301
+/posts/tech/2024/01/2023-tokyo-coworking-space/ /posts/random-thoughts/2024/01/2023-tokyo-coworking-space/ 301
+/posts/tech/2024/01/2023-tokyo-coworking-space/index.html /posts/random-thoughts/2024/01/2023-tokyo-coworking-space/ 301
+
+# Preserve tag URLs after merging equivalent labels.
+/en/tag/commitizen /en/tag/commitizen-tools 301
+/en/tag/commitizen.html /en/tag/commitizen-tools 301
+/en/tag/commitizen/ /en/tag/commitizen-tools 301
+/tag/editor /tag/text-editor 301
+/tag/editor.html /tag/text-editor 301
+/tag/editor/ /tag/text-editor 301
+/tag/life /tag/lifestyle 301
+/tag/life.html /tag/lifestyle 301
+/tag/life/ /tag/lifestyle 301
+/tag/wa-deng /tag/wa-xiao-deng 301
+/tag/wa-deng.html /tag/wa-xiao-deng 301
+/tag/wa-deng/ /tag/wa-xiao-deng 301
+/tag/wa-xiang-zi /tag/wa-xiao-xiang 301
+/tag/wa-xiang-zi.html /tag/wa-xiao-xiang 301
+/tag/wa-xiang-zi/ /tag/wa-xiao-xiang 301

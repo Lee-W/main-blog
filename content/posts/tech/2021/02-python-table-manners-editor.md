@@ -1,7 +1,7 @@
 Title: Python Table Manners 番外 - 編輯器
 Date: 2021-01-02 12:57 +0800
 Category: Tech
-Tags: Python, Editor
+Tags: Python, Text Editor
 Slug: python-table-manner-editor
 Series: Python Table Manners
 Authors: Wei Lee

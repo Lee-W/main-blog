@@ -1,7 +1,7 @@
 Title: 一期一會
 Date: 2026-08-19 08:44 +0800
 Category: Random Thoughts
-Tags: BlogBlog 同樂會, Life, Japan
+Tags: BlogBlog 同樂會, Lifestyle, Japan
 Slug: ichigo-ichie
 Cover: /images/post-images/2026/ichigo-ichie/juyondai.jpeg
 Authors: Wei Lee
