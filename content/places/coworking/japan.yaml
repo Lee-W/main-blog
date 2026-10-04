@@ -202,3 +202,27 @@ neko-cafe-mocha-ikebukuro:
   urls:
     - label: "2023 東京 Coworking Spaces"
       href: "{filename}/posts/random-thoughts/2024/03-2023-tokyo-coworking-space.md"
+
+smart-cafe-akihabara:
+  name: スマートカフェ 秋葉原店
+  lat: 35.696675
+  lon: 139.774697
+  address: 東京都千代田区神田須田町2-25
+  country: 日本
+  city: 東京
+  district: 秋葉原
+  osm_type: node
+  osm_id: 13717710801
+  category: 咖啡廳
+  hours: "24 小時"
+  meal: "❌"
+  power: "✅"
+  wifi: "✅"
+  time_limit: "❌"
+  noise: "★★★★★"
+  work_score: "★★★★☆"
+  min_spend: "¥480"
+  tags: []
+  urls:
+    - label: "スマートカフェ 秋葉原店"
+      href: "{filename}/posts/random-thoughts/2026/smart-cafe-akihabara.md"
