@@ -1088,16 +1088,16 @@ wheels = [
 
 [[package]]
 name = "pelican-osm"
-version = "0.19.3"
+version = "0.20.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pelican" },
     { name = "pelican-tabular" },
     { name = "pyyaml" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/3d/91/b577506bb35492651f6f3cd7d38858175dcdfce6d902ab0437ebb987e371/pelican_osm-0.19.3.tar.gz", hash = "sha256:0f5220b70fb6a6e45ba964e42854f5e32203e979bdd31fee9190f9a304c9f6ad", size = 74006, upload-time = "2026-10-04T05:02:50.184Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/6d/25/48eacd04629c5bbb6fafd46c5bbb5a27dfe2d16649f312754f459a7d0cec/pelican_osm-0.20.0.tar.gz", hash = "sha256:4700efe3f1e6e637c6ea4b899112059a4661fca6503fd6db4365dfa01db269ab", size = 76226, upload-time = "2026-10-04T14:52:48.641Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b3/83/f856409067a034291caf9b375698794aaf4c285bbf0be7817688d6acf4a4/pelican_osm-0.19.3-py3-none-any.whl", hash = "sha256:0ac4d2e34db3ce5151f9edbfce42d25d63c21526c9319cb0055cd42e5ca78fd8", size = 62695, upload-time = "2026-10-04T05:02:48.635Z" },
+    { url = "https://files.pythonhosted.org/packages/96/d6/e37afe9619682ef761e57d0fbb347dfc72122315b745cb179892b1dcf228/pelican_osm-0.20.0-py3-none-any.whl", hash = "sha256:de5341b103cdb3cca85c568b202dae2f1a86313be6868adf59a6fbfc79766320", size = 64570, upload-time = "2026-10-04T14:52:46.593Z" },
 ]
 
 [package.optional-dependencies]
