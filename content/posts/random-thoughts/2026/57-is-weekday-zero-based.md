@@ -1,5 +1,5 @@
 Title: 禮拜其實是 0-based 的嗎？！
-Date: 2026-10-12 15:39 +0800
+Date: 2026-10-12 16:42 +0800
 Category: Random Thoughts
 Tags: Lifestyle
 Slug: is-weekday-zero-based
