@@ -1,11 +1,10 @@
 Title: 第一件在日本感到開心的事
-Date: 2026-09-22 23:16 +0900
+Date: 2026-10-23 13:26 +0800
 Category: Random Thoughts
 Tags: Japan, Lifestyle, 娃： 大 Mortis, 娃： 喵夢
 Slug: first-happy-thing-in-japan
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 傳說中日本的死鎖鐵三角，我已經透過持有電話解除了
 第一個落腳著也有社群前輩幫忙
