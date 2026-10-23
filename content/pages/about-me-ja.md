@@ -1,8 +1,8 @@
 Title: プロフィール
-Summary: 李唯（Wei Lee）です。オープンソース、Python、自動化、そして学んだことを書き残すのが好きです。
 Date: 2017-02-03 13:06 +0800
 Modified: 2026-09-19 12:00 +0800
 Slug: about-me
+Summary: 李唯（Wei Lee）です。オープンソース、Python、自動化、そして学んだことを書き残すのが好きです。
 Lang: ja
 
 李唯（Wei Lee）と申します。

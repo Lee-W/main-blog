@@ -1,8 +1,8 @@
 Title: About Me
-Summary: I'm Wei Lee, an open-source developer who enjoys Python, automation, and writing down what I learn.
 Date: 2017-02-03 13:06 +0800
 Modified: 2026-04-17 21:30 +0800
 Slug: about-me
+Summary: I'm Wei Lee, an open-source developer who enjoys Python, automation, and writing down what I learn.
 Lang: en
 
 I'm Wei Lee / 李唯.

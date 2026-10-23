@@ -1,8 +1,8 @@
 Title: ブログロール
-Summary: RSS で購読しているブログ、コミュニティの仲間、ニュースメディア。
 Date: 2026-06-10 22:00 +0800
 Modified: 2026-06-27 17:25 +0800
 Slug: blogroll
+Summary: RSS で購読しているブログ、コミュニティの仲間、ニュースメディア。
 Lang: ja
 
 [RSS]({filename}/posts/random-thoughts/2025/02-get-your-retention-back-through-rss.md) で購読しているブログたちです

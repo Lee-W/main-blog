@@ -1,9 +1,9 @@
 Title: Coworking Spaces
-Summary: Coworking spaces and work-friendly places I have personally visited in Taiwan and Japan.
-Slug: coworking
-Lang: en
 Date: 2026-06-05 11:34 +0800
 Modified: 2026-07-08 18:30 +0800
+Slug: coworking
+Summary: Coworking spaces and work-friendly places I have personally visited in Taiwan and Japan.
+Lang: en
 
 [TOC]
 
