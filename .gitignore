@@ -113,3 +113,8 @@ pelican-plugin
 .MWebMetaData
 seo_report.html
 cache
+
+# Environment / OS
+.venv
+.env
+.DS_Store
