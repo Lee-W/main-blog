@@ -462,7 +462,7 @@ def pelican_run(cmd):
 @task(optional=["rev_range"])
 def style(c, rev_range="origin/main.."):
     """Run style check on python code"""
-    python_targets = "pelicanconf.py publishconf.py tasks.py scripts plugins"
+    python_targets = "pelicanconf.py publishconf.py tasks.py scripts plugins tests"
     c.run(f"uv run ruff check {python_targets}")
 
     commit_count = subprocess.run(
@@ -485,7 +485,7 @@ def style(c, rev_range="origin/main.."):
 @task
 def format(c):
     """Run autoformater on python code"""
-    python_targets = "pelicanconf.py publishconf.py tasks.py scripts plugins"
+    python_targets = "pelicanconf.py publishconf.py tasks.py scripts plugins tests"
     c.run(
         f"""
         uv run ruff format {python_targets} && \
@@ -562,25 +562,12 @@ def _create_post_from_template(
     category_dir = Path("content/posts") / category.lower().replace(" ", "-") / year
     category_dir.mkdir(parents=True, exist_ok=True)
 
-    numbers = []
-    pad_width = 0
-    for f in category_dir.glob("*.md"):
-        m = re.match(r"^(\d+)-", f.name)
-        if m:
-            num_str = m.group(1)
-            numbers.append(int(num_str))
-            if num_str.startswith("0"):
-                pad_width = len(num_str)
-
-    n = max(numbers, default=0) + 1
-    n_str = str(n).zfill(pad_width) if pad_width else str(n)
-
     template = Template((Path("templates") / template_name).read_text())
     content = template.substitute(
         title=title, date=date_str, category=category, slug=slug, **(extra or {})
     )
 
-    filepath = category_dir / f"{n_str}-{slug}.md"
+    filepath = category_dir / f"{slug}.md"
     filepath.write_text(content)
     print(f"Created: {filepath}")
 
