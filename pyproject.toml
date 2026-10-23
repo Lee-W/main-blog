@@ -79,7 +79,7 @@ name = "cz_customize"
 
 [tool.commitizen.customize]
 message_template = "{{change_type}}: {{message}}"
-example = "post: this is my first post"
+example = "new post: this is my first post"
 schema = "<type>: <body>"
 schema_pattern = "^((new post|post update|new draft|draft update|post metadata|typo|config|theme|dependency|static page)): .*"
 info = "This is commit convention for my blog post"
