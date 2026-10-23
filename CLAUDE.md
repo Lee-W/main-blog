@@ -81,7 +81,6 @@ Key plugins configured in `pelicanconf.py`:
 - `pelican.plugins.series` — groups posts into series
 - `pelican.plugins.webassets` — CSS/JS asset bundling
 - `pelican.plugins.seo` — SEO report and enhancer
-- `pelican.plugins.deadlinks` — dead link validation (disabled by default)
 - `pagefind` — client-side search (must be built separately with `--build-pagefind`)
 
 ### Commit Convention
