@@ -1,8 +1,8 @@
 Title: CV
-Summary: Wei Lee's work experience, open-source contributions, community involvement, talks, awards, publications, and education.
 Date: 2026-04-17 00:00 +0800
 Modified: 2026-10-05 09:15 +0900
 Slug: cv
+Summary: Wei Lee's work experience, open-source contributions, community involvement, talks, awards, publications, and education.
 Lang: en
 
 [TOC]

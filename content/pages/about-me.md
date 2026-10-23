@@ -1,8 +1,8 @@
 Title: 關於我
-Summary: 我是李唯（Wei Lee），熱愛開源、Python、自動化與把經驗寫下來。
 Date: 2017-02-03 13:06 +0800
 Modified: 2026-04-17 21:30 +0800
 Slug: about-me
+Summary: 我是李唯（Wei Lee），熱愛開源、Python、自動化與把經驗寫下來。
 Lang: zh-tw
 
 我是李唯（Wei Lee）
