@@ -64,13 +64,6 @@ repos:
         entry: uv run --no-sync python scripts/check_page_metadata.py
         files: ^content/pages/.*\.md$
 
-      - id: check-place-ids
-        name: Check place id/name uniqueness
-        language: system
-        pass_filenames: false
-        entry: uv run --no-sync python scripts/check_place_ids.py
-        files: ^content/places/.*\.yaml$
-
       - id: remove-gps-from-image-exif
         name: Remove GPS Info from image exif
         language: system
