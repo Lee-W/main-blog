@@ -36,7 +36,6 @@ DIRECT_TEMPLATES = (
     "tags",
     "series_list",
 )
-CATEGORIES_URL = "category"
 ARCHIVES_URL = "archives"
 ARCHIVES_SAVE_AS = "archives.html"
 AUTHORS_URL = "authors"
@@ -108,6 +107,7 @@ MARKDOWN = {
         "markdown.extensions.codehilite": {"css_class": "highlight"},
         "markdown.extensions.nl2br": {},
         "markdown.extensions.toc": {"toc_depth": "1-3"},
+        "markdown_mermaidjs": {},
         "markdown_del_ins": {},
         "pymdownx.blocks.caption": {},
         "pymdownx.superfences": {},
@@ -311,9 +311,6 @@ AUTHOR_META = {
         "image": "/images/avatar.jpeg",
     }
 }
-
-# Markdown extension
-MARKDOWN["extension_configs"]["markdown_mermaidjs"] = {}
 
 # i18n
 CATEGORY_TRANSLATIONS = {
