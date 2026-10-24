@@ -42,7 +42,6 @@ Lang: zh-tw
     * 用 [HttpHook](https://airflow.apache.org/docs/apache-airflow-providers-http/stable/_api/airflow/providers/http/hooks/http/index.html#airflow.providers.http.hooks.http.HttpHook) 重新寫過傳送 Discord 訊息的邏輯，並且讓上游的資源（Asset） 在傳送資源事件額外資訊（Asset Event Extra）只傳 Airflow 變數（Variable）的鍵，到了傳送訊息的 Dag 才去取得實際的值，以確保所有的 webhook 都是由 Airflow 變數所管理
     * 現在所有資產跟 Dag 之間的相依大概長這樣 ![assets](/images/post-images/2025-06-30-07-06-open-source-report/assets.jpg)
 
-
 ---
 
 ## Reference

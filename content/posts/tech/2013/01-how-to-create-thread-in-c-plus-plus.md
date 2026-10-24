@@ -15,7 +15,7 @@ Lang: zh-tw
 (`-std=c++11 -lpthread` 好像也可以 )
 
 e.g. `g++ -o t thread.cpp -std=c++11 -pthread`
-`-std=c++11` :  是指定 c++ 的版本
+`-std=c++11` : 是指定 c++ 的版本
 `-pthread` ( 或 `-lpthread`)：使用 thread 的 library
 
 下面有寫到 join 的部份

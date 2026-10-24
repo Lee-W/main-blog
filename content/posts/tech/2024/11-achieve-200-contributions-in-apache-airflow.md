@@ -126,7 +126,7 @@ The count of PRs might appear to be higher than the value I added (and it actual
 30. [feat(providers/microsoft): add AzureContainerInstancesOperator.volume as a template field](https://github.com/apache/airflow/pull/34070)
 31. [test(providers/microsfot): add system test for AzureContainerVolumeHook and AzureContainerRegistryHook](https://github.com/apache/airflow/pull/34002)
 32. [docs(providers): replace markdown style link with rst style link for amazon and apache-beam](https://github.com/apache/airflow/pull/33992)
-33. [test(providers/microsoft): add test cases  to AzureContainerInstanceHook](https://github.com/apache/airflow/pull/33991)
+33. [test(providers/microsoft): add test cases to AzureContainerInstanceHook](https://github.com/apache/airflow/pull/33991)
 34. [Add DefaultAzureCredential support to AzureContainerRegistryHook](https://github.com/apache/airflow/pull/33825)
 35. [feat(providers/microsoft): add DefaultAzureCredential support to AzureContainerVolumeHook](https://github.com/apache/airflow/pull/33822)
 36. [Add AzureBatchOperator example](https://github.com/apache/airflow/pull/33716)

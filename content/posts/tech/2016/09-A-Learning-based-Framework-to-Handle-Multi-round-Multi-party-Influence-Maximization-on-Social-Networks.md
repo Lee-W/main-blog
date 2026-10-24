@@ -177,8 +177,7 @@ $ Algorithm $
         * Use MINMAX theorem to find the equilibrium
     * $Q(s, a, o)$: The reward of first party when using strategy $a$ against opponent's strategy $o$ in state $s$
     * $Q_{t+1}(s_t, a_t, o_t) = (1-\alpha)Q_t(s_t, a_t, o_t)+\alpha[r_{t+1}+\gamma V(s_{t+1})]$
-    * Operations  Research
-
+    * Operations Research
 * The difference between STORM-QQ and STORM-MM
 
 |STORM-QQ|STORM-MM|

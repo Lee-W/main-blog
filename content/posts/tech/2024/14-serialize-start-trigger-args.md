@@ -81,7 +81,7 @@ class StartTriggerArgs:
 
 and wish Airflow would magically handle everything for me.
 
-But,  ...
+But, ...
 ![That's not how airflow serialization works](/images/post-images/2024-serialize-start-trigger-args/han.jpg)
 
 ## Why do we need serialization here?

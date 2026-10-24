@@ -368,7 +368,6 @@ with log_level(logging.DEBUG, "mylog") as logger:
     * 用3個 double quotes (`"""`) 開頭
     * 第一行應該是單一句子，來描寫用途
     * 接下來的文字含有使用者應該知道的作業細節
-
 * class
     * 將重要的 public attribute 和 method 在 class level 的 docstring 寫出
 * public function / method
@@ -402,7 +401,6 @@ with log_level(logging.DEBUG, "mylog") as logger:
 
 * 最好的做法是重構程式碼
     * 但有時候清楚的劃分相當困難，或 cost 太高了，因此還是需要知道如何打破循環依存性
-
 * 解法一： 重新安排匯入順序
     * 這是一個比較不好的做法，違反了 PEP 8，且容易讓程式碼稍微的修改就造成問題
 * 解法二： import, configure and execute

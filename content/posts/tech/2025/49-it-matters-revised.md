@@ -51,65 +51,65 @@ Lang: zh-tw
 ### Apache Airflow
 
 - **個人貢獻**
-  - 現任 [Committer](https://github.com/apache/airflow/blob/610b5c0458a835d0e9db0aac4aab8e0caf625002/airflow-core/docs/project.rst?plain=1#L108)，具備直接合併程式碼的權限
-  - [臺灣華語程式碼、翻譯負責人](https://github.com/apache/airflow/blob/610b5c0458a835d0e9db0aac4aab8e0caf625002/.github/CODEOWNERS#L48)
-  - [貢獻量前 20 名貢獻者](https://github.com/apache/airflow/graphs/contributors)
-  - 發起 [350+ 合併 PRs](https://github.com/apache/airflow/pulls?q=sort%3Aupdated-desc+is%3Apr+author%3ALee-W+is%3Amerged+)
-  - 主導多項 Airflow Improvement Proposal (AIP)  
-    - **[AIP-90 Human in the loop](https://github.com/orgs/apache/projects/508/views/1?query=sort%3Aupdated-desc+is%3Aopen)**（主導人之一）  
-    - **[AIP-74 Introducing Data Assets](https://github.com/orgs/apache/projects/412/views/1?query=sort%3Aupdated-desc+is%3Aopen)**（負責主要實作）  
-    - **[AIP-75 New Asset-Centric Syntax](https://github.com/orgs/apache/projects/413/views/1?query=sort%3Aupdated-desc+is%3Aopen)**（協助實作）  
+    - 現任 [Committer](https://github.com/apache/airflow/blob/610b5c0458a835d0e9db0aac4aab8e0caf625002/airflow-core/docs/project.rst?plain=1#L108)，具備直接合併程式碼的權限
+    - [臺灣華語程式碼、翻譯負責人](https://github.com/apache/airflow/blob/610b5c0458a835d0e9db0aac4aab8e0caf625002/.github/CODEOWNERS#L48)
+    - [貢獻量前 20 名貢獻者](https://github.com/apache/airflow/graphs/contributors)
+    - 發起 [350+ 合併 PRs](https://github.com/apache/airflow/pulls?q=sort%3Aupdated-desc+is%3Apr+author%3ALee-W+is%3Amerged+)
+    - 主導多項 Airflow Improvement Proposal (AIP)  
+        - **[AIP-90 Human in the loop](https://github.com/orgs/apache/projects/508/views/1?query=sort%3Aupdated-desc+is%3Aopen)**（主導人之一）  
+        - **[AIP-74 Introducing Data Assets](https://github.com/orgs/apache/projects/412/views/1?query=sort%3Aupdated-desc+is%3Aopen)**（負責主要實作）  
+        - **[AIP-75 New Asset-Centric Syntax](https://github.com/orgs/apache/projects/413/views/1?query=sort%3Aupdated-desc+is%3Aopen)**（協助實作）  
 - **專案影響力**
-  - 被 **[Google Cloud Composer](https://cloud.google.com/composer)、[Amazon MWAA](https://aws.amazon.com/managed-workflows-for-apache-airflow/)、[Astronomer](https://www.astronomer.io/)** 等商業產品直接採用
-  - 被開源社群 [PyCon Taiwan](https://tw.pycon.org/) 採用 ([pycon-etl](https://github.com/pycontw/pycon-etl))
-  - [約 1,400萬次下載/月](https://pypistats.org/packages/apache-airflow)
+    - 被 **[Google Cloud Composer](https://cloud.google.com/composer)、[Amazon MWAA](https://aws.amazon.com/managed-workflows-for-apache-airflow/)、[Astronomer](https://www.astronomer.io/)** 等商業產品直接採用
+    - 被開源社群 [PyCon Taiwan](https://tw.pycon.org/) 採用 ([pycon-etl](https://github.com/pycontw/pycon-etl))
+    - [約 1,400萬次下載/月](https://pypistats.org/packages/apache-airflow)
 
 ### Ruff
 - **個人貢獻**
-  - [貢獻量前 30 名貢獻者](https://github.com/astral-sh/ruff/graphs/contributors)
-  - [發起 62 個合併 PRs](https://github.com/astral-sh/ruff/pulls?q=sort%3Aupdated-desc+is%3Apr+author%3ALee-W+is%3Amerged+)  
-  - 主導 **[Airflow 2 → 3 遷移自動化](https://github.com/apache/airflow/issues/41641)**，設計並實作 [Ruff AIR301–312 規則](https://docs.astral.sh/ruff/rules/#airflow-air)
+    - [貢獻量前 30 名貢獻者](https://github.com/astral-sh/ruff/graphs/contributors)
+    - [發起 62 個合併 PRs](https://github.com/astral-sh/ruff/pulls?q=sort%3Aupdated-desc+is%3Apr+author%3ALee-W+is%3Amerged+)  
+    - 主導 **[Airflow 2 → 3 遷移自動化](https://github.com/apache/airflow/issues/41641)**，設計並實作 [Ruff AIR301–312 規則](https://docs.astral.sh/ruff/rules/#airflow-air)
 - **專案影響力**
-  - [約 7,200萬次下載/月](https://pypistats.org/packages/ruff)
-  - 廣泛應用於 [大型開源專案與企業](https://github.com/astral-sh/ruff#whos-using-ruff)
+    - [約 7,200萬次下載/月](https://pypistats.org/packages/ruff)
+    - 廣泛應用於 [大型開源專案與企業](https://github.com/astral-sh/ruff#whos-using-ruff)
 
 ### Commitizen
 
 - **個人貢獻**
-  - [專案維護者](https://github.com/commitizen-tools/commitizen/blob/9e6830c97b498d1ffc7a52b66908d82764668c44/pyproject.toml#L7)
-  - [貢獻量第 1 名](https://github.com/commitizen-tools/commitizen/graphs/contributors)
+    - [專案維護者](https://github.com/commitizen-tools/commitizen/blob/9e6830c97b498d1ffc7a52b66908d82764668c44/pyproject.toml#L7)
+    - [貢獻量第 1 名](https://github.com/commitizen-tools/commitizen/graphs/contributors)
 - **專案影響力**
-  - [約 100萬次下載/月](https://pypistats.org/packages/commitizen)
-  - 獲 [Numberly](https://numberly.com/en/) 自 2023/06 起贊助維護
+    - [約 100萬次下載/月](https://pypistats.org/packages/commitizen)
+    - 獲 [Numberly](https://numberly.com/en/) 自 2023/06 起贊助維護
 
 ## 2. 可持續性與實踐力
 <!--例如:是否積極且持續參與開源專案，並頻繁更新或貢獻？專案是否具實際落地應用與商業可行性？-->
 
 - **長期持續貢獻** (自 2022/07/01 起算)
-  - [400+ Airflow 貢獻](https://github.com/apache/airflow/graphs/contributors)
-  - [64 Ruff 貢獻](https://github.com/astral-sh/ruff/graphs/contributors)
-  - [120+ Commitizen 貢獻](https://github.com/commitizen-tools/commitizen/graphs/contributors)
+    - [400+ Airflow 貢獻](https://github.com/apache/airflow/graphs/contributors)
+    - [64 Ruff 貢獻](https://github.com/astral-sh/ruff/graphs/contributors)
+    - [120+ Commitizen 貢獻](https://github.com/commitizen-tools/commitizen/graphs/contributors)
 - **實際落地應用**
-  - Airflow: 廣泛應用於 ETL/ML pipeline，並被各大雲端服務整合  
-  - Ruff: 已成為 Python 社群主要 linter，亦可協助 Airflow 2 → 3 遷移  
-  - Commitizen: 實際應用於企業版本管理流程
+    - Airflow: 廣泛應用於 ETL/ML pipeline，並被各大雲端服務整合  
+    - Ruff: 已成為 Python 社群主要 linter，亦可協助 Airflow 2 → 3 遷移  
+    - Commitizen: 實際應用於企業版本管理流程
 
 ## 3. 開源精神與貢獻度
 <!--例如:在程式碼、文件撰寫、Issue 回覆、教學內容製作、專案治理等方面是否有具體的貢獻？-->
 
 - **程式碼與設計**
-  - 詳述於第一點各中專案個人貢獻
+    - 詳述於第一點各中專案個人貢獻
 - **文件與翻譯**
-  - 擔任 Airflow [臺灣華語程式碼、翻譯負責人](https://github.com/apache/airflow/blob/610b5c0458a835d0e9db0aac4aab8e0caf625002/.github/CODEOWNERS#L48)，負責審閱臺灣華語翻譯相關 PRs
+    - 擔任 Airflow [臺灣華語程式碼、翻譯負責人](https://github.com/apache/airflow/blob/610b5c0458a835d0e9db0aac4aab8e0caf625002/.github/CODEOWNERS#L48)，負責審閱臺灣華語翻譯相關 PRs
 - **專案治理** (自 2022/07/01 起算)
-  - 擔任 Airflow Committer
-    - [審閱約 1,000 合併 PRs](https://github.com/apache/airflow/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aopen+reviewed-by%3ALee-W+-author%3ALee-W)
-    - [參與 250+ issue 討論](https://github.com/apache/airflow/issues?q=sort%3Aupdated-desc%20is%3Aissue%20is%3Aopen%20is%3Aissue%20involves%3ALee-W%20created%3A2022-07-01..2025-08-31)
-  - 擔任 Commitizen 維護者
-    - [審閱約 500 PRs](https://github.com/commitizen-tools/commitizen/pulls?q=is%3Apr+reviewed-by%3ALee-W+is%3Amerged+merged%3A2022-07-01..2025-08-31+-author%3ALee-W)
-    - [參與 150+ issue 討論](https://github.com/commitizen-tools/commitizen/issues?q=sort%3Aupdated-desc%20is%3Aissue%20is%3Aopen%20is%3Aissue%20involves%3ALee-W%20created%3A2022-07-01..2025-08-31)
+    - 擔任 Airflow Committer
+        - [審閱約 1,000 合併 PRs](https://github.com/apache/airflow/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aopen+reviewed-by%3ALee-W+-author%3ALee-W)
+        - [參與 250+ issue 討論](https://github.com/apache/airflow/issues?q=sort%3Aupdated-desc%20is%3Aissue%20is%3Aopen%20is%3Aissue%20involves%3ALee-W%20created%3A2022-07-01..2025-08-31)
+    - 擔任 Commitizen 維護者
+        - [審閱約 500 PRs](https://github.com/commitizen-tools/commitizen/pulls?q=is%3Apr+reviewed-by%3ALee-W+is%3Amerged+merged%3A2022-07-01..2025-08-31+-author%3ALee-W)
+        - [參與 150+ issue 討論](https://github.com/commitizen-tools/commitizen/issues?q=sort%3Aupdated-desc%20is%3Aissue%20is%3Aopen%20is%3Aissue%20involves%3ALee-W%20created%3A2022-07-01..2025-08-31)
 - **教學內容**  
-  - 持續於 [技術部落格](https://blog.wei-lee.me/) 撰寫文章，分享 Airflow、Ruff、Commitizen 等主題  
+    - 持續於 [技術部落格](https://blog.wei-lee.me/) 撰寫文章，分享 Airflow、Ruff、Commitizen 等主題  
 
 ## 4. 推廣與傳播力
 <!--例如:是否積極參與社群活動，與他人交流互動？是否透過演講、文章、社群媒體等多種管道分享知識、經驗或專案資訊？-->
@@ -145,12 +145,12 @@ Lang: zh-tw
 
 ### 其他開源社群活動
 - **主導衝刺開發** (Python 研討會中類似黑客松，但專注於開源專案貢獻的活動)  
-  - **Apache Airflow**
+    - **Apache Airflow**
         1. [EuroPython 2025](https://github.com/EuroPython/website/pull/1437)
         2. [DurianPy](https://www.meetup.com/durianpy/events/308390476/)
         3. PyCon APAC 2025
         4. [PyCon TW 2024](https://hackmd.io/LKLr7XyOR9mK1AEEnvnCuQ#Apache-Airflow)
-  - **Commitizen**
+    - **Commitizen**
         5. [PyCon US 2024](https://us.pycon.org/2024/events/dev-sprints/#sprint-3)
         6. [COSCUP 2024](https://pretalx.coscup.org/coscup-2024/talk/SDR77M/)
         7. [Scisprint Taipei 2024 March](https://sciwork.kktix.cc/events/scisprint-202403-taipei)
@@ -162,26 +162,26 @@ Lang: zh-tw
         13. PyCon CA 2019
 - **導師**: 擔任 [「源來是你」Airflow 與 Commitizen 導師](https://blog.wei-lee.me/)，協助新手開源參與
 - **公開分享技術內容**  
-  - 投影片（[SpeakerDeck](https://speakerdeck.com/leew)）  
-  - 文章 ([部落格](https://blog.wei-lee.me/))  
+    - 投影片（[SpeakerDeck](https://speakerdeck.com/leew)）  
+    - 文章 ([部落格](https://blog.wei-lee.me/))  
 
 ## 5. 其他開源成就（加分項）
 <!--例如:是否有參與或作為主要成員組織國際開源社群活動？近三年 (2022/07/01後) 是否獲得其他開源獎項或成就？-->
 
 - **國際社群志工**
-  - [Python Asia Organization](https://pythonasia.org/events/)  
-    - EuroPython 2025 攤位志工
-  - [PyCon APAC](https://pycon.asia/)  
-    - PyCon JP 2024 攤位志工  
-    - PyCon US 2024 攤位志工
-  - [PyCon CA 2019](https://2019.pycon.ca/) 議程主持人
+    - [Python Asia Organization](https://pythonasia.org/events/)  
+        - EuroPython 2025 攤位志工
+    - [PyCon APAC](https://pycon.asia/)  
+        - PyCon JP 2024 攤位志工  
+        - PyCon US 2024 攤位志工
+    - [PyCon CA 2019](https://2019.pycon.ca/) 議程主持人
 - **[PyCon Taiwan](https://tw.pycon.org) 志工**  
-  - 2025: 到處都看得到他們、審稿委員  
-  - 2024: 公關 & 行銷組員、審稿委員  
-  - 2023: 行銷組長  
-  - 2022: 大會副主席  
-  - 2021: 大會主席  
-  - 2020: 議程組長  
-  - 2019: 議程組員  
+    - 2025: 到處都看得到他們、審稿委員  
+    - 2024: 公關 & 行銷組員、審稿委員  
+    - 2023: 行銷組長  
+    - 2022: 大會副主席  
+    - 2021: 大會主席  
+    - 2020: 議程組長  
+    - 2019: 議程組員  
 - **[源來適你](https://github.com/opensource4you/readme)**  
-  - 導師（Airflow / Commitizen）
+    - 導師（Airflow / Commitizen）

@@ -199,7 +199,7 @@ Status: draft
 * 產品形態
     * 競價標的： 競價關鍵詞（bid term）
         * 使用者輸入的查詢（query）透過與關鍵詞匹配，來確定是否可以觸發該條廣告
-    * 結算方式：  CPC
+    * 結算方式： CPC
     * 曝光區一般分為北、東、南3個部分，其中南區較為少用
         * ![ad-loc](/images/post-images/2026/computational-advertising/ad-loc.jpg)
 * 產品策略

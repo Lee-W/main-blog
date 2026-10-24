@@ -11,7 +11,7 @@ Lang: zh-tw
 
 <!--more-->
 
-其實在 [AIP-83 - Rename execution_date -> logical_date and - DAG 即將走入歷史]({filename}/posts/tech/2024/24-aip-83.md)  就有稍微提到
+其實在 [AIP-83 - Rename execution_date -> logical_date and - DAG 即將走入歷史]({filename}/posts/tech/2024/24-aip-83.md) 就有稍微提到
 （上次的副標題也是蠻爛新聞的，但沒這次爛）
 只是最近又拿出來討論
 
