@@ -61,6 +61,7 @@ pelican-random-article = false
 pelican-on-this-day = false
 pelican-tabular = false
 pelican-stat = false
+certifi = false
 
 [tool.uv.sources]
 attila = { git = "https://github.com/Lee-W/attila/" }
