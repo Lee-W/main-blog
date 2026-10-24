@@ -88,7 +88,7 @@ It's a powerful package supports not only linters but also plenty of useful feat
 ![python-mode-screenshot](/images/post-images/2017-03-15-tools-for-checking-python-coding-style/5FffIqN.png)
 Unlike `ale`, `python-mode` check your code only when you save or open your python file (You can set this in your `~/.vimrc`)
 
-Add these lines in `~/.vimrc`  to enable `pylint`
+Add these lines in `~/.vimrc` to enable `pylint`
 
 ```vim
 let g:pymode_lint_checkers = ['pyflakes', 'pylint', 'pep8']

@@ -10,7 +10,7 @@ Lang: zh-tw
 每次只要開 Win 8 ，再重新開機進到 Ubuntu 就會出現 file system 無法掛載的問題
 然後我在兩個系統間共同的 data 分割區就會無法掛載
 可是再重開一次 Win 8，問題就神祕的解決了 @@
-後來才發現原來是因為 Win 8 的 **Fast Boot**  造成的
+後來才發現原來是因為 Win 8 的 **Fast Boot** 造成的
 
 <!--more-->
 

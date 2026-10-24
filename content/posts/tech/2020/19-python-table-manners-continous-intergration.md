@@ -77,7 +77,7 @@ on: [push, pull_request]
 
 * `jobs`： workflow 要執行的 job ，可以有超過一個 job。每個 job 都必須給它一個 job id (e.g., check)
     * `run-on`： 要跑在哪種機器上 （More option 👉[jobs.<job_id>.runs-on](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on)）
-    * `steps`:  要執行的 step
+    * `steps`: 要執行的 step
         * `name`: step 的名稱
         * `use`: step 要使用哪個 action，可以用在 [GitHub Marketplace · Actions](https://github.com/marketplace?type=actions) 找看看有沒有別人已經寫好的 action 不用重造輪子
         * `with`: 輸入 actions 的參數

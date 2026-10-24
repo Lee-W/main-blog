@@ -34,6 +34,7 @@ Lang: zh-tw
 ![4_success_apply](/images/post-images/2016-11-22-apply-line-messaging-api/4ViJbIR.png)
 
 ---
+
 進入剛剛創好的帳號的 `LINE@ Manager`
 
 頁面左上方，Bot 名稱下方
@@ -42,7 +43,7 @@ Lang: zh-tw
 
 ![5_bot_page](/images/post-images/2016-11-22-apply-line-messaging-api/8DC4TSG.png)
 
-接著到設定頁面左下方，找到 `Settings`  → `Bot Settings`
+接著到設定頁面左下方，找到 `Settings` → `Bot Settings`
 
 進入以下的畫面開啟 Messaging API
 ![6_bot_setting](/images/post-images/2016-11-22-apply-line-messaging-api/BtaSwa5.png)

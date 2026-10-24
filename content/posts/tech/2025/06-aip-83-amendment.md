@@ -140,7 +140,7 @@ Daniel (修正案提案者之一) 說自己以前是 Data Engineer 的時候，�
     1. 新增 `run_after` 欄位， 表示 dag run 最早可以被執行的時間
     2. 並用預設用 `run_after` 作為排序
 4. Data interval
-    1. Asset 觸發 dag runs 不會有 `logical_date`, `data_interval_start`,  `data_interval_end` (其實跟 2-1 重複了)
+    1. Asset 觸發 dag runs 不會有 `logical_date`, `data_interval_start`, `data_interval_end` (其實跟 2-1 重複了)
     2. 手動觸發 dag runs
         1. dag 本身如果是
             1. schedule-driven: 而且 logical_date 有被提供，就給 data interval

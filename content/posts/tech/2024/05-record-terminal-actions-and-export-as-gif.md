@@ -51,7 +51,7 @@ asciinema cat <.cast file path>
 
 ## agg
 agg 則是 asciinema 組織中的專案，負責產生 gif
-（全名是  asciinema gif generator ）
+（全名是 asciinema gif generator ）
 有不少可以客製化的參數
 我比較常用的是 `--font-family`, `--speed`, `--no-loop`
 分別可以設定字體、播放速度跟是否要讓 gif 重播

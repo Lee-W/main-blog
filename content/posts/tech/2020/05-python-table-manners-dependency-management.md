@@ -201,7 +201,7 @@ pipenv install --ignore-pipfile
 
 ### 安裝開發環境套件
 有些套件（e.g., 測試工具）不需要在 Production 的環境上安裝
-以往會將不同的套件用不同的 `requirements.txt` 來管理 (e.g.,  `requirements/dev.txt`, `requirements/prod.txt`)
+以往會將不同的套件用不同的 `requirements.txt` 來管理 (e.g., `requirements/dev.txt`, `requirements/prod.txt`)
 pipenv 則是將開發環境才需要的套件寫在 Pipfile 的 **dev-packages** 內
 只要在安裝時後面加上選項 `--dev`
 

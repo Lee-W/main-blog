@@ -12,7 +12,7 @@ A few weeks ago, I submitted [#38674](https://github.com/apache/airflow/pull/386
 
 <!--more-->
 
-Thus, I was invited to present this feature at the  [Airflow Monthly Town-Hall](https://astronomer.zoom.us/meeting/register/tZYqcOqhpjkqHdWPk_L11pHpUVLRHB4uYBSv#/registration). Here is the [slide](https://speakerdeck.com/leew/starts-airflow-task-execution-directly-from-the-triggerer) I used.
+Thus, I was invited to present this feature at the [Airflow Monthly Town-Hall](https://astronomer.zoom.us/meeting/register/tZYqcOqhpjkqHdWPk_L11pHpUVLRHB4uYBSv#/registration). Here is the [slide](https://speakerdeck.com/leew/starts-airflow-task-execution-directly-from-the-triggerer) I used.
 
 Even though this feature will not look the same after [#39585](https://github.com/apache/airflow/pull/39585), the core concept is similar, and I already finished 70% of this article before even creating that PR, so I still want to finish this writing 😆
 

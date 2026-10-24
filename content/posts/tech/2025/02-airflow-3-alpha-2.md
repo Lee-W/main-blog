@@ -59,7 +59,7 @@ uv run airflow db migrate
 uv run airflow standalone
 ```
 
-If everything works fine, you should to able to find  `airflow.db`, `airflow.cfg`, `standalone_admin_password.txt`, and other files.
+If everything works fine, you should to able to find `airflow.db`, `airflow.cfg`, `standalone_admin_password.txt`, and other files.
 
 Now go to your browser and open `http://localhost:8080`.
 Use `admin` as the username and the content of the file `standalone_admin_password.txt` as the password to log in.
@@ -197,7 +197,7 @@ Found 4 errors.
 [*] 1 fixable with the `--fix` option.
 ```
 
-If you find anything missing regarding migration tooling, please comment on  [Airflow 2 to 3 auto migration rules #41641]. This is the root issue where we try to track everything related to migration rules.
+If you find anything missing regarding migration tooling, please comment on [Airflow 2 to 3 auto migration rules #41641]. This is the root issue where we try to track everything related to migration rules.
 
 ## Why does the title look so weird
 Well... this post was supposed to be published on Thursday. It was still alpha1. Then, alpha2 was released around the Airflow 3.0 dev call. It's midnight where I am, so... I can't really attend. Sleep is important. Staying up is bad.

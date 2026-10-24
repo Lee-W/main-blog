@@ -36,7 +36,7 @@ Lang: zh-tw
     3. [Use ChainMap to rewrite the cmd options <- configuration file <- default configuration chain #1672](https://github.com/commitizen-tools/commitizen/issues/1672)
     4. [Not possible to use --get-next when changelog is enabled #1640](https://github.com/commitizen-tools/commitizen/issues/1640)
     5. [Shared cross-repository configuration for commitizen #434](https://github.com/commitizen-tools/commitizen/issues/434)
-    6. [Bumping rule is wrongly documented  #515](https://github.com/commitizen-tools/commitizen/issues/515)
+    6. [Bumping rule is wrongly documented #515](https://github.com/commitizen-tools/commitizen/issues/515)
 * 開啟 issue
     1. [Separate version providers from core #1676](https://github.com/commitizen-tools/commitizen/issues/1676)
 * 加入 issues 討論

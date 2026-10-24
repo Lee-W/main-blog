@@ -103,7 +103,7 @@ Issue [Add general python distribution setup steps #112](https://github.com/pyco
 
 另外還有許久以前 ysard 開的 issue [Conflict with html minification tools #16](https://github.com/oruelle/md_mermaid/issues/16)
 終於有時間認真看，意外的蠻簡單的
-就發了 PR  [generate < pre class="mermaid">< /pre> instead of < div class="mermaid">< /div> #7](https://github.com/Lee-W/markdown-mermaidjs/pull/7) 把它給修了
+就發了 PR [generate < pre class="mermaid">< /pre> instead of < div class="mermaid">< /div> #7](https://github.com/Lee-W/markdown-mermaidjs/pull/7) 把它給修了
 
 因為這些改動，這一週就發了兩版
 

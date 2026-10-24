@@ -332,7 +332,7 @@ Read More 👉 [Configuration reference](https://coverage.readthedocs.io/en/cove
 ## Reference
 * [Python Testing with pytest](https://pragprog.com/book/bopytest/python-testing-with-pytest)
 * [快快樂樂成為 Coding Ninja (by pytest) - PyCon APAC 2015](https://www.youtube.com/watch?time_continue=201&v=pX1_I_sEi8k)
-* [Pytest: Rapid Simple Testing -  Swiss Python Summit 2016](https://wei-lee.me/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/)
+* [Pytest: Rapid Simple Testing - Swiss Python Summit 2016](https://wei-lee.me/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/)
 * [Demystifying the Patch Function - PyCon US 2018](https://wei-lee.me/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/)
 * [Escape from auto-manual testing with Hypothesis!](https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/escape-from-auto-manual-testing-with-yypothesis/)
 * [Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019](https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/)

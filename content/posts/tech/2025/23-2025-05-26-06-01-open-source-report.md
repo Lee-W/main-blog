@@ -54,7 +54,7 @@ MyGO!!!!! 怎麼可能是浪費時間呢
     2. [Support the latest version of Ruff #1474](https://github.com/commitizen-tools/commitizen/issues/1474)
     1. Close [[Feature Request] Respect --allow-empty flag #247](https://github.com/commitizen-tools/commitizen/issues/247)
     2. Close [Option to allow fixup! and squash! in commit messages #414](https://github.com/commitizen-tools/commitizen/issues/414)
-    3. Close [commitizen v4 #1073](https://github.com/commitizen-tools/commitizen/issues/1073) in favor of  [Release commitizen v5 #1481](https://github.com/commitizen-tools/commitizen/issues/1481)
+    3. Close [commitizen v4 #1073](https://github.com/commitizen-tools/commitizen/issues/1073) in favor of [Release commitizen v5 #1481](https://github.com/commitizen-tools/commitizen/issues/1481)
 
 這週依然是滿滿的 commitizen
 還蠻開心讓我初入開源的專案，到現在還在緩慢成長中

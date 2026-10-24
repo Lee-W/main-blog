@@ -204,7 +204,7 @@ Unless you know the risk and the difference between it and dynamic task mapping 
 
 **Warning: Proceed at your own risk.**
 
-First, you'll need to define arguments `trigger_kwargs` explicitly and  `start_from_trigger` in the `__init__` method so Airflow can expand it in the scheduler.
+First, you'll need to define arguments `trigger_kwargs` explicitly and `start_from_trigger` in the `__init__` method so Airflow can expand it in the scheduler.
 
 ```python
 class WaitHoursSensor(BaseSensorOperator):
