@@ -76,7 +76,6 @@ import sys
 import telegram
 from flask import Flask, request
 
-
 app = Flask(__name__)
 bot = telegram.Bot(token="Your API Token")
 
