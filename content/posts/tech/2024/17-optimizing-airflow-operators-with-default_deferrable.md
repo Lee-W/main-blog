@@ -30,7 +30,7 @@ or through the environment variable
 AIRFLOW__OPERATORS__DEFAULT_DEFERRABLE=true
 ```
 
-By enabling this configuration, all the current operators that support deferrable mode (see the complete list [here](https://airflow.apache.org/docs/apache-airflow-providers/core-extensions/deferrable-operator-ref.html)) will now operate in deferrable mode. The primary advantage of deferrable operators is that part of the logic is run asynchronously by the Airflow triggerer. For more details, please refer to [Deferrable Operators & Triggers](https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/deferring.html).
+By enabling this configuration, all the current operators that support deferrable mode (see the complete list [deferrable operator reference](https://airflow.apache.org/docs/apache-airflow-providers/core-extensions/deferrable-operator-ref.html)) will now operate in deferrable mode. The primary advantage of deferrable operators is that part of the logic is run asynchronously by the Airflow triggerer. For more details, please refer to [Deferrable Operators & Triggers](https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/deferring.html).
 
 ## How was it done?
 

@@ -50,7 +50,7 @@ class ExampleOperator(BaseOperator):
 [ast](https://docs.python.org/3/library/ast.html) is a built-in Python module that can parse Python code into an abstract syntax tree. I won't go into depth here; that's a post for another day. We'll only discuss `ast.parse` and `ast.iter_child_nodes` here. Airflow already uses `ast` for this kind of checking in various places.
 
 ### Search for candidate modules
-We already know that all the operators (including sensors), whether they are in the core or in the providers, will be put under `operators` or `sensors` directories. So we first iterate all the modules we need to check [here](https://github.com/apache/airflow/blob/725a9b6cabcf8b6814de883db361eca6f58fd16b/scripts/ci/pre_commit/check_deferrable_default.py#L88-L93).
+We already know that all the operators (including sensors), whether they are in the core or in the providers, will be put under `operators` or `sensors` directories. So we first iterate all the modules we need to check [check_deferrable_default.py#L88-L93](https://github.com/apache/airflow/blob/725a9b6cabcf8b6814de883db361eca6f58fd16b/scripts/ci/pre_commit/check_deferrable_default.py#L88-L93).
 
 ```python
 modules = itertools.chain(
@@ -158,7 +158,7 @@ def iter_check_deferrable_default_errors(module_filename: str) -> Iterator[str]:
 
 ### Filter out the arguments and their default values
 After finding the init methods, we loop through these nodes and search for their arguments. As arguments **with** defaults always comes after those **without**
-ones, we reverse the order [here](https://github.com/apache/airflow/blob/725a9b6cabcf8b6814de883db361eca6f58fd16b/scripts/ci/pre_commit/check_deferrable_default.py#L75-L84) and zip the arguments and defaults together.
+ones, we reverse the order [check_deferrable_default.py#L75-L84](https://github.com/apache/airflow/blob/725a9b6cabcf8b6814de883db361eca6f58fd16b/scripts/ci/pre_commit/check_deferrable_default.py#L75-L84) and zip the arguments and defaults together.
 
 ```python
 def iter_check_deferrable_default_errors(module_filename: str) -> Iterator[str]:

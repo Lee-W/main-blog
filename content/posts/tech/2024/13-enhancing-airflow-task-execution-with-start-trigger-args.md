@@ -11,7 +11,7 @@ As mentioned in [Starts Airflow task execution directly from the triggerer]({fil
 
 <!--more-->
 
-This is needed mainly because we don't want to run any user code in the scheduler, which might happen [here](https://github.com/apache/airflow/pull/38674/files#).
+This is needed mainly because we don't want to run any user code in the scheduler, which might happen [this change in PR #38674](https://github.com/apache/airflow/pull/38674/files#).
 
 This article will cover the following 3 PRs
 

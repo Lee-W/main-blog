@@ -187,7 +187,7 @@ def __init__(self, sft: bool):
 
 It won't take effect as the mapped operator won't run `__init__` at that stage.
 
-As for `self.start_trigger_args`, we're doing something similar. After we have already decided we want to defer the task, we use the newly added `expand_start_trigger_args` method to get the value needed [here](https://github.com/apache/airflow/pull/39912/files#diff-62f7d8a52fefdb8e05d4f040c6d3459b4a56fe46976c24f68843dbaeb5a98487R1621-R1631)
+As for `self.start_trigger_args`, we're doing something similar. After we have already decided we want to defer the task, we use the newly added `expand_start_trigger_args` method to get the value needed [PR #39912 diff](https://github.com/apache/airflow/pull/39912/files#diff-62f7d8a52fefdb8e05d4f040c6d3459b4a56fe46976c24f68843dbaeb5a98487R1621-R1631)
 
 One last thing to note is that we're not resolving XCom for these 2 values.
 
