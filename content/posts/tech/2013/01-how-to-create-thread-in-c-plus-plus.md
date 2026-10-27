@@ -163,4 +163,4 @@ main()
 
 * [資訊小兵的胡言亂語 : [C++] Thread Function 相關測試](http://programmingpaul.blogspot.tw/2013/08/c-thread-function.html)
 * [解析 Linux 中多線程編程並傳遞多個參數實例](http://17089349.blog.hexun.com.tw/65836836_d.html)
-* [linux 下 C/C++, 多线程 pthread](http://www.cnblogs.com/xianghang123/archive/2011/08/11/2134927.html)
+* [linux 下 C/C++, 多线程 pthread](https://www.cnblogs.com/xianghang123/archive/2011/08/11/2134927.html)

@@ -16,7 +16,7 @@ Lang: zh-tw
 
 <!--more-->
 
-所以在這篇要介紹如何用 [invoke](http://www.pyinvoke.org/) 管理這些指令
+所以在這篇要介紹如何用 [invoke](https://www.pyinvoke.org/) 管理這些指令
 
 [TOC]
 
@@ -83,7 +83,7 @@ inv clean
 所以第一步要先在專案最上層建立 `tasks.py`
 接著撰寫一個函式叫 `develop` ，這就會是之後的任務名稱 (i.e., 透過 `inv develop` 執行)
 在函式前加上裝飾器 (decorator) `@task`
-invoke 會傳入一個 context 做為第一個參數 (Read More 👉 [what exactly is this ‘context’ arg anyway?](http://docs.pyinvoke.org/en/stable/getting-started.html#aside-what-exactly-is-this-context-arg-anyway))
+invoke 會傳入一個 context 做為第一個參數 (Read More 👉 [what exactly is this ‘context’ arg anyway?](https://docs.pyinvoke.org/en/stable/getting-started.html#aside-what-exactly-is-this-context-arg-anyway))
 (p.s. 原本的程式碼中是使用 `cmd` ，那是錯誤的用法)
 最後就可以用這個 context （參數 `ctx`） 執行指令
 
@@ -135,7 +135,7 @@ def init():
 ## 任務模組化
 當任務便多時，為了方便維護，就會傾向將相似的任務模組化
 這時候就可以使用到 `namespace` 的概念
-(Read More 👉 [Constructing namespaces](http://docs.pyinvoke.org/en/stable/concepts/namespaces.html))
+(Read More 👉 [Constructing namespaces](https://docs.pyinvoke.org/en/stable/concepts/namespaces.html))
 
 不過我不會在這篇文章深入探討要怎麼說
 一般來說，除非任務真的非常多，這是不太必要的
@@ -227,13 +227,13 @@ def clean(cmd):
 ## 其他進階應用
 * 如何在任務加上參數？
     * 任務的函式後面加上除了 context 意外的參數
-    * 👉 [Task parameters](http://docs.pyinvoke.org/en/stable/getting-started.html#task-parameters)
+    * 👉 [Task parameters](https://docs.pyinvoke.org/en/stable/getting-started.html#task-parameters)
 * 為什麼用 invoke 的結果跟指令列上的執行結果不完全相同？
     * 在 `run` 函式中加上 `pty=True` 參數通常能解決，但建議可以看看 invoke 為什麼不將這設定為預設行為
-    * 👉 [Why is my command behaving differently under Invoke versus being run by hand?](http://www.pyinvoke.org/faq.html#why-is-my-command-behaving-differently-under-invoke-versus-being-run-by-hand)
+    * 👉 [Why is my command behaving differently under Invoke versus being run by hand?](https://www.pyinvoke.org/faq.html#why-is-my-command-behaving-differently-under-invoke-versus-being-run-by-hand)
 * 如何在任務執行失敗時，只做警告，不要跳錯
     * 在 `run` 函式加上 `warn=True` (預設是 `False`)
-    * 👉 [invoke.runners.Runner.run](http://docs.pyinvoke.org/en/1.2/api/runners.html#invoke.runners.Runner.run)
+    * 👉 [invoke.runners.Runner.run](https://docs.pyinvoke.org/en/1.2/api/runners.html#invoke.runners.Runner.run)
 
 ## Reference
 * [Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019](https://web.archive.org/web/20221210062755/https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/)

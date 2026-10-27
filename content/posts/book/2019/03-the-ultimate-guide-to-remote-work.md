@@ -179,4 +179,4 @@ Hope this excerpt would help if you're working remotely or considering it.
 * Program Blockers:
     * [SelfControl](https://selfcontrolapp.com)
     * [Cold Turkey](https://getcoldturkey.com)
-    * More options: [14 Tools to Help You Avoid Distractions and Stay Focused at Work](http://www.quacklabs.in/blog/2017/03/17/14-tools-help-avoid-distractions-stay-focused-work/)
+    * More options: [14 Tools to Help You Avoid Distractions and Stay Focused at Work](https://www.quacklabs.in/blog/2017/03/17/14-tools-help-avoid-distractions-stay-focused-work/)

@@ -6,7 +6,7 @@ Slug: mining-online-social-data-for-detecting-social-network-mental-disorders
 Authors: Wei Lee
 Lang: en
 
-* [Paper](http://www2016.net/proceedings/proceedings/p275.pdf)
+* [Paper](https://www2016.net/proceedings/proceedings/p275.pdf)
 * [My Slide](https://speakerdeck.com/leew/mining-online-social-data-for-detecting-social-network-mental-disorders)
 
 This paper proposes a model named SNMDD to detect Social Network Mental Disorder (SNMD) through users' behaviors on online social networks (OSN) instead of asking their mental condition.

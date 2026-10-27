@@ -77,7 +77,7 @@ Lang: zh-tw
     * 有足夠能力的人，都會在幾年後爬上升職的階梯。如果你不為那個晉升準備，你會發現自己成為「彼得原理」的受害者，被晉升到不能勝任的位置
 * 解決方案
     * 經常反省自己的工作方式
-    * 建立 Personal Practices Map (Ref: [My Personal Practices Map](http://code-dojo.blogspot.com/2009/12/my-personal-practices-map.html))
+    * 建立 Personal Practices Map (Ref: [My Personal Practices Map](https://code-dojo.blogspot.com/2009/12/my-personal-practices-map.html))
 
 ### 分享個人所學
 * 這對初學者可能是不容易跨過的心理障礙，**但正因為知道的不多，你的解釋會最簡單、直接，而不需要其他知識，這會讓他們成為更好的解釋**

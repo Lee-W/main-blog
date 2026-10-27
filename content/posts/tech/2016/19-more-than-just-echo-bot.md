@@ -195,7 +195,7 @@ Mary Johnson at 12 pm tomorrow.
 不過這些服務，通常會有它的限制
 這時候就能用上 Python 強大的函式庫們，來實作自己的版本
 
-* [NLTK](http://www.nltk.org)
+* [NLTK](https://www.nltk.org)
     * Python 經典的 NLP 函式庫
 * [word2vec](https://radimrehurek.com/gensim/)
     * 透過詞向量，找出相似詞
@@ -229,7 +229,7 @@ Mary Johnson at 12 pm tomorrow.
 
 ### Read More
 
-* [WHEN BOTS GO BAD: COMMON UX MISTAKES IN CHATBOT DESIGN](http://www.topbots.com/common-chatbot-ux-mistakes-in-bot-design/)
+* [WHEN BOTS GO BAD: COMMON UX MISTAKES IN CHATBOT DESIGN](https://www.topbots.com/common-chatbot-ux-mistakes-in-bot-design/)
 * [Does Conversation Hurt Or Help The Chatbot UX?](https://www.smashingmagazine.com/2016/11/does-conversation-hurt-or-help-the-chatbot-ux/)
 
 ## Reference

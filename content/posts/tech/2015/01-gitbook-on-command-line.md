@@ -82,7 +82,7 @@ gitbook serve
 ## 輸出
 
 在 export 前，需要為 pdf, epub, mobi 三種格式多安裝程式才能使用
-先到的官網下載 [Calibre](http://calibre-ebook.com/download)
+先到的官網下載 [Calibre](https://calibre-ebook.com/download)
 
 以 mac 為例
 需要下面這個指令，為 ebook-covert 建立一個捷徑，讓 gitbook 可以找到這個功能
@@ -126,4 +126,4 @@ git push -u gitbook
 
 * [Gitbook](https://github.com/GitbookIO/gitbook)
 * [GitBook Documentation](http://help.gitbook.io/index.html)
-* [深入淺出 GitBook 寫作與自助出版，電子書也能多人協作](http://www.codedata.com.tw/social-coding/gitbook-self-publishing/)
+* [深入淺出 GitBook 寫作與自助出版，電子書也能多人協作](https://www.codedata.com.tw/social-coding/gitbook-self-publishing/)

@@ -32,4 +32,4 @@ sudo apt-get install guake
 
 ## Reference
 
-[Ubuntu 安裝 Guake Terminal](http://www.arthurtoday.com/2012/08/ubuntu-install-guake-terminal.html#.UvcpWx9KiXo)
+[Ubuntu 安裝 Guake Terminal](https://www.arthurtoday.com/2012/08/ubuntu-install-guake-terminal.html#.UvcpWx9KiXo)
