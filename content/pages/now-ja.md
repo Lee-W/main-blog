@@ -57,7 +57,7 @@ Lang: ja
 ## 🎵 最近聴いているもの
 
 * [江松霖](https://www.youtube.com/@sungsungvideo) → 小松全肯定オタク。一生聴いていられる
-* 📻 [尼我喝牛奶：你的次文化指南](https://neildrinkmilk.firstory.io/)
+* 📻 [尼我喝牛奶：你的次文化指南](https://web.archive.org/web/20260503052838/https://neildrinkmilk.firstory.io/)
 
 ## 🌟 最近の推し
 

@@ -132,7 +132,7 @@ For more slides, check my [Speaker Deck](https://speakerdeck.com/leew/).
 ## Podcast / Show
 * [Python Asia Organization](https://www.youtube.com/watch?v=ofywY-xseqg)
     * [Python Across Asia Episode 02](https://www.youtube.com/watch?v=ofywY-xseqg)
-* [PyCast](https://pycast.firstory.io/)
+* [PyCast](https://web.archive.org/web/20260503104618/https://pycast.firstory.io/)
     1. [S4EP6｜ Python Taiwan 年會搞了 13 年，到底在 『稿』什麼？ feat. Andy Lee, Wei Lee, TengLin Yu](https://open.firstory.me/story/clz1c1b2c03m701vggil3837p)
     2. [S2EP4 | Emergence: 佛系經營社群的二三事，原來你我都是這片雪花的一部分 - Taihsiang & Wei](https://pycast.firstory.io/episodes/cl8pof56x05p901ws56y185jl)
     3. [EP2 | 職場邊緣人教你如何讓 WFH 變得更有趣](https://pycast.firstory.io/episodes/ckovh74d9nw2t0818urqtusva)
