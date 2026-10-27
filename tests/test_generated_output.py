@@ -2,6 +2,7 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 from bs4 import BeautifulSoup
@@ -243,7 +244,10 @@ def test_dead_listing_links_fall_back_to_their_own_subsite(tmp_path, monkeypatch
 
 @pytest.fixture(scope="module")
 def built_site(tmp_path_factory):
-    """Build the real site once (local config) and run the post-build link pass."""
+    """Build the real site once (local config) and run the post-build link pass.
+
+    Yields the output directory and how many ``<a href>`` values the pass rewrote.
+    """
     output = tmp_path_factory.mktemp("site")
     subprocess.run(
         [sys.executable, "-m", "pelican", "-s", "pelicanconf.py", "-o", str(output)],
@@ -253,21 +257,33 @@ def built_site(tmp_path_factory):
     )
     with pytest.MonkeyPatch.context() as patch:
         patch.setitem(tasks.CONFIG, "deploy_path", str(output))
-        tasks._fix_internal_links()
-    return output
+        fixed_links = tasks._fix_internal_links()
+    return SimpleNamespace(output=output, fixed_links=fixed_links)
 
 
 def test_built_pages_have_no_dot_dot_segments_in_asset_urls(built_site):
     """Subsite <link>/<script> URLs must not carry ``/../`` (e.g. ``/en/../static``)."""
     checked = {"zh-tw": 0, "en": 0}
     offenders = []
-    for page in built_site.rglob("*.html"):
+    for page in built_site.output.rglob("*.html"):
         soup = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
         urls = [link["href"] for link in soup.find_all("link", href=True)]
         urls += [script["src"] for script in soup.find_all("script", src=True)]
         offenders += [(page.name, url) for url in urls if "/../" in url]
-        relative = page.relative_to(built_site).parts
+        relative = page.relative_to(built_site.output).parts
         checked["en" if relative[0] == "en" else "zh-tw"] += 1
     # Guard against a vacuous pass: both languages must actually have been built.
     assert all(checked.values()), checked
     assert offenders == []
+
+
+# `_fix_internal_links` silently repairs links the theme/plugins emit wrongly. A
+# real build rewrote 1197 links (local config; ~1186 with publishconf.py) when
+# this sentinel was added. The band is roughly +/-30% around that: normal content
+# growth stays inside it, while a theme/plugin upgrade that suddenly breaks (or
+# fixes) most links trips it. If it fails, find out why before widening the band.
+FIXED_LINKS_EXPECTED_RANGE = range(840, 1560)
+
+
+def test_fix_internal_links_repair_volume_stays_in_expected_band(built_site):
+    assert built_site.fixed_links in FIXED_LINKS_EXPECTED_RANGE
