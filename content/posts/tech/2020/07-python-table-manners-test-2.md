@@ -8,7 +8,7 @@ Series: Python Table Manners
 Authors: Wei Lee
 Lang: zh-tw
 
-接續前一篇提到的 [pytest](https://docs.pytest.org/en/6.1.1/)，繼續看它的其他功能吧
+接續前一篇提到的 [pytest](https://web.archive.org/web/20201021101602/https://docs.pytest.org/en/6.1.1/)，繼續看它的其他功能吧
 
 <!--more-->
 
@@ -312,7 +312,7 @@ Read More 👉 [Configuration reference](https://coverage.readthedocs.io/en/cove
     * 用平行化加速測試的執行 (`pipenv run pytest -n NUM`)
 * [pytest-mock](https://github.com/pytest-dev/pytest-mock)
     * 使用 mocking 的技巧將部分不好測試的物件替換成假的物件
-    * 推薦參考 [Demystifying the Patch Function - PyCon US 2018](https://wei-lee.me/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/) （不過她不是用 pytest）
+    * 推薦參考 [Demystifying the Patch Function - PyCon US 2018](https://web.archive.org/web/20220925103827/https://wei-lee.me/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/) （不過她不是用 pytest）
 * [pytest-regressions](https://github.com/ESSS/pytest-regressions)
     * 將冗長的測試結果寫成檔案，每次測試都去比對跟上次產生的結果是否相同
 * 尋找其他 plugins
@@ -324,15 +324,15 @@ Read More 👉 [Configuration reference](https://coverage.readthedocs.io/en/cove
     * 在各種不同版本的 Python 中做測試，幾乎是開源 Python 專案的標準工具
 * [nox](https://nox.thea.codes/en/stable/)
     * 基本上跟 tox 的功能相似，不過組態設定是使用 Python
-    * tox 跟 nox 推薦參考 [Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019](https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/)
+    * tox 跟 nox 推薦參考 [Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019](https://web.archive.org/web/20221210062755/https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/)
 * [hypothesis](https://github.com/HypothesisWorks/hypothesis)
     * 採用 Property-based testing，跟以往要自己產生測試資料不同，我們只需要給予資料的定義（e.g., 0 ~ 10000 之間的整數）， hypothsis 會根據定義來產生隨機的資料，也因此更容易包含到極端案例
-    * 推薦參考 [Escape from auto-manual testing with Hypothesis!](https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/escape-from-auto-manual-testing-with-yypothesis/) （PyCon US 2019， Zac 投了 talk, sprint, tutorial, poster，很用心在推廣這套工具）
+    * 推薦參考 [Escape from auto-manual testing with Hypothesis!](https://web.archive.org/web/20221210061952/https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/escape-from-auto-manual-testing-with-yypothesis/) （PyCon US 2019， Zac 投了 talk, sprint, tutorial, poster，很用心在推廣這套工具）
 
 ## Reference
 * [Python Testing with pytest](https://pragprog.com/book/bopytest/python-testing-with-pytest)
 * [快快樂樂成為 Coding Ninja (by pytest) - PyCon APAC 2015](https://www.youtube.com/watch?time_continue=201&v=pX1_I_sEi8k)
-* [Pytest: Rapid Simple Testing - Swiss Python Summit 2016](https://wei-lee.me/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/)
-* [Demystifying the Patch Function - PyCon US 2018](https://wei-lee.me/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/)
-* [Escape from auto-manual testing with Hypothesis!](https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/escape-from-auto-manual-testing-with-yypothesis/)
-* [Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019](https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/)
+* [Pytest: Rapid Simple Testing - Swiss Python Summit 2016](https://web.archive.org/web/20220930010618/https://wei-lee.me/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/)
+* [Demystifying the Patch Function - PyCon US 2018](https://web.archive.org/web/20220925103827/https://wei-lee.me/pycon-note/posts/pycon-us-2018/2020/01/demystifying-the-Patch-functionusing-python/)
+* [Escape from auto-manual testing with Hypothesis!](https://web.archive.org/web/20221210061952/https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/escape-from-auto-manual-testing-with-yypothesis/)
+* [Break the Cycle: Three excellent Python tools to automate repetitive tasks - PyCon US 2019](https://web.archive.org/web/20221210062755/https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/08/break-the-cycle-three-excellent-python-tools-to-automate-repetitive-tasks/)

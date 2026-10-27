@@ -236,7 +236,7 @@ Mary Johnson at 12 pm tomorrow.
 
 * [Head First ChatBot](https://hackmd.io/s/SyJUciYWg)
 * [AIML Tutorial](https://www.tutorialspoint.com/aiml/index.htm)
-* [AI Chat Bot in Python with AIML](http://www.devdungeon.com/content/ai-chat-bot-python-aiml)
+* [AI Chat Bot in Python with AIML](https://web.archive.org/web/20250803112527/http://www.devdungeon.com/content/ai-chat-bot-python-aiml)
 * [Wit.ai Quickstart](https://wit.ai/docs/quickstart)
 * [自己动手做聊天机器人教程](https://github.com/warmheartli/ChatBotCourse)
 * [An overview of the bot landscape](https://www.oreilly.com/ideas/an-overview-of-the-bot-landscape?imm_mid=0eb199&cmp=em-data-na-na-newsltr_20161130)

@@ -59,7 +59,7 @@ class WidgetTestCase(unittest.TestCase):
 * 使用 `assertEqual` 來做正確性的驗證
 
 ## pytest
-[pytest](https://docs.pytest.org/en/6.1.1/) 是現在 Python 專案建議使用的測試框架，也會是這篇文章的主角
+[pytest](https://web.archive.org/web/20201021101602/https://docs.pytest.org/en/6.1.1/) 是現在 Python 專案建議使用的測試框架，也會是這篇文章的主角
 
 * 為什麼要用 pytest
     * 更符合 Python 程式碼風格 (Pythonic)
@@ -306,4 +306,4 @@ def test_sponsor_number(sponsors):
 * [Python Testing with pytest](https://pragprog.com/book/bopytest/python-testing-with-pytest)
     * 非常推薦用這本書上手 `pytest`
 * [快快樂樂成為 Coding Ninja (by pytest) - PyCon APAC 2015](https://www.youtube.com/watch?time_continue=201&v=pX1_I_sEi8k)
-* [Pytest: Rapid Simple Testing - Swiss Python Summit 2016](https://wei-lee.me/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/)
+* [Pytest: Rapid Simple Testing - Swiss Python Summit 2016](https://web.archive.org/web/20220930010618/https://wei-lee.me/pycon-note/posts/swiss-python-summit-2016/2019/11/pytest-rapid-simple-testing/)

@@ -63,7 +63,7 @@ cz init
 ![cz-init-1](/images/post-images/2020-02-22-python-table-manner-series/cz-init-1.png)
 
 接著要選擇一套 commit 規範，預設有三種
-如果有安裝其他的 commit 規範，它們也會出現在選項中（See more 👉 [Third-Party Commitizen Templates](https://commitizen-tools.github.io/commitizen/third-party-commitizen/)）
+如果有安裝其他的 commit 規範，它們也會出現在選項中（See more 👉 [Third-Party Commitizen Templates](https://web.archive.org/web/20251125184807/https://commitizen-tools.github.io/commitizen/third-party-commitizen/)）
 
 ![cz-init-2](/images/post-images/2020-02-22-python-table-manner-series/cz-init-2.png)
 
@@ -176,7 +176,7 @@ p.s. conventional commit 可以有很多種延伸，這裡指的只是 commitize
 e.g., 要 merge 回 master 的改動中出現 BREAKING CHANGE，不管其他有多少 feat 或 fix ，都只會讓 `MAJOR` 提升 1
 
 目前只有 `cz_conventional_commits` 有預設的版本對應
-如果為 `cz_jira`, `cz_customize` 或自己客製化規則加上提升版本的功能，可以參考commitizen 文件中 [customization](https://commitizen-tools.github.io/commitizen/customization/) ，並加上 `bump_pattern`（比對 commit 是哪個種類） 和 `bump_map` （哪個種類的 commit 要提升哪個版本號）
+如果為 `cz_jira`, `cz_customize` 或自己客製化規則加上提升版本的功能，可以參考commitizen 文件中 [customization](https://web.archive.org/web/20251126110703/https://commitizen-tools.github.io/commitizen/customization/) ，並加上 `bump_pattern`（比對 commit 是哪個種類） 和 `bump_map` （哪個種類的 commit 要提升哪個版本號）
 
 稍微解釋了一下提升版本的規則，接下來要來講該如何使用了
 
@@ -211,7 +211,7 @@ cz bump --yes
 如果每次透過 commitizen 提升版本號後，還要手動更新其他部分，就失去了自動的好處了
 所以 commitizen 另外提供了 `version_files` 這個設定，將需要改動的檔案也寫進來
 commitizen 提升版本號時，就會一併更新檔案的內容
-（Read More 👉 [bump](https://commitizen-tools.github.io/commitizen/bump/) ）
+（Read More 👉 [bump](https://commitizen-tools.github.io/commitizen/commands/bump/) ）
 
 透過 `cz bump` 指令雖然可以省下很多步驟
 但更好的做法是將自動升版加入到加入到持續整合（Continuous Integration）
@@ -285,7 +285,7 @@ message = "Do you want to add body message in commit?"
 
 ### 將客製化的 commit 規範寫成 Python 套件發佈
 這個做法比較複雜，也比較不常會用到，所以我只會概略地講
-（Read More 👉 [Customization](https://commitizen-tools.github.io/commitizen/customization/)）
+（Read More 👉 [Customization](https://web.archive.org/web/20251126110703/https://commitizen-tools.github.io/commitizen/customization/)）
 
 我已經先將套件的架構驟寫成一個 [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.0/) 範本
 透過以下指令，可以進入 cookiecutter 的互動式介面，並初始化專案

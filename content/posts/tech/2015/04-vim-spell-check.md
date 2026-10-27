@@ -23,7 +23,7 @@ Bundle 'vimspell'
 
 ## 字典檔
 
-[下載字典檔](http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/dictionaries/)
+[下載字典檔](https://web.archive.org/web/20150624194502/http://archive.services.openoffice.org/pub/mirror/OpenOffice.org/contrib/dictionaries/)
 
 我下載的是 `en_US.zip`
 
