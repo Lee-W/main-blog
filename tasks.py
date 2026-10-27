@@ -15,7 +15,7 @@ from collections import defaultdict
 from collections.abc import Sequence
 from pathlib import Path
 from string import Template
-from urllib.parse import unquote, urlparse
+from urllib.parse import unquote, urlparse, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup
 from invoke.exceptions import Exit
@@ -233,6 +233,41 @@ def _preserve_atom_entry_ids(output_root: Path) -> int:
     return updated
 
 
+def _collapse_dot_segments(url: str) -> str:
+    """Collapse ``/../`` and ``/./`` in the path of an http(s) or path-only URL.
+
+    Other schemes (``data:``, ``mailto:``, ``javascript:``, ``blob:`` ...) and URLs
+    whose path has no dot segment are returned untouched, so e.g. a trailing slash
+    is never normalized away.
+    """
+    parts = urlsplit(url)
+    if parts.scheme not in {"", "http", "https"}:
+        return url
+    if "/../" not in parts.path and "/./" not in parts.path:
+        return url
+    return urlunsplit(parts._replace(path=posixpath.normpath(parts.path)))
+
+
+def _normalize_asset_urls(soup: BeautifulSoup) -> int:
+    """Collapse ``/../`` in ``<link href>`` and ``<script src>`` values.
+
+    i18n_subsites points subsite ``THEME_STATIC_DIR`` at ``../theme`` (meant to be
+    joined onto the subsite's own SITEURL), but attila joins it onto the main
+    site's ``STATIC_SITEURL``, and ``CSS_OVERRIDE`` entries are joined onto the
+    subsite's SITEURL. Both yield valid-by-accident URLs such as
+    ``https://host/../theme/css/style.css``; strip the dot segments here instead.
+    """
+    normalized = 0
+    for tag, attribute in (("link", "href"), ("script", "src")):
+        for element in soup.find_all(tag, attrs={attribute: True}):
+            url = element[attribute]
+            cleaned = _collapse_dot_segments(url)
+            if cleaned != url:
+                element[attribute] = cleaned
+                normalized += 1
+    return normalized
+
+
 def _fix_internal_links() -> None:
     """Normalize generated links for i18n and Cloudflare Static Assets."""
     output_root = Path(CONFIG["deploy_path"]).resolve()
@@ -270,10 +305,15 @@ def _fix_internal_links() -> None:
 
     fixed = 0
     hreflang_pages = 0
+    normalized_assets = 0
     for page in pages:
         html = page.read_text(encoding="utf-8")
         soup = BeautifulSoup(html, "html.parser")
         changed = False
+        asset_count = _normalize_asset_urls(soup)
+        if asset_count:
+            normalized_assets += asset_count
+            changed = True
         for anchor in soup.find_all("a", href=True):
             href = anchor["href"]
             parsed = urlparse(href)
@@ -331,6 +371,7 @@ def _fix_internal_links() -> None:
     preserved_feed_ids = _preserve_atom_entry_ids(output_root)
     print(
         f"Fixed {fixed} generated internal link(s); "
+        f"normalized {normalized_assets} asset URL(s); "
         f"added hreflang to {hreflang_pages} page(s); "
         f"removed {sitemap_duplicates} duplicate sitemap URL(s); "
         f"preserved {preserved_feed_ids} Atom entry ID(s)"

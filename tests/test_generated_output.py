@@ -1,11 +1,16 @@
+import subprocess
+import sys
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
+import pytest
 from bs4 import BeautifulSoup
 
 import tasks
 from tasks import (
     _add_hreflang_links,
     _canonicalize_cloudflare_url,
+    _collapse_dot_segments,
     _normalize_sitemap,
     _preserve_atom_entry_ids,
 )
@@ -18,6 +23,23 @@ def test_canonicalize_cloudflare_url_matches_static_asset_html_handling():
     assert _canonicalize_cloudflare_url(
         "https://example.com/posts/example/index.html"
     ) == ("https://example.com/posts/example/")
+
+
+@pytest.mark.parametrize(
+    ("url", "expected"),
+    [
+        ("data:text/javascript,a/../b", "data:text/javascript,a/../b"),
+        ("javascript:void('/../')", "javascript:void('/../')"),
+        ("https://host/en/../static/a.css", "https://host/static/a.css"),
+        ("/../theme/js/script.js", "/theme/js/script.js"),
+        ("//host/en/../a.css", "//host/a.css"),
+        ("https://host/a/../b.css?v=1#top", "https://host/b.css?v=1#top"),
+        ("https://host/dir/", "https://host/dir/"),
+        ("https://host/a/./b/", "https://host/a/b"),
+    ],
+)
+def test_collapse_dot_segments(url, expected):
+    assert _collapse_dot_segments(url) == expected
 
 
 def test_add_hreflang_links_for_translated_page():
@@ -217,3 +239,35 @@ def test_dead_listing_links_fall_back_to_their_own_subsite(tmp_path, monkeypatch
 
     soup = BeautifulSoup(page.read_text(), "html.parser")
     assert [anchor["href"] for anchor in soup.find_all("a")] == ["/ja/", "/en/", "/"]
+
+
+@pytest.fixture(scope="module")
+def built_site(tmp_path_factory):
+    """Build the real site once (local config) and run the post-build link pass."""
+    output = tmp_path_factory.mktemp("site")
+    subprocess.run(
+        [sys.executable, "-m", "pelican", "-s", "pelicanconf.py", "-o", str(output)],
+        cwd=Path(__file__).resolve().parents[1],
+        check=True,
+        capture_output=True,
+    )
+    with pytest.MonkeyPatch.context() as patch:
+        patch.setitem(tasks.CONFIG, "deploy_path", str(output))
+        tasks._fix_internal_links()
+    return output
+
+
+def test_built_pages_have_no_dot_dot_segments_in_asset_urls(built_site):
+    """Subsite <link>/<script> URLs must not carry ``/../`` (e.g. ``/en/../static``)."""
+    checked = {"zh-tw": 0, "en": 0}
+    offenders = []
+    for page in built_site.rglob("*.html"):
+        soup = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
+        urls = [link["href"] for link in soup.find_all("link", href=True)]
+        urls += [script["src"] for script in soup.find_all("script", src=True)]
+        offenders += [(page.name, url) for url in urls if "/../" in url]
+        relative = page.relative_to(built_site).parts
+        checked["en" if relative[0] == "en" else "zh-tw"] += 1
+    # Guard against a vacuous pass: both languages must actually have been built.
+    assert all(checked.values()), checked
+    assert offenders == []
