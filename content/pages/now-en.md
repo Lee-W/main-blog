@@ -51,7 +51,7 @@ My thoughts 👉 [Those Things No One Cares About](https://travlog.wei-lee.me/)
 
 ## 🎵 What I've been listening to
 * [江松霖](https://www.youtube.com/@sungsungvideo) → full-on fan, could listen forever
-* 📻 [尼我喝牛奶：你的次文化指南](https://web.archive.org/web/20260503052838/https://neildrinkmilk.firstory.io/)
+* 📻 [尼我喝牛奶：你的次文化指南](https://open.firstory.fm/user/neildrinkmilk)
 
 ## 🌟 What I've been recommending
 * [Yuzuki Watase](https://x.com/Watase_Yuzuki) → got completely hooked after seeing her live in Mutsumi's whirlwind
