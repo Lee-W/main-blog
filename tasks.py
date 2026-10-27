@@ -268,8 +268,12 @@ def _normalize_asset_urls(soup: BeautifulSoup) -> int:
     return normalized
 
 
-def _fix_internal_links() -> None:
-    """Normalize generated links for i18n and Cloudflare Static Assets."""
+def _fix_internal_links() -> int:
+    """Normalize generated links for i18n and Cloudflare Static Assets.
+
+    Returns the number of ``<a href>`` values rewritten, so tests can notice when
+    the amount of silent repair changes drastically.
+    """
     output_root = Path(CONFIG["deploy_path"]).resolve()
     pages = list(output_root.rglob("*.html"))
     legacy_routes: dict[str, str] = {}
@@ -376,6 +380,7 @@ def _fix_internal_links() -> None:
         f"removed {sitemap_duplicates} duplicate sitemap URL(s); "
         f"preserved {preserved_feed_ids} Atom entry ID(s)"
     )
+    return fixed
 
 
 @task
