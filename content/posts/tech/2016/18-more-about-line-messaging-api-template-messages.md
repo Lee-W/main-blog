@@ -10,7 +10,7 @@ Lang: zh-tw
 除了傳送文字外，Line Bot 還可以傳
 
 * 圖片, 影像, 聲音, 地圖
-* 貼圖 (Line Bot 所能使用的[貼圖清單](https://web.archive.org/web/20190624041015/https://devdocs.line.me/files/sticker_list.pdf))
+* 貼圖 (Line Bot 所能使用的[貼圖清單](https://developers.line.biz/en/docs/messaging-api/sticker-list/))
 * Imagemap
 * Template
     * Button

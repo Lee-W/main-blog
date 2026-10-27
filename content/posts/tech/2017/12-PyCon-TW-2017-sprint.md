@@ -31,7 +31,7 @@ Lang: zh-tw
 Russell 都會很友善地回答問題
 像我一開始採的雷就是 batavia 還沒支援到 Python3.6，他也很熱心幫我解決
 我問了好幾個專案的小問題，Russell 都會說 "That's can be a pull request"
-只要送了 PR 就可以得到[Challenge Coins](https://web.archive.org/web/20170409095415/https://pybee.org/contributing/challenge-coins/)
+只要送了 PR 就可以得到[Challenge Coins](https://beeware.org/contributing/challenge-coins/)
 拿到這個 challenge coin 其實還蠻開心的 xd
 
 ![Challenge Coin](/images/post-images/2017-06-12-PyCon-TW-2017-Sprint/2-challenge-coin.jpg){: style="width:30%"}
