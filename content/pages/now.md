@@ -51,7 +51,7 @@ Lang: zh-tw
 
 ## 🎵 最近聽的
 * [江松霖](https://www.youtube.com/@sungsungvideo) → 小松全肯定廚，可以聽小松的歌一輩子
-* 📻 [尼我喝牛奶：你的次文化指南](https://neildrinkmilk.firstory.io/)
+* 📻 [尼我喝牛奶：你的次文化指南](https://web.archive.org/web/20260503052838/https://neildrinkmilk.firstory.io/)
 
 ## 🌟 最近推的
 * [渡瀬 結月](https://x.com/Watase_Yuzuki) → 看過睦葉炫風現場，就被圈粉了
