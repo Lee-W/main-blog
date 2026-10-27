@@ -159,9 +159,9 @@ def test_add(x, y, expected_sum):
 這裡會介紹 [markers](http://doc.pytest.org/en/6.1.1/example/markers.html) 還可以做什麼
 
 ### 內建 marker
-* [skip](http://doc.pytest.org/en/6.1.1/skipping.html#skip): 跳過這個測試案例
-* [skipif](http://doc.pytest.org/en/6.1.1/skipping.html#skipif): 如果符合某個條件，則跳過這個測試案例
-* [xfail](http://doc.pytest.org/en/6.1.1/skipping.html#xfail): 預期會失敗 （其實前一篇想跳過會失敗的案例應該要用 `xfail`，而不是 `skip`）
+* [skip](https://doc.pytest.org/en/6.1.1/skipping.html#skip): 跳過這個測試案例
+* [skipif](https://doc.pytest.org/en/6.1.1/skipping.html#skipif): 如果符合某個條件，則跳過這個測試案例
+* [xfail](https://doc.pytest.org/en/6.1.1/skipping.html#xfail): 預期會失敗 （其實前一篇想跳過會失敗的案例應該要用 `xfail`，而不是 `skip`）
 
 ### 自定義 marker
 `@pytest.mark.[any custom marker]` 的用途是標記測試案例

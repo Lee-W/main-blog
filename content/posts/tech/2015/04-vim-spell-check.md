@@ -6,7 +6,7 @@ Slug: vim-spell-check
 Authors: Wei Lee
 Lang: zh-tw
 
-[vimspell](http://www.vim.org/scripts/script.php?script_id=465) 是一套提供 vim 根據字典來檢查文法的套件
+[vimspell](https://www.vim.org/scripts/script.php?script_id=465) 是一套提供 vim 根據字典來檢查文法的套件
 有了 vimspell，寫 Markdown 或 LaTeX 的時候，就不用再怕拼錯字了
 
 <!--more-->
@@ -87,7 +87,7 @@ vimspell 被開啟後，就會自動把拼錯的字反白起來
 ## Reference
 
 * [Vim documentation: spell](http://vimdoc.sourceforge.net/htmldoc/spell.html)
-* [How to use spell check with vim](http://www.go2linux.org/linux/2010/10/how-use-spell-check-vim-795)
+* [How to use spell check with vim](https://www.go2linux.org/linux/2010/10/how-use-spell-check-vim-795)
 * [[Reply] 如何在 vim 裡用拼字檢查 - iT 邦幫忙 ::IT 知識分享社群](http://ithelp.ithome.com.tw/question/10055602)
-* [Create a spell file for VIM](http://henry.precheur.org/vim/create_spell_file_for_vim)
+* [Create a spell file for VIM](https://henry.precheur.org/vim/create_spell_file_for_vim)
 * [vim - Automatically enabling spell checking in vimrc - Stack Overflow](http://stackoverflow.com/questions/7286207/automatically-enabling-spell-checking-in-vimrc)

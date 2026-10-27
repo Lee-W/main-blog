@@ -207,7 +207,7 @@ Ian 很喜歡收明信片 XD
 Guido 的訪談算是第二天的重頭戲，稍微紀錄一下我比較有印象的內容
 
 * Python will always be dynamic language. Type needs to be optional.
-* 對於新進的軟體工程師，推薦可以看 [King's Day Speech](http://neopythonic.blogspot.com/2016/04/kings-day-speech.html)
+* 對於新進的軟體工程師，推薦可以看 [King's Day Speech](https://neopythonic.blogspot.com/2016/04/kings-day-speech.html)
 * Q: 你能想到你最不喜歡 Python 哪嗎?
     * A: 目前沒想法，抱歉
 

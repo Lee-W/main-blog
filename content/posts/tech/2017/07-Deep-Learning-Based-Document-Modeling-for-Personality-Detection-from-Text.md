@@ -10,7 +10,7 @@ Lang: en
 * Implementation: [Personality-Detection](https://github.com/SenticNet/Personality-Detection)
 * Data Set
     * [James Pennebaker and Laura King's stream-of-consciousness essay dataset](http://mypersonality.org/wiki/doku.php?id=wcpr13)
-    * [NRC Word-Emotion Association Lexicon](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm)
+    * [NRC Word-Emotion Association Lexicon](https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm)
 
 <!--more-->
 
@@ -48,7 +48,7 @@ Mairesse baseline feature set (e.g. word count, average sentence length)
 ### 3. Filtering
 
 Sentences without personality clues are dropped
-(Based on [NRC Word-Emotion Association Lexicon](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm))
+(Based on [NRC Word-Emotion Association Lexicon](https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm))
 
 ### 4. Word-level feature extraction
 

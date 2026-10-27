@@ -277,7 +277,7 @@ poetry remove <package>
 * [dependabot](https://dependabot.com)
 
 ## Bonus: pipx - 在系統安裝 Python 工具
-雖然建議 Python 的套件都裝在虛擬環境，但如果平時要使用的工具 (e.g., [invoke](http://www.pyinvoke.org/), [awscli](https://pypi.org/project/awscli/)) 都裝在虛擬環境
+雖然建議 Python 的套件都裝在虛擬環境，但如果平時要使用的工具 (e.g., [invoke](https://www.pyinvoke.org/), [awscli](https://pypi.org/project/awscli/)) 都裝在虛擬環境
 每次使用這些工具都得進入虛擬環境就太麻煩了
 [pipx](https://pipxproject.github.io/pipx/) 會為每個工具創建一個專屬的虛擬環境，並且設定好 PATH
 

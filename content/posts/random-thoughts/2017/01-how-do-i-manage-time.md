@@ -50,7 +50,7 @@ Lang: zh-tw
 最好是可以小到不會讓人感受到壓力
 再來就是每天不斷地完成這些小小的行動
 
-這部影片是[Daily Checklist](http://dailysuccessweb.com) 的社群分享的
+這部影片是[Daily Checklist](https://dailysuccessweb.com) 的社群分享的
 這個 App 可以幫我們追蹤今天是不是完成了要達成的行動，到了凌晨 12 點就會重設 Checklist
 接下來會提到這個 App，如何幫我達成目標
 
@@ -116,7 +116,7 @@ Lang: zh-tw
 不過如果要給一個最簡單的原則，那就是[No more yes. It's Either HELL YEAH! Or No](https://www.youtube.com/watch?time_continue=60&v=1ehWlVeMrqw)
 `如果這件事不是「太棒了！我一定要去做！！！」，那麼就不要做了`
 
-另外一個更明確的做法是[Rule of Three](http://www.artofmanliness.com/2017/01/09/work-deliberately-instead-reactively-rule-3/?utm_source=pocket&utm_medium=email&utm_campaign=pockethits)
+另外一個更明確的做法是[Rule of Three](https://www.artofmanliness.com/2017/01/09/work-deliberately-instead-reactively-rule-3/?utm_source=pocket&utm_medium=email&utm_campaign=pockethits)
 在一天結束前，為明天定下三件重要而且一定要完成的事
 只要三件，`可以少，但不可以多`，就算只有一件也很好
 只要這三件事情還沒有達成就不能做其他的事

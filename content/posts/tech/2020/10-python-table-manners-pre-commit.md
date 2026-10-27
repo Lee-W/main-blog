@@ -8,7 +8,7 @@ Series: Python Table Manners
 Authors: Wei Lee
 Lang: zh-tw
 
-前一篇提到了透過 [invoke](http://www.pyinvoke.org/) 簡化繁瑣的指令
+前一篇提到了透過 [invoke](https://www.pyinvoke.org/) 簡化繁瑣的指令
 但人類除了是懶惰的，還是健忘的
 即使已經更簡便了，沒被督促常常還是會忘了執行
 就像這次的系列文，如果沒被寫作松督促，不知道什麼時候才會出現（笑

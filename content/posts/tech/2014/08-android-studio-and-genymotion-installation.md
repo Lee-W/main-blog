@@ -35,7 +35,7 @@ Android Studio 正式版已經發布了，現在好像完全無法把 sdk 放在
 ##### Install JDK
 
 在安裝 Android Studio 前，要先安裝好 JDK
-現在最新的版本是 JDK 8，可以到[這個連結](http://www.oracle.com/technetwork/java/javase/downloads/index.html)下載
+現在最新的版本是 JDK 8，可以到[這個連結](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下載
 
 ![3_jdk1](/images/post-images/2014-11-23-android-studio-and-genymotion-installation/0om5D2M.png)
 選好自己的作業系統
@@ -131,7 +131,7 @@ Genymotion ！！！
 
 ### Genymotion
 
-安裝 Genymotion 的模擬器前，我們必須先到[官網](http://www.genymotion.com/)註冊
+安裝 Genymotion 的模擬器前，我們必須先到[官網](https://www.genymotion.com/)註冊
 
 #### Download
 

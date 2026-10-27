@@ -13,7 +13,7 @@ Lang: zh-tw
 
 <!--more-->
 
-當時我覺得最有趣的論文是 [Interactive Rule Refinement for Fraud Detection.](http://www.vldb.org/pvldb/vol9/p1465-milo.pdf)
+當時我覺得最有趣的論文是 [Interactive Rule Refinement for Fraud Detection.](https://www.vldb.org/pvldb/vol9/p1465-milo.pdf)
 不過竟然沒有做到太多筆記
 
 [TOC]

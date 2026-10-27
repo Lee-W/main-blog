@@ -45,7 +45,7 @@ Lang: zh-tw
 | Day 4 | <ul> <li>OOP Introduciton</li> </ul> |
 | Day 5 | <ul> <li>Exception Handling</li> <li>File</li> <li>String</li> <li>Coding Convention</li> </ul>|
 | Day 6 | <ul> <li>Recap</li> <li>Built-in</li> <ul/>|
-| Day 7 | <ul> <li>Regular Expression</li> <li>Python 套件管理 </li> <li>[requests](http://docs.python-requests.org/en/master/)</li>|
+| Day 7 | <ul> <li>Regular Expression</li> <li>Python 套件管理 </li> <li>[requests](https://docs.python-requests.org/en/master/)</li>|
 | Day 8 | <ul> <li>[Beautifulsoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)</li> <li>Visualization</li> </ul> |
 | Day 9 | <ul> <li>Decorator</li> <li>Iterator</li> <li>Generator</li> <li>Context Manager</li> </ul>|
 | Day 10 | <ul> <li>Broaden Horizon</li> </ul> |

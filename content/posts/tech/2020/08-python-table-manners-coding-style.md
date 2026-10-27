@@ -139,7 +139,7 @@ pipenv run pylint <package> ......
     max-line-length = 88
 ```
 
-其中 disable 的錯誤可以在 [pylint-messages](http://pylint-messages.wikidot.com/all-codes) 找到
+其中 disable 的錯誤可以在 [pylint-messages](https://pylint-messages.wikidot.com/all-codes) 找到
 
 ### 局部跳過檢查
 只要在要忽略的程式碼前面一行加上 `# pylint: disable=[error]`
@@ -169,7 +169,7 @@ flake8 在大多數狀況已經足夠
 ![because-guido-say-so](/images/post-images/2020-02-22-python-table-manner-series/because-guido-say-so.png)
 
 ## 型別檢查 - mypy
-[mypy](http://mypy-lang.org/) 是 Python 做靜態型別檢查的工具
+[mypy](https://mypy-lang.org/) 是 Python 做靜態型別檢查的工具
 Python 是一個動態型別的語言，所以可以隨意地不同型別的值指派給同一個變數
 e.g.,
 

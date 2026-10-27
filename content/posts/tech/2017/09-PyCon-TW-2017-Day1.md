@@ -147,7 +147,7 @@ Linear (Simpler) Model First
 * Tools
     * [modulegraph](https://web.archive.org/web/20200707103256/https://bitbucket.org/ronaldoussoren/modulegraph)
     * [pydegraph (py2degraph)](http://www.tarind.com/depgraph.html)
-    * [snackfood](http://furius.ca/snakefood/)
+    * [snackfood](https://furius.ca/snakefood/)
 * 數據分析
     * e.g. 被用最多的反而不是核心 → 這些程式碼好用、易用
 * 走訪專案
@@ -213,7 +213,7 @@ Linear (Simpler) Model First
 這場 Talk 主要講學習、推廣和社群
 
 Carol 有提到幾個學習 Python 很棒的資源
-其中我覺得最有用的大概就是[pyvideo.org](http://pyvideo.org) 了
+其中我覺得最有用的大概就是[pyvideo.org](https://pyvideo.org) 了
 之前回去聽工資管系系友演講，趨勢的學長就有提到看 Talk 是很快的學習方式
 
 另外，Carol 強力推薦今年 PyCon US，Instagram 給的 Talk
