@@ -147,7 +147,7 @@ btw Dustin 在 PyCon TW / US / ... 給的 talks "PEP 572"，真的非常精彩
 後來發現好像是台灣才是比較特例
 即使是用中文給的 talk ，還是習慣用英文做投影片
 
-最後閉幕的時候聽到 Python 這個商標在日本被[ARK](http://www.gigamall.ne.jp/ark/ai/python.html)註冊走
+最後閉幕的時候聽到 Python 這個商標在日本被[ARK](https://web.archive.org/web/20210731184639/http://www.gigamall.ne.jp/ark/ai/python.html)註冊走
 PSF 要著手處理這件事了
 
 ![drone](/images/post-images/2019-10-12-pycon-jp-2019/15700840284965.jpg)

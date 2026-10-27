@@ -32,4 +32,4 @@ sudo apt-get install --reinstall bcmwl-kernel-source
 
 ## Reference
 
-* [Ubuntu14.04 Acer Aspire V5 571 Broadcom BCM43228 WiFi - BeyondLogic](http://wiki.beyondlogic.org/index.php?title=Ubuntu14.04_Acer_Aspire_V5_571_Broadcom_BCM43228_WiFi)
+* [Ubuntu14.04 Acer Aspire V5 571 Broadcom BCM43228 WiFi - BeyondLogic](https://web.archive.org/web/20250214132021/http://wiki.beyondlogic.org/index.php?title=Ubuntu14.04_Acer_Aspire_V5_571_Broadcom_BCM43228_WiFi)

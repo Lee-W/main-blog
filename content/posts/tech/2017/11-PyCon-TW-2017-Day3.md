@@ -103,7 +103,7 @@ Backward Compatibility 就是一件很重要的事
 
 ## 比美麗的湯更美麗：pyquery
 
-* [slide](https://aji.tw/slides/pycon2017/#/)
+* [slide](https://web.archive.org/web/20191207180424/https://aji.tw/slides/pycon2017/#/)
 
 ### [pyquery](https://github.com/gawel/pyquery)
 

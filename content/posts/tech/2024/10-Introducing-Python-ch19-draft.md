@@ -40,7 +40,7 @@ Lang: zh-tw
 * [PyPI](https://pypi.org/)
     * used to be "cheese shop" from Monty Python
 * [GitHub Trend](https://github.com/trending/python)
-* [Popular Python recipes](https://code.activestate.com/recipes/langs/python/)
+* [Popular Python recipes](https://web.archive.org/web/20260916074241/https://code.activestate.com/recipes/langs/python/)
 
 ## Install package
 * [pip](https://pypi.org/project/pip/)

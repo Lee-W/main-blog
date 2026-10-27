@@ -35,7 +35,7 @@ Lang: zh-tw
 不愧是大大，跟我只是胡說八道的就是不一樣
 大家快去聽 Kir 大大的分享吧！
 
-👉 [#7 | FAANG 工作環境跟外面有什麼不一樣？想進入 FAANG 就要聽這集！- Kir Chou](https://pycast.firstory.io/episodes/ckxnh7hxq2s3s0966ghtw3qzq)
+👉 [#7 | FAANG 工作環境跟外面有什麼不一樣？想進入 FAANG 就要聽這集！- Kir Chou](https://web.archive.org/web/20221209065937/https://pycast.firstory.io/episodes/ckxnh7hxq2s3s0966ghtw3qzq)
 
 ### Python Bytes
 * [Official Site](https://pythonbytes.fm/)
@@ -93,7 +93,7 @@ Michael Kennedy 跟 Brian Okken 邀請各路來賓來聊聊最近Python 圈發�
 
 當初是因為志祺七七的廣告注意到這個節目
 不過真的很吸引我聽下去好像是從「做工的人」的作者立青那集開始
-👉 [EP.37 監工男神_上| 茶魚飯厚起點!!工地人生遭遇戰 feat.林立青](https://open.firstory.me/story/ckmlmfpmr9v2s0841e0f27c60)
+👉 [EP.37 監工男神_上| 茶魚飯厚起點!!工地人生遭遇戰 feat.林立青](https://web.archive.org/web/20220119084413/https://open.firstory.me/story/ckmlmfpmr9v2s0841e0f27c60)
 
 **是我聽的 podcast 中，最有溫度的**
 從節目中能聽到人生百態
@@ -104,7 +104,7 @@ Michael Kennedy 跟 Brian Okken 邀請各路來賓來聊聊最近Python 圈發�
 不過疫情爆發後級數都有點太長了 😆
 最近也是挑有興趣的才聽
 不過長規長，節目的內容還是相當的精彩
-最近印象最深的是 [EP112 思覺失調_上| 先嘴砲再開始走蠻荒 feat.國國](https://open.firstory.me/story/ckwm9078m2fbw0901qbcprbuw)
+最近印象最深的是 [EP112 思覺失調_上| 先嘴砲再開始走蠻荒 feat.國國](https://web.archive.org/web/20220119065147/https://open.firstory.me/story/ckwm9078m2fbw0901qbcprbuw)
 也是我開頭說我被茶魚飯厚感動催生出這篇文章的那集
 
 ### Gooaye 股癌

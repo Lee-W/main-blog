@@ -29,7 +29,7 @@ Lang: zh-tw
         * 來自 Monty Python
 * [GitHub Trend](https://github.com/trending/python)
     * GitHub 是目前主流的 Git 倉儲，在這可以找到最近流行的 Python 專案
-* [Popular Python recipes](https://code.activestate.com/recipes/langs/python/)
+* [Popular Python recipes](https://web.archive.org/web/20260916074241/https://code.activestate.com/recipes/langs/python/)
     * 這就真的是第一次看到了
 
 ## Install package

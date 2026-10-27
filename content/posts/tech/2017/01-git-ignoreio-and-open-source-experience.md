@@ -104,7 +104,7 @@ $ git ignore-io -s ja
 但是就沒有人寫，bug 沒有人修
 所以就只好先承認自己就是「沒有人」了 xd
 
-其實 gitignore.io 本身就有提供一個簡單的 script [gi](https://www.gitignore.io/docs#-install-command-line)
+其實 gitignore.io 本身就有提供一個簡單的 script [gi](https://web.archive.org/web/20190209193624/https://www.gitignore.io/docs#-install-command-line)
 不過實在有點不夠我用 xD
 於是我就寫了[gi_extension](https://github.com/Lee-W/gi_extension)
 後來又覺得，如果整併的 git extras

@@ -8,7 +8,7 @@ Lang: zh-tw
 
 reveal.js 提供了 `data-markdown="example.md"` 這個 tag 可以載入外部的 markdown
 卻沒提供可以載入 html 的 tag
-於是就有人寫了這個[External.js](https://github.com/calevans/external)
+於是就有人寫了這個[External.js](https://web.archive.org/web/20251111222151/https://github.com/calevans/external)
 
 <!--more-->
 
@@ -18,7 +18,7 @@ reveal.js 提供了 `data-markdown="example.md"` 這個 tag 可以載入外部�
 
 ### Method1: Download
 
-1. 到 [external](https://github.com/calevans/external) 下載
+1. 到 [external](https://web.archive.org/web/20251111222151/https://github.com/calevans/external) 下載
 2. 把 external 裡面的 external 資料夾放到 plugin 裡面
 3. 在 `index.html` 中的 `Reveal.initialize` 這個 block 加入下面的內容
 

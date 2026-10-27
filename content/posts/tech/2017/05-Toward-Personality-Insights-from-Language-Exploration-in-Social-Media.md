@@ -6,8 +6,8 @@ Slug: Toward-Personality-Insights-from-Language-Exploration-in-Social-Media
 Authors: Wei Lee
 Lang: en
 
-* [Paper](http://wwbp.org/papers/sam2013-dla.pdf)
-* [Demo](http://wwbp.org/personality_wc.html)
+* [Paper](https://web.archive.org/web/20221129223301/http://wwbp.org/papers/sam2013-dla.pdf)
+* [Demo](https://web.archive.org/web/20230921130052/http://wwbp.org/personality_wc.html)
 * [My Slide](https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media)
 
 The main purpose of this paper is to show how social media can be used to gain psychological insights.
@@ -35,7 +35,7 @@ it uses an open vocabulary approach that allowing discovery of unanticipated lan
 2. Correlation analysis
     * Least Squares Linear Regression
 3. Visualization
-    * [Differential Word Clouds](http://wwbp.org/personality_wc.html)
+    * [Differential Word Clouds](https://web.archive.org/web/20230921130052/http://wwbp.org/personality_wc.html)
         * Word size represents correlation strength.
         * Color represents relative frequency
     * Standardized Frequency Plot

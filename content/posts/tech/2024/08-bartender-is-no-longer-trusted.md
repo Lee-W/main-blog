@@ -38,7 +38,7 @@ Bartender 默默的就易主了
 已經沒有繼續維護了，但用起來還堪用
 
 #### VimMotionApp
-🔗 [link to Github](https://github.com/dwarvesf/VimMotionApp)
+🔗 [link to Github](https://web.archive.org/web/20260212002910/https://github.com/dwarvesf/VimMotionApp)
 
 跟 menu bar 無關
 意外發現 [hidden](https://github.com/dwarvesf/hidden) 開發者還有開發出這種好東西
@@ -48,9 +48,9 @@ Bartender 默默的就易主了
 推薦[Vimium](https://addons.mozilla.org/firefox/addon/vimium-ff/)給你，一起反人類
 
 ### HiddenBar
-🔗 [link to Github](https://github.com/UeharaYou/HiddenBar)
+🔗 [link to Github](https://web.archive.org/web/20250816001039/https://github.com/UeharaYou/HiddenBar)
 
-[UeharaYou](https://github.com/UeharaYou) fork [hidden](https://github.com/dwarvesf/hidden) 出來維護的的版本
+[UeharaYou](https://web.archive.org/web/20260528160556/https://github.com/UeharaYou) fork [hidden](https://github.com/dwarvesf/hidden) 出來維護的的版本
 Star 數不算太多，就沒特別試了
 但我有同事用這個
 

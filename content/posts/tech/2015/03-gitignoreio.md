@@ -18,7 +18,7 @@ Lang: zh-tw
 ## gitignore.io on command
 
 這是 gitignore.io 的官方文件
-[doc](https://www.gitignore.io/docs)
+[doc](https://web.archive.org/web/20190209193624/https://www.gitignore.io/docs)
 
 ### 設定
 

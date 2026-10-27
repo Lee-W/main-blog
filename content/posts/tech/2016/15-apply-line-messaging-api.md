@@ -7,7 +7,7 @@ Series: Line Bot Tutorial
 Authors: Wei Lee
 Lang: zh-tw
 
-先到[Messaging API](https://business.line.me/zh-hant/services/bot) 申請帳號
+先到[Messaging API](https://web.archive.org/web/20170624124142/https://business.line.me/zh-hant/services/bot) 申請帳號
 
 `開始使用 Messaging API` 和 `開始使用 Developer Trial` 申請到的帳號是不同的
 之後不能互換，所以一開始就要根據需求來決定申請哪種帳號

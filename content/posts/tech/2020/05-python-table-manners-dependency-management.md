@@ -54,7 +54,7 @@ pipenv 不使用 `requirements.txt`，而是使用自定義的 `Pipfile` 跟 `Pi
 它的好處是能透過單一指令將套件安裝到虛擬環境中，並且更新到 `Pipfile` 以及 `Pipfile.lock`
 
 ### 安裝 pipenv
-根據不同的系統，可以在 [Installing Pipenv](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv) 找到安裝 pipenv 的方式
+根據不同的系統，可以在 [Installing Pipenv](https://web.archive.org/web/20200416031622/https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv) 找到安裝 pipenv 的方式
 
 不過最簡單的做法還是透過 `pip` 安裝
 
@@ -295,6 +295,6 @@ pipx install [package]
 ```
 
 ## Reference
-* [這樣的開發環境沒問題嗎？ - PyCon TW 2018](https://wei-lee.me/pycon-note/posts/pycon-tw-2018/2019/10/is-your-dev-env-alright/)
-* [Pipenv: The Future of Python Dependency Management - PyCon US 2018](https://wei-lee.me/pycon-note/posts/pycon-us-2018/2019/11/pipenv-the-future-of-python-dependency-management/)
-* [Python Dependency Management - PyCon DE 2018](https://wei-lee.me/pycon-note/posts/pycon-de-2018/2019/12/python-dependency-management/)
+* [這樣的開發環境沒問題嗎？ - PyCon TW 2018](https://web.archive.org/web/20211022074053/https://wei-lee.me/pycon-note/posts/pycon-tw-2018/2019/10/is-your-dev-env-alright/)
+* [Pipenv: The Future of Python Dependency Management - PyCon US 2018](https://web.archive.org/web/20211022070235/https://wei-lee.me/pycon-note/posts/pycon-us-2018/2019/11/pipenv-the-future-of-python-dependency-management/)
+* [Python Dependency Management - PyCon DE 2018](https://web.archive.org/web/20211022075531/https://wei-lee.me/pycon-note/posts/pycon-de-2018/2019/12/python-dependency-management/)
