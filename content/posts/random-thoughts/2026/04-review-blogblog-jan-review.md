@@ -144,7 +144,7 @@ Trilium Notes 看起來蠻酷的
 
 * [在言語裡感受熱情──我喜歡的 3 個 Podcast 節目 | 綠橄欖筆記](https://www.oliveassignment.xyz/3-podcast/)
 
-我也有聽[尼我喝牛奶](https://web.archive.org/web/20260503052838/https://neildrinkmilk.firstory.io/)！
+我也有聽[尼我喝牛奶](https://open.firstory.fm/user/neildrinkmilk/episodes)！
 
 * [推坑《奇諾之旅》 ─two corpses─ | 浮生若夢](https://web.archive.org/web/20260212185820/https://tshilangsing.bearblog.dev/new-post/)
 

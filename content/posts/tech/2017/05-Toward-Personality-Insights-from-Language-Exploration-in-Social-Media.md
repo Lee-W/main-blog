@@ -6,7 +6,7 @@ Slug: Toward-Personality-Insights-from-Language-Exploration-in-Social-Media
 Authors: Wei Lee
 Lang: en
 
-* [Paper](https://web.archive.org/web/20221129223301/http://wwbp.org/papers/sam2013-dla.pdf)
+* [Paper](https://cdn.aaai.org/ocs/5764/5764-24484-1-PB.pdf)
 * [Demo](https://web.archive.org/web/20230921130052/http://wwbp.org/personality_wc.html)
 * [My Slide](https://speakerdeck.com/leew/toward-personality-insights-from-language-exploration-in-social-media)
 

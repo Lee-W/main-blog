@@ -156,7 +156,7 @@ print("Imagine this is a really long line!")
 除了相關的檢查外， pylint 會比 flake8 做更嚴格的檢查
 也可以做更多的設定，但在執行上也會比較慢
 
-在 PyCon US 2018 的 [Automating Code Quality](https://web.archive.org/web/20220925120738/https://wei-lee.me/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/)，Kyle Knapp 很詳細的比較了這兩個工具
+在 PyCon US 2018 的 [Automating Code Quality](https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/)，Kyle Knapp 很詳細的比較了這兩個工具
 
 我的使用上會把 flake8 作為強制檢查程式碼風格的一環
 只要沒有通過 flake8 的檢查，就應該做修正
@@ -187,8 +187,8 @@ str_var = 1
 因此近幾年越來越多人注意 Python 的型別標記
 
 PyCon US 2017 中 Lisa Guo 和 Hui Ding 的 Keynote Session [Python@Instagram]({filename}/posts/tech/2017/13-Python@Instagram.md) 講了 Instagram 是為什麼要和如何將龐大的程式庫加上型別標示
-[Static Typing in Python](https://web.archive.org/web/20220925101505/https://wei-lee.me/pycon-note/posts/pycon-us-2020/2020/05/static-typing-in-python/) 則是 PyCon US 2020 年 Dustin 對型別標示和檢查的詳細介紹
-而 Vita Smid 在 EuroPython 2019 的 [Static typing: beyond the basics of def foo(x: int) -str:](https://web.archive.org/web/20220925121114/https://wei-lee.me/pycon-note/posts/europython-2019/2020/03/static-typing-beyond-the-basics-of-def-foo-x-int-str/) 則講到了型別檢查更進階一點的應用
+[Static Typing in Python](https://lee-w.github.io/pycon-note/posts/pycon-us-2020/2020/05/static-typing-in-python/) 則是 PyCon US 2020 年 Dustin 對型別標示和檢查的詳細介紹
+而 Vita Smid 在 EuroPython 2019 的 [Static typing: beyond the basics of def foo(x: int) -str:](https://lee-w.github.io/pycon-note/posts/europython-2019/2020/03/static-typing-beyond-the-basics-of-def-foo-x-int-str/) 則講到了型別檢查更進階一點的應用
 這幾場演講都非常推薦可以觀看！
 
 ### 使用
@@ -352,7 +352,7 @@ pipenv run isort --atomic .
 * `--atomic`: 只有重新排序後的結果沒有語法錯誤，才會儲存
 
 ### 設定
-自從 5.0.0 後， isort 直接把常見的設定寫成 [profile](https://web.archive.org/web/20210306005140/https://pycqa.github.io/isort/docs/configuration/profiles/)
+自從 5.0.0 後， isort 直接把常見的設定寫成 [profile](https://isort.readthedocs.io/en/latest/configuration/profiles.html)
 只要指定 profile 就能直接套用相容的設定
 
 ```toml
@@ -389,6 +389,6 @@ profile = "black"
     * mypy
 
 ## Reference
-* [Automating Code Quality - PyCon US 2018](https://web.archive.org/web/20220925120738/https://wei-lee.me/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/)
-* [Life Is Better Painted Black, or: How to Stop Worrying and Embrace Auto-Formatting - PyCon US 2019](https://web.archive.org/web/20220925101400/https://wei-lee.me/pycon-note/posts/pycon-us-2019/2019/11/life-is-better-painted-black-or-how-to-stop-worrying-and-embrace-auto-formatting/)
+* [Automating Code Quality - PyCon US 2018](https://lee-w.github.io/pycon-note/posts/pycon-us-2018/2019/09/automating-code-quality/)
+* [Life Is Better Painted Black, or: How to Stop Worrying and Embrace Auto-Formatting - PyCon US 2019](https://lee-w.github.io/pycon-note/posts/pycon-us-2019/2019/11/life-is-better-painted-black-or-how-to-stop-worrying-and-embrace-auto-formatting/)
 * [Beyond PEP 8 -- Best practices for beautiful intelligible code - PyCon 2015](https://www.youtube.com/watch?v=wf-BqAjZb8M&feature=youtu.be)
