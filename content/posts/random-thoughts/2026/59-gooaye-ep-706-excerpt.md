@@ -1,5 +1,5 @@
 Title: EP706 | 👑 - Gooaye 股癌 節錄
-Date: 2026-10-29 00:10 +0800
+Date: 2026-10-28 23:25 +0800
 Category: Random Thoughts
 Tags: Podcast, Lifestyle
 Slug: gooaye-ep-706-excerpt
