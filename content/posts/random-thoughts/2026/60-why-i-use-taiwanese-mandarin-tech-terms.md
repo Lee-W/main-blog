@@ -1,11 +1,10 @@
 Title: 臺灣華語的技術用語，總要有人用吧
-Date: 2026-10-29 22:26 +0900
+Date: 2026-10-29 22:40 +0800
 Category: Random Thoughts
 Tags: BlogBlog 同樂會, Airflow, i18n
 Slug: why-i-use-taiwanese-mandarin-tech-terms
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 > 這是響應「[BlogBlog 同樂會 - 2026 年 10 月](https://blogblog.club/party/)」的相關文章，並非投稿文章
 > 本月主題是「[語言的習得、傳承與推廣](https://angeci.github.io/blog/zh/blogblog-party-languages/)」
