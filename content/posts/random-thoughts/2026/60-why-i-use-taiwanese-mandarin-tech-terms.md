@@ -72,12 +72,14 @@ Lang: zh-tw
 
 這...顯然是集合沒學過或沒學好？
 
-```text
-ZH_HK ⊆ ZH
-ZH_MY ⊆ ZH
-
-ZH_HK ≠ ZH
-```
+$$
+\begin{aligned}
+\text{ZH_HK} &\subseteq \text{ZH} \\
+\text{ZH_MY} &\subseteq \text{ZH} \\
+\\
+\text{ZH_HK} &= \text{ZH}
+\end{aligned}
+$$
 
 兩個概念是不同的吧？
 而我認為大多數人應該都會推論為前者
