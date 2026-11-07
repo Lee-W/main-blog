@@ -1,12 +1,11 @@
 Title: スマートカフェ 秋葉原店
-Date: 2026-10-04 22:31 +0900
+Date: 2026-11-07 19:34 +0800
 Category: Random Thoughts
 Tags: Coworking Space
 Slug: smart-cafe-akihabara
 Cover: /images/post-images/2026/smart-cafe-akihabara/desk.jpeg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 因為晚上要去參加[エンジニアニメ](https://engineers-anime.github.io/)
 找了一間在秋葉原附近的工作空間工作
