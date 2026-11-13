@@ -1,12 +1,11 @@
 Title: 第二本筆記本也寫完了
-Date: 2026-09-11 15:40 +0800
+Date: 2026-11-13 23:03 +0900
 Category: Random Thoughts
 Tags: Blog, Lifestyle
 Slug: second-notebook-finished
 Cover: /images/post-images/2026/second-notebook-finished/finished-notebook.jpeg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 在[參加 BlogBlog 同樂會的一些變化]({filename}/posts/random-thoughts/2026/39-blogblog-meetup-changes.md)有提到最近開始在空閒時間寫點文字在筆記本
 而寫下這段文字的那刻，我終於把第二本也寫完了
