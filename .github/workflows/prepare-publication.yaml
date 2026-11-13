@@ -10,6 +10,11 @@
 # The metadata edit is done by that script's `prepare` mode; ci.yaml runs the
 # same script in `check` mode as a PR gate.
 #
+# Before stamping, the PR branch is rebased onto the latest base branch so CI
+# runs against base's current fixes (a stale branch can fail checks that base
+# already repairs and stall auto-merge). Because the rebase rewrites history,
+# the result is pushed with --force-with-lease pinned to the tip we checked out.
+#
 # Security: pull_request_target runs with repository secrets, so the job `if`
 # restricts it to same-repo branches, and the *automation* script is checked
 # out from the trusted base commit (not the PR head) into a separate directory
@@ -75,6 +80,26 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           token: ${{ secrets.PUBLISH_TOKEN }}
 
+      # Bring the branch up to date with the base before stamping. BASE_REF goes
+      # through env, never interpolated into the script. The recorded tip is the
+      # lease for the final force push.
+      - name: Rebase onto base branch
+        working-directory: pull-request
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          echo "ORIGINAL_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          git fetch origin "$BASE_REF"
+          if git merge-base --is-ancestor "origin/$BASE_REF" HEAD; then
+            echo "Branch already contains origin/$BASE_REF."
+          elif ! git rebase "origin/$BASE_REF"; then
+            git rebase --abort
+            echo "::error::Rebase onto $BASE_REF hit conflicts; rebase manually and re-enable auto-merge."
+            exit 1
+          fi
+
       # Corrects the category/year filename sequence, removes Status: draft, and
       # rewrites Date for posts this PR changes vs the base.
       - name: Prepare publication metadata
@@ -90,17 +115,22 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
           # Loop-breaker: our marker push fires `synchronize`, which re-enters
-          # this job. The script also treats this branch-tip marker as prepared.
+          # this job. A branch-tip marker (ours, or carried over by the rebase)
+          # means the branch is already stamped; the script treats it likewise.
           if git log -1 --pretty=%s | grep -q '^post metadata: prepare publication for #'; then
             echo "Branch already carries the automation publication commit."
+          else
+            # Not just content/posts: renaming a post also rewrites the
+            # {filename} references pointing at it (e.g. content/places/*.yaml).
+            git add content
+            # The marker commit is the required-check handshake. Keep it even in
+            # the unlikely case where Date already equals the current minute.
+            git commit --allow-empty -m "post metadata: prepare publication for #${PR_NUMBER}"
+          fi
+          # Push only if something changed. The branch may have been rebased, so
+          # force, but lease against the tip we checked out.
+          if [ "$(git rev-parse HEAD)" = "$ORIGINAL_SHA" ]; then
+            echo "Nothing to push."
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Not just content/posts: renaming a post also rewrites the
-          # {filename} references pointing at it (e.g. content/places/*.yaml).
-          git add content
-          # The marker commit is the required-check handshake. Keep it even in
-          # the unlikely case where Date already equals the current minute.
-          git commit --allow-empty -m "post metadata: prepare publication for #${PR_NUMBER}"
-          git push origin "HEAD:${HEAD_REF}"
+          git push --force-with-lease="${HEAD_REF}:${ORIGINAL_SHA}" origin "HEAD:${HEAD_REF}"
