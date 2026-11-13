@@ -71,7 +71,8 @@ excluded from the build. To publish one:
 1. Include a commit named `new post: <title>` in the pull request.
 2. Enable auto-merge.
 
-Before the PR merges, a GitHub Actions workflow assigns the final sequence
+Before the PR merges, a GitHub Actions workflow first rebases the branch onto
+the latest base branch, then assigns the final sequence
 number, removes the draft status, and rewrites the post's `Date` to the
 moment it ships, so the published date is accurate without manual editing. It
 also moves any colliding drafts after the publishing post. See
