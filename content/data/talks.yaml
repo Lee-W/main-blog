@@ -1,3 +1,12 @@
+- date: 2026-11-16
+  event:
+    text: "🇯🇵 Tokyo Python"
+    href: "https://www.meetup.com/tokyopython/events/317056429/"
+  title: "Apache Airflow Introduction"
+  slide:
+    text: "📊"
+    href: "https://speakerdeck.com/leew/slides-3de49b10-fa30-4a63-aa9f-bf90b7c0f1e5"
+
 - date: 2026-10-11
   event:
     text: "Community Over Code Glasgow 2026"
@@ -14,7 +23,7 @@
   title: "Orchestration Still Matters: Apache Airflow in the Age of AI"
   slide:
     text: "📊"
-    href: "https://speakerdeck.com/leew/asset-partitions-matching-workflow-to-the-right-datahttps://speakerdeck.com/leew/orchestration-still-matters-apache-airflow-in-the-age-of-ai"
+    href: "https://speakerdeck.com/leew/orchestration-still-matters-apache-airflow-in-the-age-of-ai"
 
 - date: 2026-08-31
   event:
