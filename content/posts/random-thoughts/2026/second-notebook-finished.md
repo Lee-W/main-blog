@@ -7,7 +7,7 @@ Cover: /images/post-images/2026/second-notebook-finished/finished-notebook.jpeg
 Authors: Wei Lee
 Lang: zh-tw
 
-在[參加 BlogBlog 同樂會的一些變化]({filename}/posts/random-thoughts/2026/39-blogblog-meetup-changes.md)有提到最近開始在空閒時間寫點文字在筆記本
+在[參加 BlogBlog 同樂會的一些變化]({filename}/posts/random-thoughts/2026/40-blogblog-meetup-changes.md)有提到最近開始在空閒時間寫點文字在筆記本
 而寫下這段文字的那刻，我終於把第二本也寫完了
 
 <!--more-->
