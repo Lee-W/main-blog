@@ -351,7 +351,7 @@ I18N_SUBSITES["en"].update(
             ),
             ("🎲 Random", "/en/random/"),
         ),
-        "SITENAME": "Those aren't written down are meant to be forgotten",
+        "SITENAME": "What isn't written down will be forgotten",
     }
 )
 
