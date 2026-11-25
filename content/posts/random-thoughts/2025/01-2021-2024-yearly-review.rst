@@ -128,7 +128,7 @@
 | 過去的我寫的文章就大大的幫助了我自己
 | 直接抄以前的我寫的 code 來做測試
 |
-| 如同現在部落格的標題 "Those aren't written down are meant to be forgotten"
+| 如同現在部落格的標題 "What isn't written down will be forgotten"
 | 我的腦袋不好，不寫下來的東西我會忘記
 | 雖然也可能像巴德尼先生說的
 |
