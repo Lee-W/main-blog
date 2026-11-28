@@ -1,12 +1,11 @@
 Title: #:~:text=
-Date: 2026-11-28 12:26 +0900
+Date: 2026-11-28 12:18 +0800
 Category: Tech
 Tags: BlogBlog 同樂會, TIL
 Slug: text-fragments
 Cover: /images/meme/avemujica-shocked.jpg
 Authors: Wei Lee
 Lang: zh-tw
-Status: draft
 
 如同[#:~:text=](https://lq7.tw/chat/cool-text-url/#:~:text=%23%3A~%3Atext%3D)所提到
 LQ7 大大為了跟我解釋[駿恆老師](https://www.dragon-art.tw/)是誰，所以貼了[#:~:text=駿恆老師的課](https://yuncolorblog.com/about/#:~:text=駿恆老師的課)給我看
